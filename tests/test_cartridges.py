@@ -79,6 +79,12 @@ class CatalogueTests(unittest.TestCase):
         self.assertFalse(is_obsolete("7.5x55 mm Swiss (GP 11)"))
         self.assertFalse(is_obsolete("9x19 mm"))
 
+    def test_swiss_service_revolver_rounds_are_obsolete(self):
+        for name in ("7.5 mm Swiss Ordnance 1882", "10.4 mm Swiss Ordnance 1878"):
+            self.assertIn(name, NAMES)
+            self.assertTrue(is_obsolete(name), name)
+        self.assertEqual(INTRODUCED["10.4 mm Swiss Ordnance 1878"][0], 1878)
+
 
 if __name__ == "__main__":
     unittest.main()
