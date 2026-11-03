@@ -225,8 +225,9 @@ PRIMERS = {
 # Year each calibre was first introduced: released as factory ammunition or adopted for
 # service (for a wildcat, the year it became a factory round; for a military round, the year
 # of adoption). Each entry names the page the year was checked against. Calibres without a
-# single reliable year are listed in INTRODUCED_UNKNOWN with the reason, so a new calibre
-# has to be put in one of the two.
+# introduction year (shot shells, loose balls, pellets) are listed in INTRODUCED_UNKNOWN with
+# the reason, so a new calibre has to be put in one of the two. Where sources disagree or give
+# only a period, the earliest probable year is used.
 _WP = "https://en.wikipedia.org/wiki/"
 INTRODUCED = {
     ".22 Short": (1857, _WP + ".22_Short"),
@@ -305,13 +306,14 @@ INTRODUCED = {
     ".577/450 Martini-Henry": (1871, _WP + ".577/450_Martini–Henry"),
     ".50-70 Government": (1866, _WP + ".50-70_Government"),
     ".44-40 WCF": (1873, _WP + ".44-40_Winchester"),
+    # Sources disagree or give only a period: the earliest probable year is used.
+    "9x21 mm IMI": (1980, _WP + "9×21mm"),                         # "1980–present", text says the 1980s
+    "7.5x53.5 mm Swiss (GP 1890)": (1889, _WP + "7.5×55mm_Swiss"),  # named Modell 1890, in service 1889
+    "10.4x38 mm R Vetterli": (1867, _WP + ".41_Swiss"),             # adopted 1867, issued with the rifle 1869
+    "9.3x74 mm R": (1900, _WP + "9.3×74mmR"),                       # "c. 1900"
 }
 
 INTRODUCED_UNKNOWN = {
-    "9x21 mm IMI": "only '1980s'; no exact launch year found",
-    "7.5x53.5 mm Swiss (GP 1890)": "named Modell 1890, but the source says in service 1889",
-    "10.4x38 mm R Vetterli": "sources give both 1867 and 1869",
-    "9.3x74 mm R": "only 'about 1900'",
     # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
     **{n: "not a single cartridge" for n in (
         "12/70", "12/76", "12/89", "16/70", "20/70", "20/76", "28/70", ".410/76",
