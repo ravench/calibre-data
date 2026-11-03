@@ -3,7 +3,7 @@ import os, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
-                        INTRODUCED, INTRODUCED_UNKNOWN,
+                        INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
                         RIMFIRE, BALL, MINIE, PELLET, SHOT)
 
 ALL = [s for _, items in CATALOGUE for s in items]
@@ -72,6 +72,12 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(INTRODUCED["9x19 mm"][0], 1902)
         self.assertEqual(INTRODUCED[".308 Winchester"][0], 1952)
         self.assertLess(INTRODUCED[".308 Winchester"][0], INTRODUCED["7.62x51 mm NATO"][0])
+
+    def test_obsolete_calibres_are_known(self):
+        self.assertLessEqual(OBSOLETE, NAMES)
+        self.assertTrue(is_obsolete("7.5x53.5 mm Swiss (GP 1890)"))
+        self.assertFalse(is_obsolete("7.5x55 mm Swiss (GP 11)"))
+        self.assertFalse(is_obsolete("9x19 mm"))
 
 
 if __name__ == "__main__":
