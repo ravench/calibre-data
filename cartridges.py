@@ -180,6 +180,29 @@ CATALOGUE = [
         straight(".444 Marlin", RIMMED, 13.1, 11.95, 11.5, 56.5, 65.0, 10.9, FLAT, ["444marlin"]),
         straight(".458 Winchester Magnum", BELTED, 13.5, 13.0, 12.2, 63.5, 84.8, 11.63, ROUND, ["458winmag", "458wm"]),
         straight(".350 Legend", RIMLESS, 9.6, 9.9, 9.6, 43.0, 57.0, 9.07, SPITZER, ["350legend"]),
+        # Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        c("5.6x50 mm Magnum", RIMLESS, 9.6, 9.56, 9.0, 6.48, 50.0, 41.7, 61.3, 5.7, SPITZER, ["5.6x50", "5.6x50mag"]),
+        c("6.5x57 mm Mauser", RIMLESS, 11.95, 11.9, 10.94, 7.65, 56.7, 47.3, 82.0, 6.7, SPITZER, ["6.5x57"]),
+        c("6.5x68 mm", RIMLESS, 13.0, 13.3, 12.18, 7.6, 67.5, 58.1, 86.5, 6.7, SPITZER, ["6.5x68"]),
+        c("8x64 mm S", RIMLESS, 12.0, 11.95, 10.85, 8.96, 64.0, 53.0, 87.5, 8.22, SPITZER, ["8x64s", "8x64"]),
+        c("8x60 mm S", RIMLESS, 11.95, 11.98, 10.95, 9.08, 60.0, 49.0, 83.6, 8.22, SPITZER, ["8x60s", "8x60"]),
+        c("9.5x57 mm Mannlicher-Schönauer", RIMLESS, 11.89, 11.89, 11.55, 10.16, 57.15, 44.6, 74.9, 9.55, ROUND, ["9.5x57", "375rimless"]),
+        c(".375 Ruger", RIMLESS, 13.5, 13.5, 13.1, 10.3, 65.5, 53.0, 84.8, 9.5, ROUND, ["375ruger"]),
+        straight(".450 Bushmaster", RIMLESS, 12.01, 12.7, 12.19, 43.2, 57.4, 11.48, SPITZER, ["450bm", "450bushmaster"]),
+        c("6.8 mm Remington SPC", RIMLESS, 10.7, 10.7, 10.2, 7.8, 42.8, 33.1, 57.4, 7.0, SPITZER, ["6.8spc", "68spc"]),
+        c(".300 Winchester Short Magnum", RIMLESS, 13.6, 14.1, 13.7, 8.7, 53.3, 42.7, 72.6, 7.8, SPITZER, ["300wsm"]),
+        c(".17 Remington", RIMLESS, 9.6, 9.6, 9.0, 5.1, 45.6, 38.8, 54.6, 4.4, SPITZER, ["17rem"]),
+        c(".218 Bee", RIMMED, 10.4, 8.9, 8.4, 6.1, 34.2, 25.9, 42.7, 5.7, FLAT, ["218bee"]),
+        c(".25-35 Winchester", RIMMED, 12.9, 10.7, 9.3, 7.2, 51.9, 42.6, 65.0, 6.6, FLAT, ["25-35", "25-35wcf"]),
+        c(".32 Winchester Special", RIMMED, 12.9, 10.7, 10.2, 8.7, 51.8, 40.8, 65.2, 8.2, FLAT, ["32winspecial", "32ws"]),
+        c(".35 Remington", RIMLESS, 11.7, 11.6, 10.3, 9.8, 48.8, 36.8, 64.1, 9.1, ROUND, ["35rem"]),
+        straight(".38-55 Winchester", RIMMED, 12.9, 10.7, 10.0, 53.0, 64.8, 9.6, FLAT, ["38-55"]),
+        c(".348 Winchester", RIMMED, 15.5, 14.0, 12.3, 9.61, 57.3, 45.6, 71.0, 8.8, FLAT, ["348win"]),
+        c(".358 Winchester", RIMLESS, 12.0, 11.9, 11.5, 9.9, 51.2, 39.2, 70.6, 9.1, ROUND, ["358win"]),
+        c(".264 Winchester Magnum", BELTED, 13.5, 13.1, 12.5, 7.6, 64.0, 54.6, 85.0, 6.7, SPITZER, ["264winmag"]),
+        c(".300 Weatherby Magnum", BELTED, 13.5, 13.0, 12.5, 8.5, 71.8, 61.2, 90.5, 7.8, SPITZER, ["300wby", "300weatherby"]),
+        c(".416 Remington Magnum", BELTED, 13.5, 13.0, 12.4, 11.4, 72.4, 58.7, 91.4, 10.6, ROUND, ["416rem"]),
+        c(".470 Nitro Express", RIMMED, 16.6, 14.6, 13.5, 12.8, 83.0, 67.8, 101.0, 12.0, ROUND, ["470ne"]),
     ]),
     ("Schwarzpulver", [
         ball(".36 Rundkugel (.375)", 9.5, ["36", "36navy", ".375ball"]),
@@ -293,6 +316,28 @@ PRIMERS = {
     ".50-70 Government": LARGE_RIFLE, ".44-40 WCF": LARGE_PISTOL,
     "12/70": SHOTSHELL_209, "12/76": SHOTSHELL_209, "12/89": SHOTSHELL_209, "16/70": SHOTSHELL_209,
     "20/70": SHOTSHELL_209, "20/76": SHOTSHELL_209, "28/70": SHOTSHELL_209, ".410/76": SHOTSHELL_209,
+    "5.6x50 mm Magnum": SMALL_RIFLE,
+    "6.5x57 mm Mauser": LARGE_RIFLE,
+    "6.5x68 mm": LARGE_RIFLE,
+    "8x64 mm S": LARGE_RIFLE,
+    "8x60 mm S": LARGE_RIFLE,
+    "9.5x57 mm Mannlicher-Schönauer": LARGE_RIFLE,
+    ".375 Ruger": LARGE_RIFLE,
+    ".450 Bushmaster": LARGE_RIFLE,
+    "6.8 mm Remington SPC": SMALL_RIFLE,
+    ".300 Winchester Short Magnum": LARGE_RIFLE,
+    ".17 Remington": SMALL_RIFLE,
+    ".218 Bee": SMALL_RIFLE,
+    ".25-35 Winchester": LARGE_RIFLE,
+    ".32 Winchester Special": LARGE_RIFLE,
+    ".35 Remington": LARGE_RIFLE,
+    ".38-55 Winchester": LARGE_RIFLE,
+    ".348 Winchester": LARGE_RIFLE,
+    ".358 Winchester": LARGE_RIFLE,
+    ".264 Winchester Magnum": LARGE_RIFLE,
+    ".300 Weatherby Magnum": LARGE_RIFLE,
+    ".416 Remington Magnum": LARGE_RIFLE,
+    ".470 Nitro Express": LARGE_RIFLE,
 }
 
 # Year each calibre was first introduced: released as factory ammunition or adopted for
@@ -432,9 +477,31 @@ INTRODUCED = {
     "7.5x53.5 mm Swiss (GP 1890)": (1889, _WP + "7.5×55mm_Swiss"),  # named Modell 1890, in service 1889
     "10.4x38 mm R Vetterli": (1867, _WP + ".41_Swiss"),             # adopted 1867, issued with the rifle 1869
     "9.3x74 mm R": (1900, _WP + "9.3×74mmR"),                       # "c. 1900"
+    "5.6x50 mm Magnum": (1970, _WP + "5.6×50mm_Magnum"),
+    "6.5x57 mm Mauser": (1893, _WP + "6.5×57mm_Mauser"),
+    "6.5x68 mm": (1939, _WP + "6.5×68mm"),
+    "8x64 mm S": (1912, _WP + "8×64mm_S"),
+    "9.5x57 mm Mannlicher-Schönauer": (1910, _WP + "9.5×57mm_Mannlicher–Schönauer"),
+    ".375 Ruger": (2007, _WP + ".375_Ruger"),
+    ".450 Bushmaster": (2007, _WP + ".450_Bushmaster"),
+    "6.8 mm Remington SPC": (2002, _WP + "6.8mm_Remington_SPC"),
+    ".300 Winchester Short Magnum": (2001, _WP + ".300_Winchester_Short_Magnum"),
+    ".17 Remington": (1971, _WP + ".17_Remington"),
+    ".218 Bee": (1937, _WP + ".218_Bee"),
+    ".25-35 Winchester": (1895, _WP + ".25-35_Winchester"),
+    ".32 Winchester Special": (1899, _WP + ".32_Winchester_Special"),
+    ".35 Remington": (1906, _WP + ".35_Remington"),
+    ".38-55 Winchester": (1884, _WP + ".38-55_Winchester"),
+    ".348 Winchester": (1936, _WP + ".348_Winchester"),
+    ".358 Winchester": (1955, _WP + ".358_Winchester"),
+    ".264 Winchester Magnum": (1959, _WP + ".264_Winchester_Magnum"),
+    ".300 Weatherby Magnum": (1944, _WP + ".300_Weatherby_Magnum"),
+    ".416 Remington Magnum": (1989, _WP + ".416_Remington_Magnum"),
+    ".470 Nitro Express": (1907, _WP + ".470_Nitro_Express"),
 }
 
 INTRODUCED_UNKNOWN = {
+    "8x60 mm S": "source only says between the world wars",
     ".22 TCM": "no year in the source",
     ".38 Short Colt": "no year in the source",
     # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
@@ -453,6 +520,7 @@ OBSOLETE = {
     "9 mm Glisenti", "9x23 mm Steyr", "9x23 mm Largo", ".38 Long Colt", "10.4 mm Swiss Ordnance 1878",
     "11 mm French Ordnance",
     "8x50 mm R Mannlicher", "7.35x51 mm Carcano",
+    "9.5x57 mm Mannlicher-Schönauer",
 }
 
 
