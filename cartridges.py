@@ -44,6 +44,12 @@ CATALOGUE = [
         straight(".22 WMR", RIMFIRE, 7.5, 6.1, 6.1, 26.8, 32.3, 5.7, SPITZER, ["22mag", "22wmr"]),
         c(".17 HMR", RIMFIRE, 7.5, 6.1, 6.1, 4.5, 26.9, 21.5, 32.8, 4.4, SPITZER, ["17hmr"]),
         c(".17 Mach 2", RIMFIRE, 6.9, 5.7, 5.7, 4.5, 18.0, 13.5, 25.0, 4.4, SPITZER),
+        # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        straight(".22 Long", RIMFIRE, 6.9, 5.7, 5.7, 15.6, 22.6, 5.7, ROUND, ["22long"]),
+        straight(".22 BB Cap", RIMFIRE, 6.9, 5.7, 5.7, 7.2, 8.7, 5.7, ROUND, ["22bb", "bbcap", "flobert"]),
+        c("5 mm Remington Rimfire Magnum", RIMFIRE, 8.3, 6.6, 6.6, 5.7, 25.9, 18.2, 33.0, 5.2, SPITZER, ["5mmrmr", "5rmr"]),
+        c(".17 Winchester Super Magnum", RIMFIRE, 8.5, 6.8, 6.8, 5.0, 30.5, 23.7, 36.6, 4.4, SPITZER, ["17wsm"]),
+        straight(".44 Henry", RIMFIRE, 13.2, 11.2, 11.0, 22.9, 34.2, 11.3, FLAT, ["44henry"]),
     ]),
     ("Kurzwaffe", [
         straight("6.35 mm Browning (.25 ACP)", RIMLESS, 7.6, 7.1, 7.0, 15.6, 23.1, 6.4, ROUND, ["6.35", "25acp", "25auto"]),
@@ -236,6 +242,10 @@ CATALOGUE = [
         c(".577/450 Martini-Henry", RIMMED, 19.0, 17.0, 16.0, 12.3, 59.7, 38.0, 79.0, 11.6, ROUND, ["martini-henry", "577/450"]),
         straight(".50-70 Government", RIMMED, 16.9, 14.2, 13.4, 44.5, 57.0, 13.0, ROUND, ["50-70"]),
         c(".44-40 WCF", RIMMED, 13.1, 11.9, 11.5, 11.1, 33.2, 22.0, 40.6, 10.8, FLAT, ["44-40", "4440"]),
+        # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        c("11x59 mm R Gras", RIMMED, 16.9, 13.8, 13.5, 11.9, 59.0, 44.6, 76.0, 11.3, ROUND, ["11gras", "gras"]),
+        straight(".32-40 Ballard", RIMMED, 12.9, 10.8, 8.6, 54.0, 66.0, 8.1, FLAT, ["32-40"]),
+        straight(".50-90 Sharps", RIMMED, 16.8, 14.9, 13.4, 64.0, 81.0, 13.0, ROUND, ["50-90", "50sharps"]),
     ]),
     ("Flinte", [
         shot("12/70", 20.6, 22.3, 64.0, ["12", "12/70", "12ga", "12gauge"]),
@@ -375,6 +385,9 @@ PRIMERS = {
     ".442 Webley": LARGE_PISTOL,
     ".450 Adams": LARGE_PISTOL,
     ".476 Enfield": LARGE_PISTOL,
+    "11x59 mm R Gras": LARGE_RIFLE,
+    ".32-40 Ballard": LARGE_RIFLE,
+    ".50-90 Sharps": LARGE_RIFLE,
 }
 
 # Year each calibre was first introduced: released as factory ammunition or adopted for
@@ -553,6 +566,14 @@ INTRODUCED = {
     ".442 Webley": (1868, _WP + ".442_Webley"),
     ".450 Adams": (1868, _WP + ".450_Adams"),
     ".476 Enfield": (1881, _WP + ".476_Enfield"),
+    ".22 Long": (1871, _WP + ".22_Long"),
+    ".22 BB Cap": (1845, _WP + ".22_BB"),
+    "5 mm Remington Rimfire Magnum": (1969, _WP + "5mm_Remington_Rimfire_Magnum"),
+    ".17 Winchester Super Magnum": (2013, _WP + ".17_Winchester_Super_Magnum"),
+    ".44 Henry": (1860, _WP + ".44_Henry"),
+    "11x59 mm R Gras": (1874, _WP + "11×59mmR_Gras"),
+    ".32-40 Ballard": (1884, _WP + ".32-40_Ballard"),
+    ".50-90 Sharps": (1872, _WP + ".50-90_Sharps"),
 }
 
 INTRODUCED_UNKNOWN = {
@@ -586,6 +607,10 @@ OBSOLETE = {
     ".442 Webley",
     ".450 Adams",
     ".476 Enfield",
+    ".44 Henry",
+    "11x59 mm R Gras",
+    ".32-40 Ballard",
+    ".50-90 Sharps",
 }
 
 
