@@ -320,3 +320,14 @@ INTRODUCED_UNKNOWN = {
         ".36 Rundkugel (.375)", ".44 Rundkugel (.454)", ".45 Rundkugel (.440)", ".50 Rundkugel (.490)",
         ".54 Rundkugel (.530)", ".58 Minié", ".69 Minié", "4.5 mm Diabolo (.177)", "5.5 mm Diabolo (.22)")},
 }
+
+# Calibres no longer in regular factory production (only surplus, boutique loads or reloading).
+# Everything else is current. The apps can hide these by default; the poster can mark them.
+OBSOLETE = {
+    "7.5x53.5 mm Swiss (GP 1890)", "10.4x38 mm R Vetterli", ".577 Snider", ".577/450 Martini-Henry",
+    ".50-70 Government", ".58 Minié", ".69 Minié",
+}
+
+
+def is_obsolete(name):
+    return name in OBSOLETE
