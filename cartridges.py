@@ -280,14 +280,14 @@ PRIMERS = {
     "8x57 mm IS": LARGE_RIFLE, "8x68 mm S": LARGE_RIFLE, "9.3x62 mm": LARGE_RIFLE, "9.3x74 mm R": LARGE_RIFLE,
     ".338 Lapua Magnum": LARGE_RIFLE, ".375 H&H Magnum": LARGE_RIFLE, ".416 Rigby": LARGE_RIFLE,
     ".45-70 Government": LARGE_RIFLE, ".50 BMG": BMG_35,
-    "6.5x52 mm Carcano": LARGE_RIFLE, "6.5x50 mm SR Arisaka": LARGE_RIFLE, "7.7x58 mm Arisaka":
-    LARGE_RIFLE, "8x50 mm R Lebel": LARGE_RIFLE, "8x56 mm R Mannlicher": LARGE_RIFLE, "8x50 mm R
-    Mannlicher": LARGE_RIFLE, "7.35x51 mm Carcano": LARGE_RIFLE, "6.5x54 mm Mannlicher-Schönauer":
-    LARGE_RIFLE, ".30-40 Krag": LARGE_RIFLE, "7.92x33 mm Kurz": LARGE_RIFLE, "5.45x39 mm": SMALL_RIFLE,
-    ".22 Hornet": SMALL_RIFLE, ".25-06 Remington": LARGE_RIFLE, ".257 Roberts": LARGE_RIFLE, ".280
-    Remington": LARGE_RIFLE, ".35 Whelen": LARGE_RIFLE, ".300 H&H Magnum": LARGE_RIFLE, ".338 Winchester
-    Magnum": LARGE_RIFLE, ".444 Marlin": LARGE_RIFLE, ".458 Winchester Magnum": LARGE_RIFLE, ".350
-    Legend": SMALL_RIFLE,
+    "6.5x52 mm Carcano": LARGE_RIFLE, "6.5x50 mm SR Arisaka": LARGE_RIFLE, "7.7x58 mm Arisaka": LARGE_RIFLE,
+    "8x50 mm R Lebel": LARGE_RIFLE, "8x56 mm R Mannlicher": LARGE_RIFLE, "8x50 mm R Mannlicher": LARGE_RIFLE,
+    "7.35x51 mm Carcano": LARGE_RIFLE, "6.5x54 mm Mannlicher-Schönauer": LARGE_RIFLE,
+    ".30-40 Krag": LARGE_RIFLE, "7.92x33 mm Kurz": LARGE_RIFLE, "5.45x39 mm": SMALL_RIFLE,
+    ".22 Hornet": SMALL_RIFLE, ".25-06 Remington": LARGE_RIFLE, ".257 Roberts": LARGE_RIFLE,
+    ".280 Remington": LARGE_RIFLE, ".35 Whelen": LARGE_RIFLE, ".300 H&H Magnum": LARGE_RIFLE,
+    ".338 Winchester Magnum": LARGE_RIFLE, ".444 Marlin": LARGE_RIFLE, ".458 Winchester Magnum": LARGE_RIFLE,
+    ".350 Legend": SMALL_RIFLE,
     # Vetterli: the original Swiss service round is rimfire; modern centrefire cases take large rifle.
     "10.4x38 mm R Vetterli": LARGE_RIFLE, ".577 Snider": LARGE_RIFLE, ".577/450 Martini-Henry": LARGE_RIFLE,
     ".50-70 Government": LARGE_RIFLE, ".44-40 WCF": LARGE_PISTOL,
