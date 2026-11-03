@@ -6,7 +6,10 @@ The shared calibre catalogue for
 [calibre wall poster](https://github.com/ravench/calibre-poster).
 
 - `cartridges.py`: every calibre with its approximate dimensions in mm (CIP/SAAMI, rounded),
-  search aliases, printable alternative names and primer sizes.
+  search aliases, printable alternative names and primer sizes, and the year each calibre was
+  first introduced (`INTRODUCED`, with the page it was checked against; `INTRODUCED_UNKNOWN`
+  lists the entries that aren't one cartridge and why; where sources disagree, the earliest
+  probable year), and `OBSOLETE`, the calibres no longer in regular factory production.
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side
   (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90).
