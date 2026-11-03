@@ -221,3 +221,100 @@ PRIMERS = {
     "12/70": SHOTSHELL_209, "12/76": SHOTSHELL_209, "12/89": SHOTSHELL_209, "16/70": SHOTSHELL_209,
     "20/70": SHOTSHELL_209, "20/76": SHOTSHELL_209, "28/70": SHOTSHELL_209, ".410/76": SHOTSHELL_209,
 }
+
+# Year each calibre was first introduced: released as factory ammunition or adopted for
+# service (for a wildcat, the year it became a factory round; for a military round, the year
+# of adoption). Each entry names the page the year was checked against. Calibres without a
+# single reliable year are listed in INTRODUCED_UNKNOWN with the reason, so a new calibre
+# has to be put in one of the two.
+_WP = "https://en.wikipedia.org/wiki/"
+INTRODUCED = {
+    ".22 Short": (1857, _WP + ".22_Short"),
+    ".22 LR": (1887, _WP + ".22_Long_Rifle"),
+    ".22 WMR": (1959, _WP + ".22_Winchester_Magnum_Rimfire"),
+    ".17 HMR": (2002, _WP + ".17_Hornady_Magnum_Rimfire"),
+    ".17 Mach 2": (2004, _WP + ".17_Hornady_Mach_2"),
+    "6.35 mm Browning (.25 ACP)": (1905, _WP + ".25_ACP"),
+    "7.65 mm Browning (.32 ACP)": (1899, _WP + ".32_ACP"),
+    "7.65 mm Parabellum": (1898, _WP + "7.65×21mm_Parabellum"),
+    ".32 S&W Long": (1896, _WP + ".32_S%26W_Long"),
+    ".32 H&R Magnum": (1984, _WP + ".32_H%26R_Magnum"),
+    "7.62x25 mm Tokarev": (1930, _WP + "7.62×25mm_Tokarev"),
+    "9 mm Browning kurz (.380 ACP)": (1908, _WP + ".380_ACP"),
+    "9x18 mm Makarov": (1951, _WP + "9×18mm_Makarov"),
+    "9x19 mm": (1902, _WP + "9×19mm_Parabellum"),
+    ".357 SIG": (1994, _WP + ".357_SIG"),
+    ".38 Special": (1898, _WP + ".38_Special"),
+    ".357 Magnum": (1935, _WP + ".357_Magnum"),
+    ".38 Super": (1929, _WP + ".38_Super"),
+    "10 mm Auto": (1983, _WP + "10mm_Auto"),
+    ".40 S&W": (1990, _WP + ".40_S%26W"),
+    ".41 Magnum": (1964, _WP + ".41_Remington_Magnum"),
+    ".44 Special": (1907, _WP + ".44_Special"),
+    ".44 Magnum": (1956, _WP + ".44_Magnum"),
+    ".45 ACP": (1905, _WP + ".45_ACP"),           # designed 1904, produced from 1905
+    ".45 Colt": (1873, _WP + ".45_Colt"),         # designed 1872, produced from 1873
+    ".45 GAP": (2003, _WP + ".45_GAP"),
+    ".454 Casull": (1997, _WP + ".454_Casull"),   # wildcat from 1958, commercial (SAAMI) 1997
+    ".460 S&W Magnum": (2005, _WP + ".460_S%26W_Magnum"),
+    ".500 S&W Magnum": (2003, _WP + ".500_S%26W_Magnum"),
+    "5.7x28 mm": (1990, _WP + "FN_5.7×28mm"),
+    "4.6x30 mm": (1999, _WP + "HK_4.6×30mm"),
+    ".204 Ruger": (2004, _WP + ".204_Ruger"),
+    ".222 Remington": (1950, _WP + ".222_Remington"),
+    ".223 Remington": (1963, _WP + ".223_Remington"),
+    "5.56x45 mm NATO": (1980, _WP + "5.56×45mm_NATO"),   # STANAG 4172, 28 Oct 1980
+    "5.6 mm GP 90 (Swiss)": (1990, _WP + "SIG_SG_550"),  # adopted with the Stgw 90
+    ".22-250 Remington": (1965, _WP + ".22-250_Remington"),  # wildcat from 1937
+    ".243 Winchester": (1955, _WP + ".243_Winchester"),
+    "6 mm BR Norma": (1996, _WP + "6mm_BR"),
+    "6 mm ARC": (2020, _WP + "6mm_ARC"),
+    "6.5 mm Creedmoor": (2007, _WP + "6.5mm_Creedmoor"),
+    "6.5x55 mm Swedish": (1894, _WP + "6.5×55mm_Swedish"),
+    "6.5x47 mm Lapua": (2005, _WP + "6.5×47mm_Lapua"),
+    "6.5 PRC": (2018, _WP + "Hornady"),
+    ".260 Remington": (1997, _WP + ".260_Remington"),
+    ".270 Winchester": (1925, _WP + ".270_Winchester"),
+    "7 mm-08 Remington": (1980, _WP + "7mm-08_Remington"),
+    "7x57 mm Mauser": (1892, _WP + "7×57mm_Mauser"),
+    "7x64 mm": (1917, _WP + "7×64mm"),
+    "7 mm Remington Magnum": (1962, _WP + "7mm_Remington_Magnum"),
+    "7 mm PRC": (2022, _WP + "Hornady"),
+    "7.5x55 mm Swiss (GP 11)": (1911, _WP + "7.5×55mm_Swiss"),
+    "7.5x54 mm French": (1929, _WP + "7.5×54mm_French"),
+    "7.62x39 mm": (1943, _WP + "7.62×39mm"),
+    ".300 AAC Blackout": (2010, _WP + ".300_AAC_Blackout"),
+    "7.62x51 mm NATO": (1954, _WP + "7.62×51mm_NATO"),
+    ".308 Winchester": (1952, _WP + ".308_Winchester"),
+    ".30-06 Springfield": (1906, _WP + ".30-06_Springfield"),
+    ".30-30 Winchester": (1895, _WP + ".30-30_Winchester"),
+    ".300 Winchester Magnum": (1963, _WP + ".300_Winchester_Magnum"),
+    ".300 PRC": (2018, _WP + "Hornady"),
+    ".300 Norma Magnum": (2012, _WP + ".300_Norma_Magnum"),
+    ".303 British": (1888, _WP + ".303_British"),
+    "7.62x54 mm R": (1891, _WP + "7.62×54mmR"),
+    "8x57 mm IS": (1903, _WP + "7.92×57mm_Mauser"),     # S bullet; the round-nosed Patrone 88 is 1888
+    "8x68 mm S": (1939, _WP + "8×68mm_S"),
+    "9.3x62 mm": (1905, _WP + "9.3×62mm"),
+    ".338 Lapua Magnum": (1989, _WP + ".338_Lapua_Magnum"),
+    ".375 H&H Magnum": (1912, _WP + ".375_H%26H_Magnum"),
+    ".416 Rigby": (1912, _WP + ".416_Rigby"),           # designed 1911, produced from 1912
+    ".45-70 Government": (1873, _WP + ".45-70"),
+    ".50 BMG": (1921, _WP + ".50_BMG"),
+    ".577 Snider": (1866, _WP + ".577_Snider"),
+    ".577/450 Martini-Henry": (1871, _WP + ".577/450_Martini–Henry"),
+    ".50-70 Government": (1866, _WP + ".50-70_Government"),
+    ".44-40 WCF": (1873, _WP + ".44-40_Winchester"),
+}
+
+INTRODUCED_UNKNOWN = {
+    "9x21 mm IMI": "only '1980s'; no exact launch year found",
+    "7.5x53.5 mm Swiss (GP 1890)": "named Modell 1890, but the source says in service 1889",
+    "10.4x38 mm R Vetterli": "sources give both 1867 and 1869",
+    "9.3x74 mm R": "only 'about 1900'",
+    # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+    **{n: "not a single cartridge" for n in (
+        "12/70", "12/76", "12/89", "16/70", "20/70", "20/76", "28/70", ".410/76",
+        ".36 Rundkugel (.375)", ".44 Rundkugel (.454)", ".45 Rundkugel (.440)", ".50 Rundkugel (.490)",
+        ".54 Rundkugel (.530)", ".58 Minié", ".69 Minié", "4.5 mm Diabolo (.177)", "5.5 mm Diabolo (.22)")},
+}

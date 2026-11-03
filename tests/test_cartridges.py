@@ -3,6 +3,7 @@ import os, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
+                        INTRODUCED, INTRODUCED_UNKNOWN,
                         RIMFIRE, BALL, MINIE, PELLET, SHOT)
 
 ALL = [s for _, items in CATALOGUE for s in items]
@@ -51,6 +52,26 @@ class CatalogueTests(unittest.TestCase):
         self.assertIn("gp1890", by_name["7.5x53.5 mm Swiss (GP 1890)"]["aliases"])
         self.assertIn("gp90", by_name["5.6 mm GP 90 (Swiss)"]["aliases"], "GP 90 means the 5.6 mm Stgw 90 round")
         self.assertEqual(by_name["12/70"]["kind"], SHOT)
+
+    def test_every_calibre_has_an_introduction_year_or_a_reason(self):
+        self.assertEqual(set(INTRODUCED) | set(INTRODUCED_UNKNOWN), NAMES)
+        self.assertFalse(set(INTRODUCED) & set(INTRODUCED_UNKNOWN))
+        for name, reason in INTRODUCED_UNKNOWN.items():
+            self.assertTrue(reason.strip(), name)
+
+    def test_introduction_years_are_plausible_and_sourced(self):
+        for name, (year, source) in INTRODUCED.items():
+            with self.subTest(name):
+                self.assertIsInstance(year, int)
+                self.assertGreaterEqual(year, 1800)
+                self.assertLessEqual(year, 2026)
+                self.assertTrue(source.startswith("https://"), source)
+
+    def test_known_introduction_years(self):
+        self.assertEqual(INTRODUCED["7.5x55 mm Swiss (GP 11)"][0], 1911)
+        self.assertEqual(INTRODUCED["9x19 mm"][0], 1902)
+        self.assertEqual(INTRODUCED[".308 Winchester"][0], 1952)
+        self.assertLess(INTRODUCED[".308 Winchester"][0], INTRODUCED["7.62x51 mm NATO"][0])
 
 
 if __name__ == "__main__":
