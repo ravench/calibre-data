@@ -1018,7 +1018,7 @@ RARE = {
     "8 mm Nambu", "8 mm Roth-Steyr", "8x50 mm R Mannlicher", "8x58 mm R Danish Krag",
     "9.5x57 mm Mannlicher-Schönauer", "9x18 mm Ultra", "9x57 mm Mauser",
     # Still made, but hardly ever found:
-    ".505 Gibbs", ".500 Jeffery", ".416 Barrett", "12.7x108 mm", ".460 Weatherby Magnum",
+    ".450 Rigby", ".375 CheyTac", ".505 Gibbs", ".500 Jeffery", ".416 Barrett", "12.7x108 mm", ".460 Weatherby Magnum",
     ".338-378 Weatherby Magnum", ".30-378 Weatherby Magnum", "7 mm STW", ".22 Savage Hi-Power",
     ".307 Winchester", ".356 Winchester", ".450 Marlin", ".458 SOCOM", ".50 Beowulf",
     ".30 Thompson/Center", ".300 Ruger Compact Magnum", ".300 Remington SAUM",

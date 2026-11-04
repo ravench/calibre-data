@@ -69,6 +69,7 @@ class CatalogueTests(unittest.TestCase):
         for name, values in sheet.items():
             self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
             self.assertGreater(by_name[name]["shoulder"], by_name[name]["neck"], name)
+            self.assertTrue(is_rare(name), name)
 
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}
