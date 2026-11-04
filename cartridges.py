@@ -53,6 +53,10 @@ CATALOGUE = [
         c(".17 Mach 2", RIMFIRE, 6.9, 5.7, 5.7, 4.5, 18.0, 13.5, 25.0, 4.4, SPITZER),
         # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         straight(".22 Long", RIMFIRE, 6.9, 5.7, 5.7, 15.6, 22.6, 5.7, ROUND, ["22long"]),
+        # Measured specimens on municion.org (AECC drawings 06-020-CBR-010, 08-014-CBR-020, 08-020-CBR-020).
+        straight(".22 Extra Long", RIMFIRE, 6.95, 5.74, 5.72, 19.83, 29.89, 5.63, ROUND, ["22extralong", "22xl"]),
+        straight(".32 Short Rimfire", RIMFIRE, 9.47, 8.02, 8.02, 14.22, 23.79, 7.88, ROUND, ["32shortrf", "32rfshort"]),
+        straight(".32 Long Rimfire", RIMFIRE, 9.51, 8.09, 8.09, 20.0, 30.85, 7.92, ROUND, ["32longrf", "32rflong"]),
         straight(".22 BB Cap", RIMFIRE, 6.9, 5.7, 5.7, 7.2, 8.7, 5.7, ROUND, ["22bb", "bbcap", "flobert"]),
         c("5 mm Remington Rimfire Magnum", RIMFIRE, 8.3, 6.6, 6.6, 5.7, 25.9, 18.2, 33.0, 5.2, SPITZER, ["5mmrmr", "5rmr"]),
         c(".17 Winchester Super Magnum", RIMFIRE, 8.5, 6.8, 6.8, 5.0, 30.5, 23.7, 36.6, 4.4, SPITZER, ["17wsm"]),
@@ -159,6 +163,9 @@ CATALOGUE = [
         c(".25 NAA", RIMLESS, 8.6, 8.6, 8.5, 7.0, 18.9, 9.9, 24.4, 6.4, ROUND, ["25naa"]),
         c(".32 NAA", RIMLESS, 9.5, 9.5, 9.47, 8.55, 17.3, 6.6, 25.0, 7.95, ROUND, ["32naa"]),
         straight(".32 Long Colt", RIMMED, 9.5, 8.1, 8.0, 23.0, 32.0, 7.9, ROUND, ["32longcolt"]),
+        # Measured specimens on municion.org (AECC drawings 06-029-CBC-010, 13-035-CGC-010).
+        straight("5.75 mm Velo-Dog", RIMMED, 7.78, 6.37, 6.25, 29.41, 35.24, 5.65, ROUND, ["velodog", "5.75velodog", "5.5velodog", "5.5x30r"]),
+        straight(".500 JRH", RIMLESS, 13.83, 13.38, 13.38, 35.36, 47.2, 12.72, FLAT, ["500jrh"]),
         straight(".35 S&W Auto", RIMLESS, 8.85, 8.83, 8.82, 17.21, 24.16, 7.92, ROUND, ["35s&w", "35auto"]),
         straight(".38 ACP", RIMLESS, 10.3, 9.8, 9.8, 22.9, 33.0, 9.0, ROUND, ["38acp", "38auto"]),
         straight(".41 Long Colt", RIMMED, 11.0, 10.3, 10.2, 28.6, 35.5, 9.8, ROUND, ["41longcolt", "41lc"]),
@@ -317,6 +324,12 @@ CATALOGUE = [
         c(".450 No. 2 Nitro Express", RIMMED, 16.76, 14.35, 13.97, 12.24, 88.9, 72.39, 109.98, 11.63, ROUND, ["450no2"]),
         c(".500/416 Nitro Express", RIMMED, 16.64, 14.55, 13.49, 11.33, 82.55, 60.96, 101.09, 10.57, ROUND, ["500/416"]),
         c(".375 Flanged Magnum Nitro Express", RIMMED, 14.35, 13.13, 11.43, 10.29, 74.68, 60.96, 96.52, 9.52, ROUND, ["375flmag"]),
+        # .375 Flanged NE (1899, 2.5 in, straight taper) and .55 Boys: measured specimens on municion.org
+        # (AECC 10-063-TBC-020, 14-099-BFC-020; Boys belt 21.59 matches antitank.co.uk's 0.850 in).
+        # .45-90 WCF: C.I.P. Tab. II "45-90 WM" maximum cartridge, checked against AECC 11-061-BBC-020.
+        straight(".375 Flanged Nitro Express", RIMMED, 13.31, 11.52, 10.08, 63.13, 77.58, 9.48, ROUND, ["375flne", "370flanged"]),
+        c(".55 Boys", BELTED, 20.3, 20.14, 18.03, 15.51, 99.11, 75.0, 133.64, 14.36, SPITZER, ["55boys", "13.9x99b", "boys"]),
+        straight(".45-90 WCF", RIMMED, 15.44, 12.82, 12.22, 60.96, 82.0, 11.63, FLAT, ["45-90", "4590", "45-90wcf"]),
         c("9.3x53 mm R Finnish", RIMMED, 14.4, 12.42, 11.61, 9.9, 53.3, 39.61, 76.0, 9.3, ROUND, ["9.3x53r"]),
         c("10.3x60 mm R", RIMMED, 15.7, 13.85, 12.5, 11.26, 60.8, 40.8, 78.9, 10.54, ROUND, ["10.3x60r"]),
         c("7x61 mm Sharpe & Hart", BELTED, 13.5, 13.05, 11.91, 8.06, 61.0, 50.8, 83.0, 7.2, SPITZER, ["7x61", "7x61sh", "7x61super"]),
@@ -623,6 +636,9 @@ PRIMERS = {
     ".25 NAA": SMALL_PISTOL,
     ".32 NAA": SMALL_PISTOL,
     ".32 Long Colt": SMALL_PISTOL,
+    "5.75 mm Velo-Dog": SMALL_PISTOL, ".500 JRH": LARGE_PISTOL,
+    ".375 Flanged Nitro Express": LARGE_RIFLE, ".45-90 WCF": LARGE_RIFLE,
+    ".55 Boys": BMG_35,  # assumed: the sources give no primer size
     ".35 S&W Auto": SMALL_PISTOL,
     ".38 ACP": SMALL_PISTOL,
     ".41 Long Colt": SMALL_PISTOL,
@@ -968,6 +984,14 @@ INTRODUCED = {
     ".25 NAA": (2002, _WP + ".25_NAA"),
     ".32 NAA": (2002, _WP + ".32_NAA"),
     ".32 Long Colt": (1873, _WP + ".32_Long_Colt"),
+    ".22 Extra Long": (1878, "https://municion.org/producto/22-extra-long-rf-us/"),
+    ".32 Short Rimfire": (1865, "https://municion.org/producto/32-short-rf/"),  # "c1865"
+    ".32 Long Rimfire": (1861, "https://municion.org/producto/32-long-rf/"),
+    "5.75 mm Velo-Dog": (1894, "https://municion.org/producto/56-mm-velo-dog/"),
+    ".500 JRH": (1993, "https://municion.org/producto/500-jrh/"),
+    ".375 Flanged Nitro Express": (1899, "https://municion.org/producto/375-flanged-nitro-express/"),
+    ".55 Boys": (1936, "https://municion.org/producto/55-boys/"),
+    ".45-90 WCF": (1886, "https://municion.org/producto/45-90-300-winchester-cf/"),
     ".35 S&W Auto": (1912, _WP + ".35_S%26W_Auto"),
     ".38 ACP": (1900, _WP + ".38_ACP"),
     ".41 Long Colt": (1877, _WP + ".41_Long_Colt"),
@@ -1179,6 +1203,7 @@ OBSOLETE = {
     ".357 Remington Maximum",
     ".41 Action Express",
     ".32 Long Colt",
+    ".22 Extra Long", ".32 Short Rimfire", ".32 Long Rimfire", ".55 Boys",
     ".35 S&W Auto",
     ".38 ACP",
     ".41 Long Colt",
@@ -1239,7 +1264,7 @@ def is_obsolete(name):
 # obsolete collector rounds, but some are still made in small numbers (big Nitro and African
 # rounds, short-lived magnums, niche handgun rounds). Judged, not counted: no source counts them.
 RARE = {
-    ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express",
+    ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express", ".22 Extra Long", ".32 Short Rimfire", ".32 Long Rimfire", "5.75 mm Velo-Dog", ".500 JRH", ".375 Flanged Nitro Express", ".55 Boys", ".45-90 WCF",
     "9.3x53 mm R Finnish", "10.3x60 mm R", "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
     ".219 Zipper", ".22 Remington Jet", ".223 WSSM", ".225 Winchester",
     ".25 Remington", ".25 WSSM", ".256 Winchester Magnum", ".30 Remington AR", ".303 Savage",
@@ -1302,7 +1327,8 @@ COUNTRIES = {  # code: (English name, flag emoji or None)
 
 WORLDWIDE = "WW"
 ORIGIN = {
-    ".450 No. 2 Nitro Express": "GB", ".375 Flanged Magnum Nitro Express": "GB", ".360 No. 5 Rook": "GB",
+    ".450 No. 2 Nitro Express": "GB", ".375 Flanged Magnum Nitro Express": "GB", ".375 Flanged Nitro Express": "GB", ".55 Boys": "GB",
+    "5.75 mm Velo-Dog": "FR", ".500 JRH": "US", ".45-90 WCF": "US", ".22 Extra Long": "US", ".32 Short Rimfire": "US", ".32 Long Rimfire": "US", ".360 No. 5 Rook": "GB",
     "10.3x60 mm R": "CH", "7x61 mm Sharpe & Hart": "US",
     # In common use worldwide:
     ".22 Short": WORLDWIDE, ".22 LR": WORLDWIDE, ".22 WMR": WORLDWIDE, ".17 HMR": WORLDWIDE,
