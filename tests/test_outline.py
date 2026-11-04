@@ -3,7 +3,7 @@ import os, re, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
-from cartridges import PATCHED  # noqa: E402
+from cartridges import PATCHED, CRIMPED  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -40,6 +40,24 @@ class OutlineTests(unittest.TestCase):
             o = outline.outline(s)
             self.assertEqual("patch" in o, s["profile"] == PATCHED and s["oal"] > s["case"] + 0.1, s["name"])
             self.assertEqual(o.get("bulletMaterial") == "steel", "patch" in o, s["name"])
+
+    def test_crimped_blank_is_a_case_narrowing_to_the_mouth(self):
+        s = next(s for _, s in outline.specs() if s["name"] == ".22 Blank (6.8/11)")
+        self.assertEqual(s["profile"], CRIMPED)
+        o = outline.outline(s)
+        self.assertNotIn("bullet", o, "a blank has no bullet")
+        pts = points(o["case"])
+        # Tip at y = 0: the mouth is the crimp's width, the body further back the full base.
+        mouth = [x for x, y in pts if y < 0.01]
+        self.assertAlmostEqual(max(mouth) - min(mouth), s["neck"], places=1)
+        body = [x for x, y in pts if abs(y - s["case"] * outline.CRIMP_LENGTH) < 0.01]
+        self.assertAlmostEqual(max(body) - min(body), s["base"], places=1)
+        self.assertLess(s["neck"], s["base"])
+
+    def test_only_blanks_are_crimped(self):
+        for _, s in outline.specs():
+            if s["profile"] == CRIMPED:
+                self.assertEqual(s["oal"], s["case"], s["name"])
 
     def test_identical_groups(self):
         self.assertEqual(outline.identical_groups(), [
