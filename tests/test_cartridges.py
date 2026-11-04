@@ -89,7 +89,7 @@ class CatalogueTests(unittest.TestCase):
         keys = ("rim", "base", "neck", "case", "oal", "bullet")
         published = {  # Wikipedia infoboxes (.277 Fury after the SAAMI drawing)
             ".277 SIG Fury": (11.99, 11.95, 7.87, 51.18, 71.76, 7.06),
-            "5.8x42 mm": (10.42, 10.4, 6.65, 42.2, 58.0, 5.8),
+            "5.8x42 mm": (10.42, 10.4, 6.65, 42.2, 58.0, 6.0),  # bullet from the AECC drawing
         }
         for name, values in published.items():
             self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
@@ -251,6 +251,22 @@ class CatalogueTests(unittest.TestCase):
             self.assertTrue(is_obsolete(name), name)
         self.assertEqual(INTRODUCED["10.4 mm Swiss Ordnance 1878"][0], 1878)
 
+    def test_municion_check_fixes_wrong_dimensions(self):
+        # Values that disagreed with both the municion.org drawing and the published standard.
+        by_name = {s["name"]: s for s in ALL}
+        expected = {
+            ".22 WMR": {"oal": 34.3},
+            ".41 Magnum": {"rim": 12.5},
+            ".22-250 Remington": {"shoulder": 10.5},
+            ".338 Lapua Magnum": {"shoulder": 13.82},
+            ".300 PRC": {"case": 65.5, "sh_at": 54.6},
+            "6.5x54 mm Mannlicher-Schönauer": {"case": 53.6, "sh_at": 43.5},
+            "10.4x38 mm R Vetterli": {"rim": 15.7, "base": 13.62, "shoulder": 13.1, "neck": 11.43,
+                                      "case": 38.21, "sh_at": 30.7, "oal": 56.22, "bullet": 10.92},
+        }
+        for name, fields in expected.items():
+            for key, value in fields.items():
+                self.assertEqual(by_name[name][key], value, f"{name} {key}")
 
 if __name__ == "__main__":
     unittest.main()
