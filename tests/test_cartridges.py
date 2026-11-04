@@ -72,6 +72,18 @@ class CatalogueTests(unittest.TestCase):
             self.assertGreater(by_name[name]["shoulder"], by_name[name]["neck"], name)
             self.assertTrue(is_rare(name), name)
 
+    def test_third_cip_batch_keeps_the_sheet_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
+        sheet = {  # C.I.P. TDCC maximum cartridge
+            ".450 No. 2 Nitro Express": (16.76, 14.35, 13.97, 12.24, 88.9, 72.39, 109.98, 11.63),
+            "10.3x60 mm R": (15.7, 13.85, 12.5, 11.26, 60.8, 40.8, 78.9, 10.54),
+            "7x61 mm Sharpe & Hart": (13.5, 13.05, 11.91, 8.06, 61.0, 50.8, 83.0, 7.2),
+        }
+        for name, values in sheet.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        self.assertEqual(ORIGIN["10.3x60 mm R"], "CH")
+
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}
         b = by_name[".22 Blank (6.8/11)"]
