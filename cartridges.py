@@ -1044,6 +1044,7 @@ RARE = {
     ".45 Winchester Magnum", "9x23 mm Winchester", ".400 Cor-Bon",
     ".577 Nitro Express", ".600 Nitro Express", ".700 Nitro Express", ".500/465 Nitro Express",
     ".224 Weatherby Magnum",
+    ".408 CheyTac", ".338 Ruger Compact Magnum",
 }
 
 
