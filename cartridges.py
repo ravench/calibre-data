@@ -84,6 +84,9 @@ CATALOGUE = [
         c(".400 Cor-Bon", RIMLESS, 12.0, 11.9, 11.85, 10.7, 22.8, 19.5, 30.0, 10.2, FLAT, ["400corbon"]),
         straight("9x23 mm Winchester", RIMLESS, 10.01, 9.93, 9.68, 22.86, 33.02, 9.04, ROUND, ["9x23win"]),
         straight(".356 TSW", RIMLESS, 10.0, 9.92, 9.7, 21.6, 29.5, 9.0, ROUND, ["356tsw"]),
+        # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        c(".22 Remington Jet", RIMMED, 11.2, 9.6, 8.9, 6.3, 33.0, 25.0, 40.0, 5.6, SPITZER, ["22jet"]),
+        c(".256 Winchester Magnum", RIMMED, 11.2, 9.7, 9.3, 7.2, 32.5, 24.5, 40.4, 6.5, FLAT, ["256win"]),
         straight(".41 Magnum", RIMMED, 13.0, 11.0, 11.0, 32.8, 40.4, 10.4, FLAT, ["41mag"]),
         straight(".44 Special", RIMMED, 13.1, 11.6, 11.6, 29.5, 37.0, 10.9, FLAT, ["44spl", "44special"]),
         straight(".44 Magnum", RIMMED, 13.1, 11.6, 11.6, 32.6, 40.9, 10.9, FLAT, ["44mag", "44magnum"]),
@@ -286,6 +289,10 @@ CATALOGUE = [
         c(".243 WSSM", RIMLESS, 13.6, 14.1, 13.8, 7.4, 42.4, 33.6, 60.0, 6.2, SPITZER, ["243wssm"]),
         c(".25 WSSM", RIMLESS, 13.6, 14.1, 13.8, 7.2, 42.4, 33.2, 60.0, 6.53, SPITZER, ["25wssm"]),
         c(".350 Remington Magnum", BELTED, 13.5, 13.51, 12.6, 9.9, 55.1, 43.1, 71.1, 9.1, ROUND, ["350remmag"]),
+        # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        c(".338-378 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 9.2, 73.8, 62.3, 93.0, 8.6, SPITZER, ["338-378"]),
+        c("6.8 Western", RIMLESS, 13.6, 14.1, 13.7, 8.0, 51.3, 41.6, 75.1, 7.04, SPITZER, ["6.8western", "68western"]),
+        c("7 mm Remington SAUM", RIMLESS, 13.6, 13.61, 13.58, 8.1, 51.7, 41.8, 71.8, 7.2, SPITZER, ["7saum"]),
         # Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
         c(".26 Nosler", RIMLESS, 13.6, 14.0, 13.6, 7.6, 65.8, 56.4, 84.8, 6.7, SPITZER, ["26nosler"]),
         c(".27 Nosler", RIMLESS, 13.6, 14.0, 13.6, 7.8, 65.8, 56.1, 84.8, 7.04, SPITZER, ["27nosler"]),
@@ -320,6 +327,13 @@ CATALOGUE = [
         c(".44-40 WCF", RIMMED, 13.1, 11.9, 11.5, 11.1, 33.2, 22.0, 40.6, 10.8, FLAT, ["44-40", "4440"]),
         # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c("11x59 mm R Gras", RIMMED, 16.9, 13.8, 13.5, 11.9, 59.0, 44.6, 76.0, 11.3, ROUND, ["11gras", "gras"]),
+        # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        c("11x60 mm R Mauser", RIMMED, 14.9, 13.1, 13.0, 11.8, 60.0, 46.0, 71.1, 11.3, ROUND, ["11mauser", "11x60r"]),
+        c("6.5x53 mm R Mannlicher", RIMMED, 13.4, 11.48, 10.75, 7.55, 53.5, 44.2, 77.47, 6.65, ROUND, ["6.5x53r", "6.5dutch"]),
+        c("8x58 mm R Danish Krag", RIMMED, 14.65, 12.75, 11.95, 8.98, 58.0, 47.0, 78.0, 8.2, ROUND, ["8x58r", "danishkrag"]),
+        c("7.62x45 mm vz. 52", RIMLESS, 11.3, 11.3, 10.56, 8.66, 45.0, 34.4, 60.0, 7.83, SPITZER, ["7.62x45", "vz52"]),
+        c("7.92x107 mm DS", RIMLESS, 16.36, 16.39, 13.15, 9.23, 107.18, 96.2, 132.0, 8.18, SPITZER, ["7.92x107", "7.92ds"]),
+        c("7.65x53 mm Argentine", RIMLESS, 11.96, 12.01, 11.0, 8.73, 53.6, 42.9, 76.0, 7.92, SPITZER, ["7.65x53", "7.65argentine", "7.65belgian"]),
         straight(".32-40 Ballard", RIMMED, 12.9, 10.8, 8.6, 54.0, 66.0, 8.1, FLAT, ["32-40"]),
         straight(".50-90 Sharps", RIMMED, 16.8, 14.9, 13.4, 64.0, 81.0, 13.0, ROUND, ["50-90", "50sharps"]),
     ]),
@@ -524,6 +538,17 @@ PRIMERS = {
     "6.5-284 Norma": LARGE_RIFLE,
     ".30-378 Weatherby Magnum": LARGE_RIFLE,
     "5.6x57 mm": LARGE_RIFLE,
+    "11x60 mm R Mauser": LARGE_RIFLE,
+    "6.5x53 mm R Mannlicher": LARGE_RIFLE,
+    "8x58 mm R Danish Krag": LARGE_RIFLE,
+    "7.62x45 mm vz. 52": LARGE_RIFLE,
+    "7.92x107 mm DS": LARGE_RIFLE,
+    "7.65x53 mm Argentine": LARGE_RIFLE,
+    ".338-378 Weatherby Magnum": LARGE_RIFLE,
+    "6.8 Western": LARGE_RIFLE,
+    "7 mm Remington SAUM": LARGE_RIFLE,
+    ".22 Remington Jet": SMALL_PISTOL,
+    ".256 Winchester Magnum": SMALL_PISTOL,
 }
 
 # Year each calibre was first introduced: released as factory ammunition or adopted for
@@ -766,6 +791,17 @@ INTRODUCED = {
     "6.5-284 Norma": (1999, _WP + "6.5-284_Norma"),
     ".30-378 Weatherby Magnum": (1959, _WP + ".30-378_Weatherby_Magnum"),
     "5.6x57 mm": (1964, _WP + "5.6×57mm"),
+    "11x60 mm R Mauser": (1871, _WP + "11×60mm_Mauser"),
+    "6.5x53 mm R Mannlicher": (1892, _WP + "6.5×53mmR"),
+    "8x58 mm R Danish Krag": (1888, _WP + "8×58mmR_Danish_Krag"),
+    "7.62x45 mm vz. 52": (1952, _WP + "7.62×45mm"),
+    "7.92x107 mm DS": (1931, _WP + "7.92×107mm_DS"),
+    "7.65x53 mm Argentine": (1889, _WP + "7.65×53mm_Mauser"),
+    ".338-378 Weatherby Magnum": (1963, _WP + ".338-378_Weatherby_Magnum"),
+    "6.8 Western": (2021, _WP + "6.8_Western"),
+    "7 mm Remington SAUM": (2002, _WP + "7mm_Remington_Short_Action_Ultra_Magnum"),
+    ".22 Remington Jet": (1961, _WP + ".22_Remington_Jet"),
+    ".256 Winchester Magnum": (1960, _WP + ".256_Winchester_Magnum"),
 }
 
 INTRODUCED_UNKNOWN = {
@@ -815,6 +851,13 @@ OBSOLETE = {
     ".30 Remington AR",
     ".308 Marlin Express",
     ".222 Remington Magnum",
+    "11x60 mm R Mauser",
+    "6.5x53 mm R Mannlicher",
+    "8x58 mm R Danish Krag",
+    "7.62x45 mm vz. 52",
+    "7.92x107 mm DS",
+    ".22 Remington Jet",
+    ".256 Winchester Magnum",
 }
 
 
