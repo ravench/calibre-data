@@ -10,6 +10,9 @@ The shared calibre catalogue for
   first introduced (`INTRODUCED`, with the page it was checked against; `INTRODUCED_UNKNOWN`
   lists the entries that aren't one cartridge and why; where sources disagree, the earliest
   probable year), and `OBSOLETE`, the calibres no longer in regular factory production.
+- `ORIGIN` maps the calibres clearly linked to one country (national service rounds, regional
+  hunting rounds) to a code in `COUNTRIES` (English name and flag emoji; historical states such
+  as the Soviet Union have no emoji). Calibres used worldwide have none. `origin(name)` looks it up.
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side
   (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (`CRIMPED`,

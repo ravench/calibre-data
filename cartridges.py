@@ -958,3 +958,63 @@ OBSOLETE = {
 
 def is_obsolete(name):
     return name in OBSOLETE
+
+
+# Countries a calibre is clearly linked to: where it was introduced and with which it is still
+# associated (a national service round, or a regional hunting round). Calibres in common use
+# worldwide (9x19 mm, .22 LR, .308 Winchester, ...) have no entry. Historical states keep their
+# own code (ISO 3166-3 SU/CS where one exists); they have no flag emoji, so apps draw their own.
+COUNTRIES = {  # code: (English name, flag emoji or None)
+    "CH": ("Switzerland", "🇨🇭"), "DE": ("Germany", "🇩🇪"), "AH": ("Austria-Hungary", None),
+    "AT": ("Austria", "🇦🇹"), "FR": ("France", "🇫🇷"), "IT": ("Italy", "🇮🇹"),
+    "GB": ("United Kingdom", "🇬🇧"), "US": ("United States", "🇺🇸"), "SE": ("Sweden", "🇸🇪"),
+    "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "ES": ("Spain", "🇪🇸"),
+    "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"),
+    "RU": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
+}
+
+ORIGIN = {
+    # Switzerland
+    "5.6 mm GP 90": "CH", "7.5x55 mm Swiss (GP 11)": "CH", "7.5x53.5 mm Swiss (GP 1890)": "CH",
+    "7.5 mm Swiss Ordnance 1882": "CH", "10.4 mm Swiss Ordnance 1878": "CH",
+    "10.4x38 mm R Vetterli": "CH",
+    "7.65 mm Parabellum": "CH",  # first adopted by the Swiss Army (Ordonnanzpistole 1900)
+    # Soviet Union and Russian Empire
+    "7.62x39 mm": "SU", "5.45x39 mm": "SU", "9x18 mm Makarov": "SU", "7.62x25 mm Tokarev": "SU",
+    "5.45x18 mm": "SU", "12.7x108 mm": "SU",
+    "7.62x54 mm R": "RU", "7.62x38 mm R Nagant": "RU",
+    # Germany: service rounds and German hunting rounds
+    "8x57 mm IS": "DE", "8x57 mm IRS": "DE", "7.92x33 mm Kurz": "DE", "7.63x25 mm Mauser": "DE",
+    "11x60 mm R Mauser": "DE", "7x57 mm Mauser": "DE", "7x57 mm R": "DE", "6.5x57 mm Mauser": "DE",
+    "6.5x57 mm R": "DE", "9x57 mm Mauser": "DE", "9.3x57 mm Mauser": "DE", "7x64 mm": "DE",
+    "7x65 mm R": "DE", "8x64 mm S": "DE", "8x60 mm S": "DE", "8x68 mm S": "DE", "6.5x68 mm": "DE",
+    "9.3x62 mm": "DE", "9.3x64 mm Brenneke": "DE", "9.3x74 mm R": "DE", "5.6x57 mm": "DE",
+    "5.6x50 mm Magnum": "DE", "4.6x30 mm": "DE", ".500 Jeffery": "DE",
+    # Austria-Hungary and Austria
+    "8x50 mm R Mannlicher": "AH", "8 mm Roth-Steyr": "AH", "9x23 mm Steyr": "AH",
+    "6.5x54 mm Mannlicher-Schönauer": "AH", "9.5x57 mm Mannlicher-Schönauer": "AH",
+    "8x56 mm R Mannlicher": "AT", ".376 Steyr": "AT",
+    # France
+    "8x50 mm R Lebel": "FR", "7.5x54 mm French": "FR", "11x59 mm R Gras": "FR",
+    "11 mm French Ordnance": "FR", "8 mm Lebel revolver": "FR", "7.65 mm Longue": "FR",
+    # Italy
+    "6.5x52 mm Carcano": "IT", "7.35x51 mm Carcano": "IT", "9 mm Glisenti": "IT",
+    # United Kingdom: service rounds and the British African rounds
+    ".303 British": "GB", ".577 Snider": "GB", ".577/450 Martini-Henry": "GB", ".455 Webley": "GB",
+    ".450 Adams": "GB", ".476 Enfield": "GB", ".442 Webley": "GB", ".470 Nitro Express": "GB",
+    ".416 Rigby": "GB", ".404 Jeffery": "GB", ".505 Gibbs": "GB",
+    # United States: service rounds only
+    ".30-40 Krag": "US", ".30 Carbine": "US", ".45-70 Government": "US",
+    ".50-70 Government": "US",
+    # Others
+    "6.5x55 mm Swedish": "SE", "8x58 mm R Danish Krag": "DK", "7.65x53 mm Argentine": "BE",
+    "9 mm Browning Long": "BE", "9x23 mm Largo": "ES", "6.5x50 mm SR Arisaka": "JP",
+    "7.7x58 mm Arisaka": "JP", "8 mm Nambu": "JP", "7.92x107 mm DS": "PL",
+    "7.62x45 mm vz. 52": "CS", "9x21 mm IMI": "IL",
+}
+
+
+def origin(name):
+    """(code, English name, flag emoji or None) of the country a calibre is linked to, or None."""
+    code = ORIGIN.get(name)
+    return (code, *COUNTRIES[code]) if code else None

@@ -4,6 +4,7 @@ import os, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
+                        ORIGIN, COUNTRIES, origin,
                         RIMFIRE, BALL, MINIE, PELLET, SHOT)
 
 ALL = [s for _, items in CATALOGUE for s in items]
@@ -93,6 +94,23 @@ class CatalogueTests(unittest.TestCase):
         self.assertTrue(is_obsolete("7.5x53.5 mm Swiss (GP 1890)"))
         self.assertFalse(is_obsolete("7.5x55 mm Swiss (GP 11)"))
         self.assertFalse(is_obsolete("9x19 mm"))
+
+    def test_origins_name_known_calibres_and_countries(self):
+        self.assertLessEqual(set(ORIGIN), NAMES)
+        self.assertLessEqual(set(ORIGIN.values()), set(COUNTRIES))
+        self.assertEqual(set(ORIGIN.values()), set(COUNTRIES))  # no unused country
+        for code, (name, flag) in COUNTRIES.items():
+            self.assertTrue(name)
+            self.assertTrue(flag is None or len(flag) == 2, code)
+
+    def test_known_origins(self):
+        for name in ("5.6 mm GP 90", "7.5x55 mm Swiss (GP 11)", "7.5x53.5 mm Swiss (GP 1890)",
+                     "7.5 mm Swiss Ordnance 1882", "7.65 mm Parabellum"):
+            self.assertEqual(ORIGIN[name], "CH")
+        self.assertEqual(origin("7.62x39 mm"), ("SU", "Soviet Union", None))
+        self.assertEqual(origin("5.6 mm GP 90"), ("CH", "Switzerland", "🇨🇭"))
+        for worldwide in ("9x19 mm", ".22 LR", ".308 Winchester", "5.56x45 mm NATO", ".45 ACP"):
+            self.assertIsNone(origin(worldwide), worldwide)
 
     def test_swiss_service_revolver_rounds_are_obsolete(self):
         for name in ("7.5 mm Swiss Ordnance 1882", "10.4 mm Swiss Ordnance 1878"):
