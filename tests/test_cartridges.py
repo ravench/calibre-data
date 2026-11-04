@@ -126,6 +126,22 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(pak["neck"], pak["base"])
         self.assertFalse(is_rare("9 mm P.A.K."))
 
+    def test_municion_specimens_keep_the_drawing_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "neck", "case", "oal", "bullet")
+        drawn = {  # AECC drawings on municion.org, mm
+            "5.75 mm Velo-Dog": (7.78, 6.37, 6.25, 29.41, 35.24, 5.65),
+            ".32 Long Rimfire": (9.51, 8.09, 8.09, 20.0, 30.85, 7.92),
+            ".22 Extra Long": (6.95, 5.74, 5.72, 19.83, 29.89, 5.63),
+            ".55 Boys": (20.3, 20.14, 15.51, 99.11, 133.64, 14.36),
+            ".45-90 WCF": (15.44, 12.82, 12.22, 60.96, 82.0, 11.63),  # C.I.P. maximum
+        }
+        for name, values in drawn.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        self.assertEqual(by_name[".32 Short Rimfire"]["kind"], RIMFIRE)
+        self.assertTrue(is_obsolete(".55 Boys"))
+        self.assertEqual(ORIGIN["5.75 mm Velo-Dog"], "FR")
+
     def test_second_cip_batch_keeps_the_sheet_values(self):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
