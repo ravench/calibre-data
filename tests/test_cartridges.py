@@ -72,6 +72,23 @@ class CatalogueTests(unittest.TestCase):
             self.assertGreater(by_name[name]["shoulder"], by_name[name]["neck"], name)
             self.assertTrue(is_rare(name), name)
 
+    def test_second_cip_batch_keeps_the_sheet_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
+        sheet = {  # C.I.P. TDCC maximum cartridge
+            "8x75 mm RS": (13.35, 11.9, 10.4, 9.08, 74.6, 66.2, 96.0, 8.22),
+            ".450/400 Nitro Express 3 inch": (15.87, 13.92, 13.21, 11.18, 76.2, 55.26, 95.25, 10.41),
+            ".338 Marlin Express": (14.05, 12.89, 12.52, 9.35, 48.01, 37.03, 62.23, 8.6),
+            ".17 Remington Fireball": (9.6, 9.57, 9.28, 5.18, 35.81, 27.05, 46.48, 4.38),
+        }
+        for name, values in sheet.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        # Values the earlier sources got wrong:
+        self.assertAlmostEqual(by_name["6.5-300 Weatherby Magnum"]["neck"], 7.49)  # Wikipedia: 13.68
+        self.assertGreater(by_name[".38-56 WCF"]["case"], 50)                     # Wikipedia mm: 2.10
+        self.assertLess(by_name[".22 Nosler"]["rim"], by_name[".22 Nosler"]["base"])  # rebated rim
+        self.assertIsNone(by_name["9.3x72 mm R"]["shoulder"])
+
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}
         b = by_name[".22 Blank (6.8/11)"]
