@@ -255,6 +255,17 @@ CATALOGUE = [
         c(".300 Weatherby Magnum", BELTED, 13.5, 13.0, 12.5, 8.5, 71.8, 61.2, 90.5, 7.8, SPITZER, ["300wby", "300weatherby"]),
         c(".416 Remington Magnum", BELTED, 13.5, 13.0, 12.4, 11.4, 72.4, 58.7, 91.4, 10.6, ROUND, ["416rem"]),
         c(".470 Nitro Express", RIMMED, 16.6, 14.6, 13.5, 12.8, 83.0, 67.8, 101.0, 12.0, ROUND, ["470ne"]),
+        # Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        straight(".450 Nitro Express", RIMMED, 15.8, 13.8, 12.2, 83.0, 100.0, 11.6, ROUND, ["450ne"]),
+        straight(".500 Nitro Express", RIMMED, 16.6, 14.6, 13.5, 76.0, 95.0, 13.0, ROUND, ["500ne"]),
+        straight(".577 Nitro Express", RIMMED, 19.0, 16.8, 15.5, 76.0, 94.0, 14.9, ROUND, ["577ne"]),
+        straight(".600 Nitro Express", RIMMED, 20.6, 17.8, 16.5, 76.0, 94.0, 15.7, ROUND, ["600ne"]),
+        straight(".700 Nitro Express", RIMMED, 22.6, 19.8, 18.5, 89.0, 107.0, 17.8, ROUND, ["700ne"]),
+        c(".500/465 Nitro Express", RIMMED, 16.4, 14.5, 13.4, 12.4, 83.0, 67.9, 99.0, 11.9, ROUND, ["500/465", "465ne"]),
+        c(".318 Westley Richards", RIMLESS, 11.8, 11.8, 11.1, 9.1, 60.1, 48.9, 85.1, 8.4, ROUND, ["318wr", "318rne"]),
+        c(".240 Weatherby Magnum", BELTED, 12.0, 11.5, 10.9, 6.9, 63.4, 54.6, 78.7, 6.2, SPITZER, ["240wby"]),
+        c(".224 Weatherby Magnum", BELTED, 10.9, 10.5, 10.0, 6.4, 48.8, 40.5, 59.2, 5.7, SPITZER, ["224wby"]),
+        c("6.5 mm Remington Magnum", BELTED, 13.5, 13.51, 12.6, 7.6, 55.1, 45.7, 71.1, 6.7, SPITZER, ["6.5remmag"]),
         # Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c(".220 Swift", RIMLESS, 12.0, 11.3, 10.2, 6.6, 56.0, 47.7, 68.1, 5.7, SPITZER, ["220swift"]),
         c(".25-20 Winchester", RIMMED, 10.4, 8.9, 8.5, 7.0, 33.8, 24.5, 40.4, 6.6, FLAT, ["25-20", "25wcf"]),
@@ -328,24 +339,7 @@ CATALOGUE = [
         c("6.5-284 Norma", RIMLESS, 12.0, 12.7, 12.1, 7.5, 55.1, 45.7, 82.0, 6.7, SPITZER, ["6.5-284"]),
         c(".30-378 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 8.6, 74.0, 63.4, 93.7, 7.82, SPITZER, ["30-378"]),
         c("5.6x57 mm", RIMLESS, 11.95, 11.9, 10.94, 7.1, 56.7, 48.4, 69.0, 5.7, SPITZER, ["5.6x57"]),
-    ]),
-    ("Schwarzpulver", [
-        ball(".36 Rundkugel (.375)", 9.5, ["36", "36navy", ".375ball"]),
-        ball(".44 Rundkugel (.454)", 11.5, ["44", "44ball", ".454", "454ball"]),
-        ball(".45 Rundkugel (.440)", 11.2, ["45ball", ".440"]),
-        ball(".50 Rundkugel (.490)", 12.4, ["50", "50ball", ".490"]),
-        ball(".54 Rundkugel (.530)", 13.5, ["54", "54ball", ".530"]),
-        minie(".58 Minié", 14.6, 25.0, ["58", "58minie"]),
-        minie(".69 Minié", 17.3, 27.0, ["69", "69minie"]),
-        c("10.4x38 mm R Vetterli", RIMMED, 17.6, 14.4, 13.4, 11.4, 38.0, 25.0, 58.5, 10.8, ROUND, ["vetterli", "10.4", "10.4vetterli", "10.4x38"]),
-        straight(".577 Snider", RIMMED, 19.2, 17.0, 16.4, 50.8, 62.0, 14.6, ROUND, ["577snider"]),
-        c(".577/450 Martini-Henry", RIMMED, 19.0, 17.0, 16.0, 12.3, 59.7, 38.0, 79.0, 11.6, ROUND, ["martini-henry", "577/450"]),
-        straight(".50-70 Government", RIMMED, 16.9, 14.2, 13.4, 44.5, 57.0, 13.0, ROUND, ["50-70"]),
-        c(".44-40 WCF", RIMMED, 13.1, 11.9, 11.5, 11.1, 33.2, 22.0, 40.6, 10.8, FLAT, ["44-40", "4440"]),
-        # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
-        c("11x59 mm R Gras", RIMMED, 16.9, 13.8, 13.5, 11.9, 59.0, 44.6, 76.0, 11.3, ROUND, ["11gras", "gras"]),
-        # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
-        c("11x60 mm R Mauser", RIMMED, 14.9, 13.1, 13.0, 11.8, 60.0, 46.0, 71.1, 11.3, ROUND, ["11mauser", "11x60r"]),
+        # Smokeless rounds from batches 6 and 7, first misplaced under Schwarzpulver.
         c("6.5x53 mm R Mannlicher", RIMMED, 13.4, 11.48, 10.75, 7.55, 53.5, 44.2, 77.47, 6.65, ROUND, ["6.5x53r", "6.5dutch"]),
         c("8x58 mm R Danish Krag", RIMMED, 14.65, 12.75, 11.95, 8.98, 58.0, 47.0, 78.0, 8.2, ROUND, ["8x58r", "danishkrag"]),
         c("7.62x45 mm vz. 52", RIMLESS, 11.3, 11.3, 10.56, 8.66, 45.0, 34.4, 60.0, 7.83, SPITZER, ["7.62x45", "vz52"]),
@@ -370,6 +364,24 @@ CATALOGUE = [
         c(".500 Jeffery", RIMLESS, 14.6, 15.7, 15.4, 13.7, 70.0, 53.7, 88.0, 13.0, ROUND, ["500jeffery", "12.7x70"]),
         c(".416 Barrett", RIMLESS, 20.4, 20.4, 18.5, 11.6, 83.0, 69.3, 118.0, 10.6, SPITZER, ["416barrett"]),
         c("12.7x108 mm", RIMLESS, 21.7, 21.75, 18.9, 13.95, 108.0, 91.7, 147.5, 12.98, SPITZER, ["12.7x108", "dshk"]),
+    ]),
+    ("Schwarzpulver", [
+        ball(".36 Rundkugel (.375)", 9.5, ["36", "36navy", ".375ball"]),
+        ball(".44 Rundkugel (.454)", 11.5, ["44", "44ball", ".454", "454ball"]),
+        ball(".45 Rundkugel (.440)", 11.2, ["45ball", ".440"]),
+        ball(".50 Rundkugel (.490)", 12.4, ["50", "50ball", ".490"]),
+        ball(".54 Rundkugel (.530)", 13.5, ["54", "54ball", ".530"]),
+        minie(".58 Minié", 14.6, 25.0, ["58", "58minie"]),
+        minie(".69 Minié", 17.3, 27.0, ["69", "69minie"]),
+        c("10.4x38 mm R Vetterli", RIMMED, 17.6, 14.4, 13.4, 11.4, 38.0, 25.0, 58.5, 10.8, ROUND, ["vetterli", "10.4", "10.4vetterli", "10.4x38"]),
+        straight(".577 Snider", RIMMED, 19.2, 17.0, 16.4, 50.8, 62.0, 14.6, ROUND, ["577snider"]),
+        c(".577/450 Martini-Henry", RIMMED, 19.0, 17.0, 16.0, 12.3, 59.7, 38.0, 79.0, 11.6, ROUND, ["martini-henry", "577/450"]),
+        straight(".50-70 Government", RIMMED, 16.9, 14.2, 13.4, 44.5, 57.0, 13.0, ROUND, ["50-70"]),
+        c(".44-40 WCF", RIMMED, 13.1, 11.9, 11.5, 11.1, 33.2, 22.0, 40.6, 10.8, FLAT, ["44-40", "4440"]),
+        # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        c("11x59 mm R Gras", RIMMED, 16.9, 13.8, 13.5, 11.9, 59.0, 44.6, 76.0, 11.3, ROUND, ["11gras", "gras"]),
+        # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        c("11x60 mm R Mauser", RIMMED, 14.9, 13.1, 13.0, 11.8, 60.0, 46.0, 71.1, 11.3, ROUND, ["11mauser", "11x60r"]),
         straight(".32-40 Ballard", RIMMED, 12.9, 10.8, 8.6, 54.0, 66.0, 8.1, FLAT, ["32-40"]),
         straight(".50-90 Sharps", RIMMED, 16.8, 14.9, 13.4, 64.0, 81.0, 13.0, ROUND, ["50-90", "50sharps"]),
     ]),
@@ -613,6 +625,16 @@ PRIMERS = {
     ".40-65 Winchester": LARGE_RIFLE,
     ".303 Savage": LARGE_RIFLE,
     ".219 Zipper": LARGE_RIFLE,
+    ".450 Nitro Express": LARGE_RIFLE,
+    ".500 Nitro Express": LARGE_RIFLE,
+    ".577 Nitro Express": LARGE_RIFLE,
+    ".600 Nitro Express": LARGE_RIFLE,
+    ".700 Nitro Express": LARGE_RIFLE,
+    ".500/465 Nitro Express": LARGE_RIFLE,
+    ".318 Westley Richards": LARGE_RIFLE,
+    ".240 Weatherby Magnum": LARGE_RIFLE,
+    ".224 Weatherby Magnum": LARGE_RIFLE,
+    "6.5 mm Remington Magnum": LARGE_RIFLE,
 }
 
 # Year each calibre was first introduced: released as factory ammunition or adopted for
@@ -890,9 +912,19 @@ INTRODUCED = {
     ".303 Savage": (1894, _WP + ".303_Savage"),
     ".219 Zipper": (1937, _WP + ".219_Zipper"),
     ".22 Winchester Rimfire": (1890, _WP + ".22_Winchester_Rimfire"),
+    ".450 Nitro Express": (1898, _WP + ".450_Nitro_Express"),
+    ".500 Nitro Express": (1890, _WP + ".500_Nitro_Express"),
+    ".600 Nitro Express": (1899, _WP + ".600_Nitro_Express"),
+    ".700 Nitro Express": (1988, _WP + ".700_Nitro_Express"),
+    ".500/465 Nitro Express": (1907, _WP + ".500/465_Nitro_Express"),
+    ".318 Westley Richards": (1906, _WP + ".318_Westley_Richards"),
+    ".240 Weatherby Magnum": (1968, _WP + ".240_Weatherby_Magnum"),
+    ".224 Weatherby Magnum": (1963, _WP + ".224_Weatherby_Magnum"),
+    "6.5 mm Remington Magnum": (1966, _WP + "6.5mm_Remington_Magnum"),
 }
 
 INTRODUCED_UNKNOWN = {
+    ".577 Nitro Express": "the source gives only the 1890s",
     ".35 Winchester Self-Loading": "no year in the source",
     ".401 Winchester Self-Loading": "no year in the source",
     ".358 Norma Magnum": "the source gives only the 1950s",
@@ -961,8 +993,47 @@ OBSOLETE = {
     ".401 Winchester Self-Loading",
     ".303 Savage",
     ".219 Zipper",
+    ".224 Weatherby Magnum",
+    "6.5 mm Remington Magnum",
 }
 
 
 def is_obsolete(name):
     return name in OBSOLETE
+
+
+# Calibres you are unlikely to find, so a photo or measurement that matches one is far more
+# likely a false positive than the real thing. Independent of OBSOLETE: most rare calibres are
+# obsolete collector rounds, but some are still made in small numbers (big Nitro and African
+# rounds, short-lived magnums, niche handgun rounds). Judged, not counted: no source counts them.
+RARE = {
+    ".219 Zipper", ".22 Remington Jet", ".223 WSSM", ".225 Winchester",
+    ".25 Remington", ".25 WSSM", ".256 Winchester Magnum", ".30 Remington AR", ".303 Savage",
+    ".32 Remington", ".33 Winchester", ".35 S&W Auto", ".35 Winchester Self-Loading",
+    ".351 Winchester Self-Loading", ".356 TSW", ".401 Winchester Self-Loading",
+    ".41 Action Express", ".44 Henry", ".442 Webley", ".450 Adams", ".476 Enfield", ".577 Snider",
+    "10.4 mm Swiss Ordnance 1878", "10.4x38 mm R Vetterli", "11 mm French Ordnance",
+    "11x59 mm R Gras", "11x60 mm R Mauser", "6.5x53 mm R Mannlicher", "7.35x51 mm Carcano",
+    "7.5x53.5 mm Swiss (GP 1890)", "7.62x45 mm vz. 52", "7.65 mm Longue", "7.92x107 mm DS",
+    "8 mm Nambu", "8 mm Roth-Steyr", "8x50 mm R Mannlicher", "8x58 mm R Danish Krag",
+    "9.5x57 mm Mannlicher-Schönauer", "9x18 mm Ultra", "9x57 mm Mauser",
+    # Still made, but hardly ever found:
+    ".505 Gibbs", ".500 Jeffery", ".416 Barrett", "12.7x108 mm", ".460 Weatherby Magnum",
+    ".338-378 Weatherby Magnum", ".30-378 Weatherby Magnum", "7 mm STW", ".22 Savage Hi-Power",
+    ".307 Winchester", ".356 Winchester", ".450 Marlin", ".458 SOCOM", ".50 Beowulf",
+    ".30 Thompson/Center", ".300 Ruger Compact Magnum", ".300 Remington SAUM",
+    "7 mm Remington SAUM", ".325 Winchester Short Magnum", ".27 Nosler", ".33 Nosler",
+    ".460 Rowland", ".475 Linebaugh", ".22 TCM", "4.6x30 mm", ".25 NAA", ".32 NAA", ".45 Super",
+    ".45 Winchester Magnum", "9x23 mm Winchester", ".400 Cor-Bon",
+    ".577 Nitro Express", ".600 Nitro Express", ".700 Nitro Express", ".500/465 Nitro Express",
+    ".224 Weatherby Magnum",
+}
+
+
+def is_rare(name):
+    return name in RARE
+
+
+def tags(name):
+    """The status tags of a calibre: [], ["obsolete"], ["rare"] or ["obsolete", "rare"]."""
+    return [t for t, s in (("obsolete", OBSOLETE), ("rare", RARE)) if name in s]

@@ -9,7 +9,9 @@ The shared calibre catalogue for
   search aliases, printable alternative names and primer sizes, and the year each calibre was
   first introduced (`INTRODUCED`, with the page it was checked against; `INTRODUCED_UNKNOWN`
   lists the entries that aren't one cartridge and why; where sources disagree, the earliest
-  probable year), and `OBSOLETE`, the calibres no longer in regular factory production.
+  probable year), `OBSOLETE`, the calibres no longer in regular factory production, and `RARE`, the calibres you
+  are unlikely to find, so a match is more likely a false positive (independent of `OBSOLETE`;
+  `tags(name)` gives `[]`, `["obsolete"]`, `["rare"]` or both).
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side
   (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (`CRIMPED`,
