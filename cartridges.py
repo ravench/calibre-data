@@ -56,6 +56,8 @@ CATALOGUE = [
         straight(".22 BB Cap", RIMFIRE, 6.9, 5.7, 5.7, 7.2, 8.7, 5.7, ROUND, ["22bb", "bbcap", "flobert"]),
         c("5 mm Remington Rimfire Magnum", RIMFIRE, 8.3, 6.6, 6.6, 5.7, 25.9, 18.2, 33.0, 5.2, SPITZER, ["5mmrmr", "5rmr"]),
         c(".17 Winchester Super Magnum", RIMFIRE, 8.5, 6.8, 6.8, 5.0, 30.5, 23.7, 36.6, 4.4, SPITZER, ["17wsm"]),
+        # Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+        straight(".22 Winchester Rimfire", RIMFIRE, 7.6, 6.24, 6.18, 24.5, 30.0, 5.8, ROUND, ["22wrf"]),
         # .22 crimped blank, the size of the yellow/green/red power-tool loads and starter pistol
         # blanks ("6.8/11": 6.8 mm rim, 11 mm long). Crimp shape after fired ones in Raven's
         # photos (2026-11-04): the star opens on firing but the petals stay narrower than the body.
@@ -258,6 +260,16 @@ CATALOGUE = [
         c(".340 Weatherby Magnum", BELTED, 13.5, 13.0, 12.6, 9.3, 72.0, 60.5, 91.0, 8.6, SPITZER, ["340wby"]),
         c(".284 Winchester", RIMLESS, 12.01, 12.72, 12.06, 8.13, 55.12, 45.2, 71.12, 7.21, SPITZER, ["284win"]),
         c(".300 Savage", RIMLESS, 12.0, 12.0, 11.3, 8.6, 47.5, 36.9, 66.0, 7.8, SPITZER, ["300savage"]),
+        # Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+        c(".33 Winchester", RIMMED, 15.5, 12.9, 11.3, 9.3, 54.0, 42.5, 71.0, 8.6, FLAT, ["33win", "33wcf"]),
+        c(".25 Remington", RIMLESS, 10.6, 10.6, 10.1, 7.3, 52.0, 42.8, 64.0, 6.54, ROUND, ["25rem"]),
+        c(".32 Remington", RIMLESS, 10.7, 10.7, 10.06, 8.74, 52.1, 41.2, 64.1, 8.13, ROUND, ["32rem"]),
+        straight(".35 Winchester Self-Loading", RIMLESS, 10.3, 9.7, 9.6, 29.3, 42.0, 8.9, ROUND, ["35wsl"]),
+        straight(".351 Winchester Self-Loading", RIMLESS, 10.4, 9.7, 9.5, 35.1, 48.4, 8.9, ROUND, ["351wsl"]),
+        straight(".401 Winchester Self-Loading", RIMLESS, 11.6, 10.9, 10.9, 38.0, 50.9, 10.33, ROUND, ["401wsl"]),
+        straight(".40-65 Winchester", RIMMED, 15.3, 12.8, 10.7, 53.0, 63.0, 10.3, FLAT, ["40-65"]),
+        c(".303 Savage", RIMMED, 12.8, 11.2, 10.5, 8.5, 51.2, 40.6, 64.0, 7.8, ROUND, ["303savage"]),
+        c(".219 Zipper", RIMMED, 12.9, 10.7, 9.3, 6.4, 49.2, 40.9, 57.4, 5.7, FLAT, ["219zipper"]),
         c(".300 Remington Ultra Magnum", RIMLESS, 13.6, 14.0, 13.3, 8.7, 72.4, 61.8, 91.4, 7.8, SPITZER, ["300rum"]),
         c(".270 Winchester Short Magnum", RIMLESS, 13.6, 14.1, 13.67, 7.98, 53.3, 43.6, 72.6, 7.0, SPITZER, ["270wsm"]),
         c("7 mm Winchester Short Magnum", RIMLESS, 13.6, 14.1, 13.7, 8.2, 53.3, 43.4, 72.6, 7.2, SPITZER, ["7mmwsm", "7wsm"]),
@@ -586,6 +598,15 @@ PRIMERS = {
     ".500 Jeffery": LARGE_RIFLE,
     ".416 Barrett": BMG_35,
     "12.7x108 mm": BMG_35,
+    ".33 Winchester": LARGE_RIFLE,
+    ".25 Remington": LARGE_RIFLE,
+    ".32 Remington": LARGE_RIFLE,
+    ".35 Winchester Self-Loading": SMALL_RIFLE,
+    ".351 Winchester Self-Loading": SMALL_RIFLE,
+    ".401 Winchester Self-Loading": LARGE_RIFLE,
+    ".40-65 Winchester": LARGE_RIFLE,
+    ".303 Savage": LARGE_RIFLE,
+    ".219 Zipper": LARGE_RIFLE,
 }
 
 # Year each calibre was first introduced: released as factory ammunition or adopted for
@@ -853,9 +874,19 @@ INTRODUCED = {
     ".500 Jeffery": (1920, _WP + ".500_Jeffery"),
     ".416 Barrett": (2005, _WP + ".416_Barrett"),
     "12.7x108 mm": (1934, _WP + "12.7×108mm"),
+    ".33 Winchester": (1902, _WP + ".33_Winchester"),
+    ".25 Remington": (1906, _WP + ".25_Remington"),
+    ".32 Remington": (1906, _WP + ".32_Remington"),
+    ".351 Winchester Self-Loading": (1906, _WP + ".351_Winchester_Self-Loading"),
+    ".40-65 Winchester": (1887, _WP + ".40-65_Winchester"),
+    ".303 Savage": (1894, _WP + ".303_Savage"),
+    ".219 Zipper": (1937, _WP + ".219_Zipper"),
+    ".22 Winchester Rimfire": (1890, _WP + ".22_Winchester_Rimfire"),
 }
 
 INTRODUCED_UNKNOWN = {
+    ".35 Winchester Self-Loading": "no year in the source",
+    ".401 Winchester Self-Loading": "no year in the source",
     ".358 Norma Magnum": "the source gives only the 1950s",
     "9x57 mm Mauser": "the source gives only the 1890s",
     "7x57 mm R": "rimmed variant, no year in the source",
@@ -914,6 +945,14 @@ OBSOLETE = {
     ".22 Remington Jet",
     ".256 Winchester Magnum",
     "9x57 mm Mauser",
+    ".33 Winchester",
+    ".25 Remington",
+    ".32 Remington",
+    ".35 Winchester Self-Loading",
+    ".351 Winchester Self-Loading",
+    ".401 Winchester Self-Loading",
+    ".303 Savage",
+    ".219 Zipper",
 }
 
 
