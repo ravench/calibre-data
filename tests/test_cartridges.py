@@ -4,6 +4,7 @@ import os, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
+                        RARE, is_rare, tags,
                         ORIGIN, COUNTRIES, origin,
                         RIMFIRE, BALL, MINIE, PELLET, SHOT)
 
@@ -108,6 +109,23 @@ class CatalogueTests(unittest.TestCase):
         self.assertFalse(is_obsolete("7.5x55 mm Swiss (GP 11)"))
         self.assertFalse(is_obsolete("9x19 mm"))
 
+    def test_rare_calibres_are_known(self):
+        self.assertTrue(RARE)
+        self.assertLessEqual(RARE, NAMES)
+        self.assertTrue(is_rare("7.5x53.5 mm Swiss (GP 1890)"))
+        self.assertFalse(is_rare("7.5 mm Swiss Ordnance 1882"))
+        self.assertFalse(is_rare("7.5x55 mm Swiss (GP 11)"))
+
+    def test_rare_does_not_require_obsolete(self):
+        self.assertTrue(RARE & OBSOLETE)
+        self.assertTrue(RARE - OBSOLETE)
+        self.assertTrue(OBSOLETE - RARE)
+
+    def test_tags(self):
+        self.assertEqual(tags("7.5x55 mm Swiss (GP 11)"), [])
+        self.assertEqual(tags("7.5 mm Swiss Ordnance 1882"), ["obsolete"])
+        self.assertEqual(tags(".505 Gibbs"), ["rare"])
+        self.assertEqual(tags("7.5x53.5 mm Swiss (GP 1890)"), ["obsolete", "rare"])
     def test_origins_name_known_calibres_and_countries(self):
         self.assertLessEqual(set(ORIGIN), NAMES)
         self.assertLessEqual(set(ORIGIN.values()), set(COUNTRIES))

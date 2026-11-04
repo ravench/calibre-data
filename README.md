@@ -9,7 +9,9 @@ The shared calibre catalogue for
   search aliases, printable alternative names and primer sizes, and the year each calibre was
   first introduced (`INTRODUCED`, with the page it was checked against; `INTRODUCED_UNKNOWN`
   lists the entries that aren't one cartridge and why; where sources disagree, the earliest
-  probable year), and `OBSOLETE`, the calibres no longer in regular factory production.
+  probable year), `OBSOLETE`, the calibres no longer in regular factory production, and `RARE`, the calibres you
+  are unlikely to find, so a match is more likely a false positive (independent of `OBSOLETE`;
+  `tags(name)` gives `[]`, `["obsolete"]`, `["rare"]` or both).
 - `ORIGIN` maps the calibres clearly linked to one country (national service rounds, regional
   hunting rounds) to a code in `COUNTRIES` (English name and flag emoji; historical states such
   as the Soviet Union have no emoji). Calibres in common use worldwide get `WORLDWIDE` ("WW",
