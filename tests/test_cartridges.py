@@ -194,7 +194,7 @@ class CatalogueTests(unittest.TestCase):
     def test_rare_calibres_are_known(self):
         self.assertTrue(RARE)
         self.assertLessEqual(RARE, NAMES)
-        self.assertTrue(is_rare("7.5x53.5 mm Swiss (GP 1890)"))
+        self.assertTrue(is_rare("11x59 mm R Gras"))
         self.assertFalse(is_rare("7.5 mm Swiss Ordnance 1882"))
         self.assertFalse(is_rare("7.5x55 mm Swiss (GP 11)"))
 
@@ -207,7 +207,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(tags("7.5x55 mm Swiss (GP 11)"), [])
         self.assertEqual(tags("7.5 mm Swiss Ordnance 1882"), ["obsolete"])
         self.assertEqual(tags(".505 Gibbs"), ["rare"])
-        self.assertEqual(tags("7.5x53.5 mm Swiss (GP 1890)"), ["obsolete", "rare"])
+        self.assertEqual(tags("11x59 mm R Gras"), ["obsolete", "rare"])
     def test_origins_name_known_calibres_and_countries(self):
         self.assertLessEqual(set(ORIGIN), NAMES)
         self.assertLessEqual(set(ORIGIN.values()), set(COUNTRIES))
