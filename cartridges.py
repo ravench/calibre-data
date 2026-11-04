@@ -173,9 +173,16 @@ CATALOGUE = [
         c(".243 Winchester", RIMLESS, 12.0, 12.0, 11.5, 7.0, 51.9, 41.0, 68.8, 6.2, SPITZER, ["243", "243win"]),
         c("6 mm BR Norma", RIMLESS, 12.0, 12.0, 11.6, 6.9, 39.6, 31.5, 58.0, 6.2, SPITZER, ["6br", "6mmbr"]),
         c("6 mm ARC", RIMLESS, 11.2, 11.2, 10.9, 6.9, 38.6, 31.8, 57.4, 6.2, SPITZER, ["6arc"]),
+        # Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        c(".338 ARC", RIMLESS, 11.2, 10.97, 10.9, 9.55, 33.02, 27.0, 57.4, 8.59, SPITZER, ["338arc"]),
+        c("6 mm PPC", RIMLESS, 11.3, 11.2, 10.9, 6.7, 38.5, 29.7, 53.3, 6.17, SPITZER, ["6ppc", "6mmppc"]),
+        c("9x39 mm", RIMLESS, 11.35, 11.35, 10.36, 9.98, 38.77, 26.6, 56.0, 9.25, SPITZER, ["9x39", "sp-5", "sp-6"]),
         c("6.5 mm Creedmoor", RIMLESS, 12.0, 12.0, 11.7, 7.5, 48.8, 39.6, 71.8, 6.7, SPITZER, ["6.5cm", "6.5creedmoor", "65cm", "creedmoor"]),
         # Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
         c("6 mm GT", RIMLESS, 11.96, 11.95, 11.66, 6.95, 43.82, 33.1, 67.06, 6.17, SPITZER, ["6gt", "6mmgt"]),
+        # Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        c(".22 Creedmoor", RIMLESS, 11.99, 11.95, 11.76, 6.53, 48.77, 39.6, 68.58, 5.7, SPITZER, ["22cm", "22creedmoor"]),
+        c("7 mm Backcountry", RIMLESS, 11.99, 11.93, 11.65, 8.05, 61.39, 51.4, 84.84, 7.22, SPITZER, ["7bc", "7mmbackcountry", "7backcountry"]),
         # Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
         c("6 mm Creedmoor", RIMLESS, 12.01, 11.94, 11.73, 6.99, 48.8, 37.8, 71.1, 6.2, SPITZER, ["6cm", "6creedmoor", "6mmcm"]),
         c(".25 Creedmoor", RIMLESS, 12.0, 11.95, 11.76, 7.32, 48.8, 39.6, 71.8, 6.54, SPITZER, ["25cm", "25creedmoor"]),
@@ -747,6 +754,11 @@ PRIMERS = {
     ".378 Weatherby Magnum": LARGE_RIFLE,
     "7.5 FK": SMALL_PISTOL,
     "6 mm GT": SMALL_RIFLE,
+    ".22 Creedmoor": LARGE_RIFLE,
+    "7 mm Backcountry": LARGE_RIFLE,
+    ".338 ARC": SMALL_RIFLE,
+    "6 mm PPC": SMALL_RIFLE,
+    "9x39 mm": LARGE_RIFLE,
 }
 
 # Year each calibre was first introduced: released as factory ammunition or adopted for
@@ -1073,10 +1085,15 @@ INTRODUCED = {
     ".30 R Blaser": (1991, _WP + ".30_R_Blaser"),
     ".378 Weatherby Magnum": (1953, _WP + ".378_Weatherby_Magnum"),
     "7.5 FK": (2009, _WP + "7.5_FK"),
+    ".22 Creedmoor": (2023, _WP + ".22_Creedmoor"),
+    "7 mm Backcountry": (2024, _WP + "7mm_Backcountry"),
+    ".338 ARC": (2025, "https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"),
+    "6 mm PPC": (1975, _WP + "6mm_PPC"),
 }
 
 INTRODUCED_UNKNOWN = {
     "6 mm GT": "sources give only the 2024 SAAMI acceptance",
+    "9x39 mm": "the source gives only the early 1980s",
     ".475 No. 2 Nitro Express": "the source gives only the early 1900s",
     ".577 Nitro Express": "the source gives only the 1890s",
     "8.6 Blackout": "sources give only the 2026 SAAMI acceptance, not when Q introduced it",
@@ -1210,6 +1227,7 @@ RARE = {
     ".22 Remington Automatic", ".465 H&H Magnum", ".475 No. 2 Nitro Express", ".400/350 Nitro Express",
     ".350 Rigby Magnum", ".310 Cadet", "6.5x58 mm Vergueiro",
     ".378 Weatherby Magnum", "7.5 FK", "6 mm GT",
+    "6 mm PPC", "9x39 mm",
 }
 
 
@@ -1311,6 +1329,7 @@ ORIGIN = {
     "6.5x58 mm Vergueiro": "PT",
     ".30 R Blaser": "DE",
     "7.5 FK": "CZ",
+    "9x39 mm": "SU",
 }
 
 
