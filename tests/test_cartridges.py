@@ -95,6 +95,18 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual((s["rim"], s["base"]), (12.01, 12.7), name)
         self.assertEqual(ORIGIN[".300 HAM'R"], "US")
 
+    def test_blaser_family_keeps_the_cip_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
+        sheet = {  # C.I.P. TDCC maximum cartridge
+            "7 mm Blaser Magnum": (13.59, 13.84, 13.09, 8.0, 59.7, 47.24, 80.0, 7.22),
+            ".338 Blaser Magnum": (13.59, 13.84, 13.02, 9.36, 63.7, 51.51, 84.84, 8.59),
+            "8.5x55 mm Blaser": (13.59, 13.84, 13.17, 9.36, 54.7, 42.38, 75.84, 8.59),
+        }
+        for name, values in sheet.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        self.assertFalse(is_rare("8.5x55 mm Blaser"))  # sold widely in German-speaking countries
+
     def test_second_cip_batch_keeps_the_sheet_values(self):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
