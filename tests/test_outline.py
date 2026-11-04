@@ -44,7 +44,7 @@ class OutlineTests(unittest.TestCase):
     def test_identical_groups(self):
         self.assertEqual(outline.identical_groups(), [
             [".45 ACP", ".45 Super"],
-            [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90 (Swiss)"],
+            [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"],
             ["7.62x51 mm NATO", ".308 Winchester"],
         ])
 
