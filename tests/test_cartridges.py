@@ -59,6 +59,15 @@ class CatalogueTests(unittest.TestCase):
         self.assertNotIn("5.6 mm GP 90 (Swiss)", by_name)
         self.assertIn("gewehrpatrone 90", by_name["5.6 mm GP 90"]["aliases"])
 
+    def test_crimped_blank(self):
+        by_name = {s["name"]: s for s in ALL}
+        b = by_name[".22 Blank (6.8/11)"]
+        self.assertEqual(b["kind"], RIMFIRE)
+        self.assertEqual((b["rim"], b["case"], b["oal"]), (6.8, 11.0, 11.0))
+        self.assertEqual(b["base"], by_name[".22 Short"]["base"], "same .22 case body")
+        self.assertIn("platzpatrone", b["aliases"])
+        self.assertFalse(is_obsolete(b["name"]))
+
     def test_every_calibre_has_an_introduction_year_or_a_reason(self):
         self.assertEqual(set(INTRODUCED) | set(INTRODUCED_UNKNOWN), NAMES)
         self.assertFalse(set(INTRODUCED) & set(INTRODUCED_UNKNOWN))

@@ -9,7 +9,8 @@ Dimensions are approximations for drawings and matching, not reloading data.
 RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET = (
     "rimless", "rimmed", "belted", "rimfire", "shot", "ball", "minie", "pellet")
 # Bullet profiles. PATCHED: paper-patched lead body with a steel-capped round nose (GP 1890).
-SPITZER, ROUND, FLAT, PATCHED = "spitzer", "round", "flat", "patched"
+# CRIMPED: no bullet; the case mouth is folded shut in a star (blanks and power-tool loads).
+SPITZER, ROUND, FLAT, PATCHED, CRIMPED = "spitzer", "round", "flat", "patched", "crimped"
 
 
 def c(name, kind, rim, base, shoulder, neck, case, sh_at, oal, bullet, profile, aliases=()):
@@ -19,6 +20,12 @@ def c(name, kind, rim, base, shoulder, neck, case, sh_at, oal, bullet, profile, 
 
 def straight(name, kind, rim, base, neck, case, oal, bullet, profile, aliases=()):
     return c(name, kind, rim, base, None, neck, case, None, oal, bullet, profile, aliases)
+
+
+def blank(name, rim, base, mouth, length, aliases=()):
+    """A crimped blank: no bullet, the case (`length` long) narrows to `mouth` at the star crimp.
+    `bullet` holds the nominal bore so drawings and tables keep a width."""
+    return c(name, RIMFIRE, rim, base, None, mouth, length, None, length, base, CRIMPED, aliases)
 
 
 def shot(name, dia, rim, length, aliases=()):
@@ -49,6 +56,11 @@ CATALOGUE = [
         straight(".22 BB Cap", RIMFIRE, 6.9, 5.7, 5.7, 7.2, 8.7, 5.7, ROUND, ["22bb", "bbcap", "flobert"]),
         c("5 mm Remington Rimfire Magnum", RIMFIRE, 8.3, 6.6, 6.6, 5.7, 25.9, 18.2, 33.0, 5.2, SPITZER, ["5mmrmr", "5rmr"]),
         c(".17 Winchester Super Magnum", RIMFIRE, 8.5, 6.8, 6.8, 5.0, 30.5, 23.7, 36.6, 4.4, SPITZER, ["17wsm"]),
+        # .22 crimped blank, the size of the yellow/green/red power-tool loads and starter pistol
+        # blanks ("6.8/11": 6.8 mm rim, 11 mm long). Crimp shape after fired ones in Raven's
+        # photos (2026-11-04): the star opens on firing but the petals stay narrower than the body.
+        blank(".22 Blank (6.8/11)", 6.8, 5.7, 3.4, 11.0,
+              ["22blank", "6.8/11", "6.8x11", "platzpatrone", "kartusche", "setzkartusche", "bolzensetzer"]),
         straight(".44 Henry", RIMFIRE, 13.2, 11.2, 11.0, 22.9, 34.2, 11.3, FLAT, ["44henry"]),
     ]),
     ("Kurzwaffe", [
@@ -294,6 +306,7 @@ CATALOGUE = [
 # not necessarily interchangeable, so each stays its own entry.
 DISPLAY_ALIASES = {
     ".22 LR": [".22 Long Rifle", "KK"],
+    ".22 Blank (6.8/11)": [".22 Platzpatrone", "Setzkartusche 6.8/11"],
     ".22 WMR": [".22 Magnum"],
     "7.65 mm Browning (.32 ACP)": [".32 ACP", ".32 Auto"],
     "7.65 mm Parabellum": [".30 Luger"],
@@ -651,6 +664,7 @@ INTRODUCED_UNKNOWN = {
     "8x60 mm S": "source only says between the world wars",
     ".22 TCM": "no year in the source",
     ".38 Short Colt": "no year in the source",
+    ".22 Blank (6.8/11)": "a family of blanks and power-tool loads with no single launch",
     # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
     **{n: "not a single cartridge" for n in (
         "12/70", "12/76", "12/89", "16/70", "20/70", "20/76", "28/70", ".410/76",

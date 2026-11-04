@@ -7,7 +7,7 @@ millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bot
 import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cartridges import CATALOGUE, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED  # noqa: E402
+from cartridges import CATALOGUE, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
 
 N = 14  # samples per curve
 
@@ -26,6 +26,9 @@ def case_profile(s):
             pts[-1] = (rim, 3.3)
             pts += [(rim, 6.2), (base * 0.985, 6.2)]
     top = s["neck"] / 2
+    if s["profile"] == CRIMPED:
+        # Star crimp: the petals bend in over the front 38 % of the case, then turn in at the mouth.
+        return pts + [(base, case * (1 - CRIMP_LENGTH)), ((base + top) / 2, case - 0.35), (top, case)]
     if s["shoulder"]:
         sh = s["shoulder"] / 2
         run = max(0.8, (sh - top) / math.tan(math.radians(32)))
@@ -64,6 +67,9 @@ def bullet_profile(r, y0, top, profile):
         pts.append((0, top))
     return pts
 
+
+# Share of a crimped blank's case taken up by the star crimp, from the mouth back.
+CRIMP_LENGTH = 0.38
 
 # Share of the exposed bullet that shows the paper patch (GP 1890), from the case mouth up.
 PATCH_BAND = 0.26

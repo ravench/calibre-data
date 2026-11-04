@@ -12,7 +12,8 @@ The shared calibre catalogue for
   probable year), and `OBSOLETE`, the calibres no longer in regular factory production.
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side
-  (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90).
+  (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (`CRIMPED`,
+  e.g. the .22 blank 6.8/11) has no bullet: its case narrows to the star crimp.
 
 The values are for drawings and for matching photos, **not reloading data**.
 
