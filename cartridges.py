@@ -996,7 +996,9 @@ def is_obsolete(name):
 
 # Countries a calibre is clearly linked to: where it was introduced and with which it is still
 # associated (a national service round, or a regional hunting round). Calibres in common use
-# worldwide (9x19 mm, .22 LR, .308 Winchester, ...) have no entry. Historical states keep their
+# worldwide (9x19 mm, .22 LR, .308 Winchester, ...) get WORLDWIDE instead, so no entry means
+# neither a clear country nor universal use. A round with a clear country keeps it even when
+# it spread worldwide (7.62x39 mm stays Soviet, 8x57 IS stays German). Historical states keep their
 # own code (ISO 3166-3 SU/CS where one exists, else a made-up AH/RUE that no ISO code uses, so
 # RU stays today's Russia); they have no flag emoji, so apps draw their own.
 COUNTRIES = {  # code: (English name, flag emoji or None)
@@ -1005,10 +1007,26 @@ COUNTRIES = {  # code: (English name, flag emoji or None)
     "GB": ("United Kingdom", "🇬🇧"), "US": ("United States", "🇺🇸"), "SE": ("Sweden", "🇸🇪"),
     "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "ES": ("Spain", "🇪🇸"),
     "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"),
+"WW": ("Worldwide", "🌐"),
     "RUE": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
 }
 
+WORLDWIDE = "WW"
 ORIGIN = {
+    # In common use worldwide:
+    ".22 Short": WORLDWIDE, ".22 LR": WORLDWIDE, ".22 WMR": WORLDWIDE, ".17 HMR": WORLDWIDE,
+    "6.35 mm Browning (.25 ACP)": WORLDWIDE, "7.65 mm Browning (.32 ACP)": WORLDWIDE,
+    "9 mm Browning kurz (.380 ACP)": WORLDWIDE, "9x19 mm": WORLDWIDE, ".38 Special": WORLDWIDE,
+    ".357 Magnum": WORLDWIDE, ".40 S&W": WORLDWIDE, ".44 Magnum": WORLDWIDE, ".45 ACP": WORLDWIDE,
+    "5.7x28 mm": WORLDWIDE, ".222 Remington": WORLDWIDE, ".223 Remington": WORLDWIDE,
+    "5.56x45 mm NATO": WORLDWIDE, ".22-250 Remington": WORLDWIDE, ".22 Hornet": WORLDWIDE,
+    ".243 Winchester": WORLDWIDE, "6.5 mm Creedmoor": WORLDWIDE, ".270 Winchester": WORLDWIDE,
+    "7 mm Remington Magnum": WORLDWIDE, ".300 AAC Blackout": WORLDWIDE,
+    "7.62x51 mm NATO": WORLDWIDE, ".308 Winchester": WORLDWIDE, ".30-06 Springfield": WORLDWIDE,
+    ".300 Winchester Magnum": WORLDWIDE, ".338 Lapua Magnum": WORLDWIDE,
+    ".375 H&H Magnum": WORLDWIDE, ".50 BMG": WORLDWIDE, "12/70": WORLDWIDE, "12/76": WORLDWIDE,
+    "20/70": WORLDWIDE, "20/76": WORLDWIDE, "4.5 mm Diabolo (.177)": WORLDWIDE,
+    "5.5 mm Diabolo (.22)": WORLDWIDE,
     # Switzerland
     "5.6 mm GP 90": "CH", "7.5x55 mm Swiss (GP 11)": "CH", "7.5x53.5 mm Swiss (GP 1890)": "CH",
     "7.5 mm Swiss Ordnance 1882": "CH", "10.4 mm Swiss Ordnance 1878": "CH",
