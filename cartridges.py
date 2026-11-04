@@ -164,6 +164,15 @@ CATALOGUE = [
         c("6 mm BR Norma", RIMLESS, 12.0, 12.0, 11.6, 6.9, 39.6, 31.5, 58.0, 6.2, SPITZER, ["6br", "6mmbr"]),
         c("6 mm ARC", RIMLESS, 11.2, 11.2, 10.9, 6.9, 38.6, 31.8, 57.4, 6.2, SPITZER, ["6arc"]),
         c("6.5 mm Creedmoor", RIMLESS, 12.0, 12.0, 11.7, 7.5, 48.8, 39.6, 71.8, 6.7, SPITZER, ["6.5cm", "6.5creedmoor", "65cm", "creedmoor"]),
+        # Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED (SAAMI drawing for .25 Creedmoor and 8.6 Blackout), rounded; 6 mm Creedmoor takes the 6.5 Creedmoor case with a 6 mm neck; shoulder heights estimated.
+        c("6 mm Creedmoor", RIMLESS, 12.0, 12.0, 11.7, 6.9, 48.8, 39.6, 71.1, 6.2, SPITZER, ["6cm", "6creedmoor", "6mmcm"]),
+        c(".25 Creedmoor", RIMLESS, 12.0, 11.95, 11.76, 7.32, 48.8, 39.6, 71.8, 6.54, SPITZER, ["25cm", "25creedmoor"]),
+        c("8.6 Blackout", RIMLESS, 12.0, 11.95, 11.7, 9.3, 42.8, 36.0, 71.4, 8.61, SPITZER, ["8.6blk", "86blk", "8.6blackout"]),
+        c(".22 ARC", RIMLESS, 11.2, 11.2, 10.91, 6.4, 38.7, 31.8, 57.4, 5.7, SPITZER, ["22arc"]),
+        c(".338 Ruger Compact Magnum", RIMLESS, 13.5, 13.5, 13.1, 9.4, 51.2, 39.7, 72.1, 8.6, SPITZER, ["338rcm"]),
+        c(".408 CheyTac", RIMLESS, 16.25, 16.18, 15.24, 11.12, 77.21, 63.8, 115.5, 10.36, SPITZER, ["408cheytac", "408ct", "10.36x77"]),
+        straight(".360 Buckhammer", RIMMED, 12.9, 10.66, 9.65, 46.0, 63.5, 9.1, FLAT, ["360buckhammer", "360bh"]),
+        straight(".400 Legend", RIMLESS, 10.7, 11.2, 10.84, 42.0, 57.0, 10.17, ROUND, ["400legend"]),
         c("6.5x55 mm Swedish", RIMLESS, 12.2, 12.2, 11.0, 7.6, 55.0, 44.6, 80.0, 6.7, SPITZER, ["6.5x55", "6.5x55se"]),
         c("6.5x47 mm Lapua", RIMLESS, 12.0, 12.0, 11.6, 7.5, 47.0, 38.2, 72.0, 6.7, SPITZER, ["6.5x47"]),
         c("6.5 PRC", RIMLESS, 13.0, 13.0, 12.8, 7.5, 51.2, 41.8, 84.8, 6.7, SPITZER, ["6.5prc"]),
@@ -607,6 +616,14 @@ PRIMERS = {
     ".40-65 Winchester": LARGE_RIFLE,
     ".303 Savage": LARGE_RIFLE,
     ".219 Zipper": LARGE_RIFLE,
+    "6 mm Creedmoor": LARGE_RIFLE,
+    ".25 Creedmoor": LARGE_RIFLE,
+    "8.6 Blackout": LARGE_RIFLE,
+    ".22 ARC": SMALL_RIFLE,
+    ".338 Ruger Compact Magnum": LARGE_RIFLE,
+    ".408 CheyTac": LARGE_RIFLE,
+    ".360 Buckhammer": LARGE_RIFLE,
+    ".400 Legend": SMALL_RIFLE,
 }
 
 # Year each calibre was first introduced: released as factory ammunition or adopted for
@@ -882,9 +899,17 @@ INTRODUCED = {
     ".303 Savage": (1894, _WP + ".303_Savage"),
     ".219 Zipper": (1937, _WP + ".219_Zipper"),
     ".22 Winchester Rimfire": (1890, _WP + ".22_Winchester_Rimfire"),
+    "6 mm Creedmoor": (2009, _WP + "6.5mm_Creedmoor"),
+    ".25 Creedmoor": (2025, "https://saami.org/wp-content/uploads/2025/01/Public-Introduction-25-Creedmoor-2025-01-27.pdf"),
+    ".22 ARC": (2023, _WP + ".22_ARC"),
+    ".338 Ruger Compact Magnum": (2008, _WP + ".338_Ruger_Compact_Magnum"),
+    ".408 CheyTac": (2001, _WP + ".408_Cheyenne_Tactical"),
+    ".360 Buckhammer": (2022, _WP + ".360_Buckhammer"),
+    ".400 Legend": (2023, _WP + ".400_Legend"),
 }
 
 INTRODUCED_UNKNOWN = {
+    "8.6 Blackout": "sources give only the 2026 SAAMI acceptance, not when Q introduced it",
     ".35 Winchester Self-Loading": "no year in the source",
     ".401 Winchester Self-Loading": "no year in the source",
     ".358 Norma Magnum": "the source gives only the 1950s",
