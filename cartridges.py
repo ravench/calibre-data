@@ -293,6 +293,25 @@ CATALOGUE = [
         straight(".351 Winchester Self-Loading", RIMLESS, 10.4, 9.7, 9.5, 35.1, 48.4, 8.9, ROUND, ["351wsl"]),
         straight(".401 Winchester Self-Loading", RIMLESS, 11.6, 10.9, 10.9, 38.0, 50.9, 10.33, ROUND, ["401wsl"]),
         straight(".40-65 Winchester", RIMMED, 15.3, 12.8, 10.7, 53.0, 63.0, 10.3, FLAT, ["40-65"]),
+        # Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, sh_at = L1,
+        # oal = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+        # from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+        # shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+        straight("9.3x72 mm R", RIMMED, 12.35, 10.91, 9.82, 72.0, 86.0, 9.57, ROUND, ["9.3x72r"]),
+        c("8x75 mm RS", RIMMED, 13.35, 11.9, 10.4, 9.08, 74.6, 66.2, 96.0, 8.22, SPITZER, ["8x75rs"]),
+        c("6.5x65 mm RWS", RIMLESS, 11.95, 12.04, 10.97, 7.57, 65.0, 53.85, 85.0, 6.7, SPITZER, ["6.5x65", "6.5x65rws"]),
+        c("9.3x66 mm Sako (.370 Sako Magnum)", RIMLESS, 11.95, 12.13, 11.43, 9.92, 66.0, 55.8, 85.0, 9.3, ROUND, ["9.3x66", "370sako"]),
+        c(".300 Blaser Magnum", RIMLESS, 13.59, 13.84, 13.0, 8.61, 64.2, 52.12, 84.84, 7.83, SPITZER, ["300blaser"]),
+        c(".375 Blaser Magnum", RIMLESS, 13.59, 13.84, 12.9, 10.31, 71.7, 59.13, 92.0, 9.53, ROUND, ["375blaser"]),
+        c(".450/400 Nitro Express 3 inch", RIMMED, 15.87, 13.92, 13.21, 11.18, 76.2, 55.26, 95.25, 10.41, ROUND, ["450/400", "450/400ne"]),
+        c(".40-82 WCF", RIMMED, 15.49, 12.92, 11.54, 10.85, 60.71, 44.91, 70.23, 10.35, FLAT, ["40-82"]),
+        c(".50-95 WCF", RIMMED, 15.93, 14.27, 14.05, 13.62, 49.28, 36.63, 57.4, 13.03, FLAT, ["50-95"]),
+        c(".38-56 WCF", RIMMED, 15.37, 12.83, 11.3, 10.16, 53.34, 36.8, 63.5, 9.59, FLAT, ["38-56"]),
+        c(".30 Remington", RIMLESS, 10.72, 10.71, 10.19, 8.43, 52.07, 38.05, 64.14, 7.8, FLAT, ["30rem"]),
+        c(".17 Remington Fireball", RIMLESS, 9.6, 9.57, 9.28, 5.18, 35.81, 27.05, 46.48, 4.38, SPITZER, ["17fireball"]),
+        c(".338 Marlin Express", RIMMED, 14.05, 12.89, 12.52, 9.35, 48.01, 37.03, 62.23, 8.6, FLAT, ["338me"]),
+        c(".22 Nosler", RIMLESS, 9.6, 10.67, 10.16, 6.48, 44.7, 35.28, 57.4, 5.69, SPITZER, ["22nosler"]),
+        c("6.5-300 Weatherby Magnum", BELTED, 13.5, 13.0, 12.57, 7.49, 71.76, 58.38, 91.44, 6.72, SPITZER, ["6.5-300", "6.5-300wby"]),
         c(".303 Savage", RIMMED, 12.8, 11.2, 10.5, 8.5, 51.2, 40.6, 64.0, 7.8, ROUND, ["303savage"]),
         c(".219 Zipper", RIMMED, 12.9, 10.7, 9.3, 6.4, 49.2, 40.9, 57.4, 5.7, FLAT, ["219zipper"]),
         c(".300 Remington Ultra Magnum", RIMLESS, 13.6, 14.0, 13.3, 8.7, 72.4, 61.8, 91.4, 7.8, SPITZER, ["300rum"]),
@@ -652,6 +671,21 @@ PRIMERS = {
     ".408 CheyTac": LARGE_RIFLE,
     ".360 Buckhammer": LARGE_RIFLE,
     ".400 Legend": SMALL_RIFLE,
+    "9.3x72 mm R": LARGE_RIFLE,
+    "8x75 mm RS": LARGE_RIFLE,
+    "6.5x65 mm RWS": LARGE_RIFLE,
+    "9.3x66 mm Sako (.370 Sako Magnum)": LARGE_RIFLE,
+    ".300 Blaser Magnum": LARGE_RIFLE,
+    ".375 Blaser Magnum": LARGE_RIFLE,
+    ".450/400 Nitro Express 3 inch": LARGE_RIFLE,
+    ".40-82 WCF": LARGE_RIFLE,
+    ".50-95 WCF": LARGE_RIFLE,
+    ".38-56 WCF": LARGE_RIFLE,
+    ".30 Remington": LARGE_RIFLE,
+    ".17 Remington Fireball": SMALL_RIFLE,
+    ".338 Marlin Express": LARGE_RIFLE,
+    ".22 Nosler": SMALL_RIFLE,
+    "6.5-300 Weatherby Magnum": LARGE_RIFLE,
 }
 
 # Year each calibre was first introduced: released as factory ammunition or adopted for
@@ -945,6 +979,14 @@ INTRODUCED = {
     ".408 CheyTac": (2001, _WP + ".408_Cheyenne_Tactical"),
     ".360 Buckhammer": (2022, _WP + ".360_Buckhammer"),
     ".400 Legend": (2023, _WP + ".400_Legend"),
+    ".30 Remington": (1906, _WP + ".30_Remington"),
+    ".17 Remington Fireball": (2006, _WP + ".17_Remington_Fireball"),  # designed 2006, made from 2007
+    ".338 Marlin Express": (2009, _WP + ".338_Marlin_Express"),
+    ".38-56 WCF": (1887, _WP + ".38-56_WCF"),
+    ".22 Nosler": (2017, "https://bulletin.accurateshooter.com/2017/01/22-nosler-more-details-load-data-and-a-bit-of-history"),
+    "9.3x66 mm Sako (.370 Sako Magnum)": (2002, "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page71.pdf"),  # C.I.P. sheet 2002-01-22, Sako launch 2003
+    ".300 Blaser Magnum": (2009, "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page114.pdf"),  # C.I.P. sheet 2009-05-05, no earlier source
+    ".375 Blaser Magnum": (2009, "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page140.pdf"),  # C.I.P. sheet 2009-05-05, no earlier source
 }
 
 INTRODUCED_UNKNOWN = {
@@ -968,6 +1010,13 @@ INTRODUCED_UNKNOWN = {
         "12/70", "12/76", "12/89", "16/70", "20/70", "20/76", "28/70", ".410/76",
         ".36 Rundkugel (.375)", ".44 Rundkugel (.454)", ".45 Rundkugel (.440)", ".50 Rundkugel (.490)",
         ".54 Rundkugel (.530)", ".58 Minié", ".69 Minié", "4.5 mm Diabolo (.177)", "5.5 mm Diabolo (.22)")},
+    "9.3x72 mm R": "no introduction year in the sources checked (C.I.P. sheet 1984)",
+    "8x75 mm RS": "no introduction year in the sources checked (German, before World War I)",
+    "6.5x65 mm RWS": "no introduction year in the sources checked (C.I.P. sheet 1990)",
+    ".450/400 Nitro Express 3 inch": "sources give 1899 for the 3 1/4 inch parent only",
+    ".40-82 WCF": "no introduction year in the sources checked",
+    ".50-95 WCF": "no introduction year in the sources checked",
+    "6.5-300 Weatherby Magnum": "sources give only the 2017 SAAMI drawing",
 }
 
 # Calibres no longer in regular factory production (only surplus, boutique loads or reloading).
@@ -1020,6 +1069,7 @@ OBSOLETE = {
     ".219 Zipper",
     ".224 Weatherby Magnum",
     "6.5 mm Remington Magnum",
+    ".30 Remington", ".338 Marlin Express", ".38-56 WCF", ".40-82 WCF", ".50-95 WCF",
 }
 
 
@@ -1053,6 +1103,8 @@ RARE = {
     ".577 Nitro Express", ".600 Nitro Express", ".700 Nitro Express", ".500/465 Nitro Express",
     ".224 Weatherby Magnum",
     ".408 CheyTac", ".338 Ruger Compact Magnum",
+    # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+    "9.3x72 mm R", "8x75 mm RS", "6.5x65 mm RWS", "9.3x66 mm Sako (.370 Sako Magnum)", ".300 Blaser Magnum", ".375 Blaser Magnum", ".450/400 Nitro Express 3 inch", ".40-82 WCF", ".50-95 WCF", ".38-56 WCF", ".30 Remington", ".17 Remington Fireball", ".338 Marlin Express", ".22 Nosler", "6.5-300 Weatherby Magnum",
 }
 
 
@@ -1137,6 +1189,11 @@ ORIGIN = {
     "9 mm Browning Long": "BE", "9x23 mm Largo": "ES", "6.5x50 mm SR Arisaka": "JP",
     "7.7x58 mm Arisaka": "JP", "8 mm Nambu": "JP", "7.92x107 mm DS": "PL",
     "7.62x45 mm vz. 52": "CS", "9x21 mm IMI": "IL",
+    "9.3x72 mm R": "DE", "8x75 mm RS": "DE", "6.5x65 mm RWS": "DE",
+    ".450 Rigby": "GB", ".450/400 Nitro Express 3 inch": "GB", ".375 CheyTac": "US",
+    ".40-82 WCF": "US", ".50-95 WCF": "US", ".38-56 WCF": "US", ".30 Remington": "US",
+    ".17 Remington Fireball": "US", ".338 Marlin Express": "US", ".22 Nosler": "US",
+    "6.5-300 Weatherby Magnum": "US",
 }
 
 
