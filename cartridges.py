@@ -99,6 +99,8 @@ CATALOGUE = [
         straight(".44 Special", RIMMED, 13.1, 11.6, 11.6, 29.5, 37.0, 10.9, FLAT, ["44spl", "44special"]),
         straight(".44 Magnum", RIMMED, 13.1, 11.6, 11.6, 32.6, 40.9, 10.9, FLAT, ["44mag", "44magnum"]),
         straight(".45 ACP", RIMLESS, 12.0, 12.0, 12.0, 22.8, 32.4, 11.5, ROUND, ["45acp", "45auto", "45", "11.43"]),
+        # Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
+        c("7.5 FK", RIMLESS, 10.8, 10.8, 10.8, 8.5, 27.0, 21.0, 35.0, 7.8, ROUND, ["7.5fk", "fk brno"]),
         # Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c("9x25 mm Dillon", RIMLESS, 10.8, 10.8, 10.7, 9.7, 25.1, 19.5, 31.8, 9.0, ROUND, ["9x25", "9x25dillon"]),
         straight(".45 Colt", RIMMED, 12.9, 12.2, 12.2, 32.6, 40.6, 11.5, FLAT, ["45colt", "45lc", "45longcolt"]),
@@ -176,6 +178,8 @@ CATALOGUE = [
         c("6 mm PPC", RIMLESS, 11.3, 11.2, 10.9, 6.7, 38.5, 29.7, 53.3, 6.17, SPITZER, ["6ppc", "6mmppc"]),
         c("9x39 mm", RIMLESS, 11.35, 11.35, 10.36, 9.98, 38.77, 26.6, 56.0, 9.25, SPITZER, ["9x39", "sp-5", "sp-6"]),
         c("6.5 mm Creedmoor", RIMLESS, 12.0, 12.0, 11.7, 7.5, 48.8, 39.6, 71.8, 6.7, SPITZER, ["6.5cm", "6.5creedmoor", "65cm", "creedmoor"]),
+        # Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
+        c("6 mm GT", RIMLESS, 11.96, 11.95, 11.66, 6.95, 43.82, 33.1, 67.06, 6.17, SPITZER, ["6gt", "6mmgt"]),
         # Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c(".22 Creedmoor", RIMLESS, 11.99, 11.95, 11.76, 6.53, 48.77, 39.6, 68.58, 5.7, SPITZER, ["22cm", "22creedmoor"]),
         c("7 mm Backcountry", RIMLESS, 11.99, 11.93, 11.65, 8.05, 61.39, 51.4, 84.84, 7.22, SPITZER, ["7bc", "7mmbackcountry", "7backcountry"]),
@@ -210,6 +214,8 @@ CATALOGUE = [
         c("7.5x54 mm French", RIMLESS, 12.25, 12.25, 11.2, 8.6, 54.0, 44.0, 76.0, 7.8, SPITZER, ["7.5x54"]),
         c("7.62x39 mm", RIMLESS, 11.35, 11.35, 10.07, 8.6, 38.7, 30.5, 56.0, 7.9, SPITZER, ["7.62x39", "762x39"]),
         c(".300 AAC Blackout", RIMLESS, 9.6, 9.6, 9.1, 8.4, 34.7, 31.0, 57.0, 7.8, SPITZER, ["300blk", "300blackout", "300aac"]),
+        # SAAMI drawing (Wilson Combat copy, rev. 2022-04-11); case length after the SAAMI datasheet.
+        c(".300 HAM'R", RIMLESS, 9.6, 9.55, 9.3, 8.43, 41.02, 33.93, 57.4, 7.82, SPITZER, ["300hamr", "hamr"]),
         c("7.62x51 mm NATO", RIMLESS, 11.9, 11.9, 11.5, 8.7, 51.2, 39.6, 71.1, 7.82, SPITZER, ["7.62x51", "7.62nato", "762"]),
         c(".308 Winchester", RIMLESS, 11.9, 11.9, 11.5, 8.7, 51.2, 39.6, 71.1, 7.82, SPITZER, ["308", "308win"]),
         c(".30-06 Springfield", RIMLESS, 12.0, 12.0, 11.2, 8.6, 63.3, 49.5, 84.8, 7.82, SPITZER, ["30-06", "3006"]),
@@ -232,6 +238,8 @@ CATALOGUE = [
         c("9.3x74 mm R", RIMMED, 13.0, 11.9, 10.8, 10.0, 74.0, 58.0, 94.5, 9.3, ROUND, ["9.3x74r"]),
         c(".338 Lapua Magnum", RIMLESS, 14.9, 14.9, 14.4, 9.3, 69.2, 57.5, 93.5, 8.6, SPITZER, ["338lm", "338lapua", "338"]),
         c(".375 H&H Magnum", BELTED, 13.0, 13.0, 11.6, 10.3, 72.4, 62.0, 91.4, 9.5, ROUND, ["375h&h", "375hh"]),
+        # Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
+        c(".378 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 10.1, 74.0, 61.5, 93.0, 9.5, ROUND, ["378wby"]),
         # Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
         c(".465 H&H Magnum", BELTED, 14.7, 14.8, 13.5, 12.5, 73.5, 58.4, 90.2, 11.9, ROUND, ["465hh", "465h&h"]),
         c(".475 No. 2 Nitro Express", RIMMED, 16.9, 14.6, 13.9, 13.0, 89.0, 73.5, 108.0, 12.3, ROUND, ["475no2", "475ne"]),
@@ -396,6 +404,11 @@ CATALOGUE = [
         straight(".50 Beowulf", RIMLESS, 11.3, 13.6, 13.3, 42.0, 54.0, 12.7, FLAT, ["50beowulf"]),
         c(".222 Remington Magnum", RIMLESS, 9.6, 9.6, 9.1, 6.4, 47.0, 38.7, 57.9, 5.7, SPITZER, ["222remmag"]),
         c("6.5-284 Norma", RIMLESS, 12.0, 12.7, 12.1, 7.5, 55.1, 45.7, 82.0, 6.7, SPITZER, ["6.5-284"]),
+        # Weatherby RPM family (rebated rim, 6.5-284 body lengthened). The .25 is from the 2026 SAAMI drawing;
+        # the 6.5 and .338 share its rim, head and shoulder diameter, with neck and shoulder height estimated.
+        c(".25 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.37, 60.96, 51.89, 84.84, 6.53, SPITZER, ["25rpm", "25wbyrpm"]),
+        c("6.5 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.54, 65.28, 55.3, 84.84, 6.71, SPITZER, ["6.5rpm", "6.5wbyrpm", "65rpm"]),
+        c(".338 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 9.37, 64.77, 54.8, 82.55, 8.59, SPITZER, ["338rpm", "338wbyrpm"]),
         c(".30-378 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 8.6, 74.0, 63.4, 93.7, 7.82, SPITZER, ["30-378"]),
         c("5.6x57 mm", RIMLESS, 11.95, 11.9, 10.94, 7.1, 56.7, 48.4, 69.0, 5.7, SPITZER, ["5.6x57"]),
         # Smokeless rounds from batches 6 and 7, first misplaced under Schwarzpulver.
@@ -525,7 +538,7 @@ PRIMERS = {
     "7 mm-08 Remington": LARGE_RIFLE, "7x57 mm Mauser": LARGE_RIFLE, "7x64 mm": LARGE_RIFLE,
     "7 mm Remington Magnum": LARGE_RIFLE, "7 mm PRC": LARGE_RIFLE, "7.5x55 mm Swiss (GP 11)": LARGE_RIFLE,
     "7.5x53.5 mm Swiss (GP 1890)": LARGE_RIFLE,
-    "7.5x54 mm French": LARGE_RIFLE, "7.62x39 mm": SMALL_RIFLE, ".300 AAC Blackout": SMALL_RIFLE,
+    "7.5x54 mm French": LARGE_RIFLE, "7.62x39 mm": SMALL_RIFLE, ".300 AAC Blackout": SMALL_RIFLE, ".300 HAM'R": SMALL_RIFLE,
     "7.62x51 mm NATO": LARGE_RIFLE, ".308 Winchester": LARGE_RIFLE, ".30-06 Springfield": LARGE_RIFLE,
     ".30-30 Winchester": LARGE_RIFLE, ".300 Winchester Magnum": LARGE_RIFLE, ".300 PRC": LARGE_RIFLE,
     ".300 Norma Magnum": LARGE_RIFLE, ".303 British": LARGE_RIFLE, "7.62x54 mm R": LARGE_RIFLE,
@@ -645,7 +658,7 @@ PRIMERS = {
     ".458 SOCOM": LARGE_PISTOL,
     ".50 Beowulf": LARGE_PISTOL,
     ".222 Remington Magnum": SMALL_RIFLE,
-    "6.5-284 Norma": LARGE_RIFLE,
+    "6.5-284 Norma": LARGE_RIFLE, ".25 Weatherby RPM": LARGE_RIFLE, "6.5 Weatherby RPM": LARGE_RIFLE, ".338 Weatherby RPM": LARGE_RIFLE,
     ".30-378 Weatherby Magnum": LARGE_RIFLE,
     "5.6x57 mm": LARGE_RIFLE,
     "11x60 mm R Mauser": LARGE_RIFLE,
@@ -733,6 +746,9 @@ PRIMERS = {
     ".310 Cadet": SMALL_RIFLE,
     "6.5x58 mm Vergueiro": LARGE_RIFLE,
     ".30 R Blaser": LARGE_RIFLE,
+    ".378 Weatherby Magnum": LARGE_RIFLE,
+    "7.5 FK": SMALL_PISTOL,
+    "6 mm GT": SMALL_RIFLE,
     ".22 Creedmoor": LARGE_RIFLE,
     "7 mm Backcountry": LARGE_RIFLE,
     ".338 ARC": SMALL_RIFLE,
@@ -803,6 +819,7 @@ INTRODUCED = {
     "7.5x54 mm French": (1929, _WP + "7.5×54mm_French"),
     "7.62x39 mm": (1943, _WP + "7.62×39mm"),
     ".300 AAC Blackout": (2010, _WP + ".300_AAC_Blackout"),
+    ".300 HAM'R": (2018, "https://athlonoutdoors.com/article/wilson-combat-300-hamr-cartridge/"),
     "7.62x51 mm NATO": (1954, _WP + "7.62×51mm_NATO"),
     ".308 Winchester": (1952, _WP + ".308_Winchester"),
     ".30-06 Springfield": (1906, _WP + ".30-06_Springfield"),
@@ -980,6 +997,9 @@ INTRODUCED = {
     ".50 Beowulf": (2001, _WP + ".50_Beowulf"),
     ".222 Remington Magnum": (1957, _WP + ".222_Remington_Magnum"),
     "6.5-284 Norma": (1999, _WP + "6.5-284_Norma"),
+    ".25 Weatherby RPM": (2026, "https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"),
+    "6.5 Weatherby RPM": (2019, "https://hodgdonpowderco.com/articles/loading-the-6-5-weatherby-rpm/"),
+    ".338 Weatherby RPM": (2022, "https://www.thefirearmblog.com/blog/2022/08/02/weatherby-338-wby-rpm-cartridge/"),
     ".30-378 Weatherby Magnum": (1959, _WP + ".30-378_Weatherby_Magnum"),
     "5.6x57 mm": (1964, _WP + "5.6×57mm"),
     "11x60 mm R Mauser": (1871, _WP + "11×60mm_Mauser"),
@@ -1056,6 +1076,8 @@ INTRODUCED = {
     ".310 Cadet": (1900, _WP + ".310_Cadet"),
     "6.5x58 mm Vergueiro": (1904, _WP + "6.5×58mm_Vergueiro"),
     ".30 R Blaser": (1991, _WP + ".30_R_Blaser"),
+    ".378 Weatherby Magnum": (1953, _WP + ".378_Weatherby_Magnum"),
+    "7.5 FK": (2009, _WP + "7.5_FK"),
     ".22 Creedmoor": (2023, _WP + ".22_Creedmoor"),
     "7 mm Backcountry": (2024, _WP + "7mm_Backcountry"),
     ".338 ARC": (2025, "https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"),
@@ -1063,6 +1085,7 @@ INTRODUCED = {
 }
 
 INTRODUCED_UNKNOWN = {
+    "6 mm GT": "sources give only the 2024 SAAMI acceptance",
     "9x39 mm": "the source gives only the early 1980s",
     ".475 No. 2 Nitro Express": "the source gives only the early 1900s",
     ".577 Nitro Express": "the source gives only the 1890s",
@@ -1179,7 +1202,7 @@ RARE = {
     "8 mm Nambu", "8 mm Roth-Steyr", "8x50 mm R Mannlicher", "8x58 mm R Danish Krag",
     "9.5x57 mm Mannlicher-Schönauer", "9x18 mm Ultra", "9x57 mm Mauser",
     # Still made, but hardly ever found:
-    ".450 Rigby", ".375 CheyTac", ".505 Gibbs", ".500 Jeffery", ".416 Barrett", "12.7x108 mm", ".460 Weatherby Magnum",
+    ".450 Rigby", ".375 CheyTac", ".505 Gibbs", ".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM", ".300 HAM'R", ".500 Jeffery", ".416 Barrett", "12.7x108 mm", ".460 Weatherby Magnum",
     ".338-378 Weatherby Magnum", ".30-378 Weatherby Magnum", "7 mm STW", ".22 Savage Hi-Power",
     ".307 Winchester", ".356 Winchester", ".450 Marlin", ".458 SOCOM", ".50 Beowulf",
     ".30 Thompson/Center", ".300 Ruger Compact Magnum", ".300 Remington SAUM",
@@ -1195,6 +1218,7 @@ RARE = {
     ".35 Winchester", ".50-110 Winchester", ".400 H&H Magnum", ".244 H&H Magnum", ".45-75 Winchester",
     ".22 Remington Automatic", ".465 H&H Magnum", ".475 No. 2 Nitro Express", ".400/350 Nitro Express",
     ".350 Rigby Magnum", ".310 Cadet", "6.5x58 mm Vergueiro",
+    ".378 Weatherby Magnum", "7.5 FK", "6 mm GT",
     "6 mm PPC", "9x39 mm",
 }
 
@@ -1218,7 +1242,7 @@ COUNTRIES = {  # code: (English name, flag emoji or None)
     "CH": ("Switzerland", "🇨🇭"), "DE": ("Germany", "🇩🇪"), "AH": ("Austria-Hungary", None),
     "AT": ("Austria", "🇦🇹"), "FR": ("France", "🇫🇷"), "IT": ("Italy", "🇮🇹"),
     "GB": ("United Kingdom", "🇬🇧"), "US": ("United States", "🇺🇸"), "SE": ("Sweden", "🇸🇪"),
-    "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "ES": ("Spain", "🇪🇸"), "PT": ("Portugal", "🇵🇹"),
+    "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "ES": ("Spain", "🇪🇸"), "PT": ("Portugal", "🇵🇹"), "CZ": ("Czechia", "🇨🇿"),
     "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"),
 "WW": ("Worldwide", "🌐"),
     "RUE": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
@@ -1234,7 +1258,7 @@ ORIGIN = {
     "5.7x28 mm": WORLDWIDE, ".222 Remington": WORLDWIDE, ".223 Remington": WORLDWIDE,
     "5.56x45 mm NATO": WORLDWIDE, ".22-250 Remington": WORLDWIDE, ".22 Hornet": WORLDWIDE,
     ".243 Winchester": WORLDWIDE, "6.5 mm Creedmoor": WORLDWIDE, ".270 Winchester": WORLDWIDE,
-    "7 mm Remington Magnum": WORLDWIDE, ".300 AAC Blackout": WORLDWIDE,
+    "7 mm Remington Magnum": WORLDWIDE, ".300 AAC Blackout": WORLDWIDE, ".300 HAM'R": "US", ".25 Weatherby RPM": "US", "6.5 Weatherby RPM": "US", ".338 Weatherby RPM": "US",
     "7.62x51 mm NATO": WORLDWIDE, ".308 Winchester": WORLDWIDE, ".30-06 Springfield": WORLDWIDE,
     ".300 Winchester Magnum": WORLDWIDE, ".338 Lapua Magnum": WORLDWIDE,
     ".375 H&H Magnum": WORLDWIDE, ".50 BMG": WORLDWIDE, "12/70": WORLDWIDE, "12/76": WORLDWIDE,
@@ -1294,6 +1318,7 @@ ORIGIN = {
     ".310 Cadet": "GB",
     "6.5x58 mm Vergueiro": "PT",
     ".30 R Blaser": "DE",
+    "7.5 FK": "CZ",
     "9x39 mm": "SU",
 }
 
