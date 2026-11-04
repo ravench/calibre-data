@@ -88,6 +88,19 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(INTRODUCED[".308 Winchester"][0], 1952)
         self.assertLess(INTRODUCED[".308 Winchester"][0], INTRODUCED["7.62x51 mm NATO"][0])
 
+    def test_black_powder_category_holds_only_black_powder_era_rounds(self):
+        # Smokeless powder arrived with the 8 mm Lebel in 1886.
+        for cat, items in CATALOGUE:
+            if cat != "Schwarzpulver":
+                continue
+            for s in items:
+                year = INTRODUCED.get(s["name"], (None,))[0]
+                if year is not None:
+                    self.assertLessEqual(year, 1886, s["name"])
+        langwaffe = {s["name"] for cat, items in CATALOGUE if cat == "Langwaffe" for s in items}
+        for name in (".338 Norma Magnum", "12.7x108 mm", "7.65x53 mm Argentine"):
+            self.assertIn(name, langwaffe)
+
     def test_obsolete_calibres_are_known(self):
         self.assertLessEqual(OBSOLETE, NAMES)
         self.assertTrue(is_obsolete("7.5x53.5 mm Swiss (GP 1890)"))
