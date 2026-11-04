@@ -84,6 +84,18 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
         self.assertEqual(ORIGIN["10.3x60 mm R"], "CH")
 
+    def test_fury_and_dbp87_keep_the_published_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "neck", "case", "oal", "bullet")
+        published = {  # Wikipedia infoboxes (.277 Fury after the SAAMI drawing)
+            ".277 SIG Fury": (11.99, 11.95, 7.87, 51.18, 71.76, 7.06),
+            "5.8x42 mm": (10.42, 10.4, 6.65, 42.2, 58.0, 5.8),
+        }
+        for name, values in published.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        self.assertEqual(ORIGIN["5.8x42 mm"], "CN")
+        self.assertEqual(ORIGIN[".277 SIG Fury"], "US")
+
     def test_rpm_family_and_hamr_keep_the_saami_values(self):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
