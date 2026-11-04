@@ -72,6 +72,70 @@ class CatalogueTests(unittest.TestCase):
             self.assertGreater(by_name[name]["shoulder"], by_name[name]["neck"], name)
             self.assertTrue(is_rare(name), name)
 
+    def test_third_cip_batch_keeps_the_sheet_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
+        sheet = {  # C.I.P. TDCC maximum cartridge
+            ".450 No. 2 Nitro Express": (16.76, 14.35, 13.97, 12.24, 88.9, 72.39, 109.98, 11.63),
+            "10.3x60 mm R": (15.7, 13.85, 12.5, 11.26, 60.8, 40.8, 78.9, 10.54),
+            "7x61 mm Sharpe & Hart": (13.5, 13.05, 11.91, 8.06, 61.0, 50.8, 83.0, 7.2),
+        }
+        for name, values in sheet.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        self.assertEqual(ORIGIN["10.3x60 mm R"], "CH")
+
+    def test_fury_and_dbp87_keep_the_published_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "neck", "case", "oal", "bullet")
+        published = {  # Wikipedia infoboxes (.277 Fury after the SAAMI drawing)
+            ".277 SIG Fury": (11.99, 11.95, 7.87, 51.18, 71.76, 7.06),
+            "5.8x42 mm": (10.42, 10.4, 6.65, 42.2, 58.0, 5.8),
+        }
+        for name, values in published.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        self.assertEqual(ORIGIN["5.8x42 mm"], "CN")
+        self.assertEqual(ORIGIN[".277 SIG Fury"], "US")
+
+    def test_rpm_family_and_hamr_keep_the_saami_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
+        self.assertEqual(tuple(by_name[".25 Weatherby RPM"][k] for k in keys),
+                         (12.01, 12.7, 12.14, 7.37, 60.96, 51.89, 84.84, 6.53))
+        self.assertEqual(tuple(by_name[".300 HAM'R"][k] for k in ("rim", "case", "oal")), (9.6, 41.02, 57.4))
+        for name in (".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM"):
+            s = by_name[name]  # one case family: rebated rim under a 0.500 in head
+            self.assertEqual((s["rim"], s["base"]), (12.01, 12.7), name)
+        self.assertEqual(ORIGIN[".300 HAM'R"], "US")
+
+    def test_blaser_family_keeps_the_cip_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
+        sheet = {  # C.I.P. TDCC maximum cartridge
+            "7 mm Blaser Magnum": (13.59, 13.84, 13.09, 8.0, 59.7, 47.24, 80.0, 7.22),
+            ".338 Blaser Magnum": (13.59, 13.84, 13.02, 9.36, 63.7, 51.51, 84.84, 8.59),
+            "8.5x55 mm Blaser": (13.59, 13.84, 13.17, 9.36, 54.7, 42.38, 75.84, 8.59),
+        }
+        for name, values in sheet.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        self.assertFalse(is_rare("8.5x55 mm Blaser"))  # sold widely in German-speaking countries
+
+    def test_second_cip_batch_keeps_the_sheet_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
+        sheet = {  # C.I.P. TDCC maximum cartridge
+            "8x75 mm RS": (13.35, 11.9, 10.4, 9.08, 74.6, 66.2, 96.0, 8.22),
+            ".450/400 Nitro Express 3 inch": (15.87, 13.92, 13.21, 11.18, 76.2, 55.26, 95.25, 10.41),
+            ".338 Marlin Express": (14.05, 12.89, 12.52, 9.35, 48.01, 37.03, 62.23, 8.6),
+            ".17 Remington Fireball": (9.6, 9.57, 9.28, 5.18, 35.81, 27.05, 46.48, 4.38),
+        }
+        for name, values in sheet.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        # Values the earlier sources got wrong:
+        self.assertAlmostEqual(by_name["6.5-300 Weatherby Magnum"]["neck"], 7.49)  # Wikipedia: 13.68
+        self.assertGreater(by_name[".38-56 WCF"]["case"], 50)                     # Wikipedia mm: 2.10
+        self.assertLess(by_name[".22 Nosler"]["rim"], by_name[".22 Nosler"]["base"])  # rebated rim
+        self.assertIsNone(by_name["9.3x72 mm R"]["shoulder"])
+
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}
         b = by_name[".22 Blank (6.8/11)"]
