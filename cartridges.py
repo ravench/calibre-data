@@ -1037,6 +1037,9 @@ ORIGIN = {
     ".303 British": "GB", ".577 Snider": "GB", ".577/450 Martini-Henry": "GB", ".455 Webley": "GB",
     ".450 Adams": "GB", ".476 Enfield": "GB", ".442 Webley": "GB", ".470 Nitro Express": "GB",
     ".416 Rigby": "GB", ".404 Jeffery": "GB", ".505 Gibbs": "GB",
+    ".450 Nitro Express": "GB", ".500 Nitro Express": "GB", ".577 Nitro Express": "GB",
+    ".600 Nitro Express": "GB", ".700 Nitro Express": "GB", ".500/465 Nitro Express": "GB",
+    ".318 Westley Richards": "GB",
     # United States: service rounds only
     ".30-40 Krag": "US", ".30 Carbine": "US", ".45-70 Government": "US",
     ".50-70 Government": "US",
