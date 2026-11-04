@@ -119,6 +119,14 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
         self.assertFalse(is_rare("8.5x55 mm Blaser"))  # sold widely in German-speaking countries
 
+    def test_milbank_amsler_keeps_the_drawing_values(self):
+        s = {c["name"]: c for c in ALL}["18 mm Milbank-Amsler"]
+        keys = ("rim", "base", "neck", "case", "oal", "bullet")
+        self.assertEqual(tuple(s[k] for k in keys), (20.72, 18.58, 18.27, 25.54, 39.92, 18.15))
+        self.assertEqual(s["kind"], RIMFIRE)
+        self.assertEqual(ORIGIN["18 mm Milbank-Amsler"], "CH")
+        self.assertTrue(is_obsolete("18 mm Milbank-Amsler"))
+
     def test_second_cip_batch_keeps_the_sheet_values(self):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
