@@ -1017,6 +1017,8 @@ RARE = {
     "7 mm Remington SAUM", ".325 Winchester Short Magnum", ".27 Nosler", ".33 Nosler",
     ".460 Rowland", ".475 Linebaugh", ".22 TCM", "4.6x30 mm", ".25 NAA", ".32 NAA", ".45 Super",
     ".45 Winchester Magnum", "9x23 mm Winchester", ".400 Cor-Bon",
+    ".577 Nitro Express", ".600 Nitro Express", ".700 Nitro Express", ".500/465 Nitro Express",
+    ".224 Weatherby Magnum",
 }
 
 
