@@ -121,6 +121,8 @@ class CatalogueTests(unittest.TestCase):
                      "7.5 mm Swiss Ordnance 1882", "7.65 mm Parabellum"):
             self.assertEqual(ORIGIN[name], "CH")
         self.assertEqual(origin("7.62x39 mm"), ("SU", "Soviet Union", None))
+        self.assertEqual(origin("7.62x54 mm R"), ("RUE", "Russian Empire", None))
+        self.assertNotIn("RU", COUNTRIES)  # RU is today's Russia, not the Russian Empire
         self.assertEqual(origin("5.6 mm GP 90"), ("CH", "Switzerland", "🇨🇭"))
         for worldwide in ("9x19 mm", ".22 LR", ".308 Winchester", "5.56x45 mm NATO", ".45 ACP"):
             self.assertIsNone(origin(worldwide), worldwide)

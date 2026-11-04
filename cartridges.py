@@ -997,14 +997,15 @@ def is_obsolete(name):
 # Countries a calibre is clearly linked to: where it was introduced and with which it is still
 # associated (a national service round, or a regional hunting round). Calibres in common use
 # worldwide (9x19 mm, .22 LR, .308 Winchester, ...) have no entry. Historical states keep their
-# own code (ISO 3166-3 SU/CS where one exists); they have no flag emoji, so apps draw their own.
+# own code (ISO 3166-3 SU/CS where one exists, else a made-up AH/RUE that no ISO code uses, so
+# RU stays today's Russia); they have no flag emoji, so apps draw their own.
 COUNTRIES = {  # code: (English name, flag emoji or None)
     "CH": ("Switzerland", "🇨🇭"), "DE": ("Germany", "🇩🇪"), "AH": ("Austria-Hungary", None),
     "AT": ("Austria", "🇦🇹"), "FR": ("France", "🇫🇷"), "IT": ("Italy", "🇮🇹"),
     "GB": ("United Kingdom", "🇬🇧"), "US": ("United States", "🇺🇸"), "SE": ("Sweden", "🇸🇪"),
     "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "ES": ("Spain", "🇪🇸"),
     "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"),
-    "RU": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
+    "RUE": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
 }
 
 ORIGIN = {
@@ -1016,7 +1017,7 @@ ORIGIN = {
     # Soviet Union and Russian Empire
     "7.62x39 mm": "SU", "5.45x39 mm": "SU", "9x18 mm Makarov": "SU", "7.62x25 mm Tokarev": "SU",
     "5.45x18 mm": "SU", "12.7x108 mm": "SU",
-    "7.62x54 mm R": "RU", "7.62x38 mm R Nagant": "RU",
+    "7.62x54 mm R": "RUE", "7.62x38 mm R Nagant": "RUE",
     # Germany: service rounds and German hunting rounds
     "8x57 mm IS": "DE", "8x57 mm IRS": "DE", "7.92x33 mm Kurz": "DE", "7.63x25 mm Mauser": "DE",
     "11x60 mm R Mauser": "DE", "7x57 mm Mauser": "DE", "7x57 mm R": "DE", "6.5x57 mm Mauser": "DE",
