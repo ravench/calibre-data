@@ -64,9 +64,10 @@ CATALOGUE = [
         blank(".22 Blank (6.8/11)", 6.8, 5.7, 3.4, 11.0,
               ["22blank", "6.8/11", "6.8x11", "platzpatrone", "kartusche", "setzkartusche", "bolzensetzer"]),
         # 9 mm P.A.K. alarm-pistol blank and gas round (centrefire), C.I.P. Tab. VIII "9 mm PA Blanc"
-        # maximum cartridge (sheet 1991-07-30); length = L3 (L6 is 22.7). No crimp tip given; 5.7 estimated like the .22 blank.
-        c("9 mm P.A.K.", RIMLESS, 9.5, 9.5, None, 5.7, 22.5, None, 22.5, 9.5, CRIMPED,
-          ["9mmpak", "pak", "9pak", "9x22", "9mmpa", "9mmpablanc", "gaspatrone", "reizstoffpatrone"]),
+        # maximum cartridge (sheet 1991-07-30); length = L3 (L6 is 22.7). The front is closed inside the
+        # case, not star-crimped, so it is a plain cylinder with nothing above the mouth (Raven 2026-11-04).
+        straight("9 mm P.A.K.", RIMLESS, 9.5, 9.5, 9.5, 22.5, 22.5, 9.5, FLAT,
+                 ["9mmpak", "pak", "9pak", "9x22", "9mmpa", "9mmpablanc", "gaspatrone", "reizstoffpatrone"]),
         straight(".44 Henry", RIMFIRE, 13.2, 11.2, 11.0, 22.9, 34.2, 11.3, FLAT, ["44henry"]),
         # Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
         straight(".22 Remington Automatic", RIMFIRE, 7.4, 6.2, 6.2, 16.8, 23.4, 5.7, ROUND, ["22remauto"]),

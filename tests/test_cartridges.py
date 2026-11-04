@@ -122,8 +122,8 @@ class CatalogueTests(unittest.TestCase):
     def test_9mm_pak_keeps_the_cip_blank_values(self):
         pak = {s["name"]: s for s in ALL}["9 mm P.A.K."]
         self.assertEqual((pak["rim"], pak["base"], pak["case"], pak["oal"]), (9.5, 9.5, 22.5, 22.5))
-        self.assertEqual(pak["profile"], "crimped")
-        self.assertLess(pak["neck"], pak["base"])  # star crimp narrows the mouth
+        self.assertNotEqual(pak["profile"], "crimped")  # closed inside the case, no star crimp
+        self.assertEqual(pak["neck"], pak["base"])
         self.assertFalse(is_rare("9 mm P.A.K."))
 
     def test_second_cip_batch_keeps_the_sheet_values(self):
