@@ -263,6 +263,10 @@ CATALOGUE = [
         c(".30-40 Krag", RIMMED, 13.8, 11.6, 10.7, 8.6, 58.8, 48.2, 78.5, 7.8, ROUND, ["30-40", "30-40krag", "30army"]),
         c("7.92x33 mm Kurz", RIMLESS, 11.95, 11.94, 11.4, 9.1, 33.0, 22.0, 48.0, 8.22, SPITZER, ["7.92kurz", "8mmkurz", "7.92x33"]),
         c("5.45x39 mm", RIMLESS, 10.0, 10.0, 9.25, 6.29, 39.82, 31.7, 57.0, 5.6, SPITZER, ["5.45x39", "545x39"]),
+        # Sourced 2026-11-04 from the Wikipedia infoboxes (.277 SIG Fury after the 2020 SAAMI drawing);
+        # shoulder heights estimated (.277 Fury like the .308 parent).
+        c(".277 SIG Fury", RIMLESS, 11.99, 11.95, 11.71, 7.87, 51.18, 39.6, 71.76, 7.06, SPITZER, ["277fury", "277sigfury", "6.8x51"]),
+        c("5.8x42 mm", RIMLESS, 10.42, 10.4, 9.35, 6.65, 42.2, 33.5, 58.0, 5.8, SPITZER, ["5.8x42", "dbp87", "dbp10"]),
         c(".22 Hornet", RIMMED, 8.89, 7.57, 7.01, 6.17, 35.64, 27.4, 43.76, 5.69, SPITZER, ["22hornet", "5.6x35r"]),
         c(".25-06 Remington", RIMLESS, 12.0, 11.9, 11.2, 7.4, 63.3, 54.1, 82.6, 6.5, SPITZER, ["25-06"]),
         c(".257 Roberts", RIMLESS, 12.0, 12.0, 10.9, 7.4, 56.7, 47.6, 70.5, 6.5, SPITZER, ["257roberts"]),
@@ -543,6 +547,7 @@ PRIMERS = {
     "8x50 mm R Lebel": LARGE_RIFLE, "8x56 mm R Mannlicher": LARGE_RIFLE, "8x50 mm R Mannlicher": LARGE_RIFLE,
     "7.35x51 mm Carcano": LARGE_RIFLE, "6.5x54 mm Mannlicher-Schönauer": LARGE_RIFLE,
     ".30-40 Krag": LARGE_RIFLE, "7.92x33 mm Kurz": LARGE_RIFLE, "5.45x39 mm": SMALL_RIFLE,
+    ".277 SIG Fury": SMALL_RIFLE, "5.8x42 mm": SMALL_RIFLE,
     ".22 Hornet": SMALL_RIFLE, ".25-06 Remington": LARGE_RIFLE, ".257 Roberts": LARGE_RIFLE,
     ".280 Remington": LARGE_RIFLE, ".35 Whelen": LARGE_RIFLE, ".300 H&H Magnum": LARGE_RIFLE,
     ".338 Winchester Magnum": LARGE_RIFLE, ".444 Marlin": LARGE_RIFLE, ".458 Winchester Magnum": LARGE_RIFLE,
@@ -842,6 +847,8 @@ INTRODUCED = {
     ".30-40 Krag": (1892, _WP + ".30-40_Krag"),
     "7.92x33 mm Kurz": (1942, _WP + "7.92×33mm_Kurz"),
     "5.45x39 mm": (1974, _WP + "5.45×39mm"),
+    ".277 SIG Fury": (2019, _WP + ".277_Fury"),
+    "5.8x42 mm": (1987, _WP + "5.8×42mm"),
     ".22 Hornet": (1930, _WP + ".22_Hornet"),
     ".25-06 Remington": (1969, _WP + ".25-06_Remington"),
     ".257 Roberts": (1934, _WP + ".257_Roberts"),
@@ -1185,7 +1192,8 @@ RARE = {
     "8 mm Nambu", "8 mm Roth-Steyr", "8x50 mm R Mannlicher", "8x58 mm R Danish Krag",
     "9.5x57 mm Mannlicher-Schönauer", "9x18 mm Ultra", "9x57 mm Mauser",
     # Still made, but hardly ever found:
-    ".450 Rigby", ".375 CheyTac", ".505 Gibbs", ".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM", ".300 HAM'R", ".500 Jeffery", ".416 Barrett", "12.7x108 mm", ".460 Weatherby Magnum",
+    ".450 Rigby", ".375 CheyTac", ".505 Gibbs", ".277 SIG Fury", "5.8x42 mm", ".25 Weatherby RPM", "6.5 Weatherby RPM",
+    ".338 Weatherby RPM", ".300 HAM'R", ".500 Jeffery", ".416 Barrett", "12.7x108 mm", ".460 Weatherby Magnum",
     ".338-378 Weatherby Magnum", ".30-378 Weatherby Magnum", "7 mm STW", ".22 Savage Hi-Power",
     ".307 Winchester", ".356 Winchester", ".450 Marlin", ".458 SOCOM", ".50 Beowulf",
     ".30 Thompson/Center", ".300 Ruger Compact Magnum", ".300 Remington SAUM",
@@ -1228,6 +1236,7 @@ COUNTRIES = {  # code: (English name, flag emoji or None)
     "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"),
 "WW": ("Worldwide", "🌐"),
     "RUE": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
+    "CN": ("China", "🇨🇳"),
 }
 
 WORLDWIDE = "WW"
@@ -1254,6 +1263,7 @@ ORIGIN = {
     # Soviet Union and Russian Empire
     "7.62x39 mm": "SU", "5.45x39 mm": "SU", "9x18 mm Makarov": "SU", "7.62x25 mm Tokarev": "SU",
     "5.45x18 mm": "SU", "12.7x108 mm": "SU",
+    "5.8x42 mm": "CN", ".277 SIG Fury": "US",
     "7.62x54 mm R": "RUE", "7.62x38 mm R Nagant": "RUE",
     # Germany: service rounds and German hunting rounds
     "8x57 mm IS": "DE", "8x57 mm IRS": "DE", "7.92x33 mm Kurz": "DE", "7.63x25 mm Mauser": "DE",
