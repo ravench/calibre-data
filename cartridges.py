@@ -346,6 +346,10 @@ CATALOGUE = [
         c("9.3x66 mm Sako (.370 Sako Magnum)", RIMLESS, 11.95, 12.13, 11.43, 9.92, 66.0, 55.8, 85.0, 9.3, ROUND, ["9.3x66", "370sako"]),
         c(".300 Blaser Magnum", RIMLESS, 13.59, 13.84, 13.0, 8.61, 64.2, 52.12, 84.84, 7.83, SPITZER, ["300blaser"]),
         c(".375 Blaser Magnum", RIMLESS, 13.59, 13.84, 12.9, 10.31, 71.7, 59.13, 92.0, 9.53, ROUND, ["375blaser"]),
+        # C.I.P. TDCC maximum cartridge (8.5x55 from the 2021 C.I.P. bulletin, sheet 2019-05-22).
+        c("7 mm Blaser Magnum", RIMLESS, 13.59, 13.84, 13.09, 8.0, 59.7, 47.24, 80.0, 7.22, SPITZER, ["7mmblaser", "7blaser"]),
+        c(".338 Blaser Magnum", RIMLESS, 13.59, 13.84, 13.02, 9.36, 63.7, 51.51, 84.84, 8.59, SPITZER, ["338blaser"]),
+        c("8.5x55 mm Blaser", RIMLESS, 13.59, 13.84, 13.17, 9.36, 54.7, 42.38, 75.84, 8.59, SPITZER, ["8.5x55", "8.5x55blaser", "85x55"]),
         c(".450/400 Nitro Express 3 inch", RIMMED, 15.87, 13.92, 13.21, 11.18, 76.2, 55.26, 95.25, 10.41, ROUND, ["450/400", "450/400ne"]),
         c(".40-82 WCF", RIMMED, 15.49, 12.92, 11.54, 10.85, 60.71, 44.91, 70.23, 10.35, FLAT, ["40-82"]),
         c(".50-95 WCF", RIMMED, 15.93, 14.27, 14.05, 13.62, 49.28, 36.63, 57.4, 13.03, FLAT, ["50-95"]),
@@ -728,6 +732,9 @@ PRIMERS = {
     "9.3x66 mm Sako (.370 Sako Magnum)": LARGE_RIFLE,
     ".300 Blaser Magnum": LARGE_RIFLE,
     ".375 Blaser Magnum": LARGE_RIFLE,
+    "7 mm Blaser Magnum": LARGE_RIFLE,
+    ".338 Blaser Magnum": LARGE_RIFLE,
+    "8.5x55 mm Blaser": LARGE_RIFLE,
     ".450/400 Nitro Express 3 inch": LARGE_RIFLE,
     ".40-82 WCF": LARGE_RIFLE,
     ".50-95 WCF": LARGE_RIFLE,
@@ -1066,6 +1073,9 @@ INTRODUCED = {
     "9.3x66 mm Sako (.370 Sako Magnum)": (2002, "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page71.pdf"),  # C.I.P. sheet 2002-01-22, Sako launch 2003
     ".300 Blaser Magnum": (2009, "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page114.pdf"),  # C.I.P. sheet 2009-05-05, no earlier source
     ".375 Blaser Magnum": (2009, "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page140.pdf"),  # C.I.P. sheet 2009-05-05, no earlier source
+    "7 mm Blaser Magnum": (2009, "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page36.pdf"),  # C.I.P. sheet 2009-05-05, no earlier source
+    ".338 Blaser Magnum": (2009, "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page130.pdf"),  # C.I.P. sheet 2009-05-05, no earlier source
+    "8.5x55 mm Blaser": (2019, "https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vestnik_%202021_DEF.pdf"),  # C.I.P. sheet 2019-05-22
     ".25 Stevens": (1898, _WP + ".25_Stevens"),
     ".41 Short": (1863, _WP + ".41_Short"),
     ".56-56 Spencer": (1860, _WP + ".56-56_Spencer"),
@@ -1221,7 +1231,7 @@ RARE = {
     ".224 Weatherby Magnum",
     ".408 CheyTac", ".338 Ruger Compact Magnum",
     # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
-    "9.3x72 mm R", "8x75 mm RS", "6.5x65 mm RWS", "9.3x66 mm Sako (.370 Sako Magnum)", ".300 Blaser Magnum", ".375 Blaser Magnum", ".450/400 Nitro Express 3 inch", ".40-82 WCF", ".50-95 WCF", ".38-56 WCF", ".30 Remington", ".17 Remington Fireball", ".338 Marlin Express", ".22 Nosler", "6.5-300 Weatherby Magnum",
+    "9.3x72 mm R", "8x75 mm RS", "6.5x65 mm RWS", "9.3x66 mm Sako (.370 Sako Magnum)", ".300 Blaser Magnum", ".375 Blaser Magnum", "7 mm Blaser Magnum", ".338 Blaser Magnum", ".450/400 Nitro Express 3 inch", ".40-82 WCF", ".50-95 WCF", ".38-56 WCF", ".30 Remington", ".17 Remington Fireball", ".338 Marlin Express", ".22 Nosler", "6.5-300 Weatherby Magnum",
     ".25 Stevens", ".41 Short", ".56-56 Spencer", "9x25 mm Dillon", ".300 Lapua Magnum",
     ".35 Winchester", ".50-110 Winchester", ".400 H&H Magnum", ".244 H&H Magnum", ".45-75 Winchester",
     ".22 Remington Automatic", ".465 H&H Magnum", ".475 No. 2 Nitro Express", ".400/350 Nitro Express",
