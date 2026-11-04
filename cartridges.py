@@ -202,6 +202,11 @@ CATALOGUE = [
         c(".338 Lapua Magnum", RIMLESS, 14.9, 14.9, 14.4, 9.3, 69.2, 57.5, 93.5, 8.6, SPITZER, ["338lm", "338lapua", "338"]),
         c(".375 H&H Magnum", BELTED, 13.0, 13.0, 11.6, 10.3, 72.4, 62.0, 91.4, 9.5, ROUND, ["375h&h", "375hh"]),
         c(".416 Rigby", RIMLESS, 14.9, 14.9, 13.6, 11.6, 73.7, 59.0, 95.3, 10.6, ROUND, ["416rigby"]),
+        # Sourced 2026-11-04 from the C.I.P. TDCC sheet (maximum cartridge), rounded to 0.01 mm:
+        # sh_at = L1, shoulder = P2, neck = H2, oal = L6. Wikipedia's .450 Rigby infobox gives
+        # H1 as the shoulder (12.5 mm), which is why it was left out before.
+        c(".450 Rigby", RIMLESS, 14.99, 14.96, 14.5, 12.38, 73.5, 59.5, 95.25, 11.66, ROUND, ["450rigby"]),
+        c(".375 CheyTac", RIMLESS, 16.25, 16.18, 15.22, 10.31, 76.91, 62.28, 113.4, 9.52, SPITZER, ["375cheytac", "375ct"]),
         straight(".45-70 Government", RIMMED, 15.2, 12.7, 12.2, 53.5, 64.8, 11.6, FLAT, ["45-70", "4570"]),
         c(".50 BMG", RIMLESS, 20.4, 20.4, 18.3, 14.0, 99.0, 76.0, 138.0, 12.98, SPITZER, ["50bmg", "12.7x99"]),
         # Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
@@ -453,6 +458,7 @@ PRIMERS = {
     ".300 Norma Magnum": LARGE_RIFLE, ".303 British": LARGE_RIFLE, "7.62x54 mm R": LARGE_RIFLE,
     "8x57 mm IS": LARGE_RIFLE, "8x68 mm S": LARGE_RIFLE, "9.3x62 mm": LARGE_RIFLE, "9.3x74 mm R": LARGE_RIFLE,
     ".338 Lapua Magnum": LARGE_RIFLE, ".375 H&H Magnum": LARGE_RIFLE, ".416 Rigby": LARGE_RIFLE,
+    ".450 Rigby": LARGE_RIFLE, ".375 CheyTac": LARGE_RIFLE,
     ".45-70 Government": LARGE_RIFLE, ".50 BMG": BMG_35,
     "6.5x52 mm Carcano": LARGE_RIFLE, "6.5x50 mm SR Arisaka": LARGE_RIFLE, "7.7x58 mm Arisaka": LARGE_RIFLE,
     "8x50 mm R Lebel": LARGE_RIFLE, "8x56 mm R Mannlicher": LARGE_RIFLE, "8x50 mm R Mannlicher": LARGE_RIFLE,
@@ -687,6 +693,8 @@ INTRODUCED = {
     ".338 Lapua Magnum": (1989, _WP + ".338_Lapua_Magnum"),
     ".375 H&H Magnum": (1912, _WP + ".375_H%26H_Magnum"),
     ".416 Rigby": (1912, _WP + ".416_Rigby"),           # designed 1911, produced from 1912
+    ".450 Rigby": (1994, _WP + ".450_Rigby"),           # named 1994, produced from 1995
+    ".375 CheyTac": (2007, _WP + ".408_Cheyenne_Tactical"),  # infobox says 2009, text has .375 variants by 2007; C.I.P. 2017
     ".45-70 Government": (1873, _WP + ".45-70"),
     ".50 BMG": (1921, _WP + ".50_BMG"),
     ".577 Snider": (1866, _WP + ".577_Snider"),

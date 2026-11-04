@@ -59,6 +59,16 @@ class CatalogueTests(unittest.TestCase):
         self.assertNotIn("5.6 mm GP 90 (Swiss)", by_name)
         self.assertIn("gewehrpatrone 90", by_name["5.6 mm GP 90"]["aliases"])
 
+    def test_cip_sourced_rounds_keep_the_sheet_values(self):
+        # C.I.P. TDCC maximum cartridge: shoulder is P2 (not H1), shoulder starts at L1.
+        by_name = {s["name"]: s for s in ALL}
+        sheet = {".450 Rigby": (14.99, 14.96, 14.5, 12.38, 73.5, 59.5, 95.25, 11.66),
+                 ".375 CheyTac": (16.25, 16.18, 15.22, 10.31, 76.91, 62.28, 113.4, 9.52)}
+        keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
+        for name, values in sheet.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+            self.assertGreater(by_name[name]["shoulder"], by_name[name]["neck"], name)
+
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}
         b = by_name[".22 Blank (6.8/11)"]
