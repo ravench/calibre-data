@@ -960,9 +960,10 @@ def is_obsolete(name):
     return name in OBSOLETE
 
 
-# Obsolete calibres that are also rare: no factory ammunition has been made for years, so
-# cartridges turn up mainly in collections. Every rare calibre is obsolete, which gives three
-# states: current, obsolete, obsolete and rare. Judged from production status, not counts.
+# Calibres you are unlikely to find, so a photo or measurement that matches one is far more
+# likely a false positive than the real thing. Independent of OBSOLETE: most rare calibres are
+# obsolete collector rounds, but some are still made in small numbers (big Nitro and African
+# rounds, short-lived magnums, niche handgun rounds). Judged, not counted: no source counts them.
 RARE = {
     ".219 Zipper", ".22 Remington Jet", ".223 WSSM", ".225 Winchester",
     ".25 Remington", ".25 WSSM", ".256 Winchester Magnum", ".30 Remington AR", ".303 Savage",
@@ -974,6 +975,14 @@ RARE = {
     "7.5x53.5 mm Swiss (GP 1890)", "7.62x45 mm vz. 52", "7.65 mm Longue", "7.92x107 mm DS",
     "8 mm Nambu", "8 mm Roth-Steyr", "8x50 mm R Mannlicher", "8x58 mm R Danish Krag",
     "9.5x57 mm Mannlicher-Schönauer", "9x18 mm Ultra", "9x57 mm Mauser",
+    # Still made, but hardly ever found:
+    ".505 Gibbs", ".500 Jeffery", ".416 Barrett", "12.7x108 mm", ".460 Weatherby Magnum",
+    ".338-378 Weatherby Magnum", ".30-378 Weatherby Magnum", "7 mm STW", ".22 Savage Hi-Power",
+    ".307 Winchester", ".356 Winchester", ".450 Marlin", ".458 SOCOM", ".50 Beowulf",
+    ".30 Thompson/Center", ".300 Ruger Compact Magnum", ".300 Remington SAUM",
+    "7 mm Remington SAUM", ".325 Winchester Short Magnum", ".27 Nosler", ".33 Nosler",
+    ".460 Rowland", ".475 Linebaugh", ".22 TCM", "4.6x30 mm", ".25 NAA", ".32 NAA", ".45 Super",
+    ".45 Winchester Magnum", "9x23 mm Winchester", ".400 Cor-Bon",
 }
 
 
@@ -981,6 +990,6 @@ def is_rare(name):
     return name in RARE
 
 
-def status(name):
-    """"current", "obsolete" or "rare" (rare calibres are always obsolete too)."""
-    return "rare" if name in RARE else "obsolete" if name in OBSOLETE else "current"
+def tags(name):
+    """The status tags of a calibre: [], ["obsolete"], ["rare"] or ["obsolete", "rare"]."""
+    return [t for t, s in (("obsolete", OBSOLETE), ("rare", RARE)) if name in s]
