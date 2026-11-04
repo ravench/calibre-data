@@ -84,6 +84,17 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(ORIGIN["5.8x42 mm"], "CN")
         self.assertEqual(ORIGIN[".277 SIG Fury"], "US")
 
+    def test_rpm_family_and_hamr_keep_the_saami_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
+        self.assertEqual(tuple(by_name[".25 Weatherby RPM"][k] for k in keys),
+                         (12.01, 12.7, 12.14, 7.37, 60.96, 51.89, 84.84, 6.53))
+        self.assertEqual(tuple(by_name[".300 HAM'R"][k] for k in ("rim", "case", "oal")), (9.6, 41.02, 57.4))
+        for name in (".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM"):
+            s = by_name[name]  # one case family: rebated rim under a 0.500 in head
+            self.assertEqual((s["rim"], s["base"]), (12.01, 12.7), name)
+        self.assertEqual(ORIGIN[".300 HAM'R"], "US")
+
     def test_second_cip_batch_keeps_the_sheet_values(self):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
