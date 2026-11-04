@@ -958,3 +958,29 @@ OBSOLETE = {
 
 def is_obsolete(name):
     return name in OBSOLETE
+
+
+# Obsolete calibres that are also rare: no factory ammunition has been made for years, so
+# cartridges turn up mainly in collections. Every rare calibre is obsolete, which gives three
+# states: current, obsolete, obsolete and rare. Judged from production status, not counts.
+RARE = {
+    ".219 Zipper", ".22 Remington Jet", ".223 WSSM", ".225 Winchester",
+    ".25 Remington", ".25 WSSM", ".256 Winchester Magnum", ".30 Remington AR", ".303 Savage",
+    ".32 Remington", ".33 Winchester", ".35 S&W Auto", ".35 Winchester Self-Loading",
+    ".351 Winchester Self-Loading", ".356 TSW", ".401 Winchester Self-Loading",
+    ".41 Action Express", ".44 Henry", ".442 Webley", ".450 Adams", ".476 Enfield", ".577 Snider",
+    "10.4 mm Swiss Ordnance 1878", "10.4x38 mm R Vetterli", "11 mm French Ordnance",
+    "11x59 mm R Gras", "11x60 mm R Mauser", "6.5x53 mm R Mannlicher", "7.35x51 mm Carcano",
+    "7.5x53.5 mm Swiss (GP 1890)", "7.62x45 mm vz. 52", "7.65 mm Longue", "7.92x107 mm DS",
+    "8 mm Nambu", "8 mm Roth-Steyr", "8x50 mm R Mannlicher", "8x58 mm R Danish Krag",
+    "9.5x57 mm Mannlicher-Schönauer", "9x18 mm Ultra", "9x57 mm Mauser",
+}
+
+
+def is_rare(name):
+    return name in RARE
+
+
+def status(name):
+    """"current", "obsolete" or "rare" (rare calibres are always obsolete too)."""
+    return "rare" if name in RARE else "obsolete" if name in OBSOLETE else "current"
