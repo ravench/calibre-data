@@ -307,6 +307,15 @@ CATALOGUE = [
         c(".300 Weatherby Magnum", BELTED, 13.5, 13.0, 12.5, 8.5, 71.8, 61.2, 90.5, 7.8, SPITZER, ["300wby", "300weatherby"]),
         c(".416 Remington Magnum", BELTED, 13.5, 13.0, 12.4, 11.4, 72.4, 58.7, 91.4, 10.6, ROUND, ["416rem"]),
         c(".470 Nitro Express", RIMMED, 16.6, 14.6, 13.5, 12.8, 83.0, 67.8, 101.0, 12.0, ROUND, ["470ne"]),
+        # Sourced 2026-11-04 (batch 12 leftovers): C.I.P. TDCC maximum cartridge (shoulder = P2,
+        # neck = H2, sh_at = L1, oal = L6); .360 No. 5 Rook from the Wikipedia infobox (Barnes).
+        c(".450 No. 2 Nitro Express", RIMMED, 16.76, 14.35, 13.97, 12.24, 88.9, 72.39, 109.98, 11.63, ROUND, ["450no2"]),
+        c(".500/416 Nitro Express", RIMMED, 16.64, 14.55, 13.49, 11.33, 82.55, 60.96, 101.09, 10.57, ROUND, ["500/416"]),
+        c(".375 Flanged Magnum Nitro Express", RIMMED, 14.35, 13.13, 11.43, 10.29, 74.68, 60.96, 96.52, 9.52, ROUND, ["375flmag"]),
+        c("9.3x53 mm R Finnish", RIMMED, 14.4, 12.42, 11.61, 9.9, 53.3, 39.61, 76.0, 9.3, ROUND, ["9.3x53r"]),
+        c("10.3x60 mm R", RIMMED, 15.7, 13.85, 12.5, 11.26, 60.8, 40.8, 78.9, 10.54, ROUND, ["10.3x60r"]),
+        c("7x61 mm Sharpe & Hart", BELTED, 13.5, 13.05, 11.91, 8.06, 61.0, 50.8, 83.0, 7.2, SPITZER, ["7x61", "7x61sh", "7x61super"]),
+        straight(".360 No. 5 Rook", RIMMED, 10.97, 9.65, 9.53, 26.67, 36.83, 9.19, ROUND, ["360rook"]),
         # Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         straight(".450 Nitro Express", RIMMED, 15.8, 13.8, 12.2, 83.0, 100.0, 11.6, ROUND, ["450ne"]),
         straight(".500 Nitro Express", RIMMED, 16.6, 14.6, 13.5, 76.0, 95.0, 13.0, ROUND, ["500ne"]),
@@ -518,6 +527,13 @@ PRIMER_DIAMETERS = {  # mm, nominal primer cup diameter
     BMG_35: 8.03,                              # .316", CCI #35
 }
 PRIMERS = {
+    ".450 No. 2 Nitro Express": LARGE_RIFLE,
+    ".500/416 Nitro Express": LARGE_RIFLE,
+    ".375 Flanged Magnum Nitro Express": LARGE_RIFLE,
+    "9.3x53 mm R Finnish": LARGE_RIFLE,
+    "10.3x60 mm R": LARGE_RIFLE,
+    "7x61 mm Sharpe & Hart": LARGE_RIFLE,
+    ".360 No. 5 Rook": LARGE_PISTOL,
     "6.35 mm Browning (.25 ACP)": SMALL_PISTOL, "7.65 mm Browning (.32 ACP)": SMALL_PISTOL,
     "7.65 mm Parabellum": SMALL_PISTOL, ".32 S&W Long": SMALL_PISTOL, ".32 H&R Magnum": SMALL_PISTOL,
     "7.62x25 mm Tokarev": SMALL_PISTOL, "9 mm Browning kurz (.380 ACP)": SMALL_PISTOL,
@@ -776,6 +792,9 @@ PRIMERS = {
 # only a period, the earliest probable year is used.
 _WP = "https://en.wikipedia.org/wiki/"
 INTRODUCED = {
+    ".450 No. 2 Nitro Express": (1903, _WP + ".450_No_2_Nitro_Express"),
+    "7x61 mm Sharpe & Hart": (1953, _WP + "7%C3%9761mm_Sharpe_%26_Hart"),  # developed on a 1953 trip
+    ".360 No. 5 Rook": (1875, _WP + ".360_No._5_Rook"),  # introduced 1875-1880
     ".22 Short": (1857, _WP + ".22_Short"),
     ".22 LR": (1887, _WP + ".22_Long_Rifle"),
     ".22 WMR": (1959, _WP + ".22_Winchester_Magnum_Rimfire"),
@@ -1102,6 +1121,10 @@ INTRODUCED = {
 }
 
 INTRODUCED_UNKNOWN = {
+    ".500/416 Nitro Express": "no introduction year in the sources checked",
+    ".375 Flanged Magnum Nitro Express": "no introduction year in the sources checked",
+    "9.3x53 mm R Finnish": "no introduction year in the sources checked",
+    "10.3x60 mm R": "no introduction year in the sources checked",
     "6 mm GT": "sources give only the 2024 SAAMI acceptance",
     "9x39 mm": "the source gives only the early 1980s",
     ".475 No. 2 Nitro Express": "the source gives only the early 1900s",
@@ -1137,6 +1160,7 @@ INTRODUCED_UNKNOWN = {
 # Calibres no longer in regular factory production (only surplus, boutique loads or reloading).
 # Everything else is current. The apps can hide these by default; the poster can mark them.
 OBSOLETE = {
+    "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
     "7.5x53.5 mm Swiss (GP 1890)", "10.4x38 mm R Vetterli", ".577 Snider", ".577/450 Martini-Henry",
     ".50-70 Government", ".58 Minié", ".69 Minié",
     "7.5 mm Swiss Ordnance 1882", "7.65 mm Longue", "8 mm Nambu", "8 mm Lebel revolver", "8 mm Roth-Steyr",
@@ -1208,6 +1232,8 @@ def is_obsolete(name):
 # obsolete collector rounds, but some are still made in small numbers (big Nitro and African
 # rounds, short-lived magnums, niche handgun rounds). Judged, not counted: no source counts them.
 RARE = {
+    ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express",
+    "9.3x53 mm R Finnish", "10.3x60 mm R", "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
     ".219 Zipper", ".22 Remington Jet", ".223 WSSM", ".225 Winchester",
     ".25 Remington", ".25 WSSM", ".256 Winchester Magnum", ".30 Remington AR", ".303 Savage",
     ".32 Remington", ".33 Winchester", ".35 S&W Auto", ".35 Winchester Self-Loading",
@@ -1269,6 +1295,8 @@ COUNTRIES = {  # code: (English name, flag emoji or None)
 
 WORLDWIDE = "WW"
 ORIGIN = {
+    ".450 No. 2 Nitro Express": "GB", ".375 Flanged Magnum Nitro Express": "GB", ".360 No. 5 Rook": "GB",
+    "10.3x60 mm R": "CH", "7x61 mm Sharpe & Hart": "US",
     # In common use worldwide:
     ".22 Short": WORLDWIDE, ".22 LR": WORLDWIDE, ".22 WMR": WORLDWIDE, ".17 HMR": WORLDWIDE,
     "6.35 mm Browning (.25 ACP)": WORLDWIDE, "7.65 mm Browning (.32 ACP)": WORLDWIDE,
