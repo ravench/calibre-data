@@ -164,10 +164,10 @@ CATALOGUE = [
         c("6 mm BR Norma", RIMLESS, 12.0, 12.0, 11.6, 6.9, 39.6, 31.5, 58.0, 6.2, SPITZER, ["6br", "6mmbr"]),
         c("6 mm ARC", RIMLESS, 11.2, 11.2, 10.9, 6.9, 38.6, 31.8, 57.4, 6.2, SPITZER, ["6arc"]),
         c("6.5 mm Creedmoor", RIMLESS, 12.0, 12.0, 11.7, 7.5, 48.8, 39.6, 71.8, 6.7, SPITZER, ["6.5cm", "6.5creedmoor", "65cm", "creedmoor"]),
-        # Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED (SAAMI drawing for .25 Creedmoor and 8.6 Blackout), rounded; 6 mm Creedmoor takes the 6.5 Creedmoor case with a 6 mm neck; shoulder heights estimated.
-        c("6 mm Creedmoor", RIMLESS, 12.0, 12.0, 11.7, 6.9, 48.8, 39.6, 71.1, 6.2, SPITZER, ["6cm", "6creedmoor", "6mmcm"]),
+        # Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+        c("6 mm Creedmoor", RIMLESS, 12.01, 11.94, 11.73, 6.99, 48.8, 37.8, 71.1, 6.2, SPITZER, ["6cm", "6creedmoor", "6mmcm"]),
         c(".25 Creedmoor", RIMLESS, 12.0, 11.95, 11.76, 7.32, 48.8, 39.6, 71.8, 6.54, SPITZER, ["25cm", "25creedmoor"]),
-        c("8.6 Blackout", RIMLESS, 12.0, 11.95, 11.7, 9.3, 42.8, 36.0, 71.4, 8.61, SPITZER, ["8.6blk", "86blk", "8.6blackout"]),
+        c("8.6 Blackout", RIMLESS, 11.99, 11.95, 11.78, 9.3, 42.8, 34.4, 71.4, 8.61, SPITZER, ["8.6blk", "86blk", "8.6blackout"]),
         c(".22 ARC", RIMLESS, 11.2, 11.2, 10.91, 6.4, 38.7, 31.8, 57.4, 5.7, SPITZER, ["22arc"]),
         c(".338 Ruger Compact Magnum", RIMLESS, 13.5, 13.5, 13.1, 9.4, 51.2, 39.7, 72.1, 8.6, SPITZER, ["338rcm"]),
         c(".408 CheyTac", RIMLESS, 16.25, 16.18, 15.24, 11.12, 77.21, 63.8, 115.5, 10.36, SPITZER, ["408cheytac", "408ct", "10.36x77"]),
