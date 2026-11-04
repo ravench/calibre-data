@@ -250,6 +250,17 @@ CATALOGUE = [
         c(".300 Weatherby Magnum", BELTED, 13.5, 13.0, 12.5, 8.5, 71.8, 61.2, 90.5, 7.8, SPITZER, ["300wby", "300weatherby"]),
         c(".416 Remington Magnum", BELTED, 13.5, 13.0, 12.4, 11.4, 72.4, 58.7, 91.4, 10.6, ROUND, ["416rem"]),
         c(".470 Nitro Express", RIMMED, 16.6, 14.6, 13.5, 12.8, 83.0, 67.8, 101.0, 12.0, ROUND, ["470ne"]),
+        # Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+        straight(".450 Nitro Express", RIMMED, 15.8, 13.8, 12.2, 83.0, 100.0, 11.6, ROUND, ["450ne"]),
+        straight(".500 Nitro Express", RIMMED, 16.6, 14.6, 13.5, 76.0, 95.0, 13.0, ROUND, ["500ne"]),
+        straight(".577 Nitro Express", RIMMED, 19.0, 16.8, 15.5, 76.0, 94.0, 14.9, ROUND, ["577ne"]),
+        straight(".600 Nitro Express", RIMMED, 20.6, 17.8, 16.5, 76.0, 94.0, 15.7, ROUND, ["600ne"]),
+        straight(".700 Nitro Express", RIMMED, 22.6, 19.8, 18.5, 89.0, 107.0, 17.8, ROUND, ["700ne"]),
+        c(".500/465 Nitro Express", RIMMED, 16.4, 14.5, 13.4, 12.4, 83.0, 67.9, 99.0, 11.9, ROUND, ["500/465", "465ne"]),
+        c(".318 Westley Richards", RIMLESS, 11.8, 11.8, 11.1, 9.1, 60.1, 48.9, 85.1, 8.4, ROUND, ["318wr", "318rne"]),
+        c(".240 Weatherby Magnum", BELTED, 12.0, 11.5, 10.9, 6.9, 63.4, 54.6, 78.7, 6.2, SPITZER, ["240wby"]),
+        c(".224 Weatherby Magnum", BELTED, 10.9, 10.5, 10.0, 6.4, 48.8, 40.5, 59.2, 5.7, SPITZER, ["224wby"]),
+        c("6.5 mm Remington Magnum", BELTED, 13.5, 13.51, 12.6, 7.6, 55.1, 45.7, 71.1, 6.7, SPITZER, ["6.5remmag"]),
         # Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c(".220 Swift", RIMLESS, 12.0, 11.3, 10.2, 6.6, 56.0, 47.7, 68.1, 5.7, SPITZER, ["220swift"]),
         c(".25-20 Winchester", RIMMED, 10.4, 8.9, 8.5, 7.0, 33.8, 24.5, 40.4, 6.6, FLAT, ["25-20", "25wcf"]),
@@ -608,6 +619,16 @@ PRIMERS = {
     ".40-65 Winchester": LARGE_RIFLE,
     ".303 Savage": LARGE_RIFLE,
     ".219 Zipper": LARGE_RIFLE,
+    ".450 Nitro Express": LARGE_RIFLE,
+    ".500 Nitro Express": LARGE_RIFLE,
+    ".577 Nitro Express": LARGE_RIFLE,
+    ".600 Nitro Express": LARGE_RIFLE,
+    ".700 Nitro Express": LARGE_RIFLE,
+    ".500/465 Nitro Express": LARGE_RIFLE,
+    ".318 Westley Richards": LARGE_RIFLE,
+    ".240 Weatherby Magnum": LARGE_RIFLE,
+    ".224 Weatherby Magnum": LARGE_RIFLE,
+    "6.5 mm Remington Magnum": LARGE_RIFLE,
 }
 
 # Year each calibre was first introduced: released as factory ammunition or adopted for
@@ -883,9 +904,19 @@ INTRODUCED = {
     ".303 Savage": (1894, _WP + ".303_Savage"),
     ".219 Zipper": (1937, _WP + ".219_Zipper"),
     ".22 Winchester Rimfire": (1890, _WP + ".22_Winchester_Rimfire"),
+    ".450 Nitro Express": (1898, _WP + ".450_Nitro_Express"),
+    ".500 Nitro Express": (1890, _WP + ".500_Nitro_Express"),
+    ".600 Nitro Express": (1899, _WP + ".600_Nitro_Express"),
+    ".700 Nitro Express": (1988, _WP + ".700_Nitro_Express"),
+    ".500/465 Nitro Express": (1907, _WP + ".500/465_Nitro_Express"),
+    ".318 Westley Richards": (1906, _WP + ".318_Westley_Richards"),
+    ".240 Weatherby Magnum": (1968, _WP + ".240_Weatherby_Magnum"),
+    ".224 Weatherby Magnum": (1963, _WP + ".224_Weatherby_Magnum"),
+    "6.5 mm Remington Magnum": (1966, _WP + "6.5mm_Remington_Magnum"),
 }
 
 INTRODUCED_UNKNOWN = {
+    ".577 Nitro Express": "the source gives only the 1890s",
     ".35 Winchester Self-Loading": "no year in the source",
     ".401 Winchester Self-Loading": "no year in the source",
     ".358 Norma Magnum": "the source gives only the 1950s",
@@ -954,6 +985,8 @@ OBSOLETE = {
     ".401 Winchester Self-Loading",
     ".303 Savage",
     ".219 Zipper",
+    ".224 Weatherby Magnum",
+    "6.5 mm Remington Magnum",
 }
 
 
