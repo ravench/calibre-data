@@ -119,6 +119,13 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
         self.assertFalse(is_rare("8.5x55 mm Blaser"))  # sold widely in German-speaking countries
 
+    def test_9mm_pak_keeps_the_cip_blank_values(self):
+        pak = {s["name"]: s for s in ALL}["9 mm P.A.K."]
+        self.assertEqual((pak["rim"], pak["base"], pak["case"], pak["oal"]), (9.5, 9.5, 22.5, 22.5))
+        self.assertEqual(pak["profile"], "crimped")
+        self.assertLess(pak["neck"], pak["base"])  # star crimp narrows the mouth
+        self.assertFalse(is_rare("9 mm P.A.K."))
+
     def test_second_cip_batch_keeps_the_sheet_values(self):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")

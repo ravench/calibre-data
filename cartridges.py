@@ -63,6 +63,10 @@ CATALOGUE = [
         # photos (2026-11-04): the star opens on firing but the petals stay narrower than the body.
         blank(".22 Blank (6.8/11)", 6.8, 5.7, 3.4, 11.0,
               ["22blank", "6.8/11", "6.8x11", "platzpatrone", "kartusche", "setzkartusche", "bolzensetzer"]),
+        # 9 mm P.A.K. alarm-pistol blank and gas round (centrefire), C.I.P. Tab. VIII "9 mm PA Blanc"
+        # maximum cartridge (sheet 1991-07-30); length = L3 (L6 is 22.7). No crimp tip given; 5.7 estimated like the .22 blank.
+        c("9 mm P.A.K.", RIMLESS, 9.5, 9.5, None, 5.7, 22.5, None, 22.5, 9.5, CRIMPED,
+          ["9mmpak", "pak", "9pak", "9x22", "9mmpa", "9mmpablanc", "gaspatrone", "reizstoffpatrone"]),
         straight(".44 Henry", RIMFIRE, 13.2, 11.2, 11.0, 22.9, 34.2, 11.3, FLAT, ["44henry"]),
         # Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
         straight(".22 Remington Automatic", RIMFIRE, 7.4, 6.2, 6.2, 16.8, 23.4, 5.7, ROUND, ["22remauto"]),
@@ -499,6 +503,7 @@ CATALOGUE = [
 DISPLAY_ALIASES = {
     ".22 LR": [".22 Long Rifle", "KK"],
     ".22 Blank (6.8/11)": [".22 Platzpatrone", "Setzkartusche 6.8/11"],
+    "9 mm P.A.K.": ["9 mm P.A. Knall", "9 mm PA Blanc"],
     ".22 WMR": [".22 Magnum"],
     "7.65 mm Browning (.32 ACP)": [".32 ACP", ".32 Auto"],
     "7.65 mm Parabellum": [".30 Luger"],
@@ -547,7 +552,7 @@ PRIMERS = {
     "10.4 mm Swiss Ordnance 1878": LARGE_PISTOL, ".44 S&W Russian": LARGE_PISTOL, "11 mm French Ordnance": LARGE_PISTOL,
     ".45 Schofield": LARGE_PISTOL, ".45 Auto Rim": LARGE_PISTOL, ".455 Webley": LARGE_PISTOL,
     ".480 Ruger": LARGE_PISTOL, ".50 Action Express": LARGE_PISTOL,
-    "9x18 mm Makarov": SMALL_PISTOL, "9x19 mm": SMALL_PISTOL, "9x21 mm IMI": SMALL_PISTOL,
+    "9x18 mm Makarov": SMALL_PISTOL, "9x19 mm": SMALL_PISTOL, "9 mm P.A.K.": SMALL_PISTOL, "9x21 mm IMI": SMALL_PISTOL,
     ".357 SIG": SMALL_PISTOL, ".38 Special": SMALL_PISTOL, ".357 Magnum": SMALL_PISTOL,
     ".38 Super": SMALL_PISTOL, "10 mm Auto": LARGE_PISTOL, ".40 S&W": SMALL_PISTOL,
     ".41 Magnum": LARGE_PISTOL, ".44 Special": LARGE_PISTOL, ".44 Magnum": LARGE_PISTOL,
@@ -809,6 +814,7 @@ INTRODUCED = {
     "9 mm Browning kurz (.380 ACP)": (1908, _WP + ".380_ACP"),
     "9x18 mm Makarov": (1951, _WP + "9×18mm_Makarov"),
     "9x19 mm": (1902, _WP + "9×19mm_Parabellum"),
+    "9 mm P.A.K.": (1991, "https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"),  # C.I.P. sheet 1991-07-30, no earlier source
     ".357 SIG": (1994, _WP + ".357_SIG"),
     ".38 Special": (1898, _WP + ".38_Special"),
     ".357 Magnum": (1935, _WP + ".357_Magnum"),
@@ -1300,7 +1306,7 @@ ORIGIN = {
     # In common use worldwide:
     ".22 Short": WORLDWIDE, ".22 LR": WORLDWIDE, ".22 WMR": WORLDWIDE, ".17 HMR": WORLDWIDE,
     "6.35 mm Browning (.25 ACP)": WORLDWIDE, "7.65 mm Browning (.32 ACP)": WORLDWIDE,
-    "9 mm Browning kurz (.380 ACP)": WORLDWIDE, "9x19 mm": WORLDWIDE, ".38 Special": WORLDWIDE,
+    "9 mm Browning kurz (.380 ACP)": WORLDWIDE, "9x19 mm": WORLDWIDE, "9 mm P.A.K.": "DE", ".38 Special": WORLDWIDE,
     ".357 Magnum": WORLDWIDE, ".40 S&W": WORLDWIDE, ".44 Magnum": WORLDWIDE, ".45 ACP": WORLDWIDE,
     "5.7x28 mm": WORLDWIDE, ".222 Remington": WORLDWIDE, ".223 Remington": WORLDWIDE,
     "5.56x45 mm NATO": WORLDWIDE, ".22-250 Remington": WORLDWIDE, ".22 Hornet": WORLDWIDE,
