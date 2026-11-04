@@ -1059,8 +1059,8 @@ RARE = {
     ".577 Nitro Express", ".600 Nitro Express", ".700 Nitro Express", ".500/465 Nitro Express",
     ".224 Weatherby Magnum",
     ".408 CheyTac", ".338 Ruger Compact Magnum",
-    ".45 GAP", ".30 Super Carry", "5 mm Remington Rimfire Magnum", ".221 Remington Fireball",
-    ".224 Valkyrie", "6.8 Western", ".376 Steyr", "8 mm Remington Magnum", ".350 Remington Magnum",
+    ".45 GAP", "5 mm Remington Rimfire Magnum", ".221 Remington Fireball",
+    ".224 Valkyrie", ".376 Steyr", "8 mm Remington Magnum", ".350 Remington Magnum",
     ".358 Norma Magnum", ".416 Weatherby Magnum", "7 mm Remington Ultra Magnum",
     ".338 Remington Ultra Magnum", ".375 Remington Ultra Magnum",
 }
