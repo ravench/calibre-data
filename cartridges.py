@@ -136,7 +136,8 @@ CATALOGUE = [
         c(".222 Remington", RIMLESS, 9.6, 9.6, 9.1, 6.4, 43.2, 34.0, 54.0, 5.7, SPITZER, ["222rem"]),
         c(".223 Remington", RIMLESS, 9.6, 9.6, 9.0, 6.4, 44.7, 36.0, 57.4, 5.7, SPITZER, ["223", "223rem"]),
         c("5.56x45 mm NATO", RIMLESS, 9.6, 9.6, 9.0, 6.4, 44.7, 36.0, 57.4, 5.7, SPITZER, ["5.56", "556", "5.56x45", "5.56nato"]),
-        c("5.6 mm GP 90 (Swiss)", RIMLESS, 9.6, 9.6, 9.0, 6.4, 44.7, 36.0, 57.4, 5.7, SPITZER, ["gp90", "gp 90", "5.6", "5.6mm", "5.6gp90", "stgw90"]),
+        # Official name «5,6 mm Gewehrpatrone 90», short «5,6 mm GP 90» (Stgw 90, from 1990).
+        c("5.6 mm GP 90", RIMLESS, 9.6, 9.6, 9.0, 6.4, 44.7, 36.0, 57.4, 5.7, SPITZER, ["gp90", "gp 90", "5.6", "5.6mm", "5.6gp90", "stgw90", "gewehrpatrone 90", "gwpat90"]),
         c(".22-250 Remington", RIMLESS, 12.0, 12.0, 11.5, 6.6, 48.6, 39.0, 60.3, 5.7, SPITZER, ["22-250"]),
         c(".243 Winchester", RIMLESS, 12.0, 12.0, 11.5, 7.0, 51.9, 41.0, 68.8, 6.2, SPITZER, ["243", "243win"]),
         c("6 mm BR Norma", RIMLESS, 12.0, 12.0, 11.6, 6.9, 39.6, 31.5, 58.0, 6.2, SPITZER, ["6br", "6mmbr"]),
@@ -342,7 +343,7 @@ PRIMERS = {
     ".454 Casull": SMALL_RIFLE, ".460 S&W Magnum": LARGE_RIFLE, ".500 S&W Magnum": LARGE_RIFLE,
     "5.7x28 mm": SMALL_RIFLE, "4.6x30 mm": SMALL_RIFLE,
     ".204 Ruger": SMALL_RIFLE, ".222 Remington": SMALL_RIFLE, ".223 Remington": SMALL_RIFLE,
-    "5.56x45 mm NATO": SMALL_RIFLE, "5.6 mm GP 90 (Swiss)": SMALL_RIFLE, ".22-250 Remington": LARGE_RIFLE,
+    "5.56x45 mm NATO": SMALL_RIFLE, "5.6 mm GP 90": SMALL_RIFLE, ".22-250 Remington": LARGE_RIFLE,
     ".243 Winchester": LARGE_RIFLE, "6 mm BR Norma": SMALL_RIFLE, "6 mm ARC": SMALL_RIFLE,
     "6.5 mm Creedmoor": LARGE_RIFLE, "6.5x55 mm Swedish": LARGE_RIFLE, "6.5x47 mm Lapua": SMALL_RIFLE,
     "6.5 PRC": LARGE_RIFLE, ".260 Remington": LARGE_RIFLE, ".270 Winchester": LARGE_RIFLE,
@@ -480,7 +481,7 @@ INTRODUCED = {
     ".222 Remington": (1950, _WP + ".222_Remington"),
     ".223 Remington": (1963, _WP + ".223_Remington"),
     "5.56x45 mm NATO": (1980, _WP + "5.56×45mm_NATO"),   # STANAG 4172, 28 Oct 1980
-    "5.6 mm GP 90 (Swiss)": (1990, _WP + "SIG_SG_550"),  # adopted with the Stgw 90
+    "5.6 mm GP 90": (1990, _WP + "SIG_SG_550"),  # adopted with the Stgw 90
     ".22-250 Remington": (1965, _WP + ".22-250_Remington"),  # wildcat from 1937
     ".243 Winchester": (1955, _WP + ".243_Winchester"),
     "6 mm BR Norma": (1996, _WP + "6mm_BR"),

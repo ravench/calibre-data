@@ -50,8 +50,14 @@ class CatalogueTests(unittest.TestCase):
         by_name = {s["name"]: s for s in ALL}
         self.assertIn("gp11", by_name["7.5x55 mm Swiss (GP 11)"]["aliases"])
         self.assertIn("gp1890", by_name["7.5x53.5 mm Swiss (GP 1890)"]["aliases"])
-        self.assertIn("gp90", by_name["5.6 mm GP 90 (Swiss)"]["aliases"], "GP 90 means the 5.6 mm Stgw 90 round")
+        self.assertIn("gp90", by_name["5.6 mm GP 90"]["aliases"], "GP 90 means the 5.6 mm Stgw 90 round")
         self.assertEqual(by_name["12/70"]["kind"], SHOT)
+
+    def test_gp90_uses_the_short_swiss_army_name(self):
+        # Swiss Army: «5,6 mm Gewehrpatrone 90», short «5,6 mm GP 90».
+        by_name = {s["name"]: s for s in ALL}
+        self.assertNotIn("5.6 mm GP 90 (Swiss)", by_name)
+        self.assertIn("gewehrpatrone 90", by_name["5.6 mm GP 90"]["aliases"])
 
     def test_every_calibre_has_an_introduction_year_or_a_reason(self):
         self.assertEqual(set(INTRODUCED) | set(INTRODUCED_UNKNOWN), NAMES)
