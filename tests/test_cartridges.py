@@ -89,7 +89,7 @@ class CatalogueTests(unittest.TestCase):
         keys = ("rim", "base", "neck", "case", "oal", "bullet")
         published = {  # Wikipedia infoboxes (.277 Fury after the SAAMI drawing)
             ".277 SIG Fury": (11.99, 11.95, 7.87, 51.18, 71.76, 7.06),
-            "5.8x42 mm": (10.42, 10.4, 6.65, 42.2, 58.0, 5.8),
+            "5.8x42 mm": (10.42, 10.4, 6.65, 42.2, 58.0, 6.0),  # bullet from the AECC drawing
         }
         for name, values in published.items():
             self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
@@ -224,6 +224,9 @@ class CatalogueTests(unittest.TestCase):
         self.assertTrue(is_rare("11x59 mm R Gras"))
         self.assertFalse(is_rare("7.5 mm Swiss Ordnance 1882"))
         self.assertFalse(is_rare("7.5x55 mm Swiss (GP 11)"))
+        self.assertFalse(is_rare(".450 Marlin"))  # 1.5 per mille of the guns on TownPost
+        self.assertFalse(is_rare("10.3x60 mm R"))  # 2.4 per mille on swisswaffen.com
+        self.assertTrue(is_rare(".405 Winchester"))  # not among GunBroker's 250 calibres
 
     def test_rare_does_not_require_obsolete(self):
         self.assertTrue(RARE & OBSOLETE)
@@ -262,6 +265,23 @@ class CatalogueTests(unittest.TestCase):
             self.assertTrue(is_obsolete(name), name)
         self.assertEqual(INTRODUCED["10.4 mm Swiss Ordnance 1878"][0], 1878)
 
+    def test_municion_check_fixes_wrong_dimensions(self):
+        # Values that disagreed with both the municion.org drawing and the published standard.
+        by_name = {s["name"]: s for s in ALL}
+        expected = {
+            ".22 WMR": {"oal": 34.3},
+            ".41 Magnum": {"rim": 12.5},
+            ".22-250 Remington": {"shoulder": 10.5},
+            ".338 Lapua Magnum": {"shoulder": 13.82},
+            ".300 PRC": {"case": 65.5, "sh_at": 54.6},
+            # sh_at is the C.I.P. sheet's L1 (see SHOULDER_ANGLES), not the municion.org specimen.
+            "6.5x54 mm Mannlicher-Schönauer": {"case": 53.6, "sh_at": 41.82},
+            "10.4x38 mm R Vetterli": {"rim": 15.7, "base": 13.62, "shoulder": 13.1, "neck": 11.43,
+                                      "case": 38.21, "sh_at": 30.7, "oal": 56.22, "bullet": 10.92},
+        }
+        for name, fields in expected.items():
+            for key, value in fields.items():
+                self.assertEqual(by_name[name][key], value, f"{name} {key}")
 
     def test_municion_years_fill_unknown_introductions(self):
         years = {".17 Hornet": 2012, ".35 Winchester Self-Loading": 1905, ".401 Winchester Self-Loading": 1910,
