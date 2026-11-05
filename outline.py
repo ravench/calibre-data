@@ -1,6 +1,7 @@
 """Side-view outlines of the catalogue cartridges, shared by both apps and the poster.
 
-outline(spec) returns {"width", "height", "case"?, "head"?, "bullet"?, "patch"?, "bulletMaterial"?}:
+outline(spec) returns {"width", "height", "case"?, "head"?, "bullet"?, "patch"?, "tip"?, "bulletMaterial"?,
+"caseMaterial"?}:
 millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bottom
 (y = overall length), centred in `width`.
 """
@@ -8,6 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, BRASS, bullet, case_material  # noqa: E402
 
 N = 14  # samples per curve
 
@@ -75,9 +77,29 @@ CRIMP_LENGTH = 0.38
 PATCH_BAND = 0.26
 
 
-def patch_profile(r, y0, top):
-    """Right half of the paper band of a PATCHED bullet, drawn over the bullet."""
-    return [(r, y0), (r, y0 + PATCH_BAND * (top - y0))]
+def patch_profile(r, y0, top, band=PATCH_BAND):
+    """Right half of the paper band of a patched bullet, drawn over the bullet."""
+    return [(r, y0), (r, y0 + band * (top - y0))]
+
+
+# Share of the exposed bullet wrapped in paper on a PAPER_PATCHED lead bullet (Gras, Martini-Henry):
+# the paper covers the body, the lead nose shows.
+PAPER_BAND = 0.5
+
+# Share of the exposed bullet that is the bare lead tip of a SOFT_POINT bullet.
+TIP_SHARE = 0.14
+
+
+def tip_profile(right, top, share=TIP_SHARE):
+    """Right half of the front `share` of a bullet profile (bottom to tip), for a soft point's lead tip."""
+    cut = top - share * (top - right[0][1])
+    pts = []
+    for (x0, y0), (x1, y1) in zip(right, right[1:]):
+        if y0 < cut < y1:
+            pts.append((x0 + (x1 - x0) * (cut - y0) / (y1 - y0), cut))
+        if y1 >= cut:
+            pts.append((x1, y1))
+    return pts
 
 
 def mirror(right):
@@ -125,10 +147,21 @@ def outline(s):
         paths["case"] = to_path(mirror(prof), H, hw)
         if s["oal"] > s["case"] + 0.1:
             paths["bullet"] = to_path(mirror(bullet_profile(s["bullet"] / 2, s["case"], s["oal"], s["profile"])), H, hw)
+            kind = bullet(s["name"])
             if s["profile"] == PATCHED:
                 # The bullet path is the whole silhouette (steel cap colour); the paper band goes on top.
                 paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"])), H, hw)
                 paths["bulletMaterial"] = "steel"
+            elif kind == PAPER_PATCHED:
+                paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"], PAPER_BAND)), H, hw)
+                paths["bulletMaterial"] = "lead"
+            elif kind == LEAD:
+                paths["bulletMaterial"] = "lead"
+            elif kind == SOFT_POINT:
+                right = bullet_profile(s["bullet"] / 2, s["case"], s["oal"], s["profile"])
+                paths["tip"] = to_path(mirror(tip_profile(right, s["oal"])), H, hw)
+        if case_material(s["name"]) != BRASS:
+            paths["caseMaterial"] = case_material(s["name"])
     return {"width": round(width, 2), "height": round(H, 2), **paths}
 
 
@@ -142,7 +175,8 @@ def identical_groups():
     These cartridges cannot be told apart from the side."""
     groups = {}
     for _, s in specs():
-        o = outline(s)
+        # Only the shape counts: twins may differ in bullet (.308 Win soft point, 7.62 NATO jacketed).
+        o = {k: v for k, v in outline(s).items() if k in ("width", "height", "case", "head", "bullet")}
         key = (s["kind"], tuple(sorted(o.items())))
         groups.setdefault(key, []).append(s["name"])
     return [names for names in groups.values() if len(names) > 1]

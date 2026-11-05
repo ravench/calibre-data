@@ -7,7 +7,9 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
                         RARE, is_rare, tags,
                         ORIGIN, COUNTRIES, origin,
-                        RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT)
+                        RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
+                        BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, bullet,
+                        CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, case_material)
 
 ALL = [s for _, items in CATALOGUE for s in items]
 NAMES = {s["name"] for s in ALL}
@@ -331,3 +333,45 @@ class CatalogueTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_bullets_name_known_calibres_and_are_sourced(self):
+        names = {s["name"] for _, items in CATALOGUE for s in items}
+        for name, (kind, url) in BULLETS.items():
+            self.assertIn(name, names)
+            self.assertIn(kind, (LEAD, PAPER_PATCHED, SOFT_POINT), name)
+            self.assertTrue(url is None or url.startswith("https://"), name)
+        self.assertEqual(BULLET_INFERRED, {"7 mm Blaser Magnum", ".300 Blaser Magnum", "8.5x55 mm Blaser",
+                                           ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)"})
+        self.assertEqual(bullet("9x19 mm"), JACKETED)
+
+    def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):
+        # Jacketed bullets came with smokeless powder (Rubin 1882, Lebel 1886); the Swiss 1882 revolver
+        # round was one of the first.
+        for _, items in CATALOGUE:
+            for s in items:
+                year = INTRODUCED.get(s["name"], (None,))[0]
+                if year and year < 1886 and s["oal"] > s["case"] and s["case"] and s["name"] != "7.5 mm Swiss Ordnance 1882":
+                    self.assertNotEqual(bullet(s["name"]), JACKETED, s["name"])
+
+    def test_known_original_bullets(self):
+        self.assertEqual(bullet(".22 LR"), LEAD)
+        self.assertEqual(bullet(".38 Special"), LEAD)
+        self.assertEqual(bullet(".357 Magnum"), LEAD)
+        self.assertEqual(bullet("11x59 mm R Gras"), PAPER_PATCHED)
+        self.assertEqual(bullet("10.4x38 mm R Vetterli"), PAPER_PATCHED)
+        self.assertEqual(bullet(".30-30 Winchester"), SOFT_POINT)
+        self.assertEqual(bullet("9.3x62 mm"), SOFT_POINT)
+        self.assertEqual(bullet(".308 Winchester"), SOFT_POINT)
+        self.assertEqual(bullet("7.62x51 mm NATO"), JACKETED)
+        self.assertEqual(bullet("7.5x55 mm Swiss (GP 11)"), JACKETED)
+
+    def test_case_materials(self):
+        names = {s["name"] for _, items in CATALOGUE for s in items}
+        for name, (material, url) in CASES.items():
+            self.assertIn(name, names)
+            self.assertIn(material, (COPPER, STEEL, NICKEL, PAPER), name)
+            self.assertTrue(url.startswith("https://"), name)
+        self.assertEqual(case_material(".44 Henry"), COPPER)
+        self.assertEqual(case_material("5.45x39 mm"), STEEL)
+        self.assertEqual(case_material(".577 Snider"), PAPER)
+        self.assertEqual(case_material("9x19 mm"), BRASS)
