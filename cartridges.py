@@ -284,8 +284,8 @@ CATALOGUE = [
         c("5.45x39 mm", RIMLESS, 10.0, 10.0, 9.25, 6.29, 39.82, 30, 57.0, 5.6, SPITZER, ["5.45x39", "545x39"]),
         # Sourced 2026-11-04 from the Wikipedia infoboxes (.277 SIG Fury after the 2020 SAAMI drawing);
         # shoulder heights estimated (.277 Fury like the .308 parent).
-        c(".277 SIG Fury", RIMLESS, 11.99, 11.95, 11.71, 7.87, 51.18, 39.6, 71.76, 7.06, SPITZER, ["277fury", "277sigfury", "6.8x51"]),
-        c("5.8x42 mm", RIMLESS, 10.42, 10.4, 9.35, 6.65, 42.2, 33.5, 58.0, 6.0, SPITZER, ["5.8x42", "dbp87", "dbp10"]),
+        c(".277 SIG Fury", RIMLESS, 11.99, 11.95, 11.71, 7.87, 51.18, 39.21, 71.76, 7.06, SPITZER, ["277fury", "277sigfury", "6.8x51"]),
+        c("5.8x42 mm", RIMLESS, 10.42, 10.4, 9.35, 6.65, 42.2, 32.14, 58.0, 6.0, SPITZER, ["5.8x42", "dbp87", "dbp10"]),
         c(".22 Hornet", RIMMED, 8.89, 7.57, 7.01, 6.17, 35.64, 21.64, 43.76, 5.69, SPITZER, ["22hornet", "5.6x35r"]),
         c(".25-06 Remington", RIMLESS, 12.0, 11.9, 11.2, 7.4, 63.3, 49.48, 82.6, 6.5, SPITZER, ["25-06"]),
         c(".257 Roberts", RIMLESS, 12.0, 12.0, 10.9, 7.4, 56.7, 43.88, 70.5, 6.5, SPITZER, ["257roberts"]),
@@ -1449,6 +1449,8 @@ SHOULDER_ANGLES = {
     ".22 Creedmoor": (30, "https://saami.org/wp-content/uploads/2026/10/Public-Revision-Notice-22-Creedmoor-2026-10-26.pdf"),  # SAAMI drawing
     ".25 Weatherby RPM": (35, "https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"),  # SAAMI drawing
     "6.5-300 Weatherby Magnum": (46.4, "https://jagdfibel.de/images/0/0e/65300.pdf"),  # SAAMI drawing (double radius; chord through the .4920 datum and neck start)
+    ".277 SIG Fury": (29, "https://commons.wikimedia.org/wiki/File:XM1186.jpg"),  # measured on the photo; neck start kept
+    "5.8x42 mm": (21, "https://commons.wikimedia.org/wiki/File:5.8x42_mm.jpg"),  # measured on the photo (upper edge); neck start kept
 }
 DEFAULT_SHOULDER_ANGLE = 32
 
