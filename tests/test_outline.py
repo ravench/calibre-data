@@ -71,5 +71,41 @@ class OutlineTests(unittest.TestCase):
         self.assertEqual(outline.outline(s), outline.outline(dict(s)))
 
 
+    def test_necks_start_where_the_municion_drawings_show(self):
+        # AECC specimen drawings on municion.org: (shoulder start SL, neck length NL, case length CL), mm.
+        # The outline draws a 32-degree shoulder, so sh_at sits where the drawn neck begins
+        # (CL - NL) minus that shoulder, and never well before the drawn shoulder start.
+        drawn = {
+            "4.6x30 mm": (18.77, 8.98, 30.58), ".32-20 Winchester": (19.0, 11.0, 33.18),
+            ".25 NAA": (13.8, 3.83, 18.91), ".32 NAA": (13.55, 2.1, 17.16), ".400 Cor-Bon": (17.25, 3.45, 22.84),
+            "6 mm BR Norma": (26.9, 7.9, 39.38), "6 mm PPC": (27.2, 7.4, 38.65), "9x39 mm": (31.1, 5.85, 38.97),
+            "6.5x47 mm Lapua": (36.18, 7.7, 46.78), "6.5 PRC": (40.08, 8.55, 51.41),
+            ".300 AAC Blackout": (26.6, 6.6, 34.6), ".300 Norma Magnum": (48.08, 7.31, 63.04),
+            ".300 Lapua Magnum": (54.9, 8.89, 69.2), ".303 British": (45.3, 8.65, 56.08),
+            ".400/350 Nitro Express": (53.0, 13.3, 69.82), ".400 H&H Magnum": (49.6, 15.35, 72.0),
+            ".257 Roberts": (43.5, 7.8, 56.6), ".375 Ruger": (55.3, 7.0, 65.32),
+            ".25-35 Winchester": (34.2, 13.2, 52.0), ".300 Weatherby Magnum": (59.0, 9.3, 71.5),
+            ".416 Remington Magnum": (60.9, 10.3, 72.27), ".470 Nitro Express": (61.2, 18.9, 82.34),
+            ".500/465 Nitro Express": (56.0, 16.5, 82.37), ".240 Weatherby Magnum": (50.96, 8.78, 63.3),
+            ".220 Swift": (43.7, 6.9, 55.78), ".25-20 Winchester": (20.4, 9.6, 33.25),
+            ".257 Weatherby Magnum": (52.18, 9.45, 64.6), ".270 Weatherby Magnum": (52.0, 8.7, 64.58),
+            "7 mm Weatherby Magnum": (51.85, 9.4, 64.45), ".300 Savage": (39.35, 4.9, 47.2),
+            ".32 Remington": (37.7, 11.95, 52.0), ".303 Savage": (34.0, 13.0, 51.09),
+            ".219 Zipper": (34.4, 7.75, 49.15), "6 mm Remington": (43.65, 8.5, 56.64),
+            ".22 Savage Hi-Power": (34.0, 10.7, 52.07), ".223 WSSM": (29.05, 6.04, 42.05),
+            ".243 WSSM": (29.1, 6.4, 42.3), ".25 WSSM": (29.2, 7.4, 42.57),
+            ".338-378 Weatherby Magnum": (60.4, 9.78, 73.7), "7 mm Remington SAUM": (38.95, 7.5, 51.52),
+            ".458 SOCOM": (30.0, 9.15, 40.0), "8x58 mm R Danish Krag": (41.0, 11.2, 57.7),
+            ".416 Barrett": (63.5, 12.17, 82.95),
+        }
+        specs = {s["name"]: s for _, s in outline.specs()}
+        for name, (shoulder_start, neck_length, case_length) in drawn.items():
+            with self.subTest(name):
+                s = specs[name]
+                top = s["neck"] / 2
+                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9)
+                self.assertLess(abs(neck_start - (case_length - neck_length)), 1.5)
+                self.assertGreater(s["sh_at"], shoulder_start - 0.6)
+
 if __name__ == "__main__":
     unittest.main()
