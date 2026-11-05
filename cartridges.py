@@ -1204,12 +1204,25 @@ INTRODUCED_UNKNOWN = {
 # Where each primer size in PRIMERS was checked. Wikipedia pages are the cartridge infobox
 # ("Primer type"); Hodgdon, Vihtavuori and Sierra are the primers used in their published
 # reloading data; Starline is the primer named on its brass page. Shot shells: Hodgdon's
-# shotshell data uses 209-size primers for every gauge and length listed. Calibres not yet checked against a
+# shotshell data uses 209-size primers for every gauge and length listed. municion.org: the
+# primer diameter measured on its headstamp photos (median over the specimens, scaled by the rim
+# diameter; checked on 9 mm, .38 Special and .308 to within 2 %), only for US rounds that were
+# Boxer-primed from the start, so the original primer is the reloading size. Calibres not yet checked against a
 # source are in PRIMER_UNVERIFIED, so a new calibre has to go in one of the two.
 _HODGDON = "https://hodgdonreloading.com/rldc/"
 _VIHTAVUORI = "https://vihtavuori.com/reloading-data/reloading-data-tool/"
 _STARLINE = "https://www.starlinebrass.com/"
+_MUNICION = "https://municion.org/producto/"
 PRIMER_SOURCES = {
+    ".25 Remington": _MUNICION + "25-remington-auto/",  # 5.30 mm, 6 specimens
+    ".32 Remington": _MUNICION + "32-remington/",  # 5.11 mm, 4 specimens
+    ".30 Remington": _MUNICION + "30-remington/",  # 5.33 mm, 3 specimens
+    ".35 Winchester Self-Loading": _MUNICION + "35-winchester-self-loading/",  # 4.44 mm, 3 specimens
+    ".401 Winchester Self-Loading": _MUNICION + "401-winchester-self-loading/",  # 5.34 mm, 8 specimens
+    ".40-82 WCF": _MUNICION + "40-82-260-winchester-cf-marlin/",  # 5.05 mm, 8 specimens
+    ".50-95 WCF": _MUNICION + "50-95-300-winchester/",  # 5.16 mm, 6 specimens
+    ".45-75 Winchester": _MUNICION + "45-75-winchester-centennial/",  # 5.23 mm, 5 specimens
+    ".35 S&W Auto": _MUNICION + "35-smith-wesson-automatic/",  # 4.34 mm, 4 specimens
     "7x61 mm Sharpe & Hart": "https://sierrabullets.com/content/load-data/legacy/284-7mm/7x61mm-sharpe-hart.pdf",  # Rem 9 1/2M
     "6.35 mm Browning (.25 ACP)": _WP + ".25_ACP",
     "7.65 mm Browning (.32 ACP)": _WP + ".32_ACP",
@@ -1503,22 +1516,20 @@ PRIMER_SOURCES = {
 # rifle primers; Federal's ammunition uses small pistol, so it stays small pistol until checked.
 PRIMER_UNVERIFIED = {
     ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express",
-    "9.3x53 mm R Finnish", "10.3x60 mm R", ".360 No. 5 Rook",
-    ".30 Super Carry", "8 mm Lebel revolver", "8 mm Roth-Steyr", "9 mm Glisenti",
-    "10.4 mm Swiss Ordnance 1878", "11 mm French Ordnance", "9 mm P.A.K.", "5.6 mm GP 90",
-    "8x50 mm R Mannlicher", "7.35x51 mm Carcano", "5.8x42 mm", "10.4x38 mm R Vetterli",
-    ".577 Snider", ".577/450 Martini-Henry", "8x60 mm S", "9.5x57 mm Mannlicher-Schönauer",
-    "5.75 mm Velo-Dog", ".500 JRH", ".375 Flanged Nitro Express", ".55 Boys", ".35 S&W Auto",
-    ".442 Webley", ".450 Adams", ".476 Enfield", "11x59 mm R Gras", ".356 TSW",
-    "6.5x53 mm R Mannlicher", "8x58 mm R Danish Krag", "7.92x107 mm DS", "9x57 mm Mauser",
-    "6.5x57 mm R", ".416 Barrett", "12.7x108 mm", ".25 Remington", ".32 Remington",
-    ".35 Winchester Self-Loading", ".401 Winchester Self-Loading", ".450 Nitro Express",
-    ".577 Nitro Express", ".600 Nitro Express", ".500/465 Nitro Express", ".318 Westley Richards",
-    "9.3x72 mm R", "8x75 mm RS", "6.5x65 mm RWS", ".300 Blaser Magnum", ".375 Blaser Magnum",
-    "7 mm Blaser Magnum", ".338 Blaser Magnum", "8.5x55 mm Blaser",
-    ".450/400 Nitro Express 3 inch", ".40-82 WCF", ".50-95 WCF", ".30 Remington",
-    ".244 H&H Magnum", ".45-75 Winchester", ".475 No. 2 Nitro Express", ".400/350 Nitro Express",
-    ".350 Rigby Magnum", "6.5x58 mm Vergueiro",
+    "9.3x53 mm R Finnish", "10.3x60 mm R", ".360 No. 5 Rook", ".30 Super Carry",
+    "8 mm Lebel revolver", "8 mm Roth-Steyr", "9 mm Glisenti", "10.4 mm Swiss Ordnance 1878",
+    "11 mm French Ordnance", "9 mm P.A.K.", "5.6 mm GP 90", "8x50 mm R Mannlicher",
+    "7.35x51 mm Carcano", "5.8x42 mm", "10.4x38 mm R Vetterli", ".577 Snider",
+    ".577/450 Martini-Henry", "8x60 mm S", "9.5x57 mm Mannlicher-Schönauer", "5.75 mm Velo-Dog",
+    ".500 JRH", ".375 Flanged Nitro Express", ".55 Boys", ".442 Webley", ".450 Adams",
+    ".476 Enfield", "11x59 mm R Gras", ".356 TSW", "6.5x53 mm R Mannlicher",
+    "8x58 mm R Danish Krag", "7.92x107 mm DS", "9x57 mm Mauser", "6.5x57 mm R", ".416 Barrett",
+    "12.7x108 mm", ".450 Nitro Express", ".577 Nitro Express", ".600 Nitro Express",
+    ".500/465 Nitro Express", ".318 Westley Richards", "9.3x72 mm R", "8x75 mm RS",
+    "6.5x65 mm RWS", ".300 Blaser Magnum", ".375 Blaser Magnum", "7 mm Blaser Magnum",
+    ".338 Blaser Magnum", "8.5x55 mm Blaser", ".450/400 Nitro Express 3 inch", ".244 H&H Magnum",
+    ".475 No. 2 Nitro Express", ".400/350 Nitro Express", ".350 Rigby Magnum",
+    "6.5x58 mm Vergueiro",
 }
 
 
