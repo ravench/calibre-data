@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, CASES, bullet, case_material, current_case_materials  # noqa: E402
+from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -42,7 +42,18 @@ class OutlineTests(unittest.TestCase):
             has_bullet = s["oal"] > s["case"] + 0.1 and "case" in o
             patched = s["profile"] == PATCHED or bullet(s["name"]) == PAPER_PATCHED
             self.assertEqual("patch" in o, patched and has_bullet, s["name"])
-            self.assertEqual(o.get("bulletMaterial") == "steel", s["profile"] == PATCHED and has_bullet, s["name"])
+            if "case" in o:
+                self.assertEqual(o.get("bulletMaterial") == "steel", s["profile"] == PATCHED and has_bullet, s["name"])
+
+    def test_loose_projectiles_name_only_non_lead_materials(self):
+        for _, s in outline.specs():
+            if s["kind"] in (BALL, MINIE, PELLET):
+                material = loose_material(s["name"])
+                self.assertEqual(outline.outline(s).get("bulletMaterial"), None if material == LEAD else material, s["name"])
+        by_name = {s["name"]: s for _, s in outline.specs()}
+        self.assertEqual(outline.outline(by_name["4.4 mm Stahl-BB (.177 BB)"])["bulletMaterial"], "steel")
+        self.assertEqual(outline.outline(by_name["6 mm Airsoft-BB"])["bulletMaterial"], "plastic")
+        self.assertNotIn("bulletMaterial", outline.outline(by_name[".44 Rundkugel (.454)"]))
 
     def test_lead_bullets_are_drawn_in_lead(self):
         for _, s in outline.specs():
