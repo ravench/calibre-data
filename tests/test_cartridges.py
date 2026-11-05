@@ -3,6 +3,7 @@ import os, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
+                        SMALL_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
                         RARE, is_rare, tags,
                         ORIGIN, COUNTRIES, origin,
@@ -47,6 +48,19 @@ class CatalogueTests(unittest.TestCase):
         centrefire = {s["name"] for s in ALL if s["kind"] not in (RIMFIRE, BALL, MINIE, PELLET)}
         self.assertEqual(set(PRIMERS), centrefire)
         self.assertLessEqual(set(PRIMERS.values()), set(PRIMER_DIAMETERS))
+
+    def test_checked_primer_corrections(self):
+        # Primer sizes that were guessed wrong, checked against reloading data and brass makers:
+        # 7.62x39, 6.8 SPC: Hodgdon (Winchester/Remington cases) and Vihtavuori (Lapua 7.62x39 cases) use large rifle.
+        # .450 Bushmaster, .30 RAR: Hodgdon loads Hornady/Starline/Remington cases with small rifle primers.
+        # .277 SIG Fury: Vihtavuori loads the SIG hybrid case with large rifle primers.
+        # .400 Cor-Bon: Starline changed the pocket to small pistol in 12/2000; Cor-Bon recommends small pistol.
+        # .22 TCM: Hodgdon loads Armscor cases with CCI 500 small pistol primers.
+        expected = {"7.62x39 mm": LARGE_RIFLE, "6.8 mm Remington SPC": LARGE_RIFLE,
+                    ".450 Bushmaster": SMALL_RIFLE, ".30 Remington AR": SMALL_RIFLE,
+                    ".277 SIG Fury": LARGE_RIFLE, ".400 Cor-Bon": SMALL_PISTOL, ".22 TCM": SMALL_PISTOL}
+        for name, primer in expected.items():
+            self.assertEqual(PRIMERS[name], primer, name)
 
     def test_swiss_service_rounds(self):
         by_name = {s["name"]: s for s in ALL}
