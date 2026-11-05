@@ -3,10 +3,12 @@ import os, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
+                        PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO,
+                        SMALL_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
                         RARE, is_rare, tags,
                         ORIGIN, COUNTRIES, origin,
-                        RIMFIRE, BALL, MINIE, PELLET, SHOT)
+                        RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT)
 
 ALL = [s for _, items in CATALOGUE for s in items]
 NAMES = {s["name"] for s in ALL}
@@ -47,6 +49,33 @@ class CatalogueTests(unittest.TestCase):
         centrefire = {s["name"] for s in ALL if s["kind"] not in (RIMFIRE, BALL, MINIE, PELLET)}
         self.assertEqual(set(PRIMERS), centrefire)
         self.assertLessEqual(set(PRIMERS.values()), set(PRIMER_DIAMETERS))
+
+    def test_original_primers_from_headstamp_photos(self):
+        for name in ("10.3x60 mm R", "11x59 mm R Gras", ".500/465 Nitro Express",
+                     ".475 No. 2 Nitro Express", ".375 Flanged Nitro Express", "9.3x72 mm R"):
+            self.assertEqual(PRIMERS[name], BERDAN_NITRO, name)
+        self.assertEqual(PRIMER_DIAMETERS[BERDAN_NITRO], 6.45)
+        for name in (".450 Adams", ".476 Enfield", ".360 No. 5 Rook"):
+            self.assertEqual(PRIMERS[name], SMALL_PISTOL, name)
+
+    def test_every_primer_is_sourced_or_marked_unverified(self):
+        self.assertEqual(set(PRIMER_SOURCES) & PRIMER_UNVERIFIED, set())
+        self.assertEqual(set(PRIMER_SOURCES) | PRIMER_UNVERIFIED, set(PRIMERS))
+        for name, url in PRIMER_SOURCES.items():
+            self.assertTrue(url.startswith("https://"), name)
+
+    def test_checked_primer_corrections(self):
+        # Primer sizes that were guessed wrong, checked against reloading data and brass makers:
+        # 7.62x39, 6.8 SPC: Hodgdon (Winchester/Remington cases) and Vihtavuori (Lapua 7.62x39 cases) use large rifle.
+        # .450 Bushmaster, .30 RAR: Hodgdon loads Hornady/Starline/Remington cases with small rifle primers.
+        # .277 SIG Fury: Vihtavuori loads the SIG hybrid case with large rifle primers.
+        # .400 Cor-Bon: Starline changed the pocket to small pistol in 12/2000; Cor-Bon recommends small pistol.
+        # .22 TCM: Hodgdon loads Armscor cases with CCI 500 small pistol primers.
+        expected = {"7.62x39 mm": LARGE_RIFLE, "6.8 mm Remington SPC": LARGE_RIFLE,
+                    ".450 Bushmaster": SMALL_RIFLE, ".30 Remington AR": SMALL_RIFLE,
+                    ".277 SIG Fury": LARGE_RIFLE, ".400 Cor-Bon": SMALL_PISTOL, ".22 TCM": SMALL_PISTOL}
+        for name, primer in expected.items():
+            self.assertEqual(PRIMERS[name], primer, name)
 
     def test_swiss_service_rounds(self):
         by_name = {s["name"]: s for s in ALL}
@@ -178,6 +207,30 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(b["base"], by_name[".22 Short"]["base"], "same .22 case body")
         self.assertIn("platzpatrone", b["aliases"])
         self.assertFalse(is_obsolete(b["name"]))
+
+    def test_alarm_blanks_keep_the_cip_values(self):
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("kind", "rim", "base", "case", "oal", "profile")
+        sheet = {  # C.I.P. Tab. VIII maximum cartridge, mm
+            "8 mm Knall": (RIMLESS, 8.0, 8.0, 20.3, 20.3, "flat"),
+            ".315 Knall": (RIMLESS, 8.0, 8.0, 17.65, 17.65, "flat"),
+            "9 mm R Knall": (RIMMED, 11.0, 9.58, 17.5, 17.5, "crimped"),
+            ".320 Knall": (RIMMED, 9.55, 8.09, 16.0, 16.0, "crimped"),
+            ".45 Knall": (RIMMED, 13.0, 12.1, 16.6, 16.6, "crimped"),
+            ".22 Long Knall": (RIMFIRE, 7.06, 5.74, 15.0, 15.0, "crimped"),
+            "6 mm Flobert Knall": (RIMFIRE, 7.15, 5.75, 6.6, 6.6, "crimped"),
+        }
+        for name, values in sheet.items():
+            with self.subTest(name):
+                s = by_name[name]
+                self.assertEqual(tuple(s[k] for k in keys), values)
+                self.assertLess(s["neck"], s["base"] + 0.01)
+                self.assertFalse(is_obsolete(name))
+                self.assertFalse(is_rare(name))
+                self.assertEqual(INTRODUCED[name][0], 1991)
+                self.assertEqual(name in PRIMERS, s["kind"] != RIMFIRE)
+        self.assertEqual(ORIGIN["6 mm Flobert Knall"], "FR")
+        self.assertIn("9mmrk", by_name["9 mm R Knall"]["aliases"])
 
     def test_every_calibre_has_an_introduction_year_or_a_reason(self):
         self.assertEqual(set(INTRODUCED) | set(INTRODUCED_UNKNOWN), NAMES)

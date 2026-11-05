@@ -55,6 +55,15 @@ class OutlineTests(unittest.TestCase):
         self.assertAlmostEqual(max(body) - min(body), s["base"], places=1)
         self.assertLess(s["neck"], s["base"])
 
+    def test_rimmed_alarm_blank_draws_a_rim_and_a_crimp(self):
+        s = next(s for _, s in outline.specs() if s["name"] == "9 mm R Knall")
+        o = outline.outline(s)
+        self.assertNotIn("bullet", o)
+        pts = points(o["case"])
+        self.assertAlmostEqual(max(x for x, _ in pts) - min(x for x, _ in pts), s["rim"], places=1)
+        mouth = [x for x, y in pts if y < 0.01]
+        self.assertAlmostEqual(max(mouth) - min(mouth), s["neck"], places=1)
+
     def test_only_blanks_are_crimped(self):
         for _, s in outline.specs():
             if s["profile"] == CRIMPED:
@@ -187,6 +196,7 @@ class OutlineTests(unittest.TestCase):
         "6.5 mm Grendel", "6.5x50 mm SR Arisaka", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
         "7.5x53.5 mm Swiss (GP 1890)", "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
         "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
+        ".315 Knall", "8 mm Knall",  # alarm blanks: C.I.P. Tab. VIII gives no extractor groove
     }
 
     def rimless(self):
