@@ -132,7 +132,7 @@ CATALOGUE = [
         c(".32-20 Winchester", RIMMED, 10.4, 9.0, 8.7, 8.3, 33.4, 22.35, 40.4, 7.94, FLAT, ["32-20", "32wcf"]),
         c("5.45x18 mm", RIMLESS, 7.64, 7.64, 7.4, 6.26, 18.03, 12.07, 25.0, 5.63, SPITZER, ["5.45x18", "psm"]),
         c(".22 TCM", RIMLESS, 9.6, 9.55, 9.19, 6.48, 25.96, 17.72, 32.13, 5.7, SPITZER, ["22tcm"]),
-        c("8 mm Nambu", RIMLESS, 10.5, 10.23, 10.0, 8.71, 21.43, 15.0, 31.56, 8.13, ROUND, ["nambu", "8nambu"]),
+        c("8 mm Nambu", RIMLESS, 10.5, 10.23, 10.0, 8.71, 21.43, 15.35, 31.56, 8.13, ROUND, ["nambu", "8nambu"]),
         straight("8 mm Lebel revolver", RIMMED, 10.43, 8.96, 8.83, 27.5, 36.7, 8.35, ROUND, ["8lebelrev", "8mm1892"]),
         straight("8 mm Roth-Steyr", RIMLESS, 8.85, 8.85, 8.8, 18.65, 29.0, 8.16, ROUND, ["rothsteyr", "8steyr"]),
         straight("9 mm Glisenti", RIMLESS, 9.98, 9.96, 9.65, 19.15, 29.21, 9.02, ROUND, ["glisenti"]),
@@ -186,19 +186,19 @@ CATALOGUE = [
         c("6 mm BR Norma", RIMLESS, 12.0, 12.0, 11.6, 6.9, 39.6, 27.3, 58.0, 6.2, SPITZER, ["6br", "6mmbr"]),
         c("6 mm ARC", RIMLESS, 11.2, 11.2, 10.9, 6.9, 38.6, 31.54, 57.4, 6.2, SPITZER, ["6arc"]),
         # Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
-        c(".338 ARC", RIMLESS, 11.2, 10.97, 10.9, 9.55, 33.02, 27.0, 57.4, 8.59, SPITZER, ["338arc"]),
+        c(".338 ARC", RIMLESS, 11.2, 10.97, 10.9, 9.55, 33.02, 23.83, 57.4, 8.59, SPITZER, ["338arc"]),
         c("6 mm PPC", RIMLESS, 11.3, 11.2, 10.9, 6.7, 38.5, 27.3, 53.3, 6.17, SPITZER, ["6ppc", "6mmppc"]),
         c("9x39 mm", RIMLESS, 11.35, 11.35, 10.36, 9.98, 38.77, 32.3, 56.0, 9.25, SPITZER, ["9x39", "sp-5", "sp-6"]),
         c("6.5 mm Creedmoor", RIMLESS, 12.0, 12.0, 11.7, 7.5, 48.8, 37.84, 71.8, 6.7, SPITZER, ["6.5cm", "6.5creedmoor", "65cm", "creedmoor"]),
         # Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
         c("6 mm GT", RIMLESS, 11.96, 11.95, 11.66, 6.95, 43.82, 33.1, 67.06, 6.17, SPITZER, ["6gt", "6mmgt"]),
         # Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
-        c(".22 Creedmoor", RIMLESS, 11.99, 11.95, 11.76, 6.53, 48.77, 39.6, 68.58, 5.7, SPITZER, ["22cm", "22creedmoor"]),
-        c("7 mm Backcountry", RIMLESS, 11.99, 11.93, 11.65, 8.05, 61.39, 51.4, 84.84, 7.22, SPITZER, ["7bc", "7mmbackcountry", "7backcountry"]),
+        c(".22 Creedmoor", RIMLESS, 11.99, 11.95, 11.76, 6.53, 48.77, 37.85, 68.58, 5.7, SPITZER, ["22cm", "22creedmoor"]),
+        c("7 mm Backcountry", RIMLESS, 11.99, 11.93, 11.65, 8.05, 61.39, 51.35, 84.84, 7.22, SPITZER, ["7bc", "7mmbackcountry", "7backcountry"]),
         # Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
         c("6 mm Creedmoor", RIMLESS, 12.01, 11.94, 11.73, 6.99, 48.8, 37.49, 71.1, 6.2, SPITZER, ["6cm", "6creedmoor", "6mmcm"]),
         c(".25 Creedmoor", RIMLESS, 12.0, 11.95, 11.76, 7.32, 48.8, 37.85, 71.8, 6.54, SPITZER, ["25cm", "25creedmoor"]),
-        c("8.6 Blackout", RIMLESS, 11.99, 11.95, 11.78, 9.3, 42.8, 34.4, 71.4, 8.61, SPITZER, ["8.6blk", "86blk", "8.6blackout"]),
+        c("8.6 Blackout", RIMLESS, 11.99, 11.95, 11.78, 9.3, 42.8, 32.26, 71.4, 8.61, SPITZER, ["8.6blk", "86blk", "8.6blackout"]),
         c(".22 ARC", RIMLESS, 11.2, 11.2, 10.91, 6.4, 38.7, 31.8, 57.4, 5.7, SPITZER, ["22arc"]),
         c(".338 Ruger Compact Magnum", RIMLESS, 13.5, 13.5, 13.1, 9.4, 51.2, 40.34, 72.1, 8.6, SPITZER, ["338rcm"]),
         c(".408 CheyTac", RIMLESS, 16.25, 16.18, 15.24, 11.12, 77.21, 62.02, 115.5, 10.36, SPITZER, ["408cheytac", "408ct", "10.36x77"]),
@@ -220,7 +220,7 @@ CATALOGUE = [
         # unusual: a lead body wrapped in two turns of paper (the white band above the case mouth) and a
         # long, blunt round nose under a steel cap (13.7 g, 29 mm long, 7.8 mm over the paper). Shorter case
         # than GP 11. Not to be confused with the 5.6 mm GP 90 of the Stgw 90.
-        c("7.5x53.5 mm Swiss (GP 1890)", RIMLESS, 12.5, 12.4, 11.5, 8.6, 53.5, 42.5, 77.0, 7.8, PATCHED,
+        c("7.5x53.5 mm Swiss (GP 1890)", RIMLESS, 12.5, 12.4, 11.5, 8.6, 53.5, 44.24, 77.0, 7.8, PATCHED,
           ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp90/23", "7.5 mm gp 90", "patrone 1890", "patrone 90/23",
            "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]),
         c("7.5x54 mm French", RIMLESS, 12.25, 12.25, 11.2, 8.6, 54.0, 42.79, 76.0, 7.8, SPITZER, ["7.5x54"]),
@@ -273,11 +273,11 @@ CATALOGUE = [
         # shoulder heights estimated for drawing.
         c("6.5x52 mm Carcano", RIMLESS, 11.45, 11.41, 10.94, 7.55, 52.5, 41.2, 76.5, 6.8, ROUND, ["6.5carcano", "6.5x52"]),
         c("6.5x50 mm SR Arisaka", RIMLESS, 12.08, 11.45, 10.4, 7.37, 51.0, 38.92, 76.0, 6.63, SPITZER, ["6.5arisaka", "6.5x50"]),
-        c("7.7x58 mm Arisaka", RIMLESS, 12.07, 12.02, 11.0, 8.58, 57.8, 47.1, 79.6, 7.92, SPITZER, ["7.7arisaka", "7.7x58"]),
-        c("8x50 mm R Lebel", RIMMED, 16.0, 13.77, 11.42, 8.85, 50.5, 39.4, 75.0, 8.3, SPITZER, ["8lebel", "8x50rlebel"]),
+        c("7.7x58 mm Arisaka", RIMLESS, 12.07, 12.02, 11.0, 8.58, 57.8, 47.34, 79.6, 7.92, SPITZER, ["7.7arisaka", "7.7x58"]),
+        c("8x50 mm R Lebel", RIMMED, 16.0, 13.77, 11.42, 8.85, 50.5, 37.22, 75.0, 8.3, SPITZER, ["8lebel", "8x50rlebel"]),
         c("8x56 mm R Mannlicher", RIMMED, 14.05, 12.47, 12.0, 9.2, 55.63, 37.03, 75.91, 8.35, SPITZER, ["8x56r"]),
         c("8x50 mm R Mannlicher", RIMMED, 14.11, 12.48, 12.01, 9.03, 50.38, 38.29, 76.21, 8.22, ROUND, ["8x50rmannlicher", "8x50r"]),
-        c("7.35x51 mm Carcano", RIMLESS, 11.4, 11.4, 10.85, 8.32, 51.5, 41.2, 73.5, 7.57, SPITZER, ["7.35carcano", "7.35x51"]),
+        c("7.35x51 mm Carcano", RIMLESS, 11.4, 11.4, 10.85, 8.32, 51.5, 41.73, 73.5, 7.57, SPITZER, ["7.35carcano", "7.35x51"]),
         c("6.5x54 mm Mannlicher-Schönauer", RIMLESS, 11.52, 11.47, 10.87, 7.56, 53.6, 41.82, 77.8, 6.7, ROUND, ["6.5x54ms", "6.5x54"]),
         c(".30-40 Krag", RIMMED, 13.8, 11.6, 10.7, 8.6, 58.8, 43.82, 78.5, 7.8, ROUND, ["30-40", "30-40krag", "30army"]),
         c("7.92x33 mm Kurz", RIMLESS, 11.95, 11.94, 11.4, 9.1, 33.0, 24.38, 48.0, 8.22, SPITZER, ["7.92kurz", "8mmkurz", "7.92x33"]),
@@ -385,7 +385,7 @@ CATALOGUE = [
         c(".17 Remington Fireball", RIMLESS, 9.6, 9.57, 9.28, 5.18, 35.81, 27.05, 46.48, 4.38, SPITZER, ["17fireball"]),
         c(".338 Marlin Express", RIMMED, 14.05, 12.89, 12.52, 9.35, 48.01, 37.03, 62.23, 8.6, FLAT, ["338me"]),
         c(".22 Nosler", RIMLESS, 9.6, 10.67, 10.16, 6.48, 44.7, 35.28, 57.4, 5.69, SPITZER, ["22nosler"]),
-        c("6.5-300 Weatherby Magnum", BELTED, 13.5, 13.0, 12.57, 7.49, 71.76, 58.38, 91.44, 6.72, SPITZER, ["6.5-300", "6.5-300wby"]),
+        c("6.5-300 Weatherby Magnum", BELTED, 13.5, 13.0, 12.57, 7.49, 71.76, 58.35, 91.44, 6.72, SPITZER, ["6.5-300", "6.5-300wby"]),
         c(".303 Savage", RIMMED, 12.8, 11.2, 10.5, 8.5, 51.2, 34.33, 64.0, 7.8, ROUND, ["303savage"]),
         c(".219 Zipper", RIMMED, 12.9, 10.7, 9.3, 6.4, 49.2, 34.55, 57.4, 5.7, FLAT, ["219zipper"]),
         c(".300 Remington Ultra Magnum", RIMLESS, 13.6, 14.0, 13.3, 8.7, 72.4, 60.64, 91.4, 7.8, SPITZER, ["300rum"]),
@@ -397,7 +397,7 @@ CATALOGUE = [
         c("6.5 mm Grendel", RIMLESS, 11.2, 11.15, 10.87, 7.44, 38.7, 29.07, 57.5, 6.71, SPITZER, ["6.5grendel", "grendel"]),
         c("6 mm Remington", RIMLESS, 12.0, 12.0, 10.9, 7.0, 56.7, 43.81, 71.8, 6.18, SPITZER, ["6mmrem", "244rem"]),
         c("7-30 Waters", RIMMED, 12.9, 10.7, 10.2, 7.8, 52.0, 40.29, 64.0, 7.2, FLAT, ["7-30waters"]),
-        c(".17 Hornet", RIMMED, 8.9, 7.6, 7.3, 4.9, 34.3, 27.5, 43.8, 4.4, SPITZER, ["17hornet"]),
+        c(".17 Hornet", RIMMED, 8.9, 7.6, 7.3, 4.9, 34.3, 26.83, 43.8, 4.4, SPITZER, ["17hornet"]),
         straight(".375 Winchester", RIMMED, 12.9, 10.7, 10.2, 51.3, 65.0, 9.5, FLAT, ["375win"]),
         straight(".405 Winchester", RIMMED, 13.8, 11.7, 11.1, 65.6, 80.6, 10.45, FLAT, ["405win"]),
         straight(".450 Marlin", BELTED, 13.4, 13.01, 12.2, 53.0, 65.0, 11.6, FLAT, ["450marlin"]),
@@ -441,7 +441,7 @@ CATALOGUE = [
         c("6.5-284 Norma", RIMLESS, 12.0, 12.7, 12.1, 7.5, 55.1, 44.98, 82.0, 6.7, SPITZER, ["6.5-284"]),
         # Weatherby RPM family (rebated rim, 6.5-284 body lengthened). The .25 is from the 2026 SAAMI drawing;
         # the 6.5 and .338 share its rim, head and shoulder diameter, with neck and shoulder height estimated.
-        c(".25 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.37, 60.96, 51.89, 84.84, 6.53, SPITZER, ["25rpm", "25wbyrpm"]),
+        c(".25 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.37, 60.96, 50.48, 84.84, 6.53, SPITZER, ["25rpm", "25wbyrpm"]),
         c("6.5 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.54, 65.28, 55.3, 84.84, 6.71, SPITZER, ["6.5rpm", "6.5wbyrpm", "65rpm"]),
         c(".338 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 9.37, 64.77, 54.8, 82.55, 8.59, SPITZER, ["338rpm", "338wbyrpm"]),
         c(".30-378 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 8.6, 74.0, 61.2, 93.7, 7.82, SPITZER, ["30-378"]),
@@ -454,7 +454,7 @@ CATALOGUE = [
         c("7.65x53 mm Argentine", RIMLESS, 11.96, 12.01, 11.0, 8.73, 53.6, 44.6, 76.0, 7.92, SPITZER, ["7.65x53", "7.65argentine", "7.65belgian"]),
         # Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
         c(".338 Norma Magnum", RIMLESS, 14.93, 14.87, 14.5, 9.4, 63.3, 47.78, 93.5, 8.6, SPITZER, ["338nm"]),
-        c(".308 Norma Magnum", BELTED, 13.5, 13.0, 12.5, 8.1, 65.0, 54.4, 85.0, 7.82, SPITZER, ["308nm"]),
+        c(".308 Norma Magnum", BELTED, 13.5, 13.0, 12.5, 8.1, 65.0, 53.05, 85.0, 7.82, SPITZER, ["308nm"]),
         c(".358 Norma Magnum", BELTED, 13.5, 13.03, 12.45, 9.85, 64.0, 52.94, 85.0, 9.12, ROUND, ["358nm"]),
         c("9.3x64 mm Brenneke", RIMLESS, 12.6, 12.88, 12.05, 10.04, 64.0, 52.09, 85.6, 9.3, ROUND, ["9.3x64"]),
         c("9.3x57 mm Mauser", RIMLESS, 11.95, 11.95, 10.95, 10.0, 56.5, 45.86, 81.0, 9.3, ROUND, ["9.3x57"]),
@@ -466,7 +466,7 @@ CATALOGUE = [
         c(".325 Winchester Short Magnum", RIMLESS, 13.6, 14.1, 13.7, 8.9, 53.3, 42.25, 72.6, 8.2, SPITZER, ["325wsm"]),
         c(".375 Weatherby Magnum", BELTED, 13.5, 13.0, 12.5, 10.2, 72.6, 61.75, 91.4, 9.5, ROUND, ["375wby"]),
         c(".460 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 12.2, 74.0, 60.39, 93.0, 11.6, ROUND, ["460wby"]),
-        c(".404 Jeffery", RIMLESS, 13.79, 13.84, 13.46, 11.48, 73.02, 59.2, 89.66, 10.72, ROUND, ["404jeffery", "10.75x73"]),
+        c(".404 Jeffery", RIMLESS, 13.79, 13.84, 13.46, 11.48, 73.02, 50.82, 89.66, 10.72, ROUND, ["404jeffery", "10.75x73"]),
         c(".505 Gibbs", RIMLESS, 16.3, 16.3, 15.2, 13.6, 80.0, 62.43, 97.8, 12.8, ROUND, ["505gibbs"]),
         c(".500 Jeffery", RIMLESS, 14.6, 15.7, 15.4, 13.7, 70.0, 57.61, 88.0, 13.0, ROUND, ["500jeffery", "12.7x70"]),
         c(".416 Barrett", RIMLESS, 20.4, 20.4, 18.5, 11.6, 83.0, 63.55, 118.0, 10.6, SPITZER, ["416barrett"]),
@@ -496,7 +496,7 @@ CATALOGUE = [
         straight(".50-70 Government", RIMMED, 16.9, 14.2, 13.4, 44.5, 57.0, 13.0, ROUND, ["50-70"]),
         c(".44-40 WCF", RIMMED, 13.1, 11.9, 11.5, 11.1, 33.2, 23.58, 40.6, 10.8, FLAT, ["44-40", "4440"]),
         # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
-        c("11x59 mm R Gras", RIMMED, 16.9, 13.8, 13.5, 11.9, 59.0, 44.6, 76.0, 11.3, ROUND, ["11gras", "gras"]),
+        c("11x59 mm R Gras", RIMMED, 16.9, 13.8, 13.5, 11.9, 59.0, 38.55, 76.0, 11.3, ROUND, ["11gras", "gras"]),
         # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c("11x60 mm R Mauser", RIMMED, 14.9, 13.1, 13.0, 11.8, 60.0, 36.4, 71.1, 11.3, ROUND, ["11mauser", "11x60r"]),
         straight(".32-40 Ballard", RIMMED, 12.9, 10.8, 8.6, 54.0, 66.0, 8.1, FLAT, ["32-40"]),
@@ -1432,6 +1432,23 @@ SHOULDER_ANGLES = {
     ".338 Ruger Compact Magnum": (27.7, "https://municion.org/producto/338-ruger-compact-magnum/"),  # AECC drawing 09-051-BGC-050
     ".458 SOCOM": (35.2, "https://municion.org/producto/458-socom/"),  # AECC drawing
     "10.4x38 mm R Vetterli": (10.2, "https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"),  # AECC drawing 11-038-BBC-011
+    ".404 Jeffery": (8.5, _CIP + "tab-i/tabical-en-page145.pdf"),  # C.I.P. 404 Riml. N.E.
+    "8.5x55 mm Blaser": (30, "https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vestnik_%202021_DEF.pdf"),  # C.I.P. sheet p7: atan((P2-H2)/2/(L2-L1))
+    "11x59 mm R Gras": (8.7, "https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"),  # AECC drawing 11-059-BBC-010
+    "7.35x51 mm Carcano": (22.2, "https://municion.org/producto/735-x-51-italian-carcano-m-1938/"),  # AECC drawing 08-051-BGC-010
+    "7.7x58 mm Arisaka": (16.1, "https://municion.org/producto/77-x-58-japanese-rimless-arisaka-type-99/"),  # AECC drawing 08-058-BGC-020
+    "8 mm Nambu": (15.5, "https://municion.org/producto/8-mm-nambu-m-1914/"),  # AECC drawing 08-022-BGC-040
+    ".55 Boys": (10, "https://municion.org/producto/55-boys/"),  # AECC drawing 14-099-BFC-020
+    ".308 Norma Magnum": (24.8, "https://municion.org/producto/308-norma-magnum-belted/"),  # AECC drawing 08-065-BFC-010
+    "7.5x53.5 mm Swiss (GP 1890)": (27.8, "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"),  # AECC drawing 08-054-BGC-040
+    "8x50 mm R Lebel": (17.9, "https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/"),  # AECC drawing 08-050-BBC-060
+    ".17 Hornet": (21, "https://municion.org/producto/17-hornet/"),  # AECC drawing 04-035-BBC-57W
+    "7 mm Backcountry": (30, "https://saami.org/wp-content/uploads/2025/01/Public-Introduction-7mm-Backcountry-2025-01-27.pdf"),  # SAAMI drawing
+    "8.6 Blackout": (30, "https://saami.org/wp-content/uploads/2026/04/Public-Introduction-8.6-BLACKOUT-2026-04-07.pdf"),  # SAAMI drawing
+    ".338 ARC": (30, "https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"),  # SAAMI drawing
+    ".22 Creedmoor": (30, "https://saami.org/wp-content/uploads/2026/10/Public-Revision-Notice-22-Creedmoor-2026-10-26.pdf"),  # SAAMI drawing
+    ".25 Weatherby RPM": (35, "https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"),  # SAAMI drawing
+    "6.5-300 Weatherby Magnum": (46.4, "https://jagdfibel.de/images/0/0e/65300.pdf"),  # SAAMI drawing (double radius; chord through the .4920 datum and neck start)
 }
 DEFAULT_SHOULDER_ANGLE = 32
 
@@ -1629,6 +1646,8 @@ CASE_HEADS = {
     ".300 Ruger Compact Magnum": (1.27, 3.24, 12.07, 35.0, _CIP + "tab-i/tabical-en-page143.pdf"),  # shortened .375 Ruger case; C.I.P. 375 Ruger
     ".338 Ruger Compact Magnum": (1.27, 3.24, 12.07, 35.0, _CIP + "tab-i/tabical-en-page143.pdf"),  # shortened .375 Ruger case; C.I.P. 375 Ruger
     "6.8 Western": (1.37, 3.35, 12.19, 45.0, _CIP + "tab-i/tabical-en-page100.pdf"),  # .270 WSM case; C.I.P. 270 Win. Short Mag.
+    ".404 Jeffery": (1.27, 3.3, 12.37, 36.04, _CIP + "tab-i/tabical-en-page145.pdf"),  # C.I.P. 404 Riml. N.E.
+    "8.5x55 mm Blaser": (1.37, 3.62, 12.19, 45.0, "https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vestnik_%202021_DEF.pdf"),  # C.I.P. sheet p7
 }
 
 

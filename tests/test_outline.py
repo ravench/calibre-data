@@ -114,12 +114,8 @@ class OutlineTests(unittest.TestCase):
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
     # or article giving the angle was found yet. Remove a name here when its angle is added.
     SHOULDER_UNSOURCED = {
-        "8 mm Nambu", ".338 ARC", "6 mm GT", ".22 Creedmoor", "7 mm Backcountry", "8.6 Blackout",
-        ".22 ARC", "7.5x53.5 mm Swiss (GP 1890)", "7.7x58 mm Arisaka", "8x50 mm R Lebel",
-        "7.35x51 mm Carcano", ".277 SIG Fury", "5.8x42 mm", ".55 Boys", "8.5x55 mm Blaser",
-        "6.5-300 Weatherby Magnum", ".17 Hornet", "6.8 Western", ".27 Nosler", ".30 Nosler",
-        ".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM", ".308 Norma Magnum",
-        ".404 Jeffery", "11x59 mm R Gras",
+        "6 mm GT", ".22 ARC", ".277 SIG Fury", "5.8x42 mm", "6.8 Western", ".27 Nosler", ".30 Nosler",
+        "6.5 Weatherby RPM", ".338 Weatherby RPM",
     }
 
     def bottlenecks(self):
@@ -178,7 +174,7 @@ class OutlineTests(unittest.TestCase):
                 self.assertEqual(specs[name]["sh_at"], start)
 
     def test_unsourced_shoulders_keep_the_default(self):
-        self.assertEqual(cartridges.shoulder_angle(".17 Hornet"), cartridges.DEFAULT_SHOULDER_ANGLE)
+        self.assertEqual(cartridges.shoulder_angle("6 mm GT"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
     # Rimless and belted cases without a C.I.P. head (or a parent case that has one); they keep the
     # generic head. A new rimless or belted calibre needs a head in CASE_HEADS or a place here.
@@ -188,12 +184,12 @@ class OutlineTests(unittest.TestCase):
         ".30 Super Carry", ".307 Winchester", ".308 Norma Magnum", ".33 Nosler", ".338 ARC",
         ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading", ".350 Legend",
         ".351 Winchester Self-Loading", ".356 Winchester", ".375 CheyTac", ".400 Legend",
-        ".401 Winchester Self-Loading", ".404 Jeffery", ".408 CheyTac", ".416 Barrett",
+        ".401 Winchester Self-Loading", ".408 CheyTac", ".416 Barrett",
         ".450 Bushmaster", ".458 SOCOM", ".475 Linebaugh", ".480 Ruger", ".50 Beowulf", ".500 JRH",
         ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm ARC", "6 mm GT", "6.5 Weatherby RPM",
         "6.5 mm Grendel", "6.5x50 mm SR Arisaka", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
         "7.5x53.5 mm Swiss (GP 1890)", "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
-        "8.5x55 mm Blaser", "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
+        "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
     }
 
     def rimless(self):
