@@ -285,7 +285,7 @@ CATALOGUE = [
         # Sourced 2026-11-04 from the Wikipedia infoboxes (.277 SIG Fury after the 2020 SAAMI drawing);
         # shoulder heights estimated (.277 Fury like the .308 parent).
         c(".277 SIG Fury", RIMLESS, 11.99, 11.95, 11.71, 7.87, 51.18, 41.43, 71.76, 7.06, SPITZER, ["277fury", "277sigfury", "6.8x51"]),
-        c("5.8x42 mm", RIMLESS, 10.42, 10.4, 9.35, 6.65, 42.2, 32.14, 58.0, 6.0, SPITZER, ["5.8x42", "dbp87", "dbp10"]),
+        c("5.8x42 mm", RIMLESS, 10.42, 10.4, 9.35, 6.65, 42.2, 34.0, 58.0, 6.0, SPITZER, ["5.8x42", "dbp87", "dbp10"]),
         c(".22 Hornet", RIMMED, 8.89, 7.57, 7.01, 6.17, 35.64, 21.64, 43.76, 5.69, SPITZER, ["22hornet", "5.6x35r"]),
         c(".25-06 Remington", RIMLESS, 12.0, 11.9, 11.2, 7.4, 63.3, 49.48, 82.6, 6.5, SPITZER, ["25-06"]),
         c(".257 Roberts", RIMLESS, 12.0, 12.0, 10.9, 7.4, 56.7, 43.88, 70.5, 6.5, SPITZER, ["257roberts"]),
@@ -443,7 +443,7 @@ CATALOGUE = [
         # the 6.5 and .338 share its rim, head and shoulder diameter, with neck and shoulder height estimated.
         c(".25 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.37, 60.96, 50.48, 84.84, 6.53, SPITZER, ["25rpm", "25wbyrpm"]),
         c("6.5 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.54, 65.28, 54.80, 84.84, 6.71, SPITZER, ["6.5rpm", "6.5wbyrpm", "65rpm"]),
-        c(".338 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 9.37, 64.77, 55.04, 82.55, 8.59, SPITZER, ["338rpm", "338wbyrpm"]),
+        c(".338 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.04, 9.25, 64.77, 54.85, 82.55, 8.59, SPITZER, ["338rpm", "338wbyrpm"]),
         c(".30-378 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 8.6, 74.0, 61.2, 93.7, 7.82, SPITZER, ["30-378"]),
         c("5.6x57 mm", RIMLESS, 11.95, 11.9, 10.94, 7.1, 56.7, 44.51, 69.0, 5.7, SPITZER, ["5.6x57"]),
         # Smokeless rounds from batches 6 and 7, first misplaced under Schwarzpulver.
@@ -1450,10 +1450,10 @@ SHOULDER_ANGLES = {
     ".25 Weatherby RPM": (35, "https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"),  # SAAMI drawing
     "6.5-300 Weatherby Magnum": (46.4, "https://jagdfibel.de/images/0/0e/65300.pdf"),  # SAAMI drawing (double radius; chord through the .4920 datum and neck start)
     ".277 SIG Fury": (30, "https://www.xxlreloading.com/"),  # SAAMI 277 Fury drawing shown with xxlreloading.com load data: 30 deg, shoulder .4611 in at 1.6311 in, neck .310 in at 1.7619 in
-    "5.8x42 mm": (21, "https://commons.wikimedia.org/wiki/File:5.8x42_mm.jpg"),  # measured on the photo (upper edge); neck start kept
+    "5.8x42 mm": (24.5, "https://www.small-arms.org/"),  # small-arms.org (QBQ club) 5.8x42 dimension drawing: 49 deg full cone angle, shoulder at 34 mm, neck at 37.2 mm
     "6.8 Western": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/11/6.8-Western-Public-Introduction-Orig-2020-11-01.pdf"),  # SAAMI drawing
     "6.5 Weatherby RPM": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"),  # SAAMI drawing
-    ".338 Weatherby RPM": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"),  # same RPM case: 35 degrees on the .25 and 6.5 RPM SAAMI drawings; neck start kept
+    ".338 Weatherby RPM": (35, "https://www.thefirearmblog.com/"),  # SAAMI 338 WBY RPM drawing (issued 2022-01-16) shown by The Firearm Blog: 35 deg, shoulder .4739 in at 2.1595 in, neck .364 in at 2.2380 in
     ".22 ARC": (30, "https://www.outdoorlife.com/guns/22-arc-review/"),  # SAAMI 22 ARC drawing (issued 2024-01-21) shown by Outdoor Life: 30 deg, shoulder .4297 in at 1.1510 in, neck .253 in at 1.3040 in
     "6 mm GT": (35, "https://www.4dreamerrentals.com/"),  # 4D Reamer Rentals 6mm GT drawing: 35 deg, shoulder at 1.3040 in, neck at 1.4375 in (GA Precision brass photo reads 35-36)
     ".30 Nosler": (35, "https://www.nosler.com/"),  # Nosler's "30 Nosler Rifle Cartridges" drawing: 35 deg, shoulder .528 in at 2.115 in, neck .344 in at 2.246 in, case 2.556 in
