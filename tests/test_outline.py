@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED  # noqa: E402
+from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, CASES, bullet, case_material, current_case_materials  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -20,7 +20,7 @@ class OutlineTests(unittest.TestCase):
                 o = outline.outline(s)
                 self.assertAlmostEqual(o["height"], s["oal"], places=2)
                 self.assertAlmostEqual(o["width"], max(s["rim"], s["base"], s["bullet"]), places=2)
-                paths = [o[k] for k in ("case", "head", "bullet", "patch") if k in o]
+                paths = [o[k] for k in ("case", "head", "bullet", "patch", "tip") if k in o]
                 self.assertTrue(paths)
                 for d in paths:
                     self.assertRegex(d, PATH)
@@ -36,11 +36,62 @@ class OutlineTests(unittest.TestCase):
             xs = [x for x, _ in points(o.get("case") or o["bullet"])]
             self.assertAlmostEqual(min(xs) + max(xs), o["width"], places=1, msg=s["name"])
 
-    def test_only_the_paper_patched_bullet_has_a_patch(self):
+    def test_only_paper_patched_bullets_have_a_patch(self):
         for _, s in outline.specs():
             o = outline.outline(s)
-            self.assertEqual("patch" in o, s["profile"] == PATCHED and s["oal"] > s["case"] + 0.1, s["name"])
-            self.assertEqual(o.get("bulletMaterial") == "steel", "patch" in o, s["name"])
+            has_bullet = s["oal"] > s["case"] + 0.1 and "case" in o
+            patched = s["profile"] == PATCHED or bullet(s["name"]) == PAPER_PATCHED
+            self.assertEqual("patch" in o, patched and has_bullet, s["name"])
+            self.assertEqual(o.get("bulletMaterial") == "steel", s["profile"] == PATCHED and has_bullet, s["name"])
+
+    def test_lead_bullets_are_drawn_in_lead(self):
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            if "case" in o and "bullet" in o and s["profile"] != PATCHED:
+                lead = bullet(s["name"]) in (LEAD, PAPER_PATCHED)
+                self.assertEqual(o.get("bulletMaterial") == "lead", lead, s["name"])
+
+    def test_soft_points_show_a_lead_tip_at_the_front_of_the_bullet(self):
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            self.assertEqual("tip" in o, bullet(s["name"]) in (SOFT_POINT, POLYMER_TIP) and "bullet" in o, s["name"])
+            self.assertEqual(o.get("tipMaterial") == "polymer", bullet(s["name"]) == POLYMER_TIP and "bullet" in o, s["name"])
+            if "tip" in o:
+                tip, whole = points(o["tip"]), points(o["bullet"])
+                self.assertAlmostEqual(min(y for _, y in tip), 0, places=2, msg=s["name"])
+                exposed = s["oal"] - s["case"]
+                self.assertAlmostEqual(max(y for _, y in tip), outline.TIP_SHARE * exposed, places=1, msg=s["name"])
+                # The tip lies inside the bullet's width.
+                self.assertLessEqual(max(x for x, _ in tip), max(x for x, _ in whole) + 0.01, s["name"])
+
+    def test_tip_profile_cuts_the_front_of_a_profile(self):
+        right = [(2.0, 10.0), (2.0, 12.0), (1.0, 14.0), (0.0, 16.0)]
+        self.assertEqual(outline.tip_profile(right, 16.0, share=1 / 3), [(1.0, 14.0), (0.0, 16.0)])
+        self.assertEqual(outline.tip_profile(right, 16.0, share=0.25), [(0.75, 14.5), (0.0, 16.0)])
+
+    def test_case_material_only_where_not_brass(self):
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            self.assertEqual(o.get("caseMaterial"), None if case_material(s["name"]) == BRASS else case_material(s["name"]), s["name"])
+        self.assertEqual(outline.outline(next(s for _, s in outline.specs() if s["name"] == ".45-70 Government"))["caseMaterial"], "copper")
+        self.assertTrue(CASES)
+
+    def test_current_case_materials_are_listed_but_not_drawn(self):
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            self.assertEqual(o.get("currentCaseMaterials"), list(current_case_materials(s["name"])) or None, s["name"])
+        o = outline.outline(next(s for _, s in outline.specs() if s["name"] == ".45-70 Government"))
+        self.assertEqual((o["caseMaterial"], o["currentCaseMaterials"]), ("copper", ["brass"]))
+
+    def test_hybrid_case_has_a_steel_head(self):
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            self.assertEqual(o.get("headMaterial") == "steel", case_material(s["name"]) == HYBRID, s["name"])
+        fury = outline.outline(next(s for _, s in outline.specs() if s["name"] == ".277 SIG Fury"))
+        ys = [y for _, y in points(fury["head"])]
+        # y grows from the tip: the head runs from the base up to HYBRID_HEAD.
+        self.assertAlmostEqual(max(ys), fury["height"], places=2)
+        self.assertAlmostEqual(min(ys), fury["height"] - outline.HYBRID_HEAD, places=2)
 
     def test_crimped_blank_is_a_case_narrowing_to_the_mouth(self):
         s = next(s for _, s in outline.specs() if s["name"] == ".22 Blank (6.8/11)")
