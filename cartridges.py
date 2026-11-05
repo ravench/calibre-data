@@ -22,10 +22,10 @@ def straight(name, kind, rim, base, neck, case, oal, bullet, profile, aliases=()
     return c(name, kind, rim, base, None, neck, case, None, oal, bullet, profile, aliases)
 
 
-def blank(name, rim, base, mouth, length, aliases=()):
+def blank(name, rim, base, mouth, length, aliases=(), kind=RIMFIRE):
     """A crimped blank: no bullet, the case (`length` long) narrows to `mouth` at the star crimp.
     `bullet` holds the nominal bore so drawings and tables keep a width."""
-    return c(name, RIMFIRE, rim, base, None, mouth, length, None, length, base, CRIMPED, aliases)
+    return c(name, kind, rim, base, None, mouth, length, None, length, base, CRIMPED, aliases)
 
 
 def shot(name, dia, rim, length, aliases=()):
@@ -72,6 +72,20 @@ CATALOGUE = [
         # case, not star-crimped, so it is a plain cylinder with nothing above the mouth (Raven 2026-11-04).
         straight("9 mm P.A.K.", RIMLESS, 9.5, 9.5, 9.5, 22.5, 22.5, 9.5, FLAT,
                  ["9mmpak", "pak", "9pak", "9x22", "9mmpa", "9mmpablanc", "gaspatrone", "reizstoffpatrone"]),
+        # Alarm and starter blanks from C.I.P. Tab. VIII, maximum cartridge (sheets 1991-07-29 to
+        # 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm P.A.K., length = L3.
+        # Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base,
+        # the ratio of the measured .22 blank above, because C.I.P. gives no crimp size.
+        straight("8 mm Knall", RIMLESS, 8.0, 8.0, 8.0, 20.3, 20.3, 8.0, FLAT,
+                 ["8mmknall", "8mmpak", "8pak", "8x20", "8mmblanc", "8mmblank"]),
+        straight(".315 Knall", RIMLESS, 8.0, 8.0, 8.0, 17.65, 17.65, 8.0, FLAT,
+                 ["315knall", "315", "315blanc"]),
+        blank("9 mm R Knall", 11.0, 9.58, 5.7, 17.5,
+              ["9mmrk", "9rk", "9mmr", "380r", "380knall", "9x17r", "revolverknall"], kind=RIMMED),
+        blank(".320 Knall", 9.55, 8.09, 4.9, 16.0, ["320knall", "320", "320blanc"], kind=RIMMED),
+        blank(".45 Knall", 13.0, 12.1, 7.3, 16.6, ["45knall", "45k", "45shortknall", "45kblanc"], kind=RIMMED),
+        blank(".22 Long Knall", 7.06, 5.74, 3.4, 15.0, ["22longknall", "22langknall", "22longblank", "5.6/16", "5.6x16"]),
+        blank("6 mm Flobert Knall", 7.15, 5.75, 3.4, 6.6, ["6mmflobert", "6mmknall", "6mmflobertblanc", "flobertknall"]),
         straight(".44 Henry", RIMFIRE, 13.2, 11.2, 11.0, 22.9, 34.2, 11.3, FLAT, ["44henry"]),
         # Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
         straight(".22 Remington Automatic", RIMFIRE, 7.4, 6.2, 6.2, 16.8, 23.4, 5.7, ROUND, ["22remauto"]),
@@ -528,6 +542,9 @@ DISPLAY_ALIASES = {
     ".22 LR": [".22 Long Rifle", "KK"],
     ".22 Blank (6.8/11)": [".22 Platzpatrone", "Setzkartusche 6.8/11"],
     "9 mm P.A.K.": ["9 mm P.A. Knall", "9 mm PA Blanc"],
+    "8 mm Knall": ["8 mm P.A.K.", "8 mm Blanc"],
+    "9 mm R Knall": ["9 mm R.K.", ".380 R Blanc"],
+    ".22 Long Knall": [".22 lang Knall", "Setzkartusche 5.6/16"],
     ".22 WMR": [".22 Magnum"],
     "7.65 mm Browning (.32 ACP)": [".32 ACP", ".32 Auto"],
     "7.65 mm Parabellum": [".30 Luger"],
@@ -574,7 +591,7 @@ PRIMERS = {
     "7.63x25 mm Mauser": SMALL_PISTOL, "7.62x38 mm R Nagant": SMALL_PISTOL, "7.5 mm Swiss Ordnance 1882": SMALL_PISTOL,
     "7.65 mm Longue": SMALL_PISTOL, ".30 Super Carry": SMALL_PISTOL, ".32 S&W": SMALL_PISTOL,
     ".327 Federal Magnum": SMALL_PISTOL, ".32-20 Winchester": SMALL_PISTOL, "5.45x18 mm": SMALL_PISTOL,
-    ".22 TCM": SMALL_RIFLE, "8 mm Nambu": SMALL_PISTOL, "8 mm Lebel revolver": SMALL_PISTOL,
+    ".22 TCM": SMALL_PISTOL, "8 mm Nambu": SMALL_PISTOL, "8 mm Lebel revolver": SMALL_PISTOL,
     "8 mm Roth-Steyr": SMALL_PISTOL, "9 mm Glisenti": SMALL_PISTOL, "9 mm Browning Long": SMALL_PISTOL,
     "9x23 mm Steyr": SMALL_PISTOL, "9x23 mm Largo": SMALL_PISTOL, ".38 S&W": SMALL_PISTOL,
     ".38 Short Colt": SMALL_PISTOL, ".38 Long Colt": SMALL_PISTOL, ".38-40 Winchester": LARGE_PISTOL,
@@ -582,6 +599,9 @@ PRIMERS = {
     ".45 Schofield": LARGE_PISTOL, ".45 Auto Rim": LARGE_PISTOL, ".455 Webley": LARGE_PISTOL,
     ".480 Ruger": LARGE_PISTOL, ".50 Action Express": LARGE_PISTOL,
     "9x18 mm Makarov": SMALL_PISTOL, "9x19 mm": SMALL_PISTOL, "9 mm P.A.K.": SMALL_PISTOL, "9x21 mm IMI": SMALL_PISTOL,
+    # Alarm blanks: not reloadable, primed with small pistol size caps.
+    "8 mm Knall": SMALL_PISTOL, ".315 Knall": SMALL_PISTOL, "9 mm R Knall": SMALL_PISTOL,
+    ".320 Knall": SMALL_PISTOL, ".45 Knall": SMALL_PISTOL,
     ".357 SIG": SMALL_PISTOL, ".38 Special": SMALL_PISTOL, ".357 Magnum": SMALL_PISTOL,
     ".38 Super": SMALL_PISTOL, "10 mm Auto": LARGE_PISTOL, ".40 S&W": SMALL_PISTOL,
     ".41 Magnum": LARGE_PISTOL, ".44 Special": LARGE_PISTOL, ".44 Magnum": LARGE_PISTOL,
@@ -596,7 +616,7 @@ PRIMERS = {
     "7 mm-08 Remington": LARGE_RIFLE, "7x57 mm Mauser": LARGE_RIFLE, "7x64 mm": LARGE_RIFLE,
     "7 mm Remington Magnum": LARGE_RIFLE, "7 mm PRC": LARGE_RIFLE, "7.5x55 mm Swiss (GP 11)": LARGE_RIFLE,
     "7.5x53.5 mm Swiss (GP 1890)": LARGE_RIFLE,
-    "7.5x54 mm French": LARGE_RIFLE, "7.62x39 mm": SMALL_RIFLE, ".300 AAC Blackout": SMALL_RIFLE, ".300 HAM'R": SMALL_RIFLE,
+    "7.5x54 mm French": LARGE_RIFLE, "7.62x39 mm": LARGE_RIFLE, ".300 AAC Blackout": SMALL_RIFLE, ".300 HAM'R": SMALL_RIFLE,
     "7.62x51 mm NATO": LARGE_RIFLE, ".308 Winchester": LARGE_RIFLE, ".30-06 Springfield": LARGE_RIFLE,
     ".30-30 Winchester": LARGE_RIFLE, ".300 Winchester Magnum": LARGE_RIFLE, ".300 PRC": LARGE_RIFLE,
     ".300 Norma Magnum": LARGE_RIFLE, ".303 British": LARGE_RIFLE, "7.62x54 mm R": LARGE_RIFLE,
@@ -608,7 +628,7 @@ PRIMERS = {
     "8x50 mm R Lebel": LARGE_RIFLE, "8x56 mm R Mannlicher": LARGE_RIFLE, "8x50 mm R Mannlicher": LARGE_RIFLE,
     "7.35x51 mm Carcano": LARGE_RIFLE, "6.5x54 mm Mannlicher-Schönauer": LARGE_RIFLE,
     ".30-40 Krag": LARGE_RIFLE, "7.92x33 mm Kurz": LARGE_RIFLE, "5.45x39 mm": SMALL_RIFLE,
-    ".277 SIG Fury": SMALL_RIFLE, "5.8x42 mm": SMALL_RIFLE,
+    ".277 SIG Fury": LARGE_RIFLE, "5.8x42 mm": SMALL_RIFLE,
     ".22 Hornet": SMALL_RIFLE, ".25-06 Remington": LARGE_RIFLE, ".257 Roberts": LARGE_RIFLE,
     ".280 Remington": LARGE_RIFLE, ".35 Whelen": LARGE_RIFLE, ".300 H&H Magnum": LARGE_RIFLE,
     ".338 Winchester Magnum": LARGE_RIFLE, ".444 Marlin": LARGE_RIFLE, ".458 Winchester Magnum": LARGE_RIFLE,
@@ -625,8 +645,8 @@ PRIMERS = {
     "8x60 mm S": LARGE_RIFLE,
     "9.5x57 mm Mannlicher-Schönauer": LARGE_RIFLE,
     ".375 Ruger": LARGE_RIFLE,
-    ".450 Bushmaster": LARGE_RIFLE,
-    "6.8 mm Remington SPC": SMALL_RIFLE,
+    ".450 Bushmaster": SMALL_RIFLE,
+    "6.8 mm Remington SPC": LARGE_RIFLE,
     ".300 Winchester Short Magnum": LARGE_RIFLE,
     ".17 Remington": SMALL_RIFLE,
     ".218 Bee": SMALL_RIFLE,
@@ -703,7 +723,7 @@ PRIMERS = {
     ".243 WSSM": LARGE_RIFLE,
     ".25 WSSM": LARGE_RIFLE,
     ".350 Remington Magnum": LARGE_RIFLE,
-    ".400 Cor-Bon": LARGE_PISTOL,
+    ".400 Cor-Bon": SMALL_PISTOL,
     "9x23 mm Winchester": SMALL_PISTOL,
     ".356 TSW": SMALL_PISTOL,
     ".26 Nosler": LARGE_RIFLE,
@@ -713,7 +733,7 @@ PRIMERS = {
     ".33 Nosler": LARGE_RIFLE,
     ".300 Ruger Compact Magnum": LARGE_RIFLE,
     ".30 Thompson/Center": LARGE_RIFLE,
-    ".30 Remington AR": LARGE_RIFLE,
+    ".30 Remington AR": SMALL_RIFLE,
     ".308 Marlin Express": LARGE_RIFLE,
     ".300 Remington SAUM": LARGE_RIFLE,
     ".224 Valkyrie": SMALL_RIFLE,
@@ -847,6 +867,9 @@ INTRODUCED = {
     "9x18 mm Makarov": (1951, _WP + "9×18mm_Makarov"),
     "9x19 mm": (1902, _WP + "9×19mm_Parabellum"),
     "9 mm P.A.K.": (1991, "https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"),  # C.I.P. sheet 1991-07-30, no earlier source
+    # C.I.P. Tab. VIII sheet dates (1991-07-29 to 1991-08-02); no earlier source found for these blanks.
+    **{n: (1991, "https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf") for n in (
+        "8 mm Knall", ".315 Knall", "9 mm R Knall", ".320 Knall", ".45 Knall", ".22 Long Knall", "6 mm Flobert Knall")},
     ".357 SIG": (1994, _WP + ".357_SIG"),
     ".38 Special": (1898, _WP + ".38_Special"),
     ".357 Magnum": (1935, _WP + ".357_Magnum"),
@@ -1550,7 +1573,8 @@ PRIMER_SOURCES = {
 PRIMER_UNVERIFIED = {
     ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express",
     "9.3x53 mm R Finnish", ".30 Super Carry", "8 mm Lebel revolver", "10.4 mm Swiss Ordnance 1878",
-    "11 mm French Ordnance", "9 mm P.A.K.", "5.6 mm GP 90", "8x50 mm R Mannlicher", "5.8x42 mm",
+    "11 mm French Ordnance", "9 mm P.A.K.", "8 mm Knall", ".315 Knall", "9 mm R Knall", ".320 Knall",
+    ".45 Knall", "5.6 mm GP 90", "8x50 mm R Mannlicher", "5.8x42 mm",
     "10.4x38 mm R Vetterli", ".577 Snider", ".577/450 Martini-Henry",
     "9.5x57 mm Mannlicher-Schönauer", ".500 JRH", ".442 Webley", ".356 TSW",
     "6.5x53 mm R Mannlicher", ".450 Nitro Express", ".577 Nitro Express", ".318 Westley Richards",
@@ -1723,7 +1747,8 @@ ORIGIN = {
     # In common use worldwide:
     ".22 Short": WORLDWIDE, ".22 LR": WORLDWIDE, ".22 WMR": WORLDWIDE, ".17 HMR": WORLDWIDE,
     "6.35 mm Browning (.25 ACP)": WORLDWIDE, "7.65 mm Browning (.32 ACP)": WORLDWIDE,
-    "9 mm Browning kurz (.380 ACP)": WORLDWIDE, "9x19 mm": WORLDWIDE, "9 mm P.A.K.": "DE", ".38 Special": WORLDWIDE,
+    "9 mm Browning kurz (.380 ACP)": WORLDWIDE, "9x19 mm": WORLDWIDE, "9 mm P.A.K.": "DE", "8 mm Knall": "DE", ".315 Knall": "DE", "9 mm R Knall": "DE", ".320 Knall": "DE", ".45 Knall": "DE",
+    ".22 Long Knall": "IT", "6 mm Flobert Knall": "FR", ".38 Special": WORLDWIDE,
     ".357 Magnum": WORLDWIDE, ".40 S&W": WORLDWIDE, ".44 Magnum": WORLDWIDE, ".45 ACP": WORLDWIDE,
     "5.7x28 mm": WORLDWIDE, ".222 Remington": WORLDWIDE, ".223 Remington": WORLDWIDE,
     "5.56x45 mm NATO": WORLDWIDE, ".22-250 Remington": WORLDWIDE, ".22 Hornet": WORLDWIDE,
