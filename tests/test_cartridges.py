@@ -9,7 +9,8 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         ORIGIN, COUNTRIES, origin,
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
-                        CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material)
+                        CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
+                        CURRENT_CASES, current_case_materials)
 
 ALL = [s for _, items in CATALOGUE for s in items]
 NAMES = {s["name"] for s in ALL}
@@ -378,3 +379,15 @@ if __name__ == "__main__":
         self.assertEqual(case_material(".577 Snider"), PAPER)
         self.assertEqual(case_material("9x19 mm"), BRASS)
         self.assertEqual(case_material(".277 SIG Fury"), HYBRID)
+
+    def test_current_case_materials_differ_from_the_original(self):
+        names = {s["name"] for _, items in CATALOGUE for s in items}
+        for name, (materials, url) in CURRENT_CASES.items():
+            self.assertIn(name, names)
+            self.assertTrue(materials, name)
+            self.assertNotIn(case_material(name), materials, name)
+            self.assertTrue(set(materials) <= {BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID}, name)
+            self.assertTrue(url.startswith("https://"), name)
+        self.assertEqual(current_case_materials(".45-70 Government"), (BRASS,))
+        self.assertEqual(current_case_materials("9x19 mm"), (STEEL,))
+        self.assertEqual(current_case_materials("7.5x55 mm Swiss (GP 11)"), ())

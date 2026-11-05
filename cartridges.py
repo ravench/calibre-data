@@ -1744,3 +1744,33 @@ CASES = {  # name: (material, source)
 def case_material(name):
     """What the case is made of: BRASS, COPPER, STEEL, NICKEL, PAPER or HYBRID."""
     return CASES.get(name, (BRASS, None))[0]
+
+
+_STARLINE = "https://www.starlinebrass.com/"
+_BARNAUL = "https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"
+CURRENT_CASES = {  # name: (other case materials made today, source); the original in CASES stays the drawn one
+    ".45-70 Government": ((BRASS,), _STARLINE + "45-70-govt-brass"),
+    ".50-70 Government": ((BRASS,), _STARLINE + "50-70-govt-brass"),
+    ".45 Schofield": ((BRASS,), _STARLINE + "45-sw-schofield-brass"),
+    ".577 Snider": ((BRASS,), "https://en.wikipedia.org/wiki/.577_Snider"),  # Kynamco, Bertram
+    "7.62x39 mm": ((BRASS,), _STARLINE + "762x39mm-russian"),
+    ".277 SIG Fury": ((BRASS,), "https://en.wikipedia.org/wiki/.277_Fury"),  # brass "practice" loads
+    # Barnaul's lacquered, zinc- or polymer-coated steel cases.
+    "9x19 mm": ((STEEL,), _BARNAUL),
+    "9x18 mm Makarov": ((STEEL,), _BARNAUL),
+    ".45 ACP": ((STEEL,), _BARNAUL),
+    "5.56x45 mm NATO": ((STEEL,), _BARNAUL),
+    ".223 Remington": ((STEEL,), _BARNAUL),
+    "6.5 mm Grendel": ((STEEL,), _BARNAUL),
+    ".243 Winchester": ((STEEL,), _BARNAUL),
+    "7.62x51 mm NATO": ((STEEL,), _BARNAUL),
+    ".308 Winchester": ((STEEL,), _BARNAUL),
+    "7.62x54 mm R": ((STEEL,), _BARNAUL),
+    ".30-06 Springfield": ((STEEL,), _BARNAUL),
+    "9.3x64 mm Brenneke": ((STEEL,), _BARNAUL),
+}
+
+
+def current_case_materials(name):
+    """Case materials made today besides the original one, e.g. (BRASS,) for the .45-70."""
+    return CURRENT_CASES.get(name, ((), None))[0]

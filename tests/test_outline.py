@@ -3,7 +3,7 @@ import os, re, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
-from cartridges import PATCHED, CRIMPED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, CASES, bullet, case_material  # noqa: E402
+from cartridges import PATCHED, CRIMPED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, CASES, bullet, case_material, current_case_materials  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -74,6 +74,13 @@ class OutlineTests(unittest.TestCase):
             self.assertEqual(o.get("caseMaterial"), None if case_material(s["name"]) == BRASS else case_material(s["name"]), s["name"])
         self.assertEqual(outline.outline(next(s for _, s in outline.specs() if s["name"] == ".45-70 Government"))["caseMaterial"], "copper")
         self.assertTrue(CASES)
+
+    def test_current_case_materials_are_listed_but_not_drawn(self):
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            self.assertEqual(o.get("currentCaseMaterials"), list(current_case_materials(s["name"])) or None, s["name"])
+        o = outline.outline(next(s for _, s in outline.specs() if s["name"] == ".45-70 Government"))
+        self.assertEqual((o["caseMaterial"], o["currentCaseMaterials"]), ("copper", ["brass"]))
 
     def test_hybrid_case_has_a_steel_head(self):
         for _, s in outline.specs():

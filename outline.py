@@ -1,7 +1,7 @@
 """Side-view outlines of the catalogue cartridges, shared by both apps and the poster.
 
 outline(spec) returns {"width", "height", "case"?, "head"?, "bullet"?, "patch"?, "tip"?, "bulletMaterial"?,
-"tipMaterial"?, "caseMaterial"?, "headMaterial"?}:
+"tipMaterial"?, "caseMaterial"?, "headMaterial"?, "currentCaseMaterials"?}:
 millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bottom
 (y = overall length), centred in `width`.
 """
@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, bullet, case_material  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, bullet, case_material, current_case_materials  # noqa: E402
 
 N = 14  # samples per curve
 
@@ -173,6 +173,8 @@ def outline(s):
             paths["headMaterial"] = "steel"
         if case_material(s["name"]) != BRASS:
             paths["caseMaterial"] = case_material(s["name"])
+        if current_case_materials(s["name"]):
+            paths["currentCaseMaterials"] = list(current_case_materials(s["name"]))
     return {"width": round(width, 2), "height": round(H, 2), **paths}
 
 
