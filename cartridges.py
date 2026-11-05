@@ -561,25 +561,30 @@ DISPLAY_ALIASES = {
     ".50 BMG": ["12,7x99 mm NATO"],
 }
 
-# Primer per calibre (Boxer sizes of commercial, reloadable brass). Primers sit in the
-# centre of the case head. Military surplus can be Berdan-primed with other sizes
-# (e.g. 7.62x39, 7.62x54R, 7.5x54 French); rimfire and caseless entries have none.
-SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE, SHOTSHELL_209, BMG_35 = (
-    "small-pistol", "large-pistol", "small-rifle", "large-rifle", "shotshell-209", "bmg-35")
+# Primer per calibre: the primer of the original factory ammunition, which is today's Boxer size
+# for calibres still loaded. Primers sit in the centre of the case head. Old British Nitro
+# Expresses and some old European rounds came with the large .254" Berdan "Nitro" primer
+# (Kynoch #40, today RWS 6507), measured on headstamp photos (see PRIMER_SOURCES). Other Berdan
+# primers (4.5 and 5.5 mm, e.g. 7.62x39, 7.62x54R surplus) are within 0.2 mm of a Boxer size and
+# keep that kind; rimfire and caseless entries have none.
+SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE, SHOTSHELL_209, BMG_35, BERDAN_NITRO = (
+    "small-pistol", "large-pistol", "small-rifle", "large-rifle", "shotshell-209", "bmg-35",
+    "berdan-nitro")
 PRIMER_DIAMETERS = {  # mm, nominal primer cup diameter
     SMALL_PISTOL: 4.45, SMALL_RIFLE: 4.45,     # .175"
     LARGE_PISTOL: 5.33, LARGE_RIFLE: 5.33,     # .210"
     SHOTSHELL_209: 6.15,                       # .242"
     BMG_35: 8.03,                              # .316", CCI #35
+    BERDAN_NITRO: 6.45,                        # .254", Kynoch #40 / RWS 6507
 }
 PRIMERS = {
     ".450 No. 2 Nitro Express": LARGE_RIFLE,
     ".500/416 Nitro Express": LARGE_RIFLE,
     ".375 Flanged Magnum Nitro Express": LARGE_RIFLE,
     "9.3x53 mm R Finnish": LARGE_RIFLE,
-    "10.3x60 mm R": LARGE_RIFLE,
+    "10.3x60 mm R": BERDAN_NITRO,
     "7x61 mm Sharpe & Hart": LARGE_RIFLE,
-    ".360 No. 5 Rook": LARGE_PISTOL,
+    ".360 No. 5 Rook": SMALL_PISTOL,
     "6.35 mm Browning (.25 ACP)": SMALL_PISTOL, "7.65 mm Browning (.32 ACP)": SMALL_PISTOL,
     "7.65 mm Parabellum": SMALL_PISTOL, ".32 S&W Long": SMALL_PISTOL, ".32 H&R Magnum": SMALL_PISTOL,
     "7.62x25 mm Tokarev": SMALL_PISTOL, "9 mm Browning kurz (.380 ACP)": SMALL_PISTOL,
@@ -667,16 +672,16 @@ PRIMERS = {
     ".32 NAA": SMALL_PISTOL,
     ".32 Long Colt": SMALL_PISTOL,
     "5.75 mm Velo-Dog": SMALL_PISTOL, ".500 JRH": LARGE_PISTOL,
-    ".375 Flanged Nitro Express": LARGE_RIFLE, ".45-90 WCF": LARGE_RIFLE,
-    ".55 Boys": BMG_35,  # assumed: the sources give no primer size
+    ".375 Flanged Nitro Express": BERDAN_NITRO, ".45-90 WCF": LARGE_RIFLE,
+    ".55 Boys": BMG_35,
     ".35 S&W Auto": SMALL_PISTOL,
     ".38 ACP": SMALL_PISTOL,
     ".41 Long Colt": SMALL_PISTOL,
     ".44 Colt": LARGE_PISTOL,
     ".442 Webley": LARGE_PISTOL,
-    ".450 Adams": LARGE_PISTOL,
-    ".476 Enfield": LARGE_PISTOL,
-    "11x59 mm R Gras": LARGE_RIFLE,
+    ".450 Adams": SMALL_PISTOL,
+    ".476 Enfield": SMALL_PISTOL,
+    "11x59 mm R Gras": BERDAN_NITRO,
     ".32-40 Ballard": LARGE_RIFLE,
     ".50-90 Sharps": LARGE_RIFLE,
     ".220 Swift": LARGE_RIFLE,
@@ -781,7 +786,7 @@ PRIMERS = {
     ".577 Nitro Express": LARGE_RIFLE,
     ".600 Nitro Express": LARGE_RIFLE,
     ".700 Nitro Express": LARGE_RIFLE,
-    ".500/465 Nitro Express": LARGE_RIFLE,
+    ".500/465 Nitro Express": BERDAN_NITRO,
     ".318 Westley Richards": LARGE_RIFLE,
     ".240 Weatherby Magnum": LARGE_RIFLE,
     ".224 Weatherby Magnum": LARGE_RIFLE,
@@ -794,7 +799,7 @@ PRIMERS = {
     ".408 CheyTac": LARGE_RIFLE,
     ".360 Buckhammer": LARGE_RIFLE,
     ".400 Legend": SMALL_RIFLE,
-    "9.3x72 mm R": LARGE_RIFLE,
+    "9.3x72 mm R": BERDAN_NITRO,
     "8x75 mm RS": LARGE_RIFLE,
     "6.5x65 mm RWS": LARGE_RIFLE,
     "9.3x66 mm Sako (.370 Sako Magnum)": LARGE_RIFLE,
@@ -820,7 +825,7 @@ PRIMERS = {
     ".244 H&H Magnum": LARGE_RIFLE,
     ".45-75 Winchester": LARGE_RIFLE,
     ".465 H&H Magnum": LARGE_RIFLE,
-    ".475 No. 2 Nitro Express": LARGE_RIFLE,
+    ".475 No. 2 Nitro Express": BERDAN_NITRO,
     ".400/350 Nitro Express": LARGE_RIFLE,
     ".350 Rigby Magnum": LARGE_RIFLE,
     ".310 Cadet": SMALL_RIFLE,
@@ -1223,6 +1228,360 @@ INTRODUCED_UNKNOWN = {
     ".450/400 Nitro Express 3 inch": "sources give 1899 for the 3 1/4 inch parent only",
     "6.5-300 Weatherby Magnum": "sources give only the 2017 SAAMI drawing",
 }
+
+# Where each primer size in PRIMERS was checked. Wikipedia pages are the cartridge infobox
+# ("Primer type"); Hodgdon, Vihtavuori and Sierra are the primers used in their published
+# reloading data; Starline is the primer named on its brass page. Shot shells: Hodgdon's
+# shotshell data uses 209-size primers for every gauge and length listed. municion.org: the
+# primer diameter measured on its headstamp photos (median over the specimens, scaled by the rim
+# diameter; checked on 9 mm, .38 Special and .308 to within 2 %). It gives the original primer:
+# about 6.1-6.7 mm is the .254" Berdan Nitro primer, under 4.5 mm a small one. Readings between two
+# sizes (4.8-5.0 mm, about 6.0 mm) stay unverified. Calibres not yet checked against a source are
+# in PRIMER_UNVERIFIED, so a new calibre has to go in one of the two.
+_HODGDON = "https://hodgdonreloading.com/rldc/"
+_VIHTAVUORI = "https://vihtavuori.com/reloading-data/reloading-data-tool/"
+_STARLINE = "https://www.starlinebrass.com/"
+_MUNICION = "https://municion.org/producto/"
+PRIMER_SOURCES = {
+    ".25 Remington": _MUNICION + "25-remington-auto/",  # 5.30 mm, 6 specimens
+    ".32 Remington": _MUNICION + "32-remington/",  # 5.11 mm, 4 specimens
+    ".30 Remington": _MUNICION + "30-remington/",  # 5.33 mm, 3 specimens
+    ".35 Winchester Self-Loading": _MUNICION + "35-winchester-self-loading/",  # 4.44 mm, 3 specimens
+    ".401 Winchester Self-Loading": _MUNICION + "401-winchester-self-loading/",  # 5.34 mm, 8 specimens
+    ".40-82 WCF": _MUNICION + "40-82-260-winchester-cf-marlin/",  # 5.05 mm, 8 specimens
+    ".50-95 WCF": _MUNICION + "50-95-300-winchester/",  # 5.16 mm, 6 specimens
+    ".45-75 Winchester": _MUNICION + "45-75-winchester-centennial/",  # 5.23 mm, 5 specimens
+    ".35 S&W Auto": _MUNICION + "35-smith-wesson-automatic/",  # 4.34 mm, 4 specimens
+    "10.3x60 mm R": _MUNICION + "103-x-60-r/",  # 6.14 mm, 4 specimens
+    "11x59 mm R Gras": _MUNICION + "11-x-59-r-french-gras-m-1874-79-83/",  # 6.10 mm, 8 specimens
+    ".500/465 Nitro Express": _MUNICION + "500-465-holland-holland-flanged-ne-3-1-4/",  # 6.13 mm, 3 specimens
+    ".475 No. 2 Nitro Express": _MUNICION + "475-n2-nitro-express-jeffery-3-1-2/",  # 6.69 mm, 5 specimens
+    ".375 Flanged Nitro Express": _MUNICION + "375-flanged-nitro-express/",  # 6.22 mm, 2 specimens
+    "9.3x72 mm R": _MUNICION + "93-x-72-r-d-express/",  # 6.47 mm, 2 specimens
+    ".450 Adams": _MUNICION + "450-adams-mk-ii-brass-base-disk/",  # 4.23 mm, 6 specimens
+    ".476 Enfield": _MUNICION + "476-enfield-revolver-mk-iii/",  # 4.41 mm, 3 specimens
+    ".360 No. 5 Rook": _MUNICION + "360-n-5-revolver-rifle/",  # 4.40 mm, 8 specimens
+    "8 mm Roth-Steyr": _MUNICION + "8-mm-roth-steyr/",  # 4.32 mm, 8 specimens
+    "9 mm Glisenti": _MUNICION + "9-mm-glisenti-m-1910/",  # 4.34 mm, 7 specimens
+    "7.35x51 mm Carcano": _MUNICION + "735-x-51-italian-carcano-m-1938/",  # 5.11 mm, 4 specimens
+    "8x60 mm S": _MUNICION + "8-x-60-s-mauser/",  # 5.11 mm, 5 specimens
+    "5.75 mm Velo-Dog": _MUNICION + "56-mm-velo-dog/",  # 4.15 mm, 8 specimens
+    ".55 Boys": _MUNICION + "55-boys/",  # 7.61 mm, 7 specimens
+    "8x58 mm R Danish Krag": _MUNICION + "8-x-58-r-danish-krag-jorgensen-m-1889/",  # 5.42 mm, 8 specimens
+    "7.92x107 mm DS": _MUNICION + "792-x-107-polish-anti-tank-maroszek-ur-wz-35/",  # 5.64 mm, 4 specimens
+    "9x57 mm Mauser": _MUNICION + "9-x-57-mauser/",  # 5.36 mm, 8 specimens
+    "6.5x57 mm R": _MUNICION + "65-x-57-r-mauser-m88/",  # 5.11 mm, 4 specimens
+    ".416 Barrett": _MUNICION + "416-barrett-sniper/",  # 7.77 mm, 2 specimens
+    "12.7x108 mm": _MUNICION + "127-x-108-russian-dshk-rimless/",  # 8.70 mm, 8 specimens
+    ".600 Nitro Express": _MUNICION + "600-nitro-express-3/",  # 5.52 mm, 8 specimens
+    "6.5x65 mm RWS": _MUNICION + "65-x-65-rws/",  # 5.38 mm, 2 specimens
+    "8x75 mm RS": _MUNICION + "8-x-75-r-s-behr/",  # 5.10 mm, 6 specimens
+    ".450/400 Nitro Express 3 inch": _MUNICION + "450-400-express-2-3-8/",  # 5.16 mm, 6 specimens
+    ".400/350 Nitro Express": _MUNICION + "400-350-rigby-flanged-nitro-express/",  # 5.53 mm, 3 specimens
+    "6.5x58 mm Vergueiro": _MUNICION + "65-x-58-mauser-vergueiro-m-1904/",  # 5.28 mm, 8 specimens
+    "7x61 mm Sharpe & Hart": "https://sierrabullets.com/content/load-data/legacy/284-7mm/7x61mm-sharpe-hart.pdf",  # Rem 9 1/2M
+    "6.35 mm Browning (.25 ACP)": _WP + ".25_ACP",
+    "7.65 mm Browning (.32 ACP)": _WP + ".32_ACP",
+    "7.65 mm Parabellum": _WP + "7.65×21mm_Parabellum",
+    ".32 S&W Long": _WP + ".32_S%26W_Long",
+    ".32 H&R Magnum": _WP + ".32_H%26R_Magnum",
+    "7.62x25 mm Tokarev": _WP + "7.62×25mm_Tokarev",
+    "9 mm Browning kurz (.380 ACP)": _WP + ".380_ACP",
+    "7.63x25 mm Mauser": _STARLINE + "30-mauser-brass",
+    "7.62x38 mm R Nagant": _WP + "7.62×38mmR",
+    "7.5 mm Swiss Ordnance 1882": _WP + "7.5mm_1882_Ordnance",
+    "7.65 mm Longue": _WP + "7.65×20mm_Long",
+    ".32 S&W": _WP + ".32_S%26W",
+    ".327 Federal Magnum": _WP + ".327_Federal_Magnum",
+    ".32-20 Winchester": _WP + ".32-20_Winchester",
+    "5.45x18 mm": _WP + "5.45×18mm",
+    ".22 TCM": _HODGDON,
+    "8 mm Nambu": _WP + "8×22mm_Nambu",
+    "9 mm Browning Long": _WP + "9mm_Browning_Long",
+    "9x23 mm Steyr": _WP + "9×23mm_Steyr",
+    "9x23 mm Largo": _WP + "9×23mm_Largo",
+    ".38 S&W": _WP + ".38_S%26W",
+    ".38 Short Colt": _STARLINE + "38-short-colt-brass",
+    ".38 Long Colt": _STARLINE + "38-long-colt-brass",
+    ".38-40 Winchester": _STARLINE + "38-40-brass",
+    ".44 S&W Russian": _WP + ".44_S%26W_Russian",
+    ".45 Schofield": _WP + ".45_Schofield",
+    ".45 Auto Rim": _WP + ".45_Auto_Rim",
+    ".455 Webley": _WP + ".455_Webley",
+    ".480 Ruger": _WP + ".480_Ruger",
+    ".50 Action Express": _WP + ".50_Action_Express",
+    "9x18 mm Makarov": _WP + "9×18mm_Makarov",
+    "9x19 mm": _WP + "9×19mm_Parabellum",
+    "9x21 mm IMI": _WP + "9×21mm",
+    ".357 SIG": _WP + ".357_SIG",
+    ".38 Special": _WP + ".38_Special",
+    ".357 Magnum": _WP + ".357_Magnum",
+    ".38 Super": _WP + ".38_Super",
+    "10 mm Auto": _WP + "10mm_Auto",
+    ".40 S&W": _WP + ".40_S%26W",
+    ".41 Magnum": _WP + ".41_Remington_Magnum",
+    ".44 Special": _WP + ".44_Special",
+    ".44 Magnum": _WP + ".44_Magnum",
+    ".45 ACP": _WP + ".45_ACP",
+    ".45 Colt": _WP + ".45_Colt",
+    ".45 GAP": _WP + ".45_GAP",
+    ".454 Casull": _WP + ".454_Casull",
+    ".460 S&W Magnum": _WP + ".460_S%26W_Magnum",
+    ".500 S&W Magnum": _WP + ".500_S%26W_Magnum",
+    "5.7x28 mm": _WP + "FN_5.7×28mm",
+    "4.6x30 mm": _WP + "HK_4.6×30mm",
+    ".204 Ruger": _WP + ".204_Ruger",
+    ".222 Remington": _WP + ".222_Remington",
+    ".223 Remington": _WP + ".223_Remington",
+    "5.56x45 mm NATO": _WP + "5.56×45mm_NATO",
+    ".22-250 Remington": _WP + ".22-250_Remington",
+    ".243 Winchester": _WP + ".243_Winchester",
+    "6 mm BR Norma": _WP + "6mm_BR",
+    "6 mm ARC": _WP + "6mm_ARC",
+    "6.5 mm Creedmoor": _WP + "6.5mm_Creedmoor",
+    "6.5x55 mm Swedish": _WP + "6.5×55mm_Swedish",
+    "6.5x47 mm Lapua": _WP + "6.5×47mm_Lapua",
+    "6.5 PRC": _HODGDON,
+    ".260 Remington": _WP + ".260_Remington",
+    ".270 Winchester": _WP + ".270_Winchester",
+    "7 mm-08 Remington": _WP + "7mm-08_Remington",
+    "7x57 mm Mauser": _WP + "7×57mm_Mauser",
+    "7x64 mm": _WP + "7×64mm",
+    "7 mm Remington Magnum": _WP + "7mm_Remington_Magnum",
+    "7 mm PRC": _HODGDON,
+    "7.5x55 mm Swiss (GP 11)": _WP + "7.5×55mm_Swiss",
+    "7.5x53.5 mm Swiss (GP 1890)": _WP + "7.5×55mm_Swiss",
+    "7.5x54 mm French": _WP + "7.5×54mm_French",
+    "7.62x39 mm": _VIHTAVUORI,
+    ".300 AAC Blackout": _WP + ".300_AAC_Blackout",
+    ".300 HAM'R": _STARLINE + "300-hamr-brass",
+    "7.62x51 mm NATO": _WP + "7.62×51mm_NATO",
+    ".308 Winchester": _WP + ".308_Winchester",
+    ".30-06 Springfield": _WP + ".30-06_Springfield",
+    ".30-30 Winchester": _WP + ".30-30_Winchester",
+    ".300 Winchester Magnum": _WP + ".300_Winchester_Magnum",
+    ".300 PRC": _HODGDON,
+    ".300 Norma Magnum": _WP + ".300_Norma_Magnum",
+    ".303 British": _WP + ".303_British",
+    "7.62x54 mm R": _WP + "7.62×54mmR",
+    "8x57 mm IS": _WP + "7.92×57mm_Mauser",
+    "8x68 mm S": _WP + "8×68mm_S",
+    "9.3x62 mm": _WP + "9.3×62mm",
+    "9.3x74 mm R": _WP + "9.3×74mmR",
+    ".338 Lapua Magnum": _WP + ".338_Lapua_Magnum",
+    ".375 H&H Magnum": _WP + ".375_H%26H_Magnum",
+    ".416 Rigby": _WP + ".416_Rigby",
+    ".450 Rigby": _WP + ".450_Rigby",
+    ".375 CheyTac": _WP + ".408_Cheyenne_Tactical",
+    ".45-70 Government": _WP + ".45-70",
+    ".50 BMG": _WP + ".50_BMG",
+    "6.5x52 mm Carcano": _HODGDON,
+    "6.5x50 mm SR Arisaka": _WP + "6.5×50mmSR_Arisaka",
+    "7.7x58 mm Arisaka": _WP + "7.7×58mm_Arisaka",
+    "8x50 mm R Lebel": _WP + "8×50mmR_Lebel",
+    "8x56 mm R Mannlicher": _WP + "8×56mmR",
+    "6.5x54 mm Mannlicher-Schönauer": _WP + "6.5×54mm_Mannlicher–Schönauer",
+    ".30-40 Krag": _HODGDON,
+    "7.92x33 mm Kurz": _WP + "7.92×33mm_Kurz",
+    "5.45x39 mm": _WP + "5.45×39mm",
+    ".277 SIG Fury": _VIHTAVUORI,
+    ".22 Hornet": _WP + ".22_Hornet",
+    ".25-06 Remington": _WP + ".25-06_Remington",
+    ".257 Roberts": _WP + ".257_Roberts",
+    ".280 Remington": _WP + ".280_Remington",
+    ".35 Whelen": _WP + ".35_Whelen",
+    ".300 H&H Magnum": _WP + ".300_H%26H_Magnum",
+    ".338 Winchester Magnum": _WP + ".338_Winchester_Magnum",
+    ".444 Marlin": _WP + ".444_Marlin",
+    ".458 Winchester Magnum": _WP + ".458_Winchester_Magnum",
+    ".350 Legend": _WP + ".350_Legend",
+    ".50-70 Government": _STARLINE + "50-70-govt-brass",
+    ".44-40 WCF": _WP + ".44-40_Winchester",
+    "12/70": _HODGDON,
+    "12/76": _HODGDON,
+    "12/89": _HODGDON,
+    "16/70": _HODGDON,
+    "20/70": _HODGDON,
+    "20/76": _HODGDON,
+    "28/70": _HODGDON,
+    ".410/76": _HODGDON,
+    "5.6x50 mm Magnum": _WP + "5.6×50mm_Magnum",
+    "6.5x57 mm Mauser": _WP + "6.5×57mm_Mauser",
+    "6.5x68 mm": _WP + "6.5×68mm",
+    "8x64 mm S": _WP + "8×64mm_S",
+    ".375 Ruger": _WP + ".375_Ruger",
+    ".450 Bushmaster": _HODGDON,
+    "6.8 mm Remington SPC": _WP + "6.8mm_Remington_SPC",
+    ".300 Winchester Short Magnum": _WP + ".300_Winchester_Short_Magnum",
+    ".17 Remington": _WP + ".17_Remington",
+    ".218 Bee": _WP + ".218_Bee",
+    ".25-35 Winchester": _WP + ".25-35_Winchester",
+    ".32 Winchester Special": _WP + ".32_Winchester_Special",
+    ".35 Remington": _WP + ".35_Remington",
+    ".38-55 Winchester": _STARLINE + "38-55-brass-2080",
+    ".348 Winchester": _WP + ".348_Winchester",
+    ".358 Winchester": _WP + ".358_Winchester",
+    ".264 Winchester Magnum": _WP + ".264_Winchester_Magnum",
+    ".300 Weatherby Magnum": _WP + ".300_Weatherby_Magnum",
+    ".416 Remington Magnum": _WP + ".416_Remington_Magnum",
+    ".470 Nitro Express": _HODGDON,
+    "9x18 mm Ultra": _WP + "9×18mm_Ultra",
+    ".357 Remington Maximum": _HODGDON,
+    ".41 Action Express": _WP + ".41_Action_Express",
+    ".45 Winchester Magnum": _WP + ".45_Winchester_Magnum",
+    ".45 Super": _WP + ".45_Super",
+    ".460 Rowland": _STARLINE + "460-rowland-brass",
+    ".475 Linebaugh": _WP + ".475_Linebaugh",
+    ".221 Remington Fireball": _WP + ".221_Remington_Fireball",
+    ".25 NAA": _WP + ".25_NAA",
+    ".32 NAA": _WP + ".32_NAA",
+    ".32 Long Colt": _WP + ".32_Long_Colt",
+    ".45-90 WCF": _STARLINE + "45-90-brass-45-24",
+    ".38 ACP": _WP + ".38_ACP",
+    ".41 Long Colt": _STARLINE + "41-colt-brass",
+    ".44 Colt": _WP + ".44_Colt",
+    ".32-40 Ballard": _WP + ".32-40_Ballard",
+    ".50-90 Sharps": _WP + ".50-90_Sharps",
+    ".220 Swift": _WP + ".220_Swift",
+    ".25-20 Winchester": _WP + ".25-20_Winchester",
+    ".250 Savage": _WP + ".250-3000_Savage",
+    ".257 Weatherby Magnum": _WP + ".257_Weatherby_Magnum",
+    ".270 Weatherby Magnum": _WP + ".270_Weatherby_Magnum",
+    "7 mm Weatherby Magnum": _WP + "7mm_Weatherby_Magnum",
+    ".340 Weatherby Magnum": _WP + ".340_Weatherby_Magnum",
+    ".284 Winchester": _WP + ".284_Winchester",
+    ".300 Savage": _WP + ".300_Savage",
+    ".300 Remington Ultra Magnum": _WP + ".300_Remington_Ultra_Magnum",
+    ".270 Winchester Short Magnum": _WP + ".270_Winchester_Short_Magnum",
+    "7 mm Winchester Short Magnum": _WP + "7mm_Winchester_Short_Magnum",
+    ".338 Federal": _WP + ".338_Federal",
+    "8 mm Remington Magnum": _WP + "8mm_Remington_Magnum",
+    ".376 Steyr": _WP + ".376_Steyr",
+    "6.5 mm Grendel": _WP + "6.5mm_Grendel",
+    "6 mm Remington": _WP + "6mm_Remington",
+    "7-30 Waters": _WP + "7-30_Waters",
+    ".17 Hornet": _HODGDON,
+    ".375 Winchester": _HODGDON,
+    ".405 Winchester": _WP + ".405_Winchester",
+    ".450 Marlin": _WP + ".450_Marlin",
+    ".458 Lott": _WP + ".458_Lott",
+    ".30 Carbine": _HODGDON,
+    "7x65 mm R": _WP + "7×64mm",
+    ".22 Savage Hi-Power": _WP + ".22_Savage_Hi-Power",
+    "8x57 mm IRS": _VIHTAVUORI,
+    ".280 Ackley Improved": _HODGDON,
+    ".356 Winchester": _HODGDON,
+    ".307 Winchester": _HODGDON,
+    ".416 Ruger": _WP + ".416_Ruger",
+    ".416 Weatherby Magnum": _WP + ".416_Weatherby_Magnum",
+    ".375 Remington Ultra Magnum": _WP + ".375_Remington_Ultra_Magnum",
+    "7 mm STW": _WP + "7mm_STW",
+    ".225 Winchester": _WP + ".225_Winchester",
+    ".223 WSSM": _WP + ".223_Winchester_Super_Short_Magnum",
+    ".243 WSSM": _WP + ".243_Winchester_Super_Short_Magnum",
+    ".25 WSSM": _HODGDON,
+    ".350 Remington Magnum": _WP + ".350_Remington_Magnum",
+    ".400 Cor-Bon": _STARLINE + "400-cor-bon-brass",
+    "9x23 mm Winchester": _WP + "9×23mm_Winchester",
+    ".26 Nosler": _WP + ".28_Nosler",
+    ".27 Nosler": _WP + ".28_Nosler",
+    ".28 Nosler": _WP + ".28_Nosler",
+    ".30 Nosler": _WP + ".28_Nosler",
+    ".33 Nosler": _WP + ".28_Nosler",
+    ".300 Ruger Compact Magnum": _WP + ".300_Ruger_Compact_Magnum",
+    ".30 Thompson/Center": _HODGDON,
+    ".30 Remington AR": _HODGDON,
+    ".308 Marlin Express": _WP + ".308_Marlin_Express",
+    ".300 Remington SAUM": _WP + ".300_Remington_Short_Action_Ultra_Magnum",
+    ".224 Valkyrie": _WP + ".224_Valkyrie",
+    ".458 SOCOM": _WP + ".458_SOCOM",
+    ".50 Beowulf": _WP + ".50_Beowulf",
+    ".222 Remington Magnum": _WP + ".222_Remington_Magnum",
+    "6.5-284 Norma": _HODGDON,
+    ".25 Weatherby RPM": _HODGDON,
+    "6.5 Weatherby RPM": _HODGDON,
+    ".338 Weatherby RPM": _HODGDON,
+    ".30-378 Weatherby Magnum": _WP + ".30-378_Weatherby_Magnum",
+    "5.6x57 mm": _WP + "5.6×57mm",
+    "11x60 mm R Mauser": _WP + "11×60mm_Mauser",
+    "7.62x45 mm vz. 52": _WP + "7.62×45mm",
+    "7.65x53 mm Argentine": _WP + "7.65×53mm_Mauser",
+    ".338-378 Weatherby Magnum": _WP + ".338-378_Weatherby_Magnum",
+    "6.8 Western": _WP + "6.8_Western",
+    "7 mm Remington SAUM": _WP + "7mm_Remington_Short_Action_Ultra_Magnum",
+    ".22 Remington Jet": _WP + ".22_Remington_Jet",
+    ".256 Winchester Magnum": _WP + ".256_Winchester_Magnum",
+    ".338 Norma Magnum": _WP + ".338_Norma_Magnum",
+    ".308 Norma Magnum": _WP + ".308_Norma_Magnum",
+    ".358 Norma Magnum": _HODGDON,
+    "9.3x64 mm Brenneke": _WP + "9.3×64mm_Brenneke",
+    "9.3x57 mm Mauser": _WP + "9.3×57mm_Mauser",
+    "7x57 mm R": _VIHTAVUORI,
+    ".338 Remington Ultra Magnum": _WP + ".338_Remington_Ultra_Magnum",
+    "7 mm Remington Ultra Magnum": _WP + "7mm_Remington_Ultra_Magnum",
+    ".325 Winchester Short Magnum": _WP + ".325_WSM",
+    ".375 Weatherby Magnum": _WP + ".375_Weatherby_Magnum",
+    ".460 Weatherby Magnum": _WP + ".460_Weatherby_Magnum",
+    ".404 Jeffery": _WP + ".404_Jeffery",
+    ".505 Gibbs": _WP + ".505_Gibbs",
+    ".500 Jeffery": _WP + ".500_Jeffery",
+    ".33 Winchester": _WP + ".33_Winchester",
+    ".351 Winchester Self-Loading": _WP + ".351_Winchester_Self-Loading",
+    ".40-65 Winchester": _WP + ".40-65_Winchester",
+    ".303 Savage": _WP + ".303_Savage",
+    ".219 Zipper": _WP + ".219_Zipper",
+    ".500 Nitro Express": _HODGDON,
+    ".700 Nitro Express": _WP + ".700_Nitro_Express",
+    ".240 Weatherby Magnum": _WP + ".240_Weatherby_Magnum",
+    ".224 Weatherby Magnum": _WP + ".224_Weatherby_Magnum",
+    "6.5 mm Remington Magnum": _WP + "6.5mm_Remington_Magnum",
+    "6 mm Creedmoor": _WP + "6.5mm_Creedmoor",
+    ".25 Creedmoor": _HODGDON,
+    "8.6 Blackout": _STARLINE + "86-blackout-brass",
+    ".22 ARC": _HODGDON,
+    ".338 Ruger Compact Magnum": _WP + ".338_Ruger_Compact_Magnum",
+    ".408 CheyTac": _WP + ".408_Cheyenne_Tactical",
+    ".360 Buckhammer": _HODGDON,
+    ".400 Legend": _WP + ".400_Legend",
+    "9.3x66 mm Sako (.370 Sako Magnum)": _VIHTAVUORI,
+    ".38-56 WCF": _WP + ".38-56_WCF",
+    ".17 Remington Fireball": _WP + ".17_Remington_Fireball",
+    ".338 Marlin Express": _HODGDON,
+    ".22 Nosler": _HODGDON,
+    "6.5-300 Weatherby Magnum": _HODGDON,
+    "9x25 mm Dillon": _WP + "9×25mm_Dillon",
+    ".300 Lapua Magnum": _WP + ".300_Lapua_Magnum",
+    ".35 Winchester": _WP + ".35_Winchester",
+    ".50-110 Winchester": _WP + ".50-110_Winchester",
+    ".400 H&H Magnum": _WP + ".400_H%26H_Magnum",
+    ".465 H&H Magnum": _WP + ".465_H%26H_Magnum",
+    ".310 Cadet": _WP + ".310_Cadet",
+    ".30 R Blaser": _WP + ".30_R_Blaser",
+    ".378 Weatherby Magnum": _WP + ".378_Weatherby_Magnum",
+    "7.5 FK": _WP + "7.5_FK",
+    "6 mm GT": _HODGDON,
+    ".22 Creedmoor": _VIHTAVUORI,
+    "7 mm Backcountry": _WP + "7mm_Backcountry",
+    ".338 ARC": _HODGDON,
+    "6 mm PPC": _WP + "6mm_PPC",
+    "9x39 mm": _STARLINE + "9x39-brass",
+}
+
+# Primer sizes still unchecked: no reloading data, brass maker page or clear headstamp photo
+# found yet (old military rounds, Nitro Expresses, European hunting rounds). Hodgdon loads .30 Super Carry with small
+# rifle primers; Federal's ammunition uses small pistol, so it stays small pistol until checked.
+PRIMER_UNVERIFIED = {
+    ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express",
+    "9.3x53 mm R Finnish", ".30 Super Carry", "8 mm Lebel revolver", "10.4 mm Swiss Ordnance 1878",
+    "11 mm French Ordnance", "9 mm P.A.K.", "8 mm Knall", ".315 Knall", "9 mm R Knall", ".320 Knall",
+    ".45 Knall", "5.6 mm GP 90", "8x50 mm R Mannlicher", "5.8x42 mm",
+    "10.4x38 mm R Vetterli", ".577 Snider", ".577/450 Martini-Henry",
+    "9.5x57 mm Mannlicher-Schönauer", ".500 JRH", ".442 Webley", ".356 TSW",
+    "6.5x53 mm R Mannlicher", ".450 Nitro Express", ".577 Nitro Express", ".318 Westley Richards",
+    ".300 Blaser Magnum", ".375 Blaser Magnum", "7 mm Blaser Magnum", ".338 Blaser Magnum",
+    "8.5x55 mm Blaser", ".244 H&H Magnum", ".350 Rigby Magnum",
+}
+
 
 # Calibres no longer in regular factory production (only surplus, boutique loads or reloading).
 # Everything else is current. The apps can hide these by default; the poster can mark them.
