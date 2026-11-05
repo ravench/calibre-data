@@ -531,6 +531,11 @@ CATALOGUE = [
     ("Luftdruck", [
         pellet("4.5 mm Diabolo (.177)", 4.5, 5.5, ["4.5", "4.5mm", "177", "luftgewehr", "lg", "lp"]),
         pellet("5.5 mm Diabolo (.22)", 5.5, 6.5, ["5.5", "5.5mm"]),
+        # BBs: loose balls, not cartridges. Steel BBs (zinc or copper plated) measure 4.3-4.4 mm and
+        # are fired from smoothbore .177 BB guns; airsoft BBs are plastic, 6 mm, a few guns take 8 mm.
+        ball("4.4 mm Stahl-BB (.177 BB)", 4.35, ["bb", "steelbb", "stahlbb", "4.4mm"]),
+        ball("6 mm Airsoft-BB", 6.0, ["airsoft", "6mmbb", "6mmairsoft"]),
+        ball("8 mm Airsoft-BB", 8.0, ["8mmbb", "8mmairsoft"]),
     ]),
 ]
 
@@ -1224,7 +1229,8 @@ INTRODUCED_UNKNOWN = {
     **{n: "not a single cartridge" for n in (
         "12/70", "12/76", "12/89", "16/70", "20/70", "20/76", "28/70", ".410/76",
         ".36 Rundkugel (.375)", ".44 Rundkugel (.454)", ".45 Rundkugel (.440)", ".50 Rundkugel (.490)",
-        ".54 Rundkugel (.530)", ".58 Minié", ".69 Minié", "4.5 mm Diabolo (.177)", "5.5 mm Diabolo (.22)")},
+        ".54 Rundkugel (.530)", ".58 Minié", ".69 Minié", "4.5 mm Diabolo (.177)", "5.5 mm Diabolo (.22)",
+        "4.4 mm Stahl-BB (.177 BB)", "6 mm Airsoft-BB", "8 mm Airsoft-BB")},
     ".450/400 Nitro Express 3 inch": "sources give 1899 for the 3 1/4 inch parent only",
     "6.5-300 Weatherby Magnum": "sources give only the 2017 SAAMI drawing",
 }
@@ -2223,7 +2229,8 @@ ORIGIN = {
     ".300 Winchester Magnum": WORLDWIDE, ".338 Lapua Magnum": WORLDWIDE,
     ".375 H&H Magnum": WORLDWIDE, ".50 BMG": WORLDWIDE, "12/70": WORLDWIDE, "12/76": WORLDWIDE,
     "20/70": WORLDWIDE, "20/76": WORLDWIDE, "4.5 mm Diabolo (.177)": WORLDWIDE,
-    "5.5 mm Diabolo (.22)": WORLDWIDE,
+    "5.5 mm Diabolo (.22)": WORLDWIDE, "4.4 mm Stahl-BB (.177 BB)": WORLDWIDE,
+    "6 mm Airsoft-BB": WORLDWIDE, "8 mm Airsoft-BB": WORLDWIDE,
     # Switzerland
     "5.6 mm GP 90": "CH", "7.5x55 mm Swiss (GP 11)": "CH", "7.5x53.5 mm Swiss (GP 1890)": "CH",
     "7.5 mm Swiss Ordnance 1882": "CH", "10.4 mm Swiss Ordnance 1878": "CH",
@@ -2598,3 +2605,20 @@ CURRENT_CASES = {  # name: (other case materials made today, source); the origin
 def current_case_materials(name):
     """Case materials made today besides the original one, e.g. (BRASS,) for the .45-70."""
     return CURRENT_CASES.get(name, ((), None))[0]
+
+
+# Loose projectiles (balls, Minié bullets, pellets) not made of lead (Raven 2026-11-05: steel BBs
+# and airsoft BBs). Not listed means lead.
+PLASTIC = "plastic"
+_BB = "https://en.wikipedia.org/wiki/BB_gun"
+_AIRSOFT = "https://en.wikipedia.org/wiki/Airsoft_pellets"
+LOOSE_MATERIALS = {  # name: (material, source)
+    "4.4 mm Stahl-BB (.177 BB)": (STEEL, _BB),  # 0.171-0.173 in, zinc or copper plated
+    "6 mm Airsoft-BB": (PLASTIC, _AIRSOFT),
+    "8 mm Airsoft-BB": (PLASTIC, _AIRSOFT),
+}
+
+
+def loose_material(name):
+    """What a ball, Minié bullet or pellet is made of: LEAD, STEEL or PLASTIC."""
+    return LOOSE_MATERIALS.get(name, (LEAD, None))[0]

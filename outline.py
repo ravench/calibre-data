@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, shoulder_angle, case_head, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, bullet, case_material, current_case_materials  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
 BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
@@ -190,6 +190,8 @@ def outline(s):
             paths["caseMaterial"] = case_material(s["name"])
         if current_case_materials(s["name"]):
             paths["currentCaseMaterials"] = list(current_case_materials(s["name"]))
+    if k in (BALL, MINIE, PELLET) and loose_material(s["name"]) != LEAD:
+        paths["bulletMaterial"] = loose_material(s["name"])  # "steel" or "plastic"; lead is not named
     return {"width": round(width, 2), "height": round(H, 2), **paths}
 
 

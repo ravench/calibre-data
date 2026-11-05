@@ -11,7 +11,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
-                        CURRENT_CASES, current_case_materials)
+                        CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material)
 
 ALL = [s for _, items in CATALOGUE for s in items]
 NAMES = {s["name"] for s in ALL}
@@ -404,6 +404,24 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(current_case_materials(".45-70 Government"), (BRASS,))
         self.assertEqual(current_case_materials("9x19 mm"), (STEEL,))
         self.assertEqual(current_case_materials("7.5x55 mm Swiss (GP 11)"), ())
+
+
+    def test_bbs_are_loose_steel_or_plastic_balls(self):
+        by_name = {s["name"]: s for _, items in CATALOGUE for s in items}
+        for name, (material, url) in LOOSE_MATERIALS.items():
+            self.assertIn(by_name[name]["kind"], (BALL, MINIE, PELLET), name)
+            self.assertIn(material, (STEEL, PLASTIC), name)
+            self.assertTrue(url.startswith("https://"), name)
+        steel = by_name["4.4 mm Stahl-BB (.177 BB)"]
+        self.assertEqual(steel["kind"], BALL)
+        self.assertTrue(4.3 <= steel["bullet"] <= 4.4)  # 0.171-0.173 in, smaller than a 4.5 mm pellet
+        self.assertEqual(loose_material("4.4 mm Stahl-BB (.177 BB)"), STEEL)
+        self.assertEqual(loose_material("6 mm Airsoft-BB"), PLASTIC)
+        self.assertEqual(loose_material(".50 Rundkugel (.490)"), LEAD)
+        self.assertEqual(by_name["6 mm Airsoft-BB"]["bullet"], 6.0)
+        self.assertEqual(by_name["8 mm Airsoft-BB"]["bullet"], 8.0)
+        luftdruck = [s["name"] for cat, items in CATALOGUE if cat == "Luftdruck" for s in items]
+        self.assertIn("6 mm Airsoft-BB", luftdruck)
 
 
 if __name__ == "__main__":
