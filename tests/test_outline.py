@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import PATCHED, CRIMPED  # noqa: E402
+from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -107,7 +107,7 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(name):
                 s = specs[name]
                 top = s["neck"] / 2
-                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9)
+                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
                 self.assertLess(abs(neck_start - (case_length - neck_length)), 1.5)
                 self.assertGreater(s["sh_at"], shoulder_start - 0.6)
 
@@ -119,12 +119,12 @@ class OutlineTests(unittest.TestCase):
         "7 mm Backcountry", "8.6 Blackout", ".22 ARC", ".338 Ruger Compact Magnum",
         "7.5x53.5 mm Swiss (GP 1890)", ".300 HAM'R", "6.5x58 mm Vergueiro", ".375 CheyTac",
         "7.7x58 mm Arisaka", "8x50 mm R Lebel", "7.35x51 mm Carcano", ".277 SIG Fury", "5.8x42 mm",
-        ".25-35 Winchester", ".32 Winchester Special", ".264 Winchester Magnum", ".55 Boys",
+        ".25-35 Winchester", ".55 Boys",
         "8.5x55 mm Blaser", ".38-56 WCF", ".22 Nosler", "6.5-300 Weatherby Magnum", ".17 Hornet",
         "6.8 Western", ".26 Nosler", ".27 Nosler", ".30 Nosler", ".33 Nosler", ".300 Ruger Compact Magnum",
-        ".224 Valkyrie", ".458 SOCOM", ".222 Remington Magnum", ".25 Weatherby RPM", "6.5 Weatherby RPM",
+        ".224 Valkyrie", ".458 SOCOM", ".25 Weatherby RPM", "6.5 Weatherby RPM",
         ".338 Weatherby RPM", "7.92x107 mm DS", ".308 Norma Magnum", ".404 Jeffery", ".416 Barrett",
-        "10.4x38 mm R Vetterli", "11x59 mm R Gras", "11x60 mm R Mauser",
+        "10.4x38 mm R Vetterli", "11x59 mm R Gras",
     }
 
     def bottlenecks(self):
@@ -145,7 +145,7 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(name):
                 prof = outline.case_profile(s)
                 top = s["neck"] / 2
-                i = next(i for i, (r, _) in enumerate(prof) if abs(r - top) < 1e-9)
+                i = next(i for i, (r, h) in enumerate(prof) if abs(r - top) < 1e-9 and h > s["sh_at"])
                 (r0, h0), (r1, h1) = prof[i - 1], prof[i]
                 self.assertAlmostEqual(r0, s["shoulder"] / 2)
                 drawn = math.degrees(math.atan2(r0 - r1, h1 - h0))
@@ -168,11 +168,76 @@ class OutlineTests(unittest.TestCase):
                 self.assertEqual(cartridges.shoulder_angle(name), angle)
                 self.assertEqual(s["sh_at"], l1)
                 top = s["neck"] / 2
-                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9)
+                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
                 self.assertLess(abs(neck_start - l2), 0.6)
 
     def test_unsourced_shoulders_keep_the_default(self):
         self.assertEqual(cartridges.shoulder_angle(".22 Nosler"), cartridges.DEFAULT_SHOULDER_ANGLE)
+
+    # Rimless and belted cases without a C.I.P. head (or a parent case that has one); they keep the
+    # generic head. A new rimless or belted calibre needs a head in CASE_HEADS or a place here.
+    HEAD_UNSOURCED = {
+        ".22 ARC", ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".26 Nosler", ".27 Nosler",
+        ".277 SIG Fury", ".28 Nosler", ".30 Carbine", ".30 Nosler", ".30 Remington AR",
+        ".30 Super Carry", ".307 Winchester", ".308 Norma Magnum", ".33 Nosler", ".338 ARC",
+        ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading", ".350 Legend",
+        ".351 Winchester Self-Loading", ".356 Winchester", ".375 CheyTac", ".400 Legend",
+        ".401 Winchester Self-Loading", ".404 Jeffery", ".408 CheyTac", ".416 Barrett",
+        ".450 Bushmaster", ".458 SOCOM", ".475 Linebaugh", ".480 Ruger", ".50 Beowulf", ".500 JRH",
+        ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm ARC", "6 mm GT", "6.5 Weatherby RPM",
+        "6.5 mm Grendel", "6.5x50 mm SR Arisaka", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
+        "7.5x53.5 mm Swiss (GP 1890)", "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
+        "8.5x55 mm Blaser", "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
+    }
+
+    def rimless(self):
+        return {s["name"]: s for _, s in outline.specs() if s["kind"] in (RIMLESS, BELTED)}
+
+    def test_every_rimless_head_is_sourced_or_listed(self):
+        self.assertEqual(set(self.rimless()) - set(cartridges.CASE_HEADS), self.HEAD_UNSOURCED)
+        self.assertEqual(set(cartridges.CASE_HEADS) - set(self.rimless()), set())
+        for name, (thick, top_at, groove, angle, url) in cartridges.CASE_HEADS.items():
+            with self.subTest(name):
+                s = self.rimless()[name]
+                self.assertTrue(url.startswith("https://"), url)
+                self.assertTrue(0.7 < thick < 2.5 and 2.0 < top_at < 7.0 and 10 <= angle <= 75)
+                self.assertLess(groove, min(s["rim"], s["base"]))
+
+    def test_heads_are_drawn_from_their_own_groove(self):
+        # Regression: every rimless head used to get one generic groove (82 % of the base, 1.3 mm rim).
+        for name, s in self.rimless().items():
+            head = cartridges.case_head(name)
+            if not head:
+                continue
+            thick, top_at, groove, angle = head
+            with self.subTest(name):
+                prof = outline.case_profile(s)
+                self.assertEqual(prof[1], (s["rim"] / 2, thick))
+                self.assertEqual(prof[2], (groove / 2, thick))
+                (r0, h0), (r1, h1) = prof[3], prof[4]
+                self.assertEqual(r0, groove / 2)
+                self.assertGreaterEqual(h0, thick)
+                if s["kind"] == RIMLESS:
+                    self.assertEqual(h1, top_at)
+                    if h0 > thick:  # the ramp keeps its angle unless it would cut into the rim
+                        self.assertAlmostEqual(math.degrees(math.atan2(r1 - r0, h1 - h0)), angle, places=6)
+                else:
+                    self.assertAlmostEqual(math.degrees(math.atan2(r1 - r0, h1 - h0)), angle, places=6)
+                    self.assertEqual(prof[5], (s["rim"] / 2, top_at))  # front of the belt
+                heights = [h for _, h in prof]
+                self.assertEqual(heights, sorted(heights))
+        self.assertGreater(len({h[:4] for h in cartridges.CASE_HEADS.values()}), 40)
+
+    def test_heads_follow_the_sheets(self):
+        # (R rim thickness, E, E1 groove diameter, ramp angle) on the C.I.P. sheets.
+        sheets = {
+            ".308 Winchester": (1.37, 3.85, 10.39, 36.0), "9x19 mm": (1.27, 2.98, 8.79, 35.0),
+            ".45 ACP": (1.24, 4.11, 10.16, 26.0), ".300 Winchester Magnum": (1.27, 5.59, 12.07, 35.0),
+            "7.5x55 mm Swiss (GP 11)": (1.65, 3.46, 10.3, 51.8), ".50 BMG": (2.26, 6.23, 17.27, 36.0),
+            "5.6 mm GP 90": (1.14, 3.15, 8.43, 25.0),  # .223 case, via the .300 BLK sheet
+        }
+        for name, values in sheets.items():
+            self.assertEqual(cartridges.case_head(name), values, name)
 
 if __name__ == "__main__":
     unittest.main()

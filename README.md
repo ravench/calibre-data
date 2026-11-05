@@ -17,6 +17,7 @@ The shared calibre catalogue for
   as the Soviet Union have no emoji). Calibres in common use worldwide get `WORLDWIDE` ("WW",
   🌐) instead; no entry means neither a clear country nor universal use. `origin(name)` looks it up.
 - `SHOULDER_ANGLES` gives each bottleneck case its shoulder angle (degrees from the case axis,
+- `CASE_HEADS` / `case_head(name)`: rim thickness, extractor-groove diameter and ramp (or belt front) of 181 rimless and belted cases from the C.I.P. sheets; the outline draws each head from them, other cases keep a generic head.
   the American alpha/2) with the page it was read from: mostly the C.I.P. sheets, whose `L1`
   is then the calibre's `sh_at`. Cases without a source yet are drawn at
   `DEFAULT_SHOULDER_ANGLE` (32°); the tests list them, so a new calibre needs an angle or a

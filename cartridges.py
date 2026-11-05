@@ -261,7 +261,7 @@ CATALOGUE = [
         # Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c(".400 H&H Magnum", BELTED, 13.5, 13.0, 12.5, 11.2, 72.3, 50.4, 90.2, 10.4, ROUND, ["400hh", "400h&h"]),
         c(".244 H&H Magnum", BELTED, 13.5, 12.9, 11.3, 6.7, 71.0, 59.18, 91.0, 6.2, SPITZER, ["244hh", "244h&h"]),
-        c(".416 Rigby", RIMLESS, 14.9, 14.9, 13.6, 11.6, 73.7, 59.6, 95.3, 10.6, ROUND, ["416rigby"]),
+        c(".416 Rigby", RIMLESS, 14.9, 14.9, 13.6, 11.6, 73.7, 59.77, 95.3, 10.6, ROUND, ["416rigby"]),
         # Sourced 2026-11-04 from the C.I.P. TDCC sheet (maximum cartridge), rounded to 0.01 mm:
         # sh_at = L1, shoulder = P2, neck = H2, oal = L6. Wikipedia's .450 Rigby infobox gives
         # H1 as the shoulder (12.5 mm), which is why it was left out before.
@@ -310,12 +310,12 @@ CATALOGUE = [
         c(".17 Remington", RIMLESS, 9.6, 9.6, 9.0, 5.1, 45.6, 34.31, 54.6, 4.4, SPITZER, ["17rem"]),
         c(".218 Bee", RIMMED, 10.4, 8.9, 8.4, 6.1, 34.2, 23.45, 42.7, 5.7, FLAT, ["218bee"]),
         c(".25-35 Winchester", RIMMED, 12.9, 10.7, 9.3, 7.2, 51.9, 37.35, 65.0, 6.6, FLAT, ["25-35", "25-35wcf"]),
-        c(".32 Winchester Special", RIMMED, 12.9, 10.7, 10.2, 8.7, 51.8, 40.8, 65.2, 8.2, FLAT, ["32winspecial", "32ws"]),
+        c(".32 Winchester Special", RIMMED, 12.9, 10.7, 10.2, 8.7, 51.8, 36.72, 65.2, 8.2, FLAT, ["32winspecial", "32ws"]),
         c(".35 Remington", RIMLESS, 11.7, 11.6, 10.3, 9.8, 48.8, 39.1, 64.1, 9.1, ROUND, ["35rem"]),
         straight(".38-55 Winchester", RIMMED, 12.9, 10.7, 10.0, 53.0, 64.8, 9.6, FLAT, ["38-55"]),
         c(".348 Winchester", RIMMED, 15.5, 14.0, 12.3, 9.61, 57.3, 41.91, 71.0, 8.8, FLAT, ["348win"]),
         c(".358 Winchester", RIMLESS, 12.0, 11.9, 11.5, 9.9, 51.2, 39.62, 70.6, 9.1, ROUND, ["358win"]),
-        c(".264 Winchester Magnum", BELTED, 13.5, 13.1, 12.5, 7.6, 64.0, 54.6, 85.0, 6.7, SPITZER, ["264winmag"]),
+        c(".264 Winchester Magnum", BELTED, 13.5, 13.1, 12.5, 7.6, 64.0, 51.82, 85.0, 6.7, SPITZER, ["264winmag"]),
         c(".300 Weatherby Magnum", BELTED, 13.5, 13.0, 12.5, 8.5, 71.8, 59.62, 90.5, 7.8, SPITZER, ["300wby", "300weatherby"]),
         c(".416 Remington Magnum", BELTED, 13.5, 13.0, 12.4, 11.4, 72.4, 60.69, 91.4, 10.6, ROUND, ["416rem"]),
         c(".470 Nitro Express", RIMMED, 16.6, 14.6, 13.5, 12.8, 83.0, 60.96, 101.0, 12.0, ROUND, ["470ne"]),
@@ -437,7 +437,7 @@ CATALOGUE = [
         c(".224 Valkyrie", RIMLESS, 10.7, 10.69, 10.24, 6.5, 41.0, 32.7, 57.4, 5.7, SPITZER, ["224valk"]),
         c(".458 SOCOM", RIMLESS, 12.01, 13.74, 13.49, 12.32, 40.0, 30.0, 57.4, 11.63, ROUND, ["458socom"]),
         straight(".50 Beowulf", RIMLESS, 11.3, 13.6, 13.3, 42.0, 54.0, 12.7, FLAT, ["50beowulf"]),
-        c(".222 Remington Magnum", RIMLESS, 9.6, 9.6, 9.1, 6.4, 47.0, 38.7, 57.9, 5.7, SPITZER, ["222remmag"]),
+        c(".222 Remington Magnum", RIMLESS, 9.6, 9.6, 9.1, 6.4, 47.0, 37.18, 57.9, 5.7, SPITZER, ["222remmag"]),
         c("6.5-284 Norma", RIMLESS, 12.0, 12.7, 12.1, 7.5, 55.1, 44.98, 82.0, 6.7, SPITZER, ["6.5-284"]),
         # Weatherby RPM family (rebated rim, 6.5-284 body lengthened). The .25 is from the 2026 SAAMI drawing;
         # the 6.5 and .338 share its rim, head and shoulder diameter, with neck and shoulder height estimated.
@@ -498,7 +498,7 @@ CATALOGUE = [
         # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c("11x59 mm R Gras", RIMMED, 16.9, 13.8, 13.5, 11.9, 59.0, 44.6, 76.0, 11.3, ROUND, ["11gras", "gras"]),
         # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
-        c("11x60 mm R Mauser", RIMMED, 14.9, 13.1, 13.0, 11.8, 60.0, 46.0, 71.1, 11.3, ROUND, ["11mauser", "11x60r"]),
+        c("11x60 mm R Mauser", RIMMED, 14.9, 13.1, 13.0, 11.8, 60.0, 36.4, 71.1, 11.3, ROUND, ["11mauser", "11x60r"]),
         straight(".32-40 Ballard", RIMMED, 12.9, 10.8, 8.6, 54.0, 66.0, 8.1, FLAT, ["32-40"]),
         straight(".50-90 Sharps", RIMMED, 16.8, 14.9, 13.4, 64.0, 81.0, 13.0, ROUND, ["50-90", "50sharps"]),
         # Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
@@ -1401,10 +1401,14 @@ SHOULDER_ANGLES = {
     ".300 AAC Blackout": (23, _CIP + "tab-i/300-aac-blackout-180801-en.pdf"),  # C.I.P. 300 AAC Blackout
     "6 mm Creedmoor": (30, "https://chuckhawks.com/6mm_Creedmoor.html"),
     "6.5 mm Grendel": (30, "https://www.rifleshootermag.com/editorial/6-5-grendel-evolution/84008"),
-    ".416 Rigby": (45, "https://chuckhawks.com/416_caliber_family.html"),
     "6.5 PRC": (30, "https://bulletin.accurateshooter.com/?p=61574"),
     "7 mm PRC": (30, "https://www.all4shooters.com/en/hunting/ammunition/new-hornady-7mm-prc-cartridge-test-report-background-development-data/"),
     ".300 PRC": (30, "https://www.americanrifleman.org/content/tested-hornady-s-300-prc/"),
+    ".222 Remington Magnum": (23, _CIP + "tab-i/tabical-en-page85.pdf"),  # C.I.P. 222 Rem. Mag.
+    ".264 Winchester Magnum": (25, _CIP + "tab-iii/tabiiical-en-page13.pdf"),  # C.I.P. 264 Win. Mag.
+    ".416 Rigby": (44.9, _CIP + "tab-i/tabical-en-page146.pdf"),  # C.I.P. 416 Rigby
+    "11x60 mm R Mauser": (8.95, _CIP + "tab-ii/tabiical-en-page53.pdf"),  # C.I.P. 11,15 x 60 R
+    ".32 Winchester Special": (14.5, _CIP + "tab-ii/tabiical-en-page80.pdf"),  # C.I.P. 32 Win. Spec.
 }
 DEFAULT_SHOULDER_ANGLE = 32
 
@@ -1413,6 +1417,202 @@ def shoulder_angle(name):
     """Half cone angle of the shoulder in degrees (sourced, or the default)."""
     entry = SHOULDER_ANGLES.get(name)
     return entry[0] if entry else DEFAULT_SHOULDER_ANGLE
+
+
+# Case heads of rimless and belted cases, from the C.I.P. sheets (maximum cartridge):
+# name: (R, E, E1, delta, url). R = rim thickness; E = head to the top of the extractor-groove ramp
+# (belted: head to the front of the belt); E1 = groove diameter; delta = angle of the groove's
+# front ramp to the case axis, in degrees. A case made from a parent case without its own sheet
+# keeps the parent's head (the note says which). Cases not listed keep a generic head.
+CASE_HEADS = {
+    "7.65 mm Parabellum": (1.22, 3.69, 8.79, 20.0, _CIP + "tab-iv/tabivcal-en-page14.pdf"),  # C.I.P. 7,65 Parabellum
+    "7.62x25 mm Tokarev": (1.32, 3.34, 8.65, 30.0, _CIP + "tab-iv/tabivcal-en-page9.pdf"),  # C.I.P. 7,62 x 25 Tokarev
+    ".357 SIG": (1.4, 3.59, 8.81, 43.0, _CIP + "tab-iv/tabivcal-en-page53.pdf"),  # C.I.P. 357 SIG
+    "5.7x28 mm": (1.14, 3.38, 6.6, 25.0, _CIP + "tab-i/tabical-en-page7.pdf"),  # C.I.P. 5,7 x 28
+    "4.6x30 mm": (1.1, 2.87, 6.8, 31.0, _CIP + "tab-iv/tabivcal-en-page1.pdf"),  # C.I.P. 4,6 x 30
+    "7.63x25 mm Mauser": (1.27, 3.72, 8.73, 20.0, _CIP + "tab-iv/tabivcal-en-page11.pdf"),  # C.I.P. 7,63 Mauser
+    "5.45x18 mm": (1.13, 2.9, 6.58, 16.7, _CIP + "tab-iv/tabivcal-en-page2.pdf"),  # C.I.P. 5,45x18
+    ".221 Remington Fireball": (1.14, 3.13, 8.43, 25.0, _CIP + "tab-iv/tabivcal-en-page37.pdf"),  # C.I.P. 221 Rem. Fireball
+    ".204 Ruger": (1.14, 3.11, 8.43, 25.0, _CIP + "tab-i/tabical-en-page79.pdf"),  # C.I.P. 204 Ruger
+    ".222 Remington": (1.14, 3.01, 8.43, 25.0, _CIP + "tab-i/tabical-en-page84.pdf"),  # C.I.P. 221 Rem. Fireball?
+    ".22-250 Remington": (1.24, 3.22, 10.39, 34.0, _CIP + "tab-i/tabical-en-page82.pdf"),  # C.I.P. 22-250 Rem
+    ".243 Winchester": (1.37, 3.85, 10.39, 36.0, _CIP + "tab-i/tabical-en-page88.pdf"),  # C.I.P. 243 Win.
+    "6 mm BR Norma": (1.37, 3.85, 10.39, 36.0, _CIP + "tab-i/tabical-en-page12.pdf"),  # C.I.P. 6mm BR Norma
+    "6 mm PPC": (1.5, 3.5, 9.6, 43.7, _CIP + "tab-i/tabical-en-page14.pdf"),  # C.I.P. 6 mm PPC
+    "6.5x55 mm Swedish": (1.5, 3.25, 10.5, 45.0, _CIP + "tab-i/tabical-en-page23.pdf"),  # C.I.P. 6,5 x 55 SE
+    "6.5x47 mm Lapua": (1.37, 3.85, 10.39, 36.0, _CIP + "tab-i/tabical-en-page19.pdf"),  # C.I.P. 6,5 x 47 Lapua
+    ".260 Remington": (1.37, 3.85, 10.39, 36.0, _CIP + "tab-i/tabical-en-page97.pdf"),  # C.I.P. 260 Rem.
+    ".270 Winchester": (1.24, 3.16, 10.39, 36.0, _CIP + "tab-i/tabical-en-page99.pdf"),  # C.I.P. 270 Win.
+    "7 mm-08 Remington": (1.37, 3.85, 10.39, 36.0, _CIP + "tab-i/tabical-en-page35.pdf"),  # C.I.P. 7 mm - 08 Rem.
+    "7x57 mm Mauser": (1.15, 3.04, 10.7, 32.0, _CIP + "tab-i/tabical-en-page33.pdf"),  # C.I.P. 7 x 57
+    "7x64 mm": (1.3, 3.2, 10.5, 36.9, _CIP + "tab-i/tabical-en-page34.pdf"),  # C.I.P. 7 x 64
+    "7 mm Remington Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page3.pdf"),  # C.I.P. 7 mm Rem. Mag.
+    "7.5x55 mm Swiss (GP 11)": (1.65, 3.46, 10.3, 51.8, _CIP + "tab-i/tabical-en-page46.pdf"),  # C.I.P. 7,5 x 55 Suisse
+    "7.5x54 mm French": (1.4, 3.2, 10.5, 41.2, _CIP + "tab-i/tabical-en-page45.pdf"),  # C.I.P. 7,5 x 54 MAS
+    "7.62x39 mm": (1.5, 3.2, 9.56, 52.0, _CIP + "tab-i/tabical-en-page47.pdf"),  # C.I.P. 7,62 x 39
+    ".308 Winchester": (1.37, 3.85, 10.39, 36.0, _CIP + "tab-i/tabical-en-page125.pdf"),  # C.I.P. 308 Win.
+    ".30-06 Springfield": (1.24, 3.16, 10.39, 36.0, _CIP + "tab-i/tabical-en-page111.pdf"),  # C.I.P. 30-06 Spring.
+    ".300 Winchester Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page20.pdf"),  # C.I.P. 300 Win. Mag.
+    ".300 Lapua Magnum": (1.52, 3.12, 13.24, 50.0, _CIP + "tab-i/tabical-en-page116.pdf"),  # C.I.P. 300 Lapua Mag.
+    "8x57 mm IS": (1.3, 3.19, 10.5, 36.0, _CIP + "tab-i/tabical-en-page57.pdf"),  # C.I.P. 8 x 57 IS
+    "8x68 mm S": (1.4, 3.5, 11.2, 43.7, _CIP + "tab-i/tabical-en-page63.pdf"),  # C.I.P. 8 x 68 S
+    "9.3x62 mm": (1.3, 3.2, 10.5, 41.6, _CIP + "tab-i/tabical-en-page69.pdf"),  # C.I.P. 9,3 x 62
+    ".338 Lapua Magnum": (1.52, 3.12, 13.24, 50.1, _CIP + "tab-i/tabical-en-page132.pdf"),  # C.I.P. 338 Lapua Mag.
+    ".375 H&H Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page27.pdf"),  # C.I.P. 375 H&H Mag.
+    ".378 Weatherby Magnum": (1.6, 6.4, 12.57, 45.0, _CIP + "tab-iii/tabiiical-en-page29.pdf"),  # C.I.P. ?
+    ".465 H&H Magnum": (1.6, 6.4, 12.57, 45.0, _CIP + "tab-iii/tabiiical-en-page38.pdf"),  # C.I.P. ?
+    ".350 Rigby Magnum": (1.52, 3.81, 11.61, 26.9, _CIP + "tab-i/tabical-en-page138.pdf"),  # C.I.P. 350 Mag. Rigby
+    ".400 H&H Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page30.pdf"),  # C.I.P. 400 H&H Belt. Mag.
+    ".244 H&H Magnum": (1.27, 5.56, 11.94, 45.0, _CIP + "tab-iii/tabiiical-en-page11.pdf"),  # C.I.P. 244 H&H Mag.
+    ".450 Rigby": (1.65, 3.81, 12.7, 39.9, _CIP + "tab-i/tabical-en-page150.pdf"),  # C.I.P. 450 Rigby
+    ".50 BMG": (2.26, 6.23, 17.27, 36.0, _CIP + "tab-i/tabical-en-page152.pdf"),  # C.I.P. 50 Browning
+    "6.5x52 mm Carcano": (1.3, 3.2, 9.95, 74.7, _CIP + "tab-i/tabical-en-page20.pdf"),  # C.I.P. 6,5 x 52 Carcano
+    "6.5x54 mm Mannlicher-Schönauer": (1.05, 3.4, 9.7, 33.2, _CIP + "tab-i/tabical-en-page22.pdf"),  # C.I.P. 6,5 x 54 Mannl. Sch.
+    "7.92x33 mm Kurz": (1.3, 3.5, 10.5, 31.0, _CIP + "tab-i/tabical-en-page53.pdf"),  # C.I.P. 7,92 x 33 kurz
+    "5.45x39 mm": (1.5, 3.2, 8.6, 45.0, _CIP + "tab-i/tabical-en-page2.pdf"),  # C.I.P. 5,45 x 39
+    ".25-06 Remington": (1.24, 3.16, 10.39, 36.0, _CIP + "tab-i/tabical-en-page92.pdf"),  # C.I.P. 25-06 Rem.?
+    ".257 Roberts": (1.24, 3.2, 10.39, 36.0, _CIP + "tab-i/tabical-en-page96.pdf"),  # C.I.P. 257 Roberts
+    ".280 Remington": (1.24, 3.17, 10.39, 36.0, _CIP + "tab-i/tabical-en-page103.pdf"),  # C.I.P. 280 Rem.
+    ".35 Whelen": (1.24, 3.16, 10.39, 36.0, _CIP + "tab-i/tabical-en-page137.pdf"),  # C.I.P. 35 Whelen
+    ".300 H&H Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page18.pdf"),  # C.I.P. 300 H&H Mag.
+    ".338 Winchester Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page22.pdf"),  # C.I.P. 338 Win. Mag.
+    "5.6x50 mm Magnum": (1.14, 3.1, 8.44, 25.8, _CIP + "tab-i/tabical-en-page4.pdf"),  # C.I.P. 5,6 x 50 Mag.
+    "6.5x57 mm Mauser": (1.3, 3.2, 10.5, 37.9, _CIP + "tab-i/tabical-en-page24.pdf"),  # C.I.P. 6,5 x 57
+    "6.5x68 mm": (1.4, 3.5, 11.2, 43.7, _CIP + "tab-i/tabical-en-page30.pdf"),  # C.I.P. 6,5 x 68
+    "8x64 mm S": (1.3, 3.2, 10.6, 36.8, _CIP + "tab-i/tabical-en-page62.pdf"),  # C.I.P. 8 x 64 S
+    "8x60 mm S": (1.3, 3.2, 10.5, 39.4, _CIP + "tab-i/tabical-en-page60.pdf"),  # C.I.P. 8 x 60 S
+    "9.5x57 mm Mannlicher-Schönauer": (1.2, 3.2, 10.3, 38.7, _CIP + "tab-i/tabical-en-page72.pdf"),  # C.I.P. 9,5 x 57 Mannl. Sch.
+    ".375 Ruger": (1.27, 3.24, 12.07, 35.0, _CIP + "tab-i/tabical-en-page143.pdf"),  # C.I.P. 375 Ruger
+    "6.8 mm Remington SPC": (1.24, 3.2, 9.09, 36.0, _CIP + "tab-i/tabical-en-page31.pdf"),  # C.I.P. 6,8 mm Rem. SPC
+    ".300 Winchester Short Magnum": (1.37, 3.35, 12.19, 45.0, _CIP + "tab-i/tabical-en-page122.pdf"),  # C.I.P. 300 Win. Short Mag.
+    ".17 Remington": (1.14, 3.13, 8.43, 25.0, _CIP + "tab-i/tabical-en-page77.pdf"),  # C.I.P. 17 Rem.
+    ".35 Remington": (1.24, 3.14, 10.16, 34.0, _CIP + "tab-i/tabical-en-page136.pdf"),  # C.I.P. 35 Rem.
+    ".358 Winchester": (1.37, 3.85, 10.39, 36.0, _CIP + "tab-i/tabical-en-page139.pdf"),  # C.I.P. 358 Win.
+    ".300 Weatherby Magnum": (1.3, 5.56, 11.61, 45.0, _CIP + "tab-iii/tabiiical-en-page19.pdf"),  # C.I.P. ?
+    ".416 Remington Magnum": (1.27, 5.59, 12.06, 35.0, _CIP + "tab-iii/tabiiical-en-page31.pdf"),  # C.I.P. 416 Rem. Mag.
+    "7x61 mm Sharpe & Hart": (1.3, 5.6, 12.2, 35.0, _CIP + "tab-iii/tabiiical-en-page2.pdf"),  # C.I.P. 7 x 61 Super
+    ".318 Westley Richards": (1.27, 3.51, 10.52, 25.6, _CIP + "tab-i/tabical-en-page126.pdf"),  # C.I.P. 318 Riml. N.E.
+    ".240 Weatherby Magnum": (1.27, 5.56, 10.39, 45.0, _CIP + "tab-iii/tabiiical-en-page10.pdf"),  # C.I.P. ?
+    ".224 Weatherby Magnum": (1.27, 5.03, 9.37, 45.0, _CIP + "tab-iii/tabiiical-en-page8.pdf"),  # C.I.P. ?
+    "6.5 mm Remington Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page1.pdf"),  # C.I.P. 6,5 mm Rem. Mag.
+    ".220 Swift": (1.24, 2.89, 10.82, 15.0, _CIP + "tab-i/tabical-en-page83.pdf"),  # C.I.P. 220 Swift
+    ".250 Savage": (1.24, 3.14, 10.39, 36.0, _CIP + "tab-i/tabical-en-page93.pdf"),  # C.I.P. 250 Savage
+    ".257 Weatherby Magnum": (1.3, 5.56, 11.61, 45.0, _CIP + "tab-iii/tabiiical-en-page12.pdf"),  # C.I.P. ?
+    ".270 Weatherby Magnum": (1.3, 5.56, 11.61, 45.0, _CIP + "tab-iii/tabiiical-en-page14.pdf"),  # C.I.P. ?
+    "7 mm Weatherby Magnum": (1.3, 5.56, 11.61, 45.0, _CIP + "tab-iii/tabiiical-en-page5.pdf"),  # C.I.P. 7 mm Weath. Mag.
+    ".340 Weatherby Magnum": (1.3, 5.56, 11.61, 45.0, _CIP + "tab-iii/tabiiical-en-page24.pdf"),  # C.I.P. ?
+    ".284 Winchester": (1.37, 3.78, 10.39, 40.0, _CIP + "tab-i/tabical-en-page105.pdf"),  # C.I.P. 284 Win.?
+    ".300 Savage": (1.24, 3.18, 10.39, 36.0, _CIP + "tab-i/tabical-en-page120.pdf"),  # C.I.P. 300 Savage
+    ".25 Remington": (1.24, 3.2, 9.09, 36.0, _CIP + "tab-i/tabical-en-page90.pdf"),  # C.I.P. 25 Rem.
+    ".32 Remington": (1.24, 3.19, 9.09, 36.0, _CIP + "tab-i/tabical-en-page127.pdf"),  # C.I.P. 32 Rem.
+    "6.5x65 mm RWS": (1.3, 3.2, 10.5, 40.5, _CIP + "tab-i/tabical-en-page29.pdf"),  # C.I.P. 6,5 x 65 RWS
+    "9.3x66 mm Sako (.370 Sako Magnum)": (1.3, 3.24, 10.5, 41.0, _CIP + "tab-i/tabical-en-page71.pdf"),  # C.I.P. 9,3 x 66 Sako
+    ".300 Blaser Magnum": (1.37, 3.61, 12.19, 45.0, _CIP + "tab-i/tabical-en-page114.pdf"),  # C.I.P. 300 Blaser Mag.
+    ".375 Blaser Magnum": (1.37, 3.61, 12.19, 45.0, _CIP + "tab-i/tabical-en-page140.pdf"),  # C.I.P. 375 Blaser Mag.
+    "7 mm Blaser Magnum": (1.37, 3.61, 12.19, 45.0, _CIP + "tab-i/tabical-en-page36.pdf"),  # C.I.P. 7 mm Blaser Mag.
+    ".338 Blaser Magnum": (1.37, 3.61, 12.19, 45.0, _CIP + "tab-i/tabical-en-page130.pdf"),  # C.I.P. 338 Blaser Mag.
+    ".30 Remington": (1.24, 3.19, 9.09, 36.0, _CIP + "tab-i/tabical-en-page108.pdf"),  # C.I.P. 30 Rem.
+    ".17 Remington Fireball": (1.14, 3.12, 8.43, 25.0, _CIP + "tab-i/tabical-en-page78.pdf"),  # C.I.P. 17 Rem. Fireball
+    ".300 Remington Ultra Magnum": (1.27, 3.75, 12.07, 32.0, _CIP + "tab-i/tabical-en-page119.pdf"),  # C.I.P. 300 Rem. Ultra Mag.
+    ".270 Winchester Short Magnum": (1.37, 3.35, 12.19, 45.0, _CIP + "tab-i/tabical-en-page100.pdf"),  # C.I.P. 270 Win. Short Mag.
+    "7 mm Winchester Short Magnum": (1.37, 3.35, 12.19, 45.0, _CIP + "tab-i/tabical-en-page43.pdf"),  # C.I.P. 7 mm Win. Short Mag.
+    ".338 Federal": (1.37, 3.85, 10.39, 36.0, _CIP + "tab-i/tabical-en-page131.pdf"),  # C.I.P. 338 Federal
+    "8 mm Remington Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page6.pdf"),  # C.I.P. 8 mm Rem. Mag.
+    ".376 Steyr": (1.3, 3.2, 11.2, 43.0, _CIP + "tab-i/tabical-en-page144.pdf"),  # C.I.P. 376 Steyr
+    "6 mm Remington": (1.24, 3.4, 10.36, 34.0, _CIP + "tab-i/tabical-en-page16.pdf"),  # C.I.P. 6 mm Rem. (244 Rem.)
+    ".416 Ruger": (1.27, 3.25, 12.07, 35.0, _CIP + "tab-i/tabical-en-page147.pdf"),  # C.I.P. 416 Ruger
+    ".416 Weatherby Magnum": (1.6, 6.4, 12.57, 45.0, _CIP + "tab-iii/tabiiical-en-page33.pdf"),  # C.I.P. ?
+    ".375 Remington Ultra Magnum": (1.27, 3.75, 12.07, 32.0, _CIP + "tab-i/tabical-en-page142.pdf"),  # C.I.P. 375 Rem. Ultra Mag.
+    "7 mm STW": (1.27, 5.58, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page4.pdf"),  # C.I.P. 7 mm STW
+    ".223 WSSM": (1.37, 3.35, 12.19, 45.0, _CIP + "tab-i/tabical-en-page87.pdf"),  # C.I.P. 223 Win. Super Short Mag.
+    ".243 WSSM": (1.37, 3.35, 12.19, 45.0, _CIP + "tab-i/tabical-en-page89.pdf"),  # C.I.P. 243 Win. Super Short Mag.
+    ".25 WSSM": (1.37, 3.36, 12.19, 45.0, _CIP + "tab-i/tabical-en-page91.pdf"),  # C.I.P. 25 Win. SSM
+    ".350 Remington Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page25.pdf"),  # C.I.P. 350 Rem. Mag.
+    ".338-378 Weatherby Magnum": (1.6, 6.4, 12.57, 45.0, _CIP + "tab-iii/tabiiical-en-page23.pdf"),  # C.I.P. ?
+    "7 mm Remington SAUM": (1.27, 3.75, 12.07, 32.0, _CIP + "tab-i/tabical-en-page40.pdf"),  # C.I.P. 7 mm Rem. SA Ultra Mag.
+    ".30 Thompson/Center": (1.37, 3.88, 10.39, 35.0, _CIP + "tab-i/tabical-en-page109.pdf"),  # C.I.P. ?
+    ".308 Marlin Express": (1.6, 3.72, 10.41, 25.0, _CIP + "tab-i/tabical-en-page124.pdf"),  # C.I.P. 308 Marlin Express
+    ".300 Remington SAUM": (1.27, 3.75, 12.07, 32.0, _CIP + "tab-i/tabical-en-page118.pdf"),  # C.I.P. 300 Rem. SA Ultra Mag.
+    "6.5-284 Norma": (1.37, 3.78, 10.39, 40.0, _CIP + "tab-i/tabical-en-page18.pdf"),  # C.I.P. 6,5 - 284 Norma
+    ".30-378 Weatherby Magnum": (1.6, 6.4, 12.57, 45.0, _CIP + "tab-iii/tabiiical-en-page17.pdf"),  # C.I.P. ?
+    "5.6x57 mm": (1.3, 3.2, 10.5, 37.9, _CIP + "tab-i/tabical-en-page5.pdf"),  # C.I.P. 5,6 x 57
+    "7.62x45 mm vz. 52": (1.5, 3.99, 9.7, 30.0, _CIP + "tab-i/tabical-en-page48.pdf"),  # C.I.P. 7,62 x 45
+    "7.65x53 mm Argentine": (1.0, 3.2, 10.4, 35.7, _CIP + "tab-i/tabical-en-page50.pdf"),  # C.I.P. 7,65 x 53 Arg.
+    ".338 Norma Magnum": (1.52, 3.15, 13.24, 50.0, _CIP + "tab-i/tabical-en-page133.pdf"),  # C.I.P. 338 Norma Mag.
+    ".358 Norma Magnum": (1.25, 5.56, 11.6, 45.0, _CIP + "tab-iii/tabiiical-en-page26.pdf"),  # C.I.P. ? Norma Mag.
+    "9.3x64 mm Brenneke": (1.3, 3.2, 11.2, 43.0, _CIP + "tab-i/tabical-en-page70.pdf"),  # C.I.P. 9,3 x 64 Brenneke
+    "9.3x57 mm Mauser": (1.3, 3.2, 10.5, 38.7, _CIP + "tab-i/tabical-en-page68.pdf"),  # C.I.P. 9,3 x 57
+    "9x57 mm Mauser": (1.3, 3.2, 10.5, 38.7, _CIP + "tab-i/tabical-en-page67.pdf"),  # C.I.P. 9 x 57
+    ".338 Remington Ultra Magnum": (1.27, 3.75, 12.06, 32.0, _CIP + "tab-i/tabical-en-page134.pdf"),  # C.I.P. 338 Rem. Ultra Mag.
+    "7 mm Remington Ultra Magnum": (1.27, 3.75, 12.07, 32.0, _CIP + "tab-i/tabical-en-page41.pdf"),  # C.I.P. 7 mm Rem. Ultra Mag.
+    ".325 Winchester Short Magnum": (1.37, 3.35, 12.19, 45.0, _CIP + "tab-i/tabical-en-page128.pdf"),  # C.I.P. 325 WSM
+    ".375 Weatherby Magnum": (1.3, 5.56, 11.61, 45.0, _CIP + "tab-iii/tabiiical-en-page28.pdf"),  # C.I.P. 375 Weath. Mag.
+    ".460 Weatherby Magnum": (1.6, 6.4, 12.57, 45.0, _CIP + "tab-iii/tabiiical-en-page37.pdf"),  # C.I.P. ?
+    ".505 Gibbs": (1.65, 4.06, 14.22, 36.3, _CIP + "tab-i/tabical-en-page154.pdf"),  # C.I.P. 505 Mag. Gibbs
+    ".500 Jeffery": (1.32, 3.73, 13.77, 34.7, _CIP + "tab-i/tabical-en-page153.pdf"),  # C.I.P. ?
+    "6.5 mm Creedmoor": (1.37, 3.84, 10.39, 36.0, "https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"),  # C.I.P. 6,5 Creedmoor
+    ".300 Norma Magnum": (1.52, 3.15, 13.24, 50.0, "https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf"),  # C.I.P. 300 Norma Mag
+    ".300 AAC Blackout": (1.14, 3.15, 8.43, 25.0, _CIP + "tab-i/300-aac-blackout-180801-en.pdf"),  # C.I.P. 300 AAC Blackout
+    "6.35 mm Browning (.25 ACP)": (1.1, 2.77, 6.35, 20.0, _CIP + "tab-iv/tabivcal-en-page4.pdf"),  # C.I.P. 6,35 Browning
+    "7.65 mm Browning (.32 ACP)": (1.25, 3.01, 7.85, 20.0, _CIP + "tab-iv/tabivcal-en-page12.pdf"),  # C.I.P. 7,65 mm Browning
+    "9 mm Browning kurz (.380 ACP)": (1.3, 2.84, 8.25, 40.0, _CIP + "tab-iv/tabivcal-en-page24.pdf"),  # C.I.P. 9 mm Browning court
+    "9x18 mm Makarov": (1.25, 3.5, 8.55, 29.2, _CIP + "tab-iv/tabivcal-en-page23.pdf"),  # C.I.P. 9 mm Makarov
+    "9x19 mm": (1.27, 2.98, 8.79, 35.0, _CIP + "tab-iv/tabivcal-en-page28.pdf"),  # C.I.P. 9 mm Luger
+    "9x21 mm IMI": (1.27, 2.98, 8.79, 35.0, _CIP + "tab-iv/tabivcal-en-page20.pdf"),  # C.I.P. 9 x 21
+    ".38 Super": (1.27, 3.65, 8.76, 20.0, _CIP + "tab-iv/tabivcal-en-page61.pdf"),  # C.I.P. 38 Super Auto
+    "10 mm Auto": (1.4, 3.63, 8.85, 45.0, _CIP + "tab-iv/tabivcal-en-page31.pdf"),  # C.I.P. 10 mm Auto
+    ".40 S&W": (1.4, 3.52, 8.81, 45.0, _CIP + "tab-iv/tabivcal-en-page66.pdf"),  # C.I.P. 40 S.& W. (title confirmed)
+    ".45 ACP": (1.24, 4.11, 10.16, 26.0, _CIP + "tab-iv/tabivcal-en-page76.pdf"),  # C.I.P. 45 Auto
+    ".45 GAP": (1.24, 4.11, 10.16, 26.0, _CIP + "tab-iv/tabivcal-en-page80.pdf"),  # C.I.P. 45 GAP
+    "7.65 mm Longue": (1.05, 3.5, 7.5, 21.3, _CIP + "tab-iv/tabivcal-en-page13.pdf"),  # C.I.P. 7,65 Long
+    "8 mm Roth-Steyr": (1.1, 3.3, 7.85, 24.4, _CIP + "tab-iv/tabivcal-en-page17.pdf"),  # C.I.P. 8 mm Steyr
+    "9 mm Browning Long": (1.25, 2.96, 8.5, 45.0, _CIP + "tab-iv/tabivcal-en-page25.pdf"),  # C.I.P. 9 mm Browning long
+    "9x23 mm Steyr": (1.25, 3.5, 8.7, 27.8, _CIP + "tab-iv/tabivcal-en-page29.pdf"),  # C.I.P. 9 mm Steyr
+    "9x18 mm Ultra": (1.25, 2.93, 8.25, 50.0, _CIP + "tab-iv/tabivcal-en-page18.pdf"),  # C.I.P. 9 x 18
+    ".41 Action Express": (1.27, 3.77, 8.79, 35.0, _CIP + "tab-iv/tabivcal-en-page67.pdf"),  # C.I.P. 41 Act Exp
+    ".45 Winchester Magnum": (1.24, 3.38, 10.54, 32.0, _CIP + "tab-iv/tabivcal-en-page84.pdf"),  # C.I.P. 45 Win. Mag.
+    ".50 Action Express": (1.5, 3.94, 11.7, 35.0, _CIP + "tab-iv/tabivcal-en-page91.pdf"),  # C.I.P. ?(50 AE: rim 13.06, body 13.79)
+    ".416 Rigby": (1.65, 3.81, 12.7, 39.9, _CIP + "tab-i/tabical-en-page146.pdf"),  # C.I.P. 416 Rigby
+    ".222 Remington Magnum": (1.14, 3.11, 8.43, 25.0, _CIP + "tab-i/tabical-en-page85.pdf"),  # C.I.P. 222 Rem. Mag.
+    ".264 Winchester Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page13.pdf"),  # C.I.P. 264 Win. Mag.
+    ".458 Winchester Magnum": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page36.pdf"),  # C.I.P. 458 Win. Mag.
+    ".458 Lott": (1.27, 5.59, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page35.pdf"),  # C.I.P. 458 Lott
+    ".450 Marlin": (1.27, 6.4, 12.07, 35.0, _CIP + "tab-iii/tabiiical-en-page34.pdf"),  # C.I.P. 450 Marlin
+    ".223 Remington": (1.14, 3.15, 8.43, 25.0, _CIP + "tab-i/300-aac-blackout-180801-en.pdf"),  # the .300 BLK is made from .223 Rem. cases; C.I.P. 300 AAC Blackout
+    "5.56x45 mm NATO": (1.14, 3.15, 8.43, 25.0, _CIP + "tab-i/300-aac-blackout-180801-en.pdf"),  # same case as the .223 Rem.; C.I.P. 300 AAC Blackout
+    "5.6 mm GP 90": (1.14, 3.15, 8.43, 25.0, _CIP + "tab-i/300-aac-blackout-180801-en.pdf"),  # same case as the .223 Rem.; C.I.P. 300 AAC Blackout
+    ".300 HAM'R": (1.14, 3.15, 8.43, 25.0, _CIP + "tab-i/300-aac-blackout-180801-en.pdf"),  # made from .223 Rem. cases; C.I.P. 300 AAC Blackout
+    "7.62x51 mm NATO": (1.37, 3.85, 10.39, 36.0, _CIP + "tab-i/tabical-en-page125.pdf"),  # same case as the .308 Win.; C.I.P. 308 Win.
+    "6 mm Creedmoor": (1.37, 3.84, 10.39, 36.0, "https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"),  # 6.5 Creedmoor case necked down; C.I.P. 6,5 Creedmoor
+    ".25 Creedmoor": (1.37, 3.84, 10.39, 36.0, "https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"),  # 6.5 Creedmoor case necked down; C.I.P. 6,5 Creedmoor
+    ".22 Creedmoor": (1.37, 3.84, 10.39, 36.0, "https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"),  # 6.5 Creedmoor case necked down; C.I.P. 6,5 Creedmoor
+    ".280 Ackley Improved": (1.24, 3.17, 10.39, 36.0, _CIP + "tab-i/tabical-en-page103.pdf"),  # fire-formed .280 Rem.; C.I.P. 280 Rem.
+    ".45 Super": (1.24, 4.11, 10.16, 26.0, _CIP + "tab-iv/tabivcal-en-page76.pdf"),  # same case as the .45 ACP, thicker walls; C.I.P. 45 Auto
+    ".460 Rowland": (1.24, 4.11, 10.16, 26.0, _CIP + "tab-iv/tabivcal-en-page76.pdf"),  # lengthened .45 ACP case; C.I.P. 45 Auto
+    ".400 Cor-Bon": (1.24, 4.11, 10.16, 26.0, _CIP + "tab-iv/tabivcal-en-page76.pdf"),  # .45 ACP case necked down; C.I.P. 45 Auto
+    "9x25 mm Dillon": (1.4, 3.63, 8.85, 45.0, _CIP + "tab-iv/tabivcal-en-page31.pdf"),  # 10 mm Auto case necked down; C.I.P. 10 mm Auto
+    ".38 ACP": (1.27, 3.65, 8.76, 20.0, _CIP + "tab-iv/tabivcal-en-page61.pdf"),  # same case as the .38 Super; C.I.P. 38 Super Auto
+    "9 mm Glisenti": (1.27, 2.98, 8.79, 35.0, _CIP + "tab-iv/tabivcal-en-page28.pdf"),  # same case as the 9x19; C.I.P. 9 mm Luger
+    ".356 TSW": (1.27, 2.98, 8.79, 35.0, _CIP + "tab-iv/tabivcal-en-page20.pdf"),  # 9x19-based like the 9x21; C.I.P. 9 x 21
+    ".25 NAA": (1.25, 3.01, 7.85, 20.0, _CIP + "tab-iv/tabivcal-en-page12.pdf"),  # .32 ACP case necked down; C.I.P. 7,65 mm Browning
+    ".32 NAA": (1.3, 2.84, 8.25, 40.0, _CIP + "tab-iv/tabivcal-en-page24.pdf"),  # .380 ACP case necked down; C.I.P. 9 mm Browning court
+    ".224 Valkyrie": (1.24, 3.2, 9.09, 36.0, _CIP + "tab-i/tabical-en-page31.pdf"),  # 6.8 SPC case necked down; C.I.P. 6,8 mm Rem. SPC
+    "9x39 mm": (1.5, 3.2, 9.56, 52.0, _CIP + "tab-i/tabical-en-page47.pdf"),  # 7.62x39 case necked up; C.I.P. 7,62 x 39
+    "7.35x51 mm Carcano": (1.3, 3.2, 9.95, 74.7, _CIP + "tab-i/tabical-en-page20.pdf"),  # 6.5 Carcano case necked up; C.I.P. 6,5 x 52 Carcano
+    "6.5-300 Weatherby Magnum": (1.3, 5.56, 11.61, 45.0, _CIP + "tab-iii/tabiiical-en-page19.pdf"),  # .300 Wby case necked down; C.I.P. ?
+    ".300 PRC": (1.27, 3.24, 12.07, 35.0, _CIP + "tab-i/tabical-en-page143.pdf"),  # from the .375 Ruger case; C.I.P. 375 Ruger
+    "6.5 PRC": (1.27, 3.24, 12.07, 35.0, _CIP + "tab-i/tabical-en-page143.pdf"),  # from the .375 Ruger case family; C.I.P. 375 Ruger
+    "7 mm PRC": (1.27, 3.24, 12.07, 35.0, _CIP + "tab-i/tabical-en-page143.pdf"),  # from the .375 Ruger case family; C.I.P. 375 Ruger
+    ".300 Ruger Compact Magnum": (1.27, 3.24, 12.07, 35.0, _CIP + "tab-i/tabical-en-page143.pdf"),  # shortened .375 Ruger case; C.I.P. 375 Ruger
+    ".338 Ruger Compact Magnum": (1.27, 3.24, 12.07, 35.0, _CIP + "tab-i/tabical-en-page143.pdf"),  # shortened .375 Ruger case; C.I.P. 375 Ruger
+    "6.8 Western": (1.37, 3.35, 12.19, 45.0, _CIP + "tab-i/tabical-en-page100.pdf"),  # .270 WSM case; C.I.P. 270 Win. Short Mag.
+}
+
+
+def case_head(name):
+    """(rim thickness, ramp top or belt front, groove diameter, ramp angle) or None."""
+    entry = CASE_HEADS.get(name)
+    return entry[:4] if entry else None
 
 
 # Calibres no longer in regular factory production (only surplus, boutique loads or reloading).
