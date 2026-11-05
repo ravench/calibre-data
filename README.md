@@ -16,10 +16,18 @@ The shared calibre catalogue for
   hunting rounds) to a code in `COUNTRIES` (English name and flag emoji; historical states such
   as the Soviet Union have no emoji). Calibres in common use worldwide get `WORLDWIDE` ("WW",
   🌐) instead; no entry means neither a clear country nor universal use. `origin(name)` looks it up.
+- `BULLETS` gives the bullet each calibre was first sold with where it was not a full metal
+  jacket: `LEAD`, `PAPER_PATCHED` (lead wrapped in paper below the nose) or `SOFT_POINT`
+  (jacket with a lead tip), with the page that says so (`BULLET_INFERRED`: hunting rounds
+  without a source, soft point from their use). `CASES` lists cases that were not brass
+  (`COPPER`, lacquered `STEEL`, `NICKEL`-plated steel, `PAPER`-covered foil). `bullet(name)` and
+  `case_material(name)` look them up.
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side
   (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (`CRIMPED`,
   e.g. the .22 blank 6.8/11) has no bullet: its case narrows to the star crimp.
+  `bulletMaterial` is `steel` (GP 1890 cap) or `lead`, `tip` is a soft point's lead tip drawn over
+  the bullet, `patch` the paper band, `caseMaterial` set when the case is not brass.
 
 The values are for drawings and for matching photos, **not reloading data**.
 
