@@ -6,7 +6,8 @@ The shared calibre catalogue for
 [calibre wall poster](https://github.com/ravench/calibre-poster).
 
 - `cartridges.py`: every calibre with its approximate dimensions in mm (CIP/SAAMI, rounded),
-  search aliases, printable alternative names and primer sizes, and the year each calibre was
+  search aliases, printable alternative names and primer sizes (`PRIMER_SOURCES` names where each
+  was checked; `PRIMER_UNVERIFIED` lists the ones not yet checked), and the year each calibre was
   first introduced (`INTRODUCED`, with the page it was checked against; `INTRODUCED_UNKNOWN`
   lists the entries that aren't one cartridge and why; where sources disagree, the earliest
   probable year), `OBSOLETE`, the calibres no longer in regular factory production, and `RARE`, the calibres you
@@ -23,6 +24,12 @@ The shared calibre catalogue for
   (`COPPER`, lacquered `STEEL`, `NICKEL`-plated steel, `PAPER`-covered foil, `HYBRID` brass body on a steel head). `CURRENT_CASES` lists other case materials
   made today (brass .45-70, steel 9x19); the original stays the drawn one. `bullet(name)`,
   `case_material(name)` and `current_case_materials(name)` look them up.
+- `SHOULDER_ANGLES` gives each bottleneck case its shoulder angle (degrees from the case axis,
+  the American alpha/2) with the page it was read from: mostly the C.I.P. sheets, whose `L1`
+  is then the calibre's `sh_at`. Cases without a source yet are drawn at
+  `DEFAULT_SHOULDER_ANGLE` (32°); the tests list them, so a new calibre needs an angle or a
+  conscious entry there.
+- `CASE_HEADS` / `case_head(name)`: rim thickness, extractor-groove diameter and ramp (or belt front) of 181 rimless and belted cases from the C.I.P. sheets; the outline draws each head from them, other cases keep a generic head.
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side
   (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (`CRIMPED`,
