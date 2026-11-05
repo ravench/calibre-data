@@ -544,25 +544,30 @@ DISPLAY_ALIASES = {
     ".50 BMG": ["12,7x99 mm NATO"],
 }
 
-# Primer per calibre (Boxer sizes of commercial, reloadable brass). Primers sit in the
-# centre of the case head. Military surplus can be Berdan-primed with other sizes
-# (e.g. 7.62x39, 7.62x54R, 7.5x54 French); rimfire and caseless entries have none.
-SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE, SHOTSHELL_209, BMG_35 = (
-    "small-pistol", "large-pistol", "small-rifle", "large-rifle", "shotshell-209", "bmg-35")
+# Primer per calibre: the primer of the original factory ammunition, which is today's Boxer size
+# for calibres still loaded. Primers sit in the centre of the case head. Old British Nitro
+# Expresses and some old European rounds came with the large .254" Berdan "Nitro" primer
+# (Kynoch #40, today RWS 6507), measured on headstamp photos (see PRIMER_SOURCES). Other Berdan
+# primers (4.5 and 5.5 mm, e.g. 7.62x39, 7.62x54R surplus) are within 0.2 mm of a Boxer size and
+# keep that kind; rimfire and caseless entries have none.
+SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE, SHOTSHELL_209, BMG_35, BERDAN_NITRO = (
+    "small-pistol", "large-pistol", "small-rifle", "large-rifle", "shotshell-209", "bmg-35",
+    "berdan-nitro")
 PRIMER_DIAMETERS = {  # mm, nominal primer cup diameter
     SMALL_PISTOL: 4.45, SMALL_RIFLE: 4.45,     # .175"
     LARGE_PISTOL: 5.33, LARGE_RIFLE: 5.33,     # .210"
     SHOTSHELL_209: 6.15,                       # .242"
     BMG_35: 8.03,                              # .316", CCI #35
+    BERDAN_NITRO: 6.45,                        # .254", Kynoch #40 / RWS 6507
 }
 PRIMERS = {
     ".450 No. 2 Nitro Express": LARGE_RIFLE,
     ".500/416 Nitro Express": LARGE_RIFLE,
     ".375 Flanged Magnum Nitro Express": LARGE_RIFLE,
     "9.3x53 mm R Finnish": LARGE_RIFLE,
-    "10.3x60 mm R": LARGE_RIFLE,
+    "10.3x60 mm R": BERDAN_NITRO,
     "7x61 mm Sharpe & Hart": LARGE_RIFLE,
-    ".360 No. 5 Rook": LARGE_PISTOL,
+    ".360 No. 5 Rook": SMALL_PISTOL,
     "6.35 mm Browning (.25 ACP)": SMALL_PISTOL, "7.65 mm Browning (.32 ACP)": SMALL_PISTOL,
     "7.65 mm Parabellum": SMALL_PISTOL, ".32 S&W Long": SMALL_PISTOL, ".32 H&R Magnum": SMALL_PISTOL,
     "7.62x25 mm Tokarev": SMALL_PISTOL, "9 mm Browning kurz (.380 ACP)": SMALL_PISTOL,
@@ -647,16 +652,16 @@ PRIMERS = {
     ".32 NAA": SMALL_PISTOL,
     ".32 Long Colt": SMALL_PISTOL,
     "5.75 mm Velo-Dog": SMALL_PISTOL, ".500 JRH": LARGE_PISTOL,
-    ".375 Flanged Nitro Express": LARGE_RIFLE, ".45-90 WCF": LARGE_RIFLE,
-    ".55 Boys": BMG_35,  # assumed: the sources give no primer size
+    ".375 Flanged Nitro Express": BERDAN_NITRO, ".45-90 WCF": LARGE_RIFLE,
+    ".55 Boys": BMG_35,
     ".35 S&W Auto": SMALL_PISTOL,
     ".38 ACP": SMALL_PISTOL,
     ".41 Long Colt": SMALL_PISTOL,
     ".44 Colt": LARGE_PISTOL,
     ".442 Webley": LARGE_PISTOL,
-    ".450 Adams": LARGE_PISTOL,
-    ".476 Enfield": LARGE_PISTOL,
-    "11x59 mm R Gras": LARGE_RIFLE,
+    ".450 Adams": SMALL_PISTOL,
+    ".476 Enfield": SMALL_PISTOL,
+    "11x59 mm R Gras": BERDAN_NITRO,
     ".32-40 Ballard": LARGE_RIFLE,
     ".50-90 Sharps": LARGE_RIFLE,
     ".220 Swift": LARGE_RIFLE,
@@ -761,7 +766,7 @@ PRIMERS = {
     ".577 Nitro Express": LARGE_RIFLE,
     ".600 Nitro Express": LARGE_RIFLE,
     ".700 Nitro Express": LARGE_RIFLE,
-    ".500/465 Nitro Express": LARGE_RIFLE,
+    ".500/465 Nitro Express": BERDAN_NITRO,
     ".318 Westley Richards": LARGE_RIFLE,
     ".240 Weatherby Magnum": LARGE_RIFLE,
     ".224 Weatherby Magnum": LARGE_RIFLE,
@@ -774,7 +779,7 @@ PRIMERS = {
     ".408 CheyTac": LARGE_RIFLE,
     ".360 Buckhammer": LARGE_RIFLE,
     ".400 Legend": SMALL_RIFLE,
-    "9.3x72 mm R": LARGE_RIFLE,
+    "9.3x72 mm R": BERDAN_NITRO,
     "8x75 mm RS": LARGE_RIFLE,
     "6.5x65 mm RWS": LARGE_RIFLE,
     "9.3x66 mm Sako (.370 Sako Magnum)": LARGE_RIFLE,
@@ -800,7 +805,7 @@ PRIMERS = {
     ".244 H&H Magnum": LARGE_RIFLE,
     ".45-75 Winchester": LARGE_RIFLE,
     ".465 H&H Magnum": LARGE_RIFLE,
-    ".475 No. 2 Nitro Express": LARGE_RIFLE,
+    ".475 No. 2 Nitro Express": BERDAN_NITRO,
     ".400/350 Nitro Express": LARGE_RIFLE,
     ".350 Rigby Magnum": LARGE_RIFLE,
     ".310 Cadet": SMALL_RIFLE,
@@ -1206,9 +1211,10 @@ INTRODUCED_UNKNOWN = {
 # reloading data; Starline is the primer named on its brass page. Shot shells: Hodgdon's
 # shotshell data uses 209-size primers for every gauge and length listed. municion.org: the
 # primer diameter measured on its headstamp photos (median over the specimens, scaled by the rim
-# diameter; checked on 9 mm, .38 Special and .308 to within 2 %), only for US rounds that were
-# Boxer-primed from the start, so the original primer is the reloading size. Calibres not yet checked against a
-# source are in PRIMER_UNVERIFIED, so a new calibre has to go in one of the two.
+# diameter; checked on 9 mm, .38 Special and .308 to within 2 %). It gives the original primer:
+# about 6.1-6.7 mm is the .254" Berdan Nitro primer, under 4.5 mm a small one. Readings between two
+# sizes (4.8-5.0 mm, about 6.0 mm) stay unverified. Calibres not yet checked against a source are
+# in PRIMER_UNVERIFIED, so a new calibre has to go in one of the two.
 _HODGDON = "https://hodgdonreloading.com/rldc/"
 _VIHTAVUORI = "https://vihtavuori.com/reloading-data/reloading-data-tool/"
 _STARLINE = "https://www.starlinebrass.com/"
@@ -1223,6 +1229,33 @@ PRIMER_SOURCES = {
     ".50-95 WCF": _MUNICION + "50-95-300-winchester/",  # 5.16 mm, 6 specimens
     ".45-75 Winchester": _MUNICION + "45-75-winchester-centennial/",  # 5.23 mm, 5 specimens
     ".35 S&W Auto": _MUNICION + "35-smith-wesson-automatic/",  # 4.34 mm, 4 specimens
+    "10.3x60 mm R": _MUNICION + "103-x-60-r/",  # 6.14 mm, 4 specimens
+    "11x59 mm R Gras": _MUNICION + "11-x-59-r-french-gras-m-1874-79-83/",  # 6.10 mm, 8 specimens
+    ".500/465 Nitro Express": _MUNICION + "500-465-holland-holland-flanged-ne-3-1-4/",  # 6.13 mm, 3 specimens
+    ".475 No. 2 Nitro Express": _MUNICION + "475-n2-nitro-express-jeffery-3-1-2/",  # 6.69 mm, 5 specimens
+    ".375 Flanged Nitro Express": _MUNICION + "375-flanged-nitro-express/",  # 6.22 mm, 2 specimens
+    "9.3x72 mm R": _MUNICION + "93-x-72-r-d-express/",  # 6.47 mm, 2 specimens
+    ".450 Adams": _MUNICION + "450-adams-mk-ii-brass-base-disk/",  # 4.23 mm, 6 specimens
+    ".476 Enfield": _MUNICION + "476-enfield-revolver-mk-iii/",  # 4.41 mm, 3 specimens
+    ".360 No. 5 Rook": _MUNICION + "360-n-5-revolver-rifle/",  # 4.40 mm, 8 specimens
+    "8 mm Roth-Steyr": _MUNICION + "8-mm-roth-steyr/",  # 4.32 mm, 8 specimens
+    "9 mm Glisenti": _MUNICION + "9-mm-glisenti-m-1910/",  # 4.34 mm, 7 specimens
+    "7.35x51 mm Carcano": _MUNICION + "735-x-51-italian-carcano-m-1938/",  # 5.11 mm, 4 specimens
+    "8x60 mm S": _MUNICION + "8-x-60-s-mauser/",  # 5.11 mm, 5 specimens
+    "5.75 mm Velo-Dog": _MUNICION + "56-mm-velo-dog/",  # 4.15 mm, 8 specimens
+    ".55 Boys": _MUNICION + "55-boys/",  # 7.61 mm, 7 specimens
+    "8x58 mm R Danish Krag": _MUNICION + "8-x-58-r-danish-krag-jorgensen-m-1889/",  # 5.42 mm, 8 specimens
+    "7.92x107 mm DS": _MUNICION + "792-x-107-polish-anti-tank-maroszek-ur-wz-35/",  # 5.64 mm, 4 specimens
+    "9x57 mm Mauser": _MUNICION + "9-x-57-mauser/",  # 5.36 mm, 8 specimens
+    "6.5x57 mm R": _MUNICION + "65-x-57-r-mauser-m88/",  # 5.11 mm, 4 specimens
+    ".416 Barrett": _MUNICION + "416-barrett-sniper/",  # 7.77 mm, 2 specimens
+    "12.7x108 mm": _MUNICION + "127-x-108-russian-dshk-rimless/",  # 8.70 mm, 8 specimens
+    ".600 Nitro Express": _MUNICION + "600-nitro-express-3/",  # 5.52 mm, 8 specimens
+    "6.5x65 mm RWS": _MUNICION + "65-x-65-rws/",  # 5.38 mm, 2 specimens
+    "8x75 mm RS": _MUNICION + "8-x-75-r-s-behr/",  # 5.10 mm, 6 specimens
+    ".450/400 Nitro Express 3 inch": _MUNICION + "450-400-express-2-3-8/",  # 5.16 mm, 6 specimens
+    ".400/350 Nitro Express": _MUNICION + "400-350-rigby-flanged-nitro-express/",  # 5.53 mm, 3 specimens
+    "6.5x58 mm Vergueiro": _MUNICION + "65-x-58-mauser-vergueiro-m-1904/",  # 5.28 mm, 8 specimens
     "7x61 mm Sharpe & Hart": "https://sierrabullets.com/content/load-data/legacy/284-7mm/7x61mm-sharpe-hart.pdf",  # Rem 9 1/2M
     "6.35 mm Browning (.25 ACP)": _WP + ".25_ACP",
     "7.65 mm Browning (.32 ACP)": _WP + ".32_ACP",
@@ -1511,25 +1544,18 @@ PRIMER_SOURCES = {
     "9x39 mm": _STARLINE + "9x39-brass",
 }
 
-# Primer sizes still unchecked: no reloading data or brass maker page found yet (old military
-# rounds, Nitro Expresses, European hunting rounds). Hodgdon loads .30 Super Carry with small
+# Primer sizes still unchecked: no reloading data, brass maker page or clear headstamp photo
+# found yet (old military rounds, Nitro Expresses, European hunting rounds). Hodgdon loads .30 Super Carry with small
 # rifle primers; Federal's ammunition uses small pistol, so it stays small pistol until checked.
 PRIMER_UNVERIFIED = {
     ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express",
-    "9.3x53 mm R Finnish", "10.3x60 mm R", ".360 No. 5 Rook", ".30 Super Carry",
-    "8 mm Lebel revolver", "8 mm Roth-Steyr", "9 mm Glisenti", "10.4 mm Swiss Ordnance 1878",
-    "11 mm French Ordnance", "9 mm P.A.K.", "5.6 mm GP 90", "8x50 mm R Mannlicher",
-    "7.35x51 mm Carcano", "5.8x42 mm", "10.4x38 mm R Vetterli", ".577 Snider",
-    ".577/450 Martini-Henry", "8x60 mm S", "9.5x57 mm Mannlicher-Schönauer", "5.75 mm Velo-Dog",
-    ".500 JRH", ".375 Flanged Nitro Express", ".55 Boys", ".442 Webley", ".450 Adams",
-    ".476 Enfield", "11x59 mm R Gras", ".356 TSW", "6.5x53 mm R Mannlicher",
-    "8x58 mm R Danish Krag", "7.92x107 mm DS", "9x57 mm Mauser", "6.5x57 mm R", ".416 Barrett",
-    "12.7x108 mm", ".450 Nitro Express", ".577 Nitro Express", ".600 Nitro Express",
-    ".500/465 Nitro Express", ".318 Westley Richards", "9.3x72 mm R", "8x75 mm RS",
-    "6.5x65 mm RWS", ".300 Blaser Magnum", ".375 Blaser Magnum", "7 mm Blaser Magnum",
-    ".338 Blaser Magnum", "8.5x55 mm Blaser", ".450/400 Nitro Express 3 inch", ".244 H&H Magnum",
-    ".475 No. 2 Nitro Express", ".400/350 Nitro Express", ".350 Rigby Magnum",
-    "6.5x58 mm Vergueiro",
+    "9.3x53 mm R Finnish", ".30 Super Carry", "8 mm Lebel revolver", "10.4 mm Swiss Ordnance 1878",
+    "11 mm French Ordnance", "9 mm P.A.K.", "5.6 mm GP 90", "8x50 mm R Mannlicher", "5.8x42 mm",
+    "10.4x38 mm R Vetterli", ".577 Snider", ".577/450 Martini-Henry",
+    "9.5x57 mm Mannlicher-Schönauer", ".500 JRH", ".442 Webley", ".356 TSW",
+    "6.5x53 mm R Mannlicher", ".450 Nitro Express", ".577 Nitro Express", ".318 Westley Richards",
+    ".300 Blaser Magnum", ".375 Blaser Magnum", "7 mm Blaser Magnum", ".338 Blaser Magnum",
+    "8.5x55 mm Blaser", ".244 H&H Magnum", ".350 Rigby Magnum",
 }
 
 

@@ -3,7 +3,7 @@ import os, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
-                        PRIMER_SOURCES, PRIMER_UNVERIFIED,
+                        PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO, SMALL_PISTOL,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
                         RARE, is_rare, tags,
                         ORIGIN, COUNTRIES, origin,
@@ -48,6 +48,14 @@ class CatalogueTests(unittest.TestCase):
         centrefire = {s["name"] for s in ALL if s["kind"] not in (RIMFIRE, BALL, MINIE, PELLET)}
         self.assertEqual(set(PRIMERS), centrefire)
         self.assertLessEqual(set(PRIMERS.values()), set(PRIMER_DIAMETERS))
+
+    def test_original_primers_from_headstamp_photos(self):
+        for name in ("10.3x60 mm R", "11x59 mm R Gras", ".500/465 Nitro Express",
+                     ".475 No. 2 Nitro Express", ".375 Flanged Nitro Express", "9.3x72 mm R"):
+            self.assertEqual(PRIMERS[name], BERDAN_NITRO, name)
+        self.assertEqual(PRIMER_DIAMETERS[BERDAN_NITRO], 6.45)
+        for name in (".450 Adams", ".476 Enfield", ".360 No. 5 Rook"):
+            self.assertEqual(PRIMERS[name], SMALL_PISTOL, name)
 
     def test_every_primer_is_sourced_or_marked_unverified(self):
         self.assertEqual(set(PRIMER_SOURCES) & PRIMER_UNVERIFIED, set())
