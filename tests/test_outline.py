@@ -114,8 +114,7 @@ class OutlineTests(unittest.TestCase):
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
     # or article giving the angle was found yet. Remove a name here when its angle is added.
     SHOULDER_UNSOURCED = {
-        "6 mm GT", ".22 ARC", "6.8 Western", ".27 Nosler", ".30 Nosler",
-        "6.5 Weatherby RPM", ".338 Weatherby RPM",
+        "6 mm GT", ".22 ARC", ".27 Nosler", ".30 Nosler",
     }
 
     def bottlenecks(self):

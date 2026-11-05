@@ -421,7 +421,7 @@ CATALOGUE = [
         c(".350 Remington Magnum", BELTED, 13.5, 13.51, 12.6, 9.9, 55.1, 43.18, 71.1, 9.1, ROUND, ["350remmag"]),
         # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c(".338-378 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 9.2, 73.8, 61.05, 93.0, 8.6, SPITZER, ["338-378"]),
-        c("6.8 Western", RIMLESS, 13.6, 14.1, 13.7, 8.0, 51.3, 41.6, 75.1, 7.04, SPITZER, ["6.8western", "68western"]),
+        c("6.8 Western", RIMLESS, 13.6, 14.1, 13.7, 8.0, 51.3, 40.21, 75.1, 7.04, SPITZER, ["6.8western", "68western"]),
         c("7 mm Remington SAUM", RIMLESS, 13.6, 13.61, 13.58, 8.1, 51.7, 39.07, 71.8, 7.2, SPITZER, ["7saum"]),
         # Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
         c(".26 Nosler", RIMLESS, 13.6, 14.0, 13.6, 7.6, 65.8, 55.58, 84.8, 6.7, SPITZER, ["26nosler"]),
@@ -442,8 +442,8 @@ CATALOGUE = [
         # Weatherby RPM family (rebated rim, 6.5-284 body lengthened). The .25 is from the 2026 SAAMI drawing;
         # the 6.5 and .338 share its rim, head and shoulder diameter, with neck and shoulder height estimated.
         c(".25 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.37, 60.96, 50.48, 84.84, 6.53, SPITZER, ["25rpm", "25wbyrpm"]),
-        c("6.5 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.54, 65.28, 55.3, 84.84, 6.71, SPITZER, ["6.5rpm", "6.5wbyrpm", "65rpm"]),
-        c(".338 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 9.37, 64.77, 54.8, 82.55, 8.59, SPITZER, ["338rpm", "338wbyrpm"]),
+        c("6.5 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 7.54, 65.28, 54.80, 84.84, 6.71, SPITZER, ["6.5rpm", "6.5wbyrpm", "65rpm"]),
+        c(".338 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.14, 9.37, 64.77, 55.04, 82.55, 8.59, SPITZER, ["338rpm", "338wbyrpm"]),
         c(".30-378 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 8.6, 74.0, 61.2, 93.7, 7.82, SPITZER, ["30-378"]),
         c("5.6x57 mm", RIMLESS, 11.95, 11.9, 10.94, 7.1, 56.7, 44.51, 69.0, 5.7, SPITZER, ["5.6x57"]),
         # Smokeless rounds from batches 6 and 7, first misplaced under Schwarzpulver.
@@ -1451,6 +1451,9 @@ SHOULDER_ANGLES = {
     "6.5-300 Weatherby Magnum": (46.4, "https://jagdfibel.de/images/0/0e/65300.pdf"),  # SAAMI drawing (double radius; chord through the .4920 datum and neck start)
     ".277 SIG Fury": (29, "https://commons.wikimedia.org/wiki/File:XM1186.jpg"),  # measured on the photo; neck start kept
     "5.8x42 mm": (21, "https://commons.wikimedia.org/wiki/File:5.8x42_mm.jpg"),  # measured on the photo (upper edge); neck start kept
+    "6.8 Western": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/11/6.8-Western-Public-Introduction-Orig-2020-11-01.pdf"),  # SAAMI drawing
+    "6.5 Weatherby RPM": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"),  # SAAMI drawing
+    ".338 Weatherby RPM": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"),  # same RPM case: 35 degrees on the .25 and 6.5 RPM SAAMI drawings; neck start kept
 }
 DEFAULT_SHOULDER_ANGLE = 32
 
