@@ -277,7 +277,7 @@ class CatalogueTests(unittest.TestCase):
             # sh_at is the C.I.P. sheet's L1 (see SHOULDER_ANGLES), not the municion.org specimen.
             "6.5x54 mm Mannlicher-Schönauer": {"case": 53.6, "sh_at": 41.82},
             "10.4x38 mm R Vetterli": {"rim": 15.7, "base": 13.62, "shoulder": 13.1, "neck": 11.43,
-                                      "case": 38.21, "sh_at": 30.7, "oal": 56.22, "bullet": 10.92},
+                                      "case": 38.21, "sh_at": 26.11, "oal": 56.22, "bullet": 10.92},
         }
         for name, fields in expected.items():
             for key, value in fields.items():

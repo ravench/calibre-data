@@ -114,17 +114,12 @@ class OutlineTests(unittest.TestCase):
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
     # or article giving the angle was found yet. Remove a name here when its angle is added.
     SHOULDER_UNSOURCED = {
-        ".17 Winchester Super Magnum", ".400 Cor-Bon", ".256 Winchester Magnum", "9x25 mm Dillon", ".22 TCM",
-        "8 mm Nambu", ".25 NAA", ".32 NAA", ".338 ARC", "9x39 mm", "6 mm GT", ".22 Creedmoor",
-        "7 mm Backcountry", "8.6 Blackout", ".22 ARC", ".338 Ruger Compact Magnum",
-        "7.5x53.5 mm Swiss (GP 1890)", ".300 HAM'R", "6.5x58 mm Vergueiro", ".375 CheyTac",
-        "7.7x58 mm Arisaka", "8x50 mm R Lebel", "7.35x51 mm Carcano", ".277 SIG Fury", "5.8x42 mm",
-        ".25-35 Winchester", ".55 Boys",
-        "8.5x55 mm Blaser", ".38-56 WCF", ".22 Nosler", "6.5-300 Weatherby Magnum", ".17 Hornet",
-        "6.8 Western", ".26 Nosler", ".27 Nosler", ".30 Nosler", ".33 Nosler", ".300 Ruger Compact Magnum",
-        ".224 Valkyrie", ".458 SOCOM", ".25 Weatherby RPM", "6.5 Weatherby RPM",
-        ".338 Weatherby RPM", "7.92x107 mm DS", ".308 Norma Magnum", ".404 Jeffery", ".416 Barrett",
-        "10.4x38 mm R Vetterli", "11x59 mm R Gras",
+        "8 mm Nambu", ".338 ARC", "6 mm GT", ".22 Creedmoor", "7 mm Backcountry", "8.6 Blackout",
+        ".22 ARC", "7.5x53.5 mm Swiss (GP 1890)", "7.7x58 mm Arisaka", "8x50 mm R Lebel",
+        "7.35x51 mm Carcano", ".277 SIG Fury", "5.8x42 mm", ".55 Boys", "8.5x55 mm Blaser",
+        "6.5-300 Weatherby Magnum", ".17 Hornet", "6.8 Western", ".27 Nosler", ".30 Nosler",
+        ".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM", ".308 Norma Magnum",
+        ".404 Jeffery", "11x59 mm R Gras",
     }
 
     def bottlenecks(self):
@@ -171,8 +166,19 @@ class OutlineTests(unittest.TestCase):
                 neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
                 self.assertLess(abs(neck_start - l2), 0.6)
 
+    def test_municion_shoulders_follow_the_aecc_drawings(self):
+        # (half angle, shoulder start) from AECC drawings on municion.org: atan(((SØ-NØ)/2)/(CL-NL-SL)).
+        drawings = {".22 Nosler": (29.9, 35.28), ".38-56 WCF": (6.5, 30.64), "6.5x58 mm Vergueiro": (10.8, 41.0),
+                    ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.2, 26.11)}
+        specs = self.bottlenecks()
+        for name, (angle, start) in drawings.items():
+            with self.subTest(name):
+                self.assertEqual(cartridges.shoulder_angle(name), angle)
+                self.assertIn("municion.org", cartridges.SHOULDER_ANGLES[name][1])
+                self.assertEqual(specs[name]["sh_at"], start)
+
     def test_unsourced_shoulders_keep_the_default(self):
-        self.assertEqual(cartridges.shoulder_angle(".22 Nosler"), cartridges.DEFAULT_SHOULDER_ANGLE)
+        self.assertEqual(cartridges.shoulder_angle(".17 Hornet"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
     # Rimless and belted cases without a C.I.P. head (or a parent case that has one); they keep the
     # generic head. A new rimless or belted calibre needs a head in CASE_HEADS or a place here.
