@@ -191,7 +191,7 @@ CATALOGUE = [
         c("9x39 mm", RIMLESS, 11.35, 11.35, 10.36, 9.98, 38.77, 32.3, 56.0, 9.25, SPITZER, ["9x39", "sp-5", "sp-6"]),
         c("6.5 mm Creedmoor", RIMLESS, 12.0, 12.0, 11.7, 7.5, 48.8, 37.84, 71.8, 6.7, SPITZER, ["6.5cm", "6.5creedmoor", "65cm", "creedmoor"]),
         # Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
-        c("6 mm GT", RIMLESS, 11.96, 11.95, 11.66, 6.95, 43.82, 33.51, 67.06, 6.17, SPITZER, ["6gt", "6mmgt"]),
+        c("6 mm GT", RIMLESS, 11.96, 11.95, 11.66, 6.95, 43.82, 33.12, 67.06, 6.17, SPITZER, ["6gt", "6mmgt"]),
         # Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c(".22 Creedmoor", RIMLESS, 11.99, 11.95, 11.76, 6.53, 48.77, 37.85, 68.58, 5.7, SPITZER, ["22cm", "22creedmoor"]),
         c("7 mm Backcountry", RIMLESS, 11.99, 11.93, 11.65, 8.05, 61.39, 51.35, 84.84, 7.22, SPITZER, ["7bc", "7mmbackcountry", "7backcountry"]),
@@ -1455,7 +1455,7 @@ SHOULDER_ANGLES = {
     "6.5 Weatherby RPM": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"),  # SAAMI drawing
     ".338 Weatherby RPM": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"),  # same RPM case: 35 degrees on the .25 and 6.5 RPM SAAMI drawings; neck start kept
     ".22 ARC": (30, "https://www.eurooptic.com/"),  # measured on the Hornady 86162 case photo (29-30 deg); same 30 deg as its 6 mm ARC parent; neck start kept
-    "6 mm GT": (35, "https://www.gaprecision.net/"),  # measured on the GA Precision / Hornady 6mm GT brass photo (35-36 deg); neck start kept
+    "6 mm GT": (35, "https://www.4dreamerrentals.com/"),  # 4D Reamer Rentals 6mm GT drawing: 35 deg, shoulder at 1.3040 in, neck at 1.4375 in (GA Precision brass photo reads 35-36)
     ".30 Nosler": (35, "https://www.creedmoorsports.com/"),  # measured on the Peterson 30 Nosler brass photo (33-35 deg); 35 deg like the .28 Nosler; neck start kept
     ".27 Nosler": (35, "https://www.nosler.com/"),  # Nosler's "27 Nosler Rifle Cartridge" drawing: 35 deg, shoulder at 2.109 in, neck at 2.262 in
 }
