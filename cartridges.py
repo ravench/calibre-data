@@ -1202,14 +1202,15 @@ INTRODUCED_UNKNOWN = {
 }
 
 # Where each primer size in PRIMERS was checked. Wikipedia pages are the cartridge infobox
-# ("Primer type"); Hodgdon and Vihtavuori are the primers used in their published reloading
-# data; Starline is the primer named on its brass page. Shot shells: Hodgdon's shotshell data
-# uses 209-size primers for every gauge and length listed. Calibres not yet checked against a
+# ("Primer type"); Hodgdon, Vihtavuori and Sierra are the primers used in their published
+# reloading data; Starline is the primer named on its brass page. Shot shells: Hodgdon's
+# shotshell data uses 209-size primers for every gauge and length listed. Calibres not yet checked against a
 # source are in PRIMER_UNVERIFIED, so a new calibre has to go in one of the two.
 _HODGDON = "https://hodgdonreloading.com/rldc/"
 _VIHTAVUORI = "https://vihtavuori.com/reloading-data/reloading-data-tool/"
 _STARLINE = "https://www.starlinebrass.com/"
 PRIMER_SOURCES = {
+    "7x61 mm Sharpe & Hart": "https://sierrabullets.com/content/load-data/legacy/284-7mm/7x61mm-sharpe-hart.pdf",  # Rem 9 1/2M
     "6.35 mm Browning (.25 ACP)": _WP + ".25_ACP",
     "7.65 mm Browning (.32 ACP)": _WP + ".32_ACP",
     "7.65 mm Parabellum": _WP + "7.65×21mm_Parabellum",
@@ -1502,7 +1503,7 @@ PRIMER_SOURCES = {
 # rifle primers; Federal's ammunition uses small pistol, so it stays small pistol until checked.
 PRIMER_UNVERIFIED = {
     ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express",
-    "9.3x53 mm R Finnish", "10.3x60 mm R", "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
+    "9.3x53 mm R Finnish", "10.3x60 mm R", ".360 No. 5 Rook",
     ".30 Super Carry", "8 mm Lebel revolver", "8 mm Roth-Steyr", "9 mm Glisenti",
     "10.4 mm Swiss Ordnance 1878", "11 mm French Ordnance", "9 mm P.A.K.", "5.6 mm GP 90",
     "8x50 mm R Mannlicher", "7.35x51 mm Carcano", "5.8x42 mm", "10.4x38 mm R Vetterli",
