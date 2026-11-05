@@ -1470,8 +1470,9 @@ def origin(name):
 # with their lead tip). Calibres not listed here had a full metal jacket (or another all-copper bullet).
 # LEAD: bare lead, also lubricated or wax coated. PAPER_PATCHED: lead bullet wrapped in paper below
 # the nose. SOFT_POINT: copper jacket with the lead core showing at the tip (hunting rounds).
+# POLYMER_TIP: copper jacket with a plastic tip (V-Max, ELD, FTX, SST, AccuBond; Raven 2026-11-05).
 # The GP 1890 steel cap is its own profile (PATCHED) and not listed.
-JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT = "jacketed", "lead", "paper", "softpoint"
+JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP = "jacketed", "lead", "paper", "softpoint", "polymer"
 BULLETS = {  # name: (bullet, source that names the original or factory bullet)
     ".22 Short": (LEAD, "https://en.wikipedia.org/wiki/.22_Short"),
     ".22 LR": (LEAD, "https://en.wikipedia.org/wiki/.22_Long_Rifle"),
@@ -1675,6 +1676,33 @@ BULLETS = {  # name: (bullet, source that names the original or factory bullet)
     ".577 Nitro Express": (SOFT_POINT, "https://en.wikipedia.org/wiki/.577_Nitro_Express"),
     ".600 Nitro Express": (SOFT_POINT, "https://municion.org/producto/600-nitro-express-3/"),
     ".700 Nitro Express": (SOFT_POINT, "https://en.wikipedia.org/wiki/.700_Nitro_Express"),
+    ".17 HMR": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.17_Hornady_Magnum_Rimfire"),
+    ".17 Mach 2": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.17_Hornady_Mach_2"),
+    ".17 Winchester Super Magnum": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"),
+    ".204 Ruger": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.204_Ruger"),
+    ".17 Remington Fireball": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.17_Remington_Fireball"),
+    ".17 Hornet": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.17_Hornet"),
+    "6.5 mm Creedmoor": (POLYMER_TIP, "https://en.wikipedia.org/wiki/6.5mm_Creedmoor"),
+    "6.5 PRC": (POLYMER_TIP, "https://en.wikipedia.org/wiki/6.5_PRC"),
+    "7 mm PRC": (POLYMER_TIP, "https://en.wikipedia.org/wiki/7mm_PRC"),
+    ".300 PRC": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.300_PRC"),
+    ".22 ARC": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.22_ARC"),
+    "6 mm ARC": (POLYMER_TIP, "https://en.wikipedia.org/wiki/6mm_ARC"),
+    ".22 Creedmoor": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.22_Creedmoor"),
+    ".308 Marlin Express": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.308_Marlin_Express"),
+    ".338 Marlin Express": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.338_Marlin_Express"),
+    ".30 Thompson/Center": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.30_Thompson_Center"),
+    ".338 Ruger Compact Magnum": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.338_Ruger_Compact_Magnum"),
+    ".325 Winchester Short Magnum": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.325_WSM"),
+    ".26 Nosler": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.26_Nosler"),
+    ".27 Nosler": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.28_Nosler"),
+    ".28 Nosler": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.28_Nosler"),
+    ".30 Nosler": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.30_Nosler"),
+    ".33 Nosler": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.28_Nosler"),
+    "6.8 Western": (POLYMER_TIP, "https://en.wikipedia.org/wiki/6.8_Western"),
+    ".450 Bushmaster": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.450_Bushmaster"),
+    "7 mm Backcountry": (POLYMER_TIP, "https://en.wikipedia.org/wiki/7mm_Backcountry"),
+    ".338 Federal": (POLYMER_TIP, "https://en.wikipedia.org/wiki/.338_Federal"),
     "7 mm Blaser Magnum": (SOFT_POINT, None),
     ".300 Blaser Magnum": (SOFT_POINT, None),
     "8.5x55 mm Blaser": (SOFT_POINT, None),
@@ -1687,13 +1715,13 @@ BULLET_INFERRED = {name for name, (_, url) in BULLETS.items() if url is None}
 
 
 def bullet(name):
-    """The original bullet of a calibre: JACKETED, LEAD, PAPER_PATCHED or SOFT_POINT."""
+    """The original bullet of a calibre: JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT or POLYMER_TIP."""
     return BULLETS.get(name, (JACKETED, None))[0]
 
 
 # Case material of the original cartridge where it was not brass (Raven 2026-11-05).
-# PAPER: brass foil covered in paper (Boxer's Snider case).
-BRASS, COPPER, STEEL, NICKEL, PAPER = "brass", "copper", "steel", "nickel", "paper"
+# PAPER: brass foil covered in paper (Boxer's Snider case). HYBRID: brass body on a steel head.
+BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID = "brass", "copper", "steel", "nickel", "paper", "hybrid"
 CASES = {  # name: (material, source)
     ".44 Henry": (COPPER, "https://en.wikipedia.org/wiki/.44_Henry"),
     ".56-56 Spencer": (COPPER, "https://municion.org/producto/56-56-spencer-rf/"),
@@ -1706,11 +1734,13 @@ CASES = {  # name: (material, source)
     # Lacquered steel: 5.45x39 from the start; 7.62x39 since the early 1960s (bimetal before).
     "5.45x39 mm": (STEEL, "https://en.wikipedia.org/wiki/5.45%C3%9739mm"),
     "7.62x39 mm": (STEEL, "https://en.wikipedia.org/wiki/7.62%C3%9739mm"),
+    # Brass body on a stainless steel head, held by an aluminium washer.
+    ".277 SIG Fury": (HYBRID, "https://en.wikipedia.org/wiki/.277_Fury"),
     # Nickel-plated steel case (Federal).
     "7 mm Backcountry": (NICKEL, "https://en.wikipedia.org/wiki/7mm_Backcountry"),
 }
 
 
 def case_material(name):
-    """What the case is made of: BRASS, COPPER, STEEL, NICKEL or PAPER."""
+    """What the case is made of: BRASS, COPPER, STEEL, NICKEL, PAPER or HYBRID."""
     return CASES.get(name, (BRASS, None))[0]

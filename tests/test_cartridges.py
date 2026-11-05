@@ -8,8 +8,8 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         RARE, is_rare, tags,
                         ORIGIN, COUNTRIES, origin,
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
-                        BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, bullet,
-                        CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, case_material)
+                        BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
+                        CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material)
 
 ALL = [s for _, items in CATALOGUE for s in items]
 NAMES = {s["name"] for s in ALL}
@@ -338,7 +338,7 @@ if __name__ == "__main__":
         names = {s["name"] for _, items in CATALOGUE for s in items}
         for name, (kind, url) in BULLETS.items():
             self.assertIn(name, names)
-            self.assertIn(kind, (LEAD, PAPER_PATCHED, SOFT_POINT), name)
+            self.assertIn(kind, (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP), name)
             self.assertTrue(url is None or url.startswith("https://"), name)
         self.assertEqual(BULLET_INFERRED, {"7 mm Blaser Magnum", ".300 Blaser Magnum", "8.5x55 mm Blaser",
                                            ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)"})
@@ -364,14 +364,17 @@ if __name__ == "__main__":
         self.assertEqual(bullet(".308 Winchester"), SOFT_POINT)
         self.assertEqual(bullet("7.62x51 mm NATO"), JACKETED)
         self.assertEqual(bullet("7.5x55 mm Swiss (GP 11)"), JACKETED)
+        self.assertEqual(bullet(".17 HMR"), POLYMER_TIP)
+        self.assertEqual(bullet("6.5 mm Creedmoor"), POLYMER_TIP)
 
     def test_case_materials(self):
         names = {s["name"] for _, items in CATALOGUE for s in items}
         for name, (material, url) in CASES.items():
             self.assertIn(name, names)
-            self.assertIn(material, (COPPER, STEEL, NICKEL, PAPER), name)
+            self.assertIn(material, (COPPER, STEEL, NICKEL, PAPER, HYBRID), name)
             self.assertTrue(url.startswith("https://"), name)
         self.assertEqual(case_material(".44 Henry"), COPPER)
         self.assertEqual(case_material("5.45x39 mm"), STEEL)
         self.assertEqual(case_material(".577 Snider"), PAPER)
         self.assertEqual(case_material("9x19 mm"), BRASS)
+        self.assertEqual(case_material(".277 SIG Fury"), HYBRID)

@@ -1,7 +1,7 @@
 """Side-view outlines of the catalogue cartridges, shared by both apps and the poster.
 
 outline(spec) returns {"width", "height", "case"?, "head"?, "bullet"?, "patch"?, "tip"?, "bulletMaterial"?,
-"caseMaterial"?}:
+"tipMaterial"?, "caseMaterial"?, "headMaterial"?}:
 millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bottom
 (y = overall length), centred in `width`.
 """
@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, BRASS, bullet, case_material  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, bullet, case_material  # noqa: E402
 
 N = 14  # samples per curve
 
@@ -86,8 +86,13 @@ def patch_profile(r, y0, top, band=PATCH_BAND):
 # the paper covers the body, the lead nose shows.
 PAPER_BAND = 0.5
 
-# Share of the exposed bullet that is the bare lead tip of a SOFT_POINT bullet.
+# Share of the exposed bullet that is the bare lead tip of a SOFT_POINT bullet, or the plastic tip of
+# a POLYMER_TIP bullet.
 TIP_SHARE = 0.14
+
+# Height of the steel head of a HYBRID case, from the base (mm): rim, extractor groove and the
+# start of the body (.277 Fury).
+HYBRID_HEAD = 3.3
 
 
 def tip_profile(right, top, share=TIP_SHARE):
@@ -157,9 +162,15 @@ def outline(s):
                 paths["bulletMaterial"] = "lead"
             elif kind == LEAD:
                 paths["bulletMaterial"] = "lead"
-            elif kind == SOFT_POINT:
+            elif kind in (SOFT_POINT, POLYMER_TIP):
                 right = bullet_profile(s["bullet"] / 2, s["case"], s["oal"], s["profile"])
                 paths["tip"] = to_path(mirror(tip_profile(right, s["oal"])), H, hw)
+                if kind == POLYMER_TIP:
+                    paths["tipMaterial"] = "polymer"
+        if case_material(s["name"]) == HYBRID:
+            head = [(x, y) for x, y in prof if y <= HYBRID_HEAD] + [(s["base"] / 2, HYBRID_HEAD)]
+            paths["head"] = to_path(mirror(head), H, hw)
+            paths["headMaterial"] = "steel"
         if case_material(s["name"]) != BRASS:
             paths["caseMaterial"] = case_material(s["name"])
     return {"width": round(width, 2), "height": round(H, 2), **paths}

@@ -3,7 +3,7 @@ import os, re, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
-from cartridges import PATCHED, CRIMPED, LEAD, PAPER_PATCHED, SOFT_POINT, BRASS, CASES, bullet, case_material  # noqa: E402
+from cartridges import PATCHED, CRIMPED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, CASES, bullet, case_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -53,7 +53,8 @@ class OutlineTests(unittest.TestCase):
     def test_soft_points_show_a_lead_tip_at_the_front_of_the_bullet(self):
         for _, s in outline.specs():
             o = outline.outline(s)
-            self.assertEqual("tip" in o, bullet(s["name"]) == SOFT_POINT and "bullet" in o, s["name"])
+            self.assertEqual("tip" in o, bullet(s["name"]) in (SOFT_POINT, POLYMER_TIP) and "bullet" in o, s["name"])
+            self.assertEqual(o.get("tipMaterial") == "polymer", bullet(s["name"]) == POLYMER_TIP and "bullet" in o, s["name"])
             if "tip" in o:
                 tip, whole = points(o["tip"]), points(o["bullet"])
                 self.assertAlmostEqual(min(y for _, y in tip), 0, places=2, msg=s["name"])
@@ -73,6 +74,16 @@ class OutlineTests(unittest.TestCase):
             self.assertEqual(o.get("caseMaterial"), None if case_material(s["name"]) == BRASS else case_material(s["name"]), s["name"])
         self.assertEqual(outline.outline(next(s for _, s in outline.specs() if s["name"] == ".45-70 Government"))["caseMaterial"], "copper")
         self.assertTrue(CASES)
+
+    def test_hybrid_case_has_a_steel_head(self):
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            self.assertEqual(o.get("headMaterial") == "steel", case_material(s["name"]) == HYBRID, s["name"])
+        fury = outline.outline(next(s for _, s in outline.specs() if s["name"] == ".277 SIG Fury"))
+        ys = [y for _, y in points(fury["head"])]
+        # y grows from the tip: the head runs from the base up to HYBRID_HEAD.
+        self.assertAlmostEqual(max(ys), fury["height"], places=2)
+        self.assertAlmostEqual(min(ys), fury["height"] - outline.HYBRID_HEAD, places=2)
 
     def test_crimped_blank_is_a_case_narrowing_to_the_mouth(self):
         s = next(s for _, s in outline.specs() if s["name"] == ".22 Blank (6.8/11)")
