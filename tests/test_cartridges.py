@@ -332,8 +332,6 @@ class CatalogueTests(unittest.TestCase):
             self.assertTrue(INTRODUCED[name][1].startswith("https://municion.org/producto/"), name)
             self.assertNotIn(name, INTRODUCED_UNKNOWN)
 
-if __name__ == "__main__":
-    unittest.main()
 
     def test_bullets_name_known_calibres_and_are_sourced(self):
         names = {s["name"] for _, items in CATALOGUE for s in items}
@@ -391,3 +389,7 @@ if __name__ == "__main__":
         self.assertEqual(current_case_materials(".45-70 Government"), (BRASS,))
         self.assertEqual(current_case_materials("9x19 mm"), (STEEL,))
         self.assertEqual(current_case_materials("7.5x55 mm Swiss (GP 11)"), ())
+
+
+if __name__ == "__main__":
+    unittest.main()
