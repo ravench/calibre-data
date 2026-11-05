@@ -199,7 +199,7 @@ CATALOGUE = [
         c("6 mm Creedmoor", RIMLESS, 12.01, 11.94, 11.73, 6.99, 48.8, 37.49, 71.1, 6.2, SPITZER, ["6cm", "6creedmoor", "6mmcm"]),
         c(".25 Creedmoor", RIMLESS, 12.0, 11.95, 11.76, 7.32, 48.8, 37.85, 71.8, 6.54, SPITZER, ["25cm", "25creedmoor"]),
         c("8.6 Blackout", RIMLESS, 11.99, 11.95, 11.78, 9.3, 42.8, 32.26, 71.4, 8.61, SPITZER, ["8.6blk", "86blk", "8.6blackout"]),
-        c(".22 ARC", RIMLESS, 11.2, 11.2, 10.91, 6.4, 38.7, 31.5, 57.4, 5.7, SPITZER, ["22arc"]),
+        c(".22 ARC", RIMLESS, 11.2, 11.2, 10.915, 6.43, 38.74, 29.235, 57.4, 5.7, SPITZER, ["22arc"]),
         c(".338 Ruger Compact Magnum", RIMLESS, 13.5, 13.5, 13.1, 9.4, 51.2, 40.34, 72.1, 8.6, SPITZER, ["338rcm"]),
         c(".408 CheyTac", RIMLESS, 16.25, 16.18, 15.24, 11.12, 77.21, 62.02, 115.5, 10.36, SPITZER, ["408cheytac", "408ct", "10.36x77"]),
         straight(".360 Buckhammer", RIMMED, 12.9, 10.66, 9.65, 46.0, 63.5, 9.1, FLAT, ["360buckhammer", "360bh"]),
@@ -427,7 +427,7 @@ CATALOGUE = [
         c(".26 Nosler", RIMLESS, 13.6, 14.0, 13.6, 7.6, 65.8, 55.58, 84.8, 6.7, SPITZER, ["26nosler"]),
         c(".27 Nosler", RIMLESS, 13.6, 14.0, 13.6, 7.8, 65.8, 53.57, 84.8, 7.04, SPITZER, ["27nosler"]),
         c(".28 Nosler", RIMLESS, 13.6, 14.0, 13.6, 8.0, 65.8, 56.38, 84.8, 7.2, SPITZER, ["28nosler"]),
-        c(".30 Nosler", RIMLESS, 13.6, 14.0, 13.6, 8.6, 65.8, 55.63, 84.8, 7.82, SPITZER, ["30nosler"]),
+        c(".30 Nosler", RIMLESS, 13.56, 13.97, 13.41, 8.74, 64.92, 53.72, 84.84, 7.82, SPITZER, ["30nosler"]),
         c(".33 Nosler", RIMLESS, 13.6, 14.0, 13.6, 9.4, 65.8, 54.32, 84.8, 8.6, SPITZER, ["33nosler"]),
         c(".300 Ruger Compact Magnum", RIMLESS, 13.5, 13.5, 13.1, 8.6, 53.0, 42.44, 71.8, 7.82, SPITZER, ["300rcm"]),
         c(".30 Thompson/Center", RIMLESS, 12.01, 11.95, 11.78, 8.56, 48.77, 38.4, 67.56, 7.82, SPITZER, ["30tc"]),
@@ -1454,9 +1454,9 @@ SHOULDER_ANGLES = {
     "6.8 Western": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/11/6.8-Western-Public-Introduction-Orig-2020-11-01.pdf"),  # SAAMI drawing
     "6.5 Weatherby RPM": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"),  # SAAMI drawing
     ".338 Weatherby RPM": (35, "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"),  # same RPM case: 35 degrees on the .25 and 6.5 RPM SAAMI drawings; neck start kept
-    ".22 ARC": (30, "https://www.eurooptic.com/"),  # measured on the Hornady 86162 case photo (29-30 deg); same 30 deg as its 6 mm ARC parent; neck start kept
+    ".22 ARC": (30, "https://www.outdoorlife.com/guns/22-arc-review/"),  # SAAMI 22 ARC drawing (issued 2024-01-21) shown by Outdoor Life: 30 deg, shoulder .4297 in at 1.1510 in, neck .253 in at 1.3040 in
     "6 mm GT": (35, "https://www.4dreamerrentals.com/"),  # 4D Reamer Rentals 6mm GT drawing: 35 deg, shoulder at 1.3040 in, neck at 1.4375 in (GA Precision brass photo reads 35-36)
-    ".30 Nosler": (35, "https://www.creedmoorsports.com/"),  # measured on the Peterson 30 Nosler brass photo (33-35 deg); 35 deg like the .28 Nosler; neck start kept
+    ".30 Nosler": (35, "https://www.nosler.com/"),  # Nosler's "30 Nosler Rifle Cartridges" drawing: 35 deg, shoulder .528 in at 2.115 in, neck .344 in at 2.246 in, case 2.556 in
     ".27 Nosler": (35, "https://www.nosler.com/"),  # Nosler's "27 Nosler Rifle Cartridge" drawing: 35 deg, shoulder at 2.109 in, neck at 2.262 in
 }
 DEFAULT_SHOULDER_ANGLE = 32
