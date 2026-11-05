@@ -332,7 +332,6 @@ class CatalogueTests(unittest.TestCase):
             self.assertTrue(INTRODUCED[name][1].startswith("https://municion.org/producto/"), name)
             self.assertNotIn(name, INTRODUCED_UNKNOWN)
 
-
     def test_bullets_name_known_calibres_and_are_sourced(self):
         names = {s["name"] for _, items in CATALOGUE for s in items}
         for name, (kind, url) in BULLETS.items():
