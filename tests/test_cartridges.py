@@ -119,6 +119,17 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
         self.assertFalse(is_rare("8.5x55 mm Blaser"))  # sold widely in German-speaking countries
 
+    def test_swiss_rimfires_keep_the_drawing_values(self):
+        s = {c["name"]: c for c in ALL}["18 mm Milbank-Amsler"]
+        keys = ("rim", "base", "neck", "case", "oal", "bullet")
+        self.assertEqual(tuple(s[k] for k in keys), (20.72, 18.58, 18.27, 25.54, 39.92, 18.15))
+        self.assertEqual(s["kind"], RIMFIRE)
+        self.assertEqual(ORIGIN["18 mm Milbank-Amsler"], "CH")
+        self.assertTrue(is_obsolete("18 mm Milbank-Amsler"))
+        rf72 = {c["name"]: c for c in ALL}["10.4 mm Swiss Ordnance 1872 Rimfire"]
+        self.assertEqual(tuple(rf72[k] for k in keys), (12.7, 10.95, 10.85, 18.23, 30.52, 10.85))
+        self.assertEqual(rf72["kind"], RIMFIRE)
+
     def test_9mm_pak_keeps_the_cip_blank_values(self):
         pak = {s["name"]: s for s in ALL}["9 mm P.A.K."]
         self.assertEqual((pak["rim"], pak["base"], pak["case"], pak["oal"]), (9.5, 9.5, 22.5, 22.5))

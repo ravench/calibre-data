@@ -481,6 +481,16 @@ CATALOGUE = [
         minie(".58 Minié", 14.6, 25.0, ["58", "58minie"]),
         minie(".69 Minié", 17.3, 27.0, ["69", "69minie"]),
         c("10.4x38 mm R Vetterli", RIMMED, 17.6, 14.4, 13.4, 11.4, 38.0, 25.0, 58.5, 10.8, ROUND, ["vetterli", "10.4", "10.4vetterli", "10.4x38"]),
+        # Swiss rimfire for the Milbank-Amsler conversion of the 18 mm Infanteriegewehr 1842/1859 (Thun).
+        # Drawing on municion.org (AECC ref. 18-026-CBR-010): rim 20.72 (1.74 thick), head 18.58, mouth 18.27,
+        # bullet 18.15, case 25.54, overall 39.92. AECC 18-025-BBR-010 (labelled for the converted French
+        # 1864 rifle) is a close variant: rim 20.50, head 18.62, mouth 17.96, case 25.45, overall 40.40.
+        straight("18 mm Milbank-Amsler", RIMFIRE, 20.72, 18.58, 18.27, 25.54, 39.92, 18.15, ROUND,
+                 ["milbankamsler", "milbank-amsler", "milbank", "18x25r", "18x25.7r"]),
+        # Rimfire of the Ordonnanzrevolver 1872 (Thun), before the 1878 centrefire change. Drawing on municion.org
+        # (AECC ref. 11-018-CBR-010): rim 12.70 (1.50 thick), head 10.95, mouth 10.85, bullet 10.85, case 18.23, overall 30.52.
+        straight("10.4 mm Swiss Ordnance 1872 Rimfire", RIMFIRE, 12.7, 10.95, 10.85, 18.23, 30.52, 10.85, ROUND,
+                 ["10.4rf", "revolver72", "10.4x18", "10.4mmrf"]),
         straight(".577 Snider", RIMMED, 19.2, 17.0, 16.4, 50.8, 62.0, 14.6, ROUND, ["577snider"]),
         c(".577/450 Martini-Henry", RIMMED, 19.0, 17.0, 16.0, 12.3, 59.7, 38.0, 79.0, 11.6, ROUND, ["martini-henry", "577/450"]),
         straight(".50-70 Government", RIMMED, 16.9, 14.2, 13.4, 44.5, 57.0, 13.0, ROUND, ["50-70"]),
@@ -951,6 +961,8 @@ INTRODUCED = {
     "9x21 mm IMI": (1980, _WP + "9×21mm"),                         # "1980–present", text says the 1980s
     "7.5x53.5 mm Swiss (GP 1890)": (1889, _WP + "7.5×55mm_Swiss"),  # named Modell 1890, in service 1889
     "10.4x38 mm R Vetterli": (1867, _WP + ".41_Swiss"),             # adopted 1867, issued with the rifle 1869
+    "18 mm Milbank-Amsler": (1867, "https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"),
+    "10.4 mm Swiss Ordnance 1872 Rimfire": (1872, "https://municion.org/producto/104-mm-swiss-rf-m-1872/"),
     "9.3x74 mm R": (1900, _WP + "9.3×74mmR"),                       # "c. 1900"
     "5.6x50 mm Magnum": (1970, _WP + "5.6×50mm_Magnum"),
     "6.5x57 mm Mauser": (1893, _WP + "6.5×57mm_Mauser"),
@@ -1192,7 +1204,7 @@ INTRODUCED_UNKNOWN = {
 # Everything else is current. The apps can hide these by default; the poster can mark them.
 OBSOLETE = {
     "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
-    "7.5x53.5 mm Swiss (GP 1890)", "10.4x38 mm R Vetterli", ".577 Snider", ".577/450 Martini-Henry",
+    "7.5x53.5 mm Swiss (GP 1890)", "10.4x38 mm R Vetterli", "18 mm Milbank-Amsler", ".577 Snider", "10.4 mm Swiss Ordnance 1872 Rimfire", ".577/450 Martini-Henry",
     ".50-70 Government", ".58 Minié", ".69 Minié",
     "7.5 mm Swiss Ordnance 1882", "7.65 mm Longue", "8 mm Nambu", "8 mm Lebel revolver", "8 mm Roth-Steyr",
     "9 mm Glisenti", "9x23 mm Steyr", "9x23 mm Largo", ".38 Long Colt", "10.4 mm Swiss Ordnance 1878",
@@ -1274,7 +1286,7 @@ RARE = {
     ".32 Remington", ".33 Winchester", ".35 S&W Auto", ".35 Winchester Self-Loading",
     ".351 Winchester Self-Loading", ".356 TSW", ".401 Winchester Self-Loading",
     ".41 Action Express", ".44 Henry", ".442 Webley", ".450 Adams", ".476 Enfield", ".577 Snider",
-    "11 mm French Ordnance",
+    "11 mm French Ordnance", "18 mm Milbank-Amsler", "10.4 mm Swiss Ordnance 1872 Rimfire",
     "11x59 mm R Gras", "11x60 mm R Mauser", "6.5x53 mm R Mannlicher", "7.35x51 mm Carcano",
     "7.62x45 mm vz. 52", "7.92x107 mm DS",
     "8 mm Nambu", "8 mm Roth-Steyr", "8x50 mm R Mannlicher", "8x58 mm R Danish Krag",
@@ -1357,7 +1369,7 @@ ORIGIN = {
     # Switzerland
     "5.6 mm GP 90": "CH", "7.5x55 mm Swiss (GP 11)": "CH", "7.5x53.5 mm Swiss (GP 1890)": "CH",
     "7.5 mm Swiss Ordnance 1882": "CH", "10.4 mm Swiss Ordnance 1878": "CH",
-    "10.4x38 mm R Vetterli": "CH",
+    "10.4x38 mm R Vetterli": "CH", "18 mm Milbank-Amsler": "CH", "10.4 mm Swiss Ordnance 1872 Rimfire": "CH",
     "7.65 mm Parabellum": "CH",  # first adopted by the Swiss Army (Ordonnanzpistole 1900)
     # Soviet Union and Russian Empire
     "7.62x39 mm": "SU", "5.45x39 mm": "SU", "9x18 mm Makarov": "SU", "7.62x25 mm Tokarev": "SU",
