@@ -1275,13 +1275,15 @@ def is_obsolete(name):
 # Calibres you are unlikely to find, so a photo or measurement that matches one is far more
 # likely a false positive than the real thing. Independent of OBSOLETE: most rare calibres are
 # obsolete collector rounds, but some are still made in small numbers (big Nitro and African
-# rounds, short-lived magnums, niche handgun rounds). Checked on 2026-11-04
-# against the guns listed on waffenbörse.ch and the market monitoring counts on swisswaffen.com:
-# calibres that turn up there are not rare (Vetterli, 9x18 Ultra, GP 1890, 10.4 mm 1878 and
-# 7.65 mm Longue were taken out); obsolete or niche calibres found in neither were added.
+# rounds, short-lived magnums, niche handgun rounds). Checked on 2026-11-04 against the share of
+# each site's listings a calibre has (waffenbörse.ch, swisswaffen.com, GunBroker, TownPost,
+# Frankonia, usedguns.com.au, zbrane.cz and others), so a big site counts for more than a small one:
+# a calibre with at least 0.5 per mille and at least 3 listings on any site is not rare, unless
+# it is obsolete (the guns outlive the ammunition). Under 0.05 per mille on GunBroker and at most
+# 2 listings elsewhere counts as rare.
 RARE = {
     ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express", ".22 Extra Long", ".32 Short Rimfire", ".32 Long Rimfire", "5.75 mm Velo-Dog", ".500 JRH", ".375 Flanged Nitro Express", ".55 Boys", ".45-90 WCF",
-    "9.3x53 mm R Finnish", "10.3x60 mm R", "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
+    "9.3x53 mm R Finnish", "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
     ".219 Zipper", ".22 Remington Jet", ".223 WSSM", ".225 Winchester",
     ".25 Remington", ".25 WSSM", ".256 Winchester Magnum", ".30 Remington AR", ".303 Savage",
     ".32 Remington", ".33 Winchester", ".35 S&W Auto", ".35 Winchester Self-Loading",
@@ -1296,29 +1298,36 @@ RARE = {
     ".38 ACP", ".357 Remington Maximum", ".222 Remington Magnum", ".243 WSSM",
     ".308 Marlin Express", ".577/450 Martini-Henry", ".50-70 Government", ".50-90 Sharps", ".69 Minié",
     # Still made, but hardly ever found:
-    ".450 Rigby", ".375 CheyTac", ".505 Gibbs", ".277 SIG Fury", "5.8x42 mm", ".25 Weatherby RPM", "6.5 Weatherby RPM",
-    ".338 Weatherby RPM", ".300 HAM'R", ".500 Jeffery", ".416 Barrett", "12.7x108 mm", ".460 Weatherby Magnum",
+    ".450 Rigby", ".375 CheyTac", ".505 Gibbs", ".277 SIG Fury", "5.8x42 mm", ".25 Weatherby RPM", 
+    ".338 Weatherby RPM", ".300 HAM'R", ".500 Jeffery", "12.7x108 mm", ".460 Weatherby Magnum",
     ".338-378 Weatherby Magnum", ".30-378 Weatherby Magnum", "7 mm STW", ".22 Savage Hi-Power",
-    ".307 Winchester", ".356 Winchester", ".450 Marlin", ".458 SOCOM", ".50 Beowulf",
+    ".307 Winchester", ".356 Winchester", ".458 SOCOM", ".50 Beowulf",
     ".30 Thompson/Center", ".300 Ruger Compact Magnum", ".300 Remington SAUM",
-    "7 mm Remington SAUM", ".325 Winchester Short Magnum", ".27 Nosler", ".33 Nosler",
-    ".460 Rowland", ".475 Linebaugh", ".22 TCM", "4.6x30 mm", ".25 NAA", ".32 NAA", ".45 Super",
+    ".325 Winchester Short Magnum", ".27 Nosler", ".33 Nosler",
+    ".460 Rowland", ".475 Linebaugh", ".22 TCM", ".25 NAA", ".32 NAA", ".45 Super",
     ".45 Winchester Magnum", "9x23 mm Winchester", ".400 Cor-Bon",
     ".577 Nitro Express", ".600 Nitro Express", ".700 Nitro Express", ".500/465 Nitro Express",
     ".224 Weatherby Magnum",
     ".408 CheyTac", ".338 Ruger Compact Magnum",
     ".45 GAP", "5 mm Remington Rimfire Magnum", ".221 Remington Fireball",
-    ".224 Valkyrie", ".376 Steyr", "8 mm Remington Magnum", ".350 Remington Magnum",
+    ".224 Valkyrie", ".376 Steyr", "8 mm Remington Magnum", 
     ".358 Norma Magnum", ".416 Weatherby Magnum", "7 mm Remington Ultra Magnum",
     ".338 Remington Ultra Magnum", ".375 Remington Ultra Magnum",
     # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
-    "9.3x72 mm R", "8x75 mm RS", "6.5x65 mm RWS", "9.3x66 mm Sako (.370 Sako Magnum)", ".300 Blaser Magnum", ".375 Blaser Magnum", "7 mm Blaser Magnum", ".338 Blaser Magnum", ".450/400 Nitro Express 3 inch", ".40-82 WCF", ".50-95 WCF", ".38-56 WCF", ".30 Remington", ".17 Remington Fireball", ".338 Marlin Express", ".22 Nosler", "6.5-300 Weatherby Magnum",
+    "9.3x72 mm R", "8x75 mm RS", "6.5x65 mm RWS", "9.3x66 mm Sako (.370 Sako Magnum)", ".300 Blaser Magnum", ".375 Blaser Magnum", ".338 Blaser Magnum", ".450/400 Nitro Express 3 inch", ".40-82 WCF", ".50-95 WCF", ".38-56 WCF", ".30 Remington", ".17 Remington Fireball", ".338 Marlin Express", ".22 Nosler", 
     ".25 Stevens", ".41 Short", ".56-56 Spencer", "9x25 mm Dillon", ".300 Lapua Magnum",
     ".35 Winchester", ".50-110 Winchester", ".400 H&H Magnum", ".244 H&H Magnum", ".45-75 Winchester",
     ".22 Remington Automatic", ".465 H&H Magnum", ".475 No. 2 Nitro Express", ".400/350 Nitro Express",
     ".350 Rigby Magnum", ".310 Cadet", "6.5x58 mm Vergueiro",
     ".378 Weatherby Magnum", "7.5 FK", "6 mm GT",
     "6 mm PPC", "9x39 mm",
+    # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+    # and at most 2 listings on any other site:
+    ".22 BB Cap", ".22 Long", ".318 Westley Richards", ".38 Short Colt", ".40-65 Winchester",
+    ".405 Winchester", ".44 Colt", ".45 Auto Rim", ".458 Lott", ".480 Ruger", ".470 Nitro Express",
+    ".450 Nitro Express", ".500 Nitro Express", "6.5 mm Remington Magnum", "7-30 Waters",
+    "7.92x33 mm Kurz", "8x64 mm S", "9.3x57 mm Mauser", "9.3x64 mm Brenneke", "5.6x57 mm",
+    ".375 Weatherby Magnum", ".404 Jeffery", ".416 Ruger",
 }
 
 

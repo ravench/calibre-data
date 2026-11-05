@@ -224,6 +224,9 @@ class CatalogueTests(unittest.TestCase):
         self.assertTrue(is_rare("11x59 mm R Gras"))
         self.assertFalse(is_rare("7.5 mm Swiss Ordnance 1882"))
         self.assertFalse(is_rare("7.5x55 mm Swiss (GP 11)"))
+        self.assertFalse(is_rare(".450 Marlin"))  # 1.5 per mille of the guns on TownPost
+        self.assertFalse(is_rare("10.3x60 mm R"))  # 2.4 per mille on swisswaffen.com
+        self.assertTrue(is_rare(".405 Winchester"))  # not among GunBroker's 250 calibres
 
     def test_rare_does_not_require_obsolete(self):
         self.assertTrue(RARE & OBSOLETE)
