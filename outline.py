@@ -7,9 +7,10 @@ millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bot
 import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cartridges import CATALOGUE, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
+from cartridges import CATALOGUE, shoulder_angle, case_head, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
 
 N = 14  # samples per curve
+BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
 
 
 def case_profile(s):
@@ -19,6 +20,19 @@ def case_profile(s):
     if k in (RIMMED, RIMFIRE):
         h = 1.1 if k == RIMFIRE else 1.5
         pts = [(rim, 0), (rim, h), (base, h)]
+    elif case_head(s["name"]):
+        # Rim, extractor groove and its front ramp at the calibre's own values (cartridges.CASE_HEADS).
+        thick, top_at, groove_dia, ramp_angle = case_head(s["name"])
+        groove, slope = groove_dia / 2, math.tan(math.radians(ramp_angle))
+        if k == BELTED:
+            # The ramp climbs to the belt (rim diameter), which ends at E; the sheets give no groove
+            # width, so the groove floor is drawn BELTED_GROOVE long.
+            ramp_end = thick + BELTED_GROOVE + (rim - groove) / slope
+            pts = [(rim, 0), (rim, thick), (groove, thick), (groove, thick + BELTED_GROOVE),
+                   (rim, ramp_end), (rim, top_at), (base * 0.985, top_at)]
+        else:
+            ramp_start = max(thick, top_at - (base - groove) / slope)
+            pts = [(rim, 0), (rim, thick), (groove, thick), (groove, ramp_start), (base, top_at)]
     else:
         groove = base * 0.82
         pts = [(rim, 0), (rim, 1.3), (groove, 1.3), (groove, 2.6), (base, 3.3)]
@@ -31,7 +45,8 @@ def case_profile(s):
         return pts + [(base, case * (1 - CRIMP_LENGTH)), ((base + top) / 2, case - 0.35), (top, case)]
     if s["shoulder"]:
         sh = s["shoulder"] / 2
-        run = max(0.8, (sh - top) / math.tan(math.radians(32)))
+        # The shoulder runs at the calibre's own angle to the axis (cartridges.SHOULDER_ANGLES).
+        run = (sh - top) / math.tan(math.radians(shoulder_angle(s["name"])))
         sh_at = min(s["sh_at"], case - run - 1.2)
         pts += [(sh, sh_at), (top, sh_at + run), (top, case)]
     else:

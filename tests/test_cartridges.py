@@ -129,7 +129,7 @@ class CatalogueTests(unittest.TestCase):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
         self.assertEqual(tuple(by_name[".25 Weatherby RPM"][k] for k in keys),
-                         (12.01, 12.7, 12.14, 7.37, 60.96, 51.89, 84.84, 6.53))
+                         (12.01, 12.7, 12.14, 7.37, 60.96, 50.48, 84.84, 6.53))
         self.assertEqual(tuple(by_name[".300 HAM'R"][k] for k in ("rim", "case", "oal")), (9.6, 41.02, 57.4))
         for name in (".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM"):
             s = by_name[name]  # one case family: rebated rim under a 0.500 in head
@@ -327,9 +327,10 @@ class CatalogueTests(unittest.TestCase):
             ".22-250 Remington": {"shoulder": 10.5},
             ".338 Lapua Magnum": {"shoulder": 13.82},
             ".300 PRC": {"case": 65.5, "sh_at": 54.6},
-            "6.5x54 mm Mannlicher-Schönauer": {"case": 53.6, "sh_at": 43.5},
+            # sh_at is the C.I.P. sheet's L1 (see SHOULDER_ANGLES), not the municion.org specimen.
+            "6.5x54 mm Mannlicher-Schönauer": {"case": 53.6, "sh_at": 41.82},
             "10.4x38 mm R Vetterli": {"rim": 15.7, "base": 13.62, "shoulder": 13.1, "neck": 11.43,
-                                      "case": 38.21, "sh_at": 30.7, "oal": 56.22, "bullet": 10.92},
+                                      "case": 38.21, "sh_at": 26.11, "oal": 56.22, "bullet": 10.92},
         }
         for name, fields in expected.items():
             for key, value in fields.items():
