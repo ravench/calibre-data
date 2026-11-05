@@ -3,6 +3,7 @@ import os, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
+                        PRIMER_SOURCES, PRIMER_UNVERIFIED,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
                         RARE, is_rare, tags,
                         ORIGIN, COUNTRIES, origin,
@@ -47,6 +48,12 @@ class CatalogueTests(unittest.TestCase):
         centrefire = {s["name"] for s in ALL if s["kind"] not in (RIMFIRE, BALL, MINIE, PELLET)}
         self.assertEqual(set(PRIMERS), centrefire)
         self.assertLessEqual(set(PRIMERS.values()), set(PRIMER_DIAMETERS))
+
+    def test_every_primer_is_sourced_or_marked_unverified(self):
+        self.assertEqual(set(PRIMER_SOURCES) & PRIMER_UNVERIFIED, set())
+        self.assertEqual(set(PRIMER_SOURCES) | PRIMER_UNVERIFIED, set(PRIMERS))
+        for name, url in PRIMER_SOURCES.items():
+            self.assertTrue(url.startswith("https://"), name)
 
     def test_swiss_service_rounds(self):
         by_name = {s["name"]: s for s in ALL}

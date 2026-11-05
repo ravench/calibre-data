@@ -6,7 +6,8 @@ The shared calibre catalogue for
 [calibre wall poster](https://github.com/ravench/calibre-poster).
 
 - `cartridges.py`: every calibre with its approximate dimensions in mm (CIP/SAAMI, rounded),
-  search aliases, printable alternative names and primer sizes, and the year each calibre was
+  search aliases, printable alternative names and primer sizes (`PRIMER_SOURCES` names where each
+  was checked; `PRIMER_UNVERIFIED` lists the ones not yet checked), and the year each calibre was
   first introduced (`INTRODUCED`, with the page it was checked against; `INTRODUCED_UNKNOWN`
   lists the entries that aren't one cartridge and why; where sources disagree, the earliest
   probable year), `OBSOLETE`, the calibres no longer in regular factory production, and `RARE`, the calibres you
