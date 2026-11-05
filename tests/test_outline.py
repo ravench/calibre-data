@@ -113,9 +113,7 @@ class OutlineTests(unittest.TestCase):
 
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
     # or article giving the angle was found yet. Remove a name here when its angle is added.
-    SHOULDER_UNSOURCED = {
-        ".27 Nosler",
-    }
+    SHOULDER_UNSOURCED = set()
 
     def bottlenecks(self):
         return {s["name"]: s for _, s in outline.specs() if s["shoulder"] and s["profile"] != CRIMPED}
@@ -173,7 +171,7 @@ class OutlineTests(unittest.TestCase):
                 self.assertEqual(specs[name]["sh_at"], start)
 
     def test_unsourced_shoulders_keep_the_default(self):
-        self.assertEqual(cartridges.shoulder_angle(".27 Nosler"), cartridges.DEFAULT_SHOULDER_ANGLE)
+        self.assertEqual(cartridges.shoulder_angle("New calibre"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
     # Rimless and belted cases without a C.I.P. head (or a parent case that has one); they keep the
     # generic head. A new rimless or belted calibre needs a head in CASE_HEADS or a place here.

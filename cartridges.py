@@ -425,7 +425,7 @@ CATALOGUE = [
         c("7 mm Remington SAUM", RIMLESS, 13.6, 13.61, 13.58, 8.1, 51.7, 39.07, 71.8, 7.2, SPITZER, ["7saum"]),
         # Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
         c(".26 Nosler", RIMLESS, 13.6, 14.0, 13.6, 7.6, 65.8, 55.58, 84.8, 6.7, SPITZER, ["26nosler"]),
-        c(".27 Nosler", RIMLESS, 13.6, 14.0, 13.6, 7.8, 65.8, 56.1, 84.8, 7.04, SPITZER, ["27nosler"]),
+        c(".27 Nosler", RIMLESS, 13.6, 14.0, 13.6, 7.8, 65.8, 53.57, 84.8, 7.04, SPITZER, ["27nosler"]),
         c(".28 Nosler", RIMLESS, 13.6, 14.0, 13.6, 8.0, 65.8, 56.38, 84.8, 7.2, SPITZER, ["28nosler"]),
         c(".30 Nosler", RIMLESS, 13.6, 14.0, 13.6, 8.6, 65.8, 55.63, 84.8, 7.82, SPITZER, ["30nosler"]),
         c(".33 Nosler", RIMLESS, 13.6, 14.0, 13.6, 9.4, 65.8, 54.32, 84.8, 8.6, SPITZER, ["33nosler"]),
@@ -1457,6 +1457,7 @@ SHOULDER_ANGLES = {
     ".22 ARC": (30, "https://www.eurooptic.com/"),  # measured on the Hornady 86162 case photo (29-30 deg); same 30 deg as its 6 mm ARC parent; neck start kept
     "6 mm GT": (35, "https://www.gaprecision.net/"),  # measured on the GA Precision / Hornady 6mm GT brass photo (35-36 deg); neck start kept
     ".30 Nosler": (35, "https://www.creedmoorsports.com/"),  # measured on the Peterson 30 Nosler brass photo (33-35 deg); 35 deg like the .28 Nosler; neck start kept
+    ".27 Nosler": (35, "https://www.nosler.com/"),  # Nosler's "27 Nosler Rifle Cartridge" drawing: 35 deg, shoulder at 2.109 in, neck at 2.262 in
 }
 DEFAULT_SHOULDER_ANGLE = 32
 
