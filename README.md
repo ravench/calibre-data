@@ -16,6 +16,11 @@ The shared calibre catalogue for
   hunting rounds) to a code in `COUNTRIES` (English name and flag emoji; historical states such
   as the Soviet Union have no emoji). Calibres in common use worldwide get `WORLDWIDE` ("WW",
   🌐) instead; no entry means neither a clear country nor universal use. `origin(name)` looks it up.
+- `SHOULDER_ANGLES` gives each bottleneck case its shoulder angle (degrees from the case axis,
+  the American alpha/2) with the page it was read from: mostly the C.I.P. sheets, whose `L1`
+  is then the calibre's `sh_at`. Cases without a source yet are drawn at
+  `DEFAULT_SHOULDER_ANGLE` (32°); the tests list them, so a new calibre needs an angle or a
+  conscious entry there.
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side
   (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (`CRIMPED`,

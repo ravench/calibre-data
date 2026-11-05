@@ -1,8 +1,9 @@
 """python3 -m unittest discover -s tests"""
-import os, re, sys, unittest
+import math, os, re, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
+import cartridges  # noqa: E402
 from cartridges import PATCHED, CRIMPED  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
@@ -73,8 +74,9 @@ class OutlineTests(unittest.TestCase):
 
     def test_necks_start_where_the_municion_drawings_show(self):
         # AECC specimen drawings on municion.org: (shoulder start SL, neck length NL, case length CL), mm.
-        # The outline draws a 32-degree shoulder, so sh_at sits where the drawn neck begins
-        # (CL - NL) minus that shoulder, and never well before the drawn shoulder start.
+        # sh_at sits where the drawn neck begins (CL - NL) minus the calibre's shoulder, and never
+        # well before the drawn shoulder start. Calibres with a C.I.P. sheet follow the sheet
+        # instead (test_cip_shoulders_follow_the_sheets), which wins over a measured specimen.
         drawn = {
             "4.6x30 mm": (18.77, 8.98, 30.58), ".32-20 Winchester": (19.0, 11.0, 33.18),
             ".25 NAA": (13.8, 3.83, 18.91), ".32 NAA": (13.55, 2.1, 17.16), ".400 Cor-Bon": (17.25, 3.45, 22.84),
@@ -100,12 +102,77 @@ class OutlineTests(unittest.TestCase):
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
+            if cartridges.SHOULDER_ANGLES.get(name, (0, ""))[1].startswith(cartridges._CIP):
+                continue
             with self.subTest(name):
                 s = specs[name]
                 top = s["neck"] / 2
                 neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9)
                 self.assertLess(abs(neck_start - (case_length - neck_length)), 1.5)
                 self.assertGreater(s["sh_at"], shoulder_start - 0.6)
+
+    # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
+    # or article giving the angle was found yet. Remove a name here when its angle is added.
+    SHOULDER_UNSOURCED = {
+        ".17 Winchester Super Magnum", ".400 Cor-Bon", ".256 Winchester Magnum", "9x25 mm Dillon", ".22 TCM",
+        "8 mm Nambu", ".25 NAA", ".32 NAA", ".338 ARC", "9x39 mm", "6 mm GT", ".22 Creedmoor",
+        "7 mm Backcountry", "8.6 Blackout", ".22 ARC", ".338 Ruger Compact Magnum",
+        "7.5x53.5 mm Swiss (GP 1890)", ".300 HAM'R", "6.5x58 mm Vergueiro", ".375 CheyTac",
+        "7.7x58 mm Arisaka", "8x50 mm R Lebel", "7.35x51 mm Carcano", ".277 SIG Fury", "5.8x42 mm",
+        ".25-35 Winchester", ".32 Winchester Special", ".264 Winchester Magnum", ".55 Boys",
+        "8.5x55 mm Blaser", ".38-56 WCF", ".22 Nosler", "6.5-300 Weatherby Magnum", ".17 Hornet",
+        "6.8 Western", ".26 Nosler", ".27 Nosler", ".30 Nosler", ".33 Nosler", ".300 Ruger Compact Magnum",
+        ".224 Valkyrie", ".458 SOCOM", ".222 Remington Magnum", ".25 Weatherby RPM", "6.5 Weatherby RPM",
+        ".338 Weatherby RPM", "7.92x107 mm DS", ".308 Norma Magnum", ".404 Jeffery", ".416 Barrett",
+        "10.4x38 mm R Vetterli", "11x59 mm R Gras", "11x60 mm R Mauser",
+    }
+
+    def bottlenecks(self):
+        return {s["name"]: s for _, s in outline.specs() if s["shoulder"] and s["profile"] != CRIMPED}
+
+    def test_every_bottleneck_has_a_sourced_angle_or_is_listed(self):
+        sourced = set(cartridges.SHOULDER_ANGLES)
+        self.assertEqual(sourced - set(self.bottlenecks()), set(), "angles for calibres without a shoulder")
+        self.assertEqual(set(self.bottlenecks()) - sourced, self.SHOULDER_UNSOURCED)
+        for name, (angle, url) in cartridges.SHOULDER_ANGLES.items():
+            with self.subTest(name):
+                self.assertTrue(2 <= angle <= 55, angle)
+                self.assertTrue(url.startswith("https://"), url)
+
+    def test_shoulders_are_drawn_at_their_own_angle(self):
+        # Regression: every shoulder used to be drawn at one shared 32-degree slope.
+        for name, s in self.bottlenecks().items():
+            with self.subTest(name):
+                prof = outline.case_profile(s)
+                top = s["neck"] / 2
+                i = next(i for i, (r, _) in enumerate(prof) if abs(r - top) < 1e-9)
+                (r0, h0), (r1, h1) = prof[i - 1], prof[i]
+                self.assertAlmostEqual(r0, s["shoulder"] / 2)
+                drawn = math.degrees(math.atan2(r0 - r1, h1 - h0))
+                self.assertAlmostEqual(drawn, cartridges.shoulder_angle(name), places=6)
+                self.assertEqual(h0, s["sh_at"], "shoulder moved to fit a neck")
+        self.assertGreater(len({a for a, _ in cartridges.SHOULDER_ANGLES.values()}), 40)
+
+    def test_cip_shoulders_follow_the_sheets(self):
+        # (half angle, L1 body/shoulder junction, L2 shoulder/neck junction) from the C.I.P. sheets.
+        sheets = {
+            ".308 Winchester": (20.0, 39.62, 43.48), "7.5x55 mm Swiss (GP 11)": (30.5, 44.58, 47.085),
+            ".300 H&H Magnum": (8.5, 53.46, 62.96), "6.5 mm Creedmoor": (30.0, 37.84, 41.52),
+            ".350 Rigby Magnum": (45.0, 57.15, 57.99), ".22 Hornet": (5.6, 21.64, 25.80),
+            "7.62x54 mm R": (18.5, 39.70, 44.30), ".300 AAC Blackout": (23.0, 27.20, 28.00),
+        }
+        specs = self.bottlenecks()
+        for name, (angle, l1, l2) in sheets.items():
+            with self.subTest(name):
+                s = specs[name]
+                self.assertEqual(cartridges.shoulder_angle(name), angle)
+                self.assertEqual(s["sh_at"], l1)
+                top = s["neck"] / 2
+                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9)
+                self.assertLess(abs(neck_start - l2), 0.6)
+
+    def test_unsourced_shoulders_keep_the_default(self):
+        self.assertEqual(cartridges.shoulder_angle(".22 Nosler"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
 if __name__ == "__main__":
     unittest.main()

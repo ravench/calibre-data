@@ -7,7 +7,7 @@ millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bot
 import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cartridges import CATALOGUE, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
+from cartridges import CATALOGUE, shoulder_angle, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
 
 N = 14  # samples per curve
 
@@ -31,7 +31,8 @@ def case_profile(s):
         return pts + [(base, case * (1 - CRIMP_LENGTH)), ((base + top) / 2, case - 0.35), (top, case)]
     if s["shoulder"]:
         sh = s["shoulder"] / 2
-        run = max(0.8, (sh - top) / math.tan(math.radians(32)))
+        # The shoulder runs at the calibre's own angle to the axis (cartridges.SHOULDER_ANGLES).
+        run = (sh - top) / math.tan(math.radians(shoulder_angle(s["name"])))
         sh_at = min(s["sh_at"], case - run - 1.2)
         pts += [(sh, sh_at), (top, sh_at + run), (top, case)]
     else:
