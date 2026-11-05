@@ -1161,42 +1161,43 @@ INTRODUCED = {
     "7 mm Backcountry": (2024, _WP + "7mm_Backcountry"),
     ".338 ARC": (2025, "https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"),
     "6 mm PPC": (1975, _WP + "6mm_PPC"),
+    # Year of production on the municion.org product pages (AECC).
+    ".17 Hornet": (2012, "https://municion.org/producto/17-hornet/"),
+    ".22 TCM": (2008, "https://municion.org/producto/22-tuason-craig-micromagnum/"),  # as the Tuason Craig Micromagnum, ca. 2008
+    ".280 Ackley Improved": (2006, "https://municion.org/producto/280-ackley-improved/"),  # earlier than the 2008 SAAMI acceptance
+    ".35 Winchester Self-Loading": (1905, "https://municion.org/producto/35-winchester-self-loading/"),
+    ".358 Norma Magnum": (1959, "https://municion.org/producto/358-norma-magnum-belted/"),
+    ".375 Flanged Magnum Nitro Express": (1912, "https://municion.org/producto/375-holland-holland-flanged-magnum-ne/"),
+    ".38 Short Colt": (1874, "https://municion.org/producto/38-short-colt-long-case/"),
+    ".40-82 WCF": (1885, "https://municion.org/producto/40-82-260-winchester-cf-marlin/"),
+    ".401 Winchester Self-Loading": (1910, "https://municion.org/producto/401-winchester-self-loading/"),
+    ".50-95 WCF": (1876, "https://municion.org/producto/50-95-300-winchester/"),
+    "6.5x57 mm R": (1910, "https://municion.org/producto/65-x-57-r-mauser-m88/"),  # ca. 1910
+    "6.5x65 mm RWS": (1988, "https://municion.org/producto/65-x-65-rws/"),
+    "7x57 mm R": (1893, "https://municion.org/producto/7-x-57-r-mauser/"),
+    "8x57 mm IRS": (1905, "https://municion.org/producto/8-x-57-r-jrs-mauser/"),  # ca. 1905
+    "8x60 mm S": (1919, "https://municion.org/producto/8-x-60-s/"),
+    "8x75 mm RS": (1909, "https://municion.org/producto/8-x-75-r-behr/"),  # ca. 1909
+    "9.3x53 mm R Finnish": (1946, "https://municion.org/producto/93-x-53-r-finnish/"),  # ca. 1946
+    "9.3x72 mm R": (1892, "https://municion.org/producto/93-x-72-r/"),
+    "9x39 mm": (1980, "https://municion.org/producto/9-x-39-russian/"),  # "1980s"; the other source says early 1980s
+    "9x57 mm Mauser": (1890, "https://municion.org/producto/9-x-57-mauser/"),  # municion says ca. 1904, the other source the 1890s: earliest wins
+    "10.3x60 mm R": (1919, "https://municion.org/producto/103-x-60-r/"),
 }
 
 INTRODUCED_UNKNOWN = {
     ".500/416 Nitro Express": "no introduction year in the sources checked",
-    ".375 Flanged Magnum Nitro Express": "no introduction year in the sources checked",
-    "9.3x53 mm R Finnish": "no introduction year in the sources checked",
-    "10.3x60 mm R": "no introduction year in the sources checked",
     "6 mm GT": "sources give only the 2024 SAAMI acceptance",
-    "9x39 mm": "the source gives only the early 1980s",
     ".475 No. 2 Nitro Express": "the source gives only the early 1900s",
     ".577 Nitro Express": "the source gives only the 1890s",
     "8.6 Blackout": "sources give only the 2026 SAAMI acceptance, not when Q introduced it",
-    ".35 Winchester Self-Loading": "no year in the source",
-    ".401 Winchester Self-Loading": "no year in the source",
-    ".358 Norma Magnum": "the source gives only the 1950s",
-    "9x57 mm Mauser": "the source gives only the 1890s",
-    "7x57 mm R": "rimmed variant, no year in the source",
-    "6.5x57 mm R": "rimmed variant, no year in the source",
-    "8x57 mm IRS": "no year for the rimmed variant in the source",
-    ".280 Ackley Improved": "wildcat; the source gives only the 2008 SAAMI acceptance",
-    ".17 Hornet": "no factory year in the source",
-    "8x60 mm S": "source only says between the world wars",
-    ".22 TCM": "no year in the source",
-    ".38 Short Colt": "no year in the source",
     ".22 Blank (6.8/11)": "a family of blanks and power-tool loads with no single launch",
     # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
     **{n: "not a single cartridge" for n in (
         "12/70", "12/76", "12/89", "16/70", "20/70", "20/76", "28/70", ".410/76",
         ".36 Rundkugel (.375)", ".44 Rundkugel (.454)", ".45 Rundkugel (.440)", ".50 Rundkugel (.490)",
         ".54 Rundkugel (.530)", ".58 Minié", ".69 Minié", "4.5 mm Diabolo (.177)", "5.5 mm Diabolo (.22)")},
-    "9.3x72 mm R": "no introduction year in the sources checked (C.I.P. sheet 1984)",
-    "8x75 mm RS": "no introduction year in the sources checked (German, before World War I)",
-    "6.5x65 mm RWS": "no introduction year in the sources checked (C.I.P. sheet 1990)",
     ".450/400 Nitro Express 3 inch": "sources give 1899 for the 3 1/4 inch parent only",
-    ".40-82 WCF": "no introduction year in the sources checked",
-    ".50-95 WCF": "no introduction year in the sources checked",
     "6.5-300 Weatherby Magnum": "sources give only the 2017 SAAMI drawing",
 }
 

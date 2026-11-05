@@ -263,5 +263,14 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(INTRODUCED["10.4 mm Swiss Ordnance 1878"][0], 1878)
 
 
+    def test_municion_years_fill_unknown_introductions(self):
+        years = {".17 Hornet": 2012, ".35 Winchester Self-Loading": 1905, ".401 Winchester Self-Loading": 1910,
+                 ".375 Flanged Magnum Nitro Express": 1912, "9.3x72 mm R": 1892, "9x57 mm Mauser": 1890,
+                 "10.3x60 mm R": 1919, "9x39 mm": 1980}
+        for name, year in years.items():
+            self.assertEqual(INTRODUCED[name][0], year, name)
+            self.assertTrue(INTRODUCED[name][1].startswith("https://municion.org/producto/"), name)
+            self.assertNotIn(name, INTRODUCED_UNKNOWN)
+
 if __name__ == "__main__":
     unittest.main()
