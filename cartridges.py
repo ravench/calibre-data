@@ -2192,11 +2192,12 @@ def tags(name):
     """The status tags of a calibre: [], ["obsolete"], ["rare"] or ["obsolete", "rare"]."""
     return [t for t, s in (("obsolete", OBSOLETE), ("rare", RARE)) if name in s]
 
-# Countries a calibre is clearly linked to: where it was introduced and with which it is still
-# associated (a national service round, or a regional hunting round). Calibres in common use
-# worldwide (9x19 mm, .22 LR, .308 Winchester, ...) get WORLDWIDE instead, so no entry means
-# neither a clear country nor universal use. A round with a clear country keeps it even when
-# it spread worldwide (7.62x39 mm stays Soviet, 8x57 IS stays German). Historical states keep their
+# The state that introduced each calibre (Raven 2026-11-06: every calibre whose origin the sources
+# agree on, sporting rounds included; before that only service and regional rounds). Calibres in
+# common use worldwide (9x19 mm, .22 LR, .308 Winchester, ...) get WORLDWIDE instead; a round with
+# a clear country keeps it even when it spread worldwide (7.62x39 mm stays Soviet, 8x57 IS stays
+# German). No entry means the entry is not a single cartridge, or the origin is open and listed in
+# ORIGIN_UNDECIDED with its candidate states. Historical states keep their
 # own code (ISO 3166-3 SU/CS where one exists, else a made-up AH/RUE that no ISO code uses, so
 # RU stays today's Russia); they have no flag emoji, so apps draw their own.
 COUNTRIES = {  # code: (English name, flag emoji or None)
@@ -2207,7 +2208,7 @@ COUNTRIES = {  # code: (English name, flag emoji or None)
     "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"), "FI": ("Finland", "🇫🇮"),
 "WW": ("Worldwide", "🌐"),
     "RUE": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
-    "CN": ("China", "🇨🇳"),
+    "CN": ("China", "🇨🇳"), "PH": ("Philippines", "🇵🇭"),
 }
 
 WORLDWIDE = "WW"
@@ -2264,9 +2265,6 @@ ORIGIN = {
     ".450 Nitro Express": "GB", ".500 Nitro Express": "GB", ".577 Nitro Express": "GB",
     ".600 Nitro Express": "GB", ".700 Nitro Express": "GB", ".500/465 Nitro Express": "GB",
     ".318 Westley Richards": "GB",
-    # United States: service rounds
-    ".30-40 Krag": "US", ".30 Carbine": "US", ".45-70 Government": "US",
-    ".50-70 Government": "US",
     # Others
     "6.5x55 mm Swedish": "SE", "8x58 mm R Danish Krag": "DK", "7.65x53 mm Argentine": "BE",
     "9 mm Browning Long": "BE", "9x23 mm Largo": "ES", "6.5x50 mm SR Arisaka": "JP",
@@ -2288,7 +2286,8 @@ ORIGIN = {
     ".30 R Blaser": "DE",
     "7.5 FK": "CZ",
     "9x39 mm": "SU",
-    # United States: sporting, target and revolver rounds (Raven 2026-11-06: tag every calibre whose origin is agreed)
+    # United States: service rounds, then sporting, target and revolver rounds (Raven 2026-11-06)
+    ".30-40 Krag": "US", ".30 Carbine": "US", ".45-70 Government": "US", ".50-70 Government": "US",
     ".17 Mach 2": "US", ".22 Long": "US", "5 mm Remington Rimfire Magnum": "US",
     ".17 Winchester Super Magnum": "US", ".22 Winchester Rimfire": "US", ".44 Henry": "US",
     ".22 Remington Automatic": "US", ".25 Stevens": "US", ".41 Short": "US", ".56-56 Spencer": "US",
@@ -2344,7 +2343,8 @@ ORIGIN = {
     # France
     ".22 BB Cap": "FR",
     # Germany
-    "9x18 mm Ultra": "DE", ".300 Blaser Magnum": "DE", ".375 Blaser Magnum": "DE",
+    "9x18 mm Ultra": "DE",  # Genschow design of 1936; Hirtenberger (AT) first loaded it in 1972 for the Walther PP Super
+    ".300 Blaser Magnum": "DE", ".375 Blaser Magnum": "DE",
     "7 mm Blaser Magnum": "DE", ".338 Blaser Magnum": "DE", "8.5x55 mm Blaser": "DE",
     # Austria-Hungary
     "6.5x53 mm R Mannlicher": "AH",
@@ -2354,7 +2354,8 @@ ORIGIN = {
     "6.5x47 mm Lapua": "FI", ".300 Lapua Magnum": "FI", "9.3x53 mm R Finnish": "FI",
     "9.3x66 mm Sako (.370 Sako Magnum)": "FI",
     # Sweden
-    ".300 Norma Magnum": "SE", ".338 Norma Magnum": "SE", ".308 Norma Magnum": "SE",
+    ".300 Norma Magnum": "SE", ".308 Norma Magnum": "SE",
+    ".338 Norma Magnum": "SE",  # developed by Norma with Jimmie Sloan (US) as a new round; both sources say Sweden
     ".358 Norma Magnum": "SE",
 }
 
@@ -2367,12 +2368,13 @@ ORIGIN_UNDECIDED = {
     ".22 TCM": ("PH", "US"),  # Armscor (Philippines) with Fred Craig (US)
     "6 mm BR Norma": ("SE", "US"),  # Norma standardised the US 6mm BR Remington wildcat 1996
     "6.5-284 Norma": ("SE", "US"),  # Norma standardised the US 6.5-284 wildcat
-    ".500/416 Nitro Express": ("DE",),  # Krieghoff with Hornady, 2000s; only municion.org names a country
+    ".500/416 Nitro Express": ("DE", "US"),  # Krieghoff (Ulm) with Hornady, 2000s; only municion.org names a country
 }
 
 
 def origin(name):
-    """(code, English name, flag emoji or None) of the country a calibre is linked to, or None."""
+    """(code, English name, flag emoji or None) of the state that introduced a calibre, WORLDWIDE for
+    the universal rounds, or None (not a single cartridge, or still open in ORIGIN_UNDECIDED)."""
     code = ORIGIN.get(name)
     return (code, *COUNTRIES[code]) if code else None
 

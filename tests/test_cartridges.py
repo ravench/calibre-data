@@ -297,7 +297,9 @@ class CatalogueTests(unittest.TestCase):
     def test_origins_name_known_calibres_and_countries(self):
         self.assertLessEqual(set(ORIGIN), NAMES)
         self.assertLessEqual(set(ORIGIN.values()), set(COUNTRIES))
-        self.assertEqual(set(ORIGIN.values()), set(COUNTRIES))  # no unused country
+        candidates = {c for cs in ORIGIN_UNDECIDED.values() for c in cs}
+        self.assertLessEqual(candidates, set(COUNTRIES))
+        self.assertEqual(set(ORIGIN.values()) | candidates, set(COUNTRIES))  # no unused country
         for code, (name, flag) in COUNTRIES.items():
             self.assertTrue(name)
             self.assertTrue(flag is None or len(flag) == 2 or code == WORLDWIDE, code)
@@ -318,12 +320,16 @@ class CatalogueTests(unittest.TestCase):
 
     def test_every_cartridge_has_an_origin_or_is_undecided(self):
         # Raven 2026-11-06: every calibre gets the state that introduced it, where the sources agree.
-        for name in NAMES - set(INTRODUCED_UNKNOWN):
+        generic = {n for n, why in INTRODUCED_UNKNOWN.items()
+                   if "not a single cartridge" in why or "family of blanks" in why}
+        self.assertEqual(len(generic), 21)
+        for name in NAMES - generic:
             self.assertTrue(name in ORIGIN or name in ORIGIN_UNDECIDED, name)
         self.assertLessEqual(set(ORIGIN_UNDECIDED), NAMES)
         self.assertFalse(set(ORIGIN_UNDECIDED) & set(ORIGIN))
         for name, candidates in ORIGIN_UNDECIDED.items():
-            self.assertTrue(candidates, name)
+            self.assertGreaterEqual(len(candidates), 2, name)  # two states can claim it
+            self.assertEqual(len(set(candidates)), len(candidates), name)
         self.assertEqual(ORIGIN[".22 BB Cap"], "FR")  # Flobert 1845
         self.assertEqual(ORIGIN["6.5x53 mm R Mannlicher"], "AH")  # Steyr 1892, Romanian and Dutch service round
         self.assertEqual(origin(".338 Lapua Magnum"), ("WW", "Worldwide", "🌐"))
