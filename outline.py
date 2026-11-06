@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, shoulder_angle, case_head, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, PAPER, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
 BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
@@ -109,6 +109,10 @@ TIP_SHARE = 0.14
 # start of the body (.277 Fury).
 HYBRID_HEAD = 3.3
 
+# Height of the brass base cup of a PAPER case, from the base (mm): Boxer's Snider case is
+# paper-covered brass foil in a brass cup; the paper starts 12.2-12.7 mm up on Raven's photos (2026-11-06).
+PAPER_HEAD = 12.7
+
 
 def tip_profile(right, top, share=TIP_SHARE):
     """Right half of the front `share` of a bullet profile (bottom to tip), for a soft point's lead tip."""
@@ -120,6 +124,12 @@ def tip_profile(right, top, share=TIP_SHARE):
         if y1 >= cut:
             pts.append((x1, y1))
     return pts
+
+
+def head_profile(prof, top):
+    """Right half of a case profile (bottom to top) from the base up to height `top`."""
+    (x0, y0), (x1, y1) = next((a, b) for a, b in zip(prof, prof[1:]) if a[1] < top <= b[1])
+    return [(x, y) for x, y in prof if y < top] + [(x0 + (x1 - x0) * (top - y0) / (y1 - y0), top)]
 
 
 def mirror(right):
@@ -183,9 +193,10 @@ def outline(s):
                 if kind == POLYMER_TIP:
                     paths["tipMaterial"] = "polymer"
         if case_material(s["name"]) == HYBRID:
-            head = [(x, y) for x, y in prof if y <= HYBRID_HEAD] + [(s["base"] / 2, HYBRID_HEAD)]
-            paths["head"] = to_path(mirror(head), H, hw)
+            paths["head"] = to_path(mirror(head_profile(prof, HYBRID_HEAD)), H, hw)
             paths["headMaterial"] = "steel"
+        elif case_material(s["name"]) == PAPER:  # brass head, no headMaterial
+            paths["head"] = to_path(mirror(head_profile(prof, PAPER_HEAD)), H, hw)
         if case_material(s["name"]) != BRASS:
             paths["caseMaterial"] = case_material(s["name"])
         if current_case_materials(s["name"]):
