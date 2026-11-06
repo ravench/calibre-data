@@ -116,7 +116,7 @@ class OutlineTests(unittest.TestCase):
         head = points(o["head"])
         self.assertAlmostEqual(max(y for _, y in head), o["height"], places=2)
         top = min(y for _, y in head)
-        self.assertAlmostEqual(top, o["height"] - outline.PAPER_HEAD_SHARE * s["case"], places=2)
+        self.assertAlmostEqual(top, o["height"] - outline.PAPER_HEAD, places=2)
         # The head ends on the case's tapering wall: narrower than the base, wider than the mouth.
         xs = [x for x, y in head if y == top]
         self.assertTrue(s["neck"] < max(xs) - min(xs) < s["base"], xs)

@@ -109,9 +109,9 @@ TIP_SHARE = 0.14
 # start of the body (.277 Fury).
 HYBRID_HEAD = 3.3
 
-# Share of a PAPER case that is its brass head, from the base (Boxer's Snider case: paper-covered
-# brass foil on a brass base cup). The sources give no height, so it is drawn like a shot shell's head.
-PAPER_HEAD_SHARE = 0.2
+# Height of the brass base cup of a PAPER case, from the base (mm): Boxer's Snider case is
+# paper-covered brass foil in a brass cup; the paper starts 12.2-12.7 mm up on Raven's photos (2026-11-06).
+PAPER_HEAD = 12.7
 
 
 def tip_profile(right, top, share=TIP_SHARE):
@@ -196,7 +196,7 @@ def outline(s):
             paths["head"] = to_path(mirror(head_profile(prof, HYBRID_HEAD)), H, hw)
             paths["headMaterial"] = "steel"
         elif case_material(s["name"]) == PAPER:  # brass head, no headMaterial
-            paths["head"] = to_path(mirror(head_profile(prof, PAPER_HEAD_SHARE * s["case"])), H, hw)
+            paths["head"] = to_path(mirror(head_profile(prof, PAPER_HEAD)), H, hw)
         if case_material(s["name"]) != BRASS:
             paths["caseMaterial"] = case_material(s["name"])
         if current_case_materials(s["name"]):
