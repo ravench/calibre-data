@@ -2204,7 +2204,7 @@ COUNTRIES = {  # code: (English name, flag emoji or None)
     "AT": ("Austria", "🇦🇹"), "FR": ("France", "🇫🇷"), "IT": ("Italy", "🇮🇹"),
     "GB": ("United Kingdom", "🇬🇧"), "US": ("United States", "🇺🇸"), "SE": ("Sweden", "🇸🇪"),
     "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "ES": ("Spain", "🇪🇸"), "PT": ("Portugal", "🇵🇹"), "CZ": ("Czechia", "🇨🇿"),
-    "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"),
+    "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"), "FI": ("Finland", "🇫🇮"),
 "WW": ("Worldwide", "🌐"),
     "RUE": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
     "CN": ("China", "🇨🇳"),
@@ -2264,7 +2264,7 @@ ORIGIN = {
     ".450 Nitro Express": "GB", ".500 Nitro Express": "GB", ".577 Nitro Express": "GB",
     ".600 Nitro Express": "GB", ".700 Nitro Express": "GB", ".500/465 Nitro Express": "GB",
     ".318 Westley Richards": "GB",
-    # United States: service rounds only
+    # United States: service rounds
     ".30-40 Krag": "US", ".30 Carbine": "US", ".45-70 Government": "US",
     ".50-70 Government": "US",
     # Others
@@ -2288,6 +2288,86 @@ ORIGIN = {
     ".30 R Blaser": "DE",
     "7.5 FK": "CZ",
     "9x39 mm": "SU",
+    # United States: sporting, target and revolver rounds (Raven 2026-11-06: tag every calibre whose origin is agreed)
+    ".17 Mach 2": "US", ".22 Long": "US", "5 mm Remington Rimfire Magnum": "US",
+    ".17 Winchester Super Magnum": "US", ".22 Winchester Rimfire": "US", ".44 Henry": "US",
+    ".22 Remington Automatic": "US", ".25 Stevens": "US", ".41 Short": "US", ".56-56 Spencer": "US",
+    ".32 S&W Long": "US", ".32 H&R Magnum": "US", ".38 Super": "US", ".400 Cor-Bon": "US",
+    "9x23 mm Winchester": "US", ".356 TSW": "US", ".22 Remington Jet": "US",
+    ".256 Winchester Magnum": "US", ".41 Magnum": "US", ".44 Special": "US", "9x25 mm Dillon": "US",
+    ".45 Colt": "US", ".454 Casull": "US", ".460 S&W Magnum": "US", ".500 S&W Magnum": "US",
+    ".30 Super Carry": "US", ".32 S&W": "US", ".327 Federal Magnum": "US",
+    ".32-20 Winchester": "US", ".38 S&W": "US", ".38 Short Colt": "US", ".38 Long Colt": "US",
+    ".38-40 Winchester": "US", ".44 S&W Russian": "US", ".45 Schofield": "US", ".45 Auto Rim": "US",
+    ".480 Ruger": "US", ".50 Action Express": "US", ".357 Remington Maximum": "US",
+    ".41 Action Express": "US", ".45 Winchester Magnum": "US", ".45 Super": "US",
+    ".460 Rowland": "US", ".475 Linebaugh": "US", ".221 Remington Fireball": "US", ".25 NAA": "US",
+    ".32 NAA": "US", ".32 Long Colt": "US", ".35 S&W Auto": "US", ".38 ACP": "US",
+    ".41 Long Colt": "US", ".44 Colt": "US", ".204 Ruger": "US", "6 mm ARC": "US", ".338 ARC": "US",
+    "6 mm PPC": "US", "6 mm GT": "US", ".22 Creedmoor": "US", "7 mm Backcountry": "US",
+    "6 mm Creedmoor": "US", ".25 Creedmoor": "US", "8.6 Blackout": "US", ".22 ARC": "US",
+    ".338 Ruger Compact Magnum": "US", ".408 CheyTac": "US", ".360 Buckhammer": "US",
+    ".400 Legend": "US", "6.5 PRC": "US", ".260 Remington": "US", "7 mm-08 Remington": "US",
+    "7 mm PRC": "US", ".30-30 Winchester": "US", ".300 PRC": "US", ".35 Winchester": "US",
+    ".50-110 Winchester": "US", ".378 Weatherby Magnum": "US", ".25-06 Remington": "US",
+    ".257 Roberts": "US", ".280 Remington": "US", ".35 Whelen": "US",
+    ".338 Winchester Magnum": "US", ".444 Marlin": "US", ".458 Winchester Magnum": "US",
+    ".350 Legend": "US", ".375 Ruger": "US", ".450 Bushmaster": "US", "6.8 mm Remington SPC": "US",
+    ".300 Winchester Short Magnum": "US", ".17 Remington": "US", ".218 Bee": "US",
+    ".25-35 Winchester": "US", ".32 Winchester Special": "US", ".35 Remington": "US",
+    ".38-55 Winchester": "US", ".348 Winchester": "US", ".358 Winchester": "US",
+    ".264 Winchester Magnum": "US", ".300 Weatherby Magnum": "US", ".416 Remington Magnum": "US",
+    ".240 Weatherby Magnum": "US", ".224 Weatherby Magnum": "US", "6.5 mm Remington Magnum": "US",
+    ".220 Swift": "US", ".25-20 Winchester": "US", ".250 Savage": "US",
+    ".257 Weatherby Magnum": "US", ".270 Weatherby Magnum": "US", "7 mm Weatherby Magnum": "US",
+    ".340 Weatherby Magnum": "US", ".284 Winchester": "US", ".300 Savage": "US",
+    ".33 Winchester": "US", ".25 Remington": "US", ".32 Remington": "US",
+    ".35 Winchester Self-Loading": "US", ".351 Winchester Self-Loading": "US",
+    ".401 Winchester Self-Loading": "US", ".40-65 Winchester": "US", ".303 Savage": "US",
+    ".219 Zipper": "US", ".300 Remington Ultra Magnum": "US", ".270 Winchester Short Magnum": "US",
+    "7 mm Winchester Short Magnum": "US", ".338 Federal": "US", "8 mm Remington Magnum": "US",
+    "6.5 mm Grendel": "US", "6 mm Remington": "US", "7-30 Waters": "US", ".17 Hornet": "US",
+    ".375 Winchester": "US", ".405 Winchester": "US", ".450 Marlin": "US", ".458 Lott": "US",
+    ".22 Savage Hi-Power": "US", ".280 Ackley Improved": "US", ".356 Winchester": "US",
+    ".307 Winchester": "US", ".416 Ruger": "US", ".416 Weatherby Magnum": "US",
+    ".375 Remington Ultra Magnum": "US", "7 mm STW": "US", ".225 Winchester": "US",
+    ".223 WSSM": "US", ".243 WSSM": "US", ".25 WSSM": "US", ".350 Remington Magnum": "US",
+    ".338-378 Weatherby Magnum": "US", "6.8 Western": "US", "7 mm Remington SAUM": "US",
+    ".26 Nosler": "US", ".27 Nosler": "US", ".28 Nosler": "US", ".30 Nosler": "US",
+    ".33 Nosler": "US", ".300 Ruger Compact Magnum": "US", ".30 Thompson/Center": "US",
+    ".30 Remington AR": "US", ".308 Marlin Express": "US", ".300 Remington SAUM": "US",
+    ".224 Valkyrie": "US", ".458 SOCOM": "US", ".50 Beowulf": "US", ".222 Remington Magnum": "US",
+    ".30-378 Weatherby Magnum": "US", ".338 Remington Ultra Magnum": "US",
+    "7 mm Remington Ultra Magnum": "US", ".325 Winchester Short Magnum": "US",
+    ".375 Weatherby Magnum": "US", ".460 Weatherby Magnum": "US", ".416 Barrett": "US",
+    ".44-40 WCF": "US", ".32-40 Ballard": "US", ".50-90 Sharps": "US", ".45-75 Winchester": "US",
+    # France
+    ".22 BB Cap": "FR",
+    # Germany
+    "9x18 mm Ultra": "DE", ".300 Blaser Magnum": "DE", ".375 Blaser Magnum": "DE",
+    "7 mm Blaser Magnum": "DE", ".338 Blaser Magnum": "DE", "8.5x55 mm Blaser": "DE",
+    # Austria-Hungary
+    "6.5x53 mm R Mannlicher": "AH",
+    # United Kingdom
+    ".300 H&H Magnum": "GB",
+    # Finland
+    "6.5x47 mm Lapua": "FI", ".300 Lapua Magnum": "FI", "9.3x53 mm R Finnish": "FI",
+    "9.3x66 mm Sako (.370 Sako Magnum)": "FI",
+    # Sweden
+    ".300 Norma Magnum": "SE", ".338 Norma Magnum": "SE", ".308 Norma Magnum": "SE",
+    ".358 Norma Magnum": "SE",
+}
+
+# Calibres two states can claim; neither is in ORIGIN until Raven decides (thread "Verify country per
+# cartridge", 2026-11-06). The tuple lists the candidates, the likelier one first.
+ORIGIN_UNDECIDED = {
+    "10 mm Auto": ("US", "SE"),  # designed in the US (Cooper, Dornaus & Dixon) 1983, first loaded by Norma
+    ".357 SIG": ("US", "CH"),  # SIGARMS (Exeter NH) with Federal 1994
+    ".45 GAP": ("US", "AT"),  # CCI/Speer design 2003 at Glock's request
+    ".22 TCM": ("PH", "US"),  # Armscor (Philippines) with Fred Craig (US)
+    "6 mm BR Norma": ("SE", "US"),  # Norma standardised the US 6mm BR Remington wildcat 1996
+    "6.5-284 Norma": ("SE", "US"),  # Norma standardised the US 6.5-284 wildcat
+    ".500/416 Nitro Express": ("DE",),  # Krieghoff with Hornady, 2000s; only municion.org names a country
 }
 
 
