@@ -112,7 +112,7 @@ class OutlineTests(unittest.TestCase):
         s = next(s for _, s in outline.specs() if s["name"] == ".577 Snider")
         o = outline.outline(s)
         self.assertEqual(o["caseMaterial"], "paper")
-        self.assertNotIn("headMaterial", o, "brass")
+        self.assertNotIn("headMaterial", o, "no headMaterial: the head is brass")
         head = points(o["head"])
         self.assertAlmostEqual(max(y for _, y in head), o["height"], places=2)
         top = min(y for _, y in head)
