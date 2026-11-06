@@ -2551,7 +2551,7 @@ def bullet(name):
 
 
 # Case material of the original cartridge where it was not brass (Raven 2026-11-05).
-# PAPER: brass foil covered in paper (Boxer's Snider case). HYBRID: brass body on a steel head.
+# PAPER: brass foil covered in paper, on a brass head (Boxer's Snider case). HYBRID: brass body on a steel head.
 BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID = "brass", "copper", "steel", "nickel", "paper", "hybrid"
 CASES = {  # name: (material, source)
     ".44 Henry": (COPPER, "https://en.wikipedia.org/wiki/.44_Henry"),

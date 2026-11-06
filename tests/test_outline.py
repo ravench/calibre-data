@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -103,6 +103,23 @@ class OutlineTests(unittest.TestCase):
         # y grows from the tip: the head runs from the base up to HYBRID_HEAD.
         self.assertAlmostEqual(max(ys), fury["height"], places=2)
         self.assertAlmostEqual(min(ys), fury["height"] - outline.HYBRID_HEAD, places=2)
+
+    def test_paper_case_stands_on_a_brass_head(self):
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            # Only shot shells, hybrid and paper cases have a head part apart from the case.
+            self.assertEqual("head" in o, s["kind"] == SHOT or case_material(s["name"]) in (HYBRID, PAPER), s["name"])
+        s = next(s for _, s in outline.specs() if s["name"] == ".577 Snider")
+        o = outline.outline(s)
+        self.assertEqual(o["caseMaterial"], "paper")
+        self.assertNotIn("headMaterial", o, "brass")
+        head = points(o["head"])
+        self.assertAlmostEqual(max(y for _, y in head), o["height"], places=2)
+        top = min(y for _, y in head)
+        self.assertAlmostEqual(top, o["height"] - outline.PAPER_HEAD_SHARE * s["case"], places=2)
+        # The head ends on the case's tapering wall: narrower than the base, wider than the mouth.
+        xs = [x for x, y in head if y == top]
+        self.assertTrue(s["neck"] < max(xs) - min(xs) < s["base"], xs)
 
     def test_crimped_blank_is_a_case_narrowing_to_the_mouth(self):
         s = next(s for _, s in outline.specs() if s["name"] == ".22 Blank (6.8/11)")
