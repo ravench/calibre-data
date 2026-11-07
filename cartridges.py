@@ -978,7 +978,7 @@ INTRODUCED = {
     "9 mm Glisenti": (1909, _WP + "Glisenti_Model_1910"),
     "9 mm Browning Long": (1903, _WP + "9mm_Browning_Long"),
     "9x23 mm Steyr": (1912, _WP + "9×23mm_Steyr"),
-    "9x23 mm Largo": (1905, _WP + "9×23mm_Largo"),
+    "9x23 mm Largo": (1903, _WP + "9×23mm_Largo"),  # Bergmann-Bayard 1903; Spain adopted it 1905
     ".38 S&W": (1877, _WP + ".38_S%26W"),
     ".38 Long Colt": (1875, _WP + ".38_Long_Colt"),
     ".38-40 Winchester": (1874, _WP + ".38-40_Winchester"),
@@ -2199,12 +2199,15 @@ def tags(name):
 # both. No entry means the entry is not a single cartridge, or the origin is open and listed in
 # ORIGIN_UNDECIDED with its candidate states. Historical states keep their
 # own code (ISO 3166-3 SU/CS where one exists, else a made-up AH/RUE that no ISO code uses, so
-# RU stays today's Russia); they have no flag emoji, so apps draw their own.
+# RU stays today's Russia); they have no flag emoji, so apps draw their own. The German Empire,
+# Weimar Republic, Nazi Germany and West Germany are all DE, the Kingdom of Italy IT and the Empire
+# of Japan JP: the same state continues under today's flag. Blanks have no country: they are trade
+# sizes made everywhere (thread "Verify country per cartridge", 2026-11-07).
 COUNTRIES = {  # code: (English name, flag emoji or None)
     "CH": ("Switzerland", "🇨🇭"), "DE": ("Germany", "🇩🇪"), "AH": ("Austria-Hungary", None),
     "AT": ("Austria", "🇦🇹"), "FR": ("France", "🇫🇷"), "IT": ("Italy", "🇮🇹"),
     "GB": ("United Kingdom", "🇬🇧"), "US": ("United States", "🇺🇸"), "SE": ("Sweden", "🇸🇪"),
-    "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "ES": ("Spain", "🇪🇸"), "PT": ("Portugal", "🇵🇹"), "CZ": ("Czechia", "🇨🇿"),
+    "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "PT": ("Portugal", "🇵🇹"), "CZ": ("Czechia", "🇨🇿"),
     "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"), "FI": ("Finland", "🇫🇮"),
     "RUE": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
     "CN": ("China", "🇨🇳"), "PH": ("Philippines", "🇵🇭"),
@@ -2225,35 +2228,29 @@ ORIGIN = {
     "7.62x51 mm NATO": "US", ".308 Winchester": "US", ".30-06 Springfield": "US",
     ".300 Winchester Magnum": "US", ".338 Lapua Magnum": "FI",
     ".375 H&H Magnum": "GB", ".50 BMG": "US",
-    # Blanks: the market whose makers standardised each; only municion.org names a country for them
-    # (8 mm Knall DE, 6 mm Flobert Knall FR, 9 mm P.A.K. IT 1985), so whether blanks keep a country
-    # at all is still open for Raven (thread "Verify country per cartridge", 2026-11-06).
-    "9 mm P.A.K.": "DE", "8 mm Knall": "DE", ".315 Knall": "DE", "9 mm R Knall": "DE", ".320 Knall": "DE", ".45 Knall": "DE",
-    ".22 Long Knall": "IT", "6 mm Flobert Knall": "FR",
     # Switzerland
     "5.6 mm GP 90": "CH", "7.5x55 mm Swiss (GP 11)": "CH", "7.5x53.5 mm Swiss (GP 1890)": "CH",
     "7.5 mm Swiss Ordnance 1882": "CH", "10.4 mm Swiss Ordnance 1878": "CH",
     "10.4x38 mm R Vetterli": "CH", "18 mm Milbank-Amsler": "CH", "10.4 mm Swiss Ordnance 1872 Rimfire": "CH",
-    "7.65 mm Parabellum": "CH",  # first adopted by the Swiss Army (Ordonnanzpistole 1900)
     # Soviet Union and Russian Empire
     "7.62x39 mm": "SU", "5.45x39 mm": "SU", "9x18 mm Makarov": "SU", "7.62x25 mm Tokarev": "SU",
     "5.45x18 mm": "SU", "12.7x108 mm": "SU",
     "5.8x42 mm": "CN", ".277 SIG Fury": "US",
-    "7.62x54 mm R": "RUE", "7.62x38 mm R Nagant": "RUE",
+    "7.62x54 mm R": "RUE",
     # Germany: service rounds and German hunting rounds
     "8x57 mm IS": "DE", "8x57 mm IRS": "DE", "7.92x33 mm Kurz": "DE", "7.63x25 mm Mauser": "DE",
     "11x60 mm R Mauser": "DE", "7x57 mm Mauser": "DE", "7x57 mm R": "DE", "6.5x57 mm Mauser": "DE",
-    "6.5x57 mm R": "DE", "9x57 mm Mauser": "DE", "9.3x57 mm Mauser": "DE", "7x64 mm": "DE",
+    "6.5x57 mm R": "DE", "9x57 mm Mauser": "DE", "7x64 mm": "DE",
     "7x65 mm R": "DE", "8x64 mm S": "DE", "8x60 mm S": "DE", "8x68 mm S": "DE", "6.5x68 mm": "DE",
     "9.3x62 mm": "DE", "9.3x64 mm Brenneke": "DE", "9.3x74 mm R": "DE", "5.6x57 mm": "DE",
-    "5.6x50 mm Magnum": "DE", "4.6x30 mm": "DE", ".500 Jeffery": "DE",
+    "5.6x50 mm Magnum": "DE", "4.6x30 mm": "DE",
     # Austria-Hungary and Austria
     "8x50 mm R Mannlicher": "AH", "8 mm Roth-Steyr": "AH", "9x23 mm Steyr": "AH",
-    "6.5x54 mm Mannlicher-Schönauer": "AH", "9.5x57 mm Mannlicher-Schönauer": "AH",
-    "8x56 mm R Mannlicher": "AT", ".376 Steyr": "AT",
+    "6.5x54 mm Mannlicher-Schönauer": "AH",
+    "8x56 mm R Mannlicher": "AT",
     # France
     "8x50 mm R Lebel": "FR", "7.5x54 mm French": "FR", "11x59 mm R Gras": "FR",
-    "11 mm French Ordnance": "FR", "8 mm Lebel revolver": "FR", "7.65 mm Longue": "FR",
+    "11 mm French Ordnance": "FR", "8 mm Lebel revolver": "FR",
     # Italy
     "6.5x52 mm Carcano": "IT", "7.35x51 mm Carcano": "IT", "9 mm Glisenti": "IT",
     # United Kingdom: service rounds and the British African rounds
@@ -2264,10 +2261,10 @@ ORIGIN = {
     ".600 Nitro Express": "GB", ".700 Nitro Express": "GB", ".500/465 Nitro Express": "GB",
     ".318 Westley Richards": "GB",
     # Others
-    "6.5x55 mm Swedish": "SE", "8x58 mm R Danish Krag": "DK", "7.65x53 mm Argentine": "BE",
-    "9 mm Browning Long": "BE", "9x23 mm Largo": "ES", "6.5x50 mm SR Arisaka": "JP",
+    "8x58 mm R Danish Krag": "DK",
+    "9 mm Browning Long": "BE", "6.5x50 mm SR Arisaka": "JP",
     "7.7x58 mm Arisaka": "JP", "8 mm Nambu": "JP", "7.92x107 mm DS": "PL",
-    "7.62x45 mm vz. 52": "CS", "9x21 mm IMI": "IL",
+    "7.62x45 mm vz. 52": "CS",
     "9.3x72 mm R": "DE", "8x75 mm RS": "DE", "6.5x65 mm RWS": "DE",
     ".450 Rigby": "GB", ".450/400 Nitro Express 3 inch": "GB", ".375 CheyTac": "US",
     ".40-82 WCF": "US", ".50-95 WCF": "US", ".38-56 WCF": "US", ".30 Remington": "US",
@@ -2358,22 +2355,35 @@ ORIGIN = {
     ".300 Norma Magnum": "SE", ".308 Norma Magnum": "SE",
     ".338 Norma Magnum": "SE",  # developed by Norma with Jimmie Sloan (US) as a new round; both sources say Sweden
     ".358 Norma Magnum": "SE",
+    # Calibres two states can claim, decided in the thread "Verify country per cartridge" (2026-11-07) for
+    # the state that introduced the round; the other claim stands after the colon.
+    "7.65 mm Parabellum": "DE",  # Luger at DWM, Berlin, 1898; the Swiss Army adopted it first (Ordonnanzpistole 1900): CH
+    "9x23 mm Largo": "DE",  # Bergmann-Bayard 1903; Spain adopted it 1905 and made it its own (no other calibre is Spanish): ES
+    "7.65x53 mm Argentine": "BE",  # Mauser design for the Belgian Model 1889; Argentina followed 1891: DE, AR
+    ".500 Jeffery": "DE",  # August Schüler, Suhl, 1920s (12.7x70 Schüler); W. J. Jeffery, London, sold and named it: GB
+    "9.5x57 mm Mannlicher-Schönauer": "AH",  # Steyr 1910; Westley Richards' .375 Rimless NE 2 1/4 of 1908 is the same case: GB
+    "9.3x57 mm Mauser": "DE",  # necked-up 8x57 of c. 1900 that became a Swedish and Norwegian hunting round: SE
+    ".376 Steyr": "AT",  # Steyr Mannlicher with Hornady 1999 for the Steyr Scout: US
+    "7.62x38 mm R Nagant": "RUE",  # Léon Nagant, Liège, designed it for the Russian M1895 contract; made in Russia: BE
+    "9x21 mm IMI": "IL",  # IMI c. 1980 for markets where 9x19 mm is banned, above all Italy: IT
+    "7.65 mm Longue": "FR",  # French service round (MAS 1935); derived from the US .30 Pedersen of 1917: US
+    "6.5x55 mm Swedish": "SE",  # joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms: NO
+    "6.35 mm Browning (.25 ACP)": "BE",  # Browning (US) design, first made and sold by FN Herstal 1905/06; Colt 1908: US
+    "7.65 mm Browning (.32 ACP)": "BE",  # Browning (US) design, introduced by FN Herstal 1899 for the FN M1900: US
+    "5.56x45 mm NATO": "US",  # the US .223/M193 case of 1963; NATO adopted the Belgian SS109 load in 1980: BE
+    "10 mm Auto": "US",  # Cooper, Dornaus & Dixon 1983; first loaded by Norma: SE
+    ".357 SIG": "US",  # SIGARMS (Exeter NH) with Federal 1994: CH
+    ".45 GAP": "US",  # Ernest Durham at CCI/Speer 2003, at Glock's request: AT
+    ".22 TCM": "PH",  # Armscor with Fred Craig (US); made by Armscor: US
+    "6 mm BR Norma": "SE",  # Norma standardised the US 6mm BR Remington wildcat 1996: US
+    "6.5-284 Norma": "SE",  # Norma standardised the US 6.5-284 wildcat (C.I.P. 2001): US
+    ".500/416 Nitro Express": "DE",  # Krieghoff (Ulm) with Hornady, 2000s; only municion.org names a country: US
 }
 
-# Calibres two states can claim; neither is in ORIGIN until Raven decides (thread "Verify country per
-# cartridge", 2026-11-06). The tuple lists the candidates, the likelier one first.
-ORIGIN_UNDECIDED = {
-    "6.35 mm Browning (.25 ACP)": ("BE", "US"),  # Browning design, first made and sold by FN Herstal 1905/06, Colt 1908
-    "7.65 mm Browning (.32 ACP)": ("BE", "US"),  # Browning design, introduced by FN Herstal 1899 for the FN M1900
-    "5.56x45 mm NATO": ("US", "BE"),  # US .223/M193 of 1963 became the NATO round; the NATO SS109 load of 1980 is Belgian (FN)
-    "10 mm Auto": ("US", "SE"),  # designed in the US (Cooper, Dornaus & Dixon) 1983, first loaded by Norma
-    ".357 SIG": ("US", "CH"),  # SIGARMS (Exeter NH) with Federal 1994
-    ".45 GAP": ("US", "AT"),  # CCI/Speer design 2003 at Glock's request
-    ".22 TCM": ("PH", "US"),  # Armscor (Philippines) with Fred Craig (US)
-    "6 mm BR Norma": ("SE", "US"),  # Norma standardised the US 6mm BR Remington wildcat 1996
-    "6.5-284 Norma": ("SE", "US"),  # Norma standardised the US 6.5-284 wildcat
-    ".500/416 Nitro Express": ("DE", "US"),  # Krieghoff (Ulm) with Hornady, 2000s; only municion.org names a country
-}
+# Calibres two states can claim and nobody has decided yet: {name: (candidate codes, likelier first)}.
+# origin() answers None for them and origin_candidates() lists the candidates. Empty since 2026-11-07,
+# when the thread "Verify country per cartridge" decided the last ten (the last block of ORIGIN).
+ORIGIN_UNDECIDED = {}
 
 # Calibres in common use worldwide (Raven 2026-11-04); independent of ORIGIN (Raven 2026-11-07: show the
 # country as well, so 9x19 mm is German and worldwide). Includes the generic gauges and pellet sizes.
