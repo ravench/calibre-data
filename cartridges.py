@@ -2216,7 +2216,6 @@ ORIGIN = {
     "10.3x60 mm R": "CH", "7x61 mm Sharpe & Hart": "US",
     # In common use worldwide (also in WORLDWIDE); the state that introduced them:
     ".22 Short": "US", ".22 LR": "US", ".22 WMR": "US", ".17 HMR": "US",
-   
     "9 mm Browning kurz (.380 ACP)": "US", "9x19 mm": "DE", "9 mm P.A.K.": "DE", "8 mm Knall": "DE", ".315 Knall": "DE", "9 mm R Knall": "DE", ".320 Knall": "DE", ".45 Knall": "DE",
     ".22 Long Knall": "IT", "6 mm Flobert Knall": "FR", ".38 Special": "US",
     ".357 Magnum": "US", ".40 S&W": "US", ".44 Magnum": "US", ".45 ACP": "US",
