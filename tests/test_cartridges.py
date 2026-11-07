@@ -302,7 +302,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(set(ORIGIN.values()) | candidates, set(COUNTRIES))  # no unused country
         for code, (name, flag) in COUNTRIES.items():
             self.assertTrue(name)
-            self.assertTrue(flag is None or len(flag) == 2 or code == WORLDWIDE, code)
+            self.assertTrue(flag is None or len(flag) == 2, code)
 
     def test_known_origins(self):
         for name in ("5.6 mm GP 90", "7.5x55 mm Swiss (GP 11)", "7.5x53.5 mm Swiss (GP 1890)",
@@ -312,9 +312,16 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(origin("7.62x54 mm R"), ("RUE", "Russian Empire", None))
         self.assertNotIn("RU", COUNTRIES)  # RU is today's Russia, not the Russian Empire
         self.assertEqual(origin("5.6 mm GP 90"), ("CH", "Switzerland", "🇨🇭"))
+        # Raven 2026-11-07: worldwide rounds keep the state that introduced them; WORLDWIDE is a separate set
         for worldwide in ("9x19 mm", ".22 LR", ".308 Winchester", "5.56x45 mm NATO", ".45 ACP", "12/70"):
-            self.assertEqual(origin(worldwide), ("WW", "Worldwide", "🌐"), worldwide)
-        self.assertEqual(ORIGIN["7.62x39 mm"], "SU")  # a clear country wins over worldwide use
+            self.assertIn(worldwide, WORLDWIDE)
+        self.assertEqual(origin("9x19 mm"), ("DE", "Germany", "🇩🇪"))
+        self.assertEqual(ORIGIN[".22 LR"], "US")
+        self.assertIn("5.56x45 mm NATO", ORIGIN_UNDECIDED)  # US .223 or the Belgian SS109
+        self.assertIsNone(origin("12/70"))  # a gauge, not a cartridge
+        self.assertNotIn("7.62x39 mm", WORLDWIDE)
+        self.assertLessEqual(WORLDWIDE, NAMES)
+        self.assertNotIn("WW", COUNTRIES)
         self.assertEqual(origin(".30 Nosler"), ("US", "United States", "🇺🇸"))  # sporting rounds are tagged too
         self.assertIsNone(origin(".36 Rundkugel (.375)"))  # not a single cartridge
 
@@ -332,7 +339,8 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(len(set(candidates)), len(candidates), name)
         self.assertEqual(ORIGIN[".22 BB Cap"], "FR")  # Flobert 1845
         self.assertEqual(ORIGIN["6.5x53 mm R Mannlicher"], "AH")  # Steyr 1892, Romanian and Dutch service round
-        self.assertEqual(origin(".338 Lapua Magnum"), ("WW", "Worldwide", "🌐"))
+        self.assertEqual(origin(".338 Lapua Magnum"), ("FI", "Finland", "🇫🇮"))
+        self.assertIn(".338 Lapua Magnum", WORLDWIDE)
         self.assertEqual(origin(".300 Lapua Magnum"), ("FI", "Finland", "🇫🇮"))
 
     def test_swiss_service_revolver_rounds_are_obsolete(self):

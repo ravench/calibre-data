@@ -2193,10 +2193,10 @@ def tags(name):
     return [t for t, s in (("obsolete", OBSOLETE), ("rare", RARE)) if name in s]
 
 # The state that introduced each calibre (Raven 2026-11-06: every calibre whose origin the sources
-# agree on, sporting rounds included; before that only service and regional rounds). Calibres in
-# common use worldwide (9x19 mm, .22 LR, .308 Winchester, ...) get WORLDWIDE instead; a round with
-# a clear country keeps it even when it spread worldwide (7.62x39 mm stays Soviet, 8x57 IS stays
-# German). No entry means the entry is not a single cartridge, or the origin is open and listed in
+# agree on, sporting rounds included; before that only service and regional rounds). A round keeps
+# its country when it spread worldwide (9x19 mm stays German, 7.62x39 mm Soviet); the calibres in
+# common use worldwide are listed separately in WORLDWIDE, so apps can show the flag, a globe or
+# both. No entry means the entry is not a single cartridge, or the origin is open and listed in
 # ORIGIN_UNDECIDED with its candidate states. Historical states keep their
 # own code (ISO 3166-3 SU/CS where one exists, else a made-up AH/RUE that no ISO code uses, so
 # RU stays today's Russia); they have no flag emoji, so apps draw their own.
@@ -2206,32 +2206,30 @@ COUNTRIES = {  # code: (English name, flag emoji or None)
     "GB": ("United Kingdom", "🇬🇧"), "US": ("United States", "🇺🇸"), "SE": ("Sweden", "🇸🇪"),
     "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "ES": ("Spain", "🇪🇸"), "PT": ("Portugal", "🇵🇹"), "CZ": ("Czechia", "🇨🇿"),
     "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"), "FI": ("Finland", "🇫🇮"),
-"WW": ("Worldwide", "🌐"),
     "RUE": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
     "CN": ("China", "🇨🇳"), "PH": ("Philippines", "🇵🇭"),
 }
 
-WORLDWIDE = "WW"
 ORIGIN = {
     ".450 No. 2 Nitro Express": "GB", ".375 Flanged Magnum Nitro Express": "GB", ".375 Flanged Nitro Express": "GB", ".55 Boys": "GB",
     "5.75 mm Velo-Dog": "FR", ".500 JRH": "US", ".45-90 WCF": "US", ".22 Extra Long": "US", ".32 Short Rimfire": "US", ".32 Long Rimfire": "US", ".360 No. 5 Rook": "GB",
     "10.3x60 mm R": "CH", "7x61 mm Sharpe & Hart": "US",
-    # In common use worldwide:
-    ".22 Short": WORLDWIDE, ".22 LR": WORLDWIDE, ".22 WMR": WORLDWIDE, ".17 HMR": WORLDWIDE,
-    "6.35 mm Browning (.25 ACP)": WORLDWIDE, "7.65 mm Browning (.32 ACP)": WORLDWIDE,
-    "9 mm Browning kurz (.380 ACP)": WORLDWIDE, "9x19 mm": WORLDWIDE, "9 mm P.A.K.": "DE", "8 mm Knall": "DE", ".315 Knall": "DE", "9 mm R Knall": "DE", ".320 Knall": "DE", ".45 Knall": "DE",
-    ".22 Long Knall": "IT", "6 mm Flobert Knall": "FR", ".38 Special": WORLDWIDE,
-    ".357 Magnum": WORLDWIDE, ".40 S&W": WORLDWIDE, ".44 Magnum": WORLDWIDE, ".45 ACP": WORLDWIDE,
-    "5.7x28 mm": WORLDWIDE, ".222 Remington": WORLDWIDE, ".223 Remington": WORLDWIDE,
-    "5.56x45 mm NATO": WORLDWIDE, ".22-250 Remington": WORLDWIDE, ".22 Hornet": WORLDWIDE,
-    ".243 Winchester": WORLDWIDE, "6.5 mm Creedmoor": WORLDWIDE, ".270 Winchester": WORLDWIDE,
-    "7 mm Remington Magnum": WORLDWIDE, ".300 AAC Blackout": WORLDWIDE, ".300 HAM'R": "US", ".25 Weatherby RPM": "US", "6.5 Weatherby RPM": "US", ".338 Weatherby RPM": "US",
-    "7.62x51 mm NATO": WORLDWIDE, ".308 Winchester": WORLDWIDE, ".30-06 Springfield": WORLDWIDE,
-    ".300 Winchester Magnum": WORLDWIDE, ".338 Lapua Magnum": WORLDWIDE,
-    ".375 H&H Magnum": WORLDWIDE, ".50 BMG": WORLDWIDE, "12/70": WORLDWIDE, "12/76": WORLDWIDE,
-    "20/70": WORLDWIDE, "20/76": WORLDWIDE, "4.5 mm Diabolo (.177)": WORLDWIDE,
-    "5.5 mm Diabolo (.22)": WORLDWIDE, "4.4 mm Stahl-BB (.177 BB)": WORLDWIDE,
-    "6 mm Airsoft-BB": WORLDWIDE, "8 mm Airsoft-BB": WORLDWIDE,
+    # In common use worldwide (also in WORLDWIDE); the state that introduced them:
+    ".22 Short": "US", ".22 LR": "US", ".22 WMR": "US", ".17 HMR": "US",
+   
+    "9 mm Browning kurz (.380 ACP)": "US", "9x19 mm": "DE", "9 mm P.A.K.": "DE", "8 mm Knall": "DE", ".315 Knall": "DE", "9 mm R Knall": "DE", ".320 Knall": "DE", ".45 Knall": "DE",
+    ".22 Long Knall": "IT", "6 mm Flobert Knall": "FR", ".38 Special": "US",
+    ".357 Magnum": "US", ".40 S&W": "US", ".44 Magnum": "US", ".45 ACP": "US",
+    "5.7x28 mm": "BE", ".222 Remington": "US", ".223 Remington": "US",
+    ".22-250 Remington": "US", ".22 Hornet": "US",
+    ".243 Winchester": "US", "6.5 mm Creedmoor": "US", ".270 Winchester": "US",
+    "7 mm Remington Magnum": "US", ".300 AAC Blackout": "US", ".300 HAM'R": "US", ".25 Weatherby RPM": "US", "6.5 Weatherby RPM": "US", ".338 Weatherby RPM": "US",
+    "7.62x51 mm NATO": "US", ".308 Winchester": "US", ".30-06 Springfield": "US",
+    ".300 Winchester Magnum": "US", ".338 Lapua Magnum": "FI",
+    ".375 H&H Magnum": "GB", ".50 BMG": "US",
+   
+   
+   
     # Switzerland
     "5.6 mm GP 90": "CH", "7.5x55 mm Swiss (GP 11)": "CH", "7.5x53.5 mm Swiss (GP 1890)": "CH",
     "7.5 mm Swiss Ordnance 1882": "CH", "10.4 mm Swiss Ordnance 1878": "CH",
@@ -2362,6 +2360,9 @@ ORIGIN = {
 # Calibres two states can claim; neither is in ORIGIN until Raven decides (thread "Verify country per
 # cartridge", 2026-11-06). The tuple lists the candidates, the likelier one first.
 ORIGIN_UNDECIDED = {
+    "6.35 mm Browning (.25 ACP)": ("BE", "US"),  # Browning design, first made and sold by FN Herstal 1905/06, Colt 1908
+    "7.65 mm Browning (.32 ACP)": ("BE", "US"),  # Browning design, introduced by FN Herstal 1899 for the FN M1900
+    "5.56x45 mm NATO": ("US", "BE"),  # US .223/M193 of 1963 became the NATO round; the NATO SS109 load of 1980 is Belgian (FN)
     "10 mm Auto": ("US", "SE"),  # designed in the US (Cooper, Dornaus & Dixon) 1983, first loaded by Norma
     ".357 SIG": ("US", "CH"),  # SIGARMS (Exeter NH) with Federal 1994
     ".45 GAP": ("US", "AT"),  # CCI/Speer design 2003 at Glock's request
@@ -2371,10 +2372,22 @@ ORIGIN_UNDECIDED = {
     ".500/416 Nitro Express": ("DE", "US"),  # Krieghoff (Ulm) with Hornady, 2000s; only municion.org names a country
 }
 
+# Calibres in common use worldwide (Raven 2026-11-04); independent of ORIGIN (Raven 2026-11-07: show the
+# country as well, so 9x19 mm is German and worldwide). Includes the generic gauges and pellet sizes.
+WORLDWIDE = frozenset({
+    ".22 Short", ".22 LR", ".22 WMR", ".17 HMR", "6.35 mm Browning (.25 ACP)", "7.65 mm Browning (.32 ACP)",
+    "9 mm Browning kurz (.380 ACP)", "9x19 mm", ".38 Special", ".357 Magnum", ".40 S&W", ".44 Magnum", ".45 ACP",
+    "5.7x28 mm", ".222 Remington", ".223 Remington", "5.56x45 mm NATO", ".22-250 Remington", ".22 Hornet",
+    ".243 Winchester", "6.5 mm Creedmoor", ".270 Winchester", "7 mm Remington Magnum", ".300 AAC Blackout",
+    "7.62x51 mm NATO", ".308 Winchester", ".30-06 Springfield", ".300 Winchester Magnum", ".338 Lapua Magnum",
+    ".375 H&H Magnum", ".50 BMG", "12/70", "12/76", "20/70", "20/76", "4.5 mm Diabolo (.177)", "5.5 mm Diabolo (.22)",
+    "4.4 mm Stahl-BB (.177 BB)", "6 mm Airsoft-BB", "8 mm Airsoft-BB",
+})
+
 
 def origin(name):
-    """(code, English name, flag emoji or None) of the state that introduced a calibre, WORLDWIDE for
-    the universal rounds, or None (not a single cartridge, or still open in ORIGIN_UNDECIDED)."""
+    """(code, English name, flag emoji or None) of the state that introduced a calibre, or None (not a
+    single cartridge, or still open in ORIGIN_UNDECIDED). Worldwide use is a separate set, WORLDWIDE."""
     code = ORIGIN.get(name)
     return (code, *COUNTRIES[code]) if code else None
 
