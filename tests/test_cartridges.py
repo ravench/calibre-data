@@ -1,5 +1,6 @@
 """python3 -m unittest discover -s tests"""
 import os, sys, unittest
+from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
@@ -232,7 +233,7 @@ class CatalogueTests(unittest.TestCase):
                 self.assertFalse(is_rare(name))
                 self.assertEqual(INTRODUCED[name][0], 1991)
                 self.assertEqual(name in PRIMERS, s["kind"] != RIMFIRE)
-        self.assertEqual(ORIGIN["6 mm Flobert Knall"], "FR")
+        self.assertIsNone(origin("6 mm Flobert Knall"))  # blanks have no country (2026-11-07)
         self.assertIn("9mmrk", by_name["9 mm R Knall"]["aliases"])
 
     def test_every_calibre_has_an_introduction_year_or_a_reason(self):
@@ -306,8 +307,9 @@ class CatalogueTests(unittest.TestCase):
 
     def test_known_origins(self):
         for name in ("5.6 mm GP 90", "7.5x55 mm Swiss (GP 11)", "7.5x53.5 mm Swiss (GP 1890)",
-                     "7.5 mm Swiss Ordnance 1882", "7.65 mm Parabellum"):
+                     "7.5 mm Swiss Ordnance 1882"):
             self.assertEqual(ORIGIN[name], "CH")
+        self.assertEqual(ORIGIN["7.65 mm Parabellum"], "DE")  # DWM 1898; the Swiss Army was only the first to adopt it
         self.assertEqual(origin("7.62x39 mm"), ("SU", "Soviet Union", None))
         self.assertEqual(origin("7.62x54 mm R"), ("RUE", "Russian Empire", None))
         self.assertNotIn("RU", COUNTRIES)  # RU is today's Russia, not the Russian Empire
@@ -317,11 +319,12 @@ class CatalogueTests(unittest.TestCase):
             self.assertIn(worldwide, WORLDWIDE)
         self.assertEqual(origin("9x19 mm"), ("DE", "Germany", "🇩🇪"))
         self.assertEqual(ORIGIN[".22 LR"], "US")
-        self.assertIn("5.56x45 mm NATO", ORIGIN_UNDECIDED)  # US .223 or the Belgian SS109
+        self.assertEqual(ORIGIN["5.56x45 mm NATO"], "US")  # the .223/M193 case; the SS109 is a Belgian load
         self.assertIsNone(origin("12/70"))  # a gauge, not a cartridge
         self.assertNotIn("7.62x39 mm", WORLDWIDE)
         self.assertLessEqual(WORLDWIDE, NAMES)
         self.assertNotIn("WW", COUNTRIES)
+        self.assertNotIn("ES", COUNTRIES)  # 9x23 mm Largo is Bergmann's (DE); no other calibre is Spanish
         self.assertEqual(origin(".30 Nosler"), ("US", "United States", "🇺🇸"))  # sporting rounds are tagged too
         self.assertIsNone(origin(".36 Rundkugel (.375)"))  # not a single cartridge
         self.assertEqual(origin("9x18 mm Ultra"), ("DE", "Germany", "🇩🇪"))  # Genschow 1936, not Hirtenberger 1972
@@ -333,21 +336,30 @@ class CatalogueTests(unittest.TestCase):
         self.assertTrue(is_worldwide("12/70"))
         self.assertFalse(is_worldwide("7.62x39 mm"))
         self.assertFalse(is_worldwide("no such calibre"))
-        self.assertEqual(origin_candidates("5.56x45 mm NATO"),
-                         (("US", "United States", "🇺🇸"), ("BE", "Belgium", "🇧🇪")))
-        self.assertEqual(origin_candidates(".22 TCM")[0], ("PH", "Philippines", "🇵🇭"))
+        self.assertEqual(ORIGIN_UNDECIDED, {})  # every two-state case was decided 2026-11-07
         self.assertEqual(origin_candidates("9x19 mm"), ())  # decided
         self.assertEqual(origin_candidates("12/70"), ())  # a gauge, nothing to decide
+        with patch.dict(ORIGIN_UNDECIDED, {"5.56x45 mm NATO": ("US", "BE")}):
+            self.assertEqual(origin_candidates("5.56x45 mm NATO"),
+                             (("US", "United States", "🇺🇸"), ("BE", "Belgium", "🇧🇪")))
         for name in ORIGIN_UNDECIDED:
             self.assertIsNone(origin(name), name)
             self.assertEqual(len(origin_candidates(name)), len(ORIGIN_UNDECIDED[name]))
 
     def test_every_cartridge_has_an_origin_or_is_undecided(self):
         # Raven 2026-11-06: every calibre gets the state that introduced it, where the sources agree.
-        # Shot shell gauges, loose balls and air gun pellets are not one cartridge; nor is the .22 blank family.
-        generic = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)} | {".22 Blank (6.8/11)"}
-        self.assertLessEqual(generic, set(INTRODUCED_UNKNOWN))
-        for name in NAMES - generic:
+        # Shot shell gauges, loose balls and air gun pellets are not one cartridge, and blanks (built by
+        # blank(): no bullet, so the case is the whole round and the "bullet" width is the case's) are
+        # trade sizes made everywhere: none of them has a country.
+        sizes = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)}
+        blanks = {s["name"] for s in ALL if s["oal"] == s["case"] and s["bullet"] == s["base"]} - sizes
+        self.assertEqual(len(blanks), 9)
+        self.assertLessEqual(sizes, set(INTRODUCED_UNKNOWN))
+        self.assertIn("9 mm P.A.K.", blanks)
+        for name in sizes | blanks:
+            self.assertIsNone(origin(name), name)
+            self.assertNotIn(name, ORIGIN_UNDECIDED)
+        for name in NAMES - sizes - blanks:
             self.assertTrue(name in ORIGIN or name in ORIGIN_UNDECIDED, name)
         self.assertLessEqual(set(ORIGIN_UNDECIDED), NAMES)
         self.assertFalse(set(ORIGIN_UNDECIDED) & set(ORIGIN))
@@ -359,6 +371,12 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(origin(".338 Lapua Magnum"), ("FI", "Finland", "🇫🇮"))
         self.assertIn(".338 Lapua Magnum", WORLDWIDE)
         self.assertEqual(origin(".300 Lapua Magnum"), ("FI", "Finland", "🇫🇮"))
+        # the two-state cases decided 2026-11-07
+        self.assertEqual(origin(".22 TCM"), ("PH", "Philippines", "🇵🇭"))
+        self.assertEqual(ORIGIN["9x23 mm Largo"], "DE")  # Bergmann 1901-03, Spanish service round from 1905
+        self.assertEqual(ORIGIN["7.65x53 mm Argentine"], "BE")  # Belgian Model 1889 first
+        self.assertEqual(ORIGIN["6.35 mm Browning (.25 ACP)"], "BE")
+        self.assertEqual(ORIGIN["10 mm Auto"], "US")
 
     def test_swiss_service_revolver_rounds_are_obsolete(self):
         for name in ("7.5 mm Swiss Ordnance 1882", "10.4 mm Swiss Ordnance 1878"):
