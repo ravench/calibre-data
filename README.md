@@ -13,10 +13,14 @@ The shared calibre catalogue for
   probable year), `OBSOLETE`, the calibres no longer in regular factory production, and `RARE`, the calibres you
   are unlikely to find, so a match is more likely a false positive (independent of `OBSOLETE`;
   `tags(name)` gives `[]`, `["obsolete"]`, `["rare"]` or both).
-- `ORIGIN` maps the calibres clearly linked to one country (national service rounds, regional
-  hunting rounds) to a code in `COUNTRIES` (English name and flag emoji; historical states such
-  as the Soviet Union have no emoji). Calibres in common use worldwide get `WORLDWIDE` ("WW",
-  🌐) instead; no entry means neither a clear country nor universal use. `origin(name)` looks it up.
+- `ORIGIN` maps each calibre to the state that introduced it, as a code in `COUNTRIES` (English
+  name and flag emoji; historical states such as the Soviet Union have no emoji). No entry means
+  the entry is not a single cartridge (balls, gauges, pellets) or the origin is still open:
+  `ORIGIN_UNDECIDED` lists those with the candidate states. `origin(name)` gives
+  `(code, name, flag)` or `None`; `origin_candidates(name)` gives the open candidates the same
+  way, likelier first. `WORLDWIDE` is the separate set of calibres in common use worldwide, and
+  `is_worldwide(name)` tests it (9x19 mm is both German and worldwide). Since 2026-11-07 there is
+  no `WW` country code: a worldwide round carries its country, and the globe is a second marker.
 - `BULLETS` gives the bullet each calibre was first sold with where it was not a full metal
   jacket: `LEAD`, `PAPER_PATCHED` (lead wrapped in paper below the nose), `SOFT_POINT`
   (jacket with a lead tip) or `POLYMER_TIP` (jacket with a plastic tip), with the page that says so (`BULLET_INFERRED`: hunting rounds
