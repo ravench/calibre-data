@@ -7,7 +7,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         SMALL_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
                         RARE, is_rare, tags,
-                        ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, origin,
+                        ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, origin, origin_candidates, is_worldwide,
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
@@ -324,12 +324,29 @@ class CatalogueTests(unittest.TestCase):
         self.assertNotIn("WW", COUNTRIES)
         self.assertEqual(origin(".30 Nosler"), ("US", "United States", "🇺🇸"))  # sporting rounds are tagged too
         self.assertIsNone(origin(".36 Rundkugel (.375)"))  # not a single cartridge
+        self.assertEqual(origin("9x18 mm Ultra"), ("DE", "Germany", "🇩🇪"))  # Genschow 1936, not Hirtenberger 1972
+        self.assertEqual(ORIGIN[".300 HAM'R"], "US")
+        self.assertNotIn(".300 HAM'R", WORLDWIDE)
+
+    def test_worldwide_and_candidate_helpers(self):
+        self.assertTrue(is_worldwide("9x19 mm"))
+        self.assertTrue(is_worldwide("12/70"))
+        self.assertFalse(is_worldwide("7.62x39 mm"))
+        self.assertFalse(is_worldwide("no such calibre"))
+        self.assertEqual(origin_candidates("5.56x45 mm NATO"),
+                         (("US", "United States", "🇺🇸"), ("BE", "Belgium", "🇧🇪")))
+        self.assertEqual(origin_candidates(".22 TCM")[0], ("PH", "Philippines", "🇵🇭"))
+        self.assertEqual(origin_candidates("9x19 mm"), ())  # decided
+        self.assertEqual(origin_candidates("12/70"), ())  # a gauge, nothing to decide
+        for name in ORIGIN_UNDECIDED:
+            self.assertIsNone(origin(name), name)
+            self.assertEqual(len(origin_candidates(name)), len(ORIGIN_UNDECIDED[name]))
 
     def test_every_cartridge_has_an_origin_or_is_undecided(self):
         # Raven 2026-11-06: every calibre gets the state that introduced it, where the sources agree.
-        generic = {n for n, why in INTRODUCED_UNKNOWN.items()
-                   if "not a single cartridge" in why or "family of blanks" in why}
-        self.assertEqual(len(generic), 21)
+        # Shot shell gauges, loose balls and air gun pellets are not one cartridge; nor is the .22 blank family.
+        generic = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)} | {".22 Blank (6.8/11)"}
+        self.assertLessEqual(generic, set(INTRODUCED_UNKNOWN))
         for name in NAMES - generic:
             self.assertTrue(name in ORIGIN or name in ORIGIN_UNDECIDED, name)
         self.assertLessEqual(set(ORIGIN_UNDECIDED), NAMES)

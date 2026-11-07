@@ -2216,19 +2216,20 @@ ORIGIN = {
     "10.3x60 mm R": "CH", "7x61 mm Sharpe & Hart": "US",
     # In common use worldwide (also in WORLDWIDE); the state that introduced them:
     ".22 Short": "US", ".22 LR": "US", ".22 WMR": "US", ".17 HMR": "US",
-    "9 mm Browning kurz (.380 ACP)": "US", "9x19 mm": "DE", "9 mm P.A.K.": "DE", "8 mm Knall": "DE", ".315 Knall": "DE", "9 mm R Knall": "DE", ".320 Knall": "DE", ".45 Knall": "DE",
-    ".22 Long Knall": "IT", "6 mm Flobert Knall": "FR", ".38 Special": "US",
+    "9 mm Browning kurz (.380 ACP)": "US", "9x19 mm": "DE", ".38 Special": "US",
     ".357 Magnum": "US", ".40 S&W": "US", ".44 Magnum": "US", ".45 ACP": "US",
     "5.7x28 mm": "BE", ".222 Remington": "US", ".223 Remington": "US",
     ".22-250 Remington": "US", ".22 Hornet": "US",
     ".243 Winchester": "US", "6.5 mm Creedmoor": "US", ".270 Winchester": "US",
-    "7 mm Remington Magnum": "US", ".300 AAC Blackout": "US", ".300 HAM'R": "US", ".25 Weatherby RPM": "US", "6.5 Weatherby RPM": "US", ".338 Weatherby RPM": "US",
+    "7 mm Remington Magnum": "US", ".300 AAC Blackout": "US",
     "7.62x51 mm NATO": "US", ".308 Winchester": "US", ".30-06 Springfield": "US",
     ".300 Winchester Magnum": "US", ".338 Lapua Magnum": "FI",
     ".375 H&H Magnum": "GB", ".50 BMG": "US",
-   
-   
-   
+    # Blanks: the market whose makers standardised each; only municion.org names a country for them
+    # (8 mm Knall DE, 6 mm Flobert Knall FR, 9 mm P.A.K. IT 1985), so whether blanks keep a country
+    # at all is still open for Raven (thread "Verify country per cartridge", 2026-11-06).
+    "9 mm P.A.K.": "DE", "8 mm Knall": "DE", ".315 Knall": "DE", "9 mm R Knall": "DE", ".320 Knall": "DE", ".45 Knall": "DE",
+    ".22 Long Knall": "IT", "6 mm Flobert Knall": "FR",
     # Switzerland
     "5.6 mm GP 90": "CH", "7.5x55 mm Swiss (GP 11)": "CH", "7.5x53.5 mm Swiss (GP 1890)": "CH",
     "7.5 mm Swiss Ordnance 1882": "CH", "10.4 mm Swiss Ordnance 1878": "CH",
@@ -2337,10 +2338,13 @@ ORIGIN = {
     "7 mm Remington Ultra Magnum": "US", ".325 Winchester Short Magnum": "US",
     ".375 Weatherby Magnum": "US", ".460 Weatherby Magnum": "US", ".416 Barrett": "US",
     ".44-40 WCF": "US", ".32-40 Ballard": "US", ".50-90 Sharps": "US", ".45-75 Winchester": "US",
+    ".300 HAM'R": "US", ".25 Weatherby RPM": "US", "6.5 Weatherby RPM": "US", ".338 Weatherby RPM": "US",
     # France
     ".22 BB Cap": "FR",
     # Germany
-    "9x18 mm Ultra": "DE",  # Genschow design of 1936; Hirtenberger (AT) first loaded it in 1972 for the Walther PP Super
+    # Genschow (Durlach) designed it in 1936 for the Luftwaffe, the year INTRODUCED gives, and Wikipedia says
+    # Germany; Hirtenberger (AT) only revived it in 1972 for the Walther PP Super, so AT is not a candidate.
+    "9x18 mm Ultra": "DE",
     ".300 Blaser Magnum": "DE", ".375 Blaser Magnum": "DE",
     "7 mm Blaser Magnum": "DE", ".338 Blaser Magnum": "DE", "8.5x55 mm Blaser": "DE",
     # Austria-Hungary
@@ -2386,9 +2390,21 @@ WORLDWIDE = frozenset({
 
 def origin(name):
     """(code, English name, flag emoji or None) of the state that introduced a calibre, or None (not a
-    single cartridge, or still open in ORIGIN_UNDECIDED). Worldwide use is a separate set, WORLDWIDE."""
+    single cartridge, or still open in ORIGIN_UNDECIDED, see origin_candidates). Worldwide use is
+    separate: is_worldwide."""
     code = ORIGIN.get(name)
     return (code, *COUNTRIES[code]) if code else None
+
+
+def origin_candidates(name):
+    """The states that can claim a calibre whose origin is still open, likelier first, as
+    (code, English name, flag emoji or None) tuples; () when origin() answers or nothing is known."""
+    return tuple((code, *COUNTRIES[code]) for code in ORIGIN_UNDECIDED.get(name, ()))
+
+
+def is_worldwide(name):
+    """True for a calibre in common use worldwide (WORLDWIDE); independent of origin()."""
+    return name in WORLDWIDE
 
 
 # Bullet the cartridge was first sold with (Raven 2026-11-05: draw the original bullet, soft points
