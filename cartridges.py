@@ -258,14 +258,18 @@ CATALOGUE = [
         # unusual: a lead body wrapped in two turns of paper (the white band above the case mouth) and a
         # long, blunt round nose under a steel cap (13.7 g, 29 mm long, 7.8 mm over the paper). Shorter case
         # than GP 11. Not to be confused with the 5.6 mm GP 90 of the Stgw 90.
-        # Case: 53.5 is the name and Wikipedia's figure for the 1890 and 90/03 rounds (2.106 in, 12.4 mm head),
-        # but its 90/23 row gives 2.15 in (54.6) with a 12.6 mm head, armedconflicts.com calls the 1890/03
-        # «7.5x54.5» with «modified internal dimensions», and Raven's paper-patched round of June 1906
-        # (headstamp «6 T T 06») measures case 54.6, rim 12.7, base 12.5, head to shoulder 45.0, length 76.0.
-        # The 54.6 case is drawn, as most rounds still around were made after 1903. C.I.P. has no sheet; DWM
-        # gives all versions one case number (388) and AECC (municion.org) one entry, so 90/03 and 90/23 stay
-        # names of this calibre. Same case values as the Kadettenpatrone: one chamber (the Kadettengewehr 1897
-        # is sighted for both rounds).
+        # Case: 53.5 is the name and Wikipedia's figure for the 1890 and 90/03 rounds (2.106 in, 12.4 mm head).
+        # Wikipedia calls the 90/23 «7.5×54.5mm», made to be usable in arms chambered for GP 11: 2.15 in (54.6)
+        # case, 0.5 in (12.7) rim, 0.496 in (12.6) head. armedconflicts.com already gives the 1890/03 as
+        # «7.5x54.5» with «modified internal dimensions». Raven's paper-patched round of June 1906 (headstamp
+        # «6 T T 06») measures case 54.6, rim 12.7, base 12.5, head to shoulder 45.0, length 76.0, so the longer
+        # case predates the 90/23, and it is the one drawn. Rim and base are drawn at Wikipedia's 90/23 figures,
+        # which the Kadettenpatrone round also measures (the 1906 base is 0.1 under). Head to shoulder 45.0 on
+        # both rounds replaces the AECC drawing's 44.24 (its shoulder angle is still used). C.I.P. has no sheet
+        # and AECC (municion.org) has one entry, «M.1890-1903», with a DWM-made round headstamped «DWM K K 388»,
+        # so 90/03 and 90/23 stay names of this calibre. Same case values as the Kadettenpatrone: one chamber
+        # (Wikipedia, Schmidt–Rubin: the Kadettengewehr 1897's «sights were graduated both for the light and
+        # the standard loads»).
         c("7.5x53.5 mm Swiss (GP 1890)", RIMLESS, 12.7, 12.6, 11.5, 8.6, 54.6, 45.0, 77.0, 7.8, PATCHED,
           ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp90/23", "7.5 mm gp 90", "patrone 1890", "patrone 90/23",
            "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]),

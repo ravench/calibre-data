@@ -93,8 +93,8 @@ class CatalogueTests(unittest.TestCase):
         kp, gp = by_name["7.5 mm Kadettenpatrone"], by_name["7.5x53.5 mm Swiss (GP 1890)"]
         measured = {"rim": 12.7, "base": 12.6, "shoulder": 11.5, "neck": 8.6, "sh_at": 45.0, "oal": 77.5, "bullet": 7.8}
         self.assertEqual({k: kp[k] for k in measured}, measured)
-        self.assertAlmostEqual(kp["case"], 54.8, delta=0.25, msg="measured 54.8, drawn on the GP 1890's 54.6")
-        # The Kadettengewehr 1897 fires both: the same case, so Schiesstagebuch offers them as one chamber.
+        self.assertEqual(kp["case"], 54.6, "measured 54.8, drawn on the GP 1890's case")
+        # The Kadettengewehr 1897 is sighted for both: the same case, so Schiesstagebuch offers them as one chamber.
         chamber = ("kind", "rim", "base", "shoulder", "neck", "case", "sh_at", "bullet")
         self.assertEqual([kp[k] for k in chamber], [gp[k] for k in chamber])
         self.assertNotEqual(kp["profile"], gp["profile"], "a jacketed round nose, not the paper-patched bullet")
@@ -109,12 +109,12 @@ class CatalogueTests(unittest.TestCase):
 
     def test_gp1890_is_drawn_on_the_later_longer_case(self):
         # Raven's paper-patched round of 1906 measures 54.6 (Wikipedia's 90/23 row: 2.15 in, 12.6 mm head);
-        # the 53.5 of the name stays in the name. Still shorter than GP 11, so a caliper tells them apart.
+        # the 53.5 of the name stays in the name. 1.0 shorter than GP 11, so a caliper tells them apart.
         by_name = {s["name"]: s for s in ALL}
         gp, gp11 = by_name["7.5x53.5 mm Swiss (GP 1890)"], by_name["7.5x55 mm Swiss (GP 11)"]
         self.assertEqual((gp["case"], gp["base"], gp["sh_at"]), (54.6, 12.6, 45.0))
-        self.assertGreaterEqual(gp11["case"] - gp["case"], 1.0)
-        self.assertIn("gp90/23", gp["aliases"], "90/03 and 90/23 are versions of this calibre (DWM 388, one AECC entry)")
+        self.assertEqual(gp11["case"], 55.6)
+        self.assertIn("gp90/23", gp["aliases"], "90/03 and 90/23 are versions of this calibre (one AECC entry)")
 
     def test_swiss_army_pistol_round_names(self):
         # Raven 2026-11-08: 9 mm Para is «Pistolenpatrone 41» (Pist Pat 41) in the Swiss Army; the
