@@ -102,6 +102,18 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(tags("7.5 mm Kadettenpatrone"), ["obsolete", "rare"])
         self.assertEqual(bullet("7.5 mm Kadettenpatrone"), JACKETED)
 
+    def test_swiss_army_pistol_round_names(self):
+        # Raven 2026-11-08: 9 mm Para is «Pistolenpatrone 41» (Pist Pat 41) in the Swiss Army; the
+        # 7.65 mm Parabellum boxes say «Pistolen-Patronen Cal. 7,65 mm».
+        by_name = {s["name"]: s for s in ALL}
+        self.assertIn("pist pat 41", by_name["9x19 mm"]["aliases"])
+        self.assertIn("pistolenpatrone 41", by_name["9x19 mm"]["aliases"])
+        self.assertIn("9 mm pist pat 41", by_name["9x19 mm"]["aliases"])
+        self.assertIn("pistolenpatrone 7.65", by_name["7.65 mm Parabellum"]["aliases"])
+        # Search names only: the printed names stay as they were.
+        self.assertEqual(DISPLAY_ALIASES["7.65 mm Parabellum"], [".30 Luger"])
+        self.assertEqual(DISPLAY_ALIASES["9x19 mm"], ["9 mm Luger", "9 mm Para"])
+
     def test_gp90_uses_the_short_swiss_army_name(self):
         # Swiss Army: «5,6 mm Gewehrpatrone 90», short «5,6 mm GP 90».
         by_name = {s["name"]: s for s in ALL}

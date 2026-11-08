@@ -101,7 +101,8 @@ CATALOGUE = [
     ("Kurzwaffe", [
         straight("6.35 mm Browning (.25 ACP)", RIMLESS, 7.6, 7.1, 7.0, 15.6, 23.1, 6.4, ROUND, ["6.35", "25acp", "25auto"]),
         straight("7.65 mm Browning (.32 ACP)", RIMLESS, 9.1, 8.6, 8.5, 17.3, 25.0, 7.9, ROUND, ["7.65browning", "32acp", "32auto"]),
-        c("7.65 mm Parabellum", RIMLESS, 9.9, 9.9, 9.7, 8.4, 21.6, 15.58, 29.8, 7.85, ROUND, ["7.65para", "30luger"]),
+        # Swiss Army box label «Pistolen-Patronen Cal. 7,65 mm» (Raven's 1938 M+F Thun box); Ordonnanzpistole 1900.
+        c("7.65 mm Parabellum", RIMLESS, 9.9, 9.9, 9.7, 8.4, 21.6, 15.58, 29.8, 7.85, ROUND, ["7.65para", "30luger", "pistolenpatrone 7.65"]),
         straight(".32 S&W Long", RIMMED, 9.5, 8.6, 8.5, 23.4, 32.5, 7.9, ROUND, ["32s&w", "32swl", "32long"]),
         # Target load for ISSF 25 m centre-fire pistols, its own C.I.P. cartridge ("32 S&W Long Wad Cut.",
         # tab-iv/tabivcal-en-page46.pdf, sheet 1984-06-14, origin DE/FI): higher pressure (Pmax 1550 bar against 1000) and a
@@ -115,7 +116,10 @@ CATALOGUE = [
         c("7.62x25 mm Tokarev", RIMLESS, 9.9, 9.9, 9.6, 8.5, 24.7, 19.6, 34.9, 7.85, ROUND, ["tokarev", "7.62tok"]),
         straight("9 mm Browning kurz (.380 ACP)", RIMLESS, 9.5, 9.5, 9.4, 17.3, 25.0, 9.0, ROUND, ["380acp", "380auto", "9kurz", "9mmkurz"]),
         straight("9x18 mm Makarov", RIMLESS, 9.9, 9.9, 9.7, 18.1, 25.0, 9.27, ROUND, ["makarov"]),
-        straight("9x19 mm", RIMLESS, 9.96, 9.96, 9.65, 19.15, 29.7, 9.01, ROUND, ["9x19", "9mm", "9mmpara", "9para", "9mmluger", "9luger", "9x19para", "parabellum"]),
+        # Swiss Army name «9 mm Pistolenpatrone 41», short «9 mm Pist Pat 41» (Raven's 1955 Thun box «scharfe
+        # Pistolenpatronen 41 9 mm»; sigforum.com thread "PISTOLENPATRONE 41 9mm ammo").
+        straight("9x19 mm", RIMLESS, 9.96, 9.96, 9.65, 19.15, 29.7, 9.01, ROUND, ["9x19", "9mm", "9mmpara", "9para", "9mmluger", "9luger", "9x19para", "parabellum",
+                 "pist pat 41", "pistolenpatrone 41", "9 mm pist pat 41"]),
         straight("9x21 mm IMI", RIMLESS, 9.96, 9.96, 9.65, 21.15, 29.7, 9.01, ROUND, ["9x21"]),
         c(".357 SIG", RIMLESS, 10.77, 10.77, 10.7, 9.68, 21.97, 16.48, 28.96, 9.02, ROUND, ["357sig"]),
         straight(".38 Special", RIMMED, 11.2, 9.6, 9.6, 29.3, 39.4, 9.07, ROUND, ["38spl", "38special", "38"]),
