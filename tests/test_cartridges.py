@@ -169,6 +169,20 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(pak["neck"], pak["base"])
         self.assertFalse(is_rare("9 mm P.A.K."))
 
+    def test_32_wadcutter_is_its_own_cip_cartridge(self):
+        # C.I.P. "32 S&W Long Wad Cut." (Tab. IV page 46): maximum cartridge R1, P1, H2, L3, G1; seated flush.
+        by_name = {s["name"]: s for s in ALL}
+        wc, swl = by_name[".32 S&W Long Wadcutter"], by_name[".32 S&W Long"]
+        keys = ("kind", "rim", "base", "neck", "case", "oal", "bullet")
+        self.assertEqual(tuple(wc[k] for k in keys), (RIMMED, 9.53, 8.56, 8.56, 23.27, 23.27, 8.0))
+        self.assertNotEqual(wc["case"], swl["case"], "a different chamber, so not grouped with the .32 S&W Long")
+        self.assertIn("32 s&w long wc", wc["aliases"])
+        self.assertEqual(DISPLAY_ALIASES[".32 S&W Long Wadcutter"], [".32 S&W Long WC"])
+        self.assertEqual(PRIMERS[".32 S&W Long Wadcutter"], SMALL_PISTOL)
+        self.assertEqual(bullet(".32 S&W Long Wadcutter"), LEAD)
+        self.assertEqual(origin_candidates(".32 S&W Long Wadcutter")[0][0], "DE")
+        self.assertEqual(tags(".32 S&W Long Wadcutter"), [])
+
     def test_municion_specimens_keep_the_drawing_values(self):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "neck", "case", "oal", "bullet")
