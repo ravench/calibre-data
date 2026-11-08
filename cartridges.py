@@ -276,7 +276,10 @@ CATALOGUE = [
         # which the Kadettenpatrone round also measures (the 1906 base is 0.1 under). Head to shoulder 45.0 on
         # both rounds replaces the AECC drawing's 44.24 (its shoulder angle is still used). C.I.P. has no sheet
         # and AECC (municion.org) has one entry, «M.1890-1903», with a DWM-made round headstamped «DWM K K 388»,
-        # so 90/03 and 90/23 stay names of this calibre. Same case values as the Kadettenpatrone: one chamber
+        # so 90/03 and 90/23 stay names of this calibre. Cartridges of the World (15th ed., 2016) also has one
+        # entry for the whole family, under the 7.5x55 name with GP 11 measurements: no own case length for the
+        # 1889 round, no 90/23 and no Kadettenpatrone. It keeps GP 11 apart by its bigger bullet (.308 for .299)
+        # and stronger load, which the 1889 rifle must not fire. Same case values as the Kadettenpatrone: one chamber
         # (Wikipedia, Schmidt–Rubin: the Kadettengewehr 1897's «sights were graduated both for the light and
         # the standard loads»).
         c("7.5x53.5 mm Swiss (GP 1890)", RIMLESS, 12.7, 12.6, 11.5, 8.6, 54.6, 45.0, 77.0, 7.8, PATCHED,
