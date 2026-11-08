@@ -157,6 +157,7 @@ CATALOGUE = [
         # rounded; shoulder heights of bottleneck cases are estimated for drawing.
         c("7.63x25 mm Mauser", RIMLESS, 9.98, 9.86, 9.6, 8.46, 25.15, 19.28, 34.8, 7.86, ROUND, ["7.63mauser", "30mauser"]),
         straight("7.62x38 mm R Nagant", RIMMED, 9.86, 8.94, 7.26, 38.86, 38.86, 7.82, ROUND, ["nagant", "7.62nagant"]),
+        # Cartridges of the World: interchangeable with the Swedish and Norwegian Nagant rounds; only the bullet lube differs.
         straight("7.5 mm Swiss Ordnance 1882", RIMMED, 10.4, 8.4, 8.4, 22.8, 34.6, 8.0, ROUND, ["7.5ord", "7.5revolver", "revolver82", "7.5nagant", "7.5swedishnagant", "7.5norwegiannagant"]),
         straight("7.65 mm Longue", RIMLESS, 8.5, 8.53, 8.5, 19.7, 30.24, 7.85, ROUND, ["7.65longue", "7.65mas", "30pedersen"]),
         straight(".30 Super Carry", RIMLESS, 8.74, 8.7, 8.56, 21.0, 29.7, 7.93, ROUND, ["30sc", "30supercarry"]),
@@ -299,7 +300,7 @@ CATALOGUE = [
         c("9.3x62 mm", RIMLESS, 12.0, 12.0, 11.5, 10.0, 62.0, 51.79, 83.6, 9.3, ROUND, ["9.3x62"]),
         # Rim R1, shoulder P2, neck H2 and case L3 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
         c("9.3x74 mm R", RIMMED, 13.35, 11.9, 10.4, 9.92, 74.7, 59, 94.5, 9.3, ROUND, ["9.3x74r"]),
-        c(".338 Lapua Magnum", RIMLESS, 14.9, 14.9, 13.82, 9.3, 69.2, 54.9, 93.5, 8.6, SPITZER, ["338lm", "338lapua", "338", "8.58x71", "8.6x70"]),
+        c(".338 Lapua Magnum", RIMLESS, 14.9, 14.9, 13.82, 9.3, 69.2, 54.9, 93.5, 8.6, SPITZER, ["338lm", "338lapua", "338", "8.58x71", "8.58x70", "8.6x70"]),
         # Rim R1, shoulder P2, neck H2 and bullet G1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
         c(".375 H&H Magnum", BELTED, 13.51, 13.0, 11.37, 10.21, 72.4, 61.27, 91.4, 9.55, ROUND, ["375h&h", "375hh"]),
         # Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
@@ -460,8 +461,8 @@ CATALOGUE = [
         # Rim R1 and length L6 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
         c("7x65 mm R", RIMMED, 13.32, 11.89, 10.8, 7.95, 65.0, 51.5, 83.6, 7.25, SPITZER, ["7x65r"]),
         c(".22 Savage Hi-Power", RIMMED, 12.85, 10.7, 9.2, 6.4, 52.0, 35.52, 63.5, 5.79, ROUND, ["22savage", "5.6x52r", "22hp"]),
-        # Rim R1, body P1, shoulder P2, neck H2 and bullet G1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
-        c("8x57 mm IRS", RIMMED, 13.32, 11.92, 10.95, 9.08, 57.0, 46, 80.0, 8.22, ROUND, ["8x57irs", "8x57jrs"]),
+        # Rim R1, body P1, shoulder P2, neck H2, length L6 and bullet G1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("8x57 mm IRS", RIMMED, 13.32, 11.92, 10.95, 9.08, 57.0, 46, 82.0, 8.22, ROUND, ["8x57irs", "8x57jrs"]),
         c(".280 Ackley Improved", RIMLESS, 12.0, 12.0, 11.7, 8.0, 64.1, 54.96, 84.6, 7.2, SPITZER, ["280ai"]),
         c(".356 Winchester", RIMLESS, 12.9, 11.95, 11.5, 9.9, 51.2, 39.62, 65.0, 9.1, FLAT, ["356win"]),
         c(".307 Winchester", RIMLESS, 12.9, 12.0, 11.5, 8.7, 51.2, 39.62, 65.0, 7.8, FLAT, ["307win"]),
@@ -517,8 +518,8 @@ CATALOGUE = [
         c("9.3x64 mm Brenneke", RIMLESS, 12.6, 12.88, 12.05, 10.04, 64.0, 52.09, 85.6, 9.3, ROUND, ["9.3x64"]),
         c("9.3x57 mm Mauser", RIMLESS, 11.95, 11.95, 10.95, 10.0, 56.5, 45.86, 81.0, 9.3, ROUND, ["9.3x57"]),
         c("9x57 mm Mauser", RIMLESS, 11.9, 11.9, 10.9, 9.8, 56.8, 46.2, 81.0, 9.1, ROUND, ["9x57"]),
-        # Rim R1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
-        c("7x57 mm R", RIMMED, 13.5, 12.05, 10.92, 8.25, 57.0, 43.8, 80.0, 7.25, SPITZER, ["7x57r"]),
+        # Rim R1 and length L6 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("7x57 mm R", RIMMED, 13.5, 12.05, 10.92, 8.25, 57.0, 43.8, 78.0, 7.25, SPITZER, ["7x57r"]),
         # Rim R1 and body P1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
         c("6.5x57 mm R", RIMMED, 13.32, 11.92, 10.94, 7.65, 56.7, 44.5, 82.0, 6.7, SPITZER, ["6.5x57r"]),
         c(".338 Remington Ultra Magnum", RIMLESS, 13.6, 14.0, 13.4, 9.4, 70.1, 58.32, 91.4, 8.6, SPITZER, ["338rum"]),

@@ -484,10 +484,10 @@ class CatalogueTests(unittest.TestCase):
             "6.5 mm Remington Magnum": {"rim": 13.51, "base": 13.03},
             ".350 Remington Magnum": {"rim": 13.51, "base": 13.03},
             ".416 Weatherby Magnum": {"rim": 14.71},
-            "7x57 mm R": {"rim": 13.5},
+            "7x57 mm R": {"rim": 13.5, "oal": 78.0},
             "7x65 mm R": {"rim": 13.32, "oal": 83.6},
             "6.5x57 mm R": {"rim": 13.32, "base": 11.92},
-            "8x57 mm IRS": {"rim": 13.32, "base": 11.92, "shoulder": 10.95, "neck": 9.08},
+            "8x57 mm IRS": {"rim": 13.32, "base": 11.92, "shoulder": 10.95, "neck": 9.08, "oal": 82.0},
             "9.3x74 mm R": {"rim": 13.35, "shoulder": 10.4, "neck": 9.92, "case": 74.7},
             "11x60 mm R Mauser": {"rim": 15.0, "neck": 11.85, "case": 60.35, "oal": 78.0, "bullet": 11.4},
         }
@@ -508,7 +508,8 @@ class CatalogueTests(unittest.TestCase):
             "7.7x56r": ".303 British", "400jeffery": ".450/400 Nitro Express 3 inch", "12.7x107": "12.7x108 mm",
             "38special+p": ".38 Special", "45-85": ".45-90 WCF", "50-105": ".50-110 Winchester",
             "7.5swedishnagant": "7.5 mm Swiss Ordnance 1882", "6.5-08": ".260 Remington",
-            "7mmexpress": ".280 Remington", "8.58x71": ".338 Lapua Magnum", "44remmag": ".44 Magnum",
+            "7mmexpress": ".280 Remington", "8.58x71": ".338 Lapua Magnum", "8.58x70": ".338 Lapua Magnum",
+            "301savage": ".303 Savage", "45-90hv": ".45-90 WCF", "44remmag": ".44 Magnum",
         }
         for alias, name in expected.items():
             self.assertIn(alias, by_name[name]["aliases"], name)
