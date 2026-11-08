@@ -2072,7 +2072,7 @@ PRIMER_UNVERIFIED = {
 # Everything else is current. The apps can hide these by default; the poster can mark them.
 OBSOLETE = {
     "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
-    ".320 Revolver",  # 2026-11-08: "an obsolete revolver cartridge", produced 1868 to the 1920s (Wikipedia)
+    ".320 Revolver",  # 2026-11-08: "an obsolete revolver cartridge" (Wikipedia)
     "7.5x53.5 mm Swiss (GP 1890)", "10.4x38 mm R Vetterli", "18 mm Milbank-Amsler", ".577 Snider", "10.4 mm Swiss Ordnance 1872 Rimfire", ".577/450 Martini-Henry",
     ".50-70 Government", ".58 Minié", ".69 Minié",
     "7.5 mm Swiss Ordnance 1882", "7.65 mm Longue", "8 mm Nambu", "8 mm Lebel revolver", "8 mm Roth-Steyr",
@@ -2356,7 +2356,7 @@ ORIGIN = {
     ".44-40 WCF": "US", ".32-40 Ballard": "US", ".50-90 Sharps": "US", ".45-75 Winchester": "US",
     ".300 HAM'R": "US", ".25 Weatherby RPM": "US", "6.5 Weatherby RPM": "US", ".338 Weatherby RPM": "US",
     # France
-    ".22 BB Cap": "FR", "9 mm Flobert Bosquette": "FR", ".320 Revolver": "GB",
+    ".22 BB Cap": "FR", "9 mm Flobert Bosquette": "FR",
     # Germany
     # Genschow (Durlach) designed it in 1936 for the Luftwaffe, the year INTRODUCED gives, and Wikipedia says
     # Germany; Hirtenberger (AT) only revived it in 1972 for the Walther PP Super, so AT is not a candidate.
@@ -2366,6 +2366,7 @@ ORIGIN = {
     # Austria-Hungary
     "6.5x53 mm R Mannlicher": "AH",
     # United Kingdom
+    ".320 Revolver": "GB",
     ".300 H&H Magnum": "GB",
     # Finland
     "6.5x47 mm Lapua": "FI", ".300 Lapua Magnum": "FI", "9.3x53 mm R Finnish": "FI",
