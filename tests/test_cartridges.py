@@ -202,6 +202,22 @@ class CatalogueTests(unittest.TestCase):
         self.assertLess(by_name[".22 Nosler"]["rim"], by_name[".22 Nosler"]["base"])  # rebated rim
         self.assertIsNone(by_name["9.3x72 mm R"]["shoulder"])
 
+    def test_rounds_from_ravens_bag_keep_their_sources(self):
+        # 2026-11-08: .320 Revolver from the C.I.P. «320 Short» sheet, 9 mm Flobert from Wikipedia's infobox.
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("kind", "rim", "base", "neck", "case", "oal", "bullet", "profile")
+        self.assertEqual(tuple(by_name[".320 Revolver"][k] for k in keys),
+                         (RIMMED, 9.55, 8.12, 8.12, 16.6, 26.7, 8.0, "round"))
+        self.assertEqual(tuple(by_name["9 mm Flobert Bosquette"][k] for k in keys),
+                         (RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, "round"))
+        self.assertEqual(INTRODUCED[".320 Revolver"][0], 1868)
+        self.assertEqual(origin(".320 Revolver")[0], "GB")
+        self.assertEqual(origin("9 mm Flobert Bosquette")[0], "FR")
+        self.assertEqual(tags(".320 Revolver"), ["obsolete", "rare"])
+        self.assertEqual(tags("9 mm Flobert Bosquette"), ["rare"])
+        self.assertEqual(bullet(".320 Revolver"), LEAD)
+        self.assertNotIn("9 mm Flobert Bosquette", PRIMERS)  # rimfire
+
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}
         b = by_name[".22 Blank (6.8/11)"]
