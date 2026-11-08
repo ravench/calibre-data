@@ -88,6 +88,22 @@ class CatalogueTests(unittest.TestCase):
         self.assertIn("gp90", by_name["5.6 mm GP 90"]["aliases"], "GP 90 means the 5.6 mm Stgw 90 round")
         self.assertEqual(by_name["12/70"]["kind"], SHOT)
 
+    def test_kadettenpatrone_is_its_own_round(self):
+        # Raven 2026-11-08: a variant of GP 1890, but technically its own cartridge; measured on one round.
+        by_name = {s["name"]: s for s in ALL}
+        kp, gp = by_name["7.5 mm Kadettenpatrone"], by_name["7.5x53.5 mm Swiss (GP 1890)"]
+        measured = {"rim": 12.7, "base": 12.6, "shoulder": 11.5, "neck": 8.6, "case": 54.8, "sh_at": 45.0, "oal": 77.5, "bullet": 7.8}
+        self.assertEqual({k: kp[k] for k in measured}, measured)
+        self.assertGreater(kp["case"], gp["case"], "a longer case than GP 1890: not one chamber")
+        self.assertEqual(kp["kind"], RIMLESS)
+        self.assertEqual(kp["profile"], "round")
+        self.assertIn("kadettenpatrone", kp["aliases"])
+        self.assertEqual(DISPLAY_ALIASES["7.5 mm Kadettenpatrone"], ["Cart. 7,5 mm cadets", "Cart. 7,5 mm cadetti"])
+        self.assertEqual(INTRODUCED["7.5 mm Kadettenpatrone"][0], 1897)
+        self.assertEqual(ORIGIN["7.5 mm Kadettenpatrone"], "CH")
+        self.assertEqual(tags("7.5 mm Kadettenpatrone"), ["obsolete", "rare"])
+        self.assertEqual(bullet("7.5 mm Kadettenpatrone"), JACKETED)
+
     def test_swiss_army_pistol_round_names(self):
         # Raven 2026-11-08: 9 mm Para is «Pistolenpatrone 41» (Pist Pat 41) in the Swiss Army; the
         # 7.65 mm Parabellum boxes say «Pistolen-Patronen Cal. 7,65 mm».
