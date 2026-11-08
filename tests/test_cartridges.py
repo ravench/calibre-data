@@ -356,7 +356,8 @@ class CatalogueTests(unittest.TestCase):
         for name in ("5.6 mm GP 90", "7.5x55 mm Swiss (GP 11)", "7.5x53.5 mm Swiss (GP 1890)",
                      "7.5 mm Swiss Ordnance 1882"):
             self.assertEqual(ORIGIN[name], "CH")
-        self.assertEqual(ORIGIN["7.65 mm Parabellum"], "DE")  # DWM 1898; the Swiss Army was only the first to adopt it
+        # Raven 2026-11-08: the tag tilts to the main adopter, user or producer where only the developer differs
+        self.assertEqual(origin("7.65 mm Parabellum"), ("CH", "Switzerland", "🇨🇭"))  # Swiss service pistol round 1900-49; DWM design
         self.assertEqual(origin("7.62x39 mm"), ("SU", "Soviet Union", None))
         self.assertEqual(origin("7.62x54 mm R"), ("RUE", "Russian Empire", None))
         self.assertNotIn("RU", COUNTRIES)  # RU is today's Russia, not the Russian Empire
@@ -366,12 +367,15 @@ class CatalogueTests(unittest.TestCase):
             self.assertIn(worldwide, WORLDWIDE)
         self.assertEqual(origin("9x19 mm"), ("DE", "Germany", "🇩🇪"))
         self.assertEqual(ORIGIN[".22 LR"], "US")
-        self.assertEqual(ORIGIN["5.56x45 mm NATO"], "US")  # the .223/M193 case; the SS109 is a Belgian load
+        # unions of states are origins too (Raven 2026-11-08): the NATO rounds carry NATO, which has no flag emoji
+        self.assertEqual(origin("5.56x45 mm NATO"), ("NATO", "NATO", None))
+        self.assertEqual(origin("7.62x51 mm NATO"), ("NATO", "NATO", None))
+        self.assertEqual(ORIGIN[".223 Remington"], "US")
         self.assertIsNone(origin("12/70"))  # a gauge, not a cartridge
         self.assertNotIn("7.62x39 mm", WORLDWIDE)
         self.assertLessEqual(WORLDWIDE, NAMES)
         self.assertNotIn("WW", COUNTRIES)
-        self.assertNotIn("ES", COUNTRIES)  # 9x23 mm Largo is Bergmann's (DE); no other calibre is Spanish
+        self.assertEqual(origin("9x23 mm Largo"), ("ES", "Spain", "🇪🇸"))  # Spanish service round 1905-1980s; Bergmann design
         self.assertEqual(origin(".30 Nosler"), ("US", "United States", "🇺🇸"))  # sporting rounds are tagged too
         self.assertIsNone(origin(".36 Rundkugel (.375)"))  # not a single cartridge
         self.assertEqual(origin("9x18 mm Ultra"), ("DE", "Germany", "🇩🇪"))  # Genschow 1936, not Hirtenberger 1972
@@ -419,10 +423,12 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(origin(".338 Lapua Magnum"), ("FI", "Finland", "🇫🇮"))
         self.assertIn(".338 Lapua Magnum", WORLDWIDE)
         self.assertEqual(origin(".300 Lapua Magnum"), ("FI", "Finland", "🇫🇮"))
-        # the two-state cases decided 2026-11-07
+        # the two-state cases decided 2026-11-07/08
         self.assertEqual(origin(".22 TCM"), ("PH", "Philippines", "🇵🇭"))
-        self.assertEqual(ORIGIN["9x23 mm Largo"], "DE")  # Bergmann 1901-03, Spanish service round from 1905
-        self.assertEqual(ORIGIN["7.65x53 mm Argentine"], "DE")  # Mauser design, like the 7.65 mm Parabellum
+        self.assertEqual(origin("7.65x53 mm Argentine"), ("AR", "Argentina", "🇦🇷"))  # the largest adopter; Mauser design
+        self.assertEqual(ORIGIN["9x21 mm IMI"], "IT")  # Jager of Loano designed it; IMI only commercialised it
+        self.assertEqual(ORIGIN[".500 Jeffery"], "GB")
+        self.assertEqual(ORIGIN["6 mm BR Norma"], "SE")
         self.assertEqual(ORIGIN["6.35 mm Browning (.25 ACP)"], "BE")
         self.assertEqual(ORIGIN["10 mm Auto"], "US")
 

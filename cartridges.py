@@ -2237,15 +2237,19 @@ def tags(name):
 # RU stays today's Russia); they have no flag emoji, so apps draw their own. The German Empire,
 # Weimar Republic, Nazi Germany and West Germany are all DE, the Kingdom of Italy IT and the Empire
 # of Japan JP: the same state continues under today's flag. Blanks have no country: they are trade
-# sizes made everywhere (thread "Verify country per cartridge", 2026-11-07).
+# sizes made everywhere (thread "Verify country per cartridge", 2026-11-07). Unions of states get a
+# code too (NATO for the rounds NATO standardised; EU when needed). Where only the developer sits in
+# another state than the main adopters, users and producers, the tag follows the latter (Raven
+# 2026-11-08): the 7.65 mm Parabellum is Swiss, the 9x23 mm Largo Spanish, the 9x21 mm Italian.
 COUNTRIES = {  # code: (English name, flag emoji or None)
     "CH": ("Switzerland", "🇨🇭"), "DE": ("Germany", "🇩🇪"), "AH": ("Austria-Hungary", None),
     "AT": ("Austria", "🇦🇹"), "FR": ("France", "🇫🇷"), "IT": ("Italy", "🇮🇹"),
     "GB": ("United Kingdom", "🇬🇧"), "US": ("United States", "🇺🇸"), "SE": ("Sweden", "🇸🇪"),
     "DK": ("Denmark", "🇩🇰"), "BE": ("Belgium", "🇧🇪"), "PT": ("Portugal", "🇵🇹"), "CZ": ("Czechia", "🇨🇿"),
-    "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "IL": ("Israel", "🇮🇱"), "FI": ("Finland", "🇫🇮"),
+    "JP": ("Japan", "🇯🇵"), "PL": ("Poland", "🇵🇱"), "FI": ("Finland", "🇫🇮"),  # IL left with the 9x21 mm (IT)
     "RUE": ("Russian Empire", None), "SU": ("Soviet Union", None), "CS": ("Czechoslovakia", None),
-    "CN": ("China", "🇨🇳"), "PH": ("Philippines", "🇵🇭"),
+    "CN": ("China", "🇨🇳"), "PH": ("Philippines", "🇵🇭"), "ES": ("Spain", "🇪🇸"), "AR": ("Argentina", "🇦🇷"),
+    "NATO": ("NATO", None),  # a union of states; the EU (🇪🇺) joins when a calibre needs it
 }
 
 ORIGIN = {
@@ -2260,7 +2264,7 @@ ORIGIN = {
     ".22-250 Remington": "US", ".22 Hornet": "US",
     ".243 Winchester": "US", "6.5 mm Creedmoor": "US", ".270 Winchester": "US",
     "7 mm Remington Magnum": "US", ".300 AAC Blackout": "US",
-    "7.62x51 mm NATO": "US", ".308 Winchester": "US", ".30-06 Springfield": "US",
+    ".308 Winchester": "US", ".30-06 Springfield": "US",
     ".300 Winchester Magnum": "US", ".338 Lapua Magnum": "FI",
     ".375 H&H Magnum": "GB", ".50 BMG": "US",
     # Switzerland
@@ -2391,29 +2395,30 @@ ORIGIN = {
     ".300 Norma Magnum": "SE", ".308 Norma Magnum": "SE",
     ".338 Norma Magnum": "SE",  # developed by Norma with Jimmie Sloan (US) as a new round; both sources say Sweden
     ".358 Norma Magnum": "SE",
-    # Calibres two states can claim, decided in the thread "Verify country per cartridge" (2026-11-07) for
-    # the state that introduced the round; the other claim stands after the colon. Military adoption (Raven asked
+    # Calibres two states can claim, decided in the thread "Verify country per cartridge" (2026-11-07/08) for
+    # the state that introduced the round, tilted to the main adopter, user or producer where only the developer
+    # sits elsewhere (Raven 2026-11-08); the other claim stands after the colon. Military adoption (Raven asked
     # 2026-11-08) is noted for the service rounds; .25 ACP, .22 TCM, the Norma rounds, .500/416 and .500 Jeffery,
     # 9.5x57, 9.3x57, .376 Steyr, 9x21 and .32 S&W Long WC were never issued by a military, and the .45 GAP (US state
     # police 2007-13) and .357 SIG (US federal and state police) only by police.
     # Germany never issued the 7.65 mm Parabellum (its P04 and P08 are 9 mm); as a service round it was Swiss
     # 1900-49 (first adopter), then Bulgaria 1903, Brazil 1906, Portugal 1908, Finland 1923; US trials 1901.
-    "7.65 mm Parabellum": "DE",  # Luger at DWM, Berlin, 1898; the Swiss Army adopted it first (Ordonnanzpistole 1900): CH
+    "7.65 mm Parabellum": "CH",  # the Swiss Army adopted it first (Ordonnanzpistole 1900) and shot it longest; Luger designed it at DWM, Berlin, 1898: DE
     # Bergmann and Schmeisser designed the 9x23 mm for the Bergmann-Bayard 1903 (Jane's Ammunition Handbook; the 1901
     # Bergmann Mars already shot it); Spain adopted it 1905 (pistols made by Pieper, Herstal), Denmark 1910. «Largo» is
     # the Spanish name; Spain shot it until the 1980s. Wikipedia and municion.org both say Germany.
-    "9x23 mm Largo": "DE",  # Spain adopted it 1905 and made it its own (no other calibre is Spanish): ES
+    "9x23 mm Largo": "ES",  # Spain adopted it 1905, made it (Astra, Star, Campo-Giro) and shot it until the 1980s; Bergmann designed it: DE
     # Paul Mauser designed the 7.65x53 mm in 1889 for the Belgian trials; Belgium adopted it first (October 1889, FN
     # was founded to make the rifle), then the Ottoman Empire 1890, Argentina 1891, Peru, Spain 1893, Bolivia,
     # Colombia, Ecuador and Paraguay. Rifles came from Loewe/DWM (Berlin) and FN (Herstal); Fabricaciones Militares
     # (Argentina), Norma and PPU still load it. Wikipedia: German Empire; municion.org: Belgium 1889.
-    "7.65x53 mm Argentine": "DE",  # the first adopter and the usual name: BE, AR
-    ".500 Jeffery": "DE",  # August Schüler, Suhl, 1920s (12.7x70 Schüler); W. J. Jeffery, London, sold and named it: GB
+    "7.65x53 mm Argentine": "AR",  # the largest adopter (about 495,000 rifles, 85,000 of them Argentine-made) and the usual name; Belgium adopted it first and FN made it, Mauser designed it: BE, DE
+    ".500 Jeffery": "GB",  # W. J. Jeffery, London, sold and named it and British hunters shot it (Kynoch); August Schüler, Suhl, made it first as the 12.7x70 Schüler in the 1920s: DE
     "9.5x57 mm Mannlicher-Schönauer": "AH",  # Steyr 1910; Westley Richards' .375 Rimless NE 2 1/4 of 1908 is the same case: GB
-    "9.3x57 mm Mauser": "DE",  # necked-up 8x57 of c. 1900 that became a Swedish and Norwegian hunting round: SE
+    "9.3x57 mm Mauser": "SE",  # the Swedish and Norwegian hunting round (Husqvarna rifles, Norma ammunition); a German necked-up 8x57 of c. 1900: DE
     ".376 Steyr": "AT",  # Steyr Mannlicher with Hornady 1999 for the Steyr Scout: US
     "7.62x38 mm R Nagant": "RUE",  # Léon Nagant, Liège, designed it for the Russian M1895 contract; made in Russia; issued by Russia 1895-1952 and the Polish police 1928-39 (wz. 30): BE
-    "9x21 mm IMI": "IL",  # IMI c. 1980 for markets where 9x19 mm is banned, above all Italy: IT
+    "9x21 mm IMI": "IT",  # Jager of Loano designed it (9x21 Jager) for Italy, where 9x19 mm was banned for civilians until 2022; IMI adopted and commercialised it c. 1980; Fiocchi and Geco make it, 80 % of the Italian civilian market: IL
     "7.65 mm Longue": "FR",  # French service round 1935-60 (MAS 1935, MAS-38); the US .30 Pedersen of 1917/18 it derives from armed the Pedersen device, scrapped between the wars: US
     "6.5x55 mm Swedish": "SE",  # joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms; issued by Norway and Sweden 1894, Luxembourg 1900, Denmark 1946: NO
     # Browning (US) designed both pocket rounds, FN Herstal (BE) introduced them: the 7.65 mm with the FN M1900 in 1899
@@ -2423,13 +2428,14 @@ ORIGIN = {
     # The 7.65 mm Browning was issued by France from 1915 (710,000 Ruby pistols), Russia 1916, Finland 1919, Italy
     # 1937 (Beretta M1935) and Germany (Walther PP/PPK, captured Rubys and Berettas); the 6.35 mm never.
     "7.65 mm Browning (.32 ACP)": "BE",  # the designer's country and the «ACP» name: US
-    "5.56x45 mm NATO": "US",  # the US .223/M193 case of 1963; NATO adopted the Belgian SS109 load in 1980: BE
+    "5.56x45 mm NATO": "NATO",  # the union that standardised it in 1980 (with the Belgian SS109 load); the case is the US .223/M193 of 1963: US, BE
     "10 mm Auto": "US",  # Cooper, Dornaus & Dixon 1983; first loaded by Norma; FBI 1989-97, Denmark's Sirius patrol (Glock 20): SE
     ".357 SIG": "US",  # SIGARMS (Exeter NH) with Federal 1994: CH
     ".45 GAP": "US",  # Ernest Durham at CCI/Speer (Lewiston, Idaho) designed and loaded it 2002/03 at Glock's request; the Glock 37 followed. Wikipedia: Austria and US; municion.org: Austria 2002: AT
     ".22 TCM": "PH",  # Fred Craig (US gunsmith) developed it at Armscor's Marikina plant as the .22 Micromagnum; Armscor named it after Martin Tuason and makes the pistols and the only factory ammunition: US (Craig)
-    "6 mm BR Norma": "US",  # Remington's factory 6mm BR of 1978 (wildcats since 1962, C.I.P. 1994); Norma's 1996 version only lengthens the throat: SE
+    "6 mm BR Norma": "SE",  # Norma's 1996 version is the one made (Norma, Lapua) and shot (300 m); Remington's factory 6mm BR of 1978 is its parent: US
     "6.5-284 Norma": "SE",  # a US wildcat on the .284 Winchester since the 1960s that no US maker standardised; Norma took it to C.I.P. 1999: US
+    "7.62x51 mm NATO": "NATO",  # the union that standardised it in 1954; the US T65 of 1949-54 is the design: US
     ".500/416 Nitro Express": "DE",  # Krieghoff (Ulm) unveiled it early 1996 on the .500 NE case (municion.org: Germany 1997); Norma, Hornady, Nosler and Kynoch loaded it, Krieghoff and Heym chamber it: US (Hornady)
 }
 

@@ -13,8 +13,10 @@ The shared calibre catalogue for
   probable year), `OBSOLETE`, the calibres no longer in regular factory production, and `RARE`, the calibres you
   are unlikely to find, so a match is more likely a false positive (independent of `OBSOLETE`;
   `tags(name)` gives `[]`, `["obsolete"]`, `["rare"]` or both).
-- `ORIGIN` maps each calibre to the state that introduced it, as a code in `COUNTRIES` (English
-  name and flag emoji; historical states such as the Soviet Union have no emoji). No entry means
+- `ORIGIN` maps each calibre to the state that introduced it, tilted to the main adopter, user or
+  producer where only the developer sits elsewhere (the 7.65 mm Parabellum is Swiss), as a code in
+  `COUNTRIES` (English name and flag emoji; historical states such as the Soviet Union and unions
+  such as NATO have no emoji). No entry means
   the entry is not a single cartridge (balls, gauges, pellets, blanks) or the origin is still open:
   `ORIGIN_UNDECIDED` lists those with the candidate states. `origin(name)` gives
   `(code, name, flag)` or `None`; `origin_candidates(name)` gives the open candidates the same
