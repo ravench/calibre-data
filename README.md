@@ -35,7 +35,14 @@ The shared calibre catalogue for
   is then the calibre's `sh_at`. Cases without a source yet are drawn at
   `DEFAULT_SHOULDER_ANGLE` (32°); the tests list them, so a new calibre needs an angle or a
   conscious entry there.
-- `CASE_HEADS` / `case_head(name)`: rim thickness, extractor-groove diameter and ramp (or belt front) of 181 rimless and belted cases from the C.I.P. sheets; the outline draws each head from them, other cases keep a generic head.
+- `CASE_HEADS` / `case_head(name)`: rim thickness, extractor-groove diameter and ramp (or belt front) of the rimless and belted cases from the C.I.P. sheets; the outline draws each head from them, other cases keep a generic head.
+- `LOOKALIKES` lists the groups of calibres that are cartridges of their own but look alike
+  (.223 Rem / 5.56 NATO / GP 90, rimmed and rimless twins such as 7x64 / 7x65 R, the .32 S&W Long
+  and its Wadcutter), each with what tells them apart: `RIM`, `BORE`, `LENGTH` (by about a
+  millimetre), `SEATING` (a flush wadcutter) or `LOAD` (a hotter load or another chamber that a
+  board or the service specifies). `lookalikes(name)` gives the others of a calibre's group, so an
+  app can show the whole group from any one of them. Other names of the same cartridge are search
+  aliases, not groups.
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side
   (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (`CRIMPED`,

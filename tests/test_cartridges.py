@@ -12,7 +12,8 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
-                        CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material)
+                        CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material,
+                        LOOKALIKES, RIM, BORE, LENGTH, SEATING, LOAD, lookalikes)
 
 ALL = [s for _, items in CATALOGUE for s in items]
 NAMES = {s["name"] for s in ALL}
@@ -600,6 +601,35 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(by_name["8 mm Airsoft-BB"]["bullet"], 8.0)
         luftdruck = [s["name"] for cat, items in CATALOGUE if cat == "Luftdruck" for s in items]
         self.assertIn("6 mm Airsoft-BB", luftdruck)
+
+    def test_lookalike_groups(self):
+        by_name = {s["name"]: s for s in ALL}
+        seen = set()
+        for differs, names in LOOKALIKES:
+            self.assertGreaterEqual(len(names), 2, names)
+            self.assertTrue(differs, names)
+            self.assertLessEqual(set(differs), {RIM, BORE, LENGTH, SEATING, LOAD}, names)
+            for name in names:
+                self.assertIn(name, NAMES)
+                self.assertNotIn(name, seen, f"{name} is in two lookalike groups")
+                seen.add(name)
+            specs = [by_name[n] for n in names]
+
+            def spread(key):
+                return round(max(s[key] for s in specs) - min(s[key] for s in specs), 2)
+            # What the group names as the difference is what the dimensions show (LOAD is not in them).
+            self.assertEqual(len({s["kind"] for s in specs}) > 1, RIM in differs, names)
+            self.assertEqual(spread("bullet") > 0.15, BORE in differs, names)
+            self.assertEqual(spread("case") > 0.5, LENGTH in differs, names)
+            self.assertEqual(spread("oal") > 5, SEATING in differs, names)  # the wadcutter sits deep
+        self.assertEqual(lookalikes("5.6 mm GP 90"), [".223 Remington", "5.56x45 mm NATO"])
+        self.assertEqual(lookalikes("7x65 mm R"), ["7x64 mm"])
+        self.assertEqual(lookalikes(".30-06 Springfield"), [])
+
+    def test_45_super_is_an_alias_of_45_acp(self):
+        # Raven 2026-11-08: no board lists the .45 Super and it measures like the .45 ACP.
+        self.assertNotIn(".45 Super", NAMES)
+        self.assertIn("45super", next(s for s in ALL if s["name"] == ".45 ACP")["aliases"])
 
 
 if __name__ == "__main__":
