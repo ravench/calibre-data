@@ -2392,7 +2392,10 @@ ORIGIN = {
     ".338 Norma Magnum": "SE",  # developed by Norma with Jimmie Sloan (US) as a new round; both sources say Sweden
     ".358 Norma Magnum": "SE",
     # Calibres two states can claim, decided in the thread "Verify country per cartridge" (2026-11-07) for
-    # the state that introduced the round; the other claim stands after the colon.
+    # the state that introduced the round; the other claim stands after the colon. Military adoption (Raven asked
+    # 2026-11-08) is noted for the service rounds; .25 ACP, .22 TCM, the Norma rounds, .500/416 and .500 Jeffery,
+    # 9.5x57, 9.3x57, .376 Steyr, 9x21 and .32 S&W Long WC were never issued by a military, and the .45 GAP (US state
+    # police 2007-13) and .357 SIG (US federal and state police) only by police.
     # Germany never issued the 7.65 mm Parabellum (its P04 and P08 are 9 mm); as a service round it was Swiss
     # 1900-49 (first adopter), then Bulgaria 1903, Brazil 1906, Portugal 1908, Finland 1923; US trials 1901.
     "7.65 mm Parabellum": "DE",  # Luger at DWM, Berlin, 1898; the Swiss Army adopted it first (Ordonnanzpistole 1900): CH
@@ -2409,17 +2412,19 @@ ORIGIN = {
     "9.5x57 mm Mannlicher-Schönauer": "AH",  # Steyr 1910; Westley Richards' .375 Rimless NE 2 1/4 of 1908 is the same case: GB
     "9.3x57 mm Mauser": "DE",  # necked-up 8x57 of c. 1900 that became a Swedish and Norwegian hunting round: SE
     ".376 Steyr": "AT",  # Steyr Mannlicher with Hornady 1999 for the Steyr Scout: US
-    "7.62x38 mm R Nagant": "RUE",  # Léon Nagant, Liège, designed it for the Russian M1895 contract; made in Russia: BE
+    "7.62x38 mm R Nagant": "RUE",  # Léon Nagant, Liège, designed it for the Russian M1895 contract; made in Russia; issued by Russia 1895-1952 and the Polish police 1928-39 (wz. 30): BE
     "9x21 mm IMI": "IL",  # IMI c. 1980 for markets where 9x19 mm is banned, above all Italy: IT
-    "7.65 mm Longue": "FR",  # French service round (MAS 1935); derived from the US .30 Pedersen of 1917: US
-    "6.5x55 mm Swedish": "SE",  # joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms: NO
+    "7.65 mm Longue": "FR",  # French service round 1935-60 (MAS 1935, MAS-38); the US .30 Pedersen of 1917/18 it derives from armed the Pedersen device, scrapped between the wars: US
+    "6.5x55 mm Swedish": "SE",  # joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms; issued by Norway and Sweden 1894, Luxembourg 1900, Denmark 1946: NO
     # Browning (US) designed both pocket rounds, FN Herstal (BE) introduced them: the 7.65 mm with the FN M1900 in 1899
     # (Cartridges of the World), the 6.35 mm with the FN Vest Pocket of 1906; Colt followed in 1903 and 1908. Wikipedia
     # says US (7.65) and US and Belgium (6.35); municion.org says Belgium 1897 (7.65) and US 1902 (6.35).
     "6.35 mm Browning (.25 ACP)": "BE",  # the designer's country and the «ACP» name: US
+    # The 7.65 mm Browning was issued by France from 1915 (710,000 Ruby pistols), Russia 1916, Finland 1919, Italy
+    # 1937 (Beretta M1935) and Germany (Walther PP/PPK, captured Rubys and Berettas); the 6.35 mm never.
     "7.65 mm Browning (.32 ACP)": "BE",  # the designer's country and the «ACP» name: US
     "5.56x45 mm NATO": "US",  # the US .223/M193 case of 1963; NATO adopted the Belgian SS109 load in 1980: BE
-    "10 mm Auto": "US",  # Cooper, Dornaus & Dixon 1983; first loaded by Norma: SE
+    "10 mm Auto": "US",  # Cooper, Dornaus & Dixon 1983; first loaded by Norma; FBI 1989-97, Denmark's Sirius patrol (Glock 20): SE
     ".357 SIG": "US",  # SIGARMS (Exeter NH) with Federal 1994: CH
     ".45 GAP": "US",  # Ernest Durham at CCI/Speer (Lewiston, Idaho) designed and loaded it 2002/03 at Glock's request; the Glock 37 followed. Wikipedia: Austria and US; municion.org: Austria 2002: AT
     ".22 TCM": "PH",  # Fred Craig (US gunsmith) developed it at Armscor's Marikina plant as the .22 Micromagnum; Armscor named it after Martin Tuason and makes the pistols and the only factory ammunition: US (Craig)
