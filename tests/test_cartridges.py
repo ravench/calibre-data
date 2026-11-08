@@ -88,6 +88,18 @@ class CatalogueTests(unittest.TestCase):
         self.assertIn("gp90", by_name["5.6 mm GP 90"]["aliases"], "GP 90 means the 5.6 mm Stgw 90 round")
         self.assertEqual(by_name["12/70"]["kind"], SHOT)
 
+    def test_swiss_army_pistol_round_names(self):
+        # Raven 2026-11-08: 9 mm Para is «Pistolenpatrone 41» (Pist Pat 41) in the Swiss Army; the
+        # 7.65 mm Parabellum boxes say «Pistolen-Patronen Cal. 7,65 mm».
+        by_name = {s["name"]: s for s in ALL}
+        self.assertIn("pist pat 41", by_name["9x19 mm"]["aliases"])
+        self.assertIn("pistolenpatrone 41", by_name["9x19 mm"]["aliases"])
+        self.assertIn("9 mm pist pat 41", by_name["9x19 mm"]["aliases"])
+        self.assertIn("pistolenpatrone 7.65", by_name["7.65 mm Parabellum"]["aliases"])
+        # Search names only: the printed names stay as they were.
+        self.assertEqual(DISPLAY_ALIASES["7.65 mm Parabellum"], [".30 Luger"])
+        self.assertEqual(DISPLAY_ALIASES["9x19 mm"], ["9 mm Luger", "9 mm Para"])
+
     def test_gp90_uses_the_short_swiss_army_name(self):
         # Swiss Army: «5,6 mm Gewehrpatrone 90», short «5,6 mm GP 90».
         by_name = {s["name"]: s for s in ALL}
@@ -170,6 +182,20 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(pak["neck"], pak["base"])
         self.assertFalse(is_rare("9 mm P.A.K."))
 
+    def test_32_wadcutter_is_its_own_cip_cartridge(self):
+        # C.I.P. "32 S&W Long Wad Cut." (Tab. IV page 46): maximum cartridge R1, P1, H2, L3, G1; seated flush.
+        by_name = {s["name"]: s for s in ALL}
+        wc, swl = by_name[".32 S&W Long Wadcutter"], by_name[".32 S&W Long"]
+        keys = ("kind", "rim", "base", "neck", "case", "oal", "bullet")
+        self.assertEqual(tuple(wc[k] for k in keys), (RIMMED, 9.53, 8.56, 8.56, 23.27, 23.27, 8.0))
+        self.assertNotEqual(wc["case"], swl["case"], "a different chamber, so not grouped with the .32 S&W Long")
+        self.assertIn("32 s&w long wc", wc["aliases"])
+        self.assertEqual(DISPLAY_ALIASES[".32 S&W Long Wadcutter"], [".32 S&W Long WC"])
+        self.assertEqual(PRIMERS[".32 S&W Long Wadcutter"], SMALL_PISTOL)
+        self.assertEqual(bullet(".32 S&W Long Wadcutter"), LEAD)
+        self.assertEqual(origin_candidates(".32 S&W Long Wadcutter")[0][0], "DE")
+        self.assertEqual(tags(".32 S&W Long Wadcutter"), [])
+
     def test_municion_specimens_keep_the_drawing_values(self):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "neck", "case", "oal", "bullet")
@@ -203,6 +229,11 @@ class CatalogueTests(unittest.TestCase):
         self.assertLess(by_name[".22 Nosler"]["rim"], by_name[".22 Nosler"]["base"])  # rebated rim
         self.assertIsNone(by_name["9.3x72 mm R"]["shoulder"])
 
+    def test_45_colt_is_drawn_with_a_round_nose(self):
+        # Factory lead loads are round nose with a small flat (Raven's W-W round, 2026-11-08).
+        by_name = {s["name"]: s for s in ALL}
+        self.assertEqual(by_name[".45 Colt"]["profile"], "round")
+
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}
         b = by_name[".22 Blank (6.8/11)"]
@@ -235,6 +266,22 @@ class CatalogueTests(unittest.TestCase):
                 self.assertEqual(name in PRIMERS, s["kind"] != RIMFIRE)
         self.assertIsNone(origin("6 mm Flobert Knall"))  # blanks have no country (2026-11-07)
         self.assertIn("9mmrk", by_name["9 mm R Knall"]["aliases"])
+
+    def test_rounds_from_ravens_bag_keep_their_sources(self):
+        # 2026-11-08: .320 Revolver from the C.I.P. «320 Short» sheet, 9 mm Flobert from Wikipedia's infobox.
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("kind", "rim", "base", "neck", "case", "oal", "bullet", "profile")
+        self.assertEqual(tuple(by_name[".320 Revolver"][k] for k in keys),
+                         (RIMMED, 9.55, 8.12, 8.12, 16.6, 26.7, 8.0, "round"))
+        self.assertEqual(tuple(by_name["9 mm Flobert Bosquette"][k] for k in keys),
+                         (RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, "round"))
+        self.assertEqual(INTRODUCED[".320 Revolver"][0], 1868)
+        self.assertEqual(origin(".320 Revolver")[0], "GB")
+        self.assertEqual(origin("9 mm Flobert Bosquette")[0], "FR")
+        self.assertEqual(tags(".320 Revolver"), ["obsolete", "rare"])
+        self.assertEqual(tags("9 mm Flobert Bosquette"), ["rare"])
+        self.assertEqual(bullet(".320 Revolver"), LEAD)
+        self.assertNotIn("9 mm Flobert Bosquette", PRIMERS)  # rimfire
 
     def test_every_calibre_has_an_introduction_year_or_a_reason(self):
         self.assertEqual(set(INTRODUCED) | set(INTRODUCED_UNKNOWN), NAMES)
@@ -336,7 +383,8 @@ class CatalogueTests(unittest.TestCase):
         self.assertTrue(is_worldwide("12/70"))
         self.assertFalse(is_worldwide("7.62x39 mm"))
         self.assertFalse(is_worldwide("no such calibre"))
-        self.assertEqual(ORIGIN_UNDECIDED, {})  # every two-state case was decided 2026-11-07
+        # every two-state case was decided 2026-11-07; #52 then added the C.I.P. "DE/FI" wadcutter
+        self.assertEqual(set(ORIGIN_UNDECIDED), {".32 S&W Long Wadcutter"})
         self.assertEqual(origin_candidates("9x19 mm"), ())  # decided
         self.assertEqual(origin_candidates("12/70"), ())  # a gauge, nothing to decide
         with patch.dict(ORIGIN_UNDECIDED, {"5.56x45 mm NATO": ("US", "BE")}):
