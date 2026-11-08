@@ -505,7 +505,7 @@ class CatalogueTests(unittest.TestCase):
         # national names, loads in the same case and +P loads.
         by_name = {s["name"]: s for s in ALL}
         expected = {
-            "38coltnewpolice": ".38 S&W", "275rigby": "7x57 mm Mauser", "6.5x52r": ".25-35 Winchester",
+            "38coltnewpolice": ".38 S&W", "7mmmauser": "7x57 mm Mauser", "6.5x52r": ".25-35 Winchester",
             "7.7x56r": ".303 British", "400jeffery": ".450/400 Nitro Express 3 inch", "12.7x107": "12.7x108 mm",
             "38special+p": ".38 Special", "45-85": ".45-90 WCF", "50-105": ".50-110 Winchester",
             "7.5swedishnagant": "7.5 mm Swiss Ordnance 1882", "6.5-08": ".260 Remington",
@@ -534,7 +534,10 @@ class CatalogueTests(unittest.TestCase):
             self.assertIn(kind, (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP), name)
             self.assertTrue(url is None or url.startswith("https://"), name)
         self.assertEqual(BULLET_INFERRED, {"7 mm Blaser Magnum", ".300 Blaser Magnum", "8.5x55 mm Blaser",
-                                           ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)"})
+                                           ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)",
+                                           "5.6x50 mm R Magnum", "5.6x57 mm R", "6.5x65 mm R RWS", "6.5x68 mm R",
+                                           "8x60 mm RS", "8x65 mm RS", "9x57 mm R", "8x57 mm IR",
+                                           ".450/400 Nitro Express 3¼ inch", ".275 Rigby"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):
@@ -619,12 +622,49 @@ class CatalogueTests(unittest.TestCase):
                 return round(max(s[key] for s in specs) - min(s[key] for s in specs), 2)
             # What the group names as the difference is what the dimensions show (LOAD is not in them).
             self.assertEqual(len({s["kind"] for s in specs}) > 1, RIM in differs, names)
-            self.assertEqual(spread("bullet") > 0.15, BORE in differs, names)
+            # 8x57 I .318" against IS .323"; Finnish 7.62x53 R against 7.62x54 R. A wadcutter group is left
+            # out: the parent's bullet is a rounded figure, the wadcutter's from its sheet.
+            if SEATING not in differs:
+                self.assertEqual(spread("bullet") >= 0.05, BORE in differs, names)
             self.assertEqual(spread("case") > 0.5, LENGTH in differs, names)
-            self.assertEqual(spread("oal") > 5, SEATING in differs, names)  # the wadcutter sits deep
+            # A wadcutter sits flush or nearly so with the case mouth.
+            self.assertEqual(min(s["oal"] - s["case"] for s in specs) < 1.5, SEATING in differs, names)
         self.assertEqual(lookalikes("5.6 mm GP 90"), [".223 Remington", "5.56x45 mm NATO"])
         self.assertEqual(lookalikes("7x65 mm R"), ["7x64 mm"])
+        self.assertEqual(lookalikes("8x57 mm I"), ["8x57 mm IS", "8x57 mm IRS", "8x57 mm IR"])
+        self.assertEqual(lookalikes(".275 Rigby"), ["7x57 mm Mauser", "7x57 mm R"])
         self.assertEqual(lookalikes(".30-06 Springfield"), [])
+
+    def test_lookalike_variants_from_their_cip_sheets(self):
+        # Raven 2026-11-08: the cartridges C.I.P. lists apart from a calibre already in the catalogue are
+        # calibres of their own. Values are the sheets' maximum cartridge (rim R1, body P1, neck H2, case L3,
+        # length L6, bullet G1).
+        by_name = {s["name"]: s for s in ALL}
+        expected = {
+            "5.6x50 mm R Magnum": (10.9, 9.59, 6.48, 50.0, 61.0, 5.7),
+            "5.6x57 mm R": (13.32, 11.94, 7.1, 56.7, 69.0, 5.7),
+            "6.5x65 mm R RWS": (13.5, 12.08, 7.57, 65.0, 85.0, 6.7),
+            "6.5x68 mm R": (15.0, 13.34, 7.6, 67.5, 87.5, 6.7),
+            "8x60 mm RS": (13.4, 12.03, 9.08, 60.0, 83.6, 8.22),
+            "8x65 mm RS": (13.32, 11.99, 8.96, 65.0, 87.5, 8.22),
+            "9x57 mm R": (13.4, 11.96, 9.83, 56.8, 81.0, 9.08),
+            "8x57 mm I": (11.95, 11.94, 8.99, 57.0, 82.0, 8.09),
+            "8x57 mm IR": (13.32, 11.92, 8.99, 57.0, 82.0, 8.09),
+            "7.62x53 mm R": (14.4, 12.42, 8.5, 53.5, 77.0, 7.85),
+            ".450/400 Nitro Express 3¼ inch": (15.85, 13.84, 11.05, 82.55, 100.33, 10.41),
+            ".275 Rigby": (12.06, 12.04, 8.23, 56.9, 77.98, 7.21),
+            ".38 Special Wadcutter": (11.18, 9.63, 9.63, 29.34, 30.35, 9.14),
+        }
+        for name, values in expected.items():
+            s = by_name[name]
+            self.assertEqual((s["rim"], s["base"], s["neck"], s["case"], s["oal"], s["bullet"]), values, name)
+            self.assertTrue(lookalikes(name), name)
+        # .275 Rigby is its own calibre now (C.I.P. gives it 3200 bar against the 7x57's 3900), so its names
+        # moved from the 7x57 to it.
+        self.assertLessEqual({"275rigby", "275hvrigby"}, set(by_name[".275 Rigby"]["aliases"]))
+        self.assertFalse({"275rigby", "275hvrigby"} & set(by_name["7x57 mm Mauser"]["aliases"]))
+        # municion.org gives the rimmed 6.5x65 its own 1988 launch, like the rimless one.
+        self.assertEqual(INTRODUCED["6.5x65 mm R RWS"][0], 1988)
 
     def test_45_super_is_an_alias_of_45_acp(self):
         # Raven 2026-11-08: no board lists the .45 Super and it measures like the .45 ACP.
