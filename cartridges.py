@@ -123,6 +123,11 @@ CATALOGUE = [
         straight("9x21 mm IMI", RIMLESS, 9.96, 9.96, 9.65, 21.15, 29.7, 9.01, ROUND, ["9x21"]),
         c(".357 SIG", RIMLESS, 10.77, 10.77, 10.7, 9.68, 21.97, 16.48, 28.96, 9.02, ROUND, ["357sig"]),
         straight(".38 Special", RIMMED, 11.2, 9.6, 9.6, 29.3, 39.4, 9.07, ROUND, ["38spl", "38special", "38", "38special+p", "38spl+p", "38s&wspecial", "38coltspecial"]),
+        # Target load for 25 m centre-fire pistols and revolvers, its own C.I.P. cartridge ("38 Spl. Wad Cut.",
+        # tab-iv/tabivcal-en-page60.pdf, sheet 1984-06-14, origin US): Pmax 1200 bar, the wadcutter seated about
+        # 1 mm out of the case (L6 30.35 against L3 29.34). Maximum cartridge R1/P1/H2/L3/L6/G1 from the sheet.
+        straight(".38 Special Wadcutter", RIMMED, 11.18, 9.63, 9.63, 29.34, 30.35, 9.14, FLAT,
+                 ["38wc", "38splwc", "38specialwc", "38specialwadcutter", "38 spl wc"]),
         straight(".357 Magnum", RIMMED, 11.2, 9.6, 9.6, 32.8, 40.6, 9.07, FLAT, ["357mag", "357", "357magnum", "357s&wmag", "357s&wmagnum"]),
         straight(".38 Super", RIMLESS, 10.2, 9.7, 9.6, 22.9, 32.5, 9.03, ROUND, ["38super"]),
         straight("10 mm Auto", RIMLESS, 10.8, 10.8, 10.7, 25.2, 32.0, 10.17, FLAT, ["10mm", "10auto"]),
@@ -249,7 +254,10 @@ CATALOGUE = [
         c(".260 Remington", RIMLESS, 12.0, 12.0, 11.5, 7.5, 51.7, 39.62, 71.1, 6.7, SPITZER, ["260rem", "6.5-08", "6.5-08a-square"]),
         c(".270 Winchester", RIMLESS, 12.0, 12.0, 11.2, 7.8, 64.5, 49.49, 84.8, 7.0, SPITZER, ["270", "270win"]),
         c("7 mm-08 Remington", RIMLESS, 12.0, 12.0, 11.5, 8.0, 51.7, 39.62, 71.1, 7.2, SPITZER, ["7mm-08", "7-08"]),
-        c("7x57 mm Mauser", RIMLESS, 12.0, 12.0, 10.9, 8.2, 57.0, 43.84, 78.0, 7.24, SPITZER, ["7x57", "7mmmauser", "275rigby", "275hvrigby"]),
+        c("7x57 mm Mauser", RIMLESS, 12.0, 12.0, 10.9, 8.2, 57.0, 43.84, 78.0, 7.24, SPITZER, ["7x57", "7mmmauser"]),
+        # Rigby's name for the 7x57, but C.I.P. gives the "275 H.V. Rigby" its own sheet (in SHOULDER_ANGLES) at
+        # 3200 bar against the 7x57's 3900, so 7x57 ammunition is too hot for its guns: its own calibre (2026-11-08).
+        c(".275 Rigby", RIMLESS, 12.06, 12.04, 10.87, 8.23, 56.9, 43.79, 77.98, 7.21, SPITZER, ["275rigby", "275hvrigby", "275bore"]),
         c("7x64 mm", RIMLESS, 12.0, 12.0, 11.3, 8.0, 64.0, 51.5, 84.0, 7.24, SPITZER, ["7x64"]),
         c("7 mm Remington Magnum", BELTED, 13.5, 13.0, 12.4, 8.0, 63.5, 51.82, 82.6, 7.2, SPITZER, ["7mmremmag", "7rm"]),
         c("7 mm PRC", RIMLESS, 13.4, 13.4, 13.0, 8.0, 63.5, 53.67, 90.3, 7.2, SPITZER, ["7prc"]),
@@ -295,7 +303,12 @@ CATALOGUE = [
         straight(".50-110 Winchester", RIMMED, 15.4, 14.0, 13.6, 61.0, 70.0, 13.0, FLAT, ["50-110", "50-100", "50-105"]),
         c(".303 British", RIMMED, 13.5, 11.7, 10.2, 8.6, 56.4, 45.47, 78.1, 7.92, SPITZER, ["303", "303brit", "7.7x56r"]),
         c("7.62x54 mm R", RIMMED, 14.5, 12.4, 11.6, 8.5, 53.6, 39.7, 77.2, 7.92, SPITZER, ["7.62x54r", "762x54r"]),
+        # Finnish service round (1918) on the 7.62x54 R case with a narrower bore; its own C.I.P. sheet in SHOULDER_ANGLES.
+        c("7.62x53 mm R", RIMMED, 14.4, 12.42, 11.61, 8.5, 53.5, 39.61, 77.0, 7.85, SPITZER, ["7.62x53r", "762x53r"]),
         c("8x57 mm IS", RIMLESS, 11.95, 11.95, 11.0, 9.1, 57.0, 46.2, 82.0, 8.2, SPITZER, ["8x57", "8x57is", "8mmmauser", "7.92x57", "7.9x57", "8x57js"]),
+        # The first 8x57 (Patrone 88, 1888) with the old .318" (8.09 mm) bullet that the 1905 S bore replaced;
+        # values from its C.I.P. sheet in SHOULDER_ANGLES. 8x57 IS ammunition must not be fired in its guns.
+        c("8x57 mm I", RIMLESS, 11.95, 11.94, 10.95, 8.99, 57.0, 46.2, 82.0, 8.09, ROUND, ["8x57i", "8x57j", "patrone88"]),
         c("8x68 mm S", RIMLESS, 13.3, 13.3, 12.4, 9.2, 67.5, 53.2, 87.5, 8.2, SPITZER, ["8x68"]),
         c("9.3x62 mm", RIMLESS, 12.0, 12.0, 11.5, 10.0, 62.0, 51.79, 83.6, 9.3, ROUND, ["9.3x62"]),
         # Rim R1, shoulder P2, neck H2 and case L3 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
@@ -351,10 +364,18 @@ CATALOGUE = [
         straight(".350 Legend", RIMLESS, 9.6, 9.9, 9.6, 43.0, 57.0, 9.07, SPITZER, ["350legend"]),
         # Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c("5.6x50 mm Magnum", RIMLESS, 9.6, 9.56, 9.0, 6.48, 50.0, 40.26, 61.3, 5.7, SPITZER, ["5.6x50", "5.6x50mag"]),
+        # The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("5.6x50 mm R Magnum", RIMMED, 10.9, 9.59, 9.0, 6.48, 50.0, 40.26, 61.0, 5.7, SPITZER, ["5.6x50r", "5.6x50rmag"]),
         c("6.5x57 mm Mauser", RIMLESS, 11.95, 11.9, 10.94, 7.65, 56.7, 44.5, 82.0, 6.7, SPITZER, ["6.5x57"]),
         c("6.5x68 mm", RIMLESS, 13.0, 13.3, 12.18, 7.6, 67.5, 51.75, 86.5, 6.7, SPITZER, ["6.5x68"]),
+        # The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("6.5x68 mm R", RIMMED, 15.0, 13.34, 12.18, 7.6, 67.5, 51.78, 87.5, 6.7, SPITZER, ["6.5x68r"]),
         c("8x64 mm S", RIMLESS, 12.0, 11.95, 10.85, 8.96, 64.0, 51.8, 87.5, 8.22, SPITZER, ["8x64s", "8x64"]),
+        # The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("8x65 mm RS", RIMMED, 13.32, 11.99, 10.85, 8.96, 65.0, 51.8, 87.5, 8.22, SPITZER, ["8x65rs"]),
         c("8x60 mm S", RIMLESS, 11.95, 11.98, 10.95, 9.08, 60.0, 48.2, 83.6, 8.22, SPITZER, ["8x60s", "8x60"]),
+        # The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("8x60 mm RS", RIMMED, 13.4, 12.03, 10.95, 9.08, 60.0, 48.22, 83.6, 8.22, SPITZER, ["8x60rs"]),
         c("9.5x57 mm Mannlicher-Schönauer", RIMLESS, 11.89, 11.89, 11.55, 10.16, 57.15, 46.5, 74.9, 9.55, ROUND, ["9.5x57", "375rimless", "9.5x56", "375rimlessne"]),
         c(".375 Ruger", RIMLESS, 13.5, 13.5, 13.1, 10.3, 65.5, 55.36, 84.8, 9.5, ROUND, ["375ruger"]),
         straight(".450 Bushmaster", RIMLESS, 12.01, 12.7, 12.19, 43.2, 57.4, 11.48, SPITZER, ["450bm", "450bushmaster"]),
@@ -424,6 +445,8 @@ CATALOGUE = [
         straight("9.3x72 mm R", RIMMED, 12.35, 10.91, 9.82, 72.0, 86.0, 9.57, ROUND, ["9.3x72r"]),
         c("8x75 mm RS", RIMMED, 13.35, 11.9, 10.4, 9.08, 74.6, 66.2, 96.0, 8.22, SPITZER, ["8x75rs"]),
         c("6.5x65 mm RWS", RIMLESS, 11.95, 12.04, 10.97, 7.57, 65.0, 53.85, 85.0, 6.7, SPITZER, ["6.5x65", "6.5x65rws"]),
+        # The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("6.5x65 mm R RWS", RIMMED, 13.5, 12.08, 10.97, 7.57, 65.0, 53.85, 85.0, 6.7, SPITZER, ["6.5x65r", "6.5x65rrws"]),
         c("9.3x66 mm Sako (.370 Sako Magnum)", RIMLESS, 11.95, 12.13, 11.43, 9.92, 66.0, 55.8, 85.0, 9.3, ROUND, ["9.3x66", "370sako"]),
         c(".300 Blaser Magnum", RIMLESS, 13.59, 13.84, 13.0, 8.61, 64.2, 52.12, 84.84, 7.83, SPITZER, ["300blaser"]),
         c(".375 Blaser Magnum", RIMLESS, 13.59, 13.84, 12.9, 10.31, 71.7, 59.13, 92.0, 9.53, ROUND, ["375blaser"]),
@@ -432,6 +455,9 @@ CATALOGUE = [
         c(".338 Blaser Magnum", RIMLESS, 13.59, 13.84, 13.02, 9.36, 63.7, 51.51, 84.84, 8.59, SPITZER, ["338blaser"]),
         c("8.5x55 mm Blaser", RIMLESS, 13.59, 13.84, 13.17, 9.36, 54.7, 42.38, 75.84, 8.59, SPITZER, ["8.5x55", "8.5x55blaser", "85x55"]),
         c(".450/400 Nitro Express 3 inch", RIMMED, 15.87, 13.92, 13.21, 11.18, 76.2, 55.26, 95.25, 10.41, ROUND, ["450/400", "450/400ne", "400jeffery"]),
+        # The 3 1/4 inch original of the .450/400, from its C.I.P. sheet in SHOULDER_ANGLES ("450/400 Mag. N.E. 3\"1/4").
+        c(".450/400 Nitro Express 3¼ inch", RIMMED, 15.85, 13.84, 12.65, 11.05, 82.55, 50.8, 100.33, 10.41, ROUND,
+          ["450/400magnum", "450/400mag", "450/400 3 1/4", "450/400 3.25"]),
         c(".40-82 WCF", RIMMED, 15.49, 12.92, 11.54, 10.85, 60.71, 44.91, 70.23, 10.35, FLAT, ["40-82"]),
         c(".50-95 WCF", RIMMED, 15.93, 14.27, 14.05, 13.62, 49.28, 36.63, 57.4, 13.03, FLAT, ["50-95", "50-95express"]),
         c(".38-56 WCF", RIMMED, 15.37, 12.83, 11.3, 10.16, 53.34, 30.64, 63.5, 9.59, FLAT, ["38-56"]),
@@ -463,6 +489,8 @@ CATALOGUE = [
         c(".22 Savage Hi-Power", RIMMED, 12.85, 10.7, 9.2, 6.4, 52.0, 35.52, 63.5, 5.79, ROUND, ["22savage", "5.6x52r", "22hp"]),
         # Rim R1, body P1, shoulder P2, neck H2, length L6 and bullet G1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
         c("8x57 mm IRS", RIMMED, 13.32, 11.92, 10.95, 9.08, 57.0, 46, 82.0, 8.22, ROUND, ["8x57irs", "8x57jrs"]),
+        # The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("8x57 mm IR", RIMMED, 13.32, 11.92, 10.95, 8.99, 57.0, 46.0, 82.0, 8.09, ROUND, ["8x57ir", "8x57jr"]),
         c(".280 Ackley Improved", RIMLESS, 12.0, 12.0, 11.7, 8.0, 64.1, 54.96, 84.6, 7.2, SPITZER, ["280ai"]),
         c(".356 Winchester", RIMLESS, 12.9, 11.95, 11.5, 9.9, 51.2, 39.62, 65.0, 9.1, FLAT, ["356win"]),
         c(".307 Winchester", RIMLESS, 12.9, 12.0, 11.5, 8.7, 51.2, 39.62, 65.0, 7.8, FLAT, ["307win"]),
@@ -505,6 +533,8 @@ CATALOGUE = [
         c(".338 Weatherby RPM", RIMLESS, 12.01, 12.7, 12.04, 9.25, 64.77, 54.85, 82.55, 8.59, SPITZER, ["338rpm", "338wbyrpm"]),
         c(".30-378 Weatherby Magnum", BELTED, 14.7, 14.8, 14.2, 8.6, 74.0, 61.2, 93.7, 7.82, SPITZER, ["30-378"]),
         c("5.6x57 mm", RIMLESS, 11.95, 11.9, 10.94, 7.1, 56.7, 44.51, 69.0, 5.7, SPITZER, ["5.6x57"]),
+        # The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("5.6x57 mm R", RIMMED, 13.32, 11.94, 10.94, 7.1, 56.7, 44.37, 69.0, 5.7, SPITZER, ["5.6x57r"]),
         # Smokeless rounds from batches 6 and 7, first misplaced under Schwarzpulver.
         c("6.5x53 mm R Mannlicher", RIMMED, 13.4, 11.48, 10.75, 7.55, 53.5, 43.33, 77.47, 6.65, ROUND, ["6.5x53r", "6.5dutch"]),
         c("8x58 mm R Danish Krag", RIMMED, 14.65, 12.75, 11.95, 8.98, 58.0, 41.96, 78.0, 8.2, ROUND, ["8x58r", "danishkrag"]),
@@ -518,6 +548,8 @@ CATALOGUE = [
         c("9.3x64 mm Brenneke", RIMLESS, 12.6, 12.88, 12.05, 10.04, 64.0, 52.09, 85.6, 9.3, ROUND, ["9.3x64"]),
         c("9.3x57 mm Mauser", RIMLESS, 11.95, 11.95, 10.95, 10.0, 56.5, 45.86, 81.0, 9.3, ROUND, ["9.3x57"]),
         c("9x57 mm Mauser", RIMLESS, 11.9, 11.9, 10.9, 9.8, 56.8, 46.2, 81.0, 9.1, ROUND, ["9x57"]),
+        # The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+        c("9x57 mm R", RIMMED, 13.4, 11.96, 10.95, 9.83, 56.8, 46.14, 81.0, 9.08, ROUND, ["9x57r"]),
         # Rim R1 and length L6 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
         c("7x57 mm R", RIMMED, 13.5, 12.05, 10.92, 8.25, 57.0, 43.8, 78.0, 7.25, SPITZER, ["7x57r"]),
         # Rim R1 and body P1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
@@ -605,6 +637,7 @@ DISPLAY_ALIASES = {
     "9 mm Browning kurz (.380 ACP)": [".380 ACP", ".380 Auto"],
     "9x19 mm": ["9 mm Luger", "9 mm Para"],
     ".38 Special": [".38 Spl"],
+    ".38 Special Wadcutter": [".38 Spl WC"],
     ".45 ACP": [".45 Auto", "11,43 mm"],
     ".45 Colt": [".45 Long Colt"],
     ".320 Revolver": [".320 Short"],
@@ -661,6 +694,7 @@ PRIMERS = {
     "8 mm Knall": SMALL_PISTOL, ".315 Knall": SMALL_PISTOL, "9 mm R Knall": SMALL_PISTOL,
     ".320 Knall": SMALL_PISTOL, ".45 Knall": SMALL_PISTOL,
     ".357 SIG": SMALL_PISTOL, ".38 Special": SMALL_PISTOL, ".357 Magnum": SMALL_PISTOL,
+    ".38 Special Wadcutter": SMALL_PISTOL,
     ".38 Super": SMALL_PISTOL, "10 mm Auto": LARGE_PISTOL, ".40 S&W": SMALL_PISTOL,
     ".41 Magnum": LARGE_PISTOL, ".44 Special": LARGE_PISTOL, ".44 Magnum": LARGE_PISTOL,
     ".45 ACP": LARGE_PISTOL, ".45 Colt": LARGE_PISTOL, ".45 GAP": SMALL_PISTOL,
@@ -698,6 +732,7 @@ PRIMERS = {
     "12/70": SHOTSHELL_209, "12/76": SHOTSHELL_209, "12/89": SHOTSHELL_209, "16/70": SHOTSHELL_209,
     "20/70": SHOTSHELL_209, "20/76": SHOTSHELL_209, "28/70": SHOTSHELL_209, ".410/76": SHOTSHELL_209,
     "5.6x50 mm Magnum": SMALL_RIFLE,
+    "5.6x50 mm R Magnum": SMALL_RIFLE,
     "6.5x57 mm Mauser": LARGE_RIFLE,
     "6.5x68 mm": LARGE_RIFLE,
     "8x64 mm S": LARGE_RIFLE,
@@ -769,6 +804,9 @@ PRIMERS = {
     "7x65 mm R": LARGE_RIFLE,
     ".22 Savage Hi-Power": LARGE_RIFLE,
     "8x57 mm IRS": LARGE_RIFLE,
+    "5.6x57 mm R": LARGE_RIFLE, "6.5x65 mm R RWS": LARGE_RIFLE, "6.5x68 mm R": LARGE_RIFLE, "8x60 mm RS": LARGE_RIFLE,
+    "8x65 mm RS": LARGE_RIFLE, "9x57 mm R": LARGE_RIFLE, "8x57 mm I": LARGE_RIFLE, "8x57 mm IR": LARGE_RIFLE,
+    "7.62x53 mm R": LARGE_RIFLE, ".450/400 Nitro Express 3¼ inch": LARGE_RIFLE, ".275 Rigby": LARGE_RIFLE,
     ".280 Ackley Improved": LARGE_RIFLE,
     ".356 Winchester": LARGE_RIFLE,
     ".307 Winchester": LARGE_RIFLE,
@@ -1273,6 +1311,17 @@ INTRODUCED = {
     ".500/416 Nitro Express": (1996, "https://bulletin.accurateshooter.com/?p=59952"),  # Krieghoff unveiled it early 1996
     # Swiss cadet round for the Kadettengewehr 1897.
     "7.5 mm Kadettenpatrone": (1897, "https://swisswaffen.com/75mm-cadet-cartridge/gp90kp/wjpaihuqy7ys"),  # "First Issued: 1897"
+    # Lookalike variants (2026-11-08).
+    "5.6x50 mm R Magnum": (1968, _WP + "5.6×50mm_Magnum"),  # the rimmed parent came first
+    "5.6x57 mm R": (1964, "https://municion.org/producto/56-x-57-r-rws/"),
+    "6.5x65 mm R RWS": (1988, "https://municion.org/producto/65-x-65-r-rws/"),
+    "8x65 mm RS": (1914, _WP + "8×64mm_S"),  # Brenneke's rimmed variants
+    "9x57 mm R": (1903, "https://municion.org/producto/9-x-57-r-mauser/"),
+    "8x57 mm I": (1888, _WP + "7.92×57mm_Mauser"),  # Patrone 88
+    "8x57 mm IR": (1893, "https://municion.org/producto/8-x-57-r-mauser-m88b-hunting/"),
+    "7.62x53 mm R": (1918, _WP + "7.62×53mmR"),
+    ".450/400 Nitro Express 3¼ inch": (1899, _WP + ".450/400_Nitro_Express"),
+    ".275 Rigby": (1900, "https://municion.org/producto/275-rigby/"),  # municion gives "1900's": earliest wins
 }
 
 INTRODUCED_UNKNOWN = {
@@ -1290,6 +1339,9 @@ INTRODUCED_UNKNOWN = {
         "4.4 mm Stahl-BB (.177 BB)", "6 mm Airsoft-BB", "8 mm Airsoft-BB")},
     ".450/400 Nitro Express 3 inch": "sources give 1899 for the 3 1/4 inch parent only",
     "6.5-300 Weatherby Magnum": "sources give only the 2017 SAAMI drawing",
+    "6.5x68 mm R": "no launch year found (the rimless 6.5x68 is from 1939)",
+    "8x60 mm RS": "no launch year found (the rimless 8x60 S is from 1919)",
+    ".38 Special Wadcutter": "C.I.P. sheet dated 1984-06-14; no launch year found",
 }
 
 # Shoulder angle of each bottleneck case: the angle between the shoulder and the case axis in
@@ -1437,6 +1489,18 @@ SHOULDER_ANGLES = {
     "7x65 mm R": (20.3, _CIP + "tab-ii/tabiical-en-page24.pdf"),  # C.I.P. 7 x 65 R
     ".22 Savage Hi-Power": (14, _CIP + "tab-ii/tabiical-en-page57.pdf"),  # C.I.P. 22 Savage
     "8x57 mm IRS": (18.2, _CIP + "tab-ii/tabiical-en-page35.pdf"),  # C.I.P. 8 x 57 IRS
+    "5.6x50 mm R Magnum": (23, _CIP + "tab-ii/tabiical-en-page2.pdf"),  # C.I.P. 5,6 x 50 R Mag.
+    "5.6x57 mm R": (17.4, _CIP + "tab-ii/tabiical-en-page4.pdf"),  # C.I.P. 5,6 x 57 R
+    "6.5x65 mm R RWS": (20, _CIP + "tab-ii/tabiical-en-page17.pdf"),  # C.I.P. 6,5 x 65 R RWS
+    "6.5x68 mm R": (14.7, _CIP + "tab-ii/tabiical-en-page18.pdf"),  # C.I.P. 6,5 x 68 R
+    "8x60 mm RS": (19.1, _CIP + "tab-ii/tabiical-en-page38.pdf"),  # C.I.P. 8 x 60 RS
+    "8x65 mm RS": (14, _CIP + "tab-ii/tabiical-en-page40.pdf"),  # C.I.P. 8 x 65 RS
+    "9x57 mm R": (19.1, _CIP + "tab-ii/tabiical-en-page48.pdf"),  # C.I.P. 9 x 57 R
+    "8x57 mm I": (19.1, _CIP + "tab-i/tabical-en-page56.pdf"),  # C.I.P. 8 x 57 I
+    "8x57 mm IR": (18.2, _CIP + "tab-ii/tabiical-en-page34.pdf"),  # C.I.P. 8 x 57 IR
+    "7.62x53 mm R": (19, _CIP + "tab-ii/tabiical-en-page28.pdf"),  # C.I.P. 7,62 x 53 R
+    ".450/400 Nitro Express 3¼ inch": (5.6, _CIP + "tab-ii/tabiical-en-page118.pdf"),  # C.I.P. 450/400 Mag. N.E. 3"1/4
+    ".275 Rigby": (20.3, _CIP + "tab-i/tabical-en-page101.pdf"),  # C.I.P. 275 H.V. Rigby
     ".356 Winchester": (20, _CIP + "tab-ii/tabiical-en-page90.pdf"),  # C.I.P. 356 Win.
     ".307 Winchester": (20, _CIP + "tab-ii/tabiical-en-page77.pdf"),  # C.I.P. 307 Win.
     ".416 Ruger": (30, _CIP + "tab-i/tabical-en-page147.pdf"),  # C.I.P. 416 Ruger
@@ -1684,6 +1748,8 @@ CASE_HEADS = {
     "9.3x64 mm Brenneke": (1.3, 3.2, 11.2, 43.0, _CIP + "tab-i/tabical-en-page70.pdf"),  # C.I.P. 9,3 x 64 Brenneke
     "9.3x57 mm Mauser": (1.3, 3.2, 10.5, 38.7, _CIP + "tab-i/tabical-en-page68.pdf"),  # C.I.P. 9,3 x 57
     "9x57 mm Mauser": (1.3, 3.2, 10.5, 38.7, _CIP + "tab-i/tabical-en-page67.pdf"),  # C.I.P. 9 x 57
+    "8x57 mm I": (1.3, 3.2, 10.5, 38.7, _CIP + "tab-i/tabical-en-page56.pdf"),  # C.I.P. 8 x 57 I
+    ".275 Rigby": (1.09, 2.97, 10.54, 35.0, _CIP + "tab-i/tabical-en-page101.pdf"),  # C.I.P. 275 H.V. Rigby
     ".338 Remington Ultra Magnum": (1.27, 3.75, 12.06, 32.0, _CIP + "tab-i/tabical-en-page134.pdf"),  # C.I.P. 338 Rem. Ultra Mag.
     "7 mm Remington Ultra Magnum": (1.27, 3.75, 12.07, 32.0, _CIP + "tab-i/tabical-en-page41.pdf"),  # C.I.P. 7 mm Rem. Ultra Mag.
     ".325 Winchester Short Magnum": (1.37, 3.35, 12.19, 45.0, _CIP + "tab-i/tabical-en-page128.pdf"),  # C.I.P. 325 WSM
@@ -1844,6 +1910,7 @@ PRIMER_SOURCES = {
     "9x21 mm IMI": _WP + "9×21mm",
     ".357 SIG": _WP + ".357_SIG",
     ".38 Special": _WP + ".38_Special",
+    ".38 Special Wadcutter": _WP + ".38_Special",  # the same case
     ".357 Magnum": _WP + ".357_Magnum",
     ".38 Super": _WP + ".38_Super",
     "10 mm Auto": _WP + "10mm_Auto",
@@ -2110,6 +2177,9 @@ PRIMER_UNVERIFIED = {
     "6.5x53 mm R Mannlicher", ".450 Nitro Express", ".577 Nitro Express", ".318 Westley Richards",
     ".300 Blaser Magnum", ".375 Blaser Magnum", "7 mm Blaser Magnum", ".338 Blaser Magnum",
     "8.5x55 mm Blaser", ".244 H&H Magnum", ".350 Rigby Magnum",
+    # Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+    "5.6x50 mm R Magnum", "5.6x57 mm R", "6.5x65 mm R RWS", "6.5x68 mm R", "8x60 mm RS", "8x65 mm RS",
+    "9x57 mm R", "8x57 mm I", "8x57 mm IR", "7.62x53 mm R", ".450/400 Nitro Express 3¼ inch", ".275 Rigby",
 }
 
 
@@ -2155,7 +2225,7 @@ OBSOLETE = {
     "7.92x107 mm DS",
     ".22 Remington Jet",
     ".256 Winchester Magnum",
-    "9x57 mm Mauser",
+    "9x57 mm Mauser", "9x57 mm R",
     ".33 Winchester",
     ".25 Remington",
     ".32 Remington",
@@ -2223,6 +2293,10 @@ RARE = {
     ".45 Winchester Magnum", "9x23 mm Winchester", ".400 Cor-Bon",
     ".577 Nitro Express", ".600 Nitro Express", ".700 Nitro Express", ".500/465 Nitro Express",
     ".224 Weatherby Magnum",
+    # Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
+    # the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
+    "5.6x57 mm R", "6.5x65 mm R RWS", "6.5x68 mm R", "8x60 mm RS", "8x65 mm RS", "9x57 mm R", "8x57 mm I",
+    "8x57 mm IR", "7.62x53 mm R", ".450/400 Nitro Express 3¼ inch", ".275 Rigby",
     ".408 CheyTac", ".338 Ruger Compact Magnum",
     ".45 GAP", "5 mm Remington Rimfire Magnum", ".221 Remington Fireball",
     ".224 Valkyrie", ".376 Steyr", "8 mm Remington Magnum", 
@@ -2311,6 +2385,9 @@ ORIGIN = {
     "7x65 mm R": "DE", "8x64 mm S": "DE", "8x60 mm S": "DE", "8x68 mm S": "DE", "6.5x68 mm": "DE",
     "9.3x62 mm": "DE", "9.3x64 mm Brenneke": "DE", "9.3x74 mm R": "DE", "5.6x57 mm": "DE",
     "5.6x50 mm Magnum": "DE", "4.6x30 mm": "DE",
+    "5.6x50 mm R Magnum": "DE", "5.6x57 mm R": "DE", "6.5x65 mm R RWS": "DE", "6.5x68 mm R": "DE",
+    "8x60 mm RS": "DE", "8x65 mm RS": "DE", "9x57 mm R": "DE", "8x57 mm I": "DE", "8x57 mm IR": "DE",
+    "7.62x53 mm R": "FI", ".450/400 Nitro Express 3¼ inch": "GB", ".275 Rigby": "GB", ".38 Special Wadcutter": "US",
     # Austria-Hungary and Austria
     "8x50 mm R Mannlicher": "AH", "8 mm Roth-Steyr": "AH", "9x23 mm Steyr": "AH",
     "6.5x54 mm Mannlicher-Schönauer": "AH",
@@ -2535,6 +2612,7 @@ BULLETS = {  # name: (bullet, source that names the original or factory bullet)
     ".32 S&W": (LEAD, "https://en.wikipedia.org/wiki/.32_S%26W"),
     ".32 S&W Long": (LEAD, "https://en.wikipedia.org/wiki/.32_S%26W_Long"),
     ".32 S&W Long Wadcutter": (LEAD, "https://www.lapua.com/product/32-sw-lapua-wadcutter-bullet-c427-535-g-83-gr/"),
+    ".38 Special Wadcutter": (LEAD, "https://en.wikipedia.org/wiki/.38_Special"),
     ".32 Long Colt": (LEAD, "https://en.wikipedia.org/wiki/.32_Long_Colt"),
     ".38 S&W": (LEAD, "https://en.wikipedia.org/wiki/.38_S%26W"),
     ".38 Short Colt": (LEAD, "https://municion.org/producto/38-short-colt-long-case/"),
@@ -2689,6 +2767,10 @@ BULLETS = {  # name: (bullet, source that names the original or factory bullet)
     "9.3x74 mm R": (SOFT_POINT, "https://en.wikipedia.org/wiki/9.3×74mmR"),
     "9.3x53 mm R Finnish": (SOFT_POINT, "https://municion.org/producto/93-x-53-r-finnish/"),
     "9x57 mm Mauser": (SOFT_POINT, "https://municion.org/producto/9-x-57-mauser/"),
+    # Lookalike variants (2026-11-08): hunting rounds, soft point from their use like their twins.
+    **{n: (SOFT_POINT, None) for n in (
+        "5.6x50 mm R Magnum", "5.6x57 mm R", "6.5x65 mm R RWS", "6.5x68 mm R", "8x60 mm RS", "8x65 mm RS",
+        "9x57 mm R", "8x57 mm IR", ".450/400 Nitro Express 3¼ inch", ".275 Rigby")},
     "9.5x57 mm Mannlicher-Schönauer": (SOFT_POINT, "https://en.wikipedia.org/wiki/9.5×57mm_Mannlicher–Schönauer"),
     "10.3x60 mm R": (SOFT_POINT, "https://municion.org/producto/103-x-60-r/"),
     ".400/350 Nitro Express": (SOFT_POINT, "https://en.wikipedia.org/wiki/.400/350_Nitro_Express"),
@@ -2839,8 +2921,8 @@ def loose_material(name):
 
 # Lookalikes (Raven 2026-11-08): calibres that are cartridges of their own but look alike, so an app
 # can show the others from any one of them. A group's cases share one design; what tells them apart
-# is one or more of: RIM (rimmed or rimless twin), BORE (bullet diameter), LENGTH (case length by
-# about a millimetre), SEATING (a wadcutter seated flush or nearly so) and LOAD (C.I.P., SAAMI or the service
+# is one or more of: RIM (rimmed or rimless twin), BORE (bullet diameter), LENGTH (case length),
+# SEATING (a wadcutter seated flush or nearly so) and LOAD (C.I.P., SAAMI or the service
 # gives the same case a hotter load or another chamber that the older or weaker guns must not
 # fire). Other names of the same cartridge are search aliases, not groups. Judged against
 # Cartridges of the World (15th ed., 2016) and the C.I.P. and SAAMI lists. Each calibre is in at
@@ -2853,11 +2935,21 @@ LOOKALIKES = [  # (what tells them apart, calibres)
     ((LOAD,), ["9x19 mm", "9 mm Glisenti"]),
     ((LOAD,), ["9x23 mm Largo", "9x23 mm Winchester"]),
     ((SEATING,), [".32 S&W Long", ".32 S&W Long Wadcutter"]),
-    ((RIM,), ["7x57 mm Mauser", "7x57 mm R"]),
+    ((SEATING,), [".38 Special", ".38 Special Wadcutter"]),
+    ((RIM, LOAD), ["7x57 mm Mauser", "7x57 mm R", ".275 Rigby"]),
     ((RIM,), ["6.5x57 mm Mauser", "6.5x57 mm R"]),
     ((RIM, LENGTH), ["7x64 mm", "7x65 mm R"]),
-    ((RIM,), ["8x57 mm IS", "8x57 mm IRS"]),
+    ((RIM, BORE), ["8x57 mm IS", "8x57 mm IRS", "8x57 mm I", "8x57 mm IR"]),
     ((RIM,), [".45 ACP", ".45 Auto Rim"]),
+    ((RIM,), ["5.6x50 mm Magnum", "5.6x50 mm R Magnum"]),
+    ((RIM,), ["5.6x57 mm", "5.6x57 mm R"]),
+    ((RIM,), ["6.5x65 mm RWS", "6.5x65 mm R RWS"]),
+    ((RIM,), ["6.5x68 mm", "6.5x68 mm R"]),
+    ((RIM,), ["8x60 mm S", "8x60 mm RS"]),
+    ((RIM, LENGTH), ["8x64 mm S", "8x65 mm RS"]),
+    ((RIM,), ["9x57 mm Mauser", "9x57 mm R"]),
+    ((BORE,), ["7.62x54 mm R", "7.62x53 mm R"]),
+    ((LENGTH,), [".450/400 Nitro Express 3 inch", ".450/400 Nitro Express 3¼ inch"]),
 ]
 
 

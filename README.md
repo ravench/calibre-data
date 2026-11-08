@@ -38,8 +38,8 @@ The shared calibre catalogue for
 - `CASE_HEADS` / `case_head(name)`: rim thickness, extractor-groove diameter and ramp (or belt front) of the rimless and belted cases from the C.I.P. sheets; the outline draws each head from them, other cases keep a generic head.
 - `LOOKALIKES` lists the groups of calibres that are cartridges of their own but look alike
   (.223 Rem / 5.56 NATO / GP 90, rimmed and rimless twins such as 7x64 / 7x65 R, the .32 S&W Long
-  and its Wadcutter), each with what tells them apart: `RIM`, `BORE`, `LENGTH` (by about a
-  millimetre), `SEATING` (a flush wadcutter) or `LOAD` (a hotter load or another chamber that a
+  and its Wadcutter), each with what tells them apart: `RIM`, `BORE`, `LENGTH` (the case
+  length), `SEATING` (a wadcutter seated flush or nearly so) or `LOAD` (a hotter load or another chamber that a
   board or the service specifies). `lookalikes(name)` gives the others of a calibre's group, so an
   app can show the whole group from any one of them. Other names of the same cartridge are search
   aliases, not groups.
