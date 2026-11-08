@@ -1,5 +1,6 @@
 """python3 -m unittest discover -s tests"""
 import os, sys, unittest
+from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
@@ -11,7 +12,8 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
-                        CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material)
+                        CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material,
+                        LOOKALIKES, RIM, BORE, LENGTH, SEATING, LOAD, lookalikes)
 
 ALL = [s for _, items in CATALOGUE for s in items]
 NAMES = {s["name"] for s in ALL}
@@ -292,7 +294,7 @@ class CatalogueTests(unittest.TestCase):
                 self.assertFalse(is_rare(name))
                 self.assertEqual(INTRODUCED[name][0], 1991)
                 self.assertEqual(name in PRIMERS, s["kind"] != RIMFIRE)
-        self.assertEqual(ORIGIN["6 mm Flobert Knall"], "FR")
+        self.assertIsNone(origin("6 mm Flobert Knall"))  # blanks have no country (2026-11-07)
         self.assertIn("9mmrk", by_name["9 mm R Knall"]["aliases"])
 
     def test_rounds_from_ravens_bag_keep_their_sources(self):
@@ -382,8 +384,10 @@ class CatalogueTests(unittest.TestCase):
 
     def test_known_origins(self):
         for name in ("5.6 mm GP 90", "7.5x55 mm Swiss (GP 11)", "7.5x53.5 mm Swiss (GP 1890)",
-                     "7.5 mm Swiss Ordnance 1882", "7.65 mm Parabellum"):
+                     "7.5 mm Swiss Ordnance 1882"):
             self.assertEqual(ORIGIN[name], "CH")
+        # Raven 2026-11-08: the tag tilts to the main adopter, user or producer where only the developer differs
+        self.assertEqual(origin("7.65 mm Parabellum"), ("CH", "Switzerland", "🇨🇭"))  # Swiss service pistol round 1900-49; DWM design
         self.assertEqual(origin("7.62x39 mm"), ("SU", "Soviet Union", None))
         self.assertEqual(origin("7.62x54 mm R"), ("RUE", "Russian Empire", None))
         self.assertNotIn("RU", COUNTRIES)  # RU is today's Russia, not the Russian Empire
@@ -393,11 +397,15 @@ class CatalogueTests(unittest.TestCase):
             self.assertIn(worldwide, WORLDWIDE)
         self.assertEqual(origin("9x19 mm"), ("DE", "Germany", "🇩🇪"))
         self.assertEqual(ORIGIN[".22 LR"], "US")
-        self.assertIn("5.56x45 mm NATO", ORIGIN_UNDECIDED)  # US .223 or the Belgian SS109
+        # unions of states are origins too (Raven 2026-11-08): the NATO rounds carry NATO, which has no flag emoji
+        self.assertEqual(origin("5.56x45 mm NATO"), ("NATO", "NATO", None))
+        self.assertEqual(origin("7.62x51 mm NATO"), ("NATO", "NATO", None))
+        self.assertEqual(ORIGIN[".223 Remington"], "US")
         self.assertIsNone(origin("12/70"))  # a gauge, not a cartridge
         self.assertNotIn("7.62x39 mm", WORLDWIDE)
         self.assertLessEqual(WORLDWIDE, NAMES)
         self.assertNotIn("WW", COUNTRIES)
+        self.assertEqual(origin("9x23 mm Largo"), ("ES", "Spain", "🇪🇸"))  # Spanish service round 1905-1980s; Bergmann design
         self.assertEqual(origin(".30 Nosler"), ("US", "United States", "🇺🇸"))  # sporting rounds are tagged too
         self.assertIsNone(origin(".36 Rundkugel (.375)"))  # not a single cartridge
         self.assertEqual(origin("9x18 mm Ultra"), ("DE", "Germany", "🇩🇪"))  # Genschow 1936, not Hirtenberger 1972
@@ -409,21 +417,32 @@ class CatalogueTests(unittest.TestCase):
         self.assertTrue(is_worldwide("12/70"))
         self.assertFalse(is_worldwide("7.62x39 mm"))
         self.assertFalse(is_worldwide("no such calibre"))
-        self.assertEqual(origin_candidates("5.56x45 mm NATO"),
-                         (("US", "United States", "🇺🇸"), ("BE", "Belgium", "🇧🇪")))
-        self.assertEqual(origin_candidates(".22 TCM")[0], ("PH", "Philippines", "🇵🇭"))
+        # every two-state case was decided 2026-11-07/08; #52 then added the C.I.P. "DE/FI" wadcutter
+        self.assertEqual(set(ORIGIN_UNDECIDED), {".32 S&W Long Wadcutter"})
         self.assertEqual(origin_candidates("9x19 mm"), ())  # decided
         self.assertEqual(origin_candidates("12/70"), ())  # a gauge, nothing to decide
+        with patch.dict(ORIGIN_UNDECIDED, {"5.56x45 mm NATO": ("US", "BE")}):
+            self.assertEqual(origin_candidates("5.56x45 mm NATO"),
+                             (("US", "United States", "🇺🇸"), ("BE", "Belgium", "🇧🇪")))
         for name in ORIGIN_UNDECIDED:
             self.assertIsNone(origin(name), name)
             self.assertEqual(len(origin_candidates(name)), len(ORIGIN_UNDECIDED[name]))
 
     def test_every_cartridge_has_an_origin_or_is_undecided(self):
         # Raven 2026-11-06: every calibre gets the state that introduced it, where the sources agree.
-        # Shot shell gauges, loose balls and air gun pellets are not one cartridge; nor is the .22 blank family.
-        generic = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)} | {".22 Blank (6.8/11)"}
-        self.assertLessEqual(generic, set(INTRODUCED_UNKNOWN))
-        for name in NAMES - generic:
+        # Shot shell gauges, loose balls and air gun pellets are not one cartridge, and blanks (no bullet, so
+        # the case is the whole round and the width kept for drawings is the case's: the crimped ones from
+        # blank() and the plain-cylinder alarm rounds from straight()) are trade sizes made everywhere:
+        # none of them has a country.
+        sizes = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)}
+        blanks = {s["name"] for s in ALL if s["oal"] == s["case"] and s["bullet"] == s["base"]} - sizes
+        self.assertEqual(len(blanks), 9)  # 9 mm P.A.K., .22 Blank (6.8/11) and the seven Knall rounds
+        self.assertLessEqual(sizes | {".22 Blank (6.8/11)"}, set(INTRODUCED_UNKNOWN))  # no single launch year
+        self.assertIn("9 mm P.A.K.", blanks)
+        for name in sizes | blanks:
+            self.assertIsNone(origin(name), name)
+            self.assertNotIn(name, ORIGIN_UNDECIDED)
+        for name in NAMES - sizes - blanks:
             self.assertTrue(name in ORIGIN or name in ORIGIN_UNDECIDED, name)
         self.assertLessEqual(set(ORIGIN_UNDECIDED), NAMES)
         self.assertFalse(set(ORIGIN_UNDECIDED) & set(ORIGIN))
@@ -435,6 +454,14 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(origin(".338 Lapua Magnum"), ("FI", "Finland", "🇫🇮"))
         self.assertIn(".338 Lapua Magnum", WORLDWIDE)
         self.assertEqual(origin(".300 Lapua Magnum"), ("FI", "Finland", "🇫🇮"))
+        # the two-state cases decided 2026-11-07/08
+        self.assertEqual(origin(".22 TCM"), ("PH", "Philippines", "🇵🇭"))
+        self.assertEqual(origin("7.65x53 mm Argentine"), ("AR", "Argentina", "🇦🇷"))  # the largest adopter; Mauser design
+        self.assertEqual(ORIGIN["9x21 mm IMI"], "IT")  # Jager of Loano designed it; IMI only commercialised it
+        self.assertEqual(ORIGIN[".500 Jeffery"], "GB")
+        self.assertEqual(ORIGIN["6 mm BR Norma"], "SE")
+        self.assertEqual(ORIGIN["6.35 mm Browning (.25 ACP)"], "BE")
+        self.assertEqual(ORIGIN["10 mm Auto"], "US")
 
     def test_swiss_service_revolver_rounds_are_obsolete(self):
         for name in ("7.5 mm Swiss Ordnance 1882", "10.4 mm Swiss Ordnance 1878"):
@@ -460,6 +487,50 @@ class CatalogueTests(unittest.TestCase):
             for key, value in fields.items():
                 self.assertEqual(by_name[name][key], value, f"{name} {key}")
 
+    def test_cip_case_heads_flagged_by_cartridges_of_the_world(self):
+        # Cartridges of the World (15th ed., ch. 12) gave bigger rims; the values are the C.I.P.
+        # sheets' (R1 rim, P1 body, P2 shoulder, H2 neck, L3 case, L6 length, G1 bullet).
+        by_name = {s["name"]: s for s in ALL}
+        expected = {
+            ".300 Winchester Magnum": {"rim": 13.51},
+            ".375 H&H Magnum": {"rim": 13.51, "shoulder": 11.37, "neck": 10.21, "bullet": 9.55},
+            "7 mm STW": {"rim": 13.51, "base": 13.03, "shoulder": 12.37, "neck": 8.05, "oal": 92.71},
+            "6.5 mm Remington Magnum": {"rim": 13.51, "base": 13.03},
+            ".350 Remington Magnum": {"rim": 13.51, "base": 13.03},
+            ".416 Weatherby Magnum": {"rim": 14.71},
+            "7x57 mm R": {"rim": 13.5, "oal": 78.0},
+            "7x65 mm R": {"rim": 13.32, "oal": 83.6},
+            "6.5x57 mm R": {"rim": 13.32, "base": 11.92},
+            "8x57 mm IRS": {"rim": 13.32, "base": 11.92, "shoulder": 10.95, "neck": 9.08, "oal": 82.0},
+            "9.3x74 mm R": {"rim": 13.35, "shoulder": 10.4, "neck": 9.92, "case": 74.7},
+            "11x60 mm R Mauser": {"rim": 15.0, "neck": 11.85, "case": 60.35, "oal": 78.0, "bullet": 11.4},
+        }
+        for name, fields in expected.items():
+            for key, value in fields.items():
+                self.assertEqual(by_name[name][key], value, f"{name} {key}")
+        for s in ALL:
+            if s["kind"] == "belted" and s["base"] < 13.1:
+                # Only the .378 Weatherby family has a body wider than its rim.
+                self.assertGreater(s["rim"], s["base"], s["name"])
+
+    def test_other_names_of_the_same_cartridge_are_search_aliases(self):
+        # Names that Cartridges of the World (15th ed.) gives for the same cartridge: renames, maker or
+        # national names, loads in the same case and +P loads.
+        by_name = {s["name"]: s for s in ALL}
+        expected = {
+            "38coltnewpolice": ".38 S&W", "7mmmauser": "7x57 mm Mauser", "6.5x52r": ".25-35 Winchester",
+            "7.7x56r": ".303 British", "400jeffery": ".450/400 Nitro Express 3 inch", "12.7x107": "12.7x108 mm",
+            "38special+p": ".38 Special", "45-85": ".45-90 WCF", "50-105": ".50-110 Winchester",
+            "7.5swedishnagant": "7.5 mm Swiss Ordnance 1882", "6.5-08": ".260 Remington",
+            "7mmexpress": ".280 Remington", "8.58x71": ".338 Lapua Magnum", "8.58x70": ".338 Lapua Magnum",
+            "301savage": ".303 Savage", "45-90hv": ".45-90 WCF", "44remmag": ".44 Magnum",
+        }
+        for alias, name in expected.items():
+            self.assertIn(alias, by_name[name]["aliases"], name)
+        # Same case, but a hotter load the older guns must not fire: their own calibres.
+        for name in (".38 ACP", ".38 Super", "9 mm Glisenti", "9x19 mm"):
+            self.assertIn(name, NAMES)
+
     def test_municion_years_fill_unknown_introductions(self):
         years = {".17 Hornet": 2012, ".35 Winchester Self-Loading": 1905, ".401 Winchester Self-Loading": 1910,
                  ".375 Flanged Magnum Nitro Express": 1912, "9.3x72 mm R": 1892, "9x57 mm Mauser": 1890,
@@ -476,7 +547,10 @@ class CatalogueTests(unittest.TestCase):
             self.assertIn(kind, (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP), name)
             self.assertTrue(url is None or url.startswith("https://"), name)
         self.assertEqual(BULLET_INFERRED, {"7 mm Blaser Magnum", ".300 Blaser Magnum", "8.5x55 mm Blaser",
-                                           ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)"})
+                                           ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)",
+                                           "5.6x50 mm R Magnum", "5.6x57 mm R", "6.5x65 mm R RWS", "6.5x68 mm R",
+                                           "8x60 mm RS", "8x65 mm RS", "9x57 mm R", "8x57 mm IR",
+                                           ".450/400 Nitro Express 3¼ inch", ".275 Rigby"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):
@@ -543,6 +617,86 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(by_name["8 mm Airsoft-BB"]["bullet"], 8.0)
         luftdruck = [s["name"] for cat, items in CATALOGUE if cat == "Luftdruck" for s in items]
         self.assertIn("6 mm Airsoft-BB", luftdruck)
+
+    def test_lookalike_groups(self):
+        by_name = {s["name"]: s for s in ALL}
+        seen = set()
+        for differs, names in LOOKALIKES:
+            self.assertGreaterEqual(len(names), 2, names)
+            self.assertTrue(differs, names)
+            self.assertLessEqual(set(differs), {RIM, BORE, LENGTH, SEATING, LOAD}, names)
+            for name in names:
+                self.assertIn(name, NAMES)
+                self.assertNotIn(name, seen, f"{name} is in two lookalike groups")
+                seen.add(name)
+            specs = [by_name[n] for n in names]
+
+            def spread(key):
+                return round(max(s[key] for s in specs) - min(s[key] for s in specs), 2)
+            # What the group names as the difference is what the dimensions show (LOAD is not in them).
+            self.assertEqual(len({s["kind"] for s in specs}) > 1, RIM in differs, names)
+            # 8x57 I .318" against IS .323"; Finnish 7.62x53 R against 7.62x54 R. A wadcutter group is left
+            # out: the parent's bullet is a rounded figure, the wadcutter's from its sheet.
+            if SEATING not in differs:
+                self.assertEqual(spread("bullet") >= 0.05, BORE in differs, names)
+            self.assertEqual(spread("case") > 0.5, LENGTH in differs, names)
+            # A wadcutter sits flush or nearly so with the case mouth.
+            self.assertEqual(min(s["oal"] - s["case"] for s in specs) < 1.5, SEATING in differs, names)
+        self.assertEqual(lookalikes("5.6 mm GP 90"), [".223 Remington", "5.56x45 mm NATO"])
+        self.assertEqual(lookalikes("7x65 mm R"), ["7x64 mm"])
+        self.assertEqual(lookalikes("8x57 mm I"), ["8x57 mm IS", "8x57 mm IRS", "8x57 mm IR"])
+        self.assertEqual(lookalikes(".275 Rigby"), ["7x57 mm Mauser", "7x57 mm R"])
+        self.assertEqual(lookalikes(".30-06 Springfield"), [])
+
+    def test_lookalike_variants_from_their_cip_sheets(self):
+        # Raven 2026-11-08: the cartridges C.I.P. lists apart from a calibre already in the catalogue are
+        # calibres of their own. Values are the sheets' maximum cartridge (rim R1, body P1, neck H2, case L3,
+        # length L6, bullet G1).
+        by_name = {s["name"]: s for s in ALL}
+        expected = {
+            "5.6x50 mm R Magnum": (10.9, 9.59, 6.48, 50.0, 61.0, 5.7),
+            "5.6x57 mm R": (13.32, 11.94, 7.1, 56.7, 69.0, 5.7),
+            "6.5x65 mm R RWS": (13.5, 12.08, 7.57, 65.0, 85.0, 6.7),
+            "6.5x68 mm R": (15.0, 13.34, 7.6, 67.5, 87.5, 6.7),
+            "8x60 mm RS": (13.4, 12.03, 9.08, 60.0, 83.6, 8.22),
+            "8x65 mm RS": (13.32, 11.99, 8.96, 65.0, 87.5, 8.22),
+            "9x57 mm R": (13.4, 11.96, 9.83, 56.8, 81.0, 9.08),
+            "8x57 mm I": (11.95, 11.94, 8.99, 57.0, 82.0, 8.09),
+            "8x57 mm IR": (13.32, 11.92, 8.99, 57.0, 82.0, 8.09),
+            "7.62x53 mm R": (14.4, 12.42, 8.5, 53.5, 77.0, 7.85),
+            ".450/400 Nitro Express 3¼ inch": (15.85, 13.84, 11.05, 82.55, 100.33, 10.41),
+            ".275 Rigby": (12.06, 12.04, 8.23, 56.9, 77.98, 7.21),
+            ".38 Special Wadcutter": (11.18, 9.63, 9.63, 29.34, 30.35, 9.14),
+        }
+        for name, values in expected.items():
+            s = by_name[name]
+            self.assertEqual((s["rim"], s["base"], s["neck"], s["case"], s["oal"], s["bullet"]), values, name)
+            self.assertTrue(lookalikes(name), name)
+        # .275 Rigby is its own calibre now (C.I.P. gives it 3200 bar against the 7x57's 3900), so its names
+        # moved from the 7x57 to it.
+        self.assertLessEqual({"275rigby", "275hvrigby"}, set(by_name[".275 Rigby"]["aliases"]))
+        self.assertFalse({"275rigby", "275hvrigby"} & set(by_name["7x57 mm Mauser"]["aliases"]))
+        # municion.org gives the rimmed 6.5x65 its own 1988 launch, like the rimless one.
+        self.assertEqual(INTRODUCED["6.5x65 mm R RWS"][0], 1988)
+
+    def test_years_checked_against_cartridges_of_the_world(self):
+        # 2026-11-08: years compared with Cartridges of the World (15th ed.) and a second source. A wildcat
+        # counts from its first factory ammunition, a military round from its adoption.
+        years = {".22 Remington Automatic": 1914, "7.5 mm Swiss Ordnance 1882": 1882, "9x23 mm Winchester": 1996,
+                 ".50-110 Winchester": 1887, ".338 Remington Ultra Magnum": 2002, "7 mm Remington Ultra Magnum": 2001,
+                 ".30-378 Weatherby Magnum": 1996, ".338-378 Weatherby Magnum": 1998, "7 mm STW": 1994,
+                 ".450/400 Nitro Express 3 inch": 1902}
+        for name, year in years.items():
+            self.assertEqual(INTRODUCED[name][0], year, name)
+            self.assertNotIn(name, INTRODUCED_UNKNOWN)
+        # The 3 inch case is Jeffery's shortened 3 1/4 inch one, so it cannot be older.
+        self.assertGreater(INTRODUCED[".450/400 Nitro Express 3 inch"][0],
+                           INTRODUCED[".450/400 Nitro Express 3¼ inch"][0])
+
+    def test_45_super_is_an_alias_of_45_acp(self):
+        # Raven 2026-11-08: no board lists the .45 Super and it measures like the .45 ACP.
+        self.assertNotIn(".45 Super", NAMES)
+        self.assertIn("45super", next(s for s in ALL if s["name"] == ".45 ACP")["aliases"])
 
 
 if __name__ == "__main__":
