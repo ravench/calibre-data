@@ -1056,7 +1056,7 @@ INTRODUCED = {
     ".350 Legend": (2019, _WP + ".350_Legend"),
     "7.63x25 mm Mauser": (1896, _WP + "7.63×25mm_Mauser"),
     "7.62x38 mm R Nagant": (1895, _WP + "7.62×38mmR"),
-    "7.5 mm Swiss Ordnance 1882": (1880, _WP + "7.5mm_1882_Ordnance"),
+    "7.5 mm Swiss Ordnance 1882": (1882, _WP + "7.5mm_1882_Ordnance"),  # adopted 1882; 1880 is the design
     "7.65 mm Longue": (1917, _WP + "7.65×20mm_Long"),
     ".30 Super Carry": (2022, _WP + ".30_Super_Carry"),
     ".32 S&W": (1878, _WP + ".32_S%26W"),
@@ -1174,14 +1174,14 @@ INTRODUCED = {
     ".416 Ruger": (2008, _WP + ".416_Ruger"),
     ".416 Weatherby Magnum": (1989, _WP + ".416_Weatherby_Magnum"),
     ".375 Remington Ultra Magnum": (2000, _WP + ".375_Remington_Ultra_Magnum"),
-    "7 mm STW": (1979, _WP + "7mm_STW"),
+    "7 mm STW": (1994, _WP + "7mm_STW"),  # A-Square factory ammunition; the wildcat is from 1979-81
     ".225 Winchester": (1964, _WP + ".225_Winchester"),
     ".223 WSSM": (2002, _WP + ".223_Winchester_Super_Short_Magnum"),
     ".243 WSSM": (2003, _WP + ".243_Winchester_Super_Short_Magnum"),
     ".25 WSSM": (2004, _WP + "Winchester_Super_Short_Magnum"),
     ".350 Remington Magnum": (1965, _WP + ".350_Remington_Magnum"),
     ".400 Cor-Bon": (1997, _WP + ".400_Cor-Bon"),
-    "9x23 mm Winchester": (1992, _WP + "9×23mm_Winchester"),
+    "9x23 mm Winchester": (1996, _WP + "9×23mm_Winchester"),  # 1992 is the patent on the 9x23 Super
     ".356 TSW": (1994, _WP + ".356_TSW"),
     ".26 Nosler": (2013, _WP + ".28_Nosler"),
     ".27 Nosler": (2020, _WP + ".28_Nosler"),
@@ -1201,7 +1201,7 @@ INTRODUCED = {
     ".25 Weatherby RPM": (2026, "https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"),
     "6.5 Weatherby RPM": (2019, "https://hodgdonpowderco.com/articles/loading-the-6-5-weatherby-rpm/"),
     ".338 Weatherby RPM": (2022, "https://www.thefirearmblog.com/blog/2022/08/02/weatherby-338-wby-rpm-cartridge/"),
-    ".30-378 Weatherby Magnum": (1959, _WP + ".30-378_Weatherby_Magnum"),
+    ".30-378 Weatherby Magnum": (1996, _WP + ".30-378_Weatherby_Magnum"),  # factory round; made for a US Army contract in 1959
     "5.6x57 mm": (1964, _WP + "5.6×57mm"),
     "11x60 mm R Mauser": (1871, _WP + "11×60mm_Mauser"),
     "6.5x53 mm R Mannlicher": (1892, _WP + "6.5×53mmR"),
@@ -1209,7 +1209,7 @@ INTRODUCED = {
     "7.62x45 mm vz. 52": (1952, _WP + "7.62×45mm"),
     "7.92x107 mm DS": (1931, _WP + "7.92×107mm_DS"),
     "7.65x53 mm Argentine": (1889, _WP + "7.65×53mm_Mauser"),
-    ".338-378 Weatherby Magnum": (1963, _WP + ".338-378_Weatherby_Magnum"),
+    ".338-378 Weatherby Magnum": (1998, _WP + ".338-378_Weatherby_Magnum"),  # factory round; the wildcat is older
     "6.8 Western": (2021, _WP + "6.8_Western"),
     "7 mm Remington SAUM": (2002, _WP + "7mm_Remington_Short_Action_Ultra_Magnum"),
     ".22 Remington Jet": (1961, _WP + ".22_Remington_Jet"),
@@ -1218,8 +1218,8 @@ INTRODUCED = {
     ".308 Norma Magnum": (1960, _WP + ".308_Norma_Magnum"),
     "9.3x64 mm Brenneke": (1927, _WP + "9.3×64mm_Brenneke"),
     "9.3x57 mm Mauser": (1900, _WP + "9.3×57mm_Mauser"),
-    ".338 Remington Ultra Magnum": (2000, _WP + ".338_Remington_Ultra_Magnum"),
-    "7 mm Remington Ultra Magnum": (2002, _WP + "7mm_Remington_Ultra_Magnum"),
+    ".338 Remington Ultra Magnum": (2002, _WP + ".338_Remington_Ultra_Magnum"),  # introduced 2002, designed 2000
+    "7 mm Remington Ultra Magnum": (2001, _WP + "7mm_Remington_Ultra_Magnum"),  # Wikipedia's text; its infobox says 2002
     ".325 Winchester Short Magnum": (2005, _WP + ".325_WSM"),
     ".375 Weatherby Magnum": (1944, _WP + ".375_Weatherby_Magnum"),
     ".460 Weatherby Magnum": (1957, _WP + ".460_Weatherby_Magnum"),
@@ -1269,11 +1269,12 @@ INTRODUCED = {
     "9x25 mm Dillon": (1988, _WP + "9×25mm_Dillon"),
     ".300 Lapua Magnum": (1989, _WP + ".300_Lapua_Magnum"),
     ".35 Winchester": (1903, _WP + ".35_Winchester"),
-    ".50-110 Winchester": (1898, _WP + ".50-110_Winchester"),
+    ".50-110 Winchester": (1887, "https://municion.org/producto/50-110-300-winchester-express/"),  # catalogued 1887
     ".400 H&H Magnum": (2003, _WP + ".400_H%26H_Magnum"),
     ".244 H&H Magnum": (1955, _WP + ".244_H%26H_Magnum"),
     ".45-75 Winchester": (1876, _WP + ".45-75_Winchester"),
-    ".22 Remington Automatic": (1916, _WP + ".22_Remington_Automatic"),
+    ".22 Remington Automatic": (1914, "https://gunsmagazine.com/our-experts/remington-model-16/"),  # with the Model 16
+    ".450/400 Nitro Express 3 inch": (1902, "https://www.americanhunter.org/content/behind-the-bullet-450-400-3-nitro-express/"),  # Jeffery
     ".465 H&H Magnum": (2003, _WP + ".465_H%26H_Magnum"),
     ".400/350 Nitro Express": (1899, _WP + ".400/350_Nitro_Express"),
     ".350 Rigby Magnum": (1908, _WP + ".350_Rigby"),
@@ -1337,7 +1338,6 @@ INTRODUCED_UNKNOWN = {
         ".36 Rundkugel (.375)", ".44 Rundkugel (.454)", ".45 Rundkugel (.440)", ".50 Rundkugel (.490)",
         ".54 Rundkugel (.530)", ".58 Minié", ".69 Minié", "4.5 mm Diabolo (.177)", "5.5 mm Diabolo (.22)",
         "4.4 mm Stahl-BB (.177 BB)", "6 mm Airsoft-BB", "8 mm Airsoft-BB")},
-    ".450/400 Nitro Express 3 inch": "sources give 1899 for the 3 1/4 inch parent only",
     "6.5-300 Weatherby Magnum": "sources give only the 2017 SAAMI drawing",
     "6.5x68 mm R": "no launch year found (the rimless 6.5x68 is from 1939)",
     "8x60 mm RS": "no launch year found (the rimless 8x60 S is from 1919)",
