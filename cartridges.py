@@ -2396,7 +2396,10 @@ ORIGIN = {
     # Germany never issued the 7.65 mm Parabellum (its P04 and P08 are 9 mm); as a service round it was Swiss
     # 1900-49 (first adopter), then Bulgaria 1903, Brazil 1906, Portugal 1908, Finland 1923; US trials 1901.
     "7.65 mm Parabellum": "DE",  # Luger at DWM, Berlin, 1898; the Swiss Army adopted it first (Ordonnanzpistole 1900): CH
-    "9x23 mm Largo": "DE",  # Bergmann-Bayard 1903; Spain adopted it 1905 and made it its own (no other calibre is Spanish): ES
+    # Bergmann and Schmeisser designed the 9x23 mm for the Bergmann-Bayard 1903 (Jane's Ammunition Handbook; the 1901
+    # Bergmann Mars already shot it); Spain adopted it 1905 (pistols made by Pieper, Herstal), Denmark 1910. «Largo» is
+    # the Spanish name; Spain shot it until the 1980s. Wikipedia and municion.org both say Germany.
+    "9x23 mm Largo": "DE",  # Spain adopted it 1905 and made it its own (no other calibre is Spanish): ES
     "7.65x53 mm Argentine": "BE",  # Mauser design for the Belgian Model 1889; Argentina followed 1891: DE, AR
     ".500 Jeffery": "DE",  # August Schüler, Suhl, 1920s (12.7x70 Schüler); W. J. Jeffery, London, sold and named it: GB
     "9.5x57 mm Mannlicher-Schönauer": "AH",  # Steyr 1910; Westley Richards' .375 Rimless NE 2 1/4 of 1908 is the same case: GB
@@ -2406,8 +2409,11 @@ ORIGIN = {
     "9x21 mm IMI": "IL",  # IMI c. 1980 for markets where 9x19 mm is banned, above all Italy: IT
     "7.65 mm Longue": "FR",  # French service round (MAS 1935); derived from the US .30 Pedersen of 1917: US
     "6.5x55 mm Swedish": "SE",  # joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms: NO
-    "6.35 mm Browning (.25 ACP)": "BE",  # Browning (US) design, first made and sold by FN Herstal 1905/06; Colt 1908: US
-    "7.65 mm Browning (.32 ACP)": "BE",  # Browning (US) design, introduced by FN Herstal 1899 for the FN M1900: US
+    # Browning (US) designed both pocket rounds, FN Herstal (BE) introduced them: the 7.65 mm with the FN M1900 in 1899
+    # (Cartridges of the World), the 6.35 mm with the FN Vest Pocket of 1906; Colt followed in 1903 and 1908. Wikipedia
+    # says US (7.65) and US and Belgium (6.35); municion.org says Belgium 1897 (7.65) and US 1902 (6.35).
+    "6.35 mm Browning (.25 ACP)": "BE",  # the designer's country and the «ACP» name: US
+    "7.65 mm Browning (.32 ACP)": "BE",  # the designer's country and the «ACP» name: US
     "5.56x45 mm NATO": "US",  # the US .223/M193 case of 1963; NATO adopted the Belgian SS109 load in 1980: BE
     "10 mm Auto": "US",  # Cooper, Dornaus & Dixon 1983; first loaded by Norma: SE
     ".357 SIG": "US",  # SIGARMS (Exeter NH) with Federal 1994: CH
