@@ -58,6 +58,10 @@ CATALOGUE = [
         straight(".32 Short Rimfire", RIMFIRE, 9.47, 8.02, 8.02, 14.22, 23.79, 7.88, ROUND, ["32shortrf", "32rfshort"]),
         straight(".32 Long Rimfire", RIMFIRE, 9.51, 8.09, 8.09, 20.0, 30.85, 7.92, ROUND, ["32longrf", "32rflong"]),
         straight(".22 BB Cap", RIMFIRE, 6.9, 5.7, 5.7, 7.2, 8.7, 5.7, ROUND, ["22bb", "bbcap", "flobert"]),
+        # 9 mm Flobert ball round (BB cap with a round ball, «Bosquette»), Wikipedia infobox, rounded.
+        # Raven's copper-cased specimen (2026-11-08) measured ball 8.5, rim 10.3, case 9.4, length 14.0.
+        straight("9 mm Flobert Bosquette", RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, ROUND,
+                 ["9mmflobert", "9flobert", "bosquette", "9mmbosquette", "9mmbbcap", "flobertkugel", "9mmflobertkugel"]),
         c("5 mm Remington Rimfire Magnum", RIMFIRE, 8.3, 6.6, 6.6, 5.7, 25.9, 20.22, 33.0, 5.2, SPITZER, ["5mmrmr", "5rmr"]),
         c(".17 Winchester Super Magnum", RIMFIRE, 8.5, 6.8, 6.8, 5.0, 30.5, 24.75, 36.6, 4.4, SPITZER, ["17wsm"]),
         # Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
@@ -145,6 +149,11 @@ CATALOGUE = [
         straight("7.65 mm Longue", RIMLESS, 8.5, 8.53, 8.5, 19.7, 30.24, 7.85, ROUND, ["7.65longue", "7.65mas", "30pedersen"]),
         straight(".30 Super Carry", RIMLESS, 8.74, 8.7, 8.56, 21.0, 29.7, 7.93, ROUND, ["30sc", "30supercarry"]),
         straight(".32 S&W", RIMMED, 9.5, 8.5, 8.5, 15.0, 23.0, 7.9, ROUND, ["32s&wshort", "32sws"]),
+        # Webley's 1868 Bull Dog round, C.I.P. «320 Short» (tab-iv/tabivcal-en-page48.pdf, sheet 1984-06-14,
+        # origin GB), maximum cartridge R1/P1/H2/G1/L3/L6. Raven's G.F.L. (Fiocchi) round measured rim 9.5,
+        # base 8.0, case 16.4, length 24.9 (2026-11-08).
+        straight(".320 Revolver", RIMMED, 9.55, 8.12, 8.12, 16.6, 26.7, 8.0, ROUND,
+                 ["320rev", "320revolver", "320short", "320 short", "320bulldog", "320 bulldog"]),
         straight(".327 Federal Magnum", RIMMED, 9.5, 8.6, 8.6, 30.0, 37.0, 7.9, FLAT, ["327fed", "327federal"]),
         c(".32-20 Winchester", RIMMED, 10.4, 9.0, 8.7, 8.3, 33.4, 22.35, 40.4, 7.94, FLAT, ["32-20", "32wcf"]),
         c("5.45x18 mm", RIMLESS, 7.64, 7.64, 7.4, 6.26, 18.03, 12.07, 25.0, 5.63, SPITZER, ["5.45x18", "psm"]),
@@ -561,6 +570,8 @@ DISPLAY_ALIASES = {
     ".38 Special": [".38 Spl"],
     ".45 ACP": [".45 Auto", "11,43 mm"],
     ".45 Colt": [".45 Long Colt"],
+    ".320 Revolver": [".320 Short"],
+    "9 mm Flobert Bosquette": ["9 mm Flobert Kugel"],
     ".30-06 Springfield": ["7.62x63 mm"],
     ".300 AAC Blackout": [".300 BLK", "7.62x35 mm"],
     "7.5x55 mm Swiss (GP 11)": ["GP 11", "7.5 mm Swiss"],
@@ -597,7 +608,7 @@ PRIMERS = {
     "7.65 mm Parabellum": SMALL_PISTOL, ".32 S&W Long": SMALL_PISTOL, ".32 H&R Magnum": SMALL_PISTOL,
     "7.62x25 mm Tokarev": SMALL_PISTOL, "9 mm Browning kurz (.380 ACP)": SMALL_PISTOL,
     "7.63x25 mm Mauser": SMALL_PISTOL, "7.62x38 mm R Nagant": SMALL_PISTOL, "7.5 mm Swiss Ordnance 1882": SMALL_PISTOL,
-    "7.65 mm Longue": SMALL_PISTOL, ".30 Super Carry": SMALL_PISTOL, ".32 S&W": SMALL_PISTOL,
+    "7.65 mm Longue": SMALL_PISTOL, ".30 Super Carry": SMALL_PISTOL, ".32 S&W": SMALL_PISTOL, ".320 Revolver": SMALL_PISTOL,
     ".327 Federal Magnum": SMALL_PISTOL, ".32-20 Winchester": SMALL_PISTOL, "5.45x18 mm": SMALL_PISTOL,
     ".22 TCM": SMALL_PISTOL, "8 mm Nambu": SMALL_PISTOL, "8 mm Lebel revolver": SMALL_PISTOL,
     "8 mm Roth-Steyr": SMALL_PISTOL, "9 mm Glisenti": SMALL_PISTOL, "9 mm Browning Long": SMALL_PISTOL,
@@ -972,6 +983,7 @@ INTRODUCED = {
     "7.65 mm Longue": (1917, _WP + "7.65×20mm_Long"),
     ".30 Super Carry": (2022, _WP + ".30_Super_Carry"),
     ".32 S&W": (1878, _WP + ".32_S%26W"),
+    ".320 Revolver": (1868, _WP + ".320_Revolver"),  # Webley Bull Dog
     ".327 Federal Magnum": (2008, _WP + ".327_Federal_Magnum"),
     ".32-20 Winchester": (1882, _WP + ".32-20_Winchester"),
     "5.45x18 mm": (1973, _WP + "5.45×18mm"),
@@ -1049,6 +1061,7 @@ INTRODUCED = {
     ".476 Enfield": (1881, _WP + ".476_Enfield"),
     ".22 Long": (1871, _WP + ".22_Long"),
     ".22 BB Cap": (1845, _WP + ".22_BB"),
+    "9 mm Flobert Bosquette": (1845, _WP + "9_mm_Flobert_Bosquette"),  # "Designed in 1845 by Nicolas Flobert"
     "5 mm Remington Rimfire Magnum": (1969, _WP + "5mm_Remington_Rimfire_Magnum"),
     ".17 Winchester Super Magnum": (2013, _WP + ".17_Winchester_Super_Magnum"),
     ".44 Henry": (1860, _WP + ".44_Henry"),
@@ -2039,6 +2052,7 @@ PRIMER_SOURCES = {
     ".338 ARC": _HODGDON,
     "6 mm PPC": _WP + "6mm_PPC",
     "9x39 mm": _STARLINE + "9x39-brass",
+    ".320 Revolver": _WP + ".320_Revolver",  # Berdan; Raven's Fiocchi round measures 4.7 mm (2026-11-08)
 }
 
 # Primer sizes still unchecked: no reloading data, brass maker page or clear headstamp photo
@@ -2061,6 +2075,7 @@ PRIMER_UNVERIFIED = {
 # Everything else is current. The apps can hide these by default; the poster can mark them.
 OBSOLETE = {
     "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
+    ".320 Revolver",  # 2026-11-08: "an obsolete revolver cartridge" (Wikipedia)
     "7.5x53.5 mm Swiss (GP 1890)", "10.4x38 mm R Vetterli", "18 mm Milbank-Amsler", ".577 Snider", "10.4 mm Swiss Ordnance 1872 Rimfire", ".577/450 Martini-Henry",
     ".50-70 Government", ".58 Minié", ".69 Minié",
     "7.5 mm Swiss Ordnance 1882", "7.65 mm Longue", "8 mm Nambu", "8 mm Lebel revolver", "8 mm Roth-Steyr",
@@ -2138,6 +2153,7 @@ def is_obsolete(name):
 # it is obsolete (the guns outlive the ammunition). Under 0.05 per mille on GunBroker and at most
 # 2 listings elsewhere counts as rare.
 RARE = {
+    ".320 Revolver", "9 mm Flobert Bosquette",  # 2026-11-08: from Raven's bag of old rounds
     ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express", ".22 Extra Long", ".32 Short Rimfire", ".32 Long Rimfire", "5.75 mm Velo-Dog", ".500 JRH", ".375 Flanged Nitro Express", ".55 Boys", ".45-90 WCF",
     "9.3x53 mm R Finnish", "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
     ".219 Zipper", ".22 Remington Jet", ".223 WSSM", ".225 Winchester",
@@ -2343,7 +2359,7 @@ ORIGIN = {
     ".44-40 WCF": "US", ".32-40 Ballard": "US", ".50-90 Sharps": "US", ".45-75 Winchester": "US",
     ".300 HAM'R": "US", ".25 Weatherby RPM": "US", "6.5 Weatherby RPM": "US", ".338 Weatherby RPM": "US",
     # France
-    ".22 BB Cap": "FR",
+    ".22 BB Cap": "FR", "9 mm Flobert Bosquette": "FR",
     # Germany
     # Genschow (Durlach) designed it in 1936 for the Luftwaffe, the year INTRODUCED gives, and Wikipedia says
     # Germany; Hirtenberger (AT) only revived it in 1972 for the Walther PP Super, so AT is not a candidate.
@@ -2353,6 +2369,7 @@ ORIGIN = {
     # Austria-Hungary
     "6.5x53 mm R Mannlicher": "AH",
     # United Kingdom
+    ".320 Revolver": "GB",
     ".300 H&H Magnum": "GB",
     # Finland
     "6.5x47 mm Lapua": "FI", ".300 Lapua Magnum": "FI", "9.3x53 mm R Finnish": "FI",
@@ -2425,6 +2442,8 @@ BULLETS = {  # name: (bullet, source that names the original or factory bullet)
     ".32 Short Rimfire": (LEAD, "https://municion.org/producto/32-short-rf/"),
     ".32 Long Rimfire": (LEAD, "https://municion.org/producto/32-long-rf/"),
     ".22 BB Cap": (LEAD, "https://en.wikipedia.org/wiki/.22_BB"),
+    "9 mm Flobert Bosquette": (LEAD, "https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"),  # a 00 buckshot ball
+    ".320 Revolver": (LEAD, "https://en.wikipedia.org/wiki/.320_Revolver"),  # "80 gr (5 g) Lead"
     ".22 Winchester Rimfire": (LEAD, "https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"),
     ".44 Henry": (LEAD, "https://en.wikipedia.org/wiki/.44_Henry"),
     ".25 Stevens": (LEAD, "https://municion.org/producto/25-stevens-short-rf/"),
