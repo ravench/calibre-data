@@ -101,10 +101,10 @@ CATALOGUE = [
         straight(".32 S&W Long", RIMMED, 9.5, 8.6, 8.5, 23.4, 32.5, 7.9, ROUND, ["32s&w", "32swl", "32long"]),
         # Target load for ISSF 25 m centre-fire pistols, its own C.I.P. cartridge ("32 S&W Long Wad Cut.",
         # tab-iv/tabivcal-en-page46.pdf, sheet 1984-06-14, origin DE/FI): higher pressure (Pmax 1550 bar against 1000) and a
-        # chamber with a 3 mm instead of 11 mm throat, so it is not a .32 S&W Long load. Maximum cartridge
-        # R1/P1/H2/G1/L3 from the sheet. Drawn with the wadcutter seated flush with the case mouth, as it
-        # is usually loaded (bullseyeforum.net t16197), so the length is L3 (L6 allows up to 25.40) and
-        # no bullet shows from the side.
+        # chamber with a 3 mm instead of 11 mm throat, so C.I.P. treats it as its own cartridge on the same
+        # case. Maximum cartridge R1/P1/H2/G1/L3 from the sheet. Drawn with the wadcutter seated flush with
+        # the case mouth, as it is usually loaded (https://bullseyeforum.net/t16197-32-sw-long-wadcutter-oal),
+        # so the length is L3 (L6 allows up to 25.40) and no bullet shows from the side.
         straight(".32 S&W Long Wadcutter", RIMMED, 9.53, 8.56, 8.56, 23.27, 23.27, 8.0, FLAT,
                  ["32wc", "32swlwc", "32longwc", "32 s&w long wc", "32 s&w lwc"]),
         straight(".32 H&R Magnum", RIMMED, 9.5, 8.6, 8.5, 27.4, 34.3, 7.9, FLAT),
@@ -561,9 +561,9 @@ DISPLAY_ALIASES = {
     ".22 WMR": [".22 Magnum"],
     "7.65 mm Browning (.32 ACP)": [".32 ACP", ".32 Auto"],
     "7.65 mm Parabellum": [".30 Luger"],
+    ".32 S&W Long Wadcutter": [".32 S&W Long WC"],
     "9 mm Browning kurz (.380 ACP)": [".380 ACP", ".380 Auto"],
     "9x19 mm": ["9 mm Luger", "9 mm Para"],
-    ".32 S&W Long Wadcutter": [".32 S&W Long WC"],
     ".38 Special": [".38 Spl"],
     ".45 ACP": [".45 Auto", "11,43 mm"],
     ".45 Colt": [".45 Long Colt"],
@@ -1235,7 +1235,7 @@ INTRODUCED_UNKNOWN = {
     ".577 Nitro Express": "the source gives only the 1890s",
     "8.6 Blackout": "sources give only the 2026 SAAMI acceptance, not when Q introduced it",
     ".22 Blank (6.8/11)": "a family of blanks and power-tool loads with no single launch",
-    ".32 S&W Long Wadcutter": "C.I.P. gives only its 1984 sheet date; no launch year found",
+    ".32 S&W Long Wadcutter": "C.I.P. sheet dated 1984-06-14 like the .32 S&W Long's; no launch year found",
     # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
     **{n: "not a single cartridge" for n in (
         "12/70", "12/76", "12/89", "16/70", "20/70", "20/76", "28/70", ".410/76",
