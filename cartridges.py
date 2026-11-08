@@ -263,13 +263,13 @@ CATALOGUE = [
            "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]),
         # Kadettenpatrone («7,5 mm Kadetten-Pat.», «Cart. 7,5 mm cadets/cadetti» on the box): the reduced
         # load for the single-shot Kadettengewehr 1897, "a reduced-power GP90 7.5×53.5mm cartridge"
-        # (Wikipedia, Schmidt–Rubin). Case assumed to be the GP 1890's until Raven measures it (the
-        # jacketed GP 90/23 has a longer case, 54 to 54.5 mm), so Schiesstagebuch groups the two as one chamber.
-        # Jacketed round-nose bullet (silver jacket on Raven's round). Overall length until Raven measures
-        # it: Kaliberfinder's LiDAR captures of Raven's round (training package of 2026-11-07, filed
-        # under GP 1890 with the note "Kadettenpatrone") give a median 79.0 mm over 10 shots; the same
-        # session measured the GP 11 (77.5) at 78.6 and the Vetterli (56.22) at 56.7, about 1 % long.
-        c("7.5 mm Kadettenpatrone", RIMLESS, 12.5, 12.4, 11.5, 8.6, 53.5, 44.24, 78.0, 7.8, ROUND,
+        # (Wikipedia, Schmidt–Rubin). Measured by Raven with a caliper on one round (2026-11-08, headstamp
+        # «12 D T 64»: Thun, December 1964, Dornach brass): length 77.5, case 54.8, rim 12.7, base 12.6,
+        # shoulder 11.5, neck 8.6, bullet 7.8, head to shoulder 45.0, primer 5.4. The case is longer than the
+        # GP 1890's (53.5), so the two are not one chamber. Jacketed round-nose bullet with a silver-coloured
+        # jacket on Raven's round, drawn like any jacket. Kaliberfinder's LiDAR captures of the same round
+        # (training package of 2026-11-07, filed under GP 1890 with the note "Kadettenpatrone") gave 79.0.
+        c("7.5 mm Kadettenpatrone", RIMLESS, 12.7, 12.6, 11.5, 8.6, 54.8, 45.0, 77.5, 7.8, ROUND,
           ["kadettenpatrone", "kadetten-pat", "kadettenpat", "7.5 mm kadettenpatrone", "7.5 mm kadetten-pat",
            "cadets", "cadetti", "kg97", "kadettengewehr"]),
         c("7.5x54 mm French", RIMLESS, 12.25, 12.25, 11.2, 8.6, 54.0, 42.79, 76.0, 7.8, SPITZER, ["7.5x54"]),
@@ -1521,7 +1521,7 @@ SHOULDER_ANGLES = {
     ".55 Boys": (10, "https://municion.org/producto/55-boys/"),  # AECC drawing 14-099-BFC-020
     ".308 Norma Magnum": (24.8, "https://municion.org/producto/308-norma-magnum-belted/"),  # AECC drawing 08-065-BFC-010
     "7.5x53.5 mm Swiss (GP 1890)": (27.8, "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"),  # AECC drawing 08-054-BGC-040
-    "7.5 mm Kadettenpatrone": (27.8, "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"),  # the GP 1890 case
+    "7.5 mm Kadettenpatrone": (27.8, "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"),  # assumed like the GP 1890 case
     "8x50 mm R Lebel": (17.9, "https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/"),  # AECC drawing 08-050-BBC-060
     ".17 Hornet": (21, "https://municion.org/producto/17-hornet/"),  # AECC drawing 04-035-BBC-57W
     "7 mm Backcountry": (30, "https://saami.org/wp-content/uploads/2025/01/Public-Introduction-7mm-Backcountry-2025-01-27.pdf"),  # SAAMI drawing
@@ -1870,7 +1870,7 @@ PRIMER_SOURCES = {
     "7 mm PRC": _HODGDON,
     "7.5x55 mm Swiss (GP 11)": _WP + "7.5×55mm_Swiss",
     "7.5x53.5 mm Swiss (GP 1890)": _WP + "7.5×55mm_Swiss",
-    "7.5 mm Kadettenpatrone": _WP + "7.5×55mm_Swiss",  # the GP 1890 case
+    "7.5 mm Kadettenpatrone": _WP + "7.5×55mm_Swiss",  # GP 90 family; Raven measured a 5.4 mm primer
     "7.5x54 mm French": _WP + "7.5×54mm_French",
     "7.62x39 mm": _VIHTAVUORI,
     ".300 AAC Blackout": _WP + ".300_AAC_Blackout",
