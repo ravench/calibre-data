@@ -241,9 +241,11 @@ CATALOGUE = [
         # load for the single-shot Kadettengewehr 1897, "a reduced-power GP90 7.5×53.5mm cartridge"
         # (Wikipedia, Schmidt–Rubin). Case assumed to be the GP 1890's until Raven measures it (the
         # jacketed GP 90/23 has a longer case, 54 to 54.5 mm), so Schiesstagebuch groups the two as one chamber.
-        # Jacketed round-nose bullet (silver jacket on Raven's round). Overall length estimated from
-        # Raven's photo (2026-11-08) against the case, until measured.
-        c("7.5 mm Kadettenpatrone", RIMLESS, 12.5, 12.4, 11.5, 8.6, 53.5, 44.24, 72.0, 7.8, ROUND,
+        # Jacketed round-nose bullet (silver jacket on Raven's round). Overall length until Raven measures
+        # it: Kaliberfinder's LiDAR captures of Raven's round (training package of 2026-11-07, filed
+        # under GP 1890 with the note "Kadettenpatrone") give a median 79.0 mm over 10 shots; the same
+        # session measured the GP 11 (77.5) at 78.6 and the Vetterli (56.22) at 56.7, about 1 % long.
+        c("7.5 mm Kadettenpatrone", RIMLESS, 12.5, 12.4, 11.5, 8.6, 53.5, 44.24, 78.0, 7.8, ROUND,
           ["kadettenpatrone", "kadetten-pat", "kadettenpat", "7.5 mm kadettenpatrone", "7.5 mm kadetten-pat",
            "cadets", "cadetti", "kg97", "kadettengewehr"]),
         c("7.5x54 mm French", RIMLESS, 12.25, 12.25, 11.2, 8.6, 54.0, 42.79, 76.0, 7.8, SPITZER, ["7.5x54"]),

@@ -93,7 +93,7 @@ class CatalogueTests(unittest.TestCase):
         kp, gp = by_name["7.5 mm Kadettenpatrone"], by_name["7.5x53.5 mm Swiss (GP 1890)"]
         chamber = ("kind", "rim", "base", "shoulder", "neck", "case", "sh_at", "bullet")
         self.assertEqual([kp[k] for k in chamber], [gp[k] for k in chamber], "same case: one chamber in Schiesstagebuch")
-        self.assertLess(kp["oal"], gp["oal"])
+        self.assertAlmostEqual(kp["oal"], 78.0, delta=1.5, msg="Raven's LiDAR captures: 79.0 measured, about 1 % long")
         self.assertEqual(kp["profile"], "round")
         self.assertIn("kadettenpatrone", kp["aliases"])
         self.assertEqual(DISPLAY_ALIASES["7.5 mm Kadettenpatrone"], ["Cart. 7,5 mm cadets", "Cart. 7,5 mm cadetti"])
