@@ -2393,6 +2393,8 @@ ORIGIN = {
     ".358 Norma Magnum": "SE",
     # Calibres two states can claim, decided in the thread "Verify country per cartridge" (2026-11-07) for
     # the state that introduced the round; the other claim stands after the colon.
+    # Germany never issued the 7.65 mm Parabellum (its P04 and P08 are 9 mm); as a service round it was Swiss
+    # 1900-49 (first adopter), then Bulgaria 1903, Brazil 1906, Portugal 1908, Finland 1923; US trials 1901.
     "7.65 mm Parabellum": "DE",  # Luger at DWM, Berlin, 1898; the Swiss Army adopted it first (Ordonnanzpistole 1900): CH
     "9x23 mm Largo": "DE",  # Bergmann-Bayard 1903; Spain adopted it 1905 and made it its own (no other calibre is Spanish): ES
     "7.65x53 mm Argentine": "BE",  # Mauser design for the Belgian Model 1889; Argentina followed 1891: DE, AR
