@@ -126,7 +126,10 @@ CATALOGUE = [
         c("7.5 FK", RIMLESS, 10.8, 10.8, 10.8, 8.5, 27.0, 20.85, 35.0, 7.8, ROUND, ["7.5fk", "fk brno"]),
         # Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c("9x25 mm Dillon", RIMLESS, 10.8, 10.8, 10.7, 9.7, 25.1, 19.9, 31.8, 9.0, ROUND, ["9x25", "9x25dillon"]),
-        straight(".45 Colt", RIMMED, 12.9, 12.2, 12.2, 32.6, 40.6, 11.5, FLAT, ["45colt", "45lc", "45longcolt"]),
+        # Round nose with a small flat, as factory lead loads come (Winchester X45CP2 "255 gr Lead Round
+        # Nose", Raven's W-W round photographed 2026-11-08), not the wide flat point; the 1873 original
+        # was an "ogival & flat nosed" 255 gr bullet (Wikipedia).
+        straight(".45 Colt", RIMMED, 12.9, 12.2, 12.2, 32.6, 40.6, 11.5, ROUND, ["45colt", "45lc", "45longcolt"]),
         straight(".45 GAP", RIMLESS, 12.0, 12.0, 12.0, 19.2, 27.3, 11.5, ROUND, ["45gap"]),
         straight(".454 Casull", RIMMED, 13.1, 12.1, 12.1, 35.1, 45.0, 11.5, FLAT, ["454casull"]),
         straight(".460 S&W Magnum", RIMMED, 13.2, 12.2, 12.2, 45.7, 58.0, 11.5, FLAT, ["460s&w"]),
