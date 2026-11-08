@@ -238,11 +238,14 @@ CATALOGUE = [
           ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp90/23", "7.5 mm gp 90", "patrone 1890", "patrone 90/23",
            "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]),
         # Kadettenpatrone («7,5 mm Kadetten-Pat.», «Cart. 7,5 mm cadets/cadetti» on the box): the reduced
-        # load for the single-shot Kadettengewehr 1897 on the GP 1890 case, so Schiesstagebuch groups
-        # the two as one chamber. Jacketed round-nose bullet (silver jacket on Raven's round). Length
-        # estimated from Raven's photo (2026-11-08) against the 53.5 mm case, until measured.
+        # load for the single-shot Kadettengewehr 1897, "a reduced-power GP90 7.5×53.5mm cartridge"
+        # (Wikipedia, Schmidt–Rubin). Case assumed to be the GP 1890's until Raven measures it (the
+        # jacketed GP 90/23 has a longer case, 54 to 54.5 mm), so Schiesstagebuch groups the two as one chamber.
+        # Jacketed round-nose bullet (silver jacket on Raven's round). Overall length estimated from
+        # Raven's photo (2026-11-08) against the case, until measured.
         c("7.5 mm Kadettenpatrone", RIMLESS, 12.5, 12.4, 11.5, 8.6, 53.5, 44.24, 72.0, 7.8, ROUND,
-          ["kadettenpatrone", "kadetten-pat", "kadettenpat", "cadets", "cadetti", "kg97", "kadettengewehr"]),
+          ["kadettenpatrone", "kadetten-pat", "kadettenpat", "7.5 mm kadettenpatrone", "7.5 mm kadetten-pat",
+           "cadets", "cadetti", "kg97", "kadettengewehr"]),
         c("7.5x54 mm French", RIMLESS, 12.25, 12.25, 11.2, 8.6, 54.0, 42.79, 76.0, 7.8, SPITZER, ["7.5x54"]),
         c("7.62x39 mm", RIMLESS, 11.35, 11.35, 10.07, 8.6, 38.7, 30.5, 56.0, 7.9, SPITZER, ["7.62x39", "762x39"]),
         c(".300 AAC Blackout", RIMLESS, 9.6, 9.6, 9.1, 8.4, 34.7, 27.2, 57.0, 7.8, SPITZER, ["300blk", "300blackout", "300aac"]),
@@ -2154,7 +2157,8 @@ RARE = {
     ".32 Remington", ".33 Winchester", ".35 S&W Auto", ".35 Winchester Self-Loading",
     ".351 Winchester Self-Loading", ".356 TSW", ".401 Winchester Self-Loading",
     ".41 Action Express", ".44 Henry", ".442 Webley", ".450 Adams", ".476 Enfield", ".577 Snider",
-    "11 mm French Ordnance", "18 mm Milbank-Amsler", "10.4 mm Swiss Ordnance 1872 Rimfire", "7.5 mm Kadettenpatrone",
+    "11 mm French Ordnance", "18 mm Milbank-Amsler", "10.4 mm Swiss Ordnance 1872 Rimfire",
+    "7.5 mm Kadettenpatrone",  # 2026-11-08: made only for the Kadettengewehr 1897 (about 7,900 made); collectors' item
     "11x59 mm R Gras", "11x60 mm R Mauser", "6.5x53 mm R Mannlicher", "7.35x51 mm Carcano",
     "7.62x45 mm vz. 52", "7.92x107 mm DS",
     "8 mm Nambu", "8 mm Roth-Steyr", "8x50 mm R Mannlicher", "8x58 mm R Danish Krag",
