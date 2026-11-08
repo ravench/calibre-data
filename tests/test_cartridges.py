@@ -666,6 +666,20 @@ class CatalogueTests(unittest.TestCase):
         # municion.org gives the rimmed 6.5x65 its own 1988 launch, like the rimless one.
         self.assertEqual(INTRODUCED["6.5x65 mm R RWS"][0], 1988)
 
+    def test_years_checked_against_cartridges_of_the_world(self):
+        # 2026-11-08: years compared with Cartridges of the World (15th ed.) and a second source. A wildcat
+        # counts from its first factory ammunition, a military round from its adoption.
+        years = {".22 Remington Automatic": 1914, "7.5 mm Swiss Ordnance 1882": 1882, "9x23 mm Winchester": 1996,
+                 ".50-110 Winchester": 1887, ".338 Remington Ultra Magnum": 2002, "7 mm Remington Ultra Magnum": 2001,
+                 ".30-378 Weatherby Magnum": 1996, ".338-378 Weatherby Magnum": 1998, "7 mm STW": 1994,
+                 ".450/400 Nitro Express 3 inch": 1902}
+        for name, year in years.items():
+            self.assertEqual(INTRODUCED[name][0], year, name)
+            self.assertNotIn(name, INTRODUCED_UNKNOWN)
+        # The 3 inch case is Jeffery's shortened 3 1/4 inch one, so it cannot be older.
+        self.assertGreater(INTRODUCED[".450/400 Nitro Express 3 inch"][0],
+                           INTRODUCED[".450/400 Nitro Express 3¼ inch"][0])
+
     def test_45_super_is_an_alias_of_45_acp(self):
         # Raven 2026-11-08: no board lists the .45 Super and it measures like the .45 ACP.
         self.assertNotIn(".45 Super", NAMES)
