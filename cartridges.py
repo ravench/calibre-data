@@ -137,7 +137,8 @@ CATALOGUE = [
         straight(".41 Magnum", RIMMED, 12.5, 11.0, 11.0, 32.8, 40.4, 10.4, FLAT, ["41mag", "41remmag", "41remingtonmagnum"]),
         straight(".44 Special", RIMMED, 13.1, 11.6, 11.6, 29.5, 37.0, 10.9, FLAT, ["44spl", "44special", "44s&wspecial"]),
         straight(".44 Magnum", RIMMED, 13.1, 11.6, 11.6, 32.6, 40.9, 10.9, FLAT, ["44mag", "44magnum", "44remmag", "44remingtonmagnum"]),
-        straight(".45 ACP", RIMLESS, 12.0, 12.0, 12.0, 22.8, 32.4, 11.5, ROUND, ["45acp", "45auto", "45", "11.43", "45acp+p", "45auto+p", "45automaticmatch"]),
+        # .45 Super: a hotter load in the .45 ACP case that neither C.I.P. nor SAAMI lists, so a search alias (Raven 2026-11-08).
+        straight(".45 ACP", RIMLESS, 12.0, 12.0, 12.0, 22.8, 32.4, 11.5, ROUND, ["45acp", "45auto", "45", "11.43", "45acp+p", "45auto+p", "45automaticmatch", "45super"]),
         # Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
         c("7.5 FK", RIMLESS, 10.8, 10.8, 10.8, 8.5, 27.0, 20.85, 35.0, 7.8, ROUND, ["7.5fk", "fk brno"]),
         # Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
@@ -190,12 +191,11 @@ CATALOGUE = [
         straight(".455 Webley", RIMMED, 13.5, 12.2, 12.1, 19.6, 31.2, 11.5, ROUND, ["455webley", "455"]),
         straight(".480 Ruger", RIMLESS, 13.7, 12.8, 12.8, 32.6, 41.9, 12.1, FLAT, ["480ruger"]),
         straight(".50 Action Express", RIMLESS, 13.1, 13.8, 13.5, 32.6, 40.9, 12.7, FLAT, ["50ae"]),
-        # Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded. .45 Super uses the .45 ACP case outside.
+        # Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
         straight("9x18 mm Ultra", RIMLESS, 9.37, 9.81, 9.65, 17.85, 25.27, 9.01, ROUND, ["9ultra", "9police"]),
         straight(".357 Remington Maximum", RIMMED, 11.2, 9.6, 9.6, 40.8, 50.5, 9.1, FLAT, ["357max"]),
         straight(".41 Action Express", RIMLESS, 10.0, 11.0, 11.0, 22.0, 30.0, 10.4, FLAT, ["41ae"]),
         straight(".45 Winchester Magnum", RIMLESS, 12.2, 12.1, 12.0, 30.4, 40.0, 11.5, ROUND, ["45winmag"]),
-        straight(".45 Super", RIMLESS, 12.0, 12.0, 12.0, 22.8, 32.4, 11.5, ROUND, ["45super"]),
         straight(".460 Rowland", RIMLESS, 12.2, 12.1, 12.0, 24.3, 32.4, 11.5, ROUND, ["460rowland"]),
         straight(".475 Linebaugh", RIMLESS, 13.7, 12.8, 12.8, 36.0, 45.0, 12.1, FLAT, ["475linebaugh"]),
         c(".221 Remington Fireball", RIMLESS, 9.6, 9.6, 9.2, 6.4, 35.6, 27.2, 46.5, 5.7, SPITZER, ["221fireball"]),
@@ -723,7 +723,6 @@ PRIMERS = {
     ".357 Remington Maximum": SMALL_RIFLE,
     ".41 Action Express": SMALL_PISTOL,
     ".45 Winchester Magnum": LARGE_PISTOL,
-    ".45 Super": LARGE_PISTOL,
     ".460 Rowland": LARGE_PISTOL,
     ".475 Linebaugh": LARGE_PISTOL,
     ".221 Remington Fireball": SMALL_RIFLE,
@@ -1077,7 +1076,6 @@ INTRODUCED = {
     ".357 Remington Maximum": (1983, _WP + ".357_Remington_Maximum"),
     ".41 Action Express": (1986, _WP + ".41_Action_Express"),
     ".45 Winchester Magnum": (1979, _WP + ".45_Winchester_Magnum"),
-    ".45 Super": (1988, _WP + ".45_Super"),
     ".460 Rowland": (1997, _WP + ".460_Rowland"),
     ".475 Linebaugh": (1988, _WP + ".475_Linebaugh"),
     ".221 Remington Fireball": (1963, _WP + ".221_Remington_Fireball"),
@@ -1730,7 +1728,6 @@ CASE_HEADS = {
     ".25 Creedmoor": (1.37, 3.84, 10.39, 36.0, "https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"),  # 6.5 Creedmoor case necked down; C.I.P. 6,5 Creedmoor
     ".22 Creedmoor": (1.37, 3.84, 10.39, 36.0, "https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"),  # 6.5 Creedmoor case necked down; C.I.P. 6,5 Creedmoor
     ".280 Ackley Improved": (1.24, 3.17, 10.39, 36.0, _CIP + "tab-i/tabical-en-page103.pdf"),  # fire-formed .280 Rem.; C.I.P. 280 Rem.
-    ".45 Super": (1.24, 4.11, 10.16, 26.0, _CIP + "tab-iv/tabivcal-en-page76.pdf"),  # same case as the .45 ACP, thicker walls; C.I.P. 45 Auto
     ".460 Rowland": (1.24, 4.11, 10.16, 26.0, _CIP + "tab-iv/tabivcal-en-page76.pdf"),  # lengthened .45 ACP case; C.I.P. 45 Auto
     ".400 Cor-Bon": (1.24, 4.11, 10.16, 26.0, _CIP + "tab-iv/tabivcal-en-page76.pdf"),  # .45 ACP case necked down; C.I.P. 45 Auto
     "9x25 mm Dillon": (1.4, 3.63, 8.85, 45.0, _CIP + "tab-iv/tabivcal-en-page31.pdf"),  # 10 mm Auto case necked down; C.I.P. 10 mm Auto
@@ -1962,7 +1959,6 @@ PRIMER_SOURCES = {
     ".357 Remington Maximum": _HODGDON,
     ".41 Action Express": _WP + ".41_Action_Express",
     ".45 Winchester Magnum": _WP + ".45_Winchester_Magnum",
-    ".45 Super": _WP + ".45_Super",
     ".460 Rowland": _STARLINE + "460-rowland-brass",
     ".475 Linebaugh": _WP + ".475_Linebaugh",
     ".221 Remington Fireball": _WP + ".221_Remington_Fireball",
@@ -2223,7 +2219,7 @@ RARE = {
     ".307 Winchester", ".356 Winchester", ".458 SOCOM", ".50 Beowulf",
     ".30 Thompson/Center", ".300 Ruger Compact Magnum", ".300 Remington SAUM",
     ".325 Winchester Short Magnum", ".27 Nosler", ".33 Nosler",
-    ".460 Rowland", ".475 Linebaugh", ".22 TCM", ".25 NAA", ".32 NAA", ".45 Super",
+    ".460 Rowland", ".475 Linebaugh", ".22 TCM", ".25 NAA", ".32 NAA",
     ".45 Winchester Magnum", "9x23 mm Winchester", ".400 Cor-Bon",
     ".577 Nitro Express", ".600 Nitro Express", ".700 Nitro Express", ".500/465 Nitro Express",
     ".224 Weatherby Magnum",
@@ -2365,7 +2361,7 @@ ORIGIN = {
     ".32-20 Winchester": "US", ".38 S&W": "US", ".38 Short Colt": "US", ".38 Long Colt": "US",
     ".38-40 Winchester": "US", ".44 S&W Russian": "US", ".45 Schofield": "US", ".45 Auto Rim": "US",
     ".480 Ruger": "US", ".50 Action Express": "US", ".357 Remington Maximum": "US",
-    ".41 Action Express": "US", ".45 Winchester Magnum": "US", ".45 Super": "US",
+    ".41 Action Express": "US", ".45 Winchester Magnum": "US",
     ".460 Rowland": "US", ".475 Linebaugh": "US", ".221 Remington Fireball": "US", ".25 NAA": "US",
     ".32 NAA": "US", ".32 Long Colt": "US", ".35 S&W Auto": "US", ".38 ACP": "US",
     ".41 Long Colt": "US", ".44 Colt": "US", ".204 Ruger": "US", "6 mm ARC": "US", ".338 ARC": "US",
@@ -2839,3 +2835,35 @@ LOOSE_MATERIALS = {  # name: (material, source)
 def loose_material(name):
     """What a ball, Minié bullet or pellet is made of: LEAD, STEEL or PLASTIC."""
     return LOOSE_MATERIALS.get(name, (LEAD, None))[0]
+
+
+# Lookalikes (Raven 2026-11-08): calibres that are cartridges of their own but look alike, so an app
+# can show the others from any one of them. A group's cases share one design; what tells them apart
+# is one or more of: RIM (rimmed or rimless twin), BORE (bullet diameter), LENGTH (case length by
+# about a millimetre), SEATING (a wadcutter seated flush or nearly so) and LOAD (C.I.P., SAAMI or the service
+# gives the same case a hotter load or another chamber that the older or weaker guns must not
+# fire). Other names of the same cartridge are search aliases, not groups. Judged against
+# Cartridges of the World (15th ed., 2016) and the C.I.P. and SAAMI lists. Each calibre is in at
+# most one group; a group lists its parent first.
+RIM, BORE, LENGTH, SEATING, LOAD = "rim", "bore", "length", "seating", "load"
+LOOKALIKES = [  # (what tells them apart, calibres)
+    ((LOAD,), [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"]),
+    ((LOAD,), [".308 Winchester", "7.62x51 mm NATO"]),
+    ((LOAD,), [".38 ACP", ".38 Super"]),
+    ((LOAD,), ["9x19 mm", "9 mm Glisenti"]),
+    ((LOAD,), ["9x23 mm Largo", "9x23 mm Winchester"]),
+    ((SEATING,), [".32 S&W Long", ".32 S&W Long Wadcutter"]),
+    ((RIM,), ["7x57 mm Mauser", "7x57 mm R"]),
+    ((RIM,), ["6.5x57 mm Mauser", "6.5x57 mm R"]),
+    ((RIM, LENGTH), ["7x64 mm", "7x65 mm R"]),
+    ((RIM,), ["8x57 mm IS", "8x57 mm IRS"]),
+    ((RIM,), [".45 ACP", ".45 Auto Rim"]),
+]
+
+
+def lookalikes(name):
+    """The other calibres of `name`'s lookalike group, parent first; [] when it has none."""
+    for _, names in LOOKALIKES:
+        if name in names:
+            return [n for n in names if n != name]
+    return []

@@ -150,10 +150,14 @@ class OutlineTests(unittest.TestCase):
 
     def test_identical_groups(self):
         self.assertEqual(outline.identical_groups(), [
-            [".45 ACP", ".45 Super"],
             [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"],
             ["7.62x51 mm NATO", ".308 Winchester"],
         ])
+
+    def test_identical_calibres_are_lookalikes(self):
+        # Calibres that look exactly the same from the side must be in one lookalike group.
+        for names in outline.identical_groups():
+            self.assertEqual(set(cartridges.lookalikes(names[0])), set(names[1:]), names)
 
     def test_flush_wadcutter_shows_only_its_case(self):
         # The .32 S&W Long wadcutter sits flush with the case mouth: a plain rimmed cylinder.
