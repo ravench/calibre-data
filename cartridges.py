@@ -258,18 +258,27 @@ CATALOGUE = [
         # unusual: a lead body wrapped in two turns of paper (the white band above the case mouth) and a
         # long, blunt round nose under a steel cap (13.7 g, 29 mm long, 7.8 mm over the paper). Shorter case
         # than GP 11. Not to be confused with the 5.6 mm GP 90 of the Stgw 90.
-        c("7.5x53.5 mm Swiss (GP 1890)", RIMLESS, 12.5, 12.4, 11.5, 8.6, 53.5, 44.24, 77.0, 7.8, PATCHED,
+        # Case: 53.5 is the name and Wikipedia's figure for the 1890 and 90/03 rounds (2.106 in, 12.4 mm head),
+        # but its 90/23 row gives 2.15 in (54.6) with a 12.6 mm head, armedconflicts.com calls the 1890/03
+        # «7.5x54.5» with «modified internal dimensions», and Raven's paper-patched round of June 1906
+        # (headstamp «6 T T 06») measures case 54.6, rim 12.7, base 12.5, head to shoulder 45.0, length 76.0.
+        # The 54.6 case is drawn, as most rounds still around were made after 1903. C.I.P. has no sheet; DWM
+        # gives all versions one case number (388) and AECC (municion.org) one entry, so 90/03 and 90/23 stay
+        # names of this calibre. Same case values as the Kadettenpatrone: one chamber (the Kadettengewehr 1897
+        # is sighted for both rounds).
+        c("7.5x53.5 mm Swiss (GP 1890)", RIMLESS, 12.7, 12.6, 11.5, 8.6, 54.6, 45.0, 77.0, 7.8, PATCHED,
           ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp90/23", "7.5 mm gp 90", "patrone 1890", "patrone 90/23",
            "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]),
         # Kadettenpatrone («7,5 mm Kadetten-Pat.», «Cart. 7,5 mm cadets/cadetti» on the box): the reduced
         # load for the single-shot Kadettengewehr 1897, "a reduced-power GP90 7.5×53.5mm cartridge"
         # (Wikipedia, Schmidt–Rubin). Measured by Raven with a caliper on one round (2026-11-08, headstamp
         # «12 D T 64»: Thun, December 1964, Dornach brass): length 77.5, case 54.8, rim 12.7, base 12.6,
-        # shoulder 11.5, neck 8.6, bullet 7.8, head to shoulder 45.0, primer 5.4. The case is longer than the
-        # GP 1890's (53.5), so the two are not one chamber. Jacketed round-nose bullet with a silver-coloured
-        # jacket on Raven's round, drawn like any jacket. Kaliberfinder's LiDAR captures of the same round
-        # (training package of 2026-11-07, filed under GP 1890 with the note "Kadettenpatrone") gave 79.0.
-        c("7.5 mm Kadettenpatrone", RIMLESS, 12.7, 12.6, 11.5, 8.6, 54.8, 45.0, 77.5, 7.8, ROUND,
+        # shoulder 11.5, neck 8.6, bullet 7.8, head to shoulder 45.0, primer 5.4. The case is drawn at the
+        # GP 1890's 54.6 (0.2 apart on single rounds), so the two are one chamber. Jacketed round-nose bullet
+        # with a silver-coloured jacket on Raven's round, drawn like any jacket. Kaliberfinder's LiDAR captures
+        # of the same round (training package of 2026-11-07, filed under GP 1890 with the note
+        # "Kadettenpatrone") gave 79.0.
+        c("7.5 mm Kadettenpatrone", RIMLESS, 12.7, 12.6, 11.5, 8.6, 54.6, 45.0, 77.5, 7.8, ROUND,
           ["kadettenpatrone", "kadetten-pat", "kadettenpat", "7.5 mm kadettenpatrone", "7.5 mm kadetten-pat",
            "cadets", "cadetti", "kg97", "kadettengewehr"]),
         c("7.5x54 mm French", RIMLESS, 12.25, 12.25, 11.2, 8.6, 54.0, 42.79, 76.0, 7.8, SPITZER, ["7.5x54"]),
@@ -1521,7 +1530,7 @@ SHOULDER_ANGLES = {
     ".55 Boys": (10, "https://municion.org/producto/55-boys/"),  # AECC drawing 14-099-BFC-020
     ".308 Norma Magnum": (24.8, "https://municion.org/producto/308-norma-magnum-belted/"),  # AECC drawing 08-065-BFC-010
     "7.5x53.5 mm Swiss (GP 1890)": (27.8, "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"),  # AECC drawing 08-054-BGC-040
-    "7.5 mm Kadettenpatrone": (27.8, "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"),  # assumed like the GP 1890 case
+    "7.5 mm Kadettenpatrone": (27.8, "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"),  # the GP 1890 case
     "8x50 mm R Lebel": (17.9, "https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/"),  # AECC drawing 08-050-BBC-060
     ".17 Hornet": (21, "https://municion.org/producto/17-hornet/"),  # AECC drawing 04-035-BBC-57W
     "7 mm Backcountry": (30, "https://saami.org/wp-content/uploads/2025/01/Public-Introduction-7mm-Backcountry-2025-01-27.pdf"),  # SAAMI drawing
