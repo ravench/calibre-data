@@ -273,7 +273,7 @@ class OutlineTests(unittest.TestCase):
         ".450 Bushmaster", ".458 SOCOM", ".475 Linebaugh", ".480 Ruger", ".50 Beowulf", ".500 JRH",
         ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm ARC", "6 mm GT", "6.5 Weatherby RPM",
         "6.5 mm Grendel", "6.5x50 mm SR Arisaka", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
-        "7.5x53.5 mm Swiss (GP 1890)", "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
+        "7.5x53.5 mm Swiss (GP 1890)", "7.5 mm Kadettenpatrone", "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
         "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
     }

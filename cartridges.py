@@ -237,6 +237,12 @@ CATALOGUE = [
         c("7.5x53.5 mm Swiss (GP 1890)", RIMLESS, 12.5, 12.4, 11.5, 8.6, 53.5, 44.24, 77.0, 7.8, PATCHED,
           ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp90/23", "7.5 mm gp 90", "patrone 1890", "patrone 90/23",
            "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]),
+        # Kadettenpatrone («7,5 mm Kadetten-Pat.», «Cart. 7,5 mm cadets/cadetti» on the box): the reduced
+        # load for the single-shot Kadettengewehr 1897 on the GP 1890 case, so Schiesstagebuch groups
+        # the two as one chamber. Jacketed round-nose bullet (silver jacket on Raven's round). Length
+        # estimated from Raven's photo (2026-11-08) against the 53.5 mm case, until measured.
+        c("7.5 mm Kadettenpatrone", RIMLESS, 12.5, 12.4, 11.5, 8.6, 53.5, 44.24, 72.0, 7.8, ROUND,
+          ["kadettenpatrone", "kadetten-pat", "kadettenpat", "cadets", "cadetti", "kg97", "kadettengewehr"]),
         c("7.5x54 mm French", RIMLESS, 12.25, 12.25, 11.2, 8.6, 54.0, 42.79, 76.0, 7.8, SPITZER, ["7.5x54"]),
         c("7.62x39 mm", RIMLESS, 11.35, 11.35, 10.07, 8.6, 38.7, 30.5, 56.0, 7.9, SPITZER, ["7.62x39", "762x39"]),
         c(".300 AAC Blackout", RIMLESS, 9.6, 9.6, 9.1, 8.4, 34.7, 27.2, 57.0, 7.8, SPITZER, ["300blk", "300blackout", "300aac"]),
@@ -562,6 +568,7 @@ DISPLAY_ALIASES = {
     ".300 AAC Blackout": [".300 BLK", "7.62x35 mm"],
     "7.5x55 mm Swiss (GP 11)": ["GP 11", "7.5 mm Swiss"],
     "7.5x53.5 mm Swiss (GP 1890)": ["GP 1890", "GP 90/23"],
+    "7.5 mm Kadettenpatrone": ["Cart. 7,5 mm cadets", "Cart. 7,5 mm cadetti"],
     "8x57 mm IS": ["8 mm Mauser"],
     ".50 BMG": ["12,7x99 mm NATO"],
 }
@@ -621,6 +628,7 @@ PRIMERS = {
     "7 mm-08 Remington": LARGE_RIFLE, "7x57 mm Mauser": LARGE_RIFLE, "7x64 mm": LARGE_RIFLE,
     "7 mm Remington Magnum": LARGE_RIFLE, "7 mm PRC": LARGE_RIFLE, "7.5x55 mm Swiss (GP 11)": LARGE_RIFLE,
     "7.5x53.5 mm Swiss (GP 1890)": LARGE_RIFLE,
+    "7.5 mm Kadettenpatrone": LARGE_RIFLE,
     "7.5x54 mm French": LARGE_RIFLE, "7.62x39 mm": LARGE_RIFLE, ".300 AAC Blackout": SMALL_RIFLE, ".300 HAM'R": SMALL_RIFLE,
     "7.62x51 mm NATO": LARGE_RIFLE, ".308 Winchester": LARGE_RIFLE, ".30-06 Springfield": LARGE_RIFLE,
     ".30-30 Winchester": LARGE_RIFLE, ".300 Winchester Magnum": LARGE_RIFLE, ".300 PRC": LARGE_RIFLE,
@@ -1216,6 +1224,8 @@ INTRODUCED = {
     "9x39 mm": (1980, "https://municion.org/producto/9-x-39-russian/"),  # "1980s"; the other source says early 1980s
     "9x57 mm Mauser": (1890, "https://municion.org/producto/9-x-57-mauser/"),  # municion says ca. 1904, the other source the 1890s: earliest wins
     "10.3x60 mm R": (1919, "https://municion.org/producto/103-x-60-r/"),
+    # Swiss cadet round for the Kadettengewehr 1897.
+    "7.5 mm Kadettenpatrone": (1897, "https://swisswaffen.com/75mm-cadet-cartridge/gp90kp/wjpaihuqy7ys"),  # "First Issued: 1897"
 }
 
 INTRODUCED_UNKNOWN = {
@@ -1475,6 +1485,7 @@ SHOULDER_ANGLES = {
     ".55 Boys": (10, "https://municion.org/producto/55-boys/"),  # AECC drawing 14-099-BFC-020
     ".308 Norma Magnum": (24.8, "https://municion.org/producto/308-norma-magnum-belted/"),  # AECC drawing 08-065-BFC-010
     "7.5x53.5 mm Swiss (GP 1890)": (27.8, "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"),  # AECC drawing 08-054-BGC-040
+    "7.5 mm Kadettenpatrone": (27.8, "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"),  # the GP 1890 case
     "8x50 mm R Lebel": (17.9, "https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/"),  # AECC drawing 08-050-BBC-060
     ".17 Hornet": (21, "https://municion.org/producto/17-hornet/"),  # AECC drawing 04-035-BBC-57W
     "7 mm Backcountry": (30, "https://saami.org/wp-content/uploads/2025/01/Public-Introduction-7mm-Backcountry-2025-01-27.pdf"),  # SAAMI drawing
@@ -1822,6 +1833,7 @@ PRIMER_SOURCES = {
     "7 mm PRC": _HODGDON,
     "7.5x55 mm Swiss (GP 11)": _WP + "7.5×55mm_Swiss",
     "7.5x53.5 mm Swiss (GP 1890)": _WP + "7.5×55mm_Swiss",
+    "7.5 mm Kadettenpatrone": _WP + "7.5×55mm_Swiss",  # the GP 1890 case
     "7.5x54 mm French": _WP + "7.5×54mm_French",
     "7.62x39 mm": _VIHTAVUORI,
     ".300 AAC Blackout": _WP + ".300_AAC_Blackout",
@@ -2058,7 +2070,7 @@ PRIMER_UNVERIFIED = {
 # Everything else is current. The apps can hide these by default; the poster can mark them.
 OBSOLETE = {
     "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
-    "7.5x53.5 mm Swiss (GP 1890)", "10.4x38 mm R Vetterli", "18 mm Milbank-Amsler", ".577 Snider", "10.4 mm Swiss Ordnance 1872 Rimfire", ".577/450 Martini-Henry",
+    "7.5x53.5 mm Swiss (GP 1890)", "7.5 mm Kadettenpatrone", "10.4x38 mm R Vetterli", "18 mm Milbank-Amsler", ".577 Snider", "10.4 mm Swiss Ordnance 1872 Rimfire", ".577/450 Martini-Henry",
     ".50-70 Government", ".58 Minié", ".69 Minié",
     "7.5 mm Swiss Ordnance 1882", "7.65 mm Longue", "8 mm Nambu", "8 mm Lebel revolver", "8 mm Roth-Steyr",
     "9 mm Glisenti", "9x23 mm Steyr", "9x23 mm Largo", ".38 Long Colt", "10.4 mm Swiss Ordnance 1878",
@@ -2142,7 +2154,7 @@ RARE = {
     ".32 Remington", ".33 Winchester", ".35 S&W Auto", ".35 Winchester Self-Loading",
     ".351 Winchester Self-Loading", ".356 TSW", ".401 Winchester Self-Loading",
     ".41 Action Express", ".44 Henry", ".442 Webley", ".450 Adams", ".476 Enfield", ".577 Snider",
-    "11 mm French Ordnance", "18 mm Milbank-Amsler", "10.4 mm Swiss Ordnance 1872 Rimfire",
+    "11 mm French Ordnance", "18 mm Milbank-Amsler", "10.4 mm Swiss Ordnance 1872 Rimfire", "7.5 mm Kadettenpatrone",
     "11x59 mm R Gras", "11x60 mm R Mauser", "6.5x53 mm R Mannlicher", "7.35x51 mm Carcano",
     "7.62x45 mm vz. 52", "7.92x107 mm DS",
     "8 mm Nambu", "8 mm Roth-Steyr", "8x50 mm R Mannlicher", "8x58 mm R Danish Krag",
@@ -2232,6 +2244,7 @@ ORIGIN = {
     ".22 Long Knall": "IT", "6 mm Flobert Knall": "FR",
     # Switzerland
     "5.6 mm GP 90": "CH", "7.5x55 mm Swiss (GP 11)": "CH", "7.5x53.5 mm Swiss (GP 1890)": "CH",
+    "7.5 mm Kadettenpatrone": "CH",
     "7.5 mm Swiss Ordnance 1882": "CH", "10.4 mm Swiss Ordnance 1878": "CH",
     "10.4x38 mm R Vetterli": "CH", "18 mm Milbank-Amsler": "CH", "10.4 mm Swiss Ordnance 1872 Rimfire": "CH",
     "7.65 mm Parabellum": "CH",  # first adopted by the Swiss Army (Ordonnanzpistole 1900)
