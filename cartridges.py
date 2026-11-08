@@ -58,6 +58,10 @@ CATALOGUE = [
         straight(".32 Short Rimfire", RIMFIRE, 9.47, 8.02, 8.02, 14.22, 23.79, 7.88, ROUND, ["32shortrf", "32rfshort"]),
         straight(".32 Long Rimfire", RIMFIRE, 9.51, 8.09, 8.09, 20.0, 30.85, 7.92, ROUND, ["32longrf", "32rflong"]),
         straight(".22 BB Cap", RIMFIRE, 6.9, 5.7, 5.7, 7.2, 8.7, 5.7, ROUND, ["22bb", "bbcap", "flobert"]),
+        # 9 mm Flobert ball round (BB cap with a round ball, «Bosquette»), Wikipedia infobox, rounded.
+        # Raven's copper-cased specimen (2026-11-08) measured ball 8.5, rim 10.3, case 9.4, length 14.0.
+        straight("9 mm Flobert Bosquette", RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, ROUND,
+                 ["9mmflobert", "9flobert", "bosquette", "9mmbosquette", "9mmbbcap", "flobertkugel", "9mmflobertkugel"]),
         c("5 mm Remington Rimfire Magnum", RIMFIRE, 8.3, 6.6, 6.6, 5.7, 25.9, 20.22, 33.0, 5.2, SPITZER, ["5mmrmr", "5rmr"]),
         c(".17 Winchester Super Magnum", RIMFIRE, 8.5, 6.8, 6.8, 5.0, 30.5, 24.75, 36.6, 4.4, SPITZER, ["17wsm"]),
         # Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
@@ -99,6 +103,14 @@ CATALOGUE = [
         straight("7.65 mm Browning (.32 ACP)", RIMLESS, 9.1, 8.6, 8.5, 17.3, 25.0, 7.9, ROUND, ["7.65browning", "32acp", "32auto"]),
         c("7.65 mm Parabellum", RIMLESS, 9.9, 9.9, 9.7, 8.4, 21.6, 15.58, 29.8, 7.85, ROUND, ["7.65para", "30luger"]),
         straight(".32 S&W Long", RIMMED, 9.5, 8.6, 8.5, 23.4, 32.5, 7.9, ROUND, ["32s&w", "32swl", "32long"]),
+        # Target load for ISSF 25 m centre-fire pistols, its own C.I.P. cartridge ("32 S&W Long Wad Cut.",
+        # tab-iv/tabivcal-en-page46.pdf, sheet 1984-06-14, origin DE/FI): higher pressure (Pmax 1550 bar against 1000) and a
+        # chamber with a 3 mm instead of 11 mm throat, so C.I.P. treats it as its own cartridge on the same
+        # case. Maximum cartridge R1/P1/H2/G1/L3 from the sheet. Drawn with the wadcutter seated flush with
+        # the case mouth, as it is usually loaded (https://bullseyeforum.net/t16197-32-sw-long-wadcutter-oal),
+        # so the length is L3 (L6 allows up to 25.40) and no bullet shows from the side.
+        straight(".32 S&W Long Wadcutter", RIMMED, 9.53, 8.56, 8.56, 23.27, 23.27, 8.0, FLAT,
+                 ["32wc", "32swlwc", "32longwc", "32 s&w long wc", "32 s&w lwc"]),
         straight(".32 H&R Magnum", RIMMED, 9.5, 8.6, 8.5, 27.4, 34.3, 7.9, FLAT),
         c("7.62x25 mm Tokarev", RIMLESS, 9.9, 9.9, 9.6, 8.5, 24.7, 19.6, 34.9, 7.85, ROUND, ["tokarev", "7.62tok"]),
         straight("9 mm Browning kurz (.380 ACP)", RIMLESS, 9.5, 9.5, 9.4, 17.3, 25.0, 9.0, ROUND, ["380acp", "380auto", "9kurz", "9mmkurz"]),
@@ -126,7 +138,10 @@ CATALOGUE = [
         c("7.5 FK", RIMLESS, 10.8, 10.8, 10.8, 8.5, 27.0, 20.85, 35.0, 7.8, ROUND, ["7.5fk", "fk brno"]),
         # Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
         c("9x25 mm Dillon", RIMLESS, 10.8, 10.8, 10.7, 9.7, 25.1, 19.9, 31.8, 9.0, ROUND, ["9x25", "9x25dillon"]),
-        straight(".45 Colt", RIMMED, 12.9, 12.2, 12.2, 32.6, 40.6, 11.5, FLAT, ["45colt", "45lc", "45longcolt"]),
+        # Round nose with a small flat, as factory lead loads come (Winchester X45CP2 "255 gr Lead Round
+        # Nose", Raven's W-W round photographed 2026-11-08), not the wide flat point; the 1873 original
+        # was an "ogival & flat nosed" 255 gr bullet (Wikipedia).
+        straight(".45 Colt", RIMMED, 12.9, 12.2, 12.2, 32.6, 40.6, 11.5, ROUND, ["45colt", "45lc", "45longcolt"]),
         straight(".45 GAP", RIMLESS, 12.0, 12.0, 12.0, 19.2, 27.3, 11.5, ROUND, ["45gap"]),
         straight(".454 Casull", RIMMED, 13.1, 12.1, 12.1, 35.1, 45.0, 11.5, FLAT, ["454casull"]),
         straight(".460 S&W Magnum", RIMMED, 13.2, 12.2, 12.2, 45.7, 58.0, 11.5, FLAT, ["460s&w"]),
@@ -142,6 +157,11 @@ CATALOGUE = [
         straight("7.65 mm Longue", RIMLESS, 8.5, 8.53, 8.5, 19.7, 30.24, 7.85, ROUND, ["7.65longue", "7.65mas", "30pedersen"]),
         straight(".30 Super Carry", RIMLESS, 8.74, 8.7, 8.56, 21.0, 29.7, 7.93, ROUND, ["30sc", "30supercarry"]),
         straight(".32 S&W", RIMMED, 9.5, 8.5, 8.5, 15.0, 23.0, 7.9, ROUND, ["32s&wshort", "32sws"]),
+        # Webley's 1868 Bull Dog round, C.I.P. «320 Short» (tab-iv/tabivcal-en-page48.pdf, sheet 1984-06-14,
+        # origin GB), maximum cartridge R1/P1/H2/G1/L3/L6. Raven's G.F.L. (Fiocchi) round measured rim 9.5,
+        # base 8.0, case 16.4, length 24.9 (2026-11-08).
+        straight(".320 Revolver", RIMMED, 9.55, 8.12, 8.12, 16.6, 26.7, 8.0, ROUND,
+                 ["320rev", "320revolver", "320short", "320 short", "320bulldog", "320 bulldog"]),
         straight(".327 Federal Magnum", RIMMED, 9.5, 8.6, 8.6, 30.0, 37.0, 7.9, FLAT, ["327fed", "327federal"]),
         c(".32-20 Winchester", RIMMED, 10.4, 9.0, 8.7, 8.3, 33.4, 22.35, 40.4, 7.94, FLAT, ["32-20", "32wcf"]),
         c("5.45x18 mm", RIMLESS, 7.64, 7.64, 7.4, 6.26, 18.03, 12.07, 25.0, 5.63, SPITZER, ["5.45x18", "psm"]),
@@ -564,11 +584,14 @@ DISPLAY_ALIASES = {
     ".22 WMR": [".22 Magnum"],
     "7.65 mm Browning (.32 ACP)": [".32 ACP", ".32 Auto"],
     "7.65 mm Parabellum": [".30 Luger"],
+    ".32 S&W Long Wadcutter": [".32 S&W Long WC"],
     "9 mm Browning kurz (.380 ACP)": [".380 ACP", ".380 Auto"],
     "9x19 mm": ["9 mm Luger", "9 mm Para"],
     ".38 Special": [".38 Spl"],
     ".45 ACP": [".45 Auto", "11,43 mm"],
     ".45 Colt": [".45 Long Colt"],
+    ".320 Revolver": [".320 Short"],
+    "9 mm Flobert Bosquette": ["9 mm Flobert Kugel"],
     ".30-06 Springfield": ["7.62x63 mm"],
     ".300 AAC Blackout": [".300 BLK", "7.62x35 mm"],
     "7.5x55 mm Swiss (GP 11)": ["GP 11", "7.5 mm Swiss"],
@@ -604,9 +627,10 @@ PRIMERS = {
     ".360 No. 5 Rook": SMALL_PISTOL,
     "6.35 mm Browning (.25 ACP)": SMALL_PISTOL, "7.65 mm Browning (.32 ACP)": SMALL_PISTOL,
     "7.65 mm Parabellum": SMALL_PISTOL, ".32 S&W Long": SMALL_PISTOL, ".32 H&R Magnum": SMALL_PISTOL,
+    ".32 S&W Long Wadcutter": SMALL_PISTOL,
     "7.62x25 mm Tokarev": SMALL_PISTOL, "9 mm Browning kurz (.380 ACP)": SMALL_PISTOL,
     "7.63x25 mm Mauser": SMALL_PISTOL, "7.62x38 mm R Nagant": SMALL_PISTOL, "7.5 mm Swiss Ordnance 1882": SMALL_PISTOL,
-    "7.65 mm Longue": SMALL_PISTOL, ".30 Super Carry": SMALL_PISTOL, ".32 S&W": SMALL_PISTOL,
+    "7.65 mm Longue": SMALL_PISTOL, ".30 Super Carry": SMALL_PISTOL, ".32 S&W": SMALL_PISTOL, ".320 Revolver": SMALL_PISTOL,
     ".327 Federal Magnum": SMALL_PISTOL, ".32-20 Winchester": SMALL_PISTOL, "5.45x18 mm": SMALL_PISTOL,
     ".22 TCM": SMALL_PISTOL, "8 mm Nambu": SMALL_PISTOL, "8 mm Lebel revolver": SMALL_PISTOL,
     "8 mm Roth-Steyr": SMALL_PISTOL, "9 mm Glisenti": SMALL_PISTOL, "9 mm Browning Long": SMALL_PISTOL,
@@ -982,6 +1006,7 @@ INTRODUCED = {
     "7.65 mm Longue": (1917, _WP + "7.65×20mm_Long"),
     ".30 Super Carry": (2022, _WP + ".30_Super_Carry"),
     ".32 S&W": (1878, _WP + ".32_S%26W"),
+    ".320 Revolver": (1868, _WP + ".320_Revolver"),  # Webley Bull Dog
     ".327 Federal Magnum": (2008, _WP + ".327_Federal_Magnum"),
     ".32-20 Winchester": (1882, _WP + ".32-20_Winchester"),
     "5.45x18 mm": (1973, _WP + "5.45×18mm"),
@@ -1059,6 +1084,7 @@ INTRODUCED = {
     ".476 Enfield": (1881, _WP + ".476_Enfield"),
     ".22 Long": (1871, _WP + ".22_Long"),
     ".22 BB Cap": (1845, _WP + ".22_BB"),
+    "9 mm Flobert Bosquette": (1845, _WP + "9_mm_Flobert_Bosquette"),  # "Designed in 1845 by Nicolas Flobert"
     "5 mm Remington Rimfire Magnum": (1969, _WP + "5mm_Remington_Rimfire_Magnum"),
     ".17 Winchester Super Magnum": (2013, _WP + ".17_Winchester_Super_Magnum"),
     ".44 Henry": (1860, _WP + ".44_Henry"),
@@ -1240,6 +1266,7 @@ INTRODUCED_UNKNOWN = {
     ".577 Nitro Express": "the source gives only the 1890s",
     "8.6 Blackout": "sources give only the 2026 SAAMI acceptance, not when Q introduced it",
     ".22 Blank (6.8/11)": "a family of blanks and power-tool loads with no single launch",
+    ".32 S&W Long Wadcutter": "C.I.P. sheet dated 1984-06-14 like the .32 S&W Long's; no launch year found",
     # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
     **{n: "not a single cartridge" for n in (
         "12/70", "12/76", "12/89", "16/70", "20/70", "20/76", "28/70", ".410/76",
@@ -1771,6 +1798,7 @@ PRIMER_SOURCES = {
     "7.65 mm Browning (.32 ACP)": _WP + ".32_ACP",
     "7.65 mm Parabellum": _WP + "7.65×21mm_Parabellum",
     ".32 S&W Long": _WP + ".32_S%26W_Long",
+    ".32 S&W Long Wadcutter": _WP + ".32_S%26W_Long",  # the same case
     ".32 H&R Magnum": _WP + ".32_H%26R_Magnum",
     "7.62x25 mm Tokarev": _WP + "7.62×25mm_Tokarev",
     "9 mm Browning kurz (.380 ACP)": _WP + ".380_ACP",
@@ -2053,6 +2081,7 @@ PRIMER_SOURCES = {
     ".338 ARC": _HODGDON,
     "6 mm PPC": _WP + "6mm_PPC",
     "9x39 mm": _STARLINE + "9x39-brass",
+    ".320 Revolver": _WP + ".320_Revolver",  # Berdan; Raven's Fiocchi round measures 4.7 mm (2026-11-08)
 }
 
 # Primer sizes still unchecked: no reloading data, brass maker page or clear headstamp photo
@@ -2075,6 +2104,7 @@ PRIMER_UNVERIFIED = {
 # Everything else is current. The apps can hide these by default; the poster can mark them.
 OBSOLETE = {
     "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
+    ".320 Revolver",  # 2026-11-08: "an obsolete revolver cartridge" (Wikipedia)
     "7.5x53.5 mm Swiss (GP 1890)", "7.5 mm Kadettenpatrone", "10.4x38 mm R Vetterli", "18 mm Milbank-Amsler", ".577 Snider", "10.4 mm Swiss Ordnance 1872 Rimfire", ".577/450 Martini-Henry",
     ".50-70 Government", ".58 Minié", ".69 Minié",
     "7.5 mm Swiss Ordnance 1882", "7.65 mm Longue", "8 mm Nambu", "8 mm Lebel revolver", "8 mm Roth-Steyr",
@@ -2152,6 +2182,7 @@ def is_obsolete(name):
 # it is obsolete (the guns outlive the ammunition). Under 0.05 per mille on GunBroker and at most
 # 2 listings elsewhere counts as rare.
 RARE = {
+    ".320 Revolver", "9 mm Flobert Bosquette",  # 2026-11-08: from Raven's bag of old rounds
     ".450 No. 2 Nitro Express", ".500/416 Nitro Express", ".375 Flanged Magnum Nitro Express", ".22 Extra Long", ".32 Short Rimfire", ".32 Long Rimfire", "5.75 mm Velo-Dog", ".500 JRH", ".375 Flanged Nitro Express", ".55 Boys", ".45-90 WCF",
     "9.3x53 mm R Finnish", "7x61 mm Sharpe & Hart", ".360 No. 5 Rook",
     ".219 Zipper", ".22 Remington Jet", ".223 WSSM", ".225 Winchester",
@@ -2359,7 +2390,7 @@ ORIGIN = {
     ".44-40 WCF": "US", ".32-40 Ballard": "US", ".50-90 Sharps": "US", ".45-75 Winchester": "US",
     ".300 HAM'R": "US", ".25 Weatherby RPM": "US", "6.5 Weatherby RPM": "US", ".338 Weatherby RPM": "US",
     # France
-    ".22 BB Cap": "FR",
+    ".22 BB Cap": "FR", "9 mm Flobert Bosquette": "FR",
     # Germany
     # Genschow (Durlach) designed it in 1936 for the Luftwaffe, the year INTRODUCED gives, and Wikipedia says
     # Germany; Hirtenberger (AT) only revived it in 1972 for the Walther PP Super, so AT is not a candidate.
@@ -2369,6 +2400,7 @@ ORIGIN = {
     # Austria-Hungary
     "6.5x53 mm R Mannlicher": "AH",
     # United Kingdom
+    ".320 Revolver": "GB",
     ".300 H&H Magnum": "GB",
     # Finland
     "6.5x47 mm Lapua": "FI", ".300 Lapua Magnum": "FI", "9.3x53 mm R Finnish": "FI",
@@ -2392,6 +2424,7 @@ ORIGIN_UNDECIDED = {
     "6 mm BR Norma": ("SE", "US"),  # Norma standardised the US 6mm BR Remington wildcat 1996
     "6.5-284 Norma": ("SE", "US"),  # Norma standardised the US 6.5-284 wildcat
     ".500/416 Nitro Express": ("DE", "US"),  # Krieghoff (Ulm) with Hornady, 2000s; only municion.org names a country
+    ".32 S&W Long Wadcutter": ("DE", "FI"),  # the C.I.P. sheet gives "DE/FI"
 }
 
 # Calibres in common use worldwide (Raven 2026-11-04); independent of ORIGIN (Raven 2026-11-07: show the
@@ -2441,6 +2474,8 @@ BULLETS = {  # name: (bullet, source that names the original or factory bullet)
     ".32 Short Rimfire": (LEAD, "https://municion.org/producto/32-short-rf/"),
     ".32 Long Rimfire": (LEAD, "https://municion.org/producto/32-long-rf/"),
     ".22 BB Cap": (LEAD, "https://en.wikipedia.org/wiki/.22_BB"),
+    "9 mm Flobert Bosquette": (LEAD, "https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"),  # a 00 buckshot ball
+    ".320 Revolver": (LEAD, "https://en.wikipedia.org/wiki/.320_Revolver"),  # "80 gr (5 g) Lead"
     ".22 Winchester Rimfire": (LEAD, "https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"),
     ".44 Henry": (LEAD, "https://en.wikipedia.org/wiki/.44_Henry"),
     ".25 Stevens": (LEAD, "https://municion.org/producto/25-stevens-short-rf/"),
@@ -2451,6 +2486,7 @@ BULLETS = {  # name: (bullet, source that names the original or factory bullet)
     ".22 Remington Automatic": (LEAD, "https://en.wikipedia.org/wiki/.22_Remington_Automatic"),
     ".32 S&W": (LEAD, "https://en.wikipedia.org/wiki/.32_S%26W"),
     ".32 S&W Long": (LEAD, "https://en.wikipedia.org/wiki/.32_S%26W_Long"),
+    ".32 S&W Long Wadcutter": (LEAD, "https://www.lapua.com/product/32-sw-lapua-wadcutter-bullet-c427-535-g-83-gr/"),
     ".32 Long Colt": (LEAD, "https://en.wikipedia.org/wiki/.32_Long_Colt"),
     ".38 S&W": (LEAD, "https://en.wikipedia.org/wiki/.38_S%26W"),
     ".38 Short Colt": (LEAD, "https://municion.org/producto/38-short-colt-long-case/"),
