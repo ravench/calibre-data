@@ -473,6 +473,49 @@ class CatalogueTests(unittest.TestCase):
             for key, value in fields.items():
                 self.assertEqual(by_name[name][key], value, f"{name} {key}")
 
+    def test_cip_case_heads_flagged_by_cartridges_of_the_world(self):
+        # Cartridges of the World (15th ed., ch. 12) gave bigger rims; the values are the C.I.P.
+        # sheets' (R1 rim, P1 body, P2 shoulder, H2 neck, L3 case, L6 length, G1 bullet).
+        by_name = {s["name"]: s for s in ALL}
+        expected = {
+            ".300 Winchester Magnum": {"rim": 13.51},
+            ".375 H&H Magnum": {"rim": 13.51, "shoulder": 11.37, "neck": 10.21, "bullet": 9.55},
+            "7 mm STW": {"rim": 13.51, "base": 13.03, "shoulder": 12.37, "neck": 8.05, "oal": 92.71},
+            "6.5 mm Remington Magnum": {"rim": 13.51, "base": 13.03},
+            ".350 Remington Magnum": {"rim": 13.51, "base": 13.03},
+            ".416 Weatherby Magnum": {"rim": 14.71},
+            "7x57 mm R": {"rim": 13.5},
+            "7x65 mm R": {"rim": 13.32, "oal": 83.6},
+            "6.5x57 mm R": {"rim": 13.32, "base": 11.92},
+            "8x57 mm IRS": {"rim": 13.32, "base": 11.92, "shoulder": 10.95, "neck": 9.08},
+            "9.3x74 mm R": {"rim": 13.35, "shoulder": 10.4, "neck": 9.92, "case": 74.7},
+            "11x60 mm R Mauser": {"rim": 15.0, "neck": 11.85, "case": 60.35, "oal": 78.0, "bullet": 11.4},
+        }
+        for name, fields in expected.items():
+            for key, value in fields.items():
+                self.assertEqual(by_name[name][key], value, f"{name} {key}")
+        for s in ALL:
+            if s["kind"] == "belted" and s["base"] < 13.1:
+                # Only the .378 Weatherby family has a body wider than its rim.
+                self.assertGreater(s["rim"], s["base"], s["name"])
+
+    def test_other_names_of_the_same_cartridge_are_search_aliases(self):
+        # Names that Cartridges of the World (15th ed.) gives for the same cartridge: renames, maker or
+        # national names, loads in the same case and +P loads.
+        by_name = {s["name"]: s for s in ALL}
+        expected = {
+            "38coltnewpolice": ".38 S&W", "275rigby": "7x57 mm Mauser", "6.5x52r": ".25-35 Winchester",
+            "7.7x56r": ".303 British", "400jeffery": ".450/400 Nitro Express 3 inch", "12.7x107": "12.7x108 mm",
+            "38special+p": ".38 Special", "45-85": ".45-90 WCF", "50-105": ".50-110 Winchester",
+            "7.5swedishnagant": "7.5 mm Swiss Ordnance 1882", "6.5-08": ".260 Remington",
+            "7mmexpress": ".280 Remington", "8.58x71": ".338 Lapua Magnum", "44remmag": ".44 Magnum",
+        }
+        for alias, name in expected.items():
+            self.assertIn(alias, by_name[name]["aliases"], name)
+        # Same case, but a hotter load the older guns must not fire: their own calibres.
+        for name in (".38 ACP", ".38 Super", "9 mm Glisenti", "9x19 mm"):
+            self.assertIn(name, NAMES)
+
     def test_municion_years_fill_unknown_introductions(self):
         years = {".17 Hornet": 2012, ".35 Winchester Self-Loading": 1905, ".401 Winchester Self-Loading": 1910,
                  ".375 Flanged Magnum Nitro Express": 1912, "9.3x72 mm R": 1892, "9x57 mm Mauser": 1890,
