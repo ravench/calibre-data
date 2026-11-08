@@ -403,7 +403,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertTrue(is_worldwide("12/70"))
         self.assertFalse(is_worldwide("7.62x39 mm"))
         self.assertFalse(is_worldwide("no such calibre"))
-        # every two-state case was decided 2026-11-07; #52 then added the C.I.P. "DE/FI" wadcutter
+        # every two-state case was decided 2026-11-07/08; #52 then added the C.I.P. "DE/FI" wadcutter
         self.assertEqual(set(ORIGIN_UNDECIDED), {".32 S&W Long Wadcutter"})
         self.assertEqual(origin_candidates("9x19 mm"), ())  # decided
         self.assertEqual(origin_candidates("12/70"), ())  # a gauge, nothing to decide
@@ -416,13 +416,14 @@ class CatalogueTests(unittest.TestCase):
 
     def test_every_cartridge_has_an_origin_or_is_undecided(self):
         # Raven 2026-11-06: every calibre gets the state that introduced it, where the sources agree.
-        # Shot shell gauges, loose balls and air gun pellets are not one cartridge, and blanks (built by
-        # blank(): no bullet, so the case is the whole round and the "bullet" width is the case's) are
-        # trade sizes made everywhere: none of them has a country.
+        # Shot shell gauges, loose balls and air gun pellets are not one cartridge, and blanks (no bullet, so
+        # the case is the whole round and the width kept for drawings is the case's: the crimped ones from
+        # blank() and the plain-cylinder alarm rounds from straight()) are trade sizes made everywhere:
+        # none of them has a country.
         sizes = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)}
         blanks = {s["name"] for s in ALL if s["oal"] == s["case"] and s["bullet"] == s["base"]} - sizes
-        self.assertEqual(len(blanks), 9)
-        self.assertLessEqual(sizes, set(INTRODUCED_UNKNOWN))
+        self.assertEqual(len(blanks), 9)  # 9 mm P.A.K., .22 Blank (6.8/11) and the seven Knall rounds
+        self.assertLessEqual(sizes | {".22 Blank (6.8/11)"}, set(INTRODUCED_UNKNOWN))  # no single launch year
         self.assertIn("9 mm P.A.K.", blanks)
         for name in sizes | blanks:
             self.assertIsNone(origin(name), name)

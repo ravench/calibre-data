@@ -2419,7 +2419,8 @@ ORIGIN = {
     # sits elsewhere (Raven 2026-11-08); the other claim stands after the colon. Military adoption (Raven asked
     # 2026-11-08) is noted for the service rounds; .25 ACP, .22 TCM, the Norma rounds, .500/416 and .500 Jeffery,
     # 9.5x57, 9.3x57, .376 Steyr, 9x21 and .32 S&W Long WC were never issued by a military, and the .45 GAP (US state
-    # police 2007-13) and .357 SIG (US federal and state police) only by police.
+    # police 2007-13) and .357 SIG (US federal and state police) only by police. INTRODUCED keeps the round's own
+    # first year (the Largo's 1903 design), whichever state the tilt names.
     # Germany never issued the 7.65 mm Parabellum (its P04 and P08 are 9 mm); as a service round it was Swiss
     # 1900-49 (first adopter), then Bulgaria 1903, Brazil 1906, Portugal 1908, Finland 1923; US trials 1901.
     "7.65 mm Parabellum": "CH",  # the Swiss Army adopted it first (Ordonnanzpistole 1900) and shot it longest; Luger designed it at DWM, Berlin, 1898: DE
@@ -2437,9 +2438,9 @@ ORIGIN = {
     "9.3x57 mm Mauser": "SE",  # the Swedish and Norwegian hunting round (Husqvarna rifles, Norma ammunition); a German necked-up 8x57 of c. 1900: DE
     ".376 Steyr": "AT",  # Steyr Mannlicher with Hornady 1999 for the Steyr Scout: US
     "7.62x38 mm R Nagant": "RUE",  # Léon Nagant, Liège, designed it for the Russian M1895 contract; made in Russia; issued by Russia 1895-1952 and the Polish police 1928-39 (wz. 30): BE
-    "9x21 mm IMI": "IT",  # Jager of Loano designed it (9x21 Jager) for Italy, where 9x19 mm was banned for civilians until 2022; IMI adopted and commercialised it c. 1980; Fiocchi and Geco make it, 80 % of the Italian civilian market: IL
+    "9x21 mm IMI": "IT",  # Jager of Loano designed it (9x21 Jager) for Italy, where 9x19 mm was banned for civilians until 2022; IMI adopted and commercialised it c. 1980; Fiocchi and Geco make it, 80 % of the Italian civilian market: IL (no code in COUNTRIES)
     "7.65 mm Longue": "FR",  # French service round 1935-60 (MAS 1935, MAS-38); the US .30 Pedersen of 1917/18 it derives from armed the Pedersen device, scrapped between the wars: US
-    "6.5x55 mm Swedish": "SE",  # joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms; issued by Norway and Sweden 1894, Luxembourg 1900, Denmark 1946: NO
+    "6.5x55 mm Swedish": "SE",  # joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms; issued by Norway and Sweden 1894, Luxembourg 1900, Denmark 1946: NO (no code in COUNTRIES)
     # Browning (US) designed both pocket rounds, FN Herstal (BE) introduced them: the 7.65 mm with the FN M1900 in 1899
     # (Cartridges of the World), the 6.35 mm with the FN Vest Pocket of 1906; Colt followed in 1903 and 1908. Wikipedia
     # says US (7.65) and US and Belgium (6.35); municion.org says Belgium 1897 (7.65) and US 1902 (6.35).
@@ -2460,7 +2461,7 @@ ORIGIN = {
 
 # Calibres two states can claim and nobody has decided yet: {name: (candidate codes, likelier first)}.
 # origin() answers None for them and origin_candidates() lists the candidates. The thread "Verify country
-# per cartridge" decided the last ten on 2026-11-07 (the last block of ORIGIN); #52 added one more.
+# per cartridge" decided the 21 two-state cases on 2026-11-07/08 (the last block of ORIGIN); #52 added one more.
 ORIGIN_UNDECIDED = {
     ".32 S&W Long Wadcutter": ("DE", "FI"),  # the C.I.P. sheet gives "DE/FI"
 }
