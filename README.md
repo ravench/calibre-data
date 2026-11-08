@@ -37,7 +37,8 @@ The shared calibre catalogue for
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side
   (today .308 Win / 7.62 NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (`CRIMPED`,
-  e.g. the .22 blank 6.8/11) has no bullet: its case narrows to the star crimp.
+  e.g. the .22 blank 6.8/11) has no bullet: its case narrows to the star crimp. A wadcutter seated
+  flush (.32 S&W Long Wadcutter) shows no bullet either.
   `bulletMaterial` is `steel` (GP 1890 cap) or `lead`, `tip` is a soft point's lead tip (or a plastic tip, `tipMaterial` `polymer`) drawn over
   the bullet, `head` the brass head of a shot shell or paper case (`headMaterial` `steel`: the steel head of a hybrid case), `patch` the paper band, `caseMaterial` set when the case is not brass, `currentCaseMaterials` the other materials made today (not drawn).
 

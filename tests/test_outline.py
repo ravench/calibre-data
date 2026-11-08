@@ -155,6 +155,15 @@ class OutlineTests(unittest.TestCase):
             ["7.62x51 mm NATO", ".308 Winchester"],
         ])
 
+    def test_flush_wadcutter_shows_only_its_case(self):
+        # The .32 S&W Long wadcutter sits flush with the case mouth: a plain rimmed cylinder.
+        by_name = {s["name"]: s for _, s in outline.specs()}
+        o = outline.outline(by_name[".32 S&W Long Wadcutter"])
+        self.assertNotIn("bullet", o)
+        self.assertNotIn("bulletMaterial", o)
+        self.assertEqual(o["height"], 23.27)
+        self.assertNotIn(".32 S&W Long Wadcutter", [n for g in outline.identical_groups() for n in g])
+
     def test_outline_is_deterministic(self):
         _, s = outline.specs()[0]
         self.assertEqual(outline.outline(s), outline.outline(dict(s)))
