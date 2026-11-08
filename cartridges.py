@@ -1246,10 +1246,10 @@ INTRODUCED = {
     "9x39 mm": (1980, "https://municion.org/producto/9-x-39-russian/"),  # "1980s"; the other source says early 1980s
     "9x57 mm Mauser": (1890, "https://municion.org/producto/9-x-57-mauser/"),  # municion says ca. 1904, the other source the 1890s: earliest wins
     "10.3x60 mm R": (1919, "https://municion.org/producto/103-x-60-r/"),
+    ".500/416 Nitro Express": (1996, "https://bulletin.accurateshooter.com/?p=59952"),  # Krieghoff unveiled it early 1996
 }
 
 INTRODUCED_UNKNOWN = {
-    ".500/416 Nitro Express": "no introduction year in the sources checked",
     "6 mm GT": "sources give only the 2024 SAAMI acceptance",
     ".475 No. 2 Nitro Express": "the source gives only the early 1900s",
     ".577 Nitro Express": "the source gives only the 1890s",
@@ -2400,7 +2400,11 @@ ORIGIN = {
     # Bergmann Mars already shot it); Spain adopted it 1905 (pistols made by Pieper, Herstal), Denmark 1910. «Largo» is
     # the Spanish name; Spain shot it until the 1980s. Wikipedia and municion.org both say Germany.
     "9x23 mm Largo": "DE",  # Spain adopted it 1905 and made it its own (no other calibre is Spanish): ES
-    "7.65x53 mm Argentine": "BE",  # Mauser design for the Belgian Model 1889; Argentina followed 1891: DE, AR
+    # Paul Mauser designed the 7.65x53 mm in 1889 for the Belgian trials; Belgium adopted it first (October 1889, FN
+    # was founded to make the rifle), then the Ottoman Empire 1890, Argentina 1891, Peru, Spain 1893, Bolivia,
+    # Colombia, Ecuador and Paraguay. Rifles came from Loewe/DWM (Berlin) and FN (Herstal); Fabricaciones Militares
+    # (Argentina), Norma and PPU still load it. Wikipedia: German Empire; municion.org: Belgium 1889.
+    "7.65x53 mm Argentine": "DE",  # the first adopter and the usual name: BE, AR
     ".500 Jeffery": "DE",  # August Schüler, Suhl, 1920s (12.7x70 Schüler); W. J. Jeffery, London, sold and named it: GB
     "9.5x57 mm Mannlicher-Schönauer": "AH",  # Steyr 1910; Westley Richards' .375 Rimless NE 2 1/4 of 1908 is the same case: GB
     "9.3x57 mm Mauser": "DE",  # necked-up 8x57 of c. 1900 that became a Swedish and Norwegian hunting round: SE
@@ -2417,11 +2421,11 @@ ORIGIN = {
     "5.56x45 mm NATO": "US",  # the US .223/M193 case of 1963; NATO adopted the Belgian SS109 load in 1980: BE
     "10 mm Auto": "US",  # Cooper, Dornaus & Dixon 1983; first loaded by Norma: SE
     ".357 SIG": "US",  # SIGARMS (Exeter NH) with Federal 1994: CH
-    ".45 GAP": "US",  # Ernest Durham at CCI/Speer 2003, at Glock's request: AT
-    ".22 TCM": "PH",  # Armscor with Fred Craig (US); made by Armscor: US
-    "6 mm BR Norma": "SE",  # Norma standardised the US 6mm BR Remington wildcat 1996: US
-    "6.5-284 Norma": "SE",  # Norma standardised the US 6.5-284 wildcat (C.I.P. 2001): US
-    ".500/416 Nitro Express": "DE",  # Krieghoff (Ulm) with Hornady, 2000s; only municion.org names a country: US
+    ".45 GAP": "US",  # Ernest Durham at CCI/Speer (Lewiston, Idaho) designed and loaded it 2002/03 at Glock's request; the Glock 37 followed. Wikipedia: Austria and US; municion.org: Austria 2002: AT
+    ".22 TCM": "PH",  # Fred Craig (US gunsmith) developed it at Armscor's Marikina plant as the .22 Micromagnum; Armscor named it after Martin Tuason and makes the pistols and the only factory ammunition: US (Craig)
+    "6 mm BR Norma": "US",  # Remington's factory 6mm BR of 1978 (wildcats since 1962, C.I.P. 1994); Norma's 1996 version only lengthens the throat: SE
+    "6.5-284 Norma": "SE",  # a US wildcat on the .284 Winchester since the 1960s that no US maker standardised; Norma took it to C.I.P. 1999: US
+    ".500/416 Nitro Express": "DE",  # Krieghoff (Ulm) unveiled it early 1996 on the .500 NE case (municion.org: Germany 1997); Norma, Hornady, Nosler and Kynoch loaded it, Krieghoff and Heym chamber it: US (Hornady)
 }
 
 # Calibres two states can claim and nobody has decided yet: {name: (candidate codes, likelier first)}.

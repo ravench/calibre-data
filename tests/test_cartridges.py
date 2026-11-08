@@ -422,7 +422,7 @@ class CatalogueTests(unittest.TestCase):
         # the two-state cases decided 2026-11-07
         self.assertEqual(origin(".22 TCM"), ("PH", "Philippines", "🇵🇭"))
         self.assertEqual(ORIGIN["9x23 mm Largo"], "DE")  # Bergmann 1901-03, Spanish service round from 1905
-        self.assertEqual(ORIGIN["7.65x53 mm Argentine"], "BE")  # Belgian Model 1889 first
+        self.assertEqual(ORIGIN["7.65x53 mm Argentine"], "DE")  # Mauser design, like the 7.65 mm Parabellum
         self.assertEqual(ORIGIN["6.35 mm Browning (.25 ACP)"], "BE")
         self.assertEqual(ORIGIN["10 mm Auto"], "US")
 
