@@ -1,0 +1,42 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, shoulder_at = L1,
+# overall_length = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = ".450/400 Nitro Express 3 inch"
+kind = "rimmed"
+profile = "round"
+aliases = ["450/400", "450/400ne", "400jeffery"]
+
+origin = "GB"
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 15.87
+base = 13.92
+shoulder = 13.21
+shoulder_at = 55.26
+neck = 11.18
+case_length = 76.2
+overall_length = 95.25
+bullet = 10.41
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page117.pdf"]
+
+[introduced]
+# Jeffery
+year = 1902
+sources = ["https://www.americanhunter.org/content/behind-the-bullet-450-400-3-nitro-express/"]
+
+[primer]
+# 5.16 mm, 6 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/450-400-express-2-3-8/"]
+
+[shoulder_angle]
+# C.I.P. 450/400 N.E. 3''
+degrees = 15
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page117.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.450/400_Nitro_Express"]

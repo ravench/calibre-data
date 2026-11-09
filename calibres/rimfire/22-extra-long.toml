@@ -1,0 +1,26 @@
+# Measured specimens on municion.org (AECC drawings 06-020-CBR-010, 08-014-CBR-020, 08-020-CBR-020).
+name = ".22 Extra Long"
+kind = "rimfire"
+profile = "round"
+aliases = ["22extralong", "22xl"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 6.95
+base = 5.74
+neck = 5.72
+case_length = 19.83
+overall_length = 29.89
+bullet = 5.63
+sources = ["https://municion.org/producto/22-extra-long-rf-us/"]
+
+[introduced]
+year = 1878
+sources = ["https://municion.org/producto/22-extra-long-rf-us/"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/22-extra-long-rf-us/"]

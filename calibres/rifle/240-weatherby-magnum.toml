@@ -1,0 +1,46 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".240 Weatherby Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["240wby"]
+
+origin = "US"
+
+[mm]
+rim = 12.0
+base = 11.5
+shoulder = 10.9
+shoulder_at = 51.91
+neck = 6.9
+case_length = 63.4
+overall_length = 78.7
+bullet = 6.2
+sources = [
+  "https://en.wikipedia.org/wiki/.240_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page10.pdf",
+]
+
+[introduced]
+year = 1968
+sources = ["https://en.wikipedia.org/wiki/.240_Weatherby_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.240_Weatherby_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 240 Weath. Mag.
+degrees = 44.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page10.pdf"]
+
+[case_head]
+# C.I.P. ?
+rim_thickness = 1.27
+ramp_top = 5.56
+groove_diameter = 10.39
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page10.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.240_Weatherby_Magnum"]

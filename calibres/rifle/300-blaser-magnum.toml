@@ -1,0 +1,49 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, shoulder_at = L1,
+# overall_length = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = ".300 Blaser Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300blaser"]
+
+origin = "DE"
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 13.59
+base = 13.84
+shoulder = 13.0
+shoulder_at = 52.12
+neck = 8.61
+case_length = 64.2
+overall_length = 84.84
+bullet = 7.83
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page114.pdf"]
+
+[introduced]
+# C.I.P. sheet 2009-05-05, no earlier source
+year = 2009
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page114.pdf"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# C.I.P. 300 Blaser Mag.
+degrees = 30
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page114.pdf"]
+
+[case_head]
+# C.I.P. 300 Blaser Mag.
+rim_thickness = 1.37
+ramp_top = 3.61
+groove_diameter = 12.19
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page114.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = []

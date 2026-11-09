@@ -1,0 +1,44 @@
+name = "7 mm Remington Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["7mmremmag", "7rm"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 13.5
+base = 13.0
+shoulder = 12.4
+shoulder_at = 51.82
+neck = 8.0
+case_length = 63.5
+overall_length = 82.6
+bullet = 7.2
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page3.pdf"]
+
+[introduced]
+year = 1962
+sources = ["https://en.wikipedia.org/wiki/7mm_Remington_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7mm_Remington_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 7 mm Rem. Mag.
+degrees = 25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page3.pdf"]
+
+[case_head]
+# C.I.P. 7 mm Rem. Mag.
+rim_thickness = 1.27
+ramp_top = 5.59
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page3.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/7mm_Remington_Magnum"]

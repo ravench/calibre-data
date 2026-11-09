@@ -1,0 +1,31 @@
+# Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".338 ARC"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["338arc"]
+
+origin = "US"
+
+[mm]
+rim = 11.2
+base = 10.97
+shoulder = 10.9
+shoulder_at = 23.83
+neck = 9.55
+case_length = 33.02
+overall_length = 57.4
+bullet = 8.59
+sources = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"]
+
+[introduced]
+year = 2025
+sources = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# SAAMI drawing
+degrees = 30
+sources = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"]

@@ -1,0 +1,46 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "7 mm Winchester Short Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7mmwsm", "7wsm"]
+
+origin = "US"
+
+[mm]
+rim = 13.6
+base = 14.1
+shoulder = 13.7
+shoulder_at = 43.23
+neck = 8.2
+case_length = 53.3
+overall_length = 72.6
+bullet = 7.2
+sources = [
+  "https://en.wikipedia.org/wiki/7mm_Winchester_Short_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page43.pdf",
+]
+
+[introduced]
+year = 2001
+sources = ["https://en.wikipedia.org/wiki/7mm_Winchester_Short_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7mm_Winchester_Short_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 7 mm Win. Short Mag.
+degrees = 35
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page43.pdf"]
+
+[case_head]
+# C.I.P. 7 mm Win. Short Mag.
+rim_thickness = 1.37
+ramp_top = 3.35
+groove_diameter = 12.19
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page43.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/7mm_Winchester_Short_Magnum"]

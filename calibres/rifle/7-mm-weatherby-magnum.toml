@@ -1,0 +1,46 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "7 mm Weatherby Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["7mmwby"]
+
+origin = "US"
+
+[mm]
+rim = 13.5
+base = 13.0
+shoulder = 12.4
+shoulder_at = 52.55
+neck = 7.9
+case_length = 64.7
+overall_length = 83.8
+bullet = 7.2
+sources = [
+  "https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page5.pdf",
+]
+
+[introduced]
+year = 1940
+sources = ["https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 7 mm Weath. Mag.
+degrees = 47.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page5.pdf"]
+
+[case_head]
+# C.I.P. 7 mm Weath. Mag.
+rim_thickness = 1.3
+ramp_top = 5.56
+groove_diameter = 11.61
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page5.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum"]

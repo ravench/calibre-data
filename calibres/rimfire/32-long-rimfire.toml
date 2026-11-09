@@ -1,0 +1,26 @@
+# Measured specimens on municion.org (AECC drawings 06-020-CBR-010, 08-014-CBR-020, 08-020-CBR-020).
+name = ".32 Long Rimfire"
+kind = "rimfire"
+profile = "round"
+aliases = ["32longrf", "32rflong"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.51
+base = 8.09
+neck = 8.09
+case_length = 20.0
+overall_length = 30.85
+bullet = 7.92
+sources = ["https://municion.org/producto/32-long-rf/"]
+
+[introduced]
+year = 1861
+sources = ["https://municion.org/producto/32-long-rf/"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/32-long-rf/"]

@@ -1,0 +1,43 @@
+name = "8x68 mm S"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8x68"]
+
+origin = "DE"
+
+[mm]
+rim = 13.3
+base = 13.3
+shoulder = 12.4
+shoulder_at = 53.2
+neck = 9.2
+case_length = 67.5
+overall_length = 87.5
+bullet = 8.2
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page63.pdf"]
+
+[introduced]
+year = 1939
+sources = ["https://en.wikipedia.org/wiki/8×68mm_S"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/8×68mm_S"]
+
+[shoulder_angle]
+# C.I.P. 8 x 68 S
+degrees = 14.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page63.pdf"]
+
+[case_head]
+# C.I.P. 8 x 68 S
+rim_thickness = 1.4
+ramp_top = 3.5
+groove_diameter = 11.2
+ramp_angle = 43.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page63.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/8×68mm_S"]

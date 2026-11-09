@@ -1,0 +1,43 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, shoulder_at = L1,
+# overall_length = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = ".50-95 WCF"
+kind = "rimmed"
+profile = "flat"
+aliases = ["50-95", "50-95express"]
+
+origin = "US"
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 15.93
+base = 14.27
+shoulder = 14.05
+shoulder_at = 36.63
+neck = 13.62
+case_length = 49.28
+overall_length = 57.4
+bullet = 13.03
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page122.pdf"]
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+year = 1876
+sources = ["https://municion.org/producto/50-95-300-winchester/"]
+
+[primer]
+# 5.16 mm, 6 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/50-95-300-winchester/"]
+
+[shoulder_angle]
+# C.I.P. 50-95 Win.
+degrees = 6.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page122.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/50-95-300-winchester/"]

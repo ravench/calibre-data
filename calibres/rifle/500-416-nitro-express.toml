@@ -1,0 +1,39 @@
+# Sourced 2026-11-04 (batch 12 leftovers): C.I.P. TDCC maximum cartridge (shoulder = P2,
+# neck = H2, shoulder_at = L1, overall_length = L6); .360 No. 5 Rook from the Wikipedia infobox (Barnes).
+name = ".500/416 Nitro Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["500/416"]
+
+# Krieghoff (Ulm) unveiled it early 1996 on the .500 NE case (municion.org: Germany 1997); Norma, Hornady, Nosler and Kynoch loaded it, Krieghoff and Heym chamber it: US (Hornady)
+origin = "DE"
+rare = true
+
+[mm]
+rim = 16.64
+base = 14.55
+shoulder = 13.49
+shoulder_at = 60.96
+neck = 11.33
+case_length = 82.55
+overall_length = 101.09
+bullet = 10.57
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page124.pdf"]
+
+[introduced]
+# Krieghoff unveiled it early 1996
+year = 1996
+sources = ["https://bulletin.accurateshooter.com/?p=59952"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# C.I.P. 500/416 N.E. 3"1/4
+degrees = 14.8
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page124.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.500/416_Nitro_Express"]

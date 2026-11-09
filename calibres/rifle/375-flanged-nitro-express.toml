@@ -1,0 +1,31 @@
+# .375 Flanged NE (1899, 2.5 in, straight taper) and .55 Boys: measured specimens on municion.org
+# (AECC 10-063-TBC-020, 14-099-BFC-020; Boys belt 21.59 matches antitank.co.uk's 0.850 in).
+name = ".375 Flanged Nitro Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["375flne", "370flanged"]
+
+origin = "GB"
+rare = true
+
+[mm]
+rim = 13.31
+base = 11.52
+neck = 10.08
+case_length = 63.13
+overall_length = 77.58
+bullet = 9.48
+sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
+
+[introduced]
+year = 1899
+sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
+
+[primer]
+# 6.22 mm, 2 specimens
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/375-flanged-nitro-express/"]

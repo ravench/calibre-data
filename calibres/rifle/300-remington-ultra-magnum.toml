@@ -1,0 +1,46 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".300 Remington Ultra Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300rum"]
+
+origin = "US"
+
+[mm]
+rim = 13.6
+base = 14.0
+shoulder = 13.3
+shoulder_at = 60.64
+neck = 8.7
+case_length = 72.4
+overall_length = 91.4
+bullet = 7.8
+sources = [
+  "https://en.wikipedia.org/wiki/.300_Remington_Ultra_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page119.pdf",
+]
+
+[introduced]
+year = 1999
+sources = ["https://en.wikipedia.org/wiki/.300_Remington_Ultra_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.300_Remington_Ultra_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 300 Rem. Ultra Mag.
+degrees = 30
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page119.pdf"]
+
+[case_head]
+# C.I.P. 300 Rem. Ultra Mag.
+rim_thickness = 1.27
+ramp_top = 3.75
+groove_diameter = 12.07
+ramp_angle = 32.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page119.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.300_Remington_Ultra_Magnum"]

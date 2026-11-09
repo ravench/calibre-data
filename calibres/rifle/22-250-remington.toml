@@ -1,0 +1,45 @@
+name = ".22-250 Remington"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["22-250"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 10.5
+shoulder_at = 38.48
+neck = 6.6
+case_length = 48.6
+overall_length = 60.3
+bullet = 5.7
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf"]
+
+[introduced]
+# wildcat from 1937
+year = 1965
+sources = ["https://en.wikipedia.org/wiki/.22-250_Remington"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.22-250_Remington"]
+
+[shoulder_angle]
+# C.I.P. 22-250 Rem
+degrees = 28
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf"]
+
+[case_head]
+# C.I.P. 22-250 Rem
+rim_thickness = 1.24
+ramp_top = 3.22
+groove_diameter = 10.39
+ramp_angle = 34.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.22-250_Remington"]

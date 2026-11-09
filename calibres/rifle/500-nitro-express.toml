@@ -1,0 +1,31 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".500 Nitro Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["500ne"]
+
+origin = "GB"
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 16.6
+base = 14.6
+neck = 13.5
+case_length = 76.0
+overall_length = 95.0
+bullet = 13.0
+sources = ["https://en.wikipedia.org/wiki/.500_Nitro_Express"]
+
+[introduced]
+year = 1890
+sources = ["https://en.wikipedia.org/wiki/.500_Nitro_Express"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.500_Nitro_Express"]

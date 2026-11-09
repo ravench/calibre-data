@@ -1,0 +1,44 @@
+# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+name = ".300 Ruger Compact Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300rcm"]
+
+origin = "US"
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 13.5
+base = 13.5
+shoulder = 13.1
+shoulder_at = 42.44
+neck = 8.6
+case_length = 53.0
+overall_length = 71.8
+bullet = 7.82
+sources = [
+  "https://en.wikipedia.org/wiki/.300_Ruger_Compact_Magnum",
+  "https://municion.org/producto/300-ruger-compact-magnum/",
+]
+
+[introduced]
+year = 2007
+sources = ["https://en.wikipedia.org/wiki/.300_Ruger_Compact_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.300_Ruger_Compact_Magnum"]
+
+[shoulder_angle]
+# AECC drawing 08-053-BGC-110
+degrees = 38
+sources = ["https://municion.org/producto/300-ruger-compact-magnum/"]
+
+[case_head]
+# shortened .375 Ruger case; C.I.P. 375 Ruger
+rim_thickness = 1.27
+ramp_top = 3.24
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]

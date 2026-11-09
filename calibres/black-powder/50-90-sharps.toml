@@ -1,0 +1,30 @@
+# Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".50-90 Sharps"
+kind = "rimmed"
+profile = "round"
+aliases = ["50-90", "50sharps"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.8
+base = 14.9
+neck = 13.4
+case_length = 64.0
+overall_length = 81.0
+bullet = 13.0
+sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
+
+[introduced]
+year = 1872
+sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]

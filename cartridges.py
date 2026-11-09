@@ -5,9 +5,9 @@ repository as a git submodule); outline.py draws the side view of every calibre.
 Dimensions are approximations for drawings and matching, not reloading data.
 
 The data lives in TOML files: one per calibre in calibres/<category>/, plus order.toml,
-countries.toml, and one per group of lookalikes in lookalikes/ (README.md lists every field). This module reads and checks
-them and builds the tables the apps' generators, outline.py and the poster use. `python3 check.py`
-lists every problem in the files.
+countries.toml, and one per group of lookalikes in lookalikes/ (README.md lists every field). This
+module reads and checks them and builds the tables the apps' generators, outline.py and the poster
+use. `python3 check.py` lists every problem in the files.
 """
 import difflib, os, re, unicodedata
 
@@ -27,6 +27,19 @@ LOOSE = (BALL, MINIE, PELLET)  # loose projectiles, not cartridges
 # CRIMPED: no bullet; the case mouth is folded shut in a star (blanks and power-tool loads).
 SPITZER, ROUND, FLAT, PATCHED, CRIMPED = "spitzer", "round", "flat", "patched", "crimped"
 PROFILES = (SPITZER, ROUND, FLAT, PATCHED, CRIMPED)
+# How names write numbers and units (README.md, Names); other spellings belong in the aliases.
+NAME_RULES = (
+    (re.compile(r"[\d¼½¾](mm|inch)\b", re.I), "a space between the number and the unit: '9 mm', '3 inch'"),
+    (re.compile(r"\b(?!(?-i:mm|inch)\b)(mm|inch)\b", re.I), "the unit in lower case: 'mm', 'inch'"),
+    (re.compile(r"\d,\d"), "a decimal point, not a comma: '7.62'"),
+    (re.compile(r"×|\dX\d"), "a plain lower-case x between the sizes: '7.62x51 mm'"),
+    (re.compile(r"\d\s+x\s*\d|\d\s*x\s+\d"), "no spaces around the x: '7.62x51 mm'"),
+)
+# Categories: the folder in calibres/ (and key in order.toml) -> the name the apps and the poster
+# know the category by. Those names are German because the apps show them (translated); the apps
+# know only these six, so a new category needs a change in the apps too.
+CATEGORIES = {"rimfire": "Randfeuer", "handgun": "Kurzwaffe", "rifle": "Langwaffe",
+              "black-powder": "Schwarzpulver", "shotgun": "Flinte", "air-gun": "Luftdruck"}
 
 
 def c(name, kind, rim, base, shoulder, neck, case, sh_at, oal, bullet, profile, aliases=()):
@@ -273,6 +286,9 @@ def _read_calibre(f, category, countries):
     if not isinstance(name, str) or not name.strip():
         f.problem(f.line(None, "name"), "name must be text in quotes")
         return None
+    for rule, how in NAME_RULES:
+        if rule.search(name):
+            f.problem(f.line(None, "name"), f"the name {name!r} needs {how}")
     expected = slug(name) + ".toml"
     if os.path.basename(f.rel) != expected:
         f.problem(f.line(None, "name"), f"the file of {name!r} must be called {expected}")
@@ -402,6 +418,11 @@ def load(root=ROOT):
     of = read("order.toml")
     if of:
         for cat, names in of.data.items():
+            if cat not in CATEGORIES:
+                folder = {app: folder for folder, app in CATEGORIES.items()}.get(cat)
+                hint = f" (the folder of {cat} is {folder})" if folder else _close(cat, CATEGORIES)
+                of.problem(of.line(None, cat), f"category {cat!r} is not one of {', '.join(CATEGORIES)}{hint}")
+                continue
             if not _is_text_list(names):
                 of.problem(of.line(None, cat), f"{cat} must be a list of calibre names in quotes")
                 continue
@@ -420,7 +441,10 @@ def load(root=ROOT):
             continue
         folders.append(cat)
         if of and cat not in of.data:
-            problems.append((f"calibres/{cat}", None, f"category {cat!r} is not in order.toml{_close(cat, order)}"))
+            problems.append((f"calibres/{cat}", None, f"category {cat!r} is not in order.toml"
+                                                      f"{_close(cat, of.data)}"))
+            continue
+        if cat not in CATEGORIES:  # reported at its order.toml key (once order.toml reads); files stay out
             continue
         for fn in sorted(os.listdir(os.path.join(cal_dir, cat))):
             rel = f"calibres/{cat}/{fn}"
@@ -476,7 +500,7 @@ def load(root=ROOT):
             else:
                 listed.append(n)
         rest = sorted(n for n in files if n not in listed)
-        catalogue.append((cat, [files[n] for n in listed + rest]))
+        catalogue.append((CATEGORIES[cat], [files[n] for n in listed + rest]))
 
     lookalikes = []
     grouped = {}
@@ -576,7 +600,8 @@ def load(root=ROOT):
 
 _t = load()
 
-# The catalogue: [(category, [calibre dicts])] in the order of order.toml. Each dict has name, kind,
+# The catalogue: [(category, [calibre dicts])] in the order of order.toml, each category by the name
+# the apps know it by (CATEGORIES: "Randfeuer" for the folder rimfire). Each dict has name, kind,
 # rim, base, shoulder (None for straight cases), neck, case (length), sh_at (where the shoulder
 # starts, None for straight cases), oal, bullet (diameters and lengths in mm), profile and aliases.
 CATALOGUE = _t["CATALOGUE"]

@@ -1,0 +1,43 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = "6.5x52 mm Carcano"
+kind = "rimless"
+profile = "round"
+aliases = ["6.5carcano", "6.5x52"]
+
+origin = "IT"
+
+[mm]
+rim = 11.45
+base = 11.41
+shoulder = 10.94
+shoulder_at = 41.2
+neck = 7.55
+case_length = 52.5
+overall_length = 76.5
+bullet = 6.8
+sources = [
+  "https://en.wikipedia.org/wiki/6.5×52mm_Carcano",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page20.pdf",
+]
+
+[introduced]
+year = 1890
+sources = ["https://en.wikipedia.org/wiki/6.5×52mm_Carcano"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# C.I.P. 6,5 x 52 Carcano
+degrees = 24.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page20.pdf"]
+
+[case_head]
+# C.I.P. 6,5 x 52 Carcano
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 9.95
+ramp_angle = 74.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page20.pdf"]

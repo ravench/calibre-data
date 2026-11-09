@@ -1,0 +1,30 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".455 Webley"
+kind = "rimmed"
+profile = "round"
+aliases = ["455webley", "455"]
+
+origin = "GB"
+
+[mm]
+rim = 13.5
+base = 12.2
+neck = 12.1
+case_length = 19.6
+overall_length = 31.2
+bullet = 11.5
+sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
+
+[introduced]
+year = 1891
+sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.455_Webley"]

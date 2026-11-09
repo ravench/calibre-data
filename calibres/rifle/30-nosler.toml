@@ -1,0 +1,38 @@
+# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+name = ".30 Nosler"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30nosler"]
+
+origin = "US"
+
+[mm]
+rim = 13.56
+base = 13.97
+shoulder = 13.41
+shoulder_at = 53.72
+neck = 8.74
+case_length = 64.92
+overall_length = 84.84
+bullet = 7.82
+sources = [
+  "https://www.nosler.com/",
+  "https://en.wikipedia.org/wiki/.28_Nosler",
+]
+
+[introduced]
+year = 2016
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[shoulder_angle]
+# Nosler's "30 Nosler Rifle Cartridges" drawing: 35 deg, shoulder .528 in at 2.115 in, neck .344 in at 2.246 in, case 2.556 in
+degrees = 35
+sources = ["https://www.nosler.com/"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.30_Nosler"]

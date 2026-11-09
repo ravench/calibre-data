@@ -8,8 +8,9 @@ import cartridges  # noqa: E402
 import check  # noqa: E402
 from cartridges import load, slug, DataError, sources  # noqa: E402
 
-LR = "calibres/Randfeuer/22-lr.toml"
-WIN = "calibres/Langwaffe/308-winchester.toml"
+LR = "calibres/rimfire/22-lr.toml"
+WIN = "calibres/rifle/308-winchester.toml"
+FOLDER = {app: folder for folder, app in cartridges.CATEGORIES.items()}
 NATO = "lookalikes/308-winchester.toml"
 
 
@@ -63,7 +64,7 @@ class LoadTests(unittest.TestCase):
         for cat, items in cartridges.CATALOGUE:
             for s in items:
                 with self.subTest(s["name"]):
-                    self.assertTrue(os.path.exists(os.path.join(ROOT, "calibres", cat, slug(s["name"]) + ".toml")))
+                    self.assertTrue(os.path.exists(os.path.join(ROOT, "calibres", FOLDER[cat], slug(s["name"]) + ".toml")))
 
     def test_slugs(self):
         self.assertEqual(slug(".22 LR"), "22-lr")
@@ -73,9 +74,17 @@ class LoadTests(unittest.TestCase):
     def test_catalogue_follows_order_toml(self):
         with open(os.path.join(ROOT, "order.toml"), "rb") as f:
             order = tomllib.load(f)
-        self.assertEqual([cat for cat, _ in cartridges.CATALOGUE], list(order))
+        self.assertEqual([FOLDER[cat] for cat, _ in cartridges.CATALOGUE], list(order))
         for cat, items in cartridges.CATALOGUE:
-            self.assertEqual([s["name"] for s in items], order[cat])
+            names = [s["name"] for s in items]
+            listed = order[FOLDER[cat]]
+            self.assertEqual(names[:len(listed)], listed)
+            self.assertEqual(names[len(listed):], sorted(names[len(listed):]))
+
+    def test_categories_are_english_folders_and_the_apps_names(self):
+        self.assertEqual(sorted(os.listdir(os.path.join(ROOT, "calibres"))), sorted(cartridges.CATEGORIES))
+        self.assertEqual([cat for cat, _ in cartridges.CATALOGUE],
+                         ["Randfeuer", "Kurzwaffe", "Langwaffe", "Schwarzpulver", "Flinte", "Luftdruck"])
 
     def test_a_calibre_missing_from_order_toml_comes_last_by_name(self):
         with Copy() as c:
@@ -108,6 +117,32 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(sources(".22 LR", "introduced"), ["https://en.wikipedia.org/wiki/.22_Long_Rifle"])
         self.assertEqual(sources(".22 LR", "shoulder_angle"), [])
         self.assertEqual(sources("No such calibre", "mm"), [])
+
+    def test_most_calibres_name_the_source_of_their_measurements(self):
+        names = [s["name"] for _, items in cartridges.CATALOGUE for s in items]
+        self.assertGreater(sum(1 for n in names if sources(n, "mm")), len(names) / 2)
+        self.assertEqual(sources(".350 Rigby Magnum", "mm"),  # the page of most values first
+                         ["https://en.wikipedia.org/wiki/.350_Rigby",
+                          "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf"])
+
+    def test_the_template_is_the_308_winchester_file_with_explanations(self):
+        with open(os.path.join(ROOT, "docs", "template.toml"), "rb") as f:
+            template = tomllib.load(f)
+        with open(os.path.join(ROOT, WIN), "rb") as f:
+            self.assertEqual(template, tomllib.load(f))
+        with Copy() as c:  # and it passes the check as a calibre file
+            shutil.copy(os.path.join(ROOT, "docs", "template.toml"), c.path(WIN))
+            self.assertEqual(c.problems(), [])
+
+    def test_the_template_explains_every_key_and_table(self):
+        with open(os.path.join(ROOT, "docs", "template.toml"), encoding="utf-8") as f:
+            text = f.read()
+        keys = set(cartridges.TOP_KEYS) | set(cartridges.MM_FULL) | {"diameter", "mouth", "length"}
+        for table, (req, opt, _) in cartridges.FACTS.items():
+            keys |= set(req) | set(opt)
+            self.assertRegex(text, rf"(?m)^# ?\[{table}\]$|^\[{table}\]$", table)
+        for k in keys:
+            self.assertRegex(text, rf"\b{k}\b", k)
 
     def test_empty_primer_sources_mean_unverified(self):
         self.assertIn("9 mm P.A.K.", cartridges.PRIMER_UNVERIFIED)
@@ -171,7 +206,7 @@ class CheckTests(unittest.TestCase):
     def test_hidden_files_are_ignored(self):
         with Copy() as c:
             c.write("calibres/.DS_Store", "x")
-            c.write("calibres/Randfeuer/.DS_Store", "x")
+            c.write("calibres/rimfire/.DS_Store", "x")
             self.assertEqual(c.problems(), [])
 
     def test_misspelt_top_level_key(self):
@@ -247,10 +282,25 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, "shoulder_at = 39.62\n", "")
             self.assertProblem(c, WIN, r"both shoulder and shoulder_at")
 
+    def test_names_write_numbers_and_units_one_way(self):
+        for name, pattern in [("7.62x51mm Test", r"a space between the number and the unit"),
+                              (".450/400 Test 3inch", r"a space between the number and the unit"),
+                              (".450/400 Test 3¼inch", r"a space between the number and the unit"),
+                              ("9 MM Test", r"the unit in lower case"),
+                              ("9X19 mm Test", r"a plain lower-case x"),
+                              ("7,62x51 mm Test", r"a decimal point, not a comma"),
+                              ("7.62×51 mm Test", r"a plain lower-case x"),
+                              ("7.62 x 51 mm Test", r"no spaces around the x")]:
+            with self.subTest(name), Copy() as c:
+                text = c.read(WIN).replace('name = ".308 Winchester"', f"name = {name!r}")
+                rel = f"calibres/rifle/{slug(name)}.toml"
+                c.write(rel, re.sub(r"(?m)^aliases = .*$", "aliases = []", text))
+                self.assertOnlyProblems(c, rel, f"the name '{re.escape(name)}' needs {pattern}")
+
     def test_file_name_must_follow_the_name(self):
         with Copy() as c:
-            os.rename(c.path(LR), c.path("calibres/Randfeuer/long-rifle.toml"))
-            self.assertProblem(c, "calibres/Randfeuer/long-rifle.toml", r"must be called 22-lr.toml")
+            os.rename(c.path(LR), c.path("calibres/rimfire/long-rifle.toml"))
+            self.assertProblem(c, "calibres/rimfire/long-rifle.toml", r"must be called 22-lr.toml")
 
     def test_broken_toml_names_the_line(self):
         with Copy() as c:
@@ -273,17 +323,17 @@ class CheckTests(unittest.TestCase):
     def test_order_toml_names_without_a_file(self):
         with Copy() as c:
             c.edit("order.toml", '".22 LR"', '".22 LRR"')
-            self.assertProblem(c, "order.toml", r"'.22 LRR' has no file in calibres/Randfeuer/")
+            self.assertProblem(c, "order.toml", r"'.22 LRR' has no file in calibres/rimfire/")
         with Copy() as c:
             c.edit("order.toml", '  ".308 Winchester",\n', '  ".308 Winchester",\n  ".22 LR",\n')
-            self.assertProblem(c, "order.toml", r"'.22 LR' has no file in calibres/Langwaffe/ \(it is in calibres/Randfeuer/\)")
+            self.assertProblem(c, "order.toml", r"'.22 LR' has no file in calibres/rifle/ \(it is in calibres/rimfire/\)")
 
     def test_an_empty_order_toml_does_not_empty_the_catalogue(self):
         with Copy() as c:
             c.write("order.toml", "# nothing\n")
             found = c.problems()
             self.assertEqual(len(found), len(os.listdir(c.path("calibres"))), found)
-            self.assertTrue(all("is not in order.toml" in p[2] for p in found), found)
+            self.assertTrue(all(p[2].endswith("is not in order.toml") for p in found), found)
         with Copy() as c:
             shutil.rmtree(c.path("calibres"))
             self.assertProblem(c, "calibres", r"missing", line=False)
@@ -298,16 +348,33 @@ class CheckTests(unittest.TestCase):
 
     def test_a_misspelt_category_in_order_toml(self):
         with Copy() as c:
-            c.edit("order.toml", "Luftdruck = [", "Luftdruk = [")
+            c.edit("order.toml", "air-gun = [", "air-gn = [")
             found = c.problems()
             self.assertEqual(len(found), 2, found)
-            self.assertProblem(c, "order.toml", r"'Luftdruk' has no folder calibres/Luftdruk/ \(did you mean \"Luftdruck\"\?\)")
-            self.assertProblem(c, "calibres/Luftdruck", r"not in order.toml \(did you mean \"Luftdruk\"\?\)", line=False)
+            self.assertProblem(c, "order.toml", r"'air-gn' is not one of rimfire, handgun, .* \(did you mean \"air-gun\"\?\)")
+            self.assertProblem(c, "calibres/air-gun", r"not in order.toml \(did you mean \"air-gn\"\?\)", line=False)
+
+    def test_the_old_german_category_names_point_to_their_folders(self):
+        with Copy() as c:
+            c.edit("order.toml", "rifle = [", "Langwaffe = [")
+            self.assertProblem(c, "order.toml", r"'Langwaffe' is not one of .* \(the folder of Langwaffe is rifle\)")
+
+    def test_a_folder_the_apps_do_not_know_stays_out_of_the_catalogue(self):
+        with Copy() as c:
+            os.makedirs(c.path("calibres/rifles"))
+            shutil.copy(c.path(WIN), c.path("calibres/rifles/test.toml"))
+            c.write("order.toml", c.read("order.toml") + "\nrifles = []\n")
+            self.assertOnlyProblems(c, "order.toml", r"'rifles' is not one of rimfire, .* \(did you mean \"rifle\"\?\)")
+
+    def test_a_category_the_apps_know_without_a_folder(self):
+        with Copy() as c:
+            shutil.rmtree(c.path("calibres/shotgun"))
+            self.assertOnlyProblems(c, "order.toml", r"'shotgun' has no folder calibres/shotgun/")
 
     def test_unknown_category_folder(self):
         with Copy() as c:
-            os.makedirs(c.path("calibres/Langwaffen"))
-            self.assertProblem(c, "calibres/Langwaffen", r"not in order.toml \(did you mean \"Langwaffe\"\?\)", line=False)
+            os.makedirs(c.path("calibres/rifles"))
+            self.assertProblem(c, "calibres/rifles", r"not in order.toml \(did you mean \"rifle\"\?\)", line=False)
 
     def test_lookalike_groups_name_existing_calibres_once(self):
         with Copy() as c:
@@ -356,7 +423,7 @@ class CheckTests(unittest.TestCase):
             with redirect_stdout(out):
                 code = check.main(c.dir)
             self.assertEqual(code, 1)
-            self.assertRegex(out.getvalue(), r"calibres/Langwaffe/308-winchester.toml:\d+: unknown key 'shoulder_ad'")
+            self.assertRegex(out.getvalue(), r"calibres/rifle/308-winchester.toml:\d+: unknown key 'shoulder_ad'")
 
     def test_check_script_writes_github_annotations(self):
         with Copy() as c:
@@ -364,7 +431,7 @@ class CheckTests(unittest.TestCase):
             env = dict(os.environ, GITHUB_ACTIONS="true")
             run = subprocess.run([sys.executable, os.path.join(ROOT, "check.py"), c.dir], capture_output=True, text=True, env=env)
             self.assertEqual(run.returncode, 1)
-            self.assertRegex(run.stdout, r"::error file=calibres/Langwaffe/308-winchester.toml,line=\d+,title=Calibre data::unknown key")
+            self.assertRegex(run.stdout, r"::error file=calibres/rifle/308-winchester.toml,line=\d+,title=Calibre data::unknown key")
 
     def test_check_script_reports_its_own_repository_broken(self):
         # As in CI: check.py next to the broken files, so importing cartridges already fails.
@@ -374,7 +441,7 @@ class CheckTests(unittest.TestCase):
             c.edit(LR, "worldwide = true", "worldwilde = true")
             run = subprocess.run([sys.executable, c.path("check.py")], capture_output=True, text=True)
             self.assertEqual(run.returncode, 1, run.stderr)
-            self.assertIn("calibres/Randfeuer/22-lr.toml:", run.stdout)
+            self.assertIn("calibres/rimfire/22-lr.toml:", run.stdout)
             self.assertIn("unknown key 'worldwilde'", run.stdout)
 
     def test_check_script_passes_on_the_repository(self):

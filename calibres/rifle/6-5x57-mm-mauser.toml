@@ -1,0 +1,46 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "6.5x57 mm Mauser"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5x57"]
+
+origin = "DE"
+
+[mm]
+rim = 11.95
+base = 11.9
+shoulder = 10.94
+shoulder_at = 44.5
+neck = 7.65
+case_length = 56.7
+overall_length = 82.0
+bullet = 6.7
+sources = [
+  "https://en.wikipedia.org/wiki/6.5×57mm_Mauser",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page24.pdf",
+]
+
+[introduced]
+year = 1893
+sources = ["https://en.wikipedia.org/wiki/6.5×57mm_Mauser"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5×57mm_Mauser"]
+
+[shoulder_angle]
+# C.I.P. 6,5 x 57
+degrees = 18.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page24.pdf"]
+
+[case_head]
+# C.I.P. 6,5 x 57
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 10.5
+ramp_angle = 37.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page24.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/6.5×57mm_Mauser"]

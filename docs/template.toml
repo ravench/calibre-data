@@ -1,0 +1,148 @@
+# Template for a new calibre: copy this file to calibres/<category>/<file name>.toml, replace the
+# values and delete what does not apply, including these explanations. The values below are the
+# .308 Winchester's, as an example. README.md has the full reference; `python3 check.py` checks
+# the file.
+#
+# Lines starting with # are notes for people; the apps ignore them. Keep a note of anything that is
+# measured, estimated or taken from a related calibre, at the top of the file or above the value.
+# Text goes in quotes, numbers and true/false don't.
+#
+# The folder is the category: rimfire, handgun, rifle, black-powder, shotgun or air-gun. The file
+# name follows from the name (check.py gives the right one): ".308 Winchester" is
+# calibres/rifle/308-winchester.toml. A new calibre needs no entry in order.toml: it comes after the
+# listed ones of its category, by name.
+#
+# If it looks like another calibre but is a cartridge of its own, add it to that calibre's group in
+# lookalikes/, or start one: a file named after the first calibre, the parent, with differ_by (rim,
+# bore, length, seating or load) and calibres (see Lookalikes in README.md). Calibres that look
+# exactly the same must be in a group; a calibre is in one group at most.
+
+# ---------------------------------------------------------------------------------------------
+# Top of the file
+# ---------------------------------------------------------------------------------------------
+
+# The name the apps show, written like the others (Names in README.md): a space before the unit
+# ("9 mm"), a decimal point and a plain x ("7.62x51 mm NATO"), inch calibres with the leading dot.
+# Calibres that are cartridges of their own (.308 Win and 7.62 NATO) each get their own file, never
+# an alias of the other.
+name = ".308 Winchester"
+# rimless, rimmed, belted, rimfire, shot (shot shell), ball (round ball or BB), minie (Minié
+# bullet) or pellet (air gun pellet).
+kind = "rimless"
+# The bullet nose: spitzer, round, flat, patched (paper-patched lead body under a steel cap, GP 1890)
+# or crimped (no bullet, the mouth folded shut in a star: blanks and power-tool loads).
+profile = "spitzer"
+# Search aliases, lower case as people type them ([] for none). Never another calibre's name.
+aliases = ["308", "308win"]
+# Optional: one or two printable other names, shown in the apps' lists and on the poster.
+# display_aliases = [".308 Win"]
+
+# Optional: the code from countries.toml of the state that introduced the calibre. While two or more
+# states can claim it, list their codes instead, likelier first (never both keys):
+# origin_candidates = ["DE", "AT"]
+origin = "US"
+# Optional, each true or left out:
+# worldwide: in common use worldwide (independent of origin: 9x19 mm is German and worldwide).
+# obsolete: no longer in regular factory production (only surplus, boutique loads or reloading).
+# rare: you are unlikely to find it (see Rare in README.md).
+worldwide = true
+# obsolete = true
+# rare = true
+
+# ---------------------------------------------------------------------------------------------
+# [mm]: measurements in millimetres, of the maximum cartridge (C.I.P. letters in brackets)
+# ---------------------------------------------------------------------------------------------
+
+[mm]
+rim = 11.9            # rim diameter (R1); the belt for belted cases where it is wider
+base = 11.9           # body diameter just above the head (P1)
+shoulder = 11.5       # bottleneck cases only: diameter where the shoulder starts (P2)
+shoulder_at = 39.62   # bottleneck cases only: head to where the shoulder starts (L1)
+neck = 8.7            # neck diameter at the mouth (H2)
+case_length = 51.2    # case length (L3)
+overall_length = 71.1 # cartridge length (L6)
+bullet = 7.82         # bullet diameter (G1)
+# A straight case leaves out shoulder and shoulder_at. The neck length and body taper are not
+# stored: the drawing works them out from these values and the shoulder angle.
+#
+# Other calibres use short forms instead:
+#   kind = "ball":                     diameter
+#   kind = "minie" or "pellet":        diameter, length
+#   kind = "shot":                     diameter, rim, length (the case)
+#   profile = "crimped":               rim, base, mouth (at the star crimp), length
+#
+# sources: every page the measurements come from, the page of most of them first. [] when none is
+# checked yet. When only some have a source, a note above the list names the others:
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+
+# ---------------------------------------------------------------------------------------------
+# Every other table holds one fact and its sources: a list of https:// web addresses, one or
+# several (sources = ["https://…", "https://…"]).
+# ---------------------------------------------------------------------------------------------
+
+# Required. The year the calibre was first introduced, released as factory ammunition or adopted for
+# service (a wildcat: the year it became a factory round). Where sources disagree or give a period,
+# the earliest probable year. A year needs at least one source. Without a year:
+#   unknown = "why there is none (e.g. shot shells are not one cartridge with one launch)"
+[introduced]
+year = 1952
+sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
+
+# Every centrefire calibre, shot shells too; none for rimfire, balls, Minié bullets and pellets. The
+# primer of the original factory ammunition: small-pistol, large-pistol, small-rifle, large-rifle,
+# shotshell-209, bmg-35 or berdan-nitro. sources = [] when not checked yet (it then counts as
+# unverified).
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
+
+# Bottleneck cases: the angle between the shoulder and the case axis, in degrees (the American
+# alpha/2; C.I.P. sheets print the full cone angle alpha, so halve it). Needs a source; without one,
+# leave the table out and the shoulder is drawn at 32 degrees (add the calibre to SHOULDER_UNSOURCED
+# in tests/test_outline.py).
+[shoulder_angle]
+# C.I.P. 308 Win.
+degrees = 20
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+
+# Rimless and belted cases, from the C.I.P. sheet (maximum cartridge): rim thickness (R), head to the
+# top of the extractor-groove ramp (E; belted: to the front of the belt), groove diameter (E1) and
+# the groove's front ramp to the case axis in degrees (delta). Needs a source; without one, leave
+# the table out and the head is drawn generic (add the calibre to HEAD_UNSOURCED in
+# tests/test_outline.py).
+[case_head]
+# C.I.P. 308 Win.
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+
+# The bullet the cartridge was first sold with, where it was not a full metal jacket (leave the table
+# out for one): lead (bare lead, also lubricated or wax coated), paper (lead wrapped in paper below
+# the nose), softpoint (jacket with the lead core showing at the tip) or polymer (jacket with a
+# plastic tip). sources = [] when inferred from its use, not checked.
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
+
+# The original case where it was not brass (leave the table out for brass): copper, steel
+# (lacquered), nickel (nickel-plated steel), paper (brass foil covered in paper on a brass head) or
+# hybrid (brass body on a steel head). Needs a source.
+# [case]
+# material = "steel"
+# sources = ["https://…"]
+
+# Other case materials made today: brass, copper, steel or nickel, never the original's own (so
+# brass only where the original is not brass). The original stays the one drawn. Needs a source.
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+
+# Balls, Minié bullets and pellets only, when not lead: steel or plastic (steel and airsoft BBs).
+# Needs a source.
+# [projectile]
+# material = "steel"
+# sources = ["https://…"]

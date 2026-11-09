@@ -1,0 +1,26 @@
+# Measured specimens on municion.org (AECC drawings 06-029-CBC-010, 13-035-CGC-010).
+name = "5.75 mm Velo-Dog"
+kind = "rimmed"
+profile = "round"
+aliases = ["velodog", "5.75velodog", "5.5velodog", "5.5x30r"]
+
+origin = "FR"
+rare = true
+
+[mm]
+rim = 7.78
+base = 6.37
+neck = 6.25
+case_length = 29.41
+overall_length = 35.24
+bullet = 5.65
+sources = ["https://municion.org/producto/56-mm-velo-dog/"]
+
+[introduced]
+year = 1894
+sources = ["https://municion.org/producto/56-mm-velo-dog/"]
+
+[primer]
+# 4.15 mm, 8 specimens
+size = "small-pistol"
+sources = ["https://municion.org/producto/56-mm-velo-dog/"]

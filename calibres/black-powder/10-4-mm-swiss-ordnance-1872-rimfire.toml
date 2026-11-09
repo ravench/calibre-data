@@ -1,0 +1,31 @@
+# Rimfire of the Ordonnanzrevolver 1872 (Thun), before the 1878 centrefire change. Drawing on municion.org
+# (AECC ref. 11-018-CBR-010): rim 12.70 (1.50 thick), head 10.95, mouth 10.85, bullet 10.85, case 18.23, overall 30.52.
+name = "10.4 mm Swiss Ordnance 1872 Rimfire"
+kind = "rimfire"
+profile = "round"
+aliases = ["10.4rf", "revolver72", "10.4x18", "10.4mmrf"]
+
+origin = "CH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.7
+base = 10.95
+neck = 10.85
+case_length = 18.23
+overall_length = 30.52
+bullet = 10.85
+sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]
+
+[introduced]
+year = 1872
+sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]
+
+[case]
+material = "copper"
+sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]

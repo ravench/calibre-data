@@ -1,0 +1,41 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".470 Nitro Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["470ne"]
+
+origin = "GB"
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 16.6
+base = 14.6
+shoulder = 13.5
+shoulder_at = 60.96
+neck = 12.8
+case_length = 83.0
+overall_length = 101.0
+bullet = 12.0
+sources = [
+  "https://en.wikipedia.org/wiki/.470_Nitro_Express",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page119.pdf",
+]
+
+[introduced]
+year = 1907
+sources = ["https://en.wikipedia.org/wiki/.470_Nitro_Express"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# C.I.P. 470 N.E.
+degrees = 7.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page119.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/470-nitro-express/"]

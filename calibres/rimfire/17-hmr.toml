@@ -1,0 +1,32 @@
+name = ".17 HMR"
+kind = "rimfire"
+profile = "spitzer"
+aliases = ["17hmr"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 7.5
+base = 6.1
+shoulder = 6.1
+shoulder_at = 22.2
+neck = 4.5
+case_length = 26.9
+overall_length = 32.8
+bullet = 4.4
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page26.pdf"]
+
+[introduced]
+year = 2002
+sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Magnum_Rimfire"]
+
+[shoulder_angle]
+# C.I.P. 17 HMR
+degrees = 25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page26.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Magnum_Rimfire"]

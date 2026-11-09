@@ -1,0 +1,27 @@
+# Measured specimens on municion.org (AECC drawings 06-020-CBR-010, 08-014-CBR-020, 08-020-CBR-020).
+name = ".32 Short Rimfire"
+kind = "rimfire"
+profile = "round"
+aliases = ["32shortrf", "32rfshort"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.47
+base = 8.02
+neck = 8.02
+case_length = 14.22
+overall_length = 23.79
+bullet = 7.88
+sources = ["https://municion.org/producto/32-short-rf/"]
+
+[introduced]
+# "c1865"
+year = 1865
+sources = ["https://municion.org/producto/32-short-rf/"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/32-short-rf/"]

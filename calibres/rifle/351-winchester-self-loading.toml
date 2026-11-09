@@ -1,0 +1,30 @@
+# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+name = ".351 Winchester Self-Loading"
+kind = "rimless"
+profile = "round"
+aliases = ["351wsl"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.4
+base = 9.7
+neck = 9.5
+case_length = 35.1
+overall_length = 48.4
+bullet = 8.9
+sources = ["https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading"]
+
+[introduced]
+year = 1906
+sources = ["https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/351-winchester-semi-rimmed-self-loading/"]

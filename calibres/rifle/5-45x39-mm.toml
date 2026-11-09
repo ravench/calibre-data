@@ -1,0 +1,48 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = "5.45x39 mm"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["5.45x39", "545x39"]
+
+origin = "SU"
+
+[mm]
+rim = 10.0
+base = 10.0
+shoulder = 9.25
+shoulder_at = 30
+neck = 6.29
+case_length = 39.82
+overall_length = 57.0
+bullet = 5.6
+sources = [
+  "https://en.wikipedia.org/wiki/5.45×39mm",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page2.pdf",
+]
+
+[introduced]
+year = 1974
+sources = ["https://en.wikipedia.org/wiki/5.45×39mm"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/5.45×39mm"]
+
+[shoulder_angle]
+# C.I.P. 5,45 x 39
+degrees = 20.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page2.pdf"]
+
+[case_head]
+# C.I.P. 5,45 x 39
+rim_thickness = 1.5
+ramp_top = 3.2
+groove_diameter = 8.6
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page2.pdf"]
+
+[case]
+# Lacquered steel: 5.45x39 from the start; 7.62x39 since the early 1960s (bimetal before).
+material = "steel"
+sources = ["https://en.wikipedia.org/wiki/5.45%C3%9739mm"]

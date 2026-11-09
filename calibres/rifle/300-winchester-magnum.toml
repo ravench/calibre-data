@@ -1,0 +1,45 @@
+# Rim R1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+name = ".300 Winchester Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["300winmag", "300wm"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 13.51
+base = 13.0
+shoulder = 12.4
+shoulder_at = 55.78
+neck = 8.6
+case_length = 66.7
+overall_length = 84.8
+bullet = 7.82
+# No source yet for base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page20.pdf"]
+
+[introduced]
+year = 1963
+sources = ["https://en.wikipedia.org/wiki/.300_Winchester_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.300_Winchester_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 300 Win. Mag.
+degrees = 25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page20.pdf"]
+
+[case_head]
+# C.I.P. 300 Win. Mag.
+rim_thickness = 1.27
+ramp_top = 5.59
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page20.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.300_Winchester_Magnum"]

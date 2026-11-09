@@ -1,0 +1,46 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "8x60 mm S"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8x60s", "8x60"]
+
+origin = "DE"
+
+[mm]
+rim = 11.95
+base = 11.98
+shoulder = 10.95
+shoulder_at = 48.2
+neck = 9.08
+case_length = 60.0
+overall_length = 83.6
+bullet = 8.22
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page60.pdf"]
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+year = 1919
+sources = ["https://municion.org/producto/8-x-60-s/"]
+
+[primer]
+# 5.11 mm, 5 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/8-x-60-s-mauser/"]
+
+[shoulder_angle]
+# C.I.P. 8 x 60 S
+degrees = 19.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page60.pdf"]
+
+[case_head]
+# C.I.P. 8 x 60 S
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 10.5
+ramp_angle = 39.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page60.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/8-x-60-s/"]

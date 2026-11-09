@@ -1,0 +1,35 @@
+# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+name = ".416 Barrett"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["416barrett"]
+
+origin = "US"
+
+[mm]
+rim = 20.4
+base = 20.4
+shoulder = 18.5
+shoulder_at = 63.55
+neck = 11.6
+case_length = 83.0
+overall_length = 118.0
+bullet = 10.6
+sources = [
+  "https://en.wikipedia.org/wiki/.416_Barrett",
+  "https://municion.org/producto/416-barrett-sniper/",
+]
+
+[introduced]
+year = 2005
+sources = ["https://en.wikipedia.org/wiki/.416_Barrett"]
+
+[primer]
+# 7.77 mm, 2 specimens
+size = "bmg-35"
+sources = ["https://municion.org/producto/416-barrett-sniper/"]
+
+[shoulder_angle]
+# AECC drawing 11-083-BGC-010
+degrees = 24.7
+sources = ["https://municion.org/producto/416-barrett-sniper/"]

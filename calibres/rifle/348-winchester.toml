@@ -1,0 +1,38 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".348 Winchester"
+kind = "rimmed"
+profile = "flat"
+aliases = ["348win"]
+
+origin = "US"
+
+[mm]
+rim = 15.5
+base = 14.0
+shoulder = 12.3
+shoulder_at = 41.91
+neck = 9.61
+case_length = 57.3
+overall_length = 71.0
+bullet = 8.8
+sources = [
+  "https://en.wikipedia.org/wiki/.348_Winchester",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page85.pdf",
+]
+
+[introduced]
+year = 1936
+sources = ["https://en.wikipedia.org/wiki/.348_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.348_Winchester"]
+
+[shoulder_angle]
+# C.I.P. 348 Win.
+degrees = 19.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page85.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.348_Winchester"]

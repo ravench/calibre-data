@@ -1,0 +1,31 @@
+# Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
+name = ".310 Cadet"
+kind = "rimmed"
+profile = "round"
+aliases = ["310cadet", "310greener"]
+
+origin = "GB"
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 10.4
+base = 9.0
+neck = 8.3
+case_length = 28.0
+overall_length = 41.0
+bullet = 8.2
+sources = ["https://en.wikipedia.org/wiki/.310_Cadet"]
+
+[introduced]
+year = 1900
+sources = ["https://en.wikipedia.org/wiki/.310_Cadet"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.310_Cadet"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/310-cadet-single-shot/"]

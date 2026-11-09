@@ -1,0 +1,41 @@
+# Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".35 Winchester"
+kind = "rimmed"
+profile = "round"
+aliases = ["35win"]
+
+origin = "US"
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 13.7
+base = 11.6
+shoulder = 10.5
+shoulder_at = 51.4
+neck = 9.6
+case_length = 61.0
+overall_length = 80.0
+bullet = 9.1
+sources = [
+  "https://en.wikipedia.org/wiki/.35_Winchester",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page86.pdf",
+]
+
+[introduced]
+year = 1903
+sources = ["https://en.wikipedia.org/wiki/.35_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.35_Winchester"]
+
+[shoulder_angle]
+# C.I.P. 35 Win.
+degrees = 15.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page86.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.35_Winchester"]

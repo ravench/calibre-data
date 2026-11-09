@@ -1,0 +1,43 @@
+# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+name = "6.5-284 Norma"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5-284"]
+
+# a US wildcat on the .284 Winchester since the 1960s that no US maker standardised; Norma took it to C.I.P. 1999: US
+origin = "SE"
+
+[mm]
+rim = 12.0
+base = 12.7
+shoulder = 12.1
+shoulder_at = 44.98
+neck = 7.5
+case_length = 55.1
+overall_length = 82.0
+bullet = 6.7
+sources = [
+  "https://en.wikipedia.org/wiki/6.5-284_Norma",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page18.pdf",
+]
+
+[introduced]
+year = 1999
+sources = ["https://en.wikipedia.org/wiki/6.5-284_Norma"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# C.I.P. 6,5 - 284 Norma
+degrees = 35.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page18.pdf"]
+
+[case_head]
+# C.I.P. 6,5 - 284 Norma
+rim_thickness = 1.37
+ramp_top = 3.78
+groove_diameter = 10.39
+ramp_angle = 40.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page18.pdf"]

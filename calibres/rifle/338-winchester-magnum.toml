@@ -1,0 +1,47 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = ".338 Winchester Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["338winmag", "338wm"]
+
+origin = "US"
+
+[mm]
+rim = 13.5
+base = 13.0
+shoulder = 12.5
+shoulder_at = 51.82
+neck = 9.4
+case_length = 63.5
+overall_length = 84.8
+bullet = 8.6
+sources = [
+  "https://en.wikipedia.org/wiki/.338_Winchester_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page22.pdf",
+]
+
+[introduced]
+year = 1958
+sources = ["https://en.wikipedia.org/wiki/.338_Winchester_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.338_Winchester_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 338 Win. Mag.
+degrees = 25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page22.pdf"]
+
+[case_head]
+# C.I.P. 338 Win. Mag.
+rim_thickness = 1.27
+ramp_top = 5.59
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page22.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.338_Winchester_Magnum"]

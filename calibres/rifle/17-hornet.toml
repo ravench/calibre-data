@@ -1,0 +1,37 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".17 Hornet"
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["17hornet"]
+
+origin = "US"
+
+[mm]
+rim = 8.9
+base = 7.6
+shoulder = 7.3
+shoulder_at = 26.83
+neck = 4.9
+case_length = 34.3
+overall_length = 43.8
+bullet = 4.4
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://municion.org/producto/17-hornet/"]
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+year = 2012
+sources = ["https://municion.org/producto/17-hornet/"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# AECC drawing 04-035-BBC-57W
+degrees = 21
+sources = ["https://municion.org/producto/17-hornet/"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.17_Hornet"]

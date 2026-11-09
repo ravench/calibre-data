@@ -1,0 +1,44 @@
+# Swiss Army box label «Pistolen-Patronen Cal. 7,65 mm» (Raven's 1938 M+F Thun box); Ordonnanzpistole 1900.
+name = "7.65 mm Parabellum"
+kind = "rimless"
+profile = "round"
+aliases = ["7.65para", "30luger", "pistolenpatrone 7.65"]
+display_aliases = [".30 Luger"]
+
+# Germany never issued the 7.65 mm Parabellum (its P04 and P08 are 9 mm); as a service round it was Swiss
+# 1900-49 (first adopter), then Bulgaria 1903, Brazil 1906, Portugal 1908, Finland 1923; US trials 1901.
+# the Swiss Army adopted it first (Ordonnanzpistole 1900) and shot it longest; Luger designed it at DWM, Berlin, 1898: DE
+origin = "CH"
+
+[mm]
+rim = 9.9
+base = 9.9
+shoulder = 9.7
+shoulder_at = 15.58
+neck = 8.4
+case_length = 21.6
+overall_length = 29.8
+bullet = 7.85
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page14.pdf"]
+
+[introduced]
+year = 1898
+sources = ["https://en.wikipedia.org/wiki/7.65×21mm_Parabellum"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/7.65×21mm_Parabellum"]
+
+[shoulder_angle]
+# C.I.P. 7,65 Parabellum
+degrees = 15.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page14.pdf"]
+
+[case_head]
+# C.I.P. 7,65 Parabellum
+rim_thickness = 1.22
+ramp_top = 3.69
+groove_diameter = 8.79
+ramp_angle = 20.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page14.pdf"]

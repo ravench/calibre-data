@@ -1,0 +1,29 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = ".350 Legend"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["350legend"]
+
+origin = "US"
+
+[mm]
+rim = 9.6
+base = 9.9
+neck = 9.6
+case_length = 43.0
+overall_length = 57.0
+bullet = 9.07
+sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
+
+[introduced]
+year = 2019
+sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.350_Legend"]

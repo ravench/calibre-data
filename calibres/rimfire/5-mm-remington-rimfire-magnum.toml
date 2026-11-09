@@ -1,0 +1,31 @@
+# Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "5 mm Remington Rimfire Magnum"
+kind = "rimfire"
+profile = "spitzer"
+aliases = ["5mmrmr", "5rmr"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 8.3
+base = 6.6
+shoulder = 6.6
+shoulder_at = 20.22
+neck = 5.7
+case_length = 25.9
+overall_length = 33.0
+bullet = 5.2
+sources = [
+  "https://en.wikipedia.org/wiki/5mm_Remington_Rimfire_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf",
+]
+
+[introduced]
+year = 1969
+sources = ["https://en.wikipedia.org/wiki/5mm_Remington_Rimfire_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 5 mm Rem. Mag.
+degrees = 25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf"]

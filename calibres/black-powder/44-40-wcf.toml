@@ -1,0 +1,35 @@
+name = ".44-40 WCF"
+kind = "rimmed"
+profile = "flat"
+aliases = ["44-40", "4440", "44wcf"]
+
+origin = "US"
+
+[mm]
+rim = 13.1
+base = 11.9
+shoulder = 11.5
+shoulder_at = 23.58
+neck = 11.1
+case_length = 33.2
+overall_length = 40.6
+bullet = 10.8
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page108.pdf"]
+
+[introduced]
+year = 1873
+sources = ["https://en.wikipedia.org/wiki/.44-40_Winchester"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.44-40_Winchester"]
+
+[shoulder_angle]
+# C.I.P. 44-40 Win.
+degrees = 4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page108.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.44-40_Winchester"]
