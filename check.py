@@ -4,7 +4,7 @@
     python3 check.py
 
 Lists each problem with its file and line (unknown or misspelt keys, values that are not allowed,
-missing sources, broken TOML, names in order.toml or lookalikes/ that have no file, ...) and
+missing sources, broken TOML, names in order.toml or lookalikes.toml that have no file, ...) and
 exits with 1 when there is one. In GitHub Actions the problems also show on the pull request's files.
 """
 import os, sys

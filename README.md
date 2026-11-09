@@ -19,7 +19,7 @@ names they show (`CATEGORIES` in `cartridges.py`), so a new category needs a cha
   comes after the listed ones of its category, by name, so a new calibre needs no entry here.
 - `countries.toml`: the country codes a calibre's `origin` can name, with English name and flag emoji.
 - `docs/template.toml`: a calibre file with every field explained, to start a new calibre from.
-- `lookalikes/`: one file per group of calibres that are cartridges of their own but look alike.
+- `lookalikes.toml`: the groups of calibres that are cartridges of their own but look alike.
 - `cartridges.py` reads and checks all of them and gives the apps' generators, `outline.py` and the
   poster the same tables as before (`CATALOGUE`, `INTRODUCED`, `PRIMERS`, `ORIGIN`, ...).
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
@@ -286,10 +286,11 @@ counts as rare.
 ### Lookalikes
 
 Calibres that are cartridges of their own but look alike, so an app can show the others from any
-one of them (`lookalikes(name)`). Each group is one file in `lookalikes/`, named after its first
-calibre, the parent (`lookalikes/308-winchester.toml`):
+one of them (`lookalikes(name)`). All groups are in `lookalikes.toml`, each a `[[group]]` with its
+calibres, the parent first:
 
 ```toml
+[[group]]
 differ_by = ["load"]
 calibres = [".308 Winchester", "7.62x51 mm NATO"]
 ```
@@ -339,12 +340,12 @@ unknown or misspelt key (with the key it probably means), a value that is not al
 measurement or table, a source that is not a web address, a name that writes a number or unit
 another way than [Names](#names), a file whose name does not follow the calibre's name, an alias two
 calibres use or that is another calibre's name, a category the apps do not know or that is missing
-from `order.toml`, names in `order.toml` or `lookalikes/` without a file. The *Check calibre files*
+from `order.toml`, names in `order.toml` or `lookalikes.toml` without a file. The *Check calibre files*
 job runs it on every pull request. It needs Python 3.11 or newer.
 
 The tests (`python3 -m unittest discover -s tests`) also check the catalogue as a whole: a bottleneck
 case without a shoulder angle or a rimless case without a case head must be listed in
-`tests/test_outline.py`, and calibres that look exactly the same need a group in `lookalikes/`.
+`tests/test_outline.py`, and calibres that look exactly the same need a group in `lookalikes.toml`.
 
 ## Using it
 

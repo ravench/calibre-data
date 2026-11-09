@@ -11,7 +11,8 @@ from cartridges import load, slug, DataError, sources  # noqa: E402
 LR = "calibres/rimfire/22-lr.toml"
 WIN = "calibres/rifle/308-winchester.toml"
 FOLDER = {app: folder for folder, app in cartridges.CATEGORIES.items()}
-NATO = "lookalikes/308-winchester.toml"
+LOOK = "lookalikes.toml"
+NATO_GROUP = 'differ_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]'
 
 
 class Copy:
@@ -19,9 +20,8 @@ class Copy:
 
     def __enter__(self):
         self.dir = tempfile.mkdtemp()
-        for d in ("calibres", "lookalikes"):
-            shutil.copytree(os.path.join(ROOT, d), os.path.join(self.dir, d))
-        for f in ("order.toml", "countries.toml"):
+        shutil.copytree(os.path.join(ROOT, "calibres"), os.path.join(self.dir, "calibres"))
+        for f in ("order.toml", "countries.toml", "lookalikes.toml"):
             shutil.copy(os.path.join(ROOT, f), self.dir)
         return self
 
@@ -378,43 +378,48 @@ class CheckTests(unittest.TestCase):
 
     def test_lookalike_groups_name_existing_calibres_once(self):
         with Copy() as c:
-            c.edit(NATO, '"7.62x51 mm NATO"]', '"7.62x51 mm NAT0"]')
-            self.assertProblem(c, NATO, r"'7.62x51 mm NAT0' is not a calibre \(did you mean \"7.62x51 mm NATO\"\?\)",
-                               line=c.line_of(NATO, "calibres ="))
+            c.edit(LOOK, '"7.62x51 mm NATO"]', '"7.62x51 mm NAT0"]')
+            self.assertProblem(c, LOOK, r"'7.62x51 mm NAT0' is not a calibre \(did you mean \"7.62x51 mm NATO\"\?\)",
+                               line=c.line_of(LOOK, "NAT0"))
         with Copy() as c:
-            c.write("lookalikes/22-lr.toml", 'differ_by = ["rim"]\ncalibres = [".22 LR", ".308 Winchester"]\n')
-            self.assertProblem(c, NATO, r"'.308 Winchester' is already in lookalikes/22-lr.toml")
+            first = c.line_of(LOOK, '"7.62x51 mm NATO"') - 2
+            c.write(LOOK, c.read(LOOK) + '\n[[group]]\ndiffer_by = ["rim"]\ncalibres = [".22 LR", ".308 Winchester"]\n')
+            self.assertProblem(c, LOOK, rf"'.308 Winchester' is already in the group on line {first}$",
+                               line=c.read(LOOK).count("\n"))
 
-    def test_lookalike_group_files(self):
-        cases = [('differ_by = ["load"]', 'differ_by = ["lode"]', r'differ_by lists one or more of .*did you mean "load"',
-                  "differ_by ="),
-                 ('differ_by = ["load"]', "differ_by = 5", r"differ_by lists one or more of", "differ_by ="),
-                 ('differ_by = ["load"]', 'diff_by = ["load"]', r"unknown key 'diff_by'.*did you mean \"differ_by\"",
-                  "diff_by ="),
+    def test_lookalike_groups(self):
+        # Each case breaks the .308 Winchester group, which is not the first. The problem is on the
+        # group's line (0 its first key, -1 its [[group]], 1 the next key).
+        cases = [('differ_by = ["load"]', 'differ_by = ["lode"]', r'differ_by lists one or more of .*did you mean "load"', 0),
+                 ('differ_by = ["load"]', "differ_by = 5", r"differ_by lists one or more of", 0),
+                 ('differ_by = ["load"]', 'diff_by = ["load"]', r"unknown key 'diff_by'.*did you mean \"differ_by\"", 0),
+                 ('differ_by = ["load"]\n', "", r"\[\[group\]\] needs 'differ_by'", -1),
                  ('calibres = [".308 Winchester", "7.62x51 mm NATO"]', 'calibres = [".308 Winchester"]',
-                  r"calibres lists two or more", "calibres ="),
-                 ('calibres = [".308 Winchester", "7.62x51 mm NATO"]', 'calibres = ["7.62x51 mm NATO", ".308 Winchester"]',
-                  r"the group of '7.62x51 mm NATO' must be called 7-62x51-mm-nato.toml", "calibres =")]
-        for old, new, pattern, line in cases:
+                  r"calibres lists two or more", 1)]
+        for old, new, pattern, offset in cases:
             with self.subTest(new), Copy() as c:
-                c.edit(NATO, old, new)
-                self.assertEqual({p[0] for p in c.problems()}, {NATO})
-                self.assertProblem(c, NATO, pattern, line=c.line_of(NATO, line))
+                text = c.read(LOOK)
+                first = text[:text.index(NATO_GROUP)].count("\n") + 1
+                self.assertGreater(first, c.line_of(LOOK, "[[group]]") + 1)
+                c.edit(LOOK, NATO_GROUP, NATO_GROUP.replace(old, new))
+                self.assertEqual({p[0] for p in c.problems()}, {LOOK})
+                self.assertProblem(c, LOOK, pattern, line=first + offset)
         with Copy() as c:
-            c.write(NATO, c.read(NATO) + "\n[extra]\nx = 1\n")
-            self.assertProblem(c, NATO, r"unknown key 'extra'", line=c.line_of(NATO, "[extra]"))
+            c.write(LOOK, c.read(LOOK) + "\n[extra]\nx = 1\n")
+            self.assertProblem(c, LOOK, r"unknown key 'extra'", line=c.line_of(LOOK, "[extra]"))
         with Copy() as c:
-            shutil.rmtree(c.path("lookalikes"))
-            self.assertOnlyProblems(c, "lookalikes", r"missing")
+            c.write(LOOK, '[group]\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]\n')
+            self.assertOnlyProblems(c, LOOK, r"each group is a \[\[group\]\] table")
         with Copy() as c:
-            c.write("lookalikes/notes.txt", "x")
-            c.write("lookalikes/.DS_Store", "x")
-            self.assertOnlyProblems(c, "lookalikes/notes.txt", r"only .toml files")
+            os.remove(c.path(LOOK))
+            self.assertOnlyProblems(c, LOOK, r"missing")
 
-    def test_lookalikes_are_read_from_the_folder(self):
+    def test_lookalikes_are_read_from_one_file(self):
         groups = {tuple(names): diff for diff, names in cartridges.LOOKALIKES}
         self.assertEqual(groups[(".308 Winchester", "7.62x51 mm NATO")], ("load",))
-        self.assertEqual(len(groups), len(os.listdir(os.path.join(ROOT, "lookalikes"))))
+        with open(os.path.join(ROOT, LOOK), encoding="utf-8") as f:
+            self.assertEqual(len(groups), sum(l == "[[group]]" for l in f.read().split("\n")))
+        self.assertFalse(os.path.exists(os.path.join(ROOT, "lookalikes")))
 
     def test_check_script_reports_and_fails(self):
         with Copy() as c:

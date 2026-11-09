@@ -5,9 +5,9 @@ repository as a git submodule); outline.py draws the side view of every calibre.
 Dimensions are approximations for drawings and matching, not reloading data.
 
 The data lives in TOML files: one per calibre in calibres/<category>/, plus order.toml,
-countries.toml, and one per group of lookalikes in lookalikes/ (README.md lists every field). This
-module reads and checks them and builds the tables the apps' generators, outline.py and the poster
-use. `python3 check.py` lists every problem in the files.
+countries.toml and lookalikes.toml (README.md lists every field). This module reads and checks them
+and builds the tables the apps' generators, outline.py and the poster use. `python3 check.py` lists
+every problem in the files.
 """
 import difflib, os, re, unicodedata
 
@@ -99,7 +99,7 @@ JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP = "jacketed", "lead", "pa
 # pellet without [projectile] is lead).
 BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID = "brass", "copper", "steel", "nickel", "paper", "hybrid"
 PLASTIC = "plastic"
-# What tells lookalikes apart (differ_by in lookalikes/).
+# What tells lookalikes apart (differ_by in lookalikes.toml).
 RIM, BORE, LENGTH, SEATING, LOAD, IGNITION = "rim", "bore", "length", "seating", "load", "ignition"
 
 
@@ -201,15 +201,15 @@ class _File:
             m = re.search(r"\(at line (\d+)", str(e))
             self.problem(int(m.group(1)) if m else None, f"not valid TOML: {e}")
 
-    def line(self, table=None, key=None):
-        """The line of `key` (in `[table]`), of the table header, or None."""
+    def line(self, table=None, key=None, nth=0):
+        """The line of `key` (in `[table]`, or the `nth` `[[table]]`), of the table header, or None."""
         lines = self.text.split("\n")
         start = 0
         if table:
             hdr = [i for i, l in enumerate(lines) if re.match(rf"\s*\[\[?\s*{re.escape(table)}\s*\]\]?", l)]
-            if not hdr:
+            if len(hdr) <= nth:
                 return None
-            start = hdr[0]
+            start = hdr[nth]
             if key is None:
                 return start + 1
         for i in range(start + (1 if table else 0), len(lines)):
@@ -503,46 +503,47 @@ def load(root=ROOT):
         catalogue.append((CATEGORIES[cat], [files[n] for n in listed + rest]))
 
     lookalikes = []
-    grouped = {}
-    look_dir = os.path.join(root, "lookalikes")
-    if not os.path.isdir(look_dir):
-        problems.append(("lookalikes", None, "missing: the folder with one file per group of lookalikes"))
-    for fn in sorted(os.listdir(look_dir)) if os.path.isdir(look_dir) else []:
-        rel = f"lookalikes/{fn}"
-        if fn.startswith("."):
-            continue
-        if not fn.endswith(".toml"):
-            problems.append((rel, None, "only .toml files (one per group of lookalikes) belong here"))
-            continue
-        lf = read(rel)
-        if lf is None:
-            continue
-        g = lf.data
-        _check_keys(lf, None, g, {"differ_by", "calibres"}, ("differ_by", "calibres"))
-        diff, names = g.get("differ_by"), g.get("calibres")
-        if "differ_by" in g:
-            bad = [x for x in diff if x not in DIFFER_BY] if _is_text_list(diff) else [diff]
-            if bad or not diff:
-                lf.problem(lf.line(None, "differ_by"), f"differ_by lists one or more of {', '.join(DIFFER_BY)}"
-                                                       f"{_close(bad[0], DIFFER_BY) if bad else ''}")
+    lf = read("lookalikes.toml")
+    if lf:
+        _check_keys(lf, None, lf.data, {"group"}, ())
+        groups = lf.data.get("group", [])
+        if not isinstance(groups, list) or not all(isinstance(g, dict) for g in groups):
+            lf.problem(lf.line(None, "group") or lf.line("group"),
+                       "each group is a [[group]] table with differ_by and calibres")
+            groups = []
+        grouped = {}
+        for i, g in enumerate(groups):
+            def at(key=None, i=i):
+                return lf.line("group", key, nth=i) or lf.line("group", nth=i)
+            for k in g:
+                if k not in ("differ_by", "calibres"):
+                    lf.problem(at(k), f"unknown key {k!r} in [[group]]{_close(k, ('differ_by', 'calibres'))}; "
+                                      "allowed: calibres, differ_by")
+            for k in ("differ_by", "calibres"):
+                if k not in g:
+                    lf.problem(at(), f"[[group]] needs {k!r}")
+            diff, names = g.get("differ_by"), g.get("calibres")
+            if "differ_by" in g:
+                bad = [x for x in diff if x not in DIFFER_BY] if _is_text_list(diff) else [diff]
+                if bad or not diff:
+                    lf.problem(at("differ_by"), f"differ_by lists one or more of {', '.join(DIFFER_BY)}"
+                                                f"{_close(bad[0], DIFFER_BY) if bad else ''}")
+                    continue
+            if "calibres" in g and (not _is_text_list(names) or len(names) < 2):
+                lf.problem(at("calibres"), "calibres lists two or more calibre names, the parent first")
                 continue
-        if "calibres" in g and (not _is_text_list(names) or len(names) < 2):
-            lf.problem(lf.line(None, "calibres"), "calibres lists two or more calibre names, the parent first")
-            continue
-        if "differ_by" not in g or "calibres" not in g:
-            continue
-        if fn != slug(names[0]) + ".toml":
-            lf.problem(lf.line(None, "calibres"), f"the group of {names[0]!r} must be called {slug(names[0])}.toml")
-        for n in names:
-            if n not in by_name and any(has_file(cat, n) for cat in folders):
-                pass
-            elif n not in by_name:
-                lf.problem(lf.line(None, "calibres"), f"{n!r} is not a calibre{_close(n, by_name)}")
-            elif n in grouped:
-                lf.problem(lf.line(None, "calibres"), f"{n!r} is already in lookalikes/{grouped[n]}")
-            else:
-                grouped[n] = fn
-        lookalikes.append((tuple(diff), list(names)))
+            if "differ_by" not in g or "calibres" not in g:
+                continue
+            for n in names:
+                if n not in by_name and any(has_file(cat, n) for cat in folders):
+                    pass
+                elif n not in by_name:
+                    lf.problem(at("calibres"), f"{n!r} is not a calibre{_close(n, by_name)}")
+                elif n in grouped:
+                    lf.problem(at("calibres"), f"{n!r} is already in the group on line {grouped[n]}")
+                else:
+                    grouped[n] = at()
+            lookalikes.append((tuple(diff), list(names)))
 
     if problems:
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
@@ -625,7 +626,7 @@ BULLET_INFERRED = {name for name, (_, url) in BULLETS.items() if url is None}
 CASES = _t["CASES"]  # {name: (material, first source)}
 CURRENT_CASES = _t["CURRENT_CASES"]  # {name: (other case materials made today, first source)}
 LOOSE_MATERIALS = _t["LOOSE_MATERIALS"]  # {name: (material, first source)}
-LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], by file name
+LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the file's order
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
 
 
