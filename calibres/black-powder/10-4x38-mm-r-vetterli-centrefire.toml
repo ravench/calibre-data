@@ -1,7 +1,8 @@
 # The centrefire version of the Vetterli case: many Swiss Vetterli rifles went to the civil market
 # converted by changing only the firing pin. Georg Egestorff (Linden), RWS and Gévelot loaded it,
-# with a brass case and a paper-patched lead bullet, and commercial ammunition was made into the
-# early 1940s (municion.org). Same case as the rimfire original, so the same measurements.
+# and commercial ammunition was made into the early 1940s (municion.org). The Egestorff specimen has
+# a brass case and a paper-patched lead bullet (its municion.org sheet, under [bullet]). Same case as
+# the rimfire original, so the same measurements.
 name = "10.4x38 mm R Vetterli Centrefire"
 kind = "rimmed"
 profile = "round"
