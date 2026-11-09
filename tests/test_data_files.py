@@ -296,6 +296,14 @@ class CheckTests(unittest.TestCase):
                 c.write("countries.toml", text)
                 self.assertOnlyProblems(c, "countries.toml", pattern)
 
+    def test_a_misspelt_category_in_order_toml(self):
+        with Copy() as c:
+            c.edit("order.toml", "Luftdruck = [", "Luftdruk = [")
+            found = c.problems()
+            self.assertEqual(len(found), 2, found)
+            self.assertProblem(c, "order.toml", r"'Luftdruk' has no folder calibres/Luftdruk/ \(did you mean \"Luftdruck\"\?\)")
+            self.assertProblem(c, "calibres/Luftdruck", r"not in order.toml \(did you mean \"Luftdruk\"\?\)", line=False)
+
     def test_unknown_category_folder(self):
         with Copy() as c:
             os.makedirs(c.path("calibres/Langwaffen"))
@@ -325,6 +333,12 @@ class CheckTests(unittest.TestCase):
                 c.edit(NATO, old, new)
                 self.assertEqual({p[0] for p in c.problems()}, {NATO})
                 self.assertProblem(c, NATO, pattern, line=c.line_of(NATO, line))
+        with Copy() as c:
+            c.write(NATO, c.read(NATO) + "\n[extra]\nx = 1\n")
+            self.assertProblem(c, NATO, r"unknown key 'extra'", line=c.line_of(NATO, "[extra]"))
+        with Copy() as c:
+            shutil.rmtree(c.path("lookalikes"))
+            self.assertOnlyProblems(c, "lookalikes", r"missing")
         with Copy() as c:
             c.write("lookalikes/notes.txt", "x")
             c.write("lookalikes/.DS_Store", "x")

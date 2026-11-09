@@ -228,7 +228,8 @@ def _is_text_list(v):
 def _check_keys(f, table, data, allowed, required):
     for k in data:
         if k not in allowed:
-            f.problem(f.line(table, k), f"unknown key {k!r}{' in [' + table + ']' if table else ''}"
+            line = f.line(k) if table is None and isinstance(data[k], dict) else f.line(table, k)
+            f.problem(line, f"unknown key {k!r}{' in [' + table + ']' if table else ''}"
                                         f"{_close(k, allowed)}; allowed: {', '.join(sorted(allowed))}")
     for k in required:
         if k not in data:
@@ -459,7 +460,8 @@ def load(root=ROOT):
     catalogue = []
     for cat, names in order.items():
         if not os.path.isdir(os.path.join(cal_dir, cat)):
-            of.problem(of.line(None, cat), f"category {cat!r} has no folder calibres/{cat}/")
+            of.problem(of.line(None, cat), f"category {cat!r} has no folder calibres/{cat}/{_close(cat, folders)}")
+            continue
         files = {e["name"]: e for e, *_ in found.get(cat, [])}
         listed = []
         for n in names:
@@ -479,6 +481,8 @@ def load(root=ROOT):
     lookalikes = []
     grouped = {}
     look_dir = os.path.join(root, "lookalikes")
+    if not os.path.isdir(look_dir):
+        problems.append(("lookalikes", None, "missing: the folder with one file per group of lookalikes"))
     for fn in sorted(os.listdir(look_dir)) if os.path.isdir(look_dir) else []:
         rel = f"lookalikes/{fn}"
         if fn.startswith("."):
