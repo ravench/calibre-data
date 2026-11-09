@@ -13,11 +13,12 @@ rim = 14.93
 base = 14.91
 shoulder = 13.82
 shoulder_at = 54.9
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page116.pdf"]
 neck = 8.73
 case_length = 69.73
 overall_length = 94.5
 bullet = 7.82
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.300_Lapua_Magnum"]
 
 [introduced]
 year = 1989

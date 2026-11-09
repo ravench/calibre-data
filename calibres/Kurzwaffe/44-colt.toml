@@ -16,7 +16,7 @@ neck = 11.6
 case_length = 28.0
 overall_length = 38.0
 bullet = 11.5
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
 
 [introduced]
 year = 1871

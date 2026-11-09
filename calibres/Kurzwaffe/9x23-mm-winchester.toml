@@ -15,7 +15,7 @@ neck = 9.68
 case_length = 22.86
 overall_length = 33.02
 bullet = 9.04
-sources = []
+sources = ["https://en.wikipedia.org/wiki/9×23mm_Winchester"]
 
 [introduced]
 # 1992 is the patent on the 9x23 Super

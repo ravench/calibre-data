@@ -16,7 +16,7 @@ neck = 10.85
 case_length = 18.23
 overall_length = 30.52
 bullet = 10.85
-sources = []
+sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]
 
 [introduced]
 year = 1872

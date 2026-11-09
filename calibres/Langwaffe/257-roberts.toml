@@ -12,11 +12,12 @@ rim = 12.0
 base = 12.0
 shoulder = 10.9
 shoulder_at = 43.88
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page96.pdf"]
 neck = 7.4
 case_length = 56.7
 overall_length = 70.5
 bullet = 6.5
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.257_Roberts"]
 
 [introduced]
 year = 1934

@@ -11,11 +11,12 @@ rim = 13.6
 base = 14.1
 shoulder = 13.67
 shoulder_at = 42.25
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page100.pdf"]
 neck = 7.98
 case_length = 53.3
 overall_length = 72.6
 bullet = 7.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.270_Winchester_Short_Magnum"]
 
 [introduced]
 year = 2002

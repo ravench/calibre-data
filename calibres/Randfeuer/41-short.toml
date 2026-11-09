@@ -16,7 +16,7 @@ neck = 10.3
 case_length = 11.9
 overall_length = 23.2
 bullet = 10.3
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.41_Short"]
 
 [introduced]
 year = 1863

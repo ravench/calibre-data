@@ -11,11 +11,12 @@ rim = 12.0
 base = 11.9
 shoulder = 11.5
 shoulder_at = 39.62
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page131.pdf"]
 neck = 9.4
 case_length = 51.0
 overall_length = 70.0
 bullet = 8.6
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.338_Federal"]
 
 [introduced]
 year = 2006

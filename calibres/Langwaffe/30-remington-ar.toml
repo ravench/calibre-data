@@ -13,11 +13,12 @@ rim = 12.5
 base = 12.7
 shoulder = 12.4
 shoulder_at = 27.37
+shoulder_at_sources = []
 neck = 8.6
 case_length = 39.0
 overall_length = 57.0
 bullet = 7.82
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.30_Remington_AR"]
 
 [introduced]
 year = 2008

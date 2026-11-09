@@ -15,11 +15,12 @@ rim = 10.5
 base = 10.23
 shoulder = 10.0
 shoulder_at = 15.35
+shoulder_at_sources = ["https://municion.org/producto/8-mm-nambu-m-1914/"]
 neck = 8.71
 case_length = 21.43
 overall_length = 31.56
 bullet = 8.13
-sources = []
+sources = ["https://en.wikipedia.org/wiki/8×22mm_Nambu"]
 
 [introduced]
 year = 1904

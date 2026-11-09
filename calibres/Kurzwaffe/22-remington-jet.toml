@@ -13,11 +13,12 @@ rim = 11.2
 base = 9.6
 shoulder = 8.9
 shoulder_at = 15.19
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page36.pdf"]
 neck = 6.3
 case_length = 33.0
 overall_length = 40.0
 bullet = 5.6
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.22_Remington_Jet"]
 
 [introduced]
 year = 1961

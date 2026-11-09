@@ -15,7 +15,7 @@ neck = 16.5
 case_length = 76.0
 overall_length = 94.0
 bullet = 15.7
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.600_Nitro_Express"]
 
 [introduced]
 year = 1899

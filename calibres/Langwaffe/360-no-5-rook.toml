@@ -16,7 +16,7 @@ neck = 9.53
 case_length = 26.67
 overall_length = 36.83
 bullet = 9.19
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.360_No._5_Rook"]
 
 [introduced]
 # introduced 1875-1880

@@ -15,7 +15,7 @@ neck = 8.56
 case_length = 21.0
 overall_length = 29.7
 bullet = 7.93
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.30_Super_Carry"]
 
 [introduced]
 year = 2022

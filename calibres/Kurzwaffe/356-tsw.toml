@@ -15,7 +15,7 @@ neck = 9.7
 case_length = 21.6
 overall_length = 29.5
 bullet = 9.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.356_TSW"]
 
 [introduced]
 year = 1994

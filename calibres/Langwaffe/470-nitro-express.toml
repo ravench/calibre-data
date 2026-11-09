@@ -14,11 +14,12 @@ rim = 16.6
 base = 14.6
 shoulder = 13.5
 shoulder_at = 60.96
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page119.pdf"]
 neck = 12.8
 case_length = 83.0
 overall_length = 101.0
 bullet = 12.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.470_Nitro_Express"]
 
 [introduced]
 year = 1907

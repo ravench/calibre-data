@@ -10,12 +10,16 @@ origin = "US"
 rim = 11.2
 base = 11.2
 shoulder = 10.915
+shoulder_sources = ["https://www.outdoorlife.com/guns/22-arc-review/"]
 shoulder_at = 29.235
+shoulder_at_sources = ["https://www.outdoorlife.com/guns/22-arc-review/"]
 neck = 6.43
+neck_sources = ["https://www.outdoorlife.com/guns/22-arc-review/"]
 case_length = 38.74
+case_length_sources = ["https://www.outdoorlife.com/guns/22-arc-review/"]
 overall_length = 57.4
 bullet = 5.7
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.22_ARC"]
 
 [introduced]
 year = 2023

@@ -14,11 +14,12 @@ rim = 11.4
 base = 11.4
 shoulder = 10.85
 shoulder_at = 41.73
+shoulder_at_sources = ["https://municion.org/producto/735-x-51-italian-carcano-m-1938/"]
 neck = 8.32
 case_length = 51.5
 overall_length = 73.5
 bullet = 7.57
-sources = []
+sources = ["https://en.wikipedia.org/wiki/7.35×51mm_Carcano"]
 
 [introduced]
 year = 1938

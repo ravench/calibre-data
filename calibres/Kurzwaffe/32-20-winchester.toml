@@ -13,11 +13,12 @@ rim = 10.4
 base = 9.0
 shoulder = 8.7
 shoulder_at = 22.35
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page81.pdf"]
 neck = 8.3
 case_length = 33.4
 overall_length = 40.4
 bullet = 7.94
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.32-20_Winchester"]
 
 [introduced]
 year = 1882

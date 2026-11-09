@@ -15,7 +15,7 @@ neck = 5.72
 case_length = 19.83
 overall_length = 29.89
 bullet = 5.63
-sources = []
+sources = ["https://municion.org/producto/22-extra-long-rf-us/"]
 
 [introduced]
 year = 1878

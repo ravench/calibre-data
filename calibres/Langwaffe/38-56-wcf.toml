@@ -17,11 +17,12 @@ rim = 15.37
 base = 12.83
 shoulder = 11.3
 shoulder_at = 30.64
+shoulder_at_sources = ["https://municion.org/producto/38-56-winchester-cf-marlincolt/"]
 neck = 10.16
 case_length = 53.34
 overall_length = 63.5
 bullet = 9.59
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.38-56_WCF"]
 
 [introduced]
 year = 1887

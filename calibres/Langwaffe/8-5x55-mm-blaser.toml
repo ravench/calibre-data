@@ -15,7 +15,7 @@ neck = 9.36
 case_length = 54.7
 overall_length = 75.84
 bullet = 8.59
-sources = []
+sources = ["https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vestnik_%202021_DEF.pdf"]
 
 [introduced]
 # C.I.P. sheet 2019-05-22

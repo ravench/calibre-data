@@ -11,11 +11,12 @@ rim = 10.4
 base = 8.9
 shoulder = 8.5
 shoulder_at = 21.77
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page60.pdf"]
 neck = 7.0
 case_length = 33.8
 overall_length = 40.4
 bullet = 6.6
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.25-20_Winchester"]
 
 [introduced]
 year = 1895

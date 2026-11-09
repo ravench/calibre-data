@@ -15,7 +15,7 @@ neck = 12.8
 case_length = 36.0
 overall_length = 45.0
 bullet = 12.1
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]
 
 [introduced]
 year = 1988

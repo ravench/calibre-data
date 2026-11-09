@@ -15,7 +15,7 @@ neck = 12.2
 case_length = 27.9
 overall_length = 36.3
 bullet = 11.5
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.45_Schofield"]
 
 [introduced]
 year = 1875

@@ -9,14 +9,18 @@ origin = "DE"
 
 [mm]
 rim = 13.32
+rim_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page24.pdf"]
 base = 11.89
 shoulder = 10.8
 shoulder_at = 51.5
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page24.pdf"]
 neck = 7.95
 case_length = 65.0
+case_length_sources = []
 overall_length = 83.6
+overall_length_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page24.pdf"]
 bullet = 7.25
-sources = []
+sources = ["https://en.wikipedia.org/wiki/7×64mm"]
 
 [introduced]
 year = 1917

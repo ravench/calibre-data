@@ -18,7 +18,7 @@ neck = 12.8
 case_length = 32.6
 overall_length = 41.9
 bullet = 12.1
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
 
 [introduced]
 year = 2003

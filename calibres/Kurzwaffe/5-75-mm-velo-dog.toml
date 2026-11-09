@@ -14,7 +14,7 @@ neck = 6.25
 case_length = 29.41
 overall_length = 35.24
 bullet = 5.65
-sources = []
+sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 
 [introduced]
 year = 1894

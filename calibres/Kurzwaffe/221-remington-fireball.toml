@@ -12,11 +12,12 @@ rim = 9.6
 base = 9.6
 shoulder = 9.2
 shoulder_at = 27.2
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page37.pdf"]
 neck = 6.4
 case_length = 35.6
 overall_length = 46.5
 bullet = 5.7
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.221_Remington_Fireball"]
 
 [introduced]
 year = 1963

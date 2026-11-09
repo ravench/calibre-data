@@ -13,7 +13,7 @@ neck = 10.84
 case_length = 42.0
 overall_length = 57.0
 bullet = 10.17
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.400_Legend"]
 
 [introduced]
 year = 2023

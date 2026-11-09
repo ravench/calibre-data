@@ -11,11 +11,12 @@ rim = 12.0
 base = 11.3
 shoulder = 10.2
 shoulder_at = 43.76
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page83.pdf"]
 neck = 6.6
 case_length = 56.0
 overall_length = 68.1
 bullet = 5.7
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.220_Swift"]
 
 [introduced]
 year = 1935

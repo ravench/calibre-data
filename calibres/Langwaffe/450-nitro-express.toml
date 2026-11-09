@@ -16,7 +16,7 @@ neck = 12.2
 case_length = 83.0
 overall_length = 100.0
 bullet = 11.6
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.450_Nitro_Express"]
 
 [introduced]
 year = 1898

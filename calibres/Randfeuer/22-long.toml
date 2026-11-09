@@ -14,7 +14,9 @@ rim = 6.9
 base = 5.7
 neck = 5.7
 case_length = 15.6
+case_length_sources = ["https://en.wikipedia.org/wiki/.22_Long"]
 overall_length = 22.6
+overall_length_sources = ["https://en.wikipedia.org/wiki/.22_Long"]
 bullet = 5.7
 sources = []
 

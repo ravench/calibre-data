@@ -18,7 +18,7 @@ neck = 11.9
 case_length = 22.87
 overall_length = 32.12
 bullet = 11.5
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
 
 [introduced]
 year = 1920

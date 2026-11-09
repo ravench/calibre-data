@@ -13,11 +13,12 @@ rim = 13.4
 base = 11.48
 shoulder = 10.75
 shoulder_at = 43.33
+shoulder_at_sources = []
 neck = 7.55
 case_length = 53.5
 overall_length = 77.47
 bullet = 6.65
-sources = []
+sources = ["https://en.wikipedia.org/wiki/6.5×53mmR"]
 
 [introduced]
 year = 1892

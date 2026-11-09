@@ -16,7 +16,7 @@ neck = 13.6
 case_length = 61.0
 overall_length = 70.0
 bullet = 13.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.50-110_Winchester"]
 
 [introduced]
 # catalogued 1887

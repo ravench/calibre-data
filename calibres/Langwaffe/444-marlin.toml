@@ -14,7 +14,7 @@ neck = 11.5
 case_length = 56.5
 overall_length = 65.0
 bullet = 10.9
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
 
 [introduced]
 year = 1964

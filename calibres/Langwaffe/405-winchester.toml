@@ -16,7 +16,7 @@ neck = 11.1
 case_length = 65.6
 overall_length = 80.6
 bullet = 10.45
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.405_Winchester"]
 
 [introduced]
 year = 1904

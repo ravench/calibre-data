@@ -18,7 +18,7 @@ neck = 8.5
 case_length = 53.5
 overall_length = 77.0
 bullet = 7.85
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page28.pdf"]
 
 [introduced]
 # Lookalike variants (2026-11-08).

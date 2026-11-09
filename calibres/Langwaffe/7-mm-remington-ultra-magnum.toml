@@ -12,11 +12,12 @@ rim = 13.5
 base = 13.97
 shoulder = 13.34
 shoulder_at = 60.64
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page41.pdf"]
 neck = 8.1
 case_length = 72.4
 overall_length = 91.4
 bullet = 7.2
-sources = []
+sources = ["https://en.wikipedia.org/wiki/7mm_Remington_Ultra_Magnum"]
 
 [introduced]
 # Wikipedia's text; its infobox says 2002

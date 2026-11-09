@@ -14,11 +14,12 @@ rim = 14.6
 base = 15.7
 shoulder = 15.4
 shoulder_at = 57.61
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page153.pdf"]
 neck = 13.7
 case_length = 70.0
 overall_length = 88.0
 bullet = 13.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.500_Jeffery"]
 
 [introduced]
 year = 1920

@@ -11,6 +11,7 @@ rim = 8.9
 base = 7.6
 shoulder = 7.3
 shoulder_at = 26.83
+shoulder_at_sources = ["https://municion.org/producto/17-hornet/"]
 neck = 4.9
 case_length = 34.3
 overall_length = 43.8

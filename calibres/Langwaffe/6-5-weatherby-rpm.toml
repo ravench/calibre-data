@@ -9,9 +9,13 @@ origin = "US"
 
 [mm]
 rim = 12.01
+rim_sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"]
 base = 12.7
+base_sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"]
 shoulder = 12.14
+shoulder_sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"]
 shoulder_at = 54.8
+shoulder_at_sources = ["https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"]
 neck = 7.54
 case_length = 65.28
 overall_length = 84.84

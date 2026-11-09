@@ -13,11 +13,12 @@ rim = 12.01
 base = 11.95
 shoulder = 11.78
 shoulder_at = 38.4
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page109.pdf"]
 neck = 8.56
 case_length = 48.77
 overall_length = 67.56
 bullet = 7.82
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.30_Thompson_Center"]
 
 [introduced]
 year = 2007

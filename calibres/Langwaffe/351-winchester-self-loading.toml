@@ -15,7 +15,7 @@ neck = 9.5
 case_length = 35.1
 overall_length = 48.4
 bullet = 8.9
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading"]
 
 [introduced]
 year = 1906

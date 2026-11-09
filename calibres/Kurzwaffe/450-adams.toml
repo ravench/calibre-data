@@ -15,7 +15,7 @@ neck = 12.1
 case_length = 18.0
 overall_length = 28.0
 bullet = 11.6
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.450_Adams"]
 
 [introduced]
 year = 1868

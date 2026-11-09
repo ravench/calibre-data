@@ -15,7 +15,7 @@ neck = 8.09
 case_length = 20.0
 overall_length = 30.85
 bullet = 7.92
-sources = []
+sources = ["https://municion.org/producto/32-long-rf/"]
 
 [introduced]
 year = 1861

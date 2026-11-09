@@ -15,7 +15,7 @@ neck = 7.32
 case_length = 48.8
 overall_length = 71.8
 bullet = 6.54
-sources = []
+sources = ["https://saami.org/wp-content/uploads/2025/01/Public-Introduction-25-Creedmoor-2025-01-27.pdf"]
 
 [introduced]
 year = 2025

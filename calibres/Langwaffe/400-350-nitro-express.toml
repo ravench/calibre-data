@@ -14,11 +14,12 @@ rim = 13.2
 base = 11.9
 shoulder = 10.5
 shoulder_at = 53.34
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page104.pdf"]
 neck = 9.7
 case_length = 70.0
 overall_length = 93.6
 bullet = 9.1
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.400/350_Nitro_Express"]
 
 [introduced]
 year = 1899

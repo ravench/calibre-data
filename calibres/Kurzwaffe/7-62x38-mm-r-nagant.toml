@@ -16,7 +16,7 @@ neck = 7.26
 case_length = 38.86
 overall_length = 38.86
 bullet = 7.82
-sources = []
+sources = ["https://en.wikipedia.org/wiki/7.62×38mmR"]
 
 [introduced]
 year = 1895

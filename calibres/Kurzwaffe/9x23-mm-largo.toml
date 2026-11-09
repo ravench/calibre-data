@@ -20,7 +20,7 @@ neck = 9.7
 case_length = 23.1
 overall_length = 33.53
 bullet = 9.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/9×23mm_Largo"]
 
 [introduced]
 # Bergmann-Bayard 1903; Spain adopted it 1905

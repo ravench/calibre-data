@@ -15,7 +15,7 @@ neck = 8.0
 case_length = 20.3
 overall_length = 20.3
 bullet = 8.0
-sources = []
+sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
 [introduced]
 # C.I.P. Tab. VIII sheet dates (1991-07-29 to 1991-08-02); no earlier source found for these blanks.

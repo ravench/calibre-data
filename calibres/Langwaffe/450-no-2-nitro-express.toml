@@ -17,7 +17,7 @@ neck = 12.24
 case_length = 88.9
 overall_length = 109.98
 bullet = 11.63
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page116.pdf"]
 
 [introduced]
 year = 1903

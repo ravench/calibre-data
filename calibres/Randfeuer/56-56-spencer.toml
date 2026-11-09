@@ -16,7 +16,7 @@ neck = 14.2
 case_length = 22.2
 overall_length = 39.2
 bullet = 14.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.56-56_Spencer"]
 
 [introduced]
 year = 1860

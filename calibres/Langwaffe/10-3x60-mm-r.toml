@@ -16,7 +16,7 @@ neck = 11.26
 case_length = 60.8
 overall_length = 78.9
 bullet = 10.54
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page52.pdf"]
 
 [introduced]
 # Year of production on the municion.org product pages (AECC).

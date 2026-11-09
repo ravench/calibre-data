@@ -15,7 +15,7 @@ neck = 9.8
 case_length = 22.9
 overall_length = 33.0
 bullet = 9.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.38_ACP"]
 
 [introduced]
 year = 1900

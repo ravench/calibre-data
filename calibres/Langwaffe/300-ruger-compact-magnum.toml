@@ -13,11 +13,12 @@ rim = 13.5
 base = 13.5
 shoulder = 13.1
 shoulder_at = 42.44
+shoulder_at_sources = ["https://municion.org/producto/300-ruger-compact-magnum/"]
 neck = 8.6
 case_length = 53.0
 overall_length = 71.8
 bullet = 7.82
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.300_Ruger_Compact_Magnum"]
 
 [introduced]
 year = 2007

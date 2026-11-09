@@ -15,11 +15,12 @@ rim = 11.95
 base = 11.95
 shoulder = 10.95
 shoulder_at = 45.86
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page68.pdf"]
 neck = 10.0
 case_length = 56.5
 overall_length = 81.0
 bullet = 9.3
-sources = []
+sources = ["https://en.wikipedia.org/wiki/9.3×57mm_Mauser"]
 
 [introduced]
 year = 1900

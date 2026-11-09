@@ -13,11 +13,12 @@ rim = 10.8
 base = 10.8
 shoulder = 10.7
 shoulder_at = 19.9
+shoulder_at_sources = ["https://municion.org/producto/9-x-25-dillon/"]
 neck = 9.7
 case_length = 25.1
 overall_length = 31.8
 bullet = 9.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/9×25mm_Dillon"]
 
 [introduced]
 year = 1988

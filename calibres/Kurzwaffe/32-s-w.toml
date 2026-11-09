@@ -15,7 +15,7 @@ neck = 8.5
 case_length = 15.0
 overall_length = 23.0
 bullet = 7.9
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
 
 [introduced]
 year = 1878

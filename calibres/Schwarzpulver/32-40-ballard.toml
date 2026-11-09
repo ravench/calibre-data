@@ -14,7 +14,7 @@ neck = 8.6
 case_length = 54.0
 overall_length = 66.0
 bullet = 8.1
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
 
 [introduced]
 year = 1884

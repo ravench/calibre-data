@@ -15,7 +15,7 @@ neck = 8.82
 case_length = 17.21
 overall_length = 24.16
 bullet = 7.92
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.35_S%26W_Auto"]
 
 [introduced]
 year = 1912

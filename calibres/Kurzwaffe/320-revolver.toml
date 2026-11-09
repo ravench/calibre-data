@@ -20,7 +20,7 @@ neck = 8.12
 case_length = 16.6
 overall_length = 26.7
 bullet = 8.0
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page48.pdf"]
 
 [introduced]
 # Webley Bull Dog

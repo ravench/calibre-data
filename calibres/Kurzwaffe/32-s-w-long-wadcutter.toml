@@ -20,7 +20,7 @@ neck = 8.56
 case_length = 23.27
 overall_length = 23.27
 bullet = 8.0
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page46.pdf"]
 
 [introduced]
 unknown = "C.I.P. sheet dated 1984-06-14 like the .32 S&W Long's; no launch year found"

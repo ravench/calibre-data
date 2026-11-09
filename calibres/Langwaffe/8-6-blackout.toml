@@ -15,7 +15,7 @@ neck = 9.3
 case_length = 42.8
 overall_length = 71.4
 bullet = 8.61
-sources = []
+sources = ["https://saami.org/wp-content/uploads/2026/04/Public-Introduction-8.6-BLACKOUT-2026-04-07.pdf"]
 
 [introduced]
 unknown = "sources give only the 2026 SAAMI acceptance, not when Q introduced it"

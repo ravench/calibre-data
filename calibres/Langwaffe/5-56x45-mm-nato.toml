@@ -12,6 +12,7 @@ rim = 9.6
 base = 9.6
 shoulder = 9.0
 shoulder_at = 35.02
+shoulder_at_sources = ["https://en.wikipedia.org/wiki/.223_Remington"]
 neck = 6.4
 case_length = 44.7
 overall_length = 57.4

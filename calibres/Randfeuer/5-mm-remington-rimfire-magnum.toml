@@ -12,11 +12,12 @@ rim = 8.3
 base = 6.6
 shoulder = 6.6
 shoulder_at = 20.22
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf"]
 neck = 5.7
 case_length = 25.9
 overall_length = 33.0
 bullet = 5.2
-sources = []
+sources = ["https://en.wikipedia.org/wiki/5mm_Remington_Rimfire_Magnum"]
 
 [introduced]
 year = 1969

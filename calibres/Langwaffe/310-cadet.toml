@@ -16,7 +16,7 @@ neck = 8.3
 case_length = 28.0
 overall_length = 41.0
 bullet = 8.2
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.310_Cadet"]
 
 [introduced]
 year = 1900

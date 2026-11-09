@@ -12,11 +12,13 @@ rim = 11.52
 base = 11.47
 shoulder = 10.87
 shoulder_at = 41.82
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page22.pdf"]
 neck = 7.56
 case_length = 53.6
+case_length_sources = []
 overall_length = 77.8
 bullet = 6.7
-sources = []
+sources = ["https://en.wikipedia.org/wiki/6.5×54mm_Mannlicher–Schönauer"]
 
 [introduced]
 year = 1900

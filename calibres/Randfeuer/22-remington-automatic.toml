@@ -16,7 +16,7 @@ neck = 6.2
 case_length = 16.8
 overall_length = 23.4
 bullet = 5.7
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]
 
 [introduced]
 # with the Model 16

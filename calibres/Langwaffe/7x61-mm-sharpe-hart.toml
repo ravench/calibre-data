@@ -18,7 +18,7 @@ neck = 8.06
 case_length = 61.0
 overall_length = 83.0
 bullet = 7.2
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page2.pdf"]
 
 [introduced]
 # developed on a 1953 trip

@@ -9,9 +9,12 @@ origin = "DE"
 
 [mm]
 rim = 13.32
+rim_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page15.pdf"]
 base = 11.92
+base_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page15.pdf"]
 shoulder = 10.94
 shoulder_at = 44.5
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page15.pdf"]
 neck = 7.65
 case_length = 56.7
 overall_length = 82.0

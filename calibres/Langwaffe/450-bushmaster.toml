@@ -13,7 +13,7 @@ neck = 12.19
 case_length = 43.2
 overall_length = 57.4
 bullet = 11.48
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.450_Bushmaster"]
 
 [introduced]
 year = 2007

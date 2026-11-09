@@ -13,11 +13,12 @@ rim = 12.9
 base = 12.0
 shoulder = 11.5
 shoulder_at = 39.62
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page77.pdf"]
 neck = 8.7
 case_length = 51.2
 overall_length = 65.0
 bullet = 7.8
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.307_Winchester"]
 
 [introduced]
 year = 1982

@@ -13,11 +13,12 @@ rim = 12.8
 base = 11.2
 shoulder = 10.5
 shoulder_at = 34.33
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf"]
 neck = 8.5
 case_length = 51.2
 overall_length = 64.0
 bullet = 7.8
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.303_Savage"]
 
 [introduced]
 year = 1894

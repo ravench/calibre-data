@@ -15,7 +15,7 @@ neck = 8.02
 case_length = 14.22
 overall_length = 23.79
 bullet = 7.88
-sources = []
+sources = ["https://municion.org/producto/32-short-rf/"]
 
 [introduced]
 # "c1865"

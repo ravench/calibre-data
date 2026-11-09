@@ -16,7 +16,7 @@ neck = 5.7
 case_length = 7.2
 overall_length = 8.7
 bullet = 5.7
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.22_BB"]
 
 [introduced]
 year = 1845

@@ -16,7 +16,7 @@ neck = 9.63
 case_length = 29.34
 overall_length = 30.35
 bullet = 9.14
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page60.pdf"]
 
 [introduced]
 unknown = "C.I.P. sheet dated 1984-06-14; no launch year found"

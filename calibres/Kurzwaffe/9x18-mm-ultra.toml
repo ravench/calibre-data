@@ -16,7 +16,7 @@ neck = 9.65
 case_length = 17.85
 overall_length = 25.27
 bullet = 9.01
-sources = []
+sources = ["https://en.wikipedia.org/wiki/9×18mm_Ultra"]
 
 [introduced]
 year = 1936

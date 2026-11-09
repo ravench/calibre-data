@@ -15,7 +15,7 @@ neck = 9.55
 case_length = 33.02
 overall_length = 57.4
 bullet = 8.59
-sources = []
+sources = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"]
 
 [introduced]
 year = 2025

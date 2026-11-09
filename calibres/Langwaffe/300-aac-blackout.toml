@@ -12,6 +12,7 @@ rim = 9.6
 base = 9.6
 shoulder = 9.1
 shoulder_at = 27.2
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
 neck = 8.4
 case_length = 34.7
 overall_length = 57.0

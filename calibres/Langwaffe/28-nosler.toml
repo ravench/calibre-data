@@ -10,12 +10,15 @@ origin = "US"
 rim = 13.6
 base = 14.0
 shoulder = 13.6
+shoulder_sources = []
 shoulder_at = 56.38
+shoulder_at_sources = []
 neck = 8.0
+neck_sources = []
 case_length = 65.8
 overall_length = 84.8
 bullet = 7.2
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
 
 [introduced]
 year = 2015

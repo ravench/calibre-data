@@ -13,6 +13,7 @@ rim = 11.96
 base = 11.95
 shoulder = 11.66
 shoulder_at = 33.12
+shoulder_at_sources = ["https://www.4dreamerrentals.com/"]
 neck = 6.95
 case_length = 43.82
 overall_length = 67.06

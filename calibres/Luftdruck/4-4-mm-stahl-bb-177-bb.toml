@@ -9,7 +9,7 @@ worldwide = true
 
 [mm]
 diameter = 4.35
-sources = []
+sources = ["https://en.wikipedia.org/wiki/BB_gun"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.

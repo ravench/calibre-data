@@ -13,11 +13,12 @@ rim = 8.89
 base = 7.57
 shoulder = 7.01
 shoulder_at = 21.64
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page56.pdf"]
 neck = 6.17
 case_length = 35.64
 overall_length = 43.76
 bullet = 5.69
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.22_Hornet"]
 
 [introduced]
 year = 1930

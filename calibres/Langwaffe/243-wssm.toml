@@ -13,11 +13,12 @@ rim = 13.6
 base = 14.1
 shoulder = 13.8
 shoulder_at = 29.21
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page89.pdf"]
 neck = 7.4
 case_length = 42.4
 overall_length = 60.0
 bullet = 6.2
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.243_Winchester_Super_Short_Magnum"]
 
 [introduced]
 year = 2003

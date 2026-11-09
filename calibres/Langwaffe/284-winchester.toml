@@ -11,11 +11,12 @@ rim = 12.01
 base = 12.72
 shoulder = 12.06
 shoulder_at = 45.08
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page105.pdf"]
 neck = 8.13
 case_length = 55.12
 overall_length = 71.12
 bullet = 7.21
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.284_Winchester"]
 
 [introduced]
 year = 1963

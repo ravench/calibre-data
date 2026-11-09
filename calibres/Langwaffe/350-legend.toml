@@ -14,7 +14,7 @@ neck = 9.6
 case_length = 43.0
 overall_length = 57.0
 bullet = 9.07
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
 
 [introduced]
 year = 2019

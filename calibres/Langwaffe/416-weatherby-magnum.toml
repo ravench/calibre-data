@@ -10,14 +10,16 @@ rare = true
 
 [mm]
 rim = 14.71
+rim_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page33.pdf"]
 base = 14.8
 shoulder = 14.2
 shoulder_at = 60.66
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page33.pdf"]
 neck = 11.3
 case_length = 74.0
 overall_length = 95.3
 bullet = 10.6
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.416_Weatherby_Magnum"]
 
 [introduced]
 year = 1989

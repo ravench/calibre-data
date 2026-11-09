@@ -15,7 +15,7 @@ neck = 13.5
 case_length = 32.6
 overall_length = 40.9
 bullet = 12.7
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.50_Action_Express"]
 
 [introduced]
 year = 1988

@@ -14,11 +14,12 @@ rim = 15.81
 base = 14.24
 shoulder = 13.87
 shoulder_at = 26
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page113.pdf"]
 neck = 12.2
 case_length = 47.86
 overall_length = 56.52
 bullet = 11.39
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.45-75_Winchester"]
 
 [introduced]
 year = 1876

@@ -11,11 +11,12 @@ rim = 10.7
 base = 10.7
 shoulder = 10.2
 shoulder_at = 33.05
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf"]
 neck = 7.8
 case_length = 42.8
 overall_length = 57.4
 bullet = 7.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/6.8mm_Remington_SPC"]
 
 [introduced]
 year = 2002

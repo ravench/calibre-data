@@ -17,7 +17,7 @@ neck = 11.45
 case_length = 17.0
 overall_length = 30.0
 bullet = 11.46
-sources = []
+sources = ["https://en.wikipedia.org/wiki/11mm_French_Ordnance"]
 
 [introduced]
 year = 1873

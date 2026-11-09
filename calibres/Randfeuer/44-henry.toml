@@ -15,7 +15,7 @@ neck = 11.0
 case_length = 22.9
 overall_length = 34.2
 bullet = 11.3
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.44_Henry"]
 
 [introduced]
 year = 1860

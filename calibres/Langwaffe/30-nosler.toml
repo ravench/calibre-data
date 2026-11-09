@@ -15,7 +15,8 @@ neck = 8.74
 case_length = 64.92
 overall_length = 84.84
 bullet = 7.82
-sources = []
+bullet_sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+sources = ["https://www.nosler.com/"]
 
 [introduced]
 year = 2016

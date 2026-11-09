@@ -13,11 +13,12 @@ rim = 10.8
 base = 10.8
 shoulder = 10.8
 shoulder_at = 20.85
+shoulder_at_sources = []
 neck = 8.5
 case_length = 27.0
 overall_length = 35.0
 bullet = 7.8
-sources = []
+sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
 
 [introduced]
 year = 2009

@@ -16,7 +16,7 @@ neck = 13.5
 case_length = 76.0
 overall_length = 95.0
 bullet = 13.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.500_Nitro_Express"]
 
 [introduced]
 year = 1890

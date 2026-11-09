@@ -11,6 +11,7 @@ rim = 13.5
 base = 13.0
 shoulder = 12.4
 shoulder_at = 51.82
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page3.pdf"]
 neck = 8.0
 case_length = 63.5
 overall_length = 82.6

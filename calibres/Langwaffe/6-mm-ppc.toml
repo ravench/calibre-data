@@ -13,11 +13,12 @@ rim = 11.3
 base = 11.2
 shoulder = 10.9
 shoulder_at = 27.3
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page14.pdf"]
 neck = 6.7
 case_length = 38.5
 overall_length = 53.3
 bullet = 6.17
-sources = []
+sources = ["https://en.wikipedia.org/wiki/6mm_PPC"]
 
 [introduced]
 year = 1975

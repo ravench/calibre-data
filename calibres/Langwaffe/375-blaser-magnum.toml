@@ -20,7 +20,7 @@ neck = 10.31
 case_length = 71.7
 overall_length = 92.0
 bullet = 9.53
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page140.pdf"]
 
 [introduced]
 # C.I.P. sheet 2009-05-05, no earlier source

@@ -14,7 +14,7 @@ neck = 9.5
 case_length = 22.5
 overall_length = 22.5
 bullet = 9.5
-sources = []
+sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
 [introduced]
 # C.I.P. sheet 1991-07-30, no earlier source

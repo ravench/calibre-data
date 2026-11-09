@@ -13,11 +13,12 @@ rim = 9.5
 base = 9.5
 shoulder = 9.47
 shoulder_at = 13.69
+shoulder_at_sources = ["https://municion.org/producto/32-naa/"]
 neck = 8.55
 case_length = 17.3
 overall_length = 25.0
 bullet = 7.95
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.32_NAA"]
 
 [introduced]
 year = 2002

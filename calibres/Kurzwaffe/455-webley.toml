@@ -15,7 +15,7 @@ neck = 12.1
 case_length = 19.6
 overall_length = 31.2
 bullet = 11.5
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
 
 [introduced]
 year = 1891

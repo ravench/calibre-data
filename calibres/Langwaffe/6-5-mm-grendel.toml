@@ -11,11 +11,12 @@ rim = 11.2
 base = 11.15
 shoulder = 10.87
 shoulder_at = 29.07
+shoulder_at_sources = []
 neck = 7.44
 case_length = 38.7
 overall_length = 57.5
 bullet = 6.71
-sources = []
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
 
 [introduced]
 year = 2003

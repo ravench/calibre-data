@@ -11,6 +11,7 @@ rim = 12.0
 base = 12.0
 shoulder = 11.7
 shoulder_at = 37.84
+shoulder_at_sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
 neck = 7.5
 case_length = 48.8
 overall_length = 71.8

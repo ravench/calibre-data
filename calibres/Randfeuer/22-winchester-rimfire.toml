@@ -13,7 +13,7 @@ neck = 6.18
 case_length = 24.5
 overall_length = 30.0
 bullet = 5.8
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"]
 
 [introduced]
 year = 1890

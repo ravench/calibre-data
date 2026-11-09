@@ -14,7 +14,7 @@ neck = 13.38
 case_length = 35.36
 overall_length = 47.2
 bullet = 12.72
-sources = []
+sources = ["https://municion.org/producto/500-jrh/"]
 
 [introduced]
 year = 1993

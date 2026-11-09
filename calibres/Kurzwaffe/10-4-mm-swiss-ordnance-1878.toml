@@ -16,7 +16,7 @@ neck = 10.8
 case_length = 20.0
 overall_length = 32.0
 bullet = 10.76
-sources = []
+sources = ["https://en.wikipedia.org/wiki/10.4mm_Swiss_Centerfire"]
 
 [introduced]
 year = 1878

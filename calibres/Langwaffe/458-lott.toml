@@ -16,7 +16,7 @@ neck = 12.2
 case_length = 71.1
 overall_length = 91.4
 bullet = 11.6
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.458_Lott"]
 
 [introduced]
 year = 1989

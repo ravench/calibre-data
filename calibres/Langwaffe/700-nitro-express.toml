@@ -15,7 +15,7 @@ neck = 18.5
 case_length = 89.0
 overall_length = 107.0
 bullet = 17.8
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
 
 [introduced]
 year = 1988

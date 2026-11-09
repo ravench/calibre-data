@@ -15,7 +15,7 @@ neck = 13.3
 case_length = 42.0
 overall_length = 54.0
 bullet = 12.7
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
 
 [introduced]
 year = 2001

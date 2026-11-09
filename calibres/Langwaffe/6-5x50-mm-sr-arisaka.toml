@@ -12,11 +12,12 @@ rim = 12.08
 base = 11.45
 shoulder = 10.4
 shoulder_at = 38.92
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page13.pdf"]
 neck = 7.37
 case_length = 51.0
 overall_length = 76.0
 bullet = 6.63
-sources = []
+sources = ["https://en.wikipedia.org/wiki/6.5×50mmSR_Arisaka"]
 
 [introduced]
 year = 1897

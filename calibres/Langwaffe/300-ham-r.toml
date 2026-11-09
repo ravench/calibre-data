@@ -13,6 +13,7 @@ rim = 9.6
 base = 9.55
 shoulder = 9.3
 shoulder_at = 34.27
+shoulder_at_sources = ["https://municion.org/producto/300-hamr/"]
 neck = 8.43
 case_length = 41.02
 overall_length = 57.4

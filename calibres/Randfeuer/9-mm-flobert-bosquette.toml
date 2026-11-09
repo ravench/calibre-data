@@ -17,7 +17,7 @@ neck = 8.85
 case_length = 10.18
 overall_length = 14.98
 bullet = 8.84
-sources = []
+sources = ["https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"]
 
 [introduced]
 # "Designed in 1845 by Nicolas Flobert"

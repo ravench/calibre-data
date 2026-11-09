@@ -17,7 +17,7 @@ neck = 8.5
 case_length = 19.7
 overall_length = 30.24
 bullet = 7.85
-sources = []
+sources = ["https://en.wikipedia.org/wiki/7.65×20mm_Long"]
 
 [introduced]
 year = 1917

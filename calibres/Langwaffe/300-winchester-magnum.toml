@@ -9,9 +9,11 @@ worldwide = true
 
 [mm]
 rim = 13.51
+rim_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page20.pdf"]
 base = 13.0
 shoulder = 12.4
 shoulder_at = 55.78
+shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page20.pdf"]
 neck = 8.6
 case_length = 66.7
 overall_length = 84.8

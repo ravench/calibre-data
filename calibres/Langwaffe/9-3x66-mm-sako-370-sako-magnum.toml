@@ -20,7 +20,7 @@ neck = 9.92
 case_length = 66.0
 overall_length = 85.0
 bullet = 9.3
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page71.pdf"]
 
 [introduced]
 # C.I.P. sheet 2002-01-22, Sako launch 2003

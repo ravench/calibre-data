@@ -21,7 +21,7 @@ neck = 9.35
 case_length = 48.01
 overall_length = 62.23
 bullet = 8.6
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page84.pdf"]
 
 [introduced]
 year = 2009

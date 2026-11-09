@@ -9,7 +9,7 @@ worldwide = true
 
 [mm]
 diameter = 8.0
-sources = []
+sources = ["https://en.wikipedia.org/wiki/Airsoft_pellets"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.

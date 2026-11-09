@@ -14,11 +14,13 @@ rim = 10.42
 base = 10.4
 shoulder = 9.35
 shoulder_at = 34.0
+shoulder_at_sources = ["https://www.small-arms.org/"]
 neck = 6.65
 case_length = 42.2
 overall_length = 58.0
 bullet = 6.0
-sources = []
+bullet_sources = []
+sources = ["https://en.wikipedia.org/wiki/5.8×42mm"]
 
 [introduced]
 year = 1987

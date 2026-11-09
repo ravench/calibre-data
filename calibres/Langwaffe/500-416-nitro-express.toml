@@ -18,7 +18,7 @@ neck = 11.33
 case_length = 82.55
 overall_length = 101.09
 bullet = 10.57
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page124.pdf"]
 
 [introduced]
 # Krieghoff unveiled it early 1996

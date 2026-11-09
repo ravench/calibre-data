@@ -16,7 +16,7 @@ neck = 10.7
 case_length = 53.0
 overall_length = 63.0
 bullet = 10.3
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.40-65_Winchester"]
 
 [introduced]
 year = 1887

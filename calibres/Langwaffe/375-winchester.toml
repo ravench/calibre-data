@@ -13,7 +13,7 @@ neck = 10.2
 case_length = 51.3
 overall_length = 65.0
 bullet = 9.5
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.375_Winchester"]
 
 [introduced]
 year = 1978

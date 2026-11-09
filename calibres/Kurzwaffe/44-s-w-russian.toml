@@ -15,7 +15,7 @@ neck = 11.6
 case_length = 24.6
 overall_length = 36.3
 bullet = 10.9
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.44_S%26W_Russian"]
 
 [introduced]
 year = 1870

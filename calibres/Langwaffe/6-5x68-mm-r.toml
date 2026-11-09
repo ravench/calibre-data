@@ -18,7 +18,7 @@ neck = 7.6
 case_length = 67.5
 overall_length = 87.5
 bullet = 6.7
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page18.pdf"]
 
 [introduced]
 unknown = "no launch year found (the rimless 6.5x68 is from 1939)"

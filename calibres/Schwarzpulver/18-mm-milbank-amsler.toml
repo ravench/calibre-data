@@ -18,7 +18,7 @@ neck = 18.27
 case_length = 25.54
 overall_length = 39.92
 bullet = 18.15
-sources = []
+sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
 
 [introduced]
 year = 1867

@@ -20,7 +20,7 @@ neck = 11.18
 case_length = 76.2
 overall_length = 95.25
 bullet = 10.41
-sources = []
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page117.pdf"]
 
 [introduced]
 # Jeffery

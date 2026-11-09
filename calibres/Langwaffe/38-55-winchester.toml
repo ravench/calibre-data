@@ -13,7 +13,7 @@ neck = 10.0
 case_length = 53.0
 overall_length = 64.8
 bullet = 9.6
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.38-55_Winchester"]
 
 [introduced]
 year = 1884

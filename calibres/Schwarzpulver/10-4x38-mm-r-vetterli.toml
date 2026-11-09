@@ -15,7 +15,7 @@ neck = 11.43
 case_length = 38.21
 overall_length = 56.22
 bullet = 10.92
-sources = []
+sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
 
 [introduced]
 # adopted 1867, issued with the rifle 1869
