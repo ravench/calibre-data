@@ -16,6 +16,7 @@ Every calibre is one [TOML](https://toml.io) file in `calibres/<category>/`, nam
 - `order.toml`: the order the apps and the poster list the calibres in. A calibre that is not listed
   comes after the listed ones of its category, by name, so a new calibre needs no entry here.
 - `countries.toml`: the country codes a calibre's `origin` can name, with English name and flag emoji.
+- `docs/template.toml`: a calibre file with every field explained, to start a new calibre from.
 - `lookalikes/`: one file per group of calibres that are cartridges of their own but look alike.
 - `cartridges.py` reads and checks all of them and gives the apps' generators, `outline.py` and the
   poster the same tables as before (`CATALOGUE`, `INTRODUCED`, `PRIMERS`, `ORIGIN`, ...).
@@ -276,8 +277,8 @@ of a table (`"mm"`, `"introduced"`, `"primer"`, ...). A problem in the files sto
 
 ## Adding or changing a calibre
 
-1. Copy a file of a similar calibre in the right `calibres/<category>/` folder, give it the new name
-   and change the values. Add a source for each value you know and keep a note of anything measured
+1. Copy [`docs/template.toml`](docs/template.toml) (every field explained) or the file of a similar
+   calibre into the right `calibres/<category>/` folder, give it the new name and change the values. Add a source for each value you know and keep a note of anything measured
    or estimated.
 2. Run the checks and the tests:
 

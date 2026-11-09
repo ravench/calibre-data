@@ -116,6 +116,25 @@ class LoadTests(unittest.TestCase):
                          ["https://en.wikipedia.org/wiki/.350_Rigby",
                           "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf"])
 
+    def test_the_template_is_the_308_winchester_file_with_explanations(self):
+        with open(os.path.join(ROOT, "docs", "template.toml"), "rb") as f:
+            template = tomllib.load(f)
+        with open(os.path.join(ROOT, WIN), "rb") as f:
+            self.assertEqual(template, tomllib.load(f))
+        with Copy() as c:  # and it passes the check as a calibre file
+            shutil.copy(os.path.join(ROOT, "docs", "template.toml"), c.path(WIN))
+            self.assertEqual(c.problems(), [])
+
+    def test_the_template_explains_every_key_and_table(self):
+        with open(os.path.join(ROOT, "docs", "template.toml"), encoding="utf-8") as f:
+            text = f.read()
+        keys = set(cartridges.TOP_KEYS) | set(cartridges.MM_FULL) | {"diameter", "mouth", "length"}
+        for table, (req, opt, _) in cartridges.FACTS.items():
+            keys |= set(req) | set(opt)
+            self.assertRegex(text, rf"(?m)^# ?\[{table}\]$|^\[{table}\]$", table)
+        for k in keys:
+            self.assertRegex(text, rf"\b{k}\b", k)
+
     def test_empty_primer_sources_mean_unverified(self):
         self.assertIn("9 mm P.A.K.", cartridges.PRIMER_UNVERIFIED)
         self.assertNotIn("9 mm P.A.K.", cartridges.PRIMER_SOURCES)
