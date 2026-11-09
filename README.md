@@ -83,7 +83,8 @@ sources = [
 
 An empty list `sources = []` means the values have not been checked against a source yet. That is
 allowed for the measurements, the primer (then it counts as unverified) and the bullet (then it is
-inferred); a year, a shoulder angle, a case head, a case or projectile material always needs one.
+inferred); a year, a shoulder angle, a case head, a case material, the case materials made today
+and a projectile material always need one.
 `sources(name, table)` in `cartridges.py` gives the whole list; the old tables (`INTRODUCED`,
 `SHOULDER_ANGLES`, ...) keep the first one.
 
@@ -136,7 +137,7 @@ Short forms:
 adopted for service (for a wildcat, the year it became a factory round; for a military round, the
 year of adoption). Where sources disagree or give only a period, the earliest probable year is used.
 Without a year, `unknown` says why (shot shells, loose balls and pellets are not one cartridge with
-one launch).
+one launch); `sources` can then list the pages that were checked.
 
 ### `[primer]`
 
@@ -264,8 +265,8 @@ You can also edit a file in GitHub's web editor and open the pull request from t
 `python3 check.py` reads every file and lists each problem with its file and line: broken TOML, an
 unknown or misspelt key (with the key it probably means), a value that is not allowed, a missing
 measurement or table, a source that is not a web address, a file whose name does not follow the
-calibre's name, an alias two calibres use, names in `order.toml` or `lookalikes.toml` without a
-file. The *Check calibre files* job runs it on every pull request. It needs Python 3.11 or newer.
+calibre's name, an alias two calibres use or that is another calibre's name, a category folder
+missing from `order.toml`, names in `order.toml` or `lookalikes.toml` without a file. The *Check calibre files* job runs it on every pull request. It needs Python 3.11 or newer.
 
 ## Using it
 

@@ -1,5 +1,5 @@
-# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, sh_at = L1,
-# oal = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, shoulder_at = L1,
+# overall_length = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
 # from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
 # shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
 name = ".30 Remington"

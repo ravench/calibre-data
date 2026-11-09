@@ -1,5 +1,5 @@
 # Sourced 2026-11-04 (batch 12 leftovers): C.I.P. TDCC maximum cartridge (shoulder = P2,
-# neck = H2, sh_at = L1, oal = L6); .360 No. 5 Rook from the Wikipedia infobox (Barnes).
+# neck = H2, shoulder_at = L1, overall_length = L6); .360 No. 5 Rook from the Wikipedia infobox (Barnes).
 name = ".375 Flanged Magnum Nitro Express"
 kind = "rimmed"
 profile = "round"

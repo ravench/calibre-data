@@ -175,6 +175,8 @@ class _File:
         self.rel, self.problems = rel, problems
         with open(os.path.join(root, rel), "rb") as f:
             raw = f.read()
+        if raw.startswith(b"\xef\xbb\xbf"):  # the byte order mark some Windows editors write
+            raw = raw[3:]
         self.text = raw.decode("utf-8", errors="replace")
         try:
             self.data = tomllib.loads(raw.decode("utf-8"))
@@ -288,14 +290,14 @@ def _read_calibre(f, category, countries):
     for k in ("worldwide", "obsolete", "rare"):
         if k in d and not isinstance(d[k], bool):
             f.problem(f.line(None, k), f"{k} must be true or false (without quotes)")
-    if "origin" in d and d["origin"] not in countries:
+    if "origin" in d and countries is not None and d["origin"] not in countries:
         f.problem(f.line(None, "origin"),
                   f"origin {d['origin']!r} is not a code in countries.toml{_close(d['origin'], countries)}")
     if "origin_candidates" in d:
         cands = d["origin_candidates"]
         if not _is_text_list(cands) or len(cands) < 2:
             f.problem(f.line(None, "origin_candidates"), "origin_candidates lists two or more country codes")
-        else:
+        elif countries is not None:
             for code in cands:
                 if code not in countries:
                     f.problem(f.line(None, "origin_candidates"),
@@ -331,7 +333,7 @@ def _read_calibre(f, category, countries):
             elif "year" in data:
                 if not isinstance(data["year"], int) or isinstance(data["year"], bool) or not 1500 <= data["year"] <= 2100:
                     f.problem(f.line(t, "year"), "[introduced] year must be a year such as 1887, without quotes")
-                if not urls:
+                if not urls and _is_text_list(data.get("sources", [])):
                     f.problem(f.line(t), "[introduced] year needs at least one source")
             elif not isinstance(data["unknown"], str) or not data["unknown"].strip():
                 f.problem(f.line(t, "unknown"), "[introduced] unknown must say why there is no year, in quotes")
@@ -379,14 +381,21 @@ def load(root=ROOT):
         return f if f.data is not None else None
 
     countries = {}
+    before = len(problems)
     cf = read("countries.toml")
     if cf:
+        if not cf.data:
+            cf.problem(None, "lists no countries")
         for code, v in cf.data.items():
             if not isinstance(v, dict) or not isinstance(v.get("name"), str):
                 cf.problem(cf.line(code), f"[{code}] needs name = \"…\"")
                 continue
             _check_keys(cf, code, v, {"name", "flag"}, ("name",))
+            if "flag" in v and not isinstance(v["flag"], str):
+                cf.problem(cf.line(code, "flag"), f"[{code}] flag must be the flag emoji in quotes")
             countries[code] = (v["name"], v.get("flag"))
+    if len(problems) > before:  # check the calibres' origins only against a good list
+        countries = None
 
     order = {}
     of = read("order.toml")
@@ -398,14 +407,18 @@ def load(root=ROOT):
             order[cat] = names
 
     found = {}  # category -> [(entry, raw, facts, file)]
+    folders = []
     cal_dir = os.path.join(root, "calibres")
+    if not os.path.isdir(cal_dir):
+        problems.append(("calibres", None, "missing: the folder with one folder of calibre files per category"))
     for cat in sorted(os.listdir(cal_dir)) if os.path.isdir(cal_dir) else []:
         if cat.startswith("."):  # .DS_Store and other hidden files
             continue
         if not os.path.isdir(os.path.join(cal_dir, cat)):
             problems.append((f"calibres/{cat}", None, "only folders (one per category) belong in calibres/"))
             continue
-        if order and cat not in order:
+        folders.append(cat)
+        if of and cat not in of.data:
             problems.append((f"calibres/{cat}", None, f"category {cat!r} is not in order.toml{_close(cat, order)}"))
             continue
         for fn in sorted(os.listdir(os.path.join(cal_dir, cat))):
@@ -431,10 +444,14 @@ def load(root=ROOT):
             else:
                 by_name[entry["name"]] = (cat, raw, facts, f)
     seen_alias = {}
+    by_lower = {n.lower(): n for n in by_name}
     for name, (cat, raw, facts, f) in by_name.items():
-        for a in raw.get("aliases", []):
+        aliases = raw.get("aliases", [])
+        for a in aliases if _is_text_list(aliases) else []:
             if a in seen_alias and seen_alias[a] != name:
                 f.problem(f.line(None, "aliases"), f"alias {a!r} is also an alias of {seen_alias[a]!r}")
+            if by_lower.get(a.lower(), name) != name:
+                f.problem(f.line(None, "aliases"), f"alias {a!r} is the name of the calibre {by_lower[a.lower()]!r}")
             seen_alias.setdefault(a, name)
     def has_file(cat, n):  # also a file with a problem of its own, so it is not reported twice
         return os.path.exists(os.path.join(cal_dir, cat, slug(n) + ".toml"))
@@ -464,7 +481,11 @@ def load(root=ROOT):
     if lf:
         _check_keys(lf, None, lf.data, {"group"}, ())
         grouped = {}
-        for i, g in enumerate(lf.data.get("group", [])):
+        groups = lf.data.get("group", [])
+        if not isinstance(groups, list):
+            lf.problem(lf.line(None, "group"), "each group is a [[group]] table with differ_by and calibres")
+            groups = []
+        for i, g in enumerate(groups):
             line = [j + 1 for j, l in enumerate(lf.text.split("\n")) if l.strip() == "[[group]]"]
             line = line[i] if i < len(line) else None
             if not isinstance(g, dict):
@@ -481,7 +502,7 @@ def load(root=ROOT):
                 lf.problem(line, "calibres lists two or more calibre names")
                 continue
             for n in names:
-                if n not in by_name and any(has_file(cat, n) for cat in order):
+                if n not in by_name and any(has_file(cat, n) for cat in folders):
                     pass
                 elif n not in by_name:
                     lf.problem(line, f"{n!r} is not a calibre{_close(n, by_name)}")

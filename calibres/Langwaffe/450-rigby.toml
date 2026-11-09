@@ -1,5 +1,5 @@
 # Sourced 2026-11-04 from the C.I.P. TDCC sheet (maximum cartridge), rounded to 0.01 mm:
-# sh_at = L1, shoulder = P2, neck = H2, oal = L6. Wikipedia's .450 Rigby infobox gives
+# shoulder_at = L1, shoulder = P2, neck = H2, overall_length = L6. Wikipedia's .450 Rigby infobox gives
 # H1 as the shoulder (12.5 mm), which is why it was left out before.
 name = ".450 Rigby"
 kind = "rimless"

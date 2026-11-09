@@ -41,6 +41,10 @@ class Copy:
         assert old in text, (rel, old)
         self.write(rel, text.replace(old, new, 1))
 
+    def line_of(self, rel, text):
+        """The line number of the first line holding `text`."""
+        return next(i for i, l in enumerate(self.read(rel).split("\n"), 1) if text in l)
+
     def problems(self):
         try:
             load(self.dir)
@@ -122,16 +126,39 @@ class CheckTests(unittest.TestCase):
     """Each mistake is found, with its file and line where there is one."""
 
     def assertProblem(self, copy, rel, pattern, line=True):
+        """A problem in `rel` matching `pattern`, on line `line` (a number), on some line (True) or
+        anywhere (False)."""
         found = copy.problems()
         hits = [p for p in found if p[0] == rel and re.search(pattern, p[2])]
         self.assertTrue(hits, f"no problem matching {pattern!r} in {rel}: {found}")
-        if line:
+        if line is True:
             self.assertIsNotNone(hits[0][1], hits[0])
+        elif line:
+            self.assertEqual(hits[0][1], line, hits[0])
+
+    def assertOnlyProblems(self, copy, rel, pattern):
+        """Every problem is in `rel` and matches `pattern`: nothing else is reported because of it."""
+        found = copy.problems()
+        self.assertTrue(found)
+        for p in found:
+            self.assertEqual(p[0], rel, found)
+            self.assertRegex(p[2], pattern)
 
     def test_misspelt_key_is_found_with_a_suggestion(self):
         with Copy() as c:
             c.edit(WIN, "shoulder_at = ", "shoulder_ad = ")
-            self.assertProblem(c, WIN, r"unknown key 'shoulder_ad' in \[mm\] \(did you mean \"shoulder_at\"\?\)")
+            self.assertProblem(c, WIN, r"unknown key 'shoulder_ad' in \[mm\] \(did you mean \"shoulder_at\"\?\)",
+                               line=c.line_of(WIN, "shoulder_ad ="))
+
+    def test_problems_name_the_line_of_the_value(self):
+        with Copy() as c:
+            c.edit(WIN, "degrees = 20", "degrees = 120")
+            c.edit(LR, 'kind = "rimfire"', 'kind = "rimfre"')
+            self.assertProblem(c, WIN, r"degrees is the angle", line=c.line_of(WIN, "degrees = 120"))
+            self.assertProblem(c, LR, r"kind 'rimfre'", line=c.line_of(LR, "kind ="))
+        with Copy() as c:
+            c.edit(LR, 'kind = "rimfire"', 'kind = "rimfire')
+            self.assertProblem(c, LR, r"not valid TOML", line=c.line_of(LR, "kind ="))
 
     def test_a_broken_file_is_reported_once(self):
         with Copy() as c:
@@ -171,6 +198,21 @@ class CheckTests(unittest.TestCase):
                 c.edit(rel, old, new)
                 self.assertProblem(c, rel, pattern)
 
+    def test_aliases_that_are_not_a_list(self):
+        with Copy() as c:
+            c.edit(LR, 'aliases = ["22lr", "22", "kk", "22l.r."]', "aliases = 5")
+            self.assertOnlyProblems(c, LR, r"aliases must be a list")
+
+    def test_an_alias_is_never_the_name_of_another_calibre(self):
+        with Copy() as c:
+            c.edit(WIN, 'aliases = ["308", "308win"]', 'aliases = ["308", "308win", ".22 lr"]')
+            self.assertProblem(c, WIN, r"alias '.22 lr' is the name of the calibre '.22 LR'", line=c.line_of(WIN, "aliases"))
+
+    def test_a_file_with_a_byte_order_mark_is_fine(self):
+        with Copy() as c:
+            c.write(LR, "\ufeff" + c.read(LR))
+            self.assertEqual(c.problems(), [])
+
     def test_sources_must_be_web_addresses(self):
         with Copy() as c:
             c.edit(LR, '"https://en.wikipedia.org/wiki/.22_Long_Rifle"]\n\n[bullet]', '"Wikipedia"]\n\n[bullet]')
@@ -180,6 +222,13 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.edit(LR, 'year = 1887\nsources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]', "year = 1887\nsources = []")
             self.assertProblem(c, LR, r"\[introduced\] year needs at least one source")
+
+    def test_sources_written_as_text_are_one_problem(self):
+        with Copy() as c:
+            c.edit(LR, 'year = 1887\nsources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]',
+                   'year = 1887\nsources = "https://en.wikipedia.org/wiki/.22_Long_Rifle"')
+            self.assertOnlyProblems(c, LR, r"\[introduced\] sources must be a list")
+            self.assertEqual(len(c.problems()), 1)
 
     def test_measurements_need_a_sources_list(self):
         with Copy() as c:
@@ -227,6 +276,24 @@ class CheckTests(unittest.TestCase):
             c.edit("order.toml", '  ".308 Winchester",\n', '  ".308 Winchester",\n  ".22 LR",\n')
             self.assertProblem(c, "order.toml", r"'.22 LR' has no file in calibres/Langwaffe/ \(it is in calibres/Randfeuer/\)")
 
+    def test_an_empty_order_toml_does_not_empty_the_catalogue(self):
+        with Copy() as c:
+            c.write("order.toml", "# nothing\n")
+            found = c.problems()
+            self.assertEqual(len(found), len(os.listdir(c.path("calibres"))), found)
+            self.assertTrue(all("is not in order.toml" in p[2] for p in found), found)
+        with Copy() as c:
+            shutil.rmtree(c.path("calibres"))
+            self.assertProblem(c, "calibres", r"missing", line=False)
+
+    def test_a_broken_countries_toml_is_reported_there_only(self):
+        for text, pattern in [("# nothing\n", r"lists no countries"),
+                              ('[CH]\nflag = "x"\n', r"\[CH\] needs name"),
+                              ('[CH]\nname = "Switzerland"\nflag = 5\n', r"\[CH\] flag must be")]:
+            with self.subTest(text), Copy() as c:
+                c.write("countries.toml", text)
+                self.assertOnlyProblems(c, "countries.toml", pattern)
+
     def test_unknown_category_folder(self):
         with Copy() as c:
             os.makedirs(c.path("calibres/Langwaffen"))
@@ -238,7 +305,12 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, "lookalikes.toml", r"'7.62x51 mm NAT0' is not a calibre \(did you mean \"7.62x51 mm NATO\"\?\)")
         with Copy() as c:
             c.edit("lookalikes.toml", 'differ_by = ["load"]', 'differ_by = ["lode"]')
-            self.assertProblem(c, "lookalikes.toml", r"differ_by lists one or more of")
+            self.assertProblem(c, "lookalikes.toml", r"differ_by lists one or more of",
+                               line=c.line_of("lookalikes.toml", "[[group]]"))
+        for text in ("group = 5\n", 'group = "x"\n'):
+            with self.subTest(text), Copy() as c:
+                c.write("lookalikes.toml", text)
+                self.assertOnlyProblems(c, "lookalikes.toml", r"each group is a \[\[group\]\] table")
 
     def test_check_script_reports_and_fails(self):
         with Copy() as c:

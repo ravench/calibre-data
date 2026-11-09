@@ -1,6 +1,5 @@
 # .375 Flanged NE (1899, 2.5 in, straight taper) and .55 Boys: measured specimens on municion.org
 # (AECC 10-063-TBC-020, 14-099-BFC-020; Boys belt 21.59 matches antitank.co.uk's 0.850 in).
-# .45-90 WCF: C.I.P. Tab. II "45-90 WM" maximum cartridge, checked against AECC 11-061-BBC-020.
 name = ".55 Boys"
 kind = "belted"
 profile = "spitzer"
