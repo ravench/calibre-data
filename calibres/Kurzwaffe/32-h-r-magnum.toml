@@ -1,0 +1,23 @@
+name = ".32 H&R Magnum"
+kind = "rimmed"
+profile = "flat"
+aliases = []
+
+origin = "US"
+
+[mm]
+rim = 9.5
+base = 8.6
+neck = 8.5
+case_length = 27.4
+overall_length = 34.3
+bullet = 7.9
+sources = []
+
+[introduced]
+year = 1984
+sources = ["https://en.wikipedia.org/wiki/.32_H%26R_Magnum"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_H%26R_Magnum"]

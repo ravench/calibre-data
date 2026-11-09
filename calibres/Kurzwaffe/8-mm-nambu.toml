@@ -1,0 +1,35 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = "8 mm Nambu"
+kind = "rimless"
+profile = "round"
+aliases = ["nambu", "8nambu"]
+
+origin = "JP"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.5
+base = 10.23
+shoulder = 10.0
+shoulder_at = 15.35
+neck = 8.71
+case_length = 21.43
+overall_length = 31.56
+bullet = 8.13
+sources = []
+
+[introduced]
+year = 1904
+sources = ["https://en.wikipedia.org/wiki/8×22mm_Nambu"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/8×22mm_Nambu"]
+
+[shoulder_angle]
+# AECC drawing 08-022-BGC-040
+degrees = 15.5
+sources = ["https://municion.org/producto/8-mm-nambu-m-1914/"]

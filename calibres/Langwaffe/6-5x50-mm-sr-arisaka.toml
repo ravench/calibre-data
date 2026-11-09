@@ -1,0 +1,32 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = "6.5x50 mm SR Arisaka"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5arisaka", "6.5x50"]
+
+origin = "JP"
+
+[mm]
+rim = 12.08
+base = 11.45
+shoulder = 10.4
+shoulder_at = 38.92
+neck = 7.37
+case_length = 51.0
+overall_length = 76.0
+bullet = 6.63
+sources = []
+
+[introduced]
+year = 1897
+sources = ["https://en.wikipedia.org/wiki/6.5×50mmSR_Arisaka"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5×50mmSR_Arisaka"]
+
+[shoulder_angle]
+# C.I.P. 6,5 x 51 R (Arisaka)
+degrees = 18.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page13.pdf"]

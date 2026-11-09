@@ -1,0 +1,39 @@
+name = "7.5x55 mm Swiss (GP 11)"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["gp11", "gp 11", "7.5x55", "7.5", "7.5mm", "7.5swiss", "k31"]
+display_aliases = ["GP 11", "7.5 mm Swiss"]
+
+origin = "CH"
+
+[mm]
+rim = 12.6
+base = 12.6
+shoulder = 11.6
+shoulder_at = 44.58
+neck = 8.5
+case_length = 55.6
+overall_length = 77.5
+bullet = 7.77
+sources = []
+
+[introduced]
+year = 1911
+sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
+
+[shoulder_angle]
+# C.I.P. 7,5 x 55 Suisse
+degrees = 30.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page46.pdf"]
+
+[case_head]
+# C.I.P. 7,5 x 55 Suisse
+rim_thickness = 1.65
+ramp_top = 3.46
+groove_diameter = 10.3
+ramp_angle = 51.8
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page46.pdf"]

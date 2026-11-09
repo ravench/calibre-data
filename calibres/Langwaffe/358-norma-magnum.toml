@@ -1,0 +1,45 @@
+# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+name = ".358 Norma Magnum"
+kind = "belted"
+profile = "round"
+aliases = ["358nm"]
+
+origin = "SE"
+rare = true
+
+[mm]
+rim = 13.5
+base = 13.03
+shoulder = 12.45
+shoulder_at = 52.94
+neck = 9.85
+case_length = 64.0
+overall_length = 85.0
+bullet = 9.12
+sources = []
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+year = 1959
+sources = ["https://municion.org/producto/358-norma-magnum-belted/"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# C.I.P. 358 Norma Mag.
+degrees = 25.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page26.pdf"]
+
+[case_head]
+# C.I.P. ? Norma Mag.
+rim_thickness = 1.25
+ramp_top = 5.56
+groove_diameter = 11.6
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page26.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/358-norma-magnum-belted/"]

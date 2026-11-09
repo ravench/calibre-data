@@ -1,0 +1,35 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".25-35 Winchester"
+kind = "rimmed"
+profile = "flat"
+aliases = ["25-35", "25-35wcf", "6.5x52r"]
+
+origin = "US"
+
+[mm]
+rim = 12.9
+base = 10.7
+shoulder = 9.3
+shoulder_at = 34.1
+neck = 7.2
+case_length = 51.9
+overall_length = 65.0
+bullet = 6.6
+sources = []
+
+[introduced]
+year = 1895
+sources = ["https://en.wikipedia.org/wiki/.25-35_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.25-35_Winchester"]
+
+[shoulder_angle]
+# AECC drawing 06-052-BBC-050
+degrees = 11.1
+sources = ["https://municion.org/producto/25-35-winchester-cf/"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/25-35-winchester-cf/"]

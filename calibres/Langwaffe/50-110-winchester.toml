@@ -1,0 +1,32 @@
+# Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".50-110 Winchester"
+kind = "rimmed"
+profile = "flat"
+aliases = ["50-110", "50-100", "50-105"]
+
+origin = "US"
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 15.4
+base = 14.0
+neck = 13.6
+case_length = 61.0
+overall_length = 70.0
+bullet = 13.0
+sources = []
+
+[introduced]
+# catalogued 1887
+year = 1887
+sources = ["https://municion.org/producto/50-110-300-winchester-express/"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.50-110_Winchester"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/50-110-300-winchester-express/"]

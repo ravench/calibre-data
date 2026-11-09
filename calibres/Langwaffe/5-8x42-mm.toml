@@ -1,0 +1,34 @@
+# Sourced 2026-11-04 from the Wikipedia infoboxes (.277 SIG Fury after the 2020 SAAMI drawing);
+# shoulder heights estimated (.277 Fury like the .308 parent).
+name = "5.8x42 mm"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["5.8x42", "dbp87", "dbp10"]
+
+origin = "CN"
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 10.42
+base = 10.4
+shoulder = 9.35
+shoulder_at = 34.0
+neck = 6.65
+case_length = 42.2
+overall_length = 58.0
+bullet = 6.0
+sources = []
+
+[introduced]
+year = 1987
+sources = ["https://en.wikipedia.org/wiki/5.8×42mm"]
+
+[primer]
+size = "small-rifle"
+sources = []
+
+[shoulder_angle]
+# small-arms.org (QBQ club) 5.8x42 dimension drawing: 49 deg full cone angle, shoulder at 34 mm, neck at 37.2 mm
+degrees = 24.5
+sources = ["https://www.small-arms.org/"]

@@ -1,0 +1,35 @@
+name = ".45-70 Government"
+kind = "rimmed"
+profile = "flat"
+aliases = ["45-70", "4570"]
+
+origin = "US"
+
+[mm]
+rim = 15.2
+base = 12.7
+neck = 12.2
+case_length = 53.5
+overall_length = 64.8
+bullet = 11.6
+sources = []
+
+[introduced]
+year = 1873
+sources = ["https://en.wikipedia.org/wiki/.45-70"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.45-70"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.45-70"]
+
+[case]
+material = "copper"
+sources = ["https://en.wikipedia.org/wiki/.45-70"]
+
+[current_cases]
+materials = ["brass"]
+sources = ["https://www.starlinebrass.com/45-70-govt-brass"]

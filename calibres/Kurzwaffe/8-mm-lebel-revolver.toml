@@ -1,0 +1,28 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = "8 mm Lebel revolver"
+kind = "rimmed"
+profile = "round"
+aliases = ["8lebelrev", "8mm1892"]
+
+origin = "FR"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.43
+base = 8.96
+neck = 8.83
+case_length = 27.5
+overall_length = 36.7
+bullet = 8.35
+sources = []
+
+[introduced]
+year = 1892
+sources = ["https://en.wikipedia.org/wiki/8mm_French_Ordnance"]
+
+[primer]
+size = "small-pistol"
+sources = []

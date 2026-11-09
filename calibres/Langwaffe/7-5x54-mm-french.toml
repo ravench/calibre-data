@@ -1,0 +1,38 @@
+name = "7.5x54 mm French"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.5x54"]
+
+origin = "FR"
+
+[mm]
+rim = 12.25
+base = 12.25
+shoulder = 11.2
+shoulder_at = 42.79
+neck = 8.6
+case_length = 54.0
+overall_length = 76.0
+bullet = 7.8
+sources = []
+
+[introduced]
+year = 1929
+sources = ["https://en.wikipedia.org/wiki/7.5×54mm_French"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.5×54mm_French"]
+
+[shoulder_angle]
+# C.I.P. 7,5 x 54 MAS
+degrees = 20
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page45.pdf"]
+
+[case_head]
+# C.I.P. 7,5 x 54 MAS
+rim_thickness = 1.4
+ramp_top = 3.2
+groove_diameter = 10.5
+ramp_angle = 41.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page45.pdf"]

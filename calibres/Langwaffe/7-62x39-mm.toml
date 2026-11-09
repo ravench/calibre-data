@@ -1,0 +1,47 @@
+name = "7.62x39 mm"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.62x39", "762x39"]
+
+origin = "SU"
+
+[mm]
+rim = 11.35
+base = 11.35
+shoulder = 10.07
+shoulder_at = 30.5
+neck = 8.6
+case_length = 38.7
+overall_length = 56.0
+bullet = 7.9
+sources = []
+
+[introduced]
+year = 1943
+sources = ["https://en.wikipedia.org/wiki/7.62×39mm"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
+
+[shoulder_angle]
+# C.I.P. 7,62 x 39
+degrees = 16.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf"]
+
+[case_head]
+# C.I.P. 7,62 x 39
+rim_thickness = 1.5
+ramp_top = 3.2
+groove_diameter = 9.56
+ramp_angle = 52.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf"]
+
+[case]
+# Lacquered steel: 5.45x39 from the start; 7.62x39 since the early 1960s (bimetal before).
+material = "steel"
+sources = ["https://en.wikipedia.org/wiki/7.62%C3%9739mm"]
+
+[current_cases]
+materials = ["brass"]
+sources = ["https://www.starlinebrass.com/762x39mm-russian"]

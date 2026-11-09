@@ -1,0 +1,28 @@
+name = ".44 Magnum"
+kind = "rimmed"
+profile = "flat"
+aliases = ["44mag", "44magnum", "44remmag", "44remingtonmagnum"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 13.1
+base = 11.6
+neck = 11.6
+case_length = 32.6
+overall_length = 40.9
+bullet = 10.9
+sources = []
+
+[introduced]
+year = 1956
+sources = ["https://en.wikipedia.org/wiki/.44_Magnum"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.44_Magnum"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.44_Magnum"]

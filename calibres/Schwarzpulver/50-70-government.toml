@@ -1,0 +1,37 @@
+name = ".50-70 Government"
+kind = "rimmed"
+profile = "round"
+aliases = ["50-70"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.9
+base = 14.2
+neck = 13.4
+case_length = 44.5
+overall_length = 57.0
+bullet = 13.0
+sources = []
+
+[introduced]
+year = 1866
+sources = ["https://en.wikipedia.org/wiki/.50-70_Government"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://www.starlinebrass.com/50-70-govt-brass"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.50-70_Government"]
+
+[case]
+material = "copper"
+sources = ["https://en.wikipedia.org/wiki/.45-70"]
+
+[current_cases]
+materials = ["brass"]
+sources = ["https://www.starlinebrass.com/50-70-govt-brass"]

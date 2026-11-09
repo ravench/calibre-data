@@ -1,0 +1,46 @@
+# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+name = ".30-378 Weatherby Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["30-378"]
+
+origin = "US"
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 14.7
+base = 14.8
+shoulder = 14.2
+shoulder_at = 61.2
+neck = 8.6
+case_length = 74.0
+overall_length = 93.7
+bullet = 7.82
+sources = []
+
+[introduced]
+# factory round; made for a US Army contract in 1959
+year = 1996
+sources = ["https://en.wikipedia.org/wiki/.30-378_Weatherby_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.30-378_Weatherby_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 30-378 Weath. Mag.
+degrees = 53
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page17.pdf"]
+
+[case_head]
+# C.I.P. ?
+rim_thickness = 1.6
+ramp_top = 6.4
+groove_diameter = 12.57
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page17.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.30-378_Weatherby_Magnum"]

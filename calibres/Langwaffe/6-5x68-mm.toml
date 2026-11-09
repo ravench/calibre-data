@@ -1,0 +1,43 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "6.5x68 mm"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5x68"]
+
+origin = "DE"
+
+[mm]
+rim = 13.0
+base = 13.3
+shoulder = 12.18
+shoulder_at = 51.75
+neck = 7.6
+case_length = 67.5
+overall_length = 86.5
+bullet = 6.7
+sources = []
+
+[introduced]
+year = 1939
+sources = ["https://en.wikipedia.org/wiki/6.5×68mm"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5×68mm"]
+
+[shoulder_angle]
+# C.I.P. 6,5 x 68
+degrees = 14.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page30.pdf"]
+
+[case_head]
+# C.I.P. 6,5 x 68
+rim_thickness = 1.4
+ramp_top = 3.5
+groove_diameter = 11.2
+ramp_angle = 43.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page30.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/6.5×68mm"]

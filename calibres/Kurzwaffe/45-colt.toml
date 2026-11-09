@@ -1,0 +1,32 @@
+# Round nose with a small flat, as factory lead loads come (Winchester X45CP2 "255 gr Lead Round
+# Nose", Raven's W-W round photographed 2026-11-08), not the wide flat point; the 1873 original
+# was an "ogival & flat nosed" 255 gr bullet (Wikipedia).
+name = ".45 Colt"
+kind = "rimmed"
+profile = "round"
+aliases = ["45colt", "45lc", "45longcolt"]
+display_aliases = [".45 Long Colt"]
+
+origin = "US"
+
+[mm]
+rim = 12.9
+base = 12.2
+neck = 12.2
+case_length = 32.6
+overall_length = 40.6
+bullet = 11.5
+sources = []
+
+[introduced]
+# designed 1872, produced from 1873
+year = 1873
+sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.45_Colt"]

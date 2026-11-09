@@ -1,0 +1,43 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".270 Winchester Short Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["270wsm"]
+
+origin = "US"
+
+[mm]
+rim = 13.6
+base = 14.1
+shoulder = 13.67
+shoulder_at = 42.25
+neck = 7.98
+case_length = 53.3
+overall_length = 72.6
+bullet = 7.0
+sources = []
+
+[introduced]
+year = 2002
+sources = ["https://en.wikipedia.org/wiki/.270_Winchester_Short_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.270_Winchester_Short_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 270 Win. Short Mag.
+degrees = 35
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page100.pdf"]
+
+[case_head]
+# C.I.P. 270 Win. Short Mag.
+rim_thickness = 1.37
+ramp_top = 3.35
+groove_diameter = 12.19
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page100.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.270_Winchester_Short_Magnum"]

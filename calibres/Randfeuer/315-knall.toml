@@ -1,0 +1,27 @@
+# Alarm and starter blanks from C.I.P. Tab. VIII, maximum cartridge (sheets 1991-07-29 to
+# 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm P.A.K., length = L3.
+# Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base,
+# the ratio of the measured .22 blank above, because C.I.P. gives no crimp size.
+name = ".315 Knall"
+kind = "rimless"
+profile = "flat"
+aliases = ["315knall", "315", "315blanc"]
+
+[mm]
+rim = 8.0
+base = 8.0
+neck = 8.0
+case_length = 17.65
+overall_length = 17.65
+bullet = 8.0
+sources = []
+
+[introduced]
+# C.I.P. Tab. VIII sheet dates (1991-07-29 to 1991-08-02); no earlier source found for these blanks.
+year = 1991
+sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
+
+[primer]
+# Alarm blanks: not reloadable, primed with small pistol size caps.
+size = "small-pistol"
+sources = []

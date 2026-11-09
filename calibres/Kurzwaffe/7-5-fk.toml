@@ -1,0 +1,32 @@
+# Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
+name = "7.5 FK"
+kind = "rimless"
+profile = "round"
+aliases = ["7.5fk", "fk brno"]
+
+origin = "CZ"
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 10.8
+base = 10.8
+shoulder = 10.8
+shoulder_at = 20.85
+neck = 8.5
+case_length = 27.0
+overall_length = 35.0
+bullet = 7.8
+sources = []
+
+[introduced]
+year = 2009
+sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
+
+[shoulder_angle]
+degrees = 30
+sources = ["https://en.wikipedia.org/wiki/7.5_FK"]

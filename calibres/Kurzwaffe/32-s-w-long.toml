@@ -1,0 +1,27 @@
+name = ".32 S&W Long"
+kind = "rimmed"
+profile = "round"
+aliases = ["32s&w", "32swl", "32long", "32coltnewpolice"]
+
+origin = "US"
+
+[mm]
+rim = 9.5
+base = 8.6
+neck = 8.5
+case_length = 23.4
+overall_length = 32.5
+bullet = 7.9
+sources = []
+
+[introduced]
+year = 1896
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]

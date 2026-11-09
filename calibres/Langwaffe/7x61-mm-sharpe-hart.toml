@@ -1,0 +1,48 @@
+# Sourced 2026-11-04 (batch 12 leftovers): C.I.P. TDCC maximum cartridge (shoulder = P2,
+# neck = H2, sh_at = L1, oal = L6); .360 No. 5 Rook from the Wikipedia infobox (Barnes).
+name = "7x61 mm Sharpe & Hart"
+kind = "belted"
+profile = "spitzer"
+aliases = ["7x61", "7x61sh", "7x61super"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.5
+base = 13.05
+shoulder = 11.91
+shoulder_at = 50.8
+neck = 8.06
+case_length = 61.0
+overall_length = 83.0
+bullet = 7.2
+sources = []
+
+[introduced]
+# developed on a 1953 trip
+year = 1953
+sources = ["https://en.wikipedia.org/wiki/7%C3%9761mm_Sharpe_%26_Hart"]
+
+[primer]
+# Rem 9 1/2M
+size = "large-rifle"
+sources = ["https://sierrabullets.com/content/load-data/legacy/284-7mm/7x61mm-sharpe-hart.pdf"]
+
+[shoulder_angle]
+# C.I.P. 7 x 61 Super
+degrees = 42.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page2.pdf"]
+
+[case_head]
+# C.I.P. 7 x 61 Super
+rim_thickness = 1.3
+ramp_top = 5.6
+groove_diameter = 12.2
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page2.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/7%C3%9761mm_Sharpe_%26_Hart"]

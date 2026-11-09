@@ -1,0 +1,31 @@
+# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+name = ".408 CheyTac"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["408cheytac", "408ct", "10.36x77"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 16.25
+base = 16.18
+shoulder = 15.24
+shoulder_at = 62.02
+neck = 11.12
+case_length = 77.21
+overall_length = 115.5
+bullet = 10.36
+sources = []
+
+[introduced]
+year = 2001
+sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
+
+[shoulder_angle]
+degrees = 22.1
+sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]

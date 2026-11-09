@@ -1,0 +1,12 @@
+name = ".36 Rundkugel (.375)"
+kind = "ball"
+profile = "round"
+aliases = ["36", "36navy", ".375ball"]
+
+[mm]
+diameter = 9.5
+sources = []
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"

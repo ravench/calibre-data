@@ -1,0 +1,31 @@
+# .375 Flanged NE (1899, 2.5 in, straight taper) and .55 Boys: measured specimens on municion.org
+# (AECC 10-063-TBC-020, 14-099-BFC-020; Boys belt 21.59 matches antitank.co.uk's 0.850 in).
+# .45-90 WCF: C.I.P. Tab. II "45-90 WM" maximum cartridge, checked against AECC 11-061-BBC-020.
+name = ".45-90 WCF"
+kind = "rimmed"
+profile = "flat"
+aliases = ["45-90", "4590", "45-90wcf", "45-82", "45-85", "45-90hv"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 15.44
+base = 12.82
+neck = 12.22
+case_length = 60.96
+overall_length = 82.0
+bullet = 11.63
+sources = []
+
+[introduced]
+year = 1886
+sources = ["https://municion.org/producto/45-90-300-winchester-cf/"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://www.starlinebrass.com/45-90-brass-45-24"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/45-90-300-winchester-cf/"]

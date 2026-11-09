@@ -1,0 +1,30 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".442 Webley"
+kind = "rimmed"
+profile = "round"
+aliases = ["442webley", "442ric", "44webley", "10.5x17r"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.8
+base = 12.0
+neck = 12.0
+case_length = 18.0
+overall_length = 28.0
+bullet = 11.1
+sources = []
+
+[introduced]
+year = 1868
+sources = ["https://en.wikipedia.org/wiki/.442_Webley"]
+
+[primer]
+size = "large-pistol"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.442_Webley"]

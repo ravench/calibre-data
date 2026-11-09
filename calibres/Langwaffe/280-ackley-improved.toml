@@ -1,0 +1,40 @@
+# Mixed batch 4 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated (7x65 R and 8x57 IRS rims later from C.I.P.).
+name = ".280 Ackley Improved"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["280ai"]
+
+origin = "US"
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 11.7
+shoulder_at = 54.96
+neck = 8.0
+case_length = 64.1
+overall_length = 84.6
+bullet = 7.2
+sources = []
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+# earlier than the 2008 SAAMI acceptance
+year = 2006
+sources = ["https://municion.org/producto/280-ackley-improved/"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+degrees = 40
+sources = ["https://en.wikipedia.org/wiki/.280_Ackley_Improved"]
+
+[case_head]
+# fire-formed .280 Rem.; C.I.P. 280 Rem.
+rim_thickness = 1.24
+ramp_top = 3.17
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page103.pdf"]

@@ -1,0 +1,41 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, sh_at = L1,
+# oal = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = ".38-56 WCF"
+kind = "rimmed"
+profile = "flat"
+aliases = ["38-56"]
+
+origin = "US"
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 15.37
+base = 12.83
+shoulder = 11.3
+shoulder_at = 30.64
+neck = 10.16
+case_length = 53.34
+overall_length = 63.5
+bullet = 9.59
+sources = []
+
+[introduced]
+year = 1887
+sources = ["https://en.wikipedia.org/wiki/.38-56_WCF"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.38-56_WCF"]
+
+[shoulder_angle]
+# AECC drawing 09-053-BBC-050
+degrees = 6.5
+sources = ["https://municion.org/producto/38-56-winchester-cf-marlincolt/"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.38-56_WCF"]

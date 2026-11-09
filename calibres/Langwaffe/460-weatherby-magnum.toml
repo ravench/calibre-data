@@ -1,0 +1,45 @@
+# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+name = ".460 Weatherby Magnum"
+kind = "belted"
+profile = "round"
+aliases = ["460wby"]
+
+origin = "US"
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 14.7
+base = 14.8
+shoulder = 14.2
+shoulder_at = 60.39
+neck = 12.2
+case_length = 74.0
+overall_length = 93.0
+bullet = 11.6
+sources = []
+
+[introduced]
+year = 1957
+sources = ["https://en.wikipedia.org/wiki/.460_Weatherby_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.460_Weatherby_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 460 Weath. Mag.
+degrees = 28.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
+
+[case_head]
+# C.I.P. ?
+rim_thickness = 1.6
+ramp_top = 6.4
+groove_diameter = 12.57
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.460_Weatherby_Magnum"]

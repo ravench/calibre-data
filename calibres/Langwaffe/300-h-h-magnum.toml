@@ -1,0 +1,44 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = ".300 H&H Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["300h&h", "300hh"]
+
+origin = "GB"
+
+[mm]
+rim = 13.5
+base = 13.0
+shoulder = 11.4
+shoulder_at = 53.46
+neck = 8.6
+case_length = 72.4
+overall_length = 91.4
+bullet = 7.8
+sources = []
+
+[introduced]
+year = 1925
+sources = ["https://en.wikipedia.org/wiki/.300_H%26H_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.300_H%26H_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 300 H&H Mag.
+degrees = 8.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page18.pdf"]
+
+[case_head]
+# C.I.P. 300 H&H Mag.
+rim_thickness = 1.27
+ramp_top = 5.59
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page18.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.300_H%26H_Magnum"]

@@ -1,0 +1,38 @@
+# Webley's 1868 Bull Dog round, C.I.P. «320 Short» (tab-iv/tabivcal-en-page48.pdf, sheet 1984-06-14,
+# origin GB), maximum cartridge R1/P1/H2/G1/L3/L6. Raven's G.F.L. (Fiocchi) round measured rim 9.5,
+# base 8.0, case 16.4, length 24.9 (2026-11-08).
+name = ".320 Revolver"
+kind = "rimmed"
+profile = "round"
+aliases = ["320rev", "320revolver", "320short", "320 short", "320bulldog", "320 bulldog"]
+display_aliases = [".320 Short"]
+
+origin = "GB"
+# 2026-11-08: "an obsolete revolver cartridge" (Wikipedia)
+obsolete = true
+# 2026-11-08: from Raven's bag of old rounds
+rare = true
+
+[mm]
+rim = 9.55
+base = 8.12
+neck = 8.12
+case_length = 16.6
+overall_length = 26.7
+bullet = 8.0
+sources = []
+
+[introduced]
+# Webley Bull Dog
+year = 1868
+sources = ["https://en.wikipedia.org/wiki/.320_Revolver"]
+
+[primer]
+# Berdan; Raven's Fiocchi round measures 4.7 mm (2026-11-08)
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.320_Revolver"]
+
+[bullet]
+# "80 gr (5 g) Lead"
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.320_Revolver"]

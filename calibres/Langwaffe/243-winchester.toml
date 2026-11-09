@@ -1,0 +1,48 @@
+name = ".243 Winchester"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["243", "243win"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 11.5
+shoulder_at = 39.62
+neck = 7.0
+case_length = 51.9
+overall_length = 68.8
+bullet = 6.2
+sources = []
+
+[introduced]
+year = 1955
+sources = ["https://en.wikipedia.org/wiki/.243_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.243_Winchester"]
+
+[shoulder_angle]
+# C.I.P. 243 Win.
+degrees = 20
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page88.pdf"]
+
+[case_head]
+# C.I.P. 243 Win.
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page88.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.243_Winchester"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]

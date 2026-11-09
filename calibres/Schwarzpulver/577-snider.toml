@@ -1,0 +1,38 @@
+name = ".577 Snider"
+kind = "rimmed"
+profile = "round"
+aliases = ["577snider"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 19.2
+base = 17.0
+neck = 16.4
+case_length = 50.8
+overall_length = 62.0
+bullet = 14.6
+sources = []
+
+[introduced]
+year = 1866
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
+
+[case]
+material = "paper"
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
+
+[current_cases]
+# Kynamco, Bertram
+materials = ["brass"]
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]

@@ -203,7 +203,7 @@ class OutlineTests(unittest.TestCase):
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
-            if cartridges.SHOULDER_ANGLES.get(name, (0, ""))[1].startswith(cartridges._CIP):
+            if cartridges.SHOULDER_ANGLES.get(name, (0, ""))[1].startswith("https://bobp.cip-bobp.org/uploads/tdcc/"):  # a C.I.P. sheet
                 continue
             with self.subTest(name):
                 s = specs[name]

@@ -1,0 +1,43 @@
+name = ".416 Rigby"
+kind = "rimless"
+profile = "round"
+aliases = ["416rigby"]
+
+origin = "GB"
+
+[mm]
+rim = 14.9
+base = 14.9
+shoulder = 13.6
+shoulder_at = 59.77
+neck = 11.6
+case_length = 73.7
+overall_length = 95.3
+bullet = 10.6
+sources = []
+
+[introduced]
+# designed 1911, produced from 1912
+year = 1912
+sources = ["https://en.wikipedia.org/wiki/.416_Rigby"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.416_Rigby"]
+
+[shoulder_angle]
+# C.I.P. 416 Rigby
+degrees = 44.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf"]
+
+[case_head]
+# C.I.P. 416 Rigby
+rim_thickness = 1.65
+ramp_top = 3.81
+groove_diameter = 12.7
+ramp_angle = 39.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/416-rigby-magnum-nitro-express-2-7-8/"]

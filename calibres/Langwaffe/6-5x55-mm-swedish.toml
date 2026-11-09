@@ -1,0 +1,39 @@
+name = "6.5x55 mm Swedish"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5x55", "6.5x55se"]
+
+# joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms; issued by Norway and Sweden 1894, Luxembourg 1900, Denmark 1946: NO (no code in COUNTRIES)
+origin = "SE"
+
+[mm]
+rim = 12.2
+base = 12.2
+shoulder = 11.0
+shoulder_at = 43.49
+neck = 7.6
+case_length = 55.0
+overall_length = 80.0
+bullet = 6.7
+sources = []
+
+[introduced]
+year = 1894
+sources = ["https://en.wikipedia.org/wiki/6.5×55mm_Swedish"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5×55mm_Swedish"]
+
+[shoulder_angle]
+# C.I.P. 6,5 x 55 SE.
+degrees = 25.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page23.pdf"]
+
+[case_head]
+# C.I.P. 6,5 x 55 SE
+rim_thickness = 1.5
+ramp_top = 3.25
+groove_diameter = 10.5
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page23.pdf"]

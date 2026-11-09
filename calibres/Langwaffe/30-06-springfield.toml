@@ -1,0 +1,45 @@
+name = ".30-06 Springfield"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30-06", "3006"]
+display_aliases = ["7.62x63 mm"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 11.2
+shoulder_at = 49.49
+neck = 8.6
+case_length = 63.3
+overall_length = 84.8
+bullet = 7.82
+sources = []
+
+[introduced]
+year = 1906
+sources = ["https://en.wikipedia.org/wiki/.30-06_Springfield"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.30-06_Springfield"]
+
+[shoulder_angle]
+# C.I.P. 30-06 Spring
+degrees = 17.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+
+[case_head]
+# C.I.P. 30-06 Spring.
+rim_thickness = 1.24
+ramp_top = 3.16
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]

@@ -1,0 +1,32 @@
+# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+name = ".401 Winchester Self-Loading"
+kind = "rimless"
+profile = "round"
+aliases = ["401wsl"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.6
+base = 10.9
+neck = 10.9
+case_length = 38.0
+overall_length = 50.9
+bullet = 10.33
+sources = []
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+year = 1910
+sources = ["https://municion.org/producto/401-winchester-self-loading/"]
+
+[primer]
+# 5.34 mm, 8 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/401-winchester-self-loading/"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/401-winchester-self-loading/"]

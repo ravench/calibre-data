@@ -1,0 +1,45 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, sh_at = L1,
+# oal = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = "6.5-300 Weatherby Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["6.5-300", "6.5-300wby"]
+
+origin = "US"
+
+[mm]
+rim = 13.5
+base = 13.0
+shoulder = 12.57
+shoulder_at = 58.35
+neck = 7.49
+case_length = 71.76
+overall_length = 91.44
+bullet = 6.72
+sources = []
+
+[introduced]
+unknown = "sources give only the 2017 SAAMI drawing"
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# SAAMI drawing (double radius; chord through the .4920 datum and neck start)
+degrees = 46.4
+sources = ["https://jagdfibel.de/images/0/0e/65300.pdf"]
+
+[case_head]
+# .300 Wby case necked down; C.I.P. ?
+rim_thickness = 1.3
+ramp_top = 5.56
+groove_diameter = 11.61
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page19.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/6.5-300_Weatherby_Magnum"]

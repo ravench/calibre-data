@@ -1,0 +1,34 @@
+name = "6 mm ARC"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6arc"]
+
+origin = "US"
+
+[mm]
+rim = 11.2
+base = 11.2
+shoulder = 10.9
+shoulder_at = 31.54
+neck = 6.9
+case_length = 38.6
+overall_length = 57.4
+bullet = 6.2
+sources = []
+
+[introduced]
+year = 2020
+sources = ["https://en.wikipedia.org/wiki/6mm_ARC"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/6mm_ARC"]
+
+[shoulder_angle]
+# 30-degree shoulder
+degrees = 30
+sources = ["https://bulletin.accurateshooter.com/?p=69700"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/6mm_ARC"]

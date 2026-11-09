@@ -1,0 +1,37 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = "8 mm Roth-Steyr"
+kind = "rimless"
+profile = "round"
+aliases = ["rothsteyr", "8steyr"]
+
+origin = "AH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.85
+base = 8.85
+neck = 8.8
+case_length = 18.65
+overall_length = 29.0
+bullet = 8.16
+sources = []
+
+[introduced]
+year = 1907
+sources = ["https://en.wikipedia.org/wiki/Roth–Steyr_M1907"]
+
+[primer]
+# 4.32 mm, 8 specimens
+size = "small-pistol"
+sources = ["https://municion.org/producto/8-mm-roth-steyr/"]
+
+[case_head]
+# C.I.P. 8 mm Steyr
+rim_thickness = 1.1
+ramp_top = 3.3
+groove_diameter = 7.85
+ramp_angle = 24.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page17.pdf"]

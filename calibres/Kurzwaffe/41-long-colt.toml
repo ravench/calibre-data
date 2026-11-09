@@ -1,0 +1,30 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".41 Long Colt"
+kind = "rimmed"
+profile = "round"
+aliases = ["41longcolt", "41lc"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.0
+base = 10.3
+neck = 10.2
+case_length = 28.6
+overall_length = 35.5
+bullet = 9.8
+sources = []
+
+[introduced]
+year = 1877
+sources = ["https://en.wikipedia.org/wiki/.41_Long_Colt"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://www.starlinebrass.com/41-colt-brass"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.41_Long_Colt"]

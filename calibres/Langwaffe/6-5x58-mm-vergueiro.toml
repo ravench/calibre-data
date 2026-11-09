@@ -1,0 +1,35 @@
+# Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
+name = "6.5x58 mm Vergueiro"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5x58", "6.5vergueiro", "6.5portuguese"]
+
+origin = "PT"
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 11.78
+base = 11.88
+shoulder = 10.94
+shoulder_at = 41.0
+neck = 7.56
+case_length = 57.85
+overall_length = 81.5
+bullet = 6.65
+sources = []
+
+[introduced]
+year = 1904
+sources = ["https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro"]
+
+[primer]
+# 5.28 mm, 8 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]
+
+[shoulder_angle]
+# AECC drawing 07-058-BGC-030
+degrees = 10.8
+sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]

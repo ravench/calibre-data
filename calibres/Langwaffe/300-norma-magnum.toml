@@ -1,0 +1,38 @@
+name = ".300 Norma Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300norma", "300nm"]
+
+origin = "SE"
+
+[mm]
+rim = 14.9
+base = 14.9
+shoulder = 14.4
+shoulder_at = 48.06
+neck = 8.6
+case_length = 63.3
+overall_length = 91.4
+bullet = 7.82
+sources = []
+
+[introduced]
+year = 2012
+sources = ["https://en.wikipedia.org/wiki/.300_Norma_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.300_Norma_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 300 Norma Mag
+degrees = 20.5
+sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf"]
+
+[case_head]
+# C.I.P. 300 Norma Mag
+rim_thickness = 1.52
+ramp_top = 3.15
+groove_diameter = 13.24
+ramp_angle = 50.0
+sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf"]

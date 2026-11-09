@@ -1,0 +1,18 @@
+name = "12/89"
+kind = "shot"
+profile = "flat"
+aliases = ["12/89"]
+
+[mm]
+diameter = 20.6
+rim = 22.3
+length = 82.0
+sources = []
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"
+
+[primer]
+size = "shotshell-209"
+sources = ["https://hodgdonreloading.com/rldc/"]

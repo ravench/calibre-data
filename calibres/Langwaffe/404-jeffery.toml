@@ -1,0 +1,46 @@
+# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+name = ".404 Jeffery"
+kind = "rimless"
+profile = "round"
+aliases = ["404jeffery", "10.75x73", "404rimless", "404rne"]
+
+origin = "GB"
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 13.79
+base = 13.84
+shoulder = 13.46
+shoulder_at = 50.82
+neck = 11.48
+case_length = 73.02
+overall_length = 89.66
+bullet = 10.72
+sources = []
+
+[introduced]
+year = 1905
+sources = ["https://en.wikipedia.org/wiki/.404_Jeffery"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.404_Jeffery"]
+
+[shoulder_angle]
+# C.I.P. 404 Riml. N.E.
+degrees = 8.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page145.pdf"]
+
+[case_head]
+# C.I.P. 404 Riml. N.E.
+rim_thickness = 1.27
+ramp_top = 3.3
+groove_diameter = 12.37
+ramp_angle = 36.04
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page145.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.404_Jeffery"]

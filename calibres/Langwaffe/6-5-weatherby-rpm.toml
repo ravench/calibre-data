@@ -1,0 +1,32 @@
+# Weatherby RPM family (rebated rim, 6.5-284 body lengthened). The .25 is from the 2026 SAAMI drawing;
+# the 6.5 and .338 share its rim, head and shoulder diameter, with neck and shoulder height estimated.
+name = "6.5 Weatherby RPM"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5rpm", "6.5wbyrpm", "65rpm"]
+
+origin = "US"
+
+[mm]
+rim = 12.01
+base = 12.7
+shoulder = 12.14
+shoulder_at = 54.8
+neck = 7.54
+case_length = 65.28
+overall_length = 84.84
+bullet = 6.71
+sources = []
+
+[introduced]
+year = 2019
+sources = ["https://hodgdonpowderco.com/articles/loading-the-6-5-weatherby-rpm/"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# SAAMI drawing
+degrees = 35
+sources = ["https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"]

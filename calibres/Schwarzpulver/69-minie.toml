@@ -1,0 +1,16 @@
+name = ".69 Minié"
+kind = "minie"
+profile = "round"
+aliases = ["69", "69minie"]
+
+obsolete = true
+rare = true
+
+[mm]
+diameter = 17.3
+length = 27.0
+sources = []
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"
