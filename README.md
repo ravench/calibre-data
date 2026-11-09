@@ -298,10 +298,10 @@ A group's cases share one design; `differ_by` says what tells them apart: `rim` 
 twin), `bore` (bullet diameter), `length` (case length), `seating` (a wadcutter seated flush or
 nearly so), `load` (C.I.P., SAAMI or the service gives the same case a hotter load or another
 chamber that the older or weaker guns must not fire) or `ignition` (rimfire and centrefire versions
-of one case: a rimfire gun cannot fire the centrefire one, nor the other way round). Each calibre is
-in at most one group. Other
-names of the same cartridge are search aliases, not groups. The groups were judged against
-Cartridges of the World (15th ed., 2016) and the C.I.P. and SAAMI lists.
+of one cartridge: a rimfire gun cannot fire the centrefire one, nor the other way round). Each
+calibre is in at most one group. Other names of the same cartridge are search aliases, not groups.
+The groups were judged against Cartridges of the World (15th ed., 2016) and the C.I.P. and SAAMI
+lists.
 
 ## In Python
 

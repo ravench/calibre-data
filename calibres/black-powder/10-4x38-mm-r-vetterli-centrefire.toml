@@ -1,7 +1,7 @@
 # The centrefire version of the Vetterli case: many Swiss Vetterli rifles went to the civil market
-# converted by changing only the firing pin. Georg Egestorff (Linden, until 1919), RWS and Gévelot
-# loaded it, with a brass case and a paper-patched lead bullet, and commercial ammunition was made
-# into the early 1940s (municion.org). Same case as the rimfire original, so the same measurements.
+# converted by changing only the firing pin. Georg Egestorff (Linden), RWS and Gévelot loaded it,
+# with a brass case and a paper-patched lead bullet, and commercial ammunition was made into the
+# early 1940s (municion.org). Same case as the rimfire original, so the same measurements.
 name = "10.4x38 mm R Vetterli Centrefire"
 kind = "rimmed"
 profile = "round"
@@ -9,6 +9,7 @@ aliases = ["vetterlicf", "10.4cf", "10.4x38cf", "41swisscf"]
 
 origin = "CH"
 obsolete = true
+rare = true
 
 [mm]
 rim = 15.7
@@ -25,9 +26,11 @@ sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81
 unknown = "the first year of the centrefire loading is not known; the rimfire original dates from 1867"
 
 [primer]
-# Today's cases, made from 8x50 R Lebel brass, take large rifle primers.
+# Not checked for the original ammunition. Today's cases, made from 8x50 R Lebel brass, take large
+# rifle primers:
+# https://www.ammunitionartifacts.com/metriccartridgecases/104x38r-swiss-vetterli-m6981-center-fire-6dtb4
 size = "large-rifle"
-sources = ["https://www.ammunitionartifacts.com/metriccartridgecases/104x38r-swiss-vetterli-m6981-center-fire-6dtb4"]
+sources = []
 
 [shoulder_angle]
 # AECC drawing 11-038-BBC-011

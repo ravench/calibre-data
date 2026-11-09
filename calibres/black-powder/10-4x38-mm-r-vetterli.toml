@@ -1,6 +1,6 @@
 # The Swiss service round (1867-1889) is rimfire: the rifle's forked firing pin struck the rim at two
-# points (municion.org). Its centrefire version is a calibre of its own, 10.4x38 mm R Vetterli
-# Centrefire.
+# points (https://municion.org/producto/104-x-38-r-swiss-vetterli-rf-m-1866-67-78-90/). Its centrefire
+# version is a calibre of its own, 10.4x38 mm R Vetterli Centrefire.
 name = "10.4x38 mm R Vetterli"
 kind = "rimfire"
 profile = "round"

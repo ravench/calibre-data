@@ -1,6 +1,8 @@
 # The centrefire version of the .44 Henry: Winchester chambered fewer than 2,000 Model 1866 rifles
 # for it from 1873 to 1898, 1,020 of them for Brazil in 1891 (American Rifleman), and Brazil's 1883
-# Nagant service revolvers fired it too (Forgotten Weapons). Measurements and primer from Cartridges
+# Nagant service revolvers fired it too
+# (https://www.forgottenweapons.com/brazilian-1883-nagant-revolver-the-44-henry-rides-again/,
+# https://municion.org/producto/44-brazilian-nagant/). Measurements and primer from Cartridges
 # of the World (15th ed., 2016); no web page with them checked yet. The bullet is seated inside the
 # case, not heeled like the rimfire's.
 name = ".44 Henry Centrefire"

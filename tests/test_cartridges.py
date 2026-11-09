@@ -638,19 +638,21 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(len(kinds - {RIMFIRE}) > 1, RIM in differs, names)
             self.assertEqual(RIMFIRE in kinds and len(kinds) > 1, IGNITION in differs, names)
             # 8x57 I .318" against IS .323"; Finnish 7.62x53 R against 7.62x54 R. A wadcutter group is left
-            # out: the parent's bullet is a rounded figure, the wadcutter's from its sheet. Rimfire and
-            # centrefire versions come from other makers and sources, so their small differences are not
-            # what tells them apart; a bore or length they name must still show.
+            # out: the parent's bullet is a rounded figure, the wadcutter's from its sheet.
             # A wadcutter sits flush or nearly so with the case mouth.
             self.assertEqual(min(s["oal"] - s["case"] for s in specs) < 1.5, SEATING in differs, names)
-            bore, length = spread("bullet") >= 0.05, spread("case") > 0.5
             if IGNITION in differs:
-                self.assertTrue(bore or BORE not in differs, names)
-                self.assertTrue(length or LENGTH not in differs, names)
+                # Rimfire and centrefire versions come from other makers and sources, so only bigger
+                # differences count. The .44 Henry rimfire's heeled bullet is wider than the centrefire's
+                # seated one, fired in the same guns.
+                bore = spread("bullet") > 0.3 and names[0] != ".44 Henry"
+                length = spread("case") > 1.5
             else:
-                if SEATING not in differs:
-                    self.assertEqual(bore, BORE in differs, names)
-                self.assertEqual(length, LENGTH in differs, names)
+                bore = spread("bullet") >= 0.05 and SEATING not in differs
+                length = spread("case") > 0.5
+            if SEATING not in differs:
+                self.assertEqual(bore, BORE in differs, names)
+            self.assertEqual(length, LENGTH in differs, names)
         self.assertEqual(lookalikes("5.6 mm GP 90"), [".223 Remington", "5.56x45 mm NATO"])
         self.assertEqual(lookalikes("7x65 mm R"), ["7x64 mm"])
         self.assertEqual(lookalikes("8x57 mm I"), ["8x57 mm IS", "8x57 mm IRS", "8x57 mm IR"])
