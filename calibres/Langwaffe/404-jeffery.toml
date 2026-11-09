@@ -14,12 +14,14 @@ rim = 13.79
 base = 13.84
 shoulder = 13.46
 shoulder_at = 50.82
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page145.pdf"]
 neck = 11.48
 case_length = 73.02
 overall_length = 89.66
 bullet = 10.72
-sources = ["https://en.wikipedia.org/wiki/.404_Jeffery"]
+sources = [
+  "https://en.wikipedia.org/wiki/.404_Jeffery",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page145.pdf",
+]
 
 [introduced]
 year = 1905

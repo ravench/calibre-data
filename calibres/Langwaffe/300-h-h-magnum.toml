@@ -12,12 +12,14 @@ rim = 13.5
 base = 13.0
 shoulder = 11.4
 shoulder_at = 53.46
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page18.pdf"]
 neck = 8.6
 case_length = 72.4
 overall_length = 91.4
 bullet = 7.8
-sources = ["https://en.wikipedia.org/wiki/.300_H%26H_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.300_H%26H_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page18.pdf",
+]
 
 [introduced]
 year = 1925

@@ -11,8 +11,8 @@ aliases = ["45knall", "45k", "45shortknall", "45kblanc"]
 rim = 13.0
 base = 12.1
 mouth = 7.3
-mouth_sources = []
 length = 16.6
+# No source yet for mouth.
 sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
 [introduced]

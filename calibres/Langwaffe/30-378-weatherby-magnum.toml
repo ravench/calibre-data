@@ -13,12 +13,14 @@ rim = 14.7
 base = 14.8
 shoulder = 14.2
 shoulder_at = 61.2
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page17.pdf"]
 neck = 8.6
 case_length = 74.0
 overall_length = 93.7
 bullet = 7.82
-sources = ["https://en.wikipedia.org/wiki/.30-378_Weatherby_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.30-378_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page17.pdf",
+]
 
 [introduced]
 # factory round; made for a US Army contract in 1959

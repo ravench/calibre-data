@@ -12,12 +12,14 @@ rim = 16.0
 base = 13.77
 shoulder = 11.42
 shoulder_at = 37.22
-shoulder_at_sources = ["https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/"]
 neck = 8.85
 case_length = 50.5
 overall_length = 75.0
 bullet = 8.3
-sources = ["https://en.wikipedia.org/wiki/8×50mmR_Lebel"]
+sources = [
+  "https://en.wikipedia.org/wiki/8×50mmR_Lebel",
+  "https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/",
+]
 
 [introduced]
 year = 1886

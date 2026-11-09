@@ -12,12 +12,14 @@ rim = 13.8
 base = 11.6
 shoulder = 10.7
 shoulder_at = 43.82
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
 neck = 8.6
 case_length = 58.8
 overall_length = 78.5
 bullet = 7.8
-sources = ["https://en.wikipedia.org/wiki/.30-40_Krag"]
+sources = [
+  "https://en.wikipedia.org/wiki/.30-40_Krag",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf",
+]
 
 [introduced]
 year = 1892

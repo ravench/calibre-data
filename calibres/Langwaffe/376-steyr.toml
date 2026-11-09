@@ -13,12 +13,14 @@ rim = 12.55
 base = 12.73
 shoulder = 12.02
 shoulder_at = 48.09
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page144.pdf"]
 neck = 10.11
 case_length = 59.69
 overall_length = 79.0
 bullet = 9.5
-sources = ["https://en.wikipedia.org/wiki/.376_Steyr"]
+sources = [
+  "https://en.wikipedia.org/wiki/.376_Steyr",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page144.pdf",
+]
 
 [introduced]
 year = 1999

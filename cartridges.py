@@ -136,9 +136,6 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "current_cases": (("materials",), (), "required"),
     "projectile": (("material",), (), "required"),
 }
-# Tables whose values can each have their own sources: `rim_sources = [...]` replaces the table's
-# `sources` for `rim` alone.
-OWN_SOURCES = ("mm", "case_head")
 BULLET_TYPES = (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP)
 CASE_MATERIALS = (COPPER, STEEL, NICKEL, PAPER, HYBRID)
 CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL)
@@ -245,22 +242,17 @@ def _check_sources(f, table, data, rule):
             f.problem(f.line(table), f"[{table}] needs a sources list (an empty list [] when nothing is checked yet)"
                       if rule == "may be empty" else f"[{table}] needs sources = [\"https://…\"]")
         return []
-    return _check_urls(f, table, "sources", data["sources"], rule)
-
-
-def _check_urls(f, table, key, urls, rule):
-    """Check one list of sources (`sources` or a value's own `<value>_sources`)."""
-    line = f.line(table, key)
+    urls = data["sources"]
     if not _is_text_list(urls):
-        f.problem(line, f"[{table}] {key} must be a list of web addresses in quotes")
+        f.problem(f.line(table, "sources"), f"[{table}] sources must be a list of web addresses in quotes")
         return []
     if rule == "required" and not urls:
-        f.problem(line, f"[{table}] {key} needs at least one source")
+        f.problem(f.line(table, "sources"), f"[{table}] needs at least one source")
     for u in urls:
         if not re.fullmatch(r"https://[^\s\"<>]+\.[^\s\"<>]+", u):
-            f.problem(line, f"[{table}] source {u!r} is not a https:// web address")
+            f.problem(f.line(table, "sources"), f"[{table}] source {u!r} is not a https:// web address")
     if len(set(urls)) != len(urls):
-        f.problem(line, f"[{table}] {key} lists a source twice")
+        f.problem(f.line(table, "sources"), f"[{table}] lists a source twice")
     return urls
 
 
@@ -326,20 +318,12 @@ def _read_calibre(f, category, countries):
             if _shape(kind, profile) == "cartridge" and ("shoulder" in data) != ("shoulder_at" in data):
                 f.problem(f.line("mm"), "[mm] needs both shoulder and shoulder_at (bottleneck) or neither (straight case)")
                 ok = False
-        values = set(req) | set(opt)
-        allowed = values | {"sources"} | ({k + "_sources" for k in values} if t in OWN_SOURCES else set())
+        allowed = set(req) | set(opt) | {"sources"}
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)
         urls = _check_sources(f, t, data, rule)
-        own = {}
-        for k in allowed - values - {"sources"}:
-            if k in data:
-                value = k[:-len("_sources")]
-                if value not in data:
-                    f.problem(f.line(t, k), f"[{t}] has {k} but no {value}")
-                own[k] = _check_urls(f, t, k, data[k], rule)
         for k, v in data.items():
-            if k not in values:
+            if k == "sources" or k not in allowed:
                 continue
             if t == "mm" or t == "case_head" or k == "degrees":
                 if not _is_number(v) or v <= 0:
@@ -370,7 +354,7 @@ def _read_calibre(f, category, countries):
         if t == "shoulder_angle" and _is_number(data.get("degrees")) and not 0 < data["degrees"] < 90:
             f.problem(f.line(t, "degrees"), "[shoulder_angle] degrees is the angle to the case axis, above 0 and below 90")
         ok = ok and len(f.problems) == before
-        facts[t] = dict(data, sources=urls, **own)
+        facts[t] = dict(data, sources=urls)
     if not ok:
         return None
     if kind in (RIMFIRE,) + LOOSE:
@@ -541,8 +525,7 @@ def load(root=ROOT):
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "CASES",
-                         "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES", "VALUE_SOURCES",
-                         "MEASUREMENT_SOURCES")}
+                         "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE")}
     for _, items in catalogue:
         for e in items:
@@ -559,12 +542,6 @@ def load(root=ROOT):
                 t["ORIGIN_UNDECIDED"][n] = tuple(raw["origin_candidates"])
             for fact, data in facts.items():
                 t["SOURCES"][(n, fact)] = list(data["sources"])
-                for k, urls in data.items():
-                    if k.endswith("_sources"):
-                        t["VALUE_SOURCES"][(n, fact, k[:-len("_sources")])] = list(urls)
-            mm = facts["mm"]
-            t["MEASUREMENT_SOURCES"][n] = {k: list(mm.get(k + "_sources", mm["sources"])) for k in mm
-                                           if k != "sources" and not k.endswith("_sources")}
             first = lambda fact: facts[fact]["sources"][0] if facts[fact]["sources"] else None  # noqa: E731
             i = facts["introduced"]
             if "year" in i:
@@ -625,19 +602,12 @@ CURRENT_CASES = _t["CURRENT_CASES"]  # {name: (other case materials made today, 
 LOOSE_MATERIALS = _t["LOOSE_MATERIALS"]  # {name: (material, first source)}
 LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], by file name
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
-VALUE_SOURCES = _t["VALUE_SOURCES"]  # {(name, table, value): [every source]} for values with their own
-# {name: {measurement as in the file ("rim", "case_length", ...): [its sources]}}, every measurement.
-MEASUREMENT_SOURCES = _t["MEASUREMENT_SOURCES"]
 
 
-def sources(name, fact, value=None):
-    """Every source of a calibre's table, as listed in its file: fact is the table name ("mm",
-    "introduced", "primer", "shoulder_angle", "case_head", "bullet", "case", "current_cases" or
-    "projectile"). With `value` ("rim", "case_length", ...) the sources of that one value: its own
-    `<value>_sources` when it has them, else the table's. [] when nothing is checked yet or the
-    calibre has no such table."""
-    if value is not None and (name, fact, value) in VALUE_SOURCES:
-        return list(VALUE_SOURCES[(name, fact, value)])
+def sources(name, fact):
+    """Every source of one of a calibre's values, as listed in its file: fact is the table name
+    ("mm", "introduced", "primer", "shoulder_angle", "case_head", "bullet", "case", "current_cases" or
+    "projectile"); [] when nothing is checked yet or the calibre has no such table."""
     return list(SOURCES.get((name, fact), []))
 
 

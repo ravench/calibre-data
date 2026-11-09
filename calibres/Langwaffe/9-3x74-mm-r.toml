@@ -9,15 +9,13 @@ origin = "DE"
 [mm]
 rim = 13.35
 base = 11.9
-base_sources = []
 shoulder = 10.4
 shoulder_at = 59
 neck = 9.92
 case_length = 74.7
 overall_length = 94.5
-overall_length_sources = []
 bullet = 9.3
-bullet_sources = []
+# No source yet for base, overall_length and bullet.
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page51.pdf"]
 
 [introduced]

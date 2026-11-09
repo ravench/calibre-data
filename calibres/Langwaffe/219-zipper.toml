@@ -13,12 +13,14 @@ rim = 12.9
 base = 10.7
 shoulder = 9.3
 shoulder_at = 34.55
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page55.pdf"]
 neck = 6.4
 case_length = 49.2
 overall_length = 57.4
 bullet = 5.7
-sources = ["https://en.wikipedia.org/wiki/.219_Zipper"]
+sources = [
+  "https://en.wikipedia.org/wiki/.219_Zipper",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page55.pdf",
+]
 
 [introduced]
 year = 1937

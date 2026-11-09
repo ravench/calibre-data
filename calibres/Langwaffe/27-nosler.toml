@@ -13,12 +13,12 @@ rim = 13.6
 base = 14.0
 shoulder = 13.6
 shoulder_at = 53.57
-shoulder_at_sources = ["https://www.nosler.com/"]
 neck = 7.8
 case_length = 65.8
 overall_length = 84.8
 bullet = 7.04
-sources = []
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://www.nosler.com/"]
 
 [introduced]
 year = 2020

@@ -14,12 +14,14 @@ rim = 11.99
 base = 11.95
 shoulder = 11.71
 shoulder_at = 41.43
-shoulder_at_sources = ["https://www.xxlreloading.com/"]
 neck = 7.87
 case_length = 51.18
 overall_length = 71.76
 bullet = 7.06
-sources = ["https://en.wikipedia.org/wiki/.277_Fury"]
+sources = [
+  "https://en.wikipedia.org/wiki/.277_Fury",
+  "https://www.xxlreloading.com/",
+]
 
 [introduced]
 year = 2019

@@ -14,12 +14,14 @@ rim = 11.8
 base = 11.8
 shoulder = 11.1
 shoulder_at = 49.63
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page126.pdf"]
 neck = 9.1
 case_length = 60.1
 overall_length = 85.1
 bullet = 8.4
-sources = ["https://en.wikipedia.org/wiki/.318_Westley_Richards"]
+sources = [
+  "https://en.wikipedia.org/wiki/.318_Westley_Richards",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page126.pdf",
+]
 
 [introduced]
 year = 1906

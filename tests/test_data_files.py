@@ -109,27 +109,12 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(sources(".22 LR", "shoulder_angle"), [])
         self.assertEqual(sources("No such calibre", "mm"), [])
 
-    def test_a_value_can_have_its_own_sources(self):
-        cip = "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
-        self.assertEqual(sources(".308 Winchester", "mm", "shoulder_at"), [cip])
-        self.assertEqual(sources(".308 Winchester", "mm", "rim"), [])  # the table's: not checked
-        self.assertEqual(sources(".308 Winchester", "mm"), [])
-        self.assertEqual(cartridges.MEASUREMENT_SOURCES[".308 Winchester"],
-                         {k: [cip] if k == "shoulder_at" else [] for k in cartridges.MM_FULL})
-        self.assertEqual(set(cartridges.MEASUREMENT_SOURCES[".22 LR"]), set(cartridges.MM_SHAPES["cartridge"][0]))
-        with Copy() as c:
-            c.edit(LR, "rim = 6.9\n", 'rim = 6.9\nrim_sources = ["https://saami.org/"]\n')
-            c.edit(WIN, "ramp_angle = 36.0\n", "ramp_angle = 36.0\nramp_angle_sources = [\"https://saami.org/\"]\n")
-            t = load(c.dir)
-            self.assertEqual(t["VALUE_SOURCES"][(".22 LR", "mm", "rim")], ["https://saami.org/"])
-            self.assertEqual(t["MEASUREMENT_SOURCES"][".22 LR"]["rim"], ["https://saami.org/"])
-            self.assertEqual(t["MEASUREMENT_SOURCES"][".22 LR"]["base"], [])
-            self.assertEqual(t["VALUE_SOURCES"][(".308 Winchester", "case_head", "ramp_angle")], ["https://saami.org/"])
-            self.assertEqual(t["CASE_HEADS"][".308 Winchester"][4], cip)  # the tuple keeps the table's first source
-
-    def test_at_least_half_the_measurements_have_a_source(self):
-        values = [urls for m in cartridges.MEASUREMENT_SOURCES.values() for urls in m.values()]
-        self.assertGreater(sum(1 for urls in values if urls), len(values) / 2)
+    def test_most_calibres_name_the_source_of_their_measurements(self):
+        names = [s["name"] for _, items in cartridges.CATALOGUE for s in items]
+        self.assertGreater(sum(1 for n in names if sources(n, "mm")), len(names) / 2)
+        self.assertEqual(sources(".350 Rigby Magnum", "mm"),  # the page of most values first
+                         ["https://en.wikipedia.org/wiki/.350_Rigby",
+                          "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf"])
 
     def test_empty_primer_sources_mean_unverified(self):
         self.assertIn("9 mm P.A.K.", cartridges.PRIMER_UNVERIFIED)
@@ -253,27 +238,6 @@ class CheckTests(unittest.TestCase):
                    'year = 1887\nsources = "https://en.wikipedia.org/wiki/.22_Long_Rifle"')
             self.assertOnlyProblems(c, LR, r"\[introduced\] sources must be a list")
             self.assertEqual(len(c.problems()), 1)
-
-    def test_sources_of_one_value(self):
-        cases = [(LR, "rim = 6.9\n", 'rim = 6.9\nrimm_sources = []\n', r"unknown key 'rimm_sources' in \[mm\] \(did you mean \"rim_sources\"\?\)",
-                  "rimm_sources"),
-                 (LR, "rim = 6.9\n", 'rim = 6.9\nshoulder_sources = []\n', r"\[mm\] has shoulder_sources but no shoulder",
-                  "shoulder_sources"),
-                 (LR, "rim = 6.9\n", 'rim = 6.9\nrim_sources = "https://saami.org/"\n',
-                  r"\[mm\] rim_sources must be a list", "rim_sources"),
-                 (LR, "rim = 6.9\n", 'rim = 6.9\nrim_sources = ["Wikipedia"]\n',
-                  r"\[mm\] source 'Wikipedia' is not a https:// web address", "rim_sources"),
-                 (LR, "rim = 6.9\n", 'rim = 6.9\nrim_sources = ["https://saami.org/", "https://saami.org/"]\n',
-                  r"\[mm\] rim_sources lists a source twice", "rim_sources"),
-                 (LR, "year = 1887\n", 'year = 1887\nyear_sources = []\n', r"unknown key 'year_sources' in \[introduced\]",
-                  "year_sources"),
-                 (WIN, "ramp_angle = 36.0\n", "ramp_angle = 36.0\nramp_angle_sources = []\n",
-                  r"\[case_head\] ramp_angle_sources needs at least one source", "ramp_angle_sources")]
-        for rel, old, new, pattern, line in cases:
-            with self.subTest(new), Copy() as c:
-                c.edit(rel, old, new)
-                self.assertEqual({p[0] for p in c.problems()}, {rel})
-                self.assertProblem(c, rel, pattern, line=c.line_of(rel, line))
 
     def test_measurements_need_a_sources_list(self):
         with Copy() as c:
@@ -423,7 +387,7 @@ class CheckTests(unittest.TestCase):
     def test_check_script_passes_on_the_repository(self):
         run = subprocess.run([sys.executable, os.path.join(ROOT, "check.py")], capture_output=True, text=True)
         self.assertEqual(run.returncode, 0, run.stdout)
-        self.assertRegex(run.stdout, r"All \d+ calibre files are fine; \d+ of \d+ measurements \(in \d+ calibres\) still have no source")
+        self.assertIn("calibre files are fine", run.stdout)
 
     def test_ci_runs_the_check(self):
         with open(os.path.join(ROOT, ".github", "workflows", "test.yml")) as f:

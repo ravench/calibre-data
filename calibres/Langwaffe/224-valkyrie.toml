@@ -12,12 +12,14 @@ rim = 10.7
 base = 10.69
 shoulder = 10.24
 shoulder_at = 31.5
-shoulder_at_sources = ["https://municion.org/producto/224-valkyrie/"]
 neck = 6.5
 case_length = 41.0
 overall_length = 57.4
 bullet = 5.7
-sources = ["https://en.wikipedia.org/wiki/.224_Valkyrie"]
+sources = [
+  "https://en.wikipedia.org/wiki/.224_Valkyrie",
+  "https://municion.org/producto/224-valkyrie/",
+]
 
 [introduced]
 year = 2017

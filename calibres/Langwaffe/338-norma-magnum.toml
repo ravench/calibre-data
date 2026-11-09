@@ -12,12 +12,14 @@ rim = 14.93
 base = 14.87
 shoulder = 14.5
 shoulder_at = 47.78
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page133.pdf"]
 neck = 9.4
 case_length = 63.3
 overall_length = 93.5
 bullet = 8.6
-sources = ["https://en.wikipedia.org/wiki/.338_Norma_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.338_Norma_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page133.pdf",
+]
 
 [introduced]
 year = 2008

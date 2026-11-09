@@ -15,12 +15,14 @@ rim = 11.95
 base = 11.94
 shoulder = 11.4
 shoulder_at = 24.38
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page53.pdf"]
 neck = 9.1
 case_length = 33.0
 overall_length = 48.0
 bullet = 8.22
-sources = ["https://en.wikipedia.org/wiki/7.92×33mm_Kurz"]
+sources = [
+  "https://en.wikipedia.org/wiki/7.92×33mm_Kurz",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page53.pdf",
+]
 
 [introduced]
 year = 1942

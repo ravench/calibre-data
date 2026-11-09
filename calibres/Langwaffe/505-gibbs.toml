@@ -13,12 +13,14 @@ rim = 16.3
 base = 16.3
 shoulder = 15.2
 shoulder_at = 62.43
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page154.pdf"]
 neck = 13.6
 case_length = 80.0
 overall_length = 97.8
 bullet = 12.8
-sources = ["https://en.wikipedia.org/wiki/.505_Gibbs"]
+sources = [
+  "https://en.wikipedia.org/wiki/.505_Gibbs",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page154.pdf",
+]
 
 [introduced]
 year = 1910

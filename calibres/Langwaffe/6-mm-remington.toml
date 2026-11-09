@@ -11,12 +11,14 @@ rim = 12.0
 base = 12.0
 shoulder = 10.9
 shoulder_at = 43.81
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page16.pdf"]
 neck = 7.0
 case_length = 56.7
 overall_length = 71.8
 bullet = 6.18
-sources = ["https://en.wikipedia.org/wiki/6mm_Remington"]
+sources = [
+  "https://en.wikipedia.org/wiki/6mm_Remington",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page16.pdf",
+]
 
 [introduced]
 year = 1955

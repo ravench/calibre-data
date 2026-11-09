@@ -16,10 +16,12 @@ shoulder = 12.37
 shoulder_at = 60.69
 neck = 8.05
 case_length = 72.4
-case_length_sources = ["https://en.wikipedia.org/wiki/7mm_STW"]
 overall_length = 92.71
 bullet = 7.23
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page4.pdf"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page4.pdf",
+  "https://en.wikipedia.org/wiki/7mm_STW",
+]
 
 [introduced]
 # A-Square factory ammunition; the wildcat is from 1979-81

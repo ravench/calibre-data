@@ -12,11 +12,11 @@ rim = 16.25
 base = 16.18
 shoulder = 15.24
 shoulder_at = 62.02
-shoulder_at_sources = []
 neck = 11.12
 case_length = 77.21
 overall_length = 115.5
 bullet = 10.36
+# No source yet for shoulder_at.
 sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 
 [introduced]

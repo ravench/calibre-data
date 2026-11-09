@@ -11,12 +11,14 @@ rim = 13.5
 base = 13.1
 shoulder = 12.5
 shoulder_at = 51.82
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page13.pdf"]
 neck = 7.6
 case_length = 64.0
 overall_length = 85.0
 bullet = 6.7
-sources = ["https://en.wikipedia.org/wiki/.264_Winchester_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.264_Winchester_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page13.pdf",
+]
 
 [introduced]
 year = 1959

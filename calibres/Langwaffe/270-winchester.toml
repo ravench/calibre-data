@@ -11,12 +11,12 @@ rim = 12.0
 base = 12.0
 shoulder = 11.2
 shoulder_at = 49.49
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page99.pdf"]
 neck = 7.8
 case_length = 64.5
 overall_length = 84.8
 bullet = 7.0
-sources = []
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page99.pdf"]
 
 [introduced]
 year = 1925

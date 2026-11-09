@@ -13,12 +13,14 @@ rim = 16.4
 base = 14.5
 shoulder = 13.4
 shoulder_at = 55.88
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page125.pdf"]
 neck = 12.4
 case_length = 83.0
 overall_length = 99.0
 bullet = 11.9
-sources = ["https://en.wikipedia.org/wiki/.500/465_Nitro_Express"]
+sources = [
+  "https://en.wikipedia.org/wiki/.500/465_Nitro_Express",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page125.pdf",
+]
 
 [introduced]
 year = 1907

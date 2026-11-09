@@ -13,12 +13,14 @@ rim = 13.3
 base = 11.93
 shoulder = 11.54
 shoulder_at = 23.42
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page98.pdf"]
 neck = 10.58
 case_length = 33.1
 overall_length = 40.0
 bullet = 10.17
-sources = ["https://en.wikipedia.org/wiki/.38-40_Winchester"]
+sources = [
+  "https://en.wikipedia.org/wiki/.38-40_Winchester",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page98.pdf",
+]
 
 [introduced]
 year = 1874

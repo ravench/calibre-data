@@ -11,12 +11,14 @@ rim = 13.5
 base = 12.2
 shoulder = 11.2
 shoulder_at = 57.77
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page66.pdf"]
 neck = 8.73
 case_length = 68.0
 overall_length = 95.0
 bullet = 7.82
-sources = ["https://en.wikipedia.org/wiki/.30_R_Blaser"]
+sources = [
+  "https://en.wikipedia.org/wiki/.30_R_Blaser",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page66.pdf",
+]
 
 [introduced]
 year = 1991

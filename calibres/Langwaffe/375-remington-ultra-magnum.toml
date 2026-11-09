@@ -12,12 +12,14 @@ rim = 13.6
 base = 13.97
 shoulder = 13.34
 shoulder_at = 60.64
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page142.pdf"]
 neck = 10.29
 case_length = 72.4
 overall_length = 91.4
 bullet = 9.5
-sources = ["https://en.wikipedia.org/wiki/.375_Remington_Ultra_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.375_Remington_Ultra_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page142.pdf",
+]
 
 [introduced]
 year = 2000

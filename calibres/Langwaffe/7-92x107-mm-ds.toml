@@ -13,12 +13,14 @@ rim = 16.36
 base = 16.39
 shoulder = 13.15
 shoulder_at = 95.28
-shoulder_at_sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
 neck = 9.23
 case_length = 107.18
 overall_length = 132.0
 bullet = 8.18
-sources = ["https://en.wikipedia.org/wiki/7.92×107mm_DS"]
+sources = [
+  "https://en.wikipedia.org/wiki/7.92×107mm_DS",
+  "https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/",
+]
 
 [introduced]
 year = 1931

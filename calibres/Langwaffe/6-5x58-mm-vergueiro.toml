@@ -14,12 +14,14 @@ rim = 11.78
 base = 11.88
 shoulder = 10.94
 shoulder_at = 41.0
-shoulder_at_sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]
 neck = 7.56
 case_length = 57.85
 overall_length = 81.5
 bullet = 6.65
-sources = ["https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro"]
+sources = [
+  "https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro",
+  "https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/",
+]
 
 [introduced]
 year = 1904

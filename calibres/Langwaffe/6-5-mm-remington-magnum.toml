@@ -13,17 +13,17 @@ rare = true
 
 [mm]
 rim = 13.51
-rim_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page1.pdf"]
 base = 13.03
-base_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page1.pdf"]
 shoulder = 12.6
 shoulder_at = 43.18
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page1.pdf"]
 neck = 7.6
 case_length = 55.1
 overall_length = 71.1
 bullet = 6.7
-sources = ["https://en.wikipedia.org/wiki/6.5mm_Remington_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/6.5mm_Remington_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page1.pdf",
+]
 
 [introduced]
 year = 1966

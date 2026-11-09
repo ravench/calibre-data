@@ -12,15 +12,16 @@ rare = true
 [mm]
 rim = 15.0
 base = 13.1
-base_sources = ["https://en.wikipedia.org/wiki/11×60mm_Mauser"]
 shoulder = 13.0
-shoulder_sources = ["https://en.wikipedia.org/wiki/11×60mm_Mauser"]
 shoulder_at = 36.4
 neck = 11.85
 case_length = 60.35
 overall_length = 78.0
 bullet = 11.4
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page53.pdf"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page53.pdf",
+  "https://en.wikipedia.org/wiki/11×60mm_Mauser",
+]
 
 [introduced]
 year = 1871

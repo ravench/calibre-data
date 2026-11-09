@@ -11,12 +11,14 @@ rim = 12.0
 base = 11.5
 shoulder = 10.9
 shoulder_at = 51.91
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page10.pdf"]
 neck = 6.9
 case_length = 63.4
 overall_length = 78.7
 bullet = 6.2
-sources = ["https://en.wikipedia.org/wiki/.240_Weatherby_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.240_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page10.pdf",
+]
 
 [introduced]
 year = 1968

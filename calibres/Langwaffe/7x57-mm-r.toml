@@ -9,17 +9,15 @@ origin = "DE"
 
 [mm]
 rim = 13.5
-rim_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page22.pdf"]
 base = 12.05
 shoulder = 10.92
 shoulder_at = 43.8
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page22.pdf"]
 neck = 8.25
 case_length = 57.0
 overall_length = 78.0
-overall_length_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page22.pdf"]
 bullet = 7.25
-sources = []
+# No source yet for base, shoulder, neck, case_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page22.pdf"]
 
 [introduced]
 # Year of production on the municion.org product pages (AECC).

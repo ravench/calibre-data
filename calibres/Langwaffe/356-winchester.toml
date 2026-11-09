@@ -13,12 +13,14 @@ rim = 12.9
 base = 11.95
 shoulder = 11.5
 shoulder_at = 39.62
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page90.pdf"]
 neck = 9.9
 case_length = 51.2
 overall_length = 65.0
 bullet = 9.1
-sources = ["https://en.wikipedia.org/wiki/.356_Winchester"]
+sources = [
+  "https://en.wikipedia.org/wiki/.356_Winchester",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page90.pdf",
+]
 
 [introduced]
 year = 1982

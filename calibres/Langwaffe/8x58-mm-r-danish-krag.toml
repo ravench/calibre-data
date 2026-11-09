@@ -13,11 +13,11 @@ rim = 14.65
 base = 12.75
 shoulder = 11.95
 shoulder_at = 41.96
-shoulder_at_sources = []
 neck = 8.98
 case_length = 58.0
 overall_length = 78.0
 bullet = 8.2
+# No source yet for shoulder_at.
 sources = ["https://en.wikipedia.org/wiki/8×58mmR_Danish_Krag"]
 
 [introduced]

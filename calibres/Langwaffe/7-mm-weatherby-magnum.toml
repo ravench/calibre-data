@@ -11,12 +11,14 @@ rim = 13.5
 base = 13.0
 shoulder = 12.4
 shoulder_at = 52.55
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page5.pdf"]
 neck = 7.9
 case_length = 64.7
 overall_length = 83.8
 bullet = 7.2
-sources = ["https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page5.pdf",
+]
 
 [introduced]
 year = 1940

@@ -14,12 +14,14 @@ rim = 13.5
 base = 13.0
 shoulder = 12.5
 shoulder_at = 61.75
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page28.pdf"]
 neck = 10.2
 case_length = 72.6
 overall_length = 91.4
 bullet = 9.5
-sources = ["https://en.wikipedia.org/wiki/.375_Weatherby_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.375_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page28.pdf",
+]
 
 [introduced]
 year = 1944

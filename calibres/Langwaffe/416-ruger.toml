@@ -14,12 +14,14 @@ rim = 13.5
 base = 13.5
 shoulder = 13.0
 shoulder_at = 55.37
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page147.pdf"]
 neck = 11.3
 case_length = 65.3
 overall_length = 84.8
 bullet = 10.6
-sources = ["https://en.wikipedia.org/wiki/.416_Ruger"]
+sources = [
+  "https://en.wikipedia.org/wiki/.416_Ruger",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page147.pdf",
+]
 
 [introduced]
 year = 2008

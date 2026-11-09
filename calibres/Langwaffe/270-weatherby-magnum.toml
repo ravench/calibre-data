@@ -11,12 +11,14 @@ rim = 13.5
 base = 13.0
 shoulder = 12.5
 shoulder_at = 52.57
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page14.pdf"]
 neck = 7.7
 case_length = 65.0
 overall_length = 83.0
 bullet = 7.0
-sources = ["https://en.wikipedia.org/wiki/.270_Weatherby_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.270_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page14.pdf",
+]
 
 [introduced]
 year = 1943

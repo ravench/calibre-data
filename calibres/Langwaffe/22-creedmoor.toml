@@ -11,12 +11,14 @@ rim = 11.99
 base = 11.95
 shoulder = 11.76
 shoulder_at = 37.85
-shoulder_at_sources = ["https://saami.org/wp-content/uploads/2026/10/Public-Revision-Notice-22-Creedmoor-2026-10-26.pdf"]
 neck = 6.53
 case_length = 48.77
 overall_length = 68.58
 bullet = 5.7
-sources = ["https://en.wikipedia.org/wiki/.22_Creedmoor"]
+sources = [
+  "https://en.wikipedia.org/wiki/.22_Creedmoor",
+  "https://saami.org/wp-content/uploads/2026/10/Public-Revision-Notice-22-Creedmoor-2026-10-26.pdf",
+]
 
 [introduced]
 year = 2023

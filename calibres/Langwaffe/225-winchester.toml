@@ -13,12 +13,14 @@ rim = 12.0
 base = 10.7
 shoulder = 10.3
 shoulder_at = 38.86
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page58.pdf"]
 neck = 6.6
 case_length = 49.0
 overall_length = 64.0
 bullet = 5.7
-sources = ["https://en.wikipedia.org/wiki/.225_Winchester"]
+sources = [
+  "https://en.wikipedia.org/wiki/.225_Winchester",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page58.pdf",
+]
 
 [introduced]
 year = 1964

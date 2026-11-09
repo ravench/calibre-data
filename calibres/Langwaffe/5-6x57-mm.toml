@@ -14,12 +14,14 @@ rim = 11.95
 base = 11.9
 shoulder = 10.94
 shoulder_at = 44.51
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page5.pdf"]
 neck = 7.1
 case_length = 56.7
 overall_length = 69.0
 bullet = 5.7
-sources = ["https://en.wikipedia.org/wiki/5.6×57mm"]
+sources = [
+  "https://en.wikipedia.org/wiki/5.6×57mm",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page5.pdf",
+]
 
 [introduced]
 year = 1964

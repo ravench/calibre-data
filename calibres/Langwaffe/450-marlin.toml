@@ -10,10 +10,10 @@ origin = "US"
 rim = 13.4
 base = 13.01
 neck = 12.2
-neck_sources = []
 case_length = 53.0
 overall_length = 65.0
 bullet = 11.6
+# No source yet for neck.
 sources = ["https://en.wikipedia.org/wiki/.450_Marlin"]
 
 [introduced]

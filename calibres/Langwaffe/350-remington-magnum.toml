@@ -9,17 +9,17 @@ origin = "US"
 
 [mm]
 rim = 13.51
-rim_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page25.pdf"]
 base = 13.03
-base_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page25.pdf"]
 shoulder = 12.6
 shoulder_at = 43.18
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page25.pdf"]
 neck = 9.9
 case_length = 55.1
 overall_length = 71.1
 bullet = 9.1
-sources = ["https://en.wikipedia.org/wiki/.350_Remington_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.350_Remington_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page25.pdf",
+]
 
 [introduced]
 year = 1965

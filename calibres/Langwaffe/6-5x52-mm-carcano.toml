@@ -12,12 +12,14 @@ rim = 11.45
 base = 11.41
 shoulder = 10.94
 shoulder_at = 41.2
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page20.pdf"]
 neck = 7.55
 case_length = 52.5
 overall_length = 76.5
 bullet = 6.8
-sources = ["https://en.wikipedia.org/wiki/6.5×52mm_Carcano"]
+sources = [
+  "https://en.wikipedia.org/wiki/6.5×52mm_Carcano",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page20.pdf",
+]
 
 [introduced]
 year = 1890

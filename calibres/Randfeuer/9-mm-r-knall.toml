@@ -12,8 +12,8 @@ display_aliases = ["9 mm R.K.", ".380 R Blanc"]
 rim = 11.0
 base = 9.58
 mouth = 5.7
-mouth_sources = []
 length = 17.5
+# No source yet for mouth.
 sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
 [introduced]

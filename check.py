@@ -42,10 +42,8 @@ def main(root=ROOT):
     import cartridges
     t = cartridges.load(root)
     names = [s["name"] for _, items in t["CATALOGUE"] for s in items]
-    values = [(n, urls) for n in names for urls in t["MEASUREMENT_SOURCES"][n].values()]
-    unsourced = [n for n, urls in values if not urls]
-    print(f"All {len(names)} calibre files are fine; {len(unsourced)} of {len(values)} measurements "
-          f"(in {len(set(unsourced))} calibres) still have no source.")
+    unsourced = sum(1 for n in names if not t["SOURCES"].get((n, "mm")))
+    print(f"All {len(names)} calibre files are fine ({unsourced} still have no source for their measurements).")
     return 0
 
 

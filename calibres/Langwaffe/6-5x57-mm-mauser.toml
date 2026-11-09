@@ -11,12 +11,14 @@ rim = 11.95
 base = 11.9
 shoulder = 10.94
 shoulder_at = 44.5
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page24.pdf"]
 neck = 7.65
 case_length = 56.7
 overall_length = 82.0
 bullet = 6.7
-sources = ["https://en.wikipedia.org/wiki/6.5×57mm_Mauser"]
+sources = [
+  "https://en.wikipedia.org/wiki/6.5×57mm_Mauser",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page24.pdf",
+]
 
 [introduced]
 year = 1893

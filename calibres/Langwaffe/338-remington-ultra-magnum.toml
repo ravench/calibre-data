@@ -12,12 +12,14 @@ rim = 13.6
 base = 14.0
 shoulder = 13.4
 shoulder_at = 58.32
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page134.pdf"]
 neck = 9.4
 case_length = 70.1
 overall_length = 91.4
 bullet = 8.6
-sources = ["https://en.wikipedia.org/wiki/.338_Remington_Ultra_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.338_Remington_Ultra_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page134.pdf",
+]
 
 [introduced]
 # introduced 2002, designed 2000

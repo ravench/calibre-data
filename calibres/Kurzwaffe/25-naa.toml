@@ -13,12 +13,14 @@ rim = 8.6
 base = 8.6
 shoulder = 8.5
 shoulder_at = 13.79
-shoulder_at_sources = ["https://municion.org/producto/25-naa/"]
 neck = 7.0
 case_length = 18.9
 overall_length = 24.4
 bullet = 6.4
-sources = ["https://en.wikipedia.org/wiki/.25_NAA"]
+sources = [
+  "https://en.wikipedia.org/wiki/.25_NAA",
+  "https://municion.org/producto/25-naa/",
+]
 
 [introduced]
 year = 2002

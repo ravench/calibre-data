@@ -11,8 +11,8 @@ aliases = ["6mmflobert", "6mmknall", "6mmflobertblanc", "flobertknall"]
 rim = 7.15
 base = 5.75
 mouth = 3.4
-mouth_sources = []
 length = 6.6
+# No source yet for mouth.
 sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
 [introduced]

@@ -12,15 +12,16 @@ rare = true
 rim = 13.6
 base = 14.0
 shoulder = 13.6
-shoulder_sources = []
 shoulder_at = 54.32
-shoulder_at_sources = ["https://municion.org/producto/33-nosler/"]
 neck = 9.4
-neck_sources = []
 case_length = 65.8
 overall_length = 84.8
 bullet = 8.6
-sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+# No source yet for shoulder and neck.
+sources = [
+  "https://en.wikipedia.org/wiki/.28_Nosler",
+  "https://municion.org/producto/33-nosler/",
+]
 
 [introduced]
 year = 2016

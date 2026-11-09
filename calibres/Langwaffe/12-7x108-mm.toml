@@ -13,11 +13,11 @@ rim = 21.7
 base = 21.75
 shoulder = 18.9
 shoulder_at = 88.13
-shoulder_at_sources = []
 neck = 13.95
 case_length = 108.0
 overall_length = 147.5
 bullet = 12.98
+# No source yet for shoulder_at.
 sources = ["https://en.wikipedia.org/wiki/12.7×108mm"]
 
 [introduced]

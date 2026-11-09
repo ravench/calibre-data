@@ -11,12 +11,14 @@ rim = 12.9
 base = 10.7
 shoulder = 9.3
 shoulder_at = 34.1
-shoulder_at_sources = ["https://municion.org/producto/25-35-winchester-cf/"]
 neck = 7.2
 case_length = 51.9
 overall_length = 65.0
 bullet = 6.6
-sources = ["https://en.wikipedia.org/wiki/.25-35_Winchester"]
+sources = [
+  "https://en.wikipedia.org/wiki/.25-35_Winchester",
+  "https://municion.org/producto/25-35-winchester-cf/",
+]
 
 [introduced]
 year = 1895

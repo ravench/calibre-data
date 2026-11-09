@@ -10,15 +10,13 @@ worldwide = true
 [mm]
 rim = 13.51
 base = 13.0
-base_sources = []
 shoulder = 11.37
 shoulder_at = 61.27
 neck = 10.21
 case_length = 72.4
-case_length_sources = []
 overall_length = 91.4
-overall_length_sources = []
 bullet = 9.55
+# No source yet for base, case_length and overall_length.
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page27.pdf"]
 
 [introduced]

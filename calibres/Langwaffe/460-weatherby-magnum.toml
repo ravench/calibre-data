@@ -13,12 +13,14 @@ rim = 14.7
 base = 14.8
 shoulder = 14.2
 shoulder_at = 60.39
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
 neck = 12.2
 case_length = 74.0
 overall_length = 93.0
 bullet = 11.6
-sources = ["https://en.wikipedia.org/wiki/.460_Weatherby_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.460_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf",
+]
 
 [introduced]
 year = 1957

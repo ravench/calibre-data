@@ -14,12 +14,14 @@ rim = 14.11
 base = 12.48
 shoulder = 12.01
 shoulder_at = 38.29
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf"]
 neck = 9.03
 case_length = 50.38
 overall_length = 76.21
 bullet = 8.22
-sources = ["https://en.wikipedia.org/wiki/8×50mmR_Mannlicher"]
+sources = [
+  "https://en.wikipedia.org/wiki/8×50mmR_Mannlicher",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf",
+]
 
 [introduced]
 year = 1890

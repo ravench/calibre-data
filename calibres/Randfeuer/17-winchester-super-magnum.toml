@@ -11,12 +11,14 @@ rim = 8.5
 base = 6.8
 shoulder = 6.8
 shoulder_at = 24.75
-shoulder_at_sources = ["https://municion.org/producto/17-winchester-super-magnum-rf/"]
 neck = 5.0
 case_length = 30.5
 overall_length = 36.6
 bullet = 4.4
-sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
+sources = [
+  "https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum",
+  "https://municion.org/producto/17-winchester-super-magnum-rf/",
+]
 
 [introduced]
 year = 2013

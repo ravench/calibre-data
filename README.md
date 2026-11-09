@@ -47,12 +47,12 @@ rim = 11.9
 base = 11.9
 shoulder = 11.5
 shoulder_at = 39.62
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 neck = 8.7
 case_length = 51.2
 overall_length = 71.1
 bullet = 7.82
-sources = []
+# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 
 [introduced]
 year = 1952
@@ -88,41 +88,6 @@ inferred); a year, a shoulder angle, a case head, a case material, the case mate
 and a projectile material always need one.
 `sources(name, table)` in `cartridges.py` gives the whole list; the old tables (`INTRODUCED`,
 `SHOULDER_ANGLES`, ...) keep the first one.
-
-A measurement that comes from somewhere else than the rest of its table gets its own list, named
-after it: `shoulder_at_sources` replaces the table's `sources` for `shoulder_at` alone. In the
-example above only the shoulder position has a source (the C.I.P. sheet); the other values have
-none yet. In `.350 Rigby Magnum` most values come from a Wikipedia page, the shoulder position from
-the C.I.P. sheet, and the rim from neither: `[]` marks one value as not checked while the rest of
-its table has a source.
-
-```toml
-[mm]
-# The Wikipedia infobox gives the rim as 13.6 mm (checked 2026-11-09), so 13.1 has no source.
-rim = 13.1
-rim_sources = []
-base = 13.1
-shoulder = 11.6
-shoulder_at = 57.15
-shoulder_at_sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf"]
-neck = 9.7
-case_length = 69.6
-overall_length = 87.0
-bullet = 9.1
-sources = ["https://en.wikipedia.org/wiki/.350_Rigby"]
-```
-
-This works for the values in `[mm]` and `[case_head]`. Each list follows the same rules as the
-table's `sources`. `sources(name, "mm", "rim")` gives the sources of one value, and
-`MEASUREMENT_SOURCES[name]` those of every measurement of a calibre.
-
-The measurement sources were filled in from the history of this repository in November 2026: each
-value names the page it was taken from when the calibre was added or the value last changed, as
-the commits and notes say. A value the notes call estimated (most shoulder positions before the
-C.I.P. sheets), one worked out from a drawing or an angle, one measured on a cartridge, and every
-value of the first catalogue (which named no sources) has none yet. The pages were not compared
-value by value: a sample of about 230 values was, and the ones not found on their page lost their
-source. When you check a value against a source, add or fix its list.
 
 ### Top of the file
 
@@ -166,6 +131,26 @@ Short forms:
 | `kind = "minie"` or `"pellet"` | `diameter`, `length` |
 | `kind = "shot"` | `diameter`, `rim`, `length` (the case) |
 | `profile = "crimped"` | `rim`, `base`, `mouth` (at the star crimp), `length` |
+
+`sources` lists every page the measurements come from, the page of most of them first. When only
+some of them have a source, a note above the list names the others, as in the example above (only
+the shoulder position is from the C.I.P. sheet there):
+
+```toml
+# No source yet for case_length.
+sources = [
+  "https://en.wikipedia.org/wiki/7×64mm",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page24.pdf",
+]
+```
+
+These lists were filled in from the history of this repository in November 2026: each measurement
+counts the page it was taken from when the calibre was added or the value last changed, as the
+commits and notes say. Values the notes call estimated (most shoulder positions before the C.I.P.
+sheets), values worked out from a drawing or an angle, values measured on a cartridge and the
+first catalogue (which named no sources) have none yet. The pages were not compared value by value:
+a sample of about 280 values was, and the ones not found on their page count as without a source.
+When you check a measurement against a source, add the page and update the note.
 
 ### `[introduced]`
 
@@ -286,8 +271,7 @@ Cartridges of the World (15th ed., 2016) and the C.I.P. and SAAMI lists.
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
 `case_head(name)` and `lookalikes(name)` look up one value; `sources(name, table)` lists every source
-of a table (`"mm"`, `"introduced"`, `"primer"`, ...) and `sources(name, table, value)` those of one
-value (its own `<value>_sources`, else the table's). A problem in the files stops the import with a
+of a table (`"mm"`, `"introduced"`, `"primer"`, ...). A problem in the files stops the import with a
 `DataError` that lists them all.
 
 ## Adding or changing a calibre
