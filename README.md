@@ -10,8 +10,10 @@ The values are for drawings and for matching photos, **not reloading data**.
 ## The files
 
 Every calibre is one [TOML](https://toml.io) file in `calibres/<category>/`, named after the calibre
-(`.22 LR` is `calibres/Randfeuer/22-lr.toml`). The categories are the folders: `Randfeuer`,
-`Kurzwaffe`, `Langwaffe`, `Schwarzpulver`, `Flinte` and `Luftdruck`.
+(`.22 LR` is `calibres/rimfire/22-lr.toml`). The folder is the calibre's category, and the only place
+it is stored: `rimfire`, `handgun`, `rifle`, `black-powder`, `shotgun` and `air-gun`. The apps know
+these six as `Randfeuer`, `Kurzwaffe`, `Langwaffe`, `Schwarzpulver`, `Flinte` and `Luftdruck`, the
+names they show (`CATEGORIES` in `cartridges.py`), so a new category needs a change in the apps too.
 
 - `order.toml`: the order the apps and the poster list the calibres in. A calibre that is not listed
   comes after the listed ones of its category, by name, so a new calibre needs no entry here.
@@ -94,7 +96,7 @@ and a projectile material always need one.
 
 | Key | | Meaning |
 |---|---|---|
-| `name` | required | The calibre's name as the apps show it. The file name follows from it. |
+| `name` | required | The calibre's name as the apps show it, written as in [Names](#names). The file name follows from it (`.22 LR` is `22-lr.toml`); `check.py` gives the right one. |
 | `kind` | required | `rimless`, `rimmed`, `belted`, `rimfire`, `shot` (shot shell), `ball` (round ball or BB), `minie` (Minié bullet) or `pellet` (air gun pellet). |
 | `profile` | required | Bullet nose: `spitzer`, `round`, `flat`, `patched` (paper-patched lead body under a steel cap, GP 1890) or `crimped` (no bullet, the mouth folded shut in a star: blanks and power-tool loads). |
 | `aliases` | required | Search aliases, lower case as people type them (`[]` for none). Never the name of another calibre. |
@@ -104,6 +106,33 @@ and a projectile material always need one.
 | `worldwide` | | `true` for a calibre in common use worldwide (independent of `origin`: 9x19 mm is German and worldwide). Includes the generic gauges and pellet sizes. |
 | `obsolete` | | `true` when no longer in regular factory production (only surplus, boutique loads or reloading). The apps can hide these by default; the poster can mark them. |
 | `rare` | | `true` when you are unlikely to find it (see [Rare](#rare)). |
+
+### Names
+
+New names follow the way the names here are written, so the lists read alike:
+
+- Numbers and units as the SI writes them (SI Brochure, ISO 80000-1): a space before the unit
+  (`9 mm`, `3 inch`), a decimal point (`7.62`), and a plain `x` without spaces between bore and case
+  length (`7.62x51 mm`). `check.py` reports `9mm`, `7,62`, `7.62×51` and `7.62 x 51`.
+- Metric calibres: bore x case length, `mm`, the rim or bore letters, then the name:
+  `7.62x51 mm NATO`, `9x19 mm`, `7x65 mm R`, `8x57 mm IS`, `6.5x50 mm SR Arisaka`. The bore alone
+  where the case length is not part of the usual name: `9 mm Glisenti`, `6.5 mm Creedmoor`.
+- Inch calibres keep the leading dot: `.308 Winchester`, `.45 ACP`. Maker names are written out
+  (`Winchester`, `Remington`) unless the short form is the cartridge's usual name (`ACP`, `S&W`,
+  `H&H`, `WMR`, `WCF`, `BMG`). Hyphenated designations keep their hyphen (`.45-70 Government`,
+  `.30-06 Springfield`), a case necked down from another its slash (`.577/450 Martini-Henry`).
+- Trade names as the maker sells them: `6.5 PRC`, `8.6 Blackout`, `7.5 FK`.
+- Where two cartridges would get the same name, the case length or the year tells them apart:
+  `.450/400 Nitro Express 3 inch`, `10.4 mm Swiss Ordnance 1872 Rimfire`.
+- A cartridge with two common names gets the metric one first and the other in brackets:
+  `9 mm Browning kurz (.380 ACP)`, `9.3x66 mm Sako (.370 Sako Magnum)`. Swiss service rounds carry
+  their service name: `7.5x55 mm Swiss (GP 11)`, `5.6 mm GP 90`. Round balls and pellets give their
+  real diameter in brackets: `.44 Rundkugel (.454)`, `4.5 mm Diabolo (.177)`.
+- Shot shells: gauge/case length in mm, `12/70`, `.410/76`.
+- English, except for rounds known in Switzerland by a German name: `Knall`, `Rundkugel`,
+  `Diabolo`, `Kadettenpatrone`, `Browning kurz`.
+- Short and foreign forms (`.308 Win`, `9 mm Para`, `12,7x99 mm NATO`) go in `display_aliases` or
+  `aliases`, which keep a name as it is printed elsewhere.
 
 ### `[mm]`: measurements in millimetres
 
@@ -194,7 +223,8 @@ Rimless and belted cases, from the C.I.P. sheets (maximum cartridge): `rim_thick
 `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
 A case made from a parent case without its own sheet keeps the parent's head (the note says which).
-Cases without one are drawn with a generic head.
+Cases without one are drawn with a generic head (`HEAD_UNSOURCED` in `tests/test_outline.py` lists
+them).
 
 ### `[bullet]`, `[case]`, `[current_cases]`, `[projectile]`
 
@@ -207,8 +237,8 @@ Cases without one are drawn with a generic head.
 - `[case]` `material`: the original case where it was not brass: `copper`, lacquered `steel`,
   `nickel`-plated steel, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case)
   or `hybrid` (brass body on a steel head).
-- `[current_cases]` `materials`: other case materials made today (brass .45-70, steel 9x19); the
-  original stays the drawn one.
+- `[current_cases]` `materials`: other case materials made today (brass .45-70, steel 9x19), never
+  the original's own (brass only where the original is not brass); the original stays the drawn one.
 - `[projectile]` `material`: balls, Minié bullets and pellets not made of lead: `steel` or `plastic`
   (steel BBs and airsoft BBs).
 
@@ -267,7 +297,8 @@ Cartridges of the World (15th ed., 2016) and the C.I.P. and SAAMI lists.
 
 ## In Python
 
-`import cartridges` reads the files once. Besides the tables, `tags(name)` gives `[]`,
+`import cartridges` reads the files once. `CATALOGUE` names each category as the apps know it
+(`Randfeuer` for the folder `rimfire`, see `CATEGORIES`). Besides the tables, `tags(name)` gives `[]`,
 `["obsolete"]`, `["rare"]` or both; `origin(name)` gives `(code, name, flag)` or `None` and
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
@@ -278,8 +309,9 @@ of a table (`"mm"`, `"introduced"`, `"primer"`, ...). A problem in the files sto
 ## Adding or changing a calibre
 
 1. Copy [`docs/template.toml`](docs/template.toml) (every field explained) or the file of a similar
-   calibre into the right `calibres/<category>/` folder, give it the new name and change the values. Add a source for each value you know and keep a note of anything measured
-   or estimated.
+   calibre into the right `calibres/<category>/` folder, give it the new name (see [Names](#names))
+   and change the values. Add a source for each value you know and keep a note of anything
+   measured or estimated.
 2. Run the checks and the tests:
 
    ```sh
@@ -296,9 +328,15 @@ You can also edit a file in GitHub's web editor and open the pull request from t
 
 `python3 check.py` reads every file and lists each problem with its file and line: broken TOML, an
 unknown or misspelt key (with the key it probably means), a value that is not allowed, a missing
-measurement or table, a source that is not a web address, a file whose name does not follow the
-calibre's name, an alias two calibres use or that is another calibre's name, a category folder
-missing from `order.toml`, names in `order.toml` or `lookalikes/` without a file. The *Check calibre files* job runs it on every pull request. It needs Python 3.11 or newer.
+measurement or table, a source that is not a web address, a name that writes a number or unit
+another way than [Names](#names), a file whose name does not follow the calibre's name, an alias two
+calibres use or that is another calibre's name, a category the apps do not know or that is missing
+from `order.toml`, names in `order.toml` or `lookalikes/` without a file. The *Check calibre files*
+job runs it on every pull request. It needs Python 3.11 or newer.
+
+The tests (`python3 -m unittest discover -s tests`) also check the catalogue as a whole: a bottleneck
+case without a shoulder angle or a rimless case without a case head must be listed in
+`tests/test_outline.py`, and calibres that look exactly the same need a group in `lookalikes/`.
 
 ## Using it
 

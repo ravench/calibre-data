@@ -342,9 +342,9 @@ class CatalogueTests(unittest.TestCase):
                 year = INTRODUCED.get(s["name"], (None,))[0]
                 if year is not None:
                     self.assertLessEqual(year, 1886, s["name"])
-        langwaffe = {s["name"] for cat, items in CATALOGUE if cat == "Langwaffe" for s in items}
+        rifles = {s["name"] for cat, items in CATALOGUE if cat == "Langwaffe" for s in items}
         for name in (".338 Norma Magnum", "12.7x108 mm", "7.65x53 mm Argentine"):
-            self.assertIn(name, langwaffe)
+            self.assertIn(name, rifles)
 
     def test_obsolete_calibres_are_known(self):
         self.assertLessEqual(OBSOLETE, NAMES)
@@ -615,8 +615,8 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(loose_material(".50 Rundkugel (.490)"), LEAD)
         self.assertEqual(by_name["6 mm Airsoft-BB"]["bullet"], 6.0)
         self.assertEqual(by_name["8 mm Airsoft-BB"]["bullet"], 8.0)
-        luftdruck = [s["name"] for cat, items in CATALOGUE if cat == "Luftdruck" for s in items]
-        self.assertIn("6 mm Airsoft-BB", luftdruck)
+        air_guns = [s["name"] for cat, items in CATALOGUE if cat == "Luftdruck" for s in items]
+        self.assertIn("6 mm Airsoft-BB", air_guns)
 
     def test_lookalike_groups(self):
         by_name = {s["name"]: s for s in ALL}

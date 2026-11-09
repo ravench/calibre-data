@@ -1,7 +1,8 @@
 # The order the apps and the poster list the calibres in, by category (the categories in this order too).
-# A calibre that is not listed here comes after the listed ones of its category, by name.
+# Each category is a folder in calibres/. A calibre that is not listed here comes after the listed
+# ones of its category, by name.
 
-Randfeuer = [
+rimfire = [
   ".22 Short",
   ".22 LR",
   ".22 WMR",
@@ -32,7 +33,7 @@ Randfeuer = [
   ".56-56 Spencer",
 ]
 
-Kurzwaffe = [
+handgun = [
   "6.35 mm Browning (.25 ACP)",
   "7.65 mm Browning (.32 ACP)",
   "7.65 mm Parabellum",
@@ -120,7 +121,7 @@ Kurzwaffe = [
   ".476 Enfield",
 ]
 
-Langwaffe = [
+rifle = [
   ".204 Ruger",
   ".222 Remington",
   ".223 Remington",
@@ -386,7 +387,7 @@ Langwaffe = [
   "12.7x108 mm",
 ]
 
-Schwarzpulver = [
+black-powder = [
   ".36 Rundkugel (.375)",
   ".44 Rundkugel (.454)",
   ".45 Rundkugel (.440)",
@@ -408,7 +409,7 @@ Schwarzpulver = [
   ".45-75 Winchester",
 ]
 
-Flinte = [
+shotgun = [
   "12/70",
   "12/76",
   "12/89",
@@ -419,7 +420,7 @@ Flinte = [
   ".410/76",
 ]
 
-Luftdruck = [
+air-gun = [
   "4.5 mm Diabolo (.177)",
   "5.5 mm Diabolo (.22)",
   "4.4 mm Stahl-BB (.177 BB)",

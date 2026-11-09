@@ -7,18 +7,24 @@
 # measured, estimated or taken from a related calibre, at the top of the file or above the value.
 # Text goes in quotes, numbers and true/false don't.
 #
-# Category folders: Randfeuer (rimfire), Kurzwaffe (handgun), Langwaffe (rifle), Schwarzpulver
-# (black powder), Flinte (shotgun), Luftdruck (air gun). The file name is the name in lower case,
-# every run of other characters a hyphen: ".308 Winchester" is calibres/Langwaffe/308-winchester.toml.
-# A new calibre needs no entry in order.toml: it comes after the listed ones of its category. If it
-# looks like another calibre but is a cartridge of its own, add a group in lookalikes/.
+# The folder is the category: rimfire, handgun, rifle, black-powder, shotgun or air-gun. The file
+# name follows from the name (check.py gives the right one): ".308 Winchester" is
+# calibres/rifle/308-winchester.toml. A new calibre needs no entry in order.toml: it comes after the
+# listed ones of its category, by name.
+#
+# If it looks like another calibre but is a cartridge of its own, add it to that calibre's group in
+# lookalikes/, or start one: a file named after the first calibre, the parent, with differ_by (rim,
+# bore, length, seating or load) and calibres (see Lookalikes in README.md). Calibres that look
+# exactly the same must be in a group; a calibre is in one group at most.
 
 # ---------------------------------------------------------------------------------------------
 # Top of the file
 # ---------------------------------------------------------------------------------------------
 
-# The name the apps show. Calibres that are cartridges of their own (.308 Win and 7.62 NATO) each
-# get their own file, never an alias of the other.
+# The name the apps show, written like the others (Names in README.md): a space before the unit
+# ("9 mm"), a decimal point and a plain x ("7.62x51 mm NATO"), inch calibres with the leading dot.
+# Calibres that are cartridges of their own (.308 Win and 7.62 NATO) each get their own file, never
+# an alias of the other.
 name = ".308 Winchester"
 # rimless, rimmed, belted, rimfire, shot (shot shell), ball (round ball or BB), minie (Minié
 # bullet) or pellet (air gun pellet).
@@ -83,9 +89,10 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 year = 1952
 sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 
-# Every centrefire calibre; none for rimfire, balls, Minié bullets and pellets. The primer of the
-# original factory ammunition: small-pistol, large-pistol, small-rifle, large-rifle, shotshell-209,
-# bmg-35 or berdan-nitro. sources = [] when not checked yet (it then counts as unverified).
+# Every centrefire calibre, shot shells too; none for rimfire, balls, Minié bullets and pellets. The
+# primer of the original factory ammunition: small-pistol, large-pistol, small-rifle, large-rifle,
+# shotshell-209, bmg-35 or berdan-nitro. sources = [] when not checked yet (it then counts as
+# unverified).
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
@@ -102,7 +109,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 # Rimless and belted cases, from the C.I.P. sheet (maximum cartridge): rim thickness (R), head to the
 # top of the extractor-groove ramp (E; belted: to the front of the belt), groove diameter (E1) and
 # the groove's front ramp to the case axis in degrees (delta). Needs a source; without one, leave
-# the table out and the head is drawn generic.
+# the table out and the head is drawn generic (add the calibre to HEAD_UNSOURCED in
+# tests/test_outline.py).
 [case_head]
 # C.I.P. 308 Win.
 rim_thickness = 1.37
@@ -126,8 +134,8 @@ sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 # material = "steel"
 # sources = ["https://…"]
 
-# Other case materials made today: brass, copper, steel or nickel. The original stays the one drawn.
-# Needs a source.
+# Other case materials made today: brass, copper, steel or nickel, never the original's own (so
+# brass only where the original is not brass). The original stays the one drawn. Needs a source.
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]
