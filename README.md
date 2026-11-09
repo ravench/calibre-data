@@ -16,7 +16,7 @@ Every calibre is one [TOML](https://toml.io) file in `calibres/<category>/`, nam
 - `order.toml`: the order the apps and the poster list the calibres in. A calibre that is not listed
   comes after the listed ones of its category, by name, so a new calibre needs no entry here.
 - `countries.toml`: the country codes a calibre's `origin` can name, with English name and flag emoji.
-- `lookalikes.toml`: groups of calibres that are cartridges of their own but look alike.
+- `lookalikes/`: one file per group of calibres that are cartridges of their own but look alike.
 - `cartridges.py` reads and checks all of them and gives the apps' generators, `outline.py` and the
   poster the same tables as before (`CATALOGUE`, `INTRODUCED`, `PRIMERS`, `ORIGIN`, ...).
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
@@ -227,11 +227,21 @@ counts as rare.
 
 ### Lookalikes
 
-`lookalikes.toml` groups calibres that are cartridges of their own but look alike, so an app can show
-the others from any one of them (`lookalikes(name)`). Each group has `differ_by`, what tells them
-apart: `rim`, `bore`, `length` (the case length), `seating` (a wadcutter seated flush or nearly so)
-or `load` (a hotter load or another chamber that a board or the service specifies), and `calibres`,
-the parent first. Other names of the same cartridge are search aliases, not groups.
+Calibres that are cartridges of their own but look alike, so an app can show the others from any
+one of them (`lookalikes(name)`). Each group is one file in `lookalikes/`, named after its first
+calibre, the parent (`lookalikes/308-winchester.toml`):
+
+```toml
+differ_by = ["load"]
+calibres = [".308 Winchester", "7.62x51 mm NATO"]
+```
+
+A group's cases share one design; `differ_by` says what tells them apart: `rim` (rimmed or rimless
+twin), `bore` (bullet diameter), `length` (case length), `seating` (a wadcutter seated flush or
+nearly so) or `load` (C.I.P., SAAMI or the service gives the same case a hotter load or another
+chamber that the older or weaker guns must not fire). Each calibre is in at most one group. Other
+names of the same cartridge are search aliases, not groups. The groups were judged against
+Cartridges of the World (15th ed., 2016) and the C.I.P. and SAAMI lists.
 
 ## In Python
 
@@ -266,7 +276,7 @@ You can also edit a file in GitHub's web editor and open the pull request from t
 unknown or misspelt key (with the key it probably means), a value that is not allowed, a missing
 measurement or table, a source that is not a web address, a file whose name does not follow the
 calibre's name, an alias two calibres use or that is another calibre's name, a category folder
-missing from `order.toml`, names in `order.toml` or `lookalikes.toml` without a file. The *Check calibre files* job runs it on every pull request. It needs Python 3.11 or newer.
+missing from `order.toml`, names in `order.toml` or `lookalikes/` without a file. The *Check calibre files* job runs it on every pull request. It needs Python 3.11 or newer.
 
 ## Using it
 

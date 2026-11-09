@@ -10,6 +10,7 @@ from cartridges import load, slug, DataError, sources  # noqa: E402
 
 LR = "calibres/Randfeuer/22-lr.toml"
 WIN = "calibres/Langwaffe/308-winchester.toml"
+NATO = "lookalikes/308-winchester.toml"
 
 
 class Copy:
@@ -17,8 +18,9 @@ class Copy:
 
     def __enter__(self):
         self.dir = tempfile.mkdtemp()
-        shutil.copytree(os.path.join(ROOT, "calibres"), os.path.join(self.dir, "calibres"))
-        for f in ("order.toml", "countries.toml", "lookalikes.toml"):
+        for d in ("calibres", "lookalikes"):
+            shutil.copytree(os.path.join(ROOT, d), os.path.join(self.dir, d))
+        for f in ("order.toml", "countries.toml"):
             shutil.copy(os.path.join(ROOT, f), self.dir)
         return self
 
@@ -301,16 +303,37 @@ class CheckTests(unittest.TestCase):
 
     def test_lookalike_groups_name_existing_calibres_once(self):
         with Copy() as c:
-            c.edit("lookalikes.toml", '"7.62x51 mm NATO"]', '"7.62x51 mm NAT0"]')
-            self.assertProblem(c, "lookalikes.toml", r"'7.62x51 mm NAT0' is not a calibre \(did you mean \"7.62x51 mm NATO\"\?\)")
+            c.edit(NATO, '"7.62x51 mm NATO"]', '"7.62x51 mm NAT0"]')
+            self.assertProblem(c, NATO, r"'7.62x51 mm NAT0' is not a calibre \(did you mean \"7.62x51 mm NATO\"\?\)",
+                               line=c.line_of(NATO, "calibres ="))
         with Copy() as c:
-            c.edit("lookalikes.toml", 'differ_by = ["load"]', 'differ_by = ["lode"]')
-            self.assertProblem(c, "lookalikes.toml", r"differ_by lists one or more of",
-                               line=c.line_of("lookalikes.toml", "[[group]]"))
-        for text in ("group = 5\n", 'group = "x"\n'):
-            with self.subTest(text), Copy() as c:
-                c.write("lookalikes.toml", text)
-                self.assertOnlyProblems(c, "lookalikes.toml", r"each group is a \[\[group\]\] table")
+            c.write("lookalikes/22-lr.toml", 'differ_by = ["rim"]\ncalibres = [".22 LR", ".308 Winchester"]\n')
+            self.assertProblem(c, NATO, r"'.308 Winchester' is already in lookalikes/22-lr.toml")
+
+    def test_lookalike_group_files(self):
+        cases = [('differ_by = ["load"]', 'differ_by = ["lode"]', r'differ_by lists one or more of .*did you mean "load"',
+                  "differ_by ="),
+                 ('differ_by = ["load"]', "differ_by = 5", r"differ_by lists one or more of", "differ_by ="),
+                 ('differ_by = ["load"]', 'diff_by = ["load"]', r"unknown key 'diff_by'.*did you mean \"differ_by\"",
+                  "diff_by ="),
+                 ('calibres = [".308 Winchester", "7.62x51 mm NATO"]', 'calibres = [".308 Winchester"]',
+                  r"calibres lists two or more", "calibres ="),
+                 ('calibres = [".308 Winchester", "7.62x51 mm NATO"]', 'calibres = ["7.62x51 mm NATO", ".308 Winchester"]',
+                  r"the group of '7.62x51 mm NATO' must be called 7-62x51-mm-nato.toml", "calibres =")]
+        for old, new, pattern, line in cases:
+            with self.subTest(new), Copy() as c:
+                c.edit(NATO, old, new)
+                self.assertEqual({p[0] for p in c.problems()}, {NATO})
+                self.assertProblem(c, NATO, pattern, line=c.line_of(NATO, line))
+        with Copy() as c:
+            c.write("lookalikes/notes.txt", "x")
+            c.write("lookalikes/.DS_Store", "x")
+            self.assertOnlyProblems(c, "lookalikes/notes.txt", r"only .toml files")
+
+    def test_lookalikes_are_read_from_the_folder(self):
+        groups = {tuple(names): diff for diff, names in cartridges.LOOKALIKES}
+        self.assertEqual(groups[(".308 Winchester", "7.62x51 mm NATO")], ("load",))
+        self.assertEqual(len(groups), len(os.listdir(os.path.join(ROOT, "lookalikes"))))
 
     def test_check_script_reports_and_fails(self):
         with Copy() as c:
