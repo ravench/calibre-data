@@ -14,8 +14,9 @@
 #
 # If it looks like another calibre but is a cartridge of its own, add it to that calibre's group in
 # lookalikes/, or start one: a file named after the first calibre, the parent, with differ_by (rim,
-# bore, length, seating or load) and calibres (see Lookalikes in README.md). Calibres that look
-# exactly the same must be in a group; a calibre is in one group at most.
+# bore, length, seating, load or ignition) and calibres (see Lookalikes in README.md). Calibres that
+# look exactly the same must be in a group; a calibre is in one group at most. A cartridge made both
+# as rimfire and centrefire gets a file for each.
 
 # ---------------------------------------------------------------------------------------------
 # Top of the file

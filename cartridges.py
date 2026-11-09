@@ -100,7 +100,7 @@ JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP = "jacketed", "lead", "pa
 BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID = "brass", "copper", "steel", "nickel", "paper", "hybrid"
 PLASTIC = "plastic"
 # What tells lookalikes apart (differ_by in lookalikes/).
-RIM, BORE, LENGTH, SEATING, LOAD = "rim", "bore", "length", "seating", "load"
+RIM, BORE, LENGTH, SEATING, LOAD, IGNITION = "rim", "bore", "length", "seating", "load", "ignition"
 
 
 # ---- Reading and checking the files --------------------------------------------------------------
@@ -153,7 +153,7 @@ BULLET_TYPES = (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP)
 CASE_MATERIALS = (COPPER, STEEL, NICKEL, PAPER, HYBRID)
 CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL)
 PROJECTILE_MATERIALS = (STEEL, PLASTIC)
-DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD)
+DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
 
 
 def _shape(kind, profile):

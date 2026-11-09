@@ -125,8 +125,9 @@ a choice, follow the calibre's family (`.25 WSSM` like `.223 WSSM`, `.38-56 WCF`
 - A hyphen or slash in the designation stays as the cartridge is known: `.45-70 Government`,
   `.30-06 Springfield`, `6.5-284 Norma`, `7 mm-08 Remington`, `.577/450 Martini-Henry`.
 - Trade names as the maker sells them: `6.5 PRC`, `8.6 Blackout`, `7.5 FK`.
-- Where two cartridges would get the same name, the case length or the year tells them apart:
-  `.450/400 Nitro Express 3 inch`, `10.4 mm Swiss Ordnance 1872 Rimfire`.
+- Where two cartridges would get the same name, the case length, the year or the ignition tells
+  them apart: `.450/400 Nitro Express 3 inch`, `10.4 mm Swiss Ordnance 1872 Rimfire`,
+  `.44 Henry Centrefire`.
 - A cartridge with two common names gets the other one in brackets, mostly the metric one first:
   `9 mm Browning kurz (.380 ACP)`, `9.3x66 mm Sako (.370 Sako Magnum)`, `.22 Blank (6.8/11)`. Swiss
   service rounds carry their service name: `7.5x55 mm Swiss (GP 11)`, `5.6 mm GP 90`.
@@ -295,8 +296,10 @@ calibres = [".308 Winchester", "7.62x51 mm NATO"]
 
 A group's cases share one design; `differ_by` says what tells them apart: `rim` (rimmed or rimless
 twin), `bore` (bullet diameter), `length` (case length), `seating` (a wadcutter seated flush or
-nearly so) or `load` (C.I.P., SAAMI or the service gives the same case a hotter load or another
-chamber that the older or weaker guns must not fire). Each calibre is in at most one group. Other
+nearly so), `load` (C.I.P., SAAMI or the service gives the same case a hotter load or another
+chamber that the older or weaker guns must not fire) or `ignition` (rimfire and centrefire versions
+of one case: a rimfire gun cannot fire the centrefire one, nor the other way round). Each calibre is
+in at most one group. Other
 names of the same cartridge are search aliases, not groups. The groups were judged against
 Cartridges of the World (15th ed., 2016) and the C.I.P. and SAAMI lists.
 

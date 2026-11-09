@@ -1,0 +1,38 @@
+# The centrefire version of the .44 Henry: Winchester chambered fewer than 2,000 Model 1866 rifles
+# for it from 1873 to 1898, 1,020 of them for Brazil in 1891 (American Rifleman), and Brazil's 1883
+# Nagant service revolvers fired it too (Forgotten Weapons). Measurements and primer from Cartridges
+# of the World (15th ed., 2016); no web page with them checked yet. The bullet is seated inside the
+# case, not heeled like the rimfire's.
+name = ".44 Henry Centrefire"
+kind = "rimmed"
+profile = "flat"
+aliases = ["44henrycf", "44-200"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.28
+base = 11.3
+neck = 11.25
+case_length = 22.35
+overall_length = 34.54
+bullet = 10.74
+sources = []
+
+[introduced]
+year = 1873
+sources = [
+  "https://municion.org/producto/44-henry-flat-cf/",
+  "https://americanrifleman.org/content/i-have-this-old-gun-winchester-model-1866-center-fire-carbine",
+]
+
+[primer]
+size = "small-rifle"
+sources = []
+
+[bullet]
+# Winchester: flat-nosed lead with one grease groove, brass case.
+type = "lead"
+sources = ["https://municion.org/Ficha-11-022-CBC-060-0001/"]
