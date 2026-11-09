@@ -1,0 +1,44 @@
+# C.I.P. TDCC maximum cartridge (8.5x55 from the 2021 C.I.P. bulletin, sheet 2019-05-22).
+name = "8.5x55 mm Blaser"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8.5x55", "8.5x55blaser", "85x55"]
+
+origin = "DE"
+
+[mm]
+rim = 13.59
+base = 13.84
+shoulder = 13.17
+shoulder_at = 42.38
+neck = 9.36
+case_length = 54.7
+overall_length = 75.84
+bullet = 8.59
+sources = []
+
+[introduced]
+# C.I.P. sheet 2019-05-22
+year = 2019
+sources = ["https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vestnik_%202021_DEF.pdf"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# C.I.P. sheet p7: atan((P2-H2)/2/(L2-L1))
+degrees = 30
+sources = ["https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vestnik_%202021_DEF.pdf"]
+
+[case_head]
+# C.I.P. sheet p7
+rim_thickness = 1.37
+ramp_top = 3.62
+groove_diameter = 12.19
+ramp_angle = 45.0
+sources = ["https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vestnik_%202021_DEF.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = []

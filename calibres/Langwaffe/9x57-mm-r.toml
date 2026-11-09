@@ -1,0 +1,42 @@
+# The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+name = "9x57 mm R"
+kind = "rimmed"
+profile = "round"
+aliases = ["9x57r"]
+
+origin = "DE"
+obsolete = true
+# Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
+# the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
+rare = true
+
+[mm]
+rim = 13.4
+base = 11.96
+shoulder = 10.95
+shoulder_at = 46.14
+neck = 9.83
+case_length = 56.8
+overall_length = 81.0
+bullet = 9.08
+sources = []
+
+[introduced]
+# Lookalike variants (2026-11-08).
+year = 1903
+sources = ["https://municion.org/producto/9-x-57-r-mauser/"]
+
+[primer]
+# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# C.I.P. 9 x 57 R
+degrees = 19.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page48.pdf"]
+
+[bullet]
+# Lookalike variants (2026-11-08): hunting rounds, soft point from their use like their twins.
+type = "softpoint"
+sources = []

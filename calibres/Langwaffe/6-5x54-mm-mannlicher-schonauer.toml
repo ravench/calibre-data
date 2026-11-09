@@ -1,0 +1,40 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = "6.5x54 mm Mannlicher-Schönauer"
+kind = "rimless"
+profile = "round"
+aliases = ["6.5x54ms", "6.5x54"]
+
+origin = "AH"
+
+[mm]
+rim = 11.52
+base = 11.47
+shoulder = 10.87
+shoulder_at = 41.82
+neck = 7.56
+case_length = 53.6
+overall_length = 77.8
+bullet = 6.7
+sources = []
+
+[introduced]
+year = 1900
+sources = ["https://en.wikipedia.org/wiki/6.5×54mm_Mannlicher–Schönauer"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5×54mm_Mannlicher–Schönauer"]
+
+[shoulder_angle]
+# C.I.P. 6,5 x 54 Mannl. Sch.
+degrees = 23.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page22.pdf"]
+
+[case_head]
+# C.I.P. 6,5 x 54 Mannl. Sch.
+rim_thickness = 1.05
+ramp_top = 3.4
+groove_diameter = 9.7
+ramp_angle = 33.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page22.pdf"]

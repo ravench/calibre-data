@@ -1,0 +1,96 @@
+# Countries for a calibre's `origin`: the state that introduced it, as a code, with its English name
+# and flag emoji. Historical states keep their own code (ISO 3166-3 SU/CS where one exists, else a
+# made-up AH/RUE that no ISO code uses, so RU stays today's Russia); they have no flag emoji, so the
+# apps draw their own. Unions of states get a code too (NATO for the rounds NATO standardised; the EU
+# 🇪🇺 joins when a calibre needs it). IL left with the 9x21 mm (IT).
+
+[CH]
+name = "Switzerland"
+flag = "🇨🇭"
+
+[DE]
+name = "Germany"
+flag = "🇩🇪"
+
+[AH]
+name = "Austria-Hungary"
+
+[AT]
+name = "Austria"
+flag = "🇦🇹"
+
+[FR]
+name = "France"
+flag = "🇫🇷"
+
+[IT]
+name = "Italy"
+flag = "🇮🇹"
+
+[GB]
+name = "United Kingdom"
+flag = "🇬🇧"
+
+[US]
+name = "United States"
+flag = "🇺🇸"
+
+[SE]
+name = "Sweden"
+flag = "🇸🇪"
+
+[DK]
+name = "Denmark"
+flag = "🇩🇰"
+
+[BE]
+name = "Belgium"
+flag = "🇧🇪"
+
+[PT]
+name = "Portugal"
+flag = "🇵🇹"
+
+[CZ]
+name = "Czechia"
+flag = "🇨🇿"
+
+[JP]
+name = "Japan"
+flag = "🇯🇵"
+
+[PL]
+name = "Poland"
+flag = "🇵🇱"
+
+[FI]
+name = "Finland"
+flag = "🇫🇮"
+
+[RUE]
+name = "Russian Empire"
+
+[SU]
+name = "Soviet Union"
+
+[CS]
+name = "Czechoslovakia"
+
+[CN]
+name = "China"
+flag = "🇨🇳"
+
+[PH]
+name = "Philippines"
+flag = "🇵🇭"
+
+[ES]
+name = "Spain"
+flag = "🇪🇸"
+
+[AR]
+name = "Argentina"
+flag = "🇦🇷"
+
+[NATO]
+name = "NATO"

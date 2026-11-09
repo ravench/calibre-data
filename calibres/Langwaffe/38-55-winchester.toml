@@ -1,0 +1,28 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".38-55 Winchester"
+kind = "rimmed"
+profile = "flat"
+aliases = ["38-55", "38-55ballard"]
+
+origin = "US"
+
+[mm]
+rim = 12.9
+base = 10.7
+neck = 10.0
+case_length = 53.0
+overall_length = 64.8
+bullet = 9.6
+sources = []
+
+[introduced]
+year = 1884
+sources = ["https://en.wikipedia.org/wiki/.38-55_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://www.starlinebrass.com/38-55-brass-2080"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.38-55_Winchester"]

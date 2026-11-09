@@ -1,0 +1,43 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".358 Winchester"
+kind = "rimless"
+profile = "round"
+aliases = ["358win"]
+
+origin = "US"
+
+[mm]
+rim = 12.0
+base = 11.9
+shoulder = 11.5
+shoulder_at = 39.62
+neck = 9.9
+case_length = 51.2
+overall_length = 70.6
+bullet = 9.1
+sources = []
+
+[introduced]
+year = 1955
+sources = ["https://en.wikipedia.org/wiki/.358_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.358_Winchester"]
+
+[shoulder_angle]
+# C.I.P. 358 Win.
+degrees = 20
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page139.pdf"]
+
+[case_head]
+# C.I.P. 358 Win.
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page139.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.358_Winchester"]

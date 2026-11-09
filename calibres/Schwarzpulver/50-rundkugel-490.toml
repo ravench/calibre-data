@@ -1,0 +1,12 @@
+name = ".50 Rundkugel (.490)"
+kind = "ball"
+profile = "round"
+aliases = ["50", "50ball", ".490"]
+
+[mm]
+diameter = 12.4
+sources = []
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"

@@ -1,0 +1,36 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, shoulder_at = L1,
+# overall_length = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = ".22 Nosler"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["22nosler"]
+
+origin = "US"
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 9.6
+base = 10.67
+shoulder = 10.16
+shoulder_at = 35.28
+neck = 6.48
+case_length = 44.7
+overall_length = 57.4
+bullet = 5.69
+sources = []
+
+[introduced]
+year = 2017
+sources = ["https://bulletin.accurateshooter.com/2017/01/22-nosler-more-details-load-data-and-a-bit-of-history"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# AECC drawing 06-045-BRC-050
+degrees = 29.9
+sources = ["https://municion.org/producto/22-nosler/"]

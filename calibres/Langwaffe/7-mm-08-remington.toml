@@ -1,0 +1,42 @@
+name = "7 mm-08 Remington"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7mm-08", "7-08"]
+
+origin = "US"
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 11.5
+shoulder_at = 39.62
+neck = 8.0
+case_length = 51.7
+overall_length = 71.1
+bullet = 7.2
+sources = []
+
+[introduced]
+year = 1980
+sources = ["https://en.wikipedia.org/wiki/7mm-08_Remington"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7mm-08_Remington"]
+
+[shoulder_angle]
+# C.I.P. 7 mm - 08 Rem.
+degrees = 20
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page35.pdf"]
+
+[case_head]
+# C.I.P. 7 mm - 08 Rem.
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page35.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/7mm-08_Remington"]

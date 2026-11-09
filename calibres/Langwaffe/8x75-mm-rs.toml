@@ -1,0 +1,43 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, shoulder_at = L1,
+# overall_length = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = "8x75 mm RS"
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["8x75rs"]
+
+origin = "DE"
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 13.35
+base = 11.9
+shoulder = 10.4
+shoulder_at = 66.2
+neck = 9.08
+case_length = 74.6
+overall_length = 96.0
+bullet = 8.22
+sources = []
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+# ca. 1909
+year = 1909
+sources = ["https://municion.org/producto/8-x-75-r-behr/"]
+
+[primer]
+# 5.10 mm, 6 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/8-x-75-r-s-behr/"]
+
+[shoulder_angle]
+# C.I.P. 8 x 75 RS
+degrees = 13
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page42.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/8-x-75-r-behr/"]

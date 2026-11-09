@@ -1,0 +1,41 @@
+# Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".300 Lapua Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300lapua", "300lm"]
+
+origin = "FI"
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 14.93
+base = 14.91
+shoulder = 13.82
+shoulder_at = 54.9
+neck = 8.73
+case_length = 69.73
+overall_length = 94.5
+bullet = 7.82
+sources = []
+
+[introduced]
+year = 1989
+sources = ["https://en.wikipedia.org/wiki/.300_Lapua_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.300_Lapua_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 300 Lapua Mag.
+degrees = 25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page116.pdf"]
+
+[case_head]
+# C.I.P. 300 Lapua Mag.
+rim_thickness = 1.52
+ramp_top = 3.12
+groove_diameter = 13.24
+ramp_angle = 50.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page116.pdf"]

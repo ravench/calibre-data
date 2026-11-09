@@ -1,0 +1,27 @@
+name = ".44 Special"
+kind = "rimmed"
+profile = "flat"
+aliases = ["44spl", "44special", "44s&wspecial"]
+
+origin = "US"
+
+[mm]
+rim = 13.1
+base = 11.6
+neck = 11.6
+case_length = 29.5
+overall_length = 37.0
+bullet = 10.9
+sources = []
+
+[introduced]
+year = 1907
+sources = ["https://en.wikipedia.org/wiki/.44_Special"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.44_Special"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.44_Special"]

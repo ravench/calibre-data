@@ -1,0 +1,30 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".700 Nitro Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["700ne"]
+
+origin = "GB"
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 22.6
+base = 19.8
+neck = 18.5
+case_length = 89.0
+overall_length = 107.0
+bullet = 17.8
+sources = []
+
+[introduced]
+year = 1988
+sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]

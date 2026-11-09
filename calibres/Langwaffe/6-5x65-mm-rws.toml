@@ -1,0 +1,50 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, shoulder_at = L1,
+# overall_length = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = "6.5x65 mm RWS"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5x65", "6.5x65rws"]
+
+origin = "DE"
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 11.95
+base = 12.04
+shoulder = 10.97
+shoulder_at = 53.85
+neck = 7.57
+case_length = 65.0
+overall_length = 85.0
+bullet = 6.7
+sources = []
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+year = 1988
+sources = ["https://municion.org/producto/65-x-65-rws/"]
+
+[primer]
+# 5.38 mm, 2 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/65-x-65-rws/"]
+
+[shoulder_angle]
+# C.I.P. 6,5 x 65 RWS
+degrees = 20
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page29.pdf"]
+
+[case_head]
+# C.I.P. 6,5 x 65 RWS
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 10.5
+ramp_angle = 40.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page29.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/65-x-65-rws/"]

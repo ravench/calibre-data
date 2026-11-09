@@ -1,0 +1,29 @@
+# Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".32-40 Ballard"
+kind = "rimmed"
+profile = "flat"
+aliases = ["32-40", "32-40win", "32-40winchester"]
+
+origin = "US"
+obsolete = true
+
+[mm]
+rim = 12.9
+base = 10.8
+neck = 8.6
+case_length = 54.0
+overall_length = 66.0
+bullet = 8.1
+sources = []
+
+[introduced]
+year = 1884
+sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]

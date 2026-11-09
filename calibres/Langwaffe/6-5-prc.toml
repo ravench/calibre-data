@@ -1,0 +1,41 @@
+name = "6.5 PRC"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5prc"]
+
+origin = "US"
+
+[mm]
+rim = 13.0
+base = 13.0
+shoulder = 12.8
+shoulder_at = 39.75
+neck = 7.5
+case_length = 51.2
+overall_length = 84.8
+bullet = 6.7
+sources = []
+
+[introduced]
+year = 2018
+sources = ["https://en.wikipedia.org/wiki/Hornady"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+degrees = 30
+sources = ["https://bulletin.accurateshooter.com/?p=61574"]
+
+[case_head]
+# from the .375 Ruger case family; C.I.P. 375 Ruger
+rim_thickness = 1.27
+ramp_top = 3.24
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/6.5_PRC"]

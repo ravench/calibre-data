@@ -1,0 +1,41 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = "7.63x25 mm Mauser"
+kind = "rimless"
+profile = "round"
+aliases = ["7.63mauser", "30mauser"]
+
+origin = "DE"
+
+[mm]
+rim = 9.98
+base = 9.86
+shoulder = 9.6
+shoulder_at = 19.28
+neck = 8.46
+case_length = 25.15
+overall_length = 34.8
+bullet = 7.86
+sources = []
+
+[introduced]
+year = 1896
+sources = ["https://en.wikipedia.org/wiki/7.63×25mm_Mauser"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://www.starlinebrass.com/30-mauser-brass"]
+
+[shoulder_angle]
+# C.I.P. 7,63 Mauser
+degrees = 17.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page11.pdf"]
+
+[case_head]
+# C.I.P. 7,63 Mauser
+rim_thickness = 1.27
+ramp_top = 3.72
+groove_diameter = 8.73
+ramp_angle = 20.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page11.pdf"]

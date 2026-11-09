@@ -1,0 +1,43 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".250 Savage"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["250savage", "250-3000"]
+
+origin = "US"
+
+[mm]
+rim = 12.01
+base = 11.86
+shoulder = 10.25
+shoulder_at = 38.4
+neck = 7.25
+case_length = 48.56
+overall_length = 63.88
+bullet = 6.55
+sources = []
+
+[introduced]
+year = 1915
+sources = ["https://en.wikipedia.org/wiki/.250-3000_Savage"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.250-3000_Savage"]
+
+[shoulder_angle]
+# C.I.P. 250 Savage
+degrees = 26.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page93.pdf"]
+
+[case_head]
+# C.I.P. 250 Savage
+rim_thickness = 1.24
+ramp_top = 3.14
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page93.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.250-3000_Savage"]

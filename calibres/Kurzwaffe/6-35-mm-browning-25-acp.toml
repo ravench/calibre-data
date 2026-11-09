@@ -1,0 +1,36 @@
+name = "6.35 mm Browning (.25 ACP)"
+kind = "rimless"
+profile = "round"
+aliases = ["6.35", "25acp", "25auto"]
+
+# Browning (US) designed both pocket rounds, FN Herstal (BE) introduced them: the 7.65 mm with the FN M1900 in 1899
+# (Cartridges of the World), the 6.35 mm with the FN Vest Pocket of 1906; Colt followed in 1903 and 1908. Wikipedia
+# says US (7.65) and US and Belgium (6.35); municion.org says Belgium 1897 (7.65) and US 1902 (6.35).
+# the designer's country and the «ACP» name: US
+origin = "BE"
+worldwide = true
+
+[mm]
+rim = 7.6
+base = 7.1
+neck = 7.0
+case_length = 15.6
+overall_length = 23.1
+bullet = 6.4
+sources = []
+
+[introduced]
+year = 1905
+sources = ["https://en.wikipedia.org/wiki/.25_ACP"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.25_ACP"]
+
+[case_head]
+# C.I.P. 6,35 Browning
+rim_thickness = 1.1
+ramp_top = 2.77
+groove_diameter = 6.35
+ramp_angle = 20.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page4.pdf"]

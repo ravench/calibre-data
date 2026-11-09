@@ -1,0 +1,26 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".475 Linebaugh"
+kind = "rimless"
+profile = "flat"
+aliases = ["475linebaugh"]
+
+origin = "US"
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 13.7
+base = 12.8
+neck = 12.8
+case_length = 36.0
+overall_length = 45.0
+bullet = 12.1
+sources = []
+
+[introduced]
+year = 1988
+sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]

@@ -1,0 +1,38 @@
+# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+name = "6 mm Creedmoor"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6cm", "6creedmoor", "6mmcm"]
+
+origin = "US"
+
+[mm]
+rim = 12.01
+base = 11.94
+shoulder = 11.73
+shoulder_at = 37.49
+neck = 6.99
+case_length = 48.8
+overall_length = 71.1
+bullet = 6.2
+sources = []
+
+[introduced]
+year = 2009
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
+
+[shoulder_angle]
+degrees = 30
+sources = ["https://chuckhawks.com/6mm_Creedmoor.html"]
+
+[case_head]
+# 6.5 Creedmoor case necked down; C.I.P. 6,5 Creedmoor
+rim_thickness = 1.37
+ramp_top = 3.84
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]

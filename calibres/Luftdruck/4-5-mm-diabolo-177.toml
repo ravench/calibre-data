@@ -1,0 +1,15 @@
+name = "4.5 mm Diabolo (.177)"
+kind = "pellet"
+profile = "round"
+aliases = ["4.5", "4.5mm", "177", "luftgewehr", "lg", "lp"]
+
+worldwide = true
+
+[mm]
+diameter = 4.5
+length = 5.5
+sources = []
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"

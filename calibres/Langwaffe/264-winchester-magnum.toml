@@ -1,0 +1,43 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".264 Winchester Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["264winmag"]
+
+origin = "US"
+
+[mm]
+rim = 13.5
+base = 13.1
+shoulder = 12.5
+shoulder_at = 51.82
+neck = 7.6
+case_length = 64.0
+overall_length = 85.0
+bullet = 6.7
+sources = []
+
+[introduced]
+year = 1959
+sources = ["https://en.wikipedia.org/wiki/.264_Winchester_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.264_Winchester_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 264 Win. Mag.
+degrees = 25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page13.pdf"]
+
+[case_head]
+# C.I.P. 264 Win. Mag.
+rim_thickness = 1.27
+ramp_top = 5.59
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page13.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.264_Winchester_Magnum"]

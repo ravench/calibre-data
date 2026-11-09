@@ -1,0 +1,23 @@
+name = ".500 S&W Magnum"
+kind = "rimmed"
+profile = "flat"
+aliases = ["500s&w"]
+
+origin = "US"
+
+[mm]
+rim = 14.2
+base = 13.4
+neck = 13.4
+case_length = 41.3
+overall_length = 57.2
+bullet = 12.7
+sources = []
+
+[introduced]
+year = 2003
+sources = ["https://en.wikipedia.org/wiki/.500_S%26W_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.500_S%26W_Magnum"]

@@ -1,0 +1,51 @@
+# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+name = "9.3x64 mm Brenneke"
+kind = "rimless"
+profile = "round"
+aliases = ["9.3x64"]
+
+origin = "DE"
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 12.6
+base = 12.88
+shoulder = 12.05
+shoulder_at = 52.09
+neck = 10.04
+case_length = 64.0
+overall_length = 85.6
+bullet = 9.3
+sources = []
+
+[introduced]
+year = 1927
+sources = ["https://en.wikipedia.org/wiki/9.3×64mm_Brenneke"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/9.3×64mm_Brenneke"]
+
+[shoulder_angle]
+# C.I.P. 9,3 x 64 Brenneke
+degrees = 17.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page70.pdf"]
+
+[case_head]
+# C.I.P. 9,3 x 64 Brenneke
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 11.2
+ramp_angle = 43.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page70.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/9.3×64mm_Brenneke"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]

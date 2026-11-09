@@ -1,0 +1,30 @@
+# 9 mm Flobert ball round (BB cap with a round ball, «Bosquette»), Wikipedia infobox, rounded.
+# Raven's copper-cased specimen (2026-11-08) measured ball 8.5, rim 10.3, case 9.4, length 14.0.
+name = "9 mm Flobert Bosquette"
+kind = "rimfire"
+profile = "round"
+aliases = ["9mmflobert", "9flobert", "bosquette", "9mmbosquette", "9mmbbcap", "flobertkugel", "9mmflobertkugel"]
+display_aliases = ["9 mm Flobert Kugel"]
+
+origin = "FR"
+# 2026-11-08: from Raven's bag of old rounds
+rare = true
+
+[mm]
+rim = 10.16
+base = 8.85
+neck = 8.85
+case_length = 10.18
+overall_length = 14.98
+bullet = 8.84
+sources = []
+
+[introduced]
+# "Designed in 1845 by Nicolas Flobert"
+year = 1845
+sources = ["https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"]
+
+[bullet]
+# a 00 buckshot ball
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"]

@@ -1,0 +1,43 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "6 mm Remington"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6mmrem", "244rem"]
+
+origin = "US"
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 10.9
+shoulder_at = 43.81
+neck = 7.0
+case_length = 56.7
+overall_length = 71.8
+bullet = 6.18
+sources = []
+
+[introduced]
+year = 1955
+sources = ["https://en.wikipedia.org/wiki/6mm_Remington"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6mm_Remington"]
+
+[shoulder_angle]
+# C.I.P. 6 mm Rem. (244 Rem.)
+degrees = 26
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page16.pdf"]
+
+[case_head]
+# C.I.P. 6 mm Rem. (244 Rem.)
+rim_thickness = 1.24
+ramp_top = 3.4
+groove_diameter = 10.36
+ramp_angle = 34.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page16.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/6mm_Remington"]

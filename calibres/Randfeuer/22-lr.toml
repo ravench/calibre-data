@@ -1,0 +1,25 @@
+name = ".22 LR"
+kind = "rimfire"
+profile = "round"
+aliases = ["22lr", "22", "kk", "22l.r."]
+display_aliases = [".22 Long Rifle", "KK"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 6.9
+base = 5.7
+neck = 5.7
+case_length = 15.6
+overall_length = 25.4
+bullet = 5.7
+sources = []
+
+[introduced]
+year = 1887
+sources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]

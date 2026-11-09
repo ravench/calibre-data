@@ -1,0 +1,20 @@
+name = "12/70"
+kind = "shot"
+profile = "flat"
+aliases = ["12", "12/70", "12ga", "12gauge"]
+
+worldwide = true
+
+[mm]
+diameter = 20.6
+rim = 22.3
+length = 64.0
+sources = []
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"
+
+[primer]
+size = "shotshell-209"
+sources = ["https://hodgdonreloading.com/rldc/"]

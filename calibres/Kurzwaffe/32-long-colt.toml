@@ -1,0 +1,30 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".32 Long Colt"
+kind = "rimmed"
+profile = "round"
+aliases = ["32longcolt"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.5
+base = 8.1
+neck = 8.0
+case_length = 23.0
+overall_length = 32.0
+bullet = 7.9
+sources = []
+
+[introduced]
+year = 1873
+sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]

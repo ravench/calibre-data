@@ -1,0 +1,31 @@
+# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+name = ".40-65 Winchester"
+kind = "rimmed"
+profile = "flat"
+aliases = ["40-65"]
+
+origin = "US"
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 15.3
+base = 12.8
+neck = 10.7
+case_length = 53.0
+overall_length = 63.0
+bullet = 10.3
+sources = []
+
+[introduced]
+year = 1887
+sources = ["https://en.wikipedia.org/wiki/.40-65_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.40-65_Winchester"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/40-65-winchester-cf/"]

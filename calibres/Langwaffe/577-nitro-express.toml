@@ -1,0 +1,29 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".577 Nitro Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["577ne"]
+
+origin = "GB"
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 19.0
+base = 16.8
+neck = 15.5
+case_length = 76.0
+overall_length = 94.0
+bullet = 14.9
+sources = []
+
+[introduced]
+unknown = "the source gives only the 1890s"
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.577_Nitro_Express"]

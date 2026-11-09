@@ -1,0 +1,21 @@
+name = ".22 WMR"
+kind = "rimfire"
+profile = "spitzer"
+aliases = ["22mag", "22wmr"]
+display_aliases = [".22 Magnum"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 7.5
+base = 6.1
+neck = 6.1
+case_length = 26.8
+overall_length = 34.3
+bullet = 5.7
+sources = []
+
+[introduced]
+year = 1959
+sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Magnum_Rimfire"]

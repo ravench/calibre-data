@@ -1,0 +1,38 @@
+# Mixed batch 4 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated (7x65 R and 8x57 IRS rims later from C.I.P.).
+# Rim R1, body P1, shoulder P2, neck H2, length L6 and bullet G1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+name = "8x57 mm IRS"
+kind = "rimmed"
+profile = "round"
+aliases = ["8x57irs", "8x57jrs"]
+
+origin = "DE"
+
+[mm]
+rim = 13.32
+base = 11.92
+shoulder = 10.95
+shoulder_at = 46
+neck = 9.08
+case_length = 57.0
+overall_length = 82.0
+bullet = 8.22
+sources = []
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+# ca. 1905
+year = 1905
+sources = ["https://municion.org/producto/8-x-57-r-jrs-mauser/"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
+
+[shoulder_angle]
+# C.I.P. 8 x 57 IRS
+degrees = 18.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page35.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/8-x-57-r-jrs-mauser/"]

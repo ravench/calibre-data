@@ -1,0 +1,43 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".220 Swift"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["220swift"]
+
+origin = "US"
+
+[mm]
+rim = 12.0
+base = 11.3
+shoulder = 10.2
+shoulder_at = 43.76
+neck = 6.6
+case_length = 56.0
+overall_length = 68.1
+bullet = 5.7
+sources = []
+
+[introduced]
+year = 1935
+sources = ["https://en.wikipedia.org/wiki/.220_Swift"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.220_Swift"]
+
+[shoulder_angle]
+# C.I.P. 220 Swift
+degrees = 21
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page83.pdf"]
+
+[case_head]
+# C.I.P. 220 Swift
+rim_thickness = 1.24
+ramp_top = 2.89
+groove_diameter = 10.82
+ramp_angle = 15.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page83.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.220_Swift"]

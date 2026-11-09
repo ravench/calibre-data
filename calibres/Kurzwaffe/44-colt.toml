@@ -1,0 +1,31 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".44 Colt"
+kind = "rimmed"
+profile = "flat"
+aliases = ["44colt"]
+
+origin = "US"
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 12.3
+base = 11.6
+neck = 11.6
+case_length = 28.0
+overall_length = 38.0
+bullet = 11.5
+sources = []
+
+[introduced]
+year = 1871
+sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/44-colt-remington-army-revolver/"]

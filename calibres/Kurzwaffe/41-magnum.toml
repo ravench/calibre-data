@@ -1,0 +1,23 @@
+name = ".41 Magnum"
+kind = "rimmed"
+profile = "flat"
+aliases = ["41mag", "41remmag", "41remingtonmagnum"]
+
+origin = "US"
+
+[mm]
+rim = 12.5
+base = 11.0
+neck = 11.0
+case_length = 32.8
+overall_length = 40.4
+bullet = 10.4
+sources = []
+
+[introduced]
+year = 1964
+sources = ["https://en.wikipedia.org/wiki/.41_Remington_Magnum"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.41_Remington_Magnum"]

@@ -1,0 +1,38 @@
+# Sourced 2026-11-04 (batch 12 leftovers): C.I.P. TDCC maximum cartridge (shoulder = P2,
+# neck = H2, shoulder_at = L1, overall_length = L6); .360 No. 5 Rook from the Wikipedia infobox (Barnes).
+name = "10.3x60 mm R"
+kind = "rimmed"
+profile = "round"
+aliases = ["10.3x60r"]
+
+origin = "CH"
+
+[mm]
+rim = 15.7
+base = 13.85
+shoulder = 12.5
+shoulder_at = 40.8
+neck = 11.26
+case_length = 60.8
+overall_length = 78.9
+bullet = 10.54
+sources = []
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+year = 1919
+sources = ["https://municion.org/producto/103-x-60-r/"]
+
+[primer]
+# 6.14 mm, 4 specimens
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/103-x-60-r/"]
+
+[shoulder_angle]
+# C.I.P. 10,3 x 60 R
+degrees = 5.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page52.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/103-x-60-r/"]

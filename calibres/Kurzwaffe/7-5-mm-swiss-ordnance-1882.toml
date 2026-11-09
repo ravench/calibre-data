@@ -1,0 +1,29 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+# Cartridges of the World: interchangeable with the Swedish and Norwegian Nagant rounds; only the bullet lube differs.
+name = "7.5 mm Swiss Ordnance 1882"
+kind = "rimmed"
+profile = "round"
+aliases = ["7.5ord", "7.5revolver", "revolver82", "7.5nagant", "7.5swedishnagant", "7.5norwegiannagant"]
+
+origin = "CH"
+obsolete = true
+
+[mm]
+rim = 10.4
+base = 8.4
+neck = 8.4
+case_length = 22.8
+overall_length = 34.6
+bullet = 8.0
+sources = []
+
+[introduced]
+# adopted 1882; 1880 is the design
+year = 1882
+sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]

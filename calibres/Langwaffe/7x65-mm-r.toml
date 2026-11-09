@@ -1,0 +1,36 @@
+# Mixed batch 4 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated (7x65 R and 8x57 IRS rims later from C.I.P.).
+# Rim R1 and length L6 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+name = "7x65 mm R"
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["7x65r"]
+
+origin = "DE"
+
+[mm]
+rim = 13.32
+base = 11.89
+shoulder = 10.8
+shoulder_at = 51.5
+neck = 7.95
+case_length = 65.0
+overall_length = 83.6
+bullet = 7.25
+sources = []
+
+[introduced]
+year = 1917
+sources = ["https://en.wikipedia.org/wiki/7×64mm"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7×64mm"]
+
+[shoulder_angle]
+# C.I.P. 7 x 65 R
+degrees = 20.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page24.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/7×64mm"]

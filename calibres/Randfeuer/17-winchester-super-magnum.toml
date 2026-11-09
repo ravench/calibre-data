@@ -1,0 +1,31 @@
+# Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".17 Winchester Super Magnum"
+kind = "rimfire"
+profile = "spitzer"
+aliases = ["17wsm"]
+
+origin = "US"
+
+[mm]
+rim = 8.5
+base = 6.8
+shoulder = 6.8
+shoulder_at = 24.75
+neck = 5.0
+case_length = 30.5
+overall_length = 36.6
+bullet = 4.4
+sources = []
+
+[introduced]
+year = 2013
+sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
+
+[shoulder_angle]
+# AECC drawing 04-029-BBR-010
+degrees = 16.1
+sources = ["https://municion.org/producto/17-winchester-super-magnum-rf/"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
