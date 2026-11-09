@@ -109,30 +109,35 @@ and a projectile material always need one.
 
 ### Names
 
-New names follow the way the names here are written, so the lists read alike:
+New names follow the way most names here are written, so the lists read alike. Where a rule leaves
+a choice, follow the calibre's family (`.25 WSSM` like `.223 WSSM`, `.38-56 WCF` like `.45-90 WCF`).
 
 - Numbers and units as the SI writes them (SI Brochure, ISO 80000-1): a space before the unit
-  (`9 mm`, `3 inch`), a decimal point (`7.62`), and a plain `x` without spaces between bore and case
-  length (`7.62x51 mm`). `check.py` reports `9mm`, `7,62`, `7.62×51` and `7.62 x 51`.
+  (`9 mm`, `3 inch`), units in lower case, a decimal point (`7.62`), and a plain lower-case `x`
+  without spaces between bore and case length (`7.62x51 mm`). `check.py` reports `9mm`, `9 MM`,
+  `7,62`, `7.62×51`, `9X19` and `7.62 x 51`.
 - Metric calibres: bore x case length, `mm`, the rim or bore letters, then the name:
   `7.62x51 mm NATO`, `9x19 mm`, `7x65 mm R`, `8x57 mm IS`, `6.5x50 mm SR Arisaka`. The bore alone
   where the case length is not part of the usual name: `9 mm Glisenti`, `6.5 mm Creedmoor`.
 - Inch calibres keep the leading dot: `.308 Winchester`, `.45 ACP`. Maker names are written out
   (`Winchester`, `Remington`) unless the short form is the cartridge's usual name (`ACP`, `S&W`,
-  `H&H`, `WMR`, `WCF`, `BMG`). Hyphenated designations keep their hyphen (`.45-70 Government`,
-  `.30-06 Springfield`), a case necked down from another its slash (`.577/450 Martini-Henry`).
+  `H&H`, `WMR`, `BMG`).
+- A hyphen or slash in the designation stays as the cartridge is known: `.45-70 Government`,
+  `.30-06 Springfield`, `6.5-284 Norma`, `7 mm-08 Remington`, `.577/450 Martini-Henry`.
 - Trade names as the maker sells them: `6.5 PRC`, `8.6 Blackout`, `7.5 FK`.
 - Where two cartridges would get the same name, the case length or the year tells them apart:
   `.450/400 Nitro Express 3 inch`, `10.4 mm Swiss Ordnance 1872 Rimfire`.
-- A cartridge with two common names gets the metric one first and the other in brackets:
-  `9 mm Browning kurz (.380 ACP)`, `9.3x66 mm Sako (.370 Sako Magnum)`. Swiss service rounds carry
-  their service name: `7.5x55 mm Swiss (GP 11)`, `5.6 mm GP 90`. Round balls and pellets give their
-  real diameter in brackets: `.44 Rundkugel (.454)`, `4.5 mm Diabolo (.177)`.
+- A cartridge with two common names gets the other one in brackets, mostly the metric one first:
+  `9 mm Browning kurz (.380 ACP)`, `9.3x66 mm Sako (.370 Sako Magnum)`, `.22 Blank (6.8/11)`. Swiss
+  service rounds carry their service name: `7.5x55 mm Swiss (GP 11)`, `5.6 mm GP 90`.
+- Round balls, BBs and pellets: the size they are sold as, and in brackets the real diameter or the
+  other size people know them by: `.44 Rundkugel (.454)`, `4.5 mm Diabolo (.177)`,
+  `4.4 mm Stahl-BB (.177 BB)`, `6 mm Airsoft-BB`. Minié bullets by bore: `.58 Minié`.
 - Shot shells: gauge/case length in mm, `12/70`, `.410/76`.
-- English, except for rounds known in Switzerland by a German name: `Knall`, `Rundkugel`,
-  `Diabolo`, `Kadettenpatrone`, `Browning kurz`.
-- Short and foreign forms (`.308 Win`, `9 mm Para`, `12,7x99 mm NATO`) go in `display_aliases` or
-  `aliases`, which keep a name as it is printed elsewhere.
+- English, except for rounds known in Switzerland by another name, for example `Knall`,
+  `Rundkugel`, `Diabolo`, `Stahl-BB`, `Kadettenpatrone`, `Browning kurz`, `7.65 mm Longue`.
+- Short forms and other spellings (`.308 Win`, `9 mm Para`, `12,7x99 mm NATO`) go in
+  `display_aliases` or `aliases`, which keep a name as it is printed elsewhere.
 
 ### `[mm]`: measurements in millimetres
 

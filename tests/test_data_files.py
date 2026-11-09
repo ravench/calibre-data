@@ -285,8 +285,11 @@ class CheckTests(unittest.TestCase):
     def test_names_write_numbers_and_units_one_way(self):
         for name, pattern in [("7.62x51mm Test", r"a space between the number and the unit"),
                               (".450/400 Test 3inch", r"a space between the number and the unit"),
+                              (".450/400 Test 3¼inch", r"a space between the number and the unit"),
+                              ("9 MM Test", r"the unit in lower case"),
+                              ("9X19 mm Test", r"a plain lower-case x"),
                               ("7,62x51 mm Test", r"a decimal point, not a comma"),
-                              ("7.62×51 mm Test", r"a plain x between the sizes, not ×"),
+                              ("7.62×51 mm Test", r"a plain lower-case x"),
                               ("7.62 x 51 mm Test", r"no spaces around the x")]:
             with self.subTest(name), Copy() as c:
                 text = c.read(WIN).replace('name = ".308 Winchester"', f"name = {name!r}")
@@ -330,7 +333,7 @@ class CheckTests(unittest.TestCase):
             c.write("order.toml", "# nothing\n")
             found = c.problems()
             self.assertEqual(len(found), len(os.listdir(c.path("calibres"))), found)
-            self.assertTrue(all("is not in order.toml" in p[2] for p in found), found)
+            self.assertTrue(all(p[2].endswith("is not in order.toml") for p in found), found)
         with Copy() as c:
             shutil.rmtree(c.path("calibres"))
             self.assertProblem(c, "calibres", r"missing", line=False)
@@ -350,6 +353,18 @@ class CheckTests(unittest.TestCase):
             self.assertEqual(len(found), 2, found)
             self.assertProblem(c, "order.toml", r"'air-gn' is not one of rimfire, handgun, .* \(did you mean \"air-gun\"\?\)")
             self.assertProblem(c, "calibres/air-gun", r"not in order.toml \(did you mean \"air-gn\"\?\)", line=False)
+
+    def test_the_old_german_category_names_point_to_their_folders(self):
+        with Copy() as c:
+            c.edit("order.toml", "rifle = [", "Langwaffe = [")
+            self.assertProblem(c, "order.toml", r"'Langwaffe' is not one of .* \(the folder of Langwaffe is rifle\)")
+
+    def test_a_folder_the_apps_do_not_know_stays_out_of_the_catalogue(self):
+        with Copy() as c:
+            os.makedirs(c.path("calibres/rifles"))
+            shutil.copy(c.path(WIN), c.path("calibres/rifles/test.toml"))
+            c.write("order.toml", c.read("order.toml") + "\nrifles = []\n")
+            self.assertOnlyProblems(c, "order.toml", r"'rifles' is not one of rimfire, .* \(did you mean \"rifle\"\?\)")
 
     def test_a_category_the_apps_know_without_a_folder(self):
         with Copy() as c:

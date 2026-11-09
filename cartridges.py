@@ -29,9 +29,10 @@ SPITZER, ROUND, FLAT, PATCHED, CRIMPED = "spitzer", "round", "flat", "patched", 
 PROFILES = (SPITZER, ROUND, FLAT, PATCHED, CRIMPED)
 # How names write numbers and units (README.md, Names); other spellings belong in the aliases.
 NAME_RULES = (
-    (re.compile(r"\d(mm|inch)\b"), "a space between the number and the unit: '9 mm', '3 inch'"),
+    (re.compile(r"[\d¼½¾](mm|inch)\b", re.I), "a space between the number and the unit: '9 mm', '3 inch'"),
+    (re.compile(r"\b(?!(?-i:mm|inch)\b)(mm|inch)\b", re.I), "the unit in lower case: 'mm', 'inch'"),
     (re.compile(r"\d,\d"), "a decimal point, not a comma: '7.62'"),
-    (re.compile(r"×"), "a plain x between the sizes, not ×: '7.62x51 mm'"),
+    (re.compile(r"×|\dX\d"), "a plain lower-case x between the sizes: '7.62x51 mm'"),
     (re.compile(r"\d\s+x\s*\d|\d\s*x\s+\d"), "no spaces around the x: '7.62x51 mm'"),
 )
 # Categories: the folder in calibres/ (and key in order.toml) -> the name the apps and the poster
@@ -418,8 +419,9 @@ def load(root=ROOT):
     if of:
         for cat, names in of.data.items():
             if cat not in CATEGORIES:
-                of.problem(of.line(None, cat), f"category {cat!r} is not one of {', '.join(CATEGORIES)}"
-                                               f"{_close(cat, CATEGORIES)}")
+                folder = {app: folder for folder, app in CATEGORIES.items()}.get(cat)
+                hint = f" (the folder of {cat} is {folder})" if folder else _close(cat, CATEGORIES)
+                of.problem(of.line(None, cat), f"category {cat!r} is not one of {', '.join(CATEGORIES)}{hint}")
                 continue
             if not _is_text_list(names):
                 of.problem(of.line(None, cat), f"{cat} must be a list of calibre names in quotes")
@@ -440,7 +442,9 @@ def load(root=ROOT):
         folders.append(cat)
         if of and cat not in of.data:
             problems.append((f"calibres/{cat}", None, f"category {cat!r} is not in order.toml"
-                                                      f"{_close(cat, of.data or CATEGORIES)}"))
+                                                      f"{_close(cat, of.data)}"))
+            continue
+        if cat not in CATEGORIES:  # reported in order.toml; its files stay out
             continue
         for fn in sorted(os.listdir(os.path.join(cal_dir, cat))):
             rel = f"calibres/{cat}/{fn}"
