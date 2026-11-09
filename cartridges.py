@@ -444,7 +444,7 @@ def load(root=ROOT):
             problems.append((f"calibres/{cat}", None, f"category {cat!r} is not in order.toml"
                                                       f"{_close(cat, of.data)}"))
             continue
-        if cat not in CATEGORIES:  # reported in order.toml; its files stay out
+        if cat not in CATEGORIES:  # reported at its order.toml key (once order.toml reads); files stay out
             continue
         for fn in sorted(os.listdir(os.path.join(cal_dir, cat))):
             rel = f"calibres/{cat}/{fn}"
