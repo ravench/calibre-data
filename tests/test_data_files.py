@@ -394,6 +394,7 @@ class CheckTests(unittest.TestCase):
                  ('differ_by = ["load"]', "differ_by = 5", r"differ_by lists one or more of", 0),
                  ('differ_by = ["load"]', 'diff_by = ["load"]', r"unknown key 'diff_by'.*did you mean \"differ_by\"", 0),
                  ('differ_by = ["load"]\n', "", r"\[\[group\]\] needs 'differ_by'", -1),
+                 ('\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]', "", r"\[\[group\]\] needs 'calibres'", -1),
                  ('calibres = [".308 Winchester", "7.62x51 mm NATO"]', 'calibres = [".308 Winchester"]',
                   r"calibres lists two or more", 1)]
         for old, new, pattern, offset in cases:
@@ -407,9 +408,23 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.write(LOOK, c.read(LOOK) + "\n[extra]\nx = 1\n")
             self.assertProblem(c, LOOK, r"unknown key 'extra'", line=c.line_of(LOOK, "[extra]"))
+        for text in ('[group]\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]\n',
+                     "group = 5\n", "group = [1, 2]\n"):
+            with self.subTest(text), Copy() as c:
+                c.write(LOOK, "# Lookalikes\n" + text)
+                self.assertOnlyProblems(c, LOOK, r"each group is a \[\[group\]\] table")
+                self.assertProblem(c, LOOK, "each group", line=2)
         with Copy() as c:
-            c.write(LOOK, '[group]\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]\n')
-            self.assertOnlyProblems(c, LOOK, r"each group is a \[\[group\]\] table")
+            c.edit(LOOK, NATO_GROUP, '[[grup]]\n' + NATO_GROUP)
+            self.assertProblem(c, LOOK, r"unknown key 'grup' \(did you mean \"group\"\?\)",
+                               line=c.line_of(LOOK, "[[grup]]"))
+        with Copy() as c:
+            c.write(LOOK, 'group = [{differ_by = ["lode"], calibres = [".308 Winchester", "7.62x51 mm NATO"]}]\n')
+            self.assertProblem(c, LOOK, "differ_by lists", line=1)
+        for text in ("# Lookalikes\n", "group = []\n"):
+            with self.subTest(text), Copy() as c:
+                c.write(LOOK, text)
+                self.assertOnlyProblems(c, LOOK, r"lists no groups")
         with Copy() as c:
             os.remove(c.path(LOOK))
             self.assertOnlyProblems(c, LOOK, r"missing")

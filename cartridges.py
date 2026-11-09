@@ -241,7 +241,7 @@ def _is_text_list(v):
 def _check_keys(f, table, data, allowed, required):
     for k in data:
         if k not in allowed:
-            line = f.line(k) if table is None and isinstance(data[k], dict) else f.line(table, k)
+            line = f.line(table, k) or (f.line(k) if table is None else None)
             f.problem(line, f"unknown key {k!r}{' in [' + table + ']' if table else ''}"
                                         f"{_close(k, allowed)}; allowed: {', '.join(sorted(allowed))}")
     for k in required:
@@ -507,6 +507,8 @@ def load(root=ROOT):
     if lf:
         _check_keys(lf, None, lf.data, {"group"}, ())
         groups = lf.data.get("group", [])
+        if groups == []:
+            lf.problem(None, "lists no groups")
         if not isinstance(groups, list) or not all(isinstance(g, dict) for g in groups):
             lf.problem(lf.line(None, "group") or lf.line("group"),
                        "each group is a [[group]] table with differ_by and calibres")
@@ -514,7 +516,7 @@ def load(root=ROOT):
         grouped = {}
         for i, g in enumerate(groups):
             def at(key=None, i=i):
-                return lf.line("group", key, nth=i) or lf.line("group", nth=i)
+                return lf.line("group", key, nth=i) or lf.line("group", nth=i) or lf.line(None, "group")
             for k in g:
                 if k not in ("differ_by", "calibres"):
                     lf.problem(at(k), f"unknown key {k!r} in [[group]]{_close(k, ('differ_by', 'calibres'))}; "
