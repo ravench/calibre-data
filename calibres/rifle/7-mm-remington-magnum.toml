@@ -17,10 +17,10 @@ overall_length = 82.6
 bullet = 7.2
 # No source yet for overall_length.
 sources = [
+  "book:hornady-10 p. 406",
   "book:cotw-18 p. 176",
   "book:donnelly p. 803",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page3.pdf",
-  "book:hornady-10 p. 406",
 ]
 
 [introduced]
