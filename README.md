@@ -442,5 +442,7 @@ check out with `submodules: true`.
 
 ## Licence
 
-[PolyForm Noncommercial 1.0.0](LICENSE.md), © 2026 Simon Giotta. Contributions need the
-[Contributor License Agreement](CLA.md).
+The data is open: [Open Database License 1.0](LICENSE.md) (ODbL), © 2026 Simon Giotta and the
+contributors. Use it for anything, paid apps included, with the notice in [LICENSE.md](LICENSE.md);
+a changed copy you use in public goes out under the ODbL too. The code and documentation are under
+the MIT licence. Contributions follow the [contributor terms](CONTRIBUTING.md#contributor-terms).

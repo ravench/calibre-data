@@ -1,75 +1,55 @@
-# PolyForm Noncommercial License 1.0.0
+# Licence
 
-<https://polyformproject.org/licenses/noncommercial/1.0.0>
+© 2026 Simon Giotta and the contributors.
 
-## Acceptance
+## The data: Open Database License 1.0
 
-In order to get any license under these terms, you must agree to them as both strict obligations and conditions to all your licenses.
+The calibre data is made available under the Open Data Commons Open Database License (ODbL) 1.0,
+<https://opendatacommons.org/licenses/odbl/1-0/>. Any rights in individual contents of the database
+are licensed under the Database Contents License 1.0,
+<https://opendatacommons.org/licenses/dbcl/1-0/>.
 
-## Copyright License
+The data is:
 
-The licensor grants you a copyright license for the software to do everything you might do with the software that would otherwise infringe the licensor's copyright in it for any permitted purpose.  However, you may only distribute the software according to [Distribution License](#distribution-license) and make changes or new works based on the software according to [Changes and New Works License](#changes-and-new-works-license).
+- `calibres/` (every calibre file)
+- `books.toml`
+- `countries.toml`
+- `lookalikes.toml`
+- `order.toml`
 
-## Distribution License
+You may use the data for any purpose, commercial included, in apps, posters, books or other
+databases. An app or poster made with the data shows this notice where it names its sources:
 
-The licensor grants you an additional copyright license to distribute copies of the software.  Your license to distribute covers distributing the software with changes and new works permitted by [Changes and New Works License](#changes-and-new-works-license).
+> Contains information from calibre-data (https://github.com/ravench/calibre-data), which is made
+> available under the Open Database License (ODbL).
 
-## Notices
+If you publicly use a changed or extended copy of the data, publish that copy under the ODbL too
+(the license's section 4.4 and 4.6 say how).
 
-You must ensure that anyone who gets a copy of any part of the software from you also gets a copy of these terms or the URL for them above, as well as copies of any plain-text lines beginning with `Required Notice:` that the licensor provided with the software.  For example:
+## Everything else: MIT
 
-> Required Notice: Copyright Yoyodyne, Inc. (http://example.com)
+The code (`cartridges.py`, `outline.py`, `check.py`, `tests/`), the documentation and the CI files
+are licensed under the MIT licence:
 
-## Changes and New Works License
+> Copyright (c) 2026 Simon Giotta and the contributors
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+> associated documentation files (the "Software"), to deal in the Software without restriction,
+> including without limitation the rights to use, copy, modify, merge, publish, distribute,
+> sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all copies or
+> substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+> NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+> DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
+> OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-The licensor grants you an additional copyright license to make changes and new works based on the software for any permitted purpose.
+## The sources
 
-## Patent License
-
-The licensor grants you a patent license for the software that covers patent claims the licensor can license, or becomes able to license, that you would infringe by using the software.
-
-## Noncommercial Purposes
-
-Any noncommercial purpose is a permitted purpose.
-
-## Personal Uses
-
-Personal use for research, experiment, and testing for the benefit of public knowledge, personal study, private entertainment, hobby projects, amateur pursuits, or religious observance, without any anticipated commercial application, is use for a permitted purpose.
-
-## Noncommercial Organizations
-
-Use by any charitable organization, educational institution, public research organization, public safety or health organization, environmental protection organization, or government institution is use for a permitted purpose regardless of the source of funding or obligations resulting from the funding.
-
-## Fair Use
-
-You may have "fair use" rights for the software under the law. These terms do not limit them.
-
-## No Other Rights
-
-These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else.  These terms do not imply any other licenses.
-
-## Patent Defense
-
-If you make any written claim that the software infringes or contributes to infringement of any patent, your patent license for the software granted under these terms ends immediately. If your company makes such a claim, your patent license ends immediately for work on behalf of your company.
-
-## Violations
-
-The first time you are notified in writing that you have violated any of these terms, or done anything with the software not covered by your licenses, your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to correct past violations, within 32 days of receiving notice.  Otherwise, all your licenses end immediately.
-
-## No Liability
-
-***As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim.***
-
-## Definitions
-
-The **licensor** is the individual or entity offering these terms, and the **software** is the software the licensor makes available under these terms.
-
-**You** refers to the individual or entity agreeing to these terms.
-
-**Your company** is any legal entity, sole proprietorship, or other kind of organization that you work for, plus all organizations that have control over, are under the control of, or are under common control with that organization.  **Control** means ownership of substantially all the assets of an entity, or the power to direct its management and policies by vote, contract, or otherwise.  Control can be direct or indirect.
-
-**Your licenses** are all the licenses granted to you for the software under these terms.
-
-**Use** means anything you do with the software requiring one of your licenses.
-
-Required Notice: Copyright 2026 Simon Giotta (https://github.com/ravench)
+The C.I.P. sheets, SAAMI drawings, books and web pages the calibre files cite are not part of this
+repository and not covered by these licences. The files hold single facts taken from them, each with
+its source; none of their text, tables or drawings is copied here.
