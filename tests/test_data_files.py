@@ -96,6 +96,8 @@ class LoadTests(unittest.TestCase):
         self.assertIn("20x138 mm B", [s["name"] for s in cannon])
         self.assertIsNone(next(s for s in cannon if s["name"] == "20x138 mm B")["sh_at"])  # no source gives it
         self.assertNotIn("20x138 mm B", cartridges.PRIMERS)
+        self.assertTrue(all(20 <= s["bullet"] <= 40 for s in cannon))
+        self.assertLessEqual({"20x102 mm", "35x228 mm", "40x365 mm R"}, {s["name"] for s in cannon})
 
     def test_a_calibre_missing_from_order_toml_comes_last_by_name(self):
         with Copy() as c:
@@ -440,6 +442,20 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:  # and a primer
             c.edit(WIN, '[primer]\nsize = "large-rifle"\nsources = ["https://en.wikipedia.org/wiki/.308_Winchester"]\n', "")
             self.assertOnlyProblems(c, WIN, r"needs a \[primer\] table")
+
+    def test_cannon_rounds_are_20_to_40_mm(self):
+        rel = "calibres/cannon/40x365-mm-r.toml"
+        for bullet, ok in (("40.0", True), ("40.5", False), ("57.0", False)):
+            with Copy() as c:
+                c.edit(rel, "bullet = 40.0", f"bullet = {bullet}")
+                if ok:
+                    self.assertEqual(c.problems(), [])
+                else:
+                    self.assertProblem(c, rel, r"calibres/cannon/ holds the 20 to 40 mm cannon rounds",
+                                       line=c.line_of(rel, f"bullet = {bullet}"))
+        with Copy() as c:  # a heavy machine gun round belongs with the rifles
+            c.edit("calibres/cannon/20x138-mm-b.toml", "bullet = 20.0", "bullet = 14.5")
+            self.assertOnlyProblems(c, "calibres/cannon/20x138-mm-b.toml", r"20 to 40 mm cannon rounds: bullet is 20 to 40")
 
     def test_a_year_needs_a_source(self):
         with Copy() as c:

@@ -1,0 +1,16 @@
+# Oerlikon's round for the 35 mm twin anti-aircraft gun (GDF) and its successors. Its name gives the
+# bore and case length; no source gives the other measurements.
+name = "35x228 mm"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["35x228", "35 mm oerlikon"]
+origin = "CH"
+
+[mm]
+case_length = 228.0
+bullet = 35.0
+sources = ["https://en.wikipedia.org/wiki/Oerlikon_GDF", "https://www.nammo.com/products/ammunition/medium-caliber-ammunition/35-mm-series/35-mm-x-228-tp-and-tp-t/"]
+
+[introduced]
+year = 1963
+sources = ["https://en.wikipedia.org/wiki/Oerlikon_GDF"]

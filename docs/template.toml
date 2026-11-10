@@ -8,7 +8,7 @@
 # Text goes in quotes, numbers and true/false don't.
 #
 # The folder is the category: rimfire, handgun, rifle, black-powder, shotgun, air-gun or cannon
-# (20 mm cannon rounds, in the catalogue only: they may leave out measurements no source gives and
+# (20 to 40 mm cannon rounds, in the catalogue only: they may leave out measurements no source gives and
 # have no [primer]; see README.md). The file
 # name follows from the name (check.py gives the right one): ".308 Winchester" is
 # calibres/rifle/308-winchester.toml. A new calibre needs no entry in order.toml: it comes after the
