@@ -278,12 +278,12 @@ class CheckTests(unittest.TestCase):
             self.assertEqual(load(c.dir)["SOURCES"][(".22 LR", "mm")], ["book:cotw-18 p. 670", "https://saami.org/"])
         self.assertEqual(sources(".22 LR", "mm"), ["book:janes-ammo-2002 p. 681", "book:cotw-18 p. 670",
                                                    "book:tm-43-0001-27 p. 3-5"])
+        self.assertEqual(cartridges.BOOKS["cotw-18"]["isbn"], "978-1-959265-46-7")
 
     def test_a_manual_numbered_by_chapter_has_pages_like_14_13(self):
         with Copy() as c:
             c.edit(LR, LR_MM, 'sources = ["book:tm-43-0001-27 p. 14-13"]')
             self.assertEqual(c.problems(), [])
-        self.assertEqual(cartridges.BOOKS["cotw-18"]["isbn"], "978-1-959265-46-7")
 
     def test_a_book_source_names_a_book_in_books_toml_and_a_page(self):
         for source, pattern in [("book:cotw-81 p. 670", r"names no book in books.toml \(did you mean"),

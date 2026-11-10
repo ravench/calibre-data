@@ -104,8 +104,8 @@ A book page is `book:`, the book's id in `books.toml`, and the page the value is
 book's own page number, not the page of a PDF scan. `book:cotw-18 p. 670` is page 670 of the 18th
 edition of *Cartridges of the World*. A manual that numbers its pages by chapter has pages like
 `book:tm-43-0001-27 p. 14-13` (chapter 14, page 13). Cite a value with its page; never copy a book's
-text or tables into this repository. A book that is not in `books.toml` yet needs an entry there first (title and
-year; edition, authors, editors, publisher, place and ISBN where it has them).
+text or tables into this repository. A book that is not in `books.toml` yet needs an entry there
+first (title and year; edition, authors, editors, publisher, place and ISBN where it has them).
 
 An empty list `sources = []` means the values have not been checked against a source yet. That is
 allowed for the measurements, the primer (then it counts as unverified) and the bullet (then it is
