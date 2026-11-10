@@ -37,9 +37,15 @@ NAME_RULES = (
 )
 # Categories: the folder in calibres/ (and key in order.toml) -> the name the apps and the poster
 # know the category by. Those names are German because the apps show them (translated); the apps
-# know only these six, so a new category needs a change in the apps too.
+# know only the first six, so a new category needs a change in the apps too.
 CATEGORIES = {"rimfire": "Randfeuer", "handgun": "Kurzwaffe", "rifle": "Langwaffe",
-              "black-powder": "Schwarzpulver", "shotgun": "Flinte", "air-gun": "Luftdruck"}
+              "black-powder": "Schwarzpulver", "shotgun": "Flinte", "air-gun": "Luftdruck",
+              "cannon": "Kanone"}
+# Categories for the catalogue only, not yet in the apps: their calibres are in ALL_CATALOGUE and
+# the per-calibre tables but not in CATALOGUE, may leave out measurements no source gives (only bullet
+# and case_length are required) and have no [primer] (cannon primers are not reloading sizes),
+# display_aliases or lookalike group, the parts the apps' generators read whole.
+NOT_IN_APPS = ("cannon",)
 
 
 def c(name, kind, rim, base, shoulder, neck, case, sh_at, oal, bullet, profile, aliases=()):
@@ -137,6 +143,7 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
     "shot": (("diameter", "rim", "length"), ("case_length",)),
     "blank": (("rim", "base", "mouth", "length"), ()),
     "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"), ("shoulder", "shoulder_at")),
+    "partial": (("case_length", "bullet"), ("rim", "base", "shoulder", "shoulder_at", "neck", "overall_length")),
 }
 TOP_KEYS = {"name", "kind", "profile", "aliases", "display_aliases", "origin", "origin_candidates",
             "worldwide", "obsolete", "rare"}
@@ -168,19 +175,22 @@ COLOURS = ("black", "white", "grey", "silver", "red", "orange", "yellow", "green
 MEANINGS = ("ball", "armour-piercing", "incendiary", "explosive", "tracer", "spotting", "subsonic", "frangible")
 
 
-def _shape(kind, profile):
+def _shape(kind, profile, category=None):
     if kind == BALL:
         return "ball"
     if kind in (MINIE, PELLET):
         return "loose"
     if kind == SHOT:
         return "shot"
-    return "blank" if profile == CRIMPED else "cartridge"
+    if profile == CRIMPED:
+        return "blank"
+    return "partial" if category in NOT_IN_APPS else "cartridge"
 
 
-def _entry(name, kind, profile, aliases, m):
-    """The catalogue dict of a calibre, built by the helper of its shape."""
-    shape = _shape(kind, profile)
+def _entry(name, kind, profile, aliases, m, category=None):
+    """The catalogue dict of a calibre, built by the helper of its shape (None for a measurement a
+    partial one leaves out)."""
+    shape = _shape(kind, profile, category)
     if shape == "ball":
         return ball(name, m["diameter"], aliases)
     if shape == "loose":
@@ -189,8 +199,8 @@ def _entry(name, kind, profile, aliases, m):
         return shot(name, m["diameter"], m["rim"], m["length"], aliases, m.get("case_length"))
     if shape == "blank":
         return blank(name, m["rim"], m["base"], m["mouth"], m["length"], aliases, kind=kind)
-    return c(name, kind, m["rim"], m["base"], m.get("shoulder"), m["neck"], m["case_length"], m.get("shoulder_at"),
-             m["overall_length"], m["bullet"], profile, aliases)
+    return c(name, kind, m.get("rim"), m.get("base"), m.get("shoulder"), m.get("neck"), m["case_length"],
+             m.get("shoulder_at"), m.get("overall_length"), m["bullet"], profile, aliases)
 
 
 class _File:
@@ -335,7 +345,7 @@ def _check_tip_colours(f, tips, shape, countries, books):
         f.problem(f.line(None, "tip_colours") or f.line("tip_colours"),
                   "each tip colour is a [[tip_colours]] table with colours, meaning and sources")
         return
-    if shape != "cartridge":
+    if shape not in ("cartridge", "partial"):
         f.problem(f.line("tip_colours"), "[[tip_colours]] is only for cartridges with a bullet")
     req, opt = TIP_KEYS
     seen = {}
@@ -415,6 +425,9 @@ def _read_calibre(f, category, countries, books=None):
         f.problem(f.line(None, "aliases"), "aliases lists a name twice")
     if _is_text_list(d.get("display_aliases")) and not 1 <= len(d["display_aliases"]) <= 2:
         f.problem(f.line(None, "display_aliases"), "display_aliases holds one or two names")
+    if "display_aliases" in d and category in NOT_IN_APPS:
+        f.problem(f.line(None, "display_aliases"),
+                  f"display_aliases are for the apps, which do not show calibres/{category}/ yet: remove them")
     for k in ("worldwide", "obsolete", "rare"):
         if k in d and not isinstance(d[k], bool):
             f.problem(f.line(None, k), f"{k} must be true or false (without quotes)")
@@ -441,8 +454,8 @@ def _read_calibre(f, category, countries, books=None):
         data = d[t]
         req, opt, rule = FACTS[t]
         if t == "mm":
-            req, opt = MM_SHAPES[_shape(kind, profile)]
-            if _shape(kind, profile) == "cartridge" and ("shoulder" in data) != ("shoulder_at" in data):
+            req, opt = MM_SHAPES[_shape(kind, profile, category)]
+            if _shape(kind, profile, category) == "cartridge" and ("shoulder" in data) != ("shoulder_at" in data):
                 f.problem(f.line("mm"), "[mm] needs both shoulder and shoulder_at (bottleneck) or neither (straight case)")
                 ok = False
         allowed = set(req) | set(opt) | {"sources"}
@@ -490,18 +503,21 @@ def _read_calibre(f, category, countries, books=None):
         ok = ok and len(f.problems) == before
         facts[t] = dict(data, sources=urls)
     if "tip_colours" in d:
-        _check_tip_colours(f, d["tip_colours"], _shape(kind, profile), countries, books)
+        _check_tip_colours(f, d["tip_colours"], _shape(kind, profile, category), countries, books)
     if not ok:
         return None
     if kind in (RIMFIRE,) + LOOSE:
         if "primer" in facts:
             f.problem(f.line("primer"), f"a {kind} calibre has no primer: remove [primer]")
+    elif category in NOT_IN_APPS:
+        if "primer" in facts:
+            f.problem(f.line("primer"), f"calibres/{category}/ has no [primer] (not a reloading size): remove it")
     elif "primer" not in facts:
         f.problem(None, "a centrefire calibre needs a [primer] table (size and sources, or sources = [] if not checked)")
     if "projectile" in facts and kind not in LOOSE:
         f.problem(f.line("projectile"), "[projectile] is only for balls, Minié bullets and pellets")
     aliases = d.get("aliases", []) if _is_text_list(d.get("aliases")) else []
-    entry = _entry(name, kind, profile, aliases, facts["mm"])
+    entry = _entry(name, kind, profile, aliases, facts["mm"], category)
     return entry, d, facts
 
 
@@ -671,6 +687,8 @@ def load(root=ROOT):
                     lf.problem(at("calibres"), f"{n!r} is not a calibre{_close(n, by_name)}")
                 elif n in grouped:
                     lf.problem(at("calibres"), f"{n!r} is already in the group on line {grouped[n]}")
+                elif by_name[n][0] in NOT_IN_APPS:
+                    lf.problem(at("calibres"), f"{n!r} is in calibres/{by_name[n][0]}/, which the apps do not show yet")
                 else:
                     grouped[n] = at()
             lookalikes.append((tuple(diff), list(names)))
@@ -732,7 +750,9 @@ def load(root=ROOT):
                                         "sources": list(tip["sources"])} for tip in raw["tip_colours"]]
     t.update(sets)
     t["WORLDWIDE"] = frozenset(t["WORLDWIDE"])
-    t.update(CATALOGUE=catalogue, COUNTRIES=countries, BOOKS=books or {}, LOOKALIKES=lookalikes)
+    hidden = {CATEGORIES[cat] for cat in NOT_IN_APPS}
+    t.update(CATALOGUE=[(cat, items) for cat, items in catalogue if cat not in hidden], ALL_CATALOGUE=catalogue,
+             COUNTRIES=countries, BOOKS=books or {}, LOOKALIKES=lookalikes)
     return t
 
 
@@ -743,6 +763,9 @@ _t = load()
 # rim, base, shoulder (None for straight cases), neck, case (length), sh_at (where the shoulder
 # starts, None for straight cases), oal, bullet (diameters and lengths in mm), profile and aliases.
 CATALOGUE = _t["CATALOGUE"]
+# CATALOGUE and the categories not yet in the apps (NOT_IN_APPS), whose dicts can have None for a
+# measurement no source gives.
+ALL_CATALOGUE = _t["ALL_CATALOGUE"]
 # Printable alternative names (max 2), shown in the app's calibre lists and search, and on the poster.
 DISPLAY_ALIASES = _t["DISPLAY_ALIASES"]
 # Primer size per centrefire calibre; PRIMER_SOURCES has the first source of the checked ones,

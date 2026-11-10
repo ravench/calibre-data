@@ -430,3 +430,6 @@ air-gun = [
   "6 mm Airsoft-BB",
   "8 mm Airsoft-BB",
 ]
+
+# Catalogue only for now (NOT_IN_APPS in cartridges.py).
+cannon = []

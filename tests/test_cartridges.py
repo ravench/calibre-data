@@ -3,7 +3,7 @@ import os, sys, unittest
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
+from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO,
                         SMALL_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
@@ -15,8 +15,9 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material,
                         LOOKALIKES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes, BOOK_SOURCE)
 
-ALL = [s for _, items in CATALOGUE for s in items]
-NAMES = {s["name"] for s in ALL}
+ALL = [s for _, items in CATALOGUE for s in items]  # the calibres in the apps
+APP_NAMES = {s["name"] for s in ALL}
+NAMES = {s["name"] for _, items in ALL_CATALOGUE for s in items}  # also the catalogue-only ones
 CATEGORIES = {"Randfeuer", "Kurzwaffe", "Langwaffe", "Schwarzpulver", "Flinte", "Luftdruck"}
 
 
@@ -26,8 +27,15 @@ def is_source(s):
 
 
 class CatalogueTests(unittest.TestCase):
+    def test_tables_the_apps_read_whole_name_only_app_calibres(self):
+        # The generators assert these against CATALOGUE, so a catalogue-only calibre breaks them.
+        for table in (DISPLAY_ALIASES, PRIMERS, PRIMER_SOURCES, PRIMER_UNVERIFIED):
+            self.assertLessEqual(set(table), APP_NAMES)
+        for _, names in LOOKALIKES:
+            self.assertLessEqual(set(names), APP_NAMES, names)
+
     def test_names_are_unique(self):
-        self.assertEqual(len(NAMES), len(ALL))
+        self.assertEqual(len(NAMES), sum(len(items) for _, items in ALL_CATALOGUE))
 
     def test_categories_are_the_ones_the_apps_know(self):
         self.assertEqual({c for c, _ in CATALOGUE}, CATEGORIES)
@@ -54,7 +62,7 @@ class CatalogueTests(unittest.TestCase):
                     self.assertLess(s["sh_at"], s["case"])
 
     def test_display_aliases_name_known_calibres(self):
-        self.assertLessEqual(set(DISPLAY_ALIASES), NAMES)
+        self.assertLessEqual(set(DISPLAY_ALIASES), APP_NAMES)
         for name, aliases in DISPLAY_ALIASES.items():
             self.assertLessEqual(len(aliases), 2, name)
 
