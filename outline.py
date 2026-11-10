@@ -152,7 +152,7 @@ def outline(s):
     H = s["oal"]
     paths = {}
     if k == SHOT:
-        r, rim, L = s["base"] / 2, s["rim"] / 2, s["case"]
+        r, rim, L = s["base"] / 2, s["rim"] / 2, s["oal"]  # the loaded shell as crimped, not the opened hull
         head = 0.2 * L
         hull = [(r * 0.98, 1.5), (r * 0.98, L - 2.2), (r * 0.8, L - 0.6), (r * 0.35, L)]
         paths["case"] = to_path(mirror(hull), H, hw)

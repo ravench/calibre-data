@@ -7,6 +7,7 @@ aliases = ["12/89"]
 diameter = 20.6
 rim = 22.3
 length = 82.0
+case_length = 89.0
 sources = []
 
 [introduced]

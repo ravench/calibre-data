@@ -57,8 +57,10 @@ def blank(name, rim, base, mouth, length, aliases=(), kind=RIMFIRE):
     return c(name, kind, rim, base, None, mouth, length, None, length, base, CRIMPED, aliases)
 
 
-def shot(name, dia, rim, length, aliases=()):
-    return c(name, SHOT, rim, dia, None, dia, length, None, length, dia, FLAT, aliases)
+def shot(name, dia, rim, length, aliases=(), case_length=None):
+    """`length` is the loaded shell as crimped; `case_length` the hull opened by firing (the length in
+    the name: a 12/70 opens to 70 mm), the same when not given."""
+    return c(name, SHOT, rim, dia, None, dia, case_length or length, None, length, dia, FLAT, aliases)
 
 
 def ball(name, dia, aliases=()):
@@ -132,7 +134,7 @@ MM_FULL = ("rim", "base", "shoulder", "shoulder_at", "neck", "case_length", "ove
 MM_SHAPES = {  # shape: (required keys, optional keys)
     "ball": (("diameter",), ()),
     "loose": (("diameter", "length"), ()),
-    "shot": (("diameter", "rim", "length"), ()),
+    "shot": (("diameter", "rim", "length"), ("case_length",)),
     "blank": (("rim", "base", "mouth", "length"), ()),
     "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"), ("shoulder", "shoulder_at")),
 }
@@ -183,7 +185,7 @@ def _entry(name, kind, profile, aliases, m):
     if shape == "loose":
         return (minie if kind == MINIE else pellet)(name, m["diameter"], m["length"], aliases)
     if shape == "shot":
-        return shot(name, m["diameter"], m["rim"], m["length"], aliases)
+        return shot(name, m["diameter"], m["rim"], m["length"], aliases, m.get("case_length"))
     if shape == "blank":
         return blank(name, m["rim"], m["base"], m["mouth"], m["length"], aliases, kind=kind)
     return c(name, kind, m["rim"], m["base"], m.get("shoulder"), m["neck"], m["case_length"], m.get("shoulder_at"),
