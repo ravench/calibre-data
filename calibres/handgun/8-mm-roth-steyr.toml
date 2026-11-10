@@ -17,8 +17,10 @@ neck = 8.8
 case_length = 18.65
 overall_length = 29.0
 bullet = 8.16
-# No source yet for rim, base, neck, case_length and bullet.
-sources = ["book:donnelly p. 864"]
+sources = [
+  "book:janes-ammo-2002 p. 681",
+  "book:donnelly p. 864",
+]
 
 [introduced]
 year = 1907

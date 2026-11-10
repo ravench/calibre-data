@@ -16,11 +16,12 @@ neck = 8.25
 case_length = 57.0
 overall_length = 78.0
 bullet = 7.25
-# No source yet for base, shoulder and neck.
+# No source yet for shoulder.
 sources = [
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page22.pdf",
   "book:donnelly p. 829",
   "book:cotw-18 p. 651",
+  "book:janes-ammo-2002 p. 681",
 ]
 
 [introduced]

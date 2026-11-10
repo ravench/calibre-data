@@ -9,7 +9,8 @@ import check  # noqa: E402
 from cartridges import load, slug, DataError, sources  # noqa: E402
 
 LR = "calibres/rimfire/22-lr.toml"
-LR_MM = 'sources = ["book:cotw-18 p. 670"]'  # the sources of .22 LR's [mm]
+LR_MM = ('sources = [\n  "book:janes-ammo-2002 p. 681",\n  "book:cotw-18 p. 670",\n'
+         '  "book:tm-43-0001-27 p. 3-5",\n]')  # the sources of .22 LR's [mm]
 WIN = "calibres/rifle/308-winchester.toml"
 FOLDER = {app: folder for folder, app in cartridges.CATEGORIES.items()}
 LOOK = "lookalikes.toml"
@@ -275,13 +276,22 @@ class CheckTests(unittest.TestCase):
             c.edit(LR, LR_MM, 'sources = [\n  "book:cotw-18 p. 670",\n  "https://saami.org/",\n]')
             self.assertEqual(c.problems(), [])
             self.assertEqual(load(c.dir)["SOURCES"][(".22 LR", "mm")], ["book:cotw-18 p. 670", "https://saami.org/"])
-        self.assertEqual(sources(".22 LR", "mm"), ["book:cotw-18 p. 670"])
+        self.assertEqual(sources(".22 LR", "mm"), ["book:janes-ammo-2002 p. 681", "book:cotw-18 p. 670",
+                                                   "book:tm-43-0001-27 p. 3-5"])
         self.assertEqual(cartridges.BOOKS["cotw-18"]["isbn"], "978-1-959265-46-7")
+
+    def test_a_manual_numbered_by_chapter_has_pages_like_14_13(self):
+        with Copy() as c:
+            c.edit(LR, LR_MM, 'sources = ["book:tm-43-0001-27 p. 14-13"]')
+            self.assertEqual(c.problems(), [])
 
     def test_a_book_source_names_a_book_in_books_toml_and_a_page(self):
         for source, pattern in [("book:cotw-81 p. 670", r"names no book in books.toml \(did you mean"),
                                 ("book:cotw-18 page 670", r"must be written book:<id> p. <page>"),
                                 ("book:cotw-18 p. 0", r"must be written book:<id> p. <page>"),
+                                ("book:tm-43-0001-27 p. 14-", r"must be written book:<id> p. <page>"),
+                                ("book:tm-43-0001-27 p. 14-0", r"must be written book:<id> p. <page>"),
+                                ("book:tm-43-0001-27 p. 14-13-2", r"must be written book:<id> p. <page>"),
                                 ("book:cotw-18", r"must be written book:<id> p. <page>")]:
             with self.subTest(source), Copy() as c:
                 c.edit(LR, LR_MM, f'sources = ["{source}"]')

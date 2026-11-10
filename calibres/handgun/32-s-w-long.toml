@@ -12,10 +12,10 @@ neck = 8.5
 case_length = 23.4
 overall_length = 32.5
 bullet = 7.9
-# No source yet for base.
 sources = [
   "book:donnelly p. 369",
   "book:cotw-18 p. 527",
+  "book:janes-ammo-2002 p. 681",
 ]
 
 [introduced]

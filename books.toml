@@ -78,6 +78,27 @@ publisher = "Hornady Manufacturing Company"
 place = "Grand Island, Nebraska"
 year = 2016
 
+# Pages 681-682 are a table of cartridge dimensions ("Identification of Small Arms Ammunition") in
+# millimetres: rim, case length, body (the belt in its belted part), neck and bullet. The cannon
+# entries give each round's length, case length and rim diameter.
+[janes-ammo-2002]
+title = "Jane's Ammunition Handbook"
+edition = "11th (2002-2003)"
+editors = "Charles Q. Cutshaw and Leland Ness"
+publisher = "Jane's Information Group"
+place = "Coulsdon, Surrey"
+year = 2002
+isbn = "0-7106-2424-7"
+
+# A US Army technical manual of data sheets, one for each round, with its complete length in inches
+# and millimetres. Its pages are numbered by chapter: "p. 14-13" is chapter 14, page 13.
+[tm-43-0001-27]
+title = "TM 43-0001-27: Army Ammunition Data Sheets, Small Caliber Ammunition (FSC 1305)"
+edition = "29 April 1994 with changes 1 (1994) and 2 (1996)"
+publisher = "Headquarters, Department of the Army"
+place = "Washington, D.C."
+year = 1994
+
 [ammo-encyclopedia-2]
 title = "Ammo Encyclopedia"
 edition = "2nd"
