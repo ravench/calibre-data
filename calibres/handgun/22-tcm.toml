@@ -20,8 +20,11 @@ neck = 6.48
 case_length = 25.96
 overall_length = 32.13
 bullet = 5.7
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]
+# No source yet for rim, base and case_length.
+sources = [
+  "book:cotw-18 p. 451",
+  "https://municion.org/producto/22-tuason-craig-micromagnum/",
+]
 
 [introduced]
 # Year of production on the municion.org product pages (AECC).

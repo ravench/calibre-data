@@ -13,7 +13,8 @@ neck = 9.65
 case_length = 21.15
 overall_length = 29.7
 bullet = 9.01
-sources = []
+# No source yet for overall_length.
+sources = ["book:cotw-18 p. 528"]
 
 [introduced]
 # "1980–present", text says the 1980s

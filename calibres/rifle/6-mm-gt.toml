@@ -17,8 +17,11 @@ neck = 6.95
 case_length = 43.82
 overall_length = 67.06
 bullet = 6.17
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://www.4dreamerrentals.com/"]
+# No source yet for case_length.
+sources = [
+  "book:cotw-18 p. 175",
+  "https://www.4dreamerrentals.com/",
+]
 
 [introduced]
 unknown = "sources give only the 2024 SAAMI acceptance"

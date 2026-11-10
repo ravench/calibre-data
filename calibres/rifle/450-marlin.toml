@@ -13,8 +13,10 @@ neck = 12.2
 case_length = 53.0
 overall_length = 65.0
 bullet = 11.6
-# No source yet for neck.
-sources = ["https://en.wikipedia.org/wiki/.450_Marlin"]
+sources = [
+  "https://en.wikipedia.org/wiki/.450_Marlin",
+  "book:cotw-18 p. 177",
+]
 
 [introduced]
 year = 2000

@@ -20,7 +20,8 @@ neck = 6.48
 case_length = 44.7
 overall_length = 57.4
 bullet = 5.69
-sources = []
+# No source yet for shoulder_at.
+sources = ["book:cotw-18 p. 175"]
 
 [introduced]
 year = 2017

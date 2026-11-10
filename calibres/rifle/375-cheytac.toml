@@ -18,7 +18,8 @@ neck = 10.31
 case_length = 76.91
 overall_length = 113.4
 bullet = 9.52
-sources = []
+# No source yet for shoulder_at.
+sources = ["book:cotw-18 p. 453"]
 
 [introduced]
 # infobox says 2009, text has .375 variants by 2007; C.I.P. 2017

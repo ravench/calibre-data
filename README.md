@@ -18,6 +18,8 @@ names they show (`CATEGORIES` in `cartridges.py`), so a new category needs a cha
 - `order.toml`: the order the apps and the poster list the calibres in. A calibre that is not listed
   comes after the listed ones of its category, by name, so a new calibre needs no entry here.
 - `countries.toml`: the country codes a calibre's `origin` can name, with English name and flag emoji.
+- `books.toml`: the printed books a source can name (see [Sources](#sources)), with title, edition,
+  year and ISBN.
 - `docs/template.toml`: a calibre file with every field explained, to start a new calibre from.
 - `lookalikes.toml`: the groups of calibres that are cartridges of their own but look alike.
 - `cartridges.py` reads and checks all of them and gives the apps' generators, `outline.py` and the
@@ -54,8 +56,11 @@ neck = 8.7
 case_length = 51.2
 overall_length = 71.1
 bullet = 7.82
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+# No source yet for overall_length.
+sources = [
+  "book:cotw-18 p. 176",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf",
+]
 
 [introduced]
 year = 1952
@@ -76,14 +81,21 @@ apps ignore them.
 
 ### Sources
 
-Every table has a `sources` list of web addresses (`https://…`), one or several:
+Every table has a `sources` list of web addresses (`https://…`) and book pages, one or several:
 
 ```toml
 sources = [
   "https://en.wikipedia.org/wiki/.22_Long_Rifle",
   "https://municion.org/producto/22-long-rifle/",
+  "book:cotw-18 p. 670",
 ]
 ```
+
+A book page is `book:`, the book's id in `books.toml`, and the page the value is printed on: the
+book's own page number, not the page of a PDF scan. `book:cotw-18 p. 670` is page 670 of the 18th
+edition of *Cartridges of the World*. Cite a value with its page; never copy a book's text or tables
+into this repository. A book that is not in `books.toml` yet needs an entry there first (title and
+year; edition, authors, editors, publisher, place and ISBN where it has them).
 
 An empty list `sources = []` means the values have not been checked against a source yet. That is
 allowed for the measurements, the primer (then it counts as unverified) and the bullet (then it is
@@ -169,8 +181,9 @@ Short forms:
 | `profile = "crimped"` | `rim`, `base`, `mouth` (at the star crimp), `length` |
 
 `sources` lists every page the measurements come from, the page of most of them first. When only
-some of them have a source, a note above the list names the others, as in the example above (only
-the shoulder position is from the C.I.P. sheet there):
+some of them have a source, a note above the list names the others, as in the example above (the
+shoulder position is from the C.I.P. sheet there, the other diameters and the case length from the
+book):
 
 ```toml
 # No source yet for case_length.
@@ -187,6 +200,14 @@ sheets), values worked out from a drawing or an angle, values measured on a cart
 first catalogue (which named no sources) have none yet. The pages were not compared value by value:
 a sample of about 280 values was, and the ones not found on their page count as without a source.
 When you check a measurement against a source, add the page and update the note.
+
+In November 2026 the measurements still without a source were compared with the dimension tables of
+*Cartridges of the World* (18th edition, 2026) and the physical data of Donnelly's *Handloader's
+Manual of Cartridge Conversions* (1987). Where a book prints the same value, to the precision it
+prints (a value in thousandths of an inch to about 0.07 mm, in hundredths to about 0.19 mm), its page
+was added, even when the other book prints another value. Values neither book prints the same kept no
+source. A book page that prints more of the values than the earlier sources gave together was listed
+first.
 
 ### `[introduced]`
 
@@ -337,11 +358,12 @@ You can also edit a file in GitHub's web editor and open the pull request from t
 
 `python3 check.py` reads every file and lists each problem with its file and line: broken TOML, an
 unknown or misspelt key (with the key it probably means), a value that is not allowed, a missing
-measurement or table, a source that is not a web address, a name that writes a number or unit
-another way than [Names](#names), a file whose name does not follow the calibre's name, an alias two
-calibres use or that is another calibre's name, a category the apps do not know or that is missing
-from `order.toml`, names in `order.toml` or `lookalikes.toml` without a file. The *Check calibre files*
-job runs it on every pull request. It needs Python 3.11 or newer.
+measurement or table, a source that is not a web address or a page of a book in `books.toml`, a
+name that writes a number or unit another way than [Names](#names), a file whose name does not
+follow the calibre's name, an alias two calibres use or that is another calibre's name, a category
+the apps do not know or that is missing from `order.toml`, names in `order.toml` or
+`lookalikes.toml` without a file. The *Check calibre files* job runs it on every pull request. It
+needs Python 3.11 or newer.
 
 The tests (`python3 -m unittest discover -s tests`) also check the catalogue as a whole: a bottleneck
 case without a shoulder angle or a rimless case without a case head must be listed in

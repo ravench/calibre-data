@@ -17,8 +17,11 @@ neck = 7.2
 case_length = 42.4
 overall_length = 60.0
 bullet = 6.53
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page91.pdf"]
+# No source yet for neck and overall_length.
+sources = [
+  "book:cotw-18 p. 175",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page91.pdf",
+]
 
 [introduced]
 year = 2004

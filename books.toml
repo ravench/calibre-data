@@ -1,0 +1,127 @@
+# The printed books a calibre file can name as a source. A source "book:<id> p. <page>" is the book
+# with that id below and the page the value is printed on: the book's own page number, not the
+# page of a PDF scan ("book:cotw-18 p. 176" is page 176 of the 18th edition of Cartridges of the
+# World). Cite a value with its page; never copy the book's text or tables into this repository.
+#
+# Each book needs a title and a year; edition, authors, editors, publisher, place and isbn where
+# the book has them (books printed before about 1970 have no ISBN).
+
+[cotw-1]
+title = "Cartridges of the World"
+edition = "1st"
+authors = "Frank C. Barnes"
+editors = "John T. Amber"
+publisher = "The Gun Digest Company"
+place = "Chicago"
+year = 1965
+
+[cotw-2]
+title = "Cartridges of the World"
+edition = "2nd"
+authors = "Frank C. Barnes"
+editors = "John T. Amber"
+publisher = "The Gun Digest Company"
+place = "Chicago"
+year = 1969
+
+[cotw-5]
+title = "Cartridges of the World"
+edition = "revised 5th"
+authors = "Frank C. Barnes"
+editors = "Ken Warner"
+publisher = "DBI Books"
+place = "Northbrook, Illinois"
+year = 1985
+isbn = "0-910676-95-X"
+
+[cotw-8]
+title = "Cartridges of the World"
+edition = "8th"
+authors = "Frank C. Barnes"
+editors = "M. L. McPherson"
+publisher = "DBI Books"
+place = "Northbrook, Illinois"
+year = 1997
+isbn = "0-87349-178-5"
+
+# Some copies are sold as "15th edition, 2016", but the title page says 14th Edition and the
+# copyright page 2014.
+[cotw-14]
+title = "Cartridges of the World"
+edition = "14th"
+authors = "Frank C. Barnes"
+editors = "W. Todd Woodard"
+publisher = "Gun Digest Books"
+place = "Iola, Wisconsin"
+year = 2014
+isbn = "978-1-4402-4265-6"
+
+# Chapter 11 is the table of measurements of every cartridge in the book (in inches); each chapter
+# ends with its own table.
+[cotw-18]
+title = "Cartridges of the World"
+edition = "18th"
+editors = "W. Todd Woodard, Corey Graff"
+publisher = "Gun Digest Books"
+place = "Appleton, Wisconsin"
+year = 2026
+isbn = "978-1-959265-46-7"
+
+[ammo-encyclopedia-2]
+title = "Ammo Encyclopedia"
+edition = "2nd"
+authors = "Michael Bussard"
+editors = "John B. Allen, David Kosowski, Charles F. Priore Jr."
+publisher = "Blue Book Publications"
+place = "Minneapolis"
+year = 2010
+isbn = "978-1-936120-01-7"
+
+# Measurements in inches under "Physical data" on each cartridge's page. The clothbound and
+# spiral-bound editions (ISBN 0-88317-138-4, 0-88317-137-6) have the same pages.
+[donnelly]
+title = "The Handloader's Manual of Cartridge Conversions"
+authors = "John J. Donnelly"
+publisher = "Stoeger Publishing"
+place = "South Hackensack, New Jersey"
+year = 1987
+isbn = "0-88317-136-8"
+
+[labbett]
+title = "Military Small Arms Ammunition of the World, 1945-1980"
+authors = "Peter Labbett"
+publisher = "Presidio Press"
+place = "San Rafael, California"
+year = 1980
+isbn = "0-89141-116-X"
+
+[moore]
+title = "Guns: The Development of Firearms, Air Guns and Cartridges"
+authors = "Warren Moore"
+publisher = "Grosset & Dunlap"
+place = "New York"
+year = 1963
+
+# Page 35 compares the cartridges of the breech-loaders tried by 1868 (mm and g).
+[mattenheimer]
+title = "Die Patronen der Rückladungs-Gewehre"
+authors = "A. Mattenheimer"
+publisher = "Eduard Zernin"
+place = "Darmstadt and Leipzig"
+year = 1868
+
+[mueller]
+title = "Gewehre, Pistolen, Revolver: Hand- und Faustfeuerwaffen vom 14. bis 19. Jahrhundert"
+authors = "Heinrich Müller"
+publisher = "Edition Leipzig"
+place = "Leipzig"
+year = 1979
+
+# The German edition of Twentieth-Century Small Arms (2001).
+[mcnab]
+title = "Handfeuerwaffen des 20. und 21. Jahrhunderts"
+authors = "Chris McNab"
+publisher = "Neuer Kaiser Verlag"
+place = "Klagenfurt"
+year = 2007
+isbn = "978-3-7043-1427-7"

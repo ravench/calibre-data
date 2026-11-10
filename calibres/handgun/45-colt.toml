@@ -16,7 +16,11 @@ neck = 12.2
 case_length = 32.6
 overall_length = 40.6
 bullet = 11.5
-sources = []
+# No source yet for rim.
+sources = [
+  "book:donnelly p. 591",
+  "book:cotw-18 p. 529",
+]
 
 [introduced]
 # designed 1872, produced from 1873

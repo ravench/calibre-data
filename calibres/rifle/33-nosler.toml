@@ -17,10 +17,11 @@ neck = 9.4
 case_length = 65.8
 overall_length = 84.8
 bullet = 8.6
-# No source yet for shoulder and neck.
+# No source yet for shoulder.
 sources = [
   "https://en.wikipedia.org/wiki/.28_Nosler",
   "https://municion.org/producto/33-nosler/",
+  "book:cotw-18 p. 176",
 ]
 
 [introduced]

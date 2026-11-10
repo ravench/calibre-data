@@ -13,7 +13,10 @@ neck = 11.6
 case_length = 32.6
 overall_length = 40.9
 bullet = 10.9
-sources = []
+sources = [
+  "book:cotw-18 p. 528",
+  "book:donnelly p. 564",
+]
 
 [introduced]
 year = 1956

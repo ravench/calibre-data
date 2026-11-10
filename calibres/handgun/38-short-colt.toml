@@ -18,7 +18,11 @@ neck = 9.6
 case_length = 19.4
 overall_length = 30.48
 bullet = 9.1
-sources = []
+# No source yet for rim and overall_length.
+sources = [
+  "book:donnelly p. 471",
+  "book:cotw-18 p. 528",
+]
 
 [introduced]
 # Year of production on the municion.org product pages (AECC).

@@ -17,8 +17,11 @@ neck = 8.43
 case_length = 41.02
 overall_length = 57.4
 bullet = 7.82
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://municion.org/producto/300-hamr/"]
+# No source yet for case_length.
+sources = [
+  "book:cotw-18 p. 452",
+  "https://municion.org/producto/300-hamr/",
+]
 
 [introduced]
 year = 2018
