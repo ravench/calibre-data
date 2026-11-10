@@ -212,11 +212,14 @@ When you check a measurement against a source, add the page and update the note.
 
 In November 2026 the measurements still without a source were compared with the dimension tables of
 *Cartridges of the World* (18th edition, 2026) and the physical data of Donnelly's *Handloader's
-Manual of Cartridge Conversions* (1987). Where a book prints the same value, to the precision it
-prints (a value in thousandths of an inch to about 0.07 mm, in hundredths to about 0.19 mm), its page
-was added, even when the other book prints another value. Values neither book prints the same kept no
-source. A book page that prints more of the values than the earlier sources gave together was listed
-first.
+Manual of Cartridge Conversions* (1987), and then with the cartridge drawings of the *Hornady Handbook
+of Cartridge Reloading* (10th edition, 2016) and the Maximum COL and Max. Case Length lines under
+them. Where a book prints the same value, to the precision it prints (a value in thousandths of an
+inch to about 0.07 mm, in hundredths to about 0.19 mm), its page was added, even when another book
+prints another value. Values no book prints the same kept no source. A book page that prints more of
+the values than the earlier sources gave together was listed first. Some of Hornady's length bars
+start at the .200 line where the base diameter is measured, not at the head; such a bar's value plus
+0.200 is the length from the head.
 
 ### `[introduced]`
 

@@ -14,10 +14,13 @@ neck = 10.0
 case_length = 62.0
 overall_length = 83.6
 bullet = 9.3
-# No source yet for shoulder, neck and case_length.
+# No source yet for shoulder and neck.
+# Hornady p. 700 gives case_length on its Max. Case Length line; its drawing prints 2.431 in, the
+# trim length.
 sources = [
   "book:cotw-18 p. 176",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page69.pdf",
+  "book:hornady-10 p. 700",
 ]
 
 [introduced]

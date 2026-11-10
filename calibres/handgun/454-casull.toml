@@ -12,8 +12,9 @@ neck = 12.1
 case_length = 35.1
 overall_length = 45.0
 bullet = 11.5
-# No source yet for rim, base, case_length and overall_length.
+# No source yet for rim and overall_length.
 sources = [
+  "book:hornady-10 p. 959",
   "book:cotw-18 p. 529",
   "book:donnelly p. 629",
 ]

@@ -12,8 +12,12 @@ neck = 13.4
 case_length = 41.3
 overall_length = 57.2
 bullet = 12.7
-# No source yet for case_length and overall_length.
-sources = ["book:cotw-18 p. 529"]
+# Hornady p. 972 gives case_length in its drawing (1.625 in); its Max. Case Length line prints
+# 1.620 in.
+sources = [
+  "book:cotw-18 p. 529",
+  "book:hornady-10 p. 972",
+]
 
 [introduced]
 year = 2003

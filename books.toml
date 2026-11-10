@@ -67,6 +67,17 @@ place = "Appleton, Wisconsin"
 year = 2026
 isbn = "978-1-959265-46-7"
 
+# Each cartridge's first page has a dimensioned drawing in inches. A length bar that starts at the
+# ".200" line (where the base diameter is measured) is counted from there, so its value plus 0.200 is
+# the length from the head. Maximum COL and Max. Case Length are printed under the heading.
+[hornady-10]
+title = "Hornady Handbook of Cartridge Reloading"
+edition = "10th"
+editors = "Neal Emery"
+publisher = "Hornady Manufacturing Company"
+place = "Grand Island, Nebraska"
+year = 2016
+
 [ammo-encyclopedia-2]
 title = "Ammo Encyclopedia"
 edition = "2nd"

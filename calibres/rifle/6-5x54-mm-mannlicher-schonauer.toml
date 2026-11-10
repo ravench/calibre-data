@@ -16,8 +16,8 @@ neck = 7.56
 case_length = 53.6
 overall_length = 77.8
 bullet = 6.7
-# No source yet for case_length.
 sources = [
+  "book:hornady-10 p. 296",
   "https://en.wikipedia.org/wiki/6.5×54mm_Mannlicher–Schönauer",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page22.pdf",
 ]

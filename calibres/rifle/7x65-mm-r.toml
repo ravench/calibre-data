@@ -16,8 +16,8 @@ neck = 7.95
 case_length = 65.0
 overall_length = 83.6
 bullet = 7.25
-# No source yet for case_length.
 sources = [
+  "book:hornady-10 p. 381",
   "https://en.wikipedia.org/wiki/7×64mm",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page24.pdf",
 ]

@@ -16,8 +16,9 @@ neck = 8.4
 case_length = 34.7
 overall_length = 57.0
 bullet = 7.8
-# No source yet for rim, base, neck and overall_length.
+# No source yet for neck and overall_length.
 sources = [
+  "book:hornady-10 p. 435",
   "book:cotw-18 p. 176",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf",
 ]
