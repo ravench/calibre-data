@@ -15,10 +15,12 @@ it is stored: `rimfire`, `handgun`, `rifle`, `black-powder`, `shotgun` and `air-
 these six as `Randfeuer`, `Kurzwaffe`, `Langwaffe`, `Schwarzpulver`, `Flinte` and `Luftdruck`, the
 names they show (`CATEGORIES` in `cartridges.py`), so a new category needs a change in the apps too.
 
-`cannon` (`Kanone`, 20 mm cannon rounds) is in the catalogue only, not yet in the apps (`NOT_IN_APPS`):
+`cannon` (`Kanone`, the 20 to 40 mm rounds of automatic cannon; tank, naval and artillery guns
+stay out) is in the catalogue only, not yet in the apps (`NOT_IN_APPS`):
 its calibres are in `ALL_CATALOGUE` and the per-calibre tables but not in `CATALOGUE`, so the apps'
 JSON does not change. No C.I.P. or SAAMI sheet covers them, so a cannon file keeps only the
-measurements a source gives (`bullet` and `case_length` are required, the others optional). It has no
+measurements a source gives (`bullet` and `case_length` are required, the others optional; the name
+gives both, 35x228 being a 35 mm round with a 228 mm case). It has no
 `[primer]` (cannon primers are not reloading sizes), no `display_aliases` and no lookalike group:
 the apps read those whole.
 

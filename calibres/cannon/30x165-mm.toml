@@ -1,0 +1,17 @@
+# The Soviet 30 mm case of the GSh-6-30 aircraft and AK-630 naval guns (electric primer) and the 2A42
+# (percussion primer): the two loadings do not interchange. Its name gives the bore and case length;
+# no source gives the other measurements.
+name = "30x165 mm"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30x165"]
+origin = "SU"
+
+[mm]
+case_length = 165.0
+bullet = 30.0
+sources = ["https://en.wikipedia.org/wiki/Shipunov_2A42"]
+
+[introduced]
+year = 1975
+sources = ["https://en.wikipedia.org/wiki/Gryazev-Shipunov_GSh-6-30"]

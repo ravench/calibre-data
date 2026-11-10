@@ -1,0 +1,18 @@
+# The round of the ADEN Mk 4 and later aircraft cannon (the earlier ADEN marks had 30x86 B and
+# 30x111 B cases) and of the French DEFA. Its name gives the bore and case length; KNDS gives the
+# cartridge length.
+name = "30x113 mm B"
+kind = "belted"
+profile = "spitzer"
+aliases = ["30x113b", "30 mm aden", "30 mm defa"]
+origin = "GB"
+
+[mm]
+case_length = 113.0
+overall_length = 200.0
+bullet = 30.0
+sources = ["https://knds.com/en/products/ammunition/30x113-mm-b", "https://en.wikipedia.org/wiki/30_mm_caliber"]
+
+[introduced]
+year = 1955
+sources = ["https://en.wikipedia.org/wiki/30_mm_caliber"]

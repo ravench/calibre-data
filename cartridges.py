@@ -514,6 +514,8 @@ def _read_calibre(f, category, countries, books=None):
             f.problem(f.line("primer"), f"calibres/{category}/ has no [primer] (not a reloading size): remove it")
     elif "primer" not in facts:
         f.problem(None, "a centrefire calibre needs a [primer] table (size and sources, or sources = [] if not checked)")
+    if category == "cannon" and not 20 <= facts["mm"]["bullet"] <= 40:
+        f.problem(f.line("mm", "bullet"), "calibres/cannon/ holds the 20 to 40 mm cannon rounds: bullet is 20 to 40")
     if "projectile" in facts and kind not in LOOSE:
         f.problem(f.line("projectile"), "[projectile] is only for balls, Minié bullets and pellets")
     aliases = d.get("aliases", []) if _is_text_list(d.get("aliases")) else []

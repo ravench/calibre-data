@@ -1,0 +1,23 @@
+# The Soviet round of the VYa-23 aircraft cannon and, with a steel case and a different headspace,
+# of the ZU-23-2 anti-aircraft gun: the two loadings do not interchange. The name gives the bore and
+# case length, the Wikipedia infobox the rest (it names no source; its case length of 151 mm is a
+# millimetre under the name's, and its rim thickness of 33.4 mm is a slip).
+name = "23x152 mm B"
+kind = "belted"
+profile = "spitzer"
+aliases = ["23x152b", "23x152", "23 mm zu-23"]
+origin = "SU"
+
+[mm]
+rim = 34.6
+base = 33.2
+shoulder = 31.3
+neck = 23.7
+case_length = 152.0
+overall_length = 235.6
+bullet = 23.0
+sources = ["https://en.wikipedia.org/wiki/23%C3%97152mmB"]
+
+[introduced]
+year = 1941
+sources = ["https://en.wikipedia.org/wiki/Volkov-Yartsev_VYa-23"]

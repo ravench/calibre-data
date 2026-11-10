@@ -1,0 +1,17 @@
+# Hispano-Suiza's round for the HS 820, later the Rheinmetall Rh 202's. Its name gives the bore and
+# case length; KNDS gives the cartridge length.
+name = "20x139 mm"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x139", "20 mm hs 820"]
+origin = "CH"
+
+[mm]
+case_length = 139.0
+overall_length = 213.0
+bullet = 20.0
+sources = ["https://knds.com/en/products/ammunition/20x139-mm", "https://en.wikipedia.org/wiki/Hispano-Suiza_HS.820"]
+
+[introduced]
+unknown = "the sources date the HS 820 only to after 1945; the later Rh 202 reached units in 1972"
+sources = ["https://en.wikipedia.org/wiki/Hispano-Suiza_HS.820", "https://en.wikipedia.org/wiki/Rheinmetall_Mk_20_Rh-202"]

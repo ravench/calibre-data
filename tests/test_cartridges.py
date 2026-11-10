@@ -433,8 +433,9 @@ class CatalogueTests(unittest.TestCase):
         self.assertTrue(is_worldwide("12/70"))
         self.assertFalse(is_worldwide("7.62x39 mm"))
         self.assertFalse(is_worldwide("no such calibre"))
-        # every two-state case was decided 2026-11-07/08; #52 then added the C.I.P. "DE/FI" wadcutter
-        self.assertEqual(set(ORIGIN_UNDECIDED), {".32 S&W Long Wadcutter"})
+        # every two-state case was decided 2026-11-07/08; #52 then added the C.I.P. "DE/FI" wadcutter and
+        # the cannon rounds the GAU-8/KCA 30 mm round
+        self.assertEqual(set(ORIGIN_UNDECIDED), {".32 S&W Long Wadcutter", "30x173 mm"})
         self.assertEqual(origin_candidates("9x19 mm"), ())  # decided
         self.assertEqual(origin_candidates("12/70"), ())  # a gauge, nothing to decide
         with patch.dict(ORIGIN_UNDECIDED, {"5.56x45 mm NATO": ("US", "BE")}):
