@@ -15,8 +15,8 @@ neck = 7.5
 case_length = 48.8
 overall_length = 71.8
 bullet = 6.7
-# No source yet for rim, base, case_length and overall_length.
 sources = [
+  "book:hornady-10 p. 317",
   "book:cotw-18 p. 175",
   "https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf",
 ]

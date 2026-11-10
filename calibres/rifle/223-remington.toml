@@ -15,8 +15,8 @@ neck = 6.4
 case_length = 44.7
 overall_length = 57.4
 bullet = 5.7
-# No source yet for rim, shoulder, neck and overall_length.
 sources = [
+  "book:hornady-10 p. 160",
   "book:donnelly p. 152",
   "book:cotw-18 p. 175",
   "https://en.wikipedia.org/wiki/.223_Remington",

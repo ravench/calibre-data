@@ -14,8 +14,11 @@ neck = 8.6
 case_length = 38.7
 overall_length = 56.0
 bullet = 7.9
-# No source yet for rim, base and shoulder_at.
-sources = ["book:cotw-18 p. 176"]
+# No source yet for base.
+sources = [
+  "book:cotw-18 p. 176",
+  "book:hornady-10 p. 618",
+]
 
 [introduced]
 year = 1943
