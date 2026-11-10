@@ -6,16 +6,18 @@ aliases = ["7prc"]
 origin = "US"
 
 [mm]
-rim = 13.4
-base = 13.4
-shoulder = 13.0
-shoulder_at = 53.67
-neck = 8.0
-case_length = 63.5
-overall_length = 90.3
-bullet = 7.2
-# No source yet for rim, base, shoulder, shoulder_at, case_length and overall_length.
-sources = ["book:cotw-18 p. 175"]
+rim = 13.51
+base = 13.51
+shoulder = 13.15
+shoulder_at = 46.21
+neck = 8.05
+case_length = 57.91
+overall_length = 84.84
+bullet = 7.22
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/7-mm-prc-230314-en-1.pdf",
+  "book:cotw-18 p. 175",
+]
 
 [introduced]
 year = 2022

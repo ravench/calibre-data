@@ -12,14 +12,14 @@ origin = "US"
 rare = true
 
 [mm]
-rim = 11.3
+rim = 11.18
 base = 9.6
 neck = 9.6
 case_length = 19.4
 overall_length = 30.48
 bullet = 9.1
-# No source yet for rim and overall_length.
 sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page55.pdf",
   "book:donnelly p. 471",
   "book:cotw-18 p. 528",
 ]

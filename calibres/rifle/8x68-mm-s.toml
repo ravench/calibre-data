@@ -6,19 +6,18 @@ aliases = ["8x68"]
 origin = "DE"
 
 [mm]
-rim = 13.3
+rim = 13.0
 base = 13.3
-shoulder = 12.4
+shoulder = 12.15
 shoulder_at = 53.2
-neck = 9.2
+neck = 9.14
 case_length = 67.5
-overall_length = 87.5
+overall_length = 87.0
 bullet = 8.2
-# No source yet for rim, shoulder and overall_length.
 sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page63.pdf",
   "book:donnelly p. 892",
   "book:cotw-18 p. 652",
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page63.pdf",
 ]
 
 [introduced]

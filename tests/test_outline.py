@@ -249,6 +249,7 @@ class OutlineTests(unittest.TestCase):
             ".300 H&H Magnum": (8.5, 53.46, 62.96), "6.5 mm Creedmoor": (30.0, 37.84, 41.52),
             ".350 Rigby Magnum": (45.0, 57.15, 57.99), ".22 Hornet": (5.6, 21.64, 25.80),
             "7.62x54 mm R": (18.5, 39.70, 44.30), ".300 AAC Blackout": (23.0, 27.20, 28.00),
+            "6.5 PRC": (30.0, 39.84, 44.65),
         }
         specs = self.bottlenecks()
         for name, (angle, l1, l2) in sheets.items():

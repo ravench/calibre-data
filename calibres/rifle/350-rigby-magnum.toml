@@ -9,18 +9,18 @@ origin = "GB"
 rare = true
 
 [mm]
-rim = 13.1
+rim = 13.36
 base = 13.1
-shoulder = 11.6
+shoulder = 11.43
 shoulder_at = 57.15
 neck = 9.7
-case_length = 69.6
-overall_length = 87.0
+case_length = 69.85
+overall_length = 90.8
 bullet = 9.1
-# No source yet for rim: the Wikipedia infobox gives 13.6 mm (checked 2026-11-09).
 sources = [
-  "https://en.wikipedia.org/wiki/.350_Rigby",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf",
+  "book:cotw-18 p. 608",
+  "book:donnelly p. 429",
 ]
 
 [introduced]

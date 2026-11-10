@@ -8,16 +8,15 @@ origin = "SE"
 [mm]
 rim = 14.9
 base = 14.9
-shoulder = 14.4
+shoulder = 14.29
 shoulder_at = 48.06
-neck = 8.6
+neck = 8.68
 case_length = 63.3
-overall_length = 91.4
+overall_length = 93.5
 bullet = 7.82
-# No source yet for shoulder, case_length and overall_length.
 sources = [
-  "book:cotw-18 p. 651",
   "https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf",
+  "book:cotw-18 p. 651",
 ]
 
 [introduced]

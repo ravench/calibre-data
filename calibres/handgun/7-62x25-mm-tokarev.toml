@@ -7,17 +7,16 @@ origin = "SU"
 
 [mm]
 rim = 9.9
-base = 9.9
-shoulder = 9.6
+base = 9.83
+shoulder = 9.48
 shoulder_at = 19.6
 neck = 8.5
-case_length = 24.7
-overall_length = 34.9
+case_length = 25.0
+overall_length = 35.2
 bullet = 7.85
-# No source yet for base, shoulder, neck and overall_length.
 sources = [
-  "book:cotw-18 p. 527",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf",
+  "book:cotw-18 p. 527",
 ]
 
 [introduced]
