@@ -14,7 +14,8 @@ neck = 12.0
 case_length = 19.2
 overall_length = 27.3
 bullet = 11.5
-sources = []
+# No source yet for base, case_length and overall_length.
+sources = ["book:cotw-18 p. 529"]
 
 [introduced]
 year = 2003

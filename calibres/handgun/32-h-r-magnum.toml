@@ -12,7 +12,8 @@ neck = 8.5
 case_length = 27.4
 overall_length = 34.3
 bullet = 7.9
-sources = []
+# No source yet for rim and base.
+sources = ["book:cotw-18 p. 527"]
 
 [introduced]
 year = 1984

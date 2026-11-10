@@ -14,8 +14,11 @@ neck = 8.6
 case_length = 63.3
 overall_length = 91.4
 bullet = 7.82
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf"]
+# No source yet for shoulder, case_length and overall_length.
+sources = [
+  "book:cotw-18 p. 651",
+  "https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf",
+]
 
 [introduced]
 year = 2012

@@ -21,7 +21,10 @@ neck = 11.25
 case_length = 22.35
 overall_length = 34.54
 bullet = 10.74
-sources = []
+sources = [
+  "book:cotw-18 p. 251",
+  "book:donnelly p. 563",
+]
 
 [introduced]
 year = 1873

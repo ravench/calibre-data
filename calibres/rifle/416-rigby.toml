@@ -14,8 +14,12 @@ neck = 11.6
 case_length = 73.7
 overall_length = 95.3
 bullet = 10.6
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf"]
+# No source yet for shoulder, neck and overall_length.
+sources = [
+  "book:cotw-18 p. 608",
+  "book:donnelly p. 546",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf",
+]
 
 [introduced]
 # designed 1911, produced from 1912

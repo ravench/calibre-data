@@ -5,9 +5,9 @@ repository as a git submodule); outline.py draws the side view of every calibre.
 Dimensions are approximations for drawings and matching, not reloading data.
 
 The data lives in TOML files: one per calibre in calibres/<category>/, plus order.toml,
-countries.toml and lookalikes.toml (README.md lists every field). This module reads and checks them
-and builds the tables the apps' generators, outline.py and the poster use. `python3 check.py` lists
-every problem in the files.
+countries.toml, books.toml and lookalikes.toml (README.md lists every field). This module reads and
+checks them and builds the tables the apps' generators, outline.py and the poster use.
+`python3 check.py` lists every problem in the files.
 """
 import difflib, os, re, unicodedata
 
@@ -154,6 +154,9 @@ CASE_MATERIALS = (COPPER, STEEL, NICKEL, PAPER, HYBRID)
 CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL)
 PROJECTILE_MATERIALS = (STEEL, PLASTIC)
 DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
+# A printed book as a source: "book:<id> p. <page>", the id of a book in books.toml.
+BOOK_SOURCE = re.compile(r"book:(?P<id>[^\s]+) p\. (?P<page>[1-9][0-9]*)")
+BOOK_KEYS = ("title", "year", "edition", "authors", "editors", "publisher", "place", "isbn")
 
 
 def _shape(kind, profile):
@@ -249,7 +252,9 @@ def _check_keys(f, table, data, allowed, required):
             f.problem(f.line(table), f"[{table}] needs {k!r}" if table else f"needs {k!r}")
 
 
-def _check_sources(f, table, data, rule):
+def _check_sources(f, table, data, rule, books=None):
+    """The sources of one table: web addresses and book pages (`books`: the ids in books.toml, or
+    None when books.toml could not be read)."""
     if "sources" not in data:
         if rule != "optional":
             f.problem(f.line(table), f"[{table}] needs a sources list (an empty list [] when nothing is checked yet)"
@@ -262,14 +267,57 @@ def _check_sources(f, table, data, rule):
     if rule == "required" and not urls:
         f.problem(f.line(table, "sources"), f"[{table}] needs at least one source")
     for u in urls:
-        if not re.fullmatch(r"https://[^\s\"<>]+\.[^\s\"<>]+", u):
-            f.problem(f.line(table, "sources"), f"[{table}] source {u!r} is not a https:// web address")
+        book = BOOK_SOURCE.fullmatch(u)
+        if book:
+            if books is not None and book["id"] not in books:
+                f.problem(f.line(table, "sources"), f"[{table}] source {u!r} names no book in books.toml"
+                                                    f"{_close(book['id'], books)}")
+        elif u.startswith("book:"):
+            f.problem(f.line(table, "sources"), f"[{table}] source {u!r} must be written book:<id> p. <page>, "
+                                                f"e.g. \"book:cotw-18 p. 176\"")
+        elif not re.fullmatch(r"https://[^\s\"<>]+\.[^\s\"<>]+", u):
+            f.problem(f.line(table, "sources"), f"[{table}] source {u!r} is not a https:// web address "
+                                                f"or a book page (book:<id> p. <page>)")
     if len(set(urls)) != len(urls):
         f.problem(f.line(table, "sources"), f"[{table}] lists a source twice")
     return urls
 
 
-def _read_calibre(f, category, countries):
+def _isbn_ok(isbn):
+    """An ISBN-10 or ISBN-13 with hyphens or without, whose check digit is right."""
+    d = isbn.replace("-", "") if isinstance(isbn, str) else ""
+    if re.fullmatch(r"[0-9]{9}[0-9X]", d):
+        return sum((10 - i) * (10 if c == "X" else int(c)) for i, c in enumerate(d)) % 11 == 0
+    if re.fullmatch(r"97[89][0-9]{10}", d):
+        return sum(int(c) * (3 if i % 2 else 1) for i, c in enumerate(d)) % 10 == 0
+    return False
+
+
+def _read_books(bf):
+    """Check books.toml; returns {id: book table}."""
+    books = {}
+    if not bf.data:
+        bf.problem(None, "lists no books")
+    for bid, v in bf.data.items():
+        if not isinstance(v, dict):
+            bf.problem(bf.line(None, bid), f"{bid} must be a table: [{bid}] with title = \"…\" and year = …")
+            continue
+        if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", bid):
+            bf.problem(bf.line(bid), f"the book id [{bid}] must be lower case letters, digits and hyphens")
+        _check_keys(bf, bid, v, set(BOOK_KEYS), ("title", "year"))
+        for k in BOOK_KEYS:
+            if k in v and k != "year" and (not isinstance(v[k], str) or not v[k].strip()):
+                bf.problem(bf.line(bid, k), f"[{bid}] {k} must be text in quotes")
+        year = v.get("year")
+        if "year" in v and (not isinstance(year, int) or isinstance(year, bool) or not 1500 <= year <= 2100):
+            bf.problem(bf.line(bid, "year"), f"[{bid}] year must be the year printed, such as 1965, without quotes")
+        if isinstance(v.get("isbn"), str) and not _isbn_ok(v["isbn"]):
+            bf.problem(bf.line(bid, "isbn"), f"[{bid}] isbn {v['isbn']!r} is not a valid ISBN (check digit?)")
+        books[bid] = v
+    return books
+
+
+def _read_calibre(f, category, countries, books=None):
     """Check one calibre file; returns (entry dict, facts) or None when it cannot be used."""
     d = f.data
     tables = {k for k, v in d.items() if isinstance(v, dict)}
@@ -337,7 +385,7 @@ def _read_calibre(f, category, countries):
         allowed = set(req) | set(opt) | {"sources"}
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)
-        urls = _check_sources(f, t, data, rule)
+        urls = _check_sources(f, t, data, rule, books)
         for k, v in data.items():
             if k == "sources" or k not in allowed:
                 continue
@@ -414,6 +462,14 @@ def load(root=ROOT):
     if len(problems) > before:  # check the calibres' origins only against a good list
         countries = None
 
+    books = {}
+    before = len(problems)
+    bf = read("books.toml")
+    if bf:
+        books = _read_books(bf)
+    if len(problems) > before:  # check the book sources only against a good list
+        books = None
+
     order = {}
     of = read("order.toml")
     if of:
@@ -456,7 +512,7 @@ def load(root=ROOT):
             f = read(rel)
             if f is None:
                 continue
-            got = _read_calibre(f, cat, countries)
+            got = _read_calibre(f, cat, countries, books)
             if got:
                 found.setdefault(cat, []).append((*got, f))
 
@@ -597,7 +653,7 @@ def load(root=ROOT):
                 t["LOOSE_MATERIALS"][n] = (facts["projectile"]["material"], first("projectile"))
     t.update(sets)
     t["WORLDWIDE"] = frozenset(t["WORLDWIDE"])
-    t.update(CATALOGUE=catalogue, COUNTRIES=countries, LOOKALIKES=lookalikes)
+    t.update(CATALOGUE=catalogue, COUNTRIES=countries, BOOKS=books or {}, LOOKALIKES=lookalikes)
     return t
 
 
@@ -630,6 +686,7 @@ CURRENT_CASES = _t["CURRENT_CASES"]  # {name: (other case materials made today, 
 LOOSE_MATERIALS = _t["LOOSE_MATERIALS"]  # {name: (material, first source)}
 LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the file's order
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
+BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
 
 
 def sources(name, fact):

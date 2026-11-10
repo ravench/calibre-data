@@ -14,7 +14,11 @@ neck = 6.1
 case_length = 26.8
 overall_length = 34.3
 bullet = 5.7
-sources = []
+# No source yet for rim and case_length.
+sources = [
+  "book:cotw-18 p. 670",
+  "book:donnelly p. 115",
+]
 
 [introduced]
 year = 1959

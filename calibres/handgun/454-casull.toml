@@ -12,7 +12,11 @@ neck = 12.1
 case_length = 35.1
 overall_length = 45.0
 bullet = 11.5
-sources = []
+# No source yet for rim, base, case_length and overall_length.
+sources = [
+  "book:cotw-18 p. 529",
+  "book:donnelly p. 629",
+]
 
 [introduced]
 # wildcat from 1958, commercial (SAAMI) 1997

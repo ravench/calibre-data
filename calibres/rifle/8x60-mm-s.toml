@@ -15,8 +15,10 @@ neck = 9.08
 case_length = 60.0
 overall_length = 83.6
 bullet = 8.22
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page60.pdf"]
+sources = [
+  "book:cotw-18 p. 652",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page60.pdf",
+]
 
 [introduced]
 # Year of production on the municion.org product pages (AECC).

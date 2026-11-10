@@ -13,11 +13,16 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material,
-                        LOOKALIKES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes)
+                        LOOKALIKES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes, BOOK_SOURCE)
 
 ALL = [s for _, items in CATALOGUE for s in items]
 NAMES = {s["name"] for s in ALL}
 CATEGORIES = {"Randfeuer", "Kurzwaffe", "Langwaffe", "Schwarzpulver", "Flinte", "Luftdruck"}
+
+
+def is_source(s):
+    """A web address or a page of a book in books.toml."""
+    return s.startswith("https://") or bool(BOOK_SOURCE.fullmatch(s))
 
 
 class CatalogueTests(unittest.TestCase):
@@ -67,7 +72,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(set(PRIMER_SOURCES) & PRIMER_UNVERIFIED, set())
         self.assertEqual(set(PRIMER_SOURCES) | PRIMER_UNVERIFIED, set(PRIMERS))
         for name, url in PRIMER_SOURCES.items():
-            self.assertTrue(url.startswith("https://"), name)
+            self.assertTrue(is_source(url), name)
 
     def test_checked_primer_corrections(self):
         # Primer sizes that were guessed wrong, checked against reloading data and brass makers:
@@ -325,7 +330,7 @@ class CatalogueTests(unittest.TestCase):
                 self.assertIsInstance(year, int)
                 self.assertGreaterEqual(year, 1800)
                 self.assertLessEqual(year, 2026)
-                self.assertTrue(source.startswith("https://"), source)
+                self.assertTrue(is_source(source), source)
 
     def test_known_introduction_years(self):
         self.assertEqual(INTRODUCED["7.5x55 mm Swiss (GP 11)"][0], 1911)
@@ -545,7 +550,7 @@ class CatalogueTests(unittest.TestCase):
         for name, (kind, url) in BULLETS.items():
             self.assertIn(name, names)
             self.assertIn(kind, (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP), name)
-            self.assertTrue(url is None or url.startswith("https://"), name)
+            self.assertTrue(url is None or is_source(url), name)
         self.assertEqual(BULLET_INFERRED, {"7 mm Blaser Magnum", ".300 Blaser Magnum", "8.5x55 mm Blaser",
                                            ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)",
                                            "5.6x50 mm R Magnum", "5.6x57 mm R", "6.5x65 mm R RWS", "6.5x68 mm R",
@@ -581,7 +586,7 @@ class CatalogueTests(unittest.TestCase):
         for name, (material, url) in CASES.items():
             self.assertIn(name, names)
             self.assertIn(material, (COPPER, STEEL, NICKEL, PAPER, HYBRID), name)
-            self.assertTrue(url.startswith("https://"), name)
+            self.assertTrue(is_source(url), name)
         self.assertEqual(case_material(".44 Henry"), COPPER)
         self.assertEqual(case_material("5.45x39 mm"), STEEL)
         self.assertEqual(case_material(".577 Snider"), PAPER)
@@ -595,7 +600,7 @@ class CatalogueTests(unittest.TestCase):
             self.assertTrue(materials, name)
             self.assertNotIn(case_material(name), materials, name)
             self.assertTrue(set(materials) <= {BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID}, name)
-            self.assertTrue(url.startswith("https://"), name)
+            self.assertTrue(is_source(url), name)
         self.assertEqual(current_case_materials(".45-70 Government"), (BRASS,))
         self.assertEqual(current_case_materials("9x19 mm"), (STEEL,))
         self.assertEqual(current_case_materials("7.5x55 mm Swiss (GP 11)"), ())
@@ -606,7 +611,7 @@ class CatalogueTests(unittest.TestCase):
         for name, (material, url) in LOOSE_MATERIALS.items():
             self.assertIn(by_name[name]["kind"], (BALL, MINIE, PELLET), name)
             self.assertIn(material, (STEEL, PLASTIC), name)
-            self.assertTrue(url.startswith("https://"), name)
+            self.assertTrue(is_source(url), name)
         steel = by_name["4.4 mm Stahl-BB (.177 BB)"]
         self.assertEqual(steel["kind"], BALL)
         self.assertTrue(4.3 <= steel["bullet"] <= 4.4)  # 0.171-0.173 in, smaller than a 4.5 mm pellet

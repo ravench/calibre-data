@@ -72,14 +72,18 @@ bullet = 7.82         # bullet diameter (G1)
 #   kind = "shot":                     diameter, rim, length (the case)
 #   profile = "crimped":               rim, base, mouth (at the star crimp), length
 #
-# sources: every page the measurements come from, the page of most of them first. [] when none is
-# checked yet. When only some have a source, a note above the list names the others:
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+# sources: every page the measurements come from, the page of most of them first: web addresses or
+# pages of a book in books.toml ("book:cotw-18 p. 176": the page number printed in the book).
+# [] when none is checked yet. When only some have a source, a note above the list names the others:
+# No source yet for overall_length.
+sources = [
+  "book:cotw-18 p. 176",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf",
+]
 
 # ---------------------------------------------------------------------------------------------
-# Every other table holds one fact and its sources: a list of https:// web addresses, one or
-# several (sources = ["https://…", "https://…"]).
+# Every other table holds one fact and its sources: a list of https:// web addresses or book pages,
+# one or several (sources = ["https://…", "book:cotw-18 p. 176"]).
 # ---------------------------------------------------------------------------------------------
 
 # Required. The year the calibre was first introduced, released as factory ammunition or adopted for

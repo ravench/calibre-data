@@ -36,7 +36,8 @@ neck = 8.6
 case_length = 54.6
 overall_length = 77.0
 bullet = 7.8
-sources = []
+# No source yet for rim, base, shoulder, shoulder_at and case_length.
+sources = ["book:donnelly p. 838"]
 
 [introduced]
 # named Modell 1890, in service 1889

@@ -17,8 +17,11 @@ neck = 7.8
 case_length = 65.8
 overall_length = 84.8
 bullet = 7.04
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://www.nosler.com/"]
+# No source yet for rim, shoulder and neck.
+sources = [
+  "book:cotw-18 p. 451",
+  "https://www.nosler.com/",
+]
 
 [introduced]
 year = 2020

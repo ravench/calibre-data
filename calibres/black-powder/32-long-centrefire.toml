@@ -18,8 +18,10 @@ neck = 8.08
 case_length = 20.82
 overall_length = 34.29
 bullet = 8.05
-# No source yet for rim, base and neck.
-sources = ["https://municion.org/producto/32-long-cf/"]
+sources = [
+  "https://municion.org/producto/32-long-cf/",
+  "book:cotw-18 p. 250",
+]
 
 [introduced]
 # municion.org gives 1873; its history, after Cartridges of the World, about 1875.

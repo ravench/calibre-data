@@ -15,8 +15,12 @@ neck = 6.6
 case_length = 48.6
 overall_length = 60.3
 bullet = 5.7
-# No source yet for rim, base, shoulder, neck, case_length, overall_length and bullet.
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf"]
+# No source yet for base, neck and overall_length.
+sources = [
+  "book:cotw-18 p. 175",
+  "book:donnelly p. 129",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf",
+]
 
 [introduced]
 # wildcat from 1937

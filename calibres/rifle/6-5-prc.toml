@@ -14,7 +14,8 @@ neck = 7.5
 case_length = 51.2
 overall_length = 84.8
 bullet = 6.7
-sources = []
+# No source yet for rim, base, shoulder, shoulder_at, case_length and overall_length.
+sources = ["book:cotw-18 p. 175"]
 
 [introduced]
 year = 2018

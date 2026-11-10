@@ -15,7 +15,11 @@ neck = 15.5
 case_length = 76.0
 overall_length = 94.0
 bullet = 14.9
-sources = []
+# No source yet for case_length.
+sources = [
+  "book:cotw-18 p. 609",
+  "book:donnelly p. 684",
+]
 
 [introduced]
 unknown = "the source gives only the 1890s"

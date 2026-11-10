@@ -18,10 +18,10 @@ neck = 9.25
 case_length = 64.77
 overall_length = 82.55
 bullet = 8.59
-# No source yet for case_length, overall_length and bullet.
 sources = [
   "https://www.thefirearmblog.com/",
   "https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf",
+  "book:cotw-18 p. 452",
 ]
 
 [introduced]
