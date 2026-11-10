@@ -488,7 +488,7 @@ class CatalogueTests(unittest.TestCase):
                 self.assertEqual(by_name[name][key], value, f"{name} {key}")
 
     def test_cip_case_heads_flagged_by_cartridges_of_the_world(self):
-        # Cartridges of the World (15th ed., ch. 12) gave bigger rims; the values are the C.I.P.
+        # Cartridges of the World (14th ed., ch. 12) gave bigger rims; the values are the C.I.P.
         # sheets' (R1 rim, P1 body, P2 shoulder, H2 neck, L3 case, L6 length, G1 bullet).
         by_name = {s["name"]: s for s in ALL}
         expected = {
@@ -514,7 +514,7 @@ class CatalogueTests(unittest.TestCase):
                 self.assertGreater(s["rim"], s["base"], s["name"])
 
     def test_other_names_of_the_same_cartridge_are_search_aliases(self):
-        # Names that Cartridges of the World (15th ed.) gives for the same cartridge: renames, maker or
+        # Names that Cartridges of the World (14th ed.) gives for the same cartridge: renames, maker or
         # national names, loads in the same case and +P loads.
         by_name = {s["name"]: s for s in ALL}
         expected = {
@@ -712,7 +712,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(INTRODUCED["6.5x65 mm R RWS"][0], 1988)
 
     def test_years_checked_against_cartridges_of_the_world(self):
-        # 2026-11-08: years compared with Cartridges of the World (15th ed.) and a second source. A wildcat
+        # 2026-11-08: years compared with Cartridges of the World (14th ed.) and a second source. A wildcat
         # counts from its first factory ammunition, a military round from its adoption.
         years = {".22 Remington Automatic": 1914, "7.5 mm Swiss Ordnance 1882": 1882, "9x23 mm Winchester": 1996,
                  ".50-110 Winchester": 1887, ".338 Remington Ultra Magnum": 2002, "7 mm Remington Ultra Magnum": 2001,

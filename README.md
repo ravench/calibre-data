@@ -301,7 +301,7 @@ nearly so), `load` (C.I.P., SAAMI or the service gives the same case a hotter lo
 chamber that the older or weaker guns must not fire) or `ignition` (rimfire and centrefire versions
 of one cartridge: a rimfire gun cannot fire the centrefire one, nor the other way round). Each
 calibre is in at most one group. Other names of the same cartridge are search aliases, not groups.
-The groups were judged against Cartridges of the World (15th ed., 2016) and the C.I.P. and SAAMI
+The groups were judged against Cartridges of the World (14th ed., 2014) and the C.I.P. and SAAMI
 lists.
 
 ## In Python

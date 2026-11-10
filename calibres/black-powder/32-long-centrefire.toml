@@ -1,6 +1,6 @@
 # The reloadable centrefire version of the .32 Long rimfire, about 1875, for single-shot rifles and
 # the Marlin 1891 and 1892, some of which fired both by changing the firing pin (Cartridges of the
-# World, 15th ed., 2016); Winchester loaded it ("W.R.A.Co. .32 L", municion.org). Measurements and
+# World, 14th ed., 2014); Winchester loaded it ("W.R.A.Co. .32 L", municion.org). Measurements and
 # primer from the book; municion.org quotes its bullet, case length and overall length.
 name = ".32 Long Centrefire"
 kind = "rimmed"
