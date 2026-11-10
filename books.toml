@@ -99,6 +99,25 @@ publisher = "Headquarters, Department of the Army"
 place = "Washington, D.C."
 year = 1994
 
+# Appendix 2, Table 1 (pp. 225-230) gives the rim and body diameter of each cartridge used in
+# automatic weapons from 11.35 to 57 mm, in millimetres to one decimal.
+[rapid-fire]
+title = "Rapid Fire: The Development of Automatic Cannon, Heavy Machine Guns and Their Ammunition for Armies, Navies and Air Forces"
+authors = "Anthony G. Williams"
+publisher = "Airlife Publishing"
+place = "Shrewsbury"
+year = 2000
+isbn = "1-84037-122-6"
+
+# Each chapter gives the case and round lengths of its rounds in the text. The book's drawings of
+# the cases came on a CD-ROM. The ISBN sellers give (978-3-200-01445-9) is in no library catalogue.
+[koll]
+title = "Soviet Cannon: A Comprehensive Study of Soviet Guns and Ammunition in Calibres 12.7mm to 57mm"
+authors = "Christian Koll"
+publisher = "Christian Koll"
+place = "Linz"
+year = 2009
+
 [ammo-encyclopedia-2]
 title = "Ammo Encyclopedia"
 edition = "2nd"
