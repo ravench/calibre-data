@@ -41,3 +41,78 @@ ramp_top = 6.23
 groove_diameter = 17.27
 ramp_angle = 36.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page152.pdf"]
+
+[[tip_colours]]
+colours = ["black"]
+meaning = ["armour-piercing"]
+description = "M2"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/.50_BMG", "book:labbett p. 80"]
+
+[[tip_colours]]
+colours = ["silver"]
+meaning = ["armour-piercing", "incendiary"]
+description = "US M8, Swiss M.64"
+countries = ["US", "CH"]
+sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:labbett p. 80",
+  "book:labbett p. 76",
+  "book:labbett p. 77",
+]
+
+[[tip_colours]]
+colours = ["red", "silver"]
+meaning = ["armour-piercing", "incendiary", "tracer"]
+description = "US M20, Swiss M.65"
+countries = ["US", "CH"]
+sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:labbett p. 80",
+  "book:labbett p. 76",
+  "book:labbett p. 77",
+]
+
+[[tip_colours]]
+colours = ["red"]
+meaning = ["tracer"]
+description = "M1 and M21"
+countries = ["US"]
+sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:labbett p. 80",
+  "book:labbett p. 82",
+]
+
+[[tip_colours]]
+colours = ["orange"]
+meaning = ["tracer"]
+description = "M10"
+countries = ["US"]
+sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:labbett p. 80",
+  "book:labbett p. 82",
+]
+
+[[tip_colours]]
+# Labbett p. 82; the colour key on Wikipedia shows the M17 red.
+colours = ["brown"]
+meaning = ["tracer"]
+description = "M17"
+countries = ["US"]
+sources = ["book:labbett p. 82"]
+
+[[tip_colours]]
+colours = ["blue"]
+meaning = ["incendiary"]
+description = "M1, a light blue tip"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/.50_BMG", "book:labbett p. 80"]
+
+[[tip_colours]]
+colours = ["green", "grey"]
+meaning = ["armour-piercing", "explosive", "incendiary"]
+description = "Mk 211 (Raufoss)"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/.50_BMG"]

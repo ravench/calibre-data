@@ -14,6 +14,8 @@ WIN = "calibres/rifle/308-winchester.toml"
 FOLDER = {app: folder for folder, app in cartridges.CATEGORIES.items()}
 LOOK = "lookalikes.toml"
 NATO_GROUP = 'differ_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]'
+TIP = ('\n[[tip_colours]]\ncolours = ["black"]\nmeaning = ["armour-piercing"]\n'
+       'sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]\n')
 
 
 class Copy:
@@ -142,7 +144,9 @@ class LoadTests(unittest.TestCase):
         for table, (req, opt, _) in cartridges.FACTS.items():
             keys |= set(req) | set(opt)
             self.assertRegex(text, rf"(?m)^# ?\[{table}\]$|^\[{table}\]$", table)
-        for k in keys:
+        keys |= set(cartridges.TIP_KEYS[0]) | set(cartridges.TIP_KEYS[1])
+        self.assertRegex(text, r"(?m)^# \[\[tip_colours\]\]$")
+        for k in keys | set(cartridges.COLOURS) | set(cartridges.MEANINGS):
             self.assertRegex(text, rf"\b{k}\b", k)
 
     def test_empty_primer_sources_mean_unverified(self):
@@ -307,6 +311,68 @@ class CheckTests(unittest.TestCase):
             with self.subTest(text), Copy() as c:
                 c.write("books.toml", text)
                 self.assertOnlyProblems(c, "books.toml", pattern)
+
+    def test_tip_colours_are_for_the_catalogue_only(self):
+        self.assertEqual(cartridges.TIP_COLOURS[".50 BMG"][0],
+                         {"colours": ("black",), "meaning": ("armour-piercing",), "description": "M2",
+                          "countries": ("US",), "sources": ["https://en.wikipedia.org/wiki/.50_BMG", "book:labbett p. 80"]})
+        self.assertNotIn(".308 Winchester", cartridges.TIP_COLOURS)
+        files = {s["name"]: f"calibres/{FOLDER[cat]}/{slug(s['name'])}.toml"
+                 for cat, items in cartridges.CATALOGUE for s in items}
+        with Copy() as c:  # without them, every other table (the apps' catalogue too) is the same
+            for name in cartridges.TIP_COLOURS:
+                text = c.read(files[name])
+                c.write(files[name], text[:text.index("\n[[tip_colours]]")] + "\n")
+            t = load(c.dir)
+        self.assertEqual(t.pop("TIP_COLOURS"), {})
+        self.assertEqual(t, {k: v for k, v in cartridges._t.items() if k != "TIP_COLOURS"})
+
+    def test_tip_colour_problems(self):
+        first = '\n[[tip_colours]]\ncolours = ["red"]\nmeaning = ["tracer"]\nsources = ["book:labbett p. 80"]\n'
+        cases = [('colours = ["black"]', 'colours = ["blak"]', r"colours lists one or more of .*did you mean \"black\""),
+                 ('colours = ["black"]', "colours = []", r"colours lists one or more of"),
+                 ('colours = ["black"]', 'colours = ["black", "black"]', r"colours lists 'black' twice"),
+                 ('meaning = ["armour-piercing"]', 'meaning = ["armor-piercing"]', r"did you mean \"armour-piercing\""),
+                 ('meaning = ["armour-piercing"]', 'meaning = "armour-piercing"', r"meaning lists one or more of"),
+                 ('meaning = ["armour-piercing"]\n', "", r"\[\[tip_colours\]\] needs 'meaning'"),
+                 ('sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]', "sources = []",
+                  r"\[\[tip_colours\]\] needs at least one source"),
+                 ('sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]\n', "", r"\[\[tip_colours\]\] needs sources"),
+                 ('colours = ["black"]', 'colours = ["black"]\ncolor = "black"', r"unknown key 'color'.*did you mean \"colours\""),
+                 ('colours = ["black"]', 'colours = ["black"]\ndescription = " "', r"description must be text"),
+                 ('colours = ["black"]', 'colours = ["black"]\ncountries = ["USA"]', r"country 'USA' is not a code"),
+                 ('colours = ["black"]', 'colours = ["black"]\ncountries = []', r"countries lists one or more"),
+                 ('colours = ["black"]', 'colours = ["black"]\ncountries = ["US", "US"]', r"countries lists a country twice")]
+        for old, new, pattern in cases:
+            with self.subTest(new), Copy() as c:
+                c.write(WIN, c.read(WIN) + first + TIP)
+                self.assertEqual(c.problems(), [])
+                c.edit(WIN, old, new)
+                second = [i for i, l in enumerate(c.read(WIN).split("\n"), 1) if l == "[[tip_colours]]"][1]
+                found = [p for p in c.problems() if re.search(pattern, p[2])]
+                self.assertTrue(found, c.problems())
+                self.assertGreaterEqual(found[0][1], second)  # the line in the second table
+                self.assertOnlyProblems(c, WIN, r"tip_colours")
+                self.assertEqual(len(c.problems()), 1)
+
+    def test_tip_colours_are_listed_once_and_only_for_bullets(self):
+        with Copy() as c:
+            c.write(WIN, c.read(WIN) + TIP + TIP.replace("]\nsources", ']\ncountries = ["US"]\nsources'))
+            self.assertOnlyProblems(c, WIN, r"black with this meaning is already on line \d+: list all its countries there")
+        with Copy() as c:
+            c.write(WIN, c.read(WIN) + TIP + TIP.replace('["black"]', '["red", "black"]'))
+            self.assertEqual(c.problems(), [])
+        with Copy() as c:
+            c.write(WIN, 'tip_colours = "black"\n' + c.read(WIN))
+            self.assertOnlyProblems(c, WIN, r"each tip colour is a \[\[tip_colours\]\] table")
+        with Copy() as c:  # one problem for a [tip_colours] written with single brackets
+            c.write(WIN, c.read(WIN) + TIP.replace("[[tip_colours]]", "[tip_colours]"))
+            self.assertOnlyProblems(c, WIN, r"each tip colour is a \[\[tip_colours\]\] table")
+            self.assertEqual(len(c.problems()), 1)
+        for rel in ("calibres/shotgun/12-70.toml", "calibres/air-gun/4-5-mm-diabolo-177.toml"):
+            with self.subTest(rel), Copy() as c:
+                c.write(rel, c.read(rel) + TIP)
+                self.assertOnlyProblems(c, rel, r"\[\[tip_colours\]\] is only for cartridges with a bullet")
 
     def test_a_year_needs_a_source(self):
         with Copy() as c:

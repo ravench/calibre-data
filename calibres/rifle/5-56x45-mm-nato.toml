@@ -48,3 +48,38 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]
 sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+
+[[tip_colours]]
+colours = ["green"]
+meaning = ["ball"]
+description = "US M855 (with a steel penetrator), German DM11"
+countries = ["US", "DE"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[[tip_colours]]
+colours = ["orange"]
+meaning = ["tracer"]
+description = "US M856, German DM21"
+countries = ["US", "DE"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[[tip_colours]]
+colours = ["red"]
+meaning = ["tracer"]
+description = "US M856A1, British L1, L16 and L22"
+countries = ["US", "GB"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[[tip_colours]]
+colours = ["black"]
+meaning = ["armour-piercing"]
+description = "M995"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[[tip_colours]]
+colours = ["white"]
+meaning = ["frangible"]
+description = "Mk 255"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
