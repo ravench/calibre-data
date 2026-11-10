@@ -5,8 +5,8 @@ in the README says how.
 
 ## Contributor terms
 
-By sending a pull request you agree to these terms for it and for all your future contributions to
-this repository:
+Before your first pull request is merged, you agree to these terms for it and for all your future
+contributions to this repository:
 
 1. **Same licence in and out.** You license your contribution under the licences in
    [LICENSE.md](LICENSE.md): the Open Database License 1.0 for data, the MIT licence for code and

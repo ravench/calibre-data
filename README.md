@@ -1,8 +1,6 @@
 # Calibre data
 
-The shared calibre catalogue for
-[Schiesstagebuch](https://github.com/ravench/schiesstagebuch),
-[Kaliberfinder](https://github.com/ravench/kaliberfinder) and the
+The shared calibre catalogue for the Schiesstagebuch and Kaliberfinder apps and the
 [calibre wall poster](https://github.com/ravench/calibre-poster).
 
 The values are for drawings and for matching photos, **not reloading data**.

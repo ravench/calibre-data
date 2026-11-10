@@ -18,18 +18,23 @@ The data is:
 - `order.toml`
 
 You may use the data for any purpose, commercial included, in apps, posters, books or other
-databases. An app or poster made with the data shows this notice where it names its sources:
+databases. An app or poster made with the data shows a notice such as this one where its users can
+reasonably find it, for example where it names its sources:
 
 > Contains information from calibre-data (https://github.com/ravench/calibre-data), which is made
 > available under the Open Database License (ODbL).
 
-If you publicly use a changed or extended copy of the data, publish that copy under the ODbL too
-(the license's section 4.4 and 4.6 say how).
+If you pass on the data, keep this notice with it. If you publicly use a changed or extended copy,
+or something made from one, make that copy available under the ODbL too (sections 4.2, 4.4 and 4.6
+of the licence).
+
+Example values taken from the data, in the documentation, `docs/template.toml` and the tests, stay
+under the ODbL as well.
 
 ## Everything else: MIT
 
-The code (`cartridges.py`, `outline.py`, `check.py`, `tests/`), the documentation and the CI files
-are licensed under the MIT licence:
+The code (every `.py` file, `tests/` included), the documentation and the CI files are licensed
+under the MIT licence:
 
 > Copyright (c) 2026 Simon Giotta and the contributors
 >
@@ -50,6 +55,7 @@ are licensed under the MIT licence:
 
 ## The sources
 
-The C.I.P. sheets, SAAMI drawings, books and web pages the calibre files cite are not part of this
-repository and not covered by these licences. The files hold single facts taken from them, each with
-its source; none of their text, tables or drawings is copied here.
+The C.I.P. sheets, SAAMI drawings, books and web pages (Wikipedia above all) the calibre files cite
+are not part of this repository and not covered by these licences. The files are meant to hold only
+single facts taken from them, each with its source, and none of their text, tables or drawings. If
+you find copied material, please open an issue.
