@@ -1,4 +1,5 @@
 # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+# Its centrefire version is a calibre of its own, .44 Henry Centrefire.
 name = ".44 Henry"
 kind = "rimfire"
 profile = "flat"

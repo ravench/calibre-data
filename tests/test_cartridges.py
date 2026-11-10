@@ -13,7 +13,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_D
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material,
-                        LOOKALIKES, RIM, BORE, LENGTH, SEATING, LOAD, lookalikes)
+                        LOOKALIKES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes)
 
 ALL = [s for _, items in CATALOGUE for s in items]
 NAMES = {s["name"] for s in ALL}
@@ -624,7 +624,7 @@ class CatalogueTests(unittest.TestCase):
         for differs, names in LOOKALIKES:
             self.assertGreaterEqual(len(names), 2, names)
             self.assertTrue(differs, names)
-            self.assertLessEqual(set(differs), {RIM, BORE, LENGTH, SEATING, LOAD}, names)
+            self.assertLessEqual(set(differs), {RIM, BORE, LENGTH, SEATING, LOAD, IGNITION}, names)
             for name in names:
                 self.assertIn(name, NAMES)
                 self.assertNotIn(name, seen, f"{name} is in two lookalike groups")
@@ -634,19 +634,51 @@ class CatalogueTests(unittest.TestCase):
             def spread(key):
                 return round(max(s[key] for s in specs) - min(s[key] for s in specs), 2)
             # What the group names as the difference is what the dimensions show (LOAD is not in them).
-            self.assertEqual(len({s["kind"] for s in specs}) > 1, RIM in differs, names)
+            kinds = {s["kind"] for s in specs}
+            self.assertEqual(len(kinds - {RIMFIRE}) > 1, RIM in differs, names)
+            self.assertEqual(RIMFIRE in kinds and len(kinds) > 1, IGNITION in differs, names)
             # 8x57 I .318" against IS .323"; Finnish 7.62x53 R against 7.62x54 R. A wadcutter group is left
             # out: the parent's bullet is a rounded figure, the wadcutter's from its sheet.
-            if SEATING not in differs:
-                self.assertEqual(spread("bullet") >= 0.05, BORE in differs, names)
-            self.assertEqual(spread("case") > 0.5, LENGTH in differs, names)
             # A wadcutter sits flush or nearly so with the case mouth.
             self.assertEqual(min(s["oal"] - s["case"] for s in specs) < 1.5, SEATING in differs, names)
+            if IGNITION in differs:
+                # Rimfire and centrefire versions come from other makers and sources, so only bigger
+                # differences count. The .44 Henry rimfire's heeled bullet is wider than the centrefire's
+                # seated one, fired in the same guns.
+                bore = spread("bullet") > 0.3 and names[0] != ".44 Henry"
+                length = spread("case") > 1.5
+            else:
+                bore = spread("bullet") >= 0.05 and SEATING not in differs
+                length = spread("case") > 0.5
+            if SEATING not in differs:
+                self.assertEqual(bore, BORE in differs, names)
+            self.assertEqual(length, LENGTH in differs, names)
         self.assertEqual(lookalikes("5.6 mm GP 90"), [".223 Remington", "5.56x45 mm NATO"])
         self.assertEqual(lookalikes("7x65 mm R"), ["7x64 mm"])
         self.assertEqual(lookalikes("8x57 mm I"), ["8x57 mm IS", "8x57 mm IRS", "8x57 mm IR"])
         self.assertEqual(lookalikes(".275 Rigby"), ["7x57 mm Mauser", "7x57 mm R"])
         self.assertEqual(lookalikes(".30-06 Springfield"), [])
+
+    def test_rimfire_and_centrefire_versions_are_calibres_of_their_own(self):
+        # Raven 2026-11-09: a cartridge made in numbers both as rimfire and centrefire gets a file for each
+        # ignition, grouped as lookalikes; the original keeps the plain name.
+        kinds = {s["name"]: s["kind"] for s in ALL}
+        for rimfire, centrefire in [("10.4x38 mm R Vetterli", "10.4x38 mm R Vetterli Centrefire"),
+                                    (".44 Henry", ".44 Henry Centrefire"),
+                                    (".32 Long Rimfire", ".32 Long Centrefire"),
+                                    ("10.4 mm Swiss Ordnance 1872 Rimfire", "10.4 mm Swiss Ordnance 1878")]:
+            with self.subTest(rimfire):
+                self.assertEqual(kinds[rimfire], RIMFIRE)
+                self.assertNotIn(rimfire, PRIMERS)
+                self.assertEqual(kinds[centrefire], RIMMED)
+                self.assertIn(centrefire, PRIMERS)
+                self.assertEqual(lookalikes(rimfire), [centrefire])
+        # The Swiss service Vetterli was rimfire; the centrefire one is the same case with a primer.
+        by_name = {s["name"]: s for s in ALL}
+        for key in ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet"):
+            self.assertEqual(by_name["10.4x38 mm R Vetterli"][key], by_name["10.4x38 mm R Vetterli Centrefire"][key])
+        self.assertEqual(case_material("10.4x38 mm R Vetterli"), COPPER)
+        self.assertEqual(case_material("10.4x38 mm R Vetterli Centrefire"), BRASS)
 
     def test_lookalike_variants_from_their_cip_sheets(self):
         # Raven 2026-11-08: the cartridges C.I.P. lists apart from a calibre already in the catalogue are
