@@ -10,10 +10,12 @@ rim = 13.1
 base = 11.6
 neck = 11.6
 case_length = 29.5
-overall_length = 37.0
-bullet = 10.9
-# No source yet for overall_length.
-sources = ["book:cotw-18 p. 528"]
+overall_length = 41.02
+bullet = 10.98
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page74.pdf",
+  "book:cotw-18 p. 528",
+]
 
 [introduced]
 year = 1907

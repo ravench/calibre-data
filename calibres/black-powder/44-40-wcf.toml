@@ -6,19 +6,18 @@ aliases = ["44-40", "4440", "44wcf"]
 origin = "US"
 
 [mm]
-rim = 13.1
-base = 11.9
-shoulder = 11.5
+rim = 13.34
+base = 11.97
+shoulder = 11.6
 shoulder_at = 23.58
-neck = 11.1
+neck = 11.25
 case_length = 33.2
-overall_length = 40.6
+overall_length = 40.44
 bullet = 10.8
-# No source yet for rim, shoulder, neck and overall_length.
 sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page108.pdf",
   "book:cotw-18 p. 177",
   "book:donnelly p. 572",
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page108.pdf",
 ]
 
 [introduced]

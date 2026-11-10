@@ -8,14 +8,14 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 19.2
-base = 17.0
-neck = 16.4
+rim = 18.97
+base = 16.76
+neck = 15.29
 case_length = 50.8
 overall_length = 62.0
-bullet = 14.6
-# No source yet for rim, base, neck, overall_length and bullet.
+bullet = 14.48
 sources = [
+  "https://en.wikipedia.org/wiki/.577_Snider",
   "book:cotw-18 p. 574",
   "book:donnelly p. 686",
 ]

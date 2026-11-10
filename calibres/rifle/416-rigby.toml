@@ -6,19 +6,18 @@ aliases = ["416rigby"]
 origin = "GB"
 
 [mm]
-rim = 14.9
-base = 14.9
-shoulder = 13.6
+rim = 14.99
+base = 14.96
+shoulder = 13.72
 shoulder_at = 59.77
-neck = 11.6
+neck = 11.33
 case_length = 73.7
 overall_length = 95.3
 bullet = 10.6
-# No source yet for shoulder, neck and overall_length.
 sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf",
   "book:cotw-18 p. 608",
   "book:donnelly p. 546",
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf",
 ]
 
 [introduced]

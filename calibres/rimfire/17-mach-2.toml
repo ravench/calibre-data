@@ -6,18 +6,17 @@ aliases = []
 origin = "US"
 
 [mm]
-rim = 6.9
+rim = 7.06
 base = 5.7
 shoulder = 5.7
 shoulder_at = 14.23
-neck = 4.5
-case_length = 18.0
-overall_length = 25.0
+neck = 4.83
+case_length = 18.14
+overall_length = 25.4
 bullet = 4.4
-# No source yet for rim, shoulder, neck, case_length and overall_length.
 sources = [
-  "book:cotw-18 p. 670",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page27.pdf",
+  "book:cotw-18 p. 670",
 ]
 
 [introduced]

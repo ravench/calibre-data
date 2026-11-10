@@ -11,19 +11,18 @@ display_aliases = [".30 Luger"]
 origin = "CH"
 
 [mm]
-rim = 9.9
+rim = 9.98
 base = 9.9
-shoulder = 9.7
+shoulder = 9.61
 shoulder_at = 15.58
 neck = 8.4
 case_length = 21.6
 overall_length = 29.8
 bullet = 7.85
-# No source yet for shoulder, neck, case_length and overall_length.
 sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page14.pdf",
   "book:cotw-18 p. 527",
   "book:donnelly p. 306",
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page14.pdf",
 ]
 
 [introduced]

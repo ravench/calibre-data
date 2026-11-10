@@ -6,7 +6,7 @@ aliases = ["303", "303brit", "7.7x56r"]
 origin = "GB"
 
 [mm]
-rim = 13.5
+rim = 13.72
 base = 11.7
 shoulder = 10.2
 shoulder_at = 45.47
@@ -14,11 +14,10 @@ neck = 8.6
 case_length = 56.4
 overall_length = 78.1
 bullet = 7.92
-# No source yet for rim and case_length.
 sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page74.pdf",
   "book:cotw-18 p. 608",
   "book:donnelly p. 347",
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page74.pdf",
 ]
 
 [introduced]

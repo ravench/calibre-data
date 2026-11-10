@@ -9,13 +9,15 @@ origin = "US"
 rim = 11.2
 base = 11.2
 shoulder = 10.9
-shoulder_at = 31.54
-neck = 6.9
-case_length = 38.6
+shoulder_at = 28.47
+neck = 6.96
+case_length = 37.85
 overall_length = 57.4
 bullet = 6.2
-# No source yet for shoulder_at and case_length.
-sources = ["book:cotw-18 p. 175"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-mm-arc-en.pdf",
+  "book:cotw-18 p. 175",
+]
 
 [introduced]
 year = 2020
@@ -26,9 +28,12 @@ size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/6mm_ARC"]
 
 [shoulder_angle]
-# 30-degree shoulder
+# C.I.P. 6 mm ARC: 30-degree shoulder (L1 to L2)
 degrees = 30
-sources = ["https://bulletin.accurateshooter.com/?p=69700"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-mm-arc-en.pdf",
+  "https://bulletin.accurateshooter.com/?p=69700",
+]
 
 [bullet]
 type = "polymer"

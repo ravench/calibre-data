@@ -123,8 +123,8 @@ class LoadTests(unittest.TestCase):
         names = [s["name"] for _, items in cartridges.CATALOGUE for s in items]
         self.assertGreater(sum(1 for n in names if sources(n, "mm")), len(names) / 2)
         self.assertEqual(sources(".350 Rigby Magnum", "mm"),  # the page of most values first
-                         ["https://en.wikipedia.org/wiki/.350_Rigby",
-                          "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf"])
+                         ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf",
+                          "book:cotw-18 p. 608", "book:donnelly p. 429"])
 
     def test_the_template_is_the_308_winchester_file_with_explanations(self):
         with open(os.path.join(ROOT, "docs", "template.toml"), "rb") as f:
