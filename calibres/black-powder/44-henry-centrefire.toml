@@ -3,7 +3,7 @@
 # Nagant service revolvers fired it too
 # (https://www.forgottenweapons.com/brazilian-1883-nagant-revolver-the-44-henry-rides-again/,
 # https://municion.org/producto/44-brazilian-nagant/). Measurements and primer from Cartridges
-# of the World (15th ed., 2016); no web page with them checked yet. The bullet is seated inside the
+# of the World (14th ed., 2014); no web page with them checked yet. The bullet is seated inside the
 # case, not heeled like the rimfire's.
 name = ".44 Henry Centrefire"
 kind = "rimmed"
