@@ -77,8 +77,8 @@ class LoadTests(unittest.TestCase):
     def test_catalogue_follows_order_toml(self):
         with open(os.path.join(ROOT, "order.toml"), "rb") as f:
             order = tomllib.load(f)
-        self.assertEqual([FOLDER[cat] for cat, _ in cartridges.CATALOGUE], list(order))
-        for cat, items in cartridges.CATALOGUE:
+        self.assertEqual([FOLDER[cat] for cat, _ in cartridges.ALL_CATALOGUE], list(order))
+        for cat, items in cartridges.ALL_CATALOGUE:
             names = [s["name"] for s in items]
             listed = order[FOLDER[cat]]
             self.assertEqual(names[:len(listed)], listed)
@@ -88,6 +88,14 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(sorted(os.listdir(os.path.join(ROOT, "calibres"))), sorted(cartridges.CATEGORIES))
         self.assertEqual([cat for cat, _ in cartridges.CATALOGUE],
                          ["Randfeuer", "Kurzwaffe", "Langwaffe", "Schwarzpulver", "Flinte", "Luftdruck"])
+
+    def test_cannon_rounds_are_in_the_catalogue_but_not_in_the_apps(self):
+        self.assertEqual([cat for cat, _ in cartridges.ALL_CATALOGUE][-1], "Kanone")
+        self.assertEqual(cartridges.ALL_CATALOGUE[:-1], cartridges.CATALOGUE)
+        cannon = dict(cartridges.ALL_CATALOGUE)["Kanone"]
+        self.assertIn("20x138 mm B", [s["name"] for s in cannon])
+        self.assertIsNone(next(s for s in cannon if s["name"] == "20x138 mm B")["sh_at"])  # no source gives it
+        self.assertNotIn("20x138 mm B", cartridges.PRIMERS)
 
     def test_a_calibre_missing_from_order_toml_comes_last_by_name(self):
         with Copy() as c:
@@ -407,6 +415,31 @@ class CheckTests(unittest.TestCase):
             with self.subTest(rel), Copy() as c:
                 c.write(rel, c.read(rel) + TIP)
                 self.assertOnlyProblems(c, rel, r"\[\[tip_colours\]\] is only for cartridges with a bullet")
+
+    def test_cannon_rounds_need_only_the_bullet_and_case_length(self):
+        rel = "calibres/cannon/20x138-mm-b.toml"
+        with Copy() as c:
+            c.edit(rel, "rim = 28.48\nbase = 26.86\nshoulder = 25.5\n", "")
+            c.edit(rel, "overall_length = 202.7\n", "")
+            c.write(rel, c.read(rel) + TIP)  # tip colours too
+            self.assertEqual(c.problems(), [])
+            c.edit(rel, "case_length = 138.0\n", "")
+            self.assertOnlyProblems(c, rel, r"\[mm\] needs 'case_length'")
+        with Copy() as c:  # nothing the apps read whole
+            c.edit(rel, 'aliases = ["20x138b"', 'display_aliases = ["20 mm"]\naliases = ["20x138b"')
+            self.assertOnlyProblems(c, rel, r"display_aliases are for the apps, which do not show calibres/cannon/ yet")
+        with Copy() as c:
+            c.write(rel, c.read(rel) + '\n[primer]\nsize = "large-rifle"\nsources = []\n')
+            self.assertOnlyProblems(c, rel, r"calibres/cannon/ has no \[primer\]")
+        with Copy() as c:
+            c.write(LOOK, c.read(LOOK) + '\n[[group]]\ndiffer_by = ["bore"]\ncalibres = [".50 BMG", "20x138 mm B"]\n')
+            self.assertOnlyProblems(c, LOOK, r"'20x138 mm B' is in calibres/cannon/, which the apps do not show yet")
+        with Copy() as c:  # other categories still need every measurement
+            c.edit(WIN, "neck = 8.7\n", "")
+            self.assertOnlyProblems(c, WIN, r"\[mm\] needs 'neck'")
+        with Copy() as c:  # and a primer
+            c.edit(WIN, '[primer]\nsize = "large-rifle"\nsources = ["https://en.wikipedia.org/wiki/.308_Winchester"]\n', "")
+            self.assertOnlyProblems(c, WIN, r"needs a \[primer\] table")
 
     def test_a_year_needs_a_source(self):
         with Copy() as c:
