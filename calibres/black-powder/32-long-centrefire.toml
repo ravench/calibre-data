@@ -19,8 +19,8 @@ case_length = 20.82
 overall_length = 34.29
 bullet = 8.05
 sources = [
-  "https://municion.org/producto/32-long-cf/",
   "book:cotw-18 p. 250",
+  "https://municion.org/producto/32-long-cf/",
 ]
 
 [introduced]

@@ -17,9 +17,9 @@ case_length = 65.28
 overall_length = 84.84
 bullet = 6.71
 sources = [
+  "book:cotw-18 p. 451",
   "https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf",
   "https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf",
-  "book:cotw-18 p. 451",
 ]
 
 [introduced]

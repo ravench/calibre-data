@@ -16,7 +16,7 @@ bullet = 7.82
 # No source yet for base, neck and overall_length.
 sources = [
   "book:cotw-18 p. 176",
-  "book:donnelly p. 323",
+  "book:donnelly p. 297",
 ]
 
 [introduced]

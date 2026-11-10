@@ -44,8 +44,8 @@ place = "Northbrook, Illinois"
 year = 1997
 isbn = "0-87349-178-5"
 
-# The file in the project's book folder is named "15th ed, 2016", but its title page says 14th
-# Edition and its copyright page 2014.
+# Some copies are sold as "15th edition, 2016", but the title page says 14th Edition and the
+# copyright page 2014.
 [cotw-14]
 title = "Cartridges of the World"
 edition = "14th"

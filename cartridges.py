@@ -285,7 +285,9 @@ def _check_sources(f, table, data, rule, books=None):
 
 def _isbn_ok(isbn):
     """An ISBN-10 or ISBN-13 with hyphens or without, whose check digit is right."""
-    d = isbn.replace("-", "") if isinstance(isbn, str) else ""
+    if not isinstance(isbn, str) or not re.fullmatch(r"[0-9X]+(-[0-9X]+)*", isbn):
+        return False
+    d = isbn.replace("-", "")
     if re.fullmatch(r"[0-9]{9}[0-9X]", d):
         return sum((10 - i) * (10 if c == "X" else int(c)) for i, c in enumerate(d)) % 11 == 0
     if re.fullmatch(r"97[89][0-9]{10}", d):

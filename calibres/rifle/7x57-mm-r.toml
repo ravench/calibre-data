@@ -19,8 +19,8 @@ bullet = 7.25
 # No source yet for base, shoulder and neck.
 sources = [
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page22.pdf",
-  "book:cotw-18 p. 651",
   "book:donnelly p. 829",
+  "book:cotw-18 p. 651",
 ]
 
 [introduced]

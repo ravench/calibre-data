@@ -18,10 +18,9 @@ neck = 7.49
 case_length = 71.76
 overall_length = 91.44
 bullet = 6.72
-# No source yet for overall_length.
+# No source yet for case_length and overall_length.
 sources = [
   "book:cotw-18 p. 451",
-  "book:donnelly p. 786",
   "https://jagdfibel.de/images/0/0e/65300.pdf",
 ]
 

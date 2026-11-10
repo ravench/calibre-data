@@ -14,10 +14,7 @@ case_length = 10.7
 overall_length = 17.7
 bullet = 5.7
 # No source yet for overall_length.
-sources = [
-  "book:cotw-18 p. 670",
-  "book:donnelly p. 125",
-]
+sources = ["book:cotw-18 p. 670"]
 
 [introduced]
 year = 1857

@@ -17,9 +17,9 @@ case_length = 72.4
 overall_length = 91.4
 bullet = 9.55
 sources = [
+  "book:cotw-18 p. 176",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page27.pdf",
   "book:donnelly p. 453",
-  "book:cotw-18 p. 176",
 ]
 
 [introduced]

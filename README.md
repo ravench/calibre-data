@@ -205,7 +205,9 @@ In November 2026 the measurements still without a source were compared with the 
 *Cartridges of the World* (18th edition, 2026) and the physical data of Donnelly's *Handloader's
 Manual of Cartridge Conversions* (1987). Where a book prints the same value, to the precision it
 prints (a value in thousandths of an inch to about 0.07 mm, in hundredths to about 0.19 mm), its page
-was added. Values the books disagree with kept no source.
+was added, even when the other book prints another value. Values neither book prints the same kept no
+source. A book page that prints more of the values than the earlier sources gave together was listed
+first.
 
 ### `[introduced]`
 

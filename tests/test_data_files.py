@@ -274,6 +274,25 @@ class CheckTests(unittest.TestCase):
                 self.assertProblem(c, LR, pattern, line=c.line_of(LR, source))
                 self.assertOnlyProblems(c, LR, pattern)
 
+    def test_a_book_page_can_source_every_table_but_only_once(self):
+        with Copy() as c:
+            c.edit(LR, 'sources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]',
+                   'sources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle", "book:cotw-18 p. 670"]')
+            self.assertEqual(c.problems(), [])
+            c.edit(LR, LR_MM, 'sources = ["book:cotw-18 p. 670", "book:cotw-18 p. 670"]')
+            self.assertOnlyProblems(c, LR, r"\[mm\] lists a source twice")
+
+    def test_isbn_check_digits(self):
+        for isbn in ("978-1-959265-46-7", "9781959265467", "0-910676-95-X", "0-89141-116-X"):
+            self.assertTrue(cartridges._isbn_ok(isbn), isbn)
+        for isbn in ("978-1-959265-46-8", "0-910676-95-1", "978-1-959265-46-7-", "978--1959265467", 9781959265467):
+            self.assertFalse(cartridges._isbn_ok(isbn), isbn)
+
+    def test_a_missing_books_toml_is_one_problem(self):
+        with Copy() as c:
+            os.remove(c.path("books.toml"))
+            self.assertEqual(c.problems(), [("books.toml", None, "missing")])
+
     def test_a_broken_books_toml_is_reported_there_only(self):
         for text, pattern in [("# nothing\n", r"lists no books"),
                               ("[cotw-18]\nyear = 2026\n", r"\[cotw-18\] needs 'title'"),
@@ -283,7 +302,8 @@ class CheckTests(unittest.TestCase):
                               ('[COTW]\ntitle = "Cartridges of the World"\nyear = 2026\n', r"lower case"),
                               ('[cotw-18]\ntitle = "Cartridges of the World"\nyear = 2026\npages = 720\n',
                                r"unknown key 'pages'"),
-                              ('cotw-18 = "Cartridges of the World"\n', r"must be a table")]:
+                              ('cotw-18 = "Cartridges of the World"\n', r"must be a table"),
+                              ('[cotw-18]\ntitle = "Cartridges of the World\n', r"not valid TOML")]:
             with self.subTest(text), Copy() as c:
                 c.write("books.toml", text)
                 self.assertOnlyProblems(c, "books.toml", pattern)
