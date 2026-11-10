@@ -312,6 +312,40 @@ class CheckTests(unittest.TestCase):
                 c.write("books.toml", text)
                 self.assertOnlyProblems(c, "books.toml", pattern)
 
+    def test_fired_by_lists_the_firearms_of_a_round(self):
+        self.assertEqual(cartridges.FIRED_BY["7.5x53.5 mm Swiss (GP 1890)"],
+                         (("Schmidt-Rubin M1889",), "https://en.wikipedia.org/wiki/7.5×55mm_Swiss"))
+        self.assertEqual(sources(".577 Snider", "fired_by"), ["https://en.wikipedia.org/wiki/.577_Snider"])
+        self.assertNotIn(".308 Winchester", cartridges.FIRED_BY)
+        files = {s["name"]: f"calibres/{FOLDER[cat]}/{slug(s['name'])}.toml"
+                 for cat, items in cartridges.CATALOGUE for s in items}
+        with Copy() as c:  # without them, every other table but SOURCES (the apps' catalogue too) is the same
+            for name in cartridges.FIRED_BY:
+                text = c.read(files[name])
+                start = text.index("\n[fired_by]\n")
+                end = text.find("\n[", start + 2)
+                c.write(files[name], text[:start] + (text[end:] if end != -1 else "\n"))
+            t = load(c.dir)
+        self.assertEqual(t.pop("FIRED_BY"), {})
+        same = lambda tables: {k: v for k, v in tables.items() if k not in ("FIRED_BY", "SOURCES")}  # noqa: E731
+        self.assertEqual(same(t), same(cartridges._t))
+
+    def test_fired_by_problems(self):
+        arms = 'firearms = ["Lebel M1886", "Berthier"]'
+        rel = "calibres/rifle/8x50-mm-r-lebel.toml"
+        for new, pattern in [('firearms = []', r"firearms lists one or more firearm names"),
+                             ('firearms = "Lebel M1886"', r"firearms lists one or more firearm names"),
+                             ('firearms = ["Lebel M1886", " "]', r"firearms lists one or more firearm names"),
+                             ('firearms = ["Lebel M1886", "Lebel M1886 "]', r"without spaces around them"),
+                             ('firearms = ["Lebel M1886", "lebel m1886"]', r"firearms lists a firearm twice"),
+                             ('firearm = ["Lebel M1886"]', r"unknown key 'firearm'.*did you mean \"firearms\"")]:
+            with self.subTest(new), Copy() as c:
+                c.edit(rel, arms, new)
+                self.assertProblem(c, rel, pattern, line=c.line_of(rel, new))
+        with Copy() as c:
+            c.edit(rel, arms + '\nsources = ["https://en.wikipedia.org/wiki/8×50mmR_Lebel"]\n', arms + "\n")
+            self.assertProblem(c, rel, r"\[fired_by\] needs sources")
+
     def test_tip_colours_are_for_the_catalogue_only(self):
         self.assertEqual(cartridges.TIP_COLOURS[".50 BMG"][0],
                          {"colours": ("black",), "meaning": ("armour-piercing",), "description": "M2",

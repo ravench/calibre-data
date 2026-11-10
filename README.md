@@ -269,6 +269,23 @@ them).
 - `[projectile]` `material`: balls, Minié bullets and pellets not made of lead: `steel` or `plastic`
   (steel BBs and airsoft BBs).
 
+### `[fired_by]`: the firearms that fire it
+
+Optional, mostly for old and obsolete rounds: the firearms that define the round, that is the arm it
+was made for and its main service rifles; not every rifle chambered for it today, machine guns or
+later conversions. For the catalogue only; the apps do not show it yet.
+
+```toml
+[fired_by]
+firearms = ["Vetterli M1869", "Vetterli M1869/81"]
+sources = ["https://en.wikipedia.org/wiki/.41_Swiss"]
+```
+
+`firearms` names each one as maker or designer and model, the model year written `M1869` whatever
+the source writes (`Vetterli M69/81` is `Vetterli M1869/81`), the same way in every file; the family
+name alone where the whole series fires it and the source names no model (`Berthier`,
+`Snider-Enfield`). Needs a source.
+
 ### `[[tip_colours]]`: what coloured bullet tips mean
 
 Optional, for military rounds whose bullet tip is painted to show what it does: one `[[tip_colours]]`
@@ -364,7 +381,7 @@ lists.
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
 `case_head(name)` and `lookalikes(name)` look up one value; `sources(name, table)` lists every source
 of a table (`"mm"`, `"introduced"`, `"primer"`, ...). `TIP_COLOURS` holds the tip colour codes, each
-with its own sources. A problem in the files stops the import with a
+with its own sources, and `FIRED_BY` the firearms of a round. A problem in the files stops the import with a
 `DataError` that lists them all.
 
 ## Adding or changing a calibre

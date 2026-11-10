@@ -40,3 +40,7 @@ sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
 # Kynamco, Bertram
 materials = ["brass"]
 sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
+
+[fired_by]
+firearms = ["Snider-Enfield"]
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
