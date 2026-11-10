@@ -28,16 +28,23 @@ size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
 [shoulder_angle]
+# C.I.P. 7 mm PRC: alpha 60 degrees
 degrees = 30
-sources = ["https://www.all4shooters.com/en/hunting/ammunition/new-hornady-7mm-prc-cartridge-test-report-background-development-data/"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/7-mm-prc-230314-en-1.pdf",
+  "https://www.all4shooters.com/en/hunting/ammunition/new-hornady-7mm-prc-cartridge-test-report-background-development-data/",
+]
 
 [case_head]
-# from the .375 Ruger case family; C.I.P. 375 Ruger
+# C.I.P. 7 mm PRC (the same head as the 375 Ruger)
 rim_thickness = 1.27
 ramp_top = 3.24
 groove_diameter = 12.07
 ramp_angle = 35.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/7-mm-prc-230314-en-1.pdf",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf",
+]
 
 [bullet]
 type = "polymer"

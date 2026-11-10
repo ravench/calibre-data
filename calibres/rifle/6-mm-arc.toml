@@ -28,9 +28,12 @@ size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/6mm_ARC"]
 
 [shoulder_angle]
-# 30-degree shoulder
+# C.I.P. 6 mm ARC: 30-degree shoulder (L1 to L2)
 degrees = 30
-sources = ["https://bulletin.accurateshooter.com/?p=69700"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-mm-arc-en.pdf",
+  "https://bulletin.accurateshooter.com/?p=69700",
+]
 
 [bullet]
 type = "polymer"

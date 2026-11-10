@@ -33,14 +33,20 @@ size = "large-rifle"
 sources = ["https://www.starlinebrass.com/9x39-brass"]
 
 [shoulder_angle]
-# AECC drawing 09-039-BGC-010
-degrees = 14.8
-sources = ["https://municion.org/producto/9-x-39-russian/"]
+# C.I.P. 9 x 39: alpha 34 degrees 3 minutes (the AECC drawing 09-039-BGC-010 gives 14.8)
+degrees = 17.0
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/9-x-39-180314-en1.pdf",
+  "https://municion.org/producto/9-x-39-russian/",
+]
 
 [case_head]
-# 7.62x39 case necked up; C.I.P. 7,62 x 39
+# C.I.P. 9 x 39 (the same head as the 7,62 x 39 it is necked up from)
 rim_thickness = 1.5
 ramp_top = 3.2
 groove_diameter = 9.56
 ramp_angle = 52.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/9-x-39-180314-en1.pdf",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf",
+]

@@ -11,7 +11,7 @@ base = 11.6
 neck = 11.6
 case_length = 29.5
 overall_length = 41.02
-bullet = 10.9
+bullet = 10.98
 sources = [
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page74.pdf",
   "book:cotw-18 p. 528",

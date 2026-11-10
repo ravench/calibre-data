@@ -15,9 +15,9 @@ case_length = 50.8
 overall_length = 62.0
 bullet = 14.48
 sources = [
+  "https://en.wikipedia.org/wiki/.577_Snider",
   "book:cotw-18 p. 574",
   "book:donnelly p. 686",
-  "https://en.wikipedia.org/wiki/.577_Snider",
 ]
 
 [introduced]

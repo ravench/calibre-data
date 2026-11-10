@@ -6,8 +6,8 @@ aliases = ["416rigby"]
 origin = "GB"
 
 [mm]
-rim = 14.9
-base = 14.9
+rim = 14.99
+base = 14.96
 shoulder = 13.72
 shoulder_at = 59.77
 neck = 11.33
