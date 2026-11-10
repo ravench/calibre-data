@@ -39,3 +39,7 @@ sources = ["https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"]
 [bullet]
 type = "paper"
 sources = ["https://en.wikipedia.org/wiki/11×59mmR_Gras"]
+
+[fired_by]
+firearms = ["Gras M1874"]
+sources = ["https://en.wikipedia.org/wiki/11×59mmR_Gras"]

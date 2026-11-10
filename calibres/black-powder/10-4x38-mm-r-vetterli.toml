@@ -38,3 +38,7 @@ sources = ["https://en.wikipedia.org/wiki/.41_Swiss"]
 [case]
 material = "copper"
 sources = ["https://en.wikipedia.org/wiki/.41_Swiss"]
+
+[fired_by]
+firearms = ["Vetterli M1869", "Vetterli M1869/81"]
+sources = ["https://en.wikipedia.org/wiki/.41_Swiss"]

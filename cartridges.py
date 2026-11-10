@@ -148,6 +148,7 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "case": (("material",), (), "required"),
     "current_cases": (("materials",), (), "required"),
     "projectile": (("material",), (), "required"),
+    "fired_by": (("firearms",), (), "required"),
 }
 BULLET_TYPES = (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP)
 CASE_MATERIALS = (COPPER, STEEL, NICKEL, PAPER, HYBRID)
@@ -475,6 +476,13 @@ def _read_calibre(f, category, countries, books=None):
             if not _is_text_list(mats) or not mats or any(m not in CURRENT_CASE_MATERIALS for m in mats):
                 f.problem(f.line(t, "materials"), f"[current_cases] materials lists one or more of "
                                                   f"{', '.join(CURRENT_CASE_MATERIALS)}")
+        if t == "fired_by" and "firearms" in data:
+            arms = data["firearms"]
+            if not _is_text_list(arms) or not arms or not all(a.strip() and a == a.strip() for a in arms):
+                f.problem(f.line(t, "firearms"), "[fired_by] firearms lists one or more firearm names in quotes, "
+                                                 "without spaces around them")
+            elif len({a.casefold() for a in arms}) != len(arms):
+                f.problem(f.line(t, "firearms"), "[fired_by] firearms lists a firearm twice")
         if t == "shoulder_angle" and _is_number(data.get("degrees")) and not 0 < data["degrees"] < 90:
             f.problem(f.line(t, "degrees"), "[shoulder_angle] degrees is the angle to the case axis, above 0 and below 90")
         ok = ok and len(f.problems) == before
@@ -670,7 +678,7 @@ def load(root=ROOT):
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "CASES",
-                         "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES", "TIP_COLOURS")}
+                         "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES", "TIP_COLOURS", "FIRED_BY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE")}
     for _, items in catalogue:
         for e in items:
@@ -713,6 +721,8 @@ def load(root=ROOT):
                 t["CURRENT_CASES"][n] = (tuple(facts["current_cases"]["materials"]), first("current_cases"))
             if "projectile" in facts:
                 t["LOOSE_MATERIALS"][n] = (facts["projectile"]["material"], first("projectile"))
+            if "fired_by" in facts:
+                t["FIRED_BY"][n] = (tuple(facts["fired_by"]["firearms"]), first("fired_by"))
             if "tip_colours" in raw:
                 t["TIP_COLOURS"][n] = [{"colours": tuple(tip["colours"]), "meaning": tuple(tip["meaning"]),
                                         "description": tip.get("description"),
@@ -758,12 +768,15 @@ BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "b
 # from the [[tip_colours]] tables (colours from the tip down). For the catalogue only; the apps do not
 # read it.
 TIP_COLOURS = _t["TIP_COLOURS"]
+# {name: (firearms that fire it, first source)}: the firearms that define a round, mostly old and
+# obsolete ones. For the catalogue only; the apps do not read it.
+FIRED_BY = _t["FIRED_BY"]
 
 
 def sources(name, fact):
     """Every source of one of a calibre's values, as listed in its file: fact is the table name
-    ("mm", "introduced", "primer", "shoulder_angle", "case_head", "bullet", "case", "current_cases" or
-    "projectile"); [] when nothing is checked yet or the calibre has no such table."""
+    ("mm", "introduced", "primer", "shoulder_angle", "case_head", "bullet", "case", "current_cases",
+    "projectile" or "fired_by"); [] when nothing is checked yet or the calibre has no such table."""
     return list(SOURCES.get((name, fact), []))
 
 

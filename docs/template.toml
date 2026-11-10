@@ -152,6 +152,15 @@ sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
 # material = "steel"
 # sources = ["https://…"]
 
+# Optional, mostly for old and obsolete rounds: the firearms that define the round (the arm it was
+# made for and its main service rifles; not every rifle chambered for it today, machine guns or later
+# conversions), as maker or designer and model with the model year written M1869 ("Lebel M1886"), the
+# same way in every file; the family name alone where the source names no model ("Berthier"). Needs
+# a source. The catalogue only; the apps do not show it yet.
+# [fired_by]
+# firearms = ["Vetterli M1869", "Vetterli M1869/81"]
+# sources = ["https://en.wikipedia.org/wiki/.41_Swiss"]
+
 # Optional, for military rounds: what a painted bullet tip means, one [[tip_colours]] table for each
 # code, at the end of the file (the catalogue only; the apps do not show it yet).
 # colours: from the tip down, one or more of black, white, grey, silver, red, orange, yellow, green,
