@@ -165,7 +165,7 @@ Short forms:
 |---|---|
 | `kind = "ball"` | `diameter` |
 | `kind = "minie"` or `"pellet"` | `diameter`, `length` |
-| `kind = "shot"` | `diameter`, `rim`, `length` (the case) |
+| `kind = "shot"` | `diameter`, `rim`, `length` (the loaded shell as crimped), optional `case_length` (the hull opened by firing: the length in the name, 70 for a 12/70) |
 | `profile = "crimped"` | `rim`, `base`, `mouth` (at the star crimp), `length` |
 
 `sources` lists every page the measurements come from, the page of most of them first. When only

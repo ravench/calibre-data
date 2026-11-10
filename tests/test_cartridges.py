@@ -38,7 +38,10 @@ class CatalogueTests(unittest.TestCase):
         for s in ALL:
             with self.subTest(s["name"]):
                 self.assertGreater(s["oal"], 0)
-                self.assertGreaterEqual(s["oal"] + 0.01, s["case"])
+                if s["kind"] == SHOT:  # the hull opened by firing is longer than the loaded shell
+                    self.assertGreaterEqual(s["case"], s["oal"])
+                else:
+                    self.assertGreaterEqual(s["oal"] + 0.01, s["case"])
                 self.assertGreater(s["rim"], 0)
                 self.assertGreater(s["bullet"], 0)
                 if s["shoulder"]:

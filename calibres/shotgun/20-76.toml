@@ -9,6 +9,7 @@ worldwide = true
 diameter = 17.6
 rim = 19.0
 length = 70.0
+case_length = 76.0
 sources = []
 
 [introduced]
