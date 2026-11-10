@@ -14,10 +14,10 @@ neck = 9.4
 case_length = 17.3
 overall_length = 25.0
 bullet = 9.0
-# No source yet for neck.
 sources = [
   "book:cotw-18 p. 528",
   "book:donnelly p. 490",
+  "book:janes-ammo-2002 p. 681",
 ]
 
 [introduced]

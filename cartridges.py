@@ -164,8 +164,9 @@ CASE_MATERIALS = (COPPER, STEEL, NICKEL, PAPER, HYBRID)
 CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL)
 PROJECTILE_MATERIALS = (STEEL, PLASTIC)
 DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
-# A printed book as a source: "book:<id> p. <page>", the id of a book in books.toml.
-BOOK_SOURCE = re.compile(r"book:(?P<id>[^\s]+) p\. (?P<page>[1-9][0-9]*)")
+# A printed book as a source: "book:<id> p. <page>", the id of a book in books.toml. A manual that
+# numbers its pages by chapter has pages such as "14-13" (chapter 14, page 13).
+BOOK_SOURCE = re.compile(r"book:(?P<id>[^\s]+) p\. (?P<page>[1-9][0-9]*(?:-[1-9][0-9]*)?)")
 BOOK_KEYS = ("title", "year", "edition", "authors", "editors", "publisher", "place", "isbn")
 # [[tip_colours]]: what a coloured bullet tip means, a table for each code. Colours are listed from
 # the tip down (["red", "silver"]: a red tip above a silver band); the meanings combine (["armour-piercing",

@@ -102,8 +102,9 @@ sources = [
 
 A book page is `book:`, the book's id in `books.toml`, and the page the value is printed on: the
 book's own page number, not the page of a PDF scan. `book:cotw-18 p. 670` is page 670 of the 18th
-edition of *Cartridges of the World*. Cite a value with its page; never copy a book's text or tables
-into this repository. A book that is not in `books.toml` yet needs an entry there first (title and
+edition of *Cartridges of the World*. A manual that numbers its pages by chapter has pages like
+`book:tm-43-0001-27 p. 14-13` (chapter 14, page 13). Cite a value with its page; never copy a book's
+text or tables into this repository. A book that is not in `books.toml` yet needs an entry there first (title and
 year; edition, authors, editors, publisher, place and ISBN where it has them).
 
 An empty list `sources = []` means the values have not been checked against a source yet. That is
@@ -219,7 +220,11 @@ inch to about 0.07 mm, in hundredths to about 0.19 mm), its page was added, even
 prints another value. Values no book prints the same kept no source. A book page that prints more of
 the values than the earlier sources gave together was listed first. Some of Hornady's length bars
 start at the .200 line where the base diameter is measured, not at the head; such a bar's value plus
-0.200 is the length from the head.
+0.200 is the length from the head. The same was then done with the cartridge dimension table of
+*Jane's Ammunition Handbook* (2002-2003, pp. 681-682) and the round lengths of the US Army data
+sheets TM 43-0001-27 (1994). Their figures also gave the cannon rounds the diameters and lengths
+their names and web sources left out; Jane's table measures some cannon cases 0.5 to 1 mm shorter
+than their names (25x137 at 136.5 mm), and the names' lengths were kept.
 
 ### `[introduced]`
 

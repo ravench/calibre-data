@@ -14,8 +14,12 @@ neck = 5.7
 case_length = 15.6
 overall_length = 25.4
 bullet = 5.7
-# No source yet for rim, case_length and overall_length.
-sources = ["book:cotw-18 p. 670"]
+# No source yet for rim.
+sources = [
+  "book:janes-ammo-2002 p. 681",
+  "book:cotw-18 p. 670",
+  "book:tm-43-0001-27 p. 3-5",
+]
 
 [introduced]
 year = 1887
