@@ -1,7 +1,8 @@
 # The Soviet 30 mm case of the GSh-6-30 aircraft and AK-630 naval guns (electric primer) and the
 # 2A42 (percussion primer): the two loadings do not interchange. Its name gives the bore and case
-# length (Jane's and Koll measure the case at 164 mm), Rapid Fire's table the rim and base, Jane's
-# and Koll the length of the 2A42 and AO-18 rounds (Koll gives 289.5 to 291.0 mm).
+# length (Jane's p. 97 and Koll measure the 2A42 case at 164 mm, Jane's p. 98 the AK-630 case at
+# 165 mm), Rapid Fire's table the rim and base, Jane's and Koll the length of the 2A42 and AO-18
+# rounds (Koll gives 289.5 to 291.0 mm).
 name = "30x165 mm"
 kind = "rimless"
 profile = "spitzer"
@@ -17,6 +18,7 @@ bullet = 30.0
 sources = [
   "book:rapid-fire p. 228",
   "book:janes-ammo-2002 p. 97",
+  "book:janes-ammo-2002 p. 98",
   "book:koll p. 281",
   "book:koll p. 298",
   "https://en.wikipedia.org/wiki/Shipunov_2A42",
