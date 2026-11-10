@@ -43,3 +43,24 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]
 sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+
+[[tip_colours]]
+colours = ["black"]
+meaning = ["armour-piercing"]
+description = "M61 and M993"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO", "book:labbett p. 80"]
+
+[[tip_colours]]
+colours = ["orange"]
+meaning = ["tracer"]
+description = "M62"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO", "book:labbett p. 80"]
+
+[[tip_colours]]
+colours = ["purple"]
+meaning = ["tracer"]
+description = "M276 dim tracer"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]

@@ -41,3 +41,10 @@ ramp_top = 3.46
 groove_diameter = 10.3
 ramp_angle = 51.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page46.pdf"]
+
+[[tip_colours]]
+colours = ["red"]
+meaning = ["tracer"]
+description = "Tracer M.1911 (Leuchtspurpatrone)"
+countries = ["CH"]
+sources = ["book:labbett p. 76", "book:labbett p. 77"]

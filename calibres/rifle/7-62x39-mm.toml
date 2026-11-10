@@ -46,3 +46,31 @@ sources = ["https://en.wikipedia.org/wiki/7.62%C3%9739mm"]
 [current_cases]
 materials = ["brass"]
 sources = ["https://www.starlinebrass.com/762x39mm-russian"]
+
+[[tip_colours]]
+colours = ["green"]
+meaning = ["tracer"]
+description = "T-45 (57-N-231P)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×39mm"]
+
+[[tip_colours]]
+colours = ["black", "red"]
+meaning = ["armour-piercing", "incendiary"]
+description = "BZ"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[tip_colours]]
+colours = ["red"]
+meaning = ["incendiary", "spotting"]
+description = "Z"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[tip_colours]]
+colours = ["black", "green"]
+meaning = ["subsonic"]
+description = "US (57-N-231U)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×39mm"]

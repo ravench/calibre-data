@@ -37,3 +37,38 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]
 sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+
+[[tip_colours]]
+colours = ["yellow"]
+meaning = ["ball"]
+description = "D, heavy ball"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[tip_colours]]
+colours = ["silver"]
+meaning = ["ball"]
+description = "LPS, steel core"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[tip_colours]]
+colours = ["green"]
+meaning = ["tracer"]
+description = "T-46 (7T2)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[[tip_colours]]
+colours = ["black", "red"]
+meaning = ["armour-piercing", "incendiary"]
+description = "B-32 (7BZ3)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[[tip_colours]]
+colours = ["red"]
+meaning = ["incendiary", "spotting"]
+description = "ZP"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]

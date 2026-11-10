@@ -269,6 +269,36 @@ them).
 - `[projectile]` `material`: balls, Minié bullets and pellets not made of lead: `steel` or `plastic`
   (steel BBs and airsoft BBs).
 
+### `[[tip_colours]]`: what coloured bullet tips mean
+
+Optional, for military rounds whose bullet tip is painted to show what it does: one `[[tip_colours]]`
+table for each code, at the end of the file. For the catalogue only; the apps do not show it yet.
+
+```toml
+[[tip_colours]]
+colours = ["red", "silver"]
+meaning = ["armour-piercing", "incendiary", "tracer"]
+description = "US M20, Swiss M.65"
+countries = ["US", "CH"]
+sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:labbett p. 80",
+  "book:labbett p. 76",
+  "book:labbett p. 77",
+]
+```
+
+- `colours`: from the tip down, one or more of `black`, `white`, `grey`, `silver`, `red`, `orange`,
+  `yellow`, `green`, `blue`, `purple` or `brown` (`["red", "silver"]`: a red tip above a silver band).
+- `meaning`: one or more of `ball`, `armour-piercing`, `incendiary`, `explosive`, `tracer`,
+  `spotting` (a flash or smoke where it hits, also ranging rounds), `subsonic` or `frangible`; an API
+  round is `["armour-piercing", "incendiary"]`.
+- `description` (optional): the round's name, in English.
+- `countries` (optional): codes from `countries.toml` of the armies that mark it so. The same colours
+  can mean something else in another army; the same colours with the same meaning are one table
+  that lists all their countries.
+- `sources`: at least one.
+
 ### Origin
 
 The state that introduced the calibre, for every calibre whose origin the sources agree on. A round
@@ -333,7 +363,8 @@ lists.
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
 `case_head(name)` and `lookalikes(name)` look up one value; `sources(name, table)` lists every source
-of a table (`"mm"`, `"introduced"`, `"primer"`, ...). A problem in the files stops the import with a
+of a table (`"mm"`, `"introduced"`, `"primer"`, ...). `TIP_COLOURS` holds the tip colour codes, each
+with its own sources. A problem in the files stops the import with a
 `DataError` that lists them all.
 
 ## Adding or changing a calibre

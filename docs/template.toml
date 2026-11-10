@@ -151,3 +151,19 @@ sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
 # [projectile]
 # material = "steel"
 # sources = ["https://…"]
+
+# Optional, for military rounds: what a painted bullet tip means, one [[tip_colours]] table for each
+# code, at the end of the file (the catalogue only; the apps do not show it yet).
+# colours: from the tip down, one or more of black, white, grey, silver, red, orange, yellow, green,
+# blue, purple or brown (["red", "silver"]: a red tip above a silver band).
+# meaning: one or more of ball, armour-piercing, incendiary, explosive, tracer, spotting (a flash or
+# smoke where it hits), subsonic or frangible (["armour-piercing", "incendiary"]: an API round).
+# description (optional): the round's name. countries (optional): codes from countries.toml of the
+# armies that mark it so; the same colours with the same meaning are one table for all of them.
+# Needs a source.
+# [[tip_colours]]
+# colours = ["black"]
+# meaning = ["armour-piercing"]
+# description = "M61"
+# countries = ["US"]
+# sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]

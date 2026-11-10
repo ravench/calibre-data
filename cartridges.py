@@ -157,6 +157,12 @@ DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
 # A printed book as a source: "book:<id> p. <page>", the id of a book in books.toml.
 BOOK_SOURCE = re.compile(r"book:(?P<id>[^\s]+) p\. (?P<page>[1-9][0-9]*)")
 BOOK_KEYS = ("title", "year", "edition", "authors", "editors", "publisher", "place", "isbn")
+# [[tip_colours]]: what a coloured bullet tip means, a table for each code. Colours are listed from
+# the tip down (["red", "silver"]: a red tip above a silver band); the meanings combine (["armour-piercing",
+# "incendiary"] is an API round).
+TIP_KEYS = (("colours", "meaning", "sources"), ("description", "countries"))  # (required, optional)
+COLOURS = ("black", "white", "grey", "silver", "red", "orange", "yellow", "green", "blue", "purple", "brown")
+MEANINGS = ("ball", "armour-piercing", "incendiary", "explosive", "tracer", "spotting", "subsonic", "frangible")
 
 
 def _shape(kind, profile):
@@ -252,34 +258,35 @@ def _check_keys(f, table, data, allowed, required):
             f.problem(f.line(table), f"[{table}] needs {k!r}" if table else f"needs {k!r}")
 
 
-def _check_sources(f, table, data, rule, books=None):
-    """The sources of one table: web addresses and book pages (`books`: the ids in books.toml, or
-    None when books.toml could not be read)."""
+def _check_sources(f, table, data, rule, books=None, nth=0):
+    """The sources of one table (the `nth` of a [[table]]): web addresses and book pages (`books`: the
+    ids in books.toml, or None when books.toml could not be read)."""
+    label = f"[[{table}]]" if table == "tip_colours" else f"[{table}]"
     if "sources" not in data:
         if rule != "optional":
-            f.problem(f.line(table), f"[{table}] needs a sources list (an empty list [] when nothing is checked yet)"
-                      if rule == "may be empty" else f"[{table}] needs sources = [\"https://…\"]")
+            f.problem(f.line(table, nth=nth), f"{label} needs a sources list (an empty list [] when nothing is checked yet)"
+                      if rule == "may be empty" else f"{label} needs sources = [\"https://…\"]")
         return []
     urls = data["sources"]
     if not _is_text_list(urls):
-        f.problem(f.line(table, "sources"), f"[{table}] sources must be a list of web addresses in quotes")
+        f.problem(f.line(table, "sources", nth), f"{label} sources must be a list of web addresses in quotes")
         return []
     if rule == "required" and not urls:
-        f.problem(f.line(table, "sources"), f"[{table}] needs at least one source")
+        f.problem(f.line(table, "sources", nth), f"{label} needs at least one source")
     for u in urls:
         book = BOOK_SOURCE.fullmatch(u)
         if book:
             if books is not None and book["id"] not in books:
-                f.problem(f.line(table, "sources"), f"[{table}] source {u!r} names no book in books.toml"
+                f.problem(f.line(table, "sources", nth), f"{label} source {u!r} names no book in books.toml"
                                                     f"{_close(book['id'], books)}")
         elif u.startswith("book:"):
-            f.problem(f.line(table, "sources"), f"[{table}] source {u!r} must be written book:<id> p. <page>, "
+            f.problem(f.line(table, "sources", nth), f"{label} source {u!r} must be written book:<id> p. <page>, "
                                                 f"e.g. \"book:cotw-18 p. 176\"")
         elif not re.fullmatch(r"https://[^\s\"<>]+\.[^\s\"<>]+", u):
-            f.problem(f.line(table, "sources"), f"[{table}] source {u!r} is not a https:// web address "
+            f.problem(f.line(table, "sources", nth), f"{label} source {u!r} is not a https:// web address "
                                                 f"or a book page (book:<id> p. <page>)")
     if len(set(urls)) != len(urls):
-        f.problem(f.line(table, "sources"), f"[{table}] lists a source twice")
+        f.problem(f.line(table, "sources", nth), f"{label} lists a source twice")
     return urls
 
 
@@ -319,11 +326,62 @@ def _read_books(bf):
     return books
 
 
+def _check_tip_colours(f, tips, shape, countries, books):
+    """Check a calibre's [[tip_colours]] tables (`shape`: its shape in MM_SHAPES)."""
+    if not isinstance(tips, list) or not tips or not all(isinstance(t, dict) for t in tips):
+        f.problem(f.line(None, "tip_colours") or f.line("tip_colours"),
+                  "each tip colour is a [[tip_colours]] table with colours, meaning and sources")
+        return
+    if shape != "cartridge":
+        f.problem(f.line("tip_colours"), "[[tip_colours]] is only for cartridges with a bullet")
+    req, opt = TIP_KEYS
+    seen = {}
+    for i, t in enumerate(tips):
+        def at(key=None, i=i):
+            return f.line("tip_colours", key, nth=i) or f.line("tip_colours", nth=i)
+        for k in t:
+            if k not in req + opt:
+                f.problem(at(k), f"unknown key {k!r} in [[tip_colours]]{_close(k, req + opt)}; "
+                                 f"allowed: {', '.join(sorted(req + opt))}")
+        for k in req:
+            if k not in t and k != "sources":  # _check_sources reports that
+                f.problem(at(), f"[[tip_colours]] needs {k!r}")
+        _check_sources(f, "tip_colours", t, "required", books, nth=i)
+        for k, choices in (("colours", COLOURS), ("meaning", MEANINGS)):
+            if k not in t:
+                continue
+            bad = [x for x in t[k] if x not in choices] if _is_text_list(t[k]) else [t[k]]
+            if bad or not t[k]:
+                f.problem(at(k), f"[[tip_colours]] {k} lists one or more of {', '.join(choices)}"
+                                 f"{_close(bad[0], choices) if bad else ''}")
+            elif len(set(t[k])) != len(t[k]):
+                f.problem(at(k), f"[[tip_colours]] {k} lists {next(x for x in t[k] if t[k].count(x) > 1)!r} twice")
+        if "description" in t and (not isinstance(t["description"], str) or not t["description"].strip()):
+            f.problem(at("description"), "[[tip_colours]] description must be text in quotes")
+        if "countries" in t:
+            codes = t["countries"]
+            if not _is_text_list(codes) or not codes:
+                f.problem(at("countries"), "[[tip_colours]] countries lists one or more country codes")
+            elif len(set(codes)) != len(codes):
+                f.problem(at("countries"), "[[tip_colours]] countries lists a country twice")
+            elif countries is not None:
+                for code in codes:
+                    if code not in countries:
+                        f.problem(at("countries"), f"[[tip_colours]] country {code!r} is not a code in "
+                                                   f"countries.toml{_close(code, countries)}")
+        if _is_text_list(t.get("colours")) and _is_text_list(t.get("meaning")):
+            key = (tuple(t["colours"]), frozenset(t["meaning"]))
+            if key in seen:
+                f.problem(at("colours"), f"[[tip_colours]] {' over '.join(t['colours'])} with this meaning is "
+                                         f"already on line {seen[key]}: list all its countries there")
+            seen.setdefault(key, at())
+
+
 def _read_calibre(f, category, countries, books=None):
     """Check one calibre file; returns (entry dict, facts) or None when it cannot be used."""
     d = f.data
-    tables = {k for k, v in d.items() if isinstance(v, dict)}
-    top = {k for k in d if k not in tables}
+    tables = {k for k, v in d.items() if isinstance(v, dict) and k != "tip_colours"}
+    top = {k for k in d if k not in tables and k != "tip_colours"}
     _check_keys(f, None, {k: d[k] for k in top}, TOP_KEYS, ("name", "kind", "profile", "aliases"))
     for t in tables:
         if t not in FACTS:
@@ -421,6 +479,8 @@ def _read_calibre(f, category, countries, books=None):
             f.problem(f.line(t, "degrees"), "[shoulder_angle] degrees is the angle to the case axis, above 0 and below 90")
         ok = ok and len(f.problems) == before
         facts[t] = dict(data, sources=urls)
+    if "tip_colours" in d:
+        _check_tip_colours(f, d["tip_colours"], _shape(kind, profile), countries, books)
     if not ok:
         return None
     if kind in (RIMFIRE,) + LOOSE:
@@ -610,7 +670,7 @@ def load(root=ROOT):
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "CASES",
-                         "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES")}
+                         "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES", "TIP_COLOURS")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE")}
     for _, items in catalogue:
         for e in items:
@@ -653,6 +713,11 @@ def load(root=ROOT):
                 t["CURRENT_CASES"][n] = (tuple(facts["current_cases"]["materials"]), first("current_cases"))
             if "projectile" in facts:
                 t["LOOSE_MATERIALS"][n] = (facts["projectile"]["material"], first("projectile"))
+            if "tip_colours" in raw:
+                t["TIP_COLOURS"][n] = [{"colours": tuple(tip["colours"]), "meaning": tuple(tip["meaning"]),
+                                        "description": tip.get("description"),
+                                        "countries": tuple(tip.get("countries", ())),
+                                        "sources": list(tip["sources"])} for tip in raw["tip_colours"]]
     t.update(sets)
     t["WORLDWIDE"] = frozenset(t["WORLDWIDE"])
     t.update(CATALOGUE=catalogue, COUNTRIES=countries, BOOKS=books or {}, LOOKALIKES=lookalikes)
@@ -689,6 +754,10 @@ LOOSE_MATERIALS = _t["LOOSE_MATERIALS"]  # {name: (material, first source)}
 LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the file's order
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
 BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
+# {name: [{colours, meaning, description or None, countries, sources}]}: what coloured bullet tips mean,
+# from the [[tip_colours]] tables (colours from the tip down). For the catalogue only; the apps do not
+# read it.
+TIP_COLOURS = _t["TIP_COLOURS"]
 
 
 def sources(name, fact):
