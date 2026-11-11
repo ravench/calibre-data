@@ -220,27 +220,28 @@ class OutlineTests(unittest.TestCase):
         # shoulder_at is estimated, as the note in [mm] says).
         ".242 Rimless Nitro Express", ".244 Halger Magnum", ".246 Purdey Flanged", ".256 Gibbs Magnum",
         ".26 BSA", ".275 H&H Magnum", ".275 No. 2 Magnum", ".276 Enfield", ".276 Pedersen", ".280 British",
-        ".280 Jeffery", ".280 Ross", ".297/250 Rook", ".303 Magnum", ".33 BSA", ".333 Jeffery Rimless",
-        ".360 No. 2 Nitro Express", ".375/303 Westley Richards", ".400/360 Nitro Express",
-        ".400/375 Belted Nitro Express", ".425 Westley Richards Magnum", ".45 Blaser",
-        ".450/400 Nitro Express 2⅜ inch", ".460 Steyr", ".476 Nitro Express", ".500/450 Magnum Express",
-        ".500/450 Nitro Express", ".500/450 No. 1 Express", ".577/500 Nitro Express", ".577/500 No. 2 Express",
-        "10.15x61 mm R Jarmann", "10.15x63 mm R Serbian Mauser", "10.25x69 mm R Hunting-Express",
-        "10.4x47 mm R Italian Vetterli", "10.5x47 mm R", "10.75x57 mm Mannlicher",
-        "10.75x58 mm R Russian Berdan", "10.75x63 mm Mauser", "10.75x68 mm Mauser",
-        "10.8x47 mm R Martini Target", "11.15x58 mm R Spanish Remington", "11.15x58 mm R Werndl M77",
-        "11.2x60 mm Schüler", "11.2x72 mm Schüler", "11.3x50 mm R Beaumont M71",
+        ".280 Jeffery", ".280 Ross", ".297/250 Rook", ".30 Borchardt", ".303 Magnum", ".33 BSA",
+        ".333 Jeffery Rimless", ".360 Mars", ".360 No. 2 Nitro Express", ".375/303 Westley Richards",
+        ".400/360 Nitro Express", ".400/375 Belted Nitro Express", ".425 Westley Richards Magnum",
+        ".45 Blaser", ".450/400 Nitro Express 2⅜ inch", ".460 Steyr", ".476 Nitro Express",
+        ".500/450 Magnum Express", ".500/450 Nitro Express", ".500/450 No. 1 Express",
+        ".577/500 Nitro Express", ".577/500 No. 2 Express", "10.15x61 mm R Jarmann",
+        "10.15x63 mm R Serbian Mauser", "10.25x69 mm R Hunting-Express", "10.4x47 mm R Italian Vetterli",
+        "10.5x47 mm R", "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan", "10.75x63 mm Mauser",
+        "10.75x68 mm Mauser", "10.8x47 mm R Martini Target", "11.15x58 mm R Spanish Remington",
+        "11.15x58 mm R Werndl M77", "11.2x60 mm Schüler", "11.2x72 mm Schüler", "11.3x50 mm R Beaumont M71",
         "11.43x50 mm R Egyptian Remington", "11.43x55 mm R Turkish Peabody-Martini",
         "11.4x50 mm R Brazilian Comblain", "11x50 mm R Albini", "11x52 mm R Beaumont M71/78",
         "11x53 mm R Comblain", "11x60 mm R Japanese Murata", "4.3x45 mm DAG", "4.85x49 mm British",
-        "5.2x68 mm Mondragón", "5.66x39 mm MPS", "5x58 mm Sturtevant", "6 mm SAW", "6.5x27 mm R",
-        "6.5x53.5 mm SR Daudeteau", "6.5x58 mm R Krag-Jørgensen", "6.5x61 mm Mauser", "6.5x61 mm R Mauser",
-        "6x29.5 mm R Stahl", "6x57 mm Mauser", "6x58 mm Forster", "6x58 mm R Forster",
-        "7x73 mm Vom Hofe Belted", "8x42 mm R M88", "8x50 mm R Siamese Type 45", "8x52 mm R Siamese Type 66",
-        "8x54 mm Krag-Jørgensen", "8x59 mm Breda", "8x60 mm R Guedes", "8x63 mm Swedish", "8x71 mm Peterlongo",
-        "9.3x53 mm R Swiss", "9.3x53 mm Swiss", "9.3x65 mm R Collath", "9.3x72 mm R Sauer",
-        "9.3x75 mm R Nimrod", "9.5x47 mm R", "9.5x60 mm R Turkish Mauser", "9.5x73 mm Miller-Greiss Magnum",
-        "9x63 mm", "9x70 mm R Mauser", "9x71 mm Peterlongo",
+        "5 mm Clement", "5.2x68 mm Mondragón", "5.66x39 mm MPS", "5.8x21 mm DAP92", "5x58 mm Sturtevant",
+        "6 mm SAW", "6.5 mm Bergmann", "6.5x27 mm R", "6.5x53.5 mm SR Daudeteau", "6.5x58 mm R Krag-Jørgensen",
+        "6.5x61 mm Mauser", "6.5x61 mm R Mauser", "6x29.5 mm R Stahl", "6x57 mm Mauser", "6x58 mm Forster",
+        "6x58 mm R Forster", "7 mm Nambu", "7x73 mm Vom Hofe Belted", "8.5 mm Mars", "8x42 mm R M88",
+        "8x50 mm R Siamese Type 45", "8x52 mm R Siamese Type 66", "8x54 mm Krag-Jørgensen", "8x59 mm Breda",
+        "8x60 mm R Guedes", "8x63 mm Swedish", "8x71 mm Peterlongo", "9.3x53 mm R Swiss", "9.3x53 mm Swiss",
+        "9.3x65 mm R Collath", "9.3x72 mm R Sauer", "9.3x75 mm R Nimrod", "9.5x47 mm R",
+        "9.5x60 mm R Turkish Mauser", "9.5x73 mm Miller-Greiss Magnum", "9x63 mm", "9x70 mm R Mauser",
+        "9x71 mm Peterlongo",
     }
 
     def bottlenecks(self):
@@ -321,13 +322,16 @@ class OutlineTests(unittest.TestCase):
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum", ".276 Enfield",
-        ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".303 Magnum", ".33 BSA",
-        ".333 Jeffery Rimless", ".400/375 Belted Nitro Express", ".425 Westley Richards Magnum", ".45 Blaser",
+        ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt", ".303 Magnum",
+        ".33 BSA", ".333 Jeffery Rimless", ".360 Mars", ".400/375 Belted Nitro Express",
+        ".425 Westley Richards Magnum", ".45 Blaser", ".45 Mars Long", ".45 Mars Short",
         ".45 Remington Thompson", "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser",
-        "11.2x60 mm Schüler", "11.2x72 mm Schüler", "4.85x49 mm British", "5.2x68 mm Mondragón",
-        "5x58 mm Sturtevant", "6 mm SAW", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser", "6x58 mm Forster",
-        "7x73 mm Vom Hofe Belted", "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo", "9.3x53 mm Swiss",
-        "9x63 mm", "9x71 mm Peterlongo",
+        "11.2x60 mm Schüler", "11.2x72 mm Schüler", "2.7 mm Kolibri", "3 mm Kolibri", "4.25 mm Liliput",
+        "4.85x49 mm British", "5 mm Bergmann", "5 mm Clement", "5.2x68 mm Mondragón", "5.8x21 mm DAP92",
+        "5x58 mm Sturtevant", "6 mm SAW", "6.5 mm Bergmann", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser",
+        "6x58 mm Forster", "7 mm Nambu", "7.63 mm Mannlicher", "7.65 mm Roth-Sauer", "7.92x24 mm",
+        "7x73 mm Vom Hofe Belted", "8.5 mm Mars", "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo",
+        "9.3x53 mm Swiss", "9x63 mm", "9x71 mm Peterlongo",
     }
 
     def rimless(self):
@@ -388,7 +392,8 @@ class OutlineTests(unittest.TestCase):
             if t is None or s["kind"] not in (RIMMED, RIMFIRE, RIMLESS, BELTED):
                 continue
             with self.subTest(s["name"]):
-                self.assertTrue(0.8 < t <= 2.54, t)  # the thickest: .100 in., the Werndl M77 service round
+                # The thinnest: .020 in., the 5 mm Bergmann pistol round; the thickest: .100 in., the Werndl M77.
+                self.assertTrue(0.5 <= t <= 2.54, t)
                 self.assertEqual(outline.case_profile(s)[1], (s["rim"] / 2, t))
                 drawn += 1
         self.assertGreater(drawn, 330)

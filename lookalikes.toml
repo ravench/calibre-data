@@ -234,3 +234,21 @@ calibres = [".400 Purdey", ".400/350 Nitro Express"]
 [[group]]
 differ_by = ["length"]
 calibres = [".577/500 Nitro Express", ".577/500 No. 2 Express"]
+
+[[group]]
+# The Swedish M1887 Nagant and the Swiss M1882 revolver rounds: same case, the Swedish bullet wider.
+differ_by = ["bore"]
+calibres = ["7.5 mm Swiss Ordnance 1882", "7.5 mm Swedish Nagant"]
+
+[[group]]
+# Two 8 mm service revolver rounds that look much alike (COTW 18 p. 476); the Lebel bullet is wider.
+differ_by = ["bore"]
+calibres = ["8 mm Rast-Gasser", "8 mm Lebel revolver"]
+
+[[group]]
+differ_by = ["length"]
+calibres = [".45 Mars Long", ".45 Mars Short"]
+
+[[group]]
+differ_by = ["length"]
+calibres = [".32 Short Colt", ".32 Long Colt"]

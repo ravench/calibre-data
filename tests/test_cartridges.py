@@ -538,7 +538,7 @@ class CatalogueTests(unittest.TestCase):
             "38coltnewpolice": ".38 S&W", "7mmmauser": "7x57 mm Mauser", "6.5x52r": ".25-35 Winchester",
             "7.7x56r": ".303 British", "400jeffery": ".450/400 Nitro Express 3 inch", "12.7x107": "12.7x108 mm",
             "38special+p": ".38 Special", "45-85": ".45-90 WCF", "50-105": ".50-110 Winchester",
-            "7.5swedishnagant": "7.5 mm Swiss Ordnance 1882", "6.5-08": ".260 Remington",
+            "7.5swedishnagant": "7.5 mm Swedish Nagant", "6.5-08": ".260 Remington",
             "7mmexpress": ".280 Remington", "8.58x71": ".338 Lapua Magnum", "8.58x70": ".338 Lapua Magnum",
             "301savage": ".303 Savage", "45-90hv": ".45-90 WCF", "44remmag": ".44 Magnum",
         }
@@ -581,7 +581,8 @@ class CatalogueTests(unittest.TestCase):
                                            "8x60 mm R Guedes",
                                            # No factory load on the page, or a later one than the original.
                                            ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
-                                           ".500 Express 3 inch", ".500/450 Magnum Express"})
+                                           ".500 Express 3 inch", ".500/450 Magnum Express",
+                                           ".32 Protector", "7.7 mm Bittner"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):

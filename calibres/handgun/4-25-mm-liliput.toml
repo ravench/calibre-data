@@ -1,0 +1,27 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# First for the Austrian Erika pistol (1913-14, the earliest year kept), later the German Liliput.
+name = "4.25 mm Liliput"
+kind = "rimless"
+profile = "round"
+aliases = ["4.25liliput", "4.25 erika", "4.25mm erika auto"]
+
+origin = "AH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 5.03
+base = 5.03
+neck = 5.03
+case_length = 10.41
+overall_length = 14.22
+bullet = 4.24
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1913
+sources = ["book:cotw-18 p. 457"]
+
+[primer]
+size = "small-pistol"
+sources = []
