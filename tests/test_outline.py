@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import SPITZER, ROUND, FLAT, PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -62,6 +62,29 @@ class OutlineTests(unittest.TestCase):
             if "case" in o and "bullet" in o and s["profile"] != PATCHED:
                 lead = bullet(s["name"]) in (LEAD, PAPER_PATCHED)
                 self.assertEqual(o.get("bulletMaterial") == "lead", lead, s["name"])
+
+    def test_hollow_points_have_a_cavity_in_the_nose(self):
+        names = [s["name"] for _, s in outline.specs() if bullet(s["name"]) == HOLLOW_POINT]
+        self.assertIn(".22 TCM", names)
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            if "bullet" not in o:
+                continue
+            centre = [y for x, y in points(o["bullet"]) if abs(x - o["width"] / 2) < 0.01]
+            # The nose is the highest point (y 0) unless a cavity is cut into it.
+            self.assertEqual(min(centre) > 0.1, s["name"] in names, s["name"])
+
+    def test_a_hollow_point_keeps_the_round_s_nose_up_to_its_cavity(self):
+        for profile in (SPITZER, ROUND, FLAT):
+            nose, hollow = outline.bullet_profile(3, 10, 20, profile), outline.hollow_profile(3, 10, 20, profile)
+            (mx, my), (ax, ay) = hollow[-2:]
+            self.assertEqual(hollow[:-2], nose[:len(hollow) - 2], profile)
+            self.assertAlmostEqual(mx, outline.HOLLOW_MOUTH * 3)
+            self.assertEqual(ax, 0)
+            self.assertLess(ay, my)
+            self.assertLessEqual(my, 20)
+        self.assertEqual(outline.hollow_profile(3, 10, 20, FLAT)[-2][1], 20)  # the cavity opens in the flat
+        self.assertLess(outline.hollow_profile(3, 10, 20, SPITZER)[-2][1], 20)  # a pointed nose is cut short
 
     def test_soft_points_show_a_lead_tip_at_the_front_of_the_bullet(self):
         for _, s in outline.specs():

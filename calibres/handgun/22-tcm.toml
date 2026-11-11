@@ -47,8 +47,9 @@ rim_thickness = 1.24
 sources = ["book:cotw-18 p. 451"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Armscor, its only maker, loads it with jacketed hollow points only.
+type = "hollowpoint"
+sources = ["book:cotw-18 p. 362", "https://en.wikipedia.org/wiki/.22_TCM"]
 
 [case]
 material = "brass"

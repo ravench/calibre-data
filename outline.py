@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, STEEL, BRASS, HYBRID, PAPER, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
 BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
@@ -118,6 +118,20 @@ HYBRID_HEAD = 3.3
 PAPER_HEAD = 12.7
 
 
+# Mouth radius and depth of a HOLLOW_POINT bullet's cavity, as shares of the bullet's radius.
+HOLLOW_MOUTH, HOLLOW_DEPTH = 0.3, 0.8
+
+
+def hollow_profile(r, y0, top, profile):
+    """Right half of a hollow-point bullet: the round's own nose, cut off where it is as wide as the
+    cavity's mouth, with the cavity below the cut (at most 0.3 of the exposed bullet deep)."""
+    pts, m = bullet_profile(r, y0, top, profile), HOLLOW_MOUTH * r
+    i = next(i for i, (x, _) in enumerate(pts) if x <= m)
+    (xa, ya), (xb, yb) = pts[i - 1], pts[i]
+    y = ya + (xa - m) / (xa - xb) * (yb - ya)
+    return pts[:i] + [(m, y), (0, y - min(HOLLOW_DEPTH * r, 0.3 * (y - y0)))]
+
+
 def tip_profile(right, top, share=TIP_SHARE):
     """Right half of the front `share` of a bullet profile (bottom to tip), for a soft point's lead tip."""
     cut = top - share * (top - right[0][1])
@@ -180,8 +194,10 @@ def outline(s):
         prof = case_profile(s)
         paths["case"] = to_path(mirror(prof), H, hw)
         if s["oal"] > s["case"] + 0.1:
-            paths["bullet"] = to_path(mirror(bullet_profile(s["bullet"] / 2, s["case"], s["oal"], s["profile"])), H, hw)
             kind = bullet(s["name"])
+            r, y0, top = s["bullet"] / 2, s["case"], s["oal"]
+            right = hollow_profile(r, y0, top, s["profile"]) if kind == HOLLOW_POINT else bullet_profile(r, y0, top, s["profile"])
+            paths["bullet"] = to_path(mirror(right), H, hw)
             if s["profile"] == PATCHED:
                 # The bullet path is the whole silhouette (steel cap colour); the paper band goes on top.
                 paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"])), H, hw)
@@ -194,8 +210,7 @@ def outline(s):
             elif kind == STEEL:  # the MPS underwater dart
                 paths["bulletMaterial"] = "steel"
             elif kind in (SOFT_POINT, POLYMER_TIP):
-                right = bullet_profile(s["bullet"] / 2, s["case"], s["oal"], s["profile"])
-                paths["tip"] = to_path(mirror(tip_profile(right, s["oal"])), H, hw)
+                paths["tip"] = to_path(mirror(tip_profile(right, top)), H, hw)
                 if kind == POLYMER_TIP:
                     paths["tipMaterial"] = "polymer"
         if case_material(s["name"]) == HYBRID:
