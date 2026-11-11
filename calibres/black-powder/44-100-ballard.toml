@@ -10,6 +10,7 @@ obsolete = true
 rare = true
 
 [mm]
+# COTW 5 and the .45-100 Ballard row (the same case) give a .597 in. rim; this is COTW 18's .605.
 rim = 15.37
 base = 12.65
 neck = 12.32

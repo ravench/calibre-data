@@ -3,7 +3,7 @@
 name = ".44 Evans Short"
 kind = "rimmed"
 profile = "round"
-aliases = ["44 evans short", "44 evans"]
+aliases = ["44 evans short"]
 
 origin = "US"
 obsolete = true

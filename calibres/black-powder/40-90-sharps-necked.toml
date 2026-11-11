@@ -3,7 +3,7 @@
 name = ".40-90 Sharps Necked"
 kind = "rimmed"
 profile = "round"
-aliases = ["40-90 sharps necked", "40-100 sharps necked", "40-90 sharps"]
+aliases = ["40-90 sharps necked", "40-100 sharps necked"]
 
 origin = "US"
 obsolete = true

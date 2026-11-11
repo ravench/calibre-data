@@ -1,5 +1,5 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
-# For the Winchester Model 1876 lever action; a sharply tapered, slightly necked case.
+# For the Winchester Model 1876 lever action; a strongly tapered case with a short, faint neck.
 name = ".40-60 Winchester"
 kind = "rimmed"
 profile = "flat"

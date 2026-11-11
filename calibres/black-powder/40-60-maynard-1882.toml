@@ -19,6 +19,7 @@ bullet = 10.59
 sources = ["book:cotw-18 p. 251"]
 
 [introduced]
+# The year of the Maynard Model 1882 rifles it was made for.
 year = 1882
 sources = ["book:cotw-18 p. 228"]
 

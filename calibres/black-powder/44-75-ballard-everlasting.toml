@@ -24,9 +24,10 @@ year = 1876
 sources = ["book:cotw-18 p. 234"]
 
 [primer]
-# The table gives Berdan #2; COTW 18 p. 234 also names specimens with large rifle primers.
+# The table gives Berdan #2; COTW 18 p. 234 names some specimens with large rifle primers, but the
+# cases examined were Berdan primed (p. 235): size not verified.
 size = "large-rifle"
-sources = ["book:cotw-18 p. 234"]
+sources = []
 
 [bullet]
 # COTW 18 p. 235 gives no factory load; the Ballard catalogues listed a patched .44 bullet,

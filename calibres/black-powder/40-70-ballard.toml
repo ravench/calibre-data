@@ -14,6 +14,7 @@ rim = 14.1
 base = 11.96
 neck = 10.92
 case_length = 60.45
+# The table's overall length (2.55 in.) repeats the 40-60 Marlin row's in COTW 18 and COTW 5; kept.
 overall_length = 64.77
 bullet = 10.24
 sources = ["book:cotw-18 p. 251"]

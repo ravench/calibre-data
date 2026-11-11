@@ -15,10 +15,12 @@ base = 11.58
 neck = 11.43
 case_length = 45.21
 overall_length = 58.93
-bullet = 10.54
+# COTW 18 p. 228 gives one bore for the .40 Maynards, .415-.417 in.; the table's .417 of the others.
+bullet = 10.59
 sources = ["book:cotw-18 p. 251"]
 
 [introduced]
+# The year of the Maynard Model 1882 rifles it was made for.
 year = 1882
 sources = ["book:cotw-18 p. 228"]
 
