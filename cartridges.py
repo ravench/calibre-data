@@ -355,9 +355,9 @@ def _read_books(bf):
     return books
 
 
-def _check_colour_codes(f, tips, shape, countries, books):
+def _check_colour_codes(f, codes, shape, countries, books):
     """Check a calibre's [[colour_codes]] tables (`shape`: its shape in MM_SHAPES)."""
-    if not isinstance(tips, list) or not tips or not all(isinstance(t, dict) for t in tips):
+    if not isinstance(codes, list) or not codes or not all(isinstance(t, dict) for t in codes):
         f.problem(f.line(None, "colour_codes") or f.line("colour_codes"),
                   "each colour code is a [[colour_codes]] table with part, colours, meaning and sources")
         return
@@ -365,7 +365,7 @@ def _check_colour_codes(f, tips, shape, countries, books):
         f.problem(f.line("colour_codes"), "[[colour_codes]] is only for cartridges with a bullet")
     req, opt = COLOUR_CODE_KEYS
     seen = {}
-    for i, t in enumerate(tips):
+    for i, t in enumerate(codes):
         def at(key=None, i=i):
             return f.line("colour_codes", key, nth=i) or f.line("colour_codes", nth=i)
         for k in t:
@@ -379,7 +379,7 @@ def _check_colour_codes(f, tips, shape, countries, books):
         if "part" in t and t["part"] not in PARTS:
             f.problem(at("part"), f"[[colour_codes]] part is \"tip\" or \"base\"{_close(str(t['part']), PARTS)}")
         elif t.get("part") == "base" and _is_text_list(t.get("colours")) and len(t["colours"]) > 1:
-            f.problem(at("colours"), "[[colour_codes]] a base has one colour")
+            f.problem(at("colours"), f"[[colour_codes]] a base has one colour, not {len(t['colours'])}")
         for k, choices in (("colours", COLOURS), ("meaning", MEANINGS)):
             if k not in t:
                 continue
@@ -402,8 +402,8 @@ def _check_colour_codes(f, tips, shape, countries, books):
                     if code not in countries:
                         f.problem(at("countries"), f"[[colour_codes]] country {code!r} is not a code in "
                                                    f"countries.toml{_close(code, countries)}")
-        if _is_text_list(t.get("colours")) and _is_text_list(t.get("meaning")):
-            key = (t.get("part"), tuple(t["colours"]), frozenset(t["meaning"]))
+        if t.get("part") in PARTS and _is_text_list(t.get("colours")) and _is_text_list(t.get("meaning")):
+            key = (t["part"], tuple(t["colours"]), frozenset(t["meaning"]))
             if key in seen:
                 f.problem(at("colours"), f"[[colour_codes]] {' over '.join(t['colours'])} {t.get('part')} with this meaning is "
                                          f"already on line {seen[key]}: list all its countries there")
@@ -823,10 +823,10 @@ def load(root=ROOT):
             if "fired_by" in facts:
                 t["FIRED_BY"][n] = (tuple(facts["fired_by"]["firearms"]), first("fired_by"))
             if "colour_codes" in raw:
-                t["COLOUR_CODES"][n] = [{"part": tip["part"], "colours": tuple(tip["colours"]), "meaning": tuple(tip["meaning"]),
-                                        "description": tip.get("description"),
-                                        "countries": tuple(tip.get("countries", ())),
-                                        "sources": list(tip["sources"])} for tip in raw["colour_codes"]]
+                t["COLOUR_CODES"][n] = [{"part": c["part"], "colours": tuple(c["colours"]), "meaning": tuple(c["meaning"]),
+                                         "description": c.get("description"),
+                                         "countries": tuple(c.get("countries", ())),
+                                         "sources": list(c["sources"])} for c in raw["colour_codes"]]
     t.update(sets)
     t["WORLDWIDE"] = frozenset(t["WORLDWIDE"])
     hidden = {CATEGORIES[cat] for cat in NOT_IN_APPS}

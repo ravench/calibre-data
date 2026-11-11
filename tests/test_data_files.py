@@ -163,7 +163,7 @@ class LoadTests(unittest.TestCase):
         for table, (req, opt, _) in cartridges.FACTS.items():
             keys |= set(req) | set(opt)
             self.assertRegex(text, rf"(?m)^# ?\[{table}\]$|^\[{table}\]$", table)
-        keys |= set(cartridges.COLOUR_CODE_KEYS[0]) | set(cartridges.COLOUR_CODE_KEYS[1])
+        keys |= set(cartridges.COLOUR_CODE_KEYS[0]) | set(cartridges.COLOUR_CODE_KEYS[1]) | set(cartridges.PARTS)
         self.assertRegex(text, r"(?m)^# \[\[colour_codes\]\]$")
         for k in keys | set(cartridges.COLOURS) | set(cartridges.MEANINGS):
             self.assertRegex(text, rf"\b{k}\b", k)
@@ -427,7 +427,8 @@ class CheckTests(unittest.TestCase):
                  ('meaning = ["armour-piercing"]\n', "", r"\[\[colour_codes\]\] needs 'meaning'"),
                  ('part = "tip"\ncolours = ["black"]', 'colours = ["black"]', r"\[\[colour_codes\]\] needs 'part'"),
                  ('part = "tip"\ncolours = ["black"]', 'part = "bas"\ncolours = ["black"]', r"part is \"tip\" or \"base\".*did you mean \"base\""),
-                 ('part = "tip"\ncolours = ["black"]', 'part = "base"\ncolours = ["black", "red"]', r"a base has one colour"),
+                 ('part = "tip"\ncolours = ["black"]', 'part = "base"\ncolours = ["black", "red"]', r"a base has one colour, not 2"),
+                 ('part = "tip"\ncolours = ["black"]', 'part = ["tip"]\ncolours = ["black"]', r"part is \"tip\" or \"base\""),
                  ('sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]', "sources = []",
                   r"\[\[colour_codes\]\] needs at least one source"),
                  ('sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]\n', "", r"\[\[colour_codes\]\] needs sources"),

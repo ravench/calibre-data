@@ -70,6 +70,6 @@ sources = ["book:labbett p. 77", "book:labbett p. 86"]
 part = "base"
 colours = ["purple"]
 meaning = ["armour-piercing"]
-description = "Armour-piercing with a steel core, out of service by 1980"
+description = "Armour-piercing, no longer in service (1980)"
 countries = ["CH"]
 sources = ["book:labbett p. 77", "book:labbett p. 86"]

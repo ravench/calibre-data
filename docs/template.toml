@@ -168,7 +168,7 @@ sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
 # Optional, for military rounds: what a painted bullet tip or cartridge base means, one [[colour_codes]]
 # table for each code, at the end of the file (Kaliberfinder lists them on the calibre's page).
 # part: "tip" (the bullet tip) or "base" (the head of the case around the primer, as the Swiss
-# lacquered it on the GP 11).
+# formerly lacquered it on their rifle rounds).
 # colours: one or more of black, white, grey, silver, red, orange, yellow, green, blue, purple or
 # brown; a tip's from the tip down (["red", "silver"]: a red tip above a silver band), a base has one.
 # meaning: one or more of ball, armour-piercing, incendiary, explosive, tracer, spotting (a flash or

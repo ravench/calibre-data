@@ -352,7 +352,7 @@ sources = [
 ```
 
 - `part`: `tip` (the bullet tip) or `base` (the head of the case around the primer, which the Swiss
-  lacquered red for tracer and purple for armour-piercing on the GP 11 until the 1970s).
+  formerly lacquered red for tracer and purple for armour-piercing on their rifle rounds).
 - `colours`: one or more of `black`, `white`, `grey`, `silver`, `red`, `orange`,
   `yellow`, `green`, `blue`, `purple` or `brown`; a tip's from the tip down (`["red", "silver"]`: a red tip above a silver band),
   a base has one.
