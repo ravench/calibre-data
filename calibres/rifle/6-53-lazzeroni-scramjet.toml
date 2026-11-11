@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Lazzeroni's .257 long magnum, on its .530 in. case.
+name = "6.53 Lazzeroni Scramjet"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.53 scramjet", "6.53mm scramjet", "lazzeroni scramjet"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 13.46
+base = 13.46
+shoulder = 12.95
+shoulder_at = 60.1
+neck = 7.34
+case_length = 71.12
+overall_length = 90.8
+bullet = 6.53
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 451"]
+
+[introduced]
+year = 1996
+sources = ["book:cotw-18 p. 369"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 451"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

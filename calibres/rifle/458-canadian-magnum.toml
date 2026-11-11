@@ -1,0 +1,43 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# North American Shooting Systems' rebated rimless magnum for long actions, without a belt.
+name = ".458 Canadian Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["458 canadian magnum", "458 canadian mag", "458 nass"]
+
+origin = "CA"
+rare = true
+
+[mm]
+rim = 13.51
+base = 13.82
+shoulder = 13.46
+shoulder_at = 59.3
+neck = 12.32
+case_length = 71.88
+overall_length = 91.44
+bullet = 11.63
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 453"]
+
+[introduced]
+# COTW: developed about 1994.
+year = 1994
+sources = ["book:cotw-18 p. 435"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# .046 in.
+rim_thickness = 1.17
+sources = ["book:cotw-18 p. 453"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -625,7 +625,12 @@ class CatalogueTests(unittest.TestCase):
                                            ".50 Remington Navy Rimfire", ".56-50 Spencer", ".56-52 Spencer",
                                            ".56-52 Spencer Necked", ".58 Miller",
                                            # Paper-patched under its steel cap; the file says how it is known.
-                                           "7.5x53.5 mm Swiss (GP 1890)"})
+                                           "7.5x53.5 mm Swiss (GP 1890)",
+                                           # Proprietary hunting rounds whose page gives bullet weights only.
+                                           "7.82 Lazzeroni Patriot", "8.59 Lazzeroni Galaxy",
+                                           "9.09 Lazzeroni Eagle", "7 mm Dakota", ".300 Dakota", ".330 Dakota",
+                                           ".375 Dakota", ".416 Dakota", ".450 Dakota", "7 mm Canadian Magnum",
+                                           ".338 Canadian Magnum", ".458 Canadian Magnum"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):

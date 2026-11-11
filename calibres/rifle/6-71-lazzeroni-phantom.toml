@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Lazzeroni's .264 short magnum for a 2.8 in. action, on its .530 in. case.
+name = "6.71 Lazzeroni Phantom"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.71 phantom", "6.71mm phantom", "lazzeroni phantom"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 13.46
+base = 13.46
+shoulder = 12.95
+shoulder_at = 41.0
+neck = 7.54
+case_length = 52.07
+overall_length = 71.12
+bullet = 6.71
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 451"]
+
+[introduced]
+year = 1997
+sources = ["book:cotw-18 p. 376"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 451"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

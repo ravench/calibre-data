@@ -1,0 +1,43 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# North American Shooting Systems' rebated rimless magnum for long actions, without a belt.
+name = "7 mm Canadian Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7mm canadian magnum", "7mm canadian mag", "7mm nass"]
+
+origin = "CA"
+rare = true
+
+[mm]
+rim = 13.51
+base = 13.82
+shoulder = 13.46
+shoulder_at = 60.4
+neck = 8.18
+case_length = 71.88
+overall_length = 91.44
+bullet = 7.21
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 452"]
+
+[introduced]
+# COTW: developed about 1989.
+year = 1989
+sources = ["book:cotw-18 p. 388"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .046 in.
+rim_thickness = 1.17
+sources = ["book:cotw-18 p. 452"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

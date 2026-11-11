@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Lazzeroni's .338 short magnum for a 2.8 in. action, on its .577 in. case.
+name = "8.59 Lazzeroni Galaxy"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8.59 galaxy", "8.59mm galaxy", "lazzeroni galaxy"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 39.6
+neck = 9.35
+case_length = 52.07
+overall_length = 71.12
+bullet = 8.59
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 452"]
+
+[introduced]
+year = 1997
+sources = ["book:cotw-18 p. 402"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 452"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

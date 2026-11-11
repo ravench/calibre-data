@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Lazzeroni's .375 long magnum, on its .577 in. case.
+name = "9.53 Lazzeroni Saturn"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["9.53 saturn", "9.53mm saturn", "lazzeroni saturn"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 58.5
+neck = 10.26
+case_length = 71.12
+overall_length = 91.44
+bullet = 9.52
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 452"]
+
+[introduced]
+year = 1996
+sources = ["book:cotw-18 p. 416"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 452"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

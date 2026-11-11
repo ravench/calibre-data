@@ -1,0 +1,44 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .22 Nosler necked up to .243 in. and shortened to 1.600 in., with the same rebated rim the size of
+# the .223 Remington's.
+name = ".24 Nosler"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["24 nosler", "24nosler"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 9.6
+base = 10.67
+shoulder = 10.24
+shoulder_at = 31.7
+neck = 6.83
+case_length = 40.64
+overall_length = 57.4
+bullet = 6.17
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 451"]
+
+[introduced]
+# COTW: SAAMI published its dimensions in June 2017.
+year = 2017
+sources = ["book:cotw-18 p. 360"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# .045 in.
+rim_thickness = 1.14
+sources = ["book:cotw-18 p. 451"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []
