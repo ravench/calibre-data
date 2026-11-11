@@ -23,9 +23,10 @@ unknown = "From before 1873; COTW 18 p. 588 gives no year."
 sources = ["book:cotw-18 p. 588"]
 
 [primer]
-# The table gives a .241 in. Berdan primer.
-size = "berdan-nitro"
-sources = ["book:cotw-18 p. 608"]
+# The table gives a .241 in. Berdan primer, between the large Boxer and the .254 in. nitro sizes; large
+# rifle, as municion.org measures on the .400/350, for which the table also gives .241 in.
+size = "large-rifle"
+sources = []
 
 [case_head]
 # .040 in.

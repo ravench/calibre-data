@@ -23,7 +23,8 @@ year = 1901
 sources = ["book:cotw-18 p. 583"]
 
 [primer]
-size = "large-rifle"
+# The table gives no primer; small rifle, as the .297/230 Morris and the .310 Cadet (.177 in. on COTW 18 p. 608).
+size = "small-rifle"
 sources = []
 
 [case_head]

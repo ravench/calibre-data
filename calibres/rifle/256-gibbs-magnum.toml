@@ -1,5 +1,6 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
-# The 6.5x57 mm with the neck 2 mm shorter, for Gibbs's Mauser-type rifles.
+# The 6.5x57 mm with the neck 2 mm shorter, for Gibbs's Mauser-type rifles. The table marks it rimmed,
+# but p. 579 says rimless.
 name = ".256 Gibbs Magnum"
 kind = "rimless"
 profile = "spitzer"

@@ -35,8 +35,8 @@ rim_thickness = 1.4
 sources = ["book:cotw-18 p. 609"]
 
 [bullet]
-# A blackpowder round (COTW 18 p. 603), lead like the others of its time; the page's one factory load
-# is a later Nitro-for-Black soft point.
+# A blackpowder round (COTW 18 p. 603), lead like the others of its time; the one factory load, on
+# p. 604, is a later Nitro-for-Black soft point.
 type = "lead"
 sources = []
 

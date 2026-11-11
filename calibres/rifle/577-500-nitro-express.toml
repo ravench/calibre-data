@@ -35,8 +35,3 @@ sources = ["book:cotw-18 p. 609"]
 # .055 in.
 rim_thickness = 1.4
 sources = ["book:cotw-18 p. 609"]
-
-[bullet]
-# The Nitro-for-Black load; the later Nitro Express had jacketed bullets.
-type = "lead"
-sources = ["book:cotw-18 p. 603"]

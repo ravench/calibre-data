@@ -26,9 +26,9 @@ unknown = "COTW 18 p. 597 dates the oldest .500/450 to 1871 but gives no year fo
 sources = ["book:cotw-18 p. 597"]
 
 [primer]
-# The table gives a .241 in. Berdan primer.
+# COTW 5 gives a .251 in. Berdan primer; COTW 18 p. 608 prints .241 in.
 size = "berdan-nitro"
-sources = ["book:cotw-18 p. 608"]
+sources = ["book:cotw-5 p. 266"]
 
 [bullet]
 # A blackpowder round.
