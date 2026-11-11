@@ -176,10 +176,12 @@ GROUP_KEYS = ("name", "differ_by", "calibres")
 # numbers its pages by chapter has pages such as "14-13" (chapter 14, page 13).
 BOOK_SOURCE = re.compile(r"book:(?P<id>[^\s]+) p\. (?P<page>[1-9][0-9]*(?:-[1-9][0-9]*)?)")
 BOOK_KEYS = ("title", "year", "edition", "authors", "editors", "publisher", "place", "isbn")
-# [[tip_colours]]: what a coloured bullet tip means, a table for each code. Colours are listed from
-# the tip down (["red", "silver"]: a red tip above a silver band); the meanings combine (["armour-piercing",
-# "incendiary"] is an API round).
-TIP_KEYS = (("colours", "meaning", "sources"), ("description", "countries"))  # (required, optional)
+# [[colour_codes]]: what a painted bullet tip or cartridge base means, a table for each code. `part` says
+# where the paint is (PARTS). A tip's colours are listed from the tip down (["red", "silver"]: a red tip
+# above a silver band); a base, the head of the case around the primer, has one colour. The meanings
+# combine (["armour-piercing", "incendiary"] is an API round).
+COLOUR_CODE_KEYS = (("part", "colours", "meaning", "sources"), ("description", "countries"))  # (required, optional)
+PARTS = ("tip", "base")
 COLOURS = ("black", "white", "grey", "silver", "red", "orange", "yellow", "green", "blue", "purple", "brown")
 MEANINGS = ("ball", "armour-piercing", "incendiary", "explosive", "tracer", "spotting", "subsonic", "frangible")
 
@@ -290,7 +292,7 @@ def _check_keys(f, table, data, allowed, required):
 def _check_sources(f, table, data, rule, books=None, nth=0):
     """The sources of one table (the `nth` of a [[table]]): web addresses and book pages (`books`: the
     ids in books.toml, or None when books.toml could not be read)."""
-    label = f"[[{table}]]" if table == "tip_colours" else f"[{table}]"
+    label = f"[[{table}]]" if table == "colour_codes" else f"[{table}]"
     if "sources" not in data:
         if rule != "optional":
             f.problem(f.line(table, nth=nth), f"{label} needs a sources list (an empty list [] when nothing is checked yet)"
@@ -355,53 +357,57 @@ def _read_books(bf):
     return books
 
 
-def _check_tip_colours(f, tips, shape, countries, books):
-    """Check a calibre's [[tip_colours]] tables (`shape`: its shape in MM_SHAPES)."""
-    if not isinstance(tips, list) or not tips or not all(isinstance(t, dict) for t in tips):
-        f.problem(f.line(None, "tip_colours") or f.line("tip_colours"),
-                  "each tip colour is a [[tip_colours]] table with colours, meaning and sources")
+def _check_colour_codes(f, codes, shape, countries, books):
+    """Check a calibre's [[colour_codes]] tables (`shape`: its shape in MM_SHAPES)."""
+    if not isinstance(codes, list) or not codes or not all(isinstance(t, dict) for t in codes):
+        f.problem(f.line(None, "colour_codes") or f.line("colour_codes"),
+                  "each colour code is a [[colour_codes]] table with part, colours, meaning and sources")
         return
     if shape not in ("cartridge", "partial"):
-        f.problem(f.line("tip_colours"), "[[tip_colours]] is only for cartridges with a bullet")
-    req, opt = TIP_KEYS
+        f.problem(f.line("colour_codes"), "[[colour_codes]] is only for cartridges with a bullet")
+    req, opt = COLOUR_CODE_KEYS
     seen = {}
-    for i, t in enumerate(tips):
+    for i, t in enumerate(codes):
         def at(key=None, i=i):
-            return f.line("tip_colours", key, nth=i) or f.line("tip_colours", nth=i)
+            return f.line("colour_codes", key, nth=i) or f.line("colour_codes", nth=i)
         for k in t:
             if k not in req + opt:
-                f.problem(at(k), f"unknown key {k!r} in [[tip_colours]]{_close(k, req + opt)}; "
+                f.problem(at(k), f"unknown key {k!r} in [[colour_codes]]{_close(k, req + opt)}; "
                                  f"allowed: {', '.join(sorted(req + opt))}")
         for k in req:
             if k not in t and k != "sources":  # _check_sources reports that
-                f.problem(at(), f"[[tip_colours]] needs {k!r}")
-        _check_sources(f, "tip_colours", t, "required", books, nth=i)
+                f.problem(at(), f"[[colour_codes]] needs {k!r}")
+        _check_sources(f, "colour_codes", t, "required", books, nth=i)
+        if "part" in t and t["part"] not in PARTS:
+            f.problem(at("part"), f"[[colour_codes]] part is \"tip\" or \"base\"{_close(str(t['part']), PARTS)}")
+        elif t.get("part") == "base" and _is_text_list(t.get("colours")) and len(t["colours"]) > 1:
+            f.problem(at("colours"), f"[[colour_codes]] a base has one colour, not {len(t['colours'])}")
         for k, choices in (("colours", COLOURS), ("meaning", MEANINGS)):
             if k not in t:
                 continue
             bad = [x for x in t[k] if x not in choices] if _is_text_list(t[k]) else [t[k]]
             if bad or not t[k]:
-                f.problem(at(k), f"[[tip_colours]] {k} lists one or more of {', '.join(choices)}"
+                f.problem(at(k), f"[[colour_codes]] {k} lists one or more of {', '.join(choices)}"
                                  f"{_close(bad[0], choices) if bad else ''}")
             elif len(set(t[k])) != len(t[k]):
-                f.problem(at(k), f"[[tip_colours]] {k} lists {next(x for x in t[k] if t[k].count(x) > 1)!r} twice")
+                f.problem(at(k), f"[[colour_codes]] {k} lists {next(x for x in t[k] if t[k].count(x) > 1)!r} twice")
         if "description" in t and (not isinstance(t["description"], str) or not t["description"].strip()):
-            f.problem(at("description"), "[[tip_colours]] description must be text in quotes")
+            f.problem(at("description"), "[[colour_codes]] description must be text in quotes")
         if "countries" in t:
             codes = t["countries"]
             if not _is_text_list(codes) or not codes:
-                f.problem(at("countries"), "[[tip_colours]] countries lists one or more country codes")
+                f.problem(at("countries"), "[[colour_codes]] countries lists one or more country codes")
             elif len(set(codes)) != len(codes):
-                f.problem(at("countries"), "[[tip_colours]] countries lists a country twice")
+                f.problem(at("countries"), "[[colour_codes]] countries lists a country twice")
             elif countries is not None:
                 for code in codes:
                     if code not in countries:
-                        f.problem(at("countries"), f"[[tip_colours]] country {code!r} is not a code in "
+                        f.problem(at("countries"), f"[[colour_codes]] country {code!r} is not a code in "
                                                    f"countries.toml{_close(code, countries)}")
-        if _is_text_list(t.get("colours")) and _is_text_list(t.get("meaning")):
-            key = (tuple(t["colours"]), frozenset(t["meaning"]))
+        if t.get("part") in PARTS and _is_text_list(t.get("colours")) and _is_text_list(t.get("meaning")):
+            key = (t["part"], tuple(t["colours"]), frozenset(t["meaning"]))
             if key in seen:
-                f.problem(at("colours"), f"[[tip_colours]] {' over '.join(t['colours'])} with this meaning is "
+                f.problem(at("colours"), f"[[colour_codes]] {' over '.join(t['colours'])} {t.get('part')} with this meaning is "
                                          f"already on line {seen[key]}: list all its countries there")
             seen.setdefault(key, at())
 
@@ -409,8 +415,8 @@ def _check_tip_colours(f, tips, shape, countries, books):
 def _read_calibre(f, category, countries, books=None):
     """Check one calibre file; returns (entry dict, facts) or None when it cannot be used."""
     d = f.data
-    tables = {k for k, v in d.items() if isinstance(v, dict) and k != "tip_colours"}
-    top = {k for k in d if k not in tables and k != "tip_colours"}
+    tables = {k for k, v in d.items() if isinstance(v, dict) and k != "colour_codes"}
+    top = {k for k in d if k not in tables and k != "colour_codes"}
     _check_keys(f, None, {k: d[k] for k in top}, TOP_KEYS, ("name", "kind", "profile", "aliases"))
     for t in tables:
         if t not in FACTS:
@@ -523,8 +529,8 @@ def _read_calibre(f, category, countries, books=None):
             f.problem(f.line(t, "degrees"), "[shoulder_angle] degrees is the angle to the case axis, above 0 and below 90")
         ok = ok and len(f.problems) == before
         facts[t] = dict(data, sources=urls)
-    if "tip_colours" in d:
-        _check_tip_colours(f, d["tip_colours"], _shape(kind, profile, category), countries, books)
+    if "colour_codes" in d:
+        _check_colour_codes(f, d["colour_codes"], _shape(kind, profile, category), countries, books)
     if not ok:
         return None
     if kind in (RIMFIRE,) + LOOSE:
@@ -768,7 +774,7 @@ def load(root=ROOT):
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "CASES",
-                         "CURRENT_CASES", "SOURCES", "TIP_COLOURS", "FIRED_BY",
+                         "CURRENT_CASES", "SOURCES", "COLOUR_CODES", "FIRED_BY",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED")}
     for _, items in catalogue:
@@ -818,11 +824,11 @@ def load(root=ROOT):
                 t["CURRENT_CASES"][n] = (tuple(facts["current_cases"]["materials"]), first("current_cases"))
             if "fired_by" in facts:
                 t["FIRED_BY"][n] = (tuple(facts["fired_by"]["firearms"]), first("fired_by"))
-            if "tip_colours" in raw:
-                t["TIP_COLOURS"][n] = [{"colours": tuple(tip["colours"]), "meaning": tuple(tip["meaning"]),
-                                        "description": tip.get("description"),
-                                        "countries": tuple(tip.get("countries", ())),
-                                        "sources": list(tip["sources"])} for tip in raw["tip_colours"]]
+            if "colour_codes" in raw:
+                t["COLOUR_CODES"][n] = [{"part": c["part"], "colours": tuple(c["colours"]), "meaning": tuple(c["meaning"]),
+                                         "description": c.get("description"),
+                                         "countries": tuple(c.get("countries", ())),
+                                         "sources": list(c["sources"])} for c in raw["colour_codes"]]
     t.update(sets)
     t["WORLDWIDE"] = frozenset(t["WORLDWIDE"])
     hidden = {CATEGORIES[cat] for cat in NOT_IN_APPS}
@@ -871,10 +877,11 @@ LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the fil
 LOOKALIKE_NAMES = _t["LOOKALIKE_NAMES"]  # each group's name, in the same order
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
 BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
-# {name: [{colours, meaning, description or None, countries, sources}]}: what coloured bullet tips mean,
-# from the [[tip_colours]] tables (colours from the tip down). Kaliberfinder's generator reads it for the
+# {name: [{part, colours, meaning, description or None, countries, sources}]}: what a painted bullet tip
+# or cartridge base means, from the [[colour_codes]] tables (part "tip" or "base"; a tip's colours from
+# the tip down). Kaliberfinder's generator reads it for the
 # calibre page (2026-11-11); the sources stay here.
-TIP_COLOURS = _t["TIP_COLOURS"]
+COLOUR_CODES = _t["COLOUR_CODES"]
 # {name: (firearms that fire it, first source)}: the firearms that define a round, mostly old and
 # obsolete ones. For the catalogue only; the apps do not read it.
 FIRED_BY = _t["FIRED_BY"]

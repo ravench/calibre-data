@@ -332,14 +332,15 @@ the source writes (`Vetterli M69/81` is `Vetterli M1869/81`), the same way in ev
 name alone where the whole series fires it and the source names no model (`Berthier`,
 `Snider-Enfield`). Needs a source.
 
-### `[[tip_colours]]`: what coloured bullet tips mean
+### `[[colour_codes]]`: what painted bullet tips and cartridge bases mean
 
-Optional, for military rounds whose bullet tip is painted to show what it does: one `[[tip_colours]]`
-table for each code, at the end of the file. Kaliberfinder lists them on the calibre's page (its generator reads
-`TIP_COLOURS`; the sources stay here).
+Optional, for military rounds whose bullet tip or cartridge base is painted to show what it does: one
+`[[colour_codes]]` table for each code, at the end of the file. Kaliberfinder lists them on the calibre's page (its generator reads
+`COLOUR_CODES`; the sources stay here).
 
 ```toml
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["red", "silver"]
 meaning = ["armour-piercing", "incendiary", "tracer"]
 description = "US M20, Swiss M.65"
@@ -352,14 +353,17 @@ sources = [
 ]
 ```
 
-- `colours`: from the tip down, one or more of `black`, `white`, `grey`, `silver`, `red`, `orange`,
-  `yellow`, `green`, `blue`, `purple` or `brown` (`["red", "silver"]`: a red tip above a silver band).
+- `part`: `tip` (the bullet tip) or `base` (the head of the case around the primer, which the Swiss
+  formerly lacquered red for tracer and purple for armour-piercing on their rifle rounds).
+- `colours`: one or more of `black`, `white`, `grey`, `silver`, `red`, `orange`,
+  `yellow`, `green`, `blue`, `purple` or `brown`; a tip's from the tip down (`["red", "silver"]`: a red tip above a silver band),
+  a base has one.
 - `meaning`: one or more of `ball`, `armour-piercing`, `incendiary`, `explosive`, `tracer`,
   `spotting` (a flash or smoke where it hits, also ranging rounds), `subsonic` or `frangible`; an API
   round is `["armour-piercing", "incendiary"]`.
 - `description` (optional): the round's name, in English.
 - `countries` (optional): codes from `countries.toml` of the armies that mark it so. The same colours
-  can mean something else in another army; the same colours with the same meaning are one table
+  can mean something else in another army; the same part, colours and meaning are one table
   that lists all their countries.
 - `sources`: at least one.
 
@@ -433,7 +437,7 @@ in the apps (`Kanone`), whose dicts have `None` for a measurement no source give
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
 `case_head(name)`, `rim_thickness(name)` and `lookalikes(name)` look up one value; `sources(name, table)` lists every source
-of a table (`"mm"`, `"introduced"`, `"primer"`, ...). `TIP_COLOURS` holds the tip colour codes, each
+of a table (`"mm"`, `"introduced"`, `"primer"`, ...). `COLOUR_CODES` holds the tip and base colour codes, each
 with its own sources, and `FIRED_BY` the firearms of a round. A problem in the files stops the import with a
 `DataError` that lists them all.
 

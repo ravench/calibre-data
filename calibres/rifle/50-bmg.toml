@@ -50,14 +50,16 @@ sources = []
 material = "brass"
 sources = []
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["black"]
 meaning = ["armour-piercing"]
 description = "M2"
 countries = ["US"]
 sources = ["https://en.wikipedia.org/wiki/.50_BMG", "book:labbett p. 80"]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["silver"]
 meaning = ["armour-piercing", "incendiary"]
 description = "US M8, Swiss M.64"
@@ -69,7 +71,8 @@ sources = [
   "book:labbett p. 77",
 ]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["red", "silver"]
 meaning = ["armour-piercing", "incendiary", "tracer"]
 description = "US M20, Swiss M.65"
@@ -81,7 +84,8 @@ sources = [
   "book:labbett p. 77",
 ]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["red"]
 meaning = ["tracer"]
 description = "M1 and M21"
@@ -92,7 +96,8 @@ sources = [
   "book:labbett p. 82",
 ]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["orange"]
 meaning = ["tracer"]
 description = "M10"
@@ -103,7 +108,8 @@ sources = [
   "book:labbett p. 82",
 ]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 # Labbett p. 82; the colour key on Wikipedia shows the M17 red.
 colours = ["brown"]
 meaning = ["tracer"]
@@ -111,14 +117,16 @@ description = "M17"
 countries = ["US"]
 sources = ["book:labbett p. 82"]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["blue"]
 meaning = ["incendiary"]
 description = "M1, a light blue tip"
 countries = ["US"]
 sources = ["https://en.wikipedia.org/wiki/.50_BMG", "book:labbett p. 80"]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["green", "grey"]
 meaning = ["armour-piercing", "explosive", "incendiary"]
 description = "Mk 211 (Raufoss)"

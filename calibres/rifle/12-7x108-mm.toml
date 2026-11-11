@@ -46,14 +46,16 @@ sources = []
 material = "brass"
 sources = []
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["black", "red"]
 meaning = ["armour-piercing", "incendiary"]
 description = "B-32"
 countries = ["SU"]
 sources = ["book:labbett p. 84", "book:labbett p. 83"]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["purple", "red"]
 meaning = ["armour-piercing", "incendiary", "tracer"]
 description = "BZT-44"

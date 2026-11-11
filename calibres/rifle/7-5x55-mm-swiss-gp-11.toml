@@ -54,9 +54,26 @@ sources = []
 material = "brass"
 sources = []
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["red"]
 meaning = ["tracer"]
 description = "Tracer M.1911 (Leuchtspurpatrone)"
 countries = ["CH"]
 sources = ["book:labbett p. 76", "book:labbett p. 77"]
+
+[[colour_codes]]
+part = "base"
+colours = ["red"]
+meaning = ["tracer"]
+description = "Tracer, the older marking: the whole base lacquered"
+countries = ["CH"]
+sources = ["book:labbett p. 77", "book:labbett p. 86"]
+
+[[colour_codes]]
+part = "base"
+colours = ["purple"]
+meaning = ["armour-piercing"]
+description = "Armour-piercing, no longer in service (1980)"
+countries = ["CH"]
+sources = ["book:labbett p. 77", "book:labbett p. 86"]
