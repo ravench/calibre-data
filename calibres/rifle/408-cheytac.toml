@@ -30,3 +30,8 @@ sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 [shoulder_angle]
 degrees = 22.1
 sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 453"]

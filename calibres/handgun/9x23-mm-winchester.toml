@@ -25,3 +25,8 @@ sources = ["https://en.wikipedia.org/wiki/9×23mm_Winchester"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/9×23mm_Winchester"]
+
+[case_head]
+# .042 in.
+rim_thickness = 1.07
+sources = ["book:cotw-18 p. 528"]

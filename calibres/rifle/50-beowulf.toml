@@ -24,3 +24,8 @@ sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
 [primer]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 453"]

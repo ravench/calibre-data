@@ -36,6 +36,11 @@ sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
 degrees = 30
 sources = ["https://www.xxlreloading.com/"]
 
+[case_head]
+# .054 in.
+rim_thickness = 1.37
+sources = ["book:cotw-18 p. 451"]
+
 [case]
 # Brass body on a stainless steel head, held by an aluminium washer.
 material = "hybrid"

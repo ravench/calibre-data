@@ -33,6 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/.25-20_Winchester"]
 degrees = 16.6
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page60.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page60.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.25-20_Winchester"]

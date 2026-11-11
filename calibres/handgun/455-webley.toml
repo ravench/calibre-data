@@ -25,6 +25,11 @@ sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
 
+[case_head]
+# .045 in.
+rim_thickness = 1.14
+sources = ["book:donnelly p. 632"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.455_Webley"]

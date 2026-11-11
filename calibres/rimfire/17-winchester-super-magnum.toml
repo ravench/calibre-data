@@ -29,6 +29,11 @@ sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
 degrees = 16.1
 sources = ["https://municion.org/producto/17-winchester-super-magnum-rf/"]
 
+[case_head]
+# .066 in.
+rim_thickness = 1.68
+sources = ["book:cotw-18 p. 670"]
+
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]

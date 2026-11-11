@@ -22,3 +22,8 @@ sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
+
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:cotw-18 p. 529"]

@@ -36,6 +36,11 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 degrees = 7.2
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page119.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page119.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/470-nitro-express/"]

@@ -32,6 +32,11 @@ sources = ["https://municion.org/producto/32-long-cf/"]
 size = "small-rifle"
 sources = []
 
+[case_head]
+# .048 in.
+rim_thickness = 1.22
+sources = ["book:donnelly p. 367"]
+
 [bullet]
 # Outside-lubricated lead.
 type = "lead"

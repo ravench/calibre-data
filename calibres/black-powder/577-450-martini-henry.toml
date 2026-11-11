@@ -35,6 +35,11 @@ sources = []
 degrees = 15.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf"]
+
 [bullet]
 type = "paper"
 sources = ["https://en.wikipedia.org/wiki/.577/450_Martini–Henry"]

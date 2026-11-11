@@ -32,3 +32,8 @@ sources = ["https://en.wikipedia.org/wiki/.458_SOCOM"]
 # AECC drawing
 degrees = 35.2
 sources = ["https://municion.org/producto/458-socom/"]
+
+[case_head]
+# .048 in.
+rim_thickness = 1.22
+sources = ["book:cotw-18 p. 453"]

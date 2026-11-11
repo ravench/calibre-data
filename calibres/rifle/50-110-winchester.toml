@@ -27,6 +27,11 @@ sources = ["https://municion.org/producto/50-110-300-winchester-express/"]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.50-110_Winchester"]
 
+[case_head]
+# .063 in.
+rim_thickness = 1.6
+sources = ["book:cotw-18 p. 252"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/50-110-300-winchester-express/"]

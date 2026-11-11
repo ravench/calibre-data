@@ -35,6 +35,11 @@ sources = [
   "https://bulletin.accurateshooter.com/?p=69700",
 ]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-mm-arc-en.pdf"]
+
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/6mm_ARC"]

@@ -30,6 +30,11 @@ sources = ["https://municion.org/producto/401-winchester-self-loading/"]
 size = "large-rifle"
 sources = ["https://municion.org/producto/401-winchester-self-loading/"]
 
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 251"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/401-winchester-self-loading/"]

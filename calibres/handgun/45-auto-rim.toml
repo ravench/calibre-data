@@ -28,6 +28,11 @@ sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
 
+[case_head]
+# .085 in.
+rim_thickness = 2.16
+sources = ["book:cotw-18 p. 529"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]

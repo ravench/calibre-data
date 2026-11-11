@@ -36,6 +36,11 @@ sources = ["https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"]
 degrees = 8.7
 sources = ["https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"]
 
+[case_head]
+# .075 in.
+rim_thickness = 1.9
+sources = ["book:cotw-18 p. 574"]
+
 [bullet]
 type = "paper"
 sources = ["https://en.wikipedia.org/wiki/11×59mmR_Gras"]

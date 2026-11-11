@@ -34,3 +34,8 @@ sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 # AECC drawing 10-077-BGC-030
 degrees = 20
 sources = ["https://municion.org/producto/375-cheyenne-tactical/"]
+
+[case_head]
+# .063 in.
+rim_thickness = 1.6
+sources = ["book:cotw-18 p. 453"]

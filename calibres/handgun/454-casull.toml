@@ -27,3 +27,8 @@ sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
 [primer]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 529"]

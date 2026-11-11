@@ -31,3 +31,8 @@ sources = []
 [shoulder_angle]
 degrees = 25
 sources = ["https://en.wikipedia.org/wiki/6.5%C3%9753mmR"]
+
+[case_head]
+# .066 in.
+rim_thickness = 1.68
+sources = ["book:cotw-18 p. 573"]

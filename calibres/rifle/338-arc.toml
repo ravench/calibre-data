@@ -29,3 +29,8 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 # SAAMI drawing
 degrees = 30
 sources = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"]
+
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:cotw-18 p. 176"]

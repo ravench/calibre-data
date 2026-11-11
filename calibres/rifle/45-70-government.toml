@@ -22,6 +22,11 @@ sources = ["https://en.wikipedia.org/wiki/.45-70"]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.45-70"]
 
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 177"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.45-70"]

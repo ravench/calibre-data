@@ -23,6 +23,11 @@ sources = ["https://en.wikipedia.org/wiki/.400_Legend"]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.400_Legend"]
 
+[case_head]
+# .049 in.
+rim_thickness = 1.24
+sources = ["book:cotw-18 p. 177"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.400_Legend"]

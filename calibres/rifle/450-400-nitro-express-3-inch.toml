@@ -37,6 +37,11 @@ sources = ["https://municion.org/producto/450-400-express-2-3-8/"]
 degrees = 15
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page117.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page117.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.450/400_Nitro_Express"]

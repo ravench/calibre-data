@@ -35,6 +35,11 @@ sources = ["https://en.wikipedia.org/wiki/.22_Hornet"]
 degrees = 5.6
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page56.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page56.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.22_Hornet"]

@@ -35,6 +35,11 @@ sources = ["https://www.starlinebrass.com/38-40-brass"]
 degrees = 6.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page98.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page98.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38-40_Winchester"]

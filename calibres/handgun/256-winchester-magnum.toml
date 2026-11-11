@@ -34,3 +34,8 @@ sources = ["https://en.wikipedia.org/wiki/.256_Winchester_Magnum"]
 # AECC drawing 06-033-BBC-040
 degrees = 22.3
 sources = ["https://municion.org/producto/256-winchester-magnum/"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 527"]

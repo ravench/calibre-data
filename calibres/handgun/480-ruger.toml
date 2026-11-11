@@ -2,7 +2,7 @@
 # the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = ".480 Ruger"
-kind = "rimless"
+kind = "rimmed"
 profile = "flat"
 aliases = ["480ruger"]
 
@@ -27,3 +27,8 @@ sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
 [primer]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 529"]

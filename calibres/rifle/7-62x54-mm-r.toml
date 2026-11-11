@@ -35,6 +35,11 @@ sources = ["https://en.wikipedia.org/wiki/7.62×54mmR"]
 degrees = 18.5
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf"]
+
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]

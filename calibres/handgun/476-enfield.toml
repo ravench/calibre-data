@@ -26,6 +26,11 @@ sources = ["https://en.wikipedia.org/wiki/.476_Enfield"]
 size = "small-pistol"
 sources = ["https://municion.org/producto/476-enfield-revolver-mk-iii/"]
 
+[case_head]
+# .04 in.
+rim_thickness = 1.02
+sources = ["book:donnelly p. 649"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.476_Enfield"]

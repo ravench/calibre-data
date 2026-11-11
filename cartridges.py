@@ -147,12 +147,15 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
 }
 TOP_KEYS = {"name", "kind", "profile", "aliases", "display_aliases", "origin", "origin_candidates",
             "worldwide", "obsolete", "rare"}
+# [case_head] keys beside rim_thickness: the extractor groove of a rimless or belted case, all three
+# or none.
+HEAD_GROOVE = ("ramp_top", "groove_diameter", "ramp_angle")
 FACTS = {  # table: (required keys, optional keys, sources: "required", "optional" or "may be empty")
     "mm": ((), (), "may be empty"),  # keys by shape, above
     "introduced": ((), ("year", "unknown"), "optional"),
     "primer": (("size",), (), "may be empty"),
     "shoulder_angle": (("degrees",), (), "required"),
-    "case_head": (("rim_thickness", "ramp_top", "groove_diameter", "ramp_angle"), (), "required"),
+    "case_head": (("rim_thickness",), HEAD_GROOVE, "required"),
     "bullet": (("type",), (), "may be empty"),
     "case": (("material",), (), "required"),
     "current_cases": (("materials",), (), "required"),
@@ -519,6 +522,15 @@ def _read_calibre(f, category, countries, books=None):
         f.problem(f.line("mm", "bullet"), "calibres/cannon/ holds the 20 to 40 mm cannon rounds: bullet is 20 to 40")
     if "projectile" in facts and kind not in LOOSE:
         f.problem(f.line("projectile"), "[projectile] is only for balls, Minié bullets and pellets")
+    if "case_head" in facts:
+        groove = [k for k in HEAD_GROOVE if k in facts["case_head"]]
+        if kind in (RIMMED, RIMFIRE) and groove:
+            f.problem(f.line("case_head"), f"a {kind} case has no extractor groove: [case_head] has only rim_thickness")
+        elif kind not in (RIMMED, RIMFIRE, RIMLESS, BELTED):
+            f.problem(f.line("case_head"), f"a {kind} calibre has no [case_head]")
+        elif groove and len(groove) < len(HEAD_GROOVE):
+            f.problem(f.line("case_head"), "[case_head] has ramp_top, groove_diameter and ramp_angle together, "
+                                           "or only rim_thickness")
     aliases = d.get("aliases", []) if _is_text_list(d.get("aliases")) else []
     entry = _entry(name, kind, profile, aliases, facts["mm"], category)
     return entry, d, facts
@@ -700,7 +712,7 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "CASES",
                          "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES", "TIP_COLOURS", "FIRED_BY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE")}
     for _, items in catalogue:
@@ -734,8 +746,10 @@ def load(root=ROOT):
                 t["SHOULDER_ANGLES"][n] = (facts["shoulder_angle"]["degrees"], first("shoulder_angle"))
             if "case_head" in facts:
                 h = facts["case_head"]
-                t["CASE_HEADS"][n] = (h["rim_thickness"], h["ramp_top"], h["groove_diameter"], h["ramp_angle"],
-                                      first("case_head"))
+                t["RIM_THICKNESS"][n] = (h["rim_thickness"], first("case_head"))
+                if "ramp_top" in h:
+                    t["CASE_HEADS"][n] = (h["rim_thickness"], h["ramp_top"], h["groove_diameter"], h["ramp_angle"],
+                                          first("case_head"))
             if "bullet" in facts:
                 t["BULLETS"][n] = (facts["bullet"]["type"], first("bullet"))
             if "case" in facts:
@@ -778,8 +792,11 @@ PRIMERS, PRIMER_SOURCES, PRIMER_UNVERIFIED = _t["PRIMERS"], _t["PRIMER_SOURCES"]
 INTRODUCED, INTRODUCED_UNKNOWN = _t["INTRODUCED"], _t["INTRODUCED_UNKNOWN"]
 # {name: (degrees from the case axis, first source)} for bottleneck cases.
 SHOULDER_ANGLES = _t["SHOULDER_ANGLES"]
-# {name: (rim thickness R, ramp top E, groove diameter E1, ramp angle delta, first source)}.
+# {name: (rim thickness R, ramp top E, groove diameter E1, ramp angle delta, first source)}: rimless and
+# belted cases with their whole head.
 CASE_HEADS = _t["CASE_HEADS"]
+# {name: (rim thickness, first source)}: every case with a [case_head], CASE_HEADS' ones too.
+RIM_THICKNESS = _t["RIM_THICKNESS"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
 ORIGIN, ORIGIN_UNDECIDED = _t["ORIGIN"], _t["ORIGIN_UNDECIDED"]  # {name: code}, {name: (codes, likelier first)}
@@ -818,6 +835,12 @@ def case_head(name):
     """(rim thickness, ramp top or belt front, groove diameter, ramp angle) or None."""
     entry = CASE_HEADS.get(name)
     return entry[:4] if entry else None
+
+
+def rim_thickness(name):
+    """The rim's thickness in mm, or None where no source gives it."""
+    entry = RIM_THICKNESS.get(name)
+    return entry[0] if entry else None
 
 
 def is_obsolete(name):

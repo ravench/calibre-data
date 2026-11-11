@@ -33,3 +33,8 @@ sources = ["https://municion.org/producto/416-barrett-sniper/"]
 # AECC drawing 11-083-BGC-010
 degrees = 24.7
 sources = ["https://municion.org/producto/416-barrett-sniper/"]
+
+[case_head]
+# .083 in.
+rim_thickness = 2.11
+sources = ["book:cotw-18 p. 453"]

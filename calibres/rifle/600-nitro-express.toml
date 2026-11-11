@@ -26,6 +26,11 @@ sources = ["https://en.wikipedia.org/wiki/.600_Nitro_Express"]
 size = "large-rifle"
 sources = ["https://municion.org/producto/600-nitro-express-3/"]
 
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 695"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/600-nitro-express-3/"]

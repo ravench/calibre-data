@@ -33,3 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/6.5×50mmSR_Arisaka"]
 # C.I.P. 6,5 x 51 R (Arisaka)
 degrees = 18.5
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page13.pdf"]
+
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.5
+ramp_top = 2.3
+groove_diameter = 10.4
+ramp_angle = 60.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page13.pdf"]

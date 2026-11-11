@@ -26,6 +26,11 @@ sources = ["https://en.wikipedia.org/wiki/.310_Cadet"]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.310_Cadet"]
 
+[case_head]
+# .035 in.
+rim_thickness = 0.89
+sources = ["book:cotw-18 p. 608"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/310-cadet-single-shot/"]

@@ -32,3 +32,8 @@ sources = ["https://en.wikipedia.org/wiki/.303_British"]
 # C.I.P. 303 British
 degrees = 17
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page74.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page74.pdf"]

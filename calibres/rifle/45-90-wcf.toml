@@ -28,6 +28,11 @@ sources = ["https://municion.org/producto/45-90-300-winchester-cf/"]
 size = "large-rifle"
 sources = ["https://www.starlinebrass.com/45-90-brass-45-24"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.73
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page114.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/45-90-300-winchester-cf/"]

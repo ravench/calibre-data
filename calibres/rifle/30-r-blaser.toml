@@ -33,6 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/.30_R_Blaser"]
 degrees = 20
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page66.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page66.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.30_R_Blaser"]

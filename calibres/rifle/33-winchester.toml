@@ -35,6 +35,11 @@ sources = ["https://en.wikipedia.org/wiki/.33_Winchester"]
 degrees = 16.2
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page83.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page83.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/33-winchester-cf/"]

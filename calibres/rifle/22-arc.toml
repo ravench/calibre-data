@@ -33,6 +33,11 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 degrees = 30
 sources = ["https://www.outdoorlife.com/guns/22-arc-review/"]
 
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:cotw-18 p. 175"]
+
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.22_ARC"]

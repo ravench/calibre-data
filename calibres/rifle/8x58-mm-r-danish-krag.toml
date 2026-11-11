@@ -32,3 +32,8 @@ sources = ["https://municion.org/producto/8-x-58-r-danish-krag-jorgensen-m-1889/
 [shoulder_angle]
 degrees = 16.5
 sources = ["https://en.wikipedia.org/wiki/8%C3%9758mmR_Danish_Krag"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 573"]

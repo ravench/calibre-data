@@ -39,6 +39,11 @@ sources = ["https://en.wikipedia.org/wiki/.38-56_WCF"]
 degrees = 6.5
 sources = ["https://municion.org/producto/38-56-winchester-cf-marlincolt/"]
 
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 250"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38-56_WCF"]

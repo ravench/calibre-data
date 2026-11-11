@@ -36,6 +36,11 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 degrees = 25
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page84.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page84.pdf"]
+
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.338_Marlin_Express"]

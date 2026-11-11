@@ -19,6 +19,11 @@ sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"]
 year = 1890
 sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"]
 
+[case_head]
+# .046 in.
+rim_thickness = 1.17
+sources = ["book:cotw-18 p. 670"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"]

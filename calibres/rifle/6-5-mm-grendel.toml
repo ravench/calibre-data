@@ -30,6 +30,11 @@ sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
 degrees = 30
 sources = ["https://www.rifleshootermag.com/editorial/6-5-grendel-evolution/84008"]
 
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:cotw-18 p. 175"]
+
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]

@@ -35,3 +35,8 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 # AECC drawing 06-045-BRC-050
 degrees = 29.9
 sources = ["https://municion.org/producto/22-nosler/"]
+
+[case_head]
+# .045 in.
+rim_thickness = 1.14
+sources = ["book:cotw-18 p. 175"]

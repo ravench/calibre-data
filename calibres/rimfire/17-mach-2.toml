@@ -28,6 +28,11 @@ sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Mach_2"]
 degrees = 20
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page27.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.09
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page27.pdf"]
+
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Mach_2"]

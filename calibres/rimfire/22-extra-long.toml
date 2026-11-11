@@ -21,6 +21,11 @@ sources = ["https://municion.org/producto/22-extra-long-rf-us/"]
 year = 1878
 sources = ["https://municion.org/producto/22-extra-long-rf-us/"]
 
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 670"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/22-extra-long-rf-us/"]

@@ -27,6 +27,11 @@ sources = ["https://en.wikipedia.org/wiki/.38_Special"]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.38_Special"]
 
+[case_head]
+# .054 in.
+rim_thickness = 1.37
+sources = ["book:cotw-18 p. 528"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38_Special"]

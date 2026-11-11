@@ -33,6 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/.25-35_Winchester"]
 degrees = 11.1
 sources = ["https://municion.org/producto/25-35-winchester-cf/"]
 
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:cotw-18 p. 175"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/25-35-winchester-cf/"]
