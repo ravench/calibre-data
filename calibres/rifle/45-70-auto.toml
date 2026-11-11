@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Phoenix Weaponry's .45-70 Government case turned down to a rebated .473 in. rim for self-loading rifles.
+name = ".45-70 Auto"
+kind = "rimless"
+profile = "round"
+aliases = ["45-70 auto"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 12.01
+base = 12.7
+neck = 12.19
+case_length = 53.47
+overall_length = 64.77
+bullet = 11.63
+# The table prints .275 in. for the neck and a shoulder on this straight case; the neck is the
+# .45-70 Government's (COTW 18 p. 177), which the case keeps.
+sources = ["book:cotw-18 p. 453", "book:cotw-18 p. 177"]
+
+[introduced]
+year = 2017
+sources = ["book:cotw-18 p. 431"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 453"]
+
+[bullet]
+type = "polymer"
+sources = ["book:cotw-18 p. 431"]
+
+[case]
+material = "brass"
+sources = []

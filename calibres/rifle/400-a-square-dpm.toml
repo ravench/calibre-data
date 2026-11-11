@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A-Square's Dual Purpose Magnum: the full-length .375 H&H Magnum case blown out to .41.
+name = ".400 A-Square DPM"
+kind = "belted"
+profile = "round"
+aliases = ["400 a-square dpm", "400 a-square dual purpose magnum", "400 asdpm"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 13.46
+base = 13.23
+shoulder = 13.21
+shoulder_at = 60.6
+neck = 11.43
+case_length = 72.39
+overall_length = 91.44
+bullet = 10.41
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 453"]
+
+[introduced]
+# COTW: introduced in 2006, like the 400 Pondoro of 1992 on a .416 Rigby case.
+year = 2006
+sources = ["book:cotw-18 p. 418"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# from the .375 H&H Magnum case; C.I.P. 375 H&H Mag.
+rim_thickness = 1.27
+ramp_top = 5.59
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page27.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

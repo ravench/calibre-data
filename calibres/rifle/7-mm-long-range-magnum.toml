@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Gunwerks' .375 Ruger case necked down to 7 mm.
+name = "7 mm Long Range Magnum"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7 lrm", "7lrm", "7mm lrm", "7 long range magnum"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 13.41
+base = 13.41
+shoulder = 12.98
+shoulder_at = 52.7
+neck = 8.08
+case_length = 63.86
+overall_length = 84.84
+bullet = 7.21
+# The table prints .0528 in. for the rim and base; .528 in. is meant.
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 451"]
+
+[introduced]
+year = 2010
+sources = ["book:cotw-18 p. 381"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# from the .375 Ruger case; C.I.P. 375 Ruger
+rim_thickness = 1.27
+ramp_top = 3.24
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

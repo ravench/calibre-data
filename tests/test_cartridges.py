@@ -630,7 +630,11 @@ class CatalogueTests(unittest.TestCase):
                                            "7.82 Lazzeroni Patriot", "8.59 Lazzeroni Galaxy",
                                            "9.09 Lazzeroni Eagle", "7 mm Dakota", ".300 Dakota", ".330 Dakota",
                                            ".375 Dakota", ".416 Dakota", ".450 Dakota", "7 mm Canadian Magnum",
-                                           ".338 Canadian Magnum", ".458 Canadian Magnum"})
+                                           ".338 Canadian Magnum", ".458 Canadian Magnum",
+                                           # A-Square's and Hoffman's: handloads or bullet weights only.
+                                           ".338 Excaliber", ".375 A-Square", ".416 Hoffman",
+                                           ".460 A-Square Short", ".500 A-Square", ".416 Rimmed",
+                                           ".450 Assegai", ".400 A-Square DPM"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):

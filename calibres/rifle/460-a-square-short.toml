@@ -1,0 +1,47 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A shortened .460 Weatherby Magnum case, the length of the .458 Winchester Magnum.
+name = ".460 A-Square Short"
+kind = "belted"
+profile = "round"
+aliases = ["460 a-square short", "460 short a-square"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 14.7
+base = 14.78
+shoulder = 14.22
+shoulder_at = 50.3
+neck = 12.29
+case_length = 63.5
+overall_length = 88.9
+bullet = 11.63
+# The table gives the belt, .603 in., in the rim column; the rim is the .460 Weatherby Magnum's (R1 on its
+# C.I.P. sheet), as the belt is drawn at the rim diameter.
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 453", "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
+
+[introduced]
+unknown = "COTW 18 p. 434 dates the A-Square line to 1974, but not this round."
+sources = ["book:cotw-18 p. 434"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# from the .460 Weatherby Magnum case; C.I.P. sheet
+rim_thickness = 1.6
+ramp_top = 6.4
+groove_diameter = 12.57
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Jim West's (Wild West Guns) .45 for lever-action rifles. Cor-Bon loaded it, but no longer
+# (COTW 18 p. 431).
+name = ".457 WWG"
+kind = "rimmed"
+profile = "flat"
+aliases = ["457 wwg", "457 wild west guns"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.37
+base = 12.8
+neck = 12.19
+case_length = 56.13
+overall_length = 63.25
+bullet = 11.63
+sources = ["book:cotw-18 p. 453"]
+
+[introduced]
+year = 1991
+sources = ["book:cotw-18 p. 430"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# .070 in.
+rim_thickness = 1.78
+sources = ["book:cotw-18 p. 453"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

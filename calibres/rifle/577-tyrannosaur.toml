@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A-Square's .577 for bolt-action backup rifles of African professional hunters.
+name = ".577 Tyrannosaur"
+kind = "rimless"
+profile = "round"
+aliases = ["577 tyrannosaur", "577 t-rex"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 17.48
+base = 17.48
+shoulder = 17.09
+shoulder_at = 59.9
+neck = 15.6
+case_length = 75.95
+overall_length = 94.23
+bullet = 14.86
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 454"]
+
+[introduced]
+year = 1993
+sources = ["book:cotw-18 p. 449"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 454"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 454"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []
