@@ -32,7 +32,7 @@ size = "berdan-nitro"
 sources = ["book:cotw-18 p. 652"]
 
 [bullet]
-# A blackpowder target round (COTW 18 p. 643); lead, like the others of its time.
+# A blackpowder target round (COTW 18 p. 644); lead, like the others of its time.
 type = "lead"
 sources = []
 

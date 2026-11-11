@@ -23,8 +23,8 @@ bullet = 11.18
 sources = ["book:cotw-18 p. 652"]
 
 [introduced]
-# COTW: possibly 1920 to 1922; the earliest year is kept.
-year = 1920
+# COTW: listed in the 1911 Alpha catalogue, though the page also guesses 1920 to 1922; the earliest year is kept.
+year = 1911
 sources = ["book:cotw-18 p. 648"]
 
 [primer]

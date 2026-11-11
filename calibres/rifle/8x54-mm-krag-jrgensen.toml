@@ -3,8 +3,7 @@
 name = "8x54 mm Krag-Jørgensen"
 kind = "rimless"
 profile = "round"
-aliases = ["8x54", "8x54 krag"]
-display_aliases = ["8x54 mm Krag-Jorgensen"]
+aliases = ["8x54", "8x54 krag", "8x54 krag-jorgensen"]
 
 origin = "NO"
 obsolete = true

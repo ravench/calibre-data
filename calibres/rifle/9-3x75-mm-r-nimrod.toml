@@ -27,6 +27,7 @@ year = 1905
 sources = ["book:cotw-18 p. 642"]
 
 [primer]
+# The table prints LP, which this rifle case is unlikely to take; large rifle, unverified.
 size = "large-rifle"
 sources = []
 

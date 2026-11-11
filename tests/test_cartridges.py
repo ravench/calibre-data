@@ -573,7 +573,7 @@ class CatalogueTests(unittest.TestCase):
                                            "8x57 mm R 360", "8x58 mm R Sauer",
                                            # COTW 18 gives only the weight or handloads.
                                            "9.3x72 mm R Sauer", "9.3x75 mm R Nimrod", "10.75x63 mm Mauser",
-                                           "9x71 mm Peterlongo", "9.5x47 mm R", "10.5x47 mm R",
+                                           "9.5x47 mm R", "10.5x47 mm R",
                                            "10.25x69 mm R Hunting-Express", "12.17x44 mm R"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 

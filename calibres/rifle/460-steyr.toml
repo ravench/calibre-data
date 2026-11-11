@@ -2,8 +2,8 @@
 # The .50 BMG case shortened and necked down to 11.64 mm, for countries that restrict .50 calibre guns.
 name = ".460 Steyr"
 kind = "rimless"
-profile = "round"
-aliases = ["460steyr", "460 steyr", "11.64"]
+profile = "spitzer"
+aliases = ["460steyr", "460 steyr"]
 
 origin = "AT"
 rare = true
@@ -28,7 +28,7 @@ sources = ["book:cotw-18 p. 649"]
 [primer]
 # The table gives a Boxer primer; the .50 BMG case it is made from takes the #35 size.
 size = "bmg-35"
-sources = ["book:cotw-18 p. 652"]
+sources = []
 
 [case_head]
 # from the .50 BMG case; C.I.P. 50 Browning

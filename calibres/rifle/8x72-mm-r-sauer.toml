@@ -16,6 +16,7 @@ neck = 8.72
 case_length = 72.0
 overall_length = 98.0
 bullet = 8.09
+# L6 as printed on the sheet; COTW 18 p. 652 gives 3.40 in. (86.4 mm) for the factory round.
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page41.pdf"]
 
 [introduced]

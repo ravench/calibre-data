@@ -12,12 +12,12 @@ rare = true
 rim = 12.01
 base = 13.03
 shoulder = 12.98
-shoulder_at = 42.7
+shoulder_at = 41.9
 neck = 12.34
 case_length = 54.86
 overall_length = 68.58
 bullet = 11.63
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# No source yet for shoulder_at (estimated: the .49 in. neck of COTW 18 p. 649 and the shoulder at 32 degrees).
 sources = ["book:cotw-18 p. 652"]
 
 [introduced]

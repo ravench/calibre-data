@@ -1,5 +1,5 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
-# Rebated rim; the 10.75x68 mm shortened.
+# Rebated rim; the older and shorter case of the 10.75x68 mm.
 name = "10.75x63 mm Mauser"
 kind = "rimless"
 profile = "round"

@@ -31,7 +31,6 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 652"]
 
 [bullet]
-# A hunting round; COTW 18 p. 636 gives the 1932 catalogue load's weight only.
 type = "softpoint"
-sources = []
+sources = ["book:cotw-18 p. 636"]
 
