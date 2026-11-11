@@ -35,7 +35,9 @@ rim_thickness = 1.52
 sources = ["book:cotw-18 p. 453"]
 
 [bullet]
-type = "jacketed"
+# Inferred: the factory load gives the weight only; A-Square's handloads use its Lion Load soft
+# point (p. 426).
+type = "softpoint"
 sources = []
 
 [case]

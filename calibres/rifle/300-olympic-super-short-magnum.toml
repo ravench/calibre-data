@@ -6,6 +6,8 @@ profile = "spitzer"
 aliases = ["300 ossm", "300 olympic super short magnum", "300 olympic"]
 
 origin = "US"
+# Olympic Arms, its only maker, closed in 2017 (https://en.wikipedia.org/wiki/Olympic_Arms).
+obsolete = true
 rare = true
 
 [mm]
@@ -37,8 +39,9 @@ ramp_angle = 45.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page87.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Olympic Arms' factory load: a soft-point boat-tail.
+type = "softpoint"
+sources = ["book:cotw-18 p. 394"]
 
 [case]
 material = "brass"

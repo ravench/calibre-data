@@ -34,8 +34,9 @@ rim_thickness = 1.52
 sources = ["book:cotw-18 p. 454"]
 
 [bullet]
+# A-Square's factory load: a monolithic solid.
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 450"]
 
 [case]
 material = "brass"

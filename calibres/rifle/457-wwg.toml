@@ -33,8 +33,9 @@ rim_thickness = 1.78
 sources = ["book:cotw-18 p. 453"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Cor-Bon's factory load: Swift's A-Frame, a bonded soft point.
+type = "softpoint"
+sources = ["book:cotw-18 p. 431"]
 
 [case]
 material = "brass"

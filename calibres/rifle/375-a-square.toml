@@ -39,7 +39,9 @@ ramp_angle = 45.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page29.pdf"]
 
 [bullet]
-type = "jacketed"
+# Inferred: A-Square's factory load took Sierra bullets and its own three Triad types; the page names
+# no type (p. 416).
+type = "softpoint"
 sources = []
 
 [case]

@@ -2,7 +2,8 @@
 # Guncrafter Industries' .50 for 1911-type pistols, on a rebated case.
 name = ".50 GI"
 kind = "rimless"
-profile = "round"
+# Nose: flat, as in Guncrafter's two factory loads, a hollow point and a flat point (COTW 18 p. 442).
+profile = "flat"
 aliases = ["50 gi", "50gi"]
 
 origin = "US"

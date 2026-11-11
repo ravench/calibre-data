@@ -1,5 +1,6 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
-# Gunwerks' .375 Ruger case necked down to 7 mm.
+# Gunwerks' .375 Ruger case necked down to 7 mm. Gunwerks sells it loaded:
+# https://www.eurooptic.com/gunwerks-7-lrm-berger-180gr-hyb-long-range-hunting-ammunition-ay-m6019
 name = "7 mm Long Range Magnum"
 kind = "rimless"
 profile = "spitzer"
@@ -12,13 +13,13 @@ rare = true
 rim = 13.41
 base = 13.41
 shoulder = 12.98
-shoulder_at = 52.7
+shoulder_at = 52.4
 neck = 8.08
 case_length = 63.86
 overall_length = 84.84
 bullet = 7.21
 # The table prints .0528 in. for the rim and base; .528 in. is meant.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at the angle below).
 sources = ["book:cotw-18 p. 451"]
 
 [introduced]
@@ -28,6 +29,11 @@ sources = ["book:cotw-18 p. 381"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 451"]
+
+[shoulder_angle]
+# COTW 18, in the text
+degrees = 30
+sources = ["book:cotw-18 p. 381"]
 
 [case_head]
 # from the .375 Ruger case; C.I.P. 375 Ruger

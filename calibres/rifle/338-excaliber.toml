@@ -37,7 +37,9 @@ ramp_angle = 45.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-pegasus-en.pdf"]
 
 [bullet]
-type = "jacketed"
+# Inferred: the page gives only A-Square's handloads, with Nosler Ballistic Tips and Sierra
+# boat-tail soft points (p. 406).
+type = "polymer"
 sources = []
 
 [case]

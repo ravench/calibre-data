@@ -25,6 +25,7 @@ unknown = "COTW 18 p. 397 gives no year; David Tubb set a record with it in Dece
 sources = ["book:cotw-18 p. 397"]
 
 [primer]
+# The table names Federal's 215, a large rifle magnum primer.
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 

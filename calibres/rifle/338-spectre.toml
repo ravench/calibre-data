@@ -12,13 +12,13 @@ rare = true
 rim = 10.67
 base = 10.79
 shoulder = 10.54
-shoulder_at = 22.1
+shoulder_at = 23.57
 neck = 9.17
 case_length = 31.75
 overall_length = 53.34
 bullet = 8.59
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 452"]
+# shoulder_at from the drawing on p. 400.
+sources = ["book:cotw-18 p. 452", "book:cotw-18 p. 400"]
 
 [introduced]
 unknown = "COTW 18 p. 400 gives no year."
@@ -29,6 +29,12 @@ sources = ["book:cotw-18 p. 400"]
 # primers.
 size = "small-rifle"
 sources = []
+
+[shoulder_angle]
+# COTW 18 drawing. COTW says the designer gave neither the angle nor the head-to-shoulder length:
+# both were measured.
+degrees = 30
+sources = ["book:cotw-18 p. 400"]
 
 [case_head]
 # from the 6.8 mm Remington SPC case; C.I.P. 6,8 mm Rem. SPC

@@ -41,7 +41,8 @@ ramp_angle = 45.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
 
 [bullet]
-type = "jacketed"
+# Inferred: the page gives only A-Square's handloads, with soft points (p. 443).
+type = "softpoint"
 sources = []
 
 [case]

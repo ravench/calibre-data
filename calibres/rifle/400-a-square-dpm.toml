@@ -38,7 +38,8 @@ ramp_angle = 35.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page27.pdf"]
 
 [bullet]
-type = "jacketed"
+# Inferred: A-Square made its own big-game bullets for it; the page names no type (p. 419).
+type = "softpoint"
 sources = []
 
 [case]
