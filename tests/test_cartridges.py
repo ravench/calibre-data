@@ -759,12 +759,12 @@ class CatalogueTests(unittest.TestCase):
                      ".56-50 Spencer", ".56-46 Spencer", ".56-52 Spencer Necked", ".50 Remington Army",
                      ".45 Colt Government"):
             self.assertEqual(case_material(name), COPPER, name)
-            self.assertTrue(CASES[name][1].startswith("https://municion.org/producto/"), name)
-        # The same photos show brass for these.
+            self.assertTrue(any(url.startswith("https://municion.org/producto/")
+                                for url in SOURCES[(name, "case")]), name)
+        # Brass, each with a photo or a drawing as its source.
         for name in (".45-70 Van Choate", "12.17x44 mm R", ".577/450 Martini-Henry", "10.4 mm Swiss Ordnance 1878"):
             self.assertEqual(case_material(name), BRASS, name)
-            self.assertTrue(CASES[name][1], name)
-
+            self.assertTrue(SOURCES[(name, "case")], name)
 
     def test_bbs_are_loose_steel_or_plastic_balls(self):
         by_name = {s["name"]: s for _, items in CATALOGUE for s in items}

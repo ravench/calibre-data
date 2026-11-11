@@ -29,7 +29,8 @@ type = "lead"
 sources = []
 
 [case]
-# municion.org files the .46 Long (Crittenden & Tibbals' 1864 catalogue) as the .46 Carbine RF. Its photos
-# show copper cases on the early makers' rounds (Crittenden & Tibbals, Leet and Fitch, Van Vechten).
+# municion.org says the first .46 Long (its .46 Carbine RF of 1864, a case of about 28 mm) had a copper case,
+# and its photos of Crittenden & Tibbals', Leet's and Fitch, Van Vechten & Co.'s rounds show it. The 32 mm
+# case measured here is Winchester's of about 1871.
 material = "copper"
 sources = ["https://municion.org/producto/46-carbine-rf/"]

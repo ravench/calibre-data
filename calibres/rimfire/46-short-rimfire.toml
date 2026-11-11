@@ -29,6 +29,8 @@ type = "lead"
 sources = []
 
 [case]
-# municion.org's photos show copper cases on the early makers' rounds (UMC and Winchester).
+# municion.org's photos show copper cases: UMC's rounds on its short-case page (about 1868) and Winchester's
+# on its long-case page (about 1870).
 material = "copper"
-sources = ["https://municion.org/producto/46-short-rf-short-case/"]
+sources = ["https://municion.org/producto/46-short-rf-short-case/",
+           "https://municion.org/producto/46-short-rf-long-case/"]

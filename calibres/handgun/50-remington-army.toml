@@ -35,7 +35,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 526"]
 
 [case]
-# municion.org's photos show copper cases on the early makers' rounds (the army's unmarked ones and W.
-# Stokes Kirk).
+# municion.org's photos show a copper case on the unmarked army round (and on W. Stokes Kirk's later shot load).
 material = "copper"
 sources = ["https://municion.org/producto/50-remington-army-m-1871/"]

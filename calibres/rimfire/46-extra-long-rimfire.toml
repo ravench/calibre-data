@@ -28,6 +28,6 @@ type = "lead"
 sources = []
 
 [case]
-# municion.org's photos show copper cases on the early makers' rounds (UMC).
+# municion.org says the case is copper, and its photo of UMC's round shows it.
 material = "copper"
 sources = ["https://municion.org/producto/46-extra-long-rf/"]

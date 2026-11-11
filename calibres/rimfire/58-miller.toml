@@ -30,6 +30,6 @@ sources = []
 
 [case]
 # municion.org files it as the .58 Musket RF (Allin, Miller and other conversions). Its photos show copper
-# cases on the early makers' rounds (Frankford Arsenal, Leet, Fitch, Van Vechten and UMC).
+# cases on the early makers' rounds (Frankford Arsenal, Leet, Fitch, Van Vechten & Co. and UMC).
 material = "copper"
 sources = ["https://municion.org/producto/58-musket-rf/"]

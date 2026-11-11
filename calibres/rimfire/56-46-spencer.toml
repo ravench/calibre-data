@@ -31,6 +31,6 @@ type = "lead"
 sources = []
 
 [case]
-# municion.org's photos show copper cases on the early makers' rounds (Leet and Fitch, Van Vechten).
+# municion.org's photos show copper cases on the early makers' rounds (Leet and Fitch, Van Vechten & Co.).
 material = "copper"
 sources = ["https://municion.org/producto/56-46-spencer-rf-short-neck/"]

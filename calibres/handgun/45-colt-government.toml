@@ -37,8 +37,8 @@ type = "lead"
 sources = ["book:cotw-18 p. 521"]
 
 [case]
-# Frankford Arsenal's rounds for both army revolvers had copper cases: municion.org's Frankford head (filed with
-# the Schofield) and the middle round of the Commons photo, dated 1875 on.
+# Frankford Arsenal's rounds for both army revolvers had copper cases: municion.org's Frankford round of 1887
+# (its page gives the Schofield names as synonyms) and the middle round of the Commons photo, made from 1875.
 material = "copper"
 sources = ["https://municion.org/producto/45-colt-government-model-1874/",
            "https://commons.wikimedia.org/wiki/File:Colt_.45_LC_Cartridges.JPG"]
