@@ -37,3 +37,7 @@ sources = []
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 589"]
+
+[case]
+material = "brass"
+sources = []

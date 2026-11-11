@@ -26,3 +26,7 @@ sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_
 # Alarm blanks: not reloadable, primed with small pistol size caps.
 size = "small-pistol"
 sources = []
+
+[case]
+material = "brass"
+sources = []

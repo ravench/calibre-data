@@ -34,3 +34,7 @@ sources = ["book:donnelly p. 649"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.476_Enfield"]
+
+[case]
+material = "brass"
+sources = []

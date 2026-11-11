@@ -39,6 +39,10 @@ sources = ["https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932
 rim_thickness = 1.73
 sources = ["book:cotw-18 p. 573"]
 
+[case]
+material = "brass"
+sources = []
+
 [fired_by]
 firearms = ["Lebel M1886", "Berthier"]
 sources = ["https://en.wikipedia.org/wiki/8×50mmR_Lebel"]

@@ -44,3 +44,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page119.pd
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/470-nitro-express/"]
+
+[case]
+material = "brass"
+sources = []

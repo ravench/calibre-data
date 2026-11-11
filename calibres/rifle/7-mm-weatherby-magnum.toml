@@ -44,3 +44,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page5.pd
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum"]
+
+[case]
+material = "brass"
+sources = []

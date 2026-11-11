@@ -38,3 +38,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page46.pdf
 [bullet]
 type = "lead"
 sources = ["https://www.lapua.com/product/32-sw-lapua-wadcutter-bullet-c427-535-g-83-gr/"]
+
+[case]
+material = "brass"
+sources = []

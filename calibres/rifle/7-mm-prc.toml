@@ -49,3 +49,7 @@ sources = [
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/7mm_PRC"]
+
+[case]
+material = "brass"
+sources = []

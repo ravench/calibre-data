@@ -32,3 +32,7 @@ sources = ["book:cotw-18 p. 177"]
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
+
+[case]
+material = "brass"
+sources = []

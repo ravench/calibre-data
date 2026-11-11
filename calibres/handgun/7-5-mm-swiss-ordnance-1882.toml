@@ -27,3 +27,7 @@ sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]
+
+[case]
+material = "brass"
+sources = []

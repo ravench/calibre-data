@@ -35,3 +35,7 @@ sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur
 # AECC drawing 08-107-BGC-020
 degrees = 31.2
 sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
+
+[case]
+material = "brass"
+sources = []

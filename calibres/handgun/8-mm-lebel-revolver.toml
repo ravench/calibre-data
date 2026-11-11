@@ -26,3 +26,7 @@ sources = ["https://en.wikipedia.org/wiki/8mm_French_Ordnance"]
 [primer]
 size = "small-pistol"
 sources = []
+
+[case]
+material = "brass"
+sources = []

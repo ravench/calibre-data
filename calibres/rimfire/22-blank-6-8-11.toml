@@ -16,3 +16,7 @@ sources = []
 
 [introduced]
 unknown = "a family of blanks and power-tool loads with no single launch"
+
+[case]
+material = "brass"
+sources = []

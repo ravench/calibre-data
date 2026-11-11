@@ -24,3 +24,7 @@ sources = [
 [introduced]
 year = 1977
 sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
+
+[case]
+material = "brass"
+sources = []

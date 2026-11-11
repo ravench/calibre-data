@@ -41,3 +41,7 @@ sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81
 [bullet]
 type = "paper"
 sources = ["https://municion.org/ficha-11-038-bbc-011-0001/"]
+
+[case]
+material = "brass"
+sources = []

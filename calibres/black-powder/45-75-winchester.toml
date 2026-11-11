@@ -45,3 +45,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page113.pd
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.45-75_Winchester"]
+
+[case]
+material = "brass"
+sources = []

@@ -46,3 +46,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page90.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.356_Winchester"]
+
+[case]
+material = "brass"
+sources = []

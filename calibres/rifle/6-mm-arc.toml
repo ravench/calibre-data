@@ -43,3 +43,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-mm-arc-en.pdf"]
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/6mm_ARC"]
+
+[case]
+material = "brass"
+sources = []

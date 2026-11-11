@@ -47,3 +47,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page72.pdf"]
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/9.5×57mm_Mannlicher–Schönauer"]
+
+[case]
+material = "brass"
+sources = []

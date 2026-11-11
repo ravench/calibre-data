@@ -29,3 +29,7 @@ sources = ["https://municion.org/producto/450-adams-mk-ii-brass-base-disk/"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.450_Adams"]
+
+[case]
+material = "brass"
+sources = []

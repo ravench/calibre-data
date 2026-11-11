@@ -83,6 +83,10 @@ sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 # C.I.P. 308 Win.
 degrees = 20
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+
+[case]
+material = "brass"
+sources = []
 ```
 
 Text goes in quotes, numbers and `true` don't. Lines starting with `#` are notes for people; the
@@ -290,9 +294,11 @@ cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outlin
   the tip) or `polymer` (copper jacket with a plastic tip: V-Max, ELD, FTX, SST, AccuBond). The GP
   1890 steel cap is its own profile (`patched`). `sources = []`: hunting rounds whose sources give
   no bullet, soft point from their use, not checked.
-- `[case]` `material`: the original case where it was not brass: `copper`, lacquered `steel`,
-  `nickel`-plated steel, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case)
-  or `hybrid` (brass body on a steel head).
+- `[case]` `material`, in every calibre with a case (not shot shells, balls, Minié bullets or
+  pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated steel, `paper`
+  (brass foil covered in paper on a brass head, Boxer's Snider case) or `hybrid` (brass body on a
+  steel head). Every material but brass needs a source; brass may have `sources = []` while it is
+  not checked. The outlines name only the materials that are not brass (`caseMaterial`).
 - `[current_cases]` `materials`: other case materials made today (brass .45-70, steel 9x19), never
   the original's own (brass only where the original is not brass); the original stays the drawn one.
 - `[projectile]` `material`: balls, Minié bullets and pellets not made of lead: `steel` or `plastic`

@@ -45,3 +45,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf"
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/416-rigby-magnum-nitro-express-2-7-8/"]
+
+[case]
+material = "brass"
+sources = []

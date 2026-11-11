@@ -22,3 +22,7 @@ sources = ["https://en.wikipedia.org/wiki/20%C3%97138mmB"]
 [introduced]
 year = 1930
 sources = ["https://en.wikipedia.org/wiki/20%C3%97138mmB"]
+
+[case]
+material = "brass"
+sources = []

@@ -49,3 +49,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page101.pdf"
 # Lookalike variants (2026-11-08): hunting rounds, soft point from their use like their twins.
 type = "softpoint"
 sources = []
+
+[case]
+material = "brass"
+sources = []

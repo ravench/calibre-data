@@ -35,3 +35,7 @@ sources = []
 # .045 in.
 rim_thickness = 1.15
 sources = ["book:cotw-18 p. 573"]
+
+[case]
+material = "brass"
+sources = []

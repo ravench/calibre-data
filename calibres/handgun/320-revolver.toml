@@ -41,3 +41,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page48.pdf
 # "80 gr (5 g) Lead"
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.320_Revolver"]
+
+[case]
+material = "brass"
+sources = []

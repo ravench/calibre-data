@@ -46,3 +46,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page102.pd
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
+
+[case]
+material = "brass"
+sources = []

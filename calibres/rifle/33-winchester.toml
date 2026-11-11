@@ -43,3 +43,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page83.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/33-winchester-cf/"]
+
+[case]
+material = "brass"
+sources = []

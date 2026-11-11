@@ -50,3 +50,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page67.pdf"]
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/9-x-57-mauser/"]
+
+[case]
+material = "brass"
+sources = []

@@ -25,3 +25,7 @@ sources = [
 [introduced]
 year = 1963
 sources = ["https://en.wikipedia.org/wiki/Oerlikon_GDF"]
+
+[case]
+material = "brass"
+sources = []

@@ -28,3 +28,7 @@ sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
+
+[case]
+material = "brass"
+sources = []

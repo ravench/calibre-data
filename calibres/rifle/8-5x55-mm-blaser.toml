@@ -42,3 +42,7 @@ sources = ["https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vest
 [bullet]
 type = "softpoint"
 sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -29,3 +29,7 @@ sources = []
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/10.4mm_Swiss_Centerfire"]
+
+[case]
+material = "brass"
+sources = []

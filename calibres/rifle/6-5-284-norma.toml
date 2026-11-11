@@ -41,3 +41,7 @@ ramp_top = 3.78
 groove_diameter = 10.39
 ramp_angle = 40.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page18.pdf"]
+
+[case]
+material = "brass"
+sources = []

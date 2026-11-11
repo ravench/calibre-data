@@ -34,3 +34,7 @@ sources = ["book:donnelly p. 498"]
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/40-65-winchester-cf/"]
+
+[case]
+material = "brass"
+sources = []

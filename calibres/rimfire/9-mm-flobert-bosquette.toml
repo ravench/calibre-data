@@ -28,3 +28,7 @@ sources = ["https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"]
 # a 00 buckshot ball
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"]
+
+[case]
+material = "brass"
+sources = []

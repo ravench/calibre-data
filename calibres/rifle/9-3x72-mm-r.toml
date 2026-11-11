@@ -41,3 +41,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page50.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/93-x-72-r/"]
+
+[case]
+material = "brass"
+sources = []

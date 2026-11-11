@@ -21,3 +21,7 @@ sources = ["https://en.wikipedia.org/wiki/23%C3%97152mmB"]
 [introduced]
 year = 1941
 sources = ["https://en.wikipedia.org/wiki/Volkov-Yartsev_VYa-23"]
+
+[case]
+material = "brass"
+sources = []

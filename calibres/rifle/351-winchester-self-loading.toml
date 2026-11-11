@@ -33,3 +33,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/351-win-sl-en.pdf"]
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/351-winchester-semi-rimmed-self-loading/"]
+
+[case]
+material = "brass"
+sources = []

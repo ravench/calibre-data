@@ -36,3 +36,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page87.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/35-winchester-self-loading/"]
+
+[case]
+material = "brass"
+sources = []

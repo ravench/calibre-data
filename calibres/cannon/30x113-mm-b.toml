@@ -23,3 +23,7 @@ sources = [
 [introduced]
 year = 1955
 sources = ["https://en.wikipedia.org/wiki/30_mm_caliber"]
+
+[case]
+material = "brass"
+sources = []

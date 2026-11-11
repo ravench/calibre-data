@@ -46,3 +46,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page122.pd
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/50-95-300-winchester/"]
+
+[case]
+material = "brass"
+sources = []

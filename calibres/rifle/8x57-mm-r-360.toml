@@ -43,3 +43,6 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page33.pdf
 type = "lead"
 sources = []
 
+[case]
+material = "brass"
+sources = []

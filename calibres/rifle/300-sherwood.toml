@@ -36,3 +36,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page73.pdf
 # COTW: solid lead or Leslie Taylor's capped bullets.
 type = "lead"
 sources = ["book:cotw-18 p. 583"]
+
+[case]
+material = "brass"
+sources = []

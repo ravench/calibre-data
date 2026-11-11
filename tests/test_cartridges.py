@@ -609,11 +609,15 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(bullet("6.5 mm Creedmoor"), POLYMER_TIP)
 
     def test_case_materials(self):
-        names = {s["name"] for _, items in CATALOGUE for s in items}
+        names = {s["name"] for _, items in ALL_CATALOGUE for s in items}
         for name, (material, url) in CASES.items():
             self.assertIn(name, names)
-            self.assertIn(material, (COPPER, STEEL, NICKEL, PAPER, HYBRID), name)
-            self.assertTrue(is_source(url), name)
+            self.assertIn(material, (BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID), name)
+            if material != BRASS:
+                self.assertTrue(is_source(url), name)
+        # Every calibre with a case names its material, brass too; shot shells and loose projectiles have none.
+        self.assertEqual(set(CASES), {s["name"] for _, items in ALL_CATALOGUE for s in items
+                                      if s["kind"] not in (SHOT, BALL, MINIE, PELLET)})
         self.assertEqual(case_material(".44 Henry"), COPPER)
         self.assertEqual(case_material("5.45x39 mm"), STEEL)
         self.assertEqual(case_material(".577 Snider"), PAPER)

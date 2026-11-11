@@ -45,6 +45,10 @@ sources = ["book:cotw-18 p. 574"]
 type = "paper"
 sources = ["https://en.wikipedia.org/wiki/11×59mmR_Gras"]
 
+[case]
+material = "brass"
+sources = []
+
 [fired_by]
 firearms = ["Gras M1874"]
 sources = ["https://en.wikipedia.org/wiki/11×59mmR_Gras"]

@@ -25,3 +25,7 @@ sources = ["https://municion.org/producto/32-long-rf/"]
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/32-long-rf/"]
+
+[case]
+material = "brass"
+sources = []

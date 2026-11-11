@@ -29,3 +29,7 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 # .055 in.
 rim_thickness = 1.4
 sources = ["book:cotw-18 p. 528"]
+
+[case]
+material = "brass"
+sources = []

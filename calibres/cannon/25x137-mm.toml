@@ -26,3 +26,7 @@ sources = [
 [introduced]
 year = 1971
 sources = ["https://en.wikipedia.org/wiki/Oerlikon_KBA"]
+
+[case]
+material = "brass"
+sources = []

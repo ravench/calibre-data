@@ -37,3 +37,7 @@ sources = ["https://en.wikipedia.org/wiki/8%C3%9758mmR_Danish_Krag"]
 # .060 in.
 rim_thickness = 1.52
 sources = ["book:cotw-18 p. 573"]
+
+[case]
+material = "brass"
+sources = []

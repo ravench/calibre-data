@@ -47,3 +47,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page64.pdf
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 577"]
+
+[case]
+material = "brass"
+sources = []

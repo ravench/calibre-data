@@ -32,3 +32,7 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 # SAAMI drawing
 degrees = 35
 sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"]
+
+[case]
+material = "brass"
+sources = []

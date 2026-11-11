@@ -29,3 +29,7 @@ sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
+
+[case]
+material = "brass"
+sources = []

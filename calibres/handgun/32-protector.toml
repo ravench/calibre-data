@@ -35,3 +35,7 @@ sources = ["book:cotw-18 p. 527"]
 # A blackpowder round; COTW 18 p. 465 gives only an estimated load.
 type = "lead"
 sources = []
+
+[case]
+material = "brass"
+sources = []

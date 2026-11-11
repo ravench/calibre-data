@@ -135,12 +135,13 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 
-# The original case where it was not brass (leave the table out for brass): copper, steel
-# (lacquered), nickel (nickel-plated steel), paper (brass foil covered in paper on a brass head) or
-# hybrid (brass body on a steel head). Needs a source.
-# [case]
-# material = "steel"
-# sources = ["https://…"]
+# The original case, in every calibre with one (not shot shells, balls, Minié bullets or pellets):
+# brass, copper, steel (lacquered), nickel (nickel-plated steel), paper (brass foil covered in paper
+# on a brass head) or hybrid (brass body on a steel head). Every material but brass needs a source;
+# brass may have sources = [] while it is not checked.
+[case]
+material = "brass"
+sources = []
 
 # Other case materials made today: brass, copper, steel or nickel, never the original's own (so
 # brass only where the original is not brass). The original stays the one drawn. Needs a source.

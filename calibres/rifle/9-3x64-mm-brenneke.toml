@@ -48,6 +48,10 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page70.pdf"]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/9.3×64mm_Brenneke"]
 
+[case]
+material = "brass"
+sources = []
+
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]

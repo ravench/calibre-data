@@ -45,3 +45,7 @@ sources = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]
 # .049 in.
 rim_thickness = 1.24
 sources = ["book:cotw-18 p. 451"]
+
+[case]
+material = "brass"
+sources = []

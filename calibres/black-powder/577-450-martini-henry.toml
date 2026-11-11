@@ -43,3 +43,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pd
 [bullet]
 type = "paper"
 sources = ["https://en.wikipedia.org/wiki/.577/450_Martini–Henry"]
+
+[case]
+material = "brass"
+sources = []

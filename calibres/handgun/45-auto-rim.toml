@@ -36,3 +36,7 @@ sources = ["book:cotw-18 p. 529"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
+
+[case]
+material = "brass"
+sources = []

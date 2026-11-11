@@ -40,3 +40,7 @@ sources = ["https://municion.org/producto/22-nosler/"]
 # .045 in.
 rim_thickness = 1.14
 sources = ["book:cotw-18 p. 175"]
+
+[case]
+material = "brass"
+sources = []

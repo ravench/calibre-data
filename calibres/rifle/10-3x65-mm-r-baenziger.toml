@@ -30,3 +30,7 @@ sources = []
 # COTW: a lead or soft-point bullet.
 type = "lead"
 sources = ["book:cotw-18 p. 646"]
+
+[case]
+material = "brass"
+sources = []

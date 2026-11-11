@@ -42,6 +42,10 @@ groove_diameter = 10.3
 ramp_angle = 51.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page46.pdf"]
 
+[case]
+material = "brass"
+sources = []
+
 [[tip_colours]]
 colours = ["red"]
 meaning = ["tracer"]

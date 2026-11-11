@@ -27,3 +27,7 @@ sources = [
 [introduced]
 year = 1975
 sources = ["https://en.wikipedia.org/wiki/Gryazev-Shipunov_GSh-6-30"]
+
+[case]
+material = "brass"
+sources = []

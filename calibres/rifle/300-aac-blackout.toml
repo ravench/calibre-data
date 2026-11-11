@@ -43,3 +43,7 @@ ramp_top = 3.15
 groove_diameter = 8.43
 ramp_angle = 25.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+
+[case]
+material = "brass"
+sources = []

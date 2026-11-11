@@ -41,3 +41,7 @@ sources = ["book:cotw-18 p. 176"]
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.30_Nosler"]
+
+[case]
+material = "brass"
+sources = []

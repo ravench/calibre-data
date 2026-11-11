@@ -33,3 +33,7 @@ sources = ["book:cotw-18 p. 528"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.44_S%26W_Russian"]
+
+[case]
+material = "brass"
+sources = []

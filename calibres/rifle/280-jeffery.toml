@@ -36,3 +36,7 @@ sources = ["book:cotw-18 p. 608"]
 # COTW gives no factory load.
 type = "softpoint"
 sources = []
+
+[case]
+material = "brass"
+sources = []

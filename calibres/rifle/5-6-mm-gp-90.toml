@@ -42,6 +42,10 @@ groove_diameter = 8.43
 ramp_angle = 25.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
 
+[case]
+material = "brass"
+sources = []
+
 [fired_by]
 firearms = ["SIG Stgw 90"]
 sources = ["https://www.vtg.admin.ch/dam/de/sd-web/iZ8NXEwaRRyw/53_096_d.pdf", "https://en.wikipedia.org/wiki/SIG_SG_550"]

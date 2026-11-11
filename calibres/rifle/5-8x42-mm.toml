@@ -36,3 +36,7 @@ sources = []
 # small-arms.org (QBQ club) 5.8x42 dimension drawing: 49 deg full cone angle, shoulder at 34 mm, neck at 37.2 mm
 degrees = 24.5
 sources = ["https://www.small-arms.org/"]
+
+[case]
+material = "brass"
+sources = []

@@ -565,6 +565,15 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, LR, r"a rimfire calibre has no primer")
             self.assertProblem(c, WIN, r"needs a \[primer\] table", line=False)
 
+    def test_every_case_names_its_material(self):
+        with Copy() as c:
+            c.edit(LR, '[case]\nmaterial = "brass"\nsources = []\n', '')
+            c.edit(WIN, '[case]\nmaterial = "brass"', '[case]\nmaterial = "steel"')
+            c.edit("calibres/shotgun/12-70.toml", "[mm]", '[case]\nmaterial = "brass"\nsources = []\n\n[mm]')
+            self.assertProblem(c, LR, r"needs a \[case\] table", line=False)
+            self.assertProblem(c, WIN, r"\[case\] material 'steel' needs a source")
+            self.assertProblem(c, "calibres/shotgun/12-70.toml", r"a shot calibre has no metal case")
+
     def test_order_toml_names_without_a_file(self):
         with Copy() as c:
             c.edit("order.toml", '".22 LR"', '".22 LRR"')

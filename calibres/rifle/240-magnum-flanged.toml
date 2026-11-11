@@ -44,3 +44,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page59.pdf
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 577"]
+
+[case]
+material = "brass"
+sources = []

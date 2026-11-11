@@ -44,3 +44,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page20.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/7-30_Waters"]
+
+[case]
+material = "brass"
+sources = []

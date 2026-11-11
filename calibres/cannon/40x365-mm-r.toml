@@ -23,3 +23,7 @@ sources = [
 [introduced]
 year = 1951
 sources = ["https://en.wikipedia.org/wiki/Bofors_40_mm_Automatic_Gun_L/70"]
+
+[case]
+material = "brass"
+sources = []

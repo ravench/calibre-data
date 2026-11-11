@@ -35,3 +35,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page15.pdf
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 476"]
+
+[case]
+material = "brass"
+sources = []
