@@ -636,6 +636,9 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(current_case_materials("7.5x55 mm Swiss (GP 11)"), ())
         # The ZU-23's steel case followed the VYa-23's brass one (Jane's 2002 p. 91).
         self.assertEqual(current_case_materials("23x152 mm B"), (STEEL,))
+        # Copper and wartime steel first, brass today.
+        self.assertEqual(current_case_materials(".22 Short"), (BRASS,))
+        self.assertEqual(current_case_materials("7.92x33 mm Kurz"), (BRASS,))
 
     def test_case_materials_checked_2026_11_11(self):
         # Raven 2026-11-11: check every calibre's case material. COTW 18, Jane's 2002 and Gun Digest name
