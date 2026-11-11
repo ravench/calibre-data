@@ -1,6 +1,6 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A shortened .404 Jeffery case for .338 in. bullets in a .30-06-length action.
-# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 401).
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 406).
 name = ".330 Dakota"
 kind = "rimless"
 profile = "spitzer"
@@ -36,7 +36,8 @@ rim_thickness = 1.14
 sources = ["book:cotw-18 p. 452"]
 
 [bullet]
-type = "jacketed"
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
 sources = []
 
 [case]

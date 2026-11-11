@@ -6,6 +6,8 @@ profile = "round"
 aliases = ["2.34 swissminigun", "2.34mm rimfire", "2.34 mm rimfire", "swissminigun", "swiss mini gun"]
 
 origin = "CH"
+# Loaded only on request, which counts as boutique loads.
+obsolete = true
 rare = true
 
 [mm]

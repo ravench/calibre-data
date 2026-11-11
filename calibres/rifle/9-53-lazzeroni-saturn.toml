@@ -12,12 +12,12 @@ rare = true
 rim = 14.66
 base = 14.66
 shoulder = 14.15
-shoulder_at = 58.5
+shoulder_at = 58.2
 neck = 10.26
 case_length = 71.12
 overall_length = 91.44
 bullet = 9.52
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at COTW's 30 degrees).
 sources = ["book:cotw-18 p. 452"]
 
 [introduced]
@@ -28,14 +28,20 @@ sources = ["book:cotw-18 p. 416"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 
+[shoulder_angle]
+# COTW 18 p. 416: a 30-degree shoulder.
+degrees = 30
+sources = ["book:cotw-18 p. 416"]
+
 [case_head]
 # .060 in.
 rim_thickness = 1.52
 sources = ["book:cotw-18 p. 452"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 416).
+type = "softpoint"
+sources = ["book:cotw-18 p. 416"]
 
 [case]
 material = "brass"

@@ -1,10 +1,11 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A full-length .404 Jeffery case with a slightly larger rim, for magnum-length actions. Ballistic Studies
 # says Dakota stopped making it.
-# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 401).
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 424).
 name = ".416 Dakota"
 kind = "rimless"
-profile = "spitzer"
+# Nose: round, as on the other dangerous-game rounds; the page gives none.
+profile = "round"
 aliases = ["416 dakota"]
 
 origin = "US"
@@ -38,7 +39,8 @@ rim_thickness = 1.07
 sources = ["book:cotw-18 p. 453"]
 
 [bullet]
-type = "jacketed"
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
 sources = []
 
 [case]

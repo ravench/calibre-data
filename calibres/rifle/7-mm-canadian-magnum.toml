@@ -35,7 +35,8 @@ rim_thickness = 1.17
 sources = ["book:cotw-18 p. 452"]
 
 [bullet]
-type = "jacketed"
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
 sources = []
 
 [case]

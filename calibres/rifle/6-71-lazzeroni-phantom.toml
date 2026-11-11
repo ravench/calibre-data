@@ -12,12 +12,12 @@ rare = true
 rim = 13.46
 base = 13.46
 shoulder = 12.95
-shoulder_at = 41.0
+shoulder_at = 40.7
 neck = 7.54
 case_length = 52.07
 overall_length = 71.12
 bullet = 6.71
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at COTW's 30 degrees).
 sources = ["book:cotw-18 p. 451"]
 
 [introduced]
@@ -28,14 +28,20 @@ sources = ["book:cotw-18 p. 376"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 451"]
 
+[shoulder_angle]
+# COTW 18 p. 376: a 30-degree shoulder.
+degrees = 30
+sources = ["book:cotw-18 p. 376"]
+
 [case_head]
 # .055 in.
 rim_thickness = 1.4
 sources = ["book:cotw-18 p. 451"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Soft point: the Nosler Partition (COTW 18 p. 377).
+type = "softpoint"
+sources = ["book:cotw-18 p. 377"]
 
 [case]
 material = "brass"

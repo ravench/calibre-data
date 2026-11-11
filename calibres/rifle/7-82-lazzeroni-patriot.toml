@@ -12,12 +12,12 @@ rare = true
 rim = 14.66
 base = 14.66
 shoulder = 14.15
-shoulder_at = 39.8
+shoulder_at = 39.5
 neck = 8.64
 case_length = 52.07
 overall_length = 71.12
 bullet = 7.82
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at COTW's 30 degrees).
 sources = ["book:cotw-18 p. 452"]
 
 [introduced]
@@ -28,13 +28,19 @@ sources = ["book:cotw-18 p. 394"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 
+[shoulder_angle]
+# COTW 18 p. 394: a 30-degree shoulder.
+degrees = 30
+sources = ["book:cotw-18 p. 394"]
+
 [case_head]
 # .060 in.
 rim_thickness = 1.52
 sources = ["book:cotw-18 p. 452"]
 
 [bullet]
-type = "jacketed"
+# Soft point inferred: Lazzeroni loads premium hunting bullets; the page gives weights only.
+type = "softpoint"
 sources = []
 
 [case]

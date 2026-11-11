@@ -1,6 +1,6 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Don Allen's 7 mm on the .404 Jeffery case, shortened and with a slightly larger, no longer rebated rim.
-# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 401).
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 385).
 name = "7 mm Dakota"
 kind = "rimless"
 profile = "spitzer"
@@ -36,7 +36,8 @@ rim_thickness = 1.07
 sources = ["book:cotw-18 p. 451"]
 
 [bullet]
-type = "jacketed"
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
 sources = []
 
 [case]

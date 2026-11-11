@@ -1,9 +1,10 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Unlike the other Dakota rounds, an improved full-length .416 Rigby case.
-# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 401).
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 436).
 name = ".450 Dakota"
 kind = "rimless"
-profile = "spitzer"
+# Nose: round, as on the other dangerous-game rounds; the page gives none.
+profile = "round"
 aliases = ["450 dakota"]
 
 origin = "US"
@@ -35,7 +36,8 @@ rim_thickness = 1.47
 sources = ["book:cotw-18 p. 453"]
 
 [bullet]
-type = "jacketed"
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
 sources = []
 
 [case]
