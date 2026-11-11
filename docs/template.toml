@@ -131,10 +131,12 @@ groove_diameter = 10.39
 ramp_angle = 36.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 
-# The bullet the cartridge was first sold with, where it was not a full metal jacket (leave the table
-# out for one): lead (bare lead, also lubricated or wax coated), paper (lead wrapped in paper below
-# the nose), softpoint (jacket with the lead core showing at the tip) or polymer (jacket with a
-# plastic tip). sources = [] when inferred from its use, not checked.
+# The bullet the cartridge was first sold with, in every calibre with a bullet (not shot shells, blanks
+# or cannon rounds): jacketed (full metal jacket or another all-copper bullet), lead (bare lead, also
+# lubricated or wax coated), paper (lead wrapped in paper below the nose), softpoint (jacket with the
+# lead core showing at the tip), polymer (jacket with a plastic tip) or steel (a solid steel dart). Balls, Minié bullets and
+# pellets give what they are made of: lead, steel or plastic (steel needs a source, and so does
+# plastic). sources = [] when not checked.
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
@@ -153,12 +155,6 @@ sources = []
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]
 sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
-
-# Balls, Minié bullets and pellets only, when not lead: steel or plastic (steel and airsoft BBs).
-# Needs a source.
-# [projectile]
-# material = "steel"
-# sources = ["https://…"]
 
 # Optional, mostly for old and obsolete rounds: the firearms that define the round (the arm it was
 # made for and its main service rifles; not every rifle chambered for it today, machine guns or later

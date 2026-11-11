@@ -33,6 +33,10 @@ sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
 rim_thickness = 1.4
 sources = ["book:cotw-18 p. 529"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

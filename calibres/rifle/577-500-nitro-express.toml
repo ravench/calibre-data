@@ -36,6 +36,12 @@ sources = ["book:cotw-18 p. 609"]
 rim_thickness = 1.4
 sources = ["book:cotw-18 p. 609"]
 
+[bullet]
+# Lead: the Nitro-for-Black factory load; the full Nitro load that followed was a 570-grain FMJ
+# (COTW 18 p. 603).
+type = "lead"
+sources = ["book:cotw-18 p. 603"]
+
 [case]
 material = "brass"
 sources = []

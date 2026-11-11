@@ -36,6 +36,10 @@ sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur
 degrees = 31.2
 sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

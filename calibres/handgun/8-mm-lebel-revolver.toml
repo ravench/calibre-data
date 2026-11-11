@@ -27,6 +27,10 @@ sources = ["https://en.wikipedia.org/wiki/8mm_French_Ordnance"]
 size = "small-pistol"
 sources = []
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

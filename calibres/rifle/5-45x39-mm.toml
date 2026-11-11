@@ -42,6 +42,10 @@ groove_diameter = 8.6
 ramp_angle = 45.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page2.pdf"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 # Lacquered steel: 5.45x39 from the start; 7.62x39 since the early 1960s (bimetal before).
 material = "steel"

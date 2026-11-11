@@ -30,6 +30,10 @@ sources = ["book:cotw-18 p. 535"]
 size = "large-rifle"
 sources = []
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 # COTW names varnished steel and aluminium cases without saying which came first; steel is kept.
 material = "steel"

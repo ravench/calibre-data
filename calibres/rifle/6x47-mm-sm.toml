@@ -51,6 +51,10 @@ groove_diameter = 10.39
 ramp_angle = 36.0
 sources = ["https://www.tiropratico.com/CIP/Commission%20Internationale%20Permanente/6x47.pdf"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

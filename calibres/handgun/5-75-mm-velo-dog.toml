@@ -25,6 +25,10 @@ sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 size = "small-pistol"
 sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

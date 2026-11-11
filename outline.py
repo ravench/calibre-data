@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, PAPER, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, STEEL, BRASS, HYBRID, PAPER, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
 BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
@@ -191,6 +191,8 @@ def outline(s):
                 paths["bulletMaterial"] = "lead"
             elif kind == LEAD:
                 paths["bulletMaterial"] = "lead"
+            elif kind == STEEL:  # the MPS underwater dart
+                paths["bulletMaterial"] = "steel"
             elif kind in (SOFT_POINT, POLYMER_TIP):
                 right = bullet_profile(s["bullet"] / 2, s["case"], s["oal"], s["profile"])
                 paths["tip"] = to_path(mirror(tip_profile(right, s["oal"])), H, hw)

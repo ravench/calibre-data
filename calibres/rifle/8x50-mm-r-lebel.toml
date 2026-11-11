@@ -42,6 +42,10 @@ sources = ["https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932
 rim_thickness = 1.73
 sources = ["book:cotw-18 p. 573"]
 
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 553"]
+
 [case]
 material = "brass"
 sources = []

@@ -29,7 +29,10 @@ sources = ["book:cotw-18 p. 617"]
 size = "large-rifle"
 sources = []
 
-# No [bullet]: the service or target load, full metal jacket; p. 617 also lists soft points.
+[bullet]
+# The service or target load, full metal jacket; p. 617 also lists soft points.
+type = "jacketed"
+sources = ["book:cotw-18 p. 617"]
 
 [case]
 material = "brass"

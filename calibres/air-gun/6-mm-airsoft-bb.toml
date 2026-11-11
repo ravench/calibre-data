@@ -15,6 +15,6 @@ sources = ["https://en.wikipedia.org/wiki/Airsoft_pellets"]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
 unknown = "not a single cartridge"
 
-[projectile]
-material = "plastic"
+[bullet]
+type = "plastic"
 sources = ["https://en.wikipedia.org/wiki/Airsoft_pellets"]

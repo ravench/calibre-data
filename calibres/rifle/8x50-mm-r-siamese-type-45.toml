@@ -29,6 +29,10 @@ sources = ["book:cotw-18 p. 552"]
 size = "large-rifle"
 sources = []
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

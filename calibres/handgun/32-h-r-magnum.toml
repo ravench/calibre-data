@@ -31,6 +31,10 @@ sources = ["https://en.wikipedia.org/wiki/.32_H%26R_Magnum"]
 rim_thickness = 1.27
 sources = ["book:cotw-18 p. 527"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

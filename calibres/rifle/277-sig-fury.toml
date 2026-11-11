@@ -41,6 +41,10 @@ sources = ["https://www.xxlreloading.com/"]
 rim_thickness = 1.37
 sources = ["book:cotw-18 p. 451"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 # Brass body on a stainless steel head, held by an aluminium washer.
 material = "hybrid"
