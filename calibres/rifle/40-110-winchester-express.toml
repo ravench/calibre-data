@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Winchester single-shot, to compete with the big Sharps rounds; the bullet was
+# copper-tubed.
+name = ".40-110 Winchester Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["40-110", "40-110 winchester", "40 express"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.54
+base = 14.35
+shoulder = 12.32
+shoulder_at = 71.1
+neck = 10.87
+case_length = 82.55
+overall_length = 92.2
+bullet = 10.24
+# COTW 5 prints the base as .543 in.; the 18th edition's .565 in. is kept.
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1886
+sources = ["book:cotw-18 p. 221"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 222"]
+
+[case]
+material = "brass"
+sources = []

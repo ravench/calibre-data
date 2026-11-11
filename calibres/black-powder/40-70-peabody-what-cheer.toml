@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Peabody-Martini rifles of the Providence Tool Co.; a short body and a long, sloping shoulder.
+name = ".40-70 Peabody What Cheer"
+kind = "rimmed"
+profile = "round"
+aliases = ["40-70 peabody", "40-70 what cheer"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.81
+base = 14.76
+shoulder = 14.0
+shoulder_at = 31.8
+neck = 10.87
+case_length = 44.7
+overall_length = 72.39
+bullet = 10.36
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# COTW: introduced in 1877 or 1878.
+year = 1877
+sources = ["book:cotw-18 p. 225"]
+
+[primer]
+# The table gives a large rifle primer, but most samples are Berdan primed (COTW 18 p. 225).
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 226"]
+
+[case]
+material = "brass"
+sources = []

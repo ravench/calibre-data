@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A Ballard Everlasting case of 1876; the .45-100 Ballard is the same case opened up.
+name = ".44-100 Ballard"
+kind = "rimmed"
+profile = "round"
+aliases = ["44-100 ballard", "44-100 ballard everlasting"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+# COTW 5 and the .45-100 Ballard row (the same case) give a .597 in. rim; this is COTW 18's .605.
+rim = 15.37
+base = 12.65
+neck = 12.32
+case_length = 71.37
+overall_length = 82.55
+bullet = 11.3
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1876
+sources = ["book:cotw-18 p. 234"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# .080 in.
+rim_thickness = 2.03
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 234"]
+
+[case]
+material = "brass"
+sources = []

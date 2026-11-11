@@ -1,0 +1,37 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The factory 40-70 case and the heavier 40-63 Everlasting case: the same outside, so listed together.
+name = ".40-70 Ballard"
+kind = "rimmed"
+profile = "round"
+aliases = ["40-70 ballard", "40-63 ballard", "40-63 ballard everlasting", "40-70 ballard everlasting"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.1
+base = 11.96
+neck = 10.92
+case_length = 60.45
+# The table's overall length (2.55 in.) repeats the 40-60 Marlin row's in COTW 18 and COTW 5; kept.
+overall_length = 64.77
+bullet = 10.24
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# COTW: first listed after Marlin took over the Ballard rifles in 1881.
+year = 1881
+sources = ["book:cotw-18 p. 222"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 222"]
+
+[case]
+material = "brass"
+sources = []

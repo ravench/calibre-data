@@ -1,0 +1,35 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A straight 2.6 in. match case for the Remington-Hepburn Long-Range Creedmoor rifle.
+name = ".44-100 Remington Creedmoor"
+kind = "rimmed"
+profile = "round"
+aliases = ["44-100 remington", "44-100 creedmoor", "44-90 remington straight", "44-110 creedmoor"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.43
+base = 12.78
+neck = 11.81
+case_length = 66.04
+overall_length = 100.84
+bullet = 11.23
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1880
+sources = ["book:cotw-18 p. 232"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 232"]
+
+[case]
+material = "brass"
+sources = []

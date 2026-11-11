@@ -1,0 +1,37 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A .44 version of the .45-70, for the Maynard Model 1882 rifles.
+name = ".44-70 Maynard 1882"
+kind = "rimmed"
+profile = "round"
+aliases = ["44-70 maynard", "44-70 maynard 1882"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.27
+base = 12.67
+neck = 11.84
+case_length = 56.13
+overall_length = 72.9
+bullet = 11.3
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# The year of the Maynard Model 1882 rifles it was made for.
+year = 1882
+sources = ["book:cotw-18 p. 233"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 234"]
+
+[case]
+material = "brass"
+sources = []

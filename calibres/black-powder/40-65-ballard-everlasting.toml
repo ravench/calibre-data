@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# An early Ballard Everlasting case, later altered to the .40-70 Ballard of the same length.
+name = ".40-65 Ballard Everlasting"
+kind = "rimmed"
+profile = "round"
+aliases = ["40-65 ballard", "40-65 ballard everlasting"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.24
+base = 12.9
+neck = 11.05
+case_length = 60.45
+# The table's overall length (2.55 in.) repeats the 40-60 Marlin row's in COTW 18 and COTW 5; kept.
+overall_length = 64.77
+bullet = 10.24
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+year = 1876
+sources = ["book:cotw-18 p. 220"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[bullet]
+# COTW 18 p. 220 gives no load of its own; a lead bullet, as in the other Ballard
+# rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []
