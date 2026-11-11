@@ -29,3 +29,8 @@ sources = ["https://en.wikipedia.org/wiki/5mm_Remington_Rimfire_Magnum"]
 # C.I.P. 5 mm Rem. Mag.
 degrees = 25
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.26
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf"]

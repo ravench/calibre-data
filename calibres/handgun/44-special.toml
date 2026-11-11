@@ -25,6 +25,11 @@ sources = ["https://en.wikipedia.org/wiki/.44_Special"]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.44_Special"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page74.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.44_Special"]

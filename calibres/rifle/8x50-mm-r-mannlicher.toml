@@ -35,3 +35,8 @@ sources = []
 # C.I.P. 8 x 50 R
 degrees = 14.5
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf"]

@@ -36,6 +36,11 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 degrees = 21
 sources = ["https://municion.org/producto/17-hornet/"]
 
+[case_head]
+# .050 in.
+rim_thickness = 1.27
+sources = ["book:cotw-18 p. 175"]
+
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.17_Hornet"]

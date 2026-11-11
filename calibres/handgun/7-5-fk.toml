@@ -31,3 +31,8 @@ sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
 [shoulder_angle]
 degrees = 30
 sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 527"]

@@ -28,3 +28,8 @@ sources = ["https://www.starlinebrass.com/86-blackout-brass"]
 # SAAMI drawing
 degrees = 30
 sources = ["https://saami.org/wp-content/uploads/2026/04/Public-Introduction-8.6-BLACKOUT-2026-04-07.pdf"]
+
+[case_head]
+# .054 in.
+rim_thickness = 1.37
+sources = ["book:cotw-18 p. 452"]

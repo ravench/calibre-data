@@ -34,6 +34,11 @@ sources = ["https://en.wikipedia.org/wiki/.30-30_Winchester"]
 degrees = 15.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page70.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page70.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.30-30_Winchester"]

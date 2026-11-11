@@ -32,6 +32,11 @@ sources = ["https://en.wikipedia.org/wiki/.320_Revolver"]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.320_Revolver"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.32
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page48.pdf"]
+
 [bullet]
 # "80 gr (5 g) Lead"
 type = "lead"

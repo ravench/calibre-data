@@ -113,11 +113,12 @@ sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 degrees = 20
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 
-# Rimless and belted cases, from the C.I.P. sheet (maximum cartridge): rim thickness (R), head to the
-# top of the extractor-groove ramp (E; belted: to the front of the belt), groove diameter (E1) and
+# Rim thickness (R on the C.I.P. sheet, maximum cartridge; or from a book) for every kind of case.
+# Rimless and belted cases add their extractor groove from the C.I.P. sheet, all three or none: head
+# to the top of the groove's ramp (E; belted: to the front of the belt), groove diameter (E1) and
 # the groove's front ramp to the case axis in degrees (delta). Needs a source; without one, leave
-# the table out and the head is drawn generic (add the calibre to HEAD_UNSOURCED in
-# tests/test_outline.py).
+# the table out (or the groove keys) and the head is drawn generic (add a rimless or belted calibre
+# without a groove to HEAD_UNSOURCED in tests/test_outline.py).
 [case_head]
 # C.I.P. 308 Win.
 rim_thickness = 1.37

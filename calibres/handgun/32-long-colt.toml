@@ -25,6 +25,11 @@ sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
 
+[case_head]
+# .045 in.
+rim_thickness = 1.14
+sources = ["book:cotw-18 p. 527"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]

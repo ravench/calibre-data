@@ -267,12 +267,15 @@ source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
 
 ### `[case_head]`
 
-Rimless and belted cases, from the C.I.P. sheets (maximum cartridge): `rim_thickness` (R),
-`ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
+`rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. Rimless and
+belted cases add their extractor groove where a C.I.P. sheet gives it, all three or none: `ramp_top`
+(E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
 A case made from a parent case without its own sheet keeps the parent's head (the note says which).
-Cases without one are drawn with a generic head (`HEAD_UNSOURCED` in `tests/test_outline.py` lists
-them).
+Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
+its dimension tables, Donnelly as E); the note gives the printed inches. A rim without a thickness is
+drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless and belted); rimless and belted
+cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outline.py` lists them).
 
 ### `[bullet]`, `[case]`, `[current_cases]`, `[projectile]`
 
@@ -401,7 +404,7 @@ in the apps (`Kanone`), whose dicts have `None` for a measurement no source give
 `["obsolete"]`, `["rare"]` or both; `origin(name)` gives `(code, name, flag)` or `None` and
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
-`case_head(name)` and `lookalikes(name)` look up one value; `sources(name, table)` lists every source
+`case_head(name)`, `rim_thickness(name)` and `lookalikes(name)` look up one value; `sources(name, table)` lists every source
 of a table (`"mm"`, `"introduced"`, `"primer"`, ...). `TIP_COLOURS` holds the tip colour codes, each
 with its own sources, and `FIRED_BY` the firearms of a round. A problem in the files stops the import with a
 `DataError` that lists them all.

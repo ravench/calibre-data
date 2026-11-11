@@ -36,6 +36,11 @@ sources = []
 degrees = 14
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page40.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page40.pdf"]
+
 [bullet]
 # Lookalike variants (2026-11-08): hunting rounds, soft point from their use like their twins.
 type = "softpoint"

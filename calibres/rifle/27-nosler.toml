@@ -36,6 +36,11 @@ sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
 degrees = 35
 sources = ["https://www.nosler.com/"]
 
+[case_head]
+# .050 in.
+rim_thickness = 1.27
+sources = ["book:cotw-18 p. 451"]
+
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]

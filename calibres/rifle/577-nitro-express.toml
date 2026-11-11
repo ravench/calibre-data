@@ -28,6 +28,11 @@ unknown = "the source gives only the 1890s"
 size = "large-rifle"
 sources = []
 
+[case_head]
+# .052 in.
+rim_thickness = 1.32
+sources = ["book:cotw-18 p. 609"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.577_Nitro_Express"]

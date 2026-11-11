@@ -30,6 +30,11 @@ unknown = "C.I.P. sheet dated 1984-06-14 like the .32 S&W Long's; no launch year
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page46.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://www.lapua.com/product/32-sw-lapua-wadcutter-bullet-c427-535-g-83-gr/"]

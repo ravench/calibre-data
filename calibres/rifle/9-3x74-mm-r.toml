@@ -36,6 +36,11 @@ sources = ["https://en.wikipedia.org/wiki/9.3×74mmR"]
 degrees = 5.5
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page51.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page51.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/9.3×74mmR"]

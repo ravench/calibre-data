@@ -25,6 +25,11 @@ sources = ["https://en.wikipedia.org/wiki/.41_Long_Colt"]
 size = "small-pistol"
 sources = ["https://www.starlinebrass.com/41-colt-brass"]
 
+[case_head]
+# .052 in.
+rim_thickness = 1.32
+sources = ["book:cotw-18 p. 528"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.41_Long_Colt"]

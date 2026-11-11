@@ -33,6 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/7mm_Backcountry"]
 degrees = 30
 sources = ["https://saami.org/wp-content/uploads/2025/01/Public-Introduction-7mm-Backcountry-2025-01-27.pdf"]
 
+[case_head]
+# .049 in.
+rim_thickness = 1.24
+sources = ["book:cotw-18 p. 175"]
+
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/7mm_Backcountry"]

@@ -8,11 +8,13 @@ millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bot
 import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cartridges import CATALOGUE, shoulder_angle, case_head, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
+from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
 from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, PAPER, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
 BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
+# mm, rim thickness of a case whose [case_head] gives none: rimmed, rimfire, rimless or belted
+RIMMED_RIM, RIMFIRE_RIM, RIMLESS_RIM = 1.5, 1.1, 1.3
 
 
 def case_profile(s):
@@ -20,7 +22,7 @@ def case_profile(s):
     rim, base, case = s["rim"] / 2, s["base"] / 2, s["case"]
     k = s["kind"]
     if k in (RIMMED, RIMFIRE):
-        h = 1.1 if k == RIMFIRE else 1.5
+        h = rim_thickness(s["name"]) or (RIMFIRE_RIM if k == RIMFIRE else RIMMED_RIM)
         pts = [(rim, 0), (rim, h), (base, h)]
     elif case_head(s["name"]):
         # Rim, extractor groove and its front ramp at the calibre's own values (cartridges.CASE_HEADS).
@@ -36,11 +38,13 @@ def case_profile(s):
             ramp_start = max(thick, top_at - (base - groove) / slope)
             pts = [(rim, 0), (rim, thick), (groove, thick), (groove, ramp_start), (base, top_at)]
     else:
+        # Generic groove (82 % of the base) behind the calibre's own rim thickness where a source gives it.
+        t = rim_thickness(s["name"]) or RIMLESS_RIM
         groove = base * 0.82
-        pts = [(rim, 0), (rim, 1.3), (groove, 1.3), (groove, 2.6), (base, 3.3)]
+        pts = [(rim, 0), (rim, t), (groove, t), (groove, t + 1.3), (base, t + 2.0)]
         if k == BELTED:
-            pts[-1] = (rim, 3.3)
-            pts += [(rim, 6.2), (base * 0.985, 6.2)]
+            pts[-1] = (rim, t + 2.0)
+            pts += [(rim, t + 4.9), (base * 0.985, t + 4.9)]
     top = s["neck"] / 2
     if s["profile"] == CRIMPED:
         # Star crimp: the petals bend in over the front 38 % of the case, then turn in at the mouth.

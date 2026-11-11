@@ -38,6 +38,11 @@ sources = ["https://municion.org/producto/50-95-300-winchester/"]
 degrees = 6.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page122.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.57
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page122.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/50-95-300-winchester/"]

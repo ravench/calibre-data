@@ -22,6 +22,11 @@ sources = ["https://en.wikipedia.org/wiki/.22_BB"]
 year = 1845
 sources = ["https://en.wikipedia.org/wiki/.22_BB"]
 
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 670"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_BB"]

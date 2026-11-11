@@ -33,3 +33,8 @@ sources = ["https://en.wikipedia.org/wiki/8×56mmR"]
 # C.I.P. 8 x 56 R M30S
 degrees = 7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page31.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page31.pdf"]

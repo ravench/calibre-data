@@ -24,6 +24,11 @@ sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
 
+[case_head]
+# .045 in.
+rim_thickness = 1.14
+sources = ["book:cotw-18 p. 176"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.350_Legend"]

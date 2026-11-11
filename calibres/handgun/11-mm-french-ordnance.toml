@@ -27,6 +27,11 @@ sources = ["https://en.wikipedia.org/wiki/11mm_French_Ordnance"]
 size = "large-pistol"
 sources = []
 
+[case_head]
+# .035 in.
+rim_thickness = 0.89
+sources = ["book:cotw-18 p. 529"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/11mm_French_Ordnance"]

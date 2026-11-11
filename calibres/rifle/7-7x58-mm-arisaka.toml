@@ -33,3 +33,8 @@ sources = ["https://en.wikipedia.org/wiki/7.7×58mm_Arisaka"]
 # AECC drawing 08-058-BGC-020
 degrees = 16.1
 sources = ["https://municion.org/producto/77-x-58-japanese-rimless-arisaka-type-99/"]
+
+[case_head]
+# .042 in.
+rim_thickness = 1.07
+sources = ["book:cotw-18 p. 573"]

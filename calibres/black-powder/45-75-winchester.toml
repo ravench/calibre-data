@@ -37,6 +37,11 @@ sources = ["https://municion.org/producto/45-75-winchester-centennial/"]
 degrees = 5.9
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page113.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page113.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.45-75_Winchester"]

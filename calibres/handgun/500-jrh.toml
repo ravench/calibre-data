@@ -1,6 +1,6 @@
 # Measured specimens on municion.org (AECC drawings 06-029-CBC-010, 13-035-CGC-010).
 name = ".500 JRH"
-kind = "rimless"
+kind = "rimmed"
 profile = "flat"
 aliases = ["500jrh"]
 
@@ -23,3 +23,8 @@ sources = ["https://municion.org/producto/500-jrh/"]
 [primer]
 size = "large-pistol"
 sources = []
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 529"]

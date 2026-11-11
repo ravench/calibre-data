@@ -26,3 +26,8 @@ sources = ["https://en.wikipedia.org/wiki/M1_carbine"]
 [primer]
 size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# .050 in.
+rim_thickness = 1.27
+sources = ["book:cotw-18 p. 176"]

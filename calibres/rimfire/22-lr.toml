@@ -25,6 +25,11 @@ sources = [
 year = 1887
 sources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]
 
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 670"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]

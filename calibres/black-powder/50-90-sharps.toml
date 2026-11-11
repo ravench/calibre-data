@@ -25,6 +25,11 @@ sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
 
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 252"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]

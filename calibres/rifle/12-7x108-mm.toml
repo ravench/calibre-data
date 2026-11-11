@@ -33,6 +33,11 @@ sources = ["https://municion.org/producto/127-x-108-russian-dshk-rimless/"]
 degrees = 18.2
 sources = ["https://en.wikipedia.org/wiki/12.7%C3%97108mm"]
 
+[case_head]
+# .075 in.
+rim_thickness = 1.9
+sources = ["book:cotw-18 p. 574"]
+
 [[tip_colours]]
 colours = ["black", "red"]
 meaning = ["armour-piercing", "incendiary"]

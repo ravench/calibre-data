@@ -24,3 +24,8 @@ sources = ["https://en.wikipedia.org/wiki/.357_Remington_Maximum"]
 [primer]
 size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 528"]

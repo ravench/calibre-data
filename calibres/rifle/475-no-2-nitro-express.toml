@@ -36,6 +36,11 @@ sources = ["https://municion.org/producto/475-n2-nitro-express-jeffery-3-1-2/"]
 degrees = 6.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page120.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 2.03
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page120.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.475_No._2_Nitro_Express"]

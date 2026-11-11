@@ -237,6 +237,25 @@ class CheckTests(unittest.TestCase):
             c.edit(LR, "worldwide = true", "worldwilde = true")
             self.assertProblem(c, LR, r"unknown key 'worldwilde'.*did you mean \"worldwide\"")
 
+    def test_a_case_head_can_give_the_rim_thickness_alone(self):
+        with Copy() as c:
+            c.edit(WIN, "ramp_top = 3.85\ngroove_diameter = 10.39\nramp_angle = 36.0\n", "")
+            self.assertEqual(c.problems(), [])
+            t = load(c.dir)
+            self.assertEqual(t["RIM_THICKNESS"][".308 Winchester"][0], 1.37)
+            self.assertNotIn(".308 Winchester", t["CASE_HEADS"])
+
+    def test_a_case_head_has_the_whole_groove_or_none(self):
+        with Copy() as c:
+            c.edit(WIN, "ramp_angle = 36.0\n", "")
+            self.assertProblem(c, WIN, r"ramp_top, groove_diameter and ramp_angle together, or only rim_thickness")
+
+    def test_a_rimmed_case_head_has_no_groove(self):
+        with Copy() as c:
+            c.edit(LR, "rim_thickness = 1.02\n", "rim_thickness = 1.02\nramp_top = 2.0\ngroove_diameter = 6.0\n"
+                                                  "ramp_angle = 30.0\n")
+            self.assertProblem(c, LR, r"a rimfire case has no extractor groove")
+
     def test_misspelt_table(self):
         with Copy() as c:
             c.edit(WIN, "[shoulder_angle]", "[shoulder_angel]")
@@ -275,7 +294,7 @@ class CheckTests(unittest.TestCase):
 
     def test_sources_must_be_web_addresses(self):
         with Copy() as c:
-            c.edit(LR, '"https://en.wikipedia.org/wiki/.22_Long_Rifle"]\n\n[bullet]', '"Wikipedia"]\n\n[bullet]')
+            c.edit(LR, '"https://en.wikipedia.org/wiki/.22_Long_Rifle"]\n\n[case_head]', '"Wikipedia"]\n\n[case_head]')
             self.assertProblem(c, LR, r"source 'Wikipedia' is not a https:// web address")
 
     def test_a_source_can_be_a_page_of_a_book_in_books_toml(self):

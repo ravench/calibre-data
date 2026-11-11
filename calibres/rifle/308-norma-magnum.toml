@@ -33,6 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/.308_Norma_Magnum"]
 degrees = 24.8
 sources = ["https://municion.org/producto/308-norma-magnum-belted/"]
 
+[case_head]
+# .048 in.
+rim_thickness = 1.22
+sources = ["book:cotw-18 p. 651"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.308_Norma_Magnum"]

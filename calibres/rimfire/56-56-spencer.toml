@@ -22,6 +22,11 @@ sources = ["https://en.wikipedia.org/wiki/.56-56_Spencer"]
 year = 1860
 sources = ["https://en.wikipedia.org/wiki/.56-56_Spencer"]
 
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 670"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/56-56-spencer-rf/"]

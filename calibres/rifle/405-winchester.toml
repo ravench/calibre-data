@@ -26,6 +26,11 @@ sources = ["https://en.wikipedia.org/wiki/.405_Winchester"]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.405_Winchester"]
 
+[case_head]
+# .075 in.
+rim_thickness = 1.9
+sources = ["book:cotw-18 p. 251"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.405_Winchester"]

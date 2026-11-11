@@ -23,6 +23,11 @@ sources = ["https://en.wikipedia.org/wiki/.360_Buckhammer"]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
+[case_head]
+# .063 in.
+rim_thickness = 1.6
+sources = ["book:cotw-18 p. 176"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.360_Buckhammer"]

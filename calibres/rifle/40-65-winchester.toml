@@ -26,6 +26,11 @@ sources = ["https://en.wikipedia.org/wiki/.40-65_Winchester"]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.40-65_Winchester"]
 
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 498"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/40-65-winchester-cf/"]

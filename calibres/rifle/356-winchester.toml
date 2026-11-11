@@ -35,6 +35,14 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 degrees = 20
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page90.pdf"]
 
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.6
+ramp_top = 3.72
+groove_diameter = 10.41
+ramp_angle = 25.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page90.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.356_Winchester"]

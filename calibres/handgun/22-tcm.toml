@@ -40,3 +40,8 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 # AECC drawing 06-026-BGC-010
 degrees = 18.8
 sources = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]
+
+[case_head]
+# .049 in.
+rim_thickness = 1.24
+sources = ["book:cotw-18 p. 451"]

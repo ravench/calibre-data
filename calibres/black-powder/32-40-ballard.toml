@@ -24,6 +24,11 @@ sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
 
+[case_head]
+# .058 in.
+rim_thickness = 1.47
+sources = ["book:cotw-18 p. 250"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]

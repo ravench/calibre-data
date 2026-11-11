@@ -23,6 +23,11 @@ sources = ["https://en.wikipedia.org/wiki/.38-55_Winchester"]
 size = "large-rifle"
 sources = ["https://www.starlinebrass.com/38-55-brass-2080"]
 
+[case_head]
+# .058 in.
+rim_thickness = 1.47
+sources = ["book:cotw-18 p. 177"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38-55_Winchester"]

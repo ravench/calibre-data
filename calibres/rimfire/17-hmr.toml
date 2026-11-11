@@ -29,6 +29,11 @@ sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Magnum_Rimfire"]
 degrees = 25
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page26.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page26.pdf"]
+
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Magnum_Rimfire"]

@@ -26,6 +26,11 @@ sources = ["https://en.wikipedia.org/wiki/.450_Nitro_Express"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 608"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.450_Nitro_Express"]

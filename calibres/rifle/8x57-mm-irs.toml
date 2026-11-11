@@ -33,6 +33,11 @@ sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
 degrees = 18.2
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page35.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page35.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/8-x-57-r-jrs-mauser/"]

@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -281,13 +281,13 @@ class OutlineTests(unittest.TestCase):
     HEAD_UNSOURCED = {
         ".22 ARC", ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".26 Nosler", ".27 Nosler",
         ".277 SIG Fury", ".28 Nosler", ".30 Carbine", ".30 Nosler", ".30 Remington AR",
-        ".30 Super Carry", ".307 Winchester", ".308 Norma Magnum", ".33 Nosler", ".338 ARC",
+        ".30 Super Carry", ".308 Norma Magnum", ".33 Nosler", ".338 ARC",
         ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading", ".350 Legend",
-        ".351 Winchester Self-Loading", ".356 Winchester", ".375 CheyTac", ".400 Legend",
+        ".351 Winchester Self-Loading", ".375 CheyTac", ".400 Legend",
         ".401 Winchester Self-Loading", ".408 CheyTac", ".416 Barrett",
-        ".450 Bushmaster", ".458 SOCOM", ".475 Linebaugh", ".480 Ruger", ".50 Beowulf", ".500 JRH",
+        ".450 Bushmaster", ".458 SOCOM", ".50 Beowulf",
         ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm ARC", "6 mm GT", "6.5 Weatherby RPM",
-        "6.5 mm Grendel", "6.5x50 mm SR Arisaka", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
+        "6.5 mm Grendel", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
         "7.5x53.5 mm Swiss (GP 1890)", "7.5 mm Kadettenpatrone", "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
         "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
@@ -341,6 +341,30 @@ class OutlineTests(unittest.TestCase):
         }
         for name, values in sheets.items():
             self.assertEqual(cartridges.case_head(name), values, name)
+
+    def test_rims_are_drawn_at_their_own_thickness(self):
+        # Regression: rimmed cases were all drawn with a 1.5 mm rim, rimfire ones with 1.1 mm and
+        # rimless ones without a C.I.P. head with 1.3 mm (2026-11-11).
+        drawn = 0
+        for _, s in outline.specs():
+            t = cartridges.rim_thickness(s["name"])
+            if t is None or s["kind"] not in (RIMMED, RIMFIRE, RIMLESS, BELTED):
+                continue
+            with self.subTest(s["name"]):
+                self.assertTrue(0.8 < t < 2.5, t)
+                self.assertEqual(outline.case_profile(s)[1], (s["rim"] / 2, t))
+                drawn += 1
+        self.assertGreater(drawn, 330)
+
+    def test_rim_thicknesses_follow_their_sources(self):
+        values = {".30-30 Winchester": 1.6, "11x60 mm R Mauser": 2.4,  # R on the C.I.P. sheets
+                  ".22 LR": 1.02, ".470 Nitro Express": 1.02, ".38 Special": 1.37,  # .040, .040, .054 in, COTW 18
+                  "7.62x38 mm R Nagant": 1.22}  # .048 in, Donnelly
+        for name, t in values.items():
+            self.assertEqual(cartridges.rim_thickness(name), t, name)
+        self.assertIsNone(cartridges.rim_thickness(".32 Short Rimfire"))
+        unsourced = next(s for _, s in outline.specs() if s["name"] == ".32 Short Rimfire")
+        self.assertEqual(outline.case_profile(unsourced)[1][1], outline.RIMFIRE_RIM)
 
 if __name__ == "__main__":
     unittest.main()

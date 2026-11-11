@@ -36,6 +36,11 @@ sources = ["https://municion.org/producto/500-465-holland-holland-flanged-ne-3-1
 degrees = 2.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page125.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page125.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.500/465_Nitro_Express"]

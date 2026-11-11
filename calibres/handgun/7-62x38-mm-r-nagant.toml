@@ -25,3 +25,8 @@ sources = ["https://en.wikipedia.org/wiki/7.62×38mmR"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/7.62×38mmR"]
+
+[case_head]
+# .048 in.
+rim_thickness = 1.22
+sources = ["book:donnelly p. 843"]

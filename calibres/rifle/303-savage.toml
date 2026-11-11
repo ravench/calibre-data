@@ -35,6 +35,11 @@ sources = ["https://en.wikipedia.org/wiki/.303_Savage"]
 degrees = 16
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/303-savage/"]

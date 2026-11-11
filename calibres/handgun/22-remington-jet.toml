@@ -35,6 +35,11 @@ sources = ["https://en.wikipedia.org/wiki/.22_Remington_Jet"]
 degrees = 6.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page36.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page36.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.22_Remington_Jet"]

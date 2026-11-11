@@ -33,6 +33,11 @@ sources = ["https://municion.org/producto/38-short-colt-long-case/"]
 size = "small-pistol"
 sources = ["https://www.starlinebrass.com/38-short-colt-brass"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page55.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/38-short-colt-long-case/"]

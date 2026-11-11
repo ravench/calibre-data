@@ -25,6 +25,11 @@ sources = ["https://en.wikipedia.org/wiki/.38_S%26W"]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.38_S%26W"]
 
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 528"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38_S%26W"]

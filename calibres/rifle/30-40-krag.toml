@@ -33,3 +33,8 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 # C.I.P. 30-40 Krag
 degrees = 21.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]

@@ -36,3 +36,8 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 # SAAMI 338 WBY RPM drawing (issued 2022-01-16) shown by The Firearm Blog: 35 deg, shoulder .4739 in at 2.1595 in, neck .364 in at 2.2380 in
 degrees = 35
 sources = ["https://www.thefirearmblog.com/"]
+
+[case_head]
+# .054 in.
+rim_thickness = 1.37
+sources = ["book:cotw-18 p. 452"]

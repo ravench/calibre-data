@@ -1,6 +1,6 @@
 # Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
 name = ".475 Linebaugh"
-kind = "rimless"
+kind = "rimmed"
 profile = "flat"
 aliases = ["475linebaugh"]
 
@@ -24,3 +24,8 @@ sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]
 [primer]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 453"]

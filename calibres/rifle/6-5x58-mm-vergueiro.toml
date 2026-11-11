@@ -36,3 +36,8 @@ sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]
 # AECC drawing 07-058-BGC-030
 degrees = 10.8
 sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]
+
+[case_head]
+# .052 in.
+rim_thickness = 1.32
+sources = ["book:donnelly p. 775"]

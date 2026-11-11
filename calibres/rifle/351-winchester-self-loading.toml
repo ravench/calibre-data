@@ -25,6 +25,11 @@ sources = ["https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading"]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading"]
 
+[case_head]
+# .045 in.
+rim_thickness = 1.14
+sources = ["book:cotw-18 p. 250"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/351-winchester-semi-rimmed-self-loading/"]

@@ -38,6 +38,11 @@ sources = ["https://municion.org/producto/65-x-57-r-mauser-m88/"]
 degrees = 18.9
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page15.pdf"]
 
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page15.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/65-x-57-r-mauser-m88/"]

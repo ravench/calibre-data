@@ -31,6 +31,11 @@ sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
 
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 529"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
