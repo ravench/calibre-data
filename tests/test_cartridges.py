@@ -11,7 +11,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PR
                         ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, origin, origin_candidates, is_worldwide,
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
-                        CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
+                        CASES, BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material,
                         PROFILE_TODAY, LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes,
                         BOOK_SOURCE)
@@ -632,7 +632,7 @@ class CatalogueTests(unittest.TestCase):
         names = {s["name"] for _, items in ALL_CATALOGUE for s in items}
         for name, (material, url) in CASES.items():
             self.assertIn(name, names)
-            self.assertIn(material, (BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID), name)
+            self.assertIn(material, (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID), name)
             if material != BRASS:
                 self.assertTrue(is_source(url), name)
         # Every calibre with a case names its material, brass too; shot shells and loose projectiles have none.
@@ -649,13 +649,21 @@ class CatalogueTests(unittest.TestCase):
             self.assertIn(name, NAMES)
             self.assertTrue(materials, name)
             self.assertNotIn(case_material(name), materials, name)
-            self.assertTrue(set(materials) <= {BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID}, name)
+            self.assertTrue(set(materials) <= {BRASS, COPPER, STEEL, NICKEL, ALUMINIUM}, name)
             self.assertTrue(is_source(url), name)
         self.assertEqual(current_case_materials(".45-70 Government"), (BRASS,))
-        self.assertEqual(current_case_materials("9x19 mm"), (STEEL,))
+        self.assertEqual(current_case_materials("9x19 mm"), (STEEL, ALUMINIUM))
         self.assertEqual(current_case_materials("7.5x55 mm Swiss (GP 11)"), ())
         # The ZU-23's steel case followed the VYa-23's brass one (Jane's 2002 p. 91).
         self.assertEqual(current_case_materials("23x152 mm B"), (STEEL,))
+        # Raven 2026-11-11: aluminium too. CCI's Blazer Aluminum line; the Apache's LW30 rounds (Jane's p. 112).
+        for name in ("6.35 mm Browning (.25 ACP)", "7.65 mm Browning (.32 ACP)", "9 mm Browning kurz (.380 ACP)",
+                     ".38 Special", ".357 Magnum", ".40 S&W", "10 mm Auto", ".44 Special", ".44 Magnum", ".45 Colt",
+                     "30x113 mm B"):
+            self.assertEqual(current_case_materials(name), (ALUMINIUM,), name)
+        self.assertEqual(current_case_materials(".45 ACP"), (STEEL, ALUMINIUM))
+        # The GAU-8's aluminium case first, the KCA's steel too (Jane's 2002 pp. 105, 112-113).
+        self.assertEqual(current_case_materials("30x173 mm"), (STEEL,))
         # Copper and wartime steel first, brass today.
         self.assertEqual(current_case_materials(".22 Short"), (BRASS,))
         self.assertEqual(current_case_materials("7.92x33 mm Kurz"), (BRASS,))
@@ -666,7 +674,7 @@ class CatalogueTests(unittest.TestCase):
         # vz. 52, 20x102 mm, 20x139 mm, 30x113 mm B) stay brass.
         expected = {"7.92x33 mm Kurz": STEEL, "5.45x18 mm": STEEL, "5.8x42 mm": STEEL, "9x39 mm": STEEL,
                     "6 mm SAW": STEEL, ".22 Short": COPPER, "27x145 mm B": STEEL, "30x165 mm": STEEL,
-                    "30x173 mm": STEEL, "35x228 mm": STEEL, "23x152 mm B": BRASS, "40x311 mm R": BRASS,
+                    "30x173 mm": ALUMINIUM, "35x228 mm": STEEL, "23x152 mm B": BRASS, "40x311 mm R": BRASS,
                     "40x365 mm R": BRASS}
         for name, material in expected.items():
             self.assertEqual(case_material(name), material, name)

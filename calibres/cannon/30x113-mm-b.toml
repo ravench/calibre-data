@@ -27,3 +27,8 @@ sources = ["https://en.wikipedia.org/wiki/30_mm_caliber"]
 [case]
 material = "brass"
 sources = []
+
+[current_cases]
+# The LW30 rounds of the M230 (AH-64 Apache), Aden/DEFA pattern (p. 111), have aluminium cases (p. 112).
+materials = ["aluminium"]
+sources = ["book:janes-ammo-2002 p. 111", "book:janes-ammo-2002 p. 112"]
