@@ -147,8 +147,8 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
     "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"), ("shoulder", "shoulder_at")),
     "partial": (("case_length", "bullet"), ("rim", "base", "shoulder", "shoulder_at", "neck", "overall_length")),
 }
-TOP_KEYS = {"name", "kind", "profile", "aliases", "display_aliases", "origin", "origin_candidates",
-            "worldwide", "obsolete", "rare"}
+TOP_KEYS = {"name", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
+            "origin_candidates", "worldwide", "obsolete", "rare"}
 # [case_head] keys beside rim_thickness: the extractor groove of a rimless or belted case, all three
 # or none.
 HEAD_GROOVE = ("ramp_top", "groove_diameter", "ramp_angle")
@@ -425,6 +425,13 @@ def _read_calibre(f, category, countries, books=None):
     if profile not in PROFILES:
         f.problem(f.line(None, "profile"),
                   f"profile {profile!r} is not one of {', '.join(PROFILES)}{_close(profile, PROFILES)}")
+    if "profile_today" in d:
+        today = d["profile_today"]
+        if today not in PROFILES:
+            f.problem(f.line(None, "profile_today"),
+                      f"profile_today {today!r} is not one of {', '.join(PROFILES)}{_close(today, PROFILES)}")
+        elif today == profile:
+            f.problem(f.line(None, "profile_today"), "profile_today is the same as profile: leave it out")
     for k in ("aliases", "display_aliases"):
         if k in d and not _is_text_list(d[k]):
             f.problem(f.line(None, k), f"{k} must be a list of texts in quotes")
@@ -742,7 +749,8 @@ def load(root=ROOT):
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "CASES",
-                         "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES", "TIP_COLOURS", "FIRED_BY")}
+                         "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES", "TIP_COLOURS", "FIRED_BY",
+                         "PROFILE_TODAY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE")}
     for _, items in catalogue:
         for e in items:
@@ -755,6 +763,8 @@ def load(root=ROOT):
                     sets[flag.upper()].add(n)
             if "origin" in raw:
                 t["ORIGIN"][n] = raw["origin"]
+            if "profile_today" in raw:
+                t["PROFILE_TODAY"][n] = raw["profile_today"]
             if "origin_candidates" in raw:
                 t["ORIGIN_UNDECIDED"][n] = tuple(raw["origin_candidates"])
             for fact, data in facts.items():
@@ -847,6 +857,9 @@ TIP_COLOURS = _t["TIP_COLOURS"]
 # {name: (firearms that fire it, first source)}: the firearms that define a round, mostly old and
 # obsolete ones. For the catalogue only; the apps do not read it.
 FIRED_BY = _t["FIRED_BY"]
+# {name: profile}: the nose of today's usual load where it is not the one first sold (profile). For the
+# catalogue only; the apps draw profile.
+PROFILE_TODAY = _t["PROFILE_TODAY"]
 
 
 def sources(name, fact):

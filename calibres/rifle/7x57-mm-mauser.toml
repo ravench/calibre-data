@@ -2,6 +2,8 @@ name = "7x57 mm Mauser"
 kind = "rimless"
 # Nose: round, as first loaded; pointed service bullets came only from 1898 (COTW 18 p. 553).
 profile = "round"
+# Today: pointed, since Spain's service round of 1913 (https://en.wikipedia.org/wiki/7×57mm_Mauser).
+profile_today = "spitzer"
 aliases = ["7x57", "7mmmauser"]
 
 origin = "DE"

@@ -630,6 +630,16 @@ class CheckTests(unittest.TestCase):
             os.makedirs(c.path("calibres/rifles"))
             self.assertProblem(c, "calibres/rifles", r"not in order.toml \(did you mean \"rifle\"\?\)", line=False)
 
+    def test_profile_today(self):
+        rel = "calibres/rifle/303-british.toml"
+        with Copy() as c:
+            c.edit(rel, 'profile_today = "spitzer"', 'profile_today = "round"')
+            self.assertOnlyProblems(c, rel, r"profile_today is the same as profile: leave it out")
+        with Copy() as c:
+            c.edit(rel, 'profile_today = "spitzer"', 'profile_today = "spitz"')
+            self.assertOnlyProblems(c, rel, r"profile_today 'spitz' is not one of .*did you mean \"spitzer\"")
+            self.assertProblem(c, rel, "profile_today", line=c.line_of(rel, "profile_today"))
+
     def test_lookalike_groups_name_existing_calibres_once(self):
         with Copy() as c:
             c.edit(LOOK, '"7.62x51 mm NATO"]', '"7.62x51 mm NAT0"]')

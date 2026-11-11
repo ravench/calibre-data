@@ -4,6 +4,8 @@ name = ".22 Hornet"
 kind = "rimmed"
 # Nose: round soft point, as first loaded (photo, COTW 18 p. 84); pointed plastic tips came later.
 profile = "round"
+# Today: pointed, like Hornady's 35-grain V-Max factory load (COTW 18 p. 85).
+profile_today = "spitzer"
 aliases = ["22hornet", "5.6x35r"]
 
 origin = "US"

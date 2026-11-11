@@ -32,9 +32,13 @@ name = ".308 Winchester"
 # rimless, rimmed, belted, rimfire, shot (shot shell), ball (round ball or BB), minie (Minié
 # bullet) or pellet (air gun pellet).
 kind = "rimless"
-# The bullet nose: spitzer, round, flat, patched (paper-patched lead body under a steel cap, GP 1890)
-# or crimped (no bullet, the mouth folded shut in a star: blanks and power-tool loads).
+# The bullet nose of the round as first sold, which the apps draw: spitzer, round, flat, patched
+# (paper-patched lead body under a steel cap, GP 1890) or crimped (no bullet, the mouth folded shut in
+# a star: blanks and power-tool loads). A "# Nose:" note above it names the source.
 profile = "spitzer"
+# Optional: the nose of today's usual load where it is not the first one (the .303 British is drawn
+# round but loaded spitzer since the Mk VII), with a "# Today:" note above it naming the source.
+# profile_today = "round"
 # Search aliases, lower case as people type them ([] for none). Never another calibre's name.
 aliases = ["308", "308win"]
 # Optional: one or two printable other names, shown in the apps' lists and on the poster.
