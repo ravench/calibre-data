@@ -1,0 +1,32 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Bergmann No. 2 pistol; the first cases had no rim or extractor groove.
+name = "5 mm Bergmann"
+kind = "rimless"
+profile = "round"
+aliases = ["5bergmann", "5 bergmann"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 6.96
+base = 6.93
+neck = 5.84
+case_length = 14.99
+overall_length = 24.38
+bullet = 5.16
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1894
+sources = ["book:cotw-18 p. 458"]
+
+[primer]
+size = "small-pistol"
+sources = []
+
+[case_head]
+# .020 in.
+rim_thickness = 0.51
+sources = ["book:cotw-18 p. 527"]

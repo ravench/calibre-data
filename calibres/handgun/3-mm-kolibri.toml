@@ -1,0 +1,31 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Larger than the 2.7 mm Kolibri, with a lead bullet.
+name = "3 mm Kolibri"
+kind = "rimless"
+profile = "round"
+aliases = ["3kolibri", "3 kolibri"]
+
+origin = "AH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 3.81
+base = 3.81
+neck = 3.81
+case_length = 8.13
+overall_length = 10.92
+bullet = 3.05
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+unknown = "Another Kolibri round; COTW 18 p. 457 gives no year."
+sources = ["book:cotw-18 p. 457"]
+
+[primer]
+size = "small-pistol"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 457"]

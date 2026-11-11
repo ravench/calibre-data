@@ -581,7 +581,8 @@ class CatalogueTests(unittest.TestCase):
                                            "8x60 mm R Guedes",
                                            # No factory load on the page, or a later one than the original.
                                            ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
-                                           ".500 Express 3 inch", ".500/450 Magnum Express"})
+                                           ".500 Express 3 inch", ".500/450 Magnum Express",
+                                           ".32 Protector", "7.7 mm Bittner"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):

@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .45 Mars Long necked down, for Gabbett-Fairfax's Mars pistol of 1900: a thin rim and deep groove.
+name = "8.5 mm Mars"
+kind = "rimless"
+profile = "round"
+aliases = ["8.5mars", "8.5 mars", "8mm mars"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.47
+base = 12.83
+shoulder = 10.54
+shoulder_at = 18.5
+neck = 8.53
+case_length = 28.65
+overall_length = 40.21
+bullet = 8.51
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1900
+sources = ["book:cotw-18 p. 493"]
+
+[primer]
+# The table gives a Berdan primer without its size.
+size = "large-pistol"
+sources = []
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 527"]

@@ -1,0 +1,33 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A shorter, milder load for the Mars pistol of 1900.
+name = ".45 Mars Short"
+kind = "rimless"
+profile = "round"
+aliases = ["45 mars short"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.47
+base = 12.83
+neck = 11.94
+case_length = 21.36
+overall_length = 29.51
+bullet = 11.43
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1900
+sources = ["book:cotw-18 p. 509"]
+
+[primer]
+# The table gives a Berdan primer without its size.
+size = "large-pistol"
+sources = []
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 527"]

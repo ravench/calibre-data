@@ -1,0 +1,27 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The smallest commercial centrefire pistol round, for the Austrian Kolibri pistol; a jacketed bullet.
+name = "2.7 mm Kolibri"
+kind = "rimless"
+profile = "round"
+aliases = ["2.7kolibri", "2.7 kolibri", "2.7mm kolibri auto"]
+
+origin = "AH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 3.56
+base = 3.56
+neck = 3.53
+case_length = 9.4
+overall_length = 10.92
+bullet = 2.72
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1914
+sources = ["book:cotw-18 p. 456"]
+
+[primer]
+size = "small-pistol"
+sources = []
