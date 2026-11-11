@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A Swiss target round, like its rimmed twin.
+name = "9.3x53 mm Swiss"
+kind = "rimless"
+profile = "round"
+aliases = ["9.3x53", "9.3x53 swiss"]
+
+origin = "CH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.47
+base = 12.5
+shoulder = 11.51
+shoulder_at = 43.0
+neck = 9.88
+case_length = 53.59
+overall_length = 71.12
+bullet = 9.27
+# The table gives both twins in one row; its rim thickness is left out, as it does not say whose it is.
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: the mid-1920s, possibly 1925.
+year = 1925
+sources = ["book:cotw-18 p. 639"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 639"]

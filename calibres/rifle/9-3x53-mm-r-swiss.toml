@@ -1,0 +1,35 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+name = "9.3x53 mm R Swiss"
+kind = "rimmed"
+profile = "round"
+aliases = ["9.3x53r swiss"]
+
+origin = "CH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.3
+base = 12.55
+shoulder = 11.56
+shoulder_at = 43.0
+neck = 9.93
+case_length = 53.59
+overall_length = 71.88
+bullet = 9.27
+# The table gives both twins in one row; its rim thickness is left out, as it does not say whose it is.
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: the mid-1920s, possibly 1925.
+year = 1925
+sources = ["book:cotw-18 p. 639"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 639"]

@@ -1,0 +1,48 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+name = "9x56 mm Mannlicher-Schönauer"
+kind = "rimless"
+profile = "round"
+aliases = ["9x56", "9x56ms"]
+display_aliases = ["9x56 mm M.-Sch."]
+
+origin = "AT"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.9
+base = 11.8
+shoulder = 10.7
+shoulder_at = 46.48
+neck = 9.65
+case_length = 56.3
+overall_length = 81.0
+bullet = 9.08
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page66.pdf"]
+
+[introduced]
+# Added to the Mannlicher-Schönauer chamberings in about 1905.
+year = 1905
+sources = ["book:cotw-18 p. 636"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 652"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 19.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page66.pdf"]
+
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.2
+ramp_top = 3.2
+groove_diameter = 10.3
+ramp_angle = 36.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page66.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 636"]

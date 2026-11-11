@@ -2,7 +2,8 @@
 name = ".500 Jeffery"
 kind = "rimless"
 profile = "round"
-aliases = ["500jeffery", "12.7x70"]
+# COTW 18 p. 650 lists it as the 12.5x70 mm Schüler; its table row (p. 652) gives this case but for the length.
+aliases = ["500jeffery", "12.7x70", "12.5x70", "12.5x70 schuler"]
 
 # W. J. Jeffery, London, sold and named it and British hunters shot it (Kynoch); August Schüler, Suhl, made it first as the 12.7x70 Schüler in the 1920s: DE
 origin = "GB"

@@ -1,0 +1,32 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A Swiss target round for Martini rifles: the brass 2.5 in. .410 shell with a thicker rim and a bullet.
+name = "10.3x65 mm R Baenziger"
+kind = "rimmed"
+profile = "round"
+aliases = ["10.3x65r", "10.3x65r baenziger"]
+
+origin = "CH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.83
+base = 11.73
+neck = 10.95
+case_length = 65.02
+overall_length = 80.01
+bullet = 10.74
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+unknown = "DWM listed the case in 1904; COTW 18 p. 646 gives no year of origin."
+sources = ["book:cotw-18 p. 646"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+# COTW: a lead or soft-point bullet.
+type = "lead"
+sources = ["book:cotw-18 p. 646"]

@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Bottlenecked, unlike the straight 9.3x72 mm R.
+name = "9.3x72 mm R Sauer"
+kind = "rimmed"
+profile = "round"
+aliases = ["9.3x72r sauer"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.16
+base = 12.01
+shoulder = 10.72
+shoulder_at = 62.0
+neck = 9.91
+case_length = 71.88
+overall_length = 84.84
+bullet = 9.27
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+unknown = "A Sauer & Sohn round for single-shot, double and combination guns; COTW 18 p. 640 gives no year."
+sources = ["book:cotw-18 p. 640"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 652"]
+
+[bullet]
+# COTW gives only its weight.
+type = "softpoint"
+sources = []

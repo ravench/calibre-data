@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .50 BMG case shortened and necked down to 11.64 mm, for countries that restrict .50 calibre guns.
+name = ".460 Steyr"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["460steyr", "460 steyr"]
+
+origin = "AT"
+rare = true
+
+[mm]
+rim = 20.45
+base = 20.45
+shoulder = 18.26
+shoulder_at = 76.4
+neck = 12.73
+case_length = 92.46
+overall_length = 121.92
+bullet = 11.63
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: around 2004.
+year = 2004
+sources = ["book:cotw-18 p. 649"]
+
+[primer]
+# The table gives a Boxer primer; the .50 BMG case it is made from takes the #35 size.
+size = "bmg-35"
+sources = []
+
+[case_head]
+# from the .50 BMG case; C.I.P. 50 Browning
+rim_thickness = 2.26
+ramp_top = 6.23
+groove_diameter = 17.27
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page152.pdf"]
+

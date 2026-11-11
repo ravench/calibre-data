@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Johann Peterlongo of Innsbruck; the 8x71 mm Peterlongo is the same case.
+name = "9x71 mm Peterlongo"
+kind = "rimless"
+profile = "round"
+aliases = ["9x71"]
+
+origin = "AT"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.84
+base = 11.79
+shoulder = 10.67
+shoulder_at = 61.5
+neck = 9.8
+case_length = 71.12
+overall_length = 82.8
+bullet = 8.89
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+unknown = "COTW 18 p. 636 gives no year."
+sources = ["book:cotw-18 p. 636"]
+
+[primer]
+# The table gives a .216 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 652"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 636"]
+

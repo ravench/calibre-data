@@ -1,0 +1,39 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The straight 9.3x72 mm R case taken down to 8 mm, for Sauer combination guns.
+name = "8x72 mm R Sauer"
+kind = "rimmed"
+profile = "round"
+aliases = ["8x72r", "8x72r sauer"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.35
+base = 10.85
+neck = 8.72
+case_length = 72.0
+overall_length = 98.0
+bullet = 8.09
+# L6 as printed on the sheet; COTW 18 p. 652 gives 3.40 in. (86.4 mm) for the factory round.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page41.pdf"]
+
+[introduced]
+# COTW dates it by its old DWM case number to about 1910.
+year = 1910
+sources = ["book:cotw-18 p. 635"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 652"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page41.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 635"]

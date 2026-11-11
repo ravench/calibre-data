@@ -570,7 +570,11 @@ class CatalogueTests(unittest.TestCase):
                                            ".450/400 Nitro Express 3¼ inch", ".275 Rigby",
                                            # The page gives no factory load, or a later one than the original.
                                            "6.5x40 mm R", "7x75 mm R Vom Hofe Super Express", "8x48 mm R Sauer",
-                                           "8x57 mm R 360", "8x58 mm R Sauer"})
+                                           "8x57 mm R 360", "8x58 mm R Sauer",
+                                           # COTW 18 gives only the weight or handloads.
+                                           "9.3x72 mm R Sauer", "9.3x75 mm R Nimrod", "10.75x63 mm Mauser",
+                                           "9.5x47 mm R", "10.5x47 mm R",
+                                           "10.25x69 mm R Hunting-Express", "12.17x44 mm R"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):

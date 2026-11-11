@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# One of the 47 mm blackpowder target rounds that differ only in bore.
+name = "10.5x47 mm R"
+kind = "rimmed"
+profile = "round"
+aliases = ["10.5x47r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.01
+base = 13.03
+shoulder = 12.6
+shoulder_at = 35.3
+neck = 11.3
+case_length = 46.99
+overall_length = 60.96
+bullet = 10.64
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: the 1880s and 1890s; the earliest year is kept.
+year = 1880
+sources = ["book:cotw-18 p. 646"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 652"]
+
+[bullet]
+# A blackpowder target round (COTW 18 p. 646); the page gives only a cast-bullet handload.
+type = "lead"
+sources = []
+

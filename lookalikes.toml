@@ -101,6 +101,31 @@ differ_by = ["rim"]
 calibres = ["8x51 mm Mauser", "8x51 mm R Mauser"]
 
 [[group]]
+differ_by = ["rim"]
+calibres = ["9.3x53 mm Swiss", "9.3x53 mm R Swiss"]
+
+[[group]]
+differ_by = ["bore"]
+calibres = ["9x71 mm Peterlongo", "8x71 mm Peterlongo"]
+
+[[group]]
+differ_by = ["bore"]
+calibres = [".404 Jeffery", "9.5x73 mm Miller-Greiss Magnum"]
+
+[[group]]
+differ_by = ["bore"]
+calibres = ["9.5x47 mm R", "10.5x47 mm R"]
+
+[[group]]
+# The 8x72 mm R Sauer is the 9.3x72 mm R necked down (COTW 18 p. 635).
+differ_by = ["length", "bore"]
+calibres = ["9.3x72 mm R", "9.3x48 mm R", "9.3x57 mm R", "9.3x70 mm R", "8x72 mm R Sauer"]
+
+[[group]]
+differ_by = ["length"]
+calibres = ["10.75x63 mm Mauser", "10.75x68 mm Mauser"]
+
+[[group]]
 differ_by = ["bore"]
 calibres = ["7.62x54 mm R", "7.62x53 mm R"]
 
@@ -130,3 +155,18 @@ calibres = ["10.4 mm Swiss Ordnance 1872 Rimfire", "10.4 mm Swiss Ordnance 1878"
 [[group]]
 differ_by = ["bore"]
 calibres = ["6x47 mm SM", "6.5x47 mm Lapua"]
+
+[[group]]
+# COTW 18 p. 649: the rimless version of the 11x60 mm R Mauser.
+differ_by = ["rim", "bore", "length"]
+calibres = ["11x60 mm R Mauser", "11.2x60 mm Schüler"]
+
+[[group]]
+# COTW 18 p. 637: the 8x56 mm case necked up.
+differ_by = ["bore"]
+calibres = ["8x56 mm Mannlicher-Schönauer", "9x56 mm Mannlicher-Schönauer"]
+
+[[group]]
+# COTW 18 p. 633: the 6.5x55 mm case necked up (and a little shorter).
+differ_by = ["bore", "length"]
+calibres = ["6.5x55 mm Swedish", "8x54 mm Krag-Jørgensen"]
