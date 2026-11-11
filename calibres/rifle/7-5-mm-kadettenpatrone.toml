@@ -10,7 +10,7 @@
 name = "7.5 mm Kadettenpatrone"
 kind = "rimless"
 profile = "round"
-aliases = ["kadettenpatrone", "kadetten-pat", "kadettenpat", "7.5 mm kadettenpatrone", "7.5 mm kadetten-pat", "cadets", "cadetti", "kg97", "kadettengewehr"]
+aliases = ["kadettenpatrone", "kadetten-pat", "kadettenpat", "7.5 mm kadettenpatrone", "7.5 mm kadetten-pat", "cadets", "cadetti", "kg97", "kadettengewehr", "kadettengewehrpatrone"]
 display_aliases = ["Cart. 7,5 mm cadets", "Cart. 7,5 mm cadetti"]
 
 origin = "CH"
@@ -30,10 +30,10 @@ bullet = 7.8
 sources = []
 
 [introduced]
-# Swiss cadet round for the Kadettengewehr 1897.
-# "First Issued: 1897"
+# Federal Council decision of 8 September 1897 on the «Ordonnanz für Kadettengewehrpatronen» (report
+# for 1897, 50000184, p. 503)
 year = 1897
-sources = ["https://swisswaffen.com/75mm-cadet-cartridge/gp90kp/wjpaihuqy7ys"]
+sources = ["https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/50000184.pdf?id=50000184", "https://swisswaffen.com/75mm-cadet-cartridge/gp90kp/wjpaihuqy7ys"]
 
 [primer]
 # GP 90 family; Raven measured a 5.4 mm primer

@@ -140,6 +140,9 @@ class CatalogueTests(unittest.TestCase):
         self.assertIn("gp90/23", gp23["aliases"])
         self.assertNotIn("gp90/23", gp["aliases"])
         self.assertEqual(INTRODUCED["7.5x54.5 mm Swiss (GP 90/23)"][0], 1923)
+        # Federal Council decisions of 1 July 1890 and 6 March 1903 (Federal Archives minutes).
+        self.assertEqual(INTRODUCED["7.5x53.5 mm Swiss (GP 1890)"][0], 1890)
+        self.assertIn("gewehrpatrone 1890/1903", gp["aliases"])
         self.assertEqual(bullet("7.5x54.5 mm Swiss (GP 90/23)"), JACKETED)
         self.assertEqual(lookalikes("7.5 mm Kadettenpatrone"),
                          ["7.5x53.5 mm Swiss (GP 1890)", "7.5x54.5 mm Swiss (GP 90/23)"])
