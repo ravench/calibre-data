@@ -57,35 +57,40 @@ sources = []
 materials = ["steel"]
 sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["green"]
 meaning = ["ball"]
 description = "US M855 (with a steel penetrator), German DM11"
 countries = ["US", "DE"]
 sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["orange"]
 meaning = ["tracer"]
 description = "US M856, German DM21"
 countries = ["US", "DE"]
 sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["red"]
 meaning = ["tracer"]
 description = "US M856A1, British L1, L16 and L22"
 countries = ["US", "GB"]
 sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["black"]
 meaning = ["armour-piercing"]
 description = "M995"
 countries = ["US"]
 sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
 
-[[tip_colours]]
+[[colour_codes]]
+part = "tip"
 colours = ["white"]
 meaning = ["frangible"]
 description = "Mk 255"

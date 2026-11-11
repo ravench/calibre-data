@@ -165,16 +165,19 @@ sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
 # firearms = ["Vetterli M1869", "Vetterli M1869/81"]
 # sources = ["https://en.wikipedia.org/wiki/.41_Swiss"]
 
-# Optional, for military rounds: what a painted bullet tip means, one [[tip_colours]] table for each
-# code, at the end of the file (the catalogue only; the apps do not show it yet).
-# colours: from the tip down, one or more of black, white, grey, silver, red, orange, yellow, green,
-# blue, purple or brown (["red", "silver"]: a red tip above a silver band).
+# Optional, for military rounds: what a painted bullet tip or cartridge base means, one [[colour_codes]]
+# table for each code, at the end of the file (Kaliberfinder lists them on the calibre's page).
+# part: "tip" (the bullet tip) or "base" (the head of the case around the primer, as the Swiss
+# lacquered it on the GP 11).
+# colours: one or more of black, white, grey, silver, red, orange, yellow, green, blue, purple or
+# brown; a tip's from the tip down (["red", "silver"]: a red tip above a silver band), a base has one.
 # meaning: one or more of ball, armour-piercing, incendiary, explosive, tracer, spotting (a flash or
 # smoke where it hits), subsonic or frangible (["armour-piercing", "incendiary"]: an API round).
 # description (optional): the round's name. countries (optional): codes from countries.toml of the
 # armies that mark it so; the same colours with the same meaning are one table for all of them.
 # Needs a source.
-# [[tip_colours]]
+# [[colour_codes]]
+# part = "tip"
 # colours = ["black"]
 # meaning = ["armour-piercing"]
 # description = "M61"
