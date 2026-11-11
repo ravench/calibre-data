@@ -1,0 +1,55 @@
+# GP 90/23: «7,5 mm Gewehrpatrone 90/23» («Scharfe Patrone 90/23» on older boxes), adopted by the Federal
+# Council on 9 January 1923 (swisswaffen). The GP 1890 round reworked: a 1 mm longer case, a jacketed
+# round-nose bullet (190 gr) and smokeless powder, so the reserve's unaltered IG 89 rifles had a jacketed
+# round (Poyer p. 54). It also fires in rifles chambered for GP 11 (FCHM; swisswaffen). Made by the
+# Solothurn cartridge factory, designed at Thun (FCHM).
+# Case: swissrifles.com/ammo (http only, so not a listed source) gives 2.15 in (54.6) case,
+# .500 in (12.7) rim, .496 in (12.6) head and a .3075 in (7.8) bullet; Poyer p. 50 gives 7.5x54.5. Shoulder, neck and head to shoulder are Raven's
+# caliper values for the Kadettenpatrone (same case, 1964). Length is an estimate: no source gives it.
+name = "7.5x54.5 mm Swiss (GP 90/23)"
+kind = "rimless"
+profile = "round"
+aliases = ["gp90/23", "gp 90/23", "gp1890/23", "gp 1890/23", "7.5 mm gp 90/23", "patrone 90/23", "scharfe patrone 90/23", "gewehrpatrone 90/23", "7.5x54.5"]
+display_aliases = ["GP 90/23"]
+
+origin = "CH"
+obsolete = true
+
+[mm]
+rim = 12.7
+base = 12.6
+shoulder = 11.5
+shoulder_at = 45.0
+neck = 8.6
+case_length = 54.6
+overall_length = 77.0
+bullet = 7.8
+sources = ["book:poyer p. 50"]
+
+[introduced]
+# decision of 9 January 1923
+year = 1923
+sources = ["https://swisswaffen.com/?L=DE&W=GP9075&LP=SM"]
+
+[primer]
+# GP 90 family
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
+
+[shoulder_angle]
+# the GP 1890 case
+degrees = 27.8
+sources = ["https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
+
+[bullet]
+# cupronickel-jacketed round nose (Poyer p. 50; swisswaffen: steel jacket)
+type = "jacketed"
+sources = ["book:poyer p. 50"]
+
+[case]
+material = "brass"
+sources = []
+
+[fired_by]
+firearms = ["Schmidt-Rubin M1889"]
+sources = ["https://fchm.ch/munition/zentralfeuerpatronen/schmidt-rubin-patrone/"]

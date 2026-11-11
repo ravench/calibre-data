@@ -109,14 +109,15 @@ class CatalogueTests(unittest.TestCase):
     def test_kadettenpatrone_is_its_own_round(self):
         # Raven 2026-11-08: a variant of GP 1890, but technically its own cartridge; measured on one round.
         by_name = {s["name"]: s for s in ALL}
-        kp, gp = by_name["7.5 mm Kadettenpatrone"], by_name["7.5x53.5 mm Swiss (GP 1890)"]
+        kp, gp = by_name["7.5 mm Kadettenpatrone"], by_name["7.5x54.5 mm Swiss (GP 90/23)"]
         measured = {"rim": 12.7, "base": 12.6, "shoulder": 11.5, "neck": 8.6, "sh_at": 45.0, "oal": 77.5, "bullet": 7.8}
         self.assertEqual({k: kp[k] for k in measured}, measured)
-        self.assertEqual(kp["case"], 54.6, "measured 54.8, drawn on the GP 1890's case")
-        # The Kadettengewehr 1897 is sighted for both: the same case, so Schiesstagebuch offers them as one chamber.
+        self.assertEqual(kp["case"], 54.6, "measured 54.8 on a 1964 round, drawn on the GP 90/23's case")
+        # A late round on the longer case of 1923: Schiesstagebuch offers the two as one chamber.
         chamber = ("kind", "rim", "base", "shoulder", "neck", "case", "sh_at", "bullet")
         self.assertEqual([kp[k] for k in chamber], [gp[k] for k in chamber])
-        self.assertNotEqual(kp["profile"], gp["profile"], "a jacketed round nose, not the paper-patched bullet")
+        self.assertNotEqual(kp["profile"], by_name["7.5x53.5 mm Swiss (GP 1890)"]["profile"],
+                            "a jacketed round nose, not the paper-patched bullet")
         self.assertEqual(kp["kind"], RIMLESS)
         self.assertEqual(kp["profile"], "round")
         self.assertIn("kadettenpatrone", kp["aliases"])
@@ -126,14 +127,21 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(tags("7.5 mm Kadettenpatrone"), ["obsolete", "rare"])
         self.assertEqual(bullet("7.5 mm Kadettenpatrone"), JACKETED)
 
-    def test_gp1890_is_drawn_on_the_later_longer_case(self):
-        # Raven's paper-patched round of 1906 measures 54.6 (Wikipedia's 90/23 row: 2.15 in, 12.6 mm head);
-        # the 53.5 of the name stays in the name. 1.0 shorter than GP 11, so a caliper tells them apart.
+    def test_gp1890_and_gp90_23_are_two_cases(self):
+        # Raven 2026-11-11: his 1906 GP round measures 53.5; Poyer p. 50/54 and swissrifles.com give 53.5 for
+        # the GP 90 and 90/03 and the longer case only from the GP 90/23 of 1923, a calibre of its own.
         by_name = {s["name"]: s for s in ALL}
-        gp, gp11 = by_name["7.5x53.5 mm Swiss (GP 1890)"], by_name["7.5x55 mm Swiss (GP 11)"]
-        self.assertEqual((gp["case"], gp["base"], gp["sh_at"]), (54.6, 12.6, 45.0))
-        self.assertEqual(gp11["case"], 55.6)
-        self.assertIn("gp90/23", gp["aliases"], "90/03 and 90/23 are versions of this calibre (one AECC entry)")
+        gp, gp23 = by_name["7.5x53.5 mm Swiss (GP 1890)"], by_name["7.5x54.5 mm Swiss (GP 90/23)"]
+        self.assertEqual((gp["case"], gp["rim"], gp["base"]), (53.5, 12.5, 12.4))
+        self.assertEqual((gp23["case"], gp23["rim"], gp23["base"]), (54.6, 12.7, 12.6))
+        self.assertEqual(by_name["7.5x55 mm Swiss (GP 11)"]["case"], 55.6)
+        self.assertIn("gp90/03", gp["aliases"], "the 90/03 only changed the primer")
+        self.assertIn("gp90/23", gp23["aliases"])
+        self.assertNotIn("gp90/23", gp["aliases"])
+        self.assertEqual(INTRODUCED["7.5x54.5 mm Swiss (GP 90/23)"][0], 1923)
+        self.assertEqual(bullet("7.5x54.5 mm Swiss (GP 90/23)"), JACKETED)
+        self.assertEqual(lookalikes("7.5 mm Kadettenpatrone"),
+                         ["7.5x53.5 mm Swiss (GP 1890)", "7.5x54.5 mm Swiss (GP 90/23)"])
 
     def test_swiss_army_pistol_round_names(self):
         # Raven 2026-11-08: 9 mm Para is «Pistolenpatrone 41» (Pist Pat 41) in the Swiss Army; the

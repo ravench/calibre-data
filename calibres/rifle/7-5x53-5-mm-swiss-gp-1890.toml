@@ -1,47 +1,44 @@
-# GP 1890 ("Patrone, Modell 1890", later "Scharfe Patrone 90/23", from about 1960 "7,5 mm GP 90/23"):
-# the original Schmidt-Rubin round of the IG 89/96, KarK 93/05, KG 97 and KG 00. Its bullet is
-# unusual: a lead body wrapped in two turns of paper (the white band above the case mouth) and a
-# long, blunt round nose under a steel cap (13.7 g, 29 mm long, 7.8 mm over the paper). Shorter case
-# than GP 11. Not to be confused with the 5.6 mm GP 90 of the Stgw 90.
-# Case: 53.5 is the name and Wikipedia's figure for the 1890 and 90/03 rounds (2.106 in, 12.4 mm head).
-# Wikipedia calls the 90/23 «7.5×54.5mm», made to be usable in arms chambered for GP 11: 2.15 in (54.6)
-# case, 0.5 in (12.7) rim, 0.496 in (12.6) head. armedconflicts.com already gives the 1890/03 as
-# «7.5x54.5» with «modified internal dimensions». Raven's paper-patched round of June 1906 (headstamp
-# «6 T T 06») measures case 54.6, rim 12.7, base 12.5, head to shoulder 45.0, length 76.0, so the longer
-# case predates the 90/23, and it is the one drawn. Rim and base are drawn at Wikipedia's 90/23 figures,
-# which the Kadettenpatrone round also measures (the 1906 base is 0.1 under). Head to shoulder 45.0 on
-# both rounds replaces the AECC drawing's 44.24 (its shoulder angle is still used). C.I.P. has no sheet
-# and AECC (municion.org) has one entry, «M.1890-1903», with a DWM-made round headstamped «DWM K K 388»,
-# so 90/03 and 90/23 stay names of this calibre. Cartridges of the World (14th ed., 2014) also has one
-# entry for the whole family, under the 7.5x55 name with GP 11 measurements: no own case length for the
-# 1889 round, no 90/23 and no Kadettenpatrone. It keeps GP 11 apart by its bigger bullet (.308 for .299)
-# and stronger load, which the 1889 rifle must not fire. Same case values as the Kadettenpatrone: one chamber
-# (Wikipedia, Schmidt–Rubin: the Kadettengewehr 1897's «sights were graduated both for the light and
-# the standard loads»).
+# GP 1890: «7,5 mm Gewehrpatrone 90», adopted by the Federal Council on 1 July 1890 with the
+# Schmidt-Rubin IG 89 (FCHM: «7,5 mm GP Modell 1890 (Ordonnanz 1889)»; swisswaffen). The «GP» names
+# are the army's later short forms. Its bullet is unusual: a lead body wrapped in two turns of paper (the
+# white band above the case mouth) and a long, blunt round nose under a steel cap (13.7 g, 29 mm long,
+# 7.8 mm over the paper). Not to be confused with the 5.6 mm GP 90 of the Stgw 90.
+# Versions: the GP 90/03 (decision of 6 March 1903) only got a less corrosive primer and kept the
+# 53.5 mm case (Poyer p. 50, 54; swisswaffen; FCHM; swissrifles.com). The case was changed in details
+# until 1903 (FCHM). From 1923 the GP 90/23 had a 1 mm longer case and a jacketed bullet: its own calibre,
+# 7.5x54.5 mm Swiss (GP 90/23), like the Kadettenpatrone.
+# Case: swissrifles.com/ammo (http only, so not a listed source) gives 2.106 in (53.5) case,
+# .492 in (12.5) rim and .488 in (12.4) head for the GP 90 and 90/03, Poyer p. 50 gives 7.5x53.5; Raven's paper-patched GP round of June 1906 (headstamp «6 T T 06») measures
+# 53.5 (re-measured 2026-11-11; 54.6 noted on 2026-11-08 was a misreading) and 76.0 long. Head to
+# shoulder 44.24 and the shoulder angle are the AECC drawing's (municion.org, «M.1890-1903»).
+# C.I.P. has no sheet. Cartridges of the World (14th ed., 2014) has one entry for the whole family,
+# under the 7.5x55 name with GP 11 measurements. It keeps GP 11 apart by its bigger bullet (.308 for
+# .299) and stronger load, which the 1889 rifle must not fire.
 name = "7.5x53.5 mm Swiss (GP 1890)"
 kind = "rimless"
 profile = "patched"
-aliases = ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp90/23", "7.5 mm gp 90", "patrone 1890", "patrone 90/23", "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]
-display_aliases = ["GP 1890", "GP 90/23"]
+aliases = ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp 90/03", "7.5 mm gp 90", "7.5 mm gp 90/03", "patrone 1890", "gewehrpatrone 1890", "7.5 mm gewehrpatrone 90", "gp modell 1890", "modell 1890", "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]
+display_aliases = ["GP 1890", "GP 90/03"]
 
 origin = "CH"
 obsolete = true
 
 [mm]
-rim = 12.7
-base = 12.6
+rim = 12.5
+base = 12.4
 shoulder = 11.5
-shoulder_at = 45.0
+shoulder_at = 44.24
 neck = 8.6
-case_length = 54.6
-overall_length = 77.0
+case_length = 53.5
+overall_length = 76.0
 bullet = 7.8
-sources = []
+sources = ["book:poyer p. 50", "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
 [introduced]
-# named Modell 1890, in service 1889
+# chosen with the rifle in 1889, adopted as «Gewehrpatrone 90» on 1 July 1890 (swisswaffen); the
+# catalogue keeps the rifle's year
 year = 1889
-sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
+sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss", "https://swisswaffen.com/?L=DE&W=GP9075&LP=SM"]
 
 [primer]
 size = "large-rifle"

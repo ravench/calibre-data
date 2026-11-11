@@ -176,3 +176,11 @@ publisher = "Neuer Kaiser Verlag"
 place = "Klagenfurt"
 year = 2007
 isbn = "978-3-7043-1427-7"
+
+[poyer]
+title = "Swiss Magazine Loading Rifles 1869 to 1958"
+authors = "Joe Poyer"
+publisher = "North Cape Publications"
+place = "Tustin, California"
+year = 2010
+isbn = "978-1-882391-32-5"
