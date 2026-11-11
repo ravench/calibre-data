@@ -485,13 +485,32 @@ calibres = [".44 Long Centrefire", ".44 Extra Long Centrefire"]
 
 [[group]]
 # COTW 18 pp. 232-233: the .44-90 Remington Special looks like the 44-90 Sharps, shorter and a little
-# fatter, and does not fit its chamber.
+# fatter, and does not fit its chamber; p. 243: the .45-100 Remington is it with a wider, longer neck.
 name = ".44-60 Sharps & Remington Necked"
 differ_by = ["bore", "length"]
 calibres = [".44-60 Sharps & Remington Necked", ".44-77 Sharps & Remington", ".44-90 Sharps Necked",
-            ".44-90 Remington Special"]
+            ".44-90 Remington Special", ".45-100 Remington Necked"]
 
 [[group]]
+# COTW 18 p. 239: the .45-100 Ballard is the .44-100 case opened up.
 name = ".44-75 Ballard Everlasting"
+differ_by = ["bore", "length"]
+calibres = [".44-75 Ballard Everlasting", ".44-100 Ballard", ".45-100 Ballard"]
+
+[[group]]
+# The .45-70 head in straight cases of other lengths (COTW 18 pp. 240-242).
+name = ".45-70 Government"
 differ_by = ["length"]
-calibres = [".44-75 Ballard Everlasting", ".44-100 Ballard"]
+calibres = [".45-70 Government", ".45-70 Van Choate", ".45-90 WCF", ".45-110 Sharps", ".45-120 Sharps"]
+
+[[group]]
+# COTW 18 p. 244: the .50-90 Sharps case, longer.
+name = ".50-90 Sharps"
+differ_by = ["length"]
+calibres = [".50-90 Sharps", ".50-140 Sharps"]
+
+[[group]]
+# All three from the .223 Rem./5.56x45 mm case with a .30 bullet, in three lengths.
+name = ".300 AAC Blackout"
+differ_by = ["length"]
+calibres = [".300 AAC Blackout", "7.62x40 mm WT", ".300 HAM'R"]

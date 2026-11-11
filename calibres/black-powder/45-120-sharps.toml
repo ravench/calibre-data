@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The longest Sharps .45 case, 3¼ in., for the Sharps-Borchardt; thicker cases were loaded as the 45-125.
+# Eldorado Cartridge made new cases in 1991-92.
+name = ".45-120 Sharps"
+kind = "rimmed"
+profile = "round"
+aliases = ["45-120 sharps", "45-125 sharps", "45-3 1/4 sharps"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.44
+base = 12.84
+neck = 12.22
+case_length = 82.55
+overall_length = 105.66
+bullet = 11.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/45-120-sharps-3-1-4-180803-en.pdf"]
+
+[introduced]
+# COTW: introduced in 1878-79.
+year = 1878
+sources = ["book:cotw-18 p. 242"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 252"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/45-120-sharps-3-1-4-180803-en.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 242"]
+
+[case]
+material = "brass"
+sources = []

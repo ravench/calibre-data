@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The Sharps straight .45 case of 2⅞ in.; the shorter Sharps .45 cases differ only in length and load.
+name = ".45-110 Sharps"
+kind = "rimmed"
+profile = "round"
+aliases = ["45-110 sharps", "45-2 7/8 sharps", "45 sharps 2 7/8"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.44
+base = 12.84
+neck = 12.22
+case_length = 73.11
+overall_length = 85.3
+bullet = 11.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/45-110-sharps-170428-en.pdf"]
+
+[introduced]
+# COTW: Sharps brought out its .45 cases from 1876 on, without dating the 2⅞ in. one alone.
+year = 1876
+sources = ["book:cotw-18 p. 242"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/45-110-sharps-170428-en.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 242"]
+
+[case]
+material = "brass"
+sources = []

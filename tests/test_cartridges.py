@@ -607,7 +607,7 @@ class CatalogueTests(unittest.TestCase):
                                            "9.4 mm Dutch", ".44 Merwin & Hulbert", ".45 Cowboy Special",
                                            ".25-20 Single-Shot", ".25-21 Stevens", ".338-06 A-Square",
                                            ".40-65 Ballard Everlasting", ".44-40 Extra Long", ".44 Long Centrefire",
-                                           ".44-75 Ballard Everlasting",
+                                           ".44-75 Ballard Everlasting", ".45-100 Remington Necked",
                                            # Paper-patched under its steel cap; the file says how it is known.
                                            "7.5x53.5 mm Swiss (GP 1890)"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)

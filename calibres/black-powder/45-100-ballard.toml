@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .44-100 Ballard case opened up to .45, for the Ballard single-shot rifles until about 1888.
+name = ".45-100 Ballard"
+kind = "rimmed"
+profile = "round"
+aliases = ["45-100 ballard", "45-100 ballard everlasting"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.16
+base = 12.65
+neck = 12.37
+case_length = 71.37
+overall_length = 82.55
+bullet = 11.53
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# COTW: one authority gives 1878 with the Ballard No. 4½ rifle, another first lists it in 1882.
+year = 1878
+sources = ["book:cotw-18 p. 239"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 240"]
+
+[case]
+material = "brass"
+sources = []
