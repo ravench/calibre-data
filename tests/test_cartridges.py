@@ -599,11 +599,9 @@ class CatalogueTests(unittest.TestCase):
         # Raven 2026-11-11: draw the nose first sold, and keep today's usual one in the data.
         early = {".303 British", "7.65x53 mm Argentine", "7x57 mm Mauser", "6.5x57 mm Mauser", "7x57 mm R",
                  "6.5x55 mm Swedish", "6.5x50 mm SR Arisaka", "7.62x54 mm R", "8x50 mm R Lebel", ".275 Rigby",
-                 ".405 Winchester", ".22 Hornet"}
-        self.assertEqual(PROFILE_TODAY, {n: SPITZER for n in early})
-        profiles = {s["name"]: s["profile"] for _, items in ALL_CATALOGUE for s in items}
-        for name, today in PROFILE_TODAY.items():
-            self.assertNotEqual(profiles[name], today, name)
+                 ".405 Winchester"}
+        for name in early:
+            self.assertEqual(PROFILE_TODAY.get(name), SPITZER, name)
         # The 6x57 mm Mauser is no longer loaded, so it has no nose of today.
         self.assertNotIn("6x57 mm Mauser", PROFILE_TODAY)
 

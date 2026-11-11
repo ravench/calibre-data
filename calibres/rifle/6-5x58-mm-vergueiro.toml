@@ -1,6 +1,7 @@
 # Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
 name = "6.5x58 mm Vergueiro"
 kind = "rimless"
+# Nose: no source gives the first service bullet's nose (1904); left pointed.
 profile = "spitzer"
 aliases = ["6.5x58", "6.5vergueiro", "6.5portuguese"]
 

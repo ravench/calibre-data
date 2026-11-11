@@ -4,7 +4,7 @@ name = ".275 Rigby"
 kind = "rimless"
 # Nose: round soft point (photo, COTW 18 p. 580).
 profile = "round"
-# Today: pointed, Hornady's 140-grain spire point (https://www.hornady.com/ammunition/rifle/275-rigby-140-gr-interlock-sp).
+# Today: pointed, Hornady's 140-grain InterLock SP (https://www.hornady.com/ammunition/rifle/275-rigby-140-gr-interlock-sp).
 profile_today = "spitzer"
 aliases = ["275rigby", "275hvrigby", "275bore"]
 

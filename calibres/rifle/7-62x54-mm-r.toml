@@ -1,6 +1,6 @@
 name = "7.62x54 mm R"
 kind = "rimmed"
-# Nose: round, as first loaded; the pointed bullet came in 1909 (COTW 18 p. 548).
+# Nose: round: the round of 1891 is older than its pointed bullet of 1909 (COTW 18 p. 548).
 profile = "round"
 # Today: pointed, since the 150-grain bullet of 1909 (COTW 18 p. 548).
 profile_today = "spitzer"

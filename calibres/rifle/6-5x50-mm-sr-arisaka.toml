@@ -2,7 +2,8 @@
 # shoulder heights estimated for drawing.
 name = "6.5x50 mm SR Arisaka"
 kind = "rimless"
-# Nose: round, as first loaded; pointed service bullets came only from 1898 (COTW 18 p. 553).
+# Nose: round, as first loaded (the Wikipedia page below); pointed service bullets came only from 1898
+# (COTW 18 p. 553).
 profile = "round"
 # Today: pointed, since the Type 38 round of 1907 (https://en.wikipedia.org/wiki/6.5×50mmSR_Arisaka).
 profile_today = "spitzer"

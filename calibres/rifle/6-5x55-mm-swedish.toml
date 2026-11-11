@@ -1,6 +1,6 @@
 name = "6.5x55 mm Swedish"
 kind = "rimless"
-# Nose: round, as first loaded; pointed service bullets came only from 1898 (COTW 18 p. 553).
+# Nose: round: the round is older than the first pointed service bullet, of 1898 (COTW 18 p. 553).
 profile = "round"
 # Today: pointed; the service round is a pointed boat-tail (COTW 18 p. 539).
 profile_today = "spitzer"

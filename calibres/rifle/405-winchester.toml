@@ -3,7 +3,7 @@ name = ".405 Winchester"
 kind = "rimmed"
 # Nose: round, the 300-grain soft point of the factory load (COTW 18 p. 226).
 profile = "round"
-# Today: pointed, Hornady's spire-point load (COTW 18 p. 226).
+# Today: pointed, Hornady's spire-point load (COTW 18 pp. 226-227).
 profile_today = "spitzer"
 aliases = ["405win"]
 
