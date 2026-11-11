@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A little longer than the .450 Revolver; the two interchange in most revolvers.
+name = ".45 Webley"
+kind = "rimmed"
+profile = "round"
+aliases = ["45 webley", "45 webley revolver"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.8
+base = 11.96
+neck = 11.96
+case_length = 20.83
+overall_length = 29.21
+bullet = 11.48
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+# COTW: in an 1876 catalogue, perhaps a year or two older.
+year = 1876
+sources = ["book:cotw-18 p. 512"]
+
+[primer]
+size = "large-pistol"
+sources = ["book:cotw-18 p. 529"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 512"]
+
+[case]
+material = "brass"
+sources = []

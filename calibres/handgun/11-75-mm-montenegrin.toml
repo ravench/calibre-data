@@ -1,0 +1,37 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the large Gasser revolvers of Montenegro and Austria-Hungary.
+name = "11.75 mm Montenegrin"
+kind = "rimmed"
+profile = "round"
+aliases = ["11.75 montenegrin", "11mm austrian gasser", "11 mm gasser", "11.25x36", "11.25x36 montenegrin"]
+
+origin = "AH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.1
+base = 12.45
+neck = 11.99
+case_length = 35.56
+overall_length = 43.94
+bullet = 11.3
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+# COTW: about 1870.
+year = 1870
+sources = ["book:cotw-18 p. 508"]
+
+[primer]
+# The table gives no primer.
+size = "large-pistol"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 508"]
+
+[case]
+material = "brass"
+sources = []

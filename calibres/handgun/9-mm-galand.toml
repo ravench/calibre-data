@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Charles-François Galand's early centrefire revolver round, first made in 1867.
+name = "9 mm Galand"
+kind = "rimmed"
+profile = "round"
+aliases = ["9mm galand", "9 galand"]
+
+origin = "BE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.86
+base = 11.35
+neck = 9.45
+case_length = 14.35
+overall_length = 24.18
+bullet = 9.45
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+year = 1867
+sources = ["book:cotw-18 p. 486"]
+
+[primer]
+# The table gives a Berdan primer without its size.
+size = "small-pistol"
+sources = []
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+# A blackpowder revolver round of 1867; COTW 18 p. 486 gives no load.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

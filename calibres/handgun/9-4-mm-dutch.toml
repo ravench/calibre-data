@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Dutch M1873 revolver, later the M91; first blackpowder, later smokeless, the last case with a flat-nosed bullet.
+name = "9.4 mm Dutch"
+kind = "rimmed"
+profile = "flat"
+aliases = ["9.4 dutch", "9.4x21", "9.4x21 dutch", "9.4mm dutch revolver"]
+
+origin = "NL"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.19
+base = 11.0
+neck = 10.92
+case_length = 27.18
+overall_length = 33.27
+bullet = 9.65
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+year = 1873
+sources = ["book:cotw-18 p. 495"]
+
+[primer]
+# The table gives a Berdan primer without its size.
+size = "large-pistol"
+sources = []
+
+[case_head]
+# .054 in.
+rim_thickness = 1.37
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+# COTW 18 p. 495 gives only a handload with a plated bullet.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

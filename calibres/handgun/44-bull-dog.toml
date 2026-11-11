@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For Webley's British Bull Dog and similar pocket revolvers.
+name = ".44 Bull Dog"
+kind = "rimmed"
+profile = "round"
+aliases = ["44 bull dog", "44 bulldog"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.78
+base = 12.01
+neck = 11.94
+case_length = 14.48
+overall_length = 24.13
+bullet = 11.18
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+# COTW: about 1880, perhaps a year or two earlier.
+year = 1880
+sources = ["book:cotw-18 p. 507"]
+
+[primer]
+size = "small-pistol"
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 507"]
+
+[case]
+material = "brass"
+sources = []

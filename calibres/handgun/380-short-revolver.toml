@@ -1,0 +1,41 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# For Webley revolvers, from about 1868; the .38 Short Colt was copied from it.
+name = ".380 Short Revolver"
+kind = "rimmed"
+profile = "round"
+aliases = ["380 revolver", "380 short revolver", "380 rev", "380 webley revolver"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.85
+base = 9.7
+neck = 9.7
+case_length = 17.9
+overall_length = 28.0
+bullet = 9.15
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page65.pdf"]
+
+[introduced]
+# COTW: between 1868 and 1870; the earliest year is kept.
+year = 1868
+sources = ["book:cotw-18 p. 494"]
+
+[primer]
+size = "small-pistol"
+sources = ["book:cotw-18 p. 528"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page65.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 494"]
+
+[case]
+material = "brass"
+sources = []
