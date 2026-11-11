@@ -35,5 +35,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
 
 [case]
+# municion.org's photos show brass cases (UMC's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/50-90-sharps-straight-2-1-2/"]

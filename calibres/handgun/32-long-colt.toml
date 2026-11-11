@@ -35,5 +35,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
 
 [case]
+# municion.org's photos show brass cases (U.S. Cartridge Co.'s and Winchester's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/32-long-colt-outside-lubricated/"]

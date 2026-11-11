@@ -43,5 +43,6 @@ type = "lead"
 sources = ["https://municion.org/Ficha-11-022-CBC-060-0001/"]
 
 [case]
+# municion.org's photo shows a brass case (Winchester's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/44-henry-flat-cf/"]

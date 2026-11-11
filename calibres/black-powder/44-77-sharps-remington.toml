@@ -35,5 +35,6 @@ type = "paper"
 sources = ["book:cotw-18 p. 236"]
 
 [case]
+# municion.org's photos show brass cases (E. Remington & Sons', Winchester's and unmarked ones).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/44-77-300-remington-sharps-2-1-4/"]

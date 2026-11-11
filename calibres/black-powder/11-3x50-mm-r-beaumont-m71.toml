@@ -40,5 +40,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 569"]
 
 [case]
+# municion.org says the case is brass, and its photos show it.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/113-x-50-r-dutch-beaumont-m-1871/"]

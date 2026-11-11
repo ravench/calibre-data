@@ -783,7 +783,11 @@ class CatalogueTests(unittest.TestCase):
         # Brass, each with a photo, a drawing or a page's text as its source.
         for name in (".45-70 Van Choate", "12.17x44 mm R", ".577/450 Martini-Henry", "10.4 mm Swiss Ordnance 1878",
                      "7.62x54 mm R", ".38 Long Colt", "6.5x52 mm Carcano", "8x50 mm R Mannlicher", "9.3x74 mm R",
-                     "8x59 mm Breda", ".380 Short Revolver", ".40-50 Sharps Necked"):
+                     "8x59 mm Breda", ".380 Short Revolver", ".40-50 Sharps Necked",
+                     ".44-60 Sharps & Remington Necked", ".44-77 Sharps & Remington", ".58 Berdan Musket",
+                     "11.43x50 mm R Egyptian Remington", ".32-40 Remington", ".40-70 Sharps Necked",
+                     "11.3x50 mm R Beaumont M71", ".50-90 Sharps", ".32 Long Colt", ".40-90 Sharps Necked",
+                     ".44 Henry Centrefire", ".44-90 Remington Special", ".45-50 Peabody Sporting"):
             self.assertEqual(case_material(name), BRASS, name)
             self.assertTrue(SOURCES[(name, "case")], name)
 

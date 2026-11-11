@@ -41,5 +41,6 @@ type = "paper"
 sources = ["book:cotw-18 p. 566"]
 
 [case]
+# municion.org says the case is brass, and its photos show it.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/43-egyptian-remington-flat-base/"]
