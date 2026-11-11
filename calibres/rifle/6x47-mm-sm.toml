@@ -18,11 +18,12 @@ neck = 6.87
 case_length = 47.0
 overall_length = 66.0
 bullet = 6.18
-# C.I.P. 6 x 47 SM, sheet of 2002 (revised 2015), copy at tiropratico.com.
+# C.I.P. 6 x 47 SM, sheet of 2002-01-22 (revised 2002-05-15), copy at tiropratico.com.
 sources = ["https://www.tiropratico.com/CIP/Commission%20Internationale%20Permanente/6x47.pdf"]
 
 [introduced]
-# The C.I.P. sheet's date; it came before the 6.5x47 mm Lapua (2005).
+# The C.I.P. sheet's date; no earlier year found. The forum only confirms it came before the
+# 6.5x47 mm Lapua (2005).
 year = 2002
 sources = [
   "https://www.tiropratico.com/CIP/Commission%20Internationale%20Permanente/6x47.pdf",
@@ -34,6 +35,7 @@ size = "large-rifle"
 sources = [
   "https://www.xxlreloading.com/calibers/6-x-47-sm",
   "https://forum.accurateshooter.com/threads/6x47-swiss-match.3677423/",
+  "https://en.wikipedia.org/wiki/6.5×47mm_Lapua",
 ]
 
 [shoulder_angle]
