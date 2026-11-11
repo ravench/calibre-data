@@ -24,9 +24,11 @@ differ_by = ["load"]
 calibres = ["9x19 mm", "9 mm Glisenti"]
 
 [[group]]
+# Straight rimless 9 mm cases of other lengths: the 9 mm Mauser and the 9 mm Winchester Magnum, which
+# COTW 18 likens to the Mauser (p. 480).
 name = "9x23 mm Largo"
-differ_by = ["load"]
-calibres = ["9x23 mm Largo", "9x23 mm Winchester"]
+differ_by = ["load", "length"]
+calibres = ["9x23 mm Largo", "9x23 mm Winchester", "9 mm Mauser", "9 mm Winchester Magnum"]
 
 [[group]]
 # Cases that measure alike (COTW 18 p. 467). The Mauser and Tokarev rounds are loaded hotter than the
@@ -317,3 +319,26 @@ calibres = [".45 Mars Long", ".45 Mars Short"]
 name = ".32 Colt"
 differ_by = ["length"]
 calibres = [".32 Short Colt", ".32 Long Colt"]
+
+[[group]]
+# Both are the 10 mm Auto case necked down to 9 mm (COTW 18 p. 486); the chambers differ.
+name = "9x25 mm Dillon"
+differ_by = ["load"]
+calibres = ["9x25 mm Dillon", "9x25 mm Super Auto G"]
+
+[[group]]
+name = ".380 Short Revolver"
+differ_by = ["length"]
+calibres = [".380 Short Revolver", ".380 Long Revolver"]
+
+[[group]]
+# COTW 18 p. 512: the .45 Webley has a slightly longer case, and the two interchange in most revolvers.
+name = ".450 Adams"
+differ_by = ["length", "bore"]
+calibres = [".450 Adams", ".45 Webley"]
+
+[[group]]
+# COTW 18 p. 522: the Mk I and the .476 share one case, the .455 Webley (Mk II) is it shortened.
+name = ".476 Enfield"
+differ_by = ["length", "bore"]
+calibres = [".476 Enfield", ".455 Webley Mk I", ".455 Webley"]
