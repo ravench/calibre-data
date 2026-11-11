@@ -9,6 +9,13 @@ differ_by = ["load"]
 calibres = [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"]
 
 [[group]]
+# The Swiss 7.5 mm rounds of the IG 89: the 1890 round, its 1923 rework on a 1 mm longer case, and the
+# reduced cadet load on that case (Poyer p. 50).
+name = "7.5x53.5 mm Swiss (GP 1890)"
+differ_by = ["length", "load"]
+calibres = ["7.5x53.5 mm Swiss (GP 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone"]
+
+[[group]]
 name = ".308 Winchester"
 differ_by = ["load"]
 calibres = [".308 Winchester", "7.62x51 mm NATO"]

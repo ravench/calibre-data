@@ -1,3 +1,7 @@
+# Special loads besides the ball round (swissrifles.com/ammo, http only, so not a listed source):
+# armour-piercing with a steel core, marked by a violet bullet base, said to go through about 5 mm of
+# steel plate at 500 m; tracer, marked by a red base, burning to about 800 m. Match shooters mostly
+# use the ordinary ball round, which shows how accurate it is.
 name = "7.5x55 mm Swiss (GP 11)"
 kind = "rimless"
 profile = "spitzer"
