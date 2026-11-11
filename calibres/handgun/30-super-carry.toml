@@ -23,7 +23,7 @@ sources = ["https://en.wikipedia.org/wiki/.30_Super_Carry"]
 
 [primer]
 size = "small-pistol"
-sources = []
+sources = ["book:cotw-18 p. 527"]
 
 [case_head]
 # .055 in.

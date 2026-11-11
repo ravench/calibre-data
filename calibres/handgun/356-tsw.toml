@@ -23,7 +23,7 @@ sources = ["https://en.wikipedia.org/wiki/.356_TSW"]
 
 [primer]
 size = "small-pistol"
-sources = []
+sources = ["book:cotw-18 p. 528"]
 
 [case_head]
 # 9x19-based like the 9x21; C.I.P. 9 x 21

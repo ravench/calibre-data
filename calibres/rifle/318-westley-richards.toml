@@ -28,8 +28,9 @@ year = 1906
 sources = ["https://en.wikipedia.org/wiki/.318_Westley_Richards"]
 
 [primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 608"]
 
 [shoulder_angle]
 # C.I.P. 318 Riml. N.E.

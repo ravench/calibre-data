@@ -35,7 +35,7 @@ sources = [
 
 [primer]
 size = "small-rifle"
-sources = []
+sources = ["book:cotw-18 p. 251"]
 
 [bullet]
 # Winchester: flat-nosed lead with one grease groove, brass case.

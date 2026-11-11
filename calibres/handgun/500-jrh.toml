@@ -22,7 +22,7 @@ sources = ["https://municion.org/producto/500-jrh/"]
 
 [primer]
 size = "large-pistol"
-sources = []
+sources = ["book:cotw-18 p. 529"]
 
 [case_head]
 # .055 in.

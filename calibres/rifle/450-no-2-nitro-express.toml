@@ -24,8 +24,9 @@ year = 1903
 sources = ["https://en.wikipedia.org/wiki/.450_No_2_Nitro_Express"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
 
 [shoulder_angle]
 # C.I.P. 450 No.2 N.E. 3''1/2 Eley

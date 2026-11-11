@@ -27,9 +27,9 @@ year = 1903
 sources = ["https://municion.org/producto/9-x-57-r-mauser/"]
 
 [primer]
-# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 652"]
 
 [shoulder_angle]
 # C.I.P. 9 x 57 R

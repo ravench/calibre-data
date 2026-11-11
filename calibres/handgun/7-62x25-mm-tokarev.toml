@@ -6,18 +6,16 @@ aliases = ["tokarev", "7.62tok"]
 origin = "SU"
 
 [mm]
-rim = 9.9
+rim = 9.95
 base = 9.83
 shoulder = 9.48
 shoulder_at = 19.6
-neck = 8.5
+neck = 8.49
 case_length = 25.0
 overall_length = 35.2
-bullet = 7.85
-sources = [
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf",
-  "book:cotw-18 p. 527",
-]
+bullet = 7.9
+# Maximum cartridge of the C.I.P. sheet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf"]
 
 [introduced]
 year = 1930
