@@ -36,6 +36,7 @@ rim_thickness = 2.03
 sources = ["book:cotw-18 p. 573"]
 
 [bullet]
-# COTW gives the military load as a ball over blackpowder; a round of 1885, before jacketed bullets.
+# COTW 18 p. 556 gives the military load as a ball over blackpowder, without its material; lead, as in
+# the other blackpowder service rounds of 1885.
 type = "lead"
-sources = ["book:cotw-18 p. 556"]
+sources = []

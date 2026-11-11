@@ -25,8 +25,9 @@ year = 2021
 sources = ["book:cotw-18 p. 559"]
 
 [primer]
+# The table gives LRM: a large rifle magnum primer.
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 574"]
 
 [shoulder_angle]
 # Half the cone angle alpha on the C.I.P. sheet.

@@ -31,6 +31,6 @@ size = "large-rifle"
 sources = []
 
 [bullet]
-# A blackpowder round of 1874, before jacketed bullets.
+# The military load: a lead bullet over blackpowder.
 type = "lead"
 sources = ["book:cotw-18 p. 565"]
