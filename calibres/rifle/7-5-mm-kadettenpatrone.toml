@@ -45,6 +45,10 @@ sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
 degrees = 27.8
 sources = ["https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

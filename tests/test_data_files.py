@@ -272,7 +272,7 @@ class CheckTests(unittest.TestCase):
         cases = [(LR, 'kind = "rimfire"', 'kind = "rimfre"', r"kind 'rimfre'.*did you mean \"rimfire\""),
                  (LR, 'profile = "round"', 'profile = "rond"', r"profile 'rond'"),
                  (WIN, 'size = "large-rifle"', 'size = "large rifle"', r"\[primer\] size 'large rifle'"),
-                 (LR, 'type = "lead"', 'type = "jacketed"', r"leave \[bullet\] out for a full metal jacket"),
+                 (LR, 'type = "lead"', 'type = "fmj"', r"\[bullet\] type 'fmj' is not one of jacketed"),
                  (LR, 'origin = "US"', 'origin = "USA"', r"origin 'USA' is not a code in countries.toml"),
                  (LR, "rim = 6.9", 'rim = "6.9"', r"\[mm\] rim must be a number"),
                  (LR, "rim = 6.9", "rim = -6.9", r"\[mm\] rim must be a number above 0"),
@@ -573,6 +573,22 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, LR, r"needs a \[case\] table", line=False)
             self.assertProblem(c, WIN, r"\[case\] material 'steel' needs a source")
             self.assertProblem(c, "calibres/shotgun/12-70.toml", r"a shot calibre has no metal case")
+
+    def test_every_bullet_names_its_type(self):
+        ball = "calibres/black-powder/50-rundkugel-490.toml"
+        with Copy() as c:
+            c.edit(LR, '[bullet]\ntype = "lead"', '[projectile]\nmaterial = "lead"')
+            c.edit(WIN, 'type = "softpoint"', 'type = "plastic"')
+            c.edit(ball, 'type = "lead"', 'type = "softpoint"')
+            c.edit("calibres/shotgun/12-70.toml", "[mm]", '[bullet]\ntype = "lead"\nsources = []\n\n[mm]')
+            self.assertProblem(c, LR, r"unknown table \[projectile\]")
+            self.assertProblem(c, LR, r'needs a \[bullet\] table: type = "jacketed"', line=False)
+            self.assertProblem(c, WIN, r"a rimless calibre's \[bullet\] type is one of jacketed, lead")
+            self.assertProblem(c, ball, r"a ball calibre's \[bullet\] type is one of lead, steel, plastic")
+            self.assertProblem(c, "calibres/shotgun/12-70.toml", r"shot shells, blanks and cannon rounds have no \[bullet\]")
+        with Copy() as c:
+            c.edit("calibres/black-powder/50-rundkugel-490.toml", 'type = "lead"', 'type = "steel"')
+            self.assertProblem(c, "calibres/black-powder/50-rundkugel-490.toml", r"\[bullet\] type 'steel' needs a source")
 
     def test_order_toml_names_without_a_file(self):
         with Copy() as c:

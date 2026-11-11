@@ -40,6 +40,10 @@ groove_diameter = 13.24
 ramp_angle = 50.0
 sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

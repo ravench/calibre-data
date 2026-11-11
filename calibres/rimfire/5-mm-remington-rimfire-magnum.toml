@@ -35,6 +35,10 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf"]
 rim_thickness = 1.26
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

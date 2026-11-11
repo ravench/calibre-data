@@ -43,6 +43,10 @@ groove_diameter = 9.6
 ramp_angle = 43.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page14.pdf"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

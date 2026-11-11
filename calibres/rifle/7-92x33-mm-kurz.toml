@@ -45,6 +45,10 @@ groove_diameter = 10.5
 ramp_angle = 31.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page53.pdf"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 # Lacquered steel, as the wartime military rounds were made.
 material = "steel"

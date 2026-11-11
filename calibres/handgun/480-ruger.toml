@@ -33,6 +33,10 @@ sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
 rim_thickness = 1.65
 sources = ["book:cotw-18 p. 529"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

@@ -40,6 +40,10 @@ sources = ["https://municion.org/producto/256-winchester-magnum/"]
 rim_thickness = 1.4
 sources = ["book:cotw-18 p. 527"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

@@ -41,6 +41,10 @@ sources = ["https://municion.org/producto/22-nosler/"]
 rim_thickness = 1.14
 sources = ["book:cotw-18 p. 175"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

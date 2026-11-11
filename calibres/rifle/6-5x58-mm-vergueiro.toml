@@ -43,6 +43,10 @@ sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]
 rim_thickness = 1.32
 sources = ["book:donnelly p. 775"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

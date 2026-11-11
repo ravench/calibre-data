@@ -38,6 +38,10 @@ groove_diameter = 10.39
 ramp_angle = 36.0
 sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

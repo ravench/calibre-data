@@ -31,6 +31,10 @@ sources = ["https://en.wikipedia.org/wiki/9×23mm_Largo"]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/9×23mm_Largo"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

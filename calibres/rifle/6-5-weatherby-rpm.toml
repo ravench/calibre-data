@@ -40,6 +40,10 @@ sources = ["https://web.archive.org/web/2022/https://saami.org/wp-content/upload
 rim_thickness = 1.3
 sources = ["book:cotw-18 p. 451"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

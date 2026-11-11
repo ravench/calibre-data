@@ -39,6 +39,10 @@ sources = ["https://municion.org/producto/416-barrett-sniper/"]
 rim_thickness = 2.11
 sources = ["book:cotw-18 p. 453"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

@@ -112,9 +112,9 @@ text or tables into this repository. A book that is not in `books.toml` yet need
 first (title and year; edition, authors, editors, publisher, place and ISBN where it has them).
 
 An empty list `sources = []` means the values have not been checked against a source yet. That is
-allowed for the measurements, the primer (then it counts as unverified) and the bullet (then it is
-inferred); a year, a shoulder angle, a case head, a case material, the case materials made today
-and a projectile material always need one.
+allowed for the measurements, the primer (then it counts as unverified), the bullet and a brass
+case; a year, a shoulder angle, a case head, a case material other than brass and the case materials
+made today always need one.
 `sources(name, table)` in `cartridges.py` gives the whole list; the old tables (`INTRODUCED`,
 `SHOULDER_ANGLES`, ...) keep the first one.
 
@@ -289,14 +289,18 @@ the sheet). A rim without a thickness is
 drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless and belted); rimless and belted
 cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outline.py` lists them).
 
-### `[bullet]`, `[case]`, `[current_cases]`, `[projectile]`
+### `[bullet]`, `[case]`, `[current_cases]`
 
-- `[bullet]` `type`: the bullet the cartridge was first sold with where it was not a full metal
-  jacket (or another all-copper bullet): `lead` (bare lead, also lubricated or wax coated), `paper`
-  (lead wrapped in paper below the nose), `softpoint` (copper jacket with the lead core showing at
-  the tip) or `polymer` (copper jacket with a plastic tip: V-Max, ELD, FTX, SST, AccuBond). The GP
-  1890 steel cap is its own profile (`patched`). `sources = []`: hunting rounds whose sources give
-  no bullet, soft point from their use, not checked.
+- `[bullet]` `type`, in every calibre with a bullet (not shot shells, blanks or cannon rounds); no
+  type is taken for granted. For a cartridge, the bullet it was first sold with: `jacketed` (a full
+  metal jacket or another all-copper bullet), `lead` (bare lead, also lubricated or wax coated),
+  `paper` (lead wrapped in paper below the nose), `softpoint` (copper jacket with the lead core
+  showing at the tip) or `polymer` (copper jacket with a plastic tip: V-Max, ELD, FTX, SST,
+  AccuBond). The GP 1890 steel cap is its own profile (`patched`). For a ball, Minié bullet or
+  pellet, what it is made of: `lead`, `steel` or `plastic` (steel BBs and airsoft BBs).
+  `sources = []` means not checked. Steel and plastic need a source; an unchecked type other than
+  `jacketed` (or `lead` for loose projectiles), such as a hunting round's soft point inferred from
+  its use, is listed in `BULLET_INFERRED`.
 - `[case]` `material`, in every calibre with a case (not shot shells, balls, Minié bullets or
   pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated steel,
   `aluminium`, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case) or `hybrid`
@@ -306,8 +310,6 @@ cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outlin
 - `[current_cases]` `materials`: other case materials made today (brass .45-70, steel 9x19, CCI
   Blazer's aluminium), never the original's own (brass only where the original is not brass); the
   original stays the drawn one.
-- `[projectile]` `material`: balls, Minié bullets and pellets not made of lead: `steel` or `plastic`
-  (steel BBs and airsoft BBs).
 
 ### `[fired_by]`: the firearms that fire it
 

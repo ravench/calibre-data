@@ -35,6 +35,10 @@ sources = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338
 rim_thickness = 1.5
 sources = ["book:cotw-18 p. 176"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

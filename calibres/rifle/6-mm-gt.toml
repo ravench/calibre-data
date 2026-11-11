@@ -40,6 +40,10 @@ sources = ["https://www.4dreamerrentals.com/"]
 rim_thickness = 1.37
 sources = ["book:cotw-18 p. 175"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

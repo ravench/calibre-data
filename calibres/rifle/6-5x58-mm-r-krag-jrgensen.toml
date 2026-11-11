@@ -31,6 +31,10 @@ sources = ["book:cotw-18 p. 651"]
 
 # No [bullet]: the service or target load, full metal jacket; p. 620 also lists soft points.
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

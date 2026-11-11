@@ -28,6 +28,10 @@ sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
 rim_thickness = 1.5
 sources = ["book:cotw-18 p. 529"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

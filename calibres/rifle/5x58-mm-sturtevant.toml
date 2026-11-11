@@ -36,6 +36,10 @@ sources = []
 rim_thickness = 1.15
 sources = ["book:cotw-18 p. 573"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

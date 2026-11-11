@@ -33,6 +33,10 @@ sources = ["https://hodgdonreloading.com/rldc/"]
 degrees = 35
 sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

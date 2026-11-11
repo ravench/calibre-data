@@ -42,6 +42,10 @@ sources = ["https://municion.org/producto/8-mm-nambu-m-1914/"]
 rim_thickness = 1.07
 sources = ["book:donnelly p. 860"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

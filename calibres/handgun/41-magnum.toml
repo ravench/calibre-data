@@ -30,6 +30,10 @@ sources = ["https://en.wikipedia.org/wiki/.41_Remington_Magnum"]
 rim_thickness = 1.37
 sources = ["book:cotw-18 p. 528"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

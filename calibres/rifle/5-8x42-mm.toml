@@ -37,6 +37,10 @@ sources = []
 degrees = 24.5
 sources = ["https://www.small-arms.org/"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 # Copper-washed steel.
 material = "steel"

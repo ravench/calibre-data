@@ -31,6 +31,10 @@ sources = []
 
 # No [bullet]: the service or target load, full metal jacket; p. 617 also lists soft points.
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

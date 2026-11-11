@@ -101,10 +101,9 @@ PRIMER_DIAMETERS = {  # mm, nominal primer cup diameter
 # Bottleneck cases without a sourced shoulder angle are drawn at this one.
 DEFAULT_SHOULDER_ANGLE = 32
 
-# Original bullets (a calibre without [bullet] had a full metal jacket or another all-copper bullet).
+# Original bullets: JACKETED is a full metal jacket or another all-copper bullet.
 JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP = "jacketed", "lead", "paper", "softpoint", "polymer"
-# Case and projectile materials (a calibre without [case] has a brass case; a ball, Minié bullet or
-# pellet without [projectile] is lead).
+# Case materials, and what balls, Minié bullets and pellets are made of (LEAD, STEEL or PLASTIC).
 BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID = "brass", "copper", "steel", "nickel", "paper", "hybrid"
 ALUMINIUM = "aluminium"
 PLASTIC = "plastic"
@@ -162,13 +161,13 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "bullet": (("type",), (), "may be empty"),
     "case": (("material",), (), "may be empty"),  # every case but brass needs a source
     "current_cases": (("materials",), (), "required"),
-    "projectile": (("material",), (), "required"),
     "fired_by": (("firearms",), (), "required"),
 }
-BULLET_TYPES = (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP)
+CARTRIDGE_BULLETS = (JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP)
+LOOSE_BULLETS = (LEAD, STEEL, PLASTIC)
+BULLET_TYPES = CARTRIDGE_BULLETS + (STEEL, PLASTIC)
 CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID)
 CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM)
-PROJECTILE_MATERIALS = (STEEL, PLASTIC)
 DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
 GROUP_KEYS = ("name", "differ_by", "calibres")
 # A printed book as a source: "book:<id> p. <page>", the id of a book in books.toml. A manual that
@@ -494,13 +493,11 @@ def _read_calibre(f, category, countries, books=None):
             elif not isinstance(data["unknown"], str) or not data["unknown"].strip():
                 f.problem(f.line(t, "unknown"), "[introduced] unknown must say why there is no year, in quotes")
         enums = {("primer", "size"): tuple(PRIMER_DIAMETERS), ("bullet", "type"): BULLET_TYPES,
-                 ("case", "material"): CASE_MATERIALS, ("projectile", "material"): PROJECTILE_MATERIALS}
+                 ("case", "material"): CASE_MATERIALS}
         for (tt, k), allowed_values in enums.items():
             if t == tt and k in data and data[k] not in allowed_values:
-                hint = {"bullet": " (leave [bullet] out for a full metal jacket)",
-                        "projectile": " (leave [projectile] out for lead)"}
                 f.problem(f.line(t, k), f"[{t}] {k} {data[k]!r} is not one of {', '.join(allowed_values)}"
-                                        f"{_close(data[k], allowed_values)}{hint.get(t, '')}")
+                                        f"{_close(data[k], allowed_values)}")
         if t == "current_cases" and "materials" in data:
             mats = data["materials"]
             if not _is_text_list(mats) or not mats or any(m not in CURRENT_CASE_MATERIALS for m in mats):
@@ -539,8 +536,18 @@ def _read_calibre(f, category, countries, books=None):
                         "material with its sources")
     elif facts["case"]["material"] != BRASS and not facts["case"]["sources"]:
         f.problem(f.line("case"), f"[case] material {facts['case']['material']!r} needs a source")
-    if "projectile" in facts and kind not in LOOSE:
-        f.problem(f.line("projectile"), "[projectile] is only for balls, Minié bullets and pellets")
+    if kind == SHOT or profile == CRIMPED or category in NOT_IN_APPS:
+        if "bullet" in facts:
+            f.problem(f.line("bullet"), "shot shells, blanks and cannon rounds have no [bullet]: remove it")
+    elif "bullet" not in facts:
+        usual = LEAD if kind in LOOSE else JACKETED
+        f.problem(None, f'needs a [bullet] table: type = "{usual}" (sources = [] if not checked) or another type')
+    else:
+        allowed = LOOSE_BULLETS if kind in LOOSE else CARTRIDGE_BULLETS
+        if facts["bullet"]["type"] not in allowed:
+            f.problem(f.line("bullet", "type"), f"a {kind} calibre's [bullet] type is one of {', '.join(allowed)}")
+        elif facts["bullet"]["type"] in (STEEL, PLASTIC) and not facts["bullet"]["sources"]:
+            f.problem(f.line("bullet"), f"[bullet] type {facts['bullet']['type']!r} needs a source")
     if "case_head" in facts:
         groove = [k for k in HEAD_GROOVE if k in facts["case_head"]]
         if kind in (RIMMED, RIMFIRE) and groove:
@@ -750,9 +757,9 @@ def load(root=ROOT):
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "CASES",
-                         "CURRENT_CASES", "LOOSE_MATERIALS", "SOURCES", "TIP_COLOURS", "FIRED_BY",
+                         "CURRENT_CASES", "SOURCES", "TIP_COLOURS", "FIRED_BY",
                          "PROFILE_TODAY")}
-    sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE")}
+    sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED")}
     for _, items in catalogue:
         for e in items:
             n = e["name"]
@@ -792,12 +799,12 @@ def load(root=ROOT):
                                           first("case_head"))
             if "bullet" in facts:
                 t["BULLETS"][n] = (facts["bullet"]["type"], first("bullet"))
+                if not facts["bullet"]["sources"] and facts["bullet"]["type"] != (LEAD if e["kind"] in LOOSE else JACKETED):
+                    sets["BULLET_INFERRED"].add(n)
             if "case" in facts:
                 t["CASES"][n] = (facts["case"]["material"], first("case"))
             if "current_cases" in facts:
                 t["CURRENT_CASES"][n] = (tuple(facts["current_cases"]["materials"]), first("current_cases"))
-            if "projectile" in facts:
-                t["LOOSE_MATERIALS"][n] = (facts["projectile"]["material"], first("projectile"))
             if "fired_by" in facts:
                 t["FIRED_BY"][n] = (tuple(facts["fired_by"]["firearms"]), first("fired_by"))
             if "tip_colours" in raw:
@@ -841,12 +848,14 @@ RIM_THICKNESS = _t["RIM_THICKNESS"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
 ORIGIN, ORIGIN_UNDECIDED = _t["ORIGIN"], _t["ORIGIN_UNDECIDED"]  # {name: code}, {name: (codes, likelier first)}
-BULLETS = _t["BULLETS"]  # {name: (bullet, first source or None)}
-# Hunting rounds whose sources give no bullet: soft point from their use, not checked.
-BULLET_INFERRED = {name for name, (_, url) in BULLETS.items() if url is None}
+# {name: (bullet, first source or None)}: every calibre with a bullet (not shot shells, blanks or cannon
+# rounds); no source means not checked.
+BULLETS = _t["BULLETS"]
+# Unchecked bullets other than the usual one (a jacket; lead for balls, Minié bullets and pellets), such
+# as hunting rounds whose sources give no bullet: soft point from their use.
+BULLET_INFERRED = _t["BULLET_INFERRED"]
 CASES = _t["CASES"]  # {name: (material, first source)}
 CURRENT_CASES = _t["CURRENT_CASES"]  # {name: (other case materials made today, first source)}
-LOOSE_MATERIALS = _t["LOOSE_MATERIALS"]  # {name: (material, first source)}
 LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the file's order
 LOOKALIKE_NAMES = _t["LOOKALIKE_NAMES"]  # each group's name, in the same order
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
@@ -865,8 +874,8 @@ PROFILE_TODAY = _t["PROFILE_TODAY"]
 
 def sources(name, fact):
     """Every source of one of a calibre's values, as listed in its file: fact is the table name
-    ("mm", "introduced", "primer", "shoulder_angle", "case_head", "bullet", "case", "current_cases",
-    "projectile" or "fired_by"); [] when nothing is checked yet or the calibre has no such table."""
+    ("mm", "introduced", "primer", "shoulder_angle", "case_head", "bullet", "case", "current_cases"
+    or "fired_by"); [] when nothing is checked yet or the calibre has no such table."""
     return list(SOURCES.get((name, fact), []))
 
 
@@ -921,8 +930,9 @@ def is_worldwide(name):
 
 
 def bullet(name):
-    """The original bullet of a calibre: JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT or POLYMER_TIP."""
-    return BULLETS.get(name, (JACKETED, None))[0]
+    """The original bullet of a calibre: JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT or POLYMER_TIP (LEAD,
+    STEEL or PLASTIC for balls, Minié bullets and pellets); None for shot shells, blanks and cannon rounds."""
+    return BULLETS.get(name, (None, None))[0]
 
 
 def case_material(name):
@@ -936,8 +946,8 @@ def current_case_materials(name):
 
 
 def loose_material(name):
-    """What a ball, Minié bullet or pellet is made of: LEAD, STEEL or PLASTIC."""
-    return LOOSE_MATERIALS.get(name, (LEAD, None))[0]
+    """What a ball, Minié bullet or pellet is made of: LEAD, STEEL or PLASTIC (its [bullet] type)."""
+    return bullet(name)
 
 
 def lookalikes(name):

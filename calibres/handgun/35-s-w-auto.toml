@@ -26,6 +26,10 @@ sources = ["https://en.wikipedia.org/wiki/.35_S%26W_Auto"]
 size = "small-pistol"
 sources = ["https://municion.org/producto/35-smith-wesson-automatic/"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []

@@ -14,3 +14,7 @@ sources = []
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
 unknown = "not a single cartridge"
+
+[bullet]
+type = "lead"
+sources = []

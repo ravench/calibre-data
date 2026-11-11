@@ -36,6 +36,10 @@ sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 rim_thickness = 1.65
 sources = ["book:cotw-18 p. 453"]
 
+[bullet]
+type = "jacketed"
+sources = []
+
 [case]
 material = "brass"
 sources = []
