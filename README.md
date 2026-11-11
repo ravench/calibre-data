@@ -318,7 +318,8 @@ name alone where the whole series fires it and the source names no model (`Berth
 ### `[[tip_colours]]`: what coloured bullet tips mean
 
 Optional, for military rounds whose bullet tip is painted to show what it does: one `[[tip_colours]]`
-table for each code, at the end of the file. For the catalogue only; the apps do not show it yet.
+table for each code, at the end of the file. Kaliberfinder lists them on the calibre's page (its generator reads
+`TIP_COLOURS`; the sources stay here).
 
 ```toml
 [[tip_colours]]

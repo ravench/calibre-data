@@ -810,8 +810,8 @@ LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the fil
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
 BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
 # {name: [{colours, meaning, description or None, countries, sources}]}: what coloured bullet tips mean,
-# from the [[tip_colours]] tables (colours from the tip down). For the catalogue only; the apps do not
-# read it.
+# from the [[tip_colours]] tables (colours from the tip down). Kaliberfinder's generator reads it for the
+# calibre page (2026-11-11); the sources stay here.
 TIP_COLOURS = _t["TIP_COLOURS"]
 # {name: (firearms that fire it, first source)}: the firearms that define a round, mostly old and
 # obsolete ones. For the catalogue only; the apps do not read it.
