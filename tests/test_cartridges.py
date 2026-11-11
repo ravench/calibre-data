@@ -13,7 +13,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PR
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material,
-                        LOOKALIKES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes, BOOK_SOURCE)
+                        LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes, BOOK_SOURCE)
 
 ALL = [s for _, items in CATALOGUE for s in items]  # the calibres in the apps
 APP_NAMES = {s["name"] for s in ALL}
@@ -680,7 +680,9 @@ class CatalogueTests(unittest.TestCase):
                 bore = spread("bullet") > 0.3 and names[0] != ".44 Henry"
                 length = spread("case") > 1.5
             else:
-                bore = spread("bullet") >= 0.05 and SEATING not in differs
+                # The .30 Borchardt's bullet is the COTW table's .307 in., the Mauser's from its C.I.P. sheet;
+                # COTW 18 p. 467 measures the three alike, and p. 466 has Tokarev pistols fire Mauser loads.
+                bore = spread("bullet") >= 0.05 and SEATING not in differs and names[0] != ".30 Borchardt"
                 length = spread("case") > 0.5
             if SEATING not in differs:
                 self.assertEqual(bore, BORE in differs, names)
@@ -690,6 +692,17 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(lookalikes("8x57 mm I"), ["8x57 mm IS", "8x57 mm IRS", "8x57 mm IR"])
         self.assertEqual(lookalikes(".275 Rigby"), ["7x57 mm Mauser", "7x57 mm R"])
         self.assertEqual(lookalikes(".30-06 Springfield"), [])
+        self.assertEqual(lookalikes("7.62x25 mm Tokarev"), [".30 Borchardt", "7.63x25 mm Mauser"])
+
+    def test_lookalike_groups_have_names(self):
+        # Raven 2026-11-11: a group's name is one of its calibres' or the family's own.
+        self.assertEqual(len(LOOKALIKE_NAMES), len(LOOKALIKES))
+        self.assertEqual(len(set(LOOKALIKE_NAMES)), len(LOOKALIKE_NAMES))
+        groups = dict(zip(LOOKALIKE_NAMES, (names for _, names in LOOKALIKES)))
+        self.assertEqual(groups[".308 Winchester"], [".308 Winchester", "7.62x51 mm NATO"])
+        self.assertEqual(groups["7.63x25 mm"], [".30 Borchardt", "7.63x25 mm Mauser", "7.62x25 mm Tokarev"])
+        for title, names in groups.items():
+            self.assertTrue(title not in NAMES or title in names, title)
 
     def test_rimfire_and_centrefire_versions_are_calibres_of_their_own(self):
         # Raven 2026-11-09: a cartridge made in numbers both as rimfire and centrefire gets a file for each

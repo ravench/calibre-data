@@ -169,6 +169,7 @@ CASE_MATERIALS = (COPPER, STEEL, NICKEL, PAPER, HYBRID)
 CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL)
 PROJECTILE_MATERIALS = (STEEL, PLASTIC)
 DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
+GROUP_KEYS = ("name", "differ_by", "calibres")
 # A printed book as a source: "book:<id> p. <page>", the id of a book in books.toml. A manual that
 # numbers its pages by chapter has pages such as "14-13" (chapter 14, page 13).
 BOOK_SOURCE = re.compile(r"book:(?P<id>[^\s]+) p\. (?P<page>[1-9][0-9]*(?:-[1-9][0-9]*)?)")
@@ -663,7 +664,7 @@ def load(root=ROOT):
         rest = sorted(n for n in files if n not in listed)
         catalogue.append((CATEGORIES[cat], [files[n] for n in listed + rest]))
 
-    lookalikes = []
+    lookalikes, group_names = [], []
     lf = read("lookalikes.toml")
     if lf:
         _check_keys(lf, None, lf.data, {"group"}, ())
@@ -674,18 +675,34 @@ def load(root=ROOT):
             lf.problem(lf.line(None, "group") or lf.line("group"),
                        "each group is a [[group]] table with differ_by and calibres")
             groups = []
-        grouped = {}
+        grouped, titles = {}, {}
+        owners = {}  # a calibre's name, aliases and display aliases, lower case: the calibre
+        for n, (_, raw, *_rest) in by_name.items():
+            for other in [n] + [a for k in ("aliases", "display_aliases") if _is_text_list(raw.get(k))
+                                for a in raw[k]]:
+                owners.setdefault(other.lower(), n)
         for i, g in enumerate(groups):
             def at(key=None, i=i):
                 return lf.line("group", key, nth=i) or lf.line("group", nth=i) or lf.line(None, "group")
             for k in g:
-                if k not in ("differ_by", "calibres"):
-                    lf.problem(at(k), f"unknown key {k!r} in [[group]]{_close(k, ('differ_by', 'calibres'))}; "
-                                      "allowed: calibres, differ_by")
-            for k in ("differ_by", "calibres"):
+                if k not in GROUP_KEYS:
+                    lf.problem(at(k), f"unknown key {k!r} in [[group]]{_close(k, GROUP_KEYS)}; "
+                                      "allowed: calibres, differ_by, name")
+            for k in GROUP_KEYS:
                 if k not in g:
                     lf.problem(at(), f"[[group]] needs {k!r}")
-            diff, names = g.get("differ_by"), g.get("calibres")
+            title, diff, names = g.get("name"), g.get("differ_by"), g.get("calibres")
+            named = isinstance(title, str) and title.strip() == title != ""
+            if "name" in g and not named:
+                lf.problem(at("name"), "name is the group's name, as text without spaces around it")
+            elif "name" in g:
+                owner = owners.get(title.lower())
+                if title.lower() in titles:
+                    lf.problem(at("name"), f"name {title!r} is already the name of the group on line "
+                                           f"{titles[title.lower()]}")
+                elif owner and not (_is_text_list(names) and owner in names):
+                    lf.problem(at("name"), f"name {title!r} names the calibre {owner!r}, which is not in this group")
+                titles[title.lower()] = at()
             if "differ_by" in g:
                 bad = [x for x in diff if x not in DIFFER_BY] if _is_text_list(diff) else [diff]
                 if bad or not diff:
@@ -708,7 +725,9 @@ def load(root=ROOT):
                     lf.problem(at("calibres"), f"{n!r} is in calibres/{by_name[n][0]}/, which the apps do not show yet")
                 else:
                     grouped[n] = at()
-            lookalikes.append((tuple(diff), list(names)))
+            if named:  # otherwise reported above
+                lookalikes.append((tuple(diff), list(names)))
+                group_names.append(title)
 
     if problems:
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
@@ -771,7 +790,8 @@ def load(root=ROOT):
     t["WORLDWIDE"] = frozenset(t["WORLDWIDE"])
     hidden = {CATEGORIES[cat] for cat in NOT_IN_APPS}
     t.update(CATALOGUE=[(cat, items) for cat, items in catalogue if cat not in hidden], ALL_CATALOGUE=catalogue,
-             COUNTRIES=countries, BOOKS=books or {}, LOOKALIKES=lookalikes)
+             COUNTRIES=countries, BOOKS=books or {}, LOOKALIKES=lookalikes,
+             LOOKALIKE_NAMES=group_names)
     return t
 
 
@@ -809,6 +829,7 @@ CASES = _t["CASES"]  # {name: (material, first source)}
 CURRENT_CASES = _t["CURRENT_CASES"]  # {name: (other case materials made today, first source)}
 LOOSE_MATERIALS = _t["LOOSE_MATERIALS"]  # {name: (material, first source)}
 LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the file's order
+LOOKALIKE_NAMES = _t["LOOKALIKE_NAMES"]  # each group's name, in the same order
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
 BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
 # {name: [{colours, meaning, description or None, countries, sources}]}: what coloured bullet tips mean,

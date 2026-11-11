@@ -384,14 +384,19 @@ counts as rare.
 ### Lookalikes
 
 Calibres that are cartridges of their own but look alike, so an app can show the others from any
-one of them (`lookalikes(name)`). All groups are in `lookalikes.toml`, each a `[[group]]` with its
-calibres, the parent first:
+one of them (`lookalikes(name)`). All groups are in `lookalikes.toml`, each a `[[group]]` with a
+name and its calibres, the parent first:
 
 ```toml
 [[group]]
+name = ".308 Winchester"
 differ_by = ["load"]
 calibres = [".308 Winchester", "7.62x51 mm NATO"]
 ```
+
+A group's `name` is the parent's name or the family's, such as `8x57 mm` for the four 8x57 mm
+rounds. It is unique and never the name of a calibre outside the group. `LOOKALIKE_NAMES` lists the
+names in the order of `LOOKALIKES`.
 
 A group's cases share one design; `differ_by` says what tells them apart: `rim` (rimmed or rimless
 twin), `bore` (bullet diameter), `length` (case length), `seating` (a wadcutter seated flush or

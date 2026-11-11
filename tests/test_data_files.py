@@ -14,7 +14,7 @@ LR_MM = ('sources = [\n  "book:janes-ammo-2002 p. 681",\n  "book:cotw-18 p. 670"
 WIN = "calibres/rifle/308-winchester.toml"
 FOLDER = {app: folder for folder, app in cartridges.CATEGORIES.items()}
 LOOK = "lookalikes.toml"
-NATO_GROUP = 'differ_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]'
+NATO_GROUP = 'name = ".308 Winchester"\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]'
 TIP = ('\n[[tip_colours]]\ncolours = ["black"]\nmeaning = ["armour-piercing"]\n'
        'sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]\n')
 
@@ -477,7 +477,7 @@ class CheckTests(unittest.TestCase):
             c.write(rel, c.read(rel) + '\n[primer]\nsize = "large-rifle"\nsources = []\n')
             self.assertOnlyProblems(c, rel, r"calibres/cannon/ has no \[primer\]")
         with Copy() as c:
-            c.write(LOOK, c.read(LOOK) + '\n[[group]]\ndiffer_by = ["bore"]\ncalibres = [".50 BMG", "20x138 mm B"]\n')
+            c.write(LOOK, c.read(LOOK) + '\n[[group]]\nname = "x"\ndiffer_by = ["bore"]\ncalibres = [".50 BMG", "20x138 mm B"]\n')
             self.assertOnlyProblems(c, LOOK, r"'20x138 mm B' is in calibres/cannon/, which the apps do not show yet")
         with Copy() as c:  # other categories still need every measurement
             c.edit(WIN, "neck = 8.7\n", "")
@@ -627,21 +627,32 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, LOOK, r"'7.62x51 mm NAT0' is not a calibre \(did you mean \"7.62x51 mm NATO\"\?\)",
                                line=c.line_of(LOOK, "NAT0"))
         with Copy() as c:
-            first = c.line_of(LOOK, '"7.62x51 mm NATO"') - 2
-            c.write(LOOK, c.read(LOOK) + '\n[[group]]\ndiffer_by = ["rim"]\ncalibres = [".22 LR", ".308 Winchester"]\n')
+            first = c.line_of(LOOK, '"7.62x51 mm NATO"') - 3
+            c.write(LOOK, c.read(LOOK) + '\n[[group]]\nname = "x"\ndiffer_by = ["rim"]\ncalibres = [".22 LR", ".308 Winchester"]\n')
             self.assertProblem(c, LOOK, rf"'.308 Winchester' is already in the group on line {first}$",
                                line=c.read(LOOK).count("\n"))
 
     def test_lookalike_groups(self):
         # Each case breaks the .308 Winchester group, which is not the first. The problem is on the
-        # group's line (0 its first key, -1 its [[group]], 1 the next key).
-        cases = [('differ_by = ["load"]', 'differ_by = ["lode"]', r'differ_by lists one or more of .*did you mean "load"', 0),
-                 ('differ_by = ["load"]', "differ_by = 5", r"differ_by lists one or more of", 0),
-                 ('differ_by = ["load"]', 'diff_by = ["load"]', r"unknown key 'diff_by'.*did you mean \"differ_by\"", 0),
+        # group's line (0 its first key, name; -1 its [[group]]; 1 and 2 the next keys).
+        with open(os.path.join(ROOT, LOOK), encoding="utf-8") as f:
+            gp90_line = f.read().split("\n").index('calibres = [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"]') - 2
+        cases = [('differ_by = ["load"]', 'differ_by = ["lode"]', r'differ_by lists one or more of .*did you mean "load"', 1),
+                 ('differ_by = ["load"]', "differ_by = 5", r"differ_by lists one or more of", 1),
+                 ('differ_by = ["load"]', 'diff_by = ["load"]', r"unknown key 'diff_by'.*did you mean \"differ_by\"", 1),
                  ('differ_by = ["load"]\n', "", r"\[\[group\]\] needs 'differ_by'", -1),
                  ('\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]', "", r"\[\[group\]\] needs 'calibres'", -1),
                  ('calibres = [".308 Winchester", "7.62x51 mm NATO"]', 'calibres = [".308 Winchester"]',
-                  r"calibres lists two or more", 1)]
+                  r"calibres lists two or more", 2),
+                 ('name = ".308 Winchester"\n', "", r"\[\[group\]\] needs 'name'", -1),
+                 ('name = ".308 Winchester"', "name = 5", r"name is the group's name, as text", 0),
+                 ('name = ".308 Winchester"', 'name = " .308 Winchester"', r"without spaces around it", 0),
+                 ('name = ".308 Winchester"', 'name = ".223 remington"',
+                  rf"name '.223 remington' is already the name of the group on line {gp90_line}$", 0),
+                 ('name = ".308 Winchester"', 'name = ".30-06 Springfield"',
+                  r"name '.30-06 Springfield' names the calibre '.30-06 Springfield', which is not in this group", 0),
+                 ('name = ".308 Winchester"', 'name = "30-06"',
+                  r"name '30-06' names the calibre '.30-06 Springfield', which is not in this group", 0)]
         for old, new, pattern, offset in cases:
             with self.subTest(new), Copy() as c:
                 text = c.read(LOOK)
@@ -653,7 +664,7 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.write(LOOK, c.read(LOOK) + "\n[extra]\nx = 1\n")
             self.assertProblem(c, LOOK, r"unknown key 'extra'", line=c.line_of(LOOK, "[extra]"))
-        for text in ('[group]\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]\n',
+        for text in ('[group]\nname = "x"\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]\n',
                      "group = 5\n", "group = [1, 2]\n"):
             with self.subTest(text), Copy() as c:
                 c.write(LOOK, "# Lookalikes\n" + text)
@@ -664,7 +675,7 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, LOOK, r"unknown key 'grup' \(did you mean \"group\"\?\)",
                                line=c.line_of(LOOK, "[[grup]]"))
         with Copy() as c:
-            c.write(LOOK, 'group = [{differ_by = ["lode"], calibres = [".308 Winchester", "7.62x51 mm NATO"]}]\n')
+            c.write(LOOK, 'group = [{name = "x", differ_by = ["lode"], calibres = [".308 Winchester", "7.62x51 mm NATO"]}]\n')
             self.assertProblem(c, LOOK, "differ_by lists", line=1)
         for text in ("# Lookalikes\n", "group = []\n"):
             with self.subTest(text), Copy() as c:
