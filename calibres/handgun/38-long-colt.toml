@@ -37,5 +37,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38_Long_Colt"]
 
 [case]
+# municion.org says the army's first cases were tinned brass, later bare brass.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/38-long-colt-da-inside-lubricated/"]

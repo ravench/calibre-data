@@ -35,5 +35,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 218"]
 
 [case]
+# municion.org's photos show brass heads on the American rounds.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/40-50-265-sharps-necked-1-11-16-case/"]

@@ -31,5 +31,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"]
 
 [case]
-material = "brass"
-sources = []
+# municion.org says the case was copper at first.
+material = "copper"
+sources = ["https://municion.org/producto/22-winchester-rim-fire/"]

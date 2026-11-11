@@ -778,8 +778,12 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(case_material(name), COPPER, name)
             self.assertTrue(any(url.startswith("https://municion.org/producto/")
                                 for url in SOURCES[(name, "case")]), name)
-        # Brass, each with a photo or a drawing as its source.
-        for name in (".45-70 Van Choate", "12.17x44 mm R", ".577/450 Martini-Henry", "10.4 mm Swiss Ordnance 1878"):
+        # municion.org's text: the .22 WRF's case was copper at first.
+        self.assertEqual(case_material(".22 Winchester Rimfire"), COPPER)
+        # Brass, each with a photo, a drawing or a page's text as its source.
+        for name in (".45-70 Van Choate", "12.17x44 mm R", ".577/450 Martini-Henry", "10.4 mm Swiss Ordnance 1878",
+                     "7.62x54 mm R", ".38 Long Colt", "6.5x52 mm Carcano", "8x50 mm R Mannlicher", "9.3x74 mm R",
+                     "8x59 mm Breda", ".380 Short Revolver", ".40-50 Sharps Necked"):
             self.assertEqual(case_material(name), BRASS, name)
             self.assertTrue(SOURCES[(name, "case")], name)
 

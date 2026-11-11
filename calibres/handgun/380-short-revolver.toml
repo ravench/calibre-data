@@ -37,5 +37,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 495"]
 
 [case]
+# municion.org's photos show brass heads, Eley Brothers' among them.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/380-short-revolver-cf/"]
