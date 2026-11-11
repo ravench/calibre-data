@@ -80,6 +80,26 @@ differ_by = ["rim"]
 calibres = ["9x57 mm Mauser", "9x57 mm R"]
 
 [[group]]
+differ_by = ["rim"]
+calibres = ["5.6x61 mm Vom Hofe Super Express", "5.6x61 mm R Vom Hofe Super Express"]
+
+[[group]]
+differ_by = ["rim"]
+calibres = ["6x58 mm Forster", "6x58 mm R Forster"]
+
+[[group]]
+differ_by = ["rim"]
+calibres = ["6x62 mm Frères", "6x62 mm R Frères"]
+
+[[group]]
+differ_by = ["rim"]
+calibres = ["6.5x61 mm Mauser", "6.5x61 mm R Mauser"]
+
+[[group]]
+differ_by = ["rim"]
+calibres = ["8x51 mm Mauser", "8x51 mm R Mauser"]
+
+[[group]]
 differ_by = ["bore"]
 calibres = ["7.62x54 mm R", "7.62x53 mm R"]
 

@@ -1,0 +1,34 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Johann Peterlongo of Innsbruck; loaded by G. Roth and Hirtenberger.
+name = "8x71 mm Peterlongo"
+kind = "rimless"
+profile = "round"
+aliases = ["8x71"]
+
+origin = "AT"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.89
+base = 11.73
+shoulder = 10.72
+shoulder_at = 61.6
+neck = 8.86
+case_length = 71.12
+overall_length = 83.31
+bullet = 8.08
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+unknown = "COTW 18 p. 630 gives no year."
+sources = ["book:cotw-18 p. 630"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 630"]

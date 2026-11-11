@@ -1,0 +1,43 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# On the 9.3x72 mm R case, a copy of the British .360 No. 2.
+name = "8x57 mm R 360"
+kind = "rimmed"
+profile = "round"
+aliases = ["8x57r360", "8x57r 360"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.4
+base = 11.0
+shoulder = 9.7
+shoulder_at = 46.0
+neck = 8.78
+case_length = 57.0
+overall_length = 77.0
+bullet = 8.09
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page33.pdf"]
+
+[introduced]
+unknown = "Loaded first with blackpowder; COTW 18 p. 629 gives no year."
+sources = ["book:cotw-18 p. 629"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 13.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page33.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.35
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page33.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 629"]

@@ -1,0 +1,34 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Halger of Hamburg, introduced in the 1920s: the decade's first year is kept.
+name = ".244 Halger Magnum"
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["244halger", "244 halger"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.94
+base = 11.86
+shoulder = 11.05
+shoulder_at = 48.0
+neck = 7.29
+case_length = 57.15
+overall_length = 77.22
+bullet = 6.17
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+year = 1920
+sources = ["book:cotw-18 p. 615"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 615"]

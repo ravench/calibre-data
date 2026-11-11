@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The rimmed 8x51 mm Mauser for single-shot and combination guns (J bore).
+name = "8x51 mm R Mauser"
+kind = "rimmed"
+profile = "round"
+aliases = ["8x51r", "8x51rj"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.08
+base = 11.86
+shoulder = 11.07
+shoulder_at = 40.4
+neck = 8.74
+case_length = 50.29
+overall_length = 68.07
+bullet = 8.03
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+year = 1888
+sources = ["book:cotw-18 p. 627"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 651"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 627"]

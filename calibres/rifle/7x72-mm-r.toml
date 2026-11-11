@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+name = "7x72 mm R"
+kind = "rimmed"
+profile = "round"
+aliases = ["7x72r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.35
+base = 10.85
+shoulder = 8.6
+shoulder_at = 52.0
+neck = 7.92
+case_length = 72.0
+overall_length = 92.0
+bullet = 7.25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page26.pdf"]
+
+[introduced]
+unknown = "Its date of origin is not known (COTW 18 p. 623)."
+sources = ["book:cotw-18 p. 623"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 2.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page26.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page26.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 623"]

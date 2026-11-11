@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+name = "7x75 mm R Vom Hofe Super Express"
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["7x75r", "7x75r se"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.35
+base = 11.9
+shoulder = 10.7
+shoulder_at = 59.0
+neck = 7.95
+case_length = 75.0
+overall_length = 97.0
+bullet = 7.24
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page27.pdf"]
+
+[introduced]
+year = 1939
+sources = ["book:cotw-18 p. 624"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 10.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page27.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page27.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 624"]

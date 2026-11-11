@@ -263,7 +263,9 @@ Federal's ammunition uses small pistol, so it stays small pistol until checked.
 Bottleneck cases: `degrees` between the shoulder and the case axis (the American convention,
 alpha/2). C.I.P. sheets print the full cone angle alpha, so their value is halved; for those
 calibres `shoulder_at` is the sheet's L1. A bottleneck case without one is drawn at 32° until a
-source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
+source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them, except the calibres
+measured only from a book's dimension table, which gives no angle; their `shoulder_at` is estimated,
+as the note in `[mm]` says).
 
 ### `[case_head]`
 
@@ -278,7 +280,8 @@ rather than the C.I.P. maximum, so a calibre from a book can have a rim up to ab
 than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadcutter 1.5 mm from
 the sheet). A rim without a thickness is
 drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless and belted); rimless and belted
-cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outline.py` lists them).
+cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outline.py` lists them,
+except the calibres measured only from a book's dimension table, which gives no groove).
 
 ### `[bullet]`, `[case]`, `[current_cases]`, `[projectile]`
 
@@ -443,8 +446,7 @@ needs Python 3.11 or newer.
 
 The tests (`python3 -m unittest discover -s tests`) also check the catalogue as a whole: a bottleneck
 case without a shoulder angle or a rimless or belted case without an extractor groove in its
-`[case_head]` must be listed in
-`tests/test_outline.py`, and calibres that look exactly the same need a group in `lookalikes.toml`.
+`[case_head]` must be listed in `tests/test_outline.py` unless it is measured only from a book, and calibres that look exactly the same need a group in `lookalikes.toml`.
 
 ## Using it
 

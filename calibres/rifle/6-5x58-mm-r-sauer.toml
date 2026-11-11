@@ -1,0 +1,35 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+name = "6.5x58 mm R Sauer"
+kind = "rimmed"
+profile = "round"
+aliases = ["6.5x58r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.75
+base = 11.1
+neck = 7.57
+case_length = 58.5
+overall_length = 78.0
+bullet = 6.64
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page16.pdf"]
+
+[introduced]
+unknown = "The longest of Sauer's rimmed 6.5 mm rounds; COTW 18 p. 618 gives no year."
+sources = ["book:cotw-18 p. 618"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.15
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page16.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 618"]
