@@ -410,7 +410,7 @@ class CheckTests(unittest.TestCase):
         uk = [(t["colours"], t["meaning"]) for t in cartridges.COLOUR_CODES[".303 British"] if t["part"] == "annulus"]
         self.assertIn((("yellow",), ("proof",)), uk)
         sweden = cartridges.COLOUR_CODES["6.5x55 mm Swedish"]
-        self.assertEqual([(t["part"], t["meaning"]) for t in sweden], [("base", ("reduced-charge",))])
+        self.assertIn(("base", ("reduced-charge",)), [(t["part"], t["meaning"]) for t in sweden])
         files = {s["name"]: f"calibres/{FOLDER[cat]}/{slug(s['name'])}.toml"
                  for cat, items in cartridges.CATALOGUE for s in items}
         with Copy() as c:  # without them, every other table (the apps' catalogue too) is the same

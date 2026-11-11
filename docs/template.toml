@@ -173,8 +173,8 @@ sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
 # colours: one or more of black, white, grey, silver, red, orange, yellow, green, blue, purple or
 # brown; a tip's from the tip down (["red", "silver"]: a red tip above a silver band), a base or an annulus has one.
 # meaning: one or more of ball, armour-piercing, incendiary, explosive, tracer, spotting (a flash or
-# smoke where it hits), subsonic, frangible, proof (an overpressure round) or reduced-charge
-# (["armour-piercing", "incendiary"]: an API round).
+# smoke where it hits), subsonic, frangible, proof (an overpressure round) or reduced-charge (a
+# lighter load for short-range practice). An API round is ["armour-piercing", "incendiary"].
 # description (optional): the round's name. countries (optional): codes from countries.toml of the
 # armies that mark it so; the same part, colours and meaning are one table for all of them.
 # Needs a source.

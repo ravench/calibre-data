@@ -56,7 +56,7 @@ sources = []
 part = "annulus"
 colours = ["black"]
 meaning = ["ball"]
-description = "Light ball, Czechoslovak code"
+description = "Light ball, former Czechoslovak code (before the Soviet codes)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]
 
@@ -64,7 +64,7 @@ sources = ["book:labbett p. 56", "book:labbett p. 86"]
 part = "annulus"
 colours = ["green"]
 meaning = ["ball"]
-description = "Heavy ball, Czechoslovak code"
+description = "Heavy ball, former Czechoslovak code (before the Soviet codes)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]
 
@@ -72,7 +72,7 @@ sources = ["book:labbett p. 56", "book:labbett p. 86"]
 part = "annulus"
 colours = ["blue"]
 meaning = ["ball"]
-description = "Ball with a mild steel core, Czechoslovak code"
+description = "Ball with a mild steel core, former Czechoslovak code (before the Soviet codes)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]
 
@@ -80,7 +80,7 @@ sources = ["book:labbett p. 56", "book:labbett p. 86"]
 part = "annulus"
 colours = ["red"]
 meaning = ["tracer"]
-description = "Tracer, Czechoslovak code"
+description = "Tracer, former Czechoslovak code (before the Soviet codes)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]
 
@@ -88,6 +88,6 @@ sources = ["book:labbett p. 56", "book:labbett p. 86"]
 part = "annulus"
 colours = ["white"]
 meaning = ["armour-piercing"]
-description = "Armour-piercing, Czechoslovak code"
+description = "Armour-piercing, former Czechoslovak code (before the Soviet codes)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]

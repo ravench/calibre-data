@@ -353,7 +353,7 @@ sources = [
 ]
 ```
 
-- `part`: `tip` (the bullet tip) or `base` (the head of the case around the primer, which the Swiss
+- `part`: `tip` (the bullet tip) or `base` (the head of the case, which the Swiss
   formerly lacquered red for tracer and purple for armour-piercing on their rifle rounds) or `annulus`
   (the lacquer ring around the primer, as on British and Czechoslovak rounds). Many armies lacquer the
   ring only to seal out moisture: add an annulus code only where a source says what its colour means.

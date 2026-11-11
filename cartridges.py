@@ -880,8 +880,8 @@ LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the fil
 LOOKALIKE_NAMES = _t["LOOKALIKE_NAMES"]  # each group's name, in the same order
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
 BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
-# {name: [{part, colours, meaning, description or None, countries, sources}]}: what a painted bullet tip
-# or cartridge base means, from the [[colour_codes]] tables (part "tip", "base" or "annulus"; a tip's colours from
+# {name: [{part, colours, meaning, description or None, countries, sources}]}: what a painted bullet tip,
+# cartridge base or primer annulus means, from the [[colour_codes]] tables (part "tip", "base" or "annulus"; a tip's colours from
 # the tip down). Kaliberfinder's generator reads it for the
 # calibre page (2026-11-11); the sources stay here.
 COLOUR_CODES = _t["COLOUR_CODES"]

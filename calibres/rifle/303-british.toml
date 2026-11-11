@@ -94,6 +94,6 @@ sources = ["book:labbett p. 86"]
 part = "annulus"
 colours = ["yellow"]
 meaning = ["proof"]
-description = "Proof, pre-NATO British code"
+description = "Proof or standard round, pre-NATO British code"
 countries = ["GB"]
 sources = ["book:labbett p. 86"]
