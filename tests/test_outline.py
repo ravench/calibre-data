@@ -214,7 +214,13 @@ class OutlineTests(unittest.TestCase):
 
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
     # or article giving the angle was found yet. Remove a name here when its angle is added.
-    SHOULDER_UNSOURCED = set()
+    SHOULDER_UNSOURCED = {
+        # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
+        # shoulder_at is estimated, as the note in [mm] says).
+        ".244 Halger Magnum", "6.5x27 mm R", "6.5x53.5 mm SR Daudeteau", "6.5x58 mm R Krag-Jørgensen",
+        "6.5x61 mm Mauser", "6.5x61 mm R Mauser", "6x29.5 mm R Stahl", "6x57 mm Mauser", "6x58 mm Forster",
+        "6x58 mm R Forster", "7x73 mm Vom Hofe Belted", "8x42 mm R M88", "8x71 mm Peterlongo",
+    }
 
     def bottlenecks(self):
         return {s["name"]: s for _, s in outline.specs() if s["shoulder"] and s["profile"] != CRIMPED}
@@ -292,6 +298,9 @@ class OutlineTests(unittest.TestCase):
         "7.5x53.5 mm Swiss (GP 1890)", "7.5 mm Kadettenpatrone", "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
         "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
+        # Measured only from a dimension table in Cartridges of the World, which gives no groove.
+        "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser", "6x58 mm Forster", "7x73 mm Vom Hofe Belted",
+        "8x71 mm Peterlongo",
     }
 
     def rimless(self):

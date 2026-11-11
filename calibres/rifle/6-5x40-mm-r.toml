@@ -1,0 +1,32 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+name = "6.5x40 mm R"
+kind = "rimmed"
+profile = "round"
+aliases = ["6.5x40r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.46
+base = 10.06
+neck = 7.37
+case_length = 40.13
+overall_length = 52.58
+bullet = 6.35
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+unknown = "An old round for single-shot and combination guns; COTW 18 p. 616 gives no year."
+sources = ["book:cotw-18 p. 616"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+# A blackpowder round (p. 616): lead, like the others of its time.
+type = "lead"
+sources = []
+

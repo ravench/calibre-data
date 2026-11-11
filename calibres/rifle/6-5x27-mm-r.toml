@@ -1,0 +1,33 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+name = "6.5x27 mm R"
+kind = "rimmed"
+profile = "round"
+aliases = ["6.5x27r", "6.5r ronezewsky", "ronezewsky"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.87
+base = 9.63
+shoulder = 8.84
+shoulder_at = 19.1
+neck = 7.21
+case_length = 26.92
+overall_length = 39.12
+bullet = 6.53
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+unknown = "A short single-loader round, in use by the 1890s or earlier (COTW 18 p. 616); no year."
+sources = ["book:cotw-18 p. 616"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 616"]

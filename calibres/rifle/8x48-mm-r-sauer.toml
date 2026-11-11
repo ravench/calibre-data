@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+name = "8x48 mm R Sauer"
+kind = "rimmed"
+profile = "round"
+aliases = ["8x48r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.7
+base = 10.97
+neck = 8.74
+case_length = 47.75
+overall_length = 65.53
+bullet = 8.03
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+unknown = "A blackpowder round for Sauer guns; COTW 18 p. 627 gives no year."
+sources = ["book:cotw-18 p. 627"]
+
+[primer]
+# .254 in. Berdan in the table
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 651"]
+
+[bullet]
+# A blackpowder round (p. 627); the later DWM load was a soft point.
+type = "lead"
+sources = []
+

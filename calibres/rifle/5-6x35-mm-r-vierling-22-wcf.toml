@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The .22 Winchester Centerfire of 1885, loaded hotter in Germany for combination guns.
+name = "5.6x35 mm R Vierling (.22 WCF)"
+kind = "rimmed"
+profile = "round"
+aliases = ["5.6x35r vierling", "22wcf", "22 wcf"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 8.85
+base = 7.55
+shoulder = 7.05
+shoulder_at = 20.0
+neck = 6.33
+case_length = 35.5
+overall_length = 43.5
+bullet = 5.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page1.pdf"]
+
+[introduced]
+year = 1885
+sources = ["book:cotw-18 p. 611"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 4.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page1.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page1.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 611"]

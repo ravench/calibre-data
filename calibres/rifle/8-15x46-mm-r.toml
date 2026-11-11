@@ -1,0 +1,44 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# German target round; COTW dates it between 1890 and 1900: the earliest year is kept.
+name = "8.15x46 mm R"
+kind = "rimmed"
+profile = "round"
+aliases = ["8.15x46r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.35
+base = 10.75
+shoulder = 9.9
+shoulder_at = 30.0
+neck = 8.83
+case_length = 46.5
+overall_length = 62.3
+bullet = 8.38
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page44.pdf"]
+
+[introduced]
+year = 1890
+sources = ["book:cotw-18 p. 628"]
+
+[primer]
+# .250 in. Berdan in the table
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 3.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page44.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page44.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 628"]

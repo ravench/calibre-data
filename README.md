@@ -257,6 +257,8 @@ Readings between two sizes (4.8-5.0 mm, about 6.0 mm) stay unverified (`sources 
 rounds with no reloading data, brass maker page or clear headstamp photo yet (old military rounds,
 Nitro Expresses, European hunting rounds). Hodgdon loads .30 Super Carry with small rifle primers;
 Federal's ammunition uses small pistol, so it stays small pistol until checked.
+Cartridges of the World prints the Berdan primer's diameter in its European and British dimension
+tables: .177 in. (4.5 mm) is small, .216-.217 in. (5.5 mm) large and .250-.254 in. Berdan Nitro.
 
 ### `[shoulder_angle]`
 
