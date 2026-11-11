@@ -567,7 +567,10 @@ class CatalogueTests(unittest.TestCase):
                                            ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)",
                                            "5.6x50 mm R Magnum", "5.6x57 mm R", "6.5x65 mm R RWS", "6.5x68 mm R",
                                            "8x60 mm RS", "8x65 mm RS", "9x57 mm R", "8x57 mm IR",
-                                           ".450/400 Nitro Express 3¼ inch", ".275 Rigby"})
+                                           ".450/400 Nitro Express 3¼ inch", ".275 Rigby",
+                                           # The page gives no factory load, or a later one than the original.
+                                           "6.5x40 mm R", "7x75 mm R Vom Hofe Super Express", "8x48 mm R Sauer",
+                                           "8x57 mm R 360", "8x58 mm R Sauer"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):

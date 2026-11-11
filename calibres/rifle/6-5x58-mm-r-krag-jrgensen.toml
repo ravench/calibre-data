@@ -3,7 +3,7 @@
 name = "6.5x58 mm R Krag-Jørgensen"
 kind = "rimmed"
 profile = "round"
-aliases = ["6.5x58r krag", "6.5 krag"]
+aliases = ["6.5x58r krag"]
 
 origin = "DK"
 obsolete = true
@@ -27,4 +27,6 @@ sources = ["book:cotw-18 p. 620"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
+
+# No [bullet]: the service or target load, full metal jacket; p. 620 also lists soft points.

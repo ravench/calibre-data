@@ -26,7 +26,7 @@ sources = ["book:cotw-18 p. 627"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [shoulder_angle]
 # Half the cone angle alpha on the C.I.P. sheet.
@@ -43,4 +43,4 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page54.pdf"]
 
 [bullet]
 type = "softpoint"
-sources = ["book:cotw-18 p. 627"]
+sources = ["book:cotw-18 p. 628"]

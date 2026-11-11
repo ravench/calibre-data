@@ -13,13 +13,13 @@ rare = true
 rim = 13.08
 base = 11.86
 shoulder = 11.07
-shoulder_at = 40.4
+shoulder_at = 38.09
 neck = 8.74
 case_length = 50.29
 overall_length = 68.07
 bullet = 8.03
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 651"]
+# shoulder_at is L1 on the rimless twin's C.I.P. sheet: the two cases are the same but for the rim (p. 627).
+sources = ["book:cotw-18 p. 651", "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page54.pdf"]
 
 [introduced]
 year = 1888
@@ -27,7 +27,12 @@ sources = ["book:cotw-18 p. 627"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the rimless twin's C.I.P. sheet.
+degrees = 15.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page54.pdf"]
 
 [case_head]
 # .060 in.
@@ -36,4 +41,4 @@ sources = ["book:cotw-18 p. 651"]
 
 [bullet]
 type = "softpoint"
-sources = ["book:cotw-18 p. 627"]
+sources = ["book:cotw-18 p. 628"]

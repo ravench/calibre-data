@@ -26,5 +26,7 @@ size = "large-rifle"
 sources = []
 
 [bullet]
-type = "softpoint"
-sources = ["book:cotw-18 p. 616"]
+# A blackpowder round (p. 616): lead, like the others of its time.
+type = "lead"
+sources = []
+

@@ -25,7 +25,7 @@ sources = ["book:cotw-18 p. 613"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [shoulder_angle]
 # Half the cone angle alpha on the C.I.P. sheet.

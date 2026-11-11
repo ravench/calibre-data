@@ -26,7 +26,7 @@ sources = ["book:cotw-18 p. 614"]
 
 [primer]
 size = "small-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [bullet]
 type = "lead"

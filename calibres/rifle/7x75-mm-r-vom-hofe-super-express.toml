@@ -25,7 +25,7 @@ sources = ["book:cotw-18 p. 624"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [shoulder_angle]
 # Half the cone angle alpha on the C.I.P. sheet.
@@ -38,5 +38,7 @@ rim_thickness = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page27.pdf"]
 
 [bullet]
+# A hunting round; COTW 18 p. 624 has no factory data.
 type = "softpoint"
-sources = ["book:cotw-18 p. 624"]
+sources = []
+

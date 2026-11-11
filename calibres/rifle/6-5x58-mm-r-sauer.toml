@@ -2,7 +2,7 @@
 name = "6.5x58 mm R Sauer"
 kind = "rimmed"
 profile = "round"
-aliases = ["6.5x58r"]
+aliases = ["6.5x58r sauer"]
 
 origin = "DE"
 obsolete = true
@@ -23,7 +23,7 @@ sources = ["book:cotw-18 p. 618"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [case_head]
 # R on the C.I.P. sheet.

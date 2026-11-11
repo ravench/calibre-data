@@ -2,7 +2,7 @@
 name = "6.5x27 mm R"
 kind = "rimmed"
 profile = "round"
-aliases = ["6.5x27r"]
+aliases = ["6.5x27r", "6.5r ronezewsky", "ronezewsky"]
 
 origin = "DE"
 obsolete = true
@@ -21,12 +21,12 @@ bullet = 6.53
 sources = ["book:cotw-18 p. 651"]
 
 [introduced]
-unknown = "A short single-loader round; COTW 18 p. 616 gives no year."
+unknown = "A short single-loader round, in use by the 1890s or earlier (COTW 18 p. 616); no year."
 sources = ["book:cotw-18 p. 616"]
 
 [primer]
 size = "small-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [bullet]
 type = "softpoint"

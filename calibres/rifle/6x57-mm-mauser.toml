@@ -27,12 +27,15 @@ sources = ["book:cotw-18 p. 615"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [case_head]
-# .045 in.
-rim_thickness = 1.14
-sources = ["book:cotw-18 p. 651"]
+# from the 6.5x57 mm case; C.I.P. 6,5 x 57
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 10.5
+ramp_angle = 37.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page24.pdf"]
 
 [bullet]
 type = "softpoint"

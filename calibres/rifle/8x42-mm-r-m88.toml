@@ -27,7 +27,7 @@ sources = ["book:cotw-18 p. 630"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [bullet]
 type = "softpoint"

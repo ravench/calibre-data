@@ -1,8 +1,9 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
-# On the 9x19 mm case head.
+# On the 9x19 mm case head. Full metal jacket, the standard for its birds (COTW 18 p. 621), so no [bullet];
+# soft points were made too.
 name = "7x33 mm Sako"
 kind = "rimless"
-profile = "spitzer"
+profile = "round"
 aliases = ["7x33", "7x33sako"]
 
 origin = "FI"
@@ -25,8 +26,8 @@ year = 1942
 sources = ["book:cotw-18 p. 621"]
 
 [primer]
-size = "large-rifle"
-sources = []
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/7×33mm_Sako"]
 
 [shoulder_angle]
 # Half the cone angle alpha on the C.I.P. sheet.
@@ -40,7 +41,3 @@ ramp_top = 3.05
 groove_diameter = 8.8
 ramp_angle = 32.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page32.pdf"]
-
-[bullet]
-type = "softpoint"
-sources = ["book:cotw-18 p. 621"]

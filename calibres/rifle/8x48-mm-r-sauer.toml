@@ -22,8 +22,9 @@ unknown = "A blackpowder round for Sauer guns; COTW 18 p. 627 gives no year."
 sources = ["book:cotw-18 p. 627"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# .254 in. Berdan in the table
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 651"]
 
 [case_head]
 # .040 in.
@@ -31,5 +32,7 @@ rim_thickness = 1.02
 sources = ["book:cotw-18 p. 651"]
 
 [bullet]
+# A blackpowder round (p. 627); the later DWM load was a soft point.
 type = "lead"
-sources = ["book:cotw-18 p. 627"]
+sources = []
+

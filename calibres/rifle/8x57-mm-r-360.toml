@@ -39,5 +39,7 @@ rim_thickness = 1.35
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page33.pdf"]
 
 [bullet]
+# First loaded with blackpowder (p. 629), later with soft points.
 type = "lead"
-sources = ["book:cotw-18 p. 629"]
+sources = []
+

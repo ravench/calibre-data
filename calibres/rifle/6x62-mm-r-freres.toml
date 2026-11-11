@@ -19,12 +19,13 @@ bullet = 6.18
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page10.pdf"]
 
 [introduced]
-unknown = "A recent MEN design; COTW 18 p. 614 gives no year."
-sources = ["book:cotw-18 p. 614"]
+# The date of its C.I.P. sheet.
+year = 1992
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page10.pdf"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [shoulder_angle]
 # Half the cone angle alpha on the C.I.P. sheet.

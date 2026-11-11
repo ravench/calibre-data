@@ -22,8 +22,9 @@ unknown = "A blackpowder Schützen round; COTW 18 p. 629 gives no year."
 sources = ["book:cotw-18 p. 629"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# .254 in. Berdan in the table
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 651"]
 
 [case_head]
 # R on the C.I.P. sheet.
@@ -31,5 +32,7 @@ rim_thickness = 1.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf"]
 
 [bullet]
+# A blackpowder round (p. 629); the later factory load was a soft point.
 type = "lead"
-sources = ["book:cotw-18 p. 629"]
+sources = []
+

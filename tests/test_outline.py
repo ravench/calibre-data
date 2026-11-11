@@ -213,26 +213,22 @@ class OutlineTests(unittest.TestCase):
                 self.assertGreater(s["sh_at"], shoulder_start - 0.6)
 
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
-    # or article giving the angle was found yet. Remove a name here when its angle is added. Calibres
-    # measured only from a book's dimension table are not listed: the tables give no angle.
-    SHOULDER_UNSOURCED = set()
+    # or article giving the angle was found yet. Remove a name here when its angle is added.
+    SHOULDER_UNSOURCED = {
+        # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
+        # shoulder_at is estimated, as the note in [mm] says).
+        ".244 Halger Magnum", "6.5x27 mm R", "6.5x53.5 mm SR Daudeteau", "6.5x58 mm R Krag-Jørgensen",
+        "6.5x61 mm Mauser", "6.5x61 mm R Mauser", "6x29.5 mm R Stahl", "6x57 mm Mauser", "6x58 mm Forster",
+        "6x58 mm R Forster", "7x73 mm Vom Hofe Belted", "8x42 mm R M88", "8x71 mm Peterlongo",
+    }
 
     def bottlenecks(self):
         return {s["name"]: s for _, s in outline.specs() if s["shoulder"] and s["profile"] != CRIMPED}
 
-    @staticmethod
-    def from_a_book(names):
-        """The calibres measured only from a book's dimension table, which gives no shoulder angle and
-        no extractor groove."""
-        return {n for n in names if cartridges.sources(n, "mm")
-                and all(s.startswith("book:") for s in cartridges.sources(n, "mm"))}
-
     def test_every_bottleneck_has_a_sourced_angle_or_is_listed(self):
         sourced = set(cartridges.SHOULDER_ANGLES)
         self.assertEqual(sourced - set(self.bottlenecks()), set(), "angles for calibres without a shoulder")
-        unsourced = set(self.bottlenecks()) - sourced
-        self.assertEqual(unsourced - self.from_a_book(unsourced), self.SHOULDER_UNSOURCED)
-        self.assertIn("6x57 mm Mauser", self.from_a_book(unsourced))
+        self.assertEqual(set(self.bottlenecks()) - sourced, self.SHOULDER_UNSOURCED)
         for name, (angle, url) in cartridges.SHOULDER_ANGLES.items():
             with self.subTest(name):
                 self.assertTrue(2 <= angle <= 55, angle)
@@ -288,28 +284,30 @@ class OutlineTests(unittest.TestCase):
 
     # Rimless and belted cases without an extractor groove from a C.I.P. sheet (or a parent case that has
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
-    # rimless or belted calibre needs a head in CASE_HEADS or a place here, unless it is measured only
-    # from a book's dimension table, which gives no groove.
+    # rimless or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".22 ARC", ".22 TCM", ".25 Weatherby RPM", ".26 Nosler", ".27 Nosler", ".277 SIG Fury", ".28 Nosler",
-        ".30 Nosler", ".30 Remington AR", ".30 Super Carry", ".308 Norma Magnum", ".33 Nosler", ".338 ARC",
-        ".338 Weatherby RPM", ".35 S&W Auto", ".350 Legend", ".351 Winchester Self-Loading", ".400 Legend",
-        ".408 CheyTac", ".416 Barrett", ".450 Bushmaster", ".458 SOCOM", ".50 Beowulf", ".55 Boys",
-        "12.7x108 mm", "5.8x42 mm", "6 mm ARC", "6 mm GT", "6.5 Weatherby RPM", "6.5 mm Grendel",
-        "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK", "7.5x53.5 mm Swiss (GP 1890)",
-        "7.5 mm Kadettenpatrone", "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu", "8.6 Blackout",
-        "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
+        ".22 ARC", ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".26 Nosler", ".27 Nosler",
+        ".277 SIG Fury", ".28 Nosler", ".30 Carbine", ".30 Nosler", ".30 Remington AR",
+        ".30 Super Carry", ".308 Norma Magnum", ".33 Nosler", ".338 ARC",
+        ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading", ".350 Legend",
+        ".351 Winchester Self-Loading", ".375 CheyTac", ".400 Legend",
+        ".401 Winchester Self-Loading", ".408 CheyTac", ".416 Barrett",
+        ".450 Bushmaster", ".458 SOCOM", ".50 Beowulf",
+        ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm ARC", "6 mm GT", "6.5 Weatherby RPM",
+        "6.5 mm Grendel", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
+        "7.5x53.5 mm Swiss (GP 1890)", "7.5 mm Kadettenpatrone", "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
+        "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
+        # Measured only from a dimension table in Cartridges of the World, which gives no groove.
+        "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser", "6x58 mm Forster", "7x73 mm Vom Hofe Belted",
+        "8x71 mm Peterlongo",
     }
 
     def rimless(self):
         return {s["name"]: s for _, s in outline.specs() if s["kind"] in (RIMLESS, BELTED)}
 
     def test_every_rimless_head_is_sourced_or_listed(self):
-        unsourced = set(self.rimless()) - set(cartridges.CASE_HEADS)
-        self.assertEqual(unsourced - self.from_a_book(unsourced), self.HEAD_UNSOURCED)
-        self.assertIn(".30 Carbine", self.from_a_book(unsourced))
-        self.assertNotIn("7.5 mm Kadettenpatrone", self.from_a_book(unsourced))  # no source is no book
+        self.assertEqual(set(self.rimless()) - set(cartridges.CASE_HEADS), self.HEAD_UNSOURCED)
         self.assertEqual(set(cartridges.CASE_HEADS) - set(self.rimless()), set())
         for name, (thick, top_at, groove, angle, url) in cartridges.CASE_HEADS.items():
             with self.subTest(name):
