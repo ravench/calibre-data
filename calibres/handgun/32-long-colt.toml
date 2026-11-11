@@ -1,4 +1,4 @@
-# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+# Measurements from the C.I.P. sheet (maximum cartridge).
 name = ".32 Long Colt"
 kind = "rimmed"
 profile = "round"
@@ -9,13 +9,13 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 9.5
-base = 8.1
-neck = 8.0
-case_length = 23.0
-overall_length = 32.0
-bullet = 7.9
-sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
+rim = 9.68
+base = 8.08
+neck = 8.08
+case_length = 23.27
+overall_length = 30.89
+bullet = 7.97
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page42.pdf"]
 
 [introduced]
 year = 1873
@@ -26,9 +26,9 @@ size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
 
 [case_head]
-# .045 in.
-rim_thickness = 1.14
-sources = ["book:cotw-18 p. 527"]
+# R on the C.I.P. sheet.
+rim_thickness = 1.35
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page42.pdf"]
 
 [bullet]
 type = "lead"

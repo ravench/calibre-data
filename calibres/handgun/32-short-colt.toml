@@ -19,6 +19,8 @@ bullet = 7.98
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page43.pdf"]
 
 [introduced]
+# COTW: the Short and Long Colt came with Colt's New Line revolvers in 1875 (Wikipedia gives 1873 for the
+# Long Colt).
 year = 1875
 sources = ["book:cotw-18 p. 474"]
 

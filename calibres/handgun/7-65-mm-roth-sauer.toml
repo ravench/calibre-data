@@ -23,5 +23,6 @@ year = 1901
 sources = ["book:cotw-18 p. 465"]
 
 [primer]
+# The table's primer column prints 14.2, which is no size; small pistol, as for the other small cases.
 size = "small-pistol"
 sources = []

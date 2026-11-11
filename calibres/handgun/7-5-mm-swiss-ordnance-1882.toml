@@ -5,7 +5,7 @@
 name = "7.5 mm Swiss Ordnance 1882"
 kind = "rimmed"
 profile = "round"
-aliases = ["7.5ord", "7.5revolver", "revolver82", "7.5nagant", "7.5swedishnagant", "7.5norwegiannagant"]
+aliases = ["7.5ord", "7.5revolver", "revolver82", "7.5nagant", "7.5norwegiannagant"]
 
 origin = "CH"
 obsolete = true

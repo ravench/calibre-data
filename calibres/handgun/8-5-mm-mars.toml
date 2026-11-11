@@ -22,8 +22,10 @@ bullet = 8.51
 sources = ["book:cotw-18 p. 527"]
 
 [introduced]
+# COTW dates the round only to the late nineteenth century (p. 477); 1900 is the year of the Mars pistol
+# (p. 493).
 year = 1900
-sources = ["book:cotw-18 p. 493"]
+sources = ["book:cotw-18 p. 477", "book:cotw-18 p. 493"]
 
 [primer]
 # The table gives a Berdan primer without its size.
