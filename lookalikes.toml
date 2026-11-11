@@ -373,3 +373,59 @@ calibres = [".45 Winchester Magnum", ".451 Detonics Magnum"]
 name = ".45 Colt"
 differ_by = ["length"]
 calibres = [".45 Colt", ".45 Schofield", ".45 Colt Government", ".45 Cowboy Special"]
+
+[[group]]
+# Two C.I.P. sheets: the same case, Norma's with a longer overall length for longer bullets.
+name = "6 mm BR Remington"
+differ_by = ["load"]
+calibres = ["6 mm BR Remington", "6 mm BR Norma"]
+
+[[group]]
+# COTW 18 p. 197: a rimless version of the Krag round.
+name = ".30-40 Krag"
+differ_by = ["rim"]
+calibres = [".30-40 Krag", ".30 USA Rimless"]
+
+[[group]]
+# COTW 18 p. 197: the .30-06 is the .30-03 with a shorter neck.
+name = ".30-03 Springfield"
+differ_by = ["length"]
+calibres = [".30-03 Springfield", ".30-06 Springfield"]
+
+[[group]]
+# COTW 18 p. 209: the .35 Newton is the .30 Newton necked up.
+name = ".30 Newton"
+differ_by = ["bore"]
+calibres = [".30 Newton", ".35 Newton"]
+
+[[group]]
+# COTW 18 p. 188: the .25-21 is the .25-25 shortened.
+name = ".25-25 Stevens"
+differ_by = ["length"]
+calibres = [".25-25 Stevens", ".25-21 Stevens"]
+
+[[group]]
+name = ".35-30 Maynard 1882"
+differ_by = ["length"]
+calibres = [".35-30 Maynard 1882", ".35-40 Maynard 1882"]
+
+[[group]]
+name = ".38 Long Centrefire"
+differ_by = ["length"]
+calibres = [".38 Long Centrefire", ".38 Extra Long Centrefire"]
+
+[[group]]
+# Both rounds of the Winchester Model 1905 self-loading rifle (COTW 18 p. 203).
+name = ".35 Winchester Self-Loading"
+differ_by = ["bore", "length"]
+calibres = [".35 Winchester Self-Loading", ".32 Winchester Self-Loading"]
+
+[[group]]
+name = ".38-56 WCF"
+differ_by = ["length"]
+calibres = [".38-56 WCF", ".38-70 Winchester"]
+
+[[group]]
+name = ".38-40 Remington-Hepburn"
+differ_by = ["bore", "length"]
+calibres = [".38-40 Remington-Hepburn", ".38-50 Remington-Hepburn"]

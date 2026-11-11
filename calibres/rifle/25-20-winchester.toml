@@ -2,7 +2,8 @@
 name = ".25-20 Winchester"
 kind = "rimmed"
 profile = "flat"
-aliases = ["25-20", "25wcf"]
+# The 25-20 Marlin (COTW 18 p. 187) was this round loaded for the Marlin 1894, with another bullet nose.
+aliases = ["25-20", "25wcf", "25-20 marlin"]
 
 origin = "US"
 

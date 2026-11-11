@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Charles Newton's .30-06 case necked to 6.5 mm; Western loaded it from 1913 to 1938.
+name = ".256 Newton"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["256 newton"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.01
+base = 11.91
+shoulder = 10.92
+shoulder_at = 52.4
+neck = 7.37
+case_length = 61.98
+overall_length = 86.36
+bullet = 6.71
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 249"]
+
+[introduced]
+year = 1913
+sources = ["book:cotw-18 p. 191"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[case_head]
+# from the .30-06 case; C.I.P. 30-06 Spring.
+rim_thickness = 1.24
+ramp_top = 3.16
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 192"]
+
+[case]
+material = "brass"
+sources = []

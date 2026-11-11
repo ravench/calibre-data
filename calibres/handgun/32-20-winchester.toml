@@ -4,7 +4,8 @@
 name = ".32-20 Winchester"
 kind = "rimmed"
 profile = "flat"
-aliases = ["32-20", "32wcf"]
+# The 32-20 Marlin (COTW 18 p. 200) was this round loaded for the Marlin 1894, with a lighter bullet.
+aliases = ["32-20", "32wcf", "32-20 marlin"]
 
 origin = "US"
 
