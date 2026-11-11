@@ -1,0 +1,33 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Remington and Auto-Ordnance's round for the Thompson M1923 "Military Model"; not a long .45 ACP.
+name = ".45 Remington Thompson"
+kind = "rimless"
+profile = "round"
+aliases = ["45remthompson", "45 remington thompson"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.96
+base = 11.99
+neck = 11.94
+case_length = 28.45
+overall_length = 36.83
+bullet = 11.35
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1923
+sources = ["book:cotw-18 p. 565"]
+
+[primer]
+# The table gives LP.
+size = "large-pistol"
+sources = ["book:cotw-18 p. 574"]
+
+[case_head]
+# .044 in.
+rim_thickness = 1.12
+sources = ["book:cotw-18 p. 574"]

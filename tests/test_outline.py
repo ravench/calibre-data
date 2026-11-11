@@ -217,14 +217,23 @@ class OutlineTests(unittest.TestCase):
     SHOULDER_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
         # shoulder_at is estimated, as the note in [mm] says).
-        ".244 Halger Magnum", ".45 Blaser", ".460 Steyr", "10.25x69 mm R Hunting-Express", "10.5x47 mm R",
-        "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser", "10.8x47 mm R Martini Target",
-        "11.2x60 mm Schüler", "11.2x72 mm Schüler", "6.5x27 mm R", "6.5x53.5 mm SR Daudeteau",
-        "6.5x58 mm R Krag-Jørgensen", "6.5x61 mm Mauser", "6.5x61 mm R Mauser", "6x29.5 mm R Stahl",
-        "6x57 mm Mauser", "6x58 mm Forster", "6x58 mm R Forster", "7x73 mm Vom Hofe Belted", "8x42 mm R M88",
-        "8x54 mm Krag-Jørgensen", "8x71 mm Peterlongo", "9.3x53 mm R Swiss", "9.3x53 mm Swiss",
-        "9.3x65 mm R Collath", "9.3x72 mm R Sauer", "9.3x75 mm R Nimrod", "9.5x47 mm R",
-        "9.5x73 mm Miller-Greiss Magnum", "9x63 mm", "9x70 mm R Mauser", "9x71 mm Peterlongo",
+        ".244 Halger Magnum", ".276 Enfield", ".276 Pedersen", ".280 British", ".45 Blaser", ".460 Steyr",
+        "10.15x61 mm R Jarmann", "10.15x63 mm R Serbian Mauser", "10.25x69 mm R Hunting-Express",
+        "10.4x47 mm R Italian Vetterli", "10.5x47 mm R", "10.75x57 mm Mannlicher",
+        "10.75x58 mm R Russian Berdan", "10.75x63 mm Mauser", "10.75x68 mm Mauser",
+        "10.8x47 mm R Martini Target", "11.15x58 mm R Spanish Remington", "11.15x58 mm R Werndl M77",
+        "11.2x60 mm Schüler", "11.2x72 mm Schüler", "11.3x50 mm R Beaumont M71",
+        "11.43x50 mm R Egyptian Remington", "11.43x55 mm R Turkish Peabody-Martini",
+        "11.4x50 mm R Brazilian Comblain", "11x50 mm R Albini", "11x52 mm R Beaumont M71/78",
+        "11x53 mm R Comblain", "11x60 mm R Japanese Murata", "4.3x45 mm DAG", "4.85x49 mm British",
+        "5.2x68 mm Mondragón", "5.66x39 mm MPS", "5x58 mm Sturtevant", "6 mm SAW", "6.5x27 mm R",
+        "6.5x53.5 mm SR Daudeteau", "6.5x58 mm R Krag-Jørgensen", "6.5x61 mm Mauser", "6.5x61 mm R Mauser",
+        "6x29.5 mm R Stahl", "6x57 mm Mauser", "6x58 mm Forster", "6x58 mm R Forster",
+        "7x73 mm Vom Hofe Belted", "8x42 mm R M88", "8x50 mm R Siamese Type 45", "8x52 mm R Siamese Type 66",
+        "8x54 mm Krag-Jørgensen", "8x59 mm Breda", "8x60 mm R Guedes", "8x63 mm Swedish", "8x71 mm Peterlongo",
+        "9.3x53 mm R Swiss", "9.3x53 mm Swiss", "9.3x65 mm R Collath", "9.3x72 mm R Sauer",
+        "9.3x75 mm R Nimrod", "9.5x47 mm R", "9.5x60 mm R Turkish Mauser", "9.5x73 mm Miller-Greiss Magnum",
+        "9x63 mm", "9x70 mm R Mauser", "9x71 mm Peterlongo",
     }
 
     def bottlenecks(self):
@@ -304,9 +313,11 @@ class OutlineTests(unittest.TestCase):
         "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        ".45 Blaser", "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser",
-        "11.2x60 mm Schüler", "11.2x72 mm Schüler", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser",
-        "6x58 mm Forster", "7x73 mm Vom Hofe Belted", "8x71 mm Peterlongo", "9.3x53 mm Swiss", "9x63 mm",
+        ".276 Enfield", ".276 Pedersen", ".280 British", ".45 Blaser", ".45 Remington Thompson",
+        "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser", "11.2x60 mm Schüler",
+        "11.2x72 mm Schüler", "4.85x49 mm British", "5.2x68 mm Mondragón", "5x58 mm Sturtevant", "6 mm SAW",
+        "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser", "6x58 mm Forster", "7x73 mm Vom Hofe Belted",
+        "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo", "9.3x53 mm Swiss", "9x63 mm",
         "9x71 mm Peterlongo",
     }
 
@@ -368,7 +379,7 @@ class OutlineTests(unittest.TestCase):
             if t is None or s["kind"] not in (RIMMED, RIMFIRE, RIMLESS, BELTED):
                 continue
             with self.subTest(s["name"]):
-                self.assertTrue(0.8 < t < 2.5, t)
+                self.assertTrue(0.8 < t <= 2.54, t)  # the thickest: .100 in., the Werndl M77 service round
                 self.assertEqual(outline.case_profile(s)[1], (s["rim"] / 2, t))
                 drawn += 1
         self.assertGreater(drawn, 330)

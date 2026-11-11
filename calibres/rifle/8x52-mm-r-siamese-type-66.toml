@@ -1,0 +1,30 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The Siamese service round with a pointed bullet.
+name = "8x52 mm R Siamese Type 66"
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["8x52r", "8x52r siamese"]
+
+origin = "TH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.97
+base = 12.7
+shoulder = 11.68
+shoulder_at = 41.4
+neck = 8.81
+case_length = 51.82
+overall_length = 75.18
+bullet = 8.15
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+year = 1923
+sources = ["book:cotw-18 p. 552"]
+
+[primer]
+size = "large-rifle"
+sources = []

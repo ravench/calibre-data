@@ -1,6 +1,6 @@
 # Countries for a calibre's `origin`: the state that introduced it, as a code, with its English name
 # and flag emoji. Historical states keep their own code (ISO 3166-3 SU/CS where one exists, else a
-# made-up AH/RUE that no ISO code uses, so RU stays today's Russia); they have no flag emoji, so the
+# made-up AH/RUE/OE that no ISO code uses, so RU stays today's Russia); they have no flag emoji, so the
 # apps draw their own. Unions of states get a code too (NATO for the rounds NATO standardised; the EU
 # 🇪🇺 joins when a calibre needs it). IL left with the 9x21 mm (IT).
 
@@ -95,6 +95,29 @@ flag = "🇪🇸"
 [AR]
 name = "Argentina"
 flag = "🇦🇷"
+
+[NL]
+name = "Netherlands"
+flag = "🇳🇱"
+
+[BR]
+name = "Brazil"
+flag = "🇧🇷"
+
+[EG]
+name = "Egypt"
+flag = "🇪🇬"
+
+[RS]
+name = "Serbia"
+flag = "🇷🇸"
+
+[TH]
+name = "Thailand"
+flag = "🇹🇭"
+
+[OE]
+name = "Ottoman Empire"
 
 [NATO]
 name = "NATO"

@@ -126,6 +126,14 @@ differ_by = ["length"]
 calibres = ["10.75x63 mm Mauser", "10.75x68 mm Mauser"]
 
 [[group]]
+differ_by = ["length"]
+calibres = ["11x50 mm R Albini", "11x53 mm R Comblain"]
+
+[[group]]
+differ_by = ["bore", "length"]
+calibres = ["11.3x50 mm R Beaumont M71", "11x52 mm R Beaumont M71/78"]
+
+[[group]]
 differ_by = ["bore"]
 calibres = ["7.62x54 mm R", "7.62x53 mm R"]
 

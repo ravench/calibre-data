@@ -574,7 +574,9 @@ class CatalogueTests(unittest.TestCase):
                                            # COTW 18 gives only the weight or handloads.
                                            "9.3x72 mm R Sauer", "9.3x75 mm R Nimrod", "10.75x63 mm Mauser",
                                            "9.5x47 mm R", "10.5x47 mm R",
-                                           "10.25x69 mm R Hunting-Express", "12.17x44 mm R"})
+                                           "10.25x69 mm R Hunting-Express", "12.17x44 mm R",
+                                           # Brass-coated bullets drawn as lead.
+                                           "10.4x47 mm R Italian Vetterli", "11.5x57 mm R Spanish Reformado"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):

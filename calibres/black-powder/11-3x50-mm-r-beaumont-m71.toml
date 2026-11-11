@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The first Dutch Beaumont round.
+name = "11.3x50 mm R Beaumont M71"
+kind = "rimmed"
+profile = "round"
+aliases = ["11.3x50r", "11.3x50r beaumont"]
+
+origin = "NL"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.92
+base = 14.76
+shoulder = 13.46
+shoulder_at = 37.4
+neck = 12.34
+case_length = 50.04
+overall_length = 63.25
+bullet = 11.79
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1871
+sources = ["book:cotw-18 p. 569"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a lead bullet over blackpowder.
+type = "lead"
+sources = ["book:cotw-18 p. 569"]

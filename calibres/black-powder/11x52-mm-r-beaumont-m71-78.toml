@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The Dutch Beaumont round as changed in 1878.
+name = "11x52 mm R Beaumont M71/78"
+kind = "rimmed"
+profile = "round"
+aliases = ["11x52r", "11x52r beaumont"]
+
+origin = "NL"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.89
+base = 14.63
+shoulder = 13.41
+shoulder_at = 39.3
+neck = 12.29
+case_length = 51.82
+overall_length = 64.52
+bullet = 11.61
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1878
+sources = ["book:cotw-18 p. 568"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a lead bullet over blackpowder.
+type = "lead"
+sources = ["book:cotw-18 p. 568"]
