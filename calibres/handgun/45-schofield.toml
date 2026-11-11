@@ -3,7 +3,8 @@
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = ".45 Schofield"
 kind = "rimmed"
-profile = "flat"
+# Nose: round, the lead bullet (photo, COTW 18 p. 521).
+profile = "round"
 aliases = ["45schofield", "45s&w"]
 
 origin = "US"

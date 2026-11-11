@@ -1,6 +1,7 @@
 name = ".357 SIG"
 kind = "rimless"
-profile = "round"
+# Nose: a truncated cone (photo, COTW 18 p. 491).
+profile = "flat"
 aliases = ["357sig"]
 
 # SIGARMS (Exeter NH) with Federal 1994: CH

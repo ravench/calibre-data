@@ -1,6 +1,7 @@
 name = "9x21 mm IMI"
 kind = "rimless"
-profile = "round"
+# Nose: a blunt truncated cone, seated deep (COTW 18 p. 483).
+profile = "flat"
 aliases = ["9x21"]
 
 # Jager of Loano designed it (9x21 Jager) for Italy, where 9x19 mm was banned for civilians until 2022; IMI adopted and commercialised it c. 1980; Fiocchi and Geco make it, 80 % of the Italian civilian market: IL (no code in COUNTRIES)

@@ -4,7 +4,8 @@
 # shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
 name = ".338 Marlin Express"
 kind = "rimmed"
-profile = "flat"
+# Nose: pointed, Hornady's plastic-tipped FTX bullet (COTW 18 p. 152).
+profile = "spitzer"
 aliases = ["338me"]
 
 origin = "US"
