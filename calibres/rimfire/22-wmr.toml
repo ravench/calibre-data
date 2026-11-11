@@ -31,7 +31,7 @@ sources = ["book:cotw-18 p. 670"]
 
 [bullet]
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 660"]
 
 [case]
 material = "brass"

@@ -134,7 +134,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 # The bullet the cartridge was first sold with, in every calibre with a bullet (not shot shells, blanks
 # or cannon rounds): jacketed (full metal jacket or another all-copper bullet), lead (bare lead, also
 # lubricated or wax coated), paper (lead wrapped in paper below the nose), softpoint (jacket with the
-# lead core showing at the tip) or polymer (jacket with a plastic tip). Balls, Minié bullets and
+# lead core showing at the tip), polymer (jacket with a plastic tip) or steel (a solid steel dart). Balls, Minié bullets and
 # pellets give what they are made of: lead, steel or plastic (steel needs a source, and so does
 # plastic). sources = [] when not checked.
 [bullet]

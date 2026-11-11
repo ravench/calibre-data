@@ -1,6 +1,6 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
-# On the 9x19 mm case head. Full metal jacket, the standard for its birds (COTW 18 p. 621), so no [bullet];
-# soft points were made too.
+# On the 9x19 mm case head. Full metal jacket, the standard for its birds (COTW 18 p. 621); soft points
+# were made too.
 name = "7x33 mm Sako"
 kind = "rimless"
 profile = "round"
@@ -44,7 +44,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page32.pdf"]
 
 [bullet]
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 621"]
 
 [case]
 material = "brass"

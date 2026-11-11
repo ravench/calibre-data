@@ -12,7 +12,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PR
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID, case_material,
-                        CURRENT_CASES, current_case_materials, PLASTIC, loose_material, CARTRIDGE_BULLETS, LOOSE_BULLETS, CRIMPED,
+                        CURRENT_CASES, current_case_materials, PLASTIC, loose_material, CARTRIDGE_BULLETS, LOOSE_BULLETS, is_blank,
                         PROFILE_TODAY, LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes,
                         BOOK_SOURCE)
 
@@ -563,7 +563,9 @@ class CatalogueTests(unittest.TestCase):
         apps = {s["name"] for _, items in CATALOGUE for s in items}
         for _, items in ALL_CATALOGUE:
             for s in items:
-                has_bullet = s["name"] in apps and s["kind"] != SHOT and s["profile"] != CRIMPED
+                loose = s["kind"] in (BALL, MINIE, PELLET)
+                blank = not loose and is_blank(s["profile"], s["rim"], s["base"], s["neck"], s["bullet"], s["case"], s["oal"])
+                has_bullet = s["name"] in apps and s["kind"] != SHOT and not blank
                 self.assertEqual(s["name"] in BULLETS, has_bullet, s["name"])
                 if has_bullet:
                     usual = LEAD if s["kind"] in (BALL, MINIE, PELLET) else JACKETED
@@ -573,7 +575,10 @@ class CatalogueTests(unittest.TestCase):
                     self.assertEqual(s["name"] in BULLET_INFERRED, unchecked and bullet(s["name"]) != usual, s["name"])
                 else:
                     self.assertIsNone(bullet(s["name"]), s["name"])
-        self.assertEqual(bullet("12/70"), None)
+        for name in ("12/70", ".22 Blank (6.8/11)", "9 mm P.A.K.", "8 mm Knall", ".315 Knall"):
+            self.assertIsNone(bullet(name), name)
+        self.assertEqual(bullet("7.62x38 mm R Nagant"), JACKETED)  # seated inside the case, not a blank
+        self.assertEqual(bullet("5.66x39 mm MPS"), STEEL)
 
     def test_bullets_name_known_calibres_and_are_sourced(self):
         names = {s["name"] for _, items in CATALOGUE for s in items}
@@ -702,8 +707,9 @@ class CatalogueTests(unittest.TestCase):
         by_name = {s["name"]: s for _, items in CATALOGUE for s in items}
         for name, (material, url) in BULLETS.items():
             if material in (STEEL, PLASTIC):
-                self.assertIn(by_name[name]["kind"], (BALL, MINIE, PELLET), name)
                 self.assertTrue(is_source(url), name)
+                if name != "5.66x39 mm MPS":  # the steel underwater dart
+                    self.assertIn(by_name[name]["kind"], (BALL, MINIE, PELLET), name)
         steel = by_name["4.4 mm Stahl-BB (.177 BB)"]
         self.assertEqual(steel["kind"], BALL)
         self.assertTrue(4.3 <= steel["bullet"] <= 4.4)  # 0.171-0.173 in, smaller than a 4.5 mm pellet

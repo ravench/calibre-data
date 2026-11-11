@@ -113,8 +113,8 @@ first (title and year; edition, authors, editors, publisher, place and ISBN wher
 
 An empty list `sources = []` means the values have not been checked against a source yet. That is
 allowed for the measurements, the primer (then it counts as unverified), the bullet and a brass
-case; a year, a shoulder angle, a case head, a case material other than brass and the case materials
-made today always need one.
+case; a year, a shoulder angle, a case head, a steel or plastic bullet, a case material other than
+brass and the case materials made today always need one.
 `sources(name, table)` in `cartridges.py` gives the whole list; the old tables (`INTRODUCED`,
 `SHOULDER_ANGLES`, ...) keep the first one.
 
@@ -291,12 +291,13 @@ cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outlin
 
 ### `[bullet]`, `[case]`, `[current_cases]`
 
-- `[bullet]` `type`, in every calibre with a bullet (not shot shells, blanks or cannon rounds); no
-  type is taken for granted. For a cartridge, the bullet it was first sold with: `jacketed` (a full
+- `[bullet]` `type`, in every calibre with a bullet (not shot shells, cannon rounds or blanks:
+  star-crimped ones and closed plain cylinders, overall length = case length and rim = base = neck =
+  bullet, such as the 9 mm P.A.K.); no type is taken for granted. For a cartridge, the bullet it was first sold with: `jacketed` (a full
   metal jacket or another all-copper bullet), `lead` (bare lead, also lubricated or wax coated),
   `paper` (lead wrapped in paper below the nose), `softpoint` (copper jacket with the lead core
-  showing at the tip) or `polymer` (copper jacket with a plastic tip: V-Max, ELD, FTX, SST,
-  AccuBond). The GP 1890 steel cap is its own profile (`patched`). For a ball, Minié bullet or
+  showing at the tip), `polymer` (copper jacket with a plastic tip: V-Max, ELD, FTX, SST,
+  AccuBond) or `steel` (a solid steel projectile: the MPS underwater dart). The GP 1890 steel cap is its own profile (`patched`). For a ball, Minié bullet or
   pellet, what it is made of: `lead`, `steel` or `plastic` (steel BBs and airsoft BBs).
   `sources = []` means not checked. Steel and plastic need a source; an unchecked type other than
   `jacketed` (or `lead` for loose projectiles), such as a hunting round's soft point inferred from

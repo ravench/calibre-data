@@ -163,9 +163,9 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "current_cases": (("materials",), (), "required"),
     "fired_by": (("firearms",), (), "required"),
 }
-CARTRIDGE_BULLETS = (JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP)
+CARTRIDGE_BULLETS = (JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, STEEL)  # steel: the MPS dart
 LOOSE_BULLETS = (LEAD, STEEL, PLASTIC)
-BULLET_TYPES = CARTRIDGE_BULLETS + (STEEL, PLASTIC)
+BULLET_TYPES = CARTRIDGE_BULLETS + (PLASTIC,)
 CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID)
 CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM)
 DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
@@ -180,6 +180,13 @@ BOOK_KEYS = ("title", "year", "edition", "authors", "editors", "publisher", "pla
 TIP_KEYS = (("colours", "meaning", "sources"), ("description", "countries"))  # (required, optional)
 COLOURS = ("black", "white", "grey", "silver", "red", "orange", "yellow", "green", "blue", "purple", "brown")
 MEANINGS = ("ball", "armour-piercing", "incendiary", "explosive", "tracer", "spotting", "subsonic", "frangible")
+
+
+def is_blank(profile, rim, base, neck, bullet, case_length, overall_length):
+    """A blank without a bullet: star-crimped (CRIMPED), or closed inside the case, a plain cylinder with
+    nothing above the mouth (the 9 mm P.A.K., the 8 mm and .315 Knall)."""
+    return profile == CRIMPED or (case_length is not None and overall_length == case_length
+                                  and rim == base == neck == bullet)
 
 
 def _shape(kind, profile, category=None):
@@ -536,7 +543,9 @@ def _read_calibre(f, category, countries, books=None):
                         "material with its sources")
     elif facts["case"]["material"] != BRASS and not facts["case"]["sources"]:
         f.problem(f.line("case"), f"[case] material {facts['case']['material']!r} needs a source")
-    if kind == SHOT or profile == CRIMPED or category in NOT_IN_APPS:
+    m = facts["mm"]
+    if kind == SHOT or category in NOT_IN_APPS or kind not in LOOSE and is_blank(profile, m.get("rim"), m.get("base"), m.get("neck"),
+                                                           m.get("bullet"), m.get("case_length"), m.get("overall_length")):
         if "bullet" in facts:
             f.problem(f.line("bullet"), "shot shells, blanks and cannon rounds have no [bullet]: remove it")
     elif "bullet" not in facts:
@@ -930,7 +939,7 @@ def is_worldwide(name):
 
 
 def bullet(name):
-    """The original bullet of a calibre: JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT or POLYMER_TIP (LEAD,
+    """The original bullet of a calibre: JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP or STEEL (LEAD,
     STEEL or PLASTIC for balls, Minié bullets and pellets); None for shot shells, blanks and cannon rounds."""
     return BULLETS.get(name, (None, None))[0]
 

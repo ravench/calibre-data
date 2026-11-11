@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -43,7 +43,8 @@ class OutlineTests(unittest.TestCase):
             patched = s["profile"] == PATCHED or bullet(s["name"]) == PAPER_PATCHED
             self.assertEqual("patch" in o, patched and has_bullet, s["name"])
             if "case" in o:
-                self.assertEqual(o.get("bulletMaterial") == "steel", s["profile"] == PATCHED and has_bullet, s["name"])
+                steel = s["profile"] == PATCHED or bullet(s["name"]) == STEEL  # GP 1890's cap, the MPS dart
+                self.assertEqual(o.get("bulletMaterial") == "steel", steel and has_bullet, s["name"])
 
     def test_loose_projectiles_name_only_non_lead_materials(self):
         for _, s in outline.specs():
