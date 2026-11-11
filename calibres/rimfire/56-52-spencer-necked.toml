@@ -36,5 +36,7 @@ type = "lead"
 sources = []
 
 [case]
-material = "brass"
-sources = []
+# municion.org's photos show copper cases on the early makers' rounds (Leet, Ethan Allen and American
+# Metallic).
+material = "copper"
+sources = ["https://municion.org/producto/56-52-spencer-rf-necked-shortest-case/"]

@@ -27,5 +27,7 @@ type = "lead"
 sources = ["https://municion.org/producto/32-long-rf/"]
 
 [case]
-material = "brass"
-sources = []
+# municion.org's photos show copper cases on the early makers' rounds (Winchester, U.S. Cartridge Co. and
+# Phoenix).
+material = "copper"
+sources = ["https://municion.org/producto/32-long-rf/"]

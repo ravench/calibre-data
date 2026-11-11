@@ -34,5 +34,6 @@ type = "lead"
 sources = []
 
 [case]
-material = "brass"
-sources = []
+# municion.org's photos show copper cases on the early makers' rounds (Leet and UMC).
+material = "copper"
+sources = ["https://municion.org/producto/44-short-rf-short-case/"]

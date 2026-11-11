@@ -41,5 +41,6 @@ type = "lead"
 sources = []
 
 [case]
+# The Swedish Army Museum's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://commons.wikimedia.org/wiki/File:12,17x44mmR_patron_-_Arm%C3%A9museum.jpg"]

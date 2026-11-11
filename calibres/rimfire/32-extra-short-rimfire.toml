@@ -27,5 +27,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 663"]
 
 [case]
-material = "brass"
-sources = []
+# municion.org's photos show copper cases on the early makers' rounds (Winchester and UMC).
+material = "copper"
+sources = ["https://municion.org/producto/32-extra-short-rf/"]

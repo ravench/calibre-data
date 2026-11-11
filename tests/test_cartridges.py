@@ -750,6 +750,21 @@ class CatalogueTests(unittest.TestCase):
             self.assertTrue(any(url.startswith("https://commons.wikimedia.org/wiki/File:")
                                 for url in SOURCES[(name, "case")]), name)
 
+    def test_copper_cases_seen_on_municion_photos(self):
+        # Raven 2026-11-11: municion.org's photos of the early makers' rounds show copper cases.
+        for name in (".25 Short Rimfire", ".30 Short Rimfire", ".30 Long Rimfire", ".32 Extra Short Rimfire",
+                     ".32 Long Rimfire", ".32 Extra Long Rimfire", ".38 Short Rimfire", ".38 Extra Long Rimfire",
+                     ".41 Long Rimfire", ".44 Short Rimfire", ".44 Long Rimfire", ".46 Short Rimfire",
+                     ".46 Long Rimfire", ".46 Extra Long Rimfire", ".50 Remington Navy Rimfire", ".58 Miller",
+                     ".56-50 Spencer", ".56-46 Spencer", ".56-52 Spencer Necked", ".50 Remington Army",
+                     ".45 Colt Government"):
+            self.assertEqual(case_material(name), COPPER, name)
+            self.assertTrue(CASES[name][1].startswith("https://municion.org/producto/"), name)
+        # The same photos show brass for these.
+        for name in (".45-70 Van Choate", "12.17x44 mm R", ".577/450 Martini-Henry", "10.4 mm Swiss Ordnance 1878"):
+            self.assertEqual(case_material(name), BRASS, name)
+            self.assertTrue(CASES[name][1], name)
+
 
     def test_bbs_are_loose_steel_or_plastic_balls(self):
         by_name = {s["name"]: s for _, items in CATALOGUE for s in items}

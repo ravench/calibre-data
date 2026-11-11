@@ -34,5 +34,7 @@ type = "lead"
 sources = []
 
 [case]
-material = "brass"
-sources = []
+# municion.org's photos show copper cases on the early makers' rounds (Springfield Armory, Sage, Fitch, Van
+# Vechten and Leet).
+material = "copper"
+sources = ["https://municion.org/producto/56-50-spencer/"]

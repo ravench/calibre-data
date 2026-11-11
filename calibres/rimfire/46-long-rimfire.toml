@@ -29,5 +29,7 @@ type = "lead"
 sources = []
 
 [case]
-material = "brass"
-sources = []
+# municion.org files the .46 Long (Crittenden & Tibbals' 1864 catalogue) as the .46 Carbine RF. Its photos
+# show copper cases on the early makers' rounds (Crittenden & Tibbals, Leet and Fitch, Van Vechten).
+material = "copper"
+sources = ["https://municion.org/producto/46-carbine-rf/"]

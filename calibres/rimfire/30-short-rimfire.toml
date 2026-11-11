@@ -28,5 +28,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 662"]
 
 [case]
-material = "brass"
-sources = []
+# municion.org's photos show copper cases on the early makers' rounds (Allen & Wheelock and unmarked ones).
+material = "copper"
+sources = ["https://municion.org/producto/30-short-rf/"]

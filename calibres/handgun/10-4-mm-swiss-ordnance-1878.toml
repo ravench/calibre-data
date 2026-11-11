@@ -31,5 +31,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/10.4mm_Swiss_Centerfire"]
 
 [case]
+# The army's drawing of the Ordonnanz-Revolverpatrone 1878 colours the case as brass.
 material = "brass"
-sources = []
+sources = ["https://commons.wikimedia.org/wiki/File:Revolverpatrone_1878.jpg"]

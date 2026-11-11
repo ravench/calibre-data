@@ -35,5 +35,7 @@ type = "lead"
 sources = ["book:cotw-18 p. 526"]
 
 [case]
-material = "brass"
-sources = []
+# municion.org's photos show copper cases on the early makers' rounds (the army's unmarked ones and W.
+# Stokes Kirk).
+material = "copper"
+sources = ["https://municion.org/producto/50-remington-army-m-1871/"]
