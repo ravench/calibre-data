@@ -1,0 +1,35 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A hunting and target round for the Maynard Model 1882 rifles.
+name = ".40-40 Maynard 1882"
+kind = "rimmed"
+profile = "round"
+aliases = ["40-40 maynard", "40-40 maynard 1882"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.51
+base = 11.58
+neck = 11.43
+case_length = 45.21
+overall_length = 58.93
+bullet = 10.54
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1882
+sources = ["book:cotw-18 p. 228"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 228"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A rare Ballard Everlasting case, probably sold empty with bullets.
+name = ".44-75 Ballard Everlasting"
+kind = "rimmed"
+profile = "round"
+aliases = ["44-75 ballard", "44-75 ballard everlasting"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.32
+base = 12.62
+neck = 12.37
+case_length = 63.5
+overall_length = 76.2
+bullet = 11.3
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# COTW: listed for Ballard rifles introduced in 1876.
+year = 1876
+sources = ["book:cotw-18 p. 234"]
+
+[primer]
+# The table gives Berdan #2; COTW 18 p. 234 also names specimens with large rifle primers.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 234"]
+
+[bullet]
+# COTW 18 p. 235 gives no factory load; the Ballard catalogues listed a patched .44 bullet,
+# probably for this case.
+type = "paper"
+sources = []
+
+[case]
+material = "brass"
+sources = []

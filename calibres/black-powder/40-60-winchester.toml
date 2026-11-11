@@ -1,0 +1,47 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# For the Winchester Model 1876 lever action; a sharply tapered, slightly necked case.
+name = ".40-60 Winchester"
+kind = "rimmed"
+profile = "flat"
+aliases = ["40-60 winchester", "40-60 wcf"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.0
+base = 12.85
+shoulder = 11.3
+shoulder_at = 31.07
+neck = 10.91
+case_length = 47.5
+overall_length = 57.28
+bullet = 10.31
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page101.pdf"]
+
+[introduced]
+year = 1876
+sources = ["book:cotw-18 p. 222"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 2.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page101.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page101.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 223"]
+
+[case]
+material = "brass"
+sources = []

@@ -2,7 +2,8 @@
 name = ".40-65 Winchester"
 kind = "rimmed"
 profile = "flat"
-aliases = ["40-65"]
+# The 40-60 Marlin (COTW 18 p. 219) used the same case with another load.
+aliases = ["40-65", "40-60 marlin"]
 
 origin = "US"
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)

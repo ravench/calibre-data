@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Sharps sporting rifle; shorter than the straight .40-50 and not interchangeable with it.
+name = ".40-50 Sharps Necked"
+kind = "rimmed"
+profile = "round"
+aliases = ["40-50 sharps necked", "40-1 11/16 sharps"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.73
+base = 12.73
+shoulder = 12.42
+shoulder_at = 32.1
+neck = 10.77
+case_length = 43.69
+overall_length = 60.2
+bullet = 10.24
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+year = 1869
+sources = ["book:cotw-18 p. 218"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 218"]
+
+[case]
+material = "brass"
+sources = []

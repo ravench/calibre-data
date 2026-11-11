@@ -429,3 +429,69 @@ calibres = [".38-56 WCF", ".38-70 Winchester"]
 name = ".38-40 Remington-Hepburn"
 differ_by = ["bore", "length"]
 calibres = [".38-40 Remington-Hepburn", ".38-50 Remington-Hepburn"]
+
+[[group]]
+name = ".40-50 Sharps Necked"
+differ_by = ["length"]
+calibres = [".40-50 Sharps Necked", ".40-70 Sharps Necked", ".40-90 Sharps Necked"]
+
+[[group]]
+name = ".40-70 Sharps Straight"
+differ_by = ["length"]
+calibres = [".40-70 Sharps Straight", ".40-50 Sharps Straight"]
+
+[[group]]
+# COTW 18 p. 218: the Ballard case is very like the 40-90 Sharps straight, a little shorter; p. 220 has
+# the Sharps round as the Ballard's lengthened.
+name = ".40-90 Ballard Everlasting"
+differ_by = ["length"]
+calibres = [".40-90 Ballard Everlasting", ".40-90 Sharps Straight"]
+
+[[group]]
+# COTW 18 p. 228: the 40-60 is the 40-40 lengthened; p. 229: the 40-60 also fires in the 40-70 chamber.
+name = ".40-40 Maynard 1882"
+differ_by = ["length"]
+calibres = [".40-40 Maynard 1882", ".40-60 Maynard 1882", ".40-70 Maynard 1882"]
+
+[[group]]
+# Peabody-Martini cases with the Turkish service round's head (rim and base in the COTW 18 tables): the
+# Providence Tool Co.'s What Cheer target rounds.
+name = "11.43x55 mm R Turkish Peabody-Martini"
+differ_by = ["length", "bore"]
+calibres = ["11.43x55 mm R Turkish Peabody-Martini", ".44-95 Peabody What Cheer", ".40-90 Peabody What Cheer",
+            ".40-70 Peabody What Cheer"]
+
+[[group]]
+# COTW 18 p. 227: the 40-75 Bullard is like the 40-65 Winchester, with a bigger bullet.
+name = ".40-65 Winchester"
+differ_by = ["bore"]
+calibres = [".40-65 Winchester", ".40-75 Bullard"]
+
+[[group]]
+# Both for the Winchester Model 1895 box magazine.
+name = ".38-72 Winchester"
+differ_by = ["bore", "length"]
+calibres = [".38-72 Winchester", ".40-72 Winchester"]
+
+[[group]]
+name = ".44 Evans Short"
+differ_by = ["length"]
+calibres = [".44 Evans Short", ".44 Evans Long"]
+
+[[group]]
+name = ".44 Long Centrefire"
+differ_by = ["length"]
+calibres = [".44 Long Centrefire", ".44 Extra Long Centrefire"]
+
+[[group]]
+# COTW 18 pp. 232-233: the .44-90 Remington Special looks like the 44-90 Sharps, shorter and a little
+# fatter, and does not fit its chamber.
+name = ".44-60 Sharps & Remington Necked"
+differ_by = ["bore", "length"]
+calibres = [".44-60 Sharps & Remington Necked", ".44-77 Sharps & Remington", ".44-90 Sharps Necked",
+            ".44-90 Remington Special"]
+
+[[group]]
+name = ".44-75 Ballard Everlasting"
+differ_by = ["length"]
+calibres = [".44-75 Ballard Everlasting", ".44-100 Ballard"]

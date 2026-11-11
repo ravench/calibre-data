@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .40 Sharps 2¼ in. bottleneck case for the Model 1871 sporting rifle; also a match round.
+name = ".40-70 Sharps Necked"
+kind = "rimmed"
+profile = "round"
+# The 40-70 Remington (COTW 18 p. 223) is Remington's version of this round.
+aliases = ["40-70 sharps necked", "40-70 remington", "40-2 1/4 sharps"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.11
+base = 12.78
+shoulder = 12.7
+shoulder_at = 45.4
+neck = 10.82
+case_length = 57.15
+overall_length = 76.71
+bullet = 10.24
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1871
+sources = ["book:cotw-18 p. 221"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 221"]
+
+[case]
+material = "brass"
+sources = []

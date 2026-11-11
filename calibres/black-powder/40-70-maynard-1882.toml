@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The longest of the three .40 Maynard 1882 rounds, with a slightly larger rim and base.
+name = ".40-70 Maynard 1882"
+kind = "rimmed"
+profile = "round"
+aliases = ["40-70 maynard", "40-70 maynard 1882"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.59
+base = 11.46
+neck = 11.43
+case_length = 61.47
+overall_length = 73.15
+bullet = 10.59
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1882
+sources = ["book:cotw-18 p. 228"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 229"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Winchester Model 1886; a bottleneck case like the .38-70 Winchester.
+name = ".40-70 Winchester"
+kind = "rimmed"
+profile = "flat"
+aliases = ["40-70 winchester", "40-70 wcf"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.34
+base = 12.8
+shoulder = 12.6
+shoulder_at = 49.3
+neck = 10.92
+case_length = 60.96
+overall_length = 72.39
+bullet = 10.29
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1894
+sources = ["book:cotw-18 p. 223"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 223"]
+
+[case]
+material = "brass"
+sources = []
