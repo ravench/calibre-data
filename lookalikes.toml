@@ -103,3 +103,9 @@ calibres = [".32 Long Rimfire", ".32 Long Centrefire"]
 [[group]]
 differ_by = ["ignition", "length"]
 calibres = ["10.4 mm Swiss Ordnance 1872 Rimfire", "10.4 mm Swiss Ordnance 1878"]
+
+# The Swiss Match came first (C.I.P. 2002); the 6.5x47 mm Lapua (2005) is a similar case with a
+# small rifle primer, a wider neck and the shoulder further forward.
+[[group]]
+differ_by = ["bore"]
+calibres = ["6x47 mm SM", "6.5x47 mm Lapua"]

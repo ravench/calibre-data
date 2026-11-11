@@ -1,0 +1,52 @@
+# Swiss Match: a 300 m match round made by RUAG in Thun. A cartridge of its own, not the 6.5x47 mm
+# Lapua necked down (longer neck, wider shoulder), and not the 6x47 mm wildcat on the .222 Remington
+# Magnum case.
+name = "6x47 mm SM"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6x47", "6x47sm", "6x47 sm", "swiss match", "6mm sm"]
+display_aliases = ["6x47 Swiss Match"]
+
+origin = "CH"
+
+[mm]
+rim = 12.01
+base = 11.96
+shoulder = 11.59
+shoulder_at = 34.69
+neck = 6.87
+case_length = 47.0
+overall_length = 66.0
+bullet = 6.18
+# C.I.P. 6 x 47 SM, sheet of 2002-01-22 (revised 2002-05-15), copy at tiropratico.com.
+sources = ["https://www.tiropratico.com/CIP/Commission%20Internationale%20Permanente/6x47.pdf"]
+
+[introduced]
+# The C.I.P. sheet's date; no earlier year found. The forum only confirms it came before the
+# 6.5x47 mm Lapua (2005).
+year = 2002
+sources = [
+  "https://www.tiropratico.com/CIP/Commission%20Internationale%20Permanente/6x47.pdf",
+  "https://forum.cartridgecollectors.org/t/wildcat-based-on-the-6x47-swiss-match/3637",
+]
+
+[primer]
+size = "large-rifle"
+sources = [
+  "https://www.xxlreloading.com/calibers/6-x-47-sm",
+  "https://forum.accurateshooter.com/threads/6x47-swiss-match.3677423/",
+  "https://en.wikipedia.org/wiki/6.5×47mm_Lapua",
+]
+
+[shoulder_angle]
+# C.I.P. 6 x 47 SM: alpha 60°30'
+degrees = 30.25
+sources = ["https://www.tiropratico.com/CIP/Commission%20Internationale%20Permanente/6x47.pdf"]
+
+[case_head]
+# C.I.P. 6 x 47 SM
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://www.tiropratico.com/CIP/Commission%20Internationale%20Permanente/6x47.pdf"]
