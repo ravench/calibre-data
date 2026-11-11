@@ -103,6 +103,7 @@ DEFAULT_SHOULDER_ANGLE = 32
 
 # Original bullets: JACKETED is a full metal jacket or another all-copper bullet.
 JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP = "jacketed", "lead", "paper", "softpoint", "polymer"
+HOLLOW_POINT = "hollowpoint"
 # Case materials, and what balls, Minié bullets and pellets are made of (LEAD, STEEL or PLASTIC).
 BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID = "brass", "copper", "steel", "nickel", "paper", "hybrid"
 ALUMINIUM = "aluminium"
@@ -163,7 +164,8 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "current_cases": (("materials",), (), "required"),
     "fired_by": (("firearms",), (), "required"),
 }
-CARTRIDGE_BULLETS = (JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, STEEL)  # steel: the MPS dart
+# steel: the MPS dart
+CARTRIDGE_BULLETS = (JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL)
 LOOSE_BULLETS = (LEAD, STEEL, PLASTIC)
 BULLET_TYPES = CARTRIDGE_BULLETS + (PLASTIC,)
 CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID)
@@ -939,8 +941,9 @@ def is_worldwide(name):
 
 
 def bullet(name):
-    """The original bullet of a calibre: JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP or STEEL (LEAD,
-    STEEL or PLASTIC for balls, Minié bullets and pellets); None for shot shells, blanks and cannon rounds."""
+    """The original bullet of a calibre: JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT or
+    STEEL (LEAD, STEEL or PLASTIC for balls, Minié bullets and pellets); None for shot shells, blanks and
+    cannon rounds."""
     return BULLETS.get(name, (None, None))[0]
 
 

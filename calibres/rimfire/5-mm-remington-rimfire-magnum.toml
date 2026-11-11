@@ -36,8 +36,9 @@ rim_thickness = 1.26
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Remington's only load had a Core-Lokt hollow point; Aguila's later loads are hollow points too.
+type = "hollowpoint"
+sources = ["https://en.wikipedia.org/wiki/5mm_Remington_Rimfire_Magnum"]
 
 [case]
 material = "brass"

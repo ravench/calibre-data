@@ -297,12 +297,13 @@ cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outlin
   first sold with: `jacketed` (a full metal jacket or another all-copper bullet), `lead` (bare lead,
   also lubricated or wax coated), `paper` (lead wrapped in paper below the nose), `softpoint` (copper
   jacket with the lead core showing at the tip), `polymer` (copper jacket with a plastic tip: V-Max,
-  ELD, FTX, SST, AccuBond) or `steel` (a solid steel projectile: the MPS underwater dart). The GP 1890
-  steel cap is its own profile (`patched`). For a ball, Minié bullet or pellet, what it is made of:
-  `lead`, `steel` or `plastic` (steel BBs and airsoft BBs). `sources = []` means not checked. Steel
-  and plastic need a source; an unchecked type other than `jacketed` (or `lead` for loose
-  projectiles), such as a hunting round's soft point inferred from its use, is listed in
-  `BULLET_INFERRED`.
+  ELD, FTX, SST, AccuBond), `hollowpoint` (copper jacket with a cavity in its flat nose, for rounds
+  only ever loaded with hollow points: the 5 mm Remington Rimfire Magnum and .22 TCM) or `steel` (a
+  solid steel projectile: the MPS underwater dart). The GP 1890 steel cap is its own profile
+  (`patched`). For a ball, Minié bullet or pellet, what it is made of: `lead`, `steel` or `plastic`
+  (steel BBs and airsoft BBs). `sources = []` means not checked. Steel and plastic need a source;
+  an unchecked type other than `jacketed` (or `lead` for loose projectiles), such as a hunting
+  round's soft point inferred from its use, is listed in `BULLET_INFERRED`.
 - `[case]` `material`, in every calibre with a case (not shot shells, balls, Minié bullets or
   pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated steel,
   `aluminium`, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case) or `hybrid`

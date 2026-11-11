@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -62,6 +62,17 @@ class OutlineTests(unittest.TestCase):
             if "case" in o and "bullet" in o and s["profile"] != PATCHED:
                 lead = bullet(s["name"]) in (LEAD, PAPER_PATCHED)
                 self.assertEqual(o.get("bulletMaterial") == "lead", lead, s["name"])
+
+    def test_hollow_points_have_a_cavity_in_the_nose(self):
+        names = [s["name"] for _, s in outline.specs() if bullet(s["name"]) == HOLLOW_POINT]
+        self.assertIn(".22 TCM", names)
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            if "bullet" not in o:
+                continue
+            centre = [y for x, y in points(o["bullet"]) if abs(x - o["width"] / 2) < 0.01]
+            # The nose is the highest point (y 0) unless a cavity is cut into it.
+            self.assertEqual(min(centre) > 0.1, s["name"] in names, s["name"])
 
     def test_soft_points_show_a_lead_tip_at_the_front_of_the_bullet(self):
         for _, s in outline.specs():
