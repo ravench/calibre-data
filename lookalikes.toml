@@ -191,3 +191,16 @@ calibres = ["8x56 mm Mannlicher-Schönauer", "9x56 mm Mannlicher-Schönauer"]
 # COTW 18 p. 633: the 6.5x55 mm case necked up (and a little shorter).
 differ_by = ["bore", "length"]
 calibres = ["6.5x55 mm Swedish", "8x54 mm Krag-Jørgensen"]
+
+[[group]]
+# The Nitro Express is the Magnum Express case loaded with cordite.
+differ_by = ["load"]
+calibres = [".500/450 Magnum Express", ".500/450 Nitro Express"]
+
+[[group]]
+differ_by = ["length"]
+calibres = [".297/230 Morris Short", ".297/230 Morris Long"]
+
+[[group]]
+differ_by = ["rim", "length"]
+calibres = [".280 Ross", ".280 Flanged"]

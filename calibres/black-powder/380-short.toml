@@ -1,0 +1,32 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A blackpowder round for single-shot rifles, pistols and revolvers; DWM loaded it too.
+name = ".380 Short"
+kind = "rimmed"
+profile = "round"
+aliases = ["380 short", "380 short rifle"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.92
+base = 9.65
+neck = 9.63
+case_length = 15.24
+overall_length = 28.19
+bullet = 9.52
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+# COTW: the early 1870s; the decade's first year is kept.
+year = 1870
+sources = ["book:cotw-18 p. 592"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 592"]

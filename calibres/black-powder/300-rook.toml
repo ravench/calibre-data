@@ -1,0 +1,38 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# A blackpowder rook round, still in Eley-Kynoch's 1962 catalogue.
+name = ".300 Rook"
+kind = "rimmed"
+profile = "round"
+aliases = ["300 rook", "300/295 rook"]
+display_aliases = [".300/295 Rook"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.52
+base = 8.1
+neck = 8.08
+case_length = 29.97
+overall_length = 36.83
+bullet = 7.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/300-295-rook-rifle-en.pdf"]
+
+[introduced]
+unknown = "From before 1874; COTW 18 p. 583 gives no year."
+sources = ["book:cotw-18 p. 583"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.14
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/300-295-rook-rifle-en.pdf"]
+
+[bullet]
+# A blackpowder rook round.
+type = "lead"
+sources = ["book:cotw-18 p. 583"]

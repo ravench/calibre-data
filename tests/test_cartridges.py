@@ -578,7 +578,10 @@ class CatalogueTests(unittest.TestCase):
                                            # Brass-coated bullets drawn as lead.
                                            "10.4x47 mm R Italian Vetterli", "11.5x57 mm R Spanish Reformado",
                                            # COTW 18 gives a ball without its material.
-                                           "8x60 mm R Guedes"})
+                                           "8x60 mm R Guedes",
+                                           # No factory load on the page, or a later one than the original.
+                                           ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
+                                           ".500 Express 3 inch", ".500/450 Magnum Express"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):

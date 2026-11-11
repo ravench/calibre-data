@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Holland & Holland's belted 7 mm, with the .375 H&H one of the first magnums.
+name = ".275 H&H Magnum"
+kind = "belted"
+profile = "spitzer"
+aliases = ["275hh", "275 h&h", "275 belted magnum"]
+display_aliases = [".275 Belted Magnum"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.51
+base = 13.03
+shoulder = 11.53
+shoulder_at = 53.7
+neck = 8.25
+case_length = 63.5
+overall_length = 86.87
+bullet = 7.21
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+year = 1911
+sources = ["book:cotw-18 p. 581"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 608"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 581"]

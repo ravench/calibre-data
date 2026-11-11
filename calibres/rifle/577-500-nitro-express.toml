@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .577 case necked to .50; blackpowder first, later a full Nitro Express.
+name = ".577/500 Nitro Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["577/500", "577/500 3 1/8"]
+display_aliases = [".577/500 Nitro Express 3⅛ inch"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 18.21
+base = 16.38
+shoulder = 14.86
+shoulder_at = 65.4
+neck = 13.36
+case_length = 79.5
+overall_length = 95.0
+bullet = 12.9
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 609"]
+
+[introduced]
+unknown = "Blackpowder first; COTW 18 p. 603 gives no year."
+sources = ["book:cotw-18 p. 603"]
+
+[primer]
+# The table gives a .251 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 609"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 609"]
+
+[bullet]
+# The Nitro-for-Black load; the later Nitro Express had jacketed bullets.
+type = "lead"
+sources = ["book:cotw-18 p. 603"]

@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A blackpowder express round; later also loaded with nitro powder.
+name = ".360 Express 2¼ inch"
+kind = "rimmed"
+profile = "round"
+aliases = ["360 express", "360 2 1/4"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.19
+base = 10.92
+neck = 9.75
+case_length = 57.15
+overall_length = 76.2
+bullet = 9.27
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+unknown = "From before 1873; COTW 18 p. 588 gives no year."
+sources = ["book:cotw-18 p. 588"]
+
+[primer]
+# The table gives a .241 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 608"]
+
+[bullet]
+# COTW: the blackpowder loads had bare or paper-patched lead bullets.
+type = "lead"
+sources = ["book:cotw-18 p. 588"]

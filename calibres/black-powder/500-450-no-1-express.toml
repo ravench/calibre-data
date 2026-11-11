@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# One of Westley Richards's many blackpowder .500/450s.
+name = ".500/450 No. 1 Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["500/450 no 1", "500/450 no. 1 express"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.76
+base = 14.66
+shoulder = 13.46
+shoulder_at = 57.3
+neck = 12.32
+case_length = 69.85
+overall_length = 85.85
+bullet = 11.63
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+unknown = "COTW 18 p. 597 dates the oldest .500/450 to 1871 but gives no year for this one."
+sources = ["book:cotw-18 p. 597"]
+
+[primer]
+# The table gives a .241 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
+
+[bullet]
+# A blackpowder round.
+type = "lead"
+sources = ["book:cotw-18 p. 597"]

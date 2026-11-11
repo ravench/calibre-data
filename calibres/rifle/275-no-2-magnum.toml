@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For Rigby double rifles.
+name = ".275 No. 2 Magnum"
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["275 no 2", "275 no. 2 magnum"]
+display_aliases = ["7 mm Rigby Magnum Flanged"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.78
+base = 12.95
+shoulder = 11.43
+shoulder_at = 53.6
+neck = 8.08
+case_length = 63.5
+overall_length = 82.8
+bullet = 7.21
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+year = 1927
+sources = ["book:cotw-18 p. 581"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 608"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 581"]
