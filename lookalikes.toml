@@ -515,10 +515,12 @@ differ_by = ["bore", "length"]
 calibres = [".44-75 Ballard Everlasting", ".44-100 Ballard", ".45-100 Ballard"]
 
 [[group]]
-# The .45-70 head in straight cases of other lengths (COTW 18 pp. 240-242).
+# The .45-70 head in straight cases of other lengths (COTW 18 pp. 240-242), the .457 WWG's among them,
+# and the .45-70 Auto: .45-70 brass with the rim turned down (p. 431).
 name = ".45-70 Government"
-differ_by = ["length"]
-calibres = [".45-70 Government", ".45-70 Van Choate", ".45-90 WCF", ".45-110 Sharps", ".45-120 Sharps"]
+differ_by = ["rim", "length"]
+calibres = [".45-70 Government", ".45-70 Van Choate", ".45-90 WCF", ".45-110 Sharps", ".45-120 Sharps",
+            ".457 WWG", ".45-70 Auto"]
 
 [[group]]
 # COTW 18 p. 244: the .50-90 Sharps case, longer.
@@ -617,3 +619,37 @@ calibres = ["6.71 Lazzeroni Blackbird", "7.21 Lazzeroni Firehawk"]
 name = "7 mm Canadian Magnum"
 differ_by = ["bore"]
 calibres = ["7 mm Canadian Magnum", ".338 Canadian Magnum", ".458 Canadian Magnum"]
+
+[[group]]
+# COTW 18 p. 406: the .338 Excaliber is on the .300 Pegasus case.
+name = ".300 Pegasus"
+differ_by = ["bore"]
+calibres = [".300 Pegasus", ".338 Excaliber"]
+
+[[group]]
+# The .378 Weatherby Magnum case necked down and up by Weatherby
+# (https://en.wikipedia.org/wiki/.378_Weatherby_Magnum; the .460: COTW 18 p. 434), and A-Square's rounds
+# on it and on the .460 (pp. 401, 415, 434, 443).
+name = ".378 Weatherby Magnum"
+differ_by = ["bore", "length"]
+calibres = [".378 Weatherby Magnum", ".30-378 Weatherby Magnum", ".338-378 Weatherby Magnum", ".338 A-Square",
+            ".375 A-Square", ".416 Weatherby Magnum", ".460 Weatherby Magnum", ".460 A-Square Short", ".500 A-Square"]
+
+[[group]]
+# A-Square's rimmed double rifle rounds share one case (COTW 18 p. 453).
+name = ".416 Rimmed"
+differ_by = ["bore"]
+calibres = [".416 Rimmed", ".450 Assegai"]
+
+[[group]]
+# The full-length .375 H&H Magnum case blown out (COTW 18 pp. 418, 426); the .416 Remington Magnum
+# measures almost like the .416 Hoffman.
+name = ".375 H&H Magnum"
+differ_by = ["bore"]
+calibres = [".375 H&H Magnum", ".416 Hoffman", ".416 Remington Magnum", ".400 A-Square DPM"]
+
+[[group]]
+# COTW 18 p. 397: the .338 Lapua Magnum head and body, longer.
+name = ".338 Lapua Magnum"
+differ_by = ["length"]
+calibres = [".338 Lapua Magnum", ".33 XC"]

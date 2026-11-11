@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Guncrafter Industries' .50 for 1911-type pistols, on a rebated case.
+name = ".50 GI"
+kind = "rimless"
+# Nose: flat, as in Guncrafter's two factory loads, a hollow point and a flat point (COTW 18 p. 442).
+profile = "flat"
+aliases = ["50 gi", "50gi"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 12.19
+base = 13.36
+neck = 13.36
+case_length = 22.83
+overall_length = 31.01
+bullet = 12.7
+sources = ["book:cotw-18 p. 453"]
+
+[introduced]
+# COTW: created in 2002, first shown at the 2004 SHOT Show.
+year = 2002
+sources = ["book:cotw-18 p. 441"]
+
+[primer]
+# The table gives no primer.
+size = "large-pistol"
+sources = []
+
+[case_head]
+# .048 in.
+rim_thickness = 1.22
+sources = ["book:cotw-18 p. 453"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

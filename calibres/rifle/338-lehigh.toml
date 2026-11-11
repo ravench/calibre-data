@@ -1,0 +1,47 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Lehigh Defense's 6.5 mm Grendel case necked up to .338 for AR-15 rifles.
+name = ".338 Lehigh"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["338 lehigh"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 11.2
+base = 11.15
+shoulder = 10.84
+shoulder_at = 25.69
+neck = 9.37
+case_length = 35.56
+overall_length = 57.4
+bullet = 8.59
+# shoulder_at from the drawing on p. 402.
+sources = ["book:cotw-18 p. 452", "book:cotw-18 p. 402"]
+
+[introduced]
+unknown = "COTW 18 p. 402 gives no year; it followed the .300 AAC Blackout."
+sources = ["book:cotw-18 p. 402"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[shoulder_angle]
+# COTW 18 drawing
+degrees = 29
+sources = ["book:cotw-18 p. 402"]
+
+[case_head]
+# .053 in.
+rim_thickness = 1.35
+sources = ["book:cotw-18 p. 452"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

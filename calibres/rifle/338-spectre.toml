@@ -1,0 +1,53 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Marty ter Weeme's shortened 6.8 mm SPC case necked up to .338, for subsonic loads in AR-15 rifles.
+name = ".338 Spectre"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["338 spectre"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 10.67
+base = 10.79
+shoulder = 10.54
+shoulder_at = 23.57
+neck = 9.17
+case_length = 31.75
+overall_length = 53.34
+bullet = 8.59
+# shoulder_at from the drawing on p. 400.
+sources = ["book:cotw-18 p. 452", "book:cotw-18 p. 400"]
+
+[introduced]
+unknown = "COTW 18 p. 400 gives no year."
+sources = ["book:cotw-18 p. 400"]
+
+[primer]
+# The table gives large rifle, but the case is the 6.8 mm SPC's, which takes small rifle
+# primers.
+size = "small-rifle"
+sources = []
+
+[shoulder_angle]
+# COTW 18 drawing. COTW says the designer gave neither the angle nor the head-to-shoulder length:
+# both were measured.
+degrees = 30
+sources = ["book:cotw-18 p. 400"]
+
+[case_head]
+# from the 6.8 mm Remington SPC case; C.I.P. 6,8 mm Rem. SPC
+rim_thickness = 1.24
+ramp_top = 3.2
+groove_diameter = 9.09
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []
