@@ -1,0 +1,49 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Lazzeroni's .338 long magnum, on its .577 in. case.
+name = "8.59 Lazzeroni Titan"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8.59 titan", "8.59mm titan", "lazzeroni titan"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 58.4
+neck = 9.37
+case_length = 71.12
+overall_length = 91.44
+bullet = 8.59
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at COTW's 30 degrees).
+sources = ["book:cotw-18 p. 452"]
+
+[introduced]
+# COTW: designed in 1994 from a design of 1992.
+year = 1994
+sources = ["book:cotw-18 p. 404"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[shoulder_angle]
+# COTW 18 p. 404: a 30-degree shoulder.
+degrees = 30
+sources = ["book:cotw-18 p. 404"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 452"]
+
+[bullet]
+# Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 404).
+type = "softpoint"
+sources = ["book:cotw-18 p. 404"]
+
+[case]
+material = "brass"
+sources = []

@@ -156,9 +156,12 @@ differ_by = ["bore"]
 calibres = ["9x71 mm Peterlongo", "8x71 mm Peterlongo"]
 
 [[group]]
+# The Dakota rounds (COTW 18 pp. 385-424) are the .404 Jeffery case, most of them shortened, with a slightly
+# larger rim.
 name = ".404 Jeffery"
-differ_by = ["bore"]
-calibres = [".404 Jeffery", "9.5x73 mm Miller-Greiss Magnum"]
+differ_by = ["bore", "length"]
+calibres = [".404 Jeffery", "9.5x73 mm Miller-Greiss Magnum", "7 mm Dakota", ".300 Dakota", ".330 Dakota",
+            ".375 Dakota", ".416 Dakota"]
 
 [[group]]
 name = "9.5x47 mm R"
@@ -580,3 +583,37 @@ calibres = [".46 Short Rimfire", ".46 Long Rimfire", ".46 Extra Long Rimfire"]
 name = ".56-56 Spencer"
 differ_by = ["bore", "length"]
 calibres = [".56-56 Spencer", ".56-50 Spencer", ".56-52 Spencer", ".56-52 Spencer Necked", ".56-46 Spencer"]
+
+[[group]]
+# Lazzeroni's short magnums on its .577 in. case; the Eagle is the Patriot necked up (COTW 18 p. 410).
+name = "7.82 Lazzeroni Patriot"
+differ_by = ["bore"]
+calibres = ["7.82 Lazzeroni Patriot", "7.21 Lazzeroni Tomahawk", "8.59 Lazzeroni Galaxy", "9.09 Lazzeroni Eagle",
+            "9.53 Lazzeroni Hellcat", "10.57 Lazzeroni Maverick"]
+
+[[group]]
+# Lazzeroni's long magnums on its .577 in. case; the Firebird is the Warbird necked down (COTW 18 p. 388).
+name = "7.82 Lazzeroni Warbird"
+differ_by = ["bore"]
+calibres = ["7.82 Lazzeroni Warbird", "7.21 Lazzeroni Firebird", "8.59 Lazzeroni Titan", "9.53 Lazzeroni Saturn",
+            "10.57 Lazzeroni Meteor", "12.04 Bibamufu"]
+
+[[group]]
+name = "6.17 Lazzeroni Spitfire"
+differ_by = ["bore"]
+calibres = ["6.17 Lazzeroni Spitfire", "6.71 Lazzeroni Phantom"]
+
+[[group]]
+name = "6.17 Lazzeroni Flash"
+differ_by = ["bore"]
+calibres = ["6.17 Lazzeroni Flash", "6.53 Lazzeroni Scramjet"]
+
+[[group]]
+name = "6.71 Lazzeroni Blackbird"
+differ_by = ["bore"]
+calibres = ["6.71 Lazzeroni Blackbird", "7.21 Lazzeroni Firehawk"]
+
+[[group]]
+name = "7 mm Canadian Magnum"
+differ_by = ["bore"]
+calibres = ["7 mm Canadian Magnum", ".338 Canadian Magnum", ".458 Canadian Magnum"]

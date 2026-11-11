@@ -14,12 +14,12 @@ rare = true
 rim = 14.66
 base = 14.66
 shoulder = 14.15
-shoulder_at = 57.9
+shoulder_at = 57.8
 neck = 12.7
 case_length = 71.12
 overall_length = 91.95
 bullet = 12.06
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at COTW's 30 degrees).
 sources = ["book:cotw-18 p. 252"]
 
 [introduced]
@@ -29,6 +29,11 @@ sources = ["book:cotw-18 p. 243"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 252"]
+
+[shoulder_angle]
+# COTW 18 p. 243: a 30-degree shoulder.
+degrees = 30
+sources = ["book:cotw-18 p. 243"]
 
 [case_head]
 # .060 in.

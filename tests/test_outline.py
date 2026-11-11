@@ -219,37 +219,44 @@ class OutlineTests(unittest.TestCase):
     SHOULDER_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
         # shoulder_at is estimated, as the note in [mm] says).
-        ".242 Rimless Nitro Express", ".244 Halger Magnum", ".246 Purdey Flanged", ".25-20 Single-Shot",
-        ".25-36 Marlin", ".256 Gibbs Magnum", ".256 Newton", ".26 BSA", ".275 H&H Magnum", ".275 No. 2 Magnum",
-        ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".297/250 Rook",
-        ".30 Borchardt", ".30 Newton", ".303 Magnum", ".32-30 Remington",
-        ".32-40 Bullard", ".32-40 Remington", ".33 BSA", ".333 Jeffery Rimless",
-        ".35 Newton", ".360 Mars", ".360 No. 2 Nitro Express", ".375/303 Westley Richards", ".38-45 Bullard",
+        ".242 Rimless Nitro Express", ".244 Halger Magnum", ".246 Purdey Flanged",
+        ".25-20 Single-Shot", ".25-36 Marlin", ".256 Gibbs Magnum", ".256 Newton", ".26 BSA",
+        ".275 H&H Magnum", ".275 No. 2 Magnum", ".276 Enfield", ".276 Pedersen", ".280 British",
+        ".280 Jeffery", ".280 Ross", ".297/250 Rook", ".30 Borchardt", ".30 Newton",
+        ".300 Dakota", ".303 Magnum", ".32-30 Remington", ".32-40 Bullard", ".32-40 Remington", ".33 BSA",
+        ".330 Dakota", ".333 Jeffery Rimless", ".338 Canadian Magnum", ".35 Newton",
+        ".360 Mars", ".360 No. 2 Nitro Express", ".375 Dakota", ".375/303 Westley Richards", ".38-45 Bullard",
         ".38-70 Winchester", ".38-72 Winchester", ".38-90 Winchester Express", ".40-110 Winchester Express",
         ".40-50 Sharps Necked", ".40-70 Peabody What Cheer", ".40-70 Sharps Necked", ".40-70 Winchester",
         ".40-90 Bullard", ".40-90 Peabody What Cheer", ".40-90 Sharps Necked", ".400/360 Nitro Express",
-        ".400/375 Belted Nitro Express", ".425 Westley Richards Magnum", ".44-40 Extra Long",
+        ".400/375 Belted Nitro Express", ".416 Dakota", ".425 Westley Richards Magnum", ".44-40 Extra Long",
         ".44-60 Sharps & Remington Necked", ".44-77 Sharps & Remington", ".44-90 Remington Special",
         ".44-90 Sharps Necked", ".44-95 Peabody What Cheer", ".45 Blaser", ".45-100 Remington Necked",
-        ".45-125 Winchester Express", ".45-50 Peabody Sporting", ".450/400 Nitro Express 2⅜ inch",
-        ".460 Steyr", ".476 Nitro Express", ".50 Remington Army", ".50-115 Bullard", ".500/450 Magnum Express",
-        ".500/450 Nitro Express", ".500/450 No. 1 Express", ".56-46 Spencer", ".56-52 Spencer Necked",
-        ".577/500 Nitro Express", ".577/500 No. 2 Express", "10.15x61 mm R Jarmann",
-        "10.15x63 mm R Serbian Mauser", "10.25x69 mm R Hunting-Express", "10.4x47 mm R Italian Vetterli",
-        "10.5x47 mm R", "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan", "10.75x63 mm Mauser",
-        "10.75x68 mm Mauser", "10.8x47 mm R Martini Target", "11.15x58 mm R Spanish Remington",
-        "11.15x58 mm R Werndl M77", "11.2x60 mm Schüler", "11.2x72 mm Schüler", "11.3x50 mm R Beaumont M71",
-        "11.43x50 mm R Egyptian Remington", "11.43x55 mm R Turkish Peabody-Martini",
-        "11.4x50 mm R Brazilian Comblain", "11x50 mm R Albini", "11x52 mm R Beaumont M71/78",
-        "11x53 mm R Comblain", "11x60 mm R Japanese Murata", "12.04 Bibamufu", "4.3x45 mm DAG",
-        "4.85x49 mm British", "5 mm Clement", "5.2x68 mm Mondragón", "5.66x39 mm MPS", "5.8x21 mm DAP92",
-        "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW", "6.5 mm Bergmann", "6.5x27 mm R",
+        ".45-125 Winchester Express", ".45-50 Peabody Sporting", ".450 Dakota",
+        ".450/400 Nitro Express 2⅜ inch", ".458 Canadian Magnum", ".460 Steyr", ".476 Nitro Express",
+        ".50 Remington Army", ".50-115 Bullard", ".500/450 Magnum Express", ".500/450 Nitro Express",
+        ".500/450 No. 1 Express", ".56-46 Spencer", ".56-52 Spencer Necked", ".577/500 Nitro Express",
+        ".577/500 No. 2 Express", "10.15x61 mm R Jarmann", "10.15x63 mm R Serbian Mauser",
+        "10.25x69 mm R Hunting-Express", "10.4x47 mm R Italian Vetterli",
+        "10.5x47 mm R", "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan",
+        "10.75x63 mm Mauser", "10.75x68 mm Mauser", "10.8x47 mm R Martini Target",
+        "11.15x58 mm R Spanish Remington", "11.15x58 mm R Werndl M77", "11.2x60 mm Schüler",
+        "11.2x72 mm Schüler", "11.3x50 mm R Beaumont M71", "11.43x50 mm R Egyptian Remington",
+        "11.43x55 mm R Turkish Peabody-Martini", "11.4x50 mm R Brazilian Comblain", "11x50 mm R Albini",
+        "11x52 mm R Beaumont M71/78", "11x53 mm R Comblain", "11x60 mm R Japanese Murata",
+        "4.3x45 mm DAG", "4.85x49 mm British", "5 mm Clement", "5.2x68 mm Mondragón", "5.66x39 mm MPS",
+        "5.8x21 mm DAP92", "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW",
+        "6.5 mm Bergmann", "6.5x27 mm R",
         "6.5x53.5 mm SR Daudeteau", "6.5x58 mm R Krag-Jørgensen", "6.5x61 mm Mauser", "6.5x61 mm R Mauser",
-        "6.8x45 mm UCC", "6x29.5 mm R Stahl", "6x57 mm Mauser", "6x58 mm Forster", "6x58 mm R Forster",
-        "7 mm Nambu", "7.62x40 mm WT", "7x73 mm Vom Hofe Belted", "8.5 mm Mars", "8x42 mm R M88",
+        "6.8x45 mm UCC", "6x29.5 mm R Stahl",
+        "6x57 mm Mauser", "6x58 mm Forster", "6x58 mm R Forster", "7 mm Canadian Magnum", "7 mm Dakota",
+        "7 mm Nambu",
+        "7.62x40 mm WT", "7x73 mm Vom Hofe Belted",
+        "8.5 mm Mars", "8x42 mm R M88",
         "8x50 mm R Siamese Type 45", "8x52 mm R Siamese Type 66", "8x54 mm Krag-Jørgensen", "8x59 mm Breda",
-        "8x60 mm R Guedes", "8x63 mm Swedish", "8x71 mm Peterlongo", "9.3x53 mm R Swiss", "9.3x53 mm Swiss",
-        "9.3x65 mm R Collath", "9.3x72 mm R Sauer", "9.3x75 mm R Nimrod", "9.5x47 mm R",
+        "8x60 mm R Guedes", "8x63 mm Swedish", "8x71 mm Peterlongo",
+        "9.3x53 mm R Swiss", "9.3x53 mm Swiss", "9.3x65 mm R Collath", "9.3x72 mm R Sauer",
+        "9.3x75 mm R Nimrod", "9.5x47 mm R",
         "9.5x60 mm R Turkish Mauser", "9.5x73 mm Miller-Greiss Magnum", "9x63 mm", "9x70 mm R Mauser",
         "9x71 mm Peterlongo",
     }
@@ -264,7 +271,7 @@ class OutlineTests(unittest.TestCase):
         for name, (angle, url) in cartridges.SHOULDER_ANGLES.items():
             with self.subTest(name):
                 self.assertTrue(2 <= angle <= 55, angle)
-                self.assertTrue(url.startswith("https://"), url)
+                self.assertTrue(url.startswith("https://") or url.startswith("book:"), url)
 
     def test_shoulders_are_drawn_at_their_own_angle(self):
         # Regression: every shoulder used to be drawn at one shared 32-degree slope.
@@ -332,19 +339,26 @@ class OutlineTests(unittest.TestCase):
         "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum", ".276 Enfield",
-        ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt", ".30 Newton",
-        ".30 USA Rimless", ".303 Magnum", ".33 BSA", ".333 Jeffery Rimless", ".35 Newton", ".360 Mars",
-        ".400/375 Belted Nitro Express", ".425 Westley Richards Magnum", ".44 Auto Mag", ".45 Blaser",
-        ".45 Mars Long", ".45 Mars Short", ".45 Remington Thompson",
-        ".455 Webley Automatic", ".50-115 Bullard", "10.75x57 mm Mannlicher",
+        ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum",
+        ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt",
+        ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".303 Magnum", ".33 BSA", ".330 Dakota",
+        ".333 Jeffery Rimless", ".338 Canadian Magnum", ".35 Newton", ".360 Mars", ".375 Dakota",
+        ".400/375 Belted Nitro Express", ".416 Dakota", ".425 Westley Richards Magnum", ".44 Auto Mag",
+        ".45 Blaser", ".45 Mars Long", ".45 Mars Short", ".45 Remington Thompson", ".450 Dakota",
+        ".455 Webley Automatic", ".458 Canadian Magnum", ".50-115 Bullard",
+         "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor", "10.75x57 mm Mannlicher",
         "10.75x63 mm Mauser", "10.75x68 mm Mauser", "11.2x60 mm Schüler", "11.2x72 mm Schüler",
         "12.04 Bibamufu", "2.7 mm Kolibri", "3 mm Kolibri", "4.25 mm Liliput", "4.85x49 mm British",
         "5 mm Bergmann", "5 mm Clement", "5.2x68 mm Mondragón", "5.8x21 mm DAP92", "5x58 mm Sturtevant",
-        "6 mm Lee Navy", "6 mm SAW", "6.5 mm Bergmann", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser",
-        "6x58 mm Forster", "7 mm Nambu", "7.63 mm Mannlicher", "7.65 mm Roth-Sauer", "7.92x24 mm",
-        "7x73 mm Vom Hofe Belted", "8.5 mm Mars", "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo",
-        "9 mm Winchester Magnum", "9.3x53 mm Swiss", "9.8 mm Auto Colt", "9x63 mm", "9x71 mm Peterlongo",
+        "6 mm Lee Navy", "6 mm SAW", "6.17 Lazzeroni Flash", "6.17 Lazzeroni Spitfire", "6.5 mm Bergmann",
+        "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser", "6.71 Lazzeroni Blackbird",
+        "6.71 Lazzeroni Phantom", "6x58 mm Forster", "7 mm Canadian Magnum", "7 mm Dakota", "7 mm Nambu",
+        "7.21 Lazzeroni Firebird", "7.21 Lazzeroni Firehawk", "7.21 Lazzeroni Tomahawk", "7.63 mm Mannlicher",
+        "7.65 mm Roth-Sauer", "7.82 Lazzeroni Patriot", "7.82 Lazzeroni Warbird", "7.92x24 mm",
+        "7x73 mm Vom Hofe Belted", "8.5 mm Mars", "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan",
+        "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo", "9 mm Winchester Magnum",
+        "9.09 Lazzeroni Eagle", "9.3x53 mm Swiss", "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn",
+        "9.8 mm Auto Colt", "9x63 mm", "9x71 mm Peterlongo",
     }
 
     def rimless(self):
@@ -356,7 +370,7 @@ class OutlineTests(unittest.TestCase):
         for name, (thick, top_at, groove, angle, url) in cartridges.CASE_HEADS.items():
             with self.subTest(name):
                 s = self.rimless()[name]
-                self.assertTrue(url.startswith("https://"), url)
+                self.assertTrue(url.startswith("https://") or url.startswith("book:"), url)
                 self.assertTrue(0.7 < thick < 2.5 and 2.0 < top_at < 7.0 and 10 <= angle <= 75)
                 self.assertLess(groove, min(s["rim"], s["base"]))
 

@@ -1,0 +1,49 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Lazzeroni's .243 long magnum, on its .530 in. case. No loaded rounds offered since 2022 (COTW 18 p. 366).
+name = "6.17 Lazzeroni Flash"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.17 flash", "6.17mm flash", "lazzeroni flash"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.46
+base = 13.46
+shoulder = 12.95
+shoulder_at = 59.8
+neck = 6.99
+case_length = 71.12
+overall_length = 90.17
+bullet = 6.17
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at COTW's 30 degrees).
+sources = ["book:cotw-18 p. 451"]
+
+[introduced]
+year = 1996
+sources = ["book:cotw-18 p. 366"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[shoulder_angle]
+# COTW 18 p. 366: a 30-degree shoulder.
+degrees = 30
+sources = ["book:cotw-18 p. 366"]
+
+[case_head]
+# .050 in.
+rim_thickness = 1.27
+sources = ["book:cotw-18 p. 451"]
+
+[bullet]
+# Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 366).
+type = "softpoint"
+sources = ["book:cotw-18 p. 366"]
+
+[case]
+material = "brass"
+sources = []

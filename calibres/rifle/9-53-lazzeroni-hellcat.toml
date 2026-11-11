@@ -1,0 +1,48 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Lazzeroni's .375 short magnum for a 2.8 in. action, on its .577 in. case.
+name = "9.53 Lazzeroni Hellcat"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["9.53 hellcat", "9.53mm hellcat", "lazzeroni hellcat"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 39.2
+neck = 10.26
+case_length = 52.07
+overall_length = 71.12
+bullet = 9.52
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at COTW's 30 degrees).
+sources = ["book:cotw-18 p. 452"]
+
+[introduced]
+year = 1997
+sources = ["book:cotw-18 p. 413"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[shoulder_angle]
+# COTW 18 p. 413: a 30-degree shoulder.
+degrees = 30
+sources = ["book:cotw-18 p. 413"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 452"]
+
+[bullet]
+# Soft point: the Nosler Partition (COTW 18 p. 413).
+type = "softpoint"
+sources = ["book:cotw-18 p. 413"]
+
+[case]
+material = "brass"
+sources = []

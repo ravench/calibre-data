@@ -116,6 +116,10 @@ flag = "🇷🇸"
 name = "Thailand"
 flag = "🇹🇭"
 
+[CA]
+name = "Canada"
+flag = "🇨🇦"
+
 [OE]
 name = "Ottoman Empire"
 
