@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Remington No. 1 rolling block sporting rifle; a long, tapered shoulder.
+name = ".32-40 Remington"
+kind = "rimmed"
+profile = "round"
+aliases = ["32-40 remington", "32-40-150 remington"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.59
+base = 11.51
+shoulder = 9.09
+shoulder_at = 45.7
+neck = 8.38
+case_length = 54.1
+overall_length = 82.55
+bullet = 7.85
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+# COTW: introduced about 1871 to 1872, shortly after the rifle of 1870.
+year = 1871
+sources = ["book:cotw-18 p. 199"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 199"]
+
+[case]
+material = "brass"
+sources = []

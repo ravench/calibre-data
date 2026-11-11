@@ -605,6 +605,7 @@ class CatalogueTests(unittest.TestCase):
                                            ".500 Express 3 inch", ".500/450 Magnum Express",
                                            ".32 Protector", "7.7 mm Bittner", ".380 Long Revolver",
                                            "9.4 mm Dutch", ".44 Merwin & Hulbert", ".45 Cowboy Special",
+                                           ".25-20 Single-Shot", ".25-21 Stevens", ".338-06 A-Square",
                                            # Paper-patched under its steel cap; the file says how it is known.
                                            "7.5x53.5 mm Swiss (GP 1890)"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
@@ -763,7 +764,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(lookalikes("7x65 mm R"), ["7x64 mm"])
         self.assertEqual(lookalikes("8x57 mm I"), ["8x57 mm IS", "8x57 mm IRS", "8x57 mm IR"])
         self.assertEqual(lookalikes(".275 Rigby"), ["7x57 mm Mauser", "7x57 mm R"])
-        self.assertEqual(lookalikes(".30-06 Springfield"), [])
+        self.assertEqual(lookalikes(".30-06 Springfield"), [".30-03 Springfield"])
         self.assertEqual(lookalikes("7.62x25 mm Tokarev"), [".30 Borchardt", "7.63x25 mm Mauser"])
 
     def test_lookalike_groups_have_names(self):

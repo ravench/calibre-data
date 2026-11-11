@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Designed for Fred Adolph as the Adolph Express; Western loaded it until about 1938.
+name = ".30 Newton"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30 newton", "30 adolph express"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.33
+base = 13.28
+shoulder = 12.47
+shoulder_at = 53.1
+neck = 8.64
+case_length = 64.01
+overall_length = 85.09
+bullet = 7.82
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+year = 1913
+sources = ["book:cotw-18 p. 198"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 198"]
+
+[case]
+material = "brass"
+sources = []
