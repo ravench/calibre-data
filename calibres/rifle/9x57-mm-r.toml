@@ -27,7 +27,8 @@ year = 1903
 sources = ["https://municion.org/producto/9-x-57-r-mauser/"]
 
 [primer]
-# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+# The table's row, shared with the rimless twin, gives a .217 in. Berdan primer, within 0.2 mm of
+# the large Boxer size.
 size = "large-rifle"
 sources = ["book:cotw-18 p. 652"]
 
@@ -42,7 +43,7 @@ rim_thickness = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page48.pdf"]
 
 [bullet]
-# Soft points: the Remington and RWS factory loads (COTW 18 p. 637).
+# Soft points: every factory load in the loading table shared with the rimless twin (COTW 18 p. 637).
 type = "softpoint"
 sources = ["book:cotw-18 p. 637"]
 

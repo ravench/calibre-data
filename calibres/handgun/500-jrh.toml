@@ -21,8 +21,9 @@ year = 1993
 sources = ["https://municion.org/producto/500-jrh/"]
 
 [primer]
+# The COTW 18 table (p. 529) gives a large rifle primer; no maker's data checked yet.
 size = "large-pistol"
-sources = ["book:cotw-18 p. 529"]
+sources = []
 
 [case_head]
 # .055 in.

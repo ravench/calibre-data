@@ -39,7 +39,7 @@ rim_thickness = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page2.pdf"]
 
 [bullet]
-# Soft points: RWS's factory loads (COTW 18 p. 612).
+# Soft point: the one factory load given for the rimmed case (COTW 18 p. 612).
 type = "softpoint"
 sources = ["book:cotw-18 p. 612"]
 

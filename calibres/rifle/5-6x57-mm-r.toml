@@ -41,7 +41,7 @@ rim_thickness = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page4.pdf"]
 
 [bullet]
-# Soft points: the Hirtenberger and RWS factory loads (COTW 18 p. 613).
+# Soft points: every factory load in the loading table shared with the rimless twin (COTW 18 p. 613).
 type = "softpoint"
 sources = ["book:cotw-18 p. 613"]
 
