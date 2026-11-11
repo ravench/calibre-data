@@ -21,7 +21,7 @@ sources = ["book:cotw-18 p. 670"]
 [introduced]
 # COTW: in 1876 catalogues, so from the mid-1870s; some give 1866.
 year = 1876
-sources = ["book:cotw-18 p. 663"]
+sources = ["book:cotw-18 p. 664"]
 
 [bullet]
 type = "lead"

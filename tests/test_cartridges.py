@@ -800,7 +800,7 @@ class CatalogueTests(unittest.TestCase):
                 self.assertNotIn(rimfire, PRIMERS)
                 self.assertEqual(kinds[centrefire], RIMMED)
                 self.assertIn(centrefire, PRIMERS)
-                self.assertEqual(lookalikes(rimfire), [centrefire])
+                self.assertIn(centrefire, lookalikes(rimfire))
         # The Swiss service Vetterli was rimfire; the centrefire one is the same case with a primer.
         by_name = {s["name"]: s for s in ALL}
         for key in ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet"):

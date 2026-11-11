@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["22 winchester automatic", "22 win auto", "22winauto"]
 
 origin = "US"
+# Dropped by Winchester in the 1970s; Aguila's loads for old rifles count as boutique loads (COTW 18 p. 657).
 obsolete = true
 rare = true
 
@@ -19,6 +20,7 @@ bullet = 5.64
 sources = ["book:cotw-18 p. 670"]
 
 [introduced]
+# The year of the Winchester Model 1903 rifle it was made for.
 year = 1903
 sources = ["book:cotw-18 p. 657"]
 

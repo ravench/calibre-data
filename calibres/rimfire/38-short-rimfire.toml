@@ -19,8 +19,9 @@ bullet = 9.52
 sources = ["book:cotw-18 p. 670"]
 
 [introduced]
-# COTW: from the years after 1865; listed in 1869.
-year = 1866
+# COTW: from the years after 1865; first listed in the 1869 Folsom Bros. catalogue (the 1866 Remington
+# revolving rifle took a .38 rimfire without saying which length).
+year = 1869
 sources = ["book:cotw-18 p. 664"]
 
 [bullet]
