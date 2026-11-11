@@ -1,7 +1,9 @@
 # Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
 name = ".22 Winchester Rimfire"
 kind = "rimfire"
-profile = "round"
+# Nose: flat, as in Winchester's first load; Remington's round-nosed version was the .22 Remington
+# Special (COTW 18 p. 660).
+profile = "flat"
 aliases = ["22wrf", "22remspecial", "22remingtonspecial"]
 
 origin = "US"

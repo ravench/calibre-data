@@ -2,7 +2,10 @@
 # Rim R1 and length L6 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
 name = "7x57 mm R"
 kind = "rimmed"
-profile = "spitzer"
+# Nose: round: the round is older than the first pointed service bullet, of 1898 (COTW 18 p. 553).
+profile = "round"
+# Today: pointed, RWS's cone-point load (https://rws-ammunition.com/en/products/centerfire-rifle-cartridges/rws-7x57-r-ks-10-5g).
+profile_today = "spitzer"
 aliases = ["7x57r"]
 
 origin = "DE"

@@ -6,14 +6,15 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO,
                         SMALL_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
-                        INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
+                        INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
                         RARE, is_rare, tags,
                         ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, origin, origin_candidates, is_worldwide,
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, LOOSE_MATERIALS, PLASTIC, loose_material,
-                        LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes, BOOK_SOURCE)
+                        PROFILE_TODAY, LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes,
+                        BOOK_SOURCE)
 
 ALL = [s for _, items in CATALOGUE for s in items]  # the calibres in the apps
 APP_NAMES = {s["name"] for s in ALL}
@@ -593,6 +594,25 @@ class CatalogueTests(unittest.TestCase):
                 year = INTRODUCED.get(s["name"], (None,))[0]
                 if year and year < 1886 and s["oal"] > s["case"] and s["case"] and s["name"] != "7.5 mm Swiss Ordnance 1882":
                     self.assertNotEqual(bullet(s["name"]), JACKETED, s["name"])
+
+    def test_todays_noses_are_kept_beside_the_first_ones(self):
+        # Raven 2026-11-11: draw the nose first sold, and keep today's usual one in the data.
+        early = {".303 British", "7.65x53 mm Argentine", "7x57 mm Mauser", "6.5x57 mm Mauser", "7x57 mm R",
+                 "6.5x55 mm Swedish", "6.5x50 mm SR Arisaka", "7.62x54 mm R", "8x50 mm R Lebel", ".275 Rigby",
+                 ".405 Winchester"}
+        for name in early:
+            self.assertEqual(PROFILE_TODAY.get(name), SPITZER, name)
+        # The 6x57 mm Mauser is no longer loaded, so it has no nose of today.
+        self.assertNotIn("6x57 mm Mauser", PROFILE_TODAY)
+
+    def test_rounds_older_than_pointed_bullets_are_not_drawn_pointed(self):
+        # The profile is the nose of the bullet first sold, and the first pointed service bullet was the
+        # French Balle D of 1898 (COTW 18 p. 553).
+        for _, items in ALL_CATALOGUE:
+            for s in items:
+                year = INTRODUCED.get(s["name"], (None,))[0]
+                if year and year < 1898:
+                    self.assertNotEqual(s["profile"], SPITZER, s["name"])
 
     def test_known_original_bullets(self):
         self.assertEqual(bullet(".22 LR"), LEAD)

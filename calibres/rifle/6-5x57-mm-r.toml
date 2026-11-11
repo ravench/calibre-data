@@ -2,6 +2,8 @@
 # Rim R1 and body P1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
 name = "6.5x57 mm R"
 kind = "rimmed"
+# Nose: pointed, unlike its rimless twin: no source gives the rimmed round's first nose, and the
+# dates found for it (ca. 1910) come after pointed bullets.
 profile = "spitzer"
 aliases = ["6.5x57r"]
 

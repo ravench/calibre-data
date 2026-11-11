@@ -2,7 +2,10 @@
 # 3200 bar against the 7x57's 3900, so 7x57 ammunition is too hot for its guns: its own calibre (2026-11-08).
 name = ".275 Rigby"
 kind = "rimless"
-profile = "spitzer"
+# Nose: round soft point (photo, COTW 18 p. 580).
+profile = "round"
+# Today: pointed, Hornady's 140-grain InterLock SP (https://www.hornady.com/ammunition/rifle/275-rigby-140-gr-interlock-sp).
+profile_today = "spitzer"
 aliases = ["275rigby", "275hvrigby", "275bore"]
 
 origin = "GB"

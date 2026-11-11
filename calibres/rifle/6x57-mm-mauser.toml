@@ -2,7 +2,8 @@
 # The 6.5x57 mm necked down to 6 mm.
 name = "6x57 mm Mauser"
 kind = "rimless"
-profile = "spitzer"
+# Nose: round: the round is older than the first pointed service bullet, of 1898 (COTW 18 p. 553).
+profile = "round"
 aliases = ["6x57", "6.2x57"]
 
 origin = "DE"

@@ -1,7 +1,10 @@
 # Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = "6.5x57 mm Mauser"
 kind = "rimless"
-profile = "spitzer"
+# Nose: round: the round is older than the first pointed service bullet, of 1898 (COTW 18 p. 553).
+profile = "round"
+# Today: pointed, RWS's cone-point load (https://rws-ammunition.com/en/products/centerfire-rifle-cartridges/rws-6-5x57-ks-8-2g).
+profile_today = "spitzer"
 aliases = ["6.5x57"]
 
 origin = "DE"

@@ -1,6 +1,7 @@
 name = ".22 WMR"
 kind = "rimfire"
-profile = "spitzer"
+# Nose: round, the jacketed 40-grain bullet (COTW 18 p. 660, photo).
+profile = "round"
 aliases = ["22mag", "22wmr"]
 display_aliases = [".22 Magnum"]
 

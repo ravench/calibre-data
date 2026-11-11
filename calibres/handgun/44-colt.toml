@@ -1,7 +1,8 @@
 # Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
 name = ".44 Colt"
 kind = "rimmed"
-profile = "flat"
+# Nose: round, the heeled lead bullet (photos, COTW 18 p. 508).
+profile = "round"
 aliases = ["44colt"]
 
 origin = "US"

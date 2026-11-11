@@ -1,6 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 name = "6x58 mm R Forster"
 kind = "rimmed"
+# Nose: COTW 18 (p. 615) gives the bullet's weight, not its nose; left pointed.
 profile = "spitzer"
 aliases = ["6x58r"]
 

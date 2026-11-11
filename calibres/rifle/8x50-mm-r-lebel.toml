@@ -2,7 +2,10 @@
 # shoulder heights estimated for drawing.
 name = "8x50 mm R Lebel"
 kind = "rimmed"
-profile = "spitzer"
+# Nose: flat, the jacketed Balle M of 1886; the pointed Balle D followed in 1898 (COTW 18 p. 553).
+profile = "flat"
+# Today: pointed, since the Balle D of 1898 (COTW 18 p. 553).
+profile_today = "spitzer"
 aliases = ["8lebel", "8x50rlebel"]
 
 origin = "FR"
