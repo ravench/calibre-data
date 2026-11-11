@@ -78,3 +78,27 @@ meaning = ["tracer"]
 description = "M276 dim tracer"
 countries = ["US"]
 sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["purple"]
+meaning = ["ball"]
+description = "British ball"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["red"]
+meaning = ["tracer"]
+description = "British tracer"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["yellow"]
+meaning = ["proof"]
+description = "British proof or standard round"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]

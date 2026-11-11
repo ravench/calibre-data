@@ -407,6 +407,10 @@ class CheckTests(unittest.TestCase):
         self.assertEqual([(t["part"], t["colours"], t["meaning"]) for t in cartridges.COLOUR_CODES["7.5x55 mm Swiss (GP 11)"]],
                          [("tip", ("red",), ("tracer",)), ("base", ("red",), ("tracer",)),
                           ("base", ("purple",), ("armour-piercing",))])
+        uk = [(t["colours"], t["meaning"]) for t in cartridges.COLOUR_CODES[".303 British"] if t["part"] == "annulus"]
+        self.assertIn((("yellow",), ("proof",)), uk)
+        sweden = cartridges.COLOUR_CODES["6.5x55 mm Swedish"]
+        self.assertIn(("base", ("reduced-charge",)), [(t["part"], t["meaning"]) for t in sweden])
         files = {s["name"]: f"calibres/{FOLDER[cat]}/{slug(s['name'])}.toml"
                  for cat, items in cartridges.CATALOGUE for s in items}
         with Copy() as c:  # without them, every other table (the apps' catalogue too) is the same
@@ -426,9 +430,10 @@ class CheckTests(unittest.TestCase):
                  ('meaning = ["armour-piercing"]', 'meaning = "armour-piercing"', r"meaning lists one or more of"),
                  ('meaning = ["armour-piercing"]\n', "", r"\[\[colour_codes\]\] needs 'meaning'"),
                  ('part = "tip"\ncolours = ["black"]', 'colours = ["black"]', r"\[\[colour_codes\]\] needs 'part'"),
-                 ('part = "tip"\ncolours = ["black"]', 'part = "bas"\ncolours = ["black"]', r"part is \"tip\" or \"base\".*did you mean \"base\""),
+                 ('part = "tip"\ncolours = ["black"]', 'part = "bas"\ncolours = ["black"]', r"part is \"tip\", \"base\" or \"annulus\".*did you mean \"base\""),
                  ('part = "tip"\ncolours = ["black"]', 'part = "base"\ncolours = ["black", "red"]', r"a base has one colour, not 2"),
-                 ('part = "tip"\ncolours = ["black"]', 'part = ["tip"]\ncolours = ["black"]', r"part is \"tip\" or \"base\""),
+                 ('part = "tip"\ncolours = ["black"]', 'part = "annulus"\ncolours = ["black", "red"]', r"an annulus has one colour, not 2"),
+                 ('part = "tip"\ncolours = ["black"]', 'part = ["tip"]\ncolours = ["black"]', r"part is \"tip\", \"base\" or \"annulus\""),
                  ('sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]', "sources = []",
                   r"\[\[colour_codes\]\] needs at least one source"),
                  ('sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]\n', "", r"\[\[colour_codes\]\] needs sources"),

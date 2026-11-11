@@ -332,9 +332,9 @@ the source writes (`Vetterli M69/81` is `Vetterli M1869/81`), the same way in ev
 name alone where the whole series fires it and the source names no model (`Berthier`,
 `Snider-Enfield`). Needs a source.
 
-### `[[colour_codes]]`: what painted bullet tips and cartridge bases mean
+### `[[colour_codes]]`: what painted bullet tips, cartridge bases and primer rings mean
 
-Optional, for military rounds whose bullet tip or cartridge base is painted to show what it does: one
+Optional, for military rounds whose bullet tip, cartridge base or primer ring is painted to show what it does: one
 `[[colour_codes]]` table for each code, at the end of the file. Kaliberfinder lists them on the calibre's page (its generator reads
 `COLOUR_CODES`; the sources stay here).
 
@@ -353,13 +353,16 @@ sources = [
 ]
 ```
 
-- `part`: `tip` (the bullet tip) or `base` (the head of the case around the primer, which the Swiss
-  formerly lacquered red for tracer and purple for armour-piercing on their rifle rounds).
+- `part`: `tip` (the bullet tip) or `base` (the head of the case, which the Swiss
+  formerly lacquered red for tracer and purple for armour-piercing on their rifle rounds) or `annulus`
+  (the lacquer ring around the primer, as on British and Czechoslovak rounds). Many armies lacquer the
+  ring only to seal out moisture: add an annulus code only where a source says what its colour means.
 - `colours`: one or more of `black`, `white`, `grey`, `silver`, `red`, `orange`,
   `yellow`, `green`, `blue`, `purple` or `brown`; a tip's from the tip down (`["red", "silver"]`: a red tip above a silver band),
-  a base has one.
+  a base or an annulus has one.
 - `meaning`: one or more of `ball`, `armour-piercing`, `incendiary`, `explosive`, `tracer`,
-  `spotting` (a flash or smoke where it hits, also ranging rounds), `subsonic` or `frangible`; an API
+  `spotting` (a flash or smoke where it hits, also ranging rounds), `subsonic`, `frangible`, `proof` (an
+  overpressure round for proofing weapons) or `reduced-charge` (a lighter load for short-range practice); an API
   round is `["armour-piercing", "incendiary"]`.
 - `description` (optional): the round's name, in English.
 - `countries` (optional): codes from `countries.toml` of the armies that mark it so. The same colours
@@ -437,7 +440,7 @@ in the apps (`Kanone`), whose dicts have `None` for a measurement no source give
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
 `case_head(name)`, `rim_thickness(name)` and `lookalikes(name)` look up one value; `sources(name, table)` lists every source
-of a table (`"mm"`, `"introduced"`, `"primer"`, ...). `COLOUR_CODES` holds the tip and base colour codes, each
+of a table (`"mm"`, `"introduced"`, `"primer"`, ...). `COLOUR_CODES` holds the tip, base and annulus colour codes, each
 with its own sources, and `FIRED_BY` the firearms of a round. A problem in the files stops the import with a
 `DataError` that lists them all.
 
