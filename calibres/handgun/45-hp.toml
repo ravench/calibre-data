@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The .45 ACP case 1 mm shorter, the bullet seated out to the same overall length.
+name = ".45 HP"
+kind = "rimless"
+profile = "round"
+aliases = ["45 hp", "45 auto short", "45 automatic short", "45 acp short"]
+
+origin = "IT"
+rare = true
+
+[mm]
+rim = 12.05
+base = 12.09
+neck = 12.01
+case_length = 21.8
+overall_length = 31.4
+bullet = 11.48
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page81.pdf"]
+
+[introduced]
+unknown = "Made for Italy and other countries that bar the military .45 ACP; COTW 18 p. 514 gives no year."
+sources = ["book:cotw-18 p. 514"]
+
+[primer]
+size = "large-pistol"
+sources = ["book:cotw-18 p. 529"]
+
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.24
+ramp_top = 4.11
+groove_diameter = 10.16
+ramp_angle = 26.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page81.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .45 Winchester Magnum shortened to fit a 1911 magazine, too long for a .45 ACP chamber.
+name = ".451 Detonics Magnum"
+kind = "rimless"
+profile = "round"
+aliases = ["451 detonics", "451 detonics magnum"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 12.22
+base = 12.12
+neck = 12.06
+case_length = 23.98
+overall_length = 32.87
+bullet = 11.46
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+year = 1983
+sources = ["book:cotw-18 p. 511"]
+
+[primer]
+size = "large-pistol"
+sources = ["book:cotw-18 p. 529"]
+
+[case_head]
+# .045 in.
+rim_thickness = 1.14
+sources = ["book:cotw-18 p. 529"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []
