@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A .45 Colt rim on a .45 ACP-length case, for light loads.
+name = ".45 Cowboy Special"
+kind = "rimmed"
+profile = "round"
+aliases = ["45 cowboy special", "cowboy 45 special"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 13.0
+base = 12.19
+neck = 12.09
+case_length = 22.81
+overall_length = 29.72
+bullet = 11.53
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+unknown = "Made for American Cowboy Ammo for Cowboy Action Shooting; COTW 18 p. 518 gives no year."
+sources = ["book:cotw-18 p. 518"]
+
+[primer]
+size = "large-pistol"
+sources = ["book:cotw-18 p. 529"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 529"]
+
+[bullet]
+# COTW 18 p. 518 does not say; light cowboy-action loads are lead.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

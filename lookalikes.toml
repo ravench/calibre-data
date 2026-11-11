@@ -44,9 +44,10 @@ differ_by = ["seating"]
 calibres = [".32 S&W Long", ".32 S&W Long Wadcutter"]
 
 [[group]]
+# The .38 AMU (COTW 18 p. 487) is the .38 Special case semi-rimmed, with a flush wadcutter.
 name = ".38 Special"
-differ_by = ["seating"]
-calibres = [".38 Special", ".38 Special Wadcutter"]
+differ_by = ["seating", "rim"]
+calibres = [".38 Special", ".38 Special Wadcutter", ".38 AMU"]
 
 [[group]]
 name = "7x57 mm"
@@ -70,9 +71,11 @@ differ_by = ["rim", "bore"]
 calibres = ["8x57 mm IS", "8x57 mm IRS", "8x57 mm I", "8x57 mm IR"]
 
 [[group]]
+# The .45 HP is the case 1 mm shorter (COTW 18 p. 514); the .450 SMC takes a small rifle primer
+# for a hotter load (p. 517).
 name = ".45 ACP"
-differ_by = ["rim"]
-calibres = [".45 ACP", ".45 Auto Rim"]
+differ_by = ["rim", "length", "load"]
+calibres = [".45 ACP", ".45 Auto Rim", ".45 HP", ".450 SMC"]
 
 [[group]]
 name = "5.6x50 mm Magnum"
@@ -342,3 +345,31 @@ calibres = [".450 Adams", ".45 Webley"]
 name = ".476 Enfield"
 differ_by = ["length", "bore"]
 calibres = [".476 Enfield", ".455 Webley Mk I", ".455 Webley"]
+
+[[group]]
+name = "10 mm Auto"
+differ_by = ["length"]
+calibres = ["10 mm Auto", "10 mm Magnum"]
+
+[[group]]
+name = ".41 Magnum"
+differ_by = ["length"]
+calibres = [".41 Magnum", ".414 SuperMag"]
+
+[[group]]
+name = ".44 Magnum"
+differ_by = ["length"]
+calibres = [".44 Magnum", ".445 SuperMag"]
+
+[[group]]
+# COTW 18 p. 511: the .45 Winchester Magnum shortened.
+name = ".45 Winchester Magnum"
+differ_by = ["length"]
+calibres = [".45 Winchester Magnum", ".451 Detonics Magnum"]
+
+[[group]]
+# The .45 Colt Government has the Schofield's length and a Colt rim (COTW 18 p. 520); the Cowboy Special
+# a Colt rim on a .45 ACP-length case (p. 518).
+name = ".45 Colt"
+differ_by = ["length"]
+calibres = [".45 Colt", ".45 Schofield", ".45 Colt Government", ".45 Cowboy Special"]

@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Triton's .45 ACP outline with a small rifle primer pocket, for higher pressure (2000).
+name = ".450 SMC"
+kind = "rimless"
+profile = "round"
+aliases = ["450 smc", "450 short magnum cartridge", "450 small magnum cartridge"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 12.09
+base = 12.09
+neck = 12.09
+case_length = 22.81
+overall_length = 29.72
+bullet = 11.48
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+year = 2000
+sources = ["book:cotw-18 p. 517"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 529"]
+
+[case_head]
+# .45 ACP case with a small rifle primer pocket; C.I.P. 45 Auto
+rim_thickness = 1.24
+ramp_top = 4.11
+groove_diameter = 10.16
+ramp_angle = 26.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page76.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

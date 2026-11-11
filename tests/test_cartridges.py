@@ -604,7 +604,7 @@ class CatalogueTests(unittest.TestCase):
                                            ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
                                            ".500 Express 3 inch", ".500/450 Magnum Express",
                                            ".32 Protector", "7.7 mm Bittner", ".380 Long Revolver",
-                                           "9.4 mm Dutch", ".44 Merwin & Hulbert",
+                                           "9.4 mm Dutch", ".44 Merwin & Hulbert", ".45 Cowboy Special",
                                            # Paper-patched under its steel cap; the file says how it is known.
                                            "7.5x53.5 mm Swiss (GP 1890)"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
