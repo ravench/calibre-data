@@ -276,8 +276,9 @@ class OutlineTests(unittest.TestCase):
     def test_unsourced_shoulders_keep_the_default(self):
         self.assertEqual(cartridges.shoulder_angle("New calibre"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
-    # Rimless and belted cases without a C.I.P. head (or a parent case that has one); they keep the
-    # generic head. A new rimless or belted calibre needs a head in CASE_HEADS or a place here.
+    # Rimless and belted cases without an extractor groove from a C.I.P. sheet (or a parent case that has
+    # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
+    # rimless or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
         ".22 ARC", ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".26 Nosler", ".27 Nosler",
         ".277 SIG Fury", ".28 Nosler", ".30 Carbine", ".30 Nosler", ".30 Remington AR",
@@ -357,14 +358,31 @@ class OutlineTests(unittest.TestCase):
         self.assertGreater(drawn, 330)
 
     def test_rim_thicknesses_follow_their_sources(self):
-        values = {".30-30 Winchester": 1.6, "11x60 mm R Mauser": 2.4,  # R on the C.I.P. sheets
-                  ".22 LR": 1.02, ".470 Nitro Express": 1.02, ".38 Special": 1.37,  # .040, .040, .054 in, COTW 18
+        values = {".30-30 Winchester": 1.6, "11x60 mm R Mauser": 2.4, ".470 Nitro Express": 1.02,  # C.I.P. R
+                  ".22 LR": 1.02, ".38 Special": 1.37,  # .040 and .054 in, COTW 18
                   "7.62x38 mm R Nagant": 1.22}  # .048 in, Donnelly
         for name, t in values.items():
             self.assertEqual(cartridges.rim_thickness(name), t, name)
-        self.assertIsNone(cartridges.rim_thickness(".32 Short Rimfire"))
-        unsourced = next(s for _, s in outline.specs() if s["name"] == ".32 Short Rimfire")
-        self.assertEqual(outline.case_profile(unsourced)[1][1], outline.RIMFIRE_RIM)
+
+    def test_rims_without_a_source_keep_the_old_drawing(self):
+        # A rim no source gives a thickness is drawn as before rim thicknesses came in (2026-11-11).
+        by_name = {s["name"]: s for _, s in outline.specs()}
+
+        def head(name, n):
+            self.assertIsNone(cartridges.rim_thickness(name), name)
+            return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(by_name[name])[:n]]
+        self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
+        self.assertEqual(head(".44 Colt", 3), [(6.15, 0), (6.15, 1.5), (5.8, 1.5)])
+        self.assertEqual(head("9x23 mm Largo", 5), [(4.95, 0), (4.95, 1.3), (4.0631, 1.3), (4.0631, 2.6), (4.955, 3.3)])
+        self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.2574, 1.3), (8.2574, 2.6), (10.15, 3.3),
+                                               (10.15, 6.2), (9.919, 6.2)])
+
+    def test_a_generic_groove_follows_the_rim_thickness(self):
+        # .308 Norma Magnum: rim .048 in (COTW 18), no C.I.P. groove; the generic groove and belt move up with it.
+        s = next(s for _, s in outline.specs() if s["name"] == ".308 Norma Magnum")
+        self.assertEqual([(round(r, 4), round(h, 4)) for r, h in outline.case_profile(s)[:7]],
+                         [(6.75, 0), (6.75, 1.22), (5.33, 1.22), (5.33, 2.52), (6.75, 3.22), (6.75, 6.12),
+                          (6.4025, 6.12)])
 
 if __name__ == "__main__":
     unittest.main()

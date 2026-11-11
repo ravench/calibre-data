@@ -250,6 +250,12 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, "ramp_angle = 36.0\n", "")
             self.assertProblem(c, WIN, r"ramp_top, groove_diameter and ramp_angle together, or only rim_thickness")
 
+    def test_a_shot_shell_has_no_case_head(self):
+        with Copy() as c:
+            shell = "calibres/shotgun/12-70.toml"
+            c.write(shell, c.read(shell) + '\n[case_head]\nrim_thickness = 1.5\nsources = ["https://saami.org/"]\n')
+            self.assertProblem(c, shell, r"a shot calibre has no \[case_head\]")
+
     def test_a_rimmed_case_head_has_no_groove(self):
         with Copy() as c:
             c.edit(LR, "rim_thickness = 1.02\n", "rim_thickness = 1.02\nramp_top = 2.0\ngroove_diameter = 6.0\n"

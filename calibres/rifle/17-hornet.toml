@@ -37,9 +37,9 @@ degrees = 21
 sources = ["https://municion.org/producto/17-hornet/"]
 
 [case_head]
-# .050 in.
-rim_thickness = 1.27
-sources = ["book:cotw-18 p. 175"]
+# R on the C.I.P. sheet.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf"]
 
 [bullet]
 type = "polymer"

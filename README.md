@@ -273,7 +273,10 @@ belted cases add their extractor groove where a C.I.P. sheet gives it, all three
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
 A case made from a parent case without its own sheet keeps the parent's head (the note says which).
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
-its dimension tables, Donnelly as E); the note gives the printed inches. A rim without a thickness is
+its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal
+rather than the C.I.P. maximum, so a calibre from a book can have a rim up to about 0.3 mm thinner
+than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadcutter 1.5 mm from
+the sheet). A rim without a thickness is
 drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless and belted); rimless and belted
 cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outline.py` lists them).
 
@@ -439,7 +442,8 @@ the apps do not know or that is missing from `order.toml`, names in `order.toml`
 needs Python 3.11 or newer.
 
 The tests (`python3 -m unittest discover -s tests`) also check the catalogue as a whole: a bottleneck
-case without a shoulder angle or a rimless case without a case head must be listed in
+case without a shoulder angle or a rimless or belted case without an extractor groove in its
+`[case_head]` must be listed in
 `tests/test_outline.py`, and calibres that look exactly the same need a group in `lookalikes.toml`.
 
 ## Using it

@@ -29,9 +29,9 @@ size = "small-rifle"
 sources = ["https://municion.org/producto/35-winchester-self-loading/"]
 
 [case_head]
-# .045 in.
-rim_thickness = 1.14
-sources = ["book:cotw-18 p. 250"]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page87.pdf"]
 
 [bullet]
 type = "softpoint"

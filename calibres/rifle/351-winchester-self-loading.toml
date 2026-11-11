@@ -26,9 +26,9 @@ size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading"]
 
 [case_head]
-# .045 in.
-rim_thickness = 1.14
-sources = ["book:cotw-18 p. 250"]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/351-win-sl-en.pdf"]
 
 [bullet]
 type = "softpoint"

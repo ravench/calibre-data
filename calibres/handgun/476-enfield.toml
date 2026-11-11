@@ -27,7 +27,7 @@ size = "small-pistol"
 sources = ["https://municion.org/producto/476-enfield-revolver-mk-iii/"]
 
 [case_head]
-# .040 in.
+# .04 in.
 rim_thickness = 1.02
 sources = ["book:donnelly p. 649"]
 

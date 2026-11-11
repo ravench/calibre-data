@@ -36,7 +36,7 @@ degrees = 38.7
 sources = ["https://municion.org/producto/26-nosler/"]
 
 [case_head]
-# .050 in.
+# .05 in.
 rim_thickness = 1.27
 sources = ["book:cotw-18 p. 175"]
 
