@@ -427,5 +427,5 @@ calibres = [".38-56 WCF", ".38-70 Winchester"]
 
 [[group]]
 name = ".38-40 Remington-Hepburn"
-differ_by = ["length", "bore"]
+differ_by = ["bore", "length"]
 calibres = [".38-40 Remington-Hepburn", ".38-50 Remington-Hepburn"]

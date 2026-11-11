@@ -13,13 +13,13 @@ rare = true
 rim = 12.01
 base = 11.94
 shoulder = 11.2
-shoulder_at = 54.7
+shoulder_at = 49.49
 neck = 8.64
 case_length = 64.52
 overall_length = 84.84
 bullet = 7.82
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 250"]
+# shoulder_at is L1 on the .30-06's C.I.P. sheet: the .30-06 is this case with a shorter neck (COTW 18 p. 197).
+sources = ["book:cotw-18 p. 250", "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
 
 [introduced]
 year = 1903
@@ -28,6 +28,11 @@ sources = ["book:cotw-18 p. 197"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 250"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the .30-06's C.I.P. sheet.
+degrees = 17.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
 
 [case_head]
 # the .30-06 kept this case's head; C.I.P. 30-06 Spring.

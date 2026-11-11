@@ -22,7 +22,7 @@ sources = ["book:cotw-18 p. 250"]
 [introduced]
 # COTW: probably developed around 1880.
 year = 1880
-sources = ["book:cotw-18 p. 196"]
+sources = ["book:cotw-18 p. 197"]
 
 [primer]
 size = "large-rifle"
