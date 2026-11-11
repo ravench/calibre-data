@@ -214,9 +214,12 @@ differ_by = ["ignition"]
 calibres = [".44 Henry", ".44 Henry Centrefire"]
 
 [[group]]
-name = ".32 Long Rimfire"
-differ_by = ["ignition"]
-calibres = [".32 Long Rimfire", ".32 Long Centrefire"]
+# COTW 18 pp. 662-664: the .32 rimfires of one bore in four lengths (the Long Rifle sits between the Long and
+# the Extra Long and fires in Extra Long rifles), and the centrefire Long and Extra Long.
+name = ".32 Long"
+differ_by = ["ignition", "length"]
+calibres = [".32 Long Rimfire", ".32 Short Rimfire", ".32 Long Rifle Rimfire", ".32 Extra Long Rimfire",
+            ".32 Long Centrefire", ".32 Extra Long Centrefire"]
 
 # The Swiss service revolver 1872 was converted to centrefire in 1878 (Ordonnanzrevolver 1872/78).
 [[group]]
@@ -410,9 +413,11 @@ differ_by = ["length"]
 calibres = [".35-30 Maynard 1882", ".35-40 Maynard 1882"]
 
 [[group]]
-name = ".38 Long Centrefire"
-differ_by = ["length"]
-calibres = [".38 Long Centrefire", ".38 Extra Long Centrefire"]
+# The centrefire Long and Extra Long are the rimfire rounds made centrefire.
+name = ".38 Long"
+differ_by = ["ignition", "length"]
+calibres = [".38 Long Rimfire", ".38 Short Rimfire", ".38 Extra Long Rimfire", ".38 Long Centrefire",
+            ".38 Extra Long Centrefire"]
 
 [[group]]
 # Both rounds of the Winchester Model 1905 self-loading rifle (COTW 18 p. 203).
@@ -479,9 +484,11 @@ differ_by = ["length"]
 calibres = [".44 Evans Short", ".44 Evans Long"]
 
 [[group]]
-name = ".44 Long Centrefire"
-differ_by = ["length"]
-calibres = [".44 Long Centrefire", ".44 Extra Long Centrefire"]
+# The centrefire Long and Extra Long are the rimfire rounds made centrefire.
+name = ".44 Long"
+differ_by = ["ignition", "bore", "length"]
+calibres = [".44 Long Rimfire", ".44 Short Rimfire", ".44 Extra Long Rimfire", ".44 Long Centrefire",
+            ".44 Extra Long Centrefire"]
 
 [[group]]
 # COTW 18 pp. 232-233: the .44-90 Remington Special looks like the 44-90 Sharps, shorter and a little
@@ -514,3 +521,55 @@ calibres = [".50-90 Sharps", ".50-140 Sharps"]
 name = ".300 AAC Blackout"
 differ_by = ["length"]
 calibres = [".300 AAC Blackout", "7.62x40 mm WT", ".300 HAM'R"]
+
+[[group]]
+# COTW 18 p. 656: the .22 LR case with a .21 bullet.
+name = ".22 LR"
+differ_by = ["bore"]
+calibres = [".22 LR", ".21 Sharp"]
+
+[[group]]
+# COTW 18 pp. 657 and 660: smokeless-only rounds for the Winchester 1903 and the Remington Model 16
+# autoloaders; they do not interchange.
+name = ".22 Winchester Automatic"
+differ_by = ["bore"]
+calibres = [".22 Winchester Automatic", ".22 Remington Automatic"]
+
+[[group]]
+name = ".22 BB Cap"
+differ_by = ["length", "seating"]
+calibres = [".22 BB Cap", ".22 CB Cap"]
+
+[[group]]
+# COTW 18 p. 661: the short one fires in .25 Stevens rifles.
+name = ".25 Stevens"
+differ_by = ["length"]
+calibres = [".25 Stevens", ".25 Stevens Short"]
+
+[[group]]
+name = ".30 Short Rimfire"
+differ_by = ["bore", "length"]
+calibres = [".30 Short Rimfire", ".30 Long Rimfire"]
+
+[[group]]
+# Both for the Protector palm pistol: the rimfire .32 Extra Short was also called the .32 Protector
+# (COTW 18 p. 663), and the centrefire one was made for the same pistol (p. 465).
+name = ".32 Extra Short Rimfire"
+differ_by = ["ignition", "bore"]
+calibres = [".32 Extra Short Rimfire", ".32 Protector"]
+
+[[group]]
+name = ".41 Short"
+differ_by = ["length"]
+calibres = [".41 Short", ".41 Long Rimfire"]
+
+[[group]]
+name = ".46 Short Rimfire"
+differ_by = ["bore", "length"]
+calibres = [".46 Short Rimfire", ".46 Long Rimfire", ".46 Extra Long Rimfire"]
+
+[[group]]
+# The Spencer .56 case with other bullets and lengths (COTW 18 pp. 667-668).
+name = ".56-56 Spencer"
+differ_by = ["bore", "length"]
+calibres = [".56-56 Spencer", ".56-50 Spencer", ".56-52 Spencer", ".56-52 Spencer Necked", ".56-46 Spencer"]

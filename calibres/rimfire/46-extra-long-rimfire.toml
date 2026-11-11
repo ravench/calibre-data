@@ -1,0 +1,32 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Ballard single-shot rifle, loaded only by Remington; gone after World War I.
+name = ".46 Extra Long Rimfire"
+kind = "rimfire"
+profile = "round"
+aliases = ["46 extra long rf", "46 extra long rimfire"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.33
+base = 11.61
+neck = 11.61
+case_length = 38.96
+overall_length = 58.04
+bullet = 11.66
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+unknown = "COTW 18 p. 667 places it only after 1871, as the Remington catalogue of that year lacks it."
+sources = ["book:cotw-18 p. 667"]
+
+[bullet]
+# COTW 18 p. 667 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

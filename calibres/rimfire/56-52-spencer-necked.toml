@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .56-52 with Spencer's slight neck; it fires in the same arms as the straight one.
+name = ".56-52 Spencer Necked"
+kind = "rimfire"
+profile = "round"
+aliases = ["56-52 spencer necked"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.31
+base = 14.22
+shoulder = 14.17
+shoulder_at = 12.4
+neck = 13.89
+case_length = 25.91
+overall_length = 42.16
+bullet = 13.33
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+year = 1866
+sources = ["book:cotw-18 p. 668"]
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 670"]
+
+[bullet]
+# COTW 18 p. 668 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

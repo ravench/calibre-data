@@ -1,0 +1,33 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Bliss (Bacon & Bliss) revolver and other cheap handguns; listed until 1920.
+name = ".25 Short Rimfire"
+kind = "rimfire"
+profile = "round"
+aliases = ["25 short", "25 short rf", "25 bacon & bliss"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 7.37
+base = 6.22
+neck = 6.22
+case_length = 11.89
+overall_length = 19.81
+bullet = 6.25
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: about 1860.
+year = 1860
+sources = ["book:cotw-18 p. 661"]
+
+[bullet]
+# COTW 18 p. 661 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

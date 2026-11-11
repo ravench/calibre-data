@@ -1,0 +1,32 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A post-Civil War revolver and rifle round, listed in an 1869 gun catalogue.
+name = ".38 Short Rimfire"
+kind = "rimfire"
+profile = "round"
+aliases = ["38 short rf", "38 short rimfire"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.07
+base = 9.55
+neck = 9.55
+case_length = 19.51
+overall_length = 30.1
+bullet = 9.52
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: from the years after 1865; listed in 1869.
+year = 1866
+sources = ["book:cotw-18 p. 664"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 664"]
+
+[case]
+material = "brass"
+sources = []

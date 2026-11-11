@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Winchester's lead-free answer to the .22 LR: the same case with a full-diameter .21 bullet, so only the barrel
+# changes.
+name = ".21 Sharp"
+kind = "rimfire"
+profile = "round"
+aliases = ["21 sharp", "21sharp"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 6.99
+base = 5.71
+neck = 5.69
+case_length = 15.11
+overall_length = 24.76
+bullet = 5.33
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+year = 2024
+sources = ["book:cotw-18 p. 656"]
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 670"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -608,6 +608,14 @@ class CatalogueTests(unittest.TestCase):
                                            ".25-20 Single-Shot", ".25-21 Stevens", ".338-06 A-Square",
                                            ".40-65 Ballard Everlasting", ".44-40 Extra Long", ".44 Long Centrefire",
                                            ".44-75 Ballard Everlasting", ".45-100 Remington Necked",
+                                           # Rimfire rounds whose page does not name the bullet.
+                                           ".22 CB Cap", ".22 Winchester Automatic", ".25 Short Rimfire",
+                                           ".25 Stevens Short", ".30 Long Rimfire", ".38 Long Rimfire",
+                                           ".38 Extra Long Rimfire", ".41 Long Rimfire", ".44 Short Rimfire",
+                                           ".44 Long Rimfire", ".44 Extra Long Rimfire", ".46 Short Rimfire",
+                                           ".46 Long Rimfire", ".46 Extra Long Rimfire", ".56-46 Spencer",
+                                           ".50 Remington Navy Rimfire", ".56-50 Spencer", ".56-52 Spencer",
+                                           ".56-52 Spencer Necked", ".58 Miller",
                                            # Paper-patched under its steel cap; the file says how it is known.
                                            "7.5x53.5 mm Swiss (GP 1890)"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
