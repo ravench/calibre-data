@@ -8,8 +8,6 @@ aliases = ["6x47", "6x47sm", "6x47 sm", "swiss match", "6mm sm"]
 display_aliases = ["6x47 Swiss Match"]
 
 origin = "CH"
-# Few rifles were made for it, and it is hardly found outside Switzerland (Raven 2026-11-11).
-rare = true
 
 [mm]
 rim = 12.01
