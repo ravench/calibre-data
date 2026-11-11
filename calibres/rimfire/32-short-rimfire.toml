@@ -27,5 +27,6 @@ type = "lead"
 sources = ["https://municion.org/producto/32-short-rf/"]
 
 [case]
-material = "brass"
-sources = []
+# The photo shows copper-cased rounds of the Union Metallic Cartridge Co. next to their box.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:32_Rim-Fire_UMC_Cartridges.jpg"]

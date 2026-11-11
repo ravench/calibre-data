@@ -41,10 +41,13 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
 
 [case]
-material = "brass"
-sources = []
+# Frankford Arsenal's first army rounds (1873/74) and its 1875 Schofield round had copper cases; the photo
+# shows both next to a brass one of today.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:Colt_.45_LC_Cartridges.JPG"]
 
 [current_cases]
-# CCI Blazer's aluminium cases.
-materials = ["aluminium"]
-sources = ["https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]
+# Brass (the round of today in the photo); CCI Blazer's aluminium cases.
+materials = ["brass", "aluminium"]
+sources = ["https://commons.wikimedia.org/wiki/File:Colt_.45_LC_Cartridges.JPG",
+           "https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]

@@ -717,9 +717,12 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(current_case_materials("23x152 mm B"), (STEEL,))
         # Raven 2026-11-11: aluminium too. CCI's Blazer Aluminum line; the Apache's LW30 rounds (Jane's p. 112).
         for name in ("6.35 mm Browning (.25 ACP)", "7.65 mm Browning (.32 ACP)", "9 mm Browning kurz (.380 ACP)",
-                     ".38 Special", ".357 Magnum", ".40 S&W", "10 mm Auto", ".44 Special", ".44 Magnum", ".45 Colt",
+                     ".38 Special", ".357 Magnum", ".40 S&W", "10 mm Auto", ".44 Special", ".44 Magnum",
                      "30x113 mm B"):
             self.assertEqual(current_case_materials(name), (ALUMINIUM,), name)
+        # Copper first (Frankford Arsenal's 1873/74 rounds), brass and aluminium today.
+        self.assertEqual(current_case_materials(".45 Colt"), (BRASS, ALUMINIUM))
+        self.assertEqual(current_case_materials(".44 Colt"), (BRASS,))
         self.assertEqual(current_case_materials(".45 ACP"), (STEEL, ALUMINIUM))
         # The GAU-8's aluminium case first, the KCA's steel too (Jane's 2002 pp. 105, 112-113).
         self.assertEqual(current_case_materials("30x173 mm"), (STEEL,))
@@ -738,6 +741,13 @@ class CatalogueTests(unittest.TestCase):
         for name, material in expected.items():
             self.assertEqual(case_material(name), material, name)
             self.assertTrue(CASES[name][1], name)
+
+    def test_copper_cases_seen_on_wikimedia_commons_photos(self):
+        # Raven 2026-11-11: look at the Wikipedia photos of the old rounds whose case was an unchecked brass.
+        for name in (".22 BB Cap", ".22 Extra Long", ".32 Short Rimfire", ".38 Long Rimfire", ".41 Short",
+                     ".44 Colt", ".45 Colt"):
+            self.assertEqual(case_material(name), COPPER, name)
+            self.assertTrue(CASES[name][1].startswith("https://commons.wikimedia.org/wiki/File:"), name)
 
 
     def test_bbs_are_loose_steel_or_plastic_balls(self):

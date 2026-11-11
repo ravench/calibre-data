@@ -32,5 +32,12 @@ type = "lead"
 sources = ["https://municion.org/producto/44-colt-remington-army-revolver/"]
 
 [case]
-material = "brass"
-sources = []
+# The army's Benét-primed round (Frankford Arsenal's inside primer) had a copper case; the photo shows it
+# next to later brass ones.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:44_Colt.JPG"]
+
+[current_cases]
+# Starline's brass cases.
+materials = ["brass"]
+sources = ["https://starlinebrass.com/44-colt-brass"]
