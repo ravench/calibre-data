@@ -43,7 +43,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf"]
 
 [bullet]
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 115"]
 
 [case]
 material = "brass"

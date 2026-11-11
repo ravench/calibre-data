@@ -27,7 +27,7 @@ sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 
 [bullet]
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 460"]
 
 [case]
 material = "brass"

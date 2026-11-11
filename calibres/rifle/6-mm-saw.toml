@@ -32,7 +32,7 @@ sources = []
 
 [bullet]
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 536"]
 
 [case]
 # COTW names varnished steel and aluminium cases without saying which came first; steel is kept.

@@ -45,7 +45,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801
 
 [bullet]
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 91"]
 
 [case]
 material = "brass"

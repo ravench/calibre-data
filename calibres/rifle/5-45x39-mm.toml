@@ -44,7 +44,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page2.pdf"]
 
 [bullet]
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 533"]
 
 [case]
 # Lacquered steel: 5.45x39 from the start; 7.62x39 since the early 1960s (bimetal before).
