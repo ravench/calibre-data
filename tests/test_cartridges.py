@@ -625,9 +625,8 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(case_material(".277 SIG Fury"), HYBRID)
 
     def test_current_case_materials_differ_from_the_original(self):
-        names = {s["name"] for _, items in CATALOGUE for s in items}
         for name, (materials, url) in CURRENT_CASES.items():
-            self.assertIn(name, names)
+            self.assertIn(name, NAMES)
             self.assertTrue(materials, name)
             self.assertNotIn(case_material(name), materials, name)
             self.assertTrue(set(materials) <= {BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID}, name)
@@ -635,6 +634,20 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(current_case_materials(".45-70 Government"), (BRASS,))
         self.assertEqual(current_case_materials("9x19 mm"), (STEEL,))
         self.assertEqual(current_case_materials("7.5x55 mm Swiss (GP 11)"), ())
+        # The ZU-23's steel case followed the VYa-23's brass one (Jane's 2002 p. 91).
+        self.assertEqual(current_case_materials("23x152 mm B"), (STEEL,))
+
+    def test_case_materials_checked_2026_11_11(self):
+        # Raven 2026-11-11: check every calibre's case material. COTW 18, Jane's 2002 and Gun Digest name
+        # these. Rounds whose sources give brass or steel alike (9x18 mm Makarov, 12.7x108 mm, 7.62x45 mm
+        # vz. 52, 20x102 mm, 20x139 mm, 30x113 mm B) stay brass.
+        expected = {"7.92x33 mm Kurz": STEEL, "5.45x18 mm": STEEL, "5.8x42 mm": STEEL, "9x39 mm": STEEL,
+                    "6 mm SAW": STEEL, ".22 Short": COPPER, "27x145 mm B": STEEL, "30x165 mm": STEEL,
+                    "30x173 mm": STEEL, "35x228 mm": STEEL, "23x152 mm B": BRASS, "40x311 mm R": BRASS,
+                    "40x365 mm R": BRASS}
+        for name, material in expected.items():
+            self.assertEqual(case_material(name), material, name)
+            self.assertTrue(CASES[name][1], name)
 
 
     def test_bbs_are_loose_steel_or_plastic_balls(self):

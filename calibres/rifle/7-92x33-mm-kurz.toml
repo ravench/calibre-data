@@ -46,5 +46,6 @@ ramp_angle = 31.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page53.pdf"]
 
 [case]
-material = "brass"
-sources = []
+# Lacquered steel: the round was only ever made as military ammunition.
+material = "steel"
+sources = ["book:cotw-18 p. 555"]

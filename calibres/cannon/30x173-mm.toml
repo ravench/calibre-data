@@ -26,5 +26,7 @@ year = 1977
 sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
 
 [case]
-material = "brass"
-sources = []
+# Lacquered steel for the Oerlikon KCA rounds, the original; the GAU-8 and some MK 30 rounds
+# have aluminium cases (p. 112-113), not a material here yet.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 105"]

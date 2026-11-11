@@ -27,5 +27,6 @@ year = 1963
 sources = ["https://en.wikipedia.org/wiki/Oerlikon_GDF"]
 
 [case]
-material = "brass"
-sources = []
+# Drawn low-carbon steel.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 117"]

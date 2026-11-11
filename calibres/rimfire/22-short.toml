@@ -30,5 +30,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Short"]
 
 [case]
-material = "brass"
-sources = []
+# Smith & Wesson's first rimfire case was soft copper; brass by the 1880s.
+material = "copper"
+sources = ["https://gundigest.com/gear-ammo/ammunition/rimfire-history"]

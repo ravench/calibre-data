@@ -31,5 +31,6 @@ size = "large-rifle"
 sources = []
 
 [case]
-material = "brass"
-sources = []
+# Varnished steel; aluminium cases were made too (not a material here yet).
+material = "steel"
+sources = ["book:cotw-18 p. 535"]

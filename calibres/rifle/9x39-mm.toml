@@ -52,5 +52,6 @@ sources = [
 ]
 
 [case]
-material = "brass"
-sources = []
+# Lacquered steel.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 44"]
