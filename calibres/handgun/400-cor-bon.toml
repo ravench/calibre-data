@@ -44,8 +44,9 @@ ramp_angle = 26.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page76.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Cor-Bon's factory loads: jacketed hollow points.
+type = "hollowpoint"
+sources = ["book:cotw-18 p. 419"]
 
 [case]
 material = "brass"

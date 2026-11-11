@@ -11,7 +11,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PR
                         ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, origin, origin_candidates, is_worldwide,
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT,
-                        BULLET_TYPES, bullet,
+                        bullet,
                         CASES, BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, PLASTIC, loose_material, CARTRIDGE_BULLETS, LOOSE_BULLETS, is_blank,
                         PROFILE_TODAY, LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes,
@@ -681,6 +681,8 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(bullet("6.5 mm Creedmoor"), POLYMER_TIP)
         self.assertEqual(bullet(".22 TCM"), HOLLOW_POINT)
         self.assertEqual(bullet("5 mm Remington Rimfire Magnum"), HOLLOW_POINT)
+        self.assertEqual(bullet(".25 NAA"), HOLLOW_POINT)
+        self.assertEqual(bullet(".32 NAA"), JACKETED)  # also sold with full metal jackets
 
     def test_case_materials(self):
         names = {s["name"] for _, items in ALL_CATALOGUE for s in items}

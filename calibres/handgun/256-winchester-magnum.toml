@@ -41,8 +41,10 @@ rim_thickness = 1.4
 sources = ["book:cotw-18 p. 527"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Winchester, its only maker, loaded a soft point; Wikipedia calls it an «open point expanding»
+# bullet.
+type = "softpoint"
+sources = ["book:cotw-18 p. 462"]
 
 [case]
 material = "brass"

@@ -122,9 +122,14 @@ PAPER_HEAD = 12.7
 HOLLOW_MOUTH, HOLLOW_DEPTH = 0.3, 0.8
 
 
-def hollow_profile(r, y0, top):
-    """Right half of a hollow-point bullet: the flat-nosed profile with a cavity in its flat."""
-    return bullet_profile(r, y0, top, FLAT)[:-1] + [(HOLLOW_MOUTH * r, top), (0, top - HOLLOW_DEPTH * r)]
+def hollow_profile(r, y0, top, profile):
+    """Right half of a hollow-point bullet: the round's own nose, cut off where it is as wide as the
+    cavity's mouth, with the cavity below the cut (at most 0.3 of the exposed bullet deep)."""
+    pts, m = bullet_profile(r, y0, top, profile), HOLLOW_MOUTH * r
+    i = next(i for i, (x, _) in enumerate(pts) if x <= m)
+    (xa, ya), (xb, yb) = pts[i - 1], pts[i]
+    y = ya + (xa - m) / (xa - xb) * (yb - ya)
+    return pts[:i] + [(m, y), (0, y - min(HOLLOW_DEPTH * r, 0.3 * (y - y0)))]
 
 
 def tip_profile(right, top, share=TIP_SHARE):
@@ -191,7 +196,7 @@ def outline(s):
         if s["oal"] > s["case"] + 0.1:
             kind = bullet(s["name"])
             r, y0, top = s["bullet"] / 2, s["case"], s["oal"]
-            right = hollow_profile(r, y0, top) if kind == HOLLOW_POINT else bullet_profile(r, y0, top, s["profile"])
+            right = hollow_profile(r, y0, top, s["profile"]) if kind == HOLLOW_POINT else bullet_profile(r, y0, top, s["profile"])
             paths["bullet"] = to_path(mirror(right), H, hw)
             if s["profile"] == PATCHED:
                 # The bullet path is the whole silhouette (steel cap colour); the paper band goes on top.

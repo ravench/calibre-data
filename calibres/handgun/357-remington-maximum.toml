@@ -31,8 +31,9 @@ rim_thickness = 1.4
 sources = ["book:cotw-18 p. 528"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# The factory load: a jacketed hollow point.
+type = "hollowpoint"
+sources = ["book:cotw-18 p. 489"]
 
 [case]
 material = "brass"

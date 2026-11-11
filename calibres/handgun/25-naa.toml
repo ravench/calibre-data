@@ -44,8 +44,9 @@ ramp_angle = 20.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page12.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# The only load, made for North American Arms under a Cor-Bon headstamp: a jacketed hollow point.
+type = "hollowpoint"
+sources = ["book:cotw-18 p. 462"]
 
 [case]
 material = "brass"
