@@ -140,6 +140,13 @@ class CatalogueTests(unittest.TestCase):
         self.assertIn("gp90/23", gp23["aliases"])
         self.assertNotIn("gp90/23", gp["aliases"])
         self.assertEqual(INTRODUCED["7.5x54.5 mm Swiss (GP 90/23)"][0], 1923)
+
+    def test_gp1890_follows_the_1892_drawing(self):
+        # «Patrone, Modell 1890», Eidg. Munitionsfabrik Thun, 1 Feb 1892 (Federal Archives E27#1000/721#18612*).
+        gp = next(s for s in ALL if s["name"] == "7.5x53.5 mm Swiss (GP 1890)")
+        self.assertEqual((gp["case"], gp["shoulder"], gp["sh_at"], gp["neck"], gp["oal"], gp["bullet"]),
+                         (53.5, 11.5, 44.5, 8.5, 77.2, 8.15))
+        self.assertIn("patrone modell 1890", gp["aliases"])
         # Federal Council decisions of 1 July 1890 and 6 March 1903 (Federal Archives minutes).
         self.assertEqual(INTRODUCED["7.5x53.5 mm Swiss (GP 1890)"][0], 1890)
         self.assertIn("gewehrpatrone 1890/1903", gp["aliases"])
@@ -628,8 +635,6 @@ class CatalogueTests(unittest.TestCase):
                                            ".46 Long Rimfire", ".46 Extra Long Rimfire", ".56-46 Spencer",
                                            ".50 Remington Navy Rimfire", ".56-50 Spencer", ".56-52 Spencer",
                                            ".56-52 Spencer Necked", ".58 Miller",
-                                           # Paper-patched under its steel cap; the file says how it is known.
-                                           "7.5x53.5 mm Swiss (GP 1890)",
                                            # Proprietary hunting rounds whose page gives bullet weights only.
                                            "7.82 Lazzeroni Patriot", "8.59 Lazzeroni Galaxy",
                                            "9.09 Lazzeroni Eagle", "7 mm Dakota", ".300 Dakota", ".330 Dakota",
