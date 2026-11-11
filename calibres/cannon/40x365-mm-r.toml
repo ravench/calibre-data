@@ -1,6 +1,7 @@
-# The round of the Bofors 40 mm L/70 gun. Its name gives the bore and case length, Wikipedia the
-# cartridge length of most of its rounds (the PFHE and AP-T rounds differ). Wikipedia's text has it
-# in Swedish service in 1951, its infobox 1952.
+# The round of the Bofors 40 mm L/70 gun. Its name gives the bore and case length, Rapid Fire's
+# table (as 40x364R) the rim and base, Wikipedia the cartridge length of most of its rounds (the
+# PFHE and AP-T rounds differ). Wikipedia's text has it in Swedish service in 1951, its infobox
+# 1952.
 name = "40x365 mm R"
 kind = "rimmed"
 profile = "spitzer"
@@ -8,10 +9,16 @@ aliases = ["40x365r", "40x364r", "40 mm bofors l/70"]
 origin = "SE"
 
 [mm]
+rim = 65.0
+base = 57.9
 case_length = 365.0
 overall_length = 535.0
 bullet = 40.0
-sources = ["https://en.wikipedia.org/wiki/Bofors_40_mm_Automatic_Gun_L/70", "https://www.navweaps.com/Weapons/WNSweden_4cm-70_m1948.php"]
+sources = [
+  "book:rapid-fire p. 230",
+  "https://en.wikipedia.org/wiki/Bofors_40_mm_Automatic_Gun_L/70",
+  "https://www.navweaps.com/Weapons/WNSweden_4cm-70_m1948.php",
+]
 
 [introduced]
 year = 1951

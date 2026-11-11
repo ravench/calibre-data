@@ -224,7 +224,11 @@ start at the .200 line where the base diameter is measured, not at the head; suc
 *Jane's Ammunition Handbook* (2002-2003, pp. 681-682) and the round lengths of the US Army data
 sheets TM 43-0001-27 (1994). Their figures also gave the cannon rounds the diameters and lengths
 their names and web sources left out; Jane's table measures some cannon cases 0.5 to 1 mm shorter
-than their names (25x137 at 136.5 mm), and the names' lengths were kept.
+than their names (25x137 at 136.5 mm), and the names' lengths were kept. The cartridge table of
+Williams's *Rapid Fire* (2000, pp. 225-230) then gave the other cannon rounds their rim and base:
+20x139 (whose rim Jane's table and Jane's own entry give differently), 30x165, 35x228 and the two
+Bofors 40 mm rounds. Jane's and Koll's *Soviet Cannon* (2009) gave 30x165 and 35x228 their round
+lengths.
 
 ### `[introduced]`
 

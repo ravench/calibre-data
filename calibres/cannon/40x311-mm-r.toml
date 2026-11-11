@@ -1,6 +1,7 @@
 # The round of the Bofors 40 mm L/60 anti-aircraft gun. Its name gives the bore and case length,
-# NavWeaps the length of the complete HE-T round of the L/43 submarine gun, which fires the same case.
-# Wikipedia's infobox has the L/60 in service in 1934 (the Dutch navy's order).
+# Rapid Fire's table the rim and base, NavWeaps the length of the complete HE-T round of the L/43
+# submarine gun, which fires the same case. Jane's p. 127 gives the L/60 round 447 mm and the case
+# 62 mm across. Wikipedia's infobox has the L/60 in service in 1934 (the Dutch navy's order).
 name = "40x311 mm R"
 kind = "rimmed"
 profile = "spitzer"
@@ -8,10 +9,17 @@ aliases = ["40x311r", "40 mm bofors l/60"]
 origin = "SE"
 
 [mm]
+rim = 61.8
+base = 55.8
 case_length = 311.0
 overall_length = 447.0
 bullet = 40.0
-sources = ["https://en.wikipedia.org/wiki/Bofors_40_mm_L/60_gun", "https://navweaps.com/Weapons/WNSweden_4cm-43_m1932.php"]
+sources = [
+  "book:rapid-fire p. 230",
+  "https://en.wikipedia.org/wiki/Bofors_40_mm_L/60_gun",
+  "https://navweaps.com/Weapons/WNSweden_4cm-43_m1932.php",
+  "book:janes-ammo-2002 p. 127",
+]
 
 [introduced]
 year = 1934

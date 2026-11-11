@@ -100,6 +100,13 @@ class LoadTests(unittest.TestCase):
         self.assertTrue(all(20 <= s["bullet"] <= 40 for s in cannon))
         self.assertLessEqual({"20x102 mm", "35x228 mm", "40x365 mm R"}, {s["name"] for s in cannon})
 
+    def test_every_cannon_round_has_its_rim_and_a_rimmed_one_a_rim_wider_than_its_base(self):
+        # Rapid Fire's table gave the last cannon rounds without one their rim (2026-11-10).
+        for s in dict(cartridges.ALL_CATALOGUE)["Kanone"]:
+            self.assertIsNotNone(s["rim"], s["name"])
+            if s["kind"] == cartridges.RIMMED:
+                self.assertGreater(s["rim"], s["base"], s["name"])
+
     def test_a_calibre_missing_from_order_toml_comes_last_by_name(self):
         with Copy() as c:
             text = c.read("order.toml").replace('  ".22 LR",\n', "").replace('  ".22 Short",\n', "")
