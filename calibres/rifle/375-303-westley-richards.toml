@@ -1,0 +1,35 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For Westley Richards doubles with Lancaster oval-bore rifling, falling-block and Lee-action rifles.
+name = ".375/303 Westley Richards"
+kind = "rimmed"
+profile = "round"
+aliases = ["375/303", "375/303 axite"]
+display_aliases = [".375/303 Axite"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.83
+base = 11.61
+shoulder = 9.91
+shoulder_at = 54.6
+neck = 8.71
+case_length = 63.5
+overall_length = 85.34
+bullet = 7.9
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+year = 1905
+sources = ["book:cotw-18 p. 584"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 584"]

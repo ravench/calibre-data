@@ -1,0 +1,49 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The Morris Short with a longer neck.
+name = ".297/230 Morris Long"
+kind = "rimmed"
+profile = "round"
+aliases = ["297/230 long"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.02
+base = 7.59
+shoulder = 7.37
+shoulder_at = 8.71
+neck = 6.1
+case_length = 20.57
+overall_length = 27.43
+bullet = 5.71
+# The sheet leaves the rim diameter blank; the Morris Short sheet's 9.02 mm is used, as the heads are the same.
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page64.pdf",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page65.pdf",
+]
+
+[introduced]
+# COTW: first in an Eley advertisement of 1882.
+year = 1882
+sources = ["book:cotw-18 p. 577"]
+
+[primer]
+# The table gives a .177 in. Berdan primer, the small Boxer size.
+size = "small-rifle"
+sources = ["book:cotw-18 p. 608"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 18.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page64.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page64.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 577"]

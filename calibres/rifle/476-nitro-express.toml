@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Westley Richards, for single-shot and double rifles.
+name = ".476 Nitro Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["476 ne", "476 westley richards"]
+display_aliases = [".476 Westley Richards"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.33
+base = 14.48
+shoulder = 13.46
+shoulder_at = 63.7
+neck = 12.9
+case_length = 76.2
+overall_length = 95.76
+bullet = 12.09
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 609"]
+
+[introduced]
+year = 1907
+sources = ["book:cotw-18 p. 602"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 609"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 602"]

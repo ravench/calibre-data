@@ -73,6 +73,7 @@ class LoadTests(unittest.TestCase):
     def test_slugs(self):
         self.assertEqual(slug(".22 LR"), "22-lr")
         self.assertEqual(slug(".450/400 Nitro Express 3¼ inch"), "450-400-nitro-express-3-1-4-inch")
+        self.assertEqual(slug(".450/400 Nitro Express 2⅜ inch"), "450-400-nitro-express-2-3-8-inch")
         self.assertEqual(slug("9.5x57 mm Mannlicher-Schönauer"), "9-5x57-mm-mannlicher-schonauer")
 
     def test_catalogue_follows_order_toml(self):

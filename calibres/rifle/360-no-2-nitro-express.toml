@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Eley's round for single-shot and double rifles.
+name = ".360 No. 2 Nitro Express"
+kind = "rimmed"
+profile = "round"
+aliases = ["360 no 2", "360 no. 2"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.03
+base = 13.69
+shoulder = 13.13
+shoulder_at = 64.4
+neck = 9.98
+case_length = 76.2
+overall_length = 97.79
+bullet = 9.32
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+year = 1905
+sources = ["book:cotw-18 p. 589"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# .045 in.
+rim_thickness = 1.14
+sources = ["book:cotw-18 p. 608"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 589"]

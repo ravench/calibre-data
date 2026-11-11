@@ -129,8 +129,10 @@ def _format(problem):
 
 def slug(name):
     """The file name (without .toml) a calibre's file must have: its name in lower case ASCII, every
-    run of other characters a hyphen (".22 LR" is 22-lr.toml, "3¼ inch" 3-1-4-inch)."""
-    s = unicodedata.normalize("NFKD", name.replace("¼", " 1/4")).encode("ascii", "ignore").decode()
+    run of other characters a hyphen (".22 LR" is 22-lr.toml, "3¼ inch" 3-1-4-inch, "2⅜ inch" 2-3-8-inch)."""
+    name = "".join(" " + unicodedata.normalize("NFKD", ch).replace("\u2044", "/")
+                   if unicodedata.name(ch, "").startswith("VULGAR FRACTION") else ch for ch in name)
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 

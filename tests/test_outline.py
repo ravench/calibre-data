@@ -152,6 +152,7 @@ class OutlineTests(unittest.TestCase):
         self.assertEqual(outline.identical_groups(), [
             [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"],
             ["7.62x51 mm NATO", ".308 Winchester"],
+            [".500/450 Nitro Express", ".500/450 Magnum Express"],
         ])
 
     def test_identical_calibres_are_lookalikes(self):
@@ -217,7 +218,13 @@ class OutlineTests(unittest.TestCase):
     SHOULDER_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
         # shoulder_at is estimated, as the note in [mm] says).
-        ".244 Halger Magnum", ".276 Enfield", ".276 Pedersen", ".280 British", ".45 Blaser", ".460 Steyr",
+        ".242 Rimless Nitro Express", ".244 Halger Magnum", ".246 Purdey Flanged", ".256 Gibbs Magnum",
+        ".26 BSA", ".275 H&H Magnum", ".275 No. 2 Magnum", ".276 Enfield", ".276 Pedersen", ".280 British",
+        ".280 Jeffery", ".280 Ross", ".297/250 Rook", ".303 Magnum", ".33 BSA", ".333 Jeffery Rimless",
+        ".360 No. 2 Nitro Express", ".375/303 Westley Richards", ".400/360 Nitro Express",
+        ".400/375 Belted Nitro Express", ".425 Westley Richards Magnum", ".45 Blaser",
+        ".450/400 Nitro Express 2⅜ inch", ".460 Steyr", ".476 Nitro Express", ".500/450 Magnum Express",
+        ".500/450 Nitro Express", ".500/450 No. 1 Express", ".577/500 Nitro Express", ".577/500 No. 2 Express",
         "10.15x61 mm R Jarmann", "10.15x63 mm R Serbian Mauser", "10.25x69 mm R Hunting-Express",
         "10.4x47 mm R Italian Vetterli", "10.5x47 mm R", "10.75x57 mm Mannlicher",
         "10.75x58 mm R Russian Berdan", "10.75x63 mm Mauser", "10.75x68 mm Mauser",
@@ -313,12 +320,14 @@ class OutlineTests(unittest.TestCase):
         "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        ".276 Enfield", ".276 Pedersen", ".280 British", ".45 Blaser", ".45 Remington Thompson",
-        "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser", "11.2x60 mm Schüler",
-        "11.2x72 mm Schüler", "4.85x49 mm British", "5.2x68 mm Mondragón", "5x58 mm Sturtevant", "6 mm SAW",
-        "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser", "6x58 mm Forster", "7x73 mm Vom Hofe Belted",
-        "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo", "9.3x53 mm Swiss", "9x63 mm",
-        "9x71 mm Peterlongo",
+        ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum", ".276 Enfield",
+        ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".303 Magnum", ".33 BSA",
+        ".333 Jeffery Rimless", ".400/375 Belted Nitro Express", ".425 Westley Richards Magnum", ".45 Blaser",
+        ".45 Remington Thompson", "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser",
+        "11.2x60 mm Schüler", "11.2x72 mm Schüler", "4.85x49 mm British", "5.2x68 mm Mondragón",
+        "5x58 mm Sturtevant", "6 mm SAW", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser", "6x58 mm Forster",
+        "7x73 mm Vom Hofe Belted", "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo", "9.3x53 mm Swiss",
+        "9x63 mm", "9x71 mm Peterlongo",
     }
 
     def rimless(self):

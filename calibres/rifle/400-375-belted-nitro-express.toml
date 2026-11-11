@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Holland & Holland's first belted case, the world's first.
+name = ".400/375 Belted Nitro Express"
+kind = "belted"
+profile = "round"
+aliases = ["400/375", "400/375 h&h"]
+display_aliases = [".400/375 H&H"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.84
+base = 11.38
+shoulder = 11.05
+shoulder_at = 42.42
+neck = 10.08
+case_length = 63.5
+overall_length = 76.2
+bullet = 9.52
+# The table's base is the belt; the body in front of it and shoulder_at are Donnelly's.
+sources = ["book:cotw-18 p. 608", "book:donnelly p. 515"]
+
+[introduced]
+year = 1905
+sources = ["book:cotw-18 p. 590"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# .062 in.
+rim_thickness = 1.57
+sources = ["book:donnelly p. 515"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 590"]
