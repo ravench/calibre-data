@@ -21,7 +21,7 @@ sources = ["book:cotw-18 p. 529"]
 [introduced]
 # COTW: available from the late 1870s into the 1930s; 1877 is kept for the late 1870s.
 year = 1877
-sources = ["book:cotw-18 p. 520"]
+sources = ["book:cotw-18 p. 521"]
 
 [primer]
 size = "large-pistol"
@@ -34,7 +34,7 @@ sources = ["book:cotw-18 p. 529"]
 
 [bullet]
 type = "lead"
-sources = ["book:cotw-18 p. 520"]
+sources = ["book:cotw-18 p. 521"]
 
 [case]
 material = "brass"

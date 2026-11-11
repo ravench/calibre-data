@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["44 auto mag", "44 amp", "44 automag"]
 
 origin = "US"
+obsolete = true
 rare = true
 
 [mm]

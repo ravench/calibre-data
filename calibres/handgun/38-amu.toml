@@ -36,8 +36,9 @@ ramp_angle = 12.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page59.pdf"]
 
 [bullet]
+# The military load's hollow-base wadcutter.
 type = "lead"
-sources = ["book:cotw-18 p. 487"]
+sources = ["book:cotw-18 p. 488"]
 
 [case]
 material = "brass"

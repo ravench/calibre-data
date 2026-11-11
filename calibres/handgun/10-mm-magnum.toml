@@ -28,9 +28,12 @@ size = "large-pistol"
 sources = ["book:cotw-18 p. 528"]
 
 [case_head]
-# .050 in.
-rim_thickness = 1.27
-sources = ["book:cotw-18 p. 528"]
+# lengthened 10 mm Auto case; C.I.P. 10 mm Auto
+rim_thickness = 1.4
+ramp_top = 3.63
+groove_diameter = 8.85
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page31.pdf"]
 
 [bullet]
 type = "jacketed"

@@ -5,7 +5,7 @@ kind = "rimless"
 profile = "round"
 aliases = ["45 hp", "45 auto short", "45 automatic short", "45 acp short"]
 
-origin = "IT"
+origin = "AT"
 rare = true
 
 [mm]

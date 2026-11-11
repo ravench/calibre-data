@@ -26,9 +26,12 @@ size = "small-rifle"
 sources = ["book:cotw-18 p. 529"]
 
 [case_head]
-# .044 in.
-rim_thickness = 1.12
-sources = ["book:cotw-18 p. 529"]
+# .45 ACP case with a small rifle primer pocket; C.I.P. 45 Auto
+rim_thickness = 1.24
+ramp_top = 4.11
+groove_diameter = 10.16
+ramp_angle = 26.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page76.pdf"]
 
 [bullet]
 type = "jacketed"
