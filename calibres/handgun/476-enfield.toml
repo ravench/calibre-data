@@ -36,5 +36,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.476_Enfield"]
 
 [case]
+# municion.org's photo shows a brass case (a British Mk I round).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/476-enfield-revolver-mk-i/"]

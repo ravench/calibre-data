@@ -34,5 +34,7 @@ type = "lead"
 sources = []
 
 [case]
-material = "brass"
-sources = []
+# municion.org's page for the BB and CB caps shows copper cases from Winchester, UMC, Dominion
+# and Western, the conical-bullet caps in its family photo included. Peters' later heads are brass.
+material = "copper"
+sources = ["https://municion.org/producto/22-bb-cb-cap/"]

@@ -39,5 +39,7 @@ type = "lead"
 sources = ["book:cotw-18 p. 242"]
 
 [case]
+# municion.org's photos show brass cases. municion.org files the round as the .45-100/550 Sharps
+# Straight 2 7/8", and an NRA box label on the page reads .45-110.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/45-100-550-sharps-straight-2-7-8/"]

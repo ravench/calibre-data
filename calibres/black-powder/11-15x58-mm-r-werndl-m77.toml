@@ -41,5 +41,7 @@ type = "paper"
 sources = ["book:cotw-18 p. 563"]
 
 [case]
+# municion.org's photos show brass cases (the Austro-Hungarian arsenal's, Berndorfer's,
+# Hirtenberg's and Roth's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/1115-x-58-r-austrian-werndl-rifle-mod-1877/"]

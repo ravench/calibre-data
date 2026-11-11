@@ -40,5 +40,7 @@ type = "lead"
 sources = ["book:cotw-18 p. 560"]
 
 [case]
+# municion.org's photos show brass cases (Kragujevac's and Lorenz's), two of them with a
+# silvery finish.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/1015-x-625-r-serbian-mauser-koka-m-1878-80/"]

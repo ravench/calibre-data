@@ -47,8 +47,10 @@ type = "jacketed"
 sources = ["book:cotw-18 p. 553"]
 
 [case]
+# municion.org's photos show brass cases (a French arsenal's and wartime makers' in Italy,
+# Britain and the US).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/"]
 
 [fired_by]
 firearms = ["Lebel M1886", "Berthier"]

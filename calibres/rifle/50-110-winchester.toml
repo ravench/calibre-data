@@ -37,5 +37,6 @@ type = "lead"
 sources = ["https://municion.org/producto/50-110-300-winchester-express/"]
 
 [case]
+# municion.org's photos show brass cases (Winchester's and North Devon Firearms').
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/50-110-300-winchester-express/"]

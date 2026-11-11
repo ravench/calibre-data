@@ -778,8 +778,9 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(case_material(name), COPPER, name)
             self.assertTrue(any(url.startswith("https://municion.org/producto/")
                                 for url in SOURCES[(name, "case")]), name)
-        # municion.org's text: the .22 WRF's case was copper at first.
+        # municion.org's text: the .22 WRF's case was copper at first. Its BB and CB cap page shows copper.
         self.assertEqual(case_material(".22 Winchester Rimfire"), COPPER)
+        self.assertEqual(case_material(".22 CB Cap"), COPPER)
         # Brass, each with a photo, a drawing or a page's text as its source.
         for name in (".45-70 Van Choate", "12.17x44 mm R", ".577/450 Martini-Henry", "10.4 mm Swiss Ordnance 1878",
                      "7.62x54 mm R", ".38 Long Colt", "6.5x52 mm Carcano", "8x50 mm R Mannlicher", "9.3x74 mm R",
@@ -787,7 +788,22 @@ class CatalogueTests(unittest.TestCase):
                      ".44-60 Sharps & Remington Necked", ".44-77 Sharps & Remington", ".58 Berdan Musket",
                      "11.43x50 mm R Egyptian Remington", ".32-40 Remington", ".40-70 Sharps Necked",
                      "11.3x50 mm R Beaumont M71", ".50-90 Sharps", ".32 Long Colt", ".40-90 Sharps Necked",
-                     ".44 Henry Centrefire", ".44-90 Remington Special", ".45-50 Peabody Sporting"):
+                     ".44 Henry Centrefire", ".44-90 Remington Special", ".45-50 Peabody Sporting",
+                     "10.15x61 mm R Jarmann", "10.15x63 mm R Serbian Mauser", "11.15x58 mm R Werndl M77",
+                     "11x59 mm R Gras", "11x60 mm R Japanese Murata", ".25-20 Single-Shot", ".30-30 Wesson",
+                     ".32-30 Remington", ".32-40 Ballard", ".32-40 Bullard", ".35-40 Maynard 1882",
+                     ".38-40 Remington-Hepburn", ".38-50 Ballard Everlasting", ".38-50 Maynard 1882",
+                     ".38-50 Remington-Hepburn", ".40-50 Sharps Straight", ".40-60 Winchester", ".40-70 Ballard",
+                     ".40-70 Peabody What Cheer", ".40-70 Sharps Straight", ".40-90 Peabody What Cheer",
+                     ".40-90 Sharps Straight", ".44-100 Ballard", ".44-95 Peabody What Cheer",
+                     ".44 Extra Long Centrefire", ".45-110 Sharps", ".45-75 Winchester",
+                     ".450/400 Nitro Express 2⅜ inch", ".50-140 Sharps", "8x60 mm R Guedes", ".41 Long Colt",
+                     ".44 Bull Dog", ".476 Enfield", "7.5 mm Swedish Nagant", ".303 British",
+                     ".32-35 Stevens & Maynard", ".38-55 Winchester", ".38-90 Winchester Express",
+                     ".40-110 Winchester Express", ".40-65 Winchester", ".40-75 Bullard", ".40-90 Bullard",
+                     ".45-125 Winchester Express", ".45-90 WCF", ".50-110 Winchester", ".50-115 Bullard",
+                     ".50-95 WCF", "7.65x53 mm Argentine", "8x42 mm R M88", "8x50 mm R Lebel", "8x51 mm Mauser",
+                     "8x51 mm R Mauser"):
             self.assertEqual(case_material(name), BRASS, name)
             self.assertTrue(SOURCES[(name, "case")], name)
 

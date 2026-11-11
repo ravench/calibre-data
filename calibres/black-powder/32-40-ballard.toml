@@ -34,5 +34,7 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
 
 [case]
+# municion.org's photos show brass cases (Dominion's, UMC's and Winchester's). municion.org
+# files the round with the .32-40 Winchester.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/32-40-winchester-cf-marlin-ballard-savage/"]

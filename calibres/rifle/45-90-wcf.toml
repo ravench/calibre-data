@@ -38,5 +38,7 @@ type = "lead"
 sources = ["https://municion.org/producto/45-90-300-winchester-cf/"]
 
 [case]
+# municion.org's photos show brass cases (Winchester's, UMC's and the Connecticut Cartridge
+# Co.'s).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/45-90-300-winchester-cf/"]

@@ -34,5 +34,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 215"]
 
 [case]
+# municion.org's photos show brass cases (UMC's and Winchester's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/38-90-217-winchester-express/"]

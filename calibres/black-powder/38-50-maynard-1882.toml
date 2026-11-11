@@ -37,5 +37,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 214"]
 
 [case]
+# municion.org's photo shows a brass case (an unmarked one).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/38-50-maynard-1882/"]

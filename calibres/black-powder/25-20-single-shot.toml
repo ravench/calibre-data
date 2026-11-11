@@ -37,5 +37,7 @@ type = "lead"
 sources = []
 
 [case]
+# municion.org's photos show brass cases (Winchester's, Remington-UMC's, Roth's and Sellier &
+# Bellot's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/25-20-single-shot/"]

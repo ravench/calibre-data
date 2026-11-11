@@ -33,5 +33,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38-55_Winchester"]
 
 [case]
+# municion.org's photos show brass cases (Dominion's, UMC's, Winchester's and Olin's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/38-55-winchester-marlin-ballard/"]

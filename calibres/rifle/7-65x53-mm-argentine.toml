@@ -55,5 +55,6 @@ type = "jacketed"
 sources = []
 
 [case]
+# municion.org's photos show brass cases (DWM's, FN's and the Argentine arsenals').
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/765-x-53-belgian-mauser-m-1889/"]

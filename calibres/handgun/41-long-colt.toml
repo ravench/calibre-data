@@ -35,5 +35,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.41_Long_Colt"]
 
 [case]
+# municion.org's photo shows a brass case (Winchester's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/41-long-colt-original/"]

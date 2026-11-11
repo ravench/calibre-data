@@ -46,8 +46,9 @@ type = "paper"
 sources = ["https://en.wikipedia.org/wiki/11×59mmR_Gras"]
 
 [case]
+# municion.org's photos show brass cases (the French arsenals' and Gévelot's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"]
 
 [fired_by]
 firearms = ["Gras M1874"]

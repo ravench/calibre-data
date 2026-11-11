@@ -33,5 +33,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 222"]
 
 [case]
+# municion.org's photos show brass cases (UMC's and Winchester's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/40-70-ballard/"]
