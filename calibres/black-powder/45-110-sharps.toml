@@ -19,7 +19,8 @@ bullet = 11.63
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/45-110-sharps-170428-en.pdf"]
 
 [introduced]
-# COTW: Sharps brought out its .45 cases from 1876 on, without dating the 2⅞ in. one alone.
+# COTW dates the first Sharps .45 case to mid-1876; the length beside it is printed without its
+# fraction, as the 45-110's is, so probably 2⅞ in.
 year = 1876
 sources = ["book:cotw-18 p. 242"]
 

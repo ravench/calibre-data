@@ -1,4 +1,4 @@
-# Measurements from the C.I.P. sheet (maximum cartridge).
+# Diameters from the .45-70 Government's C.I.P. sheet, lengths from Cartridges of the World, 18th ed.
 # For the experimental Van Choate bolt-action military rifle: the .45-70 case lengthened to 2¼ in.
 name = ".45-70 Van Choate"
 kind = "rimmed"
@@ -21,6 +21,7 @@ bullet = 11.63
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page112.pdf", "book:cotw-18 p. 251"]
 
 [introduced]
+# The year the Van Choate rifle was made (COTW 18 p. 240); the round was designed for it.
 year = 1872
 sources = ["book:cotw-18 p. 240"]
 

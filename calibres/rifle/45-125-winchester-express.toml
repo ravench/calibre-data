@@ -30,7 +30,9 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
 
 [bullet]
-type = "softpoint"
+# Lead: the copper-tubed Express bullet, a lead bullet with a copper tube in its nose (COTW 18 p. 240);
+# the load table's "SP" is not a jacketed bullet.
+type = "lead"
 sources = ["book:cotw-18 p. 240"]
 
 [case]

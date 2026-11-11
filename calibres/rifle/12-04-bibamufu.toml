@@ -6,6 +6,8 @@ profile = "round"
 aliases = ["12.04 bibamufu", "bibamufu", "lazzeroni bibamufu"]
 
 origin = "US"
+# Special order only (COTW 18 p. 243), which counts as boutique loads.
+obsolete = true
 rare = true
 
 [mm]
