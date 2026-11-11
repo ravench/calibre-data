@@ -3,13 +3,15 @@
 name = "9.4 mm Dutch"
 kind = "rimmed"
 profile = "flat"
-aliases = ["9.4 dutch", "9.4x21", "9.4x21 dutch", "9.4mm dutch revolver"]
+aliases = ["9.4 dutch", "9.4mm dutch revolver"]
 
 origin = "NL"
 obsolete = true
 rare = true
 
 [mm]
+# The table's row is the long (27 mm) case, not the shorter 9.4x21 of the home service; its neck and
+# base look like reformed .41 Magnum brass, as made for shooting the revolvers today.
 rim = 12.19
 base = 11.0
 neck = 10.92

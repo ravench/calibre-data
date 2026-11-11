@@ -24,7 +24,7 @@ year = 1869
 sources = ["book:cotw-18 p. 506"]
 
 [primer]
-# The table gives no primer.
+# The table's primer column is garbled for this row.
 size = "large-pistol"
 sources = []
 

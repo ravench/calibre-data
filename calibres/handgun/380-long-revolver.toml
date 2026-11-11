@@ -32,7 +32,7 @@ rim_thickness = 1.25
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page64.pdf"]
 
 [bullet]
-# COTW 18 p. 494 gives a lead factory load for the .380 Revolver, without saying which length.
+# COTW 18 p. 495 gives a lead factory load for the .380 Revolver, without saying which length.
 type = "lead"
 sources = []
 

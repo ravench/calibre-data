@@ -13,10 +13,11 @@ rare = true
 rim = 12.93
 base = 11.53
 neck = 10.92
-case_length = 24.92
+# Case length as the text gives it (24.64 mm, p. 508); the table's .981 in. is the 9 mm Mauser row's.
+case_length = 24.64
 overall_length = 36.83
 bullet = 10.59
-sources = ["book:cotw-18 p. 529"]
+sources = ["book:cotw-18 p. 529", "book:cotw-18 p. 508"]
 
 [introduced]
 year = 1879
@@ -33,8 +34,9 @@ rim_thickness = 1.52
 sources = ["book:cotw-18 p. 529"]
 
 [bullet]
+# The lead factory load listed for the 11 mm German Service Revolver, the same round.
 type = "lead"
-sources = ["book:cotw-18 p. 508"]
+sources = ["book:cotw-18 p. 510"]
 
 [case]
 material = "brass"

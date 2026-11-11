@@ -24,10 +24,11 @@ differ_by = ["load"]
 calibres = ["9x19 mm", "9 mm Glisenti"]
 
 [[group]]
-# The 9 mm Mauser (COTW 18 p. 479) is the same straight rimless 9 mm case, 2 mm longer.
+# Straight rimless 9 mm cases of other lengths: the 9 mm Mauser and the 9 mm Winchester Magnum, which
+# COTW 18 likens to the Mauser (p. 480).
 name = "9x23 mm Largo"
 differ_by = ["load", "length"]
-calibres = ["9x23 mm Largo", "9x23 mm Winchester", "9 mm Mauser"]
+calibres = ["9x23 mm Largo", "9x23 mm Winchester", "9 mm Mauser", "9 mm Winchester Magnum"]
 
 [[group]]
 # Cases that measure alike (COTW 18 p. 467). The Mauser and Tokarev rounds are loaded hotter than the

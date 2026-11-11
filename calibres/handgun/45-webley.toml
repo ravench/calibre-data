@@ -29,7 +29,7 @@ sources = ["book:cotw-18 p. 529"]
 
 [bullet]
 type = "lead"
-sources = ["book:cotw-18 p. 512"]
+sources = ["book:cotw-18 p. 513"]
 
 [case]
 material = "brass"
