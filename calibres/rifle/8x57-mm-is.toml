@@ -51,3 +51,43 @@ sources = []
 [case]
 material = "brass"
 sources = []
+
+[[colour_codes]]
+part = "annulus"
+colours = ["black"]
+meaning = ["ball"]
+description = "Light ball, Czechoslovak code"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["green"]
+meaning = ["ball"]
+description = "Heavy ball, Czechoslovak code"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["blue"]
+meaning = ["ball"]
+description = "Ball with a mild steel core, Czechoslovak code"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["red"]
+meaning = ["tracer"]
+description = "Tracer, Czechoslovak code"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["white"]
+meaning = ["armour-piercing"]
+description = "Armour-piercing, Czechoslovak code"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]

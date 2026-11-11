@@ -176,14 +176,16 @@ GROUP_KEYS = ("name", "differ_by", "calibres")
 # numbers its pages by chapter has pages such as "14-13" (chapter 14, page 13).
 BOOK_SOURCE = re.compile(r"book:(?P<id>[^\s]+) p\. (?P<page>[1-9][0-9]*(?:-[1-9][0-9]*)?)")
 BOOK_KEYS = ("title", "year", "edition", "authors", "editors", "publisher", "place", "isbn")
-# [[colour_codes]]: what a painted bullet tip or cartridge base means, a table for each code. `part` says
-# where the paint is (PARTS). A tip's colours are listed from the tip down (["red", "silver"]: a red tip
-# above a silver band); a base, the head of the case around the primer, has one colour. The meanings
-# combine (["armour-piercing", "incendiary"] is an API round).
+# [[colour_codes]]: what a painted bullet tip, cartridge base or primer annulus means, a table for each
+# code. `part` says where the paint is (PARTS). A tip's colours are listed from the tip down (["red",
+# "silver"]: a red tip above a silver band); a base (the head of the case) and an annulus (the lacquer
+# ring around the primer) have one colour. The meanings combine (["armour-piercing", "incendiary"] is
+# an API round).
 COLOUR_CODE_KEYS = (("part", "colours", "meaning", "sources"), ("description", "countries"))  # (required, optional)
-PARTS = ("tip", "base")
+PARTS = ("tip", "base", "annulus")
 COLOURS = ("black", "white", "grey", "silver", "red", "orange", "yellow", "green", "blue", "purple", "brown")
-MEANINGS = ("ball", "armour-piercing", "incendiary", "explosive", "tracer", "spotting", "subsonic", "frangible")
+MEANINGS = ("ball", "armour-piercing", "incendiary", "explosive", "tracer", "spotting", "subsonic", "frangible",
+            "proof", "reduced-charge")
 
 
 def is_blank(profile, rim, base, neck, bullet, case_length, overall_length):
@@ -379,9 +381,10 @@ def _check_colour_codes(f, codes, shape, countries, books):
                 f.problem(at(), f"[[colour_codes]] needs {k!r}")
         _check_sources(f, "colour_codes", t, "required", books, nth=i)
         if "part" in t and t["part"] not in PARTS:
-            f.problem(at("part"), f"[[colour_codes]] part is \"tip\" or \"base\"{_close(str(t['part']), PARTS)}")
-        elif t.get("part") == "base" and _is_text_list(t.get("colours")) and len(t["colours"]) > 1:
-            f.problem(at("colours"), f"[[colour_codes]] a base has one colour, not {len(t['colours'])}")
+            f.problem(at("part"), f"[[colour_codes]] part is \"tip\", \"base\" or \"annulus\"{_close(str(t['part']), PARTS)}")
+        elif t.get("part") != "tip" and _is_text_list(t.get("colours")) and len(t["colours"]) > 1:
+            f.problem(at("colours"), f"[[colour_codes]] {'a' if t['part'] == 'base' else 'an'} {t['part']} has one colour, "
+                                     f"not {len(t['colours'])}")
         for k, choices in (("colours", COLOURS), ("meaning", MEANINGS)):
             if k not in t:
                 continue
@@ -878,7 +881,7 @@ LOOKALIKE_NAMES = _t["LOOKALIKE_NAMES"]  # each group's name, in the same order
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
 BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
 # {name: [{part, colours, meaning, description or None, countries, sources}]}: what a painted bullet tip
-# or cartridge base means, from the [[colour_codes]] tables (part "tip" or "base"; a tip's colours from
+# or cartridge base means, from the [[colour_codes]] tables (part "tip", "base" or "annulus"; a tip's colours from
 # the tip down). Kaliberfinder's generator reads it for the
 # calibre page (2026-11-11); the sources stay here.
 COLOUR_CODES = _t["COLOUR_CODES"]

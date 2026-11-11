@@ -52,3 +52,11 @@ sources = []
 [case]
 material = "brass"
 sources = []
+
+[[colour_codes]]
+part = "base"
+colours = ["black"]
+meaning = ["reduced-charge"]
+description = "Half of the case head blackened, the Swedish mark of a reduced charge"
+countries = ["SE"]
+sources = ["book:labbett p. 79"]

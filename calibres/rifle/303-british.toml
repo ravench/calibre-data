@@ -49,3 +49,51 @@ sources = []
 [case]
 material = "brass"
 sources = []
+
+[[colour_codes]]
+part = "annulus"
+colours = ["purple"]
+meaning = ["ball"]
+description = "Ball, pre-NATO British code"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["green"]
+meaning = ["armour-piercing"]
+description = "Armour-piercing, pre-NATO British code"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["black"]
+meaning = ["spotting"]
+description = "Observation, with a black tip, pre-NATO British code"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["blue"]
+meaning = ["incendiary"]
+description = "Incendiary, pre-NATO British code"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["red"]
+meaning = ["tracer"]
+description = "Tracer, pre-NATO British code"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["yellow"]
+meaning = ["proof"]
+description = "Proof, pre-NATO British code"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
