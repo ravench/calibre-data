@@ -1,9 +1,16 @@
-# GP 1890: «7,5 mm Gewehrpatrone 90», adopted by the Federal Council on 1 July 1890 with the
-# Schmidt-Rubin IG 89 (FCHM: «7,5 mm GP Modell 1890 (Ordonnanz 1889)»; swisswaffen). The «GP» names
-# are the army's later short forms. Its bullet is unusual: a lead body wrapped in two turns of paper (the
-# white band above the case mouth) and a long, blunt round nose under a steel cap (13.7 g, 29 mm long,
-# 7.8 mm over the paper). Not to be confused with the 5.6 mm GP 90 of the Stgw 90.
-# Versions: the GP 90/03 (decision of 6 March 1903) only got a less corrosive primer and kept the
+# GP 1890: the round of the Schmidt-Rubin IG 89. The Federal Council decided on 1 July 1890 (minutes
+# Nr. 2719, Federal Archives 70007611, PDF p. 18) that the «Munition zu dem Gewehr Modell 1889» gets a
+# hard-lead bullet with a steel cap and a paper patch, without naming the cartridge; its reports of
+# 1890-92 say «7,5 mm Patronen» and «Patronen zum Gewehr Modell 89». The first official model name is
+# «Gewehrpatrone 1890/1903» (decision of 6 March 1903, Nr. 912, 70009162, PDF p. 7), still
+# «Gewehrpatronen 90/03» in the report for 1923. «GP 90» and «GP 1890» are later short forms
+# (swisswaffen; FCHM: «7,5 mm GP Modell 1890 (Ordonnanz 1889)»). Its bullet is
+# unusual: a lead body wrapped in two turns of paper (the white band above the case mouth) and a
+# long, blunt round nose under a steel cap (13.7 g, 29 mm long, 7.8 mm over the paper). Not to be
+# confused with the 5.6 mm GP 90 of the Stgw 90.
+# Versions: the GP 90/03 (decision of 6 March 1903, which names it and refers to a drawing and table
+# not in the archive scans) got a less corrosive primer; from 1901 the army re-primed its stocks in Thun
+# and Altdorf (reports for 1901-03), so many are 1890 cases with a new primer. It kept the
 # 53.5 mm case (Poyer p. 50, 54; swisswaffen; FCHM; swissrifles.com). The case was changed in details
 # until 1903 (FCHM). From 1923 the GP 90/23 had a 1 mm longer case and a jacketed bullet: its own calibre,
 # 7.5x54.5 mm Swiss (GP 90/23), like the Kadettenpatrone.
@@ -17,7 +24,7 @@
 name = "7.5x53.5 mm Swiss (GP 1890)"
 kind = "rimless"
 profile = "patched"
-aliases = ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp 90/03", "7.5 mm gp 90", "7.5 mm gp 90/03", "patrone 1890", "gewehrpatrone 1890", "7.5 mm gewehrpatrone 90", "gp modell 1890", "modell 1890", "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]
+aliases = ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp 90/03", "7.5 mm gp 90", "7.5 mm gp 90/03", "patrone 1890", "gewehrpatrone 1890", "7.5 mm gewehrpatrone 90", "gewehrpatrone 1890/1903", "gp modell 1890", "modell 1890", "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]
 display_aliases = ["GP 1890", "GP 90/03"]
 
 origin = "CH"
@@ -35,10 +42,10 @@ bullet = 7.8
 sources = ["book:poyer p. 50", "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
 [introduced]
-# chosen with the rifle in 1889, adopted as «Gewehrpatrone 90» on 1 July 1890 (swisswaffen); the
-# catalogue keeps the rifle's year
-year = 1889
-sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss", "https://swisswaffen.com/?L=DE&W=GP9075&LP=SM"]
+# Federal Council decision of 1 July 1890 (minutes Nr. 2719, PDF p. 18); first 148,500 rounds made in
+# 1890 (report for 1890, 50000156, p. 776)
+year = 1890
+sources = ["https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/70007611.pdf?id=70007611", "https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/50000156.pdf?id=50000156"]
 
 [primer]
 size = "large-rifle"
