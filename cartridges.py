@@ -676,6 +676,11 @@ def load(root=ROOT):
                        "each group is a [[group]] table with differ_by and calibres")
             groups = []
         grouped, titles = {}, {}
+        owners = {}  # a calibre's name, aliases and display aliases, lower case: the calibre
+        for n, (_, raw, *_rest) in by_name.items():
+            for other in [n] + [a for k in ("aliases", "display_aliases") if _is_text_list(raw.get(k))
+                                for a in raw[k]]:
+                owners.setdefault(other.lower(), n)
         for i, g in enumerate(groups):
             def at(key=None, i=i):
                 return lf.line("group", key, nth=i) or lf.line("group", nth=i) or lf.line(None, "group")
@@ -687,15 +692,17 @@ def load(root=ROOT):
                 if k not in g:
                     lf.problem(at(), f"[[group]] needs {k!r}")
             title, diff, names = g.get("name"), g.get("differ_by"), g.get("calibres")
-            if "name" in g:
-                if not isinstance(title, str) or not title.strip():
-                    lf.problem(at("name"), "name is the group's name, as text")
-                    continue
-                if title in titles:
-                    lf.problem(at("name"), f"name {title!r} is already the name of the group on line {titles[title]}")
-                elif title in by_name and _is_text_list(names) and title not in names:
-                    lf.problem(at("name"), f"name {title!r} is a calibre outside this group")
-                titles[title] = at()
+            named = isinstance(title, str) and title.strip() == title != ""
+            if "name" in g and not named:
+                lf.problem(at("name"), "name is the group's name, as text without spaces around it")
+            elif "name" in g:
+                owner = owners.get(title.lower())
+                if title.lower() in titles:
+                    lf.problem(at("name"), f"name {title!r} is already the name of the group on line "
+                                           f"{titles[title.lower()]}")
+                elif owner and not (_is_text_list(names) and owner in names):
+                    lf.problem(at("name"), f"name {title!r} names the calibre {owner!r}, which is not in this group")
+                titles[title.lower()] = at()
             if "differ_by" in g:
                 bad = [x for x in diff if x not in DIFFER_BY] if _is_text_list(diff) else [diff]
                 if bad or not diff:
@@ -705,7 +712,7 @@ def load(root=ROOT):
             if "calibres" in g and (not _is_text_list(names) or len(names) < 2):
                 lf.problem(at("calibres"), "calibres lists two or more calibre names, the parent first")
                 continue
-            if not all(k in g for k in GROUP_KEYS):
+            if "differ_by" not in g or "calibres" not in g:
                 continue
             for n in names:
                 if n not in by_name and any(has_file(cat, n) for cat in folders):
@@ -718,8 +725,9 @@ def load(root=ROOT):
                     lf.problem(at("calibres"), f"{n!r} is in calibres/{by_name[n][0]}/, which the apps do not show yet")
                 else:
                     grouped[n] = at()
-            lookalikes.append((tuple(diff), list(names)))
-            group_names.append(title)
+            if named:  # otherwise reported above
+                lookalikes.append((tuple(diff), list(names)))
+                group_names.append(title)
 
     if problems:
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))

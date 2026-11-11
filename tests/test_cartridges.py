@@ -680,7 +680,7 @@ class CatalogueTests(unittest.TestCase):
                 bore = spread("bullet") > 0.3 and names[0] != ".44 Henry"
                 length = spread("case") > 1.5
             else:
-                # The .30 Borchardt's bullet is the COTW table's .307 in., the others' from their C.I.P. sheets;
+                # The .30 Borchardt's bullet is the COTW table's .307 in., the Mauser's from its C.I.P. sheet;
                 # COTW 18 p. 467 measures the three alike, and p. 466 has Tokarev pistols fire Mauser loads.
                 bore = spread("bullet") >= 0.05 and SEATING not in differs and names[0] != ".30 Borchardt"
                 length = spread("case") > 0.5

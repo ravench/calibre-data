@@ -24,14 +24,14 @@ differ_by = ["load"]
 calibres = ["9x19 mm", "9 mm Glisenti"]
 
 [[group]]
-name = "9x23 mm"
+name = "9x23 mm Largo"
 differ_by = ["load"]
 calibres = ["9x23 mm Largo", "9x23 mm Winchester"]
 
 [[group]]
-# One case: the Mauser and Tokarev rounds are loaded hotter than the Borchardt, whose pistols must not
-# fire them (COTW 18 p. 467); Tokarev pistols fire most Mauser loads (p. 466). C.I.P. gives the Mauser
-# 2600 bar and the Tokarev 2500 bar.
+# Cases that measure alike (COTW 18 p. 467). The Mauser and Tokarev rounds are loaded hotter than the
+# Borchardt, whose pistols must not fire them (p. 467); Tokarev pistols fire most Mauser loads (p. 466).
+# C.I.P. today: 2600 bar for the Mauser, 2500 bar for the Tokarev.
 name = "7.63x25 mm"
 differ_by = ["load"]
 calibres = [".30 Borchardt", "7.63x25 mm Mauser", "7.62x25 mm Tokarev"]
@@ -93,7 +93,7 @@ differ_by = ["rim"]
 calibres = ["6.5x68 mm", "6.5x68 mm R"]
 
 [[group]]
-name = "8x60 mm"
+name = "8x60 mm S"
 differ_by = ["rim"]
 calibres = ["8x60 mm S", "8x60 mm RS"]
 
@@ -194,7 +194,7 @@ differ_by = ["bore"]
 calibres = ["7.62x54 mm R", "7.62x53 mm R"]
 
 [[group]]
-name = ".450/400 Nitro Express"
+name = ".450/400 Nitro Express 3 inch"
 differ_by = ["length"]
 calibres = [".450/400 Nitro Express 3 inch", ".450/400 Nitro Express 3¼ inch"]
 
