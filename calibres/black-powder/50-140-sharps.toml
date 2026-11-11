@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .50-90 Sharps case lengthened to 3¼ in., a special-order round; Winchester loaded it with a
+# .512 in. bullet, Sharps used .509 in.
+name = ".50-140 Sharps"
+kind = "rimmed"
+profile = "round"
+aliases = ["50-140 sharps", "50-140 winchester express", "50-3 1/4 sharps"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.89
+base = 14.35
+neck = 13.41
+case_length = 82.55
+overall_length = 100.08
+bullet = 12.93
+sources = ["book:cotw-18 p. 252"]
+
+[introduced]
+# COTW: introduced in 1880, without a firm reference.
+year = 1880
+sources = ["book:cotw-18 p. 244"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 252"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 252"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 244"]
+
+[case]
+material = "brass"
+sources = []

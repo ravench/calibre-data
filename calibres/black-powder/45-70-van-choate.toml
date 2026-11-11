@@ -1,0 +1,43 @@
+# Diameters from the .45-70 Government's C.I.P. sheet, lengths from Cartridges of the World, 18th ed.
+# For the experimental Van Choate bolt-action military rifle: the .45-70 case lengthened to 2¼ in.
+name = ".45-70 Van Choate"
+kind = "rimmed"
+profile = "round"
+aliases = ["45-70 van choate", "45 van choate"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.44
+base = 12.84
+neck = 12.19
+case_length = 57.15
+overall_length = 73.91
+bullet = 11.63
+# Diameters and rim from the .45-70 Government's C.I.P. sheet, which the table refers to; case and
+# overall length from COTW 18 p. 251.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page112.pdf", "book:cotw-18 p. 251"]
+
+[introduced]
+# The year the Van Choate rifle was made (COTW 18 p. 240); the round was designed for it.
+year = 1872
+sources = ["book:cotw-18 p. 240"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page112.pdf"]
+
+[bullet]
+type = "paper"
+sources = ["book:cotw-18 p. 240"]
+
+[case]
+material = "brass"
+sources = []

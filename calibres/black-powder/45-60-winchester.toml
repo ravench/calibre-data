@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# For the Winchester Model 1876; the Kennedy and Colt Lightning rifles took it too. Loaded until 1935.
+name = ".45-60 Winchester"
+kind = "rimmed"
+profile = "flat"
+aliases = ["45-60", "45-60 winchester", "45-60 wcf"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.98
+base = 12.85
+neck = 12.26
+case_length = 48.01
+overall_length = 57.28
+bullet = 11.66
+# The sheet's cone of 1°56' from 12.41 to 12.29 mm, 33 mm up the case, is too slight for a shoulder:
+# drawn as a straight case, as COTW 18 p. 251 lists it.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page110.pdf"]
+
+[introduced]
+year = 1879
+sources = ["book:cotw-18 p. 239"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page110.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 239"]
+
+[case]
+material = "brass"
+sources = []
