@@ -1,7 +1,8 @@
 # Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".405 Winchester"
 kind = "rimmed"
-profile = "flat"
+# Nose: round, the 300-grain soft point of the factory load (COTW 18 p. 226).
+profile = "round"
 aliases = ["405win"]
 
 origin = "US"

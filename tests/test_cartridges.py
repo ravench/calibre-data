@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO,
                         SMALL_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
-                        INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete,
+                        INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
                         RARE, is_rare, tags,
                         ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, origin, origin_candidates, is_worldwide,
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
@@ -593,6 +593,15 @@ class CatalogueTests(unittest.TestCase):
                 year = INTRODUCED.get(s["name"], (None,))[0]
                 if year and year < 1886 and s["oal"] > s["case"] and s["case"] and s["name"] != "7.5 mm Swiss Ordnance 1882":
                     self.assertNotEqual(bullet(s["name"]), JACKETED, s["name"])
+
+    def test_rounds_older_than_pointed_bullets_are_not_drawn_pointed(self):
+        # The profile is the nose of the bullet first sold, and the first pointed service bullet was the
+        # French Balle D of 1898 (COTW 18 p. 553).
+        for _, items in ALL_CATALOGUE:
+            for s in items:
+                year = INTRODUCED.get(s["name"], (None,))[0]
+                if year and year < 1898:
+                    self.assertNotEqual(s["profile"], SPITZER, s["name"])
 
     def test_known_original_bullets(self):
         self.assertEqual(bullet(".22 LR"), LEAD)

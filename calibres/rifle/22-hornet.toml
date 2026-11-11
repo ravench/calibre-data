@@ -2,7 +2,8 @@
 # shoulder heights estimated for drawing.
 name = ".22 Hornet"
 kind = "rimmed"
-profile = "spitzer"
+# Nose: round soft point, as first loaded (photo, COTW 18 p. 84); pointed plastic tips came later.
+profile = "round"
 aliases = ["22hornet", "5.6x35r"]
 
 origin = "US"

@@ -2,7 +2,8 @@
 # shoulder heights estimated for drawing.
 name = "6.5x50 mm SR Arisaka"
 kind = "rimless"
-profile = "spitzer"
+# Nose: round, as first loaded; pointed service bullets came only from 1898 (COTW 18 p. 553).
+profile = "round"
 aliases = ["6.5arisaka", "6.5x50"]
 
 origin = "JP"

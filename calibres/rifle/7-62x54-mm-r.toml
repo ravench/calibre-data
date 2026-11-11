@@ -1,6 +1,7 @@
 name = "7.62x54 mm R"
 kind = "rimmed"
-profile = "spitzer"
+# Nose: round, as first loaded; the pointed bullet came in 1908 (COTW 18 p. 548).
+profile = "round"
 aliases = ["7.62x54r", "762x54r"]
 
 origin = "RUE"
