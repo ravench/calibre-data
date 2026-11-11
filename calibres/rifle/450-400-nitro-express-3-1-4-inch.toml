@@ -26,9 +26,9 @@ year = 1899
 sources = ["https://en.wikipedia.org/wiki/.450/400_Nitro_Express"]
 
 [primer]
-# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
-size = "large-rifle"
-sources = []
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
 
 [shoulder_angle]
 # C.I.P. 450/400 Mag. N.E. 3"1/4
@@ -41,9 +41,9 @@ rim_thickness = 1.07
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page118.pdf"]
 
 [bullet]
-# Lookalike variants (2026-11-08): hunting rounds, soft point from their use like their twins.
+# Soft points: the Nitro Express load (COTW 18 p. 594).
 type = "softpoint"
-sources = []
+sources = ["book:cotw-18 p. 594"]
 
 [case]
 material = "brass"

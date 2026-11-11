@@ -30,7 +30,7 @@ sources = ["https://municion.org/producto/32-long-cf/"]
 
 [primer]
 size = "small-rifle"
-sources = []
+sources = ["book:cotw-18 p. 250"]
 
 [case_head]
 # .048 in.

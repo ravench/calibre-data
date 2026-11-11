@@ -27,9 +27,10 @@ year = 1914
 sources = ["https://en.wikipedia.org/wiki/8×64mm_S"]
 
 [primer]
-# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+# The table's row, shared with the rimless twin, gives a .217 in. Berdan primer, within 0.2 mm of
+# the large Boxer size.
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 651"]
 
 [shoulder_angle]
 # C.I.P. 8 x 65 RS
@@ -42,9 +43,9 @@ rim_thickness = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page40.pdf"]
 
 [bullet]
-# Lookalike variants (2026-11-08): hunting rounds, soft point from their use like their twins.
+# Soft points: every factory load in the loading table shared with the rimless twin (COTW 18 p. 632).
 type = "softpoint"
-sources = []
+sources = ["book:cotw-18 p. 632"]
 
 [case]
 material = "brass"

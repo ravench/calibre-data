@@ -23,8 +23,9 @@ year = 1898
 sources = ["https://en.wikipedia.org/wiki/.450_Nitro_Express"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
 
 [case_head]
 # .040 in.

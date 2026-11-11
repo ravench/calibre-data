@@ -41,9 +41,9 @@ rim_thickness = 1.5
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page17.pdf"]
 
 [bullet]
-# Lookalike variants (2026-11-08): hunting rounds, soft point from their use like their twins.
+# Soft points: every factory load in the loading table shared with the rimless twin (COTW 18 p. 619).
 type = "softpoint"
-sources = []
+sources = ["book:cotw-18 p. 619"]
 
 [case]
 material = "brass"

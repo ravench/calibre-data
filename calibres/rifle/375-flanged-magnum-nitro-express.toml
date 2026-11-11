@@ -25,8 +25,9 @@ year = 1912
 sources = ["https://municion.org/producto/375-holland-holland-flanged-magnum-ne/"]
 
 [primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 608"]
 
 [shoulder_angle]
 # C.I.P. 375 Fl. Mag. N.E.

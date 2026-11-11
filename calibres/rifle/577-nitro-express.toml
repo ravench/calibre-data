@@ -25,8 +25,9 @@ sources = [
 unknown = "the source gives only the 1890s"
 
 [primer]
-size = "large-rifle"
-sources = []
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 609"]
 
 [case_head]
 # .052 in.

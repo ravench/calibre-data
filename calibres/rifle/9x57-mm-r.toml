@@ -27,9 +27,10 @@ year = 1903
 sources = ["https://municion.org/producto/9-x-57-r-mauser/"]
 
 [primer]
-# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+# The table's row, shared with the rimless twin, gives a .217 in. Berdan primer, within 0.2 mm of
+# the large Boxer size.
 size = "large-rifle"
-sources = []
+sources = ["book:cotw-18 p. 652"]
 
 [shoulder_angle]
 # C.I.P. 9 x 57 R
@@ -42,9 +43,9 @@ rim_thickness = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page48.pdf"]
 
 [bullet]
-# Lookalike variants (2026-11-08): hunting rounds, soft point from their use like their twins.
+# Soft points: every factory load in the loading table shared with the rimless twin (COTW 18 p. 637).
 type = "softpoint"
-sources = []
+sources = ["book:cotw-18 p. 637"]
 
 [case]
 material = "brass"
