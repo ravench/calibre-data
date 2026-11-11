@@ -1,4 +1,6 @@
 # Official name «5,6 mm Gewehrpatrone 90», short «5,6 mm GP 90» (Stgw 90, from 1990).
+# Army regulation 53.096 d (Stgw 90, p. 18): steel-jacketed lead-core bullet and brass case, so no
+# [bullet] or [case] table; it gives weights but no case measurements.
 name = "5.6 mm GP 90"
 kind = "rimless"
 profile = "spitzer"
@@ -21,7 +23,7 @@ sources = ["https://en.wikipedia.org/wiki/.223_Remington"]
 [introduced]
 # adopted with the Stgw 90
 year = 1990
-sources = ["https://en.wikipedia.org/wiki/SIG_SG_550"]
+sources = ["https://en.wikipedia.org/wiki/SIG_SG_550", "https://www.vtg.admin.ch/dam/de/sd-web/iZ8NXEwaRRyw/53_096_d.pdf"]
 
 [primer]
 size = "small-rifle"
@@ -39,3 +41,7 @@ ramp_top = 3.15
 groove_diameter = 8.43
 ramp_angle = 25.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+
+[fired_by]
+firearms = ["SIG Stgw 90"]
+sources = ["https://www.vtg.admin.ch/dam/de/sd-web/iZ8NXEwaRRyw/53_096_d.pdf", "https://en.wikipedia.org/wiki/SIG_SG_550"]
