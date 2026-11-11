@@ -1,0 +1,33 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Ballard's longer .44 Long rimfire for single-shot rifles; obsolete by the 1880s.
+name = ".44 Extra Long Rimfire"
+kind = "rimfire"
+profile = "round"
+aliases = ["44 extra long rf", "44 extra long rimfire"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.31
+base = 11.61
+neck = 11.58
+case_length = 31.75
+overall_length = 46.81
+bullet = 11.33
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: about 1869, though perhaps 1870-75; listed in 1876.
+year = 1869
+sources = ["book:cotw-18 p. 666"]
+
+[bullet]
+# COTW 18 p. 666 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []
