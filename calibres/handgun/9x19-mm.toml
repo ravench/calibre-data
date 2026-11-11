@@ -43,6 +43,6 @@ material = "brass"
 sources = []
 
 [current_cases]
-# Barnaul's lacquered, zinc- or polymer-coated steel cases.
-materials = ["steel"]
-sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases; CCI Blazer's aluminium cases.
+materials = ["steel", "aluminium"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant", "https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]

@@ -38,3 +38,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page12.pdf
 [case]
 material = "brass"
 sources = []
+
+[current_cases]
+# CCI Blazer's aluminium cases.
+materials = ["aluminium"]
+sources = ["https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]

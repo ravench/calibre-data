@@ -106,6 +106,7 @@ JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP = "jacketed", "lead", "pa
 # Case and projectile materials (a calibre without [case] has a brass case; a ball, Minié bullet or
 # pellet without [projectile] is lead).
 BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID = "brass", "copper", "steel", "nickel", "paper", "hybrid"
+ALUMINIUM = "aluminium"
 PLASTIC = "plastic"
 # What tells lookalikes apart (differ_by in lookalikes.toml).
 RIM, BORE, LENGTH, SEATING, LOAD, IGNITION = "rim", "bore", "length", "seating", "load", "ignition"
@@ -165,8 +166,8 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "fired_by": (("firearms",), (), "required"),
 }
 BULLET_TYPES = (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP)
-CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID)
-CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL)
+CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID)
+CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM)
 PROJECTILE_MATERIALS = (STEEL, PLASTIC)
 DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
 GROUP_KEYS = ("name", "differ_by", "calibres")
@@ -925,7 +926,7 @@ def bullet(name):
 
 
 def case_material(name):
-    """What the case is made of: BRASS, COPPER, STEEL, NICKEL, PAPER or HYBRID."""
+    """What the case is made of: BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER or HYBRID."""
     return CASES.get(name, (BRASS, None))[0]
 
 
