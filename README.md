@@ -296,13 +296,14 @@ cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outlin
   1890 steel cap is its own profile (`patched`). `sources = []`: hunting rounds whose sources give
   no bullet, soft point from their use, not checked.
 - `[case]` `material`, in every calibre with a case (not shot shells, balls, Minié bullets or
-  pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated steel, `aluminium`, `paper`
-  (brass foil covered in paper on a brass head, Boxer's Snider case) or `hybrid` (brass body on a
-  steel head). Every material but brass needs a source; brass may have `sources = []` while it is
-  not checked. The outlines name only the materials that are not brass (`caseMaterial`).
-- `[current_cases]` `materials`: other case materials made today (brass .45-70, steel 9x19, CCI Blazer's
-  aluminium), never
-  the original's own (brass only where the original is not brass); the original stays the drawn one.
+  pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated steel,
+  `aluminium`, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case) or `hybrid`
+  (brass body on a steel head). Every material but brass needs a source; brass may have
+  `sources = []` while it is not checked. The outlines name only the materials that are not brass
+  (`caseMaterial`).
+- `[current_cases]` `materials`: other case materials made today (brass .45-70, steel 9x19, CCI
+  Blazer's aluminium), never the original's own (brass only where the original is not brass); the
+  original stays the drawn one.
 - `[projectile]` `material`: balls, Minié bullets and pellets not made of lead: `steel` or `plastic`
   (steel BBs and airsoft BBs).
 

@@ -140,14 +140,14 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 
 # The original case, in every calibre with one (not shot shells, balls, Minié bullets or pellets):
-# brass, copper, steel (lacquered), nickel (nickel-plated steel), paper (brass foil covered in paper
-# on a brass head) or hybrid (brass body on a steel head). Every material but brass needs a source;
+# brass, copper, steel (lacquered), nickel (nickel-plated steel), aluminium, paper (brass foil covered
+# in paper on a brass head) or hybrid (brass body on a steel head). Every material but brass needs a source;
 # brass may have sources = [] while it is not checked.
 [case]
 material = "brass"
 sources = []
 
-# Other case materials made today: brass, copper, steel or nickel, never the original's own (so
+# Other case materials made today: brass, copper, steel, nickel or aluminium, never the original's own (so
 # brass only where the original is not brass). The original stays the one drawn. Needs a source.
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
