@@ -1,0 +1,33 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The straight Werndl round, Austria's service round from 1873 to 1877.
+name = "11.4x50 mm R Werndl M73"
+kind = "rimmed"
+profile = "round"
+aliases = ["11.4x50r werndl", "werndl m73"]
+display_aliases = ["11.4x50 mm Austrian Werndl"]
+
+origin = "AH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.5
+base = 12.52
+neck = 11.99
+case_length = 50.04
+overall_length = 64.77
+bullet = 11.4
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1873
+sources = ["book:cotw-18 p. 566"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+# The military load: a lead bullet over blackpowder.
+type = "lead"
+sources = ["book:cotw-18 p. 566"]

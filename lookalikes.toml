@@ -126,6 +126,26 @@ differ_by = ["length"]
 calibres = ["10.75x63 mm Mauser", "10.75x68 mm Mauser"]
 
 [[group]]
+# COTW 18 p. 567: the Brazilian Comblain looks much like the Belgian one.
+differ_by = ["bore", "length"]
+calibres = ["11x50 mm R Albini", "11x53 mm R Comblain", "11.4x50 mm R Brazilian Comblain"]
+
+[[group]]
+# COTW 18 p. 566: the Egyptian Remington fires in Beaumont rifles.
+differ_by = ["bore", "length"]
+calibres = ["11.3x50 mm R Beaumont M71", "11x52 mm R Beaumont M71/78", "11.43x50 mm R Egyptian Remington"]
+
+[[group]]
+# COTW 18 p. 567: rim, base and case length almost the same.
+differ_by = ["bore"]
+calibres = ["11.15x58 mm R Spanish Remington", "11.5x57 mm R Spanish Reformado"]
+
+[[group]]
+# COTW 18 p. 552: Type 45 rifles were rechambered for the Type 66.
+differ_by = ["length"]
+calibres = ["8x50 mm R Siamese Type 45", "8x52 mm R Siamese Type 66"]
+
+[[group]]
 differ_by = ["bore"]
 calibres = ["7.62x54 mm R", "7.62x53 mm R"]
 
@@ -157,9 +177,10 @@ differ_by = ["bore"]
 calibres = ["6x47 mm SM", "6.5x47 mm Lapua"]
 
 [[group]]
-# COTW 18 p. 649: the rimless version of the 11x60 mm R Mauser.
+# COTW 18 p. 649: the rimless version of the 11x60 mm R Mauser. p. 560: Serbian cases can be made from
+# 11 mm Mauser brass sized down.
 differ_by = ["rim", "bore", "length"]
-calibres = ["11x60 mm R Mauser", "11.2x60 mm Schüler"]
+calibres = ["11x60 mm R Mauser", "11.2x60 mm Schüler", "10.15x63 mm R Serbian Mauser"]
 
 [[group]]
 # COTW 18 p. 637: the 8x56 mm case necked up.

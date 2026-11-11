@@ -1,0 +1,34 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The first Spanish centrefire service round, for the early Remington rolling blocks.
+name = "11.5x57 mm R Spanish Reformado"
+kind = "rimmed"
+profile = "round"
+aliases = ["11.5x57r", "43 reformado"]
+
+origin = "ES"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.03
+base = 13.33
+neck = 11.84
+case_length = 57.4
+overall_length = 77.72
+bullet = 11.53
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1867
+sources = ["book:cotw-18 p. 567"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+# The military load was a brass-covered bullet over blackpowder (COTW 18 p. 567); drawn as lead,
+# its core, as the catalogue has no brass-covered type.
+type = "lead"
+sources = []
+

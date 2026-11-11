@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The underwater dart of the APS rifle, on a sealed 5.45x39 mm case; the dart is about 120 mm long.
+name = "5.66x39 mm MPS"
+kind = "rimless"
+profile = "spitzer"
+aliases = ["5.66x39", "mps"]
+
+origin = "SU"
+rare = true
+
+[mm]
+rim = 10.01
+base = 10.03
+shoulder = 9.25
+shoulder_at = 31.8
+neck = 6.25
+case_length = 39.83
+overall_length = 149.86
+bullet = 5.66
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+unknown = "COTW 18 p. 533 gives no year."
+sources = ["book:cotw-18 p. 533"]
+
+[primer]
+# The table gives SR.
+size = "small-rifle"
+sources = ["book:cotw-18 p. 573"]
+
+[case_head]
+# from the 5.45x39 mm case; C.I.P. 5,45 x 39
+rim_thickness = 1.5
+ramp_top = 3.2
+groove_diameter = 8.6
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page2.pdf"]
+
