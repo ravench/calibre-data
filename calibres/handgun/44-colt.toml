@@ -40,4 +40,4 @@ sources = ["https://commons.wikimedia.org/wiki/File:44_Colt.JPG"]
 [current_cases]
 # Starline's brass cases.
 materials = ["brass"]
-sources = ["https://starlinebrass.com/44-colt-brass"]
+sources = ["https://www.starlinebrass.com/44-colt-brass"]

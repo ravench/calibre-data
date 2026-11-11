@@ -15,7 +15,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PR
                         CASES, BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, PLASTIC, loose_material, CARTRIDGE_BULLETS, LOOSE_BULLETS, is_blank,
                         PROFILE_TODAY, LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes,
-                        BOOK_SOURCE)
+                        BOOK_SOURCE, SOURCES)
 
 ALL = [s for _, items in CATALOGUE for s in items]  # the calibres in the apps
 APP_NAMES = {s["name"] for s in ALL}
@@ -747,7 +747,8 @@ class CatalogueTests(unittest.TestCase):
         for name in (".22 BB Cap", ".22 Extra Long", ".32 Short Rimfire", ".38 Long Rimfire", ".41 Short",
                      ".44 Colt", ".45 Colt"):
             self.assertEqual(case_material(name), COPPER, name)
-            self.assertTrue(CASES[name][1].startswith("https://commons.wikimedia.org/wiki/File:"), name)
+            self.assertTrue(any(url.startswith("https://commons.wikimedia.org/wiki/File:")
+                                for url in SOURCES[(name, "case")]), name)
 
 
     def test_bbs_are_loose_steel_or_plastic_balls(self):
