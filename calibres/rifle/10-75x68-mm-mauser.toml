@@ -1,0 +1,35 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+name = "10.75x68 mm Mauser"
+kind = "rimless"
+profile = "round"
+aliases = ["10.75x68"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.4
+base = 12.5
+shoulder = 11.94
+shoulder_at = 56.5
+neck = 11.3
+case_length = 67.82
+overall_length = 80.26
+bullet = 10.77
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: the early 1920s; the decade's first year is kept.
+year = 1920
+sources = ["book:cotw-18 p. 647"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 652"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 647"]

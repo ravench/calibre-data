@@ -101,6 +101,30 @@ differ_by = ["rim"]
 calibres = ["8x51 mm Mauser", "8x51 mm R Mauser"]
 
 [[group]]
+differ_by = ["rim"]
+calibres = ["9.3x53 mm Swiss", "9.3x53 mm R Swiss"]
+
+[[group]]
+differ_by = ["bore"]
+calibres = ["9x71 mm Peterlongo", "8x71 mm Peterlongo"]
+
+[[group]]
+differ_by = ["bore"]
+calibres = [".404 Jeffery", "9.5x73 mm Miller-Greiss Magnum"]
+
+[[group]]
+differ_by = ["bore"]
+calibres = ["9.5x47 mm R", "10.5x47 mm R"]
+
+[[group]]
+differ_by = ["length"]
+calibres = ["9.3x72 mm R", "9.3x48 mm R", "9.3x57 mm R", "9.3x70 mm R"]
+
+[[group]]
+differ_by = ["length"]
+calibres = ["10.75x68 mm Mauser", "10.75x63 mm Mauser"]
+
+[[group]]
 differ_by = ["bore"]
 calibres = ["7.62x54 mm R", "7.62x53 mm R"]
 

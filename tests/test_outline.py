@@ -217,9 +217,15 @@ class OutlineTests(unittest.TestCase):
     SHOULDER_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
         # shoulder_at is estimated, as the note in [mm] says).
-        ".244 Halger Magnum", "6.5x27 mm R", "6.5x53.5 mm SR Daudeteau", "6.5x58 mm R Krag-Jørgensen",
-        "6.5x61 mm Mauser", "6.5x61 mm R Mauser", "6x29.5 mm R Stahl", "6x57 mm Mauser", "6x58 mm Forster",
-        "6x58 mm R Forster", "7x73 mm Vom Hofe Belted", "8x42 mm R M88", "8x71 mm Peterlongo",
+        ".244 Halger Magnum", ".45 Blaser", ".460 Steyr", "10.25x69 mm R Hunting-Express", "10.5x47 mm R",
+        "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser", "10.8x47 mm R Martini Target",
+        "11.2x60 mm Schüler", "11.2x72 mm Schüler", "12.5x70 mm Schüler", "6.5x27 mm R",
+        "6.5x53.5 mm SR Daudeteau", "6.5x58 mm R Krag-Jørgensen", "6.5x61 mm Mauser", "6.5x61 mm R Mauser",
+        "6x29.5 mm R Stahl", "6x57 mm Mauser", "6x58 mm Forster", "6x58 mm R Forster",
+        "7x73 mm Vom Hofe Belted", "8x42 mm R M88", "8x54 mm Krag-Jørgensen", "8x71 mm Peterlongo",
+        "9.3x53 mm R Swiss", "9.3x53 mm Swiss", "9.3x65 mm R Collath", "9.3x72 mm R Sauer",
+        "9.3x75 mm R Nimrod", "9.5x47 mm R", "9.5x73 mm Miller-Greiss Magnum", "9x63 mm", "9x70 mm R Mauser",
+        "9x71 mm Peterlongo",
     }
 
     def bottlenecks(self):
@@ -299,8 +305,10 @@ class OutlineTests(unittest.TestCase):
         "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser", "6x58 mm Forster", "7x73 mm Vom Hofe Belted",
-        "8x71 mm Peterlongo",
+        ".45 Blaser", "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser",
+        "11.2x60 mm Schüler", "11.2x72 mm Schüler", "12.5x70 mm Schüler", "6.5x53.5 mm SR Daudeteau",
+        "6.5x61 mm Mauser", "6x58 mm Forster", "7x73 mm Vom Hofe Belted", "8x71 mm Peterlongo",
+        "9.3x53 mm Swiss", "9x63 mm", "9x71 mm Peterlongo",
     }
 
     def rimless(self):

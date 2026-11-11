@@ -67,6 +67,10 @@ flag = "🇵🇱"
 name = "Finland"
 flag = "🇫🇮"
 
+[NO]
+name = "Norway"
+flag = "🇳🇴"
+
 [RUE]
 name = "Russian Empire"
 

@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A blackpowder target round (old DWM case 23).
+name = "9.5x47 mm R"
+kind = "rimmed"
+profile = "round"
+aliases = ["9.5x47r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.81
+base = 13.03
+shoulder = 12.62
+shoulder_at = 35.7
+neck = 10.39
+case_length = 46.99
+overall_length = 60.2
+bullet = 9.52
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: the 1880s; the decade's first year is kept.
+year = 1880
+sources = ["book:cotw-18 p. 644"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 652"]
+
+[bullet]
+# A blackpowder target round (COTW 18 p. 643); lead, like the others of its time.
+type = "lead"
+sources = []
+

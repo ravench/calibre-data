@@ -1,0 +1,35 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The shoulder is barely there.
+name = "10.75x57 mm Mannlicher"
+kind = "rimless"
+profile = "round"
+aliases = ["10.75x57"]
+
+origin = "AT"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.89
+base = 11.89
+shoulder = 11.81
+shoulder_at = 45.8
+neck = 11.38
+case_length = 56.9
+overall_length = 77.47
+bullet = 10.77
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: around 1900, possibly earlier.
+year = 1900
+sources = ["book:cotw-18 p. 647"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 647"]
