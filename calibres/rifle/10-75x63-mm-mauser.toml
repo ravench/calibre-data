@@ -34,3 +34,7 @@ sources = []
 # COTW gives only its weight.
 type = "softpoint"
 sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -50,3 +50,8 @@ sources = [
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/9-x-39-180314-en1.pdf",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf",
 ]
+
+[case]
+# Lacquered steel.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 44"]

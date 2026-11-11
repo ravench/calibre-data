@@ -33,3 +33,7 @@ sources = ["book:donnelly p. 632"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
+
+[case]
+material = "brass"
+sources = []

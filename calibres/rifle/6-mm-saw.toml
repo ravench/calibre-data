@@ -29,3 +29,9 @@ sources = ["book:cotw-18 p. 535"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[case]
+# COTW names varnished steel and aluminium cases without saying which came first; aluminium is not
+# a material here yet.
+material = "steel"
+sources = ["book:cotw-18 p. 535"]

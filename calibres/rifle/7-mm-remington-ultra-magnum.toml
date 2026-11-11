@@ -46,3 +46,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page41.pdf"]
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/7mm_Remington_Ultra_Magnum"]
+
+[case]
+material = "brass"
+sources = []

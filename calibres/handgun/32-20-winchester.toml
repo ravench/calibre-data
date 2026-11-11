@@ -43,3 +43,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page81.pdf
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.32-20_Winchester"]
+
+[case]
+material = "brass"
+sources = []

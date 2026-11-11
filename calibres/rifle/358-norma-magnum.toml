@@ -48,3 +48,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page26.p
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/358-norma-magnum-belted/"]
+
+[case]
+material = "brass"
+sources = []

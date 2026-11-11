@@ -35,3 +35,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page36.p
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.458_Winchester_Magnum"]
+
+[case]
+material = "brass"
+sources = []

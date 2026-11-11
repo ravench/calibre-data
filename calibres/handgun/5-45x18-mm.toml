@@ -42,3 +42,8 @@ ramp_top = 2.9
 groove_diameter = 6.58
 ramp_angle = 16.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page2.pdf"]
+
+[case]
+# Lacquered steel.
+material = "steel"
+sources = ["book:cotw-18 p. 458"]

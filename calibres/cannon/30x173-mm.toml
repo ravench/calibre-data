@@ -24,3 +24,9 @@ sources = [
 [introduced]
 year = 1977
 sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
+
+[case]
+# The GAU-8's rounds, in service first (1977), and some MK 30 rounds have aluminium cases
+# (pp. 112-113), not a material here yet; the steel is the Oerlikon KCA rounds' lacquered steel case.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 105"]

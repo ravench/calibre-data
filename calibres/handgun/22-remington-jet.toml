@@ -43,3 +43,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page36.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.22_Remington_Jet"]
+
+[case]
+material = "brass"
+sources = []

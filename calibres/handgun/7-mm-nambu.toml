@@ -29,3 +29,7 @@ sources = ["book:cotw-18 p. 463"]
 # The table gives a Berdan primer without its size.
 size = "small-pistol"
 sources = []
+
+[case]
+material = "brass"
+sources = []

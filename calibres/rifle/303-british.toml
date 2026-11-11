@@ -37,3 +37,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page74.pdf
 # R on the C.I.P. sheet.
 rim_thickness = 1.63
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page74.pdf"]
+
+[case]
+material = "brass"
+sources = []

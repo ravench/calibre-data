@@ -24,3 +24,7 @@ sources = [
 [introduced]
 year = 1934
 sources = ["https://en.wikipedia.org/wiki/Bofors_40_mm_L/60_gun"]
+
+[case]
+material = "brass"
+sources = ["book:janes-ammo-2002 p. 127"]

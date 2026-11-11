@@ -45,3 +45,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page37.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.221_Remington_Fireball"]
+
+[case]
+material = "brass"
+sources = []

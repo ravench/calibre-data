@@ -46,3 +46,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page128.pdf"
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.325_WSM"]
+
+[case]
+material = "brass"
+sources = []

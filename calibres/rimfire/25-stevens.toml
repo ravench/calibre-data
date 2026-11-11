@@ -25,3 +25,7 @@ sources = ["https://en.wikipedia.org/wiki/.25_Stevens"]
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/25-stevens-short-rf/"]
+
+[case]
+material = "brass"
+sources = []

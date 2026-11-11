@@ -25,3 +25,7 @@ sources = ["https://en.wikipedia.org/wiki/.35_S%26W_Auto"]
 # 4.34 mm, 4 specimens
 size = "small-pistol"
 sources = ["https://municion.org/producto/35-smith-wesson-automatic/"]
+
+[case]
+material = "brass"
+sources = []

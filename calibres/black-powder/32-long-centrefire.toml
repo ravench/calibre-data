@@ -41,3 +41,7 @@ sources = ["book:donnelly p. 367"]
 # Outside-lubricated lead.
 type = "lead"
 sources = ["https://municion.org/producto/32-long-cf/"]
+
+[case]
+material = "brass"
+sources = []

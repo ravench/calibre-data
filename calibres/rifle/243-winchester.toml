@@ -45,6 +45,10 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page88.pdf"]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.243_Winchester"]
 
+[case]
+material = "brass"
+sources = []
+
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]

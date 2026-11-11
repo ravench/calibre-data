@@ -27,3 +27,7 @@ sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Magnum_Rimfire"]
 # .046 in.
 rim_thickness = 1.17
 sources = ["book:cotw-18 p. 670"]
+
+[case]
+material = "brass"
+sources = []

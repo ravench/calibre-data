@@ -30,3 +30,7 @@ sources = ["https://en.wikipedia.org/wiki/9×23mm_Largo"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/9×23mm_Largo"]
+
+[case]
+material = "brass"
+sources = []

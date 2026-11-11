@@ -34,3 +34,7 @@ sources = []
 # The military load: a paper-patched lead bullet over blackpowder.
 type = "paper"
 sources = ["book:cotw-18 p. 562"]
+
+[case]
+material = "brass"
+sources = []

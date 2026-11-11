@@ -43,3 +43,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page57.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/22-savage-hi-power/"]
+
+[case]
+material = "brass"
+sources = []

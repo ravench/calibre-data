@@ -34,3 +34,7 @@ sources = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338
 # .059 in.
 rim_thickness = 1.5
 sources = ["book:cotw-18 p. 176"]
+
+[case]
+material = "brass"
+sources = []

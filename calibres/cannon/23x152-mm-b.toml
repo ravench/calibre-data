@@ -21,3 +21,12 @@ sources = ["https://en.wikipedia.org/wiki/23%C3%97152mmB"]
 [introduced]
 year = 1941
 sources = ["https://en.wikipedia.org/wiki/Volkov-Yartsev_VYa-23"]
+
+[case]
+# Brass for the VYa-23, the first gun; steel for the ZU-23 (see [current_cases]).
+material = "brass"
+sources = ["book:janes-ammo-2002 p. 91"]
+
+[current_cases]
+materials = ["steel"]
+sources = ["book:janes-ammo-2002 p. 91"]

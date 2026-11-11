@@ -38,3 +38,7 @@ sources = ["book:cotw-18 p. 251"]
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/401-winchester-self-loading/"]
+
+[case]
+material = "brass"
+sources = []

@@ -33,3 +33,7 @@ sources = ["book:cotw-18 p. 252"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
+
+[case]
+material = "brass"
+sources = []

@@ -28,3 +28,15 @@ sources = ["book:cotw-18 p. 670"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Short"]
+
+[case]
+# Smith & Wesson's first rimfire cases were soft copper; the NRA Museum notes how the copper heads of
+# the first Model 1's rounds bulged. Brass came later.
+material = "copper"
+sources = ["https://gundigest.com/gear-ammo/ammunition/rimfire-history",
+           "https://nramuseum.org/the-museum/the-galleries/the-prospering-new-republic/case-31-the-age-of-industry/smith-wesson-no-1-1st-issue-revolver-w-original-gutta-percha-case.aspx"]
+
+[current_cases]
+# CCI's .22 Short today: brass case.
+materials = ["brass"]
+sources = ["https://www.targetsportsusa.com/cci-22-short-ammo-29-grain-plated-lead-round-nose-0027-p-898.aspx"]

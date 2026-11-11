@@ -47,3 +47,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf"
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/350-rigby-magnum-ne/"]
+
+[case]
+material = "brass"
+sources = []

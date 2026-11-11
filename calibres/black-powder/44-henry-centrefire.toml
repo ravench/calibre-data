@@ -41,3 +41,7 @@ sources = []
 # Winchester: flat-nosed lead with one grease groove, brass case.
 type = "lead"
 sources = ["https://municion.org/Ficha-11-022-CBC-060-0001/"]
+
+[case]
+material = "brass"
+sources = []

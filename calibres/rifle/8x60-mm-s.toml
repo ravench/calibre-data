@@ -46,3 +46,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page60.pdf"]
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/8-x-60-s/"]
+
+[case]
+material = "brass"
+sources = []

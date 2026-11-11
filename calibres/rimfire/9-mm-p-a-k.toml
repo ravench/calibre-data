@@ -24,3 +24,7 @@ sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_
 [primer]
 size = "small-pistol"
 sources = []
+
+[case]
+material = "brass"
+sources = []

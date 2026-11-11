@@ -22,3 +22,8 @@ sources = [
 [introduced]
 year = 1977
 sources = ["https://en.wikipedia.org/wiki/Mauser_BK-27"]
+
+[case]
+# Lacquered steel for every round.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 95"]

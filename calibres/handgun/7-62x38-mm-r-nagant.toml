@@ -30,3 +30,7 @@ sources = ["https://en.wikipedia.org/wiki/7.62×38mmR"]
 # .048 in.
 rim_thickness = 1.22
 sources = ["book:donnelly p. 843"]
+
+[case]
+material = "brass"
+sources = []

@@ -31,3 +31,7 @@ sources = ["https://municion.org/producto/360-n-5-revolver-rifle/"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.360_No._5_Rook"]
+
+[case]
+material = "brass"
+sources = []

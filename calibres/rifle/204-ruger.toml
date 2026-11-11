@@ -44,3 +44,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page79.pdf"]
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.204_Ruger"]
+
+[case]
+material = "brass"
+sources = []

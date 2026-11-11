@@ -27,3 +27,7 @@ sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
 # .059 in.
 rim_thickness = 1.5
 sources = ["book:cotw-18 p. 529"]
+
+[case]
+material = "brass"
+sources = []

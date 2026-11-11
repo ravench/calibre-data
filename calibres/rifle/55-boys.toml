@@ -33,3 +33,7 @@ sources = ["https://municion.org/producto/55-boys/"]
 # AECC drawing 14-099-BFC-020
 degrees = 10
 sources = ["https://municion.org/producto/55-boys/"]
+
+[case]
+material = "brass"
+sources = []

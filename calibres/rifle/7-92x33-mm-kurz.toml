@@ -44,3 +44,13 @@ ramp_top = 3.5
 groove_diameter = 10.5
 ramp_angle = 31.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page53.pdf"]
+
+[case]
+# Lacquered steel, as the wartime military rounds were made.
+material = "steel"
+sources = ["book:cotw-18 p. 555"]
+
+[current_cases]
+# Prvi Partizan's round today: brass case, Boxer primer.
+materials = ["brass"]
+sources = ["https://www.targetsportsusa.com/prvi-partizan-792x33mm-kurz-mauser-124-grain-fmj-pp7k-p-2262.aspx"]

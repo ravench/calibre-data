@@ -33,3 +33,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page42.pdf
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
+
+[case]
+material = "brass"
+sources = []

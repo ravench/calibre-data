@@ -25,3 +25,7 @@ sources = ["https://en.wikipedia.org/wiki/.41_Short"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.41_Short"]
+
+[case]
+material = "brass"
+sources = []

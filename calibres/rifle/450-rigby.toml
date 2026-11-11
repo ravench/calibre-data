@@ -46,3 +46,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page150.pdf"
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.450_Rigby"]
+
+[case]
+material = "brass"
+sources = []

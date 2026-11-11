@@ -24,3 +24,7 @@ sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 # 4.15 mm, 8 specimens
 size = "small-pistol"
 sources = ["https://municion.org/producto/56-mm-velo-dog/"]
+
+[case]
+material = "brass"
+sources = []

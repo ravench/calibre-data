@@ -39,3 +39,7 @@ sources = ["https://www.4dreamerrentals.com/"]
 # .054 in.
 rim_thickness = 1.37
 sources = ["book:cotw-18 p. 175"]
+
+[case]
+material = "brass"
+sources = []

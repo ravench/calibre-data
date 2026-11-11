@@ -35,3 +35,7 @@ sources = ["book:cotw-18 p. 252"]
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/50-110-300-winchester-express/"]
+
+[case]
+material = "brass"
+sources = []

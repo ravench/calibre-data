@@ -37,3 +37,7 @@ sources = ["https://municion.org/producto/458-socom/"]
 # .048 in.
 rim_thickness = 1.22
 sources = ["book:cotw-18 p. 453"]
+
+[case]
+material = "brass"
+sources = []

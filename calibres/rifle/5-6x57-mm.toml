@@ -47,3 +47,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page5.pdf"]
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/5.6×57mm"]
+
+[case]
+material = "brass"
+sources = []

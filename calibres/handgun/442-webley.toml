@@ -28,3 +28,7 @@ sources = []
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.442_Webley"]
+
+[case]
+material = "brass"
+sources = []

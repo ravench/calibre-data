@@ -36,3 +36,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page27.pdf"]
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Mach_2"]
+
+[case]
+material = "brass"
+sources = []

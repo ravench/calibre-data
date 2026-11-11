@@ -36,3 +36,6 @@ sources = ["book:cotw-18 p. 651"]
 type = "lead"
 sources = []
 
+[case]
+material = "brass"
+sources = []

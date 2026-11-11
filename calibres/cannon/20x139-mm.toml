@@ -23,3 +23,7 @@ sources = [
 [introduced]
 unknown = "the sources date the HS 820 only to after 1945; the later Rh 202 reached units in 1972"
 sources = ["https://en.wikipedia.org/wiki/Hispano-Suiza_HS.820", "https://en.wikipedia.org/wiki/Rheinmetall_Mk_20_Rh-202"]
+
+[case]
+material = "brass"
+sources = []

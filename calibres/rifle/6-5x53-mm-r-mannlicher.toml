@@ -36,3 +36,7 @@ sources = ["https://en.wikipedia.org/wiki/6.5%C3%9753mmR"]
 # .066 in.
 rim_thickness = 1.68
 sources = ["book:cotw-18 p. 573"]
+
+[case]
+material = "brass"
+sources = []

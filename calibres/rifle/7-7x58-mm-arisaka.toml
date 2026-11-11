@@ -38,3 +38,7 @@ sources = ["https://municion.org/producto/77-x-58-japanese-rimless-arisaka-type-
 # .042 in.
 rim_thickness = 1.07
 sources = ["book:cotw-18 p. 573"]
+
+[case]
+material = "brass"
+sources = []

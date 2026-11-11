@@ -45,3 +45,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page96.pdf"]
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.257_Roberts"]
+
+[case]
+material = "brass"
+sources = []

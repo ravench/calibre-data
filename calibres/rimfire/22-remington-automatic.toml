@@ -26,3 +26,7 @@ sources = ["https://gunsmagazine.com/our-experts/remington-model-16/"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]
+
+[case]
+material = "brass"
+sources = []

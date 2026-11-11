@@ -159,13 +159,13 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "shoulder_angle": (("degrees",), (), "required"),
     "case_head": (("rim_thickness",), HEAD_GROOVE, "required"),
     "bullet": (("type",), (), "may be empty"),
-    "case": (("material",), (), "required"),
+    "case": (("material",), (), "may be empty"),  # every case but brass needs a source
     "current_cases": (("materials",), (), "required"),
     "projectile": (("material",), (), "required"),
     "fired_by": (("firearms",), (), "required"),
 }
 BULLET_TYPES = (LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP)
-CASE_MATERIALS = (COPPER, STEEL, NICKEL, PAPER, HYBRID)
+CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID)
 CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL)
 PROJECTILE_MATERIALS = (STEEL, PLASTIC)
 DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
@@ -490,7 +490,7 @@ def _read_calibre(f, category, countries, books=None):
         for (tt, k), allowed_values in enums.items():
             if t == tt and k in data and data[k] not in allowed_values:
                 hint = {"bullet": " (leave [bullet] out for a full metal jacket)",
-                        "case": " (leave [case] out for brass)", "projectile": " (leave [projectile] out for lead)"}
+                        "projectile": " (leave [projectile] out for lead)"}
                 f.problem(f.line(t, k), f"[{t}] {k} {data[k]!r} is not one of {', '.join(allowed_values)}"
                                         f"{_close(data[k], allowed_values)}{hint.get(t, '')}")
         if t == "current_cases" and "materials" in data:
@@ -523,6 +523,14 @@ def _read_calibre(f, category, countries, books=None):
         f.problem(None, "a centrefire calibre needs a [primer] table (size and sources, or sources = [] if not checked)")
     if category == "cannon" and not 20 <= facts["mm"]["bullet"] <= 40:
         f.problem(f.line("mm", "bullet"), "calibres/cannon/ holds the 20 to 40 mm cannon rounds: bullet is 20 to 40")
+    if kind in LOOSE + (SHOT,):
+        if "case" in facts:
+            f.problem(f.line("case"), f"a {kind} calibre has no metal case: remove [case]")
+    elif "case" not in facts:
+        f.problem(None, 'needs a [case] table: material = "brass" (sources = [] if not checked) or another '
+                        "material with its sources")
+    elif facts["case"]["material"] != BRASS and not facts["case"]["sources"]:
+        f.problem(f.line("case"), f"[case] material {facts['case']['material']!r} needs a source")
     if "projectile" in facts and kind not in LOOSE:
         f.problem(f.line("projectile"), "[projectile] is only for balls, Minié bullets and pellets")
     if "case_head" in facts:

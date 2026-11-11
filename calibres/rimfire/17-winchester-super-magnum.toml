@@ -37,3 +37,7 @@ sources = ["book:cotw-18 p. 670"]
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
+
+[case]
+material = "brass"
+sources = []

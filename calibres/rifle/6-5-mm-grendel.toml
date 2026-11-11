@@ -35,6 +35,10 @@ sources = ["https://www.rifleshootermag.com/editorial/6-5-grendel-evolution/8400
 rim_thickness = 1.5
 sources = ["book:cotw-18 p. 175"]
 
+[case]
+material = "brass"
+sources = []
+
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]

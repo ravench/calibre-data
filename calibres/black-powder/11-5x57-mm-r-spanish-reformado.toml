@@ -32,3 +32,6 @@ sources = []
 type = "lead"
 sources = []
 
+[case]
+material = "brass"
+sources = []

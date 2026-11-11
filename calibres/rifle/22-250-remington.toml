@@ -47,3 +47,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf"]
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.22-250_Remington"]
+
+[case]
+material = "brass"
+sources = []

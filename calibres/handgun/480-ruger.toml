@@ -32,3 +32,7 @@ sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
 # .065 in.
 rim_thickness = 1.65
 sources = ["book:cotw-18 p. 529"]
+
+[case]
+material = "brass"
+sources = []

@@ -44,3 +44,7 @@ sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
 # the GP 1890 case
 degrees = 27.8
 sources = ["https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
+
+[case]
+material = "brass"
+sources = []

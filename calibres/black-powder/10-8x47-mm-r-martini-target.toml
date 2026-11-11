@@ -33,3 +33,7 @@ sources = []
 [bullet]
 type = "paper"
 sources = ["book:cotw-18 p. 648"]
+
+[case]
+material = "brass"
+sources = []

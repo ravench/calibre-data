@@ -41,3 +41,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page94.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/375-holland-holland-flanged-magnum-ne/"]
+
+[case]
+material = "brass"
+sources = []

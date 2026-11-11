@@ -47,3 +47,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page78.pdf"]
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.17_Remington_Fireball"]
+
+[case]
+material = "brass"
+sources = []

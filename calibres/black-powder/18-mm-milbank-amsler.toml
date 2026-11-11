@@ -27,3 +27,7 @@ sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
+
+[case]
+material = "brass"
+sources = []

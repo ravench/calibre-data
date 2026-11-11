@@ -29,3 +29,7 @@ sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/44-colt-remington-army-revolver/"]
+
+[case]
+material = "brass"
+sources = []
