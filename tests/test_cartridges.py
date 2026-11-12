@@ -3,7 +3,7 @@ import os, sys, unittest
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS,  # noqa: E402
+from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO,
                         SMALL_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
@@ -71,7 +71,19 @@ class CatalogueTests(unittest.TestCase):
     def test_every_centrefire_calibre_has_a_primer(self):
         centrefire = {s["name"] for s in ALL if s["kind"] not in (RIMFIRE, BALL, MINIE, PELLET)}
         self.assertEqual(set(PRIMERS), centrefire)
-        self.assertLessEqual(set(PRIMERS.values()), set(PRIMER_DIAMETERS))
+        self.assertLessEqual(set(PRIMERS.values()), set(PRIMER_DIAMETERS) | {MINIATURE})
+        self.assertEqual(set(PRIMER_MM), centrefire)
+        for name, size in PRIMERS.items():
+            if size != MINIATURE:  # a measured diameter stays near its size
+                self.assertAlmostEqual(PRIMER_MM[name], PRIMER_DIAMETERS[size], delta=0.5, msg=name)
+
+    def test_miniature_primers_measured_on_headstamps(self):
+        # Kolibri and Liliput primers are smaller than any reloading size (municion.org photos).
+        self.assertEqual({n for n, s in PRIMERS.items() if s == MINIATURE},
+                         {"2.7 mm Kolibri", "3 mm Kolibri", "4.25 mm Liliput"})
+        self.assertEqual(PRIMER_MM["4.25 mm Liliput"], 3.0)
+        for name in ("2.7 mm Kolibri", "3 mm Kolibri"):
+            self.assertLess(PRIMER_MM[name], 2.5, name)
 
     def test_original_primers_from_headstamp_photos(self):
         for name in ("10.3x60 mm R", "11x59 mm R Gras", ".500/465 Nitro Express",

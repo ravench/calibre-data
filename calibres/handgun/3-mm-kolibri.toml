@@ -22,9 +22,11 @@ sources = ["book:cotw-18 p. 527"]
 unknown = "Another Kolibri round; COTW 18 p. 457 gives no year."
 sources = ["book:cotw-18 p. 457"]
 
+# Primer measured on municion.org headstamp photos (three photos, median 0.56 of the 3.81 mm head).
 [primer]
-size = "small-pistol"
-sources = []
+size = "miniature"
+diameter = 2.1
+sources = ["https://municion.org/producto/3-mm-kolibri/"]
 
 [bullet]
 type = "lead"
