@@ -31,8 +31,11 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 249"]
 
 [bullet]
+# The first Navy ball: a round-nose lead-core bullet in a steel jacket coated with cupronickel
+# (Wikipedia).
 type = "jacketed"
-sources = []
+jacket = "cupronickel"
+sources = ["https://en.wikipedia.org/wiki/6mm_Lee_Navy"]
 
 [case]
 material = "brass"

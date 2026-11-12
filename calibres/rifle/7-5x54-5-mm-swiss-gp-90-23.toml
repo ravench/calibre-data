@@ -49,8 +49,9 @@ degrees = 27.8
 sources = ["https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
 [bullet]
-# cupronickel-jacketed round nose (Poyer p. 50; swisswaffen: steel jacket)
+# cupronickel-jacketed round nose (Poyer p. 50: 80 % copper, 20 % nickel; swisswaffen: steel jacket)
 type = "jacketed"
+jacket = "cupronickel"
 sources = ["book:poyer p. 50"]
 
 [case]

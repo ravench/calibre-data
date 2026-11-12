@@ -47,8 +47,10 @@ ramp_angle = 51.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page46.pdf"]
 
 [bullet]
+# Steel jacket plated with cupronickel over a lead core (Poyer p. 50).
 type = "jacketed"
-sources = ["book:cotw-18 p. 545"]
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 545", "book:poyer p. 50"]
 
 [case]
 material = "brass"

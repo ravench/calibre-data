@@ -30,7 +30,9 @@ size = "large-rifle"
 sources = []
 
 [bullet]
+# Round nose with a cupronickel jacket (COTW 18 p. 552).
 type = "jacketed"
+jacket = "cupronickel"
 sources = ["book:cotw-18 p. 552"]
 
 [case]
