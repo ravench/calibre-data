@@ -16,8 +16,8 @@ bullet = 24.0
 sources = ["book:rapid-fire p. 227"]
 
 [introduced]
-# The first Panzerwagen 39 reached the troops in May 1939.
-year = 1939
+# The gun was developed in 1938 (Pzw Kan 38); the first Panzerwagen 39 reached the troops in May 1939.
+year = 1938
 sources = ["https://www.tankarchives.com/2017/06/praga-ltl-and-pzw-39-tanks-for-neutrals.html"]
 
 [case]

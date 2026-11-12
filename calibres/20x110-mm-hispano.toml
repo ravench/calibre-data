@@ -1,13 +1,15 @@
 # Hispano-Suiza's round for the HS 404 and its later versions. The Swiss Army fired it from the
-# «20 mm Kanone 48/73» (Hispano Mk V) of the Schützenpanzer 63/73, and Swiss aircraft such as the
+# «20 mm Kanone 1948/73» (Hispano Mk V) of the Schützenpanzer 63/73, and Swiss aircraft such as the
 # Doflug D-3802/3803 and EKW C-36 carried the gun (Wikipedia). Its name gives the bore and case
 # length, Rapid Fire's table the rim and base.
 name = "20x110 mm Hispano"
 categories = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
-aliases = ["20x110", "20 mm hispano", "hs 404", "20 mm kanone 48/73"]
-origin = "FR"
+aliases = ["20x110 hispano", "20 mm hispano", "hs 404", "20 mm kanone 1948/73"]
+# Hispano-Suiza's French firm (Rapid Fire) or its Swiss arm in Geneva, which designed the gun and
+# made it from 1938 (Wikipedia).
+origin_candidates = ["FR", "CH"]
 
 [mm]
 rim = 24.8

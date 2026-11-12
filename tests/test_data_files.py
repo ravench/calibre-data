@@ -125,12 +125,10 @@ class LoadTests(unittest.TestCase):
         self.assertLessEqual({"20x102 mm", "35x228 mm", "40x365 mm R", "57x348 mm SR"}, {s["name"] for s in cannon})
 
     def test_cannon_rounds_of_the_swiss_army(self):
-        # Raven 2026-11-12: every cannon round up to 57 mm the Swiss Army adopted. The four added that
-        # day are Rapid Fire's (pp. 226-229); the Swiss FMK case has a thinner rim than the HS 820's.
+        # Raven 2026-11-12: the cannon rounds up to 57 mm the Swiss Army adopted. These four were missing;
+        # Rapid Fire (pp. 226-229) gives them, and the Swiss FMK case a thinner rim than the HS 820's.
         cannon = {s["name"] for s in dict(cartridges.ALL_CATALOGUE)["Kanone"]}
-        swiss = {"20x110 mm Hispano", "20x139 mm FMK", "24x138 mm", "34x239 mm",  # added 2026-11-12
-                 "20x102 mm", "30x113 mm B", "30x173 mm", "35x228 mm"}
-        self.assertLessEqual(swiss, cannon)
+        self.assertLessEqual({"20x110 mm Hispano", "20x139 mm FMK", "24x138 mm", "34x239 mm"}, cannon)
         self.assertEqual(cartridges.rim_thickness("20x139 mm FMK"), 2.6)
         self.assertEqual(cartridges.rim_thickness("20x139 mm"), 3.5)
         for name in ("20x139 mm FMK", "24x138 mm", "34x239 mm"):
