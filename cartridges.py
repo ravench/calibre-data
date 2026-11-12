@@ -23,7 +23,7 @@ RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET = (
     "rimless", "rimmed", "belted", "rimfire", "shot", "ball", "minie", "pellet")
 KINDS = (RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET)
 LOOSE = (BALL, MINIE, PELLET)  # loose projectiles, not cartridges
-# Bullet profiles. PATCHED: paper-patched lead body with a steel-capped round nose (GP 1890).
+# Bullet profiles. PATCHED: paper-patched lead body with a steel-capped ogive nose (GP 1890).
 # CRIMPED: no bullet; the case mouth is folded shut in a star (blanks and power-tool loads).
 SPITZER, ROUND, FLAT, PATCHED, CRIMPED = "spitzer", "round", "flat", "patched", "crimped"
 PROFILES = (SPITZER, ROUND, FLAT, PATCHED, CRIMPED)

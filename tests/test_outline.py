@@ -46,6 +46,27 @@ class OutlineTests(unittest.TestCase):
                 steel = s["profile"] == PATCHED or bullet(s["name"]) == STEEL  # GP 1890's cap, the MPS dart
                 self.assertEqual(o.get("bulletMaterial") == "steel", steel and has_bullet, s["name"])
 
+    def test_gp_1890_bullet_follows_the_1892_drawing(self):
+        # «Patrone, Modell 1890» (Thun, 1 Feb 1892): 23.7 mm out of the case, paper over the first
+        # 12.7, the capped nose the last 11; 8.15 where the paper ends, 7.95 on the cap; an R 22 ogive
+        # with a 2.3 mm round tip.
+        pts = outline.bullet_profile(8.15 / 2, 53.5, 77.2, PATCHED)
+        self.assertEqual([(round(x, 3), round(y, 3)) for x, y in pts[:3]], [(4.075, 53.5), (4.075, 66.2), (3.975, 66.2)])
+        self.assertEqual(pts[-1], (0, 77.2))
+        nose = pts[2:]
+        self.assertTrue(all(a[0] > b[0] and a[1] < b[1] for a, b in zip(nose, nose[1:])))  # narrows to the tip
+        # The round tip: about 0.3 mm below it the nose is still about 1 mm from the axis, not a point.
+        x = next(x for x, y in nose if y >= 77.2 - 0.5)
+        self.assertGreater(x, 1.0)
+        # The R 22 ogive: halfway up the nose it is still about 3.36 mm from the axis.
+        mid = 66.2 + 11 / 2
+        (x0, y0), (x1, y1) = next((a, b) for a, b in zip(nose, nose[1:]) if a[1] <= mid <= b[1])
+        self.assertAlmostEqual(x0 + (x1 - x0) * (mid - y0) / (y1 - y0), 3.36, delta=0.05)
+        by_name = {s["name"]: s for _, s in outline.specs()}
+        o = outline.outline(by_name["7.5x53.5 mm Swiss (GP 1890)"])
+        ys = [y for _, y in points(o["patch"])]
+        self.assertAlmostEqual(max(ys) - min(ys), 12.7, places=1)
+
     def test_loose_projectiles_name_only_non_lead_materials(self):
         for _, s in outline.specs():
             if s["kind"] in (BALL, MINIE, PELLET):
