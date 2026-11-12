@@ -32,5 +32,7 @@ type = "lead"
 sources = ["book:cotw-18 p. 231"]
 
 [case]
+# municion.org's photo shows a brass case (an unmarked one). municion.org files the round as
+# the .44 Ballard Extra Long.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/44-ballard-extra-long/"]

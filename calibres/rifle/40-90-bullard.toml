@@ -35,5 +35,7 @@ type = "lead"
 sources = ["book:cotw-18 p. 227"]
 
 [case]
+# municion.org's photos show brass cases (the Bullard Repeating Arms Co.'s, UMC's and
+# Winchester's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/40-90-300-bullard/"]

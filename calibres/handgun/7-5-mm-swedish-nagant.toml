@@ -32,5 +32,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 477"]
 
 [case]
+# municion.org's photos show brass cases (Marieberg's and Raufoss's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/75-mm-swedish-nagant-m-1887/"]

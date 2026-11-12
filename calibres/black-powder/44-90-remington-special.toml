@@ -40,5 +40,6 @@ type = "paper"
 sources = ["book:cotw-18 p. 233"]
 
 [case]
+# municion.org's photo shows a brass case (an unmarked one).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/44-90-remington-2-7-16-special-creedmoor/"]

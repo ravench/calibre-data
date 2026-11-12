@@ -47,8 +47,9 @@ type = "jacketed"
 sources = []
 
 [case]
+# municion.org's photos show brass cases (the Royal Laboratory's, Dominion's and FN's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/303-british/"]
 
 [[colour_codes]]
 part = "annulus"

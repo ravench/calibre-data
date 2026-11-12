@@ -42,5 +42,6 @@ type = "lead"
 sources = []
 
 [case]
+# municion.org's photos show brass cases (Roth's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]

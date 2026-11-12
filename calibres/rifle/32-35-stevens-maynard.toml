@@ -32,5 +32,7 @@ type = "lead"
 sources = ["book:cotw-18 p. 201"]
 
 [case]
+# municion.org's photos show brass cases (unmarked ones). municion.org files the round as
+# the .32-35 Maynard 1882.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/32-35-maynard-1882/"]

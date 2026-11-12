@@ -34,5 +34,6 @@ type = "jacketed"
 sources = []
 
 [case]
+# municion.org says the case is generally brass.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/8-x-59-italian-breda-mg-m-1935/"]

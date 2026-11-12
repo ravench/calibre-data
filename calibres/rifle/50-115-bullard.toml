@@ -35,5 +35,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 245"]
 
 [case]
+# municion.org's photos show brass cases (unmarked ones).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/50-115-300-bullard/"]

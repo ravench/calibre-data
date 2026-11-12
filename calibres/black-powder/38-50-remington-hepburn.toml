@@ -31,5 +31,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 214"]
 
 [case]
+# municion.org's photos show brass cases (UMC's and an unmarked one).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/38-50-255-remington-hepburn-2-1-4-case/"]

@@ -47,5 +47,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.45-75_Winchester"]
 
 [case]
+# municion.org's photos show brass cases (UMC's, Dominion's, Eley's and Winchester's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/45-75-winchester-centennial/"]

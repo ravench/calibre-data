@@ -46,5 +46,6 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/9.3×74mmR"]
 
 [case]
+# municion.org gives the case as 72/28 brass.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/93-x-74-r-jagbuchse/"]

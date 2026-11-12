@@ -47,8 +47,9 @@ type = "jacketed"
 sources = []
 
 [case]
+# municion.org says the case is brass.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/65-x-52-italian-carcano-m-1891/"]
 
 [fired_by]
 firearms = ["Carcano M1891"]

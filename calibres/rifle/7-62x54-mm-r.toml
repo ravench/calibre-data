@@ -48,8 +48,9 @@ type = "jacketed"
 sources = []
 
 [case]
+# municion.org says the case is brass; steel came in 1935.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/762-x-54-r-russian-mosin-nagant-m-1891-1908/"]
 
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.

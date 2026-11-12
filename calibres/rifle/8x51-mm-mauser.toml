@@ -46,5 +46,6 @@ type = "softpoint"
 sources = ["book:cotw-18 p. 628"]
 
 [case]
+# municion.org's photos show brass cases (DWM's).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/8-x-51-mauser-m88h-rimless/"]

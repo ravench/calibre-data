@@ -31,5 +31,12 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"]
 
 [case]
-material = "brass"
-sources = []
+# municion.org says the case was copper at first, and its photos of Winchester's, UMC's and Eley's
+# heads show copper. Brass came later.
+material = "copper"
+sources = ["https://municion.org/producto/22-winchester-rim-fire/"]
+
+[current_cases]
+# Winchester's Super-X .22 WRF today: brass case.
+materials = ["brass"]
+sources = ["https://www.luckygunner.com/22-wrf-45-cplfn-winchester-super-x-50-rounds"]
