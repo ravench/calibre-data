@@ -31,5 +31,6 @@ type = "lead"
 sources = ["https://municion.org/producto/22-extra-long-rf-us/"]
 
 [case]
-material = "brass"
-sources = []
+# The photo shows a copper-cased .22 Extra Long (the longer round) next to a brass .22 Long Rifle.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:.22_Extra_Long,_with_.22_Long_Rifle_for_comparison.jpg"]

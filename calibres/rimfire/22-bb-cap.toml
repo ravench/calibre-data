@@ -32,5 +32,8 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_BB"]
 
 [case]
-material = "brass"
-sources = []
+# Flobert put a bullet in a copper percussion cap; RWS's ball caps of today in the photo are still
+# copper-coloured.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:.22_BB_with_Container.jpg",
+           "https://www.pyramydair.com/blog/2018/01/the-development-of-the-22-rimfire-cartridge-part-1/"]

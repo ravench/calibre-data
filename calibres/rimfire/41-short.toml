@@ -27,5 +27,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.41_Short"]
 
 [case]
-material = "brass"
-sources = []
+# The photo shows a copper-cased round and the head of another.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:.41_Rimfire_cartridge.JPG"]

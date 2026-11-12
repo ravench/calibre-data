@@ -45,5 +45,6 @@ type = "paper"
 sources = ["https://en.wikipedia.org/wiki/.577/450_Martini–Henry"]
 
 [case]
+# Rolled brass foil, as the Commons photo's caption says.
 material = "brass"
-sources = []
+sources = ["https://commons.wikimedia.org/wiki/File:Snider-Martini-Enfield_Cartridges.JPG"]

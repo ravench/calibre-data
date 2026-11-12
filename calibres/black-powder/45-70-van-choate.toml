@@ -39,5 +39,6 @@ type = "paper"
 sources = ["book:cotw-18 p. 240"]
 
 [case]
+# municion.org's photos show UMC's rounds with brass cases.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/45-70-420-van-choate/"]

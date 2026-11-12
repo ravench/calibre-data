@@ -15,7 +15,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PR
                         CASES, BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, PLASTIC, loose_material, CARTRIDGE_BULLETS, LOOSE_BULLETS, is_blank,
                         PROFILE_TODAY, LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes,
-                        BOOK_SOURCE)
+                        BOOK_SOURCE, SOURCES)
 
 ALL = [s for _, items in CATALOGUE for s in items]  # the calibres in the apps
 APP_NAMES = {s["name"] for s in ALL}
@@ -734,9 +734,12 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(current_case_materials("23x152 mm B"), (STEEL,))
         # Raven 2026-11-11: aluminium too. CCI's Blazer Aluminum line; the Apache's LW30 rounds (Jane's p. 112).
         for name in ("6.35 mm Browning (.25 ACP)", "7.65 mm Browning (.32 ACP)", "9 mm Browning kurz (.380 ACP)",
-                     ".38 Special", ".357 Magnum", ".40 S&W", "10 mm Auto", ".44 Special", ".44 Magnum", ".45 Colt",
+                     ".38 Special", ".357 Magnum", ".40 S&W", "10 mm Auto", ".44 Special", ".44 Magnum",
                      "30x113 mm B"):
             self.assertEqual(current_case_materials(name), (ALUMINIUM,), name)
+        # Copper first (Frankford Arsenal's 1873/74 rounds), brass and aluminium today.
+        self.assertEqual(current_case_materials(".45 Colt"), (BRASS, ALUMINIUM))
+        self.assertEqual(current_case_materials(".44 Colt"), (BRASS,))
         self.assertEqual(current_case_materials(".45 ACP"), (STEEL, ALUMINIUM))
         # The GAU-8's aluminium case first, the KCA's steel too (Jane's 2002 pp. 105, 112-113).
         self.assertEqual(current_case_materials("30x173 mm"), (STEEL,))
@@ -756,6 +759,29 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(case_material(name), material, name)
             self.assertTrue(CASES[name][1], name)
 
+    def test_copper_cases_seen_on_wikimedia_commons_photos(self):
+        # Raven 2026-11-11: look at the Wikipedia photos of the old rounds whose case was an unchecked brass.
+        for name in (".22 BB Cap", ".22 Extra Long", ".32 Short Rimfire", ".38 Long Rimfire", ".41 Short",
+                     ".44 Colt", ".45 Colt"):
+            self.assertEqual(case_material(name), COPPER, name)
+            self.assertTrue(any(url.startswith("https://commons.wikimedia.org/wiki/File:")
+                                for url in SOURCES[(name, "case")]), name)
+
+    def test_copper_cases_seen_on_municion_photos(self):
+        # Raven 2026-11-11: municion.org's photos of the early makers' rounds show copper cases.
+        for name in (".25 Short Rimfire", ".30 Short Rimfire", ".30 Long Rimfire", ".32 Extra Short Rimfire",
+                     ".32 Long Rimfire", ".32 Extra Long Rimfire", ".38 Short Rimfire", ".38 Extra Long Rimfire",
+                     ".41 Long Rimfire", ".44 Short Rimfire", ".44 Long Rimfire", ".46 Short Rimfire",
+                     ".46 Long Rimfire", ".46 Extra Long Rimfire", ".50 Remington Navy Rimfire", ".58 Miller",
+                     ".56-50 Spencer", ".56-46 Spencer", ".56-52 Spencer Necked", ".50 Remington Army",
+                     ".45 Colt Government"):
+            self.assertEqual(case_material(name), COPPER, name)
+            self.assertTrue(any(url.startswith("https://municion.org/producto/")
+                                for url in SOURCES[(name, "case")]), name)
+        # Brass, each with a photo or a drawing as its source.
+        for name in (".45-70 Van Choate", "12.17x44 mm R", ".577/450 Martini-Henry", "10.4 mm Swiss Ordnance 1878"):
+            self.assertEqual(case_material(name), BRASS, name)
+            self.assertTrue(SOURCES[(name, "case")], name)
 
     def test_bbs_are_loose_steel_or_plastic_balls(self):
         by_name = {s["name"]: s for _, items in CATALOGUE for s in items}

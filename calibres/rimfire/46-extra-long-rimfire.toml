@@ -28,5 +28,6 @@ type = "lead"
 sources = []
 
 [case]
-material = "brass"
-sources = []
+# municion.org says the case is copper, and its photo of UMC's round shows it.
+material = "copper"
+sources = ["https://municion.org/producto/46-extra-long-rf/"]

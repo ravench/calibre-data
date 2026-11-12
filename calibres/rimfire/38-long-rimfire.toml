@@ -29,5 +29,6 @@ type = "lead"
 sources = []
 
 [case]
-material = "brass"
-sources = []
+# The photo shows copper-cased rounds made by Dominion in Canada in the 1920s.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:5_rounds_of_.38_Rimfire_long.JPG"]

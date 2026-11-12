@@ -36,5 +36,6 @@ type = "lead"
 sources = []
 
 [case]
-material = "brass"
-sources = []
+# municion.org says the case is copper, and its photos of Leet's and Ethan Allen's rounds show it.
+material = "copper"
+sources = ["https://municion.org/producto/56-52-spencer-rf-necked-shortest-case/"]
