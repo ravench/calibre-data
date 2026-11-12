@@ -706,6 +706,22 @@ class CheckTests(unittest.TestCase):
                 c.edit(WIN, old, new)
                 self.assertProblem(c, WIN, pattern, line=bool(new))
 
+    def test_a_bad_category_on_a_cannon_round_is_its_only_problem(self):
+        rel = "calibres/20x138-mm-b.toml"
+        with Copy() as c:
+            c.edit(rel, 'categories = ["cannon"]', 'categories = ["cannon", "rifles"]')
+            self.assertOnlyProblems(c, rel, r"'rifles' is not one of")
+
+    def test_cannon_rounds_are_in_no_other_category(self):
+        rel = "calibres/20x138-mm-b.toml"
+        for new in ('categories = ["cannon", "rifle"]', 'categories = ["rifle", "cannon"]'):
+            with self.subTest(new), Copy() as c:
+                c.edit(rel, 'categories = ["cannon"]', new)
+                self.assertProblem(c, rel, r"cannon is not in the apps yet: a calibre in it is in no other category")
+
+    def test_categories_of_an_unknown_name(self):
+        self.assertEqual(cartridges.categories("no such calibre"), ())
+
     def test_a_calibre_in_several_categories_is_listed_under_the_first(self):
         with Copy() as c:
             c.edit(WIN, 'categories = ["rifle"]', 'categories = ["rifle", "black-powder", "handgun"]')

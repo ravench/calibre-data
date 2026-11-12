@@ -11,7 +11,8 @@ The values are for drawings and for matching photos, **not reloading data**.
 
 Every calibre is one [TOML](https://toml.io) file in `calibres/`, named after the calibre
 (`.22 LR` is `calibres/22-lr.toml`). Its `categories` list says which categories it is in, the primary
-one first: `rimfire`, `handgun`, `rifle`, `black-powder`, `shotgun` and `air-gun`. A calibre can be in
+one first: `rimfire`, `handgun`, `rifle`, `black-powder`, `shotgun`, `air-gun` or `cannon` (below; a
+cannon round is in no other category). A calibre can be in
 several (a black-powder rifle round: `["black-powder", "rifle"]`); `order.toml`, `CATALOGUE` and the
 apps list it under its first one only, and `CALIBRE_CATEGORIES` / `categories(name)` give them all.
 The apps know

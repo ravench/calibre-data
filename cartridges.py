@@ -450,7 +450,7 @@ def _read_calibre(f, countries, books=None):
     if os.path.basename(f.rel) != expected:
         f.problem(f.line(None, "name"), f"the file of {name!r} must be called {expected}")
     cats = d.get("categories")
-    category = cats[0] if _is_text_list(cats) and cats and all(c in CATEGORIES for c in cats) else None
+    category = cats[0] if _is_text_list(cats) and cats and cats[0] in CATEGORIES else None
     if "categories" not in d:
         pass  # reported by _check_keys
     elif not _is_text_list(cats) or not cats:
@@ -464,6 +464,10 @@ def _read_calibre(f, countries, books=None):
                 f.problem(f.line(None, "categories"), f"category {c!r} is not one of {', '.join(CATEGORIES)}{hint}")
         if len(set(cats)) != len(cats):
             f.problem(f.line(None, "categories"), "categories lists a category twice")
+        hidden = [c for c in cats if c in NOT_IN_APPS]
+        if hidden and len({c for c in cats if c in CATEGORIES}) > len(set(hidden)):
+            f.problem(f.line(None, "categories"), f"{', '.join(hidden)} is not in the apps yet: a calibre in it "
+                                                  "is in no other category")
     if kind not in KINDS:
         f.problem(f.line(None, "kind"), f"kind {kind!r} is not one of {', '.join(KINDS)}{_close(kind, KINDS)}")
     if profile not in PROFILES:
@@ -569,7 +573,7 @@ def _read_calibre(f, countries, books=None):
         facts[t] = dict(data, sources=urls)
     if "colour_codes" in d:
         _check_colour_codes(f, d["colour_codes"], _shape(kind, profile, category), countries, books)
-    if not ok or category is None:
+    if not ok or category is None or not all(c in CATEGORIES for c in cats):
         return None
     if kind in (RIMFIRE,) + LOOSE:
         if "primer" in facts:
@@ -971,8 +975,9 @@ def rim_thickness(name):
 
 
 def categories(name):
-    """A calibre's categories by the apps' names, the primary one first: ("Langwaffe",) for .308 Winchester."""
-    return CALIBRE_CATEGORIES[name]
+    """A calibre's categories by the apps' names, the primary one first: ("Langwaffe",) for .308 Winchester;
+    () for a name that is not a calibre."""
+    return CALIBRE_CATEGORIES.get(name, ())
 
 
 def is_obsolete(name):
