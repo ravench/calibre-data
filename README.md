@@ -254,7 +254,8 @@ than any reloading size, on the 2.7 mm and 3 mm Kolibri and the 4.25 mm Liliput,
 municion.org headstamp photos). An optional `diameter` gives the measured primer in mm (required for
 `miniature`); `PRIMER_MM` gives every calibre's diameter, measured or its size's nominal one. Other
 Berdan primers (4.5 and 5.5 mm, e.g. 7.62x39, 7.62x54R surplus) are within 0.2 mm of a Boxer size
-and keep that size.
+and keep that size, with their own `diameter` where a source gives it (e.g. the .217 in. Berdan
+primers in the tables of Cartridges of the World).
 
 Sources: Wikipedia pages are the cartridge infobox ("Primer type"); Hodgdon, Vihtavuori and Sierra
 are the primers used in their published reloading data; Starline is the primer named on its brass

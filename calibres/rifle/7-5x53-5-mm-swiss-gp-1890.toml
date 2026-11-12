@@ -56,9 +56,10 @@ year = 1890
 sources = ["https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/70007611.pdf?id=70007611", "https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/50000156.pdf?id=50000156"]
 
 [primer]
-# The 1892 drawing has a 4.92 mm Berdan cap; no Berdan rifle size in the list yet
+# The 1892 drawing has a 4.92 mm Berdan cap, drawn at its own diameter on the large rifle size.
 size = "large-rifle"
-sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
+diameter = 4.92
+sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss", "https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321"]
 
 [shoulder_angle]
 # From the 1892 drawing: 11.5 down to 8.85 over 2 mm, atan(1.325 / 2) (the AECC drawing has 27.8)

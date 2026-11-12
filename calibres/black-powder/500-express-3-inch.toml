@@ -27,6 +27,7 @@ sources = ["book:cotw-18 p. 603"]
 [primer]
 # The table gives a .251 in. Berdan primer.
 size = "berdan-nitro"
+diameter = 6.38
 sources = ["book:cotw-18 p. 609"]
 
 [case_head]

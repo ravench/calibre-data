@@ -28,6 +28,7 @@ sources = ["book:cotw-18 p. 597"]
 [primer]
 # COTW 5 gives a .251 in. Berdan primer; COTW 18 p. 608 prints .241 in.
 size = "berdan-nitro"
+diameter = 6.38
 sources = ["book:cotw-5 p. 266"]
 
 [bullet]

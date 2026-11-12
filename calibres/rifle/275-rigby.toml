@@ -33,6 +33,7 @@ sources = ["https://municion.org/producto/275-rigby/"]
 [primer]
 # The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
 size = "large-rifle"
+diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
 
 [shoulder_angle]
