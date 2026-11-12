@@ -46,6 +46,6 @@ type = "jacketed"
 sources = []
 
 [case]
-# municion.org says the case is brass or iron.
+# municion.org says the case is brass or iron; its photos show brass for the army's rounds of 1890.
 material = "brass"
 sources = ["https://municion.org/producto/8-x-50-r-austrian-mannlicher-mod-88-mod-88-93-mod-93/"]

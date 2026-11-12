@@ -35,6 +35,8 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.41_Long_Colt"]
 
 [case]
-# municion.org's photo shows a brass case (Winchester's).
+# municion.org's photos show brass cases: Winchester's for the first, outside-lubricated round, and
+# Winchester's, UMC's, the U.S. Cartridge Co.'s and Eley's for the inside-lubricated one.
 material = "brass"
-sources = ["https://municion.org/producto/41-long-colt-original/"]
+sources = ["https://municion.org/producto/41-long-colt-original/",
+           "https://municion.org/producto/41-long-colt-da-inside-lubricated/"]
