@@ -252,8 +252,9 @@ the primer of the original factory ammunition, which is today's Boxer size for c
 Nitro Expresses and some old European rounds, measured on headstamp photos) or `miniature` (smaller
 than any reloading size, on the 2.7 mm and 3 mm Kolibri and the 4.25 mm Liliput, measured on
 municion.org headstamp photos). An optional `diameter` gives the measured primer in mm (required for
-`miniature`); `PRIMER_MM` gives every calibre's diameter, measured or its size's nominal one. Other Berdan primers
-(4.5 and 5.5 mm, e.g. 7.62x39, 7.62x54R surplus) are within 0.2 mm of a Boxer size and keep that size.
+`miniature`); `PRIMER_MM` gives every calibre's diameter, measured or its size's nominal one. Other
+Berdan primers (4.5 and 5.5 mm, e.g. 7.62x39, 7.62x54R surplus) are within 0.2 mm of a Boxer size
+and keep that size.
 
 Sources: Wikipedia pages are the cartridge infobox ("Primer type"); Hodgdon, Vihtavuori and Sierra
 are the primers used in their published reloading data; Starline is the primer named on its brass

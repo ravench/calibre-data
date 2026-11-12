@@ -516,10 +516,12 @@ def _read_calibre(f, category, countries, books=None):
         if t == "primer" and data.get("size") == MINIATURE and "diameter" not in data:
             f.problem(f.line(t), f"[primer] a {MINIATURE!r} size needs its diameter (mm)")
         elif t == "primer" and "diameter" in data:
-            top = 4.45 if data.get("size") == MINIATURE else 10
-            if not (_is_number(data["diameter"]) and 1 <= data["diameter"] < top):
-                f.problem(f.line(t, "diameter"), f"[primer] diameter is the measured primer in mm, 1 to under {top}"
-                                                 f"{' for a miniature primer' if top < 10 else ''}")
+            dia, nominal = data["diameter"], PRIMER_DIAMETERS.get(data.get("size"))
+            if not _is_number(dia) or not (1 <= dia < 4.45 if nominal is None else abs(dia - nominal) <= 0.5):
+                f.problem(f.line(t, "diameter"), "[primer] diameter is the measured primer in mm: 1 to under 4.45 "
+                                                 "for a miniature primer, else within 0.5 of its size's nominal one")
+            elif not data.get("sources"):
+                f.problem(f.line(t), "[primer] a measured diameter needs a source")
         enums = {("primer", "size"): tuple(PRIMER_DIAMETERS) + (MINIATURE,), ("bullet", "type"): BULLET_TYPES,
                  ("case", "material"): CASE_MATERIALS}
         for (tt, k), allowed_values in enums.items():
