@@ -324,7 +324,8 @@ cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outlin
   a cupronickel jacket, or a steel one clad or plated with cupronickel or nickel, as on most service
   rounds of the 1890s and 1900s) or `steel` (bare or lacquered steel). Gilding metal, tombac, copper
   and copper-plated or copper-washed steel jackets are copper and leave the key out. The comment
-  above it says which source names the metal, or that it comes from a round in hand when none does.
+  above it says which source names the metal or, when none does, which round in hand it comes from
+  and that round's year.
 - `[case]` `material`, in every calibre with a case (not shot shells, balls, Minié bullets or
   pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated steel,
   `aluminium`, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case) or `hybrid`

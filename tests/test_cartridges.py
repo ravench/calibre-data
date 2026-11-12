@@ -744,6 +744,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(set(JACKETS), silver)
         for name in silver:
             self.assertEqual(jacket(name), CUPRONICKEL, name)
+        self.assertEqual({n for n in silver if BULLETS[n][1] is None}, {"7.5 mm Kadettenpatrone"})  # Raven's round
         self.assertEqual(jacket("9x19 mm"), COPPER)
         self.assertEqual(jacket(".308 Winchester"), COPPER)  # soft point: a copper jacket
         self.assertIsNone(jacket(".22 LR"))  # lead
