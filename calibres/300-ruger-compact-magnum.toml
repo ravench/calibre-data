@@ -45,9 +45,9 @@ ramp_angle = 35.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]
 
 [bullet]
-# Hornady's Superformance loads carry SST and InterBond bullets.
+# Hornady launched it in 2008 with 150-, 165- and 180-grain SST loads.
 type = "polymer"
-sources = ["https://en.wikipedia.org/wiki/.300_Ruger_Compact_Magnum", "book:cotw-18 p. 142"]
+sources = ["https://press.hornady.com/release/2008/10/03/ruger-compact-magnum-cartridges-review/", "book:cotw-18 p. 142"]
 
 [case]
 material = "brass"

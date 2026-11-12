@@ -40,9 +40,10 @@ rim_thickness = 1.9
 sources = ["book:cotw-18 p. 574"]
 
 [bullet]
-# The military loads are armour-piercing incendiary bullets in a jacket.
+# COTW 18 says the round appeared with armour-piercing bullets and lists armour-piercing incendiary
+# military loads (under 12.7x107 mm); such bullets are jacketed.
 type = "jacketed"
-sources = ["book:cotw-18 p. 571"]
+sources = ["book:cotw-18 p. 570", "book:cotw-18 p. 571"]
 
 [case]
 material = "brass"
