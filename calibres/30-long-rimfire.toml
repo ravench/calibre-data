@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The longer .30 rimfire, for handguns and some single-shot rifles; gone before World War I.
 name = ".30 Long Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 662.
+categories = ["rimfire", "handgun", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["30 long rf", "30 long rimfire"]

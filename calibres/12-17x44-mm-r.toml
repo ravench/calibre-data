@@ -2,7 +2,8 @@
 # The centrefire version of the 12.17 mm rimfire round of the Norwegian and Swedish Remington rifles.
 # Sweden is kept as its origin.
 name = "12.17x44 mm R"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 650.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["12.17x44r", "12x42r"]

@@ -2,7 +2,8 @@
 # Remington's match round for its Creedmoor rolling blocks; shorter and fatter than the
 # 44-90 Sharps, and not interchangeable.
 name = ".44-90 Remington Special"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 233.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["44-90 remington special", "44-90 remington necked"]

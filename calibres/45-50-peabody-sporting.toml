@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A sporting round for the Peabody-Martini single-shot rifle, close to the Turkish Peabody carbine round.
 name = ".45-50 Peabody Sporting"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 237.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["45-50 peabody", "45-50 peabody sporting"]

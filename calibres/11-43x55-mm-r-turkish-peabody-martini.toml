@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Ottoman Peabody-Martini rifles, many made in the United States.
 name = "11.43x55 mm R Turkish Peabody-Martini"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 565.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["11.43x55r", "45 peabody", "450 turkish"]

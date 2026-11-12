@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For cheap handguns such as the Sharps four-barrel pistol and Colt's New Line revolvers; listed until 1919.
 name = ".30 Short Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 662.
+categories = ["rimfire", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["30 short", "30 short rf"]

@@ -1,6 +1,7 @@
 # Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".45-75 Winchester"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 238.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["45-75"]

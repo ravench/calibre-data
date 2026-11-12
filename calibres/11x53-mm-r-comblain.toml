@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Belgian civil guard's Comblain rifle.
 name = "11x53 mm R Comblain"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 563.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["11x53r", "11x53r comblain"]

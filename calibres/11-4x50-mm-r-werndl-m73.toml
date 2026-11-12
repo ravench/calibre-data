@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The straight Werndl round, Austria's service round from 1873 to 1877.
 name = "11.4x50 mm R Werndl M73"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 566.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["11.4x50r werndl", "werndl m73"]

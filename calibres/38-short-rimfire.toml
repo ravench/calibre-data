@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A post-Civil War revolver and rifle round, listed in an 1869 gun catalogue.
 name = ".38 Short Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 664.
+categories = ["rimfire", "handgun", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["38 short rf", "38 short rimfire"]

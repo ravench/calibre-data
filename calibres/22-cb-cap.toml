@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A stronger BB Cap with a conical bullet; case lengths varied between makers.
 name = ".22 CB Cap"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 656.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["22 cb cap", "22cb", "cb cap"]

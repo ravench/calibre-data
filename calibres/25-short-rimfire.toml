@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Bliss (Bacon & Bliss) revolver and other cheap handguns; listed until 1920.
 name = ".25 Short Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 661.
+categories = ["rimfire", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["25 short", "25 short rf", "25 bacon & bliss"]

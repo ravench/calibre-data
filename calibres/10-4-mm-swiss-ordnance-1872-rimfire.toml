@@ -1,7 +1,8 @@
 # Rimfire of the Ordonnanzrevolver 1872 (Thun), before the 1878 centrefire change. Drawing on municion.org
 # (AECC ref. 11-018-CBR-010): rim 12.70 (1.50 thick), head 10.95, mouth 10.85, bullet 10.85, case 18.23, overall 30.52.
 name = "10.4 mm Swiss Ordnance 1872 Rimfire"
-categories = ["black-powder"]
+# Firearms: the Ordonnanzrevolver 1872 (municion.org, see the note at the top).
+categories = ["black-powder", "handgun", "rimfire"]
 kind = "rimfire"
 profile = "round"
 aliases = ["10.4rf", "revolver72", "10.4x18", "10.4mmrf"]

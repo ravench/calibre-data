@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The factory 40-70 case and the heavier 40-63 Everlasting case: the same outside, so listed together.
 name = ".40-70 Ballard"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 222.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-70 ballard", "40-63 ballard", "40-63 ballard everlasting", "40-70 ballard everlasting"]

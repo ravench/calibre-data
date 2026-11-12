@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Remington magazine pistol of 1871 and the Protector palm pistol; listed until 1920.
 name = ".32 Extra Short Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 663.
+categories = ["rimfire", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["32 extra short", "32 protector rimfire", "32 protector rf"]

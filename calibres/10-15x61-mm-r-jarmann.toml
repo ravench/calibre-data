@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The round of the Jarmann repeating rifle of Norway and Sweden.
 name = "10.15x61 mm R Jarmann"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 560.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["10.15x61r", "jarmann"]

@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Belgian Albini-Braendlin rifle; often taken for the 11 mm Comblain.
 name = "11x50 mm R Albini"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 562.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["11x50r", "11x50r albini", "albini"]

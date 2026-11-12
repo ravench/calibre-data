@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Remington-Hepburn No. 3 rifle; like the .32-20 WCF.
 name = ".32-30 Remington"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 201.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["32-30 remington", "32-30"]

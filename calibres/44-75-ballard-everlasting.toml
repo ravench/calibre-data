@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A rare Ballard Everlasting case, probably sold empty with bullets.
 name = ".44-75 Ballard Everlasting"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 234.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["44-75 ballard", "44-75 ballard everlasting"]

@@ -2,7 +2,8 @@
 # Not in the Sharps catalogues, but chambered in Sharps and Remington-Hepburn rifles; UMC and
 # Winchester loaded it.
 name = ".40-90 Sharps Straight"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 220.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-90 sharps straight", "40-3 1/4 sharps"]

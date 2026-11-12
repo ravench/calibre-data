@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Egyptian Remington rolling-block rifle; France used it too in 1870-71.
 name = "11.43x50 mm R Egyptian Remington"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 566.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["11.43x50r", "43 egyptian"]

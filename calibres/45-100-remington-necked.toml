@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A necked .45 for Remington single-shots, like the .44-90 Remington Special with a wider, longer neck.
 name = ".45-100 Remington Necked"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 243.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["45-100 remington", "45-100 remington necked"]

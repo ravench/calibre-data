@@ -2,7 +2,8 @@
 # For Frank Wesson's single-shot rifles. The body tapers to a shoulder hardly wider than the neck
 # (.330 against .329 in.), drawn here as a straight taper.
 name = ".30-30 Wesson"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 197.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["30-30 wesson"]

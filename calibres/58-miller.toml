@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For Miller's breech-loading conversion of the Springfield rifled musket and the first Allin conversions.
 name = ".58 Miller"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 669.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["58 miller", "58 allin", "58 miller rimfire"]

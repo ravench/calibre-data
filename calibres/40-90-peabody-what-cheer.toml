@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Peabody-Martini What Cheer rifle No. 3, a match round until the early 1900s.
 name = ".40-90 Peabody What Cheer"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 226.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-90 peabody", "40-90 what cheer"]

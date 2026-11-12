@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .40 Sharps 2¼ in. bottleneck case for the Model 1871 sporting rifle; also a match round.
 name = ".40-70 Sharps Necked"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 221.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 # The 40-70 Remington (COTW 18 p. 223) is Remington's version of this round.

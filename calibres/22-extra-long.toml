@@ -1,6 +1,7 @@
 # Measured specimens on municion.org (AECC drawings 06-020-CBR-010, 08-014-CBR-020, 08-020-CBR-020).
 name = ".22 Extra Long"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 659.
+categories = ["rimfire", "rifle", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["22extralong", "22xl"]

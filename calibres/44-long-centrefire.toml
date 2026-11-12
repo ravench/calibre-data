@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The centrefire version of the .44 Long rimfire, for the Ballard No. 2 and Wesson rifles.
 name = ".44 Long Centrefire"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 231.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["44 long cf", "44 long centerfire", "44 long ballard"]

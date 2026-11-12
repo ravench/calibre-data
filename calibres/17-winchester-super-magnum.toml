@@ -1,6 +1,7 @@
 # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".17 Winchester Super Magnum"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 654.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "spitzer"
 aliases = ["17wsm"]

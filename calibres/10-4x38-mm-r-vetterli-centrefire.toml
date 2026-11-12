@@ -4,7 +4,8 @@
 # a brass case and a paper-patched lead bullet (its municion.org sheet, under [bullet]). Same case as
 # the rimfire original, so the same measurements.
 name = "10.4x38 mm R Vetterli Centrefire"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 561.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["vetterlicf", "10.4cf", "10.4x38cf", "41swisscf"]

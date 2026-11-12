@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The centrefire version of the .38 Long rimfire, for single-shot rifles.
 name = ".38 Long Centrefire"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 213.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["38 long cf", "38 long centerfire"]

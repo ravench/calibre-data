@@ -1,6 +1,7 @@
 # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".22 BB Cap"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 656.
+categories = ["rimfire", "rifle", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["22bb", "bbcap", "flobert"]

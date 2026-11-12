@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Spencer's necked round for the small carbine and sporting rifle of 1866.
 name = ".56-46 Spencer"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 667.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["56-46", "56-46 spencer", "46 spencer"]

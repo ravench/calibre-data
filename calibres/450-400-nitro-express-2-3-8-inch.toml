@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .450 case shortened and necked down; blackpowder first, Nitro-for-Black and Nitro Express later.
 name = ".450/400 Nitro Express 2⅜ inch"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 593.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["450/400 2 3/8", "450/400 2.375"]

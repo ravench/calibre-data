@@ -1,5 +1,6 @@
 name = ".44-40 WCF"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 168.
+categories = ["black-powder", "rifle", "handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["44-40", "4440", "44wcf"]

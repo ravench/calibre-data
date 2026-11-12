@@ -1,7 +1,8 @@
 # Diameters from the .45-70 Government's C.I.P. sheet, lengths from Cartridges of the World, 18th ed.
 # For the experimental Van Choate bolt-action military rifle: the .45-70 case lengthened to 2¼ in.
 name = ".45-70 Van Choate"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 240.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["45-70 van choate", "45 van choate"]

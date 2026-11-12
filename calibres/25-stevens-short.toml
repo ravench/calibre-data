@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A shorter, cheaper .25 Stevens that fires in .25 Stevens rifles; made until 1942.
 name = ".25 Stevens Short"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 661.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["25 stevens short", "25 stevens short rf"]

@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Like the Belgian Comblain round to look at, but the two do not interchange.
 name = "11.4x50 mm R Brazilian Comblain"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 567.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["11.4x50r comblain"]
