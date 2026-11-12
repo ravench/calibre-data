@@ -243,7 +243,8 @@ Williams's *Rapid Fire* (2000, pp. 225-231) then gave the other cannon rounds th
 20x139 (whose rim Jane's table and Jane's own entry give differently), 30x165, 35x228 and the two
 Bofors 40 mm rounds. Jane's and Koll's *Soviet Cannon* (2009) gave 30x165 and 35x228 their round
 lengths. When `cannon` grew to 57 mm, the same table gave the eight 45 to 57 mm service rounds of its
-Table 1 (pp. 230-231) their rim and base.
+Table 1 (pp. 230-231) their rim and base, and the Swiss Army's cannon rounds the catalogue still lacked
+(20x110 Hispano, the Swiss 20x139 FMK, 24x138 and 34x239) theirs.
 
 ### `[introduced]`
 

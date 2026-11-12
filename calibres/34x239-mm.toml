@@ -1,0 +1,24 @@
+# The Swiss round of the 34 mm Flab Kan 38 anti-aircraft gun, used during and after the Second World
+# War. Its name gives the bore and case length, Rapid Fire's table the rim and base.
+name = "34x239 mm"
+categories = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["34x239", "34 mm flab kan 38"]
+origin = "CH"
+
+[mm]
+rim = 47.8
+base = 47.8
+case_length = 239.0
+bullet = 34.0
+sources = ["book:rapid-fire p. 229"]
+
+[introduced]
+# The Flab Kan 38, adopted in 1938.
+year = 1938
+sources = ["https://www.bocn.co.uk/threads/34x-239-flab-kan-38.60661"]
+
+[case]
+material = "brass"
+sources = []
