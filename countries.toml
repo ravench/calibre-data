@@ -1,127 +1,223 @@
-# Countries for a calibre's `origin`: the state that introduced it, as a code, with its English name
-# and flag emoji. Historical states keep their own code (ISO 3166-3 SU/CS where one exists, else a
+# Countries for a calibre's `origin`: the state that introduced it, as a code, with its name in English,
+# German, French and Italian and its flag emoji. Historical states keep their own code (ISO 3166-3 SU/CS where one exists, else a
 # made-up AH/RUE/OE that no ISO code uses, so RU stays today's Russia); they have no flag emoji, so the
 # apps draw their own. Unions of states get a code too (NATO for the rounds NATO standardised; the EU
 # 🇪🇺 joins when a calibre needs it). IL left with the 9x21 mm (IT).
 
 [CH]
 name = "Switzerland"
+de = "Schweiz"
+fr = "Suisse"
+it = "Svizzera"
 flag = "🇨🇭"
 
 [DE]
 name = "Germany"
+de = "Deutschland"
+fr = "Allemagne"
+it = "Germania"
 flag = "🇩🇪"
 
 [AH]
 name = "Austria-Hungary"
+de = "Österreich-Ungarn"
+fr = "Autriche-Hongrie"
+it = "Austria-Ungheria"
 
 [AT]
 name = "Austria"
+de = "Österreich"
+fr = "Autriche"
+it = "Austria"
 flag = "🇦🇹"
 
 [FR]
 name = "France"
+de = "Frankreich"
+fr = "France"
+it = "Francia"
 flag = "🇫🇷"
 
 [IT]
 name = "Italy"
+de = "Italien"
+fr = "Italie"
+it = "Italia"
 flag = "🇮🇹"
 
 [GB]
 name = "United Kingdom"
+de = "Grossbritannien"
+fr = "Royaume-Uni"
+it = "Regno Unito"
 flag = "🇬🇧"
 
 [US]
 name = "United States"
+de = "USA"
+fr = "États-Unis"
+it = "Stati Uniti"
 flag = "🇺🇸"
 
 [SE]
 name = "Sweden"
+de = "Schweden"
+fr = "Suède"
+it = "Svezia"
 flag = "🇸🇪"
 
 [DK]
 name = "Denmark"
+de = "Dänemark"
+fr = "Danemark"
+it = "Danimarca"
 flag = "🇩🇰"
 
 [BE]
 name = "Belgium"
+de = "Belgien"
+fr = "Belgique"
+it = "Belgio"
 flag = "🇧🇪"
 
 [PT]
 name = "Portugal"
+de = "Portugal"
+fr = "Portugal"
+it = "Portogallo"
 flag = "🇵🇹"
 
 [CZ]
 name = "Czechia"
+de = "Tschechien"
+fr = "Tchéquie"
+it = "Cechia"
 flag = "🇨🇿"
 
 [JP]
 name = "Japan"
+de = "Japan"
+fr = "Japon"
+it = "Giappone"
 flag = "🇯🇵"
 
 [PL]
 name = "Poland"
+de = "Polen"
+fr = "Pologne"
+it = "Polonia"
 flag = "🇵🇱"
 
 [FI]
 name = "Finland"
+de = "Finnland"
+fr = "Finlande"
+it = "Finlandia"
 flag = "🇫🇮"
 
 [NO]
 name = "Norway"
+de = "Norwegen"
+fr = "Norvège"
+it = "Norvegia"
 flag = "🇳🇴"
 
 [RUE]
 name = "Russian Empire"
+de = "Russisches Kaiserreich"
+fr = "Empire russe"
+it = "Impero russo"
 
 [SU]
 name = "Soviet Union"
+de = "Sowjetunion"
+fr = "Union soviétique"
+it = "Unione Sovietica"
 
 [CS]
 name = "Czechoslovakia"
+de = "Tschechoslowakei"
+fr = "Tchécoslovaquie"
+it = "Cecoslovacchia"
 
 [CN]
 name = "China"
+de = "China"
+fr = "Chine"
+it = "Cina"
 flag = "🇨🇳"
 
 [PH]
 name = "Philippines"
+de = "Philippinen"
+fr = "Philippines"
+it = "Filippine"
 flag = "🇵🇭"
 
 [ES]
 name = "Spain"
+de = "Spanien"
+fr = "Espagne"
+it = "Spagna"
 flag = "🇪🇸"
 
 [AR]
 name = "Argentina"
+de = "Argentinien"
+fr = "Argentine"
+it = "Argentina"
 flag = "🇦🇷"
 
 [NL]
 name = "Netherlands"
+de = "Niederlande"
+fr = "Pays-Bas"
+it = "Paesi Bassi"
 flag = "🇳🇱"
 
 [BR]
 name = "Brazil"
+de = "Brasilien"
+fr = "Brésil"
+it = "Brasile"
 flag = "🇧🇷"
 
 [EG]
 name = "Egypt"
+de = "Ägypten"
+fr = "Égypte"
+it = "Egitto"
 flag = "🇪🇬"
 
 [RS]
 name = "Serbia"
+de = "Serbien"
+fr = "Serbie"
+it = "Serbia"
 flag = "🇷🇸"
 
 [TH]
 name = "Thailand"
+de = "Thailand"
+fr = "Thaïlande"
+it = "Tailandia"
 flag = "🇹🇭"
 
 [CA]
 name = "Canada"
+de = "Kanada"
+fr = "Canada"
+it = "Canada"
 flag = "🇨🇦"
 
 [OE]
 name = "Ottoman Empire"
+de = "Osmanisches Reich"
+fr = "Empire ottoman"
+it = "Impero ottomano"
 
 [NATO]
 name = "NATO"
+de = "NATO"
+fr = "OTAN"
+it = "NATO"

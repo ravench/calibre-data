@@ -1,7 +1,7 @@
 name = "9x18 mm Makarov"
 kind = "rimless"
 profile = "round"
-aliases = ["makarov"]
+aliases = ["makarov", "9x18", "9mm mak"]
 
 origin = "SU"
 

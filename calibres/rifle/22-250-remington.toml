@@ -1,7 +1,7 @@
 name = ".22-250 Remington"
 kind = "rimless"
 profile = "spitzer"
-aliases = ["22-250"]
+aliases = ["22-250", "22-250 rem"]
 
 origin = "US"
 worldwide = true

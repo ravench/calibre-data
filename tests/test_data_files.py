@@ -655,7 +655,9 @@ class CheckTests(unittest.TestCase):
     def test_a_broken_countries_toml_is_reported_there_only(self):
         for text, pattern in [("# nothing\n", r"lists no countries"),
                               ('[CH]\nflag = "x"\n', r"\[CH\] needs name"),
-                              ('[CH]\nname = "Switzerland"\nflag = 5\n', r"\[CH\] flag must be")]:
+                              ('[CH]\nname = "Switzerland"\nde = "Schweiz"\nfr = "Suisse"\n', r"\[CH\] needs 'it'"),
+                              ('[CH]\nname = "Switzerland"\nde = ""\nfr = "Suisse"\nit = "Svizzera"\n', r"\[CH\] de must be the name"),
+                              ('[CH]\nname = "Switzerland"\nde = "Schweiz"\nfr = "Suisse"\nit = "Svizzera"\nflag = 5\n', r"\[CH\] flag must be")]:
             with self.subTest(text), Copy() as c:
                 c.write("countries.toml", text)
                 self.assertOnlyProblems(c, "countries.toml", pattern)

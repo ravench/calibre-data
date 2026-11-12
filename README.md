@@ -26,7 +26,8 @@ the apps read those whole.
 
 - `order.toml`: the order the apps and the poster list the calibres in. A calibre that is not listed
   comes after the listed ones of its category, by name, so a new calibre needs no entry here.
-- `countries.toml`: the country codes a calibre's `origin` can name, with English name and flag emoji.
+- `countries.toml`: the country codes a calibre's `origin` can name, with the name in English, German,
+  French and Italian (`name`, `de`, `fr`, `it`) and the flag emoji.
 - `books.toml`: the printed books a source can name (see [Sources](#sources)), with title, edition,
   year and ISBN.
 - `docs/template.toml`: a calibre file with every field explained, to start a new calibre from.
@@ -126,7 +127,7 @@ brass and the case materials made today always need one.
 | `kind` | required | `rimless`, `rimmed`, `belted`, `rimfire`, `shot` (shot shell), `ball` (round ball or BB), `minie` (Minié bullet) or `pellet` (air gun pellet). |
 | `profile` | required | Bullet nose of the round as first sold (the apps draw it): `spitzer`, `round`, `flat`, `patched` (paper-patched lead body under a steel cap, GP 1890) or `crimped` (no bullet, the mouth folded shut in a star: blanks and power-tool loads). |
 | `profile_today` | optional | The nose of today's usual load, where it is not the first one: the .303 British is drawn `round` but loaded `spitzer` since the Mk VII. Same values as `profile`; for the catalogue only. A `# Today:` comment above it names the source, as `# Nose:` does for `profile`. |
-| `aliases` | required | Search aliases, lower case as people type them (`[]` for none). Never the name of another calibre. |
+| `aliases` | required | Search aliases, lower case as people type them (`[]` for none), headstamp spellings among them (`"38 spl"`, `"win 308"`). Never the name of another calibre. |
 | `display_aliases` | | One or two printable other names, shown in the apps' lists and search and on the poster. Calibres that are separate cartridges are never aliases of each other: .223 Rem / 5.56 NATO / GP 90 and .308 Win / 7.62 NATO differ in loading and are not necessarily interchangeable, so each has its own file. |
 | `origin` | | Code from `countries.toml` of the state that introduced the calibre (see [Origin](#origin)). |
 | `origin_candidates` | | Instead of `origin` while two or more states can claim it: their codes, likelier first. |
@@ -442,7 +443,7 @@ lists.
 `import cartridges` reads the files once. `CATALOGUE` names each category as the apps know it
 (`Randfeuer` for the folder `rimfire`, see `CATEGORIES`); `ALL_CATALOGUE` adds the categories not yet
 in the apps (`Kanone`), whose dicts have `None` for a measurement no source gives. Besides the tables, `tags(name)` gives `[]`,
-`["obsolete"]`, `["rare"]` or both; `origin(name)` gives `(code, name, flag)` or `None` and
+`["obsolete"]`, `["rare"]` or both; `origin(name)` gives `(code, name, flag)` or `None` (`COUNTRY_NAMES[code]` the name in `en`, `de`, `fr` and `it`) and
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
 `case_head(name)`, `rim_thickness(name)` and `lookalikes(name)` look up one value; `sources(name, table)` lists every source

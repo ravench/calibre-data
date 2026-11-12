@@ -1,7 +1,7 @@
 name = "9 mm Browning kurz (.380 ACP)"
 kind = "rimless"
 profile = "round"
-aliases = ["380acp", "380auto", "9kurz", "9mmkurz"]
+aliases = ["380acp", "380auto", "9kurz", "9mmkurz", "9mm k"]
 display_aliases = [".380 ACP", ".380 Auto"]
 
 origin = "US"

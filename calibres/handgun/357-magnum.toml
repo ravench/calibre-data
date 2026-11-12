@@ -2,7 +2,7 @@ name = ".357 Magnum"
 kind = "rimmed"
 profile = "flat"
 # The .357 Atomic (Great Western, 1954) was a hot load in this case (COTW 18 p. 490).
-aliases = ["357mag", "357", "357magnum", "357s&wmag", "357s&wmagnum", "357 atomic"]
+aliases = ["357mag", "357", "357magnum", "357s&wmag", "357s&wmagnum", "357 atomic", "357 rem mag"]
 
 origin = "US"
 worldwide = true

@@ -1,7 +1,7 @@
 name = "7.65 mm Browning (.32 ACP)"
 kind = "rimless"
 profile = "round"
-aliases = ["7.65browning", "32acp", "32auto"]
+aliases = ["7.65browning", "32acp", "32auto", "7,65"]
 display_aliases = [".32 ACP", ".32 Auto"]
 
 # The 7.65 mm Browning was issued by France from 1915 (710,000 Ruby pistols), Russia 1916, Finland 1919, Italy

@@ -8,7 +8,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PR
                         SMALL_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
                         RARE, is_rare, tags,
-                        ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, origin, origin_candidates, is_worldwide,
+                        ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, COUNTRY_NAMES, origin, origin_candidates, is_worldwide,
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT,
                         bullet,
@@ -409,6 +409,22 @@ class CatalogueTests(unittest.TestCase):
         self.assertTrue(is_obsolete("7.5x53.5 mm Swiss (GP 1890)"))
         self.assertFalse(is_obsolete("7.5x55 mm Swiss (GP 11)"))
         self.assertFalse(is_obsolete("9x19 mm"))
+
+    def test_every_country_has_its_name_in_the_apps_languages(self):
+        """Kaliberfinder shows the origin in German, English, French and Italian (2026-11-12)."""
+        self.assertEqual(set(COUNTRY_NAMES), set(COUNTRIES))
+        for code, names in COUNTRY_NAMES.items():
+            self.assertEqual(set(names), {"en", "de", "fr", "it"}, code)
+            self.assertEqual(names["en"], COUNTRIES[code][0], code)
+        self.assertEqual(COUNTRY_NAMES["CH"], {"en": "Switzerland", "de": "Schweiz", "fr": "Suisse", "it": "Svizzera"})
+        self.assertEqual(COUNTRY_NAMES["GB"]["de"], "Grossbritannien")  # Swiss spelling, no ß
+
+    def test_headstamp_spellings_are_aliases(self):
+        """What is stamped on the case base finds the calibre (from Kaliberfinder's search, 2026-11-12)."""
+        by_name = {s["name"]: s for _, items in CATALOGUE for s in items}
+        for name, stamp in ((".357 Magnum", "357 rem mag"), (".44 Magnum", "44 rem mag"), (".30-30 Winchester", "30 wcf"),
+                            ("6.5x55 mm Swedish", "6,5x55"), ("7.62x25 mm Tokarev", "7.62x25")):
+            self.assertIn(stamp, by_name[name]["aliases"], name)
 
     def test_rare_calibres_are_known(self):
         self.assertTrue(RARE)

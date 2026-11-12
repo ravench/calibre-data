@@ -1,7 +1,7 @@
 name = "7 mm Remington Magnum"
 kind = "belted"
 profile = "spitzer"
-aliases = ["7mmremmag", "7rm"]
+aliases = ["7mmremmag", "7rm", "7mm rem mag"]
 
 origin = "US"
 worldwide = true

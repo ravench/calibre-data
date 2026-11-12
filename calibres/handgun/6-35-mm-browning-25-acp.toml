@@ -1,7 +1,7 @@
 name = "6.35 mm Browning (.25 ACP)"
 kind = "rimless"
 profile = "round"
-aliases = ["6.35", "25acp", "25auto"]
+aliases = ["6.35", "25acp", "25auto", "6,35"]
 
 # Browning (US) designed both pocket rounds, FN Herstal (BE) introduced them: the 7.65 mm with the FN M1900 in 1899
 # (Cartridges of the World), the 6.35 mm with the FN Vest Pocket of 1906; Colt followed in 1903 and 1908. Wikipedia
