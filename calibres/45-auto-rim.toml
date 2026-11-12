@@ -1,0 +1,43 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".45 Auto Rim"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["45autorim", "45ar"]
+
+origin = "US"
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 13.09
+base = 11.96
+neck = 11.9
+case_length = 22.87
+overall_length = 32.12
+bullet = 11.5
+sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
+
+[introduced]
+year = 1920
+sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
+
+[case_head]
+# .085 in.
+rim_thickness = 2.16
+sources = ["book:cotw-18 p. 529"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
+
+[case]
+material = "brass"
+sources = []

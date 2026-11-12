@@ -1,0 +1,37 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A short-range round for the Remington No. 1 sporting rifle and Ballard rifles; gone after World War I.
+name = ".46 Long Rimfire"
+categories = ["rimfire"]
+kind = "rimfire"
+profile = "round"
+aliases = ["46 long rf", "46 long rimfire"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.28
+base = 11.58
+neck = 11.58
+case_length = 31.75
+overall_length = 47.65
+bullet = 11.53
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: in an 1864 advertisement, though it also gives the early 1870s.
+year = 1864
+sources = ["book:cotw-18 p. 666"]
+
+[bullet]
+# COTW 18 p. 666 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+# municion.org says the first .46 Long (its .46 Carbine RF of 1864, a case of about 28 mm) had a copper case,
+# and its photos of Crittenden & Tibbals', Leet's and Fitch, Van Vechten & Co.'s rounds show it. The 32 mm
+# case measured here is Winchester's of about 1871.
+material = "copper"
+sources = ["https://municion.org/producto/46-carbine-rf/"]

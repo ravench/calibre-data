@@ -1,0 +1,50 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Miller and Greiss of Munich, on the .404 Jeffery case.
+name = "9.5x73 mm Miller-Greiss Magnum"
+categories = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["9.5x73", "9.5x73 miller-greiss"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.74
+base = 13.79
+shoulder = 13.49
+shoulder_at = 60.5
+neck = 10.21
+case_length = 72.64
+overall_length = 88.9
+bullet = 9.52
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: between 1910 and the early 1920s; the earliest year is kept.
+year = 1910
+sources = ["book:cotw-18 p. 643"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 652"]
+
+[case_head]
+# from the .404 Jeffery case; C.I.P. 404 Riml. N.E.
+rim_thickness = 1.27
+ramp_top = 3.3
+groove_diameter = 12.37
+ramp_angle = 36.04
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page145.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 643"]
+
+[case]
+material = "brass"
+sources = []

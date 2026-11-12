@@ -1,0 +1,37 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The forerunner of the .38-55: a thick, reloadable Everlasting case, 3/16 in. shorter.
+name = ".38-50 Ballard Everlasting"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["38-50 ballard", "38-50 ballard everlasting"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.75
+base = 10.79
+neck = 10.03
+case_length = 50.8
+overall_length = 69.09
+bullet = 9.55
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+year = 1876
+sources = ["book:cotw-18 p. 214"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 215"]
+
+[case]
+# municion.org's photos show brass cases (unmarked ones).
+material = "brass"
+sources = ["https://municion.org/producto/38-50-250-ballard-everlasting-2-case/"]

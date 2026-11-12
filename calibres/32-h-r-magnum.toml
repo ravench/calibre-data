@@ -1,0 +1,41 @@
+name = ".32 H&R Magnum"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "flat"
+aliases = []
+
+origin = "US"
+
+[mm]
+rim = 9.5
+base = 8.6
+neck = 8.5
+case_length = 27.4
+overall_length = 34.3
+bullet = 7.9
+# No source yet for base.
+sources = [
+  "book:cotw-18 p. 527",
+  "book:hornady-10 p. 855",
+]
+
+[introduced]
+year = 1984
+sources = ["https://en.wikipedia.org/wiki/.32_H%26R_Magnum"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_H%26R_Magnum"]
+
+[case_head]
+# .050 in.
+rim_thickness = 1.27
+sources = ["book:cotw-18 p. 527"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

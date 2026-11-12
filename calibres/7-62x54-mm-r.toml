@@ -1,0 +1,99 @@
+name = "7.62x54 mm R"
+categories = ["rifle"]
+kind = "rimmed"
+# Nose: round: the round of 1891 is older than its pointed bullet of 1909 (COTW 18 p. 548).
+profile = "round"
+# Today: pointed, since the 150-grain bullet of 1909 (COTW 18 p. 548).
+profile_today = "spitzer"
+aliases = ["7.62x54r", "762x54r"]
+
+origin = "RUE"
+
+[mm]
+rim = 14.5
+base = 12.4
+shoulder = 11.6
+shoulder_at = 39.7
+neck = 8.5
+case_length = 53.6
+overall_length = 77.2
+bullet = 7.92
+# No source yet for overall_length.
+sources = [
+  "book:hornady-10 p. 489",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf",
+  "book:cotw-18 p. 573",
+  "book:janes-ammo-2002 p. 681",
+]
+
+[introduced]
+year = 1891
+sources = ["https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[shoulder_angle]
+# C.I.P. 7,62 x 54 R
+degrees = 18.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 549"]
+
+[case]
+# municion.org says the case is brass; steel came in 1935.
+material = "brass"
+sources = ["https://municion.org/producto/762-x-54-r-russian-mosin-nagant-m-1891-1908/"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["yellow"]
+meaning = ["ball"]
+description = "D, heavy ball"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["silver"]
+meaning = ["ball"]
+description = "LPS, steel core"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["green"]
+meaning = ["tracer"]
+description = "T-46 (7T2)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["black", "red"]
+meaning = ["armour-piercing", "incendiary"]
+description = "B-32 (7BZ3)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["red"]
+meaning = ["incendiary", "spotting"]
+description = "ZP"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]

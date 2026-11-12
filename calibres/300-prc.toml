@@ -1,0 +1,47 @@
+name = ".300 PRC"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300prc"]
+
+origin = "US"
+
+[mm]
+rim = 13.4
+base = 13.4
+shoulder = 13.0
+shoulder_at = 54.6
+neck = 8.6
+case_length = 65.5
+overall_length = 94.5
+bullet = 7.82
+# No source yet for rim, base, shoulder, shoulder_at and overall_length.
+sources = ["book:cotw-18 p. 176"]
+
+[introduced]
+year = 2018
+sources = ["https://en.wikipedia.org/wiki/Hornady"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+degrees = 30
+sources = ["https://www.americanrifleman.org/content/tested-hornady-s-300-prc/"]
+
+[case_head]
+# from the .375 Ruger case; C.I.P. 375 Ruger
+rim_thickness = 1.27
+ramp_top = 3.24
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.300_PRC"]
+
+[case]
+material = "brass"
+sources = []

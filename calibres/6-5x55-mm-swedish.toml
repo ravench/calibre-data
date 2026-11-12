@@ -1,0 +1,63 @@
+name = "6.5x55 mm Swedish"
+categories = ["rifle"]
+kind = "rimless"
+# Nose: round: the round is older than the first pointed service bullet, of 1898 (COTW 18 p. 553).
+profile = "round"
+# Today: pointed; the service round is a pointed boat-tail (COTW 18 p. 539).
+profile_today = "spitzer"
+aliases = ["6.5x55", "6.5x55se", "6,5x55"]
+
+# joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms; issued by Norway and Sweden 1894, Luxembourg 1900, Denmark 1946; Sweden kept
+origin = "SE"
+
+[mm]
+rim = 12.2
+base = 12.2
+shoulder = 11.0
+shoulder_at = 43.49
+neck = 7.6
+case_length = 55.0
+overall_length = 80.0
+bullet = 6.7
+sources = [
+  "book:cotw-18 p. 573",
+  "book:donnelly p. 772",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page23.pdf",
+]
+
+[introduced]
+year = 1894
+sources = ["https://en.wikipedia.org/wiki/6.5×55mm_Swedish"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5×55mm_Swedish"]
+
+[shoulder_angle]
+# C.I.P. 6,5 x 55 SE.
+degrees = 25.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page23.pdf"]
+
+[case_head]
+# C.I.P. 6,5 x 55 SE
+rim_thickness = 1.5
+ramp_top = 3.25
+groove_diameter = 10.5
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page23.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 539"]
+
+[case]
+material = "brass"
+sources = []
+
+[[colour_codes]]
+part = "base"
+colours = ["black"]
+meaning = ["reduced-charge"]
+description = "Half of the case head blackened, the Swedish mark of a reduced charge"
+countries = ["SE"]
+sources = ["book:labbett p. 79"]

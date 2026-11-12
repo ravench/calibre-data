@@ -1,0 +1,55 @@
+# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+# Rim R1 and body P1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+name = "6.5x57 mm R"
+categories = ["rifle"]
+kind = "rimmed"
+# Nose: pointed, unlike its rimless twin: no source gives the rimmed round's first nose, and the
+# dates found for it (ca. 1910) come after pointed bullets.
+profile = "spitzer"
+aliases = ["6.5x57r"]
+
+origin = "DE"
+
+[mm]
+rim = 13.32
+base = 11.92
+shoulder = 10.94
+shoulder_at = 44.5
+neck = 7.65
+case_length = 56.7
+overall_length = 82.0
+bullet = 6.7
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page15.pdf",
+  "book:donnelly p. 774",
+  "book:cotw-18 p. 651",
+]
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+# ca. 1910
+year = 1910
+sources = ["https://municion.org/producto/65-x-57-r-mauser-m88/"]
+
+[primer]
+# 5.11 mm, 4 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/65-x-57-r-mauser-m88/"]
+
+[shoulder_angle]
+# C.I.P. 6,5 x 57 R
+degrees = 18.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page15.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page15.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/65-x-57-r-mauser-m88/"]
+
+[case]
+material = "brass"
+sources = []

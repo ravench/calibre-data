@@ -1,0 +1,48 @@
+# The reloadable centrefire version of the .32 Long rimfire, about 1875, for single-shot rifles and
+# the Marlin 1891 and 1892, some of which fired both by changing the firing pin (Cartridges of the
+# World, 14th ed., 2014); Winchester loaded it ("W.R.A.Co. .32 L", municion.org). Measurements and
+# primer from the book; municion.org quotes its bullet, case length and overall length.
+name = ".32 Long Centrefire"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["32longcf", "32cflong"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.37
+base = 8.15
+neck = 8.08
+case_length = 20.82
+overall_length = 34.29
+bullet = 8.05
+sources = [
+  "book:cotw-18 p. 250",
+  "https://municion.org/producto/32-long-cf/",
+]
+
+[introduced]
+# municion.org gives 1873; its history, after Cartridges of the World, about 1875.
+year = 1873
+sources = ["https://municion.org/producto/32-long-cf/"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[case_head]
+# .048 in.
+rim_thickness = 1.22
+sources = ["book:donnelly p. 367"]
+
+[bullet]
+# Outside-lubricated lead.
+type = "lead"
+sources = ["https://municion.org/producto/32-long-cf/"]
+
+[case]
+material = "brass"
+sources = []

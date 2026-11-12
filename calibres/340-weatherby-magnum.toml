@@ -1,0 +1,51 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".340 Weatherby Magnum"
+categories = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["340wby"]
+
+origin = "US"
+
+[mm]
+rim = 13.5
+base = 13.0
+shoulder = 12.6
+shoulder_at = 59.49
+neck = 9.3
+case_length = 72.0
+overall_length = 91.0
+bullet = 8.6
+sources = [
+  "https://en.wikipedia.org/wiki/.340_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page24.pdf",
+]
+
+[introduced]
+year = 1962
+sources = ["https://en.wikipedia.org/wiki/.340_Weatherby_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.340_Weatherby_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 340 Weath. Mag.
+degrees = 37.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page24.pdf"]
+
+[case_head]
+# C.I.P. ?
+rim_thickness = 1.3
+ramp_top = 5.56
+groove_diameter = 11.61
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page24.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.340_Weatherby_Magnum"]
+
+[case]
+material = "brass"
+sources = []

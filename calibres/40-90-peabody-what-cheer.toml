@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Peabody-Martini What Cheer rifle No. 3, a match round until the early 1900s.
+name = ".40-90 Peabody What Cheer"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["40-90 peabody", "40-90 what cheer"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.74
+base = 14.88
+shoulder = 13.87
+shoulder_at = 38.1
+neck = 11.0
+case_length = 50.8
+overall_length = 85.6
+bullet = 10.36
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# COTW: the rifle was introduced in 1877-78.
+year = 1877
+sources = ["book:cotw-18 p. 226"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 226"]
+
+[case]
+# municion.org's photo shows a brass case (an unmarked one).
+material = "brass"
+sources = ["https://municion.org/producto/40-90-500-peabody-martini-what-cheer-n3/"]

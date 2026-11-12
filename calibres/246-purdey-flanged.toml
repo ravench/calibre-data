@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For Purdey double rifles.
+name = ".246 Purdey Flanged"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["246 purdey", "246purdey"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.82
+base = 12.04
+shoulder = 10.19
+shoulder_at = 48.1
+neck = 7.19
+case_length = 56.9
+overall_length = 75.69
+bullet = 6.43
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+year = 1921
+sources = ["book:cotw-18 p. 578"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 578"]
+
+[case]
+material = "brass"
+sources = []

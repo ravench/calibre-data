@@ -1,0 +1,44 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The blackpowder parent of the .500/450 Nitro Express, popular in Africa.
+name = ".500/450 Magnum Express"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["500/450 magnum express", "500/450 bpe"]
+display_aliases = [".500/450 3¼ inch Magnum Express (BPE)"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.36
+base = 14.48
+shoulder = 12.7
+shoulder_at = 70.5
+neck = 12.17
+case_length = 82.55
+overall_length = 99.31
+bullet = 11.63
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+# COTW: the 1870s; the decade's first year is kept.
+year = 1870
+sources = ["book:cotw-18 p. 598"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
+
+[bullet]
+# A blackpowder express round of the 1870s (COTW 18 p. 598), lead like the express bullets of its time;
+# the page lists its factory loads as soft points.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

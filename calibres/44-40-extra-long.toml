@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A longer body and neck than the .44-40 WCF.
+name = ".44-40 Extra Long"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["44-40 extra long", "44-40 xl"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.08
+base = 11.89
+shoulder = 11.76
+shoulder_at = 28.8
+neck = 11.23
+case_length = 40.13
+overall_length = 49.78
+bullet = 10.87
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+unknown = "COTW 18 p. 231 finds no record of the rifle it was made for; a Stevens rifle of 1914-16 chambered it."
+sources = ["book:cotw-18 p. 231"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+# COTW 18 p. 231 gives no load; a lead bullet, as in the .44-40 WCF.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

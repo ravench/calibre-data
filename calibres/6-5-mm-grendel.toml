@@ -1,0 +1,52 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "6.5 mm Grendel"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5grendel", "grendel"]
+
+origin = "US"
+
+[mm]
+rim = 11.2
+base = 11.15
+shoulder = 10.87
+shoulder_at = 29.07
+neck = 7.44
+case_length = 38.7
+overall_length = 57.5
+bullet = 6.71
+# No source yet for shoulder_at.
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
+
+[introduced]
+year = 2003
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
+
+[shoulder_angle]
+degrees = 30
+sources = ["https://www.rifleshootermag.com/editorial/6-5-grendel-evolution/84008"]
+
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:cotw-18 p. 175"]
+
+[bullet]
+# Alexander Arms' own loads on the page include an open-tip match bullet, which counts as
+# jacketed; the FMJ row is Wolf's later load.
+type = "jacketed"
+sources = ["book:cotw-18 p. 109"]
+
+[case]
+material = "brass"
+sources = []
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]

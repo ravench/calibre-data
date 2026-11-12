@@ -1,0 +1,37 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The centrefire version of the .38 Long rimfire, for single-shot rifles.
+name = ".38 Long Centrefire"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["38 long cf", "38 long centerfire"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.2
+base = 9.63
+neck = 9.6
+case_length = 26.16
+overall_length = 36.83
+bullet = 9.52
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+# COTW: introduced in 1875-76.
+year = 1875
+sources = ["book:cotw-18 p. 213"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 213"]
+
+[case]
+material = "brass"
+sources = []

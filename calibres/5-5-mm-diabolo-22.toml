@@ -1,0 +1,20 @@
+name = "5.5 mm Diabolo (.22)"
+categories = ["air-gun"]
+kind = "pellet"
+profile = "round"
+aliases = ["5.5", "5.5mm"]
+
+worldwide = true
+
+[mm]
+diameter = 5.5
+length = 6.5
+sources = []
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"
+
+[bullet]
+type = "lead"
+sources = []

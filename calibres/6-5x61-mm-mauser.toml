@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# DWM, introduced in the 1930s: the decade's first year is kept.
+name = "6.5x61 mm Mauser"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5x61"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.17
+base = 12.12
+shoulder = 11.48
+shoulder_at = 51.1
+neck = 7.52
+case_length = 60.96
+overall_length = 90.17
+bullet = 6.71
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+year = 1930
+sources = ["book:cotw-18 p. 619"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 619"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,41 @@
+# Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".32-40 Ballard"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["32-40", "32-40win", "32-40winchester"]
+
+origin = "US"
+obsolete = true
+
+[mm]
+rim = 12.9
+base = 10.8
+neck = 8.6
+case_length = 54.0
+overall_length = 66.0
+bullet = 8.1
+sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
+
+[introduced]
+year = 1884
+sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
+
+[case_head]
+# .058 in.
+rim_thickness = 1.47
+sources = ["book:cotw-18 p. 250"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.32-40_Ballard"]
+
+[case]
+# municion.org's photos show brass cases (Dominion's, UMC's and Winchester's). municion.org
+# files the round with the .32-40 Winchester.
+material = "brass"
+sources = ["https://municion.org/producto/32-40-winchester-cf-marlin-ballard-savage/"]

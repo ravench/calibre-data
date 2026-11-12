@@ -1,0 +1,135 @@
+name = ".50 BMG"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["50bmg", "12.7x99"]
+display_aliases = ["12,7x99 mm NATO"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 20.4
+base = 20.4
+shoulder = 18.14
+shoulder_at = 76.34
+neck = 14.22
+case_length = 99.31
+overall_length = 138.43
+bullet = 12.98
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page152.pdf",
+  "book:cotw-18 p. 177",
+]
+
+[introduced]
+year = 1921
+sources = ["https://en.wikipedia.org/wiki/.50_BMG"]
+
+[primer]
+size = "bmg-35"
+sources = ["https://en.wikipedia.org/wiki/.50_BMG"]
+
+[shoulder_angle]
+# C.I.P. 50 Browning
+degrees = 15.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page152.pdf"]
+
+[case_head]
+# C.I.P. 50 Browning
+rim_thickness = 2.26
+ramp_top = 6.23
+groove_diameter = 17.27
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page152.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 570"]
+
+[case]
+material = "brass"
+sources = []
+
+[[colour_codes]]
+part = "tip"
+colours = ["black"]
+meaning = ["armour-piercing"]
+description = "M2"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/.50_BMG", "book:labbett p. 80"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["silver"]
+meaning = ["armour-piercing", "incendiary"]
+description = "US M8, Swiss M.64"
+countries = ["US", "CH"]
+sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:labbett p. 80",
+  "book:labbett p. 76",
+  "book:labbett p. 77",
+]
+
+[[colour_codes]]
+part = "tip"
+colours = ["red", "silver"]
+meaning = ["armour-piercing", "incendiary", "tracer"]
+description = "US M20, Swiss M.65"
+countries = ["US", "CH"]
+sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:labbett p. 80",
+  "book:labbett p. 76",
+  "book:labbett p. 77",
+]
+
+[[colour_codes]]
+part = "tip"
+colours = ["red"]
+meaning = ["tracer"]
+description = "M1 and M21"
+countries = ["US"]
+sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:labbett p. 80",
+  "book:labbett p. 82",
+]
+
+[[colour_codes]]
+part = "tip"
+colours = ["orange"]
+meaning = ["tracer"]
+description = "M10"
+countries = ["US"]
+sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:labbett p. 80",
+  "book:labbett p. 82",
+]
+
+[[colour_codes]]
+part = "tip"
+# Labbett p. 82; the colour key on Wikipedia shows the M17 red.
+colours = ["brown"]
+meaning = ["tracer"]
+description = "M17"
+countries = ["US"]
+sources = ["book:labbett p. 82"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["blue"]
+meaning = ["incendiary"]
+description = "M1, a light blue tip"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/.50_BMG", "book:labbett p. 80"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["green", "grey"]
+meaning = ["armour-piercing", "explosive", "incendiary"]
+description = "Mk 211 (Raufoss)"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/.50_BMG"]

@@ -1,0 +1,47 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# BSA's belted round for its sporting rifles on the Enfield action.
+name = ".33 BSA"
+categories = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["33 bsa", "33bsa", "330 bsa"]
+display_aliases = [".33 Belted Rimless"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.56
+base = 13.08
+shoulder = 11.51
+shoulder_at = 49.53
+neck = 9.37
+case_length = 60.96
+overall_length = 78.74
+bullet = 8.59
+# The table's base is the belt; the body in front of it and shoulder_at are Donnelly's.
+sources = ["book:cotw-18 p. 608", "book:donnelly p. 382"]
+
+[introduced]
+year = 1921
+sources = ["book:cotw-18 p. 586"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# .051 in.
+rim_thickness = 1.3
+sources = ["book:donnelly p. 382"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 586"]
+
+[case]
+material = "brass"
+sources = []

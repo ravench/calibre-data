@@ -1,0 +1,35 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the 1865 Remington Navy rolling-block pistol; an inside-primed centrefire round followed
+# within a year.
+name = ".50 Remington Navy Rimfire"
+categories = ["rimfire"]
+kind = "rimfire"
+profile = "round"
+aliases = ["50 remington navy rf", "50 remington navy rimfire"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.31
+base = 14.27
+neck = 13.59
+case_length = 21.84
+overall_length = 32.51
+bullet = 12.95
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+year = 1865
+sources = ["book:cotw-18 p. 667"]
+
+[bullet]
+# COTW 18 p. 667 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+# municion.org's photos show copper cases on the early makers' rounds (UMC).
+material = "copper"
+sources = ["https://municion.org/producto/50-remington-navy-m-1865-rf/"]

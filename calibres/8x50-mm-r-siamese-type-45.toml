@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The Siamese service round from 1902 to the Second World War; Type 45 is the Thai year.
+name = "8x50 mm R Siamese Type 45"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["8x50r siamese", "8x50r type 45"]
+
+origin = "TH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.97
+base = 12.19
+shoulder = 11.43
+shoulder_at = 40.0
+neck = 8.81
+case_length = 50.29
+overall_length = 75.44
+bullet = 8.15
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+year = 1902
+sources = ["book:cotw-18 p. 552"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+# Round nose with a cupronickel jacket (COTW 18 p. 552).
+type = "jacketed"
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 552"]
+
+[case]
+material = "brass"
+sources = []

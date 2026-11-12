@@ -9,9 +9,12 @@ The values are for drawings and for matching photos, **not reloading data**.
 
 ## The files
 
-Every calibre is one [TOML](https://toml.io) file in `calibres/<category>/`, named after the calibre
-(`.22 LR` is `calibres/rimfire/22-lr.toml`). The folder is the calibre's category, and the only place
-it is stored: `rimfire`, `handgun`, `rifle`, `black-powder`, `shotgun` and `air-gun`. The apps know
+Every calibre is one [TOML](https://toml.io) file in `calibres/`, named after the calibre
+(`.22 LR` is `calibres/22-lr.toml`). Its `categories` list says which categories it is in, the primary
+one first: `rimfire`, `handgun`, `rifle`, `black-powder`, `shotgun` and `air-gun`. A calibre can be in
+several (a black-powder rifle round: `["black-powder", "rifle"]`); `order.toml`, `CATALOGUE` and the
+apps list it under its first one only, and `CALIBRE_CATEGORIES` / `categories(name)` give them all.
+The apps know
 these six as `Randfeuer`, `Kurzwaffe`, `Langwaffe`, `Schwarzpulver`, `Flinte` and `Luftdruck`, the
 names they show (`CATEGORIES` in `cartridges.py`), so a new category needs a change in the apps too.
 
@@ -52,6 +55,7 @@ the apps read those whole.
 ```toml
 # Notes about the calibre: where values come from, what was measured, what to watch out for.
 name = ".308 Winchester"
+categories = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["308", "308win"]
@@ -126,6 +130,7 @@ brass and the case materials made today always need one.
 | Key | | Meaning |
 |---|---|---|
 | `name` | required | The calibre's name as the apps show it, written as in [Names](#names). The file name follows from it (`.22 LR` is `22-lr.toml`); `check.py` gives the right one. |
+| `categories` | required | The categories it is in, the primary one first (see [The files](#the-files)): `rimfire`, `handgun`, `rifle`, `black-powder`, `shotgun`, `air-gun` or `cannon`. Apps that need one category use the first. |
 | `kind` | required | `rimless`, `rimmed`, `belted`, `rimfire`, `shot` (shot shell), `ball` (round ball or BB), `minie` (Minié bullet) or `pellet` (air gun pellet). |
 | `profile` | required | Bullet nose of the round as first sold (the apps draw it): `spitzer`, `round`, `flat`, `patched` (paper-patched lead body and a steel-capped nose, GP 1890, drawn to the army's 1892 drawing) or `crimped` (no bullet, the mouth folded shut in a star: blanks and power-tool loads). |
 | `profile_today` | optional | The nose of today's usual load, where it is not the first one: the .303 British is drawn `round` but loaded `spitzer` since the Mk VII. Same values as `profile`; for the catalogue only. A `# Today:` comment above it names the source, as `# Nose:` does for `profile`. |
@@ -454,12 +459,12 @@ lists.
 ## In Python
 
 `import cartridges` reads the files once. `CATALOGUE` names each category as the apps know it
-(`Randfeuer` for the folder `rimfire`, see `CATEGORIES`); `ALL_CATALOGUE` adds the categories not yet
+(`Randfeuer` for `rimfire`, see `CATEGORIES`) and lists each calibre under its primary category; `ALL_CATALOGUE` adds the categories not yet
 in the apps (`Kanone`), whose dicts have `None` for a measurement no source gives. Besides the tables, `tags(name)` gives `[]`,
 `["obsolete"]`, `["rare"]` or both; `origin(name)` gives `(code, name, flag)` or `None` (`COUNTRY_NAMES[code]` the name in `en`, `de`, `fr` and `it`) and
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
-`case_head(name)`, `rim_thickness(name)` and `lookalikes(name)` look up one value; `sources(name, table)` lists every source
+`case_head(name)`, `rim_thickness(name)`, `lookalikes(name)` and `categories(name)` look up one value; `sources(name, table)` lists every source
 of a table (`"mm"`, `"introduced"`, `"primer"`, ...). `COLOUR_CODES` holds the tip, base and annulus colour codes, each
 with its own sources, and `FIRED_BY` the firearms of a round. A problem in the files stops the import with a
 `DataError` that lists them all.
@@ -467,7 +472,7 @@ with its own sources, and `FIRED_BY` the firearms of a round. A problem in the f
 ## Adding or changing a calibre
 
 1. Copy [`docs/template.toml`](docs/template.toml) (every field explained) or the file of a similar
-   calibre into the right `calibres/<category>/` folder, give it the new name (see [Names](#names))
+   calibre into `calibres/`, give it the new name and its `categories` (see [Names](#names))
    and change the values. Add a source for each value you know and keep a note of anything
    measured or estimated.
 2. Run the checks and the tests:

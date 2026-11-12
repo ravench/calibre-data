@@ -1,0 +1,50 @@
+# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+name = ".26 Nosler"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["26nosler"]
+
+origin = "US"
+
+[mm]
+rim = 13.6
+base = 14.0
+shoulder = 13.6
+shoulder_at = 55.58
+neck = 7.6
+case_length = 65.8
+overall_length = 84.8
+bullet = 6.7
+# No source yet for shoulder.
+sources = [
+  "https://en.wikipedia.org/wiki/.28_Nosler",
+  "https://municion.org/producto/26-nosler/",
+  "book:cotw-18 p. 175",
+]
+
+[introduced]
+year = 2013
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[shoulder_angle]
+# AECC drawing 07-066-BRC-040
+degrees = 38.7
+sources = ["https://municion.org/producto/26-nosler/"]
+
+[case_head]
+# .05 in.
+rim_thickness = 1.27
+sources = ["book:cotw-18 p. 175"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.26_Nosler"]
+
+[case]
+material = "brass"
+sources = []

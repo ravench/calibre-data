@@ -1,0 +1,40 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".44 S&W Russian"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["44russian"]
+
+origin = "US"
+
+[mm]
+rim = 13.1
+base = 11.6
+neck = 11.6
+case_length = 24.6
+overall_length = 36.3
+bullet = 10.9
+sources = ["https://en.wikipedia.org/wiki/.44_S%26W_Russian"]
+
+[introduced]
+year = 1870
+sources = ["https://en.wikipedia.org/wiki/.44_S%26W_Russian"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.44_S%26W_Russian"]
+
+[case_head]
+# .050 in.
+rim_thickness = 1.27
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.44_S%26W_Russian"]
+
+[case]
+material = "brass"
+sources = []

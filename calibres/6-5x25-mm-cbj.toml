@@ -1,0 +1,55 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# CBJ Tech AB's round for 9x19 mm pistols and submachine guns: the same case up to the shoulder, with a
+# sub-calibre bullet in a sabot. CBJ Tech AB loads it for armed forces; COTW 18 p. 373 says it has no plans
+# for commercial sales.
+name = "6.5x25 mm CBJ"
+categories = ["handgun"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5x25 cbj", "6.5x25", "cbj"]
+
+origin = "SE"
+rare = true
+
+[mm]
+rim = 9.98
+base = 9.91
+shoulder = 9.63
+shoulder_at = 16.99
+neck = 7.29
+case_length = 24.99
+overall_length = 29.69
+bullet = 6.71
+# shoulder_at from the drawing on p. 373.
+sources = ["book:cotw-18 p. 451", "book:cotw-18 p. 373"]
+
+[introduced]
+unknown = "COTW 18 p. 373 gives only the founding of CBJ Tech AB, 1997."
+sources = ["book:cotw-18 p. 373"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[shoulder_angle]
+# COTW 18 drawing
+degrees = 30
+sources = ["book:cotw-18 p. 373"]
+
+[case_head]
+# from the 9x19 mm case; C.I.P. 9 mm Luger
+rim_thickness = 1.27
+ramp_top = 2.98
+groove_diameter = 8.79
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page28.pdf"]
+
+[bullet]
+# The main load is a 4 mm tungsten core in a plastic sabot that falls away after the muzzle (p. 373);
+# no type here fits it, so it stays jacketed, unchecked.
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

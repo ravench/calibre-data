@@ -1,0 +1,39 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Jeffery's long-range target round, on the .276 Enfield case.
+name = ".303 Magnum"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["303 magnum", "303mag"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.15
+base = 13.46
+shoulder = 11.73
+shoulder_at = 49.4
+neck = 8.76
+case_length = 59.69
+overall_length = 82.55
+bullet = 7.92
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+year = 1919
+sources = ["book:cotw-18 p. 585"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 585"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A blackpowder round for Martini target rifles.
+name = "10.8x47 mm R Martini Target"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["10.8x47r", "10.8x47r martini"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.01
+base = 13.11
+shoulder = 13.0
+shoulder_at = 32.3
+neck = 11.76
+case_length = 44.45
+overall_length = 56.64
+bullet = 11.2
+# COTW 18 (and COTW 5) give a 1.75 in. case, 2.5 mm short of the 47 mm in the name.
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+unknown = "Rounds like it were shot from 1875 into the 1890s; COTW 18 p. 648 gives no year for this one."
+sources = ["book:cotw-18 p. 648"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "paper"
+sources = ["book:cotw-18 p. 648"]
+
+[case]
+material = "brass"
+sources = []

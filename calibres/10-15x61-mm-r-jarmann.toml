@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The round of the Jarmann repeating rifle of Norway and Sweden.
+name = "10.15x61 mm R Jarmann"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["10.15x61r", "jarmann"]
+
+origin = "NO"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.62
+base = 13.92
+shoulder = 13.72
+shoulder_at = 48.5
+neck = 10.92
+case_length = 60.96
+overall_length = 77.72
+bullet = 10.24
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1881
+sources = ["book:cotw-18 p. 560"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .078 in.
+rim_thickness = 1.98
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a paper-patched lead bullet over blackpowder.
+type = "paper"
+sources = ["book:cotw-18 p. 560"]
+
+[case]
+# municion.org's photos show brass cases (the Norwegian arsenal's, Raufoss's and BSA's).
+material = "brass"
+sources = ["https://municion.org/producto/1015-x-61-r-jarmann/"]

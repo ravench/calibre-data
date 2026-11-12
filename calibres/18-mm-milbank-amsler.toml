@@ -1,0 +1,34 @@
+# Swiss rimfire for the Milbank-Amsler conversion of the 18 mm Infanteriegewehr 1842/1859 (Thun).
+# Drawing on municion.org (AECC ref. 18-026-CBR-010): rim 20.72 (1.74 thick), head 18.58, mouth 18.27,
+# bullet 18.15, case 25.54, overall 39.92. AECC 18-025-BBR-010 (labelled for the converted French
+# 1864 rifle) is a close variant: rim 20.50, head 18.62, mouth 17.96, case 25.45, overall 40.40.
+name = "18 mm Milbank-Amsler"
+categories = ["black-powder"]
+kind = "rimfire"
+profile = "round"
+aliases = ["milbankamsler", "milbank-amsler", "milbank", "18x25r", "18x25.7r"]
+
+origin = "CH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 20.72
+base = 18.58
+neck = 18.27
+case_length = 25.54
+overall_length = 39.92
+bullet = 18.15
+sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
+
+[introduced]
+year = 1867
+sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
+
+[case]
+material = "brass"
+sources = []

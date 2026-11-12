@@ -1,0 +1,44 @@
+# .375 Flanged NE (1899, 2.5 in, straight taper) and .55 Boys: measured specimens on municion.org
+# (AECC 10-063-TBC-020, 14-099-BFC-020; Boys belt 21.59 matches antitank.co.uk's 0.850 in).
+name = ".55 Boys"
+categories = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["55boys", "13.9x99b", "boys"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 20.3
+base = 20.14
+shoulder = 18.03
+shoulder_at = 75.0
+neck = 15.51
+case_length = 99.11
+overall_length = 133.64
+bullet = 14.36
+sources = ["https://municion.org/producto/55-boys/"]
+
+[introduced]
+year = 1936
+sources = ["https://municion.org/producto/55-boys/"]
+
+[primer]
+# 7.61 mm, 7 specimens
+size = "bmg-35"
+sources = ["https://municion.org/producto/55-boys/"]
+
+[shoulder_angle]
+# AECC drawing 14-099-BFC-020
+degrees = 10
+sources = ["https://municion.org/producto/55-boys/"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

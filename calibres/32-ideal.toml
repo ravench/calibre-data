@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Stevens 44 and 44½ and other single-shot rifles; an inside-lubricated bullet.
+name = ".32 Ideal"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["32 ideal", "32-25-100"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.44
+base = 8.84
+neck = 8.74
+case_length = 44.96
+overall_length = 57.15
+bullet = 8.2
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+year = 1903
+sources = ["book:cotw-18 p. 204"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 205"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .455 Revolver Mk I of 1892, the longer case of the .455 Webley (Mk II, 1897); the .476 Enfield has the same case.
+name = ".455 Webley Mk I"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["455 enfield", "455 colt", "455 mk i", "455 revolver mk i", "455 webley mk1"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.46
+base = 12.14
+neck = 12.01
+case_length = 22.1
+overall_length = 34.29
+bullet = 11.56
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+year = 1892
+sources = ["book:cotw-18 p. 522"]
+
+[primer]
+size = "large-pistol"
+sources = ["book:cotw-18 p. 529"]
+
+[case_head]
+# .035 in.
+rim_thickness = 0.89
+sources = ["book:cotw-18 p. 529"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 522"]
+
+[case]
+material = "brass"
+sources = []

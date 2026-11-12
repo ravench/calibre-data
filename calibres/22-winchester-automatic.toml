@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Only for the Winchester Model 1903 self-loading rifle; too wide for .22 LR chambers.
+name = ".22 Winchester Automatic"
+categories = ["rimfire"]
+kind = "rimfire"
+profile = "round"
+aliases = ["22 winchester automatic", "22 win auto", "22winauto"]
+
+origin = "US"
+# Dropped by Winchester in the 1970s; Aguila's loads for old rifles count as boutique loads (COTW 18 p. 657).
+obsolete = true
+rare = true
+
+[mm]
+rim = 7.87
+base = 6.35
+neck = 6.35
+case_length = 16.89
+overall_length = 23.24
+bullet = 5.64
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# The year of the Winchester Model 1903 rifle it was made for.
+year = 1903
+sources = ["book:cotw-18 p. 657"]
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 670"]
+
+[bullet]
+# COTW 18 p. 657 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

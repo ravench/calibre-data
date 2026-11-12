@@ -1,0 +1,41 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".600 Nitro Express"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["600ne"]
+
+origin = "GB"
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 20.6
+base = 17.8
+neck = 16.5
+case_length = 76.0
+overall_length = 94.0
+bullet = 15.7
+sources = ["https://en.wikipedia.org/wiki/.600_Nitro_Express"]
+
+[introduced]
+year = 1899
+sources = ["https://en.wikipedia.org/wiki/.600_Nitro_Express"]
+
+[primer]
+# 5.52 mm, 8 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/600-nitro-express-3/"]
+
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 695"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/600-nitro-express-3/"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,43 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A blackpowder round for single-shot and double rifles.
+name = "10.25x69 mm R Hunting-Express"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["10.25x69r", "10.15x68r"]
+display_aliases = ["10.15x68 mm R Express"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.0
+base = 13.94
+shoulder = 12.19
+shoulder_at = 57.5
+neck = 10.54
+case_length = 69.09
+overall_length = 80.52
+bullet = 10.26
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: the 1880-90 period; the earliest year is kept.
+year = 1880
+sources = ["book:cotw-18 p. 645"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 652"]
+
+[bullet]
+# A blackpowder round (COTW 18 p. 645); only the later smokeless load had a soft point.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,50 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+name = "7x66 mm Vom Hofe Super Express"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7x66", "7mm se", "7x66se"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.0
+base = 13.85
+shoulder = 12.7
+shoulder_at = 53.6
+neck = 8.17
+case_length = 66.0
+overall_length = 84.0
+bullet = 7.24
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page42.pdf"]
+
+[introduced]
+year = 1956
+sources = ["book:cotw-18 p. 624"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 30.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page42.pdf"]
+
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.3
+ramp_top = 3.7
+groove_diameter = 11.5
+ramp_angle = 40.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page42.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 624"]
+
+[case]
+material = "brass"
+sources = []

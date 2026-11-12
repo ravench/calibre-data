@@ -1,0 +1,58 @@
+name = ".223 Remington"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["223", "223rem"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 9.6
+base = 9.6
+shoulder = 9.0
+shoulder_at = 35.02
+neck = 6.4
+case_length = 44.7
+overall_length = 57.4
+bullet = 5.7
+sources = [
+  "book:hornady-10 p. 160",
+  "book:donnelly p. 152",
+  "book:cotw-18 p. 175",
+  "https://en.wikipedia.org/wiki/.223_Remington",
+]
+
+[introduced]
+year = 1963
+sources = ["https://en.wikipedia.org/wiki/.223_Remington"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.223_Remington"]
+
+[shoulder_angle]
+# C.I.P. drawing in the article
+degrees = 23
+sources = ["https://en.wikipedia.org/wiki/.223_Remington"]
+
+[case_head]
+# the .300 BLK is made from .223 Rem. cases; C.I.P. 300 AAC Blackout
+rim_thickness = 1.14
+ramp_top = 3.15
+groove_diameter = 8.43
+ramp_angle = 25.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 91"]
+
+[case]
+material = "brass"
+sources = []
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]

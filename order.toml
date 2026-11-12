@@ -1,6 +1,6 @@
 # The order the apps and the poster list the calibres in, by category (the categories in this order too).
-# Each category is a folder in calibres/. A calibre that is not listed here comes after the listed
-# ones of its category, by name.
+# A calibre is listed under its first category (categories in its file). A calibre that is not listed
+# here comes after the listed ones of its first category, by name.
 
 rimfire = [
   ".22 Short",

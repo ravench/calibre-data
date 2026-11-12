@@ -1,0 +1,48 @@
+# Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "8x58 mm R Danish Krag"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["8x58r", "danishkrag"]
+
+origin = "DK"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.65
+base = 12.75
+shoulder = 11.95
+shoulder_at = 41.96
+neck = 8.98
+case_length = 58.0
+overall_length = 78.0
+bullet = 8.2
+# No source yet for shoulder_at.
+sources = ["https://en.wikipedia.org/wiki/8×58mmR_Danish_Krag"]
+
+[introduced]
+year = 1888
+sources = ["https://en.wikipedia.org/wiki/8×58mmR_Danish_Krag"]
+
+[primer]
+# 5.42 mm, 8 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/8-x-58-r-danish-krag-jorgensen-m-1889/"]
+
+[shoulder_angle]
+degrees = 16.5
+sources = ["https://en.wikipedia.org/wiki/8%C3%9758mmR_Danish_Krag"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 573"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 553"]
+
+[case]
+material = "brass"
+sources = []

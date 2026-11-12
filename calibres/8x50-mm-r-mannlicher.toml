@@ -1,0 +1,52 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = "8x50 mm R Mannlicher"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["8x50rmannlicher", "8x50r"]
+
+origin = "AH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.11
+base = 12.48
+shoulder = 12.01
+shoulder_at = 38.29
+neck = 9.03
+case_length = 50.38
+overall_length = 76.21
+bullet = 8.22
+sources = [
+  "https://en.wikipedia.org/wiki/8×50mmR_Mannlicher",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf",
+]
+
+[introduced]
+year = 1890
+sources = ["https://en.wikipedia.org/wiki/8×50mmR_Mannlicher"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# C.I.P. 8 x 50 R
+degrees = 14.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 554"]
+
+[case]
+# municion.org says the case is brass or iron; its photos show brass for the army's rounds of 1890.
+material = "brass"
+sources = ["https://municion.org/producto/8-x-50-r-austrian-mannlicher-mod-88-mod-88-93-mod-93/"]

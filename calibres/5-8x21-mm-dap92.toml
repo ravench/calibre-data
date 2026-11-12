@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+name = "5.8x21 mm DAP92"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["5.8x21", "5.8x21 dap92", "dap92"]
+
+origin = "CN"
+rare = true
+
+[mm]
+rim = 7.98
+base = 7.95
+shoulder = 7.77
+shoulder_at = 14.1
+neck = 6.58
+case_length = 21.01
+overall_length = 32.51
+bullet = 5.99
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+unknown = "The Chinese PDW and QSZ-92 pistol round; COTW 18 p. 461 prints the .25 ACP's history under its heading."
+sources = ["book:cotw-18 p. 461"]
+
+[primer]
+size = "small-pistol"
+sources = ["book:cotw-18 p. 527"]
+
+[case_head]
+# .044 in.
+rim_thickness = 1.12
+sources = ["book:cotw-18 p. 527"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

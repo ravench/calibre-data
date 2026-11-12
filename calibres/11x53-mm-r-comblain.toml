@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The Belgian civil guard's Comblain rifle.
+name = "11x53 mm R Comblain"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["11x53r", "11x53r comblain"]
+display_aliases = ["11x53 mm R Belgian Comblain M71"]
+
+origin = "BE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 17.09
+base = 14.6
+shoulder = 13.51
+shoulder_at = 40.8
+neck = 11.68
+case_length = 53.34
+overall_length = 70.1
+bullet = 11.07
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1871
+sources = ["book:cotw-18 p. 563"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .082 in.
+rim_thickness = 2.08
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a paper-patched lead bullet over blackpowder.
+type = "paper"
+sources = ["book:cotw-18 p. 563"]
+
+[case]
+material = "brass"
+sources = []

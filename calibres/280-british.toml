@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The British round for the EM-2 rifle; NATO chose the 7.62x51 mm instead.
+name = ".280 British"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["280british", "280 british", "7x43"]
+display_aliases = ["7x43 mm"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.01
+base = 11.94
+shoulder = 11.38
+shoulder_at = 33.5
+neck = 7.95
+case_length = 43.43
+overall_length = 64.52
+bullet = 7.19
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+# COTW: work began in 1945; ready for trials by 1947.
+year = 1945
+sources = ["book:cotw-18 p. 541"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 541"]
+
+[case]
+material = "brass"
+sources = []

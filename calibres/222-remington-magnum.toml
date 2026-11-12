@@ -1,0 +1,53 @@
+# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+name = ".222 Remington Magnum"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["222remmag"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.6
+base = 9.6
+shoulder = 9.1
+shoulder_at = 37.18
+neck = 6.4
+case_length = 47.0
+overall_length = 57.9
+bullet = 5.7
+sources = [
+  "https://en.wikipedia.org/wiki/.222_Remington_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page85.pdf",
+]
+
+[introduced]
+year = 1957
+sources = ["https://en.wikipedia.org/wiki/.222_Remington_Magnum"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.222_Remington_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 222 Rem. Mag.
+degrees = 23
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page85.pdf"]
+
+[case_head]
+# C.I.P. 222 Rem. Mag.
+rim_thickness = 1.14
+ramp_top = 3.11
+groove_diameter = 8.43
+ramp_angle = 25.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page85.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.222_Remington_Magnum"]
+
+[case]
+material = "brass"
+sources = []

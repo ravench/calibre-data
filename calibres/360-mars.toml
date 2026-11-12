@@ -1,0 +1,45 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .45 Mars Long necked down, for the Mars pistol of 1900.
+name = ".360 Mars"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["360 mars", "9mm mars"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.47
+base = 12.83
+shoulder = 11.56
+shoulder_at = 15.7
+neck = 9.4
+case_length = 26.54
+overall_length = 35.92
+bullet = 9.12
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+year = 1900
+sources = ["book:cotw-18 p. 493"]
+
+[primer]
+# The table gives a Berdan primer without its size; 5.34 mm, 3 specimens on municion.org's photos.
+size = "large-pistol"
+sources = ["https://municion.org/producto/360-mars-gabbett-fairfax/"]
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 493"]
+
+[case]
+material = "brass"
+sources = []

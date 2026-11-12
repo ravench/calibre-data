@@ -1,0 +1,32 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A longer .32 Long rimfire case with an inside-lubricated bullet, listed from 1900 to the early 1920s.
+name = ".32 Long Rifle Rimfire"
+categories = ["rimfire"]
+kind = "rimfire"
+profile = "round"
+aliases = ["32 long rifle", "32 long rifle rf"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.58
+base = 8.08
+neck = 8.08
+case_length = 23.8
+overall_length = 31.06
+bullet = 7.92
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+year = 1900
+sources = ["book:cotw-18 p. 662"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 662"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,45 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# Mauser's round for its Export pistol of 1908, longer and stronger than the 9 mm Luger; revived in 1933 for the Neuhausen and Steyr-Solothurn submachine guns.
+name = "9 mm Mauser"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["9mm mauser", "9x25 mauser", "9mm mauser export", "9 mm mauser export"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.98
+base = 9.89
+neck = 9.63
+case_length = 25.0
+overall_length = 35.0
+bullet = 9.03
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/9-mm-mauser-en.pdf"]
+
+[introduced]
+year = 1908
+sources = ["book:cotw-18 p. 479"]
+
+[primer]
+# The table gives a Berdan primer without its size; 4.11 mm, 14 specimens on municion.org's photos.
+size = "small-pistol"
+sources = ["https://municion.org/producto/9-mm-mauser-export/"]
+
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.27
+ramp_top = 3.0
+groove_diameter = 8.73
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/9-mm-mauser-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 479"]
+
+[case]
+material = "brass"
+sources = []

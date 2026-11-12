@@ -1,0 +1,50 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A rimless .30-40 Krag.
+name = ".30 USA Rimless"
+categories = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["30 usa", "30 usa rimless", "30-40 rimless"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.58
+base = 11.53
+shoulder = 10.59
+shoulder_at = 43.82
+neck = 8.46
+case_length = 58.67
+overall_length = 78.74
+bullet = 7.82
+# shoulder_at is L1 on the rimmed twin's C.I.P. sheet (30-40 Krag): COTW 18 p. 197 calls the two nearly
+# the same but for the rim.
+sources = ["book:cotw-18 p. 250", "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
+
+[introduced]
+unknown = "COTW 18 p. 197 gives no year: UMC loaded it for the Blake rifle for a time."
+sources = ["book:cotw-18 p. 197"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the rimmed twin's C.I.P. sheet.
+degrees = 21.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
+
+[case_head]
+# .054 in.
+rim_thickness = 1.37
+sources = ["book:cotw-18 p. 250"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

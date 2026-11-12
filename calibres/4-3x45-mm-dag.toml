@@ -1,0 +1,49 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Dynamit Nobel's trial round for the Heckler & Koch G11 work: the 5.56x45 mm case necked down.
+name = "4.3x45 mm DAG"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["4.3x45", "4.3 dag"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.52
+base = 9.47
+shoulder = 8.86
+shoulder_at = 37.3
+neck = 5.03
+case_length = 44.7
+overall_length = 57.4
+bullet = 4.37
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+# COTW: made around 1975.
+year = 1975
+sources = ["book:cotw-18 p. 532"]
+
+[primer]
+# 4.44 mm, 2 specimens
+size = "small-rifle"
+sources = ["https://municion.org/producto/43-x-45-german-xpl-dag/"]
+
+[case_head]
+# from the 5.56x45 mm case; the .223 Rem. head, C.I.P. 300 AAC Blackout
+rim_thickness = 1.14
+ramp_top = 3.15
+groove_diameter = 8.43
+ramp_angle = 25.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

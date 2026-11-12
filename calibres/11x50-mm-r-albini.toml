@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The Belgian Albini-Braendlin rifle; often taken for the 11 mm Comblain.
+name = "11x50 mm R Albini"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["11x50r", "11x50r albini", "albini"]
+display_aliases = ["11x50 mm R Belgian Albini M67/72"]
+
+origin = "BE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 17.22
+base = 14.73
+shoulder = 13.59
+shoulder_at = 38.5
+neck = 11.99
+case_length = 50.8
+overall_length = 66.04
+bullet = 11.05
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1867
+sources = ["book:cotw-18 p. 562"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+# The military load: a paper-patched lead bullet over blackpowder.
+type = "paper"
+sources = ["book:cotw-18 p. 562"]
+
+[case]
+material = "brass"
+sources = []

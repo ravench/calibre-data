@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The Army's 1871 version of the .50 Remington pistol round, for the rolling-block pistol; a slight bottleneck.
+name = ".50 Remington Army"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["50 remington army", "50 rem army", "50 remington m71"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.89
+base = 14.35
+shoulder = 14.33
+shoulder_at = 8.7
+neck = 13.51
+case_length = 22.22
+overall_length = 31.5
+bullet = 12.9
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+year = 1871
+sources = ["book:cotw-18 p. 526"]
+
+[primer]
+# First made with an inside primer (COTW 18 p. 526); the table gives none.
+size = "large-pistol"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 526"]
+
+[case]
+# municion.org's photos show a copper case on the unmarked army round (and on W. Stokes Kirk's later shot load).
+material = "copper"
+sources = ["https://municion.org/producto/50-remington-army-m-1871/"]

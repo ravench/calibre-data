@@ -1,0 +1,44 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Purdey, Westley Richards, Evans and Fraser each made one; they do not interchange. The table gives
+# one with a .358 in. bullet (the Purdey's is .367 in.).
+name = ".400/360 Nitro Express"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["400/360", "400/360 ne"]
+display_aliases = [".400/360 Nitro Express 2¾ inch"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.99
+base = 11.94
+shoulder = 11.1
+shoulder_at = 59.5
+neck = 9.52
+case_length = 69.85
+overall_length = 91.19
+bullet = 9.09
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+# COTW: all appeared about 1900.
+year = 1900
+sources = ["book:cotw-18 p. 589"]
+
+[primer]
+# The table gives a .241 in. Berdan primer, between the large Boxer and the .254 in. nitro sizes; large
+# rifle, as municion.org measures on the .400/350, for which the table also gives .241 in.
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 589"]
+
+[case]
+material = "brass"
+sources = []

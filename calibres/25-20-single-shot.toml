@@ -1,0 +1,44 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# J. Francis Rabbeth's round, first loaded by UMC; longer than the .25-20 Winchester made for the 1892
+# repeater.
+name = ".25-20 Single-Shot"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["25-20 single shot", "25-20ss"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.6
+base = 8.0
+shoulder = 7.52
+shoulder_at = 34.4
+neck = 6.99
+case_length = 41.4
+overall_length = 48.26
+bullet = 6.53
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 249"]
+
+[introduced]
+# COTW: first appeared about 1882.
+year = 1882
+sources = ["book:cotw-18 p. 187"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[bullet]
+# COTW 18 p. 187 lists only handloads; a lead bullet, as in the other blackpowder rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+# municion.org's photos show brass cases (Winchester's, Remington-UMC's, Roth's and Sellier &
+# Bellot's).
+material = "brass"
+sources = ["https://municion.org/producto/25-20-single-shot/"]

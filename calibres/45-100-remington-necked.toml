@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A necked .45 for Remington single-shots, like the .44-90 Remington Special with a wider, longer neck.
+name = ".45-100 Remington Necked"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["45-100 remington", "45-100 remington necked"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.38
+base = 14.17
+shoulder = 13.97
+shoulder_at = 54.0
+neck = 12.45
+case_length = 66.8
+overall_length = 82.8
+bullet = 11.63
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 252"]
+
+[introduced]
+# COTW: in the United States Cartridge Co. list of 1880-81. Its 1875 Sharps listing as a 2¼ in.
+# case does not fit the 2.63 in. case, so it is not used.
+year = 1880
+sources = ["book:cotw-18 p. 243"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 252"]
+
+[bullet]
+# COTW 18 p. 243 gives no load; a lead bullet, as in the other blackpowder rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .32 Long Centrefire lengthened, for the Ballard and other single-shot rifles.
+name = ".32 Extra Long Centrefire"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["32 extra long cf", "32 ballard extra long", "32 extra long centerfire"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.37
+base = 8.15
+neck = 8.08
+case_length = 31.5
+overall_length = 45.72
+bullet = 8.05
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+year = 1879
+sources = ["book:cotw-18 p. 202"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 203"]
+
+[case]
+material = "brass"
+sources = []

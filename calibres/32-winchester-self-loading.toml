@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The second round for the Winchester Model 1905 self-loading rifle; semi-rimmed like the .35 WSL.
+name = ".32 Winchester Self-Loading"
+categories = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["32wsl", "32 wsl"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.91
+base = 8.93
+neck = 8.81
+case_length = 32.77
+overall_length = 47.75
+bullet = 8.18
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page79.pdf"]
+
+[introduced]
+# COTW: the Model 1905 rifle came out in 1905-06.
+year = 1905
+sources = ["book:cotw-18 p. 203"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page79.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 204"]
+
+[case]
+material = "brass"
+sources = []

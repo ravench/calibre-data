@@ -1,0 +1,43 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Kynoch's round for J. Manton & Co. of Calcutta.
+name = ".242 Rimless Nitro Express"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["242 rimless", "242 manton"]
+display_aliases = [".242 Manton"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.81
+base = 11.81
+shoulder = 10.29
+shoulder_at = 51.5
+neck = 7.14
+case_length = 60.45
+overall_length = 81.28
+bullet = 6.43
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+year = 1923
+sources = ["book:cotw-18 p. 579"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[bullet]
+# COTW gives no factory load.
+type = "softpoint"
+sources = []
+
+[case]
+material = "brass"
+sources = []

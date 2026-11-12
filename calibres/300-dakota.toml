@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .404 Jeffery case shortened for a .30-06-length action, with a slightly larger rim.
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 393).
+name = ".300 Dakota"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300 dakota"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 13.82
+base = 13.82
+shoulder = 13.49
+shoulder_at = 53.0
+neck = 8.59
+case_length = 64.77
+overall_length = 84.58
+bullet = 7.82
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 452"]
+
+[introduced]
+# Ballistic Studies: Don Allen brought out his Dakota rounds in 1992; COTW gives no year.
+year = 1992
+sources = ["https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+cartridges.html"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .046 in.
+rim_thickness = 1.17
+sources = ["book:cotw-18 p. 452"]
+
+[bullet]
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+material = "brass"
+sources = []

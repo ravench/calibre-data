@@ -1,4 +1,4 @@
-# Template for a new calibre: copy this file to calibres/<category>/<file name>.toml, replace the
+# Template for a new calibre: copy this file to calibres/<file name>.toml, replace the
 # values and delete what does not apply, including these explanations. The values below are the
 # .308 Winchester's, as an example. README.md has the full reference; `python3 check.py` checks
 # the file.
@@ -7,11 +7,8 @@
 # measured, estimated or taken from a related calibre, at the top of the file or above the value.
 # Text goes in quotes, numbers and true/false don't.
 #
-# The folder is the category: rimfire, handgun, rifle, black-powder, shotgun, air-gun or cannon
-# (20 to 40 mm cannon rounds, in the catalogue only: they may leave out measurements no source gives and
-# have no [primer]; see README.md). The file
-# name follows from the name (check.py gives the right one): ".308 Winchester" is
-# calibres/rifle/308-winchester.toml. A new calibre needs no entry in order.toml: it comes after the
+# The file name follows from the name (check.py gives the right one): ".308 Winchester" is
+# calibres/308-winchester.toml. A new calibre needs no entry in order.toml: it comes after the
 # listed ones of its category, by name.
 #
 # If it looks like another calibre but is a cartridge of its own, add it to that calibre's group in
@@ -29,6 +26,11 @@
 # Calibres that are cartridges of their own (.308 Win and 7.62 NATO) each get their own file, never
 # an alias of the other.
 name = ".308 Winchester"
+# The categories, the primary one first: rimfire, handgun, rifle, black-powder, shotgun, air-gun or
+# cannon (20 to 40 mm cannon rounds, in the catalogue only: they may leave out measurements no source
+# gives and have no [primer]; see README.md). The apps and order.toml list a calibre under its first
+# category only; a round that also fits another, such as a black-powder rifle round, lists both.
+categories = ["rifle"]
 # rimless, rimmed, belted, rimfire, shot (shot shell), ball (round ball or BB), minie (Minié
 # bullet) or pellet (air gun pellet).
 kind = "rimless"

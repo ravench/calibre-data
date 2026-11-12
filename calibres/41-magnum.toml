@@ -1,0 +1,40 @@
+name = ".41 Magnum"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["41mag", "41remmag", "41remingtonmagnum"]
+
+origin = "US"
+
+[mm]
+rim = 12.5
+base = 11.0
+neck = 11.0
+case_length = 32.8
+overall_length = 40.4
+bullet = 10.4
+sources = [
+  "book:hornady-10 p. 914",
+  "book:cotw-18 p. 528",
+]
+
+[introduced]
+year = 1964
+sources = ["https://en.wikipedia.org/wiki/.41_Remington_Magnum"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.41_Remington_Magnum"]
+
+[case_head]
+# .054 in.
+rim_thickness = 1.37
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

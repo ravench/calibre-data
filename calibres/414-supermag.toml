@@ -1,0 +1,43 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .41 Magnum lengthened to the SuperMag case length.
+name = ".414 SuperMag"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["414 supermag", "414 super mag"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.5
+base = 11.05
+neck = 11.02
+case_length = 40.89
+overall_length = 49.91
+bullet = 10.41
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+unknown = "Elgin Gates began the SuperMags in the 1970s and added the .414 later; COTW 18 pp. 502-503 give no year."
+sources = ["book:cotw-18 p. 502", "book:cotw-18 p. 503"]
+
+[primer]
+# The COTW 18 table (p. 528) prints a large rifle primer; Starline's brass takes a large pistol one,
+# like the other SuperMags and the .41 Magnum.
+size = "large-pistol"
+sources = ["https://starlinebrass.com/414-super-mag-brass"]
+
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

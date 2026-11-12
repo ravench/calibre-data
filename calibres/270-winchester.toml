@@ -1,0 +1,53 @@
+name = ".270 Winchester"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["270", "270win"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 11.2
+shoulder_at = 49.49
+neck = 7.8
+case_length = 64.5
+overall_length = 84.8
+bullet = 7.0
+sources = [
+  "book:hornady-10 p. 351",
+  "book:cotw-18 p. 175",
+  "book:donnelly p. 261",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page99.pdf",
+]
+
+[introduced]
+year = 1925
+sources = ["https://en.wikipedia.org/wiki/.270_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.270_Winchester"]
+
+[shoulder_angle]
+# C.I.P. 270 Win.
+degrees = 17.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page99.pdf"]
+
+[case_head]
+# C.I.P. 270 Win.
+rim_thickness = 1.24
+ramp_top = 3.16
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page99.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.270_Winchester"]
+
+[case]
+material = "brass"
+sources = []

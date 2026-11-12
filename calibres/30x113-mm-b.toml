@@ -1,0 +1,35 @@
+# The round of the ADEN Mk 4 and later aircraft cannon (the earlier ADEN marks had 30x86 B and
+# 30x111 B cases) and of the French DEFA. Its name gives the bore and case length (Jane's table
+# measures the case at 111.99 mm); KNDS gives the cartridge length, Jane's table the belt (33.78 mm;
+# the rim is 33.30) and the neck.
+name = "30x113 mm B"
+categories = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["30x113b", "30 mm aden", "30 mm defa"]
+origin = "GB"
+
+[mm]
+rim = 33.78
+neck = 30.87
+case_length = 113.0
+overall_length = 200.0
+bullet = 30.0
+sources = [
+  "https://knds.com/en/products/ammunition/30x113-mm-b",
+  "https://en.wikipedia.org/wiki/30_mm_caliber",
+  "book:janes-ammo-2002 p. 682",
+]
+
+[introduced]
+year = 1955
+sources = ["https://en.wikipedia.org/wiki/30_mm_caliber"]
+
+[case]
+material = "brass"
+sources = []
+
+[current_cases]
+# The LW30 rounds of the M230 (AH-64 Apache), Aden/DEFA pattern (p. 111), have aluminium cases (p. 112).
+materials = ["aluminium"]
+sources = ["book:janes-ammo-2002 p. 111", "book:janes-ammo-2002 p. 112"]

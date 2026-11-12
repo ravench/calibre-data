@@ -1,0 +1,40 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".38 S&W"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["38s&w", "38sw", "380-200", "38coltnewpolice", "38cnp", "38superpolice"]
+
+origin = "US"
+
+[mm]
+rim = 11.2
+base = 9.82
+neck = 9.79
+case_length = 19.7
+overall_length = 31.5
+bullet = 9.2
+sources = ["https://en.wikipedia.org/wiki/.38_S%26W"]
+
+[introduced]
+year = 1877
+sources = ["https://en.wikipedia.org/wiki/.38_S%26W"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.38_S%26W"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.38_S%26W"]
+
+[case]
+material = "brass"
+sources = []

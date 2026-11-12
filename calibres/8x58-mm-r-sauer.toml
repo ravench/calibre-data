@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+name = "8x58 mm R Sauer"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["8x58r sauer"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.75
+base = 11.05
+neck = 8.78
+case_length = 58.5
+overall_length = 78.0
+bullet = 8.09
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf"]
+
+[introduced]
+unknown = "A blackpowder Schützen round; COTW 18 p. 629 gives no year."
+sources = ["book:cotw-18 p. 629"]
+
+[primer]
+# .254 in. Berdan in the table
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf"]
+
+[bullet]
+# A blackpowder round (p. 629); the later factory load was a soft point.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

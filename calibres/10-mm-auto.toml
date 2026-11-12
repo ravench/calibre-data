@@ -1,0 +1,46 @@
+name = "10 mm Auto"
+categories = ["handgun"]
+kind = "rimless"
+profile = "flat"
+aliases = ["10mm", "10auto"]
+
+# Cooper, Dornaus & Dixon 1983; first loaded by Norma; FBI 1989-97, Denmark's Sirius patrol (Glock 20): SE
+origin = "US"
+
+[mm]
+rim = 10.8
+base = 10.8
+neck = 10.7
+case_length = 25.2
+overall_length = 32.0
+bullet = 10.17
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+year = 1983
+sources = ["https://en.wikipedia.org/wiki/10mm_Auto"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/10mm_Auto"]
+
+[case_head]
+# C.I.P. 10 mm Auto
+rim_thickness = 1.4
+ramp_top = 3.63
+groove_diameter = 8.85
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page31.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 498"]
+
+[case]
+material = "brass"
+sources = []
+
+[current_cases]
+# CCI Blazer's aluminium cases.
+materials = ["aluminium"]
+sources = ["https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]

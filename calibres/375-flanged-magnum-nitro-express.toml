@@ -1,0 +1,50 @@
+# Sourced 2026-11-04 (batch 12 leftovers): C.I.P. TDCC maximum cartridge (shoulder = P2,
+# neck = H2, shoulder_at = L1, overall_length = L6); .360 No. 5 Rook from the Wikipedia infobox (Barnes).
+name = ".375 Flanged Magnum Nitro Express"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["375flmag"]
+
+origin = "GB"
+rare = true
+
+[mm]
+rim = 14.35
+base = 13.13
+shoulder = 11.43
+shoulder_at = 60.96
+neck = 10.29
+case_length = 74.68
+overall_length = 96.52
+bullet = 9.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page94.pdf"]
+
+[introduced]
+# Year of production on the municion.org product pages (AECC).
+year = 1912
+sources = ["https://municion.org/producto/375-holland-holland-flanged-magnum-ne/"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[shoulder_angle]
+# C.I.P. 375 Fl. Mag. N.E.
+degrees = 12.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page94.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page94.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/375-holland-holland-flanged-magnum-ne/"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,51 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "7-30 Waters"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["7-30waters"]
+
+origin = "US"
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 12.9
+base = 10.7
+shoulder = 10.2
+shoulder_at = 40.29
+neck = 7.8
+case_length = 52.0
+overall_length = 64.0
+bullet = 7.2
+sources = [
+  "https://en.wikipedia.org/wiki/7-30_Waters",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page20.pdf",
+]
+
+[introduced]
+year = 1984
+sources = ["https://en.wikipedia.org/wiki/7-30_Waters"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7-30_Waters"]
+
+[shoulder_angle]
+# C.I.P. 7-30 Waters
+degrees = 17.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page20.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page20.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/7-30_Waters"]
+
+[case]
+material = "brass"
+sources = []

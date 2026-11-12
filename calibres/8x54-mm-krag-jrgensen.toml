@@ -1,0 +1,48 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The 6.5x55 mm case necked up, so a Norwegian Krag needs only a new barrel.
+name = "8x54 mm Krag-Jørgensen"
+categories = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["8x54", "8x54 krag", "8x54 krag-jorgensen"]
+
+origin = "NO"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.14
+base = 12.14
+shoulder = 11.05
+shoulder_at = 43.9
+neck = 8.92
+case_length = 53.85
+overall_length = 72.39
+bullet = 8.2
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+unknown = "A Norwegian target and hunting round; COTW 18 p. 633 gives no year."
+sources = ["book:cotw-18 p. 633"]
+
+[primer]
+# 5.59 mm, 2 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/8-x-54-krag-jorgensen/"]
+
+[case_head]
+# from the 6.5x55 mm case; C.I.P. 6,5 x 55 SE
+rim_thickness = 1.5
+ramp_top = 3.25
+groove_diameter = 10.5
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page23.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 633"]
+
+[case]
+material = "brass"
+sources = []

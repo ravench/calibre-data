@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .25-25 Stevens shortened, for the Stevens 44 and 44½ single-shot rifles.
+name = ".25-21 Stevens"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["25-21", "25-21 stevens"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.55
+base = 7.62
+neck = 7.11
+case_length = 52.07
+overall_length = 58.42
+bullet = 6.53
+sources = ["book:cotw-18 p. 249"]
+
+[introduced]
+# COTW: developed about 1897.
+year = 1897
+sources = ["book:cotw-18 p. 188"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[bullet]
+# COTW 18 p. 188 lists only handloads; a lead bullet, as in the other blackpowder rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

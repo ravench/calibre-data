@@ -1,0 +1,29 @@
+# The round of the M61 Vulcan rotary cannon and its successors. Its name gives the bore and case
+# length; Jane's table gives the diameters, TM 43-0001-27 the length of the M56 round (6.615 in).
+name = "20x102 mm"
+categories = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x102", "20 mm vulcan"]
+origin = "US"
+
+[mm]
+rim = 29.49
+base = 29.21
+neck = 20.6
+case_length = 102.0
+overall_length = 168.0
+bullet = 20.0
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "https://en.wikipedia.org/wiki/M61_Vulcan",
+  "book:tm-43-0001-27 p. 14-13",
+]
+
+[introduced]
+year = 1959
+sources = ["https://en.wikipedia.org/wiki/M61_Vulcan"]
+
+[case]
+material = "brass"
+sources = []

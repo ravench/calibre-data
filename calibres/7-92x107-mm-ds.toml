@@ -1,0 +1,46 @@
+# Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "7.92x107 mm DS"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.92x107", "7.92ds"]
+
+origin = "PL"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.36
+base = 16.39
+shoulder = 13.15
+shoulder_at = 95.28
+neck = 9.23
+case_length = 107.18
+overall_length = 132.0
+bullet = 8.18
+sources = [
+  "https://en.wikipedia.org/wiki/7.92×107mm_DS",
+  "https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/",
+]
+
+[introduced]
+year = 1931
+sources = ["https://en.wikipedia.org/wiki/7.92×107mm_DS"]
+
+[primer]
+# 5.64 mm, 4 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
+
+[shoulder_angle]
+# AECC drawing 08-107-BGC-020
+degrees = 31.2
+sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,52 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The Sharps Rifle Company's .223 Remington case necked up to .25 for AR-15 rifles.
+name = ".25-45 Sharps"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["25-45 sharps", "25-45"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 9.6
+base = 9.55
+shoulder = 8.97
+shoulder_at = 36.1
+neck = 7.21
+case_length = 44.7
+overall_length = 54.23
+bullet = 6.53
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at the angle below).
+sources = ["book:cotw-18 p. 451"]
+
+[introduced]
+year = 2008
+sources = ["book:cotw-18 p. 367"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[shoulder_angle]
+# COTW 18, in the text
+degrees = 23
+sources = ["book:cotw-18 p. 367"]
+
+[case_head]
+# from the .223 Remington case; the .300 BLK is made from .223 Rem. cases; C.I.P. 300 AAC Blackout
+rim_thickness = 1.14
+ramp_top = 3.15
+groove_diameter = 8.43
+ramp_angle = 25.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+
+[bullet]
+# The Sharps Rifle Company's factory load: Speer's Hot-Cor soft point.
+type = "softpoint"
+sources = ["book:cotw-18 p. 368"]
+
+[case]
+material = "brass"
+sources = []

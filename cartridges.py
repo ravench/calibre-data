@@ -4,7 +4,7 @@ Shared by Schiesstagebuch, Kaliberfinder and the calibre wall poster (each pins 
 repository as a git submodule); outline.py draws the side view of every calibre.
 Dimensions are approximations for drawings and matching, not reloading data.
 
-The data lives in TOML files: one per calibre in calibres/<category>/, plus order.toml,
+The data lives in TOML files: one per calibre in calibres/, plus order.toml,
 countries.toml, books.toml and lookalikes.toml (README.md lists every field). This module reads and
 checks them and builds the tables the apps' generators, outline.py and the poster use.
 `python3 check.py` lists every problem in the files.
@@ -35,8 +35,9 @@ NAME_RULES = (
     (re.compile(r"×|\dX\d"), "a plain lower-case x between the sizes: '7.62x51 mm'"),
     (re.compile(r"\d\s+x\s*\d|\d\s*x\s+\d"), "no spaces around the x: '7.62x51 mm'"),
 )
-# Categories: the folder in calibres/ (and key in order.toml) -> the name the apps and the poster
-# know the category by. Those names are German because the apps show them (translated); the apps
+# Categories: a calibre file's `categories` (and key in order.toml) -> the name the apps and the poster
+# know the category by. A calibre can be in several; the first is its primary category, the one it is
+# listed under in order.toml and CATALOGUE. Those names are German because the apps show them (translated); the apps
 # know only the first six, so a new category needs a change in the apps too.
 CATEGORIES = {"rimfire": "Randfeuer", "handgun": "Kurzwaffe", "rifle": "Langwaffe",
               "black-powder": "Schwarzpulver", "shotgun": "Flinte", "air-gun": "Luftdruck",
@@ -157,7 +158,7 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
     "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"), ("shoulder", "shoulder_at")),
     "partial": (("case_length", "bullet"), ("rim", "base", "shoulder", "shoulder_at", "neck", "overall_length")),
 }
-TOP_KEYS = {"name", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
+TOP_KEYS = {"name", "categories", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
             "origin_candidates", "worldwide", "obsolete", "rare"}
 # [case_head] keys beside rim_thickness: the extractor groove of a rimless or belted case, all three
 # or none.
@@ -425,12 +426,12 @@ def _check_colour_codes(f, codes, shape, countries, books):
             seen.setdefault(key, at())
 
 
-def _read_calibre(f, category, countries, books=None):
-    """Check one calibre file; returns (entry dict, facts) or None when it cannot be used."""
+def _read_calibre(f, countries, books=None):
+    """Check one calibre file; returns (entry dict, raw data, facts) or None when it cannot be used."""
     d = f.data
     tables = {k for k, v in d.items() if isinstance(v, dict) and k != "colour_codes"}
     top = {k for k in d if k not in tables and k != "colour_codes"}
-    _check_keys(f, None, {k: d[k] for k in top}, TOP_KEYS, ("name", "kind", "profile", "aliases"))
+    _check_keys(f, None, {k: d[k] for k in top}, TOP_KEYS, ("name", "categories", "kind", "profile", "aliases"))
     for t in tables:
         if t not in FACTS:
             f.problem(f.line(t), f"unknown table [{t}]{_close(t, FACTS)}; allowed: {', '.join(FACTS)}")
@@ -448,6 +449,21 @@ def _read_calibre(f, category, countries, books=None):
     expected = slug(name) + ".toml"
     if os.path.basename(f.rel) != expected:
         f.problem(f.line(None, "name"), f"the file of {name!r} must be called {expected}")
+    cats = d.get("categories")
+    category = cats[0] if _is_text_list(cats) and cats and all(c in CATEGORIES for c in cats) else None
+    if "categories" not in d:
+        pass  # reported by _check_keys
+    elif not _is_text_list(cats) or not cats:
+        f.problem(f.line(None, "categories"), "categories must be a list of one or more categories in quotes, "
+                                              "the primary one first")
+    else:
+        for c in cats:
+            if c not in CATEGORIES:
+                key = {app: key for key, app in CATEGORIES.items()}.get(c)
+                hint = f" (write {key} for {c})" if key else _close(c, CATEGORIES)
+                f.problem(f.line(None, "categories"), f"category {c!r} is not one of {', '.join(CATEGORIES)}{hint}")
+        if len(set(cats)) != len(cats):
+            f.problem(f.line(None, "categories"), "categories lists a category twice")
     if kind not in KINDS:
         f.problem(f.line(None, "kind"), f"kind {kind!r} is not one of {', '.join(KINDS)}{_close(kind, KINDS)}")
     if profile not in PROFILES:
@@ -469,7 +485,7 @@ def _read_calibre(f, category, countries, books=None):
         f.problem(f.line(None, "display_aliases"), "display_aliases holds one or two names")
     if "display_aliases" in d and category in NOT_IN_APPS:
         f.problem(f.line(None, "display_aliases"),
-                  f"display_aliases are for the apps, which do not show calibres/{category}/ yet: remove them")
+                  f"display_aliases are for the apps, which do not show {category} calibres yet: remove them")
     for k in ("worldwide", "obsolete", "rare"):
         if k in d and not isinstance(d[k], bool):
             f.problem(f.line(None, k), f"{k} must be true or false (without quotes)")
@@ -553,18 +569,18 @@ def _read_calibre(f, category, countries, books=None):
         facts[t] = dict(data, sources=urls)
     if "colour_codes" in d:
         _check_colour_codes(f, d["colour_codes"], _shape(kind, profile, category), countries, books)
-    if not ok:
+    if not ok or category is None:
         return None
     if kind in (RIMFIRE,) + LOOSE:
         if "primer" in facts:
             f.problem(f.line("primer"), f"a {kind} calibre has no primer: remove [primer]")
     elif category in NOT_IN_APPS:
         if "primer" in facts:
-            f.problem(f.line("primer"), f"calibres/{category}/ has no [primer] (not a reloading size): remove it")
+            f.problem(f.line("primer"), f"a {category} round has no [primer] (not a reloading size): remove it")
     elif "primer" not in facts:
         f.problem(None, "a centrefire calibre needs a [primer] table (size and sources, or sources = [] if not checked)")
     if category == "cannon" and not 20 <= facts["mm"]["bullet"] <= 40:
-        f.problem(f.line("mm", "bullet"), "calibres/cannon/ holds the 20 to 40 mm cannon rounds: bullet is 20 to 40")
+        f.problem(f.line("mm", "bullet"), "cannon holds the 20 to 40 mm cannon rounds: bullet is 20 to 40")
     if kind in LOOSE + (SHOT,):
         if "case" in facts:
             f.problem(f.line("case"), f"a {kind} calibre has no metal case: remove [case]")
@@ -652,8 +668,8 @@ def load(root=ROOT):
     if of:
         for cat, names in of.data.items():
             if cat not in CATEGORIES:
-                folder = {app: folder for folder, app in CATEGORIES.items()}.get(cat)
-                hint = f" (the folder of {cat} is {folder})" if folder else _close(cat, CATEGORIES)
+                key = {app: key for key, app in CATEGORIES.items()}.get(cat)
+                hint = f" (write {key} for {cat})" if key else _close(cat, CATEGORIES)
                 of.problem(of.line(None, cat), f"category {cat!r} is not one of {', '.join(CATEGORIES)}{hint}")
                 continue
             if not _is_text_list(names):
@@ -661,37 +677,31 @@ def load(root=ROOT):
                 continue
             order[cat] = names
 
-    found = {}  # category -> [(entry, raw, facts, file)]
-    folders = []
+        for cat in CATEGORIES:
+            if cat not in of.data:
+                of.problem(None, f"misses the category {cat!r}")
+
+    found = {}  # primary category -> [(entry, raw, facts, file)]
     cal_dir = os.path.join(root, "calibres")
     if not os.path.isdir(cal_dir):
-        problems.append(("calibres", None, "missing: the folder with one folder of calibre files per category"))
-    for cat in sorted(os.listdir(cal_dir)) if os.path.isdir(cal_dir) else []:
-        if cat.startswith("."):  # .DS_Store and other hidden files
+        problems.append(("calibres", None, "missing: the folder with one file per calibre"))
+    for fn in sorted(os.listdir(cal_dir)) if os.path.isdir(cal_dir) else []:
+        rel = f"calibres/{fn}"
+        if fn.startswith("."):  # .DS_Store and other hidden files
             continue
-        if not os.path.isdir(os.path.join(cal_dir, cat)):
-            problems.append((f"calibres/{cat}", None, "only folders (one per category) belong in calibres/"))
+        if os.path.isdir(os.path.join(cal_dir, fn)):
+            problems.append((rel, None, "calibre files go straight into calibres/, with their categories in the "
+                                        "file (categories = [...]): move them out of this folder"))
             continue
-        folders.append(cat)
-        if of and cat not in of.data:
-            problems.append((f"calibres/{cat}", None, f"category {cat!r} is not in order.toml"
-                                                      f"{_close(cat, of.data)}"))
+        if not fn.endswith(".toml"):
+            problems.append((rel, None, "only .toml files belong here"))
             continue
-        if cat not in CATEGORIES:  # reported at its order.toml key (once order.toml reads); files stay out
+        f = read(rel)
+        if f is None:
             continue
-        for fn in sorted(os.listdir(os.path.join(cal_dir, cat))):
-            rel = f"calibres/{cat}/{fn}"
-            if fn.startswith("."):
-                continue
-            if not fn.endswith(".toml"):
-                problems.append((rel, None, "only .toml files belong here"))
-                continue
-            f = read(rel)
-            if f is None:
-                continue
-            got = _read_calibre(f, cat, countries, books)
-            if got:
-                found.setdefault(cat, []).append((*got, f))
+        got = _read_calibre(f, countries, books)
+        if got:
+            found.setdefault(got[1]["categories"][0], []).append((*got, f))
 
     # Across files: unique names and aliases, the order list, lookalike groups.
     by_name = {}
@@ -711,25 +721,25 @@ def load(root=ROOT):
             if by_lower.get(a.lower(), name) != name:
                 f.problem(f.line(None, "aliases"), f"alias {a!r} is the name of the calibre {by_lower[a.lower()]!r}")
             seen_alias.setdefault(a, name)
-    def has_file(cat, n):  # also a file with a problem of its own, so it is not reported twice
-        return os.path.exists(os.path.join(cal_dir, cat, slug(n) + ".toml"))
+    def has_file(n):  # also a file with a problem of its own, so it is not reported twice
+        return os.path.exists(os.path.join(cal_dir, slug(n) + ".toml"))
 
     catalogue = []
     for cat, names in order.items():
-        if not os.path.isdir(os.path.join(cal_dir, cat)):
-            of.problem(of.line(None, cat), f"category {cat!r} has no folder calibres/{cat}/{_close(cat, folders)}")
+        if cat not in found and not any(has_file(n) for n in names):
+            of.problem(of.line(None, cat), f"no calibre has {cat!r} as its first category")
             continue
         files = {e["name"]: e for e, *_ in found.get(cat, [])}
         listed = []
         for n in names:
             if n in listed:
                 of.problem(of.line(None, cat), f"{n!r} is listed twice")
-            elif n not in files and has_file(cat, n):
+            elif n not in files and n not in by_name and has_file(n):
                 pass
             elif n not in files:
                 where = by_name.get(n)
-                of.problem(of.line(None, cat), f"{n!r} has no file in calibres/{cat}/" +
-                           (f" (it is in calibres/{where[0]}/)" if where else _close(n, files)))
+                of.problem(of.line(None, cat), f"{n!r} is not a calibre whose first category is {cat}" +
+                           (f" (its first category is {where[0]})" if where else _close(n, files)))
             else:
                 listed.append(n)
         rest = sorted(n for n in files if n not in listed)
@@ -786,14 +796,14 @@ def load(root=ROOT):
             if "differ_by" not in g or "calibres" not in g:
                 continue
             for n in names:
-                if n not in by_name and any(has_file(cat, n) for cat in folders):
+                if n not in by_name and has_file(n):
                     pass
                 elif n not in by_name:
                     lf.problem(at("calibres"), f"{n!r} is not a calibre{_close(n, by_name)}")
                 elif n in grouped:
                     lf.problem(at("calibres"), f"{n!r} is already in the group on line {grouped[n]}")
                 elif by_name[n][0] in NOT_IN_APPS:
-                    lf.problem(at("calibres"), f"{n!r} is in calibres/{by_name[n][0]}/, which the apps do not show yet")
+                    lf.problem(at("calibres"), f"{n!r} is a {by_name[n][0]} calibre, which the apps do not show yet")
                 else:
                     grouped[n] = at()
             if named:  # otherwise reported above
@@ -805,13 +815,14 @@ def load(root=ROOT):
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "JACKETS", "CASES",
-                         "CURRENT_CASES", "SOURCES", "COLOUR_CODES", "FIRED_BY",
+                         "CURRENT_CASES", "SOURCES", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED")}
     for _, items in catalogue:
         for e in items:
             n = e["name"]
             _, raw, facts, _ = by_name[n]
+            t["CALIBRE_CATEGORIES"][n] = tuple(CATEGORIES[c] for c in raw["categories"])
             if "display_aliases" in raw:
                 t["DISPLAY_ALIASES"][n] = list(raw["display_aliases"])
             for flag in ("obsolete", "rare", "worldwide"):
@@ -874,14 +885,18 @@ def load(root=ROOT):
 
 _t = load()
 
-# The catalogue: [(category, [calibre dicts])] in the order of order.toml, each category by the name
-# the apps know it by (CATEGORIES: "Randfeuer" for the folder rimfire). Each dict has name, kind,
+# The catalogue: [(category, [calibre dicts])] in the order of order.toml, each calibre under its
+# primary category (the first of its categories), each category by the name the apps know it by
+# (CATEGORIES: "Randfeuer" for rimfire). Each dict has name, kind,
 # rim, base, shoulder (None for straight cases), neck, case (length), sh_at (where the shoulder
 # starts, None for straight cases), oal, bullet (diameters and lengths in mm), profile and aliases.
 CATALOGUE = _t["CATALOGUE"]
 # CATALOGUE and the categories not yet in the apps (NOT_IN_APPS), whose dicts can have None for a
 # measurement no source gives.
 ALL_CATALOGUE = _t["ALL_CATALOGUE"]
+# {name: (categories by the apps' names, the primary one first)}: every calibre of ALL_CATALOGUE, also
+# in the categories it is not listed under.
+CALIBRE_CATEGORIES = _t["CALIBRE_CATEGORIES"]
 # Printable alternative names (max 2), shown in the app's calibre lists and search, and on the poster.
 DISPLAY_ALIASES = _t["DISPLAY_ALIASES"]
 # Primer size per centrefire calibre; PRIMER_SOURCES has the first source of the checked ones,
@@ -953,6 +968,11 @@ def rim_thickness(name):
     """The rim's thickness in mm, or None where no source gives it."""
     entry = RIM_THICKNESS.get(name)
     return entry[0] if entry else None
+
+
+def categories(name):
+    """A calibre's categories by the apps' names, the primary one first: ("Langwaffe",) for .308 Winchester."""
+    return CALIBRE_CATEGORIES[name]
 
 
 def is_obsolete(name):

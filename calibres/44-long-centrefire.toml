@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The centrefire version of the .44 Long rimfire, for the Ballard No. 2 and Wesson rifles.
+name = ".44 Long Centrefire"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["44 long cf", "44 long centerfire", "44 long ballard"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.85
+base = 11.2
+neck = 11.18
+case_length = 27.69
+overall_length = 41.91
+bullet = 11.15
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# COTW: introduced in 1875 or 1876.
+year = 1875
+sources = ["book:cotw-18 p. 231"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+# COTW 18 p. 231 gives only the weight of the original blackpowder load.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

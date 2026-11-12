@@ -1,0 +1,35 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+name = "6.5x48 mm R Sauer"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["6.5x48r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.57
+base = 11.0
+neck = 7.21
+case_length = 47.75
+overall_length = 61.72
+bullet = 6.6
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+unknown = "A blackpowder round for Sauer guns; COTW 18 p. 617 gives no year."
+sources = ["book:cotw-18 p. 617"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 617"]
+
+[case]
+material = "brass"
+sources = []

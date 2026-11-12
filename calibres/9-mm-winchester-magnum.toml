@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Wildey gas-operated pistol; reported from 1977, in Winchester's catalogue from 1988.
+name = "9 mm Winchester Magnum"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["9mm win mag", "9mm winchester magnum", "9 mm win mag", "9x29"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.01
+base = 9.96
+neck = 9.63
+case_length = 29.46
+overall_length = 39.24
+bullet = 9.02
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+# COTW: reports from 1977, in the 1988 Winchester catalogue; the earliest year is kept.
+year = 1977
+sources = ["book:cotw-18 p. 480"]
+
+[primer]
+size = "small-pistol"
+sources = ["book:cotw-18 p. 528"]
+
+[case_head]
+# .046 in.
+rim_thickness = 1.17
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 480"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,52 @@
+name = "6.5 mm Creedmoor"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5cm", "6.5creedmoor", "65cm", "creedmoor"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 11.7
+shoulder_at = 37.84
+neck = 7.5
+case_length = 48.8
+overall_length = 71.8
+bullet = 6.7
+sources = [
+  "book:hornady-10 p. 317",
+  "book:cotw-18 p. 175",
+  "https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf",
+]
+
+[introduced]
+year = 2007
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
+
+[shoulder_angle]
+# C.I.P. 6,5 Creedmoor
+degrees = 30
+sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
+
+[case_head]
+# C.I.P. 6,5 Creedmoor
+rim_thickness = 1.37
+ramp_top = 3.84
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
+
+[case]
+material = "brass"
+sources = []

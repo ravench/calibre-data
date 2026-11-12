@@ -1,0 +1,44 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".450 Marlin"
+categories = ["rifle"]
+kind = "belted"
+profile = "flat"
+aliases = ["450marlin"]
+
+origin = "US"
+
+[mm]
+rim = 13.4
+base = 13.01
+neck = 12.2
+case_length = 53.0
+overall_length = 65.0
+bullet = 11.6
+sources = [
+  "https://en.wikipedia.org/wiki/.450_Marlin",
+  "book:cotw-18 p. 177",
+]
+
+[introduced]
+year = 2000
+sources = ["https://en.wikipedia.org/wiki/.450_Marlin"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.450_Marlin"]
+
+[case_head]
+# C.I.P. 450 Marlin
+rim_thickness = 1.27
+ramp_top = 6.4
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page34.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.450_Marlin"]
+
+[case]
+material = "brass"
+sources = []

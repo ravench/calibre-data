@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Swedish M1887 Nagant service revolver made by Husqvarna; outside-lubricated bullet.
+name = "7.5 mm Swedish Nagant"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["7.5 swedish nagant", "7.5mm swedish nagant revolver", "7.5swedishnagant"]
+
+origin = "SE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.31
+base = 8.89
+neck = 8.33
+case_length = 22.61
+overall_length = 34.29
+bullet = 8.25
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1887
+sources = ["book:cotw-18 p. 477"]
+
+[primer]
+# The table gives a Berdan primer without its size.
+size = "small-pistol"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 477"]
+
+[case]
+# municion.org's photos show brass cases (Marieberg's and Raufoss's).
+material = "brass"
+sources = ["https://municion.org/producto/75-mm-swedish-nagant-m-1887/"]

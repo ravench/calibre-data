@@ -1,0 +1,41 @@
+name = ".32 S&W Long"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["32s&w", "32swl", "32long", "32coltnewpolice"]
+
+origin = "US"
+
+[mm]
+rim = 9.5
+base = 8.6
+neck = 8.5
+case_length = 23.4
+overall_length = 32.5
+bullet = 7.9
+sources = [
+  "book:donnelly p. 369",
+  "book:cotw-18 p. 527",
+  "book:janes-ammo-2002 p. 681",
+]
+
+[introduced]
+year = 1896
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
+
+[case_head]
+# .048 in.
+rim_thickness = 1.22
+sources = ["book:cotw-18 p. 527"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
+
+[case]
+material = "brass"
+sources = []

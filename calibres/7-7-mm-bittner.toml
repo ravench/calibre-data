@@ -1,0 +1,38 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For Gustav Bittner's lever-action repeating pistol, made in Bohemia about 1893.
+name = "7.7 mm Bittner"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["7.7bittner", "7.7 bittner"]
+
+origin = "AH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.91
+base = 8.56
+neck = 8.1
+case_length = 16.89
+overall_length = 25.4
+bullet = 7.67
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1893
+sources = ["book:cotw-18 p. 466"]
+
+[primer]
+# The table gives a Berdan primer without its size.
+size = "small-pistol"
+sources = []
+
+[bullet]
+# A revolver-type round of its time; COTW 18 p. 466 gives no load.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

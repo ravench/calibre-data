@@ -1,0 +1,47 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The most successful length of the blackpowder .500 Express; the parent of the .500 Nitro Express.
+name = ".500 Express 3 inch"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["500 express", "500 bpe"]
+display_aliases = [".500 Express Nitro-for-Black"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.76
+base = 14.73
+neck = 13.59
+case_length = 76.45
+overall_length = 86.11
+bullet = 12.95
+sources = ["book:cotw-18 p. 609"]
+
+[introduced]
+# COTW: the mid- to late 1860s; the earliest year is kept.
+year = 1865
+sources = ["book:cotw-18 p. 603"]
+
+[primer]
+# The table gives a .251 in. Berdan primer.
+size = "berdan-nitro"
+diameter = 6.38
+sources = ["book:cotw-18 p. 609"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 609"]
+
+[bullet]
+# A blackpowder round (COTW 18 p. 603), lead like the others of its time; the one factory load, on
+# p. 604, is a later Nitro-for-Black soft point.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

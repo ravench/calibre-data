@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .30 Newton necked up; Western listed it until 1936.
+name = ".35 Newton"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["35 newton"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.33
+base = 13.28
+shoulder = 12.65
+shoulder_at = 52.6
+neck = 9.73
+case_length = 64.01
+overall_length = 85.09
+bullet = 9.09
+# The table row is shifted by one column: 2.52 in. is the case length and 3.35 in. the overall length.
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+# COTW: listed in the 1915 Newton Rifle Co. catalogue.
+year = 1915
+sources = ["book:cotw-18 p. 209"]
+
+[primer]
+# The table row has lost its primer; large rifle, as on the .30 Newton.
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 209"]
+
+[case]
+material = "brass"
+sources = []

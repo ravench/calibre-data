@@ -1,0 +1,44 @@
+# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+name = "8.6 Blackout"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8.6blk", "86blk", "8.6blackout"]
+
+origin = "US"
+
+[mm]
+rim = 11.99
+base = 11.95
+shoulder = 11.78
+shoulder_at = 32.26
+neck = 9.3
+case_length = 42.8
+overall_length = 71.4
+bullet = 8.61
+sources = ["https://saami.org/wp-content/uploads/2026/04/Public-Introduction-8.6-BLACKOUT-2026-04-07.pdf"]
+
+[introduced]
+unknown = "sources give only the 2026 SAAMI acceptance, not when Q introduced it"
+
+[primer]
+size = "large-rifle"
+sources = ["https://www.starlinebrass.com/86-blackout-brass"]
+
+[shoulder_angle]
+# SAAMI drawing
+degrees = 30
+sources = ["https://saami.org/wp-content/uploads/2026/04/Public-Introduction-8.6-BLACKOUT-2026-04-07.pdf"]
+
+[case_head]
+# .0539 in.
+rim_thickness = 1.37
+sources = ["book:cotw-18 p. 452"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

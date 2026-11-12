@@ -1,0 +1,40 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".32 S&W"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["32s&wshort", "32sws"]
+
+origin = "US"
+
+[mm]
+rim = 9.5
+base = 8.5
+neck = 8.5
+case_length = 15.0
+overall_length = 23.0
+bullet = 7.9
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
+
+[introduced]
+year = 1878
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
+
+[case_head]
+# .045 in.
+rim_thickness = 1.14
+sources = ["book:cotw-18 p. 527"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
+
+[case]
+material = "brass"
+sources = []

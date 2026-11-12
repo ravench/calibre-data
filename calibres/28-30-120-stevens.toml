@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Probably the first American commercial 7 mm round, designed by Charles H. Herrick for Stevens.
+name = ".28-30-120 Stevens"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["28-30", "28-30-120", "28-30 stevens"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.46
+base = 9.07
+neck = 7.85
+case_length = 63.75
+overall_length = 71.63
+bullet = 7.24
+sources = ["book:cotw-18 p. 249"]
+
+[introduced]
+year = 1900
+sources = ["book:cotw-18 p. 195"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 196"]
+
+[case]
+material = "brass"
+sources = []

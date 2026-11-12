@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the New Model Evans lever-action rifle of 1877.
+name = ".44 Evans Long"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["44 evans long", "44-40 straight", "44-40-300"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.93
+base = 11.4
+neck = 11.02
+case_length = 39.12
+overall_length = 50.8
+bullet = 10.64
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1877
+sources = ["book:cotw-18 p. 229"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 229"]
+
+[case]
+material = "brass"
+sources = []

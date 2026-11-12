@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The 8x51 mm R Mauser shortened.
+name = "8x42 mm R M88"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["8x42r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.33
+base = 11.89
+shoulder = 10.74
+shoulder_at = 32.5
+neck = 8.81
+case_length = 42.16
+overall_length = 57.91
+bullet = 8.08
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+year = 1888
+sources = ["book:cotw-18 p. 630"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 630"]
+
+[case]
+# municion.org's photos show brass cases (RWS's and Utendoerffer's).
+material = "brass"
+sources = ["https://municion.org/producto/8-x-42-r-mauser-m88d/"]
