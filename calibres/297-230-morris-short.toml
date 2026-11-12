@@ -2,7 +2,7 @@
 # A target and practice round, fired through a barrel insert; a short body and a long neck.
 name = ".297/230 Morris Short"
 # Firearms: book:cotw-18 p. 577.
-categories = ["black-powder", "rifle"]
+categories = ["black-powder", "rifle", "handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["297/230 short", "297/230 morris"]

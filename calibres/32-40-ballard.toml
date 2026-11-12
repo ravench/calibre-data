@@ -1,6 +1,6 @@
 # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".32-40 Ballard"
-# Firearms: book:cotw-18 p. 250.
+# Firearms: book:cotw-18 p. 203.
 categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "flat"

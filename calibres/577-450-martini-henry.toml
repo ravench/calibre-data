@@ -1,5 +1,5 @@
 name = ".577/450 Martini-Henry"
-# Firearms: book:cotw-18 p. 574.
+# Firearms: book:cotw-18 p. 567.
 categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"

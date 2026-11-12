@@ -1,5 +1,5 @@
 name = ".577 Snider"
-# Firearms: book:cotw-18 p. 574.
+# Firearms: book:cotw-18 p. 572.
 categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"

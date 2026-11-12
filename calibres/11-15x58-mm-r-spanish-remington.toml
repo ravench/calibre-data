@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Spanish Remington rolling-block rifle.
 name = "11.15x58 mm R Spanish Remington"
-# Firearms: book:cotw-18 p. 567.
+# Firearms: book:cotw-18 p. 563.
 categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"

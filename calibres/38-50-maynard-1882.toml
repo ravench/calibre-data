@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Maynard Model 1882 rifles; nearly the .38-55.
 name = ".38-50 Maynard 1882"
-# Firearms: book:cotw-18 p. 210.
+# Firearms: book:cotw-18 p. 214.
 categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
