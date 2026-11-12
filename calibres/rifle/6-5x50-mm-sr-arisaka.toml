@@ -47,8 +47,10 @@ ramp_angle = 60.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page13.pdf"]
 
 [bullet]
+# The Type 30 round had a cupronickel round-nose bullet (Wikipedia).
 type = "jacketed"
-sources = ["book:cotw-18 p. 537"]
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 537", "https://en.wikipedia.org/wiki/6.5×50mmSR_Arisaka"]
 
 [case]
 material = "brass"

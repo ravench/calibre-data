@@ -32,8 +32,10 @@ rim_thickness = 1.22
 sources = ["book:donnelly p. 843"]
 
 [bullet]
+# Russian military loads: a lead core in a silver jacket, cupronickel (the article says nickel).
 type = "jacketed"
-sources = ["book:cotw-18 p. 465"]
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 465", "https://en.wikipedia.org/wiki/7.62×38mmR"]
 
 [case]
 material = "brass"

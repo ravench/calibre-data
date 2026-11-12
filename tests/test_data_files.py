@@ -634,6 +634,20 @@ class CheckTests(unittest.TestCase):
             c.edit(ball, '[bullet]\ntype = "lead"\nsources = []\n', '')
             self.assertProblem(c, ball, r'needs a \[bullet\] table: type = "lead"', line=False)
 
+    def test_a_jacket_other_than_copper(self):
+        with Copy() as c:
+            c.edit(LR, '[bullet]\ntype = "lead"', '[bullet]\ntype = "lead"\njacket = "cupronickel"')
+            c.edit(WIN, 'type = "softpoint"', 'type = "softpoint"\njacket = "silver"')
+            self.assertProblem(c, LR, r"only a bullet with a jacket \(jacketed, softpoint, polymer, hollowpoint\)")
+            self.assertProblem(c, WIN, r"\[bullet\] jacket 'silver' is not one of cupronickel, steel")
+        with Copy() as c:
+            c.edit(WIN, 'type = "softpoint"\nsources = ["https://en.wikipedia.org/wiki/.308_Winchester"]',
+                   'type = "softpoint"\njacket = "steel"\nsources = []')
+            self.assertOnlyProblems(c, WIN, r"a jacket other than copper needs a source")
+        with Copy() as c:
+            c.edit(WIN, 'type = "softpoint"', 'type = "softpoint"\njacket = "steel"')
+            self.assertEqual(c.problems(), [])
+
     def test_order_toml_names_without_a_file(self):
         with Copy() as c:
             c.edit("order.toml", '".22 LR"', '".22 LRR"')

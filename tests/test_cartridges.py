@@ -11,7 +11,7 @@ from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PR
                         ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, COUNTRY_NAMES, origin, origin_candidates, is_worldwide,
                         RIMFIRE, RIMLESS, RIMMED, BALL, MINIE, PELLET, SHOT,
                         BULLETS, BULLET_INFERRED, JACKETED, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT,
-                        bullet,
+                        bullet, JACKETS, CUPRONICKEL, jacket,
                         CASES, BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, PLASTIC, loose_material, CARTRIDGE_BULLETS, LOOSE_BULLETS, is_blank,
                         PROFILE_TODAY, LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes,
@@ -734,6 +734,20 @@ class CatalogueTests(unittest.TestCase):
                                            ".460 A-Square Short", ".500 A-Square", ".416 Rimmed",
                                            ".450 Assegai", ".400 A-Square DPM"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
+
+    def test_silver_jackets_of_early_service_rounds(self):
+        # Raven 2026-11-12: record jackets that are not copper. Cupronickel, or steel clad with it:
+        # COTW 18, Poyer and the rounds' Wikipedia articles.
+        silver = {".303 British", "8x50 mm R Lebel", "6 mm Lee Navy", "6.5x50 mm SR Arisaka", ".30-06 Springfield",
+                  "8x50 mm R Siamese Type 45", "7.5x55 mm Swiss (GP 11)", "7.5x54.5 mm Swiss (GP 90/23)",
+                  "7.62x38 mm R Nagant"}
+        self.assertEqual(set(JACKETS), silver)
+        for name in silver:
+            self.assertEqual(jacket(name), CUPRONICKEL, name)
+        self.assertEqual(jacket("9x19 mm"), COPPER)
+        self.assertEqual(jacket(".308 Winchester"), COPPER)  # soft point: a copper jacket
+        self.assertIsNone(jacket(".22 LR"))  # lead
+        self.assertIsNone(jacket("7.5x53.5 mm Swiss (GP 1890)"))  # paper-patched lead under a cap
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):
         # Jacketed bullets came with smokeless powder (Rubin 1882, Lebel 1886); the Swiss 1882 revolver

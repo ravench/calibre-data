@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import SPITZER, ROUND, FLAT, PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import SPITZER, ROUND, FLAT, PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -43,7 +43,8 @@ class OutlineTests(unittest.TestCase):
             patched = s["profile"] == PATCHED or bullet(s["name"]) == PAPER_PATCHED
             self.assertEqual("patch" in o, patched and has_bullet, s["name"])
             if "case" in o:
-                steel = s["profile"] == PATCHED or bullet(s["name"]) == STEEL  # GP 1890's cap, the MPS dart
+                # GP 1890's cap, the MPS dart, a steel jacket
+                steel = s["profile"] == PATCHED or bullet(s["name"]) == STEEL or jacket(s["name"]) == STEEL
                 self.assertEqual(o.get("bulletMaterial") == "steel", steel and has_bullet, s["name"])
 
     def test_gp_1890_bullet_follows_the_1892_drawing(self):
@@ -66,6 +67,16 @@ class OutlineTests(unittest.TestCase):
         o = outline.outline(by_name["7.5x53.5 mm Swiss (GP 1890)"])
         ys = [y for _, y in points(o["patch"])]
         self.assertAlmostEqual(max(ys) - min(ys), 12.7, places=1)
+
+    def test_jackets_that_are_not_copper_are_named(self):
+        for _, s in outline.specs():
+            o = outline.outline(s)
+            material = jacket(s["name"])  # None without a jacket
+            if "bullet" in o and material:
+                self.assertEqual(o.get("bulletMaterial"), None if material == "copper" else material, s["name"])
+        by_name = {s["name"]: s for _, s in outline.specs()}
+        self.assertEqual(outline.outline(by_name[".303 British"])["bulletMaterial"], "cupronickel")
+        self.assertNotIn("bulletMaterial", outline.outline(by_name["9x19 mm"]))
 
     def test_loose_projectiles_name_only_non_lead_materials(self):
         for _, s in outline.specs():

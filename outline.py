@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, bullet, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
 BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
@@ -242,6 +242,8 @@ def outline(s):
                 paths["tip"] = to_path(mirror(tip_profile(right, top)), H, hw)
                 if kind == POLYMER_TIP:
                     paths["tipMaterial"] = "polymer"
+            if jacket(s["name"]) not in (None, COPPER):
+                paths["bulletMaterial"] = jacket(s["name"])  # "cupronickel" or "steel"; copper is not named
         if case_material(s["name"]) == HYBRID:
             paths["head"] = to_path(mirror(head_profile(prof, HYBRID_HEAD)), H, hw)
             paths["headMaterial"] = "steel"
