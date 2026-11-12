@@ -29,9 +29,11 @@ year = 1874
 sources = ["https://en.wikipedia.org/wiki/11×59mmR_Gras"]
 
 [primer]
-# 6.10 mm, 8 specimens
-size = "berdan-nitro"
-sources = ["https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"]
+# A Berdan primer (Hoyem vol. 2, CFR 117; the COTW 18 table on p. 574 gives only "B"), size unknown.
+# The municion.org photos read 6.10 mm raw (8 specimens), about 6.25 mm with the 2.5 % correction:
+# between the large and the .254 in. Nitro Berdan primer, perhaps the .241 in. one. Unverified.
+size = "large-rifle"
+sources = []
 
 [shoulder_angle]
 # AECC drawing 11-059-BBC-010
