@@ -1,0 +1,25 @@
+# The round of the 5 cm PaK 38 anti-tank gun, also fired by the KwK 39 tank gun, the BK 5 aircraft
+# cannon and the experimental Mauser MK 214A (Rapid Fire's table, which calls it 50x419R). Its name
+# (Wikipedia) gives the bore and case length, Rapid Fire's table the rim and base.
+name = "50x420 mm R"
+categories = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["50x420r", "50x419r", "50x420", "5 cm pak 38", "5 cm bk 5"]
+origin = "DE"
+
+[mm]
+rim = 78.4
+base = 70.4
+case_length = 420.0
+bullet = 50.0
+sources = ["book:rapid-fire p. 230", "https://en.wikipedia.org/wiki/5_cm_Pak_38"]
+
+[introduced]
+# The PaK 38 entered service in 1940.
+year = 1940
+sources = ["https://en.wikipedia.org/wiki/5_cm_Pak_38"]
+
+[case]
+material = "brass"
+sources = []

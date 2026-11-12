@@ -19,10 +19,10 @@ The apps know
 these six as `Randfeuer`, `Kurzwaffe`, `Langwaffe`, `Schwarzpulver`, `Flinte` and `Luftdruck`, the
 names they show (`CATEGORIES` in `cartridges.py`), so a new category needs a change in the apps too.
 
-`cannon` (`Kanone`, the 20 to 40 mm rounds of automatic cannon; tank, naval and artillery guns
-stay out) is in the catalogue only, not yet in the apps (`NOT_IN_APPS`):
-its calibres are in `ALL_CATALOGUE` and the per-calibre tables but not in `CATALOGUE`, so the apps'
-JSON does not change. No C.I.P. or SAAMI sheet covers them, so a cannon file keeps only the
+`cannon` (`Kanone`, the 20 to 57 mm rounds of automatic and autoloading cannon; rounds fired
+only by hand-loaded tank, naval and artillery guns stay out) is in the catalogue only, not yet in
+the apps (`NOT_IN_APPS`): its calibres are in `ALL_CATALOGUE` and the per-calibre tables but not in
+`CATALOGUE`, so the apps' JSON does not change. No C.I.P. or SAAMI sheet covers them, so a cannon file keeps only the
 measurements a source gives (`bullet` and `case_length` are required, the others optional; the name
 gives both, 35x228 being a 35 mm round with a 228 mm case). It has no
 `[primer]` (cannon primers are not reloading sizes), no `display_aliases` and no lookalike group:
@@ -239,10 +239,11 @@ start at the .200 line where the base diameter is measured, not at the head; suc
 sheets TM 43-0001-27 (1994). Their figures also gave the cannon rounds the diameters and lengths
 their names and web sources left out; Jane's table measures some cannon cases 0.5 to 1 mm shorter
 than their names (25x137 at 136.5 mm), and the names' lengths were kept. The cartridge table of
-Williams's *Rapid Fire* (2000, pp. 225-230) then gave the other cannon rounds their rim and base:
+Williams's *Rapid Fire* (2000, pp. 225-231) then gave the other cannon rounds their rim and base:
 20x139 (whose rim Jane's table and Jane's own entry give differently), 30x165, 35x228 and the two
 Bofors 40 mm rounds. Jane's and Koll's *Soviet Cannon* (2009) gave 30x165 and 35x228 their round
-lengths.
+lengths. When `cannon` grew to 57 mm, the same table gave the eight 45 to 57 mm service rounds of its
+Table 1 (pp. 230-231) their rim and base.
 
 ### `[introduced]`
 

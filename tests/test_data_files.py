@@ -121,8 +121,8 @@ class LoadTests(unittest.TestCase):
         self.assertIn("20x138 mm B", [s["name"] for s in cannon])
         self.assertIsNone(next(s for s in cannon if s["name"] == "20x138 mm B")["sh_at"])  # no source gives it
         self.assertNotIn("20x138 mm B", cartridges.PRIMERS)
-        self.assertTrue(all(20 <= s["bullet"] <= 40 for s in cannon))
-        self.assertLessEqual({"20x102 mm", "35x228 mm", "40x365 mm R"}, {s["name"] for s in cannon})
+        self.assertTrue(all(20 <= s["bullet"] <= 57 for s in cannon))
+        self.assertLessEqual({"20x102 mm", "35x228 mm", "40x365 mm R", "57x348 mm SR"}, {s["name"] for s in cannon})
 
     def test_every_cannon_round_has_its_rim_and_a_rimmed_one_a_rim_wider_than_its_base(self):
         # Rapid Fire's table gave the last cannon rounds without one their rim (2026-11-10).
@@ -524,19 +524,20 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, '[primer]\nsize = "large-rifle"\nsources = ["https://en.wikipedia.org/wiki/.308_Winchester"]\n', "")
             self.assertOnlyProblems(c, WIN, r"needs a \[primer\] table")
 
-    def test_cannon_rounds_are_20_to_40_mm(self):
-        rel = "calibres/40x365-mm-r.toml"
-        for bullet, ok in (("40.0", True), ("40.5", False), ("57.0", False)):
+    def test_cannon_rounds_are_20_to_57_mm(self):
+        # Raven 2026-11-12: up to 57 mm, the largest rounds in Rapid Fire's table.
+        rel = "calibres/57x348-mm-sr.toml"
+        for bullet, ok in (("57.0", True), ("57.5", False), ("75.0", False)):
             with Copy() as c:
-                c.edit(rel, "bullet = 40.0", f"bullet = {bullet}")
+                c.edit(rel, "bullet = 57.0", f"bullet = {bullet}")
                 if ok:
                     self.assertEqual(c.problems(), [])
                 else:
-                    self.assertProblem(c, rel, r"cannon holds the 20 to 40 mm cannon rounds",
+                    self.assertProblem(c, rel, r"cannon holds the 20 to 57 mm cannon rounds",
                                        line=c.line_of(rel, f"bullet = {bullet}"))
         with Copy() as c:  # a heavy machine gun round belongs with the rifles
             c.edit("calibres/20x138-mm-b.toml", "bullet = 20.0", "bullet = 14.5")
-            self.assertOnlyProblems(c, "calibres/20x138-mm-b.toml", r"20 to 40 mm cannon rounds: bullet is 20 to 40")
+            self.assertOnlyProblems(c, "calibres/20x138-mm-b.toml", r"20 to 57 mm cannon rounds: bullet is 20 to 57")
 
     def test_a_year_needs_a_source(self):
         with Copy() as c:

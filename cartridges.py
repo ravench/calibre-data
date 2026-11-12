@@ -583,8 +583,8 @@ def _read_calibre(f, countries, books=None):
             f.problem(f.line("primer"), f"a {category} round has no [primer] (not a reloading size): remove it")
     elif "primer" not in facts:
         f.problem(None, "a centrefire calibre needs a [primer] table (size and sources, or sources = [] if not checked)")
-    if category == "cannon" and not 20 <= facts["mm"]["bullet"] <= 40:
-        f.problem(f.line("mm", "bullet"), "cannon holds the 20 to 40 mm cannon rounds: bullet is 20 to 40")
+    if category == "cannon" and not 20 <= facts["mm"]["bullet"] <= 57:
+        f.problem(f.line("mm", "bullet"), "cannon holds the 20 to 57 mm cannon rounds: bullet is 20 to 57")
     if kind in LOOSE + (SHOT,):
         if "case" in facts:
             f.problem(f.line("case"), f"a {kind} calibre has no metal case: remove [case]")
