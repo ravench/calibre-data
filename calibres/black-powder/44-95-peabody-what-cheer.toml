@@ -27,9 +27,10 @@ year = 1875
 sources = ["book:cotw-18 p. 233"]
 
 [primer]
-# The table gives B-1, a Berdan primer without its size.
-size = "large-rifle"
-sources = []
+# The table gives B-1, a Berdan primer without its size; 6.68 mm, 2 specimens on municion.org's
+# photos.
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/44-95-peabody-martini-what-cheer/"]
 
 [bullet]
 type = "lead"

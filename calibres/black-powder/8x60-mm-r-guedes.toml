@@ -27,8 +27,9 @@ year = 1885
 sources = ["book:cotw-18 p. 556"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# 6.44 mm, 2 specimens
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]
 
 [case_head]
 # .080 in.

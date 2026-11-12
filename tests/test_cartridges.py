@@ -103,6 +103,20 @@ class CatalogueTests(unittest.TestCase):
         for name in (".450 Adams", ".476 Enfield", ".360 No. 5 Rook"):
             self.assertEqual(PRIMERS[name], SMALL_PISTOL, name)
 
+    def test_old_rounds_with_the_large_berdan_primer(self):
+        # Many 1870s military rifle rounds measure about 6.4 mm on municion.org's headstamp photos:
+        # the .254 in. Berdan primer, not a large rifle one.
+        for name in ("11.15x58 mm R Werndl M77", "10.75x58 mm R Russian Berdan", "11.3x50 mm R Beaumont M71",
+                     "11x60 mm R Japanese Murata", "10.4x38 mm R Vetterli Centrefire", ".44-95 Peabody What Cheer"):
+            self.assertEqual(PRIMERS[name], BERDAN_NITRO, name)
+            self.assertTrue(PRIMER_SOURCES[name].startswith("https://municion.org/producto/"), name)
+
+    def test_primers_from_infoboxes_and_reloading_data(self):
+        for name in (".276 Pedersen", "4.85x49 mm British", "7.62x40 mm WT", "8x59 mm Breda", "8x63 mm Swedish"):
+            self.assertTrue(PRIMER_SOURCES[name].startswith("https://en.wikipedia.org/wiki/"), name)
+        self.assertEqual(PRIMER_SOURCES["7.62x53 mm R"], "https://vihtavuori.com/reloading-data/reloading-data-tool/")
+        self.assertEqual(PRIMERS["7.62x53 mm R"], LARGE_RIFLE)
+
     def test_every_primer_is_sourced_or_marked_unverified(self):
         self.assertEqual(set(PRIMER_SOURCES) & PRIMER_UNVERIFIED, set())
         self.assertEqual(set(PRIMER_SOURCES) | PRIMER_UNVERIFIED, set(PRIMERS))

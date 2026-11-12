@@ -26,8 +26,9 @@ year = 1871
 sources = ["book:cotw-18 p. 569"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# 6.51 mm, 4 specimens
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/113-x-50-r-dutch-beaumont-m-1871/"]
 
 [case_head]
 # .060 in.

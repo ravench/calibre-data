@@ -26,8 +26,12 @@ year = 1894
 sources = ["book:cotw-18 p. 463"]
 
 [primer]
+# 4.57 mm, 6 specimens
 size = "small-pistol"
-sources = []
+sources = [
+  "https://municion.org/producto/65-mm-bergmann-n3-1894-grooveless/",
+  "https://municion.org/producto/65-mm-bergmann-n3-1896/",
+]
 
 [case_head]
 # .025 in.

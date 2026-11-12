@@ -26,8 +26,9 @@ year = 1946
 sources = ["https://municion.org/producto/93-x-53-r-finnish/"]
 
 [primer]
+# 5.52 mm, 3 specimens
 size = "large-rifle"
-sources = []
+sources = ["https://municion.org/producto/93-x-53-r-finnish/"]
 
 [shoulder_angle]
 # C.I.P. 9,3 x 53 R Finnish

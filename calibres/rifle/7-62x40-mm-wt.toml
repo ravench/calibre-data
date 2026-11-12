@@ -27,10 +27,10 @@ year = 2011
 sources = ["book:cotw-18 p. 248"]
 
 [primer]
-# The table gives Bx, a Boxer primer without its size; small rifle, as in the 5.56x45 mm
-# case it is made from.
+# COTW 18's table gives Bx, a Boxer primer without its size; the Wikipedia infobox gives small
+# rifle.
 size = "small-rifle"
-sources = []
+sources = ["https://en.wikipedia.org/wiki/7.62×40mm_Wilson_Tactical"]
 
 [case_head]
 # from the 5.56x45 mm case; the .223 Rem. head, C.I.P. 300 AAC Blackout

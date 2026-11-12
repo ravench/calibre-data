@@ -27,9 +27,10 @@ year = 1877
 sources = ["book:cotw-18 p. 225"]
 
 [primer]
-# The table gives a large rifle primer, but most samples are Berdan primed (COTW 18 p. 225).
-size = "large-rifle"
-sources = []
+# The table gives a large rifle primer, but most samples are Berdan primed (COTW 18 p. 225);
+# municion.org's measure 6.57 mm (2 specimens).
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
 
 [bullet]
 type = "lead"

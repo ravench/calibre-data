@@ -26,9 +26,9 @@ year = 1988
 sources = ["https://municion.org/producto/65-x-65-r-rws/"]
 
 [primer]
-# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+# 5.46 mm, 2 specimens
 size = "large-rifle"
-sources = []
+sources = ["https://municion.org/producto/65-x-65-r-rws/"]
 
 [shoulder_angle]
 # C.I.P. 6,5 x 65 R RWS

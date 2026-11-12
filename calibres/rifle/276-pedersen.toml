@@ -28,7 +28,7 @@ sources = ["book:cotw-18 p. 543"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.276_Pedersen"]
 
 [bullet]
 type = "jacketed"

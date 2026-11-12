@@ -23,9 +23,9 @@ year = 1900
 sources = ["book:cotw-18 p. 467"]
 
 [primer]
-# The table gives a Berdan primer without its size.
+# The table gives a Berdan primer without its size; 4.37 mm, 14 specimens on municion.org's photos.
 size = "small-pistol"
-sources = []
+sources = ["https://municion.org/producto/763-mm-mannlicher/"]
 
 [case_head]
 # .030 in.

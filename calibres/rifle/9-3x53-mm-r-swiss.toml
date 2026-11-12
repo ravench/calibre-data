@@ -27,8 +27,9 @@ year = 1925
 sources = ["book:cotw-18 p. 639"]
 
 [primer]
+# 5.54 mm, 4 specimens
 size = "large-rifle"
-sources = []
+sources = ["https://municion.org/producto/93-x-53-r-swiss-m-26/"]
 
 [bullet]
 type = "softpoint"

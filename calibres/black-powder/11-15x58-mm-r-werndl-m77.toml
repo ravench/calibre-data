@@ -27,8 +27,9 @@ year = 1877
 sources = ["book:cotw-18 p. 563"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# 6.44 mm, 10 specimens
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/1115-x-58-r-austrian-werndl-rifle-mod-1877/"]
 
 [case_head]
 # .100 in.

@@ -25,8 +25,9 @@ year = 1878
 sources = ["book:cotw-18 p. 569"]
 
 [primer]
+# 5.49 mm, 4 specimens
 size = "large-rifle"
-sources = []
+sources = ["https://municion.org/producto/117-x-516-r-danish-remington-cf-m-1867-96-carbines/"]
 
 [bullet]
 # The military load: a lead bullet over blackpowder.

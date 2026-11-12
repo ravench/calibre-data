@@ -81,15 +81,16 @@ def pellet(name, dia, length, aliases=()):
     return c(name, PELLET, dia, dia, None, dia, 0, None, length, dia, ROUND, aliases)
 
 
-# Primer per calibre: the primer of the original factory ammunition, which is today's Boxer size
-# for calibres still loaded. Primers sit in the centre of the case head. Old British Nitro
-# Expresses and some old European rounds came with the large .254" Berdan "Nitro" primer
+# Primer per calibre: the primer of the original factory ammunition, which is today's Boxer size for
+# calibres still loaded. Primers sit in the centre of the case head. Old British Nitro Expresses and
+# many old European and American black-powder rounds came with the large .254" Berdan "Nitro" primer
 # (Kynoch #40, today RWS 6507), measured on headstamp photos (see PRIMER_SOURCES). Other Berdan
 # primers (4.5 and 5.5 mm, e.g. 7.62x39, 7.62x54R surplus) keep the nearest size, with their
-# diameter in the file where a source gives it; rimfire and caseless entries have none. The tiny Kolibri and Liliput pistol rounds
-# have primers smaller than any reloading size: "miniature", with the diameter measured on headstamp
-# photos in the file. Any size may give its measured diameter (Berdan primers differ a little from
-# the Boxer size); PRIMER_MM gives every calibre's primer diameter, measured or nominal.
+# diameter in the file where a source gives it; rimfire and caseless entries have none. The tiny
+# Kolibri and Liliput pistol rounds have primers smaller than any reloading size: "miniature", with
+# the diameter measured on headstamp photos in the file. Any size may give its measured diameter
+# (Berdan primers differ a little from the Boxer size); PRIMER_MM gives every calibre's primer
+# diameter, measured or nominal.
 SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE, SHOTSHELL_209, BMG_35, BERDAN_NITRO, MINIATURE = (
     "small-pistol", "large-pistol", "small-rifle", "large-rifle", "shotshell-209", "bmg-35",
     "berdan-nitro", "miniature")

@@ -27,11 +27,11 @@ sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81
 unknown = "the first year of the centrefire loading is not known; the rimfire original dates from 1867"
 
 [primer]
-# Not checked for the original ammunition. Today's cases, made from 8x50 R Lebel brass, take large
-# rifle primers:
+# The original cases measure 6.47 mm (3 specimens), the .254 in. Berdan size. Today's cases, made
+# from 8x50 R Lebel brass, take large rifle primers:
 # https://www.ammunitionartifacts.com/metriccartridgecases/104x38r-swiss-vetterli-m6981-center-fire-6dtb4
-size = "large-rifle"
-sources = []
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
 
 [shoulder_angle]
 # AECC drawing 11-038-BBC-011
