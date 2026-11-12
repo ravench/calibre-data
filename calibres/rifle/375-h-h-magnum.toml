@@ -2,7 +2,7 @@
 name = ".375 H&H Magnum"
 kind = "belted"
 profile = "round"
-aliases = ["375h&h", "375hh"]
+aliases = ["375h&h", "375hh", "375 h&h mag"]
 
 origin = "GB"
 worldwide = true

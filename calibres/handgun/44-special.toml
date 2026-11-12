@@ -2,7 +2,7 @@ name = ".44 Special"
 kind = "rimmed"
 # Nose: round, the 246-grain lead bullet of the first loads (COTW 18 pp. 504-505, photo and load table).
 profile = "round"
-aliases = ["44spl", "44special", "44s&wspecial"]
+aliases = ["44spl", "44special", "44s&wspecial", "44 s&w spl"]
 
 origin = "US"
 

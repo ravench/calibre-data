@@ -607,7 +607,7 @@ def load(root=ROOT):
         f = _File(root, rel, problems)
         return f if f.data is not None else None
 
-    countries = {}
+    countries, country_names = {}, {}
     before = len(problems)
     cf = read("countries.toml")
     if cf:
@@ -617,10 +617,14 @@ def load(root=ROOT):
             if not isinstance(v, dict) or not isinstance(v.get("name"), str):
                 cf.problem(cf.line(code), f"[{code}] needs name = \"…\"")
                 continue
-            _check_keys(cf, code, v, {"name", "flag"}, ("name",))
+            _check_keys(cf, code, v, {"name", "de", "fr", "it", "flag"}, ("name", "de", "fr", "it"))
+            for lang in ("de", "fr", "it"):
+                if lang in v and not (isinstance(v[lang], str) and v[lang].strip()):
+                    cf.problem(cf.line(code, lang), f"[{code}] {lang} must be the name in that language, in quotes")
             if "flag" in v and not isinstance(v["flag"], str):
                 cf.problem(cf.line(code, "flag"), f"[{code}] flag must be the flag emoji in quotes")
             countries[code] = (v["name"], v.get("flag"))
+            country_names[code] = {"en": v["name"], **{lang: v[lang] for lang in ("de", "fr", "it") if isinstance(v.get(lang), str)}}
     if len(problems) > before:  # check the calibres' origins only against a good list
         countries = None
 
@@ -850,7 +854,7 @@ def load(root=ROOT):
     t["WORLDWIDE"] = frozenset(t["WORLDWIDE"])
     hidden = {CATEGORIES[cat] for cat in NOT_IN_APPS}
     t.update(CATALOGUE=[(cat, items) for cat, items in catalogue if cat not in hidden], ALL_CATALOGUE=catalogue,
-             COUNTRIES=countries, BOOKS=books or {}, LOOKALIKES=lookalikes,
+             COUNTRIES=countries, COUNTRY_NAMES=country_names, BOOKS=books or {}, LOOKALIKES=lookalikes,
              LOOKALIKE_NAMES=group_names)
     return t
 
@@ -883,6 +887,9 @@ CASE_HEADS = _t["CASE_HEADS"]
 RIM_THICKNESS = _t["RIM_THICKNESS"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
+# code: {"en", "de", "fr", "it"}: the country's name in the apps' languages (Kaliberfinder's
+# generator reads it, 2026-11-12; the German name is the app's localization key).
+COUNTRY_NAMES = _t["COUNTRY_NAMES"]
 ORIGIN, ORIGIN_UNDECIDED = _t["ORIGIN"], _t["ORIGIN_UNDECIDED"]  # {name: code}, {name: (codes, likelier first)}
 # {name: (bullet, first source or None)}: every calibre with a bullet (not shot shells, blanks or cannon
 # rounds); no source means not checked.

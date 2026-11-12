@@ -1,7 +1,7 @@
 name = ".44 Magnum"
 kind = "rimmed"
 profile = "flat"
-aliases = ["44mag", "44magnum", "44remmag", "44remingtonmagnum"]
+aliases = ["44mag", "44magnum", "44remmag", "44remingtonmagnum", "44 rem mag", "44 rem magnum"]
 
 origin = "US"
 worldwide = true

@@ -1,7 +1,7 @@
 name = "7 mm-08 Remington"
 kind = "rimless"
 profile = "spitzer"
-aliases = ["7mm-08", "7-08"]
+aliases = ["7mm-08", "7-08", "7mm-08 rem"]
 
 origin = "US"
 

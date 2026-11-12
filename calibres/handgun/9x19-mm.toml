@@ -3,7 +3,7 @@
 name = "9x19 mm"
 kind = "rimless"
 profile = "round"
-aliases = ["9x19", "9mm", "9mmpara", "9para", "9mmluger", "9luger", "9x19para", "parabellum", "pist pat 41", "pistolenpatrone 41", "9 mm pist pat 41", "9mmluger+p", "9mm+p"]
+aliases = ["9x19", "9mm", "9mmpara", "9para", "9mmluger", "9luger", "9x19para", "parabellum", "pist pat 41", "pistolenpatrone 41", "9 mm pist pat 41", "9mmluger+p", "9mm+p", "9mm nato"]
 display_aliases = ["9 mm Luger", "9 mm Para"]
 
 origin = "DE"

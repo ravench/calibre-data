@@ -1,7 +1,7 @@
 name = ".30-06 Springfield"
 kind = "rimless"
 profile = "spitzer"
-aliases = ["30-06", "3006"]
+aliases = ["30-06", "3006", "30-06 sprg", "30-06 spfld"]
 display_aliases = ["7.62x63 mm"]
 
 origin = "US"

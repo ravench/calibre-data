@@ -1,7 +1,7 @@
 name = "7.62x25 mm Tokarev"
 kind = "rimless"
 profile = "round"
-aliases = ["tokarev", "7.62tok"]
+aliases = ["tokarev", "7.62tok", "7.62x25"]
 
 origin = "SU"
 
