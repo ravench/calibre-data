@@ -28,7 +28,7 @@ sources = ["book:cotw-18 p. 664"]
 [bullet]
 # COTW 18 p. 664 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-09-038-cbr-010-0005/"]
 
 [case]
 # municion.org's photos show copper cases on the early makers' rounds (UMC, U.S. Cartridge Co. and

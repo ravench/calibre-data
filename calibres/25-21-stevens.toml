@@ -31,7 +31,7 @@ sources = ["book:cotw-18 p. 249"]
 [bullet]
 # COTW 18 p. 188 lists only handloads; a lead bullet, as in the other blackpowder rounds of its time.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-06-052-cbc-010-0001/"]
 
 [case]
 material = "brass"

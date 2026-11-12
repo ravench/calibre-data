@@ -641,6 +641,7 @@ class CheckTests(unittest.TestCase):
 
     def test_every_bullet_names_its_type(self):
         ball = "calibres/50-rundkugel-490.toml"
+        HORNADY_490 = 'sources = ["https://www.hornady.com/muzzleloading/browse/50-cal-490-lead-balls"]'
         with Copy() as c:
             c.edit(LR, '[bullet]\ntype = "lead"', '[projectile]\nmaterial = "lead"')
             c.edit(WIN, 'type = "softpoint"', 'type = "plastic"')
@@ -654,7 +655,7 @@ class CheckTests(unittest.TestCase):
         blank, cannon = "calibres/22-blank-6-8-11.toml", "calibres/20x102-mm.toml"
         pak = "calibres/9-mm-p-a-k.toml"
         with Copy() as c:
-            c.edit(ball, 'type = "lead"', 'type = "steel"')
+            c.edit(ball, f'type = "lead"\n{HORNADY_490}', 'type = "steel"\nsources = []')
             c.edit("calibres/6-mm-airsoft-bb.toml", 'type = "plastic"\nsources = ["https://en.wikipedia.org/wiki/Airsoft_pellets"]',
                    'type = "plastic"\nsources = []')
             c.edit(blank, "[case]", '[bullet]\ntype = "lead"\nsources = []\n\n[case]')
@@ -665,7 +666,7 @@ class CheckTests(unittest.TestCase):
             for rel in (blank, cannon, pak):
                 self.assertProblem(c, rel, r"shot shells, blanks and cannon rounds have no \[bullet\]")
         with Copy() as c:
-            c.edit(ball, '[bullet]\ntype = "lead"\nsources = []\n', '')
+            c.edit(ball, f'[bullet]\ntype = "lead"\n{HORNADY_490}\n', '')
             self.assertProblem(c, ball, r'needs a \[bullet\] table: type = "lead"', line=False)
 
     def test_a_jacket_other_than_copper(self):

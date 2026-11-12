@@ -28,7 +28,7 @@ sources = ["book:cotw-18 p. 666"]
 [bullet]
 # COTW 18 p. 666 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-12-028-cbr-010-0008/"]
 
 [case]
 # municion.org says the first .46 Long (its .46 Carbine RF of 1864, a case of about 28 mm) had a copper case,

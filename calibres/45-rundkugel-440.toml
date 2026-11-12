@@ -6,7 +6,7 @@ aliases = ["45ball", ".440"]
 
 [mm]
 diameter = 11.2
-sources = []
+sources = ["https://www.hornady.com/muzzleloading/browse/45-cal-440-lead-balls"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
@@ -14,4 +14,4 @@ unknown = "not a single cartridge"
 
 [bullet]
 type = "lead"
-sources = []
+sources = ["https://www.hornady.com/muzzleloading/browse/45-cal-440-lead-balls"]

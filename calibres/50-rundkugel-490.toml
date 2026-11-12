@@ -6,7 +6,7 @@ aliases = ["50", "50ball", ".490"]
 
 [mm]
 diameter = 12.4
-sources = []
+sources = ["https://www.hornady.com/muzzleloading/browse/50-cal-490-lead-balls"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
@@ -14,4 +14,4 @@ unknown = "not a single cartridge"
 
 [bullet]
 type = "lead"
-sources = []
+sources = ["https://www.hornady.com/muzzleloading/browse/50-cal-490-lead-balls"]

@@ -6,7 +6,7 @@ aliases = ["54", "54ball", ".530"]
 
 [mm]
 diameter = 13.5
-sources = []
+sources = ["https://www.hornady.com/muzzleloading/browse/54-cal-530-lead-balls"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
@@ -14,4 +14,4 @@ unknown = "not a single cartridge"
 
 [bullet]
 type = "lead"
-sources = []
+sources = ["https://www.hornady.com/muzzleloading/browse/54-cal-530-lead-balls"]

@@ -36,7 +36,7 @@ sources = ["book:cotw-18 p. 249"]
 [bullet]
 # COTW 18 p. 187 lists only handloads; a lead bullet, as in the other blackpowder rounds of its time.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-07-041-bbc-010-0006/"]
 
 [case]
 # municion.org's photos show brass cases (Winchester's, Remington-UMC's, Roth's and Sellier &

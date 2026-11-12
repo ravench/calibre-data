@@ -17,4 +17,4 @@ unknown = "not a single cartridge"
 
 [bullet]
 type = "lead"
-sources = []
+sources = ["https://en.wikipedia.org/wiki/Mini%C3%A9_ball"]

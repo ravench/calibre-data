@@ -6,7 +6,7 @@ aliases = ["36", "36navy", ".375ball"]
 
 [mm]
 diameter = 9.5
-sources = []
+sources = ["https://www.hornady.com/muzzleloading/browse/36-cal-375-lead-balls"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
@@ -14,4 +14,4 @@ unknown = "not a single cartridge"
 
 [bullet]
 type = "lead"
-sources = []
+sources = ["https://www.hornady.com/muzzleloading/browse/36-cal-375-lead-balls"]
