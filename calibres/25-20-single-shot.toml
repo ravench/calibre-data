@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["25-20 single shot", "25-20ss"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 384"]
 obsolete = true
 rare = true
 

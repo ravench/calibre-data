@@ -9,6 +9,7 @@ profile = "flat"
 aliases = ["32-20", "32wcf", "32-20 marlin"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.32-20_Winchester"]
 
 [mm]
 rim = 10.4

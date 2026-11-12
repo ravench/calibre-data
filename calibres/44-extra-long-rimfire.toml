@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["44 extra long rf", "44 extra long rimfire"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

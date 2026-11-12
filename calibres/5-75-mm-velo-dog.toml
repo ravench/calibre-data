@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["velodog", "5.75velodog", "5.5velodog", "5.5x30r"]
 
 origin = "FR"
+origin_sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 rare = true
 
 [mm]

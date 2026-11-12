@@ -8,6 +8,7 @@ profile = "spitzer"
 aliases = ["256 gibbs", "256gibbs"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/256-gibbs-magnum/"]
 obsolete = true
 rare = true
 

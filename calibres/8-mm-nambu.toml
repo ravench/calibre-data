@@ -8,6 +8,10 @@ profile = "round"
 aliases = ["nambu", "8nambu"]
 
 origin = "JP"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×22mm_Nambu",
+  "book:ammo-encyclopedia-2 p. 692",
+]
 obsolete = true
 rare = true
 

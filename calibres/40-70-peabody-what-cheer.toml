@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["40-70 peabody", "40-70 what cheer"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 440"]
 obsolete = true
 rare = true
 

@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["6.5x58r krag"]
 
 origin = "DK"
+origin_sources = ["https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/"]
 obsolete = true
 rare = true
 

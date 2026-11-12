@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["7saum"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/7mm_Remington_Short_Action_Ultra_Magnum"]
 
 [mm]
 rim = 13.6

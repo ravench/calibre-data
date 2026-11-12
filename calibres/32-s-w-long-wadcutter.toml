@@ -13,6 +13,7 @@ display_aliases = [".32 S&W Long WC"]
 
 # the C.I.P. sheet gives "DE/FI"
 origin_candidates = ["DE", "FI"]
+origin_sources = []
 
 [mm]
 rim = 9.53

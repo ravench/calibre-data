@@ -7,6 +7,7 @@ kind = "belted"
 profile = "spitzer"
 aliases = ["20x138b", "20 mm solothurn", "20 mm long solothurn"]
 origin = "CH"
+origin_sources = []
 obsolete = true
 rare = true
 

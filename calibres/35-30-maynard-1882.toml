@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["35-30 maynard", "35-30 maynard 1882"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

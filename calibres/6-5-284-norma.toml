@@ -7,6 +7,10 @@ aliases = ["6.5-284"]
 
 # a US wildcat on the .284 Winchester since the 1960s that no US maker standardised; Norma took it to C.I.P. 1999: US
 origin = "SE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6.5-284_Norma",
+  "book:ammo-encyclopedia-2 p. 297",
+]
 
 [mm]
 rim = 12.0

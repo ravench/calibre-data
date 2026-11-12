@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["32 extra short", "32 protector rimfire", "32 protector rf"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/32-extra-short-rf/"]
 obsolete = true
 rare = true
 

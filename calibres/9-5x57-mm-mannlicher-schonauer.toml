@@ -7,6 +7,7 @@ aliases = ["9.5x57", "375rimless", "9.5x56", "375rimlessne"]
 
 # Steyr 1910; Westley Richards' .375 Rimless NE 2 1/4 of 1908 is the same case: GB
 origin = "AH"
+origin_sources = ["https://municion.org/producto/95-x-57-mannlicher-schonauer/"]
 obsolete = true
 rare = true
 

@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["348win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.348_Winchester",
+  "book:ammo-encyclopedia-2 p. 416",
+]
 
 [mm]
 rim = 15.5

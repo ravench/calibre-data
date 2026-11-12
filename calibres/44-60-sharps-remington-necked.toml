@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["44-60 sharps", "44-60 sharps necked", "44-60 winchester", "44-60 peabody creedmoor"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 453"]
 obsolete = true
 rare = true
 

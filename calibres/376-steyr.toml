@@ -8,6 +8,10 @@ aliases = ["376steyr"]
 
 # Steyr Mannlicher with Hornady 1999 for the Steyr Scout: US
 origin = "AT"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.376_Steyr",
+  "book:ammo-encyclopedia-2 p. 345",
+]
 rare = true
 
 [mm]

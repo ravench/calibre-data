@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["7rum"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7mm_Remington_Ultra_Magnum",
+  "book:ammo-encyclopedia-2 p. 307",
+]
 rare = true
 
 [mm]

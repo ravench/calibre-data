@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["243wssm"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.243_Winchester_Super_Short_Magnum",
+  "book:ammo-encyclopedia-2 p. 278",
+]
 obsolete = true
 rare = true
 

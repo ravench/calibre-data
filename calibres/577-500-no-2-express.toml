@@ -9,6 +9,7 @@ aliases = ["577/500 no 2", "577/500 no. 2"]
 display_aliases = [".577/500 No. 2 BPE"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

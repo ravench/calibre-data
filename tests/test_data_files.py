@@ -205,6 +205,22 @@ class LoadTests(unittest.TestCase):
         self.assertIn("9 mm P.A.K.", cartridges.PRIMER_UNVERIFIED)
         self.assertNotIn("9 mm P.A.K.", cartridges.PRIMER_SOURCES)
 
+    def test_origin_sources(self):
+        # Every calibre with a state has origin_sources; an empty list means not checked yet.
+        named = set(cartridges.ORIGIN) | set(cartridges.ORIGIN_UNDECIDED)
+        self.assertEqual(set(cartridges.ORIGIN_SOURCES) | cartridges.ORIGIN_UNVERIFIED, named)
+        self.assertEqual(set(cartridges.ORIGIN_SOURCES) & cartridges.ORIGIN_UNVERIFIED, set())
+        self.assertGreater(len(cartridges.ORIGIN_SOURCES), 600)
+        # The three kinds of source: Wikipedia's infobox, the Ammo Encyclopedia, municion.org's PAÍS.
+        self.assertEqual(cartridges.sources("7.5x55 mm Swiss (GP 11)", "origin"),
+                         ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss", "book:ammo-encyclopedia-2 p. 513"])
+        self.assertEqual(cartridges.ORIGIN_SOURCES["9.3x72 mm R Sauer"],
+                         "https://municion.org/producto/93-x-72-r-sauer-sohn/")
+        # Two-state cases whose pages name the other state, and open ones, stay unverified.
+        for name in ("7.65 mm Parabellum", "9x23 mm Largo", ".32 S&W Long Wadcutter"):
+            self.assertIn(name, cartridges.ORIGIN_UNVERIFIED, name)
+        self.assertEqual(cartridges.sources("12/70", "origin"), [])  # a gauge has no origin
+
     def test_empty_bullet_sources_mean_inferred(self):
         self.assertIn("8.5x55 mm Blaser", cartridges.BULLET_INFERRED)
         self.assertEqual(cartridges.BULLETS["8.5x55 mm Blaser"], ("softpoint", None))
@@ -265,6 +281,17 @@ class CheckTests(unittest.TestCase):
             c.write("calibres/.DS_Store", "x")
             c.write("calibres/.hidden.toml", "x")
             self.assertEqual(c.problems(), [])
+
+    def test_origin_sources_go_with_an_origin(self):
+        with Copy() as c:
+            c.edit(WIN, "origin_sources = [", "origin_sourcez = [")
+            self.assertProblem(c, WIN, r"origin needs origin_sources", line=c.line_of(WIN, 'origin = "US"'))
+        with Copy() as c:
+            c.edit(WIN, '"book:ammo-encyclopedia-2 p. 327"', '"book:ammo p. 327"')
+            self.assertProblem(c, WIN, r"origin_sources source 'book:ammo p. 327' names no book")
+        with Copy() as c:
+            c.edit(WIN, 'origin = "US"\n', "")
+            self.assertProblem(c, WIN, r"origin_sources without origin")
 
     def test_misspelt_top_level_key(self):
         with Copy() as c:

@@ -5,6 +5,10 @@ profile = "flat"
 aliases = ["45-70", "4570", "45-70 govt"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.45-70",
+  "book:ammo-encyclopedia-2 p. 553",
+]
 
 [mm]
 rim = 15.2

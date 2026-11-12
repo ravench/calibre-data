@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["58 berdan", "58 us musket", "58 u.s. musket berdan", "58 berdan musket"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/58-berdan-musket/"]
 obsolete = true
 rare = true
 

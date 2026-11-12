@@ -37,6 +37,7 @@ aliases = ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp 90/03", "7.5 mm gp 9
 display_aliases = ["GP 1890", "GP 90/03"]
 
 origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
 obsolete = true
 
 [mm]

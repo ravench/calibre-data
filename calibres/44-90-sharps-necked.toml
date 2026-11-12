@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["44-90 sharps", "44-100 sharps", "44-105 sharps", "44-2 5/8 sharps"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

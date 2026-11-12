@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["338lm", "338lapua", "338", "8.58x71", "8.58x70", "8.6x70", "338 lapua mag"]
 
 origin = "FI"
+origin_sources = ["https://en.wikipedia.org/wiki/.338_Lapua_Magnum"]
 worldwide = true
 
 [mm]

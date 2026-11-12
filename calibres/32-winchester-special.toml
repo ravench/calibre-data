@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["32winspecial", "32ws"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.32_Winchester_Special",
+  "book:ammo-encyclopedia-2 p. 329",
+]
 
 [mm]
 rim = 12.9

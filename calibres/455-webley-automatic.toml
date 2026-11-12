@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["455 webley auto", "455 webley automatic", "455 webley self-loading", "455 wsl"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 713"]
 obsolete = true
 rare = true
 

@@ -6,6 +6,10 @@ aliases = ["50bmg", "12.7x99"]
 display_aliases = ["12,7x99 mm NATO"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.50_BMG",
+  "book:ammo-encyclopedia-2 p. 493",
+]
 worldwide = true
 
 [mm]

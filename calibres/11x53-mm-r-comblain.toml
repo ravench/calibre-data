@@ -9,6 +9,7 @@ aliases = ["11x53r", "11x53r comblain"]
 display_aliases = ["11x53 mm R Belgian Comblain M71"]
 
 origin = "BE"
+origin_sources = []
 obsolete = true
 rare = true
 

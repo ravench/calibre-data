@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["25-45 sharps", "25-45"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/25-45-sharps/"]
 rare = true
 
 [mm]

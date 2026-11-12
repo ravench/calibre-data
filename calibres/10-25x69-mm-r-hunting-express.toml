@@ -9,6 +9,7 @@ aliases = ["10.25x69r", "10.15x68r"]
 display_aliases = ["10.15x68 mm R Express"]
 
 origin = "DE"
+origin_sources = []
 obsolete = true
 rare = true
 

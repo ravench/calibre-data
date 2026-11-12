@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["44spl", "44special", "44s&wspecial", "44 s&w spl"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.44_Special",
+  "book:ammo-encyclopedia-2 p. 632",
+]
 
 [mm]
 rim = 13.1

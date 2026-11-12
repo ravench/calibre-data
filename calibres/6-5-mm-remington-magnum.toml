@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["6.5remmag"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6.5mm_Remington_Magnum",
+  "book:ammo-encyclopedia-2 p. 387",
+]
 obsolete = true
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:

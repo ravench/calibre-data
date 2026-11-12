@@ -8,6 +8,7 @@ aliases = ["9mmflobert", "9flobert", "bosquette", "9mmbosquette", "9mmbbcap", "f
 display_aliases = ["9 mm Flobert Kugel"]
 
 origin = "FR"
+origin_sources = ["book:ammo-encyclopedia-2 p. 763"]
 # 2026-11-08: from Raven's bag of old rounds
 rare = true
 

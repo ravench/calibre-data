@@ -6,6 +6,7 @@ kind = "belted"
 profile = "spitzer"
 aliases = ["50x346b", "50x346", "5 cm flak 41"]
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/5_cm_Flak_41"]
 
 [mm]
 rim = 68.0

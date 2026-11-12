@@ -8,6 +8,7 @@ aliases = ["9x19", "9mm", "9mmpara", "9para", "9mmluger", "9luger", "9x19para", 
 display_aliases = ["9 mm Luger", "9 mm Para"]
 
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/9×19mm_Parabellum"]
 worldwide = true
 
 [mm]

@@ -6,6 +6,7 @@ profile = "flat"
 aliases = ["400corbon"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.400_Cor-Bon"]
 # Still made, but hardly ever found:
 rare = true
 

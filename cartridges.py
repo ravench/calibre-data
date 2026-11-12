@@ -159,7 +159,7 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
     "partial": (("case_length", "bullet"), ("rim", "base", "shoulder", "shoulder_at", "neck", "overall_length")),
 }
 TOP_KEYS = {"name", "categories", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
-            "origin_candidates", "worldwide", "obsolete", "rare"}
+            "origin_candidates", "origin_sources", "worldwide", "obsolete", "rare"}
 # [case_head] keys beside rim_thickness: the extractor groove of a rimless or belted case, all three
 # or none.
 HEAD_GROOVE = ("ramp_top", "groove_diameter", "ramp_angle")
@@ -302,35 +302,36 @@ def _check_keys(f, table, data, allowed, required):
             f.problem(f.line(table), f"[{table}] needs {k!r}" if table else f"needs {k!r}")
 
 
-def _check_sources(f, table, data, rule, books=None, nth=0):
+def _check_sources(f, table, data, rule, books=None, nth=0, key="sources"):
     """The sources of one table (the `nth` of a [[table]]): web addresses and book pages (`books`: the
-    ids in books.toml, or None when books.toml could not be read)."""
-    label = f"[[{table}]]" if table == "colour_codes" else f"[{table}]"
-    if "sources" not in data:
+    ids in books.toml, or None when books.toml could not be read). Without a table, the list is the
+    top-level `key` (origin_sources)."""
+    label = key if table is None else f"[[{table}]]" if table == "colour_codes" else f"[{table}]"
+    if key not in data:
         if rule != "optional":
             f.problem(f.line(table, nth=nth), f"{label} needs a sources list (an empty list [] when nothing is checked yet)"
                       if rule == "may be empty" else f"{label} needs sources = [\"https://…\"]")
         return []
-    urls = data["sources"]
+    urls = data[key]
     if not _is_text_list(urls):
-        f.problem(f.line(table, "sources", nth), f"{label} sources must be a list of web addresses in quotes")
+        f.problem(f.line(table, key, nth), f"{label} sources must be a list of web addresses in quotes")
         return []
     if rule == "required" and not urls:
-        f.problem(f.line(table, "sources", nth), f"{label} needs at least one source")
+        f.problem(f.line(table, key, nth), f"{label} needs at least one source")
     for u in urls:
         book = BOOK_SOURCE.fullmatch(u)
         if book:
             if books is not None and book["id"] not in books:
-                f.problem(f.line(table, "sources", nth), f"{label} source {u!r} names no book in books.toml"
+                f.problem(f.line(table, key, nth), f"{label} source {u!r} names no book in books.toml"
                                                     f"{_close(book['id'], books)}")
         elif u.startswith("book:"):
-            f.problem(f.line(table, "sources", nth), f"{label} source {u!r} must be written book:<id> p. <page>, "
+            f.problem(f.line(table, key, nth), f"{label} source {u!r} must be written book:<id> p. <page>, "
                                                 f"e.g. \"book:cotw-18 p. 176\"")
         elif not re.fullmatch(r"https://[^\s\"<>]+\.[^\s\"<>]+", u):
-            f.problem(f.line(table, "sources", nth), f"{label} source {u!r} is not a https:// web address "
+            f.problem(f.line(table, key, nth), f"{label} source {u!r} is not a https:// web address "
                                                 f"or a book page (book:<id> p. <page>)")
     if len(set(urls)) != len(urls):
-        f.problem(f.line(table, "sources", nth), f"{label} lists a source twice")
+        f.problem(f.line(table, key, nth), f"{label} lists a source twice")
     return urls
 
 
@@ -507,6 +508,15 @@ def _read_calibre(f, countries, books=None):
                               f"origin candidate {code!r} is not a code in countries.toml{_close(code, countries)}")
         if "origin" in d:
             f.problem(f.line(None, "origin_candidates"), "a calibre has origin or origin_candidates, not both")
+    if "origin" in d or "origin_candidates" in d:
+        if "origin_sources" not in d:
+            f.problem(f.line(None, "origin") or f.line(None, "origin_candidates"),
+                      "origin needs origin_sources, the pages that name that state (an empty list [] when "
+                      "nothing is checked yet)")
+        else:
+            _check_sources(f, None, d, "may be empty", books, key="origin_sources")
+    elif "origin_sources" in d:
+        f.problem(f.line(None, "origin_sources"), "origin_sources without origin or origin_candidates")
     if kind not in KINDS or profile not in PROFILES or "mm" not in tables:
         return None
 
@@ -816,10 +826,11 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "JACKETS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "CASES",
                          "CURRENT_CASES", "SOURCES", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES",
                          "PROFILE_TODAY")}
-    sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED")}
+    sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
+                               "ORIGIN_UNVERIFIED")}
     for _, items in catalogue:
         for e in items:
             n = e["name"]
@@ -836,6 +847,12 @@ def load(root=ROOT):
                 t["PROFILE_TODAY"][n] = raw["profile_today"]
             if "origin_candidates" in raw:
                 t["ORIGIN_UNDECIDED"][n] = tuple(raw["origin_candidates"])
+            if "origin_sources" in raw:
+                t["SOURCES"][(n, "origin")] = list(raw["origin_sources"])
+                if raw["origin_sources"]:
+                    t["ORIGIN_SOURCES"][n] = raw["origin_sources"][0]
+                else:
+                    sets["ORIGIN_UNVERIFIED"].add(n)
             for fact, data in facts.items():
                 t["SOURCES"][(n, fact)] = list(data["sources"])
             first = lambda fact: facts[fact]["sources"][0] if facts[fact]["sources"] else None  # noqa: E731
@@ -921,6 +938,9 @@ COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
 # generator reads it, 2026-11-12; the German name is the app's localization key).
 COUNTRY_NAMES = _t["COUNTRY_NAMES"]
 ORIGIN, ORIGIN_UNDECIDED = _t["ORIGIN"], _t["ORIGIN_UNDECIDED"]  # {name: code}, {name: (codes, likelier first)}
+# The first page naming each calibre's origin (ORIGIN or ORIGIN_UNDECIDED); ORIGIN_UNVERIFIED the
+# calibres whose origin_sources are still empty.
+ORIGIN_SOURCES, ORIGIN_UNVERIFIED = _t["ORIGIN_SOURCES"], _t["ORIGIN_UNVERIFIED"]
 # {name: (bullet, first source or None)}: every calibre with a bullet (not shot shells, blanks or cannon
 # rounds); no source means not checked.
 BULLETS = _t["BULLETS"]
@@ -950,7 +970,8 @@ PROFILE_TODAY = _t["PROFILE_TODAY"]
 def sources(name, fact):
     """Every source of one of a calibre's values, as listed in its file: fact is the table name
     ("mm", "introduced", "primer", "shoulder_angle", "case_head", "bullet", "case", "current_cases"
-    or "fired_by"); [] when nothing is checked yet or the calibre has no such table."""
+    or "fired_by"), or "origin" for origin_sources; [] when nothing is checked yet or the calibre has no
+    such table."""
     return list(SOURCES.get((name, fact), []))
 
 

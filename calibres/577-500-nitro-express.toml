@@ -8,6 +8,7 @@ aliases = ["577/500", "577/500 3 1/8"]
 display_aliases = [".577/500 Nitro Express 3⅛ inch"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

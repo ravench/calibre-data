@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["338-06", "338-06 a-square"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/338-06-a-square/"]
 rare = true
 
 [mm]

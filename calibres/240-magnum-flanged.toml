@@ -8,6 +8,7 @@ aliases = ["240 flanged", "240 magnum flanged"]
 display_aliases = [".240 Flanged Nitro Express", ".240 Super Express"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

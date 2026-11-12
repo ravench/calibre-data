@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["6x62r", "6x62 r freres"]
 
 origin = "DE"
+origin_sources = []
 rare = true
 
 [mm]

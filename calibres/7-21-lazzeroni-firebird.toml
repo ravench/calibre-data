@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["7.21 firebird", "7.21mm firebird", "lazzeroni firebird"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/721-mm-lazzeroni-firebird/"]
 rare = true
 
 [mm]

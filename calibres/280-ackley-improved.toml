@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["280ai"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.280_Ackley_Improved",
+  "book:ammo-encyclopedia-2 p. 305",
+]
 
 [mm]
 rim = 12.0

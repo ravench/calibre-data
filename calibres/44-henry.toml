@@ -8,6 +8,10 @@ profile = "flat"
 aliases = ["44henry"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.44_Henry",
+  "book:ammo-encyclopedia-2 p. 740",
+]
 obsolete = true
 rare = true
 

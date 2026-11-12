@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["12.04 bibamufu", "bibamufu", "lazzeroni bibamufu"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/1204-mm-lazzeroni-bibamufu/"]
 # Special order only (COTW 18 p. 243), which counts as boutique loads.
 obsolete = true
 rare = true

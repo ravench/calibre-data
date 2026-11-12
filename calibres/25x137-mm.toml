@@ -8,6 +8,7 @@ kind = "rimless"
 profile = "spitzer"
 aliases = ["25x137"]
 origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/Oerlikon_KBA"]
 
 [mm]
 rim = 37.8

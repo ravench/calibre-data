@@ -5,6 +5,10 @@ profile = "flat"
 aliases = ["40s&w", "40sw", "40", "40 s+w"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.40_S%26W",
+  "book:ammo-encyclopedia-2 p. 629",
+]
 worldwide = true
 
 [mm]

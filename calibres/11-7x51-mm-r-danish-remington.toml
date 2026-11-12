@@ -9,6 +9,9 @@ aliases = ["11.7x51r", "45 danish"]
 display_aliases = [".45 Danish Remington"]
 
 origin = "DK"
+origin_sources = [
+  "https://municion.org/producto/117-x-516-r-danish-remington-cf-m-1867-96-carbines/",
+]
 obsolete = true
 rare = true
 

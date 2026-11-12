@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["300 pegasus", "300 a-square pegasus"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 317"]
 rare = true
 
 [mm]

@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["44-100 remington", "44-100 creedmoor", "44-90 remington straight", "44-110 creedmoor"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 451"]
 obsolete = true
 rare = true
 

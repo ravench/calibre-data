@@ -7,6 +7,10 @@ profile = "round"
 aliases = ["458winmag", "458wm"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.458_Winchester_Magnum",
+  "book:ammo-encyclopedia-2 p. 361",
+]
 
 [mm]
 rim = 13.5

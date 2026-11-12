@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["338rpm", "338wbyrpm"]
 
 origin = "US"
+origin_sources = []
 # Still made, but hardly ever found:
 rare = true
 

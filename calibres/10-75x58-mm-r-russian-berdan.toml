@@ -9,6 +9,9 @@ aliases = ["10.75x58r", "43 berdan"]
 display_aliases = [".43 Russian Berdan"]
 
 origin = "RUE"
+origin_sources = [
+  "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/",
+]
 obsolete = true
 rare = true
 

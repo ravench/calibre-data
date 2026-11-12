@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["246 purdey", "246purdey"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/246-purdey-flanged/"]
 obsolete = true
 rare = true
 

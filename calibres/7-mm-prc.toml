@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["7prc"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/7mm_PRC"]
 
 [mm]
 rim = 13.51

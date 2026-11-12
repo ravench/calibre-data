@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["martini-henry", "577/450"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.577/450_Martini–Henry",
+  "book:ammo-encyclopedia-2 p. 564",
+]
 obsolete = true
 rare = true
 

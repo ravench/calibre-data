@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["375ruger"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.375_Ruger"]
 
 [mm]
 rim = 13.5

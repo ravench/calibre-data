@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["11mmfrench", "11mm1873"]
 
 origin = "FR"
+origin_sources = []
 obsolete = true
 rare = true
 

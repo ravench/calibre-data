@@ -9,6 +9,7 @@ profile = "spitzer"
 aliases = ["6.5x65", "6.5x65rws"]
 
 origin = "DE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 296"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

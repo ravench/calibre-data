@@ -8,6 +8,7 @@ aliases = ["22mag", "22wmr", "22 win mag"]
 display_aliases = [".22 Magnum"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Magnum_Rimfire"]
 worldwide = true
 
 [mm]

@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["300norma", "300nm"]
 
 origin = "SE"
+origin_sources = ["https://en.wikipedia.org/wiki/.300_Norma_Magnum"]
 
 [mm]
 rim = 14.9

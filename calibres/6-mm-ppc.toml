@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["6ppc", "6mmppc"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6mm_PPC",
+  "book:ammo-encyclopedia-2 p. 280",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

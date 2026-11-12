@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["500 phantom"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/500-phantom/"]
 rare = true
 
 [mm]

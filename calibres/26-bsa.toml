@@ -10,6 +10,7 @@ aliases = ["26 bsa", "26bsa"]
 display_aliases = [".26 Rimless Belted Nitro Express"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 391"]
 obsolete = true
 rare = true
 

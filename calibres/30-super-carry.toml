@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["30sc", "30supercarry"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.30_Super_Carry"]
 
 [mm]
 rim = 8.74

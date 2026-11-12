@@ -7,6 +7,7 @@ profile = "flat"
 aliases = ["45-75"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.45-75_Winchester"]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

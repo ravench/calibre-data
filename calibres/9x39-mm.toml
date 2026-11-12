@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["9x39", "sp-5", "sp-6"]
 
 origin = "SU"
+origin_sources = ["https://municion.org/producto/9-x-39-russian/"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

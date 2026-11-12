@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["44 evans short"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 450"]
 obsolete = true
 rare = true
 

@@ -6,6 +6,10 @@ aliases = ["38spl", "38special", "38", "38special+p", "38spl+p", "38s&wspecial",
 display_aliases = [".38 Spl"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.38_Special",
+  "book:ammo-encyclopedia-2 p. 626",
+]
 worldwide = true
 
 [mm]

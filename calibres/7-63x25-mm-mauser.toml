@@ -8,6 +8,10 @@ profile = "round"
 aliases = ["7.63mauser", "30mauser"]
 
 origin = "DE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7.63×25mm_Mauser",
+  "book:ammo-encyclopedia-2 p. 650",
+]
 
 [mm]
 rim = 9.98

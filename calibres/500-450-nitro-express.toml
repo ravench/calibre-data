@@ -8,6 +8,7 @@ aliases = ["500/450 ne", "500/450 3 1/4"]
 display_aliases = [".500/450 Nitro Express 3¼ inch"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 465"]
 obsolete = true
 rare = true
 

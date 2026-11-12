@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["7x75r", "7x75r se"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/7-x-75-r-super-express-vom-hofe/"]
 obsolete = true
 rare = true
 

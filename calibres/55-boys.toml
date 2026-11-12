@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["55boys", "13.9x99b", "boys"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 563"]
 obsolete = true
 rare = true
 

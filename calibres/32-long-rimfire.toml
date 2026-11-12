@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["32longrf", "32rflong"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/32-long-rf/"]
 obsolete = true
 rare = true
 

@@ -7,6 +7,7 @@ kind = "rimmed"
 profile = "spitzer"
 aliases = ["57x441r", "57x441", "6 pounder 7 cwt", "6 pdr molins"]
 origin = "GB"
+origin_sources = []
 
 [mm]
 rim = 90.0

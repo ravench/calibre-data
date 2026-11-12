@@ -9,6 +9,10 @@ aliases = ["6.35", "25acp", "25auto", "6,35"]
 # says US (7.65) and US and Belgium (6.35); municion.org says Belgium 1897 (7.65) and US 1902 (6.35).
 # the designer's country and the «ACP» name: US
 origin = "BE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.25_ACP",
+  "book:ammo-encyclopedia-2 p. 615",
+]
 worldwide = true
 
 [mm]

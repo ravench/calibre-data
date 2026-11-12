@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["270wsm"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.270_Winchester_Short_Magnum",
+  "book:ammo-encyclopedia-2 p. 298",
+]
 
 [mm]
 rim = 13.6

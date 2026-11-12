@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["455webley", "455"]
 
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
 
 [mm]
 rim = 13.5

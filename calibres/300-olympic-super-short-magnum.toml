@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["300 ossm", "300 olympic super short magnum", "300 olympic"]
 
 origin = "US"
+origin_sources = []
 # Olympic Arms, its only maker, closed in 2017 (https://en.wikipedia.org/wiki/Olympic_Arms).
 obsolete = true
 rare = true

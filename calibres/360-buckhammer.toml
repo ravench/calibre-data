@@ -6,6 +6,7 @@ profile = "flat"
 aliases = ["360buckhammer", "360bh"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.360_Buckhammer"]
 
 [mm]
 rim = 12.9

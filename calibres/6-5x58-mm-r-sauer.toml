@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["6.5x58r sauer"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/65-x-58-r-sauer-sohn/"]
 obsolete = true
 rare = true
 

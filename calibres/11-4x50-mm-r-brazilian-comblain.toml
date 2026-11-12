@@ -9,6 +9,7 @@ aliases = ["11.4x50r comblain"]
 display_aliases = ["11.4x50 mm R Comblain M74"]
 
 origin = "BR"
+origin_sources = []
 obsolete = true
 rare = true
 

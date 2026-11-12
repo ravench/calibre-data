@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["30tc"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.30_Thompson_Center"]
 # Still made, but hardly ever found:
 rare = true
 

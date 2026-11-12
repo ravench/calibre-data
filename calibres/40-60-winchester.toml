@@ -8,6 +8,7 @@ profile = "flat"
 aliases = ["40-60 winchester", "40-60 wcf"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/40-60-winchester-cf/"]
 obsolete = true
 rare = true
 

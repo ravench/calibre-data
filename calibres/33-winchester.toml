@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["33win", "33wcf"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.33_Winchester",
+  "book:ammo-encyclopedia-2 p. 415",
+]
 obsolete = true
 rare = true
 

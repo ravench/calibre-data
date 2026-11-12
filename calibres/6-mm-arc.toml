@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["6arc"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/6mm_ARC"]
 
 [mm]
 rim = 11.2

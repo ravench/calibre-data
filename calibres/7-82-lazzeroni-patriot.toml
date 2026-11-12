@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["7.82 patriot", "7.82mm patriot", "lazzeroni patriot"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/782-mm-lazzeroni-patriot/"]
 rare = true
 
 [mm]

@@ -9,6 +9,10 @@ profile = "flat"
 aliases = ["30rem"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30_Remington",
+  "book:ammo-encyclopedia-2 p. 398",
+]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

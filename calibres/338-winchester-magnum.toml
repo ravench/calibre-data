@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["338winmag", "338wm"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.338_Winchester_Magnum",
+  "book:ammo-encyclopedia-2 p. 335",
+]
 
 [mm]
 rim = 13.5

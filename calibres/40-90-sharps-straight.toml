@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["40-90 sharps straight", "40-3 1/4 sharps"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/40-90-370-sharps-straight-3-1-4-case/"]
 obsolete = true
 rare = true
 

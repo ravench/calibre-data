@@ -8,6 +8,10 @@ aliases = ["4.85x49", "4.85 british"]
 display_aliases = ["4.85 mm British"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/4.85×49mm",
+  "book:ammo-encyclopedia-2 p. 498",
+]
 obsolete = true
 rare = true
 

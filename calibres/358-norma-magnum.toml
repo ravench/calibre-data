@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["358nm"]
 
 origin = "SE"
+origin_sources = ["https://municion.org/producto/358-norma-magnum-belted/"]
 rare = true
 
 [mm]

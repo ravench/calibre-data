@@ -8,6 +8,7 @@ profile = "spitzer"
 aliases = ["6mm br remington", "6mm br rem", "6mmbrrem"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

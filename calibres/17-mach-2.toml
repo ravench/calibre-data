@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = []
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Mach_2"]
 
 [mm]
 rim = 7.06

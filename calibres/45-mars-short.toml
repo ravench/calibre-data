@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["45 mars short"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/450-mars-short-case-early-type/"]
 obsolete = true
 rare = true
 

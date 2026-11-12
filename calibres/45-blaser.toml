@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["45blaser", "45 blaser"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/45-blaser/"]
 rare = true
 
 [mm]

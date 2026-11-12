@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["414 supermag", "414 super mag"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/414-elgin-gates-super-magnum/"]
 obsolete = true
 rare = true
 

@@ -10,6 +10,7 @@ aliases = ["20x110 hispano", "20 mm hispano", "hs 404", "20 mm kanone 1948/73"]
 # Hispano-Suiza's French firm (Rapid Fire) or its Swiss arm in Geneva, which designed the gun and
 # made it from 1938 (Wikipedia).
 origin_candidates = ["FR", "CH"]
+origin_sources = []
 
 [mm]
 rim = 24.8

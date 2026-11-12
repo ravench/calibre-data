@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["455 enfield", "455 colt", "455 mk i", "455 revolver mk i", "455 webley mk1"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 712"]
 obsolete = true
 rare = true
 

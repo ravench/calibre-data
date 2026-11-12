@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["25naa"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.25_NAA"]
 # Still made, but hardly ever found:
 rare = true
 

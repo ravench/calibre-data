@@ -9,6 +9,7 @@ aliases = ["6.5x55", "6.5x55se", "6,5x55"]
 
 # joint Swedish-Norwegian commission 1891-94 under the union of the two kingdoms; issued by Norway and Sweden 1894, Luxembourg 1900, Denmark 1946; Sweden kept
 origin = "SE"
+origin_sources = ["https://en.wikipedia.org/wiki/6.5×55mm_Swedish"]
 
 [mm]
 rim = 12.2

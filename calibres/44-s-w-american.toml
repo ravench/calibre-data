@@ -7,6 +7,10 @@ profile = "round"
 aliases = ["44 s&w american", "44 american", "44 smith & wesson american"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.44_S%26W_American",
+  "book:ammo-encyclopedia-2 p. 669",
+]
 obsolete = true
 rare = true
 

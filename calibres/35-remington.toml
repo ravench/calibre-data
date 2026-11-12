@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["35rem"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.35_Remington",
+  "book:ammo-encyclopedia-2 p. 338",
+]
 
 [mm]
 rim = 11.7

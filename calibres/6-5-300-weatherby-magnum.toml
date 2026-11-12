@@ -9,6 +9,7 @@ profile = "spitzer"
 aliases = ["6.5-300", "6.5-300wby"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/6.5-300_Weatherby_Magnum"]
 
 [mm]
 rim = 13.5

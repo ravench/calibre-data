@@ -8,6 +8,7 @@ aliases = ["500jeffery", "12.7x70", "12.5x70", "12.5x70 schuler"]
 
 # W. J. Jeffery, London, sold and named it and British hunters shot it (Kynoch); August Schüler, Suhl, made it first as the 12.7x70 Schüler in the 1920s: DE
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.500_Jeffery"]
 # Still made, but hardly ever found:
 rare = true
 

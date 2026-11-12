@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["8.5mars", "8.5 mars", "8mm mars"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/85-mm-mars-late-type/"]
 obsolete = true
 rare = true
 

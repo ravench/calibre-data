@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["10.3x65r", "10.3x65r baenziger"]
 
 origin = "CH"
+origin_sources = []
 obsolete = true
 rare = true
 

@@ -6,6 +6,7 @@ profile = "flat"
 aliases = ["500jrh"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/500-jrh/"]
 rare = true
 
 [mm]

@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["240wby"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.240_Weatherby_Magnum"]
 
 [mm]
 rim = 12.0

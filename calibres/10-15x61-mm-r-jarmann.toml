@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["10.15x61r", "jarmann"]
 
 origin = "NO"
+origin_sources = ["https://municion.org/producto/1015-x-61-r-jarmann/"]
 obsolete = true
 rare = true
 

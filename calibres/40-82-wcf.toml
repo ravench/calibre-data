@@ -9,6 +9,7 @@ profile = "flat"
 aliases = ["40-82"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

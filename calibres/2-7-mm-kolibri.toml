@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["2.7kolibri", "2.7 kolibri", "2.7mm kolibri auto"]
 
 origin = "AH"
+origin_sources = []
 obsolete = true
 rare = true
 

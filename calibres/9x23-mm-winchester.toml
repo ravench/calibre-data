@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["9x23win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/9×23mm_Winchester",
+  "book:ammo-encyclopedia-2 p. 624",
+]
 # Still made, but hardly ever found:
 rare = true
 

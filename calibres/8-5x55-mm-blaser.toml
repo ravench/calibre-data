@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["8.5x55", "8.5x55blaser", "85x55"]
 
 origin = "DE"
+origin_sources = []
 
 [mm]
 rim = 13.59

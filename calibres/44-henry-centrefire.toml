@@ -13,6 +13,7 @@ profile = "flat"
 aliases = ["44henrycf", "44-200"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/44-henry-flat-cf/"]
 obsolete = true
 rare = true
 

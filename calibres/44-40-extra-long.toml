@@ -7,6 +7,7 @@ profile = "flat"
 aliases = ["44-40 extra long", "44-40 xl"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/44-40-extra-long-cf/"]
 obsolete = true
 rare = true
 

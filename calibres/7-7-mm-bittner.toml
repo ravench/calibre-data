@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["7.7bittner", "7.7 bittner"]
 
 origin = "AH"
+origin_sources = []
 obsolete = true
 rare = true
 

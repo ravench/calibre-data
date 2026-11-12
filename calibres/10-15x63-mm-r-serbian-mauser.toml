@@ -8,6 +8,9 @@ profile = "round"
 aliases = ["10.15x63r", "serbian mauser"]
 
 origin = "RS"
+origin_sources = [
+  "https://municion.org/producto/1015-x-625-r-serbian-mauser-koka-m-1878-80/",
+]
 obsolete = true
 rare = true
 

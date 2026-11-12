@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["303savage", "301savage"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.303_Savage",
+  "book:ammo-encyclopedia-2 p. 401",
+]
 obsolete = true
 rare = true
 

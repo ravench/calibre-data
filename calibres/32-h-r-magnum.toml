@@ -5,6 +5,7 @@ profile = "flat"
 aliases = []
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.32_H%26R_Magnum"]
 
 [mm]
 rim = 9.5

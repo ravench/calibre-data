@@ -7,6 +7,7 @@ aliases = ["45acp", "45auto", "45", "11.43", "45acp+p", "45auto+p", "45automatic
 display_aliases = [".45 Auto", "11,43 mm"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.45_ACP"]
 worldwide = true
 
 [mm]

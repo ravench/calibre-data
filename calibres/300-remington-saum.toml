@@ -6,6 +6,9 @@ profile = "spitzer"
 aliases = ["300saum"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.300_Remington_Short_Action_Ultra_Magnum",
+]
 # Still made, but hardly ever found:
 rare = true
 

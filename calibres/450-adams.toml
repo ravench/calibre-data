@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["450adams", "450revolver"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.450_Adams",
+  "book:ammo-encyclopedia-2 p. 709",
+]
 obsolete = true
 rare = true
 

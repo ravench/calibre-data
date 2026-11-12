@@ -10,6 +10,10 @@ profile_today = "spitzer"
 aliases = ["8lebel", "8x50rlebel"]
 
 origin = "FR"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×50mmR_Lebel",
+  "book:ammo-encyclopedia-2 p. 528",
+]
 
 [mm]
 rim = 16.0

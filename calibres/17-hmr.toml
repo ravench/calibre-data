@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["17hmr"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.17_Hornady_Magnum_Rimfire",
+  "book:ammo-encyclopedia-2 p. 719",
+]
 worldwide = true
 
 [mm]

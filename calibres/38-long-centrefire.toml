@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["38 long cf", "38 long centerfire"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 423"]
 obsolete = true
 rare = true
 

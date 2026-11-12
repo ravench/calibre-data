@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["56-52", "56-52 spencer"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/56-52-spencer-rimfire-longest-case/"]
 obsolete = true
 rare = true
 

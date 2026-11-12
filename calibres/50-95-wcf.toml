@@ -9,6 +9,7 @@ profile = "flat"
 aliases = ["50-95", "50-95express"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/50-95-300-winchester/"]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

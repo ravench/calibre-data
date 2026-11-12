@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["450no2"]
 
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.450_No_2_Nitro_Express"]
 rare = true
 
 [mm]

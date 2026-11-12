@@ -5,6 +5,7 @@ profile = "flat"
 aliases = ["454casull"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
 
 [mm]
 rim = 13.1

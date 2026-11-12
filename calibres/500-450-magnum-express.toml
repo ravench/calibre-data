@@ -9,6 +9,7 @@ aliases = ["500/450 magnum express", "500/450 bpe"]
 display_aliases = [".500/450 3¼ inch Magnum Express (BPE)"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

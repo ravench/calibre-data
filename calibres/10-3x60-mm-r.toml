@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["10.3x60r"]
 
 origin = "CH"
+origin_sources = ["https://municion.org/producto/103-x-60-r/"]
 
 [mm]
 rim = 15.7

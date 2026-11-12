@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["6.5bergmann", "6.5 bergmann"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/65-mm-bergmann-n3-1894-grooveless/"]
 obsolete = true
 rare = true
 

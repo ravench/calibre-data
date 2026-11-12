@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["6.5x58", "6.5vergueiro", "6.5portuguese"]
 
 origin = "PT"
+origin_sources = ["https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro"]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

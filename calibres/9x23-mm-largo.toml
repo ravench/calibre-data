@@ -12,6 +12,7 @@ aliases = ["9largo", "bergmann-bayard", "9bayardlong", "9mmbayard"]
 # the Spanish name; Spain shot it until the 1980s. Wikipedia and municion.org both say Germany.
 # Spain adopted it 1905, made it (Astra, Star, Campo-Giro) and shot it until the 1980s; Bergmann designed it: DE
 origin = "ES"
+origin_sources = []
 obsolete = true
 
 [mm]

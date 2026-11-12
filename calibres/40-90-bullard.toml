@@ -7,6 +7,7 @@ profile = "flat"
 aliases = ["40-90 bullard"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/40-90-300-bullard/"]
 obsolete = true
 rare = true
 

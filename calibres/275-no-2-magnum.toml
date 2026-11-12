@@ -8,6 +8,7 @@ aliases = ["275 no 2", "275 no. 2 magnum"]
 display_aliases = ["7 mm Rigby Magnum Flanged"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

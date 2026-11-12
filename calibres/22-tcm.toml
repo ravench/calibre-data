@@ -9,6 +9,7 @@ aliases = ["22tcm"]
 
 # Fred Craig (US gunsmith) developed it at Armscor's Marikina plant as the .22 Micromagnum; Armscor named it after Martin Tuason and makes the pistols and the only factory ammunition: US (Craig)
 origin = "PH"
+origin_sources = []
 # Still made, but hardly ever found:
 rare = true
 

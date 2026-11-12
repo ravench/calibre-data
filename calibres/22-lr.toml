@@ -7,6 +7,10 @@ aliases = ["22lr", "22", "kk", "22l.r."]
 display_aliases = [".22 Long Rifle", "KK"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.22_Long_Rifle",
+  "book:ammo-encyclopedia-2 p. 723",
+]
 worldwide = true
 
 [mm]

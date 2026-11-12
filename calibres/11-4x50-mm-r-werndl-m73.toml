@@ -9,6 +9,7 @@ aliases = ["11.4x50r werndl", "werndl m73"]
 display_aliases = ["11.4x50 mm Austrian Werndl"]
 
 origin = "AH"
+origin_sources = []
 obsolete = true
 rare = true
 

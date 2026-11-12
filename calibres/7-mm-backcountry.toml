@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["7bc", "7mmbackcountry", "7backcountry"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/7mm_Backcountry"]
 
 [mm]
 rim = 11.99

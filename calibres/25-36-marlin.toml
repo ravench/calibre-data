@@ -7,6 +7,7 @@ profile = "flat"
 aliases = ["25-36", "25-37"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/25-36-marlin/"]
 obsolete = true
 rare = true
 

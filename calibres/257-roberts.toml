@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["257roberts", "257roberts+p"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.257_Roberts",
+  "book:ammo-encyclopedia-2 p. 289",
+]
 
 [mm]
 rim = 12.0

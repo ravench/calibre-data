@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["56-46", "56-46 spencer", "46 spencer"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 742"]
 obsolete = true
 rare = true
 

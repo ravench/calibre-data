@@ -8,6 +8,7 @@ aliases = ["280british", "280 british", "7x43"]
 display_aliases = ["7x43 mm"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 508"]
 obsolete = true
 rare = true
 

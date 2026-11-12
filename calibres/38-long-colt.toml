@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["38longcolt", "38lc"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.38_Long_Colt"]
 obsolete = true
 rare = true
 

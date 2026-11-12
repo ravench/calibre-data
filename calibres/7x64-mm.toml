@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["7x64"]
 
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/7×64mm"]
 
 [mm]
 rim = 12.0

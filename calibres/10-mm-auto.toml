@@ -6,6 +6,7 @@ aliases = ["10mm", "10auto"]
 
 # Cooper, Dornaus & Dixon 1983; first loaded by Norma; FBI 1989-97, Denmark's Sirius patrol (Glock 20): SE
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 630"]
 
 [mm]
 rim = 10.8

@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = []
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.204_Ruger",
+  "book:ammo-encyclopedia-2 p. 263",
+]
 
 [mm]
 rim = 9.6

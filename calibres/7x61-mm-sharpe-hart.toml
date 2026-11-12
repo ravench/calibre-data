@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["7x61", "7x61sh", "7x61super"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7%C3%9761mm_Sharpe_%26_Hart",
+  "book:ammo-encyclopedia-2 p. 396",
+]
 obsolete = true
 rare = true
 

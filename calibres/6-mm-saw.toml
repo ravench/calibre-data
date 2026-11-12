@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["6mm saw", "6x45 saw"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

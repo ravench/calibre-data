@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["450/400 2 3/8", "450/400 2.375"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/450-400-express-2-3-8/"]
 obsolete = true
 rare = true
 

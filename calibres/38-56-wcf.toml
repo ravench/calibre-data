@@ -9,6 +9,7 @@ profile = "flat"
 aliases = ["38-56"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.38-56_WCF"]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

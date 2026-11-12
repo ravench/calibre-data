@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["300lapua", "300lm"]
 
 origin = "FI"
+origin_sources = ["https://en.wikipedia.org/wiki/.300_Lapua_Magnum"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

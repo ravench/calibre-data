@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["25rem"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.25_Remington",
+  "book:ammo-encyclopedia-2 p. 383",
+]
 obsolete = true
 rare = true
 

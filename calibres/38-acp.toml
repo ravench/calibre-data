@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["38acp", "38auto"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.38_ACP"]
 obsolete = true
 rare = true
 

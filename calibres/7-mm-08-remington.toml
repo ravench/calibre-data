@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = ["7mm-08", "7-08", "7mm-08 rem"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7mm-08_Remington",
+  "book:ammo-encyclopedia-2 p. 303",
+]
 
 [mm]
 rim = 12.0

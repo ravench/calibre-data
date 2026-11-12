@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["5.2x68", "5.2 mondragon"]
 
 origin = "CH"
+origin_sources = []
 obsolete = true
 rare = true
 

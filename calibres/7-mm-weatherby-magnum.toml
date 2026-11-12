@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["7mmwby"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum"]
 
 [mm]
 rim = 13.5

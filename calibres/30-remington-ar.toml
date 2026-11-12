@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["30remar"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30_Remington_AR",
+  "book:ammo-encyclopedia-2 p. 312",
+]
 obsolete = true
 rare = true
 

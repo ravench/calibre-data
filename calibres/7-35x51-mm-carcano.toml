@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["7.35carcano", "7.35x51"]
 
 origin = "IT"
+origin_sources = ["https://en.wikipedia.org/wiki/7.35×51mm_Carcano"]
 obsolete = true
 rare = true
 

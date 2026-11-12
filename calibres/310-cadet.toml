@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["310cadet", "310greener"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.310_Cadet",
+  "book:ammo-encyclopedia-2 p. 520",
+]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

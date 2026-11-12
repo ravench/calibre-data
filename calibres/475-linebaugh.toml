@@ -6,6 +6,7 @@ profile = "flat"
 aliases = ["475linebaugh"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]
 # Still made, but hardly ever found:
 rare = true
 

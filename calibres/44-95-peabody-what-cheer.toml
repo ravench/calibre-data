@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["44-95 peabody", "44-100 peabody", "44-95 what cheer"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/44-95-peabody-martini-what-cheer/"]
 obsolete = true
 rare = true
 

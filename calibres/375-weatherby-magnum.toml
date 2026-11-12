@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["375wby"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.375_Weatherby_Magnum"]
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
 rare = true

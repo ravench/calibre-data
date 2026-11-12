@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["338rcm"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.338_Ruger_Compact_Magnum",
+  "book:ammo-encyclopedia-2 p. 333",
+]
 rare = true
 
 [mm]

@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["22extralong", "22xl"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/22-extra-long-rf-us/"]
 obsolete = true
 rare = true
 

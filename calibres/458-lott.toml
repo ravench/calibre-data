@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["458lott"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.458_Lott",
+  "book:ammo-encyclopedia-2 p. 362",
+]
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
 rare = true

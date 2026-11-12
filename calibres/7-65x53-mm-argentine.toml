@@ -15,6 +15,7 @@ aliases = ["7.65x53", "7.65argentine", "7.65belgian"]
 # (Argentina), Norma and PPU still load it. Wikipedia: German Empire; municion.org: Belgium 1889.
 # the largest adopter (about 495,000 rifles, 85,000 of them Argentine-made) and the usual name; Belgium adopted it first and FN made it, Mauser designed it: BE, DE
 origin = "AR"
+origin_sources = []
 
 [mm]
 rim = 11.96

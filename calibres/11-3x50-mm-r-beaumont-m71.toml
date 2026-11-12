@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["11.3x50r", "11.3x50r beaumont"]
 
 origin = "NL"
+origin_sources = ["https://municion.org/producto/113-x-50-r-dutch-beaumont-m-1871/"]
 obsolete = true
 rare = true
 

@@ -10,6 +10,7 @@ profile = "round"
 aliases = ["32longcf", "32cflong"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 409"]
 obsolete = true
 rare = true
 

@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["350rigby"]
 
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.350_Rigby"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

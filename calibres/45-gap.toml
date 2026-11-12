@@ -6,6 +6,7 @@ aliases = ["45gap"]
 
 # Ernest Durham at CCI/Speer (Lewiston, Idaho) designed and loaded it 2002/03 at Glock's request; the Glock 37 followed. Wikipedia: Austria and US; municion.org: Austria 2002: AT
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.45_GAP"]
 rare = true
 
 [mm]

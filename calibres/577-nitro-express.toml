@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["577ne"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.577_Nitro_Express",
+  "book:ammo-encyclopedia-2 p. 369",
+]
 # Still made, but hardly ever found:
 rare = true
 

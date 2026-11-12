@@ -8,6 +8,10 @@ profile = "round"
 aliases = ["7x33", "7x33sako"]
 
 origin = "FI"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7×33mm_Sako",
+  "book:ammo-encyclopedia-2 p. 395",
+]
 obsolete = true
 rare = true
 

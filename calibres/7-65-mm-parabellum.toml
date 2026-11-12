@@ -10,6 +10,7 @@ display_aliases = [".30 Luger"]
 # 1900-49 (first adopter), then Bulgaria 1903, Brazil 1906, Portugal 1908, Finland 1923; US trials 1901.
 # the Swiss Army adopted it first (Ordonnanzpistole 1900) and shot it longest; Luger designed it at DWM, Berlin, 1898: DE
 origin = "CH"
+origin_sources = []
 
 [mm]
 rim = 9.98

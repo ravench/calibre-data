@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["45schofield", "45s&w"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.45_Schofield"]
 
 [mm]
 rim = 13.2

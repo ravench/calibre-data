@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["6gt", "6mmgt"]
 
 origin = "US"
+origin_sources = []
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

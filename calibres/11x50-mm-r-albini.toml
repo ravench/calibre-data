@@ -9,6 +9,7 @@ aliases = ["11x50r", "11x50r albini", "albini"]
 display_aliases = ["11x50 mm R Belgian Albini M67/72"]
 
 origin = "BE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 541"]
 obsolete = true
 rare = true
 

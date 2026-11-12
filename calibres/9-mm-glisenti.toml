@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["glisenti"]
 
 origin = "IT"
+origin_sources = ["https://en.wikipedia.org/wiki/Glisenti_Model_1910"]
 obsolete = true
 rare = true
 

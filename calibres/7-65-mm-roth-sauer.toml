@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["7.65 roth-sauer", "7.65rothsauer", "7.65 roth sauer"]
 
 origin = "AH"
+origin_sources = ["book:ammo-encyclopedia-2 p. 652"]
 obsolete = true
 rare = true
 

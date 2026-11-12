@@ -6,6 +6,7 @@ aliases = ["380acp", "380auto", "9kurz", "9mmkurz", "9mm k"]
 display_aliases = [".380 ACP", ".380 Auto"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.380_ACP"]
 worldwide = true
 
 [mm]

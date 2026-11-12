@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["338fed"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.338_Federal",
+  "book:ammo-encyclopedia-2 p. 334",
+]
 
 [mm]
 rim = 12.0

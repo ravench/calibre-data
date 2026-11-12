@@ -9,6 +9,10 @@ aliases = ["nagant", "7.62nagant"]
 
 # Léon Nagant, Liège, designed it for the Russian M1895 contract; made in Russia; issued by Russia 1895-1952 and the Polish police 1928-39 (wz. 30): BE
 origin = "RUE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7.62×38mmR",
+  "book:ammo-encyclopedia-2 p. 690",
+]
 
 [mm]
 rim = 9.86

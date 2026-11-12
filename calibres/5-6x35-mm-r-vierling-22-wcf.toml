@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["5.6x35r vierling", "22wcf", "22 wcf"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 374"]
 rare = true
 
 [mm]

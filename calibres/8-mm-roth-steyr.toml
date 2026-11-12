@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["rothsteyr", "8steyr"]
 
 origin = "AH"
+origin_sources = ["https://en.wikipedia.org/wiki/Roth–Steyr_M1907"]
 obsolete = true
 rare = true
 

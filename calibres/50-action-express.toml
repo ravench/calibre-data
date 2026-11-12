@@ -8,6 +8,7 @@ profile = "flat"
 aliases = ["50ae"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.50_Action_Express"]
 
 [mm]
 rim = 13.1

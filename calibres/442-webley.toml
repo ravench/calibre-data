@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["442webley", "442ric", "44webley", "10.5x17r"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.442_Webley",
+  "book:ammo-encyclopedia-2 p. 667",
+]
 obsolete = true
 rare = true
 

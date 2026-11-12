@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["50 remington navy rf", "50 remington navy rimfire"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/50-remington-navy-m-1865-rf/"]
 obsolete = true
 rare = true
 

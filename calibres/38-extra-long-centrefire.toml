@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["38 extra long cf", "38 ballard extra long", "38 extra long centerfire"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

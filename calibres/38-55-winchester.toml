@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["38-55", "38-55ballard"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.38-55_Winchester",
+  "book:ammo-encyclopedia-2 p. 346",
+]
 
 [mm]
 rim = 12.9

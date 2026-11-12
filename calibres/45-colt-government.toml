@@ -7,6 +7,7 @@ profile = "flat"
 aliases = ["45 colt government", "45 government revolver", "45 revolver ball"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/45-colt-government-model-1874/"]
 obsolete = true
 rare = true
 

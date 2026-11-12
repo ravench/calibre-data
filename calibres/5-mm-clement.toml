@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["5clement", "5mm clement auto", "5 mm charola-anitua"]
 
 origin = "ES"
+origin_sources = ["https://municion.org/producto/5-mm-clement/"]
 obsolete = true
 rare = true
 

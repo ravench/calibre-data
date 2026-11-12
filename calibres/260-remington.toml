@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["260rem", "6.5-08", "6.5-08a-square"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.260_Remington"]
 
 [mm]
 rim = 12.0

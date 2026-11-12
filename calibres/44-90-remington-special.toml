@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["44-90 remington special", "44-90 remington necked"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 455"]
 obsolete = true
 rare = true
 

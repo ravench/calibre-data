@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["4.3x45", "4.3 dag"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/43-x-45-german-xpl-dag/"]
 obsolete = true
 rare = true
 

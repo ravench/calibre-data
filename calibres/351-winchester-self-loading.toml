@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["351wsl"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading",
+  "book:ammo-encyclopedia-2 p. 418",
+]
 obsolete = true
 rare = true
 

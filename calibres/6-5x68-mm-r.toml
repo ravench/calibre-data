@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["6.5x68r"]
 
 origin = "DE"
+origin_sources = []
 # Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
 # the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
 rare = true

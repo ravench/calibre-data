@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["356tsw"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.356_TSW"]
 obsolete = true
 rare = true
 

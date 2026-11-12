@@ -8,6 +8,7 @@ profile = "flat"
 aliases = ["457 wwg", "457 wild west guns"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

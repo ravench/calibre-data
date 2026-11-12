@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["5.6x50r", "5.6x50rmag"]
 
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/5.6×50mm_Magnum"]
 
 [mm]
 rim = 10.9

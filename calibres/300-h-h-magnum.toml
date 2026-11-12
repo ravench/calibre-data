@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["300h&h", "300hh", "300 belted rimless magnum"]
 
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.300_H%26H_Magnum"]
 
 [mm]
 rim = 13.5

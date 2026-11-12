@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["8x52r", "8x52r siamese"]
 
 origin = "TH"
+origin_sources = ["https://municion.org/producto/8-x-52-r-siamese-type-66/"]
 obsolete = true
 rare = true
 

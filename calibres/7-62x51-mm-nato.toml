@@ -6,6 +6,7 @@ aliases = ["7.62x51", "7.62nato", "762"]
 
 # the union that standardised it in 1954; the US T65 of 1949-54 is the design: US
 origin = "NATO"
+origin_sources = []
 worldwide = true
 
 [mm]

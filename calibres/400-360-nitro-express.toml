@@ -9,6 +9,9 @@ aliases = ["400/360", "400/360 ne"]
 display_aliases = [".400/360 Nitro Express 2¾ inch"]
 
 origin = "GB"
+origin_sources = [
+  "https://municion.org/producto/400-360-evans-rimmed-nitro-express-2-3-4/",
+]
 obsolete = true
 rare = true
 

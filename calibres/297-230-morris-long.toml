@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["297/230 long"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

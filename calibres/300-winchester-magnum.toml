@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["300winmag", "300wm"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.300_Winchester_Magnum",
+  "book:ammo-encyclopedia-2 p. 320",
+]
 worldwide = true
 
 [mm]

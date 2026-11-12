@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["450 dakota"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/450-dakota/"]
 rare = true
 
 [mm]

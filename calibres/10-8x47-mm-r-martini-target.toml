@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["10.8x47r", "10.8x47r martini"]
 
 origin = "DE"
+origin_sources = []
 obsolete = true
 rare = true
 

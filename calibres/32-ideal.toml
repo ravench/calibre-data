@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["32 ideal", "32-25-100"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 408"]
 obsolete = true
 rare = true
 

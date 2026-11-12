@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["22hornet", "5.6x35r"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.22_Hornet"]
 worldwide = true
 
 [mm]

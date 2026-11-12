@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["300prc"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/300-prc/"]
 
 [mm]
 rim = 13.4

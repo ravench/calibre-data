@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["45 hp", "45 auto short", "45 automatic short", "45 acp short"]
 
 origin = "AT"
+origin_sources = ["https://municion.org/producto/45-hp/"]
 rare = true
 
 [mm]

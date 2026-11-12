@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["50-140 sharps", "50-140 winchester express", "50-3 1/4 sharps"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 471"]
 obsolete = true
 rare = true
 

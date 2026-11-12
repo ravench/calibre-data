@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["7.92x107", "7.92ds"]
 
 origin = "PL"
+origin_sources = ["https://en.wikipedia.org/wiki/7.92×107mm_DS"]
 obsolete = true
 rare = true
 

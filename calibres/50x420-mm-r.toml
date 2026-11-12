@@ -7,6 +7,7 @@ kind = "rimmed"
 profile = "spitzer"
 aliases = ["50x420r", "50x419r", "50x420", "5 cm pak 38", "5 cm bk 5"]
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/5_cm_Pak_38"]
 
 [mm]
 rim = 78.4

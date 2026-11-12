@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["375win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.375_Winchester",
+  "book:ammo-encyclopedia-2 p. 341",
+]
 
 [mm]
 rim = 12.9

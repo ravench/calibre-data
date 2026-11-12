@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["vetterli", "10.4", "10.4vetterli", "10.4x38"]
 
 origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/.41_Swiss"]
 obsolete = true
 
 [mm]

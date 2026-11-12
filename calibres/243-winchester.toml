@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = ["243", "243win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.243_Winchester",
+  "book:ammo-encyclopedia-2 p. 279",
+]
 worldwide = true
 
 [mm]

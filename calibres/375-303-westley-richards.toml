@@ -8,6 +8,7 @@ aliases = ["375/303", "375/303 axite"]
 display_aliases = [".375/303 Axite"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

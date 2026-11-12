@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["500/450 no 1", "500/450 no. 1 express"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 466"]
 obsolete = true
 rare = true
 

@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["300savage"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.300_Savage",
+  "book:ammo-encyclopedia-2 p. 315",
+]
 
 [mm]
 rim = 12.0

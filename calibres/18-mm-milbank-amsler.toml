@@ -10,6 +10,7 @@ profile = "round"
 aliases = ["milbankamsler", "milbank-amsler", "milbank", "18x25r", "18x25.7r"]
 
 origin = "CH"
+origin_sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
 obsolete = true
 rare = true
 

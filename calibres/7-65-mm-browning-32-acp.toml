@@ -9,6 +9,7 @@ display_aliases = [".32 ACP", ".32 Auto"]
 # 1937 (Beretta M1935) and Germany (Walther PP/PPK, captured Rubys and Berettas); the 6.35 mm never.
 # the designer's country and the «ACP» name: US
 origin = "BE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 618"]
 worldwide = true
 
 [mm]

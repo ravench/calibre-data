@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["8mmremmag"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8mm_Remington_Magnum",
+  "book:ammo-encyclopedia-2 p. 333",
+]
 rare = true
 
 [mm]

@@ -5,6 +5,10 @@ profile = "round"
 aliases = ["38super", "38 super auto"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.38_Super",
+  "book:ammo-encyclopedia-2 p. 627",
+]
 
 [mm]
 rim = 10.2

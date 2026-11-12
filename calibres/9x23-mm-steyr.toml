@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["9steyr"]
 
 origin = "AH"
+origin_sources = ["https://en.wikipedia.org/wiki/9×23mm_Steyr"]
 obsolete = true
 
 [mm]

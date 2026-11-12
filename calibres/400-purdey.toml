@@ -8,6 +8,7 @@ aliases = ["400 purdey", "400 purdey light"]
 display_aliases = [".400 Purdey Light Express"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

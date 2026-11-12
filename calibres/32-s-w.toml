@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["32s&wshort", "32sws"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
 
 [mm]
 rim = 9.5

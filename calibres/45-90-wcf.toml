@@ -6,6 +6,7 @@ profile = "flat"
 aliases = ["45-90", "4590", "45-90wcf", "45-82", "45-85", "45-90hv"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/45-90-300-winchester-cf/"]
 rare = true
 
 [mm]

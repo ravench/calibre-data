@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["38 short rf", "38 short rimfire"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/38-short-rf/"]
 obsolete = true
 rare = true
 

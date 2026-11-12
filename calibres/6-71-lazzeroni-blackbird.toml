@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["6.71 blackbird", "6.71mm blackbird", "lazzeroni blackbird"]
 
 origin = "US"
+origin_sources = []
 rare = true
 
 [mm]

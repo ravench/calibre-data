@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["300rum"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 321"]
 
 [mm]
 rim = 13.6

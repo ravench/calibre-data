@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["375blaser"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/375-blaser-magnum/"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

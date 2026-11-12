@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["32-40 remington", "32-40-150 remington"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 413"]
 obsolete = true
 rare = true
 

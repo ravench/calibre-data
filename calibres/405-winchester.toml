@@ -9,6 +9,10 @@ profile_today = "spitzer"
 aliases = ["405win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.405_Winchester",
+  "book:ammo-encyclopedia-2 p. 438",
+]
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
 rare = true

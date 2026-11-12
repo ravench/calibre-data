@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["9x25", "9x25dillon"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/9×25mm_Dillon"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

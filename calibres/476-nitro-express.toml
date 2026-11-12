@@ -8,6 +8,7 @@ aliases = ["476 ne", "476 westley richards"]
 display_aliases = [".476 Westley Richards"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/476-nitro-express-3-flanged/"]
 obsolete = true
 rare = true
 
