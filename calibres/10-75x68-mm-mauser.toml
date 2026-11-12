@@ -33,6 +33,11 @@ size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
 
+[shoulder_angle]
+# C.I.P. 10,75 x 68
+degrees = 28.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 647"]

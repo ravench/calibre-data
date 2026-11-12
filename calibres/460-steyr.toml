@@ -32,6 +32,11 @@ sources = ["book:cotw-18 p. 649"]
 size = "bmg-35"
 sources = []
 
+[shoulder_angle]
+# C.I.P. 460 Steyr
+degrees = 28.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page151.pdf"]
+
 [case_head]
 # from the .50 BMG case; C.I.P. 50 Browning
 rim_thickness = 2.26

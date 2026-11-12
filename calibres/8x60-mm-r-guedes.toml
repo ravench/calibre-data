@@ -34,6 +34,11 @@ sources = ["book:cotw-18 p. 556"]
 size = "berdan-nitro"
 sources = ["https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]
 
+[shoulder_angle]
+# C.I.P. 8 x 60 R
+degrees = 19.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page37.pdf"]
+
 [case_head]
 # .080 in.
 rim_thickness = 2.03
