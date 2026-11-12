@@ -1,0 +1,31 @@
+# The Swiss round of the W+F FM-K 38 aircraft cannon (Morane D-3800 and D-3801) and the 20 mm Flab Kan
+# 38 anti-aircraft gun, used during and after the Second World War. Hispano-Suiza's later 20x139 for
+# the HS 820 grew from it (Wikipedia) and has a thicker rim (3.5 against 2.6 mm), so the two are not
+# one round. Its name gives the bore and case length, Rapid Fire's table the rim, base and rim
+# thickness.
+name = "20x139 mm FMK"
+categories = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x139 fmk", "fm-k 38", "20 mm flab kan 38"]
+origin = "CH"
+
+[mm]
+rim = 28.5
+base = 28.5
+case_length = 139.0
+bullet = 20.0
+sources = ["book:rapid-fire p. 227", "https://en.wikipedia.org/wiki/Hispano-Suiza_HS.820"]
+
+[case_head]
+rim_thickness = 2.6
+sources = ["book:rapid-fire p. 227"]
+
+[introduced]
+# The FM-K 38 («Flugzeugmotor-Kanone 1938»); the Morane D-3800 flew with it from 1939.
+year = 1938
+sources = ["https://www.vtg.admin.ch/dam/de/sd-web/5R5TuTlao8Qv/Geschichte_LW_ausgemusterte_Mittel_DE.pdf"]
+
+[case]
+material = "brass"
+sources = []
