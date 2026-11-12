@@ -623,7 +623,7 @@ class CatalogueTests(unittest.TestCase):
 
     def test_jacketed_bullets_cite_a_cotw_load_table(self):
         # Each cites the COTW 18 page whose load table lists a factory or military load with a jacketed
-        # bullet (FMJ or ball).
+        # bullet (FMJ, ball or, for the 6.5 Grendel, the maker's open-tip match bullet).
         for name in ("7.65 mm Browning (.32 ACP)", "9 mm Browning kurz (.380 ACP)", "9x19 mm", "9x21 mm IMI",
                      ".356 TSW", ".45 ACP", ".45 GAP", "4.6x30 mm", ".30 Super Carry", "8 mm Nambu", "9 mm Glisenti",
                      "9 mm Browning Long", "9x23 mm Steyr", "9x18 mm Ultra", ".41 Action Express",
