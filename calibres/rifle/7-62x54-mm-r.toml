@@ -45,7 +45,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf
 
 [bullet]
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 549"]
 
 [case]
 # municion.org says the case is brass; steel came in 1935.

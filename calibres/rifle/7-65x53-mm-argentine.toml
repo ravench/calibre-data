@@ -52,7 +52,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page50.pdf"]
 
 [bullet]
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 551"]
 
 [case]
 # municion.org's photos show brass cases (DWM's, FN's and the Argentine arsenals').

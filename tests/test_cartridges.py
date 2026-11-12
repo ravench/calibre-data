@@ -527,6 +527,8 @@ class CatalogueTests(unittest.TestCase):
             self.assertIn(name, NAMES)
             self.assertTrue(is_obsolete(name), name)
         self.assertEqual(INTRODUCED["10.4 mm Swiss Ordnance 1878"][0], 1878)
+        # Lead when first sold in 1882; the copper-alloy jacket came in 1889 (municion.org, COTW 18 p. 475).
+        self.assertEqual(bullet("7.5 mm Swiss Ordnance 1882"), LEAD)
 
     def test_municion_check_fixes_wrong_dimensions(self):
         # Values that disagreed with both the municion.org drawing and the published standard.
@@ -621,6 +623,31 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(bullet("7.62x38 mm R Nagant"), JACKETED)  # seated inside the case, not a blank
         self.assertEqual(bullet("5.66x39 mm MPS"), STEEL)
 
+    def test_jacketed_bullets_cite_a_cotw_load_table(self):
+        # Each cites the COTW 18 page whose load table lists a factory or military load with a jacketed
+        # bullet (FMJ, ball or, for the 6.5 Grendel, the maker's open-tip match bullet).
+        for name in ("7.65 mm Browning (.32 ACP)", "9 mm Browning kurz (.380 ACP)", "9x19 mm", "9x21 mm IMI",
+                     ".356 TSW", ".45 ACP", ".45 GAP", "4.6x30 mm", ".30 Super Carry", "8 mm Nambu", "9 mm Glisenti",
+                     "9 mm Browning Long", "9x23 mm Steyr", "9x18 mm Ultra", ".41 Action Express",
+                     ".45 Winchester Magnum", ".45 HP", ".45 Mars Long", ".455 Webley Automatic", "5 mm Clement",
+                     "6.5 mm Bergmann", "7 mm Nambu", "7.65 mm Roth-Sauer", "7.92x24 mm", "8.5 mm Mars",
+                     "9 mm Mauser", "9 mm Winchester Magnum", ".223 Remington", "5.56x45 mm NATO", "7x57 mm Mauser",
+                     "7.62x39 mm", "7.62x51 mm NATO", ".30-06 Springfield", ".303 British", "8x57 mm IS",
+                     ".30-40 Krag", "7.92x33 mm Kurz", "6.8 mm Remington SPC", "6.5 mm Grendel", ".30 Carbine",
+                     ".224 Valkyrie", ".50 Beowulf", ".276 Enfield", ".276 Pedersen", ".280 British", ".303 Magnum",
+                     ".375 Swiss P", "6 mm SAW", "8x59 mm Breda", "8x63 mm Swedish", "7.62x25 mm Tokarev",
+                     "7.63x25 mm Mauser", "7.65 mm Parabellum", "7.62x38 mm R Nagant", "9x18 mm Makarov",
+                     ".38 Super", "10 mm Auto", "5.7x28 mm", "5.45x18 mm", "5.75 mm Velo-Dog", ".35 S&W Auto",
+                     ".38 ACP", ".30 Borchardt", "7.63 mm Mannlicher", "9.8 mm Auto Colt", "9x39 mm",
+                     "6.5x55 mm Swedish", "7.5x55 mm Swiss (GP 11)", "7.5x54 mm French", "7.62x54 mm R", ".50 BMG",
+                     "6.5x52 mm Carcano", "6.5x50 mm SR Arisaka", "7.7x58 mm Arisaka", "8x56 mm R Mannlicher",
+                     "8x50 mm R Mannlicher", "7.35x51 mm Carcano", "6.5x54 mm Mannlicher-Schönauer", "5.45x39 mm",
+                     "6.5x53 mm R Mannlicher", "8x58 mm R Danish Krag", "7.65x53 mm Argentine",
+                     "8x50 mm R Siamese Type 45", "8x52 mm R Siamese Type 66", "4.85x49 mm British"):
+            self.assertEqual(bullet(name), JACKETED, name)
+            self.assertTrue(BULLETS[name][1].startswith("book:cotw-18 p. "), name)
+        self.assertEqual(BULLETS["8x60 mm RS"], (SOFT_POINT, "book:cotw-18 p. 634"))
+
     def test_bullets_name_known_calibres_and_are_sourced(self):
         names = {s["name"] for _, items in CATALOGUE for s in items}
         for name, (kind, url) in BULLETS.items():
@@ -629,7 +656,7 @@ class CatalogueTests(unittest.TestCase):
             self.assertTrue(url is None or is_source(url), name)
         self.assertEqual(BULLET_INFERRED, {"7 mm Blaser Magnum", ".300 Blaser Magnum", "8.5x55 mm Blaser",
                                            ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)",
-                                           "8x60 mm RS", "8x57 mm IR", ".275 Rigby",
+                                           "8x57 mm IR", ".275 Rigby",
                                            # The page gives no factory load, or a later one than the original.
                                            "6.5x40 mm R", "7x75 mm R Vom Hofe Super Express", "8x48 mm R Sauer",
                                            "8x57 mm R 360", "8x58 mm R Sauer",
@@ -670,11 +697,11 @@ class CatalogueTests(unittest.TestCase):
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):
         # Jacketed bullets came with smokeless powder (Rubin 1882, Lebel 1886); the Swiss 1882 revolver
-        # round was one of the first.
+        # round was first sold with lead and jacketed only from 1889.
         for _, items in CATALOGUE:
             for s in items:
                 year = INTRODUCED.get(s["name"], (None,))[0]
-                if year and year < 1886 and s["oal"] > s["case"] and s["case"] and s["name"] != "7.5 mm Swiss Ordnance 1882":
+                if year and year < 1886 and s["oal"] > s["case"] and s["case"]:
                     self.assertNotEqual(bullet(s["name"]), JACKETED, s["name"])
 
     def test_todays_noses_are_kept_beside_the_first_ones(self):
@@ -712,6 +739,9 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(bullet(".22 TCM"), HOLLOW_POINT)
         self.assertEqual(bullet("5 mm Remington Rimfire Magnum"), HOLLOW_POINT)
         self.assertEqual(bullet(".25 NAA"), HOLLOW_POINT)
+        # Launched with hollow points: Winchester's 180 gr JHP (1990), Federal's JHP (1994).
+        self.assertEqual(BULLETS[".40 S&W"][0], HOLLOW_POINT)
+        self.assertEqual(BULLETS[".357 SIG"][0], HOLLOW_POINT)
         self.assertEqual(bullet(".32 NAA"), JACKETED)  # also sold with full metal jackets
 
     def test_case_materials(self):

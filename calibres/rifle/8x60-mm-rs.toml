@@ -39,9 +39,9 @@ rim_thickness = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page38.pdf"]
 
 [bullet]
-# Lookalike variants (2026-11-08): hunting rounds, soft point from their use like their twins.
+# COTW 18 lists Norma's and RWS's soft-point factory loads for the 8x60 RS.
 type = "softpoint"
-sources = []
+sources = ["book:cotw-18 p. 634"]
 
 [case]
 material = "brass"

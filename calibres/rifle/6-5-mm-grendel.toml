@@ -36,8 +36,10 @@ rim_thickness = 1.5
 sources = ["book:cotw-18 p. 175"]
 
 [bullet]
+# Alexander Arms' own loads on the page include an open-tip match bullet, which counts as
+# jacketed; the FMJ row is Wolf's later load.
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 109"]
 
 [case]
 material = "brass"
