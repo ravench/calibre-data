@@ -37,8 +37,8 @@ sources = ["book:cotw-18 p. 528"]
 
 [bullet]
 # COTW 18 p. 495 gives only a handload with a plated bullet.
-# Every municion.org sheet shows a bare lead bullet; the one cited is a 1935 round of the Dutch
-# state arsenal (Artillerie Inrichtingen).
+# Every municion.org sheet of the straight case shows a lead bullet; the one cited is a 1935 round
+# of the Dutch state arsenal (Artillerie Inrichtingen).
 type = "lead"
 sources = ["https://municion.org/ficha-10-021-cbc-010-0002/"]
 

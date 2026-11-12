@@ -33,7 +33,7 @@ rim_thickness = 1.65
 sources = ["book:cotw-18 p. 670"]
 
 [bullet]
-# COTW 18 p. 668 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+# COTW 18 p. 668 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"
 sources = ["https://municion.org/ficha-13-024-bbr-010-0001/"]
 
