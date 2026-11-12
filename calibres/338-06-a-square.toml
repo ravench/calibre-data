@@ -1,0 +1,54 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .30-06 case necked up to .338 in., made a factory round by A-Square.
+name = ".338-06 A-Square"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["338-06", "338-06 a-square"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 12.01
+base = 11.94
+shoulder = 11.2
+shoulder_at = 49.49
+neck = 9.4
+case_length = 63.35
+overall_length = 82.3
+bullet = 8.59
+# The table gives the overall length as 3.24 (3.44) in.; the first is kept.
+# shoulder_at is L1 on the .30-06's C.I.P. sheet: the .30-06 case necked up, its shoulder kept (COTW 18 p. 206).
+sources = ["book:cotw-18 p. 250", "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+
+[introduced]
+# COTW: A-Square standardised it in 1998; .30-06 cases necked up go back to the 1940s.
+year = 1998
+sources = ["book:cotw-18 p. 206"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the .30-06's C.I.P. sheet.
+degrees = 17.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+
+[case_head]
+# from the .30-06 case; C.I.P. 30-06 Spring.
+rim_thickness = 1.24
+ramp_top = 3.16
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+
+[bullet]
+# COTW 18 p. 206 lists only handloads with soft-point bullets.
+type = "softpoint"
+sources = []
+
+[case]
+material = "brass"
+sources = []

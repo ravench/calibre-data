@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A German trial round on the 7.92x57 mm case (DWM case 469A), loaded by Sturtevant in Britain.
+# Rebated rim (COTW type I).
+name = "5x58 mm Sturtevant"
+categories = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["5x58", "5x58 sturtevant"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.84
+base = 11.84
+shoulder = 10.77
+shoulder_at = 48.8
+neck = 5.99
+case_length = 57.84
+overall_length = 85.7
+bullet = 5.18
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+# COTW: from the turn of the century; 1900 is kept.
+year = 1900
+sources = ["book:cotw-18 p. 532"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .045 in.
+rim_thickness = 1.15
+sources = ["book:cotw-18 p. 573"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

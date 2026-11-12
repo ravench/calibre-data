@@ -8,11 +8,11 @@ import cartridges  # noqa: E402
 import check  # noqa: E402
 from cartridges import load, slug, DataError, sources  # noqa: E402
 
-LR = "calibres/rimfire/22-lr.toml"
+LR = "calibres/22-lr.toml"
 LR_MM = ('sources = [\n  "book:janes-ammo-2002 p. 681",\n  "book:cotw-18 p. 670",\n'
          '  "book:tm-43-0001-27 p. 3-5",\n]')  # the sources of .22 LR's [mm]
-WIN = "calibres/rifle/308-winchester.toml"
-FOLDER = {app: folder for folder, app in cartridges.CATEGORIES.items()}
+WIN = "calibres/308-winchester.toml"
+KEY = {app: key for key, app in cartridges.CATEGORIES.items()}  # "Langwaffe": "rifle"
 LOOK = "lookalikes.toml"
 NATO_GROUP = 'name = ".308 Winchester"\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]'
 TIP = ('\n[[colour_codes]]\npart = "tip"\ncolours = ["black"]\nmeaning = ["armour-piercing"]\n'
@@ -65,10 +65,11 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(check.problems(), [])
 
     def test_every_calibre_file_is_named_after_its_calibre(self):
-        for cat, items in cartridges.CATALOGUE:
+        for cat, items in cartridges.ALL_CATALOGUE:
             for s in items:
                 with self.subTest(s["name"]):
-                    self.assertTrue(os.path.exists(os.path.join(ROOT, "calibres", FOLDER[cat], slug(s["name"]) + ".toml")))
+                    self.assertTrue(os.path.exists(os.path.join(ROOT, "calibres", slug(s["name"]) + ".toml")))
+                    self.assertEqual(cartridges.categories(s["name"])[0], cat)
 
     def test_slugs(self):
         self.assertEqual(slug(".22 LR"), "22-lr")
@@ -79,15 +80,17 @@ class LoadTests(unittest.TestCase):
     def test_catalogue_follows_order_toml(self):
         with open(os.path.join(ROOT, "order.toml"), "rb") as f:
             order = tomllib.load(f)
-        self.assertEqual([FOLDER[cat] for cat, _ in cartridges.ALL_CATALOGUE], list(order))
+        self.assertEqual([KEY[cat] for cat, _ in cartridges.ALL_CATALOGUE], list(order))
         for cat, items in cartridges.ALL_CATALOGUE:
             names = [s["name"] for s in items]
-            listed = order[FOLDER[cat]]
+            listed = order[KEY[cat]]
             self.assertEqual(names[:len(listed)], listed)
             self.assertEqual(names[len(listed):], sorted(names[len(listed):]))
 
-    def test_categories_are_english_folders_and_the_apps_names(self):
-        self.assertEqual(sorted(os.listdir(os.path.join(ROOT, "calibres"))), sorted(cartridges.CATEGORIES))
+    def test_categories_are_a_field_of_english_names_and_the_apps_names(self):
+        self.assertEqual([n for n in os.listdir(os.path.join(ROOT, "calibres")) if not n.endswith(".toml")], [])
+        self.assertEqual(cartridges.categories(".308 Winchester"), ("Langwaffe",))
+        self.assertEqual(len(cartridges.CALIBRE_CATEGORIES), sum(len(items) for _, items in cartridges.ALL_CATALOGUE))
         self.assertEqual([cat for cat, _ in cartridges.CATALOGUE],
                          ["Randfeuer", "Kurzwaffe", "Langwaffe", "Schwarzpulver", "Flinte", "Luftdruck"])
 
@@ -230,7 +233,7 @@ class CheckTests(unittest.TestCase):
     def test_hidden_files_are_ignored(self):
         with Copy() as c:
             c.write("calibres/.DS_Store", "x")
-            c.write("calibres/rimfire/.DS_Store", "x")
+            c.write("calibres/.hidden.toml", "x")
             self.assertEqual(c.problems(), [])
 
     def test_misspelt_top_level_key(self):
@@ -253,7 +256,7 @@ class CheckTests(unittest.TestCase):
 
     def test_a_shot_shell_has_no_case_head(self):
         with Copy() as c:
-            shell = "calibres/shotgun/12-70.toml"
+            shell = "calibres/12-70.toml"
             c.write(shell, c.read(shell) + '\n[case_head]\nrim_thickness = 1.5\nsources = ["https://saami.org/"]\n')
             self.assertProblem(c, shell, r"a shot calibre has no \[case_head\]")
 
@@ -370,7 +373,7 @@ class CheckTests(unittest.TestCase):
                          (("Schmidt-Rubin M1889",), "https://en.wikipedia.org/wiki/7.5×55mm_Swiss"))
         self.assertEqual(sources(".577 Snider", "fired_by"), ["https://en.wikipedia.org/wiki/.577_Snider"])
         self.assertNotIn(".308 Winchester", cartridges.FIRED_BY)
-        files = {s["name"]: f"calibres/{FOLDER[cat]}/{slug(s['name'])}.toml"
+        files = {s["name"]: f"calibres/{slug(s['name'])}.toml"
                  for cat, items in cartridges.CATALOGUE for s in items}
         with Copy() as c:  # without them, every other table but SOURCES (the apps' catalogue too) is the same
             for name in cartridges.FIRED_BY:
@@ -385,7 +388,7 @@ class CheckTests(unittest.TestCase):
 
     def test_fired_by_problems(self):
         arms = 'firearms = ["Lebel M1886", "Berthier"]'
-        rel = "calibres/rifle/8x50-mm-r-lebel.toml"
+        rel = "calibres/8x50-mm-r-lebel.toml"
         for new, pattern in [('firearms = []', r"firearms lists one or more firearm names"),
                              ('firearms = "Lebel M1886"', r"firearms lists one or more firearm names"),
                              ('firearms = ["Lebel M1886", " "]', r"firearms lists one or more firearm names"),
@@ -411,7 +414,7 @@ class CheckTests(unittest.TestCase):
         self.assertIn((("yellow",), ("proof",)), uk)
         sweden = cartridges.COLOUR_CODES["6.5x55 mm Swedish"]
         self.assertIn(("base", ("reduced-charge",)), [(t["part"], t["meaning"]) for t in sweden])
-        files = {s["name"]: f"calibres/{FOLDER[cat]}/{slug(s['name'])}.toml"
+        files = {s["name"]: f"calibres/{slug(s['name'])}.toml"
                  for cat, items in cartridges.CATALOGUE for s in items}
         with Copy() as c:  # without them, every other table (the apps' catalogue too) is the same
             for name in cartridges.COLOUR_CODES:
@@ -471,13 +474,13 @@ class CheckTests(unittest.TestCase):
             c.write(WIN, c.read(WIN) + TIP.replace("[[colour_codes]]", "[colour_codes]"))
             self.assertOnlyProblems(c, WIN, r"each colour code is a \[\[colour_codes\]\] table")
             self.assertEqual(len(c.problems()), 1)
-        for rel in ("calibres/shotgun/12-70.toml", "calibres/air-gun/4-5-mm-diabolo-177.toml"):
+        for rel in ("calibres/12-70.toml", "calibres/4-5-mm-diabolo-177.toml"):
             with self.subTest(rel), Copy() as c:
                 c.write(rel, c.read(rel) + TIP)
                 self.assertOnlyProblems(c, rel, r"\[\[colour_codes\]\] is only for cartridges with a bullet")
 
     def test_cannon_rounds_need_only_the_bullet_and_case_length(self):
-        rel = "calibres/cannon/20x138-mm-b.toml"
+        rel = "calibres/20x138-mm-b.toml"
         with Copy() as c:
             c.edit(rel, "rim = 28.48\nbase = 26.86\nshoulder = 25.5\n", "")
             c.edit(rel, "overall_length = 202.7\n", "")
@@ -487,13 +490,13 @@ class CheckTests(unittest.TestCase):
             self.assertOnlyProblems(c, rel, r"\[mm\] needs 'case_length'")
         with Copy() as c:  # nothing the apps read whole
             c.edit(rel, 'aliases = ["20x138b"', 'display_aliases = ["20 mm"]\naliases = ["20x138b"')
-            self.assertOnlyProblems(c, rel, r"display_aliases are for the apps, which do not show calibres/cannon/ yet")
+            self.assertOnlyProblems(c, rel, r"display_aliases are for the apps, which do not show cannon calibres yet")
         with Copy() as c:
             c.write(rel, c.read(rel) + '\n[primer]\nsize = "large-rifle"\nsources = []\n')
-            self.assertOnlyProblems(c, rel, r"calibres/cannon/ has no \[primer\]")
+            self.assertOnlyProblems(c, rel, r"a cannon round has no \[primer\]")
         with Copy() as c:
             c.write(LOOK, c.read(LOOK) + '\n[[group]]\nname = "x"\ndiffer_by = ["bore"]\ncalibres = [".50 BMG", "20x138 mm B"]\n')
-            self.assertOnlyProblems(c, LOOK, r"'20x138 mm B' is in calibres/cannon/, which the apps do not show yet")
+            self.assertOnlyProblems(c, LOOK, r"'20x138 mm B' is a cannon calibre, which the apps do not show yet")
         with Copy() as c:  # other categories still need every measurement
             c.edit(WIN, "neck = 8.7\n", "")
             self.assertOnlyProblems(c, WIN, r"\[mm\] needs 'neck'")
@@ -502,18 +505,18 @@ class CheckTests(unittest.TestCase):
             self.assertOnlyProblems(c, WIN, r"needs a \[primer\] table")
 
     def test_cannon_rounds_are_20_to_40_mm(self):
-        rel = "calibres/cannon/40x365-mm-r.toml"
+        rel = "calibres/40x365-mm-r.toml"
         for bullet, ok in (("40.0", True), ("40.5", False), ("57.0", False)):
             with Copy() as c:
                 c.edit(rel, "bullet = 40.0", f"bullet = {bullet}")
                 if ok:
                     self.assertEqual(c.problems(), [])
                 else:
-                    self.assertProblem(c, rel, r"calibres/cannon/ holds the 20 to 40 mm cannon rounds",
+                    self.assertProblem(c, rel, r"cannon holds the 20 to 40 mm cannon rounds",
                                        line=c.line_of(rel, f"bullet = {bullet}"))
         with Copy() as c:  # a heavy machine gun round belongs with the rifles
-            c.edit("calibres/cannon/20x138-mm-b.toml", "bullet = 20.0", "bullet = 14.5")
-            self.assertOnlyProblems(c, "calibres/cannon/20x138-mm-b.toml", r"20 to 40 mm cannon rounds: bullet is 20 to 40")
+            c.edit("calibres/20x138-mm-b.toml", "bullet = 20.0", "bullet = 14.5")
+            self.assertOnlyProblems(c, "calibres/20x138-mm-b.toml", r"20 to 40 mm cannon rounds: bullet is 20 to 40")
 
     def test_a_year_needs_a_source(self):
         with Copy() as c:
@@ -553,14 +556,14 @@ class CheckTests(unittest.TestCase):
                               ("7.62 x 51 mm Test", r"no spaces around the x")]:
             with self.subTest(name), Copy() as c:
                 text = c.read(WIN).replace('name = ".308 Winchester"', f"name = {name!r}")
-                rel = f"calibres/rifle/{slug(name)}.toml"
+                rel = f"calibres/{slug(name)}.toml"
                 c.write(rel, re.sub(r"(?m)^aliases = .*$", "aliases = []", text))
                 self.assertOnlyProblems(c, rel, f"the name '{re.escape(name)}' needs {pattern}")
 
     def test_file_name_must_follow_the_name(self):
         with Copy() as c:
-            os.rename(c.path(LR), c.path("calibres/rimfire/long-rifle.toml"))
-            self.assertProblem(c, "calibres/rimfire/long-rifle.toml", r"must be called 22-lr.toml")
+            os.rename(c.path(LR), c.path("calibres/long-rifle.toml"))
+            self.assertProblem(c, "calibres/long-rifle.toml", r"must be called 22-lr.toml")
 
     def test_broken_toml_names_the_line(self):
         with Copy() as c:
@@ -582,17 +585,17 @@ class CheckTests(unittest.TestCase):
 
     def test_miniature_primer_has_its_own_diameter(self):
         with Copy() as c:
-            k = "calibres/handgun/2-7-mm-kolibri.toml"
+            k = "calibres/2-7-mm-kolibri.toml"
             c.edit(k, "diameter = 2.2\n", "")
             c.edit(WIN, 'size = "large-rifle"', 'size = "large-rifle"\ndiameter = 12')
             self.assertProblem(c, k, r"'miniature' size needs its diameter")
             self.assertProblem(c, WIN, r"within 0.5 of its size's nominal one")
         with Copy() as c:
-            c.edit("calibres/handgun/2-7-mm-kolibri.toml", "diameter = 2.2", "diameter = 4.5")
+            c.edit("calibres/2-7-mm-kolibri.toml", "diameter = 2.2", "diameter = 4.5")
             c.edit(WIN, 'size = "large-rifle"', 'size = "large-rifle"\ndiameter = 5.5')
-            self.assertOnlyProblems(c, "calibres/handgun/2-7-mm-kolibri.toml", r"for a miniature primer")
+            self.assertOnlyProblems(c, "calibres/2-7-mm-kolibri.toml", r"for a miniature primer")
         with Copy() as c:
-            k = "calibres/handgun/2-7-mm-kolibri.toml"
+            k = "calibres/2-7-mm-kolibri.toml"
             c.edit(k, 'sources = ["https://municion.org/producto/27-mm-kolibri/"]', "sources = []")
             self.assertOnlyProblems(c, k, r"a measured diameter needs a source")
 
@@ -600,34 +603,34 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.edit(LR, '[case]\nmaterial = "brass"\nsources = []\n', '')
             c.edit(WIN, '[case]\nmaterial = "brass"', '[case]\nmaterial = "steel"')
-            c.edit("calibres/shotgun/12-70.toml", "[mm]", '[case]\nmaterial = "brass"\nsources = []\n\n[mm]')
+            c.edit("calibres/12-70.toml", "[mm]", '[case]\nmaterial = "brass"\nsources = []\n\n[mm]')
             self.assertProblem(c, LR, r"needs a \[case\] table", line=False)
             self.assertProblem(c, WIN, r"\[case\] material 'steel' needs a source")
-            self.assertProblem(c, "calibres/shotgun/12-70.toml", r"a shot calibre has no metal case")
+            self.assertProblem(c, "calibres/12-70.toml", r"a shot calibre has no metal case")
 
     def test_every_bullet_names_its_type(self):
-        ball = "calibres/black-powder/50-rundkugel-490.toml"
+        ball = "calibres/50-rundkugel-490.toml"
         with Copy() as c:
             c.edit(LR, '[bullet]\ntype = "lead"', '[projectile]\nmaterial = "lead"')
             c.edit(WIN, 'type = "softpoint"', 'type = "plastic"')
             c.edit(ball, 'type = "lead"', 'type = "softpoint"')
-            c.edit("calibres/shotgun/12-70.toml", "[mm]", '[bullet]\ntype = "lead"\nsources = []\n\n[mm]')
+            c.edit("calibres/12-70.toml", "[mm]", '[bullet]\ntype = "lead"\nsources = []\n\n[mm]')
             self.assertProblem(c, LR, r"unknown table \[projectile\]")
             self.assertProblem(c, LR, r'needs a \[bullet\] table: type = "jacketed"', line=False)
             self.assertProblem(c, WIN, r"a rimless calibre's \[bullet\] type is one of jacketed, lead")
             self.assertProblem(c, ball, r"a ball calibre's \[bullet\] type is one of lead, steel, plastic")
-            self.assertProblem(c, "calibres/shotgun/12-70.toml", r"shot shells, blanks and cannon rounds have no \[bullet\]")
-        blank, cannon = "calibres/rimfire/22-blank-6-8-11.toml", "calibres/cannon/20x102-mm.toml"
-        pak = "calibres/rimfire/9-mm-p-a-k.toml"
+            self.assertProblem(c, "calibres/12-70.toml", r"shot shells, blanks and cannon rounds have no \[bullet\]")
+        blank, cannon = "calibres/22-blank-6-8-11.toml", "calibres/20x102-mm.toml"
+        pak = "calibres/9-mm-p-a-k.toml"
         with Copy() as c:
             c.edit(ball, 'type = "lead"', 'type = "steel"')
-            c.edit("calibres/air-gun/6-mm-airsoft-bb.toml", 'type = "plastic"\nsources = ["https://en.wikipedia.org/wiki/Airsoft_pellets"]',
+            c.edit("calibres/6-mm-airsoft-bb.toml", 'type = "plastic"\nsources = ["https://en.wikipedia.org/wiki/Airsoft_pellets"]',
                    'type = "plastic"\nsources = []')
             c.edit(blank, "[case]", '[bullet]\ntype = "lead"\nsources = []\n\n[case]')
             c.edit(cannon, "[mm]", '[bullet]\ntype = "jacketed"\nsources = []\n\n[mm]')
             c.edit(pak, "[case]", '[bullet]\ntype = "jacketed"\nsources = []\n\n[case]')
             self.assertProblem(c, ball, r"\[bullet\] type 'steel' needs a source")
-            self.assertProblem(c, "calibres/air-gun/6-mm-airsoft-bb.toml", r"\[bullet\] type 'plastic' needs a source")
+            self.assertProblem(c, "calibres/6-mm-airsoft-bb.toml", r"\[bullet\] type 'plastic' needs a source")
             for rel in (blank, cannon, pak):
                 self.assertProblem(c, rel, r"shot shells, blanks and cannon rounds have no \[bullet\]")
         with Copy() as c:
@@ -647,17 +650,17 @@ class CheckTests(unittest.TestCase):
     def test_order_toml_names_without_a_file(self):
         with Copy() as c:
             c.edit("order.toml", '".22 LR"', '".22 LRR"')
-            self.assertProblem(c, "order.toml", r"'.22 LRR' has no file in calibres/rimfire/")
+            self.assertProblem(c, "order.toml", r"'.22 LRR' is not a calibre whose first category is rimfire \(did you mean \".22 LR\"\?\)")
         with Copy() as c:
             c.edit("order.toml", '  ".308 Winchester",\n', '  ".308 Winchester",\n  ".22 LR",\n')
-            self.assertProblem(c, "order.toml", r"'.22 LR' has no file in calibres/rifle/ \(it is in calibres/rimfire/\)")
+            self.assertProblem(c, "order.toml", r"'.22 LR' is not a calibre whose first category is rifle \(its first category is rimfire\)")
 
     def test_an_empty_order_toml_does_not_empty_the_catalogue(self):
         with Copy() as c:
             c.write("order.toml", "# nothing\n")
             found = c.problems()
-            self.assertEqual(len(found), len(os.listdir(c.path("calibres"))), found)
-            self.assertTrue(all(p[2].endswith("is not in order.toml") for p in found), found)
+            self.assertEqual(len(found), len(cartridges.CATEGORIES), found)
+            self.assertTrue(all(p[2].startswith("misses the category") for p in found), found)
         with Copy() as c:
             shutil.rmtree(c.path("calibres"))
             self.assertProblem(c, "calibres", r"missing", line=False)
@@ -678,32 +681,72 @@ class CheckTests(unittest.TestCase):
             found = c.problems()
             self.assertEqual(len(found), 2, found)
             self.assertProblem(c, "order.toml", r"'air-gn' is not one of rimfire, handgun, .* \(did you mean \"air-gun\"\?\)")
-            self.assertProblem(c, "calibres/air-gun", r"not in order.toml \(did you mean \"air-gn\"\?\)", line=False)
+            self.assertProblem(c, "order.toml", r"misses the category 'air-gun'", line=False)
 
-    def test_the_old_german_category_names_point_to_their_folders(self):
+    def test_the_old_german_category_names_point_to_the_english_ones(self):
         with Copy() as c:
             c.edit("order.toml", "rifle = [", "Langwaffe = [")
-            self.assertProblem(c, "order.toml", r"'Langwaffe' is not one of .* \(the folder of Langwaffe is rifle\)")
-
-    def test_a_folder_the_apps_do_not_know_stays_out_of_the_catalogue(self):
+            self.assertProblem(c, "order.toml", r"'Langwaffe' is not one of .* \(write rifle for Langwaffe\)")
         with Copy() as c:
-            os.makedirs(c.path("calibres/rifles"))
-            shutil.copy(c.path(WIN), c.path("calibres/rifles/test.toml"))
-            c.write("order.toml", c.read("order.toml") + "\nrifles = []\n")
-            self.assertOnlyProblems(c, "order.toml", r"'rifles' is not one of rimfire, .* \(did you mean \"rifle\"\?\)")
+            c.edit(WIN, 'categories = ["rifle"]', 'categories = ["Langwaffe"]')
+            self.assertOnlyProblems(c, WIN, r"'Langwaffe' is not one of .* \(write rifle for Langwaffe\)")
 
-    def test_a_category_the_apps_know_without_a_folder(self):
-        with Copy() as c:
-            shutil.rmtree(c.path("calibres/shotgun"))
-            self.assertOnlyProblems(c, "order.toml", r"'shotgun' has no folder calibres/shotgun/")
+    def test_categories_problems(self):
+        old = 'categories = ["rifle"]'
+        for new, pattern in [('categories = []', r"categories must be a list of one or more categories"),
+                             ('categories = "rifle"', r"categories must be a list of one or more categories"),
+                             ('categories = ["rifles"]', r"'rifles' is not one of rimfire, .* \(did you mean \"rifle\"\?\)"),
+                             ('categories = ["rifle", "rifle"]', r"categories lists a category twice"),
+                             ('', r"needs 'categories'")]:
+            with self.subTest(new), Copy() as c:
+                c.edit(WIN, old, new)
+                self.assertProblem(c, WIN, pattern, line=bool(new))
 
-    def test_unknown_category_folder(self):
+    def test_a_bad_category_on_a_cannon_round_is_its_only_problem(self):
+        rel = "calibres/20x138-mm-b.toml"
         with Copy() as c:
-            os.makedirs(c.path("calibres/rifles"))
-            self.assertProblem(c, "calibres/rifles", r"not in order.toml \(did you mean \"rifle\"\?\)", line=False)
+            c.edit(rel, 'categories = ["cannon"]', 'categories = ["cannon", "rifles"]')
+            self.assertOnlyProblems(c, rel, r"'rifles' is not one of")
+
+    def test_cannon_rounds_are_in_no_other_category(self):
+        rel = "calibres/20x138-mm-b.toml"
+        for new in ('categories = ["cannon", "rifle"]', 'categories = ["rifle", "cannon"]'):
+            with self.subTest(new), Copy() as c:
+                c.edit(rel, 'categories = ["cannon"]', new)
+                self.assertProblem(c, rel, r"cannon is not in the apps yet: a calibre in it is in no other category")
+
+    def test_categories_of_an_unknown_name(self):
+        self.assertEqual(cartridges.categories("no such calibre"), ())
+
+    def test_a_calibre_in_several_categories_is_listed_under_the_first(self):
+        with Copy() as c:
+            c.edit(WIN, 'categories = ["rifle"]', 'categories = ["rifle", "black-powder", "handgun"]')
+            t = load(c.dir)
+            self.assertEqual(t["CALIBRE_CATEGORIES"][".308 Winchester"], ("Langwaffe", "Schwarzpulver", "Kurzwaffe"))
+            self.assertEqual(t["ALL_CATALOGUE"], cartridges.ALL_CATALOGUE)  # listed once, as before
+            c.edit(WIN, 'categories = ["rifle", "black-powder", "handgun"]', 'categories = ["black-powder", "rifle"]')
+            self.assertProblem(c, "order.toml", r"'.308 Winchester' is not a calibre whose first category is rifle "
+                                                r"\(its first category is black-powder\)")
+            c.edit("order.toml", '  ".308 Winchester",\n', "")
+            catalogue = dict(load(c.dir)["ALL_CATALOGUE"])
+            self.assertIn(".308 Winchester", [s["name"] for s in catalogue["Schwarzpulver"]])
+            self.assertNotIn(".308 Winchester", [s["name"] for s in catalogue["Langwaffe"]])
+
+    def test_a_category_without_calibres(self):
+        with Copy() as c:
+            for fn in os.listdir(c.path("calibres")):
+                if c.read(f"calibres/{fn}").count('categories = ["shotgun"'):
+                    os.remove(c.path(f"calibres/{fn}"))
+            self.assertProblem(c, "order.toml", r"no calibre has 'shotgun' as its first category")
+
+    def test_calibre_files_are_not_in_folders(self):
+        with Copy() as c:
+            os.makedirs(c.path("calibres/rifle"))
+            os.rename(c.path(WIN), c.path("calibres/rifle/308-winchester.toml"))
+            self.assertProblem(c, "calibres/rifle", r"calibre files go straight into calibres/", line=False)
 
     def test_profile_today(self):
-        rel = "calibres/rifle/303-british.toml"
+        rel = "calibres/303-british.toml"
         with Copy() as c:
             c.edit(rel, 'profile_today = "spitzer"', 'profile_today = "round"')
             self.assertOnlyProblems(c, rel, r"profile_today is the same as profile: leave it out")
@@ -790,7 +833,7 @@ class CheckTests(unittest.TestCase):
             with redirect_stdout(out):
                 code = check.main(c.dir)
             self.assertEqual(code, 1)
-            self.assertRegex(out.getvalue(), r"calibres/rifle/308-winchester.toml:\d+: unknown key 'shoulder_ad'")
+            self.assertRegex(out.getvalue(), r"calibres/308-winchester.toml:\d+: unknown key 'shoulder_ad'")
 
     def test_check_script_writes_github_annotations(self):
         with Copy() as c:
@@ -798,7 +841,7 @@ class CheckTests(unittest.TestCase):
             env = dict(os.environ, GITHUB_ACTIONS="true")
             run = subprocess.run([sys.executable, os.path.join(ROOT, "check.py"), c.dir], capture_output=True, text=True, env=env)
             self.assertEqual(run.returncode, 1)
-            self.assertRegex(run.stdout, r"::error file=calibres/rifle/308-winchester.toml,line=\d+,title=Calibre data::unknown key")
+            self.assertRegex(run.stdout, r"::error file=calibres/308-winchester.toml,line=\d+,title=Calibre data::unknown key")
 
     def test_check_script_reports_its_own_repository_broken(self):
         # As in CI: check.py next to the broken files, so importing cartridges already fails.
@@ -808,7 +851,7 @@ class CheckTests(unittest.TestCase):
             c.edit(LR, "worldwide = true", "worldwilde = true")
             run = subprocess.run([sys.executable, c.path("check.py")], capture_output=True, text=True)
             self.assertEqual(run.returncode, 1, run.stderr)
-            self.assertIn("calibres/rimfire/22-lr.toml:", run.stdout)
+            self.assertIn("calibres/22-lr.toml:", run.stdout)
             self.assertIn("unknown key 'worldwilde'", run.stdout)
 
     def test_check_script_passes_on_the_repository(self):

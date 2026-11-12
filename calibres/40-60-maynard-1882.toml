@@ -1,0 +1,37 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The .40-40 Maynard 1882 lengthened, for the 1882 match and hunting rifles.
+name = ".40-60 Maynard 1882"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["40-60 maynard", "40-60 maynard 1882"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.54
+base = 11.53
+neck = 11.38
+case_length = 55.88
+overall_length = 69.85
+bullet = 10.59
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# The year of the Maynard Model 1882 rifles it was made for.
+year = 1882
+sources = ["book:cotw-18 p. 228"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 228"]
+
+[case]
+material = "brass"
+sources = []

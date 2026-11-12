@@ -1,0 +1,56 @@
+name = "6.5 PRC"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5prc"]
+
+origin = "US"
+
+[mm]
+rim = 13.51
+base = 13.51
+shoulder = 13.1
+shoulder_at = 39.84
+neck = 7.54
+case_length = 51.56
+overall_length = 75.06
+bullet = 6.72
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-prc-180709-en.pdf",
+  "book:cotw-18 p. 175",
+]
+
+[introduced]
+year = 2018
+sources = ["https://en.wikipedia.org/wiki/Hornady"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+# C.I.P. 6,5 PRC: alpha 60 degrees
+degrees = 30
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-prc-180709-en.pdf",
+  "https://bulletin.accurateshooter.com/?p=61574",
+]
+
+[case_head]
+# C.I.P. 6,5 PRC (the same head as the 375 Ruger)
+rim_thickness = 1.27
+ramp_top = 3.24
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-prc-180709-en.pdf",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf",
+]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/6.5_PRC"]
+
+[case]
+material = "brass"
+sources = []

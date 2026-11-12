@@ -1,0 +1,48 @@
+name = "7.62x25 mm Tokarev"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["tokarev", "7.62tok", "7.62x25"]
+
+origin = "SU"
+
+[mm]
+rim = 9.95
+base = 9.83
+shoulder = 9.48
+shoulder_at = 19.6
+neck = 8.49
+case_length = 25.0
+overall_length = 35.2
+bullet = 7.9
+# Maximum cartridge of the C.I.P. sheet.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf"]
+
+[introduced]
+year = 1930
+sources = ["https://en.wikipedia.org/wiki/7.62×25mm_Tokarev"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/7.62×25mm_Tokarev"]
+
+[shoulder_angle]
+# C.I.P. 7,62 x 25 Tokarev
+degrees = 19
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf"]
+
+[case_head]
+# C.I.P. 7,62 x 25 Tokarev
+rim_thickness = 1.32
+ramp_top = 3.34
+groove_diameter = 8.65
+ramp_angle = 30.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 467"]
+
+[case]
+material = "brass"
+sources = []

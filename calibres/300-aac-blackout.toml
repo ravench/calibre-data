@@ -1,0 +1,54 @@
+name = ".300 AAC Blackout"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300blk", "300blackout", "300aac"]
+display_aliases = [".300 BLK", "7.62x35 mm"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 9.6
+base = 9.6
+shoulder = 9.1
+shoulder_at = 27.2
+neck = 8.4
+case_length = 34.7
+overall_length = 57.0
+bullet = 7.8
+# No source yet for neck and overall_length.
+sources = [
+  "book:hornady-10 p. 435",
+  "book:cotw-18 p. 176",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf",
+]
+
+[introduced]
+year = 2010
+sources = ["https://en.wikipedia.org/wiki/.300_AAC_Blackout"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.300_AAC_Blackout"]
+
+[shoulder_angle]
+# C.I.P. 300 AAC Blackout
+degrees = 23
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+
+[case_head]
+# C.I.P. 300 AAC Blackout
+rim_thickness = 1.14
+ramp_top = 3.15
+groove_diameter = 8.43
+ramp_angle = 25.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

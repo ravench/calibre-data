@@ -1,0 +1,43 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".38 Long Colt"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["38longcolt", "38lc"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.3
+base = 9.7
+neck = 9.7
+case_length = 26.2
+overall_length = 34.54
+bullet = 9.1
+sources = ["https://en.wikipedia.org/wiki/.38_Long_Colt"]
+
+[introduced]
+year = 1875
+sources = ["https://en.wikipedia.org/wiki/.38_Long_Colt"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://www.starlinebrass.com/38-long-colt-brass"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 528"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.38_Long_Colt"]
+
+[case]
+# municion.org says the army's first cases were tinned brass, later bare brass.
+material = "brass"
+sources = ["https://municion.org/producto/38-long-colt-da-inside-lubricated/"]

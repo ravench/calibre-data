@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The cordite version of the .500/450 Magnum Express, probably by Holland & Holland.
+name = ".500/450 Nitro Express"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["500/450 ne", "500/450 3 1/4"]
+display_aliases = [".500/450 Nitro Express 3¼ inch"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.36
+base = 14.48
+shoulder = 12.7
+shoulder_at = 70.5
+neck = 12.17
+case_length = 82.55
+overall_length = 99.31
+bullet = 11.63
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 608"]
+
+[introduced]
+# COTW: around the end of the nineteenth century; 1900 is kept.
+year = 1900
+sources = ["book:cotw-18 p. 599"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 599"]
+
+[case]
+material = "brass"
+sources = []

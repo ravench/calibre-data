@@ -1,0 +1,36 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".450 Adams"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["450adams", "450revolver"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.0
+base = 12.1
+neck = 12.1
+case_length = 18.0
+overall_length = 28.0
+bullet = 11.6
+sources = ["https://en.wikipedia.org/wiki/.450_Adams"]
+
+[introduced]
+year = 1868
+sources = ["https://en.wikipedia.org/wiki/.450_Adams"]
+
+[primer]
+# 4.23 mm, 6 specimens
+size = "small-pistol"
+sources = ["https://municion.org/producto/450-adams-mk-ii-brass-base-disk/"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.450_Adams"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,47 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A blackpowder express round on a 2 13/16 in. case.
+name = ".577/500 No. 2 Express"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["577/500 no 2", "577/500 no. 2"]
+display_aliases = [".577/500 No. 2 BPE"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 18.44
+base = 16.28
+shoulder = 14.22
+shoulder_at = 58.6
+neck = 13.67
+case_length = 71.88
+overall_length = 86.36
+bullet = 12.88
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 609"]
+
+[introduced]
+unknown = "From before 1879; COTW 18 p. 603 gives no year."
+sources = ["book:cotw-18 p. 603"]
+
+[primer]
+# The table gives a .251 in. Berdan primer.
+size = "berdan-nitro"
+diameter = 6.38
+sources = ["book:cotw-18 p. 609"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 609"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 603"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,46 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The Sharps straight .45 case of 2⅞ in.; the shorter Sharps .45 cases differ only in length and load.
+name = ".45-110 Sharps"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["45-110 sharps", "45-2 7/8 sharps", "45 sharps 2 7/8"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.44
+base = 12.84
+neck = 12.22
+case_length = 73.11
+overall_length = 85.3
+bullet = 11.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/45-110-sharps-170428-en.pdf"]
+
+[introduced]
+# COTW dates the first Sharps .45 case to mid-1876; the length beside it is printed without its
+# fraction, as the 45-110's is, so probably 2⅞ in.
+year = 1876
+sources = ["book:cotw-18 p. 242"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/45-110-sharps-170428-en.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 242"]
+
+[case]
+# municion.org's photos show brass cases. municion.org files the round as the .45-100/550 Sharps
+# Straight 2 7/8", and an NRA box label on the page reads .45-110.
+material = "brass"
+sources = ["https://municion.org/producto/45-100-550-sharps-straight-2-7-8/"]

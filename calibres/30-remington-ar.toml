@@ -1,0 +1,47 @@
+# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+name = ".30 Remington AR"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30remar"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.5
+base = 12.7
+shoulder = 12.4
+shoulder_at = 27.37
+neck = 8.6
+case_length = 39.0
+overall_length = 57.0
+bullet = 7.82
+# No source yet for shoulder_at.
+sources = ["https://en.wikipedia.org/wiki/.30_Remington_AR"]
+
+[introduced]
+year = 2008
+sources = ["https://en.wikipedia.org/wiki/.30_Remington_AR"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[shoulder_angle]
+degrees = 25
+sources = ["https://en.wikipedia.org/wiki/.30_Remington_AR"]
+
+[case_head]
+# .054 in.
+rim_thickness = 1.37
+sources = ["book:cotw-18 p. 176"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.30_Remington_AR"]
+
+[case]
+material = "brass"
+sources = []

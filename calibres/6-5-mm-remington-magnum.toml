@@ -1,0 +1,56 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+# Rim R1 and body P1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+name = "6.5 mm Remington Magnum"
+categories = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["6.5remmag"]
+
+origin = "US"
+obsolete = true
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 13.51
+base = 13.03
+shoulder = 12.6
+shoulder_at = 43.18
+neck = 7.6
+case_length = 55.1
+overall_length = 71.1
+bullet = 6.7
+sources = [
+  "https://en.wikipedia.org/wiki/6.5mm_Remington_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page1.pdf",
+]
+
+[introduced]
+year = 1966
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Remington_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Remington_Magnum"]
+
+[shoulder_angle]
+# C.I.P. 6,5 mm Rem. Mag.
+degrees = 25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page1.pdf"]
+
+[case_head]
+# C.I.P. 6,5 mm Rem. Mag.
+rim_thickness = 1.27
+ramp_top = 5.59
+groove_diameter = 12.07
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page1.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Remington_Magnum"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# US Army trial round of the Pedersen rifle; there were several versions.
+name = ".276 Pedersen"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["276pedersen", "276 pedersen", "7x51 pedersen"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.46
+base = 11.4
+shoulder = 9.88
+shoulder_at = 42.5
+neck = 7.98
+case_length = 51.31
+overall_length = 72.39
+bullet = 7.24
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+# COTW: developed from 1923 to 1932.
+year = 1923
+sources = ["book:cotw-18 p. 543"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.276_Pedersen"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 543"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,44 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A sporting round for the Peabody-Martini single-shot rifle, close to the Turkish Peabody carbine round.
+name = ".45-50 Peabody Sporting"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["45-50 peabody", "45-50 peabody sporting"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.1
+base = 13.11
+shoulder = 12.9
+shoulder_at = 27.0
+neck = 12.14
+case_length = 39.12
+overall_length = 52.83
+bullet = 11.53
+# COTW 18 prints 2.08 in. in the rim thickness, case length and overall length columns; the case length
+# is 1.54 in. from COTW 5 p. 138.
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 251", "book:cotw-5 p. 138"]
+
+[introduced]
+# COTW: introduced in 1873-74.
+year = 1873
+sources = ["book:cotw-18 p. 237"]
+
+[primer]
+# The table gives no primer.
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 237"]
+
+[case]
+# municion.org's photo shows a brass case (UMC's).
+material = "brass"
+sources = ["https://municion.org/producto/45-50-peabody-martini-sporting/"]

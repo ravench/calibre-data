@@ -1,0 +1,50 @@
+# Finnish service round (1918) on the 7.62x54 R case with a narrower bore; its own C.I.P. sheet in SHOULDER_ANGLES.
+name = "7.62x53 mm R"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["7.62x53r", "762x53r"]
+
+origin = "FI"
+# Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
+# the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
+rare = true
+
+[mm]
+rim = 14.4
+base = 12.42
+shoulder = 11.61
+shoulder_at = 39.61
+neck = 8.5
+case_length = 53.5
+overall_length = 77.0
+bullet = 7.85
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page28.pdf"]
+
+[introduced]
+# Lookalike variants (2026-11-08).
+year = 1918
+sources = ["https://en.wikipedia.org/wiki/7.62×53mmR"]
+
+[primer]
+# Vihtavuori's data for the 7.62x53 R loads Lapua cases with large rifle primers.
+size = "large-rifle"
+sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
+
+[shoulder_angle]
+# C.I.P. 7,62 x 53 R
+degrees = 19
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page28.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page28.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

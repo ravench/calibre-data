@@ -1,0 +1,43 @@
+name = ".454 Casull"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["454casull"]
+
+origin = "US"
+
+[mm]
+rim = 13.1
+base = 12.1
+neck = 12.1
+case_length = 35.1
+overall_length = 45.0
+bullet = 11.5
+# No source yet for rim and overall_length.
+sources = [
+  "book:hornady-10 p. 959",
+  "book:cotw-18 p. 529",
+  "book:donnelly p. 629",
+]
+
+[introduced]
+# wildcat from 1958, commercial (SAAMI) 1997
+year = 1997
+sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 529"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,51 @@
+# Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+# Rim R1, neck H2, case L3, length L6 and bullet G1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+name = "11x60 mm R Mauser"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["11mauser", "11x60r"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.0
+base = 13.1
+shoulder = 13.0
+shoulder_at = 36.4
+neck = 11.85
+case_length = 60.35
+overall_length = 78.0
+bullet = 11.4
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page53.pdf",
+  "https://en.wikipedia.org/wiki/11×60mm_Mauser",
+]
+
+[introduced]
+year = 1871
+sources = ["https://en.wikipedia.org/wiki/11×60mm_Mauser"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/11×60mm_Mauser"]
+
+[shoulder_angle]
+# C.I.P. 11,15 x 60 R
+degrees = 8.95
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page53.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 2.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page53.pdf"]
+
+[bullet]
+type = "paper"
+sources = ["https://en.wikipedia.org/wiki/11×60mm_Mauser"]
+
+[case]
+material = "brass"
+sources = []

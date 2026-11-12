@@ -1,0 +1,39 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = ".444 Marlin"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["444marlin"]
+
+origin = "US"
+
+[mm]
+rim = 13.1
+base = 11.95
+neck = 11.5
+case_length = 56.5
+overall_length = 65.0
+bullet = 10.9
+sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
+
+[introduced]
+year = 1964
+sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
+
+[case_head]
+# .058 in.
+rim_thickness = 1.47
+sources = ["book:cotw-18 p. 177"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Hugo Borchardt's round for his 1893 pistol, made by Loewe in Berlin; the parent of the 7.63x25 mm Mauser.
+name = ".30 Borchardt"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["30 borchardt", "7.65 borchardt", "7.65mm borchardt"]
+
+origin = "DE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.91
+base = 9.78
+shoulder = 9.4
+shoulder_at = 16.6
+neck = 8.41
+case_length = 25.15
+overall_length = 34.04
+bullet = 7.8
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1893
+sources = ["book:cotw-18 p. 467"]
+
+[primer]
+# 4.49 mm, 3 specimens
+size = "small-pistol"
+sources = ["https://municion.org/producto/765-mm-borchardt/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 467"]
+
+[case]
+material = "brass"
+sources = []

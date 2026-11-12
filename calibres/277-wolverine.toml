@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Mad Dog Weapon Systems' 5.56x45 mm case opened to .277 for AR-15 rifles.
+name = ".277 Wolverine"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["277 wolverine"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 9.6
+base = 9.58
+shoulder = 9.04
+shoulder_at = 30.9
+neck = 7.85
+case_length = 38.86
+overall_length = 57.4
+bullet = 7.04
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 451"]
+
+[introduced]
+year = 2014
+sources = ["book:cotw-18 p. 381"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# from the 5.56x45 mm NATO case; same case as the .223 Rem.; C.I.P. 300 AAC Blackout
+rim_thickness = 1.14
+ramp_top = 3.15
+groove_diameter = 8.43
+ramp_angle = 25.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

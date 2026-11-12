@@ -1,0 +1,37 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Semi-rimmed, for the Webley self-loading pistol of the Royal Navy (1912); its bullet's nose is nearly flat.
+name = ".455 Webley Automatic"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["455 webley auto", "455 webley automatic", "455 webley self-loading", "455 wsl"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.7
+base = 12.04
+neck = 12.01
+case_length = 23.62
+overall_length = 31.24
+bullet = 11.56
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+year = 1912
+sources = ["book:cotw-18 p. 522"]
+
+[primer]
+# The table gives a Berdan primer without its size.
+size = "large-pistol"
+sources = []
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 522"]
+
+[case]
+material = "brass"
+sources = []

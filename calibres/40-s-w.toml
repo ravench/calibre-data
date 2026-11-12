@@ -1,0 +1,50 @@
+name = ".40 S&W"
+categories = ["handgun"]
+kind = "rimless"
+profile = "flat"
+aliases = ["40s&w", "40sw", "40", "40 s+w"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 10.8
+base = 10.8
+neck = 10.7
+case_length = 21.6
+overall_length = 28.8
+bullet = 10.17
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+year = 1990
+sources = ["https://en.wikipedia.org/wiki/.40_S%26W"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.40_S%26W"]
+
+[case_head]
+# C.I.P. 40 S.& W. (title confirmed)
+rim_thickness = 1.4
+ramp_top = 3.52
+groove_diameter = 8.81
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page66.pdf"]
+
+[bullet]
+# Winchester launched it in 1990 with a 180 gr JHP; COTW 18 lists 180 gr JHP factory loads.
+type = "hollowpoint"
+sources = [
+  "https://www.americanrifleman.org/content/the-short-happy-life-of-the-40-smith-wesson",
+  "book:cotw-18 p. 498",
+]
+
+[case]
+material = "brass"
+sources = []
+
+[current_cases]
+# CCI Blazer's aluminium cases.
+materials = ["aluminium"]
+sources = ["https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]

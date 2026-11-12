@@ -1,0 +1,47 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The Italian Vetterli M1870 and Vetterli-Vitali rifles.
+name = "10.4x47 mm R Italian Vetterli"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["10.4x47r", "italian vetterli"]
+display_aliases = ["10.4 mm Vetterli M1870"]
+
+origin = "IT"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.1
+base = 13.72
+shoulder = 13.13
+shoulder_at = 35.0
+neck = 11.1
+case_length = 47.5
+overall_length = 62.48
+bullet = 10.92
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1870
+sources = ["book:cotw-18 p. 561"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .058 in.
+rim_thickness = 1.47
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# A blackpowder service round of 1870; many had a brass-coated bullet (COTW 18 p. 561), drawn as
+# lead, its core, since the page gives only handloads.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

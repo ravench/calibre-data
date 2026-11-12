@@ -1,0 +1,33 @@
+# The Swiss round of the Oerlikon KBA, a NATO standard, also fired by the M242 Bushmaster. Its name
+# gives the bore and case length (Jane's table measures the case at 136.5 mm); Jane's table gives
+# the diameters, TM 43-0001-27 (the M791) and Jane's p. 89 the round length. Wikipedia's text has KBA
+# deliveries to the Netherlands from 1971, its infobox production from 1973 and service from 1975.
+name = "25x137 mm"
+categories = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["25x137"]
+origin = "CH"
+
+[mm]
+rim = 37.8
+base = 37.99
+neck = 26.08
+case_length = 137.0
+overall_length = 223.0
+bullet = 25.0
+sources = [
+  "book:janes-ammo-2002 p. 89",
+  "book:janes-ammo-2002 p. 682",
+  "https://en.wikipedia.org/wiki/Oerlikon_KBA",
+  "https://en.wikipedia.org/wiki/25_mm_caliber",
+  "book:tm-43-0001-27 p. 15-3",
+]
+
+[introduced]
+year = 1971
+sources = ["https://en.wikipedia.org/wiki/Oerlikon_KBA"]
+
+[case]
+material = "brass"
+sources = []

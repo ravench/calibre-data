@@ -1,0 +1,49 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A full-length .404 Jeffery case with a slightly larger rim, for magnum-length actions. Ballistic Studies
+# says Dakota stopped making it.
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 424).
+name = ".416 Dakota"
+categories = ["rifle"]
+kind = "rimless"
+# Nose: round, as on the other dangerous-game rounds; the page gives none.
+profile = "round"
+aliases = ["416 dakota"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.82
+base = 13.82
+shoulder = 13.39
+shoulder_at = 60.1
+neck = 11.2
+case_length = 72.39
+overall_length = 92.58
+bullet = 10.57
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 453"]
+
+[introduced]
+# Ballistic Studies: Don Allen brought out his Dakota rounds in 1992; COTW gives no year.
+year = 1992
+sources = ["https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+cartridges.html"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# .042 in.
+rim_thickness = 1.07
+sources = ["book:cotw-18 p. 453"]
+
+[bullet]
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+material = "brass"
+sources = []

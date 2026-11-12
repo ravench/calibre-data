@@ -1,0 +1,50 @@
+# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+name = ".219 Zipper"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["219zipper"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.9
+base = 10.7
+shoulder = 9.3
+shoulder_at = 34.55
+neck = 6.4
+case_length = 49.2
+overall_length = 57.4
+bullet = 5.7
+sources = [
+  "https://en.wikipedia.org/wiki/.219_Zipper",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page55.pdf",
+]
+
+[introduced]
+year = 1937
+sources = ["https://en.wikipedia.org/wiki/.219_Zipper"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.219_Zipper"]
+
+[shoulder_angle]
+# C.I.P. 219 Zipper
+degrees = 12
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page55.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page55.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.219_Zipper"]
+
+[case]
+material = "brass"
+sources = []

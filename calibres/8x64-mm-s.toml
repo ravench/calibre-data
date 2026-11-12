@@ -1,0 +1,54 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "8x64 mm S"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8x64s", "8x64"]
+
+origin = "DE"
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+rim = 12.0
+base = 11.95
+shoulder = 10.85
+shoulder_at = 51.8
+neck = 8.96
+case_length = 64.0
+overall_length = 87.5
+bullet = 8.22
+sources = [
+  "https://en.wikipedia.org/wiki/8×64mm_S",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page62.pdf",
+]
+
+[introduced]
+year = 1912
+sources = ["https://en.wikipedia.org/wiki/8×64mm_S"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/8×64mm_S"]
+
+[shoulder_angle]
+# C.I.P. 8 x 64 S
+degrees = 14
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page62.pdf"]
+
+[case_head]
+# C.I.P. 8 x 64 S
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 10.6
+ramp_angle = 36.8
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page62.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/8×64mm_S"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The round of the Breda M1937 and M1938 machine guns.
+name = "8x59 mm Breda"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8x59", "8x59 breda"]
+
+origin = "IT"
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.91
+base = 12.47
+shoulder = 11.0
+shoulder_at = 49.4
+neck = 9.07
+case_length = 59.18
+overall_length = 80.52
+bullet = 8.28
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1937
+sources = ["book:cotw-18 p. 557"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/8×59mm_Rb_Breda"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 557"]
+
+[case]
+# municion.org says the case is generally brass.
+material = "brass"
+sources = ["https://municion.org/producto/8-x-59-italian-breda-mg-m-1935/"]

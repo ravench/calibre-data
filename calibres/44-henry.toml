@@ -1,0 +1,37 @@
+# Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+# Its centrefire version is a calibre of its own, .44 Henry Centrefire.
+name = ".44 Henry"
+categories = ["rimfire"]
+kind = "rimfire"
+profile = "flat"
+aliases = ["44henry"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.2
+base = 11.2
+neck = 11.0
+case_length = 22.9
+overall_length = 34.2
+bullet = 11.3
+sources = ["https://en.wikipedia.org/wiki/.44_Henry"]
+
+[introduced]
+year = 1860
+sources = ["https://en.wikipedia.org/wiki/.44_Henry"]
+
+[case_head]
+# .066 in.
+rim_thickness = 1.68
+sources = ["book:cotw-18 p. 670"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.44_Henry"]
+
+[case]
+material = "copper"
+sources = ["https://en.wikipedia.org/wiki/.44_Henry"]

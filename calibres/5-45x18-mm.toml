@@ -1,0 +1,54 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = "5.45x18 mm"
+categories = ["handgun"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["5.45x18", "psm"]
+
+origin = "SU"
+
+[mm]
+rim = 7.64
+base = 7.64
+shoulder = 7.4
+shoulder_at = 12.07
+neck = 6.26
+case_length = 18.03
+overall_length = 25.0
+bullet = 5.63
+sources = [
+  "https://en.wikipedia.org/wiki/5.45×18mm",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page2.pdf",
+]
+
+[introduced]
+year = 1973
+sources = ["https://en.wikipedia.org/wiki/5.45×18mm"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/5.45×18mm"]
+
+[shoulder_angle]
+# C.I.P. 5,45x18
+degrees = 16.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page2.pdf"]
+
+[case_head]
+# C.I.P. 5,45x18
+rim_thickness = 1.13
+ramp_top = 2.9
+groove_diameter = 6.58
+ramp_angle = 16.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page2.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 458"]
+
+[case]
+# Lacquered steel.
+material = "steel"
+sources = ["book:cotw-18 p. 458"]

@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The trial round of the Pattern 1913 rifle; the war stopped it.
+name = ".276 Enfield"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["276enfield", "276 enfield", "7x60 enfield"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.23
+base = 13.41
+shoulder = 11.68
+shoulder_at = 49.7
+neck = 8.15
+case_length = 59.69
+overall_length = 82.55
+bullet = 7.21
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+# COTW: development began in 1909.
+year = 1909
+sources = ["book:cotw-18 p. 542"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 542"]
+
+[case]
+material = "brass"
+sources = []

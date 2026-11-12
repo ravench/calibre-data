@@ -1,0 +1,52 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# Holland & Holland's rimmed 6 mm for double rifles.
+name = ".240 Magnum Flanged"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["240 flanged", "240 magnum flanged"]
+display_aliases = [".240 Flanged Nitro Express", ".240 Super Express"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.95
+base = 11.68
+shoulder = 10.29
+shoulder_at = 49.53
+neck = 7.11
+case_length = 63.5
+overall_length = 82.55
+bullet = 6.22
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page59.pdf"]
+
+[introduced]
+# COTW: the early 1920s; the decade's first year is kept.
+year = 1920
+sources = ["book:cotw-18 p. 577"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[shoulder_angle]
+# Half the cone angle alpha on the C.I.P. sheet.
+degrees = 17.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page59.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.09
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page59.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 577"]
+
+[case]
+material = "brass"
+sources = []

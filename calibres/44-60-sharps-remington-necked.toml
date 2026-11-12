@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# A 1.88 in. .44 bottleneck case for the 1869 Sharps sporting rifle; loaded by Remington and Winchester.
+name = ".44-60 Sharps & Remington Necked"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+# The 44-60 Winchester or Peabody Creedmoor (COTW 18 p. 237) is the same round.
+aliases = ["44-60 sharps", "44-60 sharps necked", "44-60 winchester", "44-60 peabody creedmoor"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.0
+base = 13.08
+shoulder = 12.75
+shoulder_at = 35.6
+neck = 11.79
+case_length = 47.75
+overall_length = 64.77
+bullet = 11.35
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1869
+sources = ["book:cotw-18 p. 236"]
+
+[primer]
+# The table gives L-B1: a large rifle or a Berdan #1 primer.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 237"]
+
+[case]
+# municion.org's photos show brass cases (Winchester's and unmarked ones).
+material = "brass"
+sources = ["https://municion.org/producto/44-60-396-sharps-necked-1-7-8/"]

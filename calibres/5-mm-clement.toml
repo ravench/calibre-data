@@ -1,0 +1,44 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Spanish, for the Charola-Anitua pistol; named after the Belgian Clement pistol of 1903.
+name = "5 mm Clement"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["5clement", "5mm clement auto", "5 mm charola-anitua"]
+
+origin = "ES"
+obsolete = true
+rare = true
+
+[mm]
+rim = 7.14
+base = 7.14
+shoulder = 7.04
+shoulder_at = 11.8
+neck = 5.66
+case_length = 18.03
+overall_length = 25.65
+bullet = 5.13
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1897
+sources = ["book:cotw-18 p. 457"]
+
+[primer]
+size = "small-pistol"
+sources = []
+
+[case_head]
+# .025 in.
+rim_thickness = 0.64
+sources = ["book:cotw-18 p. 527"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 457"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,34 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For cheap handguns such as the Sharps four-barrel pistol and Colt's New Line revolvers; listed until 1919.
+name = ".30 Short Rimfire"
+categories = ["rimfire"]
+kind = "rimfire"
+profile = "round"
+aliases = ["30 short", "30 short rf"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.79
+base = 7.42
+neck = 7.42
+case_length = 13.08
+overall_length = 20.88
+bullet = 7.26
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: from the early 1860s.
+year = 1860
+sources = ["book:cotw-18 p. 662"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 662"]
+
+[case]
+# municion.org's photos show copper cases on the early makers' rounds (Allen & Wheelock and unmarked ones).
+material = "copper"
+sources = ["https://municion.org/producto/30-short-rf/"]

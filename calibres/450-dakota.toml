@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Unlike the other Dakota rounds, an improved full-length .416 Rigby case.
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 436).
+name = ".450 Dakota"
+categories = ["rifle"]
+kind = "rimless"
+# Nose: round, as on the other dangerous-game rounds; the page gives none.
+profile = "round"
+aliases = ["450 dakota"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 14.73
+base = 14.78
+shoulder = 14.22
+shoulder_at = 60.5
+neck = 12.32
+case_length = 73.66
+overall_length = 95.0
+bullet = 11.63
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 453"]
+
+[introduced]
+unknown = "COTW 18 p. 435 calls it the latest Dakota round, after the .404 Jeffery line, without a year."
+sources = ["book:cotw-18 p. 435", "https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+cartridges.html"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# .058 in.
+rim_thickness = 1.47
+sources = ["book:cotw-18 p. 453"]
+
+[bullet]
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+material = "brass"
+sources = []

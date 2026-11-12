@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For Miller's breech-loading conversion of the Springfield rifled musket and the first Allin conversions.
+name = ".58 Miller"
+categories = ["rimfire"]
+kind = "rimfire"
+profile = "round"
+aliases = ["58 miller", "58 allin", "58 miller rimfire"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 18.01
+base = 15.95
+neck = 15.75
+case_length = 30.3
+overall_length = 43.21
+bullet = 14.86
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: in an 1864 advertisement; the Miller conversion is from 1867.
+year = 1864
+sources = ["book:cotw-18 p. 669"]
+
+[bullet]
+# COTW 18 p. 669 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+# municion.org files it as the .58 Musket RF (Allin, Miller and other conversions). Its photos show copper
+# cases on the early makers' rounds (Frankford Arsenal, Leet, Fitch, Van Vechten & Co. and UMC).
+material = "copper"
+sources = ["https://municion.org/producto/58-musket-rf/"]

@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Not in the Sharps catalogues, but chambered in Sharps and Remington-Hepburn rifles; UMC and
+# Winchester loaded it.
+name = ".40-90 Sharps Straight"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["40-90 sharps straight", "40-3 1/4 sharps"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.87
+base = 12.12
+neck = 10.79
+case_length = 82.55
+overall_length = 103.12
+bullet = 10.24
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+# COTW: introduced about 1885.
+year = 1885
+sources = ["book:cotw-18 p. 220"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size; 5.45 mm, 5 specimens on municion.org's
+# photos.
+size = "large-rifle"
+sources = ["https://municion.org/producto/40-90-370-sharps-straight-3-1-4-case/"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 220"]
+
+[case]
+# municion.org's photos show brass cases (UMC's, Winchester's and unmarked ones).
+material = "brass"
+sources = ["https://municion.org/producto/40-90-370-sharps-straight-3-1-4-case/"]

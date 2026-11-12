@@ -1,0 +1,53 @@
+# Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "6 mm PPC"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6ppc", "6mmppc"]
+
+origin = "US"
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 11.3
+base = 11.2
+shoulder = 10.9
+shoulder_at = 27.3
+neck = 6.7
+case_length = 38.5
+overall_length = 53.3
+bullet = 6.17
+sources = [
+  "https://en.wikipedia.org/wiki/6mm_PPC",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page14.pdf",
+]
+
+[introduced]
+year = 1975
+sources = ["https://en.wikipedia.org/wiki/6mm_PPC"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/6mm_PPC"]
+
+[shoulder_angle]
+# C.I.P. 6 mm PPC
+degrees = 30
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page14.pdf"]
+
+[case_head]
+# C.I.P. 6 mm PPC
+rim_thickness = 1.5
+ramp_top = 3.5
+groove_diameter = 9.6
+ramp_angle = 43.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page14.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

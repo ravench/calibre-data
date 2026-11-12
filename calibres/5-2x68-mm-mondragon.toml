@@ -1,0 +1,46 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Designed in Switzerland by Col. Rubin for Manuel Mondragón's rifle; the first version drove the bullet
+# with a piston ring.
+name = "5.2x68 mm Mondragón"
+categories = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["5.2x68", "5.2 mondragon"]
+
+origin = "CH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.47
+base = 12.42
+shoulder = 11.43
+shoulder_at = 57.8
+neck = 6.17
+case_length = 67.31
+overall_length = 77.72
+bullet = 5.28
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+year = 1894
+sources = ["book:cotw-18 p. 532"]
+
+[primer]
+# 5.27 mm, 3 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/52-x-676-mondragon-original/"]
+
+[case_head]
+# .067 in.
+rim_thickness = 1.7
+sources = ["book:cotw-18 p. 573"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,42 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The .380 Revolver with a longer case.
+name = ".380 Long Revolver"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["380 long revolver", "380 long rev"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.85
+base = 9.7
+neck = 9.7
+case_length = 24.3
+overall_length = 35.0
+bullet = 9.15
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page64.pdf"]
+
+[introduced]
+unknown = "The longer version of the .380 Revolver; COTW 18 p. 494 dates only the round as a whole (1868 to 1870)."
+sources = ["book:cotw-18 p. 494"]
+
+[primer]
+size = "small-pistol"
+sources = ["book:cotw-18 p. 528"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page64.pdf"]
+
+[bullet]
+# COTW 18 p. 495 gives a lead factory load for the .380 Revolver, without saying which length.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

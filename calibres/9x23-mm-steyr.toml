@@ -1,0 +1,44 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = "9x23 mm Steyr"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["9steyr"]
+
+origin = "AH"
+obsolete = true
+
+[mm]
+rim = 9.7
+base = 9.7
+neck = 9.62
+case_length = 23.2
+overall_length = 32.99
+bullet = 9.03
+sources = ["https://en.wikipedia.org/wiki/9×23mm_Steyr"]
+
+[introduced]
+year = 1912
+sources = ["https://en.wikipedia.org/wiki/9×23mm_Steyr"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/9×23mm_Steyr"]
+
+[case_head]
+# C.I.P. 9 mm Steyr
+rim_thickness = 1.25
+ramp_top = 3.5
+groove_diameter = 8.7
+ramp_angle = 27.8
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page29.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 484"]
+
+[case]
+material = "brass"
+sources = []

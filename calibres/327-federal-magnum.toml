@@ -1,0 +1,40 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".327 Federal Magnum"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["327fed", "327federal"]
+
+origin = "US"
+
+[mm]
+rim = 9.5
+base = 8.6
+neck = 8.6
+case_length = 30.0
+overall_length = 37.0
+bullet = 7.9
+sources = ["https://en.wikipedia.org/wiki/.327_Federal_Magnum"]
+
+[introduced]
+year = 2008
+sources = ["https://en.wikipedia.org/wiki/.327_Federal_Magnum"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.327_Federal_Magnum"]
+
+[case_head]
+# .050 in.
+rim_thickness = 1.27
+sources = ["book:cotw-18 p. 527"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

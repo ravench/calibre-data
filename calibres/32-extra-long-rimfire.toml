@@ -1,0 +1,34 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For Ballard, Remington, Stevens and Wesson single-shot rifles; gone after World War I.
+name = ".32 Extra Long Rimfire"
+categories = ["rimfire"]
+kind = "rimfire"
+profile = "round"
+aliases = ["32 extra long rf", "32 extra long rimfire"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.6
+base = 8.08
+neck = 8.05
+case_length = 29.21
+overall_length = 39.88
+bullet = 8.03
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: in 1876 catalogues, so from the mid-1870s; some give 1866.
+year = 1876
+sources = ["book:cotw-18 p. 664"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 664"]
+
+[case]
+# municion.org's photos show copper cases on the early makers' rounds (UMC).
+material = "copper"
+sources = ["https://municion.org/producto/32-extra-long-rf/"]

@@ -1,0 +1,49 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Lazzeroni's .284 long magnum, the 7.82 Warbird necked down.
+name = "7.21 Lazzeroni Firebird"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.21 firebird", "7.21mm firebird", "lazzeroni firebird"]
+
+origin = "US"
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 58.7
+neck = 8.08
+case_length = 71.12
+overall_length = 91.44
+bullet = 7.21
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at COTW's 30 degrees).
+sources = ["book:cotw-18 p. 452"]
+
+[introduced]
+year = 1998
+sources = ["book:cotw-18 p. 388"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[shoulder_angle]
+# COTW 18 p. 388: a 30-degree shoulder.
+degrees = 30
+sources = ["book:cotw-18 p. 388"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 452"]
+
+[bullet]
+# Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 388).
+type = "softpoint"
+sources = ["book:cotw-18 p. 388"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,31 @@
+# 9 mm P.A.K. alarm-pistol blank and gas round (centrefire), C.I.P. Tab. VIII "9 mm PA Blanc"
+# maximum cartridge (sheet 1991-07-30); length = L3 (L6 is 22.7). The front is closed inside the
+# case, not star-crimped, so it is a plain cylinder with nothing above the mouth (Raven 2026-11-04).
+name = "9 mm P.A.K."
+categories = ["rimfire"]
+kind = "rimless"
+profile = "flat"
+aliases = ["9mmpak", "pak", "9pak", "9x22", "9mmpa", "9mmpablanc", "gaspatrone", "reizstoffpatrone"]
+display_aliases = ["9 mm P.A. Knall", "9 mm PA Blanc"]
+
+[mm]
+rim = 9.5
+base = 9.5
+neck = 9.5
+case_length = 22.5
+overall_length = 22.5
+bullet = 9.5
+sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
+
+[introduced]
+# C.I.P. sheet 1991-07-30, no earlier source
+year = 1991
+sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
+
+[primer]
+size = "small-pistol"
+sources = []
+
+[case]
+material = "brass"
+sources = []

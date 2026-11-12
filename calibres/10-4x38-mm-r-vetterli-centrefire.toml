@@ -1,0 +1,48 @@
+# The centrefire version of the Vetterli case: many Swiss Vetterli rifles went to the civil market
+# converted by changing only the firing pin. Georg Egestorff (Linden), RWS and Gévelot loaded it,
+# and commercial ammunition was made into the early 1940s (municion.org). The Egestorff specimen has
+# a brass case and a paper-patched lead bullet (its municion.org sheet, under [bullet]). Same case as
+# the rimfire original, so the same measurements.
+name = "10.4x38 mm R Vetterli Centrefire"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["vetterlicf", "10.4cf", "10.4x38cf", "41swisscf"]
+
+origin = "CH"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.7
+base = 13.62
+shoulder = 13.1
+shoulder_at = 26.11
+neck = 11.43
+case_length = 38.21
+overall_length = 56.22
+bullet = 10.92
+sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
+
+[introduced]
+unknown = "the first year of the centrefire loading is not known; the rimfire original dates from 1867"
+
+[primer]
+# The original primers measure 6.47 mm (3 specimens), the .254 in. Berdan size. Today's cases, made
+# from 8x50 R Lebel brass, take large rifle primers:
+# https://www.ammunitionartifacts.com/metriccartridgecases/104x38r-swiss-vetterli-m6981-center-fire-6dtb4
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
+
+[shoulder_angle]
+# AECC drawing 11-038-BBC-011
+degrees = 10.2
+sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
+
+[bullet]
+type = "paper"
+sources = ["https://municion.org/ficha-11-038-bbc-011-0001/"]
+
+[case]
+material = "brass"
+sources = []

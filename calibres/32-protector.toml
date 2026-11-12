@@ -1,0 +1,42 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Protector palm pistol; Winchester loaded it from late 1898.
+name = ".32 Protector"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["32 protector", "32protector"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.94
+base = 7.87
+neck = 7.87
+case_length = 8.89
+overall_length = 14.1
+bullet = 7.62
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1898
+sources = ["book:cotw-18 p. 465"]
+
+[primer]
+size = "small-pistol"
+sources = []
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 527"]
+
+[bullet]
+# A blackpowder round; COTW 18 p. 465 gives only an estimated load.
+type = "lead"
+sources = []
+
+[case]
+material = "brass"
+sources = []

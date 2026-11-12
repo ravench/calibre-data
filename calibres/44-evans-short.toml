@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Old Model Evans rifles; Winchester loaded it until the early 1920s.
+name = ".44 Evans Short"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["44 evans short"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.03
+base = 11.18
+neck = 11.15
+case_length = 25.15
+overall_length = 36.58
+bullet = 10.64
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1875
+sources = ["book:cotw-18 p. 229"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 230"]
+
+[case]
+material = "brass"
+sources = []

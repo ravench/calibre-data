@@ -1,0 +1,37 @@
+# The round of the American GAU-8 Avenger (A-10, 1977) and the Swiss Oerlikon KCA (Saab Viggen, dated
+# only "1970s"), later of the Mk 44 Bushmaster II and the Mauser MK 30. Its name gives the bore and
+# case length; Wikipedia and KNDS give the cartridge length, Jane's table the diameters.
+name = "30x173 mm"
+categories = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30x173", "30 mm gau-8"]
+origin_candidates = ["CH", "US"]
+
+[mm]
+rim = 43.99
+base = 43.99
+neck = 31.5
+case_length = 173.0
+overall_length = 290.0
+bullet = 30.0
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "https://en.wikipedia.org/wiki/GAU-8_Avenger",
+  "https://knds.com/en/products/ammunition/30x173-mm",
+  "https://en.wikipedia.org/wiki/30_mm_caliber",
+]
+
+[introduced]
+year = 1977
+sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
+
+[case]
+# Aluminium: the GAU-8's rounds, in service first (1977, see [introduced]).
+material = "aluminium"
+sources = ["book:janes-ammo-2002 p. 112", "book:janes-ammo-2002 p. 113"]
+
+[current_cases]
+# Lacquered steel for the Oerlikon KCA (p. 105); the MK 30-2 fires steel cases too (p. 113).
+materials = ["steel"]
+sources = ["book:janes-ammo-2002 p. 105", "book:janes-ammo-2002 p. 113"]

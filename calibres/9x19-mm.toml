@@ -1,0 +1,53 @@
+# Swiss Army name «9 mm Pistolenpatrone 41», short «9 mm Pist Pat 41» (Raven's 1955 Thun box «scharfe
+# Pistolenpatronen 41 9 mm»; sigforum.com thread "PISTOLENPATRONE 41 9mm ammo").
+name = "9x19 mm"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["9x19", "9mm", "9mmpara", "9para", "9mmluger", "9luger", "9x19para", "parabellum", "pist pat 41", "pistolenpatrone 41", "9 mm pist pat 41", "9mmluger+p", "9mm+p", "9mm nato"]
+display_aliases = ["9 mm Luger", "9 mm Para"]
+
+origin = "DE"
+worldwide = true
+
+[mm]
+rim = 9.96
+base = 9.96
+neck = 9.65
+case_length = 19.15
+overall_length = 29.7
+bullet = 9.01
+sources = [
+  "book:hornady-10 p. 864",
+  "book:cotw-18 p. 528",
+  "book:donnelly p. 903",
+]
+
+[introduced]
+year = 1902
+sources = ["https://en.wikipedia.org/wiki/9×19mm_Parabellum"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/9×19mm_Parabellum"]
+
+[case_head]
+# C.I.P. 9 mm Luger
+rim_thickness = 1.27
+ramp_top = 2.98
+groove_diameter = 8.79
+ramp_angle = 35.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page28.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 482"]
+
+[case]
+material = "brass"
+sources = []
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases; CCI Blazer's aluminium cases.
+materials = ["steel", "aluminium"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant", "https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]

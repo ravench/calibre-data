@@ -1,0 +1,55 @@
+# The first 8x57 (Patrone 88, 1888) with the old .318" (8.09 mm) bullet that the 1905 S bore replaced;
+# values from its C.I.P. sheet in SHOULDER_ANGLES. 8x57 IS ammunition must not be fired in its guns.
+name = "8x57 mm I"
+categories = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["8x57i", "8x57j", "patrone88"]
+
+origin = "DE"
+# Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
+# the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
+rare = true
+
+[mm]
+rim = 11.95
+base = 11.94
+shoulder = 10.95
+shoulder_at = 46.2
+neck = 8.99
+case_length = 57.0
+overall_length = 82.0
+bullet = 8.09
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page56.pdf"]
+
+[introduced]
+# Lookalike variants (2026-11-08).
+# Patrone 88
+year = 1888
+sources = ["https://en.wikipedia.org/wiki/7.92×57mm_Mauser"]
+
+[primer]
+# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# C.I.P. 8 x 57 I
+degrees = 19.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page56.pdf"]
+
+[case_head]
+# C.I.P. 8 x 57 I
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 10.5
+ramp_angle = 38.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page56.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,41 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+name = ".32 Long Colt"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["32longcolt"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.68
+base = 8.08
+neck = 8.08
+case_length = 23.27
+overall_length = 30.89
+bullet = 7.97
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page42.pdf"]
+
+[introduced]
+year = 1873
+sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.35
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page42.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
+
+[case]
+# municion.org's photos show brass cases (U.S. Cartridge Co.'s and Winchester's).
+material = "brass"
+sources = ["https://municion.org/producto/32-long-colt-outside-lubricated/"]

@@ -1,0 +1,51 @@
+name = ".577/450 Martini-Henry"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["martini-henry", "577/450"]
+
+origin = "GB"
+obsolete = true
+rare = true
+
+[mm]
+rim = 19.0
+base = 17.0
+shoulder = 16.0
+shoulder_at = 35.71
+neck = 12.3
+case_length = 59.7
+overall_length = 79.0
+bullet = 11.6
+# No source yet for case_length and overall_length.
+sources = [
+  "book:cotw-18 p. 574",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf",
+]
+
+[introduced]
+year = 1871
+sources = ["https://en.wikipedia.org/wiki/.577/450_Martini–Henry"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# C.I.P. 577/450 Sld. Mart. H.
+degrees = 15.8
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf"]
+
+[bullet]
+type = "paper"
+sources = ["https://en.wikipedia.org/wiki/.577/450_Martini–Henry"]
+
+[case]
+# Rolled brass foil, as the Commons photo's caption says.
+material = "brass"
+sources = ["https://commons.wikimedia.org/wiki/File:Snider-Martini-Enfield_Cartridges.JPG"]

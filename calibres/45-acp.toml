@@ -1,0 +1,53 @@
+# .45 Super: a hotter load in the .45 ACP case that neither C.I.P. nor SAAMI lists, so a search alias (Raven 2026-11-08).
+name = ".45 ACP"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["45acp", "45auto", "45", "11.43", "45acp+p", "45auto+p", "45automaticmatch", "45super"]
+display_aliases = [".45 Auto", "11,43 mm"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 12.0
+base = 12.0
+neck = 12.0
+case_length = 22.8
+overall_length = 32.4
+bullet = 11.5
+sources = [
+  "book:hornady-10 p. 941",
+  "book:cotw-18 p. 529",
+  "book:janes-ammo-2002 p. 681",
+]
+
+[introduced]
+# designed 1904, produced from 1905
+year = 1905
+sources = ["https://en.wikipedia.org/wiki/.45_ACP"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.45_ACP"]
+
+[case_head]
+# C.I.P. 45 Auto
+rim_thickness = 1.24
+ramp_top = 4.11
+groove_diameter = 10.16
+ramp_angle = 26.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page76.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 516"]
+
+[case]
+material = "brass"
+sources = []
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases; CCI Blazer's aluminium cases.
+materials = ["steel", "aluminium"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant", "https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]

@@ -1,0 +1,45 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The Schofield case length with the Colt rim, so it fired in both army revolvers.
+name = ".45 Colt Government"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["45 colt government", "45 government revolver", "45 revolver ball"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.85
+base = 12.14
+neck = 12.14
+case_length = 27.94
+overall_length = 36.58
+bullet = 11.53
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+# COTW: available from the late 1870s into the 1930s; 1877 is kept for the late 1870s.
+year = 1877
+sources = ["book:cotw-18 p. 521"]
+
+[primer]
+size = "large-pistol"
+sources = ["book:cotw-18 p. 529"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 529"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 521"]
+
+[case]
+# Frankford Arsenal's rounds for both army revolvers had copper cases: municion.org's Frankford round of 1887
+# (its page gives the Schofield names as synonyms) and the middle round of the Commons photo, made from 1875.
+material = "copper"
+sources = ["https://municion.org/producto/45-colt-government-model-1874/",
+           "https://commons.wikimedia.org/wiki/File:Colt_.45_LC_Cartridges.JPG"]

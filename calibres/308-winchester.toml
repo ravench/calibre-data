@@ -1,0 +1,57 @@
+name = ".308 Winchester"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["308", "308win"]
+
+origin = "US"
+worldwide = true
+
+[mm]
+rim = 11.9
+base = 11.9
+shoulder = 11.5
+shoulder_at = 39.62
+neck = 8.7
+case_length = 51.2
+overall_length = 71.1
+bullet = 7.82
+# No source yet for overall_length.
+sources = [
+  "book:cotw-18 p. 176",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf",
+]
+
+[introduced]
+year = 1952
+sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
+
+[shoulder_angle]
+# C.I.P. 308 Win.
+degrees = 20
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+
+[case_head]
+# C.I.P. 308 Win.
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
+
+[case]
+material = "brass"
+sources = []
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]

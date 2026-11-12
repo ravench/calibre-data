@@ -1,0 +1,43 @@
+name = ".17 Mach 2"
+categories = ["rimfire"]
+kind = "rimfire"
+profile = "spitzer"
+aliases = []
+
+origin = "US"
+
+[mm]
+rim = 7.06
+base = 5.7
+shoulder = 5.7
+shoulder_at = 14.23
+neck = 4.83
+case_length = 18.14
+overall_length = 25.4
+bullet = 4.4
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page27.pdf",
+  "book:cotw-18 p. 670",
+]
+
+[introduced]
+year = 2004
+sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Mach_2"]
+
+[shoulder_angle]
+# C.I.P. 17 Mach 2
+degrees = 20
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page27.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.09
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page27.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Mach_2"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,36 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# The first straight case made for Stevens, designed by Capt. W. L. Carpenter.
+name = ".25-25 Stevens"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["25-25", "25-25 stevens"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.55
+base = 8.2
+neck = 7.16
+case_length = 60.2
+overall_length = 66.8
+bullet = 6.53
+sources = ["book:cotw-18 p. 249"]
+
+[introduced]
+year = 1895
+sources = ["book:cotw-18 p. 190"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 190"]
+
+[case]
+material = "brass"
+sources = []

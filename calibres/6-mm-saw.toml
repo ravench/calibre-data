@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Frankford Arsenal's trial round for the US Army squad automatic weapon.
+name = "6 mm SAW"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6mm saw", "6x45 saw"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.41
+base = 10.41
+shoulder = 9.7
+shoulder_at = 36.8
+neck = 6.93
+case_length = 45.19
+overall_length = 65.53
+bullet = 6.17
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+# COTW: design work began in July 1971.
+year = 1971
+sources = ["book:cotw-18 p. 535"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 536"]
+
+[case]
+# COTW names varnished steel and aluminium cases without saying which came first; steel is kept.
+material = "steel"
+sources = ["book:cotw-18 p. 535"]

@@ -1,0 +1,41 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# For the Sharps side-hammer rifles; the 40-100 load used the same case.
+name = ".40-90 Sharps Necked"
+categories = ["black-powder"]
+kind = "rimmed"
+profile = "round"
+aliases = ["40-90 sharps necked", "40-100 sharps necked"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.29
+base = 12.85
+shoulder = 12.7
+shoulder_at = 55.2
+neck = 11.05
+case_length = 66.8
+overall_length = 87.38
+bullet = 10.24
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1873
+sources = ["book:cotw-18 p. 220"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 221"]
+
+[case]
+# municion.org's photos show brass cases (Winchester's and unmarked ones).
+material = "brass"
+sources = ["https://municion.org/producto/40-90-370-sharps-necked-2-5-8-case/"]

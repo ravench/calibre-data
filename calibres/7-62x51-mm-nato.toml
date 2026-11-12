@@ -1,0 +1,105 @@
+name = "7.62x51 mm NATO"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.62x51", "7.62nato", "762"]
+
+# the union that standardised it in 1954; the US T65 of 1949-54 is the design: US
+origin = "NATO"
+worldwide = true
+
+[mm]
+rim = 11.9
+base = 11.9
+shoulder = 11.5
+shoulder_at = 39.62
+neck = 8.7
+case_length = 51.2
+overall_length = 71.1
+bullet = 7.82
+# No source yet for shoulder, shoulder_at and neck.
+sources = [
+  "book:cotw-18 p. 573",
+  "book:tm-43-0001-27 p. 11-17",
+]
+
+[introduced]
+year = 1954
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
+
+[shoulder_angle]
+degrees = 20
+sources = ["https://en.wikipedia.org/wiki/7.62%C3%9751mm_NATO"]
+
+[case_head]
+# same case as the .308 Win.; C.I.P. 308 Win.
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 546"]
+
+[case]
+material = "brass"
+sources = []
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["black"]
+meaning = ["armour-piercing"]
+description = "M61 and M993"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO", "book:labbett p. 80"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["orange"]
+meaning = ["tracer"]
+description = "M62"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO", "book:labbett p. 80"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["purple"]
+meaning = ["tracer"]
+description = "M276 dim tracer"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["purple"]
+meaning = ["ball"]
+description = "British ball"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["red"]
+meaning = ["tracer"]
+description = "British tracer"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["yellow"]
+meaning = ["proof"]
+description = "British proof or standard round"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]

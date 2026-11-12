@@ -1,0 +1,52 @@
+# Rim R1, shoulder P2, neck H2 and case L3 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+name = "9.3x74 mm R"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["9.3x74r"]
+
+origin = "DE"
+
+[mm]
+rim = 13.35
+base = 11.9
+shoulder = 10.4
+shoulder_at = 59
+neck = 9.92
+case_length = 74.7
+overall_length = 94.5
+bullet = 9.3
+# No source yet for overall_length.
+sources = [
+  "book:hornady-10 p. 697",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page51.pdf",
+  "book:cotw-18 p. 652",
+]
+
+[introduced]
+# "c. 1900"
+year = 1900
+sources = ["https://en.wikipedia.org/wiki/9.3×74mmR"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/9.3×74mmR"]
+
+[shoulder_angle]
+# C.I.P. 9,3 x 74 R
+degrees = 5.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page51.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page51.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/9.3×74mmR"]
+
+[case]
+# municion.org gives the case as 72/28 brass.
+material = "brass"
+sources = ["https://municion.org/producto/93-x-74-r-jagbuchse/"]

@@ -1,0 +1,40 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Swedish machine-gun round, also for the m/40 rifle.
+name = "8x63 mm Swedish"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8x63", "8x63 swedish"]
+
+origin = "SE"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.17
+base = 12.4
+shoulder = 11.58
+shoulder_at = 52.8
+neck = 9.04
+case_length = 62.99
+overall_length = 85.34
+bullet = 8.2
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 573"]
+
+[introduced]
+year = 1932
+sources = ["book:cotw-18 p. 556"]
+
+[primer]
+# The infobox gives a Berdan primer of the large rifle size.
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/8×63mm_patron_m/32"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 556"]
+
+[case]
+material = "brass"
+sources = []

@@ -1,0 +1,48 @@
+# Sourced 2026-11-04 (batch 12 leftovers): C.I.P. TDCC maximum cartridge (shoulder = P2,
+# neck = H2, shoulder_at = L1, overall_length = L6); .360 No. 5 Rook from the Wikipedia infobox (Barnes).
+name = ".450 No. 2 Nitro Express"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["450no2"]
+
+origin = "GB"
+rare = true
+
+[mm]
+rim = 16.76
+base = 14.35
+shoulder = 13.97
+shoulder_at = 72.39
+neck = 12.24
+case_length = 88.9
+overall_length = 109.98
+bullet = 11.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page116.pdf"]
+
+[introduced]
+year = 1903
+sources = ["https://en.wikipedia.org/wiki/.450_No_2_Nitro_Express"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
+
+[shoulder_angle]
+# C.I.P. 450 No.2 N.E. 3''1/2 Eley
+degrees = 9.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page116.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 2.03
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page116.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.450_No_2_Nitro_Express"]
+
+[case]
+material = "brass"
+sources = []

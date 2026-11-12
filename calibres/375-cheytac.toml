@@ -1,0 +1,50 @@
+# Sourced 2026-11-04 from the C.I.P. TDCC sheet (maximum cartridge), rounded to 0.01 mm:
+# shoulder_at = L1, shoulder = P2, neck = H2, overall_length = L6.
+name = ".375 CheyTac"
+categories = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["375cheytac", "375ct"]
+
+origin = "US"
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 16.25
+base = 16.18
+shoulder = 15.22
+shoulder_at = 62.28
+neck = 10.31
+case_length = 76.91
+overall_length = 113.4
+bullet = 9.52
+# No source yet for shoulder_at.
+sources = ["book:cotw-18 p. 453"]
+
+[introduced]
+# infobox says 2009, text has .375 variants by 2007; C.I.P. 2017
+year = 2007
+sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
+
+[shoulder_angle]
+# AECC drawing 10-077-BGC-030
+degrees = 20
+sources = ["https://municion.org/producto/375-cheyenne-tactical/"]
+
+[case_head]
+# .063 in.
+rim_thickness = 1.6
+sources = ["book:cotw-18 p. 453"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

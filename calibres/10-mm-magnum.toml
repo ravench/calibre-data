@@ -1,0 +1,45 @@
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# AMT's lengthened 10 mm Auto for the AutoMag IV pistol.
+name = "10 mm Magnum"
+categories = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["10mm magnum", "10 mm mag", "10mm mag"]
+
+origin = "US"
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.77
+base = 10.74
+neck = 10.74
+case_length = 31.88
+overall_length = 39.5
+bullet = 10.16
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+# COTW: the early 1990s; the decade's first year is kept.
+year = 1990
+sources = ["book:cotw-18 p. 499"]
+
+[primer]
+size = "large-pistol"
+sources = ["book:cotw-18 p. 528"]
+
+[case_head]
+# lengthened 10 mm Auto case; C.I.P. 10 mm Auto
+rim_thickness = 1.4
+ramp_top = 3.63
+groove_diameter = 8.85
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page31.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+material = "brass"
+sources = []

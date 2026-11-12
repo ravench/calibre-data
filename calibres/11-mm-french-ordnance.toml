@@ -1,0 +1,42 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = "11 mm French Ordnance"
+categories = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["11mmfrench", "11mm1873"]
+
+origin = "FR"
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.5
+base = 11.45
+neck = 11.45
+case_length = 17.0
+overall_length = 30.0
+bullet = 11.46
+sources = ["https://en.wikipedia.org/wiki/11mm_French_Ordnance"]
+
+[introduced]
+year = 1873
+sources = ["https://en.wikipedia.org/wiki/11mm_French_Ordnance"]
+
+[primer]
+size = "large-pistol"
+sources = []
+
+[case_head]
+# .035 in.
+rim_thickness = 0.89
+sources = ["book:cotw-18 p. 529"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/11mm_French_Ordnance"]
+
+[case]
+material = "brass"
+sources = []
