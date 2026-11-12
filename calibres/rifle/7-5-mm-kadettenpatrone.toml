@@ -4,7 +4,7 @@
 # «12 D T 64»: Thun, December 1964, Dornach brass): length 77.5, case 54.8, rim 12.7, base 12.6,
 # shoulder 11.5, neck 8.6, bullet 7.8, head to shoulder 45.0, primer 5.4. A late round on the longer
 # case of 1923: drawn at the GP 90/23's 54.6 (0.2 apart on single rounds), so the two are one chamber. Jacketed round-nose bullet
-# with a silver-coloured jacket on Raven's round, drawn like any jacket. Kaliberfinder's LiDAR captures
+# with a silver-coloured jacket on Raven's round (see [bullet]). Kaliberfinder's LiDAR captures
 # of the same round (training package of 2026-11-07, filed under GP 1890 with the note
 # "Kadettenpatrone") gave 79.0.
 name = "7.5 mm Kadettenpatrone"
@@ -46,7 +46,10 @@ degrees = 27.8
 sources = ["https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
 [bullet]
+# Silver-coloured jacket on Raven's 1964 round (Raven 2026-11-12). No source names the metal or the
+# 1897 bullet; the GP 90/23 of the same case has a cupronickel jacket (Poyer p. 50).
 type = "jacketed"
+jacket = "cupronickel"
 sources = []
 
 [case]

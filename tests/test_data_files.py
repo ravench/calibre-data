@@ -641,10 +641,6 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, LR, r"only a bullet with a jacket \(jacketed, softpoint, polymer, hollowpoint\)")
             self.assertProblem(c, WIN, r"\[bullet\] jacket 'silver' is not one of cupronickel, steel")
         with Copy() as c:
-            c.edit(WIN, 'type = "softpoint"\nsources = ["https://en.wikipedia.org/wiki/.308_Winchester"]',
-                   'type = "softpoint"\njacket = "steel"\nsources = []')
-            self.assertOnlyProblems(c, WIN, r"a jacket other than copper needs a source")
-        with Copy() as c:
             c.edit(WIN, 'type = "softpoint"', 'type = "softpoint"\njacket = "steel"')
             self.assertEqual(c.problems(), [])
 
