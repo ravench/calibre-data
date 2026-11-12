@@ -580,6 +580,17 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, LR, r"a rimfire calibre has no primer")
             self.assertProblem(c, WIN, r"needs a \[primer\] table", line=False)
 
+    def test_miniature_primer_has_its_own_diameter(self):
+        with Copy() as c:
+            k = "calibres/handgun/2-7-mm-kolibri.toml"
+            c.edit(k, "diameter = 2.2\n", "")
+            c.edit(WIN, 'size = "large-rifle"', 'size = "large-rifle"\ndiameter = 5.3')
+            self.assertProblem(c, k, r"'miniature' size needs diameter")
+            self.assertProblem(c, WIN, r"'miniature' size needs diameter")
+        with Copy() as c:
+            c.edit("calibres/handgun/2-7-mm-kolibri.toml", "diameter = 2.2", "diameter = 4.5")
+            self.assertOnlyProblems(c, "calibres/handgun/2-7-mm-kolibri.toml", r"diameter of a miniature primer")
+
     def test_every_case_names_its_material(self):
         with Copy() as c:
             c.edit(LR, '[case]\nmaterial = "brass"\nsources = []\n', '')

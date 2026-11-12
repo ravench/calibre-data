@@ -22,9 +22,11 @@ sources = ["book:cotw-18 p. 527"]
 year = 1913
 sources = ["book:cotw-18 p. 457"]
 
+# Primer measured on municion.org headstamp photos (six photos 0.54-0.62, median 0.59 of the 5.03 mm head).
 [primer]
-size = "small-pistol"
-sources = []
+size = "miniature"
+diameter = 3.0
+sources = ["https://municion.org/producto/425-mm-lilliput/"]
 
 [bullet]
 type = "jacketed"

@@ -86,10 +86,12 @@ def pellet(name, dia, length, aliases=()):
 # Expresses and some old European rounds came with the large .254" Berdan "Nitro" primer
 # (Kynoch #40, today RWS 6507), measured on headstamp photos (see PRIMER_SOURCES). Other Berdan
 # primers (4.5 and 5.5 mm, e.g. 7.62x39, 7.62x54R surplus) are within 0.2 mm of a Boxer size and
-# keep that kind; rimfire and caseless entries have none.
-SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE, SHOTSHELL_209, BMG_35, BERDAN_NITRO = (
+# keep that kind; rimfire and caseless entries have none. The tiny Kolibri and Liliput pistol rounds
+# have primers smaller than any reloading size: "miniature", with the diameter measured on headstamp
+# photos in the file (PRIMER_MM gives every calibre's primer diameter).
+SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE, SHOTSHELL_209, BMG_35, BERDAN_NITRO, MINIATURE = (
     "small-pistol", "large-pistol", "small-rifle", "large-rifle", "shotshell-209", "bmg-35",
-    "berdan-nitro")
+    "berdan-nitro", "miniature")
 PRIMER_DIAMETERS = {  # mm, nominal primer cup diameter
     SMALL_PISTOL: 4.45, SMALL_RIFLE: 4.45,     # .175"
     LARGE_PISTOL: 5.33, LARGE_RIFLE: 5.33,     # .210"
@@ -156,7 +158,7 @@ HEAD_GROOVE = ("ramp_top", "groove_diameter", "ramp_angle")
 FACTS = {  # table: (required keys, optional keys, sources: "required", "optional" or "may be empty")
     "mm": ((), (), "may be empty"),  # keys by shape, above
     "introduced": ((), ("year", "unknown"), "optional"),
-    "primer": (("size",), (), "may be empty"),
+    "primer": (("size",), ("diameter",), "may be empty"),  # diameter (mm) only for a miniature primer
     "shoulder_angle": (("degrees",), (), "required"),
     "case_head": (("rim_thickness",), HEAD_GROOVE, "required"),
     "bullet": (("type",), (), "may be empty"),
@@ -510,7 +512,11 @@ def _read_calibre(f, category, countries, books=None):
                     f.problem(f.line(t), "[introduced] year needs at least one source")
             elif not isinstance(data["unknown"], str) or not data["unknown"].strip():
                 f.problem(f.line(t, "unknown"), "[introduced] unknown must say why there is no year, in quotes")
-        enums = {("primer", "size"): tuple(PRIMER_DIAMETERS), ("bullet", "type"): BULLET_TYPES,
+        if t == "primer" and ("diameter" in data) != (data.get("size") == MINIATURE):
+            f.problem(f.line(t), f'[primer] a {MINIATURE!r} size needs diameter (mm), and only it has one')
+        elif t == "primer" and "diameter" in data and not (_is_number(data["diameter"]) and 1 <= data["diameter"] < 4.45):
+            f.problem(f.line(t, "diameter"), "[primer] diameter of a miniature primer is in mm, 1 to under 4.45")
+        enums = {("primer", "size"): tuple(PRIMER_DIAMETERS) + (MINIATURE,), ("bullet", "type"): BULLET_TYPES,
                  ("case", "material"): CASE_MATERIALS}
         for (tt, k), allowed_values in enums.items():
             if t == tt and k in data and data[k] not in allowed_values:
@@ -775,7 +781,7 @@ def load(root=ROOT):
     if problems:
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
-    t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
+    t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "BULLETS", "CASES",
                          "CURRENT_CASES", "SOURCES", "COLOUR_CODES", "FIRED_BY",
                          "PROFILE_TODAY")}
@@ -805,6 +811,7 @@ def load(root=ROOT):
                 t["INTRODUCED_UNKNOWN"][n] = i["unknown"]
             if "primer" in facts:
                 t["PRIMERS"][n] = facts["primer"]["size"]
+                t["PRIMER_MM"][n] = facts["primer"].get("diameter") or PRIMER_DIAMETERS[facts["primer"]["size"]]
                 if facts["primer"]["sources"]:
                     t["PRIMER_SOURCES"][n] = first("primer")
                 else:
@@ -856,6 +863,8 @@ DISPLAY_ALIASES = _t["DISPLAY_ALIASES"]
 # Primer size per centrefire calibre; PRIMER_SOURCES has the first source of the checked ones,
 # PRIMER_UNVERIFIED the ones not checked yet.
 PRIMERS, PRIMER_SOURCES, PRIMER_UNVERIFIED = _t["PRIMERS"], _t["PRIMER_SOURCES"], _t["PRIMER_UNVERIFIED"]
+# Primer diameter in mm per centrefire calibre: PRIMER_DIAMETERS of its size, or a miniature primer's own.
+PRIMER_MM = _t["PRIMER_MM"]
 # {name: (year, first source)}; calibres without a year are in INTRODUCED_UNKNOWN with the reason.
 INTRODUCED, INTRODUCED_UNKNOWN = _t["INTRODUCED"], _t["INTRODUCED_UNKNOWN"]
 # {name: (degrees from the case axis, first source)} for bottleneck cases.
