@@ -6,7 +6,7 @@ profile = "spitzer"
 aliases = ["30nosler"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+origin_sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
 
 [mm]
 rim = 13.56

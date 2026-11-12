@@ -292,6 +292,14 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.edit(WIN, 'origin = "US"\n', "")
             self.assertProblem(c, WIN, r"origin_sources without origin")
+        with Copy() as c:
+            c.edit(WIN, 'origin_sources = [\n  "https://en.wikipedia.org/wiki/.308_Winchester",\n  "book:ammo-encyclopedia-2 p. 327",\n]',
+                   'origin_sources = "https://en.wikipedia.org/wiki/.308_Winchester"')
+            self.assertProblem(c, WIN, r"origin_sources must be a list of web addresses")
+        hisp = "calibres/20x110-mm-hispano.toml"
+        with Copy() as c:
+            c.edit(hisp, "origin_sources = []\n", "")
+            self.assertProblem(c, hisp, r"origin needs origin_sources", line=c.line_of(hisp, "origin_candidates ="))
 
     def test_misspelt_top_level_key(self):
         with Copy() as c:

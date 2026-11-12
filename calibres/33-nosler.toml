@@ -6,7 +6,7 @@ profile = "spitzer"
 aliases = ["33nosler"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+origin_sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
 # Still made, but hardly ever found:
 rare = true
 

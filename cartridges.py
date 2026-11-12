@@ -314,7 +314,8 @@ def _check_sources(f, table, data, rule, books=None, nth=0, key="sources"):
         return []
     urls = data[key]
     if not _is_text_list(urls):
-        f.problem(f.line(table, key, nth), f"{label} sources must be a list of web addresses in quotes")
+        f.problem(f.line(table, key, nth), f"{label} must be a list of web addresses in quotes" if table is None
+                  else f"{label} sources must be a list of web addresses in quotes")
         return []
     if rule == "required" and not urls:
         f.problem(f.line(table, key, nth), f"{label} needs at least one source")
