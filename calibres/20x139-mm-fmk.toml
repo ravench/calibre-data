@@ -22,7 +22,8 @@ rim_thickness = 2.6
 sources = ["book:rapid-fire p. 227"]
 
 [introduced]
-# The FM-K 38 («Flugzeugmotor-Kanone 1938»); the Morane D-3800 flew with it from 1939.
+# The designation year of the FM-K 38 («Flugzeugmotor-Kanone 1938»); the Morane D-3800 flew with it
+# from 1939.
 year = 1938
 sources = ["https://www.vtg.admin.ch/dam/de/sd-web/5R5TuTlao8Qv/Geschichte_LW_ausgemusterte_Mittel_DE.pdf"]
 
