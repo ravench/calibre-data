@@ -27,8 +27,9 @@ year = 1894
 sources = ["book:cotw-18 p. 532"]
 
 [primer]
+# 5.27 mm, 3 specimens
 size = "large-rifle"
-sources = []
+sources = ["https://municion.org/producto/52-x-676-mondragon-original/"]
 
 [case_head]
 # .067 in.

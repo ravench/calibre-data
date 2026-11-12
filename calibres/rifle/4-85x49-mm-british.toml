@@ -29,7 +29,7 @@ sources = ["book:cotw-18 p. 532"]
 
 [primer]
 size = "small-rifle"
-sources = []
+sources = ["https://en.wikipedia.org/wiki/4.85×49mm"]
 
 [case_head]
 # .041 in.

@@ -24,9 +24,10 @@ year = 1869
 sources = ["book:cotw-18 p. 506"]
 
 [primer]
-# The table's primer column is garbled for this row.
+# COTW 18's table has a garbled primer column for this row; the Wikipedia infobox gives large
+# pistol.
 size = "large-pistol"
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.44_S%26W_American"]
 
 [case_head]
 # .050 in.

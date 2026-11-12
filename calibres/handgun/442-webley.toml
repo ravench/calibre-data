@@ -22,8 +22,9 @@ year = 1868
 sources = ["https://en.wikipedia.org/wiki/.442_Webley"]
 
 [primer]
+# The infobox says large; a revolver round, so large pistol.
 size = "large-pistol"
-sources = []
+sources = ["https://en.wikipedia.org/wiki/.442_Webley"]
 
 [bullet]
 type = "lead"

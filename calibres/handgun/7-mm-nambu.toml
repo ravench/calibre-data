@@ -26,9 +26,9 @@ year = 1920
 sources = ["book:cotw-18 p. 463"]
 
 [primer]
-# The table gives a Berdan primer without its size.
+# The table gives a Berdan primer without its size; 4.41 mm, 4 specimens on municion.org's photos.
 size = "small-pistol"
-sources = []
+sources = ["https://municion.org/producto/7-mm-nambu/"]
 
 [bullet]
 type = "jacketed"

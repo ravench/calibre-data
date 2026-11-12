@@ -27,7 +27,7 @@ sources = ["book:cotw-18 p. 557"]
 
 [primer]
 size = "large-rifle"
-sources = []
+sources = ["https://en.wikipedia.org/wiki/8×59mm_Rb_Breda"]
 
 [bullet]
 type = "jacketed"

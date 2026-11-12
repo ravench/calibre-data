@@ -27,8 +27,12 @@ year = 1868
 sources = ["book:cotw-18 p. 561"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# 6.42 mm, 10 specimens
+size = "berdan-nitro"
+sources = [
+  "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/",
+  "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-mauser-a/",
+]
 
 [case_head]
 # .080 in.

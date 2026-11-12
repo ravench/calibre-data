@@ -24,8 +24,9 @@ year = 1898
 sources = ["book:cotw-18 p. 476"]
 
 [primer]
+# 4.52 mm, 9 specimens
 size = "small-pistol"
-sources = []
+sources = ["https://municion.org/producto/8-mm-gasser-m-1898/"]
 
 [case_head]
 # R on the C.I.P. sheet.

@@ -23,9 +23,9 @@ year = 1908
 sources = ["book:cotw-18 p. 479"]
 
 [primer]
-# The table gives a Berdan primer without its size.
+# The table gives a Berdan primer without its size; 4.11 mm, 14 specimens on municion.org's photos.
 size = "small-pistol"
-sources = []
+sources = ["https://municion.org/producto/9-mm-mauser-export/"]
 
 [case_head]
 # R and the extractor groove on the C.I.P. sheet.

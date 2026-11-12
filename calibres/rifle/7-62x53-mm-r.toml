@@ -26,9 +26,9 @@ year = 1918
 sources = ["https://en.wikipedia.org/wiki/7.62×53mmR"]
 
 [primer]
-# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+# Vihtavuori's data for the 7.62x53 R loads Lapua cases with large rifle primers.
 size = "large-rifle"
-sources = []
+sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
 
 [shoulder_angle]
 # C.I.P. 7,62 x 53 R

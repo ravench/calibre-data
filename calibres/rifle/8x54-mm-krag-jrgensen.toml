@@ -26,8 +26,9 @@ unknown = "A Norwegian target and hunting round; COTW 18 p. 633 gives no year."
 sources = ["book:cotw-18 p. 633"]
 
 [primer]
+# 5.59 mm, 2 specimens
 size = "large-rifle"
-sources = []
+sources = ["https://municion.org/producto/8-x-54-krag-jorgensen/"]
 
 [case_head]
 # from the 6.5x55 mm case; C.I.P. 6,5 x 55 SE

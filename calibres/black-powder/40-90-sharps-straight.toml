@@ -25,9 +25,10 @@ year = 1885
 sources = ["book:cotw-18 p. 220"]
 
 [primer]
-# The table gives B-1, a Berdan primer without its size.
+# The table gives B-1, a Berdan primer without its size; 5.45 mm, 5 specimens on municion.org's
+# photos.
 size = "large-rifle"
-sources = []
+sources = ["https://municion.org/producto/40-90-370-sharps-straight-3-1-4-case/"]
 
 [bullet]
 type = "lead"

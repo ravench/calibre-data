@@ -27,8 +27,9 @@ year = 1880
 sources = ["book:cotw-18 p. 562"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# 6.37 mm, 3 specimens
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mauser-base/"]
 
 [bullet]
 # The military load: a lead bullet over blackpowder.
