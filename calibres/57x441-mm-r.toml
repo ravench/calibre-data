@@ -1,0 +1,26 @@
+# The round of the British 6-pounder 7 cwt gun with the Molins autoloader, in aircraft and boats (the
+# anti-tank and tank guns fired the same case). Its name gives the bore and case length, Rapid Fire's
+# table the rim and base, NavWeaps the length of the longest complete round of the naval gun.
+name = "57x441 mm R"
+categories = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["57x441r", "57x441", "6 pounder", "6 pdr molins"]
+origin = "GB"
+
+[mm]
+rim = 90.0
+base = 82.0
+case_length = 441.0
+overall_length = 631.0
+bullet = 57.0
+sources = ["book:rapid-fire p. 231", "https://navweaps.com/Weapons/WNBR_6pounder_m2a.php"]
+
+[introduced]
+# The naval 6-pounder 7 cwt entered service in 1941.
+year = 1941
+sources = ["https://navweaps.com/Weapons/WNBR_6pounder_m2a.php"]
+
+[case]
+material = "brass"
+sources = []

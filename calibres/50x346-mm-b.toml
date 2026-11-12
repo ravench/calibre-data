@@ -1,0 +1,24 @@
+# The round of Rheinmetall-Borsig's 5 cm FlaK 41 anti-aircraft gun. Its name gives the bore and case
+# length, Rapid Fire's table the rim and base (whole millimetres only; the belt is not given).
+name = "50x346 mm B"
+categories = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["50x346b", "50x346", "5 cm flak 41"]
+origin = "DE"
+
+[mm]
+rim = 68.0
+base = 68.0
+case_length = 346.0
+bullet = 50.0
+sources = ["book:rapid-fire p. 230", "https://en.wikipedia.org/wiki/5_cm_Flak_41"]
+
+[introduced]
+# The FlaK 41 entered service in 1941.
+year = 1941
+sources = ["https://en.wikipedia.org/wiki/5_cm_Flak_41"]
+
+[case]
+material = "brass"
+sources = []

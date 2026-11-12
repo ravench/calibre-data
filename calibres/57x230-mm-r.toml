@@ -1,0 +1,23 @@
+# The round of the Bofors 57 mm m/47 aircraft cannon (anti-ship). Its name gives the bore and case
+# length, Rapid Fire's table the rim and base.
+name = "57x230 mm R"
+categories = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["57x230r", "57x230", "57 mm bofors m/47"]
+origin = "SE"
+
+[mm]
+rim = 79.7
+base = 73.0
+case_length = 230.0
+bullet = 57.0
+sources = ["book:rapid-fire p. 231", "https://en.wikipedia.org/wiki/Bofors_57_mm_m/47_aircraft_gun"]
+
+[introduced]
+year = 1947
+sources = ["https://en.wikipedia.org/wiki/Bofors_57_mm_m/47_aircraft_gun"]
+
+[case]
+material = "brass"
+sources = []

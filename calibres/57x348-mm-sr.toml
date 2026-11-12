@@ -1,0 +1,31 @@
+# The round of the Soviet S-60 anti-aircraft gun, also fired by the ZSU-57-2's S-68 and Chinese copies.
+# Its name (Jane's p. 135; Rapid Fire calls it 57x347SR) gives the bore and case length, Rapid Fire's
+# table the rim and base, Jane's p. 136 the length of the complete round.
+name = "57x348 mm SR"
+categories = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["57x348sr", "57x347sr", "57x348", "57 mm s-60"]
+origin = "SU"
+
+[mm]
+rim = 95.7
+base = 91.0
+case_length = 348.0
+overall_length = 536.0
+bullet = 57.0
+sources = [
+  "book:rapid-fire p. 231",
+  "book:janes-ammo-2002 p. 136",
+  "book:janes-ammo-2002 p. 135",
+  "https://en.wikipedia.org/wiki/AZP_S-60",
+]
+
+[introduced]
+# The S-60 entered service in 1950.
+year = 1950
+sources = ["https://en.wikipedia.org/wiki/AZP_S-60"]
+
+[case]
+material = "brass"
+sources = []

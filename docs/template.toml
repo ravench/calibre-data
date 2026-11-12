@@ -27,7 +27,7 @@
 # an alias of the other.
 name = ".308 Winchester"
 # The categories, the primary one first: rimfire, handgun, rifle, black-powder, shotgun, air-gun or
-# cannon (20 to 40 mm cannon rounds, in the catalogue only: they may leave out measurements no source
+# cannon (20 to 57 mm cannon rounds, in the catalogue only: they may leave out measurements no source
 # gives and have no [primer]; see README.md). The apps and order.toml list a calibre under its first
 # category only; a round that also fits another, such as a black-powder rifle round, lists both.
 categories = ["rifle"]

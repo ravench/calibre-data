@@ -1,0 +1,23 @@
+# The Soviet 45 mm naval anti-aircraft round. Its name gives the bore and case length, Rapid Fire's
+# table the rim and base (whole millimetres only).
+name = "45x386 mm SR"
+categories = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["45x386sr", "45x386"]
+origin = "SU"
+
+[mm]
+rim = 83.0
+base = 79.0
+case_length = 386.0
+bullet = 45.0
+sources = ["book:rapid-fire p. 230"]
+
+[introduced]
+unknown = "Rapid Fire's table gives no year."
+sources = ["book:rapid-fire p. 230"]
+
+[case]
+material = "brass"
+sources = []

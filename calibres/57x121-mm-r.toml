@@ -1,0 +1,23 @@
+# The round of the Japanese army's Ho-401 aircraft cannon, a short, low-velocity case. Its name gives
+# the bore and case length, Rapid Fire's table the rim and base.
+name = "57x121 mm R"
+categories = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["57x121r", "57x121", "57 mm ho-401"]
+origin = "JP"
+
+[mm]
+rim = 68.4
+base = 60.8
+case_length = 121.0
+bullet = 57.0
+sources = ["book:rapid-fire p. 231", "https://en.wikipedia.org/wiki/Ho-401_cannon"]
+
+[introduced]
+unknown = "neither Rapid Fire's table nor Wikipedia gives a year; the gun saw little service in the Second World War."
+sources = ["https://en.wikipedia.org/wiki/Ho-401_cannon"]
+
+[case]
+material = "brass"
+sources = []
