@@ -737,6 +737,9 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(bullet(".22 TCM"), HOLLOW_POINT)
         self.assertEqual(bullet("5 mm Remington Rimfire Magnum"), HOLLOW_POINT)
         self.assertEqual(bullet(".25 NAA"), HOLLOW_POINT)
+        # Launched with hollow points: Winchester's 180 gr JHP (1990), Federal's JHP (1994).
+        self.assertEqual(BULLETS[".40 S&W"][0], HOLLOW_POINT)
+        self.assertEqual(BULLETS[".357 SIG"][0], HOLLOW_POINT)
         self.assertEqual(bullet(".32 NAA"), JACKETED)  # also sold with full metal jackets
 
     def test_case_materials(self):

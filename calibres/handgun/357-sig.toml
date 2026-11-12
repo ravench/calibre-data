@@ -43,8 +43,12 @@ ramp_angle = 43.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page53.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Federal's first load had a JHP bullet; COTW 18's only factory load is a 125 gr JHP.
+type = "hollowpoint"
+sources = [
+  "https://www.chuckhawks.com/subscribers/handgun_cartridge_page/357sig.htm",
+  "book:cotw-18 p. 492",
+]
 
 [case]
 material = "brass"

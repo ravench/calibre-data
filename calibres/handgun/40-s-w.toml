@@ -32,8 +32,12 @@ ramp_angle = 45.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page66.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Winchester launched it in 1990 with a 180 gr JHP; COTW 18 lists 180 gr JHP factory loads.
+type = "hollowpoint"
+sources = [
+  "https://www.americanrifleman.org/content/the-short-happy-life-of-the-40-smith-wesson",
+  "book:cotw-18 p. 498",
+]
 
 [case]
 material = "brass"
