@@ -119,7 +119,7 @@ class CatalogueTests(unittest.TestCase):
             self.assertIn(name, PRIMER_UNVERIFIED, name)
             self.assertEqual(PRIMERS[name], LARGE_RIFLE, name)
         # Both Cartridges of the World tables give the .500/465 the .254 in. Kynoch No. 40 primer.
-        self.assertEqual(SOURCES[(".500/465 Nitro Express", "primer")][:2], ["book:cotw-18 p. 609", "book:cotw-5 p. 266"])
+        self.assertEqual(SOURCES[(".500/465 Nitro Express", "primer")][:2], ["book:cotw-18 p. 609", "book:cotw-5 p. 267"])
 
     def test_primers_from_infoboxes_and_reloading_data(self):
         expected = {".276 Pedersen": LARGE_RIFLE, ".44 S&W American": LARGE_PISTOL, ".442 Webley": LARGE_PISTOL,
