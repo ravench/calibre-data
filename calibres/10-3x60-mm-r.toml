@@ -25,9 +25,11 @@ year = 1919
 sources = ["https://municion.org/producto/103-x-60-r/"]
 
 [primer]
-# 6.14 mm, 4 specimens
-size = "berdan-nitro"
-sources = ["https://municion.org/producto/103-x-60-r/"]
+# No book gives it (COTW 18 p. 652: UNK/NA). The municion.org photos read 6.14 mm raw (4 specimens),
+# about 6.29 mm with the 2.5 % correction: between the large and the .254 in. Nitro Berdan primer,
+# perhaps the .241 in. one. Unverified.
+size = "large-rifle"
+sources = []
 
 [shoulder_angle]
 # C.I.P. 10,3 x 60 R

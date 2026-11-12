@@ -282,7 +282,9 @@ primer falls) or whose specimens disagree stay unverified (`sources = []`), like
 reloading data, brass maker page or clear headstamp photo yet (old military rounds, Nitro Expresses,
 European hunting rounds). The readings of the first batch (5 November 2026) are raw, not raised by
 2.5 %, and were judged with that batch's bands (Berdan Nitro from about 6.1 mm); they stay as they
-were. Hodgdon loads .30 Super Carry with small rifle primers; Federal's ammunition and the COTW
+were, except the three that fell between two sizes once raised: the .500/465 Nitro Express keeps the
+Nitro primer from the Cartridges of the World tables, the 11 mm Gras and the 10.3x60 R stay
+unverified. Hodgdon loads .30 Super Carry with small rifle primers; Federal's ammunition and the COTW
 table use small pistol.
 Cartridges of the World's dimension tables give the primer as a letter (S small rifle, SP small
 pistol, L large rifle, LP large pistol) or, in the European and British tables, as the Berdan

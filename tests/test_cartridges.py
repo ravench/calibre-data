@@ -96,8 +96,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(PRIMER_MM[".308 Winchester"], PRIMER_DIAMETERS[LARGE_RIFLE])
 
     def test_original_primers_from_headstamp_photos(self):
-        for name in ("10.3x60 mm R", "11x59 mm R Gras", ".500/465 Nitro Express",
-                     ".475 No. 2 Nitro Express", ".375 Flanged Nitro Express", "9.3x72 mm R"):
+        for name in (".500/465 Nitro Express", ".475 No. 2 Nitro Express", ".375 Flanged Nitro Express", "9.3x72 mm R"):
             self.assertEqual(PRIMERS[name], BERDAN_NITRO, name)
         self.assertEqual(PRIMER_DIAMETERS[BERDAN_NITRO], 6.45)
         for name in (".450 Adams", ".476 Enfield", ".360 No. 5 Rook"):
@@ -114,8 +113,13 @@ class CatalogueTests(unittest.TestCase):
 
     def test_readings_between_two_sizes_stay_unverified(self):
         # 6.1-6.3 mm may be the .241 in. Berdan primer; the 9.1x40 R's ring is too big for its head.
-        for name in (".425 Westley Richards Magnum", ".400 Purdey", ".360 Express 2¼ inch", "9.1x40 mm R"):
+        # The Gras and the 10.3x60 R read 6.10 and 6.14 mm raw (about 6.25 and 6.29 corrected).
+        for name in (".425 Westley Richards Magnum", ".400 Purdey", ".360 Express 2¼ inch", "9.1x40 mm R",
+                     "11x59 mm R Gras", "10.3x60 mm R"):
             self.assertIn(name, PRIMER_UNVERIFIED, name)
+            self.assertEqual(PRIMERS[name], LARGE_RIFLE, name)
+        # Both Cartridges of the World tables give the .500/465 the .254 in. Kynoch No. 40 primer.
+        self.assertEqual(SOURCES[(".500/465 Nitro Express", "primer")][:2], ["book:cotw-18 p. 609", "book:cotw-5 p. 267"])
 
     def test_primers_from_infoboxes_and_reloading_data(self):
         expected = {".276 Pedersen": LARGE_RIFLE, ".44 S&W American": LARGE_PISTOL, ".442 Webley": LARGE_PISTOL,
