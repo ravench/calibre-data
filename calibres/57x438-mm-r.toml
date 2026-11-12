@@ -1,18 +1,24 @@
-# The round of the Bofors 57 mm L/60 guns, the m/54 anti-aircraft gun and the naval SAK-57, and of the
-# later naval L/70. Its name gives the bore and case length, Rapid Fire's table the rim and base.
+# The round of the Bofors 57 mm L/60 guns, the m/54 anti-aircraft gun and the naval SAK-57 (Rapid Fire's
+# table), and of the later naval L/70 (Wikipedia). Its name gives the bore and case length, Rapid Fire's
+# table the rim and base, NavWeaps the length of the L/70's complete round.
 name = "57x438 mm R"
 categories = ["cannon"]
 kind = "rimmed"
 profile = "spitzer"
-aliases = ["57x438r", "57x438", "57 mm bofors", "sak-57"]
+aliases = ["57x438r", "57x438", "57 mm bofors l/60", "57 mm bofors l/70", "sak-57"]
 origin = "SE"
 
 [mm]
 rim = 93.0
 base = 83.0
 case_length = 438.0
+overall_length = 675.3
 bullet = 57.0
-sources = ["book:rapid-fire p. 231", "https://en.wikipedia.org/wiki/Bofors_57_mm_gun"]
+sources = [
+  "book:rapid-fire p. 231",
+  "https://en.wikipedia.org/wiki/Bofors_57_mm_gun",
+  "https://navweaps.com/Weapons/WNSweden_57-70_mk123.php",
+]
 
 [introduced]
 unknown = "neither Rapid Fire's table nor Wikipedia gives the year the first L/60 gun entered service."

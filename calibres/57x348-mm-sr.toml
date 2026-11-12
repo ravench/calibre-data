@@ -22,10 +22,11 @@ sources = [
 ]
 
 [introduced]
-# The S-60 entered service in 1950.
+# Wikipedia has the S-60 accepted into service in 1950; Jane's p. 135 says it first appeared in 1960.
 year = 1950
 sources = ["https://en.wikipedia.org/wiki/AZP_S-60"]
 
 [case]
+# Drawn 70:30 brass or lacquered steel (Jane's).
 material = "brass"
-sources = []
+sources = ["book:janes-ammo-2002 p. 135", "book:janes-ammo-2002 p. 136"]

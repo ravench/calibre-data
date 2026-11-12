@@ -15,6 +15,7 @@ bullet = 57.0
 sources = ["book:rapid-fire p. 231", "https://en.wikipedia.org/wiki/Bofors_57_mm_m/47_aircraft_gun"]
 
 [introduced]
+# Wikipedia's infobox has the gun in service from 1947 (designed 1945-1947, made from 1948).
 year = 1947
 sources = ["https://en.wikipedia.org/wiki/Bofors_57_mm_m/47_aircraft_gun"]
 

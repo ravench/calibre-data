@@ -20,9 +20,9 @@ these six as `Randfeuer`, `Kurzwaffe`, `Langwaffe`, `Schwarzpulver`, `Flinte` an
 names they show (`CATEGORIES` in `cartridges.py`), so a new category needs a change in the apps too.
 
 `cannon` (`Kanone`, the 20 to 57 mm rounds of automatic and autoloading cannon; rounds fired
-only by hand-loaded tank, naval and artillery guns stay out) is in the catalogue only, not yet in the apps (`NOT_IN_APPS`):
-its calibres are in `ALL_CATALOGUE` and the per-calibre tables but not in `CATALOGUE`, so the apps'
-JSON does not change. No C.I.P. or SAAMI sheet covers them, so a cannon file keeps only the
+only by hand-loaded tank, naval and artillery guns stay out) is in the catalogue only, not yet in
+the apps (`NOT_IN_APPS`): its calibres are in `ALL_CATALOGUE` and the per-calibre tables but not in
+`CATALOGUE`, so the apps' JSON does not change. No C.I.P. or SAAMI sheet covers them, so a cannon file keeps only the
 measurements a source gives (`bullet` and `case_length` are required, the others optional; the name
 gives both, 35x228 being a 35 mm round with a 228 mm case). It has no
 `[primer]` (cannon primers are not reloading sizes), no `display_aliases` and no lookalike group:
@@ -242,8 +242,8 @@ than their names (25x137 at 136.5 mm), and the names' lengths were kept. The car
 Williams's *Rapid Fire* (2000, pp. 225-231) then gave the other cannon rounds their rim and base:
 20x139 (whose rim Jane's table and Jane's own entry give differently), 30x165, 35x228 and the two
 Bofors 40 mm rounds. Jane's and Koll's *Soviet Cannon* (2009) gave 30x165 and 35x228 their round
-lengths. When `cannon` grew to 57 mm, the same table gave the eight 45 to 57 mm rounds it lists their
-rim and base.
+lengths. When `cannon` grew to 57 mm, the same table gave the eight 45 to 57 mm service rounds of its
+Table 1 (pp. 230-231) their rim and base.
 
 ### `[introduced]`
 
