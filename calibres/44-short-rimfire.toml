@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A handgun round, best known from the Hammond Bulldog pistol; it also fires in .44 Long rimfire guns.
 name = ".44 Short Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 665.
+categories = ["rimfire", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["44 short rf", "44 short rimfire"]

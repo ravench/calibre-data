@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Only for the Winchester Model 1903 self-loading rifle; too wide for .22 LR chambers.
 name = ".22 Winchester Automatic"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 657.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["22 winchester automatic", "22 win auto", "22winauto"]

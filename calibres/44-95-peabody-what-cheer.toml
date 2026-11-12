@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The largest Peabody What Cheer round, for the Peabody-Martini Long-Range Creedmoor rifle.
 name = ".44-95 Peabody What Cheer"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 233.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["44-95 peabody", "44-100 peabody", "44-95 what cheer"]

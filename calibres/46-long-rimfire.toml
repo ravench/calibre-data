@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A short-range round for the Remington No. 1 sporting rifle and Ballard rifles; gone after World War I.
 name = ".46 Long Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 666.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["46 long rf", "46 long rimfire"]

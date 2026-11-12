@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The round of the Serbian Mauser M78/80.
 name = "10.15x63 mm R Serbian Mauser"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 560.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["10.15x63r", "serbian mauser"]

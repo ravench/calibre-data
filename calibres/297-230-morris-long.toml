@@ -1,7 +1,8 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # The Morris Short with a longer neck.
 name = ".297/230 Morris Long"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 577.
+categories = ["black-powder", "rifle", "handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["297/230 long"]

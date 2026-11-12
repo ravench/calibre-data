@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # One case for the 40-85 and 40-90 loads: a thick, reloadable Everlasting case for the Ballard rifles.
 name = ".40-90 Ballard Everlasting"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 218.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-90 ballard", "40-85 ballard", "40-85 ballard everlasting"]

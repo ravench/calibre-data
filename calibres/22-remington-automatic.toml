@@ -1,6 +1,7 @@
 # Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
 name = ".22 Remington Automatic"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 660.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["22remauto"]

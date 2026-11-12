@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Ballard single-shot rifle, loaded only by Remington; gone after World War I.
 name = ".46 Extra Long Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 667.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["46 extra long rf", "46 extra long rimfire"]

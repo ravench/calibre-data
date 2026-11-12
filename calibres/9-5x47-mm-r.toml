@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A blackpowder target round (old DWM case 23).
 name = "9.5x47 mm R"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 644.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["9.5x47r"]

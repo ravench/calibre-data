@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The blackpowder parent of the .500/450 Nitro Express, popular in Africa.
 name = ".500/450 Magnum Express"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 598.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["500/450 magnum express", "500/450 bpe"]

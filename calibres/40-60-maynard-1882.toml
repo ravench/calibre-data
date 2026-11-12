@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .40-40 Maynard 1882 lengthened, for the 1882 match and hunting rifles.
 name = ".40-60 Maynard 1882"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 228.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-60 maynard", "40-60 maynard 1882"]

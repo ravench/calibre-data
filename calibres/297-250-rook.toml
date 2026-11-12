@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Holland & Holland's target and small-game round, mostly in small Martini rifles.
 name = ".297/250 Rook"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 578.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["297/250", "297/250 rook"]

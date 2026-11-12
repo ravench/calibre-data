@@ -1,5 +1,6 @@
 name = ".22 Short"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 657.
+categories = ["rimfire", "handgun", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = []

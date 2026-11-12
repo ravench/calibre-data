@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .41 Short lengthened, first for Colt's New Line revolvers; obsolete since the 1920s.
 name = ".41 Long Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 665.
+categories = ["rimfire", "handgun", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["41 long rf", "41 long rimfire"]

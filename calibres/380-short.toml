@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A blackpowder round for single-shot rifles, pistols and revolvers; DWM loaded it too.
 name = ".380 Short"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 592.
+categories = ["black-powder", "rifle", "handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["380 short", "380 short rifle"]

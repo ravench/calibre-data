@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # An early Ballard Everlasting case, later altered to the .40-70 Ballard of the same length.
 name = ".40-65 Ballard Everlasting"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 220.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-65 ballard", "40-65 ballard everlasting"]

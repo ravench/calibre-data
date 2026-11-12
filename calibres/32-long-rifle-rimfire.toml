@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A longer .32 Long rimfire case with an inside-lubricated bullet, listed from 1900 to the early 1920s.
 name = ".32 Long Rifle Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 662.
+categories = ["rimfire", "rifle", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["32 long rifle", "32 long rifle rf"]

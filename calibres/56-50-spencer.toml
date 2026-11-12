@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Springfield Armory design for the Model 1865 Spencer carbine, issued on the western frontier.
 name = ".56-50 Spencer"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 668.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["56-50", "56-50 spencer"]

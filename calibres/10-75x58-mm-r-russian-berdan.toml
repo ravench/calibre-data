@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Berdan I and II rifles; the first bottlenecked service round with an outside Berdan primer.
 name = "10.75x58 mm R Russian Berdan"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 561.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["10.75x58r", "43 berdan"]

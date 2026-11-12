@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # One of the 47 mm blackpowder target rounds that differ only in bore.
 name = "10.5x47 mm R"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 646.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["10.5x47r"]

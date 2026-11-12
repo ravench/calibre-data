@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # First for the Ethan Allen carbine, then Ballard, Howard, Remington and Wesson rifles; obsolete in the 1920s.
 name = ".44 Long Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 666.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["44 long rf", "44 long rimfire"]

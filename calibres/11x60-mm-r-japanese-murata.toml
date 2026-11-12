@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Murata Meiji 13 rifle.
 name = "11x60 mm R Japanese Murata"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 562.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["11x60r murata", "murata"]

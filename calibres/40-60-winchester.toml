@@ -1,7 +1,8 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # For the Winchester Model 1876 lever action; a strongly tapered case with a short, faint neck.
 name = ".40-60 Winchester"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 222.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["40-60 winchester", "40-60 wcf"]

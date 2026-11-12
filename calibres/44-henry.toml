@@ -1,7 +1,8 @@
 # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 # Its centrefire version is a calibre of its own, .44 Henry Centrefire.
 name = ".44 Henry"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 666.
+categories = ["rimfire", "rifle", "handgun"]
 kind = "rimfire"
 profile = "flat"
 aliases = ["44henry"]

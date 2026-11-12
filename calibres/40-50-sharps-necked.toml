@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Sharps sporting rifle; shorter than the straight .40-50 and not interchangeable with it.
 name = ".40-50 Sharps Necked"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 218.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-50 sharps necked", "40-1 11/16 sharps"]

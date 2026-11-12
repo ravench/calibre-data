@@ -2,7 +2,8 @@
 # For the 1865 Remington Navy rolling-block pistol; an inside-primed centrefire round followed
 # within a year.
 name = ".50 Remington Navy Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 667.
+categories = ["rimfire", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["50 remington navy rf", "50 remington navy rimfire"]

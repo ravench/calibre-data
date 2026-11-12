@@ -1,5 +1,6 @@
 name = ".577 Snider"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 572.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["577snider"]

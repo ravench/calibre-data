@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Sharps side-hammer rifles; the 40-100 load used the same case.
 name = ".40-90 Sharps Necked"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 220.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-90 sharps necked", "40-100 sharps necked"]

@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Maynard Model 1882 single-shot rifles.
 name = ".35-30 Maynard 1882"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 210.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["35-30 maynard", "35-30 maynard 1882"]

@@ -1,7 +1,8 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # A blackpowder rook round, still in Eley-Kynoch's 1962 catalogue.
 name = ".300 Rook"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 583 (single-shot rifles; pistols only "possibly", so rifle alone).
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["300 rook", "300/295 rook"]

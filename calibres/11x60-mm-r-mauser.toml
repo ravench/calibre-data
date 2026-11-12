@@ -1,7 +1,8 @@
 # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 # Rim R1, neck H2, case L3, length L6 and bullet G1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
 name = "11x60 mm R Mauser"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 564.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["11mauser", "11x60r"]

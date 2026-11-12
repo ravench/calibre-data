@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Maynard Improved Hunter's Rifle No. 11 of 1882; also made as a shot shell for combination guns.
 name = ".55-100 Maynard 1882"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 247.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["55-100 maynard", "55-100 maynard 1882"]

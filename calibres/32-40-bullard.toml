@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The smallest of the Bullard single-shot and repeating rifle rounds.
 name = ".32-40 Bullard"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 202.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["32-40 bullard"]

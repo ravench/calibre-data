@@ -94,6 +94,26 @@ class LoadTests(unittest.TestCase):
         self.assertEqual([cat for cat, _ in cartridges.CATALOGUE],
                          ["Randfeuer", "Kurzwaffe", "Langwaffe", "Schwarzpulver", "Flinte", "Luftdruck"])
 
+    def test_black_powder_and_rimfire_rounds_name_their_firearms(self):
+        # Second categories: the firearms of a round whose first category is not a firearm, from the
+        # source in its "# Firearms:" note (2026-11-12).
+        cats = cartridges.CALIBRE_CATEGORIES
+        self.assertEqual(cats[".22 LR"], ("Randfeuer", "Langwaffe", "Kurzwaffe"))
+        self.assertEqual(cats[".44-40 WCF"], ("Schwarzpulver", "Langwaffe", "Kurzwaffe"))
+        self.assertEqual(cats["10.4x38 mm R Vetterli"], ("Schwarzpulver", "Langwaffe", "Randfeuer"))
+        self.assertEqual(cats[".22 Blank (6.8/11)"], ("Randfeuer",))  # a blank is fired by neither
+        kinds = {s["name"]: s["kind"] for _, items in cartridges.ALL_CATALOGUE for s in items}
+        for name, c in cats.items():
+            with self.subTest(name):
+                if len(c) > 1:
+                    with open(os.path.join(ROOT, "calibres", slug(name) + ".toml"), encoding="utf-8") as f:
+                        self.assertRegex(f.read(), r"(?m)^# Firearms: .+\ncategories = ")
+                if c[0] == "Schwarzpulver" and kinds[name] not in cartridges.LOOSE:  # balls and Minié bullets: none
+                    self.assertTrue({"Langwaffe", "Kurzwaffe"} & set(c))
+                    self.assertEqual("Randfeuer" in c, kinds[name] == cartridges.RIMFIRE)
+                if c[0] in ("Kurzwaffe", "Langwaffe", "Flinte", "Luftdruck", "Kanone"):
+                    self.assertEqual(len(c), 1)
+
     def test_cannon_rounds_are_in_the_catalogue_but_not_in_the_apps(self):
         self.assertEqual([cat for cat, _ in cartridges.ALL_CATALOGUE][-1], "Kanone")
         self.assertEqual(cartridges.ALL_CATALOGUE[:-1], cartridges.CATALOGUE)
@@ -331,7 +351,7 @@ class CheckTests(unittest.TestCase):
                                 ("book:cotw-18", r"must be written book:<id> p. <page>")]:
             with self.subTest(source), Copy() as c:
                 c.edit(LR, LR_MM, f'sources = ["{source}"]')
-                self.assertProblem(c, LR, pattern, line=c.line_of(LR, source))
+                self.assertProblem(c, LR, pattern, line=c.line_of(LR, f'["{source}"]'))
                 self.assertOnlyProblems(c, LR, pattern)
 
     def test_a_book_page_can_source_every_table_but_only_once(self):

@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For Remington, Smith & Wesson and other army revolvers; gone after World War I.
 name = ".46 Short Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 667.
+categories = ["rimfire", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["46 short rf", "46 short rimfire"]

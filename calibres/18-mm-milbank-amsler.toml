@@ -3,7 +3,8 @@
 # bullet 18.15, case 25.54, overall 39.92. AECC 18-025-BBR-010 (labelled for the converted French
 # 1864 rifle) is a close variant: rim 20.50, head 18.62, mouth 17.96, case 25.45, overall 40.40.
 name = "18 mm Milbank-Amsler"
-categories = ["black-powder"]
+# Firearms: the Infanteriegewehr 1842/1859 (municion.org, see the note at the top).
+categories = ["black-powder", "rifle", "rimfire"]
 kind = "rimfire"
 profile = "round"
 aliases = ["milbankamsler", "milbank-amsler", "milbank", "18x25r", "18x25.7r"]

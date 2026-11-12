@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For Ballard, Remington, Stevens and Wesson single-shot rifles; gone after World War I.
 name = ".32 Extra Long Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 663.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["32 extra long rf", "32 extra long rimfire"]

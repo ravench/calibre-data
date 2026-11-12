@@ -2,7 +2,8 @@
 # J. Francis Rabbeth's round, first loaded by UMC; longer than the .25-20 Winchester made for the 1892
 # repeater.
 name = ".25-20 Single-Shot"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 187.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["25-20 single shot", "25-20ss"]

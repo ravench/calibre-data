@@ -1,5 +1,6 @@
 name = ".17 Mach 2"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 654.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "spitzer"
 aliases = []

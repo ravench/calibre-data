@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Ballard's longer .44 Long rimfire for single-shot rifles; obsolete by the 1880s.
 name = ".44 Extra Long Rimfire"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 666.
+categories = ["rimfire", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["44 extra long rf", "44 extra long rimfire"]

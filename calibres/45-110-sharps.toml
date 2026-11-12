@@ -1,7 +1,8 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # The Sharps straight .45 case of 2⅞ in.; the shorter Sharps .45 cases differ only in length and load.
 name = ".45-110 Sharps"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 242.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["45-110 sharps", "45-2 7/8 sharps", "45 sharps 2 7/8"]

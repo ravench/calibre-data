@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A blackpowder express round; later also loaded with nitro powder.
 name = ".360 Express 2¼ inch"
-categories = ["black-powder"]
+# Firearms: book:cotw-18 p. 588.
+categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["360 express", "360 2 1/4"]

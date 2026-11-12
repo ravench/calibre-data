@@ -1,6 +1,7 @@
 # Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".41 Short"
-categories = ["rimfire"]
+# Firearms: book:cotw-18 p. 665.
+categories = ["rimfire", "handgun"]
 kind = "rimfire"
 profile = "round"
 aliases = ["41short", "41rf"]
