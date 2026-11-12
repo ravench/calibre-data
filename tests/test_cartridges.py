@@ -703,28 +703,19 @@ class CatalogueTests(unittest.TestCase):
                                            "8x57 mm R 360", "8x58 mm R Sauer",
                                            # COTW 18 gives only the weight or handloads.
                                            "9.3x72 mm R Sauer", "9.3x75 mm R Nimrod", "10.75x63 mm Mauser",
-                                           "9.5x47 mm R", "10.5x47 mm R",
                                            "10.25x69 mm R Hunting-Express", "12.17x44 mm R",
-                                           # Brass-coated bullets drawn as lead.
-                                           "10.4x47 mm R Italian Vetterli", "11.5x57 mm R Spanish Reformado",
+                                           # A brass-coated bullet drawn as lead.
+                                           "11.5x57 mm R Spanish Reformado",
                                            # COTW 18 gives a ball without its material.
                                            "8x60 mm R Guedes",
                                            # No factory load on the page, or a later one than the original.
                                            ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
                                            ".500 Express 3 inch", ".500/450 Magnum Express",
-                                           ".32 Protector", "7.7 mm Bittner", ".380 Long Revolver",
-                                           "9.4 mm Dutch", ".44 Merwin & Hulbert", ".45 Cowboy Special",
-                                           ".25-20 Single-Shot", ".25-21 Stevens", ".338-06 A-Square",
-                                           ".40-65 Ballard Everlasting", ".44-40 Extra Long", ".44 Long Centrefire",
+                                           ".32 Protector", "7.7 mm Bittner", ".45 Cowboy Special", ".338-06 A-Square",
+                                           ".40-65 Ballard Everlasting", ".44 Long Centrefire",
                                            ".44-75 Ballard Everlasting", ".45-100 Remington Necked",
-                                           # Rimfire rounds whose page does not name the bullet.
-                                           ".22 CB Cap", ".22 Winchester Automatic", ".25 Short Rimfire",
-                                           ".25 Stevens Short", ".30 Long Rimfire", ".38 Long Rimfire",
-                                           ".38 Extra Long Rimfire", ".41 Long Rimfire", ".44 Short Rimfire",
-                                           ".44 Long Rimfire", ".44 Extra Long Rimfire", ".46 Short Rimfire",
-                                           ".46 Long Rimfire", ".46 Extra Long Rimfire", ".56-46 Spencer",
-                                           ".50 Remington Navy Rimfire", ".56-50 Spencer", ".56-52 Spencer",
-                                           ".56-52 Spencer Necked", ".58 Miller",
+                                           # Rimfire rounds whose municion.org sheets do not name the bullet's metal.
+                                           ".22 CB Cap", ".46 Short Rimfire", ".56-46 Spencer", ".56-50 Spencer",
                                            # Proprietary hunting rounds whose page gives bullet weights only.
                                            "7.82 Lazzeroni Patriot", "8.59 Lazzeroni Galaxy",
                                            "9.09 Lazzeroni Eagle", "7 mm Dakota", ".300 Dakota", ".330 Dakota",

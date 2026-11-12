@@ -35,7 +35,7 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page64.pdf
 [bullet]
 # COTW 18 p. 495 gives a lead factory load for the .380 Revolver, without saying which length.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-09-025-cbc-020-0003/"]
 
 [case]
 material = "brass"

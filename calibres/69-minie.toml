@@ -17,5 +17,6 @@ sources = []
 unknown = "not a single cartridge"
 
 [bullet]
+# Wikipedia's Minié ball article gives the bullet's metal; it does not name this calibre.
 type = "lead"
-sources = []
+sources = ["https://en.wikipedia.org/wiki/Mini%C3%A9_ball"]

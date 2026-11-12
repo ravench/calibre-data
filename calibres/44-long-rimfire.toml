@@ -26,9 +26,9 @@ year = 1860
 sources = ["book:cotw-18 p. 666"]
 
 [bullet]
-# COTW 18 p. 666 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+# COTW 18 p. 666 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-11-024-cbr-010-0011/"]
 
 [case]
 # municion.org's photos show copper cases on the early makers' rounds (Crittenden & Tibbals, Leet, U.S.

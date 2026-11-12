@@ -26,9 +26,9 @@ year = 1869
 sources = ["book:cotw-18 p. 666"]
 
 [bullet]
-# COTW 18 p. 666 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+# COTW 18 p. 666 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-11-038-cbr-010-0001/"]
 
 [case]
 material = "brass"

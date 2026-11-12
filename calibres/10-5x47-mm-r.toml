@@ -36,7 +36,7 @@ sources = ["book:cotw-18 p. 652"]
 [bullet]
 # A blackpowder target round (COTW 18 p. 646); the page gives only a cast-bullet handload.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-11-047-bbc-030-0001/"]
 
 [case]
 material = "brass"

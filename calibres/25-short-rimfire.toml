@@ -26,9 +26,10 @@ year = 1860
 sources = ["book:cotw-18 p. 661"]
 
 [bullet]
-# COTW 18 p. 661 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+# COTW 18 p. 661 does not name the bullet's material; municion.org's page for the round
+# says the original bullet was lead.
 type = "lead"
-sources = []
+sources = ["https://municion.org/producto/25-bacon-bliss-rf-short/"]
 
 [case]
 # municion.org's photos show copper cases on the early makers' rounds (Winchester and UMC).

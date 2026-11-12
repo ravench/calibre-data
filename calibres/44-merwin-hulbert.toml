@@ -36,7 +36,7 @@ sources = ["book:cotw-18 p. 528"]
 [bullet]
 # A blackpowder revolver round of 1882; COTW 18 p. 503 gives no load.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-11-029-cbc-020-0001/"]
 
 [case]
 material = "brass"

@@ -38,10 +38,10 @@ rim_thickness = 1.47
 sources = ["book:cotw-18 p. 574"]
 
 [bullet]
-# A blackpowder service round of 1870; many had a brass-coated bullet (COTW 18 p. 561), drawn as
-# lead, its core, since the page gives only handloads.
+# A blackpowder service round of 1870. Many had a brass-coated bullet (COTW 18 p. 561); municion.org's
+# earliest sheet, an 1873 Italian arsenal round, shows a bare lead one.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-11-048-bbc-005-0005/"]
 
 [case]
 material = "brass"

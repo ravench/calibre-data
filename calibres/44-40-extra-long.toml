@@ -31,9 +31,9 @@ size = "small-rifle"
 sources = ["book:cotw-18 p. 251"]
 
 [bullet]
-# COTW 18 p. 231 gives no load; a lead bullet, as in the .44-40 WCF.
+# COTW 18 p. 231 gives no load; municion.org's sheet shows a lead bullet.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-11-040-bbc-060-0002/"]
 
 [case]
 material = "brass"
