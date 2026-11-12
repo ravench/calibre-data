@@ -15,8 +15,8 @@ bullet = 34.0
 sources = ["book:rapid-fire p. 229"]
 
 [introduced]
-# In Swiss service from 1938, per A. G. Williams (Rapid Fire's author) in the thread; he names no
-# document.
+# In Swiss service from 1938, per Tony Williams (A. G. Williams, Rapid Fire's author) in the
+# thread; he names no document.
 year = 1938
 sources = ["https://www.bocn.co.uk/threads/34x-239-flab-kan-38.60661"]
 
