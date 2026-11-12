@@ -38,8 +38,9 @@ the apps read those whole.
   `identical_groups()`, the calibres that look exactly the same from the side (today .308 Win / 7.62
   NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (e.g. the .22 blank 6.8/11) has no bullet:
   its case narrows to the star crimp. A wadcutter seated flush (.32 S&W Long Wadcutter) shows no
-  bullet either. `bulletMaterial` is `steel` (GP 1890 cap, or a steel jacket), `cupronickel` (a
-  silver jacket) or `lead`, and copper when it is missing; a hollow point's `bullet` has
+  bullet either. `bulletMaterial` is `steel` (GP 1890 cap, the MPS dart, or a steel jacket),
+  `cupronickel` (a silver jacket) or `lead`; a cartridge's bullet is copper when it is missing (a
+  ball, Minié bullet or pellet is lead). A hollow point's `bullet` has
   its cavity cut into the nose, `tip` is a soft point's lead tip (or a plastic tip, `tipMaterial`
   `polymer`) drawn over the bullet, `head` the brass head of a shot shell or paper case
   (`headMaterial` `steel`: the steel head of a hybrid case), `patch` the paper band, `caseMaterial`

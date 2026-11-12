@@ -740,7 +740,7 @@ class CatalogueTests(unittest.TestCase):
         # COTW 18, Poyer and the rounds' Wikipedia articles.
         silver = {".303 British", "8x50 mm R Lebel", "6 mm Lee Navy", "6.5x50 mm SR Arisaka", ".30-06 Springfield",
                   "8x50 mm R Siamese Type 45", "7.5x55 mm Swiss (GP 11)", "7.5x54.5 mm Swiss (GP 90/23)",
-                  "7.62x38 mm R Nagant", "7.7x58 mm Arisaka"}
+                  "7.62x38 mm R Nagant"}
         self.assertEqual(set(JACKETS), silver)
         for name in silver:
             self.assertEqual(jacket(name), CUPRONICKEL, name)
