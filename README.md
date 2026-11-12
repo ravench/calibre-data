@@ -251,10 +251,12 @@ the primer of the original factory ammunition, which is today's Boxer size for c
 `berdan-nitro` (the large .254" Berdan "Nitro" primer, Kynoch #40, today RWS 6507, of old British
 Nitro Expresses and some old European rounds, measured on headstamp photos) or `miniature` (smaller
 than any reloading size, on the 2.7 mm and 3 mm Kolibri and the 4.25 mm Liliput, measured on
-municion.org headstamp photos). An optional `diameter` gives the measured primer in mm (required for
-`miniature`); `PRIMER_MM` gives every calibre's diameter, measured or its size's nominal one. Other
-Berdan primers (4.5 and 5.5 mm, e.g. 7.62x39, 7.62x54R surplus) are within 0.2 mm of a Boxer size
-and keep that size.
+municion.org headstamp photos). An optional `diameter` gives the primer in mm where a cited source
+gives one, measured or from a table or drawing (required for `miniature`); `PRIMER_MM` gives every
+calibre's diameter, that one or its size's nominal one. Other Berdan primers (4.5 and 5.5 mm, e.g.
+7.62x39, 7.62x54R surplus) keep the nearest size. So far `diameter` is filled in for the Berdan sizes
+in inches that the cited tables of Cartridges of the World give (.177, .216, .217, .250, .251) and
+for the GP 1890's 4.92 mm cap.
 
 Sources: Wikipedia pages are the cartridge infobox ("Primer type"); Hodgdon, Vihtavuori and Sierra
 are the primers used in their published reloading data; Starline is the primer named on its brass

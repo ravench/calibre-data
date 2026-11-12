@@ -85,6 +85,16 @@ class CatalogueTests(unittest.TestCase):
         for name in ("2.7 mm Kolibri", "3 mm Kolibri"):
             self.assertLess(PRIMER_MM[name], 2.5, name)
 
+    def test_berdan_primers_with_a_size_in_the_tables(self):
+        # COTW's tables give some Berdan primers in inches: drawn at that diameter, not the Boxer size.
+        self.assertEqual(PRIMER_MM[".275 Rigby"], 5.51)  # .217 in.
+        self.assertEqual(PRIMER_MM["9x71 mm Peterlongo"], 5.49)  # .216 in.
+        self.assertEqual(PRIMER_MM[".577/500 No. 2 Express"], 6.38)  # .251 in.
+        self.assertEqual(PRIMER_MM[".297/230 Morris Short"], 4.5)  # .177 in.
+        self.assertEqual(PRIMER_MM[".450 Nitro Express"], PRIMER_DIAMETERS[BERDAN_NITRO])  # .254 in. is the size
+        self.assertEqual(PRIMER_MM["7.5x53.5 mm Swiss (GP 1890)"], 4.92)  # the 1892 drawing
+        self.assertEqual(PRIMER_MM[".308 Winchester"], PRIMER_DIAMETERS[LARGE_RIFLE])
+
     def test_original_primers_from_headstamp_photos(self):
         for name in ("10.3x60 mm R", "11x59 mm R Gras", ".500/465 Nitro Express",
                      ".475 No. 2 Nitro Express", ".375 Flanged Nitro Express", "9.3x72 mm R"):

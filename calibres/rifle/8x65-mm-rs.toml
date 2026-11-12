@@ -30,6 +30,7 @@ sources = ["https://en.wikipedia.org/wiki/8×64mm_S"]
 # The table's row, shared with the rimless twin, gives a .217 in. Berdan primer, within 0.2 mm of
 # the large Boxer size.
 size = "large-rifle"
+diameter = 5.51
 sources = ["book:cotw-18 p. 651"]
 
 [shoulder_angle]

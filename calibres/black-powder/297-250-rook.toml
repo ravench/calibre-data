@@ -28,6 +28,7 @@ sources = ["book:cotw-18 p. 578"]
 [primer]
 # The table gives a .177 in. Berdan primer, the small Boxer size.
 size = "small-rifle"
+diameter = 4.5
 sources = ["book:cotw-18 p. 608"]
 
 [bullet]

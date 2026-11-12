@@ -29,6 +29,7 @@ sources = ["book:cotw-18 p. 590"]
 [primer]
 # The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
 size = "large-rifle"
+diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
 
 [case_head]
