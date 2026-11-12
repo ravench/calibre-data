@@ -102,9 +102,9 @@ sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 
 # Every centrefire calibre, shot shells too; none for rimfire, balls, Minié bullets and pellets. The
 # primer of the original factory ammunition: small-pistol, large-pistol, small-rifle, large-rifle,
-# shotshell-209, bmg-35 or berdan-nitro; miniature (smaller than any reloading size, as on the
-# Kolibri rounds) also gives its diameter in mm, e.g. diameter = 2.2. sources = [] when not checked yet
-# (it then counts as unverified).
+# shotshell-209, bmg-35 or berdan-nitro, or miniature (smaller than any reloading size, as on the
+# Kolibri rounds). Optional diameter = the measured primer in mm (e.g. a Berdan primer), required for
+# miniature, e.g. diameter = 2.2. sources = [] when not checked yet (it then counts as unverified).
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]

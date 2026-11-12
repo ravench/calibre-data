@@ -88,7 +88,8 @@ def pellet(name, dia, length, aliases=()):
 # primers (4.5 and 5.5 mm, e.g. 7.62x39, 7.62x54R surplus) are within 0.2 mm of a Boxer size and
 # keep that kind; rimfire and caseless entries have none. The tiny Kolibri and Liliput pistol rounds
 # have primers smaller than any reloading size: "miniature", with the diameter measured on headstamp
-# photos in the file (PRIMER_MM gives every calibre's primer diameter).
+# photos in the file. Any size may give its measured diameter (Berdan primers differ a little from
+# the Boxer size); PRIMER_MM gives every calibre's primer diameter, measured or nominal.
 SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE, SHOTSHELL_209, BMG_35, BERDAN_NITRO, MINIATURE = (
     "small-pistol", "large-pistol", "small-rifle", "large-rifle", "shotshell-209", "bmg-35",
     "berdan-nitro", "miniature")
@@ -158,7 +159,7 @@ HEAD_GROOVE = ("ramp_top", "groove_diameter", "ramp_angle")
 FACTS = {  # table: (required keys, optional keys, sources: "required", "optional" or "may be empty")
     "mm": ((), (), "may be empty"),  # keys by shape, above
     "introduced": ((), ("year", "unknown"), "optional"),
-    "primer": (("size",), ("diameter",), "may be empty"),  # diameter (mm) only for a miniature primer
+    "primer": (("size",), ("diameter",), "may be empty"),  # diameter: measured mm, required for miniature
     "shoulder_angle": (("degrees",), (), "required"),
     "case_head": (("rim_thickness",), HEAD_GROOVE, "required"),
     "bullet": (("type",), (), "may be empty"),
@@ -512,10 +513,13 @@ def _read_calibre(f, category, countries, books=None):
                     f.problem(f.line(t), "[introduced] year needs at least one source")
             elif not isinstance(data["unknown"], str) or not data["unknown"].strip():
                 f.problem(f.line(t, "unknown"), "[introduced] unknown must say why there is no year, in quotes")
-        if t == "primer" and ("diameter" in data) != (data.get("size") == MINIATURE):
-            f.problem(f.line(t), f'[primer] a {MINIATURE!r} size needs diameter (mm), and only it has one')
-        elif t == "primer" and "diameter" in data and not (_is_number(data["diameter"]) and 1 <= data["diameter"] < 4.45):
-            f.problem(f.line(t, "diameter"), "[primer] diameter of a miniature primer is in mm, 1 to under 4.45")
+        if t == "primer" and data.get("size") == MINIATURE and "diameter" not in data:
+            f.problem(f.line(t), f"[primer] a {MINIATURE!r} size needs its diameter (mm)")
+        elif t == "primer" and "diameter" in data:
+            top = 4.45 if data.get("size") == MINIATURE else 10
+            if not (_is_number(data["diameter"]) and 1 <= data["diameter"] < top):
+                f.problem(f.line(t, "diameter"), f"[primer] diameter is the measured primer in mm, 1 to under {top}"
+                                                 f"{' for a miniature primer' if top < 10 else ''}")
         enums = {("primer", "size"): tuple(PRIMER_DIAMETERS) + (MINIATURE,), ("bullet", "type"): BULLET_TYPES,
                  ("case", "material"): CASE_MATERIALS}
         for (tt, k), allowed_values in enums.items():
@@ -863,7 +867,7 @@ DISPLAY_ALIASES = _t["DISPLAY_ALIASES"]
 # Primer size per centrefire calibre; PRIMER_SOURCES has the first source of the checked ones,
 # PRIMER_UNVERIFIED the ones not checked yet.
 PRIMERS, PRIMER_SOURCES, PRIMER_UNVERIFIED = _t["PRIMERS"], _t["PRIMER_SOURCES"], _t["PRIMER_UNVERIFIED"]
-# Primer diameter in mm per centrefire calibre: PRIMER_DIAMETERS of its size, or a miniature primer's own.
+# Primer diameter in mm per centrefire calibre: the file's measured diameter, else PRIMER_DIAMETERS of its size.
 PRIMER_MM = _t["PRIMER_MM"]
 # {name: (year, first source)}; calibres without a year are in INTRODUCED_UNKNOWN with the reason.
 INTRODUCED, INTRODUCED_UNKNOWN = _t["INTRODUCED"], _t["INTRODUCED_UNKNOWN"]

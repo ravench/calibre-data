@@ -74,8 +74,8 @@ class CatalogueTests(unittest.TestCase):
         self.assertLessEqual(set(PRIMERS.values()), set(PRIMER_DIAMETERS) | {MINIATURE})
         self.assertEqual(set(PRIMER_MM), centrefire)
         for name, size in PRIMERS.items():
-            if size != MINIATURE:
-                self.assertEqual(PRIMER_MM[name], PRIMER_DIAMETERS[size], name)
+            if size != MINIATURE:  # a measured diameter stays near its size
+                self.assertAlmostEqual(PRIMER_MM[name], PRIMER_DIAMETERS[size], delta=0.5, msg=name)
 
     def test_miniature_primers_measured_on_headstamps(self):
         # Kolibri and Liliput primers are smaller than any reloading size (municion.org photos).
