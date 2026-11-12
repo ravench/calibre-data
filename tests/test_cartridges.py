@@ -527,6 +527,8 @@ class CatalogueTests(unittest.TestCase):
             self.assertIn(name, NAMES)
             self.assertTrue(is_obsolete(name), name)
         self.assertEqual(INTRODUCED["10.4 mm Swiss Ordnance 1878"][0], 1878)
+        # Lead when first sold in 1882; the copper-alloy jacket came in 1889 (municion.org, COTW 18 p. 475).
+        self.assertEqual(bullet("7.5 mm Swiss Ordnance 1882"), LEAD)
 
     def test_municion_check_fixes_wrong_dimensions(self):
         # Values that disagreed with both the municion.org drawing and the published standard.
@@ -695,11 +697,11 @@ class CatalogueTests(unittest.TestCase):
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):
         # Jacketed bullets came with smokeless powder (Rubin 1882, Lebel 1886); the Swiss 1882 revolver
-        # round was one of the first.
+        # round was first sold with lead and jacketed only from 1889.
         for _, items in CATALOGUE:
             for s in items:
                 year = INTRODUCED.get(s["name"], (None,))[0]
-                if year and year < 1886 and s["oal"] > s["case"] and s["case"] and s["name"] != "7.5 mm Swiss Ordnance 1882":
+                if year and year < 1886 and s["oal"] > s["case"] and s["case"]:
                     self.assertNotEqual(bullet(s["name"]), JACKETED, s["name"])
 
     def test_todays_noses_are_kept_beside_the_first_ones(self):

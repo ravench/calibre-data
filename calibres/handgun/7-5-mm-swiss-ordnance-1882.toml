@@ -29,8 +29,13 @@ size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# First loaded with a plain lead bullet over black powder (about 100 gr); a copper-alloy jacket
+# came in 1889 (municion.org). COTW 18 gives the military load as lead.
+type = "lead"
+sources = [
+  "https://municion.org/producto/75-mm-swiss-ordnance-revolver-m-1882-86/",
+  "book:cotw-18 p. 475",
+]
 
 [case]
 material = "brass"
