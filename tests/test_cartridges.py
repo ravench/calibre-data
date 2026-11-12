@@ -5,7 +5,7 @@ from unittest.mock import patch
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO,
-                        SMALL_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
+                        SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
                         RARE, is_rare, tags,
                         ORIGIN, ORIGIN_UNDECIDED, COUNTRIES, origin, origin_candidates, is_worldwide,
@@ -104,15 +104,25 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(PRIMERS[name], SMALL_PISTOL, name)
 
     def test_old_rounds_with_the_large_berdan_primer(self):
-        # Many 1870s military rifle rounds measure about 6.4 mm on municion.org's headstamp photos:
-        # the .254 in. Berdan primer, not a large rifle one.
+        # Black-powder rifle rounds of the 1870s-80s and the 10.3x65 R Baenziger measure about 6.4 mm
+        # on municion.org's headstamp photos: the .254 in. Berdan primer, not a large rifle one.
         for name in ("11.15x58 mm R Werndl M77", "10.75x58 mm R Russian Berdan", "11.3x50 mm R Beaumont M71",
-                     "11x60 mm R Japanese Murata", "10.4x38 mm R Vetterli Centrefire", ".44-95 Peabody What Cheer"):
+                     "11x60 mm R Japanese Murata", "10.4x38 mm R Vetterli Centrefire", "8x60 mm R Guedes",
+                     ".40-70 Peabody What Cheer", ".44-95 Peabody What Cheer", "10.3x65 mm R Baenziger"):
             self.assertEqual(PRIMERS[name], BERDAN_NITRO, name)
             self.assertTrue(PRIMER_SOURCES[name].startswith("https://municion.org/producto/"), name)
 
+    def test_readings_between_two_sizes_stay_unverified(self):
+        # 6.1-6.3 mm may be the .241 in. Berdan primer; the 9.1x40 R's ring is too big for its head.
+        for name in (".425 Westley Richards Magnum", ".400 Purdey", ".360 Express 2¼ inch", "9.1x40 mm R"):
+            self.assertIn(name, PRIMER_UNVERIFIED, name)
+
     def test_primers_from_infoboxes_and_reloading_data(self):
-        for name in (".276 Pedersen", "4.85x49 mm British", "7.62x40 mm WT", "8x59 mm Breda", "8x63 mm Swedish"):
+        expected = {".276 Pedersen": LARGE_RIFLE, ".44 S&W American": LARGE_PISTOL, ".442 Webley": LARGE_PISTOL,
+                    "4.85x49 mm British": SMALL_RIFLE, "7.62x40 mm WT": SMALL_RIFLE, "8x59 mm Breda": LARGE_RIFLE,
+                    "8x63 mm Swedish": LARGE_RIFLE, "5.6x57 mm R": LARGE_RIFLE}
+        for name, primer in expected.items():
+            self.assertEqual(PRIMERS[name], primer, name)
             self.assertTrue(PRIMER_SOURCES[name].startswith("https://en.wikipedia.org/wiki/"), name)
         self.assertEqual(PRIMER_SOURCES["7.62x53 mm R"], "https://vihtavuori.com/reloading-data/reloading-data-tool/")
         self.assertEqual(PRIMERS["7.62x53 mm R"], LARGE_RIFLE)
