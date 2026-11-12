@@ -169,7 +169,7 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "primer": (("size",), ("diameter",), "may be empty"),  # diameter: measured mm, required for miniature
     "shoulder_angle": (("degrees",), (), "required"),
     "case_head": (("rim_thickness",), HEAD_GROOVE, "required"),
-    "bullet": (("type",), ("jacket",), "may be empty"),  # a jacket other than copper needs a source
+    "bullet": (("type",), ("jacket",), "may be empty"),
     "case": (("material",), (), "may be empty"),  # every case but brass needs a source
     "current_cases": (("materials",), (), "required"),
     "fired_by": (("firearms",), (), "required"),
@@ -610,8 +610,6 @@ def _read_calibre(f, countries, books=None):
         elif "jacket" in facts["bullet"] and facts["bullet"]["type"] not in JACKETED_BULLETS:
             f.problem(f.line("bullet", "jacket"), f"only a bullet with a jacket ({', '.join(JACKETED_BULLETS)}) "
                                                   f"has a [bullet] jacket")
-        elif "jacket" in facts["bullet"] and not facts["bullet"]["sources"]:
-            f.problem(f.line("bullet"), "[bullet] a jacket other than copper needs a source")
     if "case_head" in facts:
         groove = [k for k in HEAD_GROOVE if k in facts["case_head"]]
         if kind in (RIMMED, RIMFIRE) and groove:
@@ -929,7 +927,7 @@ BULLETS = _t["BULLETS"]
 # Unchecked bullets other than the usual one (a jacket; lead for balls, Minié bullets and pellets), such
 # as hunting rounds whose sources give no bullet: soft point from their use.
 BULLET_INFERRED = _t["BULLET_INFERRED"]
-JACKETS = _t["JACKETS"]  # {name: CUPRONICKEL or STEEL}: jackets that are not copper-coloured, all sourced
+JACKETS = _t["JACKETS"]  # {name: CUPRONICKEL or STEEL}: jackets that are not copper-coloured
 CASES = _t["CASES"]  # {name: (material, first source)}
 CURRENT_CASES = _t["CURRENT_CASES"]  # {name: (other case materials made today, first source)}
 LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the file's order
