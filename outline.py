@@ -69,11 +69,12 @@ def bullet_profile(r, y0, top, profile):
         cyl, tip, f = 0.22, 0.16, lambda t: math.sqrt(max(0, 1 - t * t))
     elif profile == PATCHED:
         # The paper-wrapped body, then the capped nose straight from where the paper ends. The cap
-        # sits the paper's thickness (8.15 over the paper, 7.95 on the cap) inside the body, so the
-        # outline steps in there. The nose is an ogive of radius 22 mm ending in a 2.3 mm round tip.
+        # sits the paper's thickness (8.15 where the paper ends, 7.95 on the cap) inside the body, so
+        # the outline steps in there. The nose is an ogive of radius 22 mm ending in a 2.3 mm round tip.
         band, cap = PATCH_BAND * e, r - CAP_STEP
         start = y0 + band
-        return [(r, y0), (r, start), (cap, start)] + ogive_nose(cap, start, top, OGIVE_RADIUS / 3.975, TIP_RADIUS / 3.975)
+        return [(r, y0), (r, start), (cap, start)] + ogive_nose(cap, start, top, OGIVE_RADIUS / CAP_RADIUS,
+                                                                  TIP_RADIUS / CAP_RADIUS)
     else:
         cyl, tip, f = 0.30, 0.55, lambda t: math.sqrt(max(0, 1 - t * t))
     start = y0 + cyl * e
@@ -90,17 +91,21 @@ def bullet_profile(r, y0, top, profile):
 CRIMP_LENGTH = 0.38
 
 # GP 1890 bullet from the army's drawing «Patrone, Modell 1890» (Thun, 1 February 1892): of the
-# 23.7 mm out of the case, the paper covers 12.7 mm and the capped nose is the last 11 mm; the paper
-# adds 0.1 mm a side over the cap (8.15 and 7.95 across); the nose is an ogive of radius 22 mm with
-# a 2.3 mm round tip, on a 7.95 mm cap.
+# 23.7 mm out of the case, the paper covers 12.7 mm and the capped nose is the last 11 mm. Where the
+# paper ends the bullet is 8.15 across and the cap 7.95: two turns of 0.05 mm paper, 0.1 mm a side
+# (at the case mouth the paper is 8.35; drawn parallel at 8.15). The nose is an ogive of radius 22 mm
+# with a 2.3 mm round tip; on a 7.95 mm cap that gives a 10.25 mm nose, stretched 7 % to the
+# drawing's 11 (toleranced +0/-1).
 PATCH_BAND = 12.7 / 23.7
 CAP_STEP = 0.1
+CAP_RADIUS = 7.95 / 2
 OGIVE_RADIUS, TIP_RADIUS = 22.0, 2.3
 
 
 def ogive_nose(r, start, top, ogive, tip):
     """Right half of a round-tipped tangent ogive from (r, start) to the tip at `top`, its radii given
-    in bullet radii (`ogive` for the curve, `tip` for the round tip), stretched to the nose length."""
+    in bullet radii (`ogive` for the curve, `tip` for the round tip), stretched to the nose length.
+    Needs tip < 1 <= ogive."""
     R, rt = ogive * r, tip * r
     cx = r - R  # the ogive's centre, level with the start of the nose
     ty = math.sqrt((R - rt) ** 2 - cx ** 2)  # the tip circle's centre on the axis, where it touches the ogive

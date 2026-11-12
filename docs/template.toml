@@ -33,7 +33,7 @@ name = ".308 Winchester"
 # bullet) or pellet (air gun pellet).
 kind = "rimless"
 # The bullet nose of the round as first sold, which the apps draw: spitzer, round, flat, patched
-# (paper-patched lead body under a steel cap, GP 1890) or crimped (no bullet, the mouth folded shut in
+# (paper-patched lead body and a steel-capped nose, GP 1890) or crimped (no bullet, the mouth folded shut in
 # a star: blanks and power-tool loads). A "# Nose:" note above it names the source.
 profile = "spitzer"
 # Optional: the nose of today's usual load where it is not the first one (the .303 British is drawn
