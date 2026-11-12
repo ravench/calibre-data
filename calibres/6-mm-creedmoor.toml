@@ -40,8 +40,10 @@ ramp_angle = 36.0
 sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Hornady's 2017 Precision Hunter load carries a 103-grain ELD-X; COTW 18 p. 97 lists a V-Max
+# factory load.
+type = "polymer"
+sources = ["https://www.americanhunter.org/content/hornady-adds-6mm-creedmoor-to-precision-hunter-line", "book:cotw-18 p. 97"]
 
 [case]
 material = "brass"

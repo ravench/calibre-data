@@ -46,8 +46,9 @@ ramp_angle = 25.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
 
 [bullet]
+# Remington's open-tip match factory load, which counts as jacketed.
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 130"]
 
 [case]
 material = "brass"

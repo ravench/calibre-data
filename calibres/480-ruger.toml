@@ -35,8 +35,9 @@ rim_thickness = 1.65
 sources = ["book:cotw-18 p. 529"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Launched with Hornady's 325-grain XTP Magnum, a hollow point (Ruger, 2001).
+type = "hollowpoint"
+sources = ["https://ruger.com/news/2001-12-01.html", "book:cotw-18 p. 524"]
 
 [case]
 material = "brass"

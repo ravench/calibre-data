@@ -36,8 +36,9 @@ rim_thickness = 1.37
 sources = ["book:cotw-18 p. 452"]
 
 [bullet]
+# Factory loads with a solid copper bullet and an open-tip match bullet; both count as jacketed.
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 399"]
 
 [case]
 material = "brass"

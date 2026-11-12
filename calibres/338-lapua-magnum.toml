@@ -45,8 +45,9 @@ ramp_angle = 50.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page132.pdf"]
 
 [bullet]
+# Lapua's Scenar match factory load; an open-tip match bullet counts as jacketed.
 type = "jacketed"
-sources = []
+sources = ["book:cotw-18 p. 153"]
 
 [case]
 material = "brass"
