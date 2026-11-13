@@ -371,6 +371,7 @@ class OutlineTests(unittest.TestCase):
             "7.62x54 mm R": (18.5, 39.70, 44.30), ".300 AAC Blackout": (23.0, 27.20, 28.00),
             "6.5 PRC": (30.0, 39.84, 44.65), "7 mm PRC": (30.0, 46.21, 50.63),
             "6 mm ARC": (30.0, 28.47, 31.90), "9x39 mm": (17.0, 31.40, 33.00),
+            ".223 Remington": (23, 36.52, 39.55),
         }
         specs = self.bottlenecks()
         for name, (angle, l1, l2) in sheets.items():
@@ -384,7 +385,8 @@ class OutlineTests(unittest.TestCase):
 
     def test_municion_shoulders_follow_the_aecc_drawings(self):
         # (half angle, shoulder start) from AECC drawings on municion.org: atan(((SØ-NØ)/2)/(CL-NL-SL)).
-        drawings = {".22 Nosler": (29.9, 35.28), ".38-56 WCF": (6.5, 30.64), "6.5x58 mm Vergueiro": (10.8, 41.0),
+        # The .22 Nosler's start is SAAMI's 35.29 (the drawing: 35.28).
+        drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64), "6.5x58 mm Vergueiro": (10.8, 41.0),
                     ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.6, 26.11),
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
                     ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1)}

@@ -1,4 +1,4 @@
-# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+# Batch 10 (2026-11): recent American rounds; first added from the page named in INTRODUCED, now SAAMI's (see [mm]); .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor first from the Sierra load-data drawing.
 name = ".338 Ruger Compact Magnum"
 categories = ["rifle"]
 kind = "rimless"
@@ -14,11 +14,11 @@ rare = true
 
 [mm]
 # SAAMI 338 Ruger Compact Magnum, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.1 at 39.85).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 13.51
 base = 13.51
 shoulder = 13.1
-shoulder_at = 40.34
+shoulder_at = 39.85
 neck = 9.37
 case_length = 51.18
 overall_length = 72.14
@@ -34,9 +34,9 @@ size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.338_Ruger_Compact_Magnum"]
 
 [shoulder_angle]
-# AECC drawing 09-051-BGC-050
-degrees = 27.7
-sources = ["https://municion.org/producto/338-ruger-compact-magnum/"]
+# SAAMI: 30 deg (the AECC drawing 09-051-BGC-050 on municion.org gives 27.7).
+degrees = 30
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=140"]
 
 [case_head]
 # shortened .375 Ruger case; C.I.P. 375 Ruger

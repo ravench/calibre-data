@@ -1,4 +1,4 @@
-# Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+# Added 2026-11: first added from the page named in INTRODUCED, now SAAMI's (see [mm]).
 name = ".17 Winchester Super Magnum"
 # Firearms: book:cotw-18 p. 654.
 categories = ["rimfire", "rifle"]
@@ -11,11 +11,11 @@ origin_sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
 
 [mm]
 # SAAMI 17 Winchester Super Magnum, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 6.86 at 24.43).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 8.46
 base = 6.83
-shoulder = 6.8
-shoulder_at = 24.75
+shoulder = 6.86
+shoulder_at = 24.43
 neck = 5.0
 case_length = 30.48
 overall_length = 40.39

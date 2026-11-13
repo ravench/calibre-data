@@ -9,11 +9,11 @@ origin_sources = ["https://municion.org/producto/300-prc/"]
 
 [mm]
 # SAAMI 300 Precision Rifle Cartridge, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.08 at 53.89).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 13.51
 base = 13.51
-shoulder = 13.0
-shoulder_at = 54.6
+shoulder = 13.08
+shoulder_at = 53.89
 neck = 8.66
 case_length = 65.53
 overall_length = 93.98

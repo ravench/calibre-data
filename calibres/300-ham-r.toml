@@ -13,11 +13,11 @@ rare = true
 [mm]
 # SAAMI 300 HAM'R, maximum cartridge.
 # Bullet: .308 in like the .300 AAC Blackout (SAAMI maximum .309 in); shoulder and shoulder_at
-# unchanged, from the sources after SAAMI (SAAMI: 9.26 at 34.06).
+# SAAMI's, where the body and shoulder lines meet.
 rim = 9.6
 base = 9.55
-shoulder = 9.3
-shoulder_at = 34.27
+shoulder = 9.26
+shoulder_at = 34.06
 neck = 8.43
 case_length = 40.72
 overall_length = 57.4
@@ -33,9 +33,9 @@ size = "small-rifle"
 sources = ["https://www.starlinebrass.com/300-hamr-brass"]
 
 [shoulder_angle]
-# AECC drawing 08-041-BGC-001
-degrees = 27.5
-sources = ["https://municion.org/producto/300-hamr/"]
+# SAAMI: 30 deg (the AECC drawing 08-041-BGC-001 on municion.org gives 27.5).
+degrees = 30
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=116"]
 
 [case_head]
 # made from .223 Rem. cases; C.I.P. 300 AAC Blackout

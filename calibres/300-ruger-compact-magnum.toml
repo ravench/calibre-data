@@ -1,4 +1,4 @@
-# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+# Rifle batch 5 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]); the Nosler line shares the .28 Nosler case outside.
 name = ".300 Ruger Compact Magnum"
 categories = ["rifle"]
 kind = "rimless"
@@ -15,11 +15,11 @@ rare = true
 
 [mm]
 # SAAMI 300 Ruger Compact Magnum, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.08 at 41.47).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 13.51
 base = 13.51
-shoulder = 13.1
-shoulder_at = 42.44
+shoulder = 13.08
+shoulder_at = 41.47
 neck = 8.64
 case_length = 53.34
 overall_length = 72.14
@@ -35,9 +35,9 @@ size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.300_Ruger_Compact_Magnum"]
 
 [shoulder_angle]
-# AECC drawing 08-053-BGC-110
-degrees = 38
-sources = ["https://municion.org/producto/300-ruger-compact-magnum/"]
+# SAAMI: 30 deg (the AECC drawing 08-053-BGC-110 on municion.org gives 38).
+degrees = 30
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=122"]
 
 [case_head]
 # shortened .375 Ruger case; C.I.P. 375 Ruger

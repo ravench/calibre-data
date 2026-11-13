@@ -1,4 +1,4 @@
-# Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
+# Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); first added from the page named in INTRODUCED, now SAAMI's (see [mm]).
 name = "6 mm GT"
 categories = ["rifle"]
 kind = "rimless"
@@ -12,7 +12,7 @@ rare = true
 
 [mm]
 # SAAMI 6mm GT, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 11.66 at 33.12).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 11.96
 base = 11.95
 shoulder = 11.66

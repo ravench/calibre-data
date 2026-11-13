@@ -15,7 +15,8 @@ worldwide = true
 rim = 9.6
 base = 9.6
 shoulder = 9.0
-shoulder_at = 35.02
+# shoulder_at: L1 36.52 on the C.I.P. drawing on Wikipedia (File:.223_Remington.svg).
+shoulder_at = 36.52
 neck = 6.4
 case_length = 44.7
 overall_length = 57.4

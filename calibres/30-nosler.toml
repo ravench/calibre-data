@@ -1,4 +1,4 @@
-# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+# Rifle batch 5 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]); the Nosler line shares the .28 Nosler case outside.
 name = ".30 Nosler"
 categories = ["rifle"]
 kind = "rimless"
@@ -10,7 +10,7 @@ origin_sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
 
 [mm]
 # SAAMI 30 Nosler, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.41 at 53.72).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 13.56
 base = 13.97
 shoulder = 13.41

@@ -12,7 +12,7 @@ origin_sources = [
 
 [mm]
 # SAAMI 7.62 x 39, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 10.06 at 30.44).
+# Shoulder and shoulder_at stay C.I.P.'s (SAAMI: 10.06 at 30.44).
 rim = 11.35
 base = 11.25
 shoulder = 10.07

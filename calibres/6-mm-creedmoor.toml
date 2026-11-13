@@ -1,4 +1,4 @@
-# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+# Batch 10 (2026-11): recent American rounds; first added from the page named in INTRODUCED, now SAAMI's (see [mm]); .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor first from the Sierra load-data drawing.
 name = "6 mm Creedmoor"
 categories = ["rifle"]
 kind = "rimless"
@@ -10,11 +10,11 @@ origin_sources = []
 
 [mm]
 # SAAMI 6mm Creedmoor, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 11.74 at 37.85).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 11.99
 base = 11.95
-shoulder = 11.73
-shoulder_at = 37.49
+shoulder = 11.74
+shoulder_at = 37.85
 neck = 7.01
 case_length = 48.77
 overall_length = 71.12

@@ -1,4 +1,4 @@
-# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+# Rifle batch 5 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]); the Nosler line shares the .28 Nosler case outside.
 name = ".30 Remington AR"
 categories = ["rifle"]
 kind = "rimless"
@@ -15,11 +15,11 @@ rare = true
 
 [mm]
 # SAAMI 30 Remington AR, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 12.41 at 27.13).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 12.5
 base = 12.7
-shoulder = 12.4
-shoulder_at = 27.37
+shoulder = 12.41
+shoulder_at = 27.13
 neck = 8.66
 case_length = 38.86
 overall_length = 57.4

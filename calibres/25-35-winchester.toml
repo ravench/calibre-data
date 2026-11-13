@@ -1,4 +1,4 @@
-# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+# Rifle batch 2 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]).
 name = ".25-35 Winchester"
 categories = ["rifle"]
 kind = "rimmed"
@@ -13,11 +13,11 @@ origin_sources = [
 
 [mm]
 # SAAMI 25-35 Winchester, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 9.25 at 35.05).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 12.85
 base = 10.57
-shoulder = 9.3
-shoulder_at = 34.1
+shoulder = 9.25
+shoulder_at = 35.05
 neck = 7.15
 case_length = 51.89
 overall_length = 64.77
@@ -33,9 +33,11 @@ size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.25-35_Winchester"]
 
 [shoulder_angle]
-# AECC drawing 06-052-BBC-050
-degrees = 11.1
-sources = ["https://municion.org/producto/25-35-winchester-cf/"]
+# SAAMI 25-35 Winchester: 11° 34' (the AECC drawing 06-052-BBC-050 on municion.org gives 11.1).
+# SAAMI's neck tapers from 7.32 to the mouth's 7.15, so with our straight 7.15 neck the cone ends 0.4 mm
+# past SAAMI's 39.76.
+degrees = 11.57
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=92"]
 
 [case_head]
 # SAAMI 25-35 Winchester
