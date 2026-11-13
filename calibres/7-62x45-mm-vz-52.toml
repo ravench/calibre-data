@@ -51,5 +51,6 @@ type = "jacketed"
 sources = ["https://naboje.org/node/45"]
 
 [case]
+# naboje.org: brass, and from about 1953 also lacquered steel.
 material = "brass"
-sources = []
+sources = ["https://naboje.org/node/45"]
