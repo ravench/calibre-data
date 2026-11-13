@@ -19,13 +19,12 @@ rare = true
 rim = 9.55
 base = 9.52
 shoulder = 8.97
-shoulder_at = 41.2
+shoulder_at = 36.12
 neck = 5.59
 case_length = 48.89
 overall_length = 62.36
 bullet = 5.0
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 573"]
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/485-x-49-british-xpl/"]
 
 [introduced]
 # COTW: entered in the NATO trials of 1977.
@@ -35,6 +34,11 @@ sources = ["book:cotw-18 p. 532"]
 [primer]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/4.85×49mm"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 8.97, NØ 5.59, SL 36.20, NL 8.45, CL 48.97.
+degrees = 21.4
+sources = ["https://municion.org/producto/485-x-49-british-xpl/"]
 
 [case_head]
 # .041 in.

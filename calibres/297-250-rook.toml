@@ -16,13 +16,12 @@ rare = true
 rim = 8.71
 base = 7.49
 shoulder = 7.47
-shoulder_at = 13.9
+shoulder_at = 13.2
 neck = 6.78
 case_length = 20.83
 overall_length = 27.94
 bullet = 6.35
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 608"]
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/297-250-mk-ii-rook-rifle-hh/"]
 
 [introduced]
 unknown = "From before 1880; COTW 18 p. 578 gives no year."
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 578"]
 size = "small-rifle"
 diameter = 4.5
 sources = ["book:cotw-18 p. 608"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 7.29, NØ 6.73, SL 13.00, NL 5.50, CL 20.63.
+degrees = 7.5
+sources = ["https://municion.org/producto/297-250-mk-ii-rook-rifle-hh/"]
 
 [bullet]
 # A blackpowder rook round (COTW 18 p. 578), lead like the others of its kind.

@@ -17,13 +17,12 @@ rare = true
 rim = 16.97
 base = 14.76
 shoulder = 13.77
-shoulder_at = 36.6
+shoulder_at = 34.19
 neck = 12.17
 case_length = 49.28
 overall_length = 69.34
 bullet = 11.38
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 574"]
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/43-egyptian-remington-flat-base/"]
 
 [introduced]
 year = 1870
@@ -32,6 +31,11 @@ sources = ["book:cotw-18 p. 566"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.56, NØ 12.51, SL 33.44, NL 11.96, CL 48.53.
+degrees = 9.5
+sources = ["https://municion.org/producto/43-egyptian-remington-flat-base/"]
 
 [case_head]
 # .065 in.
