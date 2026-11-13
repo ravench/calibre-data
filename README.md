@@ -47,7 +47,8 @@ the apps read those whole.
   ball, Minié bullet or pellet is lead). A hollow point's `bullet` has
   its cavity cut into the nose, `tip` is a soft point's lead tip (or a plastic tip, `tipMaterial`
   `polymer`) drawn over the bullet, `head` the brass head of a shot shell or paper case
-  (`headMaterial` `steel`: the steel head of a hybrid case), `patch` the paper band (a `paper` bullet's `patch_length`, or half the exposed bullet), `caseMaterial`
+  (`headMaterial` `steel`: the steel head of a hybrid case), `patch` the paper band (its `patch_length`, else half the exposed bullet;
+  GP 1890 to its 1892 drawing), `caseMaterial`
   set when the case is not brass, `currentCaseMaterials` the other materials made today (not drawn).
 - `check.py`: checks every file (see [Checking](#checking)).
 
@@ -344,7 +345,8 @@ cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outlin
   and that round's year.
 - `[bullet]` `patch_length`, optional, for a paper-patched bullet (`paper`): the paper showing above
   the case mouth, in mm, from a source (a drawing or a measured round; the note says which). Without
-  it the paper band is drawn over half the exposed bullet.
+  it the paper band is drawn over half the exposed bullet. Not for the GP 1890 (`patched` profile),
+  whose band follows its 1892 drawing.
 - `[case]` `material`, in every calibre with a case (not shot shells, balls, Minié bullets or
   pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated steel,
   `aluminium`, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case) or `hybrid`

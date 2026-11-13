@@ -232,7 +232,8 @@ def outline(s):
                 paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"])), H, hw)
                 paths["bulletMaterial"] = "steel"
             elif kind == PAPER_PATCHED:
-                band = patch_length(s["name"]) / (s["oal"] - s["case"]) if patch_length(s["name"]) else PAPER_BAND
+                patch = patch_length(s["name"])
+                band = patch / (s["oal"] - s["case"]) if patch else PAPER_BAND
                 paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"], band)), H, hw)
                 paths["bulletMaterial"] = "lead"
             elif kind == LEAD:

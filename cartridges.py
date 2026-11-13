@@ -624,13 +624,15 @@ def _read_calibre(f, countries, books=None):
             f.problem(f.line("bullet", "jacket"), f"only a bullet with a jacket ({', '.join(JACKETED_BULLETS)}) "
                                                   f"has a [bullet] jacket")
         if "patch_length" in facts["bullet"]:
-            patch, exposed = facts["bullet"]["patch_length"], (m.get("overall_length") or 0) - m["case_length"]
-            if facts["bullet"]["type"] != PAPER_PATCHED:
+            patch = facts["bullet"]["patch_length"]
+            if facts["bullet"]["type"] != PAPER_PATCHED or kind in LOOSE or profile == PATCHED:
                 f.problem(f.line("bullet", "patch_length"), f'only a paper-patched bullet (type = "{PAPER_PATCHED}") '
-                                                            f"has a [bullet] patch_length")
-            elif not _is_number(patch) or not 0 < patch < exposed:
+                                                            f"of a cartridge has a [bullet] patch_length (GP 1890's "
+                                                            f"patched profile follows its drawing)")
+            elif not _is_number(patch) or not 0 < patch < m["overall_length"] - m["case_length"]:
                 f.problem(f.line("bullet", "patch_length"), "[bullet] patch_length is the paper showing above the case "
-                                                            f"mouth in mm: above 0 and below the exposed bullet ({exposed:g})")
+                                                            f"mouth in mm: above 0 and below the exposed bullet "
+                                                            f"({m['overall_length'] - m['case_length']:g})")
             elif not facts["bullet"]["sources"]:
                 f.problem(f.line("bullet"), "[bullet] a patch_length needs a source")
     if "case_head" in facts:

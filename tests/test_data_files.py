@@ -752,7 +752,15 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, vetterli, r"patch_length is the paper showing above the case mouth in mm: above 0 "
                                             r"and below the exposed bullet \(18.01\)",
                                line=c.line_of(vetterli, "patch_length ="))
-            self.assertProblem(c, WIN, r'only a paper-patched bullet \(type = "paper"\) has a \[bullet\] patch_length')
+            self.assertProblem(c, WIN, r'only a paper-patched bullet \(type = "paper"\) of a cartridge has a \[bullet\] patch_length')
+        with Copy() as c:
+            gp, ball = "calibres/7-5x53-5-mm-swiss-gp-1890.toml", "calibres/36-rundkugel-375.toml"
+            c.edit(gp, 'type = "paper"', 'type = "paper"\npatch_length = 5')
+            c.edit(ball, 'type = "lead"', 'type = "lead"\npatch_length = 2')
+            c.edit(vetterli, 'type = "paper"', 'type = "paper"\npatch_length = 0')
+            for rel in (gp, ball):
+                self.assertProblem(c, rel, r"only a paper-patched bullet .* of a cartridge has a \[bullet\] patch_length")
+            self.assertProblem(c, vetterli, r"patch_length is the paper showing above the case mouth")
         with Copy() as c:
             c.edit(vetterli, 'type = "paper"\nsources = ["https://en.wikipedia.org/wiki/.41_Swiss"]',
                    'type = "paper"\npatch_length = 9.4\nsources = []')
