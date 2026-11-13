@@ -10,7 +10,7 @@ display_aliases = [".22 Platzpatrone", "Setzkartusche 6.8/11"]
 
 [mm]
 rim = 6.8
-base = 5.7
+base = 5.74
 mouth = 3.4
 length = 11.0
 sources = []

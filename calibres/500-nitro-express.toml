@@ -15,13 +15,14 @@ origin_sources = [
 rare = true
 
 [mm]
-rim = 16.6
-base = 14.6
-neck = 13.5
-case_length = 76.0
-overall_length = 95.0
-bullet = 13.0
-sources = ["https://en.wikipedia.org/wiki/.500_Nitro_Express"]
+# SAAMI 500 Nitro Express 3", maximum cartridge.
+rim = 16.64
+base = 14.52
+neck = 13.51
+case_length = 76.2
+overall_length = 95.25
+bullet = 12.95
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=174"]
 
 [introduced]
 year = 1890
@@ -32,9 +33,9 @@ size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
 [case_head]
-# .040 in.
+# SAAMI 500 Nitro Express 3"
 rim_thickness = 1.02
-sources = ["book:cotw-18 p. 609"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=174"]
 
 [bullet]
 type = "softpoint"

@@ -13,13 +13,14 @@ origin_sources = ["book:ammo-encyclopedia-2 p. 618"]
 worldwide = true
 
 [mm]
-rim = 9.1
-base = 8.6
-neck = 8.5
-case_length = 17.3
-overall_length = 25.0
-bullet = 7.9
-sources = ["book:cotw-18 p. 527"]
+# SAAMI 32 Automatic, maximum cartridge.
+rim = 9.09
+base = 8.57
+neck = 8.55
+case_length = 17.27
+overall_length = 24.99
+bullet = 7.94
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=40"]
 
 [introduced]
 year = 1899
