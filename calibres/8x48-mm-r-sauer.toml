@@ -20,8 +20,9 @@ bullet = 8.03
 sources = ["book:cotw-18 p. 651"]
 
 [introduced]
-unknown = "A blackpowder round for Sauer guns; COTW 18 p. 627 gives no year."
-sources = ["book:cotw-18 p. 627"]
+# Designed about 1892 (municion.org); COTW 18 p. 627 gives no year.
+year = 1892
+sources = ["https://municion.org/producto/8-x-48-r-sauer-sohn/"]
 
 [primer]
 # .254 in. Berdan in the table
@@ -34,9 +35,17 @@ rim_thickness = 1.02
 sources = ["book:cotw-18 p. 651"]
 
 [bullet]
-# A blackpowder round (p. 627); the later DWM load was a soft point.
-type = "lead"
-sources = []
+# A blackpowder round (p. 627), but the only factory load the book gives is DWM's soft point. The DWM
+# (K K 462A) and Utendoerffer sheets on municion.org show one with a chrome-coloured bullet ("bala
+# cromada"), the RWS sheet "probably" one; none shows lead. No source names the jacket metal; the
+# sheets give no year and are filed under Germany before 1919. The first load is not dated.
+type = "softpoint"
+jacket = "cupronickel"
+sources = [
+    "book:cotw-18 p. 627",
+    "https://municion.org/ficha-08-048-tbc-010-0001/",
+    "https://municion.org/ficha-08-048-tbc-010-0002/",
+]
 
 [case]
 material = "brass"

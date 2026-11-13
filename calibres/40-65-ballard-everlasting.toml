@@ -32,9 +32,10 @@ size = "large-rifle"
 sources = []
 
 [bullet]
-# COTW 18 p. 220 gives no load of its own; a lead bullet, as in the other Ballard
-# rounds of its time.
-type = "lead"
+# COTW 18 p. 220 gives no load of its own. municion.org's one sheet
+# (https://municion.org/ficha-10-060-cbc-030-0001/: a tinned case, no maker or headstamp) shows a
+# paper-patched lead bullet; an Everlasting case was made to be reloaded, so it may be a handload.
+type = "paper"
 sources = []
 
 [case]
