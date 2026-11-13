@@ -14,13 +14,12 @@ rare = true
 rim = 9.4
 base = 8.13
 shoulder = 7.65
-shoulder_at = 22.5
+shoulder_at = 21.48
 neck = 6.65
 case_length = 29.46
 overall_length = 36.58
 bullet = 6.17
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 651"]
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/6-x-295-r-d-z-tesching/"]
 
 [introduced]
 unknown = "Made for B. Stahl's guns before 1900; no year given (COTW 18 p. 614)."
@@ -29,6 +28,11 @@ sources = ["book:cotw-18 p. 614"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 7.85, NØ 6.62, SL 21.30, NL 5.55, CL 29.28.
+degrees = 14.2
+sources = ["https://municion.org/producto/6-x-295-r-d-z-tesching/"]
 
 [bullet]
 type = "lead"

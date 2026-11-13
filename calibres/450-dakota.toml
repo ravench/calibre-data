@@ -16,13 +16,12 @@ rare = true
 rim = 14.73
 base = 14.78
 shoulder = 14.22
-shoulder_at = 60.5
+shoulder_at = 59.01
 neck = 12.32
 case_length = 73.66
 overall_length = 95.0
 bullet = 11.63
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 453"]
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/450-dakota/"]
 
 [introduced]
 unknown = "COTW 18 p. 435 calls it the latest Dakota round, after the .404 Jeffery line, without a year."
@@ -31,6 +30,11 @@ sources = ["book:cotw-18 p. 435", "https://www.ballisticstudies.com/Knowledgebas
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.15, NØ 12.29, SL 58.65, NL 12.40, CL 73.30.
+degrees = 22.5
+sources = ["https://municion.org/producto/450-dakota/"]
 
 [case_head]
 # .058 in.

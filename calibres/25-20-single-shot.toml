@@ -17,13 +17,12 @@ rare = true
 rim = 9.6
 base = 8.0
 shoulder = 7.52
-shoulder_at = 34.4
+shoulder_at = 27.13
 neck = 6.99
 case_length = 41.4
 overall_length = 48.26
 bullet = 6.53
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 249"]
+sources = ["book:cotw-18 p. 249", "https://municion.org/producto/25-20-single-shot/"]
 
 [introduced]
 # COTW: first appeared about 1882.
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 187"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 249"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 7.40, NØ 6.96, SL 27.20, NL 12.00, CL 41.47.
+degrees = 5.5
+sources = ["https://municion.org/producto/25-20-single-shot/"]
 
 [bullet]
 # COTW 18 p. 187 lists only handloads; municion.org's sheet shows a lead bullet.

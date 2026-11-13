@@ -18,13 +18,12 @@ rare = true
 rim = 11.91
 base = 12.47
 shoulder = 11.0
-shoulder_at = 49.4
+shoulder_at = 49.14
 neck = 9.07
 case_length = 59.18
 overall_length = 80.52
 bullet = 8.28
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 574"]
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/8-x-59-italian-breda-mg-m-1935/"]
 
 [introduced]
 year = 1937
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 557"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/8×59mm_Rb_Breda"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.80, NØ 9.14, SL 48.80, NL 7.60, CL 58.84.
+degrees = 18.8
+sources = ["https://municion.org/producto/8-x-59-italian-breda-mg-m-1935/"]
 
 [bullet]
 type = "jacketed"

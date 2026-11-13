@@ -15,15 +15,18 @@ rare = true
 rim = 14.7
 base = 14.78
 shoulder = 14.43
-shoulder_at = 60.1
+shoulder_at = 62.89
 neck = 13.61
 case_length = 73.66
 overall_length = 95.0
 bullet = 12.95
 # The table gives the belt, .603 in., in the rim column; the rim is the .460 Weatherby Magnum's (R1 on its
 # C.I.P. sheet), as the belt is drawn at the rim diameter.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 453", "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
+sources = [
+  "book:cotw-18 p. 453",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf",
+  "https://municion.org/producto/500-a-square-belted-type-2/",
+]
 
 [introduced]
 # COTW: designed in 1974; the A-Square company was founded for it in 1979.
@@ -33,6 +36,11 @@ sources = ["book:cotw-18 p. 443"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.40, NØ 13.47, SL 62.50, NL 9.40, CL 73.27.
+degrees = 18.7
+sources = ["https://municion.org/producto/500-a-square-belted-type-2/"]
 
 [case_head]
 # from the .460 Weatherby Magnum case; C.I.P. sheet

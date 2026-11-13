@@ -14,13 +14,12 @@ rare = true
 rim = 12.95
 base = 13.67
 shoulder = 13.44
-shoulder_at = 20.2
+shoulder_at = 22.88
 neck = 11.71
 case_length = 32.51
 overall_length = 40.39
 bullet = 10.9
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 453"]
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/440-cor-bon-magnum/"]
 
 [introduced]
 year = 1997
@@ -29,6 +28,11 @@ sources = ["book:cotw-18 p. 429"]
 [primer]
 size = "large-pistol"
 sources = ["book:cotw-18 p. 453"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.43, NØ 11.71, SL 24.02, NL 6.15, CL 33.65.
+degrees = 13.9
+sources = ["https://municion.org/producto/440-cor-bon-magnum/"]
 
 [case_head]
 # from the .50 Action Express case; C.I.P. ?(50 AE: rim 13.06, body 13.79)

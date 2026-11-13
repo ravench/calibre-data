@@ -16,13 +16,17 @@ rare = true
 rim = 13.56
 base = 13.08
 shoulder = 11.51
-shoulder_at = 49.53
+shoulder_at = 48.32
 neck = 9.37
 case_length = 60.96
 overall_length = 78.74
 bullet = 8.59
 # The table's base is the belt; the body in front of it and shoulder_at are Donnelly's.
-sources = ["book:cotw-18 p. 608", "book:donnelly p. 382"]
+sources = [
+  "book:cotw-18 p. 608",
+  "book:donnelly p. 382",
+  "https://municion.org/producto/33-bsa-belted-rimless-nitro-express/",
+]
 
 [introduced]
 year = 1921
@@ -33,6 +37,11 @@ sources = ["book:cotw-18 p. 586"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.68, NØ 9.30, SL 48.10, NL 8.10, CL 60.74.
+degrees = 14.7
+sources = ["https://municion.org/producto/33-bsa-belted-rimless-nitro-express/"]
 
 [case_head]
 # .051 in.

@@ -15,13 +15,12 @@ rare = true
 rim = 12.01
 base = 11.91
 shoulder = 10.92
-shoulder_at = 52.4
+shoulder_at = 47.73
 neck = 7.37
 case_length = 61.98
 overall_length = 86.36
 bullet = 6.71
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 249"]
+sources = ["book:cotw-18 p. 249", "https://municion.org/producto/256-newton/"]
 
 [introduced]
 year = 1913
@@ -30,6 +29,11 @@ sources = ["book:cotw-18 p. 191"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 249"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.73, NØ 7.47, SL 48.00, NL 9.85, CL 62.25.
+degrees = 20.3
+sources = ["https://municion.org/producto/256-newton/"]
 
 [case_head]
 # from the .30-06 case; C.I.P. 30-06 Spring.

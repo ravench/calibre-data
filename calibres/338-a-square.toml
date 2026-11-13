@@ -14,15 +14,18 @@ rare = true
 rim = 14.7
 base = 14.78
 shoulder = 14.05
-shoulder_at = 60.0
+shoulder_at = 58.39
 neck = 9.32
 case_length = 72.39
 overall_length = 93.22
 bullet = 8.59
 # The table gives the belt, .603 in., in the rim column; the rim is the .378 Weatherby Magnum's (R1 on its
 # C.I.P. sheet), as the belt is drawn at the rim diameter.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 452", "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page29.pdf"]
+sources = [
+  "book:cotw-18 p. 452",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page29.pdf",
+  "https://municion.org/producto/338-a-square-belted/",
+]
 
 [introduced]
 year = 1978
@@ -31,6 +34,11 @@ sources = ["book:cotw-18 p. 401"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.03, NØ 9.42, SL 58.00, NL 10.00, CL 72.00.
+degrees = 30.0
+sources = ["https://municion.org/producto/338-a-square-belted/"]
 
 [case_head]
 # from the .378 Weatherby Magnum case; C.I.P. sheet

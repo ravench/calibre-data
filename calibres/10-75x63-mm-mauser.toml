@@ -15,13 +15,12 @@ rare = true
 rim = 11.86
 base = 12.52
 shoulder = 12.17
-shoulder_at = 51.3
+shoulder_at = 52.26
 neck = 11.35
 case_length = 62.74
 overall_length = 81.79
 bullet = 10.77
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 652"]
+sources = ["book:cotw-18 p. 652", "https://municion.org/producto/1075-x-63-g-mauser/"]
 
 [introduced]
 # COTW: about 1910.
@@ -31,6 +30,11 @@ sources = ["book:cotw-18 p. 647"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.10, NØ 11.38, SL 52.50, NL 8.50, CL 62.98.
+degrees = 10.3
+sources = ["https://municion.org/producto/1075-x-63-g-mauser/"]
 
 [bullet]
 # COTW gives only its weight.

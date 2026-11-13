@@ -15,13 +15,12 @@ rare = true
 rim = 13.08
 base = 11.89
 shoulder = 11.76
-shoulder_at = 28.8
+shoulder_at = 24.54
 neck = 11.23
 case_length = 40.13
 overall_length = 49.78
 bullet = 10.87
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251"]
+sources = ["book:cotw-18 p. 251", "https://municion.org/producto/44-40-extra-long-cf/"]
 
 [introduced]
 unknown = "COTW 18 p. 231 finds no record of the rifle it was made for; a Stevens rifle of 1914-16 chambered it."
@@ -30,6 +29,11 @@ sources = ["book:cotw-18 p. 231"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 251"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.76, NØ 11.23, SL 24.54, NL 11.99, CL 40.13.
+degrees = 4.2
+sources = ["https://municion.org/producto/44-40-extra-long-cf/"]
 
 [bullet]
 # COTW 18 p. 231 gives no load; municion.org's sheet shows a lead bullet.

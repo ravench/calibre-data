@@ -15,13 +15,12 @@ rare = true
 rim = 11.89
 base = 11.73
 shoulder = 10.72
-shoulder_at = 61.6
+shoulder_at = 59.4
 neck = 8.86
 case_length = 71.12
 overall_length = 83.31
 bullet = 8.08
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 651"]
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/8-x-71-peterlongo/"]
 
 [introduced]
 unknown = "COTW 18 p. 630 gives no year."
@@ -30,6 +29,11 @@ sources = ["book:cotw-18 p. 630"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.78, NØ 8.90, SL 59.00, NL 9.20, CL 70.72.
+degrees = 20.5
+sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
 
 [bullet]
 type = "softpoint"

@@ -16,13 +16,12 @@ rare = true
 rim = 12.95
 base = 11.51
 shoulder = 10.49
-shoulder_at = 37.3
+shoulder_at = 23.86
 neck = 8.43
 case_length = 46.99
 overall_length = 57.4
 bullet = 8.0
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 250"]
+sources = ["book:cotw-18 p. 250", "https://municion.org/producto/32-40-150-bullard/"]
 
 [introduced]
 # COTW: Bullard rifles were made from 1882 or 1883, and all their rounds were out by 1887;
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 202"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 250"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.22, NØ 8.60, SL 23.60, NL 14.00, CL 46.73.
+degrees = 5.1
+sources = ["https://municion.org/producto/32-40-150-bullard/"]
 
 [bullet]
 type = "lead"

@@ -17,13 +17,15 @@ rare = true
 rim = 15.95
 base = 13.21
 shoulder = 12.8
-shoulder_at = 50.0
+shoulder_at = 42.24
 neck = 11.84
 case_length = 61.98
 overall_length = 78.23
 bullet = 11.23
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251"]
+sources = [
+  "book:cotw-18 p. 251",
+  "https://municion.org/producto/44-90-remington-2-7-16-special-creedmoor/",
+]
 
 [introduced]
 year = 1873
@@ -32,6 +34,11 @@ sources = ["book:cotw-18 p. 233"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.68, NØ 11.80, SL 42.40, NL 15.04, CL 62.14.
+degrees = 5.3
+sources = ["https://municion.org/producto/44-90-remington-2-7-16-special-creedmoor/"]
 
 [case_head]
 # .075 in.

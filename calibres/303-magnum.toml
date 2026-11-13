@@ -15,13 +15,12 @@ rare = true
 rim = 14.15
 base = 13.46
 shoulder = 11.73
-shoulder_at = 49.4
+shoulder_at = 44.49
 neck = 8.76
 case_length = 59.69
 overall_length = 82.55
 bullet = 7.92
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 608"]
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/303-jeffery-magnum-semi-rimmed/"]
 
 [introduced]
 year = 1919
@@ -30,6 +29,12 @@ sources = ["book:cotw-18 p. 585"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# The drawing is of the .303 Jeffery Magnum semi-rimmed, the same case (rim 14.15 over a 13.46 base).
+# AECC drawing on municion.org: SØ 11.60, NØ 8.83, SL 44.40, NL 9.80, CL 59.60.
+degrees = 14.4
+sources = ["https://municion.org/producto/303-jeffery-magnum-semi-rimmed/"]
 
 [bullet]
 type = "jacketed"

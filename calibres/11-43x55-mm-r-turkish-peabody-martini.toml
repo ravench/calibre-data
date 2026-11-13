@@ -17,13 +17,12 @@ rare = true
 rim = 16.97
 base = 14.78
 shoulder = 14.22
-shoulder_at = 45.3
+shoulder_at = 34.35
 neck = 12.04
 case_length = 58.42
 overall_length = 79.25
 bullet = 11.35
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 574"]
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/1143-x-59-r-turkish-martini-peabody-m-1874/"]
 
 [introduced]
 year = 1874
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 565"]
 # The table gives a Berdan primer without its size; 6.62 mm, 2 specimens on municion.org's photos,
 # the .254 in. one.
 size = "berdan-nitro"
+sources = ["https://municion.org/producto/1143-x-59-r-turkish-martini-peabody-m-1874/"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.95, NØ 12.08, SL 34.50, NL 17.80, CL 58.57.
+degrees = 8.5
 sources = ["https://municion.org/producto/1143-x-59-r-turkish-martini-peabody-m-1874/"]
 
 [bullet]

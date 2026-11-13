@@ -16,15 +16,18 @@ rare = true
 rim = 16.1
 base = 13.11
 shoulder = 12.9
-shoulder_at = 27.0
+shoulder_at = 26.06
 neck = 12.14
 case_length = 39.12
 overall_length = 52.83
 bullet = 11.53
 # COTW 18 prints 2.08 in. in the rim thickness, case length and overall length columns; the case length
 # is 1.54 in. from COTW 5 p. 138.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251", "book:cotw-5 p. 138"]
+sources = [
+  "book:cotw-18 p. 251",
+  "book:cotw-5 p. 138",
+  "https://municion.org/producto/45-50-peabody-martini-sporting/",
+]
 
 [introduced]
 # COTW: introduced in 1873-74.
@@ -35,6 +38,11 @@ sources = ["book:cotw-18 p. 237"]
 # The table gives no primer.
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.85, NØ 12.16, SL 26.30, NL 9.45, CL 39.36.
+degrees = 5.5
+sources = ["https://municion.org/producto/45-50-peabody-martini-sporting/"]
 
 [bullet]
 type = "lead"

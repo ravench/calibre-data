@@ -16,13 +16,12 @@ rare = true
 rim = 12.04
 base = 11.94
 shoulder = 10.92
-shoulder_at = 45.6
+shoulder_at = 44.78
 neck = 7.42
 case_length = 55.12
 overall_length = 78.49
 bullet = 6.71
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 608"]
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/256-gibbs-magnum/"]
 
 [introduced]
 year = 1913
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 579"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.78, NØ 7.50, SL 44.70, NL 5.40, CL 55.04.
+degrees = 18.4
+sources = ["https://municion.org/producto/256-gibbs-magnum/"]
 
 [bullet]
 type = "softpoint"

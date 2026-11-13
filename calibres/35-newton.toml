@@ -15,14 +15,13 @@ rare = true
 rim = 13.33
 base = 13.28
 shoulder = 12.65
-shoulder_at = 52.6
+shoulder_at = 51.41
 neck = 9.73
 case_length = 64.01
 overall_length = 85.09
 bullet = 9.09
 # The table row is shifted by one column: 2.52 in. is the case length and 3.35 in. the overall length.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 250"]
+sources = ["book:cotw-18 p. 250", "https://municion.org/producto/35-newton/"]
 
 [introduced]
 # COTW: listed in the 1915 Newton Rifle Co. catalogue.
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 209"]
 # The table row has lost its primer; large rifle, as on the .30 Newton.
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.67, NØ 9.76, SL 51.30, NL 8.80, CL 63.90.
+degrees = 21.0
+sources = ["https://municion.org/producto/35-newton/"]
 
 [bullet]
 type = "softpoint"

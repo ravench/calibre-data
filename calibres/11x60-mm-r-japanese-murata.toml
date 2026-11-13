@@ -16,13 +16,12 @@ rare = true
 rim = 16.05
 base = 13.77
 shoulder = 13.36
-shoulder_at = 47.7
+shoulder_at = 34.74
 neck = 11.81
 case_length = 59.94
 overall_length = 79.5
 bullet = 10.97
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 574"]
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mauser-base/"]
 
 [introduced]
 # Meiji 13 is 1880; sources differ on the year.
@@ -32,6 +31,11 @@ sources = ["book:cotw-18 p. 562"]
 [primer]
 # 6.37 mm, 3 specimens
 size = "berdan-nitro"
+sources = ["https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mauser-base/"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.50, NØ 11.90, SL 34.70, NL 17.60, CL 59.90.
+degrees = 6.0
 sources = ["https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mauser-base/"]
 
 [bullet]

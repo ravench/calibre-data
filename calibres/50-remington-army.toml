@@ -15,13 +15,12 @@ rare = true
 rim = 16.89
 base = 14.35
 shoulder = 14.33
-shoulder_at = 8.7
+shoulder_at = 14.36
 neck = 13.51
 case_length = 22.22
 overall_length = 31.5
 bullet = 12.9
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 529"]
+sources = ["book:cotw-18 p. 529", "https://municion.org/producto/50-remington-army-m-1871/"]
 
 [introduced]
 year = 1871
@@ -31,6 +30,11 @@ sources = ["book:cotw-18 p. 526"]
 # First made with an inside primer (COTW 18 p. 526); the table gives none.
 size = "large-pistol"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.27, NØ 13.60, SL 14.15, NL 6.50, CL 22.01.
+degrees = 13.8
+sources = ["https://municion.org/producto/50-remington-army-m-1871/"]
 
 [bullet]
 type = "lead"

@@ -16,13 +16,15 @@ rare = true
 rim = 15.29
 base = 12.85
 shoulder = 12.7
-shoulder_at = 55.2
+shoulder_at = 46.35
 neck = 11.05
 case_length = 66.8
 overall_length = 87.38
 bullet = 10.24
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251"]
+sources = [
+  "book:cotw-18 p. 251",
+  "https://municion.org/producto/40-90-370-sharps-necked-2-5-8-case/",
+]
 
 [introduced]
 year = 1873
@@ -32,6 +34,11 @@ sources = ["book:cotw-18 p. 220"]
 # The table gives B-1, a Berdan primer without its size.
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.50, NØ 10.84, SL 46.56, NL 16.02, CL 67.01.
+degrees = 10.6
+sources = ["https://municion.org/producto/40-90-370-sharps-necked-2-5-8-case/"]
 
 [bullet]
 type = "lead"

@@ -15,13 +15,15 @@ rare = true
 rim = 14.6
 base = 12.7
 shoulder = 11.68
-shoulder_at = 48.2
+shoulder_at = 41.67
 neck = 7.62
 case_length = 58.17
 overall_length = 82.55
 bullet = 6.71
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 651"]
+sources = [
+  "book:cotw-18 p. 651",
+  "https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/",
+]
 
 [introduced]
 year = 1933
@@ -30,6 +32,11 @@ sources = ["book:cotw-18 p. 620"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.90, NØ 7.67, SL 41.80, NL 9.90, CL 58.30.
+degrees = 17.8
+sources = ["https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/"]
 
 [bullet]
 # The service or target load, full metal jacket; p. 620 also lists soft points.

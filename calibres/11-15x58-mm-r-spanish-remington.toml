@@ -17,13 +17,12 @@ rare = true
 rim = 16.13
 base = 13.11
 shoulder = 13.0
-shoulder_at = 44.9
+shoulder_at = 38.57
 neck = 11.63
 case_length = 57.15
 overall_length = 71.63
 bullet = 11.15
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 574"]
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/1115-x-57-r-spanish-remington-m-1869-1871-188/"]
 
 [introduced]
 # COTW: it replaced the Reformado in 1871.
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 567"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.77, NØ 11.55, SL 38.00, NL 11.00, CL 56.58.
+degrees = 4.6
+sources = ["https://municion.org/producto/1115-x-57-r-spanish-remington-m-1869-1871-188/"]
 
 [case_head]
 # .082 in.

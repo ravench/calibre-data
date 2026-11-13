@@ -16,13 +16,12 @@ rare = true
 rim = 11.81
 base = 13.0
 shoulder = 13.0
-shoulder_at = 47.6
+shoulder_at = 34.44
 neck = 11.81
 case_length = 59.69
 overall_length = 72.64
 bullet = 11.18
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 652"]
+sources = ["book:cotw-18 p. 652", "https://municion.org/producto/112-x-60-schuler/"]
 
 [introduced]
 # COTW: right after the First World War, but maybe older.
@@ -34,6 +33,11 @@ sources = ["book:cotw-18 p. 649"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.76, NØ 11.95, SL 35.00, NL 19.10, CL 60.25.
+degrees = 3.8
+sources = ["https://municion.org/producto/112-x-60-schuler/"]
 
 [bullet]
 type = "softpoint"

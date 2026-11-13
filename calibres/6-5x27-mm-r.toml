@@ -14,13 +14,12 @@ rare = true
 rim = 10.87
 base = 9.63
 shoulder = 8.84
-shoulder_at = 19.1
+shoulder_at = 19.57
 neck = 7.21
 case_length = 26.92
 overall_length = 39.12
 bullet = 6.53
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 651"]
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/65-x-27-r-p-tesching/"]
 
 [introduced]
 unknown = "A short single-loader round, in use by the 1890s or earlier (COTW 18 p. 616); no year."
@@ -29,6 +28,11 @@ sources = ["book:cotw-18 p. 616"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 8.98, NØ 7.30, SL 19.50, NL 4.60, CL 26.85.
+degrees = 17.0
+sources = ["https://municion.org/producto/65-x-27-r-p-tesching/"]
 
 [bullet]
 type = "softpoint"

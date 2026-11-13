@@ -16,13 +16,15 @@ rare = true
 rim = 13.67
 base = 13.77
 shoulder = 12.8
-shoulder_at = 52.4
+shoulder_at = 49.33
 neck = 8.05
 case_length = 63.5
 overall_length = 87.63
 bullet = 7.32
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 608"]
+sources = [
+  "book:cotw-18 p. 608",
+  "https://municion.org/producto/280-jeffery-rimless-nitro-express/",
+]
 
 [introduced]
 # COTW: around 1915.
@@ -34,6 +36,11 @@ sources = ["book:cotw-18 p. 582"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.47, NØ 8.16, SL 49.36, NL 8.20, CL 63.53.
+degrees = 19.8
+sources = ["https://municion.org/producto/280-jeffery-rimless-nitro-express/"]
 
 [bullet]
 # COTW gives no factory load.

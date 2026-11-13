@@ -14,13 +14,12 @@ rare = true
 rim = 13.51
 base = 13.03
 shoulder = 12.47
-shoulder_at = 60.9
+shoulder_at = 61.86
 neck = 11.35
 case_length = 72.39
 overall_length = 91.44
 bullet = 10.57
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 453"]
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/416-hoffman-belted/"]
 
 [introduced]
 unknown = "COTW 18 p. 426: George Hoffman's wildcat of the late 1970s, later loaded by A-Square; no year."
@@ -29,6 +28,11 @@ sources = ["book:cotw-18 p. 426"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.36, NØ 11.22, SL 61.00, NL 8.50, CL 71.53.
+degrees = 15.7
+sources = ["https://municion.org/producto/416-hoffman-belted/"]
 
 [case_head]
 # from the .375 H&H Magnum case; C.I.P. 375 H&H Mag.

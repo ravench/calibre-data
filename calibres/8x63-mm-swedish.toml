@@ -18,13 +18,12 @@ rare = true
 rim = 12.17
 base = 12.4
 shoulder = 11.58
-shoulder_at = 52.8
+shoulder_at = 50.98
 neck = 9.04
 case_length = 62.99
 overall_length = 85.34
 bullet = 8.2
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 573"]
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
 
 [introduced]
 year = 1932
@@ -34,6 +33,11 @@ sources = ["book:cotw-18 p. 556"]
 # The infobox gives a Berdan primer of the large rifle size.
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/8×63mm_patron_m/32"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.51, NØ 9.10, SL 50.80, NL 8.00, CL 62.81.
+degrees = 16.7
+sources = ["https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
 
 [bullet]
 type = "jacketed"

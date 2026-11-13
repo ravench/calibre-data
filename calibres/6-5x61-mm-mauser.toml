@@ -15,13 +15,12 @@ rare = true
 rim = 12.17
 base = 12.12
 shoulder = 11.48
-shoulder_at = 51.1
+shoulder_at = 47.77
 neck = 7.52
 case_length = 60.96
 overall_length = 90.17
 bullet = 6.71
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 651"]
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/65-x-61-mauser/"]
 
 [introduced]
 year = 1930
@@ -30,6 +29,11 @@ sources = ["book:cotw-18 p. 619"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.54, NØ 7.49, SL 47.73, NL 8.78, CL 60.92.
+degrees = 24.7
+sources = ["https://municion.org/producto/65-x-61-mauser/"]
 
 [bullet]
 type = "softpoint"

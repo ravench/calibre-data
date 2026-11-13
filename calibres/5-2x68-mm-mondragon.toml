@@ -16,13 +16,12 @@ rare = true
 rim = 12.47
 base = 12.42
 shoulder = 11.43
-shoulder_at = 57.8
+shoulder_at = 61.6
 neck = 6.17
 case_length = 67.31
 overall_length = 77.72
 bullet = 5.28
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 573"]
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/52-x-676-mondragon-original/"]
 
 [introduced]
 year = 1894
@@ -31,6 +30,11 @@ sources = ["book:cotw-18 p. 532"]
 [primer]
 # 5.27 mm, 3 specimens
 size = "large-rifle"
+sources = ["https://municion.org/producto/52-x-676-mondragon-original/"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.39, NØ 6.31, SL 62.30, NL 3.55, CL 68.01.
+degrees = 49.6
 sources = ["https://municion.org/producto/52-x-676-mondragon-original/"]
 
 [case_head]

@@ -16,13 +16,12 @@ rare = true
 rim = 16.33
 base = 14.48
 shoulder = 13.46
-shoulder_at = 63.7
+shoulder_at = 57.1
 neck = 12.9
 case_length = 76.2
 overall_length = 95.76
 bullet = 12.09
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 609"]
+sources = ["book:cotw-18 p. 609", "https://municion.org/producto/476-nitro-express-3-flanged/"]
 
 [introduced]
 year = 1907
@@ -32,6 +31,11 @@ sources = ["book:cotw-18 p. 602"]
 # The table gives a .254 in. Berdan primer.
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 609"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.49, NØ 12.75, SL 57.00, NL 16.50, CL 76.10.
+degrees = 8.1
+sources = ["https://municion.org/producto/476-nitro-express-3-flanged/"]
 
 [bullet]
 type = "softpoint"

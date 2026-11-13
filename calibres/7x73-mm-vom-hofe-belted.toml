@@ -14,13 +14,12 @@ rare = true
 rim = 13.54
 base = 13.39
 shoulder = 12.27
-shoulder_at = 62.3
+shoulder_at = 52.04
 neck = 8.0
 case_length = 72.9
 overall_length = 98.55
 bullet = 7.21
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 651"]
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/7-x-73-b-vom-hofe-super-express/"]
 
 [introduced]
 year = 1931
@@ -29,6 +28,11 @@ sources = ["book:cotw-18 p. 623"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.32, NØ 8.00, SL 52.00, NL 10.00, CL 72.86.
+degrees = 11.2
+sources = ["https://municion.org/producto/7-x-73-b-vom-hofe-super-express/"]
 
 [bullet]
 type = "softpoint"

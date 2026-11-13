@@ -14,13 +14,12 @@ rare = true
 rim = 14.93
 base = 14.91
 shoulder = 14.25
-shoulder_at = 65.9
+shoulder_at = 64.91
 neck = 9.4
 case_length = 78.36
 overall_length = 124.46
 bullet = 8.59
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 452"]
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/33-xc-tubb/"]
 
 [introduced]
 unknown = "COTW 18 p. 397 gives no year; David Tubb set a record with it in December 2018."
@@ -30,6 +29,11 @@ sources = ["book:cotw-18 p. 397"]
 # The table names Federal's 215, a large rifle magnum primer.
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.00, NØ 9.20, SL 64.80, NL 9.80, CL 78.25.
+degrees = 33.3
+sources = ["https://municion.org/producto/33-xc-tubb/"]
 
 [case_head]
 # from the .338 Lapua Magnum case; C.I.P. 338 Lapua Mag.

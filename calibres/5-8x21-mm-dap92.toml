@@ -13,13 +13,12 @@ rare = true
 rim = 7.98
 base = 7.95
 shoulder = 7.77
-shoulder_at = 14.1
+shoulder_at = 16.46
 neck = 6.58
 case_length = 21.01
 overall_length = 32.51
 bullet = 5.99
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 527"]
+sources = ["book:cotw-18 p. 527", "https://municion.org/producto/58-x-21-china-pistol/"]
 
 [introduced]
 unknown = "The Chinese PDW and QSZ-92 pistol round; COTW 18 p. 461 prints the .25 ACP's history under its heading."
@@ -28,6 +27,11 @@ sources = ["book:cotw-18 p. 461"]
 [primer]
 size = "small-pistol"
 sources = ["book:cotw-18 p. 527"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 7.77, NØ 6.57, SL 16.45, NL 2.45, CL 21.00.
+degrees = 15.9
+sources = ["https://municion.org/producto/58-x-21-china-pistol/"]
 
 [case_head]
 # .044 in.

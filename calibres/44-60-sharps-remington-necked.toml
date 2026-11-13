@@ -17,13 +17,12 @@ rare = true
 rim = 16.0
 base = 13.08
 shoulder = 12.75
-shoulder_at = 35.6
+shoulder_at = 28.39
 neck = 11.79
 case_length = 47.75
 overall_length = 64.77
 bullet = 11.35
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251"]
+sources = ["book:cotw-18 p. 251", "https://municion.org/producto/44-60-396-sharps-necked-1-7-8/"]
 
 [introduced]
 year = 1869
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 236"]
 # The table gives L-B1: a large rifle or a Berdan #1 primer.
 size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.91, NØ 11.91, SL 29.00, NL 15.65, CL 48.36.
+degrees = 7.7
+sources = ["https://municion.org/producto/44-60-396-sharps-necked-1-7-8/"]
 
 [bullet]
 type = "lead"

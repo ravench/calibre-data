@@ -15,14 +15,13 @@ rare = true
 rim = 12.47
 base = 12.5
 shoulder = 11.51
-shoulder_at = 43.0
+shoulder_at = 44.26
 neck = 9.88
 case_length = 53.59
 overall_length = 71.12
 bullet = 9.27
 # The table gives both twins in one row; its rim thickness is left out, as it does not say whose it is.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 652"]
+sources = ["book:cotw-18 p. 652", "https://municion.org/producto/93-x-53-swiss-m89-n/"]
 
 [introduced]
 # COTW: the mid-1920s, possibly 1925.
@@ -32,6 +31,11 @@ sources = ["book:cotw-18 p. 639"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.38, NØ 9.98, SL 43.95, NL 6.89, CL 53.28.
+degrees = 16.0
+sources = ["https://municion.org/producto/93-x-53-swiss-m89-n/"]
 
 [bullet]
 type = "softpoint"
