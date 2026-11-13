@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
 BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
@@ -137,7 +137,7 @@ def patch_profile(r, y0, top, band=PATCH_BAND):
 
 
 # Share of the exposed bullet wrapped in paper on a PAPER_PATCHED lead bullet (Gras, Martini-Henry):
-# the paper covers the body, the lead nose shows.
+# the paper covers the body, the lead nose shows. A calibre's [bullet] patch_length replaces it.
 PAPER_BAND = 0.5
 
 # Share of the exposed bullet that is the bare lead tip of a SOFT_POINT bullet, or the plastic tip of
@@ -238,7 +238,9 @@ def outline(s):
                 paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"])), H, hw)
                 paths["bulletMaterial"] = "steel"
             elif kind == PAPER_PATCHED:
-                paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"], PAPER_BAND)), H, hw)
+                patch = patch_length(s["name"])
+                band = patch / (s["oal"] - s["case"]) if patch else PAPER_BAND
+                paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"], band)), H, hw)
                 paths["bulletMaterial"] = "lead"
             elif kind == LEAD:
                 paths["bulletMaterial"] = "lead"

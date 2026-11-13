@@ -740,6 +740,41 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, 'type = "softpoint"', 'type = "softpoint"\njacket = "steel"')
             self.assertEqual(c.problems(), [])
 
+    def test_a_patch_length(self):
+        vetterli = "calibres/10-4x38-mm-r-vetterli.toml"
+        noted = 'type = "paper"\n# Patch: measured on a round of 1878\npatch_length = '
+        with Copy() as c:
+            c.edit(vetterli, 'type = "paper"', noted + "9.4")
+            self.assertEqual(c.problems(), [])
+            self.assertEqual(load(c.dir)["PATCH_LENGTHS"]["10.4x38 mm R Vetterli"][0], 9.4)
+        with Copy() as c:
+            c.edit(vetterli, 'type = "paper"', noted + "18.1")
+            c.edit(WIN, 'type = "softpoint"', 'type = "softpoint"\npatch_length = 5')
+            self.assertProblem(c, vetterli, r"patch_length is the paper showing above the case mouth in mm: above 0 "
+                                            r"and below the exposed bullet \(18.01\)",
+                               line=c.line_of(vetterli, "patch_length ="))
+            self.assertProblem(c, WIN, r'only a paper-patched bullet \(type = "paper"\) of a cartridge has a \[bullet\] patch_length$')
+        with Copy() as c:
+            gp, ball = "calibres/7-5x53-5-mm-swiss-gp-1890.toml", "calibres/36-rundkugel-375.toml"
+            c.edit(gp, 'type = "paper"', 'type = "paper"\npatch_length = 5')
+            c.edit(ball, 'type = "lead"', 'type = "lead"\npatch_length = 2')
+            c.edit(vetterli, 'type = "paper"', noted + "0")
+            self.assertProblem(c, gp, r"GP 1890's patched profile draws its paper to the 1892 drawing: no patch_length")
+            self.assertProblem(c, ball, r"only a paper-patched bullet .* of a cartridge has a \[bullet\] patch_length$")
+            self.assertProblem(c, vetterli, r"patch_length is the paper showing above the case mouth")
+        with Copy() as c:
+            c.edit(vetterli, 'type = "paper"\nsources = ["https://en.wikipedia.org/wiki/.41_Swiss"]',
+                   noted + "9.4\nsources = []")
+            self.assertProblem(c, vetterli, r"\[bullet\] a patch_length needs a source")
+        with Copy() as c:  # the bullet's sources name the type; the length's own source goes in a comment above it
+            c.edit(vetterli, 'type = "paper"', 'type = "paper"\npatch_length = 9.4')
+            self.assertOnlyProblems(c, vetterli, r"a comment above patch_length names the source")
+        with Copy() as c:  # a mistyped length is one problem of the [mm] keys, not a crash of the range check
+            c.edit(vetterli, "overall_length = 56.22", "overal_length = 56.22")
+            c.edit(vetterli, 'type = "paper"', noted + "9.4")
+            self.assertProblem(c, vetterli, r"overall_length")
+            self.assertFalse([p for p in c.problems() if "patch_length" in p[2]], c.problems())
+
     def test_order_toml_names_without_a_file(self):
         with Copy() as c:
             c.edit("order.toml", '".22 LR"', '".22 LRR"')

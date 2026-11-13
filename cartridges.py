@@ -170,7 +170,7 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "primer": (("size",), ("diameter",), "may be empty"),  # diameter: measured mm, required for miniature
     "shoulder_angle": (("degrees",), (), "required"),
     "case_head": (("rim_thickness",), HEAD_GROOVE, "required"),
-    "bullet": (("type",), ("jacket",), "may be empty"),
+    "bullet": (("type",), ("jacket", "patch_length"), "may be empty"),
     "case": (("material",), (), "may be empty"),  # every case but brass needs a source
     "current_cases": (("materials",), (), "required"),
     "fired_by": (("firearms",), (), "required"),
@@ -286,6 +286,12 @@ def _close(word, choices):
 
 def _is_number(v):
     return isinstance(v, (int, float)) and not isinstance(v, bool)
+
+
+def _note_above(f, line):
+    """True when the line before `line` (1-based) is a comment: the note a value from a measured round needs."""
+    lines = f.text.split("\n")
+    return line is not None and line >= 2 and lines[line - 2].lstrip().startswith("#")
 
 
 def _is_text_list(v):
@@ -624,6 +630,22 @@ def _read_calibre(f, countries, books=None):
         elif "jacket" in facts["bullet"] and facts["bullet"]["type"] not in JACKETED_BULLETS:
             f.problem(f.line("bullet", "jacket"), f"only a bullet with a jacket ({', '.join(JACKETED_BULLETS)}) "
                                                   f"has a [bullet] jacket")
+        if "patch_length" in facts["bullet"]:
+            patch, line = facts["bullet"]["patch_length"], f.line("bullet", "patch_length")
+            oal, case = m.get("overall_length"), m.get("case_length")
+            # A missing or mistyped length is reported with the [mm] keys; the range then goes unchecked.
+            exposed = oal - case if _is_number(oal) and _is_number(case) else None
+            if facts["bullet"]["type"] != PAPER_PATCHED or kind in LOOSE:
+                f.problem(line, f'only a paper-patched bullet (type = "{PAPER_PATCHED}") of a cartridge has a [bullet] patch_length')
+            elif profile == PATCHED:
+                f.problem(line, "the GP 1890's patched profile draws its paper to the 1892 drawing: no patch_length")
+            elif not _is_number(patch) or exposed is not None and not 0 < patch < exposed:
+                f.problem(line, "[bullet] patch_length is the paper showing above the case mouth in mm: above 0 and below "
+                                "the exposed bullet" + (f" ({exposed:g})" if exposed is not None else ""))
+            elif not facts["bullet"]["sources"]:
+                f.problem(f.line("bullet"), "[bullet] a patch_length needs a source")
+            elif not _note_above(f, line):
+                f.problem(line, "a comment above patch_length names the source that gives it, or the round it was measured on")
     if "case_head" in facts:
         groove = [k for k in HEAD_GROOVE if k in facts["case_head"]]
         if kind in (RIMMED, RIMFIRE) and groove:
@@ -830,7 +852,7 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
                          "CURRENT_CASES", "SOURCES", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
@@ -884,6 +906,8 @@ def load(root=ROOT):
                 t["BULLETS"][n] = (facts["bullet"]["type"], first("bullet"))
                 if "jacket" in facts["bullet"]:
                     t["JACKETS"][n] = facts["bullet"]["jacket"]
+                if "patch_length" in facts["bullet"]:
+                    t["PATCH_LENGTHS"][n] = (facts["bullet"]["patch_length"], first("bullet"))
                 if not facts["bullet"]["sources"] and facts["bullet"]["type"] != (LEAD if e["kind"] in LOOSE else JACKETED):
                     sets["BULLET_INFERRED"].add(n)
             if "case" in facts:
@@ -952,6 +976,8 @@ BULLETS = _t["BULLETS"]
 # as hunting rounds whose sources give no bullet: soft point from their use.
 BULLET_INFERRED = _t["BULLET_INFERRED"]
 JACKETS = _t["JACKETS"]  # {name: CUPRONICKEL or STEEL}: jackets that are not copper-coloured
+# {name: (mm, first source)}: the paper showing above the case mouth on a paper-patched bullet, where a source gives it
+PATCH_LENGTHS = _t["PATCH_LENGTHS"]
 CASES = _t["CASES"]  # {name: (material, first source)}
 CURRENT_CASES = _t["CURRENT_CASES"]  # {name: (other case materials made today, first source)}
 LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the file's order
@@ -1028,6 +1054,12 @@ def origin_candidates(name):
     """The states that can claim a calibre whose origin is still open, likelier first, as
     (code, English name, flag emoji or None) tuples; () when origin() answers or nothing is known."""
     return tuple((code, *COUNTRIES[code]) for code in ORIGIN_UNDECIDED.get(name, ()))
+
+
+def patch_length(name):
+    """The paper of a paper-patched bullet showing above the case mouth, in mm, where a source gives it;
+    None otherwise (the outline then wraps half the exposed bullet)."""
+    return PATCH_LENGTHS.get(name, (None, None))[0]
 
 
 def is_worldwide(name):
