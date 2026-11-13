@@ -6,8 +6,9 @@ kind = "rimless"
 profile = "round"
 aliases = ["10.75x57"]
 
-origin = "AT"
-origin_sources = ["book:ammo-encyclopedia-2 p. 446"]
+origin = "AH"
+# Ammo Encyclopedia p. 446 names Austria, today's state; in 1900 that was Austria-Hungary.
+origin_sources = []
 obsolete = true
 rare = true
 

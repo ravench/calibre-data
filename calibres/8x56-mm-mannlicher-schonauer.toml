@@ -6,8 +6,8 @@ profile = "round"
 aliases = ["8x56ms", "8x56 mannlicher"]
 display_aliases = ["8x56 mm M.-Sch."]
 
-origin = "AT"
-origin_sources = []
+origin = "AH"
+origin_sources = ["https://municion.org/producto/8-x-56-mannlicher-schonauer/"]
 obsolete = true
 rare = true
 

@@ -6,8 +6,8 @@ kind = "rimless"
 profile = "round"
 aliases = ["8x71"]
 
-origin = "AT"
-origin_sources = []
+origin = "AH"
+origin_sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
 obsolete = true
 rare = true
 
