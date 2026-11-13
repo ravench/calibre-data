@@ -3,7 +3,7 @@ import os, sys, unittest
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
+from cartridges import (BALL_NOSE, WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO, BMG_35,
                         SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
@@ -406,7 +406,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(tuple(by_name[".320 Revolver"][k] for k in keys),
                          (RIMMED, 9.55, 8.12, 8.12, 16.6, 26.7, 8.0, "round"))
         self.assertEqual(tuple(by_name["9 mm Flobert Bosquette"][k] for k in keys),
-                         (RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, "round"))
+                         (RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, BALL_NOSE))
         self.assertEqual(INTRODUCED[".320 Revolver"][0], 1868)
         self.assertEqual(origin(".320 Revolver")[0], "GB")
         self.assertEqual(origin("9 mm Flobert Bosquette")[0], "FR")
