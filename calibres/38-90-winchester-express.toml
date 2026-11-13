@@ -14,13 +14,16 @@ rare = true
 [mm]
 rim = 14.17
 base = 12.12
+shoulder = 11.94
+shoulder_at = 71.5
 neck = 10.03
 case_length = 82.55
 overall_length = 93.98
 bullet = 9.55
-# A straight, tapered case: there is no shoulder on the photo of the gunauction.com listing
-# (https://www.gunauction.com/buy/8333040). COTW 18 prints a .470 in. "shoulder" Ø, probably the body just
-# below the mouth.
+# A long, gentle shoulder, not a straight case: COTW 18 calls the case bottlenecked (case type A), and Donnelly
+# draws a .240 in. shoulder at about 9 deg (not used, like his other angles). It looks like a plain taper on
+# small photos (gunauction.com 8333040). No source yet for shoulder_at (estimated: a neck one calibre long
+# and the shoulder at 32 degrees).
 sources = ["book:cotw-18 p. 250"]
 
 [introduced]
