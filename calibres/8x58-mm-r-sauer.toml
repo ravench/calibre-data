@@ -20,8 +20,9 @@ bullet = 8.09
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf"]
 
 [introduced]
-unknown = "A blackpowder Schützen round; COTW 18 p. 629 gives no year."
-sources = ["book:cotw-18 p. 629"]
+# About 1892 (municion.org; DWM's case 462 dates from about 1897); COTW 18 p. 629 gives no year.
+year = 1892
+sources = ["https://municion.org/producto/8-x-58-r-sauer-sohn/"]
 
 [primer]
 # .254 in. Berdan in the table
@@ -34,8 +35,8 @@ rim_thickness = 1.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf"]
 
 [bullet]
-# A blackpowder Schützen round (p. 629). RWS loaded it with a bare lead bullet (this sheet); DWM
-# (1936), Roth and RWS also with soft points, the factory load the book gives. Which came first is not
+# A blackpowder Schützen round (p. 629). RWS loaded it with a bare lead bullet (this sheet, filed
+# under Germany 1920-1945); DWM (1936), Roth and RWS also with soft points, the factory load the book gives. Which came first is not
 # known; lead is kept for the target round.
 type = "lead"
 sources = ["https://municion.org/ficha-08-058-tbc-010-0006/"]

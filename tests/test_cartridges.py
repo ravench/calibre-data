@@ -732,7 +732,7 @@ class CatalogueTests(unittest.TestCase):
                                            ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
                                            ".500 Express 3 inch", ".500/450 Magnum Express",
                                            ".32 Protector", "7.7 mm Bittner", ".45 Cowboy Special", ".338-06 A-Square",
-                                           ".44 Long Centrefire",
+                                           ".40-65 Ballard Everlasting", ".44 Long Centrefire",
                                            ".44-75 Ballard Everlasting", ".45-100 Remington Necked",
                                            # Rimfire rounds whose municion.org sheets do not name the bullet's metal.
                                            ".22 CB Cap", ".46 Short Rimfire", ".56-46 Spencer", ".56-50 Spencer",
@@ -817,18 +817,24 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(BULLETS[name][0], POLYMER_TIP, name)
         self.assertEqual(BULLETS[".244 H&H Magnum"][0], SOFT_POINT)
         self.assertEqual(bullet(".32 NAA"), JACKETED)  # also sold with full metal jackets
-        self.assertEqual(INTRODUCED[".480 Ruger"][0], 2001)  # Ruger's announcement, 1 December 2001
 
     def test_bullets_from_reread_sheets(self):
-        # The 8x48 R Sauer's only known loads are soft points (COTW's DWM load, three makers' sheets),
-        # two of them silver; the 8x58 R was also loaded with bare lead (RWS); the one .40-65 Ballard
-        # Everlasting sheet shows a paper patch.
+        # The 8x48 R Sauer's only known loads are soft points (COTW's DWM load, DWM's and Utendoerffer's
+        # sheets, both silver); the 8x58 R was also loaded with bare lead (RWS).
         self.assertEqual(BULLETS["8x48 mm R Sauer"][0], SOFT_POINT)
         self.assertEqual(jacket("8x48 mm R Sauer"), CUPRONICKEL)
         self.assertEqual(BULLETS["8x58 mm R Sauer"][0], LEAD)
+        # One unmarked .40-65 Ballard Everlasting shows a paper patch, but may be a handload.
         self.assertEqual(BULLETS[".40-65 Ballard Everlasting"][0], PAPER_PATCHED)
-        # Paper or metal patch: the sources disagree, so the Guedes stays unchecked.
+        self.assertIn(".40-65 Ballard Everlasting", BULLET_INFERRED)
+        # Paper and metal patches are both reported, so the Guedes stays unchecked.
         self.assertIn("8x60 mm R Guedes", BULLET_INFERRED)
+
+    def test_years_of_commercial_rounds_are_their_introduction(self):
+        # Gun Tests (12 April 2001) names it Ruger's new round for 2001; American Rifleman says 2003.
+        self.assertEqual(INTRODUCED[".480 Ruger"][0], 2001)
+        self.assertEqual(INTRODUCED["8x48 mm R Sauer"][0], 1892)
+        self.assertEqual(INTRODUCED["8x58 mm R Sauer"][0], 1892)
 
     def test_case_materials(self):
         names = {s["name"] for _, items in ALL_CATALOGUE for s in items}
