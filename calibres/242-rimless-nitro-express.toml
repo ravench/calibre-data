@@ -16,13 +16,15 @@ rare = true
 rim = 11.81
 base = 11.81
 shoulder = 10.29
-shoulder_at = 51.5
+shoulder_at = 50.46
 neck = 7.14
 case_length = 60.45
 overall_length = 81.28
 bullet = 6.43
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 608"]
+sources = [
+  "book:cotw-18 p. 608",
+  "https://municion.org/producto/242-rimless-nitro-express-vickers/",
+]
 
 [introduced]
 year = 1923
@@ -33,6 +35,11 @@ sources = ["book:cotw-18 p. 579"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.73, NØ 7.11, SL 50.80, NL 5.00, CL 60.79.
+degrees = 19.9
+sources = ["https://municion.org/producto/242-rimless-nitro-express-vickers/"]
 
 [bullet]
 # COTW gives no factory load.

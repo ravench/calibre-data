@@ -16,13 +16,12 @@ rare = true
 rim = 14.81
 base = 13.03
 shoulder = 12.62
-shoulder_at = 35.7
+shoulder_at = 23.11
 neck = 10.39
 case_length = 46.99
 overall_length = 60.2
 bullet = 9.52
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 652"]
+sources = ["book:cotw-18 p. 652", "https://municion.org/producto/95-x-47-r-mb-stahl/"]
 
 [introduced]
 # COTW: the 1880s; the decade's first year is kept.
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 644"]
 # The table gives a .254 in. Berdan primer.
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 652"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.80, NØ 10.38, SL 23.00, NL 12.50, CL 46.88.
+degrees = 6.1
+sources = ["https://municion.org/producto/95-x-47-r-mb-stahl/"]
 
 [bullet]
 # A blackpowder target round (COTW 18 p. 644); municion.org's sheet shows a lead bullet.

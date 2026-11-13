@@ -16,13 +16,15 @@ rare = true
 rim = 16.74
 base = 14.88
 shoulder = 13.87
-shoulder_at = 38.1
+shoulder_at = 29.47
 neck = 11.0
 case_length = 50.8
 overall_length = 85.6
 bullet = 10.36
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251"]
+sources = [
+  "book:cotw-18 p. 251",
+  "https://municion.org/producto/40-90-500-peabody-martini-what-cheer-n3/",
+]
 
 [introduced]
 # COTW: the rifle was introduced in 1877-78.
@@ -33,6 +35,11 @@ sources = ["book:cotw-18 p. 226"]
 # The table gives B-1, a Berdan primer without its size.
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.09, NØ 11.19, SL 29.70, NL 10.60, CL 51.03.
+degrees = 7.7
+sources = ["https://municion.org/producto/40-90-500-peabody-martini-what-cheer-n3/"]
 
 [bullet]
 type = "lead"

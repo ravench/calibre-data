@@ -18,13 +18,17 @@ rare = true
 rim = 13.46
 base = 13.03
 shoulder = 11.68
-shoulder_at = 48.01
+shoulder_at = 49.13
 neck = 7.75
 case_length = 60.71
 overall_length = 79.5
 bullet = 6.78
 # The overall length from COTW 5, the rest from Donnelly.
-sources = ["book:donnelly p. 245", "book:cotw-5 p. 266"]
+sources = [
+  "book:donnelly p. 245",
+  "book:cotw-5 p. 266",
+  "https://municion.org/producto/26-bsa-nitro-express-belted/",
+]
 
 [introduced]
 year = 1921
@@ -35,6 +39,11 @@ sources = ["book:cotw-18 p. 580"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-5 p. 266"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.49, NØ 7.81, SL 49.10, NL 6.50, CL 60.68.
+degrees = 19.9
+sources = ["https://municion.org/producto/26-bsa-nitro-express-belted/"]
 
 [case_head]
 # .049 in.

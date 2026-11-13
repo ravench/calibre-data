@@ -14,15 +14,18 @@ rare = true
 rim = 14.7
 base = 14.78
 shoulder = 14.22
-shoulder_at = 50.3
+shoulder_at = 52.27
 neck = 12.29
 case_length = 63.5
 overall_length = 88.9
 bullet = 11.63
 # The table gives the belt, .603 in., in the rim column; the rim is the .460 Weatherby Magnum's (R1 on its
 # C.I.P. sheet), as the belt is drawn at the rim diameter.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 453", "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
+sources = [
+  "book:cotw-18 p. 453",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf",
+  "https://municion.org/producto/460-a-square-short-belted/",
+]
 
 [introduced]
 unknown = "COTW 18 p. 434 dates the A-Square line to 1974, but not this round."
@@ -31,6 +34,11 @@ sources = ["book:cotw-18 p. 434"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.30, NØ 12.36, SL 52.00, NL 9.10, CL 63.23.
+degrees = 24.5
+sources = ["https://municion.org/producto/460-a-square-short-belted/"]
 
 [case_head]
 # from the .460 Weatherby Magnum case; C.I.P. sheet

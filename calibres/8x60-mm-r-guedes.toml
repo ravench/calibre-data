@@ -17,13 +17,15 @@ rare = true
 rim = 15.75
 base = 13.79
 shoulder = 12.45
-shoulder_at = 48.4
+shoulder_at = 36.04
 neck = 8.99
 case_length = 59.44
 overall_length = 82.55
 bullet = 8.28
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 573"]
+sources = [
+  "book:cotw-18 p. 573",
+  "https://municion.org/producto/8-x-60-r-portuguese-kropatschek-m-1886/",
+]
 
 [introduced]
 year = 1885
@@ -33,6 +35,11 @@ sources = ["book:cotw-18 p. 556"]
 # 6.44 mm, 2 specimens
 size = "berdan-nitro"
 sources = ["https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.39, NØ 8.94, SL 36.20, NL 14.70, CL 59.60.
+degrees = 11.2
+sources = ["https://municion.org/producto/8-x-60-r-portuguese-kropatschek-m-1886/"]
 
 [case_head]
 # .080 in.

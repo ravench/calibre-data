@@ -17,13 +17,15 @@ rare = true
 rim = 15.11
 base = 12.78
 shoulder = 12.7
-shoulder_at = 45.4
+shoulder_at = 35.68
 neck = 10.82
 case_length = 57.15
 overall_length = 76.71
 bullet = 10.24
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251"]
+sources = [
+  "book:cotw-18 p. 251",
+  "https://municion.org/producto/40-70-330-sharps-necked-2-1-4-case/",
+]
 
 [introduced]
 year = 1871
@@ -32,6 +34,11 @@ sources = ["book:cotw-18 p. 221"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.42, NØ 11.01, SL 35.70, NL 14.60, CL 57.17.
+degrees = 5.9
+sources = ["https://municion.org/producto/40-70-330-sharps-necked-2-1-4-case/"]
 
 [bullet]
 type = "lead"

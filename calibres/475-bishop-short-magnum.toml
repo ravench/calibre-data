@@ -14,14 +14,13 @@ rare = true
 rim = 12.01
 base = 14.94
 shoulder = 14.66
-shoulder_at = 42.2
+shoulder_at = 40.88
 neck = 12.8
 case_length = 55.78
 overall_length = 72.39
 bullet = 12.06
 # The table prints the bullet and neck without their points (475, 504).
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 453"]
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/475-bishop-short-magnum/"]
 
 [introduced]
 # COTW: designed in 2018, shown at the 2019 SHOT Show.
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 439"]
 # is far too big for a small one.
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.60, NØ 12.80, SL 40.30, NL 9.90, CL 55.20.
+degrees = 10.2
+sources = ["https://municion.org/producto/475-bishop-short-magnum/"]
 
 [case_head]
 # .054 in.

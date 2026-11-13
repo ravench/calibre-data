@@ -16,13 +16,15 @@ rare = true
 rim = 12.01
 base = 11.94
 shoulder = 11.38
-shoulder_at = 33.5
+shoulder_at = 30.97
 neck = 7.95
 case_length = 43.43
 overall_length = 64.52
 bullet = 7.19
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 573"]
+sources = [
+  "book:cotw-18 p. 573",
+  "https://municion.org/producto/280-british-xpl-for-em-2-assault-rifle/",
+]
 
 [introduced]
 # COTW: work began in 1945; ready for trials by 1947.
@@ -32,6 +34,11 @@ sources = ["book:cotw-18 p. 541"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.49, NØ 7.90, SL 30.90, NL 7.35, CL 43.36.
+degrees = 19.4
+sources = ["https://municion.org/producto/280-british-xpl-for-em-2-assault-rifle/"]
 
 [bullet]
 type = "jacketed"

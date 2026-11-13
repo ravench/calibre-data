@@ -16,13 +16,12 @@ rare = true
 rim = 9.52
 base = 9.55
 shoulder = 9.27
-shoulder_at = 31.1
+shoulder_at = 32.65
 neck = 8.25
 case_length = 39.75
 overall_length = 57.4
 bullet = 7.82
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 252"]
+sources = ["book:cotw-18 p. 252", "https://municion.org/producto/762-x-40-wilson-tactical/"]
 
 [introduced]
 year = 2011
@@ -33,6 +32,11 @@ sources = ["book:cotw-18 p. 248"]
 # rifle.
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/7.62×40mm_Wilson_Tactical"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 8.98, NØ 8.39, SL 32.64, NL 5.95, CL 39.74.
+degrees = 14.4
+sources = ["https://municion.org/producto/762-x-40-wilson-tactical/"]
 
 [case_head]
 # from the 5.56x45 mm case; the .223 Rem. head, C.I.P. 300 AAC Blackout

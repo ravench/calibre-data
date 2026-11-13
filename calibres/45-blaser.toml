@@ -14,13 +14,13 @@ rare = true
 rim = 12.01
 base = 13.03
 shoulder = 12.98
-shoulder_at = 41.9
+shoulder_at = 41.07
 neck = 12.34
 case_length = 54.86
 overall_length = 68.58
 bullet = 11.63
 # No source yet for shoulder_at (estimated: the .49 in. neck of COTW 18 p. 649 and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 652"]
+sources = ["book:cotw-18 p. 652", "https://municion.org/producto/45-blaser/"]
 
 [introduced]
 unknown = "COTW 18 p. 649 gives no year."
@@ -30,6 +30,11 @@ sources = ["book:cotw-18 p. 649"]
 # The table gives a large Boxer primer.
 size = "large-rifle"
 sources = ["book:cotw-18 p. 652"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.92, NØ 12.33, SL 41.00, NL 11.00, CL 54.79.
+degrees = 6.0
+sources = ["https://municion.org/producto/45-blaser/"]
 
 [case_head]
 # .054 in.

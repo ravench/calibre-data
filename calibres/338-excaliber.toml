@@ -14,13 +14,12 @@ rare = true
 rim = 14.73
 base = 14.73
 shoulder = 14.38
-shoulder_at = 63.4
+shoulder_at = 62.9
 neck = 9.42
 case_length = 75.95
 overall_length = 95.25
 bullet = 8.59
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 452"]
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/338-excalibur/"]
 
 [introduced]
 year = 1994
@@ -29,6 +28,11 @@ sources = ["book:cotw-18 p. 406"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.28, NØ 9.35, SL 62.50, NL 7.40, CL 75.55.
+degrees = 23.6
+sources = ["https://municion.org/producto/338-excalibur/"]
 
 [case_head]
 # from the .300 Pegasus case, as the table gives both one row; R and the extractor groove on the C.I.P. sheet.

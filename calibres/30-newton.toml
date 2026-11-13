@@ -15,13 +15,12 @@ rare = true
 rim = 13.33
 base = 13.28
 shoulder = 12.47
-shoulder_at = 53.1
+shoulder_at = 51.3
 neck = 8.64
 case_length = 64.01
 overall_length = 85.09
 bullet = 7.82
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 250"]
+sources = ["book:cotw-18 p. 250", "https://municion.org/producto/30-newton/"]
 
 [introduced]
 year = 1913
@@ -30,6 +29,11 @@ sources = ["book:cotw-18 p. 198"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 250"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.63, NØ 8.57, SL 51.40, NL 7.15, CL 64.11.
+degrees = 20.1
+sources = ["https://municion.org/producto/30-newton/"]
 
 [bullet]
 type = "softpoint"

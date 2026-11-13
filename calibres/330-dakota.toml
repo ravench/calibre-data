@@ -15,13 +15,12 @@ rare = true
 rim = 13.82
 base = 13.82
 shoulder = 13.46
-shoulder_at = 53.5
+shoulder_at = 53.65
 neck = 9.42
 case_length = 65.28
 overall_length = 84.33
 bullet = 8.59
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 452"]
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/330-dakota/"]
 
 [introduced]
 # Ballistic Studies: Don Allen brought out his Dakota rounds in 1992; COTW gives no year.
@@ -31,6 +30,11 @@ sources = ["https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+ca
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.38, NØ 9.36, SL 52.50, NL 7.40, CL 64.13.
+degrees = 25.4
+sources = ["https://municion.org/producto/330-dakota/"]
 
 [case_head]
 # .045 in.

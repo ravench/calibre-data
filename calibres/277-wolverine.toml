@@ -14,13 +14,12 @@ rare = true
 rim = 9.6
 base = 9.58
 shoulder = 9.04
-shoulder_at = 30.9
+shoulder_at = 32.46
 neck = 7.85
 case_length = 38.86
 overall_length = 57.4
 bullet = 7.04
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 451"]
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/277-wolverine/"]
 
 [introduced]
 year = 2014
@@ -29,6 +28,11 @@ sources = ["book:cotw-18 p. 381"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 451"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 8.90, NØ 7.70, SL 32.35, NL 5.20, CL 38.75.
+degrees = 26.6
+sources = ["https://municion.org/producto/277-wolverine/"]
 
 [case_head]
 # from the 5.56x45 mm NATO case; same case as the .223 Rem.; C.I.P. 300 AAC Blackout

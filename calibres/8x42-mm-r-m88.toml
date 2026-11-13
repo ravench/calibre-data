@@ -15,13 +15,12 @@ rare = true
 rim = 13.33
 base = 11.89
 shoulder = 10.74
-shoulder_at = 32.5
+shoulder_at = 32.06
 neck = 8.81
 case_length = 42.16
 overall_length = 57.91
 bullet = 8.08
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 651"]
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/8-x-42-r-mauser-m88d/"]
 
 [introduced]
 year = 1888
@@ -30,6 +29,11 @@ sources = ["book:cotw-18 p. 630"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.70, NØ 8.85, SL 31.80, NL 7.20, CL 41.90.
+degrees = 17.7
+sources = ["https://municion.org/producto/8-x-42-r-mauser-m88d/"]
 
 [bullet]
 type = "softpoint"
