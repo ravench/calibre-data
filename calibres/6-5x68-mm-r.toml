@@ -23,7 +23,7 @@ bullet = 6.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page18.pdf"]
 
 [introduced]
-# naboje.org: RWS brought it out in the 1960s, after the rimless 6.5x68 of 1939; the earliest year is kept.
+# naboje.org: RWS brought it out in the 1960s, after the rimless 6.5x68; the earliest year is kept.
 year = 1960
 sources = ["https://naboje.org/node/2287"]
 
