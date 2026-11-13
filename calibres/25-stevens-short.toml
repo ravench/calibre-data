@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["25 stevens short", "25 stevens short rf"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/25-stevens-short-rf/"]
 obsolete = true
 rare = true
 

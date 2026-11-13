@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["375rum"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.375_Remington_Ultra_Magnum",
+  "book:ammo-encyclopedia-2 p. 344",
+]
 rare = true
 
 [mm]

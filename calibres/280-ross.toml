@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["280ross", "280 ross", "280 rimless"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 394"]
 obsolete = true
 rare = true
 

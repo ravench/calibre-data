@@ -8,6 +8,7 @@ aliases = ["280 jeffery", "33/280 jeffery"]
 display_aliases = [".33/280 Jeffery"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/280-jeffery-rimless-nitro-express/"]
 obsolete = true
 rare = true
 

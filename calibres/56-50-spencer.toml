@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["56-50", "56-50 spencer"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/56-50-spencer/"]
 obsolete = true
 rare = true
 

@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["300rcm"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.300_Ruger_Compact_Magnum",
+  "book:ammo-encyclopedia-2 p. 316",
+]
 # Still made, but hardly ever found:
 rare = true
 

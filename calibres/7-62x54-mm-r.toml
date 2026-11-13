@@ -8,6 +8,7 @@ profile_today = "spitzer"
 aliases = ["7.62x54r", "762x54r"]
 
 origin = "RUE"
+origin_sources = ["https://en.wikipedia.org/wiki/7.62×54mmR"]
 
 [mm]
 rim = 14.5

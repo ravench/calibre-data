@@ -6,6 +6,7 @@ kind = "rimmed"
 profile = "spitzer"
 aliases = ["57x121r", "57x121", "57 mm ho-401"]
 origin = "JP"
+origin_sources = ["https://en.wikipedia.org/wiki/Ho-401_cannon"]
 
 [mm]
 rim = 68.4

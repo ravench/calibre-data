@@ -8,6 +8,7 @@ aliases = ["9x70r", "400/360 westley richards"]
 display_aliases = [".400/360 Westley Richards"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

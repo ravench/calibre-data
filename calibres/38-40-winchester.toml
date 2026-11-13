@@ -8,6 +8,10 @@ profile = "flat"
 aliases = ["38-40", "38wcf"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.38-40_Winchester",
+  "book:ammo-encyclopedia-2 p. 425",
+]
 
 [mm]
 rim = 13.3

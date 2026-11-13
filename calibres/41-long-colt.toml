@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["41longcolt", "41lc"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.41_Long_Colt",
+  "book:ammo-encyclopedia-2 p. 666",
+]
 obsolete = true
 rare = true
 

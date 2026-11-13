@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["416rem"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.416_Remington_Magnum",
+  "book:ammo-encyclopedia-2 p. 350",
+]
 
 [mm]
 rim = 13.5

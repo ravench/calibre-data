@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["45-125 winchester", "45-125 express", "45 express"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 462"]
 obsolete = true
 rare = true
 

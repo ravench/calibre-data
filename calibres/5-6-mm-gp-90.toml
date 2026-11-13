@@ -8,6 +8,7 @@ profile = "spitzer"
 aliases = ["gp90", "gp 90", "5.6", "5.6mm", "5.6gp90", "stgw90", "gewehrpatrone 90", "gwpat90"]
 
 origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/SIG_SG_550"]
 
 [mm]
 rim = 9.6

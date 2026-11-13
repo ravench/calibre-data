@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["10.4revolver", "revolver78"]
 
 origin = "CH"
+origin_sources = []
 obsolete = true
 
 [mm]

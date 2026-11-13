@@ -8,6 +8,10 @@ profile = "round"
 aliases = ["2.34 swissminigun", "2.34mm rimfire", "2.34 mm rimfire", "swissminigun", "swiss mini gun"]
 
 origin = "CH"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/2.34_mm_Rimfire",
+  "book:ammo-encyclopedia-2 p. 718",
+]
 # Loaded only on request, which counts as boutique loads.
 obsolete = true
 rare = true

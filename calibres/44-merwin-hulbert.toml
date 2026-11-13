@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["44 merwin & hulbert", "44 merwin hulbert", "44 m&h"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 668"]
 obsolete = true
 rare = true
 

@@ -8,6 +8,10 @@ profile = "round"
 aliases = ["6mm lee navy", "236 navy", "6mm lee"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6mm_Lee_Navy",
+  "book:ammo-encyclopedia-2 p. 499",
+]
 obsolete = true
 rare = true
 

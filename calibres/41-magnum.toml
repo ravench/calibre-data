@@ -5,6 +5,10 @@ profile = "flat"
 aliases = ["41mag", "41remmag", "41remingtonmagnum"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.41_Remington_Magnum",
+  "book:ammo-encyclopedia-2 p. 631",
+]
 
 [mm]
 rim = 12.5

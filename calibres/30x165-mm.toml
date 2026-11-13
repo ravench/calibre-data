@@ -9,6 +9,7 @@ kind = "rimless"
 profile = "spitzer"
 aliases = ["30x165"]
 origin = "SU"
+origin_sources = ["https://en.wikipedia.org/wiki/Shipunov_2A42"]
 
 [mm]
 rim = 40.0

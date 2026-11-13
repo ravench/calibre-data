@@ -9,6 +9,10 @@ profile_today = "spitzer"
 aliases = ["7x57", "7mmmauser"]
 
 origin = "DE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7×57mm_Mauser",
+  "book:ammo-encyclopedia-2 p. 509",
+]
 
 [mm]
 rim = 12.0

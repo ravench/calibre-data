@@ -9,6 +9,7 @@ profile = "spitzer"
 aliases = ["6.5x57r"]
 
 origin = "DE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 295"]
 
 [mm]
 rim = 13.32

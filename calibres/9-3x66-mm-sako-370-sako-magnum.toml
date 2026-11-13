@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["9.3x66", "370sako"]
 
 origin = "FI"
+origin_sources = ["book:ammo-encyclopedia-2 p. 348"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

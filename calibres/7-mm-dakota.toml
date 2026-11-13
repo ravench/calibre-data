@@ -8,6 +8,7 @@ profile = "spitzer"
 aliases = ["7mm dakota", "7 dakota"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/7-mm-dakota/"]
 rare = true
 
 [mm]

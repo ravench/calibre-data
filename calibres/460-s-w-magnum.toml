@@ -5,6 +5,7 @@ profile = "flat"
 aliases = ["460s&w"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
 
 [mm]
 rim = 13.2

@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["17rem"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.17_Remington"]
 
 [mm]
 rim = 9.6

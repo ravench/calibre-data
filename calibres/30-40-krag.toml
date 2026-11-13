@@ -7,6 +7,10 @@ profile = "round"
 aliases = ["30-40", "30-40krag", "30army"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30-40_Krag",
+  "book:ammo-encyclopedia-2 p. 325",
+]
 
 [mm]
 rim = 13.8

@@ -10,6 +10,7 @@ profile = "spitzer"
 aliases = ["338me"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.338_Marlin_Express"]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

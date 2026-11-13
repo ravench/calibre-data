@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["32 short colt", "32shortcolt", "32 colt short"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/32-short-colt/"]
 obsolete = true
 rare = true
 

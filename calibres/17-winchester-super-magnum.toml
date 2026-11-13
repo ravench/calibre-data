@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["17wsm"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
 
 [mm]
 rim = 8.5

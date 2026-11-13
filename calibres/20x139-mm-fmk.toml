@@ -9,6 +9,7 @@ kind = "rimless"
 profile = "spitzer"
 aliases = ["20x139 fmk", "fm-k 38", "20 mm flab kan 38"]
 origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/Hispano-Suiza_HS.820"]
 
 [mm]
 rim = 28.5

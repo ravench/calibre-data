@@ -11,6 +11,10 @@ profile_today = "spitzer"
 aliases = ["6.5arisaka", "6.5x50"]
 
 origin = "JP"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6.5×50mmSR_Arisaka",
+  "book:ammo-encyclopedia-2 p. 500",
+]
 
 [mm]
 rim = 12.08

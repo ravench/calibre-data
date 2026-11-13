@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["56-52 spencer necked"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/56-52-spencer-rf-necked-shortest-case/"]
 obsolete = true
 rare = true
 

@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["40-70 ballard", "40-63 ballard", "40-63 ballard everlasting", "40-70 ballard everlasting"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/40-70-ballard/"]
 obsolete = true
 rare = true
 

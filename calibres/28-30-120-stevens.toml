@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["28-30", "28-30-120", "28-30 stevens"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/28-30-120-stevens/"]
 obsolete = true
 rare = true
 

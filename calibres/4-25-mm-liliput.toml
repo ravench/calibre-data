@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["4.25liliput", "4.25 erika", "4.25mm erika auto"]
 
 origin = "AH"
+origin_sources = ["book:ammo-encyclopedia-2 p. 646"]
 obsolete = true
 rare = true
 

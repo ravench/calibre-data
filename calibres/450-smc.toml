@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["450 smc", "450 short magnum cartridge", "450 small magnum cartridge"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/450-smc/"]
 rare = true
 
 [mm]

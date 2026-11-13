@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["3kolibri", "3 kolibri"]
 
 origin = "AH"
+origin_sources = ["book:ammo-encyclopedia-2 p. 644"]
 obsolete = true
 rare = true
 

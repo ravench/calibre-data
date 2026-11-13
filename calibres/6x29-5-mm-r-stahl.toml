@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["6x29.5r"]
 
 origin = "DE"
+origin_sources = []
 obsolete = true
 rare = true
 

@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["400hh", "400h&h"]
 
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.400_H%26H_Magnum"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

@@ -7,6 +7,7 @@ kind = "rimless"
 profile = "spitzer"
 aliases = ["24x138", "24 mm pzw kan 38", "24 mm tb 41", "tankbüchse 41"]
 origin = "CH"
+origin_sources = ["https://municion.org/producto/24-x-138-swiss-k-38/"]
 
 [mm]
 rim = 31.4

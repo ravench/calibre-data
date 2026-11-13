@@ -9,6 +9,7 @@ aliases = ["6x47", "6x47sm", "6x47 sm", "swiss match", "6mm sm"]
 display_aliases = ["6x47 Swiss Match"]
 
 origin = "CH"
+origin_sources = ["book:ammo-encyclopedia-2 p. 283"]
 
 [mm]
 rim = 12.01

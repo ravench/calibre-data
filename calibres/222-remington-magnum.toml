@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["222remmag"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.222_Remington_Magnum",
+  "book:ammo-encyclopedia-2 p. 375",
+]
 obsolete = true
 rare = true
 

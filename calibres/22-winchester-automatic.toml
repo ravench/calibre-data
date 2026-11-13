@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["22 winchester automatic", "22 win auto", "22winauto"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 732"]
 # Dropped by Winchester in the 1970s; Aguila's loads for old rifles count as boutique loads (COTW 18 p. 657).
 obsolete = true
 rare = true

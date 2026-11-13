@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["333 jeffery", "333jeffery"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/333-jeffery-rimless-nitro-express/"]
 obsolete = true
 rare = true
 

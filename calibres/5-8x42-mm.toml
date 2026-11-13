@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["5.8x42", "dbp87", "dbp10"]
 
 origin = "CN"
+origin_sources = ["https://en.wikipedia.org/wiki/5.8×42mm"]
 # Still made, but hardly ever found:
 rare = true
 

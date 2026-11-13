@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["5x58", "5x58 sturtevant"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/5-x-58-sturtevant/"]
 obsolete = true
 rare = true
 

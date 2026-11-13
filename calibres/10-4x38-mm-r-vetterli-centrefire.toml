@@ -11,6 +11,7 @@ profile = "round"
 aliases = ["vetterlicf", "10.4cf", "10.4x38cf", "41swisscf"]
 
 origin = "CH"
+origin_sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
 obsolete = true
 rare = true
 

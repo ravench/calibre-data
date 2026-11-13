@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["9.5x60r", "9.5 turkish"]
 
 origin = "OE"
+origin_sources = ["https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
 obsolete = true
 rare = true
 

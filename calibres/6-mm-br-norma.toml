@@ -6,6 +6,7 @@ aliases = ["6br", "6mmbr"]
 
 # Norma's 1996 version is the one made (Norma, Lapua) and shot (300 m); Remington's factory 6mm BR of 1978 is its parent: US
 origin = "SE"
+origin_sources = []
 
 [mm]
 rim = 12.0

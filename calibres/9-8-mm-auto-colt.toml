@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["9.8 colt", "9.8mm auto colt", "9.8 colt auto pistol", "9.65 browning", "9.65mm browning automatic"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 702"]
 obsolete = true
 rare = true
 

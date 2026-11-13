@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["45winmag"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.45_Winchester_Magnum",
+  "book:ammo-encyclopedia-2 p. 635",
+]
 # Still made, but hardly ever found:
 rare = true
 

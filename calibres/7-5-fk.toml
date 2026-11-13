@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["7.5fk", "fk brno"]
 
 origin = "CZ"
+origin_sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

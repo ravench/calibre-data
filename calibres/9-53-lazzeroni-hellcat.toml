@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["9.53 hellcat", "9.53mm hellcat", "lazzeroni hellcat"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/953-mm-lazzeroni-hellcat/"]
 rare = true
 
 [mm]

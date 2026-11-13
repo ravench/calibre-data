@@ -9,6 +9,7 @@ aliases = ["8x60r guedes", "8 mm guedes"]
 display_aliases = ["8 mm Guedes M85"]
 
 origin = "PT"
+origin_sources = ["https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]
 obsolete = true
 rare = true
 

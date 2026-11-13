@@ -9,6 +9,7 @@ profile = "spitzer"
 aliases = ["22nosler"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/22-nosler/"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

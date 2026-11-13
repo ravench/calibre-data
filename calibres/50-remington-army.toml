@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["50 remington army", "50 rem army", "50 remington m71"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/50-remington-army-m-1871/"]
 obsolete = true
 rare = true
 

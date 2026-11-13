@@ -9,6 +9,7 @@ aliases = ["38wc", "38splwc", "38specialwc", "38specialwadcutter", "38 spl wc"]
 display_aliases = [".38 Spl WC"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.38_Special"]
 
 [mm]
 rim = 11.18

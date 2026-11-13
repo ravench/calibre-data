@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["40-72", "40-72 winchester"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 442"]
 obsolete = true
 rare = true
 

@@ -8,6 +8,7 @@ aliases = ["280 flanged", "280 lancaster"]
 display_aliases = [".280 Lancaster", ".280 Flanged Nitro Express"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 393"]
 obsolete = true
 rare = true
 

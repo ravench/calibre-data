@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["25-06"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.25-06_Remington",
+  "book:ammo-encyclopedia-2 p. 288",
+]
 
 [mm]
 rim = 12.0

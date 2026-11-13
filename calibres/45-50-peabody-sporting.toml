@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["45-50 peabody", "45-50 peabody sporting"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/45-50-peabody-martini-sporting/"]
 obsolete = true
 rare = true
 

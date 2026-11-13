@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["7mmblaser", "7blaser"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/7-mm-blaser-magnum/"]
 
 [mm]
 rim = 13.59

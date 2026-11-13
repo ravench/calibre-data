@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["6.5x54mauser"]
 
 origin = "DE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 388"]
 obsolete = true
 rare = true
 

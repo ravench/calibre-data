@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["35s&w", "35auto"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.35_S%26W_Auto",
+  "book:ammo-encyclopedia-2 p. 655",
+]
 obsolete = true
 rare = true
 

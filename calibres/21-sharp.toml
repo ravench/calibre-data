@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["21 sharp", "21sharp"]
 
 origin = "US"
+origin_sources = []
 # Too new (2024) for the 2026-11-04 listing check; four Savage rifles at launch (COTW 18 p. 656).
 rare = true
 

@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["28nosler"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
 
 [mm]
 rim = 13.6

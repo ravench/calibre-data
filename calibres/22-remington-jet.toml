@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["22jet"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.22_Remington_Jet",
+  "book:ammo-encyclopedia-2 p. 647",
+]
 obsolete = true
 rare = true
 

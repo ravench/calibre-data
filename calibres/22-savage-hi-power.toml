@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["22savage", "5.6x52r", "22hp"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.22_Savage_Hi-Power",
+  "book:ammo-encyclopedia-2 p. 267",
+]
 # Still made, but hardly ever found:
 rare = true
 

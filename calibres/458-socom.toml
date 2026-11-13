@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["458socom"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.458_SOCOM",
+  "book:ammo-encyclopedia-2 p. 492",
+]
 # Still made, but hardly ever found:
 rare = true
 

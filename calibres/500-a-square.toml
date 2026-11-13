@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["500 a-square", "500 a-sq"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/500-a-square-belted-type-2/"]
 rare = true
 
 [mm]

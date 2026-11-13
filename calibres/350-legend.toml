@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["350legend"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
 
 [mm]
 rim = 9.6

@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["356win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.356_Winchester",
+  "book:ammo-encyclopedia-2 p. 339",
+]
 # Still made, but hardly ever found:
 rare = true
 

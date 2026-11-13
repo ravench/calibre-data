@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["475no2", "475ne"]
 
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.475_No._2_Nitro_Express"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

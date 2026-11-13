@@ -10,6 +10,7 @@ aliases = ["12.17x44r", "12x42r"]
 display_aliases = ["12.17x44 mm R Remington M67"]
 
 origin = "SE"
+origin_sources = []
 obsolete = true
 rare = true
 

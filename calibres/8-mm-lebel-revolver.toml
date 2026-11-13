@@ -8,6 +8,10 @@ profile = "round"
 aliases = ["8lebelrev", "8mm1892"]
 
 origin = "FR"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8mm_French_Ordnance",
+  "book:ammo-encyclopedia-2 p. 693",
+]
 obsolete = true
 rare = true
 

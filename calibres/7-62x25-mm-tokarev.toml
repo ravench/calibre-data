@@ -5,6 +5,7 @@ profile = "round"
 aliases = ["tokarev", "7.62tok", "7.62x25"]
 
 origin = "SU"
+origin_sources = ["https://en.wikipedia.org/wiki/7.62×25mm_Tokarev"]
 
 [mm]
 rim = 9.95

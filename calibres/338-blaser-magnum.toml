@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["338blaser"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/338-blaser-magnum/"]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

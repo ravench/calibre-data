@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["325wsm"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.325_WSM",
+  "book:ammo-encyclopedia-2 p. 330",
+]
 # Still made, but hardly ever found:
 rare = true
 

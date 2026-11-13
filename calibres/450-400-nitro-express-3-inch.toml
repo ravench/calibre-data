@@ -9,6 +9,10 @@ profile = "round"
 aliases = ["450/400", "450/400ne", "400jeffery"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.450/400_Nitro_Express",
+  "book:ammo-encyclopedia-2 p. 356",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

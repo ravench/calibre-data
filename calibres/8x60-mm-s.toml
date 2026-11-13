@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["8x60s", "8x60"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/8-x-60-s/"]
 
 [mm]
 rim = 11.95

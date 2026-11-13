@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["224wby"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.224_Weatherby_Magnum",
+  "book:ammo-encyclopedia-2 p. 376",
+]
 obsolete = true
 # Still made, but hardly ever found:
 rare = true

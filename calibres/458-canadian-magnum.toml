@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["458 canadian magnum", "458 canadian mag", "458 nass"]
 
 origin = "CA"
+origin_sources = ["https://municion.org/producto/458-canadian-magnum-by-nass/"]
 rare = true
 
 [mm]

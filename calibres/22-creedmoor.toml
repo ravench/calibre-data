@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["22cm", "22creedmoor"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.22_Creedmoor"]
 
 [mm]
 rim = 11.99

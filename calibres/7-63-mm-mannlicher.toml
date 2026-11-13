@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["7.63mannlicher", "7.65 mannlicher", "7.63 mannlicher"]
 
 origin = "AH"
+origin_sources = ["https://municion.org/producto/763-mm-mannlicher/"]
 obsolete = true
 rare = true
 

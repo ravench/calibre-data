@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["44-40", "4440", "44wcf"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.44-40_Winchester",
+  "book:ammo-encyclopedia-2 p. 353",
+]
 
 [mm]
 rim = 13.34

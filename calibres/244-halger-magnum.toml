@@ -8,6 +8,7 @@ profile = "spitzer"
 aliases = ["244halger", "244 halger"]
 
 origin = "DE"
+origin_sources = []
 obsolete = true
 rare = true
 

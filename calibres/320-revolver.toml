@@ -9,6 +9,7 @@ aliases = ["320rev", "320revolver", "320short", "320 short", "320bulldog", "320 
 display_aliases = [".320 Short"]
 
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.320_Revolver"]
 # 2026-11-08: "an obsolete revolver cartridge" (Wikipedia)
 obsolete = true
 # 2026-11-08: from Raven's bag of old rounds

@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["8.59 galaxy", "8.59mm galaxy", "lazzeroni galaxy"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/859-mm-lazzeroni-galaxy/"]
 rare = true
 
 [mm]

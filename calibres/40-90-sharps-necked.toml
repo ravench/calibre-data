@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["40-90 sharps necked", "40-100 sharps necked"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/40-90-370-sharps-necked-2-5-8-case/"]
 obsolete = true
 rare = true
 

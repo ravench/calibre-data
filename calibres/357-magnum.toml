@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["357mag", "357", "357magnum", "357s&wmag", "357s&wmagnum", "357 atomic", "357 rem mag"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.357_Magnum",
+  "book:ammo-encyclopedia-2 p. 626",
+]
 worldwide = true
 
 [mm]

@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["25 short", "25 short rf", "25 bacon & bliss"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/25-bacon-bliss-rf-short/"]
 obsolete = true
 rare = true
 

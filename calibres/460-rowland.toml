@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["460rowland"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/460-rowland/"]
 # Still made, but hardly ever found:
 rare = true
 

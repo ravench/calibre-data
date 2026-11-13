@@ -7,6 +7,7 @@ kind = "rimless"
 profile = "spitzer"
 aliases = ["30x173", "30 mm gau-8"]
 origin_candidates = ["CH", "US"]
+origin_sources = []
 
 [mm]
 rim = 43.99

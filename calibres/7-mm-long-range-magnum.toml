@@ -8,6 +8,7 @@ profile = "spitzer"
 aliases = ["7 lrm", "7lrm", "7mm lrm", "7 long range magnum"]
 
 origin = "US"
+origin_sources = []
 rare = true
 
 [mm]

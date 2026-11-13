@@ -8,6 +8,7 @@ aliases = ["275hh", "275 h&h", "275 belted magnum"]
 display_aliases = [".275 Belted Magnum"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

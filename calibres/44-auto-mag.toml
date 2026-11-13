@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["44 auto mag", "44 amp", "44 automag"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 670"]
 obsolete = true
 rare = true
 

@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["416barrett"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.416_Barrett",
+  "book:ammo-encyclopedia-2 p. 352",
+]
 
 [mm]
 rim = 20.4

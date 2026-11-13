@@ -8,6 +8,7 @@ profile = "spitzer"
 aliases = ["300 dakota"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/300-dakota/"]
 rare = true
 
 [mm]

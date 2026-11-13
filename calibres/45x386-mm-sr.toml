@@ -6,6 +6,7 @@ kind = "rimless"
 profile = "spitzer"
 aliases = ["45x386sr", "45x386"]
 origin = "SU"
+origin_sources = []
 
 [mm]
 rim = 83.0

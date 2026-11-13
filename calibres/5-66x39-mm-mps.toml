@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["5.66x39", "mps"]
 
 origin = "SU"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/APS_underwater_rifle",
+  "book:ammo-encyclopedia-2 p. 481",
+]
 rare = true
 
 [mm]

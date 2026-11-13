@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["276enfield", "276 enfield", "7x60 enfield"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"]
 obsolete = true
 rare = true
 

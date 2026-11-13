@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["6.5grendel", "grendel"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
 
 [mm]
 rim = 11.2

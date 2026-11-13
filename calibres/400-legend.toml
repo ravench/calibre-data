@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["400legend"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.400_Legend"]
 
 [mm]
 rim = 10.7

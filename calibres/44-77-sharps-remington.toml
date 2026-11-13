@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["44-77", "44-77 sharps", "44-2 1/4 sharps"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/44-77-300-remington-sharps-2-1-4/"]
 obsolete = true
 rare = true
 

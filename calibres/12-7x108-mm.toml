@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["12.7x108", "dshk", "12.7x107"]
 
 origin = "SU"
+origin_sources = ["https://en.wikipedia.org/wiki/12.7×108mm"]
 # Still made, but hardly ever found:
 rare = true
 

@@ -9,6 +9,9 @@ aliases = ["11.15x58r werndl", "werndl m77"]
 display_aliases = ["11.15x58 mm R Austrian Werndl"]
 
 origin = "AH"
+origin_sources = [
+  "https://municion.org/producto/1115-x-58-r-austrian-werndl-rifle-mod-1877/",
+]
 obsolete = true
 rare = true
 

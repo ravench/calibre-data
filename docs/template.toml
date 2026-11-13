@@ -50,6 +50,12 @@ aliases = ["308", "308win"]
 # states can claim it, list their codes instead, likelier first (never both keys):
 # origin_candidates = ["DE", "AT"]
 origin = "US"
+# With origin or origin_candidates: the pages that name that state as the calibre's origin, web
+# addresses or book pages as in [Sources] (an empty list [] when nothing is checked yet).
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.308_Winchester",
+  "book:ammo-encyclopedia-2 p. 327",
+]
 # Optional, each true or left out:
 # worldwide: in common use worldwide (independent of origin: 9x19 mm is German and worldwide).
 # obsolete: no longer in regular factory production (only surplus, boutique loads or reloading).

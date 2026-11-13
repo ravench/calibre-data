@@ -5,6 +5,10 @@ profile = "round"
 aliases = ["makarov", "9x18", "9mm mak"]
 
 origin = "SU"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/9×18mm_Makarov",
+  "book:ammo-encyclopedia-2 p. 682",
+]
 
 [mm]
 rim = 9.9

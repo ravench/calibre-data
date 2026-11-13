@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["11mauser", "11x60r"]
 
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/11×60mm_Mauser"]
 obsolete = true
 rare = true
 

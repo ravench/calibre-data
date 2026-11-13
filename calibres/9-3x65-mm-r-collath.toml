@@ -7,6 +7,7 @@ profile = "flat"
 aliases = ["9.3x65r", "9.3x65r collath"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/93-x-65-r-collath-tesco/"]
 obsolete = true
 rare = true
 

@@ -9,6 +9,7 @@ aliases = ["9ultra", "9police"]
 # Genschow (Durlach) designed it in 1936 for the Luftwaffe, the year INTRODUCED gives, and Wikipedia says
 # Germany; Hirtenberger (AT) only revived it in 1972 for the Walther PP Super, so AT is not a candidate.
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/9×18mm_Ultra"]
 obsolete = true
 
 [mm]

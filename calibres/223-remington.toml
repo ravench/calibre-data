@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = ["223", "223rem"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.223_Remington",
+  "book:ammo-encyclopedia-2 p. 275",
+]
 worldwide = true
 
 [mm]

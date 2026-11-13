@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["276pedersen", "276 pedersen", "7x51 pedersen"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.276_Pedersen",
+  "book:ammo-encyclopedia-2 p. 506",
+]
 obsolete = true
 rare = true
 

@@ -9,6 +9,7 @@ aliases = ["11.15x58r spanish", "43 spanish", "11x53 spanish"]
 display_aliases = [".43 Spanish"]
 
 origin = "ES"
+origin_sources = []
 obsolete = true
 rare = true
 

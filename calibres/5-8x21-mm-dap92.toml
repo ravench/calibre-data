@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["5.8x21", "5.8x21 dap92", "dap92"]
 
 origin = "CN"
+origin_sources = ["book:ammo-encyclopedia-2 p. 483"]
 rare = true
 
 [mm]

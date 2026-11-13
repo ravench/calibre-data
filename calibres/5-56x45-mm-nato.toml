@@ -6,6 +6,7 @@ aliases = ["5.56", "556", "5.56x45", "5.56nato"]
 
 # the union that standardised it in 1980 (with the Belgian SS109 load); the case is the US .223/M193 of 1963: US, BE
 origin = "NATO"
+origin_sources = []
 worldwide = true
 
 [mm]

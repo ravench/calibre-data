@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["220swift"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.220_Swift",
+  "book:ammo-encyclopedia-2 p. 271",
+]
 
 [mm]
 rim = 12.0

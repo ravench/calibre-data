@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["6mmrem", "244rem"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/6mm_Remington"]
 
 [mm]
 rim = 12.0

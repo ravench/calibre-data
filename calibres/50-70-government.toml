@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["50-70"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.50-70_Government",
+  "book:ammo-encyclopedia-2 p. 560",
+]
 obsolete = true
 rare = true
 

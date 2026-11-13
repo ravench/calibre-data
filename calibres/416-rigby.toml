@@ -5,6 +5,10 @@ profile = "round"
 aliases = ["416rigby"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.416_Rigby",
+  "book:ammo-encyclopedia-2 p. 351",
+]
 
 [mm]
 rim = 14.99

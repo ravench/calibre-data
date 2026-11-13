@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["577snider"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.577_Snider",
+  "book:ammo-encyclopedia-2 p. 565",
+]
 obsolete = true
 rare = true
 

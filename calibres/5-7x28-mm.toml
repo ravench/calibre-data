@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = ["5.7x28", "57x28", "fn 5.7x28"]
 
 origin = "BE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/FN_5.7×28mm",
+  "book:ammo-encyclopedia-2 p. 482",
+]
 worldwide = true
 
 [mm]

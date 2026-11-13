@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["6x57", "6.2x57"]
 
 origin = "DE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 381"]
 obsolete = true
 rare = true
 

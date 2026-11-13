@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = ["308", "308win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.308_Winchester",
+  "book:ammo-encyclopedia-2 p. 327",
+]
 worldwide = true
 
 [mm]

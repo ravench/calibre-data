@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["338 canadian magnum", "338 canadian mag", "338 nass"]
 
 origin = "CA"
+origin_sources = []
 rare = true
 
 [mm]

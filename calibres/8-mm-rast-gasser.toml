@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["8rastgasser", "8 rast-gasser", "8mm gasser"]
 
 origin = "AH"
+origin_sources = ["https://municion.org/producto/8-mm-gasser-m-1898/"]
 obsolete = false
 rare = true
 

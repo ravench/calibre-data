@@ -9,6 +9,7 @@ profile = "spitzer"
 aliases = ["6.5x25 cbj", "6.5x25", "cbj"]
 
 origin = "SE"
+origin_sources = []
 rare = true
 
 [mm]

@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["300hamr", "hamr"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/300-hamr/"]
 # Still made, but hardly ever found:
 rare = true
 

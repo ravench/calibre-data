@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["221fireball"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.221_Remington_Fireball",
+  "book:ammo-encyclopedia-2 p. 615",
+]
 rare = true
 
 [mm]

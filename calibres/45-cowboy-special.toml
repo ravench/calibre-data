@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["45 cowboy special", "cowboy 45 special"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/45-cowboy-special/"]
 rare = true
 
 [mm]

@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["10.6 german", "10.6 reichsrevolver", "10.6mm reichsrevolver", "10.6x25r", "11mm german service", "11 mm german service revolver", "10.55 german"]
 
 origin = "DE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 706"]
 obsolete = true
 rare = true
 

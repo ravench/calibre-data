@@ -8,6 +8,7 @@ aliases = ["33 bsa", "33bsa", "330 bsa"]
 display_aliases = [".33 Belted Rimless"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/33-bsa-belted-rimless-nitro-express/"]
 obsolete = true
 rare = true
 

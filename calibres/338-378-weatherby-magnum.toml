@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["338-378"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.338-378_Weatherby_Magnum"]
 # Still made, but hardly ever found:
 rare = true
 

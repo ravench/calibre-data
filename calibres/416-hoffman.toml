@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["416 hoffman"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/416-hoffman-belted/"]
 rare = true
 
 [mm]

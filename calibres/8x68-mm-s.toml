@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = ["8x68"]
 
 origin = "DE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×68mm_S",
+  "book:ammo-encyclopedia-2 p. 332",
+]
 
 [mm]
 rim = 13.0

@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["17hornet"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.17_Hornet"]
 
 [mm]
 rim = 8.9

@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["30rblaser", "30r"]
 
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/.30_R_Blaser"]
 
 [mm]
 rim = 13.5

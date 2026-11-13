@@ -8,6 +8,7 @@ aliases = ["11.2x72", "11.2x72 schuler"]
 display_aliases = ["11.2x72 mm Mauser"]
 
 origin = "DE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 457"]
 obsolete = true
 rare = true
 

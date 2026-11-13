@@ -7,6 +7,10 @@ profile = "flat"
 aliases = ["32-40", "32-40win", "32-40winchester"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.32-40_Ballard",
+  "book:ammo-encyclopedia-2 p. 414",
+]
 obsolete = true
 
 [mm]

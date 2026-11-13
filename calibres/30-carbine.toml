@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["30carbine", "7.62x33"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/M1_carbine",
+  "book:ammo-encyclopedia-2 p. 517",
+]
 
 [mm]
 rim = 9.1

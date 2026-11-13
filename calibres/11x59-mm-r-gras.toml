@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["11gras", "gras"]
 
 origin = "FR"
+origin_sources = ["https://en.wikipedia.org/wiki/11×59mmR_Gras"]
 obsolete = true
 rare = true
 

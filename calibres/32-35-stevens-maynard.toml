@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["32-35", "32-35 stevens", "32-35 maynard"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/32-35-maynard-1882/"]
 obsolete = true
 rare = true
 

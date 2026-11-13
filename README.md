@@ -62,6 +62,10 @@ profile = "spitzer"
 aliases = ["308", "308win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.308_Winchester",
+  "book:ammo-encyclopedia-2 p. 327",
+]
 worldwide = true
 
 [mm]
@@ -123,7 +127,7 @@ An empty list `sources = []` means the values have not been checked against a so
 allowed for the measurements, the primer (then it counts as unverified), the bullet and a brass
 case; a year, a shoulder angle, a case head, a steel or plastic bullet, a case material other than
 brass and the case materials made today always need one.
-`sources(name, table)` in `cartridges.py` gives the whole list; the old tables (`INTRODUCED`,
+`sources(name, table)` in `cartridges.py` gives the whole list (`table` `"origin"` for `origin_sources`); the old tables (`INTRODUCED`,
 `SHOULDER_ANGLES`, ...) keep the first one.
 
 ### Top of the file
@@ -139,6 +143,7 @@ brass and the case materials made today always need one.
 | `display_aliases` | | One or two printable other names, shown in the apps' lists and search and on the poster. Calibres that are separate cartridges are never aliases of each other: .223 Rem / 5.56 NATO / GP 90 and .308 Win / 7.62 NATO differ in loading and are not necessarily interchangeable, so each has its own file. |
 | `origin` | | Code from `countries.toml` of the state that introduced the calibre (see [Origin](#origin)). |
 | `origin_candidates` | | Instead of `origin` while two or more states can claim it: their codes, likelier first. |
+| `origin_sources` | with `origin` or `origin_candidates` | The pages that name that state as the calibre's origin (see [Origin](#origin)); `[]` when not checked yet. |
 | `worldwide` | | `true` for a calibre in common use worldwide (independent of `origin`: 9x19 mm is German and worldwide). Includes the generic gauges and pellet sizes. |
 | `obsolete` | | `true` when no longer in regular factory production (only surplus, boutique loads or reloading). The apps can hide these by default; the poster can mark them. |
 | `rare` | | `true` when you are unlikely to find it (see [Rare](#rare)). |
@@ -424,6 +429,16 @@ for the service rounds; .25 ACP, .22 TCM, the Norma rounds, .500/416 and .500 Je
 state police 2007-13) and .357 SIG (US federal and state police) only by police. `[introduced]`
 keeps the round's own first year (the Largo's 1903 design), whichever state the origin names.
 
+`origin_sources` lists the pages that name the calibre's `origin` (for `origin_candidates`, the
+pages behind them), filled in on 12 November 2026 from three kinds of source: the "Place of origin"
+of the cartridge's Wikipedia infobox (for some rounds, mostly cannon, the gun's), the "Country of Origin" of
+the *Ammo Encyclopedia* (2nd edition) and the first "PAÍS" of the calibre's municion.org page. A page
+counts only when it names the same state; where it names several (the .25 ACP's "United States and
+Belgium"), one of them must be it. Pages that name another state are not listed: they are the
+two-state cases decided above, and a few known errors (Wikipedia's "Belgium" for the 7.5 mm 1882 and
+"Canada" for the .300 Remington Ultra Magnum). An empty list means no such page was found yet. `ORIGIN_SOURCES` gives the first page,
+`ORIGIN_UNVERIFIED` the calibres without one.
+
 ### Rare
 
 Calibres you are unlikely to find, so a photo or measurement that matches one is far more likely a
@@ -471,7 +486,7 @@ in the apps (`Kanone`), whose dicts have `None` for a measurement no source give
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
 `case_head(name)`, `rim_thickness(name)`, `lookalikes(name)` and `categories(name)` look up one value; `sources(name, table)` lists every source
-of a table (`"mm"`, `"introduced"`, `"primer"`, ...). `COLOUR_CODES` holds the tip, base and annulus colour codes, each
+of a table (`"mm"`, `"introduced"`, `"primer"`, `"origin"`, ...). `COLOUR_CODES` holds the tip, base and annulus colour codes, each
 with its own sources, and `FIRED_BY` the firearms of a round. A problem in the files stops the import with a
 `DataError` that lists them all.
 

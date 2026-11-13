@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["9.09 eagle", "9.09mm eagle", "lazzeroni eagle"]
 
 origin = "US"
+origin_sources = []
 # COTW 18 p. 410: essentially a wildcat on the Patriot case that Lazzeroni does not normally chamber.
 obsolete = true
 rare = true

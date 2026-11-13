@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["38-35 stevens", "38-33 stevens"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

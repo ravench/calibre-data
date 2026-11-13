@@ -9,6 +9,10 @@ aliases = ["45colt", "45lc", "45longcolt"]
 display_aliases = [".45 Long Colt"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.45_Colt",
+  "book:ammo-encyclopedia-2 p. 710",
+]
 
 [mm]
 rim = 12.9

@@ -8,6 +8,7 @@ profile = "spitzer"
 aliases = ["7.62x40 wt", "7.62x40 wilson tactical", "7.62x40 usa", "7.62x40"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/7.62×40mm_Wilson_Tactical"]
 obsolete = true
 rare = true
 

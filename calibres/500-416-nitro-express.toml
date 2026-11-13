@@ -8,6 +8,7 @@ aliases = ["500/416"]
 
 # Krieghoff (Ulm) unveiled it early 1996 on the .500 NE case (municion.org: Germany 1997); Norma, Hornady, Nosler and Kynoch loaded it, Krieghoff and Heym chamber it: US (Hornady)
 origin = "DE"
+origin_sources = []
 rare = true
 
 [mm]

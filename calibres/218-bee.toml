@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["218bee"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.218_Bee",
+  "book:ammo-encyclopedia-2 p. 264",
+]
 
 [mm]
 rim = 10.4

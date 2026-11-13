@@ -6,6 +6,7 @@ profile = "flat"
 aliases = ["357max"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.357_Remington_Maximum"]
 obsolete = true
 rare = true
 

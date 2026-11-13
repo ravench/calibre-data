@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["224valk"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.224_Valkyrie"]
 rare = true
 
 [mm]

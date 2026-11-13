@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["408cheytac", "408ct", "10.36x77"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 rare = true
 
 [mm]

@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["375h&h", "375hh", "375 h&h mag"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.375_H%26H_Magnum",
+  "book:ammo-encyclopedia-2 p. 342",
+]
 worldwide = true
 
 [mm]

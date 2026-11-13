@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = ["7.5x54"]
 
 origin = "FR"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7.5×54mm_French",
+  "book:ammo-encyclopedia-2 p. 512",
+]
 
 [mm]
 rim = 12.25

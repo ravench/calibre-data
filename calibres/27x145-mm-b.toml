@@ -7,6 +7,7 @@ kind = "belted"
 profile = "spitzer"
 aliases = ["27x145b", "27 mm mauser"]
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/Mauser_BK-27"]
 
 [mm]
 rim = 34.49

@@ -10,6 +10,10 @@ aliases = ["gp11", "gp 11", "7.5x55", "7.5", "7.5mm", "7.5swiss", "k31"]
 display_aliases = ["GP 11", "7.5 mm Swiss"]
 
 origin = "CH"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7.5×55mm_Swiss",
+  "book:ammo-encyclopedia-2 p. 513",
+]
 
 [mm]
 rim = 12.6

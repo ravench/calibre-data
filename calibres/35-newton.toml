@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["35 newton"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/35-newton/"]
 obsolete = true
 rare = true
 

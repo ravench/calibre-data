@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["7mmremmag", "7rm", "7mm rem mag"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/7mm_Remington_Magnum"]
 worldwide = true
 
 [mm]

@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["475 3 1/4", "475 nitro 3 1/4"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

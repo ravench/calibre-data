@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["10mm magnum", "10 mm mag", "10mm mag"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/10-mm-auto-magnum/"]
 obsolete = true
 rare = true
 

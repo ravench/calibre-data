@@ -8,6 +8,10 @@ profile = "flat"
 aliases = ["327fed", "327federal"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.327_Federal_Magnum",
+  "book:ammo-encyclopedia-2 p. 621",
+]
 
 [mm]
 rim = 9.5

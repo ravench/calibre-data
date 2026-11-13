@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["400 a-square dpm", "400 a-square dual purpose magnum", "400 asdpm"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/400-a-square-dpm-belted/"]
 rare = true
 
 [mm]

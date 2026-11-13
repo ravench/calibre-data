@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["6.8spc", "68spc", "6.8x43"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6.8mm_Remington_SPC",
+  "book:ammo-encyclopedia-2 p. 486",
+]
 
 [mm]
 rim = 10.7

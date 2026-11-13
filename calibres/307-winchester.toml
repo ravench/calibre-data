@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["307win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.307_Winchester",
+  "book:ammo-encyclopedia-2 p. 326",
+]
 # Still made, but hardly ever found:
 rare = true
 

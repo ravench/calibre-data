@@ -9,6 +9,7 @@ aliases = ["500 express", "500 bpe"]
 display_aliases = [".500 Express Nitro-for-Black"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

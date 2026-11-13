@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["9.3x53r swiss"]
 
 origin = "CH"
+origin_sources = ["https://municion.org/producto/93-x-53-r-swiss-m-26/"]
 obsolete = true
 rare = true
 

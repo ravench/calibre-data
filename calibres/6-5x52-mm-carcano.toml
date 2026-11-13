@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["6.5carcano", "6.5x52"]
 
 origin = "IT"
+origin_sources = ["https://en.wikipedia.org/wiki/6.5×52mm_Carcano"]
 
 [mm]
 rim = 11.45

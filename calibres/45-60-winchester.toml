@@ -8,6 +8,7 @@ profile = "flat"
 aliases = ["45-60", "45-60 winchester", "45-60 wcf"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 458"]
 obsolete = true
 rare = true
 

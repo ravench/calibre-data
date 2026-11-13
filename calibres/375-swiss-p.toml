@@ -8,6 +8,7 @@ aliases = ["375swissp", "375 swiss p", "9.5x70"]
 display_aliases = ["9.5x70 mm"]
 
 origin = "CH"
+origin_sources = ["https://municion.org/producto/375-swiss-p/"]
 rare = true
 
 [mm]

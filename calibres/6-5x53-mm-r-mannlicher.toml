@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["6.5x53r", "6.5dutch"]
 
 origin = "AH"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6.5×53mmR",
+  "book:ammo-encyclopedia-2 p. 502",
+]
 obsolete = true
 rare = true
 

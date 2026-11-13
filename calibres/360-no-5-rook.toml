@@ -7,6 +7,10 @@ profile = "round"
 aliases = ["360rook"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.360_No._5_Rook",
+  "book:ammo-encyclopedia-2 p. 421",
+]
 obsolete = true
 rare = true
 

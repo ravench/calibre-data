@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["11x60r murata", "murata"]
 
 origin = "JP"
+origin_sources = ["book:ammo-encyclopedia-2 p. 543"]
 obsolete = true
 rare = true
 

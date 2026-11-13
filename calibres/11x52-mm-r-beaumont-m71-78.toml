@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["11x52r", "11x52r beaumont"]
 
 origin = "NL"
+origin_sources = []
 obsolete = true
 rare = true
 

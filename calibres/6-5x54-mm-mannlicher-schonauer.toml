@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["6.5x54ms", "6.5x54"]
 
 origin = "AH"
+origin_sources = ["https://en.wikipedia.org/wiki/6.5×54mm_Mannlicher–Schönauer"]
 
 [mm]
 rim = 11.52

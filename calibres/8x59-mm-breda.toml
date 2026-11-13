@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["8x59", "8x59 breda"]
 
 origin = "IT"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×59mm_Rb_Breda",
+  "book:ammo-encyclopedia-2 p. 532",
+]
 obsolete = true
 rare = true
 

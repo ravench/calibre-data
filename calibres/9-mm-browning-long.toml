@@ -8,6 +8,10 @@ profile = "round"
 aliases = ["9browninglong", "9x20sr"]
 
 origin = "BE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/9mm_Browning_Long",
+  "book:ammo-encyclopedia-2 p. 696",
+]
 
 [mm]
 rim = 10.2

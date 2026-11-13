@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["450 assegai"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/450-assegai/"]
 rare = true
 
 [mm]

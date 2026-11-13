@@ -5,6 +5,10 @@ profile = "round"
 aliases = ["32s&w", "32swl", "32long", "32coltnewpolice"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.32_S%26W_Long",
+  "book:ammo-encyclopedia-2 p. 620",
+]
 
 [mm]
 rim = 9.5

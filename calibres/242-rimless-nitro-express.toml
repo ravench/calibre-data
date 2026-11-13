@@ -8,6 +8,7 @@ aliases = ["242 rimless", "242 manton"]
 display_aliases = [".242 Manton"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 380"]
 obsolete = true
 rare = true
 

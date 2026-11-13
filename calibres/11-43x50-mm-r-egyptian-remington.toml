@@ -9,6 +9,7 @@ aliases = ["11.43x50r", "43 egyptian"]
 display_aliases = [".43 Egyptian"]
 
 origin = "EG"
+origin_sources = ["https://municion.org/producto/43-egyptian-remington-flat-base/"]
 obsolete = true
 rare = true
 

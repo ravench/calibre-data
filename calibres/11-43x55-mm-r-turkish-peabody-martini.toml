@@ -9,6 +9,7 @@ aliases = ["11.43x55r", "45 peabody", "450 turkish"]
 display_aliases = [".45 Peabody-Martini", ".450 Turkish Peabody-Martini"]
 
 origin = "OE"
+origin_sources = []
 obsolete = true
 rare = true
 

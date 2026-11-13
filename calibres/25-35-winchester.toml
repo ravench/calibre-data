@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["25-35", "25-35wcf", "6.5x52r"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.25-35_Winchester",
+  "book:ammo-encyclopedia-2 p. 386",
+]
 
 [mm]
 rim = 12.9

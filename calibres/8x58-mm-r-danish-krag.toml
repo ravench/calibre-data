@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["8x58r", "danishkrag"]
 
 origin = "DK"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×58mmR_Danish_Krag",
+  "book:ammo-encyclopedia-2 p. 531",
+]
 obsolete = true
 rare = true
 

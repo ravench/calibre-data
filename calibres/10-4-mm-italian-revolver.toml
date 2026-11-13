@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["10.4 italian", "10.4 ord. it.", "10.35 glisenti", "10.35 italian revolver", "10.4 italian revolver"]
 
 origin = "IT"
+origin_sources = []
 obsolete = true
 rare = true
 

@@ -7,6 +7,7 @@ profile = "flat"
 aliases = ["40-70 winchester", "40-70 wcf"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 441"]
 obsolete = true
 rare = true
 

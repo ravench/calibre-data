@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["6.5prc"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/65-mm-prc/"]
 
 [mm]
 rim = 13.51

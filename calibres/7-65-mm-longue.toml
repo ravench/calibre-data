@@ -9,6 +9,7 @@ aliases = ["7.65longue", "7.65mas", "30pedersen"]
 
 # French service round 1935-60 (MAS 1935, MAS-38); the US .30 Pedersen of 1917/18 it derives from armed the Pedersen device, scrapped between the wars: US
 origin = "FR"
+origin_sources = []
 obsolete = true
 
 [mm]

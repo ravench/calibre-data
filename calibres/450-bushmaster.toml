@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["450bm", "450bushmaster"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.450_Bushmaster"]
 
 [mm]
 rim = 12.01

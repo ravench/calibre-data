@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["8x63", "8x63 swedish"]
 
 origin = "SE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×63mm_patron_m/32",
+  "book:ammo-encyclopedia-2 p. 534",
+]
 obsolete = true
 rare = true
 

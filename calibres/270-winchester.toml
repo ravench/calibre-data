@@ -5,6 +5,7 @@ profile = "spitzer"
 aliases = ["270", "270win"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.270_Winchester"]
 worldwide = true
 
 [mm]

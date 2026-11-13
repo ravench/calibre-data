@@ -9,6 +9,7 @@ aliases = ["10.4x47r", "italian vetterli"]
 display_aliases = ["10.4 mm Vetterli M1870"]
 
 origin = "IT"
+origin_sources = []
 obsolete = true
 rare = true
 

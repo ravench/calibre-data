@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["425 wr", "425 westley richards"]
 
 origin = "GB"
+origin_sources = ["https://municion.org/producto/425-westley-richards-magnum/"]
 obsolete = true
 rare = true
 

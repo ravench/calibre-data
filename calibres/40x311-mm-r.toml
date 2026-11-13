@@ -8,6 +8,7 @@ kind = "rimmed"
 profile = "spitzer"
 aliases = ["40x311r", "40 mm bofors l/60"]
 origin = "SE"
+origin_sources = ["https://en.wikipedia.org/wiki/Bofors_40_mm_L/60_gun"]
 
 [mm]
 rim = 61.8

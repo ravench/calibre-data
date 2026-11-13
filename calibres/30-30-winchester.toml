@@ -5,6 +5,10 @@ profile = "flat"
 aliases = ["30-30", "3030", "30-30 win", "30 wcf"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30-30_Winchester",
+  "book:ammo-encyclopedia-2 p. 324",
+]
 
 [mm]
 rim = 12.8

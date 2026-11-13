@@ -9,6 +9,9 @@ profile = "round"
 aliases = ["7.5ord", "7.5revolver", "revolver82", "7.5nagant", "7.5norwegiannagant"]
 
 origin = "CH"
+origin_sources = [
+  "https://municion.org/producto/75-mm-swiss-ordnance-revolver-m-1882-86/",
+]
 obsolete = true
 
 [mm]

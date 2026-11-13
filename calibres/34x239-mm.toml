@@ -6,6 +6,7 @@ kind = "rimless"
 profile = "spitzer"
 aliases = ["34x239", "34 mm flab kan 38"]
 origin = "CH"
+origin_sources = []
 
 [mm]
 rim = 47.8

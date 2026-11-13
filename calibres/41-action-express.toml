@@ -6,6 +6,10 @@ profile = "flat"
 aliases = ["41ae"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.41_Action_Express",
+  "book:ammo-encyclopedia-2 p. 666",
+]
 obsolete = true
 rare = true
 

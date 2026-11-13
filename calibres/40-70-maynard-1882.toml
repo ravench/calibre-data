@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["40-70 maynard", "40-70 maynard 1882"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/40-70-maynard-1882/"]
 obsolete = true
 rare = true
 

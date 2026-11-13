@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["375cheytac", "375ct"]
 
 origin = "US"
+origin_sources = []
 # Still made, but hardly ever found:
 rare = true
 

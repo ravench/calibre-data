@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["32wsl", "32 wsl"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 411"]
 obsolete = true
 rare = true
 

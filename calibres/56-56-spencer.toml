@@ -7,6 +7,10 @@ profile = "round"
 aliases = ["56-56", "spencer"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.56-56_Spencer",
+  "book:ammo-encyclopedia-2 p. 744",
+]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

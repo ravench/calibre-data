@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["7.5 swedish nagant", "7.5mm swedish nagant revolver", "7.5swedishnagant"]
 
 origin = "SE"
+origin_sources = ["https://municion.org/producto/75-mm-swedish-nagant-m-1887/"]
 obsolete = true
 rare = true
 

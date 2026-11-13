@@ -8,6 +8,7 @@ profile = "flat"
 aliases = ["50 gi", "50gi"]
 
 origin = "US"
+origin_sources = []
 rare = true
 
 [mm]

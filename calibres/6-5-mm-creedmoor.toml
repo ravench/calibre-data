@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = ["6.5cm", "6.5creedmoor", "65cm", "creedmoor"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6.5mm_Creedmoor",
+  "book:ammo-encyclopedia-2 p. 291",
+]
 worldwide = true
 
 [mm]

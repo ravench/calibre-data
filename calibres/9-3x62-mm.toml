@@ -5,6 +5,10 @@ profile = "round"
 aliases = ["9.3x62", "9,3x62"]
 
 origin = "DE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/9.3×62mm",
+  "book:ammo-encyclopedia-2 p. 347",
+]
 
 [mm]
 rim = 12.0

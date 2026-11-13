@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["9.5x73", "9.5x73 miller-greiss"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/95-x-73-miller-greiss-magnum/"]
 obsolete = true
 rare = true
 

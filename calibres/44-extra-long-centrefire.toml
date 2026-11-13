@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["44 extra long cf", "44 extra long ballard", "44 wesson extra long"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/44-ballard-extra-long/"]
 obsolete = true
 rare = true
 

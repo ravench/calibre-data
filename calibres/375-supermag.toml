@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["375 supermag", "375 super mag", "375 super magnum"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/375-ihmsa-super-magnum/"]
 obsolete = true
 rare = true
 

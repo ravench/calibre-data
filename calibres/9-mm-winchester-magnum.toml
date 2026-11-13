@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["9mm win mag", "9mm winchester magnum", "9 mm win mag", "9x29"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

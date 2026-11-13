@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["25wssm"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 286"]
 obsolete = true
 rare = true
 

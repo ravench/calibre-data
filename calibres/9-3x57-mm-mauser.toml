@@ -7,6 +7,7 @@ aliases = ["9.3x57"]
 
 # the Swedish and Norwegian hunting round (Husqvarna rifles, Norma ammunition); a German necked-up 8x57 of c. 1900: DE
 origin = "SE"
+origin_sources = []
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
 rare = true

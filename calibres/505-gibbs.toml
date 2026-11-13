@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["505gibbs"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.505_Gibbs",
+  "book:ammo-encyclopedia-2 p. 368",
+]
 # Still made, but hardly ever found:
 rare = true
 

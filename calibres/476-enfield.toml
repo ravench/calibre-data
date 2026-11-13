@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["476enfield", "476eley"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.476_Enfield",
+  "book:ammo-encyclopedia-2 p. 715",
+]
 obsolete = true
 rare = true
 

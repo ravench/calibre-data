@@ -6,6 +6,10 @@ profile = "round"
 aliases = ["500/465", "465ne"]
 
 origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.500/465_Nitro_Express",
+  "book:ammo-encyclopedia-2 p. 467",
+]
 # Still made, but hardly ever found:
 rare = true
 

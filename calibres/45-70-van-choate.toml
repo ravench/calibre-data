@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["45-70 van choate", "45 van choate"]
 
 origin = "US"
+origin_sources = ["https://municion.org/producto/45-70-420-van-choate/"]
 obsolete = true
 rare = true
 

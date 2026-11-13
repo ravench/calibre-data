@@ -8,6 +8,7 @@ kind = "belted"
 profile = "spitzer"
 aliases = ["30x113b", "30 mm aden", "30 mm defa"]
 origin = "GB"
+origin_sources = []
 
 [mm]
 rim = 33.78

@@ -8,6 +8,7 @@ kind = "rimless"
 profile = "spitzer"
 aliases = ["35x228", "35 mm oerlikon"]
 origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/Oerlikon_GDF"]
 
 [mm]
 rim = 54.5

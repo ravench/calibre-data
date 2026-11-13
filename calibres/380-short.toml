@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["380 short", "380 short rifle"]
 
 origin = "GB"
+origin_sources = []
 obsolete = true
 rare = true
 

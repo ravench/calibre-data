@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["401wsl"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 436"]
 obsolete = true
 rare = true
 

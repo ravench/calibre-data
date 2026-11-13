@@ -7,6 +7,7 @@ kind = "rimmed"
 profile = "spitzer"
 aliases = ["57x438r", "57x438", "57 mm bofors l/60", "57 mm bofors l/70", "sak-57"]
 origin = "SE"
+origin_sources = []
 
 [mm]
 rim = 93.0

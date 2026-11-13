@@ -9,6 +9,7 @@ profile = "round"
 aliases = ["30-30 wesson"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 402"]
 obsolete = true
 rare = true
 

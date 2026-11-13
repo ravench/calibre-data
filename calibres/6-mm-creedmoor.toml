@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["6cm", "6creedmoor", "6mmcm"]
 
 origin = "US"
+origin_sources = []
 
 [mm]
 rim = 12.01

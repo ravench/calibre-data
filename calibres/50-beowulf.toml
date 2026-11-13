@@ -6,6 +6,7 @@ profile = "flat"
 aliases = ["50beowulf"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
 # Still made, but hardly ever found:
 rare = true
 

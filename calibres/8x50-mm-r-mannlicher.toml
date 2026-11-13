@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["8x50rmannlicher", "8x50r"]
 
 origin = "AH"
+origin_sources = ["https://en.wikipedia.org/wiki/8×50mmR_Mannlicher"]
 obsolete = true
 rare = true
 

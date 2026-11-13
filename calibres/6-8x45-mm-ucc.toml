@@ -7,6 +7,7 @@ profile = "spitzer"
 aliases = ["6.8x45", "6.8x45 ucc", "6.8x45 kramer"]
 
 origin = "US"
+origin_sources = []
 obsolete = true
 rare = true
 

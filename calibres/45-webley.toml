@@ -7,6 +7,7 @@ profile = "round"
 aliases = ["45 webley", "45 webley revolver"]
 
 origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 673"]
 obsolete = true
 rare = true
 

@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["10.4rf", "revolver72", "10.4x18", "10.4mmrf"]
 
 origin = "CH"
+origin_sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]
 obsolete = true
 rare = true
 

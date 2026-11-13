@@ -6,6 +6,7 @@ profile = "round"
 aliases = ["32longcolt"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.32_Long_Colt"]
 obsolete = true
 rare = true
 

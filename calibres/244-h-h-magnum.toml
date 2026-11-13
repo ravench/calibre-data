@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["244hh", "244h&h"]
 
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.244_H%26H_Magnum"]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true

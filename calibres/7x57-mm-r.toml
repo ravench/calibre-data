@@ -10,6 +10,7 @@ profile_today = "spitzer"
 aliases = ["7x57r"]
 
 origin = "DE"
+origin_sources = ["https://municion.org/producto/7-x-57-r-mauser/"]
 
 [mm]
 rim = 13.5

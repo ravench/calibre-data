@@ -7,6 +7,10 @@ profile = "spitzer"
 aliases = ["7stw"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7mm_STW",
+  "book:ammo-encyclopedia-2 p. 310",
+]
 # Still made, but hardly ever found:
 rare = true
 

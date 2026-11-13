@@ -6,6 +6,7 @@ profile = "spitzer"
 aliases = ["8.6blk", "86blk", "8.6blackout"]
 
 origin = "US"
+origin_sources = []
 
 [mm]
 rim = 11.99

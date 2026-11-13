@@ -6,6 +6,7 @@ aliases = ["8x57", "8x57is", "8mmmauser", "7.92x57", "7.9x57", "8x57js"]
 display_aliases = ["8 mm Mauser"]
 
 origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/7.92×57mm_Mauser"]
 
 [mm]
 rim = 11.95

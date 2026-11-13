@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["22 cb cap", "22cb", "cb cap"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 721"]
 obsolete = true
 rare = true
 

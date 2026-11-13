@@ -8,6 +8,7 @@ kind = "belted"
 profile = "spitzer"
 aliases = ["23x152b", "23x152", "23 mm zu-23"]
 origin = "SU"
+origin_sources = ["https://en.wikipedia.org/wiki/23%C3%97152mmB"]
 
 [mm]
 rim = 34.6

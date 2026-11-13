@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["38s&w", "38sw", "380-200", "38coltnewpolice", "38cnp", "38superpolice"]
 
 origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.38_S%26W"]
 
 [mm]
 rim = 11.2

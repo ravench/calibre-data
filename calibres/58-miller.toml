@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["58 miller", "58 allin", "58 miller rimfire"]
 
 origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 745"]
 obsolete = true
 rare = true
 

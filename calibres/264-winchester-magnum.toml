@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["264winmag"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.264_Winchester_Magnum",
+  "book:ammo-encyclopedia-2 p. 392",
+]
 
 [mm]
 rim = 13.5

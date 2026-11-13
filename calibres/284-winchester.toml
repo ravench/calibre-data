@@ -6,6 +6,10 @@ profile = "spitzer"
 aliases = ["284win"]
 
 origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.284_Winchester",
+  "book:ammo-encyclopedia-2 p. 310",
+]
 
 [mm]
 rim = 12.01

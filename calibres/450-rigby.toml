@@ -8,6 +8,7 @@ profile = "round"
 aliases = ["450rigby"]
 
 origin = "GB"
+origin_sources = ["https://en.wikipedia.org/wiki/.450_Rigby"]
 # Still made, but hardly ever found:
 rare = true
 

@@ -5,6 +5,10 @@ profile = "spitzer"
 aliases = ["4.6x30"]
 
 origin = "DE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/HK_4.6×30mm",
+  "book:ammo-encyclopedia-2 p. 478",
+]
 
 [mm]
 rim = 8.0
