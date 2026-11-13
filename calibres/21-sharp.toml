@@ -14,22 +14,24 @@ origin_sources = []
 rare = true
 
 [mm]
-rim = 6.99
-base = 5.71
-neck = 5.69
-case_length = 15.11
-overall_length = 24.76
-bullet = 5.33
-sources = ["book:cotw-18 p. 670"]
+# SAAMI 21 Sharp, maximum cartridge.
+# Neck: the case is a .226 in cylinder to the mouth.
+rim = 7.06
+base = 5.74
+neck = 5.74
+case_length = 15.57
+overall_length = 25.4
+bullet = 5.35
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=18"]
 
 [introduced]
 year = 2024
 sources = ["book:cotw-18 p. 656"]
 
 [case_head]
-# .040 in.
-rim_thickness = 1.02
-sources = ["book:cotw-18 p. 670"]
+# SAAMI 21 Sharp
+rim_thickness = 1.09
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=18"]
 
 [bullet]
 type = "jacketed"
