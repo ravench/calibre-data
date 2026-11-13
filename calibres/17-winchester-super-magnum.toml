@@ -1,4 +1,4 @@
-# Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+# Added 2026-11: first added from the page named in INTRODUCED, now SAAMI's (see [mm]).
 name = ".17 Winchester Super Magnum"
 # Firearms: book:cotw-18 p. 654.
 categories = ["rimfire", "rifle"]

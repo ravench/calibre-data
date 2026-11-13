@@ -1,4 +1,4 @@
-# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+# Batch 10 (2026-11): recent American rounds; first added from the page named in INTRODUCED, now SAAMI's (see [mm]); .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor first from the Sierra load-data drawing.
 name = "6 mm Creedmoor"
 categories = ["rifle"]
 kind = "rimless"

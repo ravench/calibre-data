@@ -1,4 +1,4 @@
-# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+# Rifle batch 5 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]); the Nosler line shares the .28 Nosler case outside.
 name = ".26 Nosler"
 categories = ["rifle"]
 kind = "rimless"
@@ -30,9 +30,9 @@ size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
 
 [shoulder_angle]
-# AECC drawing 07-066-BRC-040
-degrees = 38.7
-sources = ["https://municion.org/producto/26-nosler/"]
+# SAAMI: 35 deg (the AECC drawing 07-066-BRC-040 on municion.org gives 38.7).
+degrees = 35
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=96"]
 
 [case_head]
 # SAAMI 26 Nosler
