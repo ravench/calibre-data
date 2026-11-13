@@ -9,13 +9,14 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.360_Buckhammer"]
 
 [mm]
-rim = 12.9
+# SAAMI 360 Buckhammer, maximum cartridge.
+rim = 12.85
 base = 10.66
 neck = 9.65
-case_length = 46.0
+case_length = 45.72
 overall_length = 63.5
-bullet = 9.1
-sources = ["https://en.wikipedia.org/wiki/.360_Buckhammer"]
+bullet = 9.12
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=150"]
 
 [introduced]
 year = 2022
@@ -26,9 +27,9 @@ size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
 [case_head]
-# .063 in.
+# SAAMI 360 Buckhammer
 rim_thickness = 1.6
-sources = ["book:cotw-18 p. 176"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=150"]
 
 [bullet]
 type = "softpoint"

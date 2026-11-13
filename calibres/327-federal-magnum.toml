@@ -14,13 +14,14 @@ origin_sources = [
 ]
 
 [mm]
-rim = 9.5
-base = 8.6
-neck = 8.6
-case_length = 30.0
-overall_length = 37.0
-bullet = 7.9
-sources = ["https://en.wikipedia.org/wiki/.327_Federal_Magnum"]
+# SAAMI 327 Federal Magnum, maximum cartridge.
+rim = 9.53
+base = 8.56
+neck = 8.56
+case_length = 30.48
+overall_length = 37.47
+bullet = 7.95
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=44"]
 
 [introduced]
 year = 2008
@@ -31,9 +32,9 @@ size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.327_Federal_Magnum"]
 
 [case_head]
-# .050 in.
-rim_thickness = 1.27
-sources = ["book:cotw-18 p. 527"]
+# SAAMI 327 Federal Magnum
+rim_thickness = 1.4
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=44"]
 
 [bullet]
 type = "jacketed"

@@ -14,16 +14,17 @@ origin_sources = ["https://municion.org/producto/22-nosler/"]
 rare = true
 
 [mm]
+# SAAMI 22 Nosler, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 10.16 at 35.29).
 rim = 9.6
-base = 10.67
+base = 10.69
 shoulder = 10.16
 shoulder_at = 35.28
-neck = 6.48
+neck = 6.46
 case_length = 44.7
 overall_length = 57.4
-bullet = 5.69
-# No source yet for shoulder_at.
-sources = ["book:cotw-18 p. 175"]
+bullet = 5.7
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=78", "book:cotw-18 p. 175"]
 
 [introduced]
 year = 2017
@@ -39,9 +40,9 @@ degrees = 29.9
 sources = ["https://municion.org/producto/22-nosler/"]
 
 [case_head]
-# .045 in.
+# SAAMI 22 Nosler
 rim_thickness = 1.14
-sources = ["book:cotw-18 p. 175"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=78"]
 
 [bullet]
 type = "jacketed"

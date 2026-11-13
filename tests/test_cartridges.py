@@ -599,7 +599,7 @@ class CatalogueTests(unittest.TestCase):
             ".41 Magnum": {"rim": 12.5},
             ".22-250 Remington": {"shoulder": 10.5},
             ".338 Lapua Magnum": {"shoulder": 13.82},
-            ".300 PRC": {"case": 65.5, "sh_at": 54.6},
+            ".300 PRC": {"case": 65.53, "sh_at": 54.6},  # case: SAAMI 2.580 in
             # sh_at is the C.I.P. sheet's L1 (see SHOULDER_ANGLES), not the municion.org specimen.
             "6.5x54 mm Mannlicher-Schönauer": {"case": 53.6, "sh_at": 41.82},
             "10.4x38 mm R Vetterli": {"rim": 15.7, "base": 13.62, "shoulder": 13.1, "neck": 11.43,

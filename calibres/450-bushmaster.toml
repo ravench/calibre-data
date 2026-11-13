@@ -9,13 +9,14 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.450_Bushmaster"]
 
 [mm]
+# SAAMI 450 Bushmaster, maximum cartridge.
 rim = 12.01
 base = 12.7
 neck = 12.19
-case_length = 43.2
+case_length = 43.18
 overall_length = 57.4
-bullet = 11.48
-sources = ["https://en.wikipedia.org/wiki/.450_Bushmaster"]
+bullet = 11.49
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=169"]
 
 [introduced]
 year = 2007
@@ -26,9 +27,9 @@ size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
 [case_head]
-# .050 in.
-rim_thickness = 1.27
-sources = ["book:cotw-18 p. 177"]
+# SAAMI 450 Bushmaster
+rim_thickness = 1.37
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=169"]
 
 [bullet]
 type = "polymer"

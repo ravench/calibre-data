@@ -12,6 +12,8 @@ origin_sources = ["https://en.wikipedia.org/wiki/.277_Fury"]
 rare = true
 
 [mm]
+# SAAMI 277 SIG Fury, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 11.71 at 41.43).
 rim = 11.99
 base = 11.95
 shoulder = 11.71
@@ -20,10 +22,7 @@ neck = 7.87
 case_length = 51.18
 overall_length = 71.76
 bullet = 7.06
-sources = [
-  "https://en.wikipedia.org/wiki/.277_Fury",
-  "https://www.xxlreloading.com/",
-]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=103", "https://en.wikipedia.org/wiki/.277_Fury", "https://www.xxlreloading.com/"]
 
 [introduced]
 year = 2019

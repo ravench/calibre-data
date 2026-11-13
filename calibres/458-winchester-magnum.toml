@@ -13,13 +13,14 @@ origin_sources = [
 ]
 
 [mm]
-rim = 13.5
-base = 13.0
-neck = 12.2
+# SAAMI 458 Winchester Magnum, maximum cartridge.
+rim = 13.51
+base = 13.02
+neck = 12.22
 case_length = 63.5
-overall_length = 84.8
-bullet = 11.63
-sources = ["https://en.wikipedia.org/wiki/.458_Winchester_Magnum"]
+overall_length = 84.84
+bullet = 11.66
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=172"]
 
 [introduced]
 year = 1956

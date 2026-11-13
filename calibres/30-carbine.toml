@@ -12,17 +12,14 @@ origin_sources = [
 ]
 
 [mm]
-rim = 9.1
-base = 9.2
-neck = 8.4
-case_length = 32.8
-overall_length = 42.0
-bullet = 7.82
-# No source yet for base, neck and overall_length.
-sources = [
-  "book:cotw-18 p. 176",
-  "book:donnelly p. 297",
-]
+# SAAMI 30 Carbine, maximum cartridge.
+rim = 9.14
+base = 9.01
+neck = 8.53
+case_length = 32.77
+overall_length = 42.67
+bullet = 7.85
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=108"]
 
 [introduced]
 year = 1941
@@ -33,9 +30,9 @@ size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
 [case_head]
-# .05 in.
+# SAAMI 30 Carbine
 rim_thickness = 1.27
-sources = ["book:cotw-18 p. 176"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=108"]
 
 [bullet]
 type = "jacketed"

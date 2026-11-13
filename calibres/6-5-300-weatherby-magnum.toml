@@ -12,6 +12,8 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/6.5-300_Weatherby_Magnum"]
 
 [mm]
+# SAAMI 6.5-300 Weatherby Magnum, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 12.5 at 58.38).
 rim = 13.5
 base = 13.0
 shoulder = 12.57
@@ -20,11 +22,7 @@ neck = 7.49
 case_length = 71.76
 overall_length = 91.44
 bullet = 6.72
-# No source yet for case_length and overall_length.
-sources = [
-  "book:cotw-18 p. 451",
-  "https://jagdfibel.de/images/0/0e/65300.pdf",
-]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=53", "book:cotw-18 p. 451", "https://jagdfibel.de/images/0/0e/65300.pdf"]
 
 [introduced]
 unknown = "sources give only the 2017 SAAMI drawing"

@@ -11,13 +11,14 @@ origin_sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]
 rare = true
 
 [mm]
-rim = 13.7
+# SAAMI 475 Linebaugh, maximum cartridge.
+rim = 13.77
 base = 12.8
 neck = 12.8
-case_length = 36.0
-overall_length = 45.0
-bullet = 12.1
-sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]
+case_length = 35.56
+overall_length = 44.83
+bullet = 12.08
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=64"]
 
 [introduced]
 year = 1988
@@ -28,9 +29,9 @@ size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]
 
 [case_head]
-# .065 in.
-rim_thickness = 1.65
-sources = ["book:cotw-18 p. 453"]
+# SAAMI 475 Linebaugh
+rim_thickness = 1.78
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=64"]
 
 [bullet]
 type = "jacketed"

@@ -17,13 +17,14 @@ origin_sources = [
 rare = true
 
 [mm]
-rim = 13.7
+# SAAMI 480 Ruger, maximum cartridge.
+rim = 13.77
 base = 12.8
 neck = 12.8
-case_length = 32.6
-overall_length = 41.9
-bullet = 12.1
-sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
+case_length = 32.64
+overall_length = 41.91
+bullet = 12.08
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=65"]
 
 [introduced]
 # Introduced for 2001 (Gun Tests, 12 April 2001, with Hornady's ammunition still to come); Ruger's
@@ -37,9 +38,9 @@ size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
 
 [case_head]
-# .065 in.
-rim_thickness = 1.65
-sources = ["book:cotw-18 p. 529"]
+# SAAMI 480 Ruger
+rim_thickness = 1.78
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=65"]
 
 [bullet]
 # Launched with Hornady's 325-grain XTP Magnum, a jacketed hollow point and at first the only load

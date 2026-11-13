@@ -12,13 +12,14 @@ origin_sources = [
 ]
 
 [mm]
-rim = 12.9
-base = 10.7
-neck = 10.0
-case_length = 53.0
-overall_length = 64.8
-bullet = 9.6
-sources = ["https://en.wikipedia.org/wiki/.38-55_Winchester"]
+# SAAMI 38-55 Winchester, maximum cartridge.
+rim = 12.85
+base = 10.65
+neck = 9.98
+case_length = 52.96
+overall_length = 63.75
+bullet = 9.58
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=158"]
 
 [introduced]
 year = 1884
@@ -29,9 +30,9 @@ size = "large-rifle"
 sources = ["https://www.starlinebrass.com/38-55-brass-2080"]
 
 [case_head]
-# .058 in.
-rim_thickness = 1.47
-sources = ["book:cotw-18 p. 177"]
+# SAAMI 38-55 Winchester
+rim_thickness = 1.6
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=158"]
 
 [bullet]
 type = "lead"
