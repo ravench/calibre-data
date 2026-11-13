@@ -8,14 +8,14 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
 
 [mm]
-rim = 13.2
-base = 12.2
-neck = 12.2
-case_length = 45.7
-overall_length = 58.0
-bullet = 11.5
-# No source yet for overall_length.
-sources = ["book:cotw-18 p. 529"]
+# SAAMI 460 S&W Magnum, maximum cartridge.
+rim = 13.21
+base = 12.14
+neck = 12.14
+case_length = 45.72
+overall_length = 58.12
+bullet = 11.49
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=63"]
 
 [introduced]
 year = 2005
@@ -26,9 +26,9 @@ size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
 
 [case_head]
-# .059 in.
+# SAAMI 460 S&W Magnum
 rim_thickness = 1.5
-sources = ["book:cotw-18 p. 529"]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=63"]
 
 [bullet]
 type = "jacketed"

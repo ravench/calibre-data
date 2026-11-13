@@ -8,18 +8,14 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
 
 [mm]
-rim = 13.1
-base = 12.1
-neck = 12.1
-case_length = 35.1
-overall_length = 45.0
-bullet = 11.5
-# No source yet for rim and overall_length.
-sources = [
-  "book:hornady-10 p. 959",
-  "book:cotw-18 p. 529",
-  "book:donnelly p. 629",
-]
+# SAAMI 454 Casull, maximum cartridge.
+rim = 13.0
+base = 12.13
+neck = 12.13
+case_length = 35.13
+overall_length = 44.83
+bullet = 11.49
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=62"]
 
 [introduced]
 # wildcat from 1958, commercial (SAAMI) 1997
@@ -31,9 +27,9 @@ size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
 
 [case_head]
-# .055 in.
-rim_thickness = 1.4
-sources = ["book:cotw-18 p. 529"]
+# SAAMI 454 Casull
+rim_thickness = 1.45
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=62"]
 
 [bullet]
 type = "jacketed"

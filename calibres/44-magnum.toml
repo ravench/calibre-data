@@ -12,16 +12,15 @@ origin_sources = [
 worldwide = true
 
 [mm]
-rim = 13.1
-base = 11.6
-neck = 11.6
-case_length = 32.6
-overall_length = 40.9
+# SAAMI 44 Remington Magnum, maximum cartridge.
+# Bullet: the .429 in groove diameter (the lead bullet is .4320 in).
+rim = 13.06
+base = 11.61
+neck = 11.58
+case_length = 32.64
+overall_length = 40.89
 bullet = 10.9
-sources = [
-  "book:cotw-18 p. 528",
-  "book:donnelly p. 564",
-]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=55"]
 
 [introduced]
 year = 1956
@@ -32,17 +31,18 @@ size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.44_Magnum"]
 
 [case_head]
-# .055 in.
-rim_thickness = 1.4
-sources = ["book:cotw-18 p. 528"]
+# SAAMI 44 Remington Magnum
+rim_thickness = 1.52
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=55"]
 
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.44_Magnum"]
 
 [case]
+# naboje.org: a brass case with a Boxer primer.
 material = "brass"
-sources = []
+sources = ["https://naboje.org/node/3106"]
 
 [current_cases]
 # CCI Blazer's aluminium cases.

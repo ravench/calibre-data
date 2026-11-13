@@ -7,7 +7,7 @@ profile = "spitzer"
 aliases = ["338 excaliber", "338 a-square excaliber"]
 
 origin = "US"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/12295"]
 rare = true
 
 [mm]

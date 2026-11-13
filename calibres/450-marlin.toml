@@ -12,16 +12,14 @@ origin_sources = [
 ]
 
 [mm]
-rim = 13.4
+# SAAMI 450 Marlin, maximum cartridge.
+rim = 13.51
 base = 13.01
-neck = 12.2
-case_length = 53.0
-overall_length = 65.0
-bullet = 11.6
-sources = [
-  "https://en.wikipedia.org/wiki/.450_Marlin",
-  "book:cotw-18 p. 177",
-]
+neck = 12.21
+case_length = 53.35
+overall_length = 64.76
+bullet = 11.64
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=170"]
 
 [introduced]
 year = 2000

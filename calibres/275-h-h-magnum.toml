@@ -8,7 +8,7 @@ aliases = ["275hh", "275 h&h", "275 belted magnum"]
 display_aliases = [".275 Belted Magnum"]
 
 origin = "GB"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/14849"]
 obsolete = true
 rare = true
 

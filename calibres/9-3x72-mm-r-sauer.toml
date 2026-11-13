@@ -23,8 +23,9 @@ bullet = 9.27
 sources = ["book:cotw-18 p. 652", "https://municion.org/producto/93-x-72-r-sauer-sohn/"]
 
 [introduced]
-unknown = "A Sauer & Sohn round for single-shot, double and combination guns; COTW 18 p. 640 gives no year."
-sources = ["book:cotw-18 p. 640"]
+# naboje.org: Germany, about 1890; COTW 18 p. 640 gives no year.
+year = 1890
+sources = ["book:cotw-18 p. 640", "https://naboje.org/node/6766"]
 
 [primer]
 # The table gives a .254 in. Berdan primer.

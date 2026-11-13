@@ -17,13 +17,14 @@ origin_sources = [
 rare = true
 
 [mm]
-rim = 13.09
-base = 11.96
-neck = 11.9
-case_length = 22.87
-overall_length = 32.12
-bullet = 11.5
-sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
+# C.I.P. 45 Auto Rim, maximum cartridge.
+rim = 13.11
+base = 12.09
+neck = 11.99
+case_length = 22.81
+overall_length = 32.39
+bullet = 11.48
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page77.pdf"]
 
 [introduced]
 year = 1920
@@ -34,9 +35,9 @@ size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.45_Auto_Rim"]
 
 [case_head]
-# .085 in.
-rim_thickness = 2.16
-sources = ["book:cotw-18 p. 529"]
+# C.I.P. 45 Auto Rim
+rim_thickness = 2.26
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page77.pdf"]
 
 [bullet]
 type = "lead"

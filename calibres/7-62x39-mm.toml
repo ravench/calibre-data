@@ -11,19 +11,17 @@ origin_sources = [
 ]
 
 [mm]
+# SAAMI 7.62 x 39, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 10.06 at 30.44).
 rim = 11.35
-base = 11.35
+base = 11.25
 shoulder = 10.07
 shoulder_at = 30.5
-neck = 8.6
-case_length = 38.7
-overall_length = 56.0
+neck = 8.56
+case_length = 38.81
+overall_length = 55.88
 bullet = 7.9
-# No source yet for base.
-sources = [
-  "book:cotw-18 p. 176",
-  "book:hornady-10 p. 618",
-]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=67", "book:cotw-18 p. 176", "book:hornady-10 p. 618"]
 
 [introduced]
 year = 1943

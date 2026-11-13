@@ -12,19 +12,17 @@ origin_sources = [
 ]
 
 [mm]
-rim = 12.0
-base = 12.0
+# SAAMI 280 Ackley Improved, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 11.53 at 53.25).
+rim = 11.99
+base = 11.9
 shoulder = 11.7
 shoulder_at = 54.96
 neck = 8.0
-case_length = 64.1
-overall_length = 84.6
-bullet = 7.2
-# No source yet for shoulder and shoulder_at.
-sources = [
-  "book:cotw-18 p. 175",
-  "book:hornady-10 p. 396",
-]
+case_length = 64.14
+overall_length = 84.58
+bullet = 7.23
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=105", "book:cotw-18 p. 175", "book:hornady-10 p. 396"]
 
 [introduced]
 # Year of production on the municion.org product pages (AECC).

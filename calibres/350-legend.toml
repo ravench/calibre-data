@@ -10,13 +10,14 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
 
 [mm]
+# SAAMI 350 Legend, maximum cartridge.
 rim = 9.6
-base = 9.9
+base = 9.91
 neck = 9.6
-case_length = 43.0
-overall_length = 57.0
+case_length = 43.43
+overall_length = 57.4
 bullet = 9.07
-sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=147"]
 
 [introduced]
 year = 2019
@@ -27,9 +28,9 @@ size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
 
 [case_head]
-# .045 in.
+# SAAMI 350 Legend
 rim_thickness = 1.14
-sources = ["book:cotw-18 p. 176"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=147"]
 
 [bullet]
 type = "softpoint"

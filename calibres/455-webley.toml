@@ -11,13 +11,14 @@ origin = "GB"
 origin_sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
 
 [mm]
+# C.I.P. 455 MK II, maximum cartridge.
 rim = 13.5
-base = 12.2
-neck = 12.1
-case_length = 19.6
-overall_length = 31.2
-bullet = 11.5
-sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
+base = 12.15
+neck = 12.14
+case_length = 19.5
+overall_length = 32.0
+bullet = 11.57
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page87.pdf"]
 
 [introduced]
 year = 1891
@@ -28,9 +29,9 @@ size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
 
 [case_head]
-# .045 in.
-rim_thickness = 1.14
-sources = ["book:donnelly p. 632"]
+# C.I.P. 455 MK II
+rim_thickness = 1.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page87.pdf"]
 
 [bullet]
 type = "lead"

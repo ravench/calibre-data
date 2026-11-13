@@ -8,18 +8,14 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.500_S%26W_Magnum"]
 
 [mm]
-rim = 14.2
-base = 13.4
-neck = 13.4
-case_length = 41.3
-overall_length = 57.2
+# SAAMI 500 S&W Magnum, maximum cartridge.
+rim = 14.22
+base = 13.46
+neck = 13.46
+case_length = 41.28
+overall_length = 57.15
 bullet = 12.7
-# Hornady p. 972 gives case_length in its drawing (1.625 in); its Max. Case Length line prints
-# 1.620 in.
-sources = [
-  "book:cotw-18 p. 529",
-  "book:hornady-10 p. 972",
-]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=67"]
 
 [introduced]
 year = 2003
@@ -30,9 +26,9 @@ size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.500_S%26W_Magnum"]
 
 [case_head]
-# .059 in.
+# SAAMI 500 S&W Magnum
 rim_thickness = 1.5
-sources = ["book:cotw-18 p. 529"]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=67"]
 
 [bullet]
 type = "jacketed"

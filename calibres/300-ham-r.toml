@@ -11,19 +11,18 @@ origin_sources = ["https://municion.org/producto/300-hamr/"]
 rare = true
 
 [mm]
+# SAAMI 300 HAM'R, maximum cartridge.
+# Bullet: .308 in like the .300 AAC Blackout (SAAMI maximum .309 in); shoulder and shoulder_at
+# unchanged, from the sources after SAAMI (SAAMI: 9.26 at 34.06).
 rim = 9.6
 base = 9.55
 shoulder = 9.3
 shoulder_at = 34.27
 neck = 8.43
-case_length = 41.02
+case_length = 40.72
 overall_length = 57.4
 bullet = 7.82
-# No source yet for case_length.
-sources = [
-  "book:cotw-18 p. 452",
-  "https://municion.org/producto/300-hamr/",
-]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=116", "book:cotw-18 p. 452", "https://municion.org/producto/300-hamr/"]
 
 [introduced]
 year = 2018

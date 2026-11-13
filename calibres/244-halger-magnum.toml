@@ -8,7 +8,7 @@ profile = "spitzer"
 aliases = ["244halger", "244 halger"]
 
 origin = "DE"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/13767"]
 obsolete = true
 rare = true
 

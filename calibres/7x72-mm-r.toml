@@ -22,8 +22,9 @@ bullet = 7.25
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page26.pdf"]
 
 [introduced]
-unknown = "Its date of origin is not known (COTW 18 p. 623)."
-sources = ["book:cotw-18 p. 623"]
+# naboje.org: designed by Wilhelm Brenneke in 1927; COTW 18 p. 623 gives no date.
+year = 1927
+sources = ["book:cotw-18 p. 623", "https://naboje.org/node/3075"]
 
 [primer]
 size = "large-rifle"

@@ -11,19 +11,17 @@ origin_sources = []
 rare = true
 
 [mm]
+# SAAMI 6mm GT, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 11.66 at 33.12).
 rim = 11.96
 base = 11.95
 shoulder = 11.66
 shoulder_at = 33.12
-neck = 6.95
+neck = 6.73
 case_length = 43.82
 overall_length = 67.06
-bullet = 6.17
-# No source yet for case_length.
-sources = [
-  "book:cotw-18 p. 175",
-  "https://www.4dreamerrentals.com/",
-]
+bullet = 6.18
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=46", "book:cotw-18 p. 175", "https://www.4dreamerrentals.com/"]
 
 [introduced]
 unknown = "sources give only the 2024 SAAMI acceptance"
@@ -38,9 +36,9 @@ degrees = 35
 sources = ["https://www.4dreamerrentals.com/"]
 
 [case_head]
-# .054 in.
+# SAAMI 6mm GT
 rim_thickness = 1.37
-sources = ["book:cotw-18 p. 175"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=46"]
 
 [bullet]
 type = "jacketed"

@@ -12,18 +12,17 @@ origin_sources = [
 ]
 
 [mm]
-rim = 12.9
-base = 10.7
+# SAAMI 25-35 Winchester, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 9.25 at 35.05).
+rim = 12.85
+base = 10.57
 shoulder = 9.3
 shoulder_at = 34.1
-neck = 7.2
-case_length = 51.9
-overall_length = 65.0
-bullet = 6.6
-sources = [
-  "https://en.wikipedia.org/wiki/.25-35_Winchester",
-  "https://municion.org/producto/25-35-winchester-cf/",
-]
+neck = 7.15
+case_length = 51.89
+overall_length = 64.77
+bullet = 6.55
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=92", "https://en.wikipedia.org/wiki/.25-35_Winchester", "https://municion.org/producto/25-35-winchester-cf/"]
 
 [introduced]
 year = 1895
@@ -39,9 +38,9 @@ degrees = 11.1
 sources = ["https://municion.org/producto/25-35-winchester-cf/"]
 
 [case_head]
-# .059 in.
-rim_thickness = 1.5
-sources = ["book:cotw-18 p. 175"]
+# SAAMI 25-35 Winchester
+rim_thickness = 1.6
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=92"]
 
 [bullet]
 type = "softpoint"

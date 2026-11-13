@@ -10,13 +10,14 @@ origin_sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 rare = true
 
 [mm]
-rim = 7.78
-base = 6.37
-neck = 6.25
-case_length = 29.41
-overall_length = 35.24
-bullet = 5.65
-sources = ["https://municion.org/producto/56-mm-velo-dog/"]
+# C.I.P. 5,75 Velodog, maximum cartridge.
+rim = 7.8
+base = 6.42
+neck = 6.3
+case_length = 29.6
+overall_length = 35.6
+bullet = 5.79
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page3.pdf"]
 
 [introduced]
 year = 1894

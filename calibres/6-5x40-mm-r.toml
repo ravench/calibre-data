@@ -20,8 +20,9 @@ bullet = 6.35
 sources = ["book:cotw-18 p. 651"]
 
 [introduced]
-unknown = "An old round for single-shot and combination guns; COTW 18 p. 616 gives no year."
-sources = ["book:cotw-18 p. 616"]
+# naboje.org: about 1900; COTW 18 p. 616 gives no year.
+year = 1900
+sources = ["book:cotw-18 p. 616", "https://naboje.org/node/22010"]
 
 [primer]
 size = "large-rifle"

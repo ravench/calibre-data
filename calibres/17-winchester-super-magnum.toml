@@ -10,18 +10,17 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
 
 [mm]
-rim = 8.5
-base = 6.8
+# SAAMI 17 Winchester Super Magnum, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 6.86 at 24.43).
+rim = 8.46
+base = 6.83
 shoulder = 6.8
 shoulder_at = 24.75
 neck = 5.0
-case_length = 30.5
-overall_length = 36.6
-bullet = 4.4
-sources = [
-  "https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum",
-  "https://municion.org/producto/17-winchester-super-magnum-rf/",
-]
+case_length = 30.48
+overall_length = 40.39
+bullet = 4.38
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=17", "https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum", "https://municion.org/producto/17-winchester-super-magnum-rf/"]
 
 [introduced]
 year = 2013
@@ -33,9 +32,9 @@ degrees = 16.1
 sources = ["https://municion.org/producto/17-winchester-super-magnum-rf/"]
 
 [case_head]
-# .066 in.
+# SAAMI 17 Winchester Super Magnum
 rim_thickness = 1.68
-sources = ["book:cotw-18 p. 670"]
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=17"]
 
 [bullet]
 type = "polymer"

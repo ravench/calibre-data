@@ -12,13 +12,14 @@ origin_sources = [
 worldwide = true
 
 [mm]
-rim = 10.8
-base = 10.8
-neck = 10.7
-case_length = 21.6
-overall_length = 28.8
+# SAAMI 40 Smith & Wesson, maximum cartridge.
+rim = 10.77
+base = 10.77
+neck = 10.74
+case_length = 21.59
+overall_length = 28.83
 bullet = 10.17
-sources = ["book:cotw-18 p. 528"]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=52"]
 
 [introduced]
 year = 1990

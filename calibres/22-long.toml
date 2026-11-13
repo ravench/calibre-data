@@ -16,26 +16,24 @@ origin_sources = [
 rare = true
 
 [mm]
-rim = 6.9
-base = 5.7
-neck = 5.7
-case_length = 15.6
-overall_length = 22.6
-bullet = 5.7
-# No source yet for rim.
-sources = [
-  "book:cotw-18 p. 670",
-  "https://en.wikipedia.org/wiki/.22_Long",
-]
+# SAAMI 22 Long, maximum cartridge.
+# Neck: the case is a .226 in cylinder to the mouth.
+rim = 7.06
+base = 5.74
+neck = 5.74
+case_length = 15.57
+overall_length = 22.56
+bullet = 5.72
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=20"]
 
 [introduced]
 year = 1871
 sources = ["https://en.wikipedia.org/wiki/.22_Long"]
 
 [case_head]
-# .040 in.
-rim_thickness = 1.02
-sources = ["book:cotw-18 p. 670"]
+# SAAMI 22 Long
+rim_thickness = 1.09
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=20"]
 
 [bullet]
 type = "lead"

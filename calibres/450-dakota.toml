@@ -24,8 +24,9 @@ bullet = 11.63
 sources = ["book:cotw-18 p. 453", "https://municion.org/producto/450-dakota/"]
 
 [introduced]
-unknown = "COTW 18 p. 435 calls it the latest Dakota round, after the .404 Jeffery line, without a year."
-sources = ["book:cotw-18 p. 435", "https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+cartridges.html"]
+# naboje.org: developed in the USA in 1995 from the .416 Rigby; COTW 18 p. 435 gives no year.
+year = 1995
+sources = ["book:cotw-18 p. 435", "https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+cartridges.html", "https://naboje.org/node/16766"]
 
 [primer]
 size = "large-rifle"

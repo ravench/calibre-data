@@ -3,7 +3,7 @@ import os, sys, unittest
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
+from cartridges import (BALL_NOSE, WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO, BMG_35,
                         SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
@@ -278,7 +278,7 @@ class CatalogueTests(unittest.TestCase):
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
         self.assertEqual(tuple(by_name[".25 Weatherby RPM"][k] for k in keys),
                          (12.01, 12.7, 12.14, 7.37, 60.96, 50.48, 84.84, 6.53))
-        self.assertEqual(tuple(by_name[".300 HAM'R"][k] for k in ("rim", "case", "oal")), (9.6, 41.02, 57.4))
+        self.assertEqual(tuple(by_name[".300 HAM'R"][k] for k in ("rim", "case", "oal")), (9.6, 40.72, 57.4))
         for name in (".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM"):
             s = by_name[name]  # one case family: rebated rim under a 0.500 in head
             self.assertEqual((s["rim"], s["base"]), (12.01, 12.7), name)
@@ -332,7 +332,7 @@ class CatalogueTests(unittest.TestCase):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "neck", "case", "oal", "bullet")
         drawn = {  # AECC drawings on municion.org, mm
-            "5.75 mm Velo-Dog": (7.78, 6.37, 6.25, 29.41, 35.24, 5.65),
+            "5.75 mm Velo-Dog": (7.8, 6.42, 6.3, 29.6, 35.6, 5.79),  # now the C.I.P. sheet
             ".32 Long Rimfire": (9.51, 8.09, 8.09, 20.0, 30.85, 7.92),
             ".22 Extra Long": (6.95, 5.74, 5.72, 19.83, 29.89, 5.63),
             ".55 Boys": (20.3, 20.14, 15.51, 99.11, 133.64, 14.36),
@@ -406,7 +406,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(tuple(by_name[".320 Revolver"][k] for k in keys),
                          (RIMMED, 9.55, 8.12, 8.12, 16.6, 26.7, 8.0, "round"))
         self.assertEqual(tuple(by_name["9 mm Flobert Bosquette"][k] for k in keys),
-                         (RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, "round"))
+                         (RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, BALL_NOSE))
         self.assertEqual(INTRODUCED[".320 Revolver"][0], 1868)
         self.assertEqual(origin(".320 Revolver")[0], "GB")
         self.assertEqual(origin("9 mm Flobert Bosquette")[0], "FR")
@@ -599,7 +599,7 @@ class CatalogueTests(unittest.TestCase):
             ".41 Magnum": {"rim": 12.5},
             ".22-250 Remington": {"shoulder": 10.5},
             ".338 Lapua Magnum": {"shoulder": 13.82},
-            ".300 PRC": {"case": 65.5, "sh_at": 54.6},
+            ".300 PRC": {"case": 65.53, "sh_at": 54.6},  # case: SAAMI 2.580 in
             # sh_at is the C.I.P. sheet's L1 (see SHOULDER_ANGLES), not the municion.org specimen.
             "6.5x54 mm Mannlicher-Schönauer": {"case": 53.6, "sh_at": 41.82},
             "10.4x38 mm R Vetterli": {"rim": 15.7, "base": 13.62, "shoulder": 13.1, "neck": 11.43,
@@ -729,7 +729,7 @@ class CatalogueTests(unittest.TestCase):
                                            # COTW 18 gives a ball without its material.
                                            "8x60 mm R Guedes",
                                            # No factory load on the page, or a later one than the original.
-                                           ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
+                                           ".242 Rimless Nitro Express", ".280 Jeffery",
                                            ".500 Express 3 inch", ".500/450 Magnum Express",
                                            ".32 Protector", "7.7 mm Bittner", ".45 Cowboy Special", ".338-06 A-Square",
                                            ".40-65 Ballard Everlasting", ".44 Long Centrefire",

@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import SPITZER, ROUND, FLAT, PATCHED, CRIMPED, RIMLESS, SEMI_RIMMED, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE, RIMLESS, SEMI_RIMMED, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -93,6 +93,17 @@ class OutlineTests(unittest.TestCase):
         by_name = {s["name"]: s for _, s in outline.specs()}
         self.assertEqual(outline.outline(by_name[".303 British"])["bulletMaterial"], "cupronickel")
         self.assertNotIn("bulletMaterial", outline.outline(by_name["9x19 mm"]))
+
+    def test_a_ball_nose_is_the_sphere_out_of_the_mouth(self):
+        # The Flobert Bosquette: an 8.84 ball, 4.8 mm of it out of a 10.18 case.
+        pts = outline.bullet_profile(4.42, 10.18, 14.98, BALL_NOSE)
+        self.assertEqual(pts[-1], (0, 14.98))
+        centre = 14.98 - 4.42
+        for x, y in pts[:-1]:
+            self.assertAlmostEqual(x * x + (y - centre) ** 2, 4.42 ** 2, places=6)
+        self.assertAlmostEqual(max(x for x, _ in pts), 4.42, places=2)  # the equator shows
+        flobert = next(s for _, s in outline.specs() if s["name"] == "9 mm Flobert Bosquette")
+        self.assertEqual(outline.outline(flobert)["bulletMaterial"], "lead")
 
     def test_loose_projectiles_name_only_non_lead_materials(self):
         for _, s in outline.specs():
@@ -222,6 +233,7 @@ class OutlineTests(unittest.TestCase):
 
     def test_identical_groups(self):
         self.assertEqual(outline.identical_groups(), [
+            [".38 Super", ".38 ACP"],  # one SAAMI drawing (.38 Super Automatic +P / .38 Automatic)
             [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"],
             ["7.62x51 mm NATO", ".308 Winchester"],
             [".500/450 Nitro Express", ".500/450 Magnum Express"],
@@ -495,7 +507,7 @@ class OutlineTests(unittest.TestCase):
 
     def test_rim_thicknesses_follow_their_sources(self):
         values = {".30-30 Winchester": 1.6, "11x60 mm R Mauser": 2.4, ".470 Nitro Express": 1.02,  # C.I.P. R
-                  ".22 LR": 1.02, ".38 Special": 1.37,  # .040 and .054 in, COTW 18
+                  ".22 LR": 1.02, ".38 Special": 1.5,  # .040 in, COTW 18; .059 in, SAAMI
                   "7.62x38 mm R Nagant": 1.22}  # .048 in, Donnelly
         for name, t in values.items():
             self.assertEqual(cartridges.rim_thickness(name), t, name)
@@ -508,7 +520,7 @@ class OutlineTests(unittest.TestCase):
             self.assertIsNone(cartridges.rim_thickness(name), name)
             return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(by_name[name])[:n]]
         self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
-        self.assertEqual(head(".44 Colt", 3), [(6.15, 0), (6.15, 1.5), (5.8, 1.5)])
+        self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
         self.assertEqual(head("9x23 mm Largo", 5), [(4.95, 0), (4.95, 1.3), (4.0631, 1.3), (4.0631, 2.6), (4.955, 3.3)])
         self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.2574, 1.3), (8.2574, 2.6), (10.15, 3.3),
                                                (10.15, 6.2), (9.919, 6.2)])

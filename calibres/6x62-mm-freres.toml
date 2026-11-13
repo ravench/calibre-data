@@ -7,7 +7,7 @@ profile = "spitzer"
 aliases = ["6x62", "6x62 freres"]
 
 origin = "DE"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/3320"]
 rare = true
 
 [mm]
@@ -22,8 +22,9 @@ bullet = 6.18
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page11.pdf"]
 
 [introduced]
-unknown = "A recent MEN design; COTW 18 p. 614 gives no year, and its C.I.P. sheet carries 1984, the date of much older rounds' sheets."
-sources = ["book:cotw-18 p. 614"]
+# naboje.org: developed in 1983; COTW 18 p. 614 gives no year.
+year = 1983
+sources = ["book:cotw-18 p. 614", "https://naboje.org/node/3320"]
 
 [primer]
 size = "large-rifle"

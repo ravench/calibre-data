@@ -13,13 +13,14 @@ origin_sources = ["https://en.wikipedia.org/wiki/9×18mm_Ultra"]
 obsolete = true
 
 [mm]
-rim = 9.37
-base = 9.81
-neck = 9.65
-case_length = 17.85
-overall_length = 25.27
-bullet = 9.01
-sources = ["https://en.wikipedia.org/wiki/9×18mm_Ultra"]
+# C.I.P. 9 x 18, maximum cartridge.
+rim = 9.5
+base = 9.87
+neck = 9.68
+case_length = 18.0
+overall_length = 25.5
+bullet = 9.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page18.pdf"]
 
 [introduced]
 year = 1936

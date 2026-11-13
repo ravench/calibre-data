@@ -9,16 +9,17 @@ origin = "US"
 origin_sources = []
 
 [mm]
-rim = 12.01
-base = 11.94
+# SAAMI 6mm Creedmoor, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 11.74 at 37.85).
+rim = 11.99
+base = 11.95
 shoulder = 11.73
 shoulder_at = 37.49
-neck = 6.99
-case_length = 48.8
-overall_length = 71.1
-bullet = 6.2
-# No source yet for shoulder_at.
-sources = ["book:cotw-18 p. 175"]
+neck = 7.01
+case_length = 48.77
+overall_length = 71.12
+bullet = 6.18
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=45", "book:cotw-18 p. 175"]
 
 [introduced]
 year = 2009
@@ -33,12 +34,12 @@ degrees = 30
 sources = ["https://chuckhawks.com/6mm_Creedmoor.html"]
 
 [case_head]
-# 6.5 Creedmoor case necked down; C.I.P. 6,5 Creedmoor
+# SAAMI 6mm Creedmoor
 rim_thickness = 1.37
 ramp_top = 3.84
 groove_diameter = 10.39
 ramp_angle = 36.0
-sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=45"]
 
 [bullet]
 # Hornady's first factory load, announced in October 2016 for 2017, carries a 108-grain ELD Match;

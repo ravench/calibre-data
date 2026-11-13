@@ -11,17 +11,14 @@ origin_sources = [
 ]
 
 [mm]
-rim = 9.5
-base = 8.6
-neck = 8.5
-case_length = 23.4
-overall_length = 32.5
-bullet = 7.9
-sources = [
-  "book:donnelly p. 369",
-  "book:cotw-18 p. 527",
-  "book:janes-ammo-2002 p. 681",
-]
+# C.I.P. 32 S&W Long, maximum cartridge.
+rim = 9.53
+base = 8.56
+neck = 8.56
+case_length = 23.37
+overall_length = 32.51
+bullet = 8.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/32s-w-long-190829-en.pdf"]
 
 [introduced]
 year = 1896
@@ -32,9 +29,9 @@ size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
 
 [case_head]
-# .048 in.
-rim_thickness = 1.22
-sources = ["book:cotw-18 p. 527"]
+# C.I.P. 32 S&W Long
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/32s-w-long-190829-en.pdf"]
 
 [bullet]
 type = "lead"

@@ -11,13 +11,14 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
 
 [mm]
-rim = 9.5
-base = 8.5
-neck = 8.5
-case_length = 15.0
-overall_length = 23.0
-bullet = 7.9
-sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
+# SAAMI 32 Smith & Wesson, maximum cartridge.
+rim = 9.6
+base = 8.61
+neck = 8.61
+case_length = 15.37
+overall_length = 23.62
+bullet = 8.0
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=42"]
 
 [introduced]
 year = 1878
@@ -28,9 +29,9 @@ size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
 
 [case_head]
-# .045 in.
-rim_thickness = 1.14
-sources = ["book:cotw-18 p. 527"]
+# SAAMI 32 Smith & Wesson
+rim_thickness = 1.37
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=42"]
 
 [bullet]
 type = "lead"

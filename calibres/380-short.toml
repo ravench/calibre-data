@@ -36,5 +36,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 592"]
 
 [case]
+# naboje.org: made with brass and also lacquered steel cases.
 material = "brass"
-sources = []
+sources = ["https://naboje.org/node/3142"]
