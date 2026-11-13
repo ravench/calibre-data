@@ -23,8 +23,9 @@ bullet = 8.89
 sources = ["book:cotw-18 p. 652", "https://municion.org/producto/9-x-71-peterlongo/"]
 
 [introduced]
-unknown = "COTW 18 p. 636 gives no year."
-sources = ["book:cotw-18 p. 636"]
+# COTW 18 p. 636 gives no year; municion.org dates it to 1907.
+year = 1907
+sources = ["https://municion.org/producto/9-x-71-peterlongo/"]
 
 [primer]
 # The table gives a .216 in. Berdan primer, within 0.2 mm of the large Boxer size.

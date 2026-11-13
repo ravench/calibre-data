@@ -8,7 +8,7 @@ aliases = ["10.75x57"]
 
 origin = "AH"
 # Ammo Encyclopedia p. 446 names Austria, today's state; in 1900 that was Austria-Hungary.
-origin_sources = []
+origin_sources = ["https://municion.org/producto/1075-x-57-mauser/"]
 obsolete = true
 rare = true
 
