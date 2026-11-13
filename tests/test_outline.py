@@ -371,6 +371,7 @@ class OutlineTests(unittest.TestCase):
             "7.62x54 mm R": (18.5, 39.70, 44.30), ".300 AAC Blackout": (23.0, 27.20, 28.00),
             "6.5 PRC": (30.0, 39.84, 44.65), "7 mm PRC": (30.0, 46.21, 50.63),
             "6 mm ARC": (30.0, 28.47, 31.90), "9x39 mm": (17.0, 31.40, 33.00),
+            ".223 Remington": (23, 36.52, 39.55),
         }
         specs = self.bottlenecks()
         for name, (angle, l1, l2) in sheets.items():
