@@ -344,9 +344,10 @@ cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outlin
   above it says which source names the metal or, when none does, which round in hand it comes from
   and that round's year.
 - `[bullet]` `patch_length`, optional, for a paper-patched bullet (`paper`): the paper showing above
-  the case mouth, in mm, from a source (a drawing or a measured round; the note says which). Without
-  it the paper band is drawn over half the exposed bullet. Not for the GP 1890 (`patched` profile),
-  whose band follows its 1892 drawing.
+  the case mouth, in mm, from a source. The bullet's `sources` name the type, so a comment right above
+  `patch_length` says which source gives the length, or which round it was measured on (the check
+  wants that comment). Without it the paper band is drawn over half the exposed bullet. Not for the
+  GP 1890 (`patched` profile), whose band follows its 1892 drawing.
 - `[case]` `material`, in every calibre with a case (not shot shells, balls, Minié bullets or
   pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated steel,
   `aluminium`, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case) or `hybrid`

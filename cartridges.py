@@ -287,6 +287,12 @@ def _is_number(v):
     return isinstance(v, (int, float)) and not isinstance(v, bool)
 
 
+def _note_above(f, line):
+    """True when the line before `line` (1-based) is a comment: the note a value from a measured round needs."""
+    lines = f.text.split("\n")
+    return line is not None and line >= 2 and lines[line - 2].lstrip().startswith("#")
+
+
 def _is_text_list(v):
     return isinstance(v, list) and all(isinstance(x, str) for x in v)
 
@@ -624,17 +630,21 @@ def _read_calibre(f, countries, books=None):
             f.problem(f.line("bullet", "jacket"), f"only a bullet with a jacket ({', '.join(JACKETED_BULLETS)}) "
                                                   f"has a [bullet] jacket")
         if "patch_length" in facts["bullet"]:
-            patch = facts["bullet"]["patch_length"]
-            if facts["bullet"]["type"] != PAPER_PATCHED or kind in LOOSE or profile == PATCHED:
-                f.problem(f.line("bullet", "patch_length"), f'only a paper-patched bullet (type = "{PAPER_PATCHED}") '
-                                                            f"of a cartridge has a [bullet] patch_length (GP 1890's "
-                                                            f"patched profile follows its drawing)")
-            elif not _is_number(patch) or not 0 < patch < m["overall_length"] - m["case_length"]:
-                f.problem(f.line("bullet", "patch_length"), "[bullet] patch_length is the paper showing above the case "
-                                                            f"mouth in mm: above 0 and below the exposed bullet "
-                                                            f"({m['overall_length'] - m['case_length']:g})")
+            patch, line = facts["bullet"]["patch_length"], f.line("bullet", "patch_length")
+            oal, case = m.get("overall_length"), m.get("case_length")
+            # A missing or mistyped length is reported with the [mm] keys; the range then goes unchecked.
+            exposed = oal - case if _is_number(oal) and _is_number(case) else None
+            if facts["bullet"]["type"] != PAPER_PATCHED or kind in LOOSE:
+                f.problem(line, f'only a paper-patched bullet (type = "{PAPER_PATCHED}") of a cartridge has a [bullet] patch_length')
+            elif profile == PATCHED:
+                f.problem(line, "the GP 1890's patched profile draws its paper to the 1892 drawing: no patch_length")
+            elif not _is_number(patch) or exposed is not None and not 0 < patch < exposed:
+                f.problem(line, "[bullet] patch_length is the paper showing above the case mouth in mm: above 0 and below "
+                                "the exposed bullet" + (f" ({exposed:g})" if exposed is not None else ""))
             elif not facts["bullet"]["sources"]:
                 f.problem(f.line("bullet"), "[bullet] a patch_length needs a source")
+            elif not _note_above(f, line):
+                f.problem(line, "a comment above patch_length names the source that gives it, or the round it was measured on")
     if "case_head" in facts:
         groove = [k for k in HEAD_GROOVE if k in facts["case_head"]]
         if kind in (RIMMED, RIMFIRE) and groove:
