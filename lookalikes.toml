@@ -655,3 +655,9 @@ calibres = [".375 H&H Magnum", ".416 Hoffman", ".416 Remington Magnum", ".400 A-
 name = ".338 Lapua Magnum"
 differ_by = ["length"]
 calibres = [".338 Lapua Magnum", ".33 XC"]
+
+[[group]]
+# Rigby's No. 2 (2019) is the .416 Rigby with a rim, for double rifles (C.I.P. sheets).
+name = ".416 Rigby"
+differ_by = ["rim"]
+calibres = [".416 Rigby", ".416 Rigby No. 2"]

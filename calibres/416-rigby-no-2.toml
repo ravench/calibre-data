@@ -1,0 +1,53 @@
+# Rigby's rimmed .416 Rigby for double rifles such as its Rising Bite, worked out with Eckhard Stief:
+# the .416 Rigby's body, shoulder and neck behind a 17 mm rim (C.I.P. sheets).
+name = ".416 Rigby No. 2"
+categories = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["416 rigby no 2", "416 rigby n2", "416 rigby n°2", "416 rimmed rigby"]
+
+# Rigby's round (London), for its double rifles; worked out with Eckhard Stief, and the C.I.P. sheet names
+# his country: DE
+origin = "GB"
+origin_sources = []
+rare = true
+
+[mm]
+rim = 17.0
+base = 14.99
+shoulder = 13.72
+shoulder_at = 59.73
+neck = 11.33
+case_length = 73.66
+overall_length = 95.25
+bullet = 10.57
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/416rigbyn2-180516-en.pdf"]
+
+[introduced]
+# The C.I.P. sheet is dated 16 May 2018; Rigby released the round in June 2019.
+year = 2019
+sources = ["https://www.thefirearmblog.com/blog/2019/06/03/john-rigby-co-releases-the-new-416-rigby-no-2-cartridge/"]
+
+[primer]
+# The C.I.P. sheet gives none; assumed from the .416 Rigby.
+size = "large-rifle"
+sources = []
+
+[shoulder_angle]
+# C.I.P. 416 Rigby N°2: alpha 89°45'32", the same cone as the .416 Rigby.
+degrees = 44.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/416rigbyn2-180516-en.pdf"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/416rigbyn2-180516-en.pdf"]
+
+[bullet]
+# Assumed from the .416 Rigby; no factory load found yet.
+type = "softpoint"
+sources = []
+
+[case]
+material = "brass"
+sources = []

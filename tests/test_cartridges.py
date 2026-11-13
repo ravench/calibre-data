@@ -744,7 +744,7 @@ class CatalogueTests(unittest.TestCase):
                                            # A-Square's and Hoffman's: handloads or bullet weights only.
                                            ".338 Excaliber", ".375 A-Square", ".416 Hoffman",
                                            ".460 A-Square Short", ".500 A-Square", ".416 Rimmed",
-                                           ".450 Assegai", ".400 A-Square DPM"})
+                                           ".450 Assegai", ".400 A-Square DPM", ".416 Rigby No. 2"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_silver_jackets_of_early_service_rounds(self):
