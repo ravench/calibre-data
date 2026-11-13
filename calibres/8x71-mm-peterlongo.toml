@@ -6,8 +6,8 @@ kind = "rimless"
 profile = "round"
 aliases = ["8x71"]
 
-origin = "AT"
-origin_sources = []
+origin = "AH"
+origin_sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
 obsolete = true
 rare = true
 
@@ -23,8 +23,9 @@ bullet = 8.08
 sources = ["book:cotw-18 p. 651", "https://municion.org/producto/8-x-71-peterlongo/"]
 
 [introduced]
-unknown = "COTW 18 p. 630 gives no year."
-sources = ["book:cotw-18 p. 630"]
+# COTW 18 p. 630 gives no year; municion.org dates it to 1909.
+year = 1909
+sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
 
 [primer]
 size = "large-rifle"

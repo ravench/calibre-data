@@ -6,8 +6,9 @@ profile = "round"
 aliases = ["9x56", "9x56ms"]
 display_aliases = ["9x56 mm M.-Sch."]
 
-origin = "AT"
-origin_sources = ["book:ammo-encyclopedia-2 p. 431"]
+origin = "AH"
+# Ammo Encyclopedia p. 431 names Austria, today's state; in 1905 that was Austria-Hungary.
+origin_sources = ["https://municion.org/producto/9-x-56-mannlicher-schonauer/"]
 obsolete = true
 rare = true
 
