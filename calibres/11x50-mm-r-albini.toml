@@ -17,13 +17,13 @@ rare = true
 rim = 17.22
 base = 14.73
 shoulder = 13.59
-shoulder_at = 42.8
+shoulder_at = 42.5
 neck = 11.99
 case_length = 50.8
 overall_length = 66.04
 bullet = 11.05
-# shoulder_at: case_length less the 8.0 mm from the shoulder start (L1 42.50) to the mouth (L3 50.50) on
-# naboje.org's drawing, which agrees with COTW within 0.4 mm on every diameter and the case length.
+# shoulder_at: L1 on naboje.org's drawing, whose shoulder, neck and case length agree with COTW within
+# 0.4 mm.
 sources = ["book:cotw-18 p. 574", "https://naboje.org/node/11147"]
 
 [introduced]

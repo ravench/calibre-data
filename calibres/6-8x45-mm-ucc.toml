@@ -23,7 +23,8 @@ bullet = 7.04
 # The table prints the rim as 375; .375 in. is meant.
 # shoulder_at: case_length less the 8.59 mm (.3382 in.) from the shoulder start to the end of the neck on
 # Pacific Tool's chamber reamer drawing (print 42050, 2015); the chamber's shoulder .3553 and neck .307 in.
-# sit a few thou over ours.
+# sit a few thou over ours. The chamber's neck end is taken as the case mouth; a chamber neck usually
+# runs .010-.015 in. past it, which would put the shoulder 0.3 mm higher.
 sources = [
   "book:cotw-18 p. 249",
   "https://www.pacifictoolandgauge.com/68--223-68x45-UCC-Finish-Chamber-Reamer_p_117954.html",
@@ -40,6 +41,8 @@ sources = ["book:cotw-18 p. 249"]
 
 [shoulder_angle]
 # Pacific Tool's finish chamber reamer drawing (print 42050): 45 deg; the chamber's cone is the case's.
+# Pacific Tool marks the angle from the axis, one side: its .32 Rem. C.I.P. print shows 23 deg, the
+# C.I.P. sheet's half angle.
 degrees = 45
 sources = ["https://www.pacifictoolandgauge.com/68--223-68x45-UCC-Finish-Chamber-Reamer_p_117954.html"]
 

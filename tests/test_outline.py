@@ -310,10 +310,9 @@ class OutlineTests(unittest.TestCase):
         ".40-70 Peabody What Cheer", ".40-70 Winchester",
         ".400 A-Square DPM", ".400/360 Nitro Express",
         ".400/375 Belted Nitro Express", ".416 Rimmed",
-        ".44-77 Sharps & Remington",
         ".45-100 Remington Necked",
         ".45-125 Winchester Express",
-        ".450/400 Nitro Express 2⅜ inch", ".50-115 Bullard",
+        ".50-115 Bullard",
         ".500/450 Magnum Express", ".500/450 Nitro Express", ".500/450 No. 1 Express",
         ".56-52 Spencer Necked", ".577/500 Nitro Express",
         ".577/500 No. 2 Express", "10.25x69 mm R Hunting-Express", "10.4x47 mm R Italian Vetterli",
@@ -394,6 +393,19 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(name):
                 self.assertEqual(cartridges.shoulder_angle(name), angle)
                 self.assertIn("municion.org", cartridges.SHOULDER_ANGLES[name][1])
+                self.assertEqual(specs[name]["sh_at"], start)
+
+    def test_shoulders_from_other_drawings_and_photos(self):
+        # (half angle, shoulder start, a word of the source) for angles from drawings, prints and photos.
+        found = {"11x50 mm R Albini": (18.6, 42.5, "naboje.org"),
+                 "6.8x45 mm UCC": (45, 36.1, "pacifictoolandgauge"),
+                 ".44-77 Sharps & Remington": (4.5, 33.0, "ammo-one1"),
+                 ".450/400 Nitro Express 2⅜ inch": (5.2, 46.1, "tabiical-en-page52")}
+        specs = self.bottlenecks()
+        for name, (angle, start, source) in found.items():
+            with self.subTest(name):
+                self.assertEqual(cartridges.shoulder_angle(name), angle)
+                self.assertIn(source, cartridges.SHOULDER_ANGLES[name][1])
                 self.assertEqual(specs[name]["sh_at"], start)
 
     def test_unsourced_shoulders_keep_the_default(self):
