@@ -8,7 +8,7 @@ profile = "round"
 aliases = ["38 long rf", "38 long rimfire"]
 
 origin = "US"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/10530"]
 obsolete = true
 rare = true
 

@@ -46,5 +46,6 @@ type = "jacketed"
 sources = ["book:cotw-18 p. 558"]
 
 [case]
+# naboje.org: usually brass, also lacquered or copper-washed steel.
 material = "brass"
-sources = []
+sources = ["https://naboje.org/node/1087"]

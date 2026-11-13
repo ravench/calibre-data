@@ -39,5 +39,6 @@ type = "jacketed"
 sources = ["book:cotw-18 p. 545"]
 
 [case]
+# naboje.org: most military rounds have brass cases, some iron (USA, France).
 material = "brass"
-sources = []
+sources = ["https://naboje.org/node/1197"]

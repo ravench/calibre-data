@@ -40,8 +40,9 @@ sources = ["https://municion.org/producto/297-250-mk-ii-rook-rifle-hh/"]
 
 [bullet]
 # A blackpowder rook round (COTW 18 p. 578), lead like the others of its kind.
+# naboje.org: loaded with black powder and a lead bullet.
 type = "lead"
-sources = []
+sources = ["https://naboje.org/node/4173"]
 
 [case]
 material = "brass"

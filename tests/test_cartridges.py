@@ -729,7 +729,7 @@ class CatalogueTests(unittest.TestCase):
                                            # COTW 18 gives a ball without its material.
                                            "8x60 mm R Guedes",
                                            # No factory load on the page, or a later one than the original.
-                                           ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
+                                           ".242 Rimless Nitro Express", ".280 Jeffery",
                                            ".500 Express 3 inch", ".500/450 Magnum Express",
                                            ".32 Protector", "7.7 mm Bittner", ".45 Cowboy Special", ".338-06 A-Square",
                                            ".40-65 Ballard Everlasting", ".44 Long Centrefire",

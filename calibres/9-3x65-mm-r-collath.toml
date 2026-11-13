@@ -40,5 +40,6 @@ type = "softpoint"
 sources = ["book:cotw-18 p. 642"]
 
 [case]
+# naboje.org: a heavy brass case made for many reloads.
 material = "brass"
-sources = []
+sources = ["https://naboje.org/node/11091"]

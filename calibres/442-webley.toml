@@ -36,5 +36,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.442_Webley"]
 
 [case]
+# naboje.org: a brass case.
 material = "brass"
-sources = []
+sources = ["https://naboje.org/node/5804"]

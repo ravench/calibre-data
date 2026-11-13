@@ -22,8 +22,9 @@ bullet = 10.57
 sources = ["book:cotw-18 p. 453", "https://municion.org/producto/416-hoffman-belted/"]
 
 [introduced]
-unknown = "COTW 18 p. 426: George Hoffman's wildcat of the late 1970s, later loaded by A-Square; no year."
-sources = ["book:cotw-18 p. 426"]
+# naboje.org: 1979; COTW 18 p. 426 has George Hoffman's wildcat of the late 1970s.
+year = 1979
+sources = ["book:cotw-18 p. 426", "https://naboje.org/node/19111"]
 
 [primer]
 size = "large-rifle"

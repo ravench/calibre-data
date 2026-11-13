@@ -7,7 +7,7 @@ profile = "round"
 aliases = ["10.3x65r", "10.3x65r baenziger"]
 
 origin = "CH"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/12541"]
 obsolete = true
 rare = true
 
