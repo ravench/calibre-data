@@ -11,13 +11,14 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.30_Super_Carry"]
 
 [mm]
+# C.I.P. 30 Super Carry, maximum cartridge.
 rim = 8.74
-base = 8.7
+base = 8.72
 neck = 8.56
-case_length = 21.0
-overall_length = 29.7
-bullet = 7.93
-sources = ["https://en.wikipedia.org/wiki/.30_Super_Carry"]
+case_length = 21.01
+overall_length = 29.69
+bullet = 7.95
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/30-super-carry-250223-en.pdf"]
 
 [introduced]
 year = 2022
@@ -28,9 +29,9 @@ size = "small-pistol"
 sources = ["book:cotw-18 p. 527"]
 
 [case_head]
-# .055 in.
-rim_thickness = 1.4
-sources = ["book:cotw-18 p. 527"]
+# C.I.P. 30 Super Carry
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/30-super-carry-250223-en.pdf"]
 
 [bullet]
 type = "jacketed"

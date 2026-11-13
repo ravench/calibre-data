@@ -16,13 +16,14 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 10.43
-base = 8.96
-neck = 8.83
-case_length = 27.5
-overall_length = 36.7
-bullet = 8.35
-sources = ["https://en.wikipedia.org/wiki/8mm_French_Ordnance"]
+# C.I.P. 8 mm Lebel, maximum cartridge.
+rim = 10.5
+base = 9.1
+neck = 8.9
+case_length = 27.4
+overall_length = 37.0
+bullet = 8.28
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page16.pdf"]
 
 [introduced]
 year = 1892

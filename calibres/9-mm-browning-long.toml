@@ -14,13 +14,14 @@ origin_sources = [
 ]
 
 [mm]
+# C.I.P. 9 mm Browning long, maximum cartridge.
 rim = 10.2
 base = 9.72
 neck = 9.68
 case_length = 20.2
 overall_length = 28.0
 bullet = 9.09
-sources = ["https://en.wikipedia.org/wiki/9mm_Browning_Long"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page25.pdf"]
 
 [introduced]
 year = 1903

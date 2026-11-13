@@ -13,16 +13,14 @@ obsolete = true
 rare = true
 
 [mm]
+# C.I.P. 8 mm Steyr, maximum cartridge.
 rim = 8.85
 base = 8.85
 neck = 8.8
 case_length = 18.65
-overall_length = 29.0
-bullet = 8.16
-sources = [
-  "book:janes-ammo-2002 p. 681",
-  "book:donnelly p. 864",
-]
+overall_length = 28.7
+bullet = 8.15
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page17.pdf"]
 
 [introduced]
 year = 1907
