@@ -46,8 +46,9 @@ ramp_angle = 30.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page48.pdf"]
 
 [bullet]
+# naboje.org: the standard bullet is full metal jacket with a mild steel core.
 type = "jacketed"
-sources = []
+sources = ["https://naboje.org/node/45"]
 
 [case]
 material = "brass"

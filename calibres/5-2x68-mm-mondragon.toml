@@ -43,8 +43,9 @@ rim_thickness = 1.7
 sources = ["book:cotw-18 p. 573"]
 
 [bullet]
+# naboje.org: smokeless powder and a full metal jacket bullet.
 type = "jacketed"
-sources = []
+sources = ["https://naboje.org/node/10304"]
 
 [case]
 material = "brass"
