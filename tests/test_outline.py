@@ -206,6 +206,7 @@ class OutlineTests(unittest.TestCase):
 
     def test_identical_groups(self):
         self.assertEqual(outline.identical_groups(), [
+            [".38 Super", ".38 ACP"],  # one SAAMI drawing (.38 Super Automatic +P / .38 Automatic)
             [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"],
             ["7.62x51 mm NATO", ".308 Winchester"],
             [".500/450 Nitro Express", ".500/450 Magnum Express"],
@@ -492,7 +493,7 @@ class OutlineTests(unittest.TestCase):
             self.assertIsNone(cartridges.rim_thickness(name), name)
             return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(by_name[name])[:n]]
         self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
-        self.assertEqual(head(".44 Colt", 3), [(6.15, 0), (6.15, 1.5), (5.8, 1.5)])
+        self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
         self.assertEqual(head("9x23 mm Largo", 5), [(4.95, 0), (4.95, 1.3), (4.0631, 1.3), (4.0631, 2.6), (4.955, 3.3)])
         self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.2574, 1.3), (8.2574, 2.6), (10.15, 3.3),
                                                (10.15, 6.2), (9.919, 6.2)])

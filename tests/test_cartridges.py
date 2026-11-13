@@ -278,7 +278,7 @@ class CatalogueTests(unittest.TestCase):
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
         self.assertEqual(tuple(by_name[".25 Weatherby RPM"][k] for k in keys),
                          (12.01, 12.7, 12.14, 7.37, 60.96, 50.48, 84.84, 6.53))
-        self.assertEqual(tuple(by_name[".300 HAM'R"][k] for k in ("rim", "case", "oal")), (9.6, 41.02, 57.4))
+        self.assertEqual(tuple(by_name[".300 HAM'R"][k] for k in ("rim", "case", "oal")), (9.6, 40.72, 57.4))
         for name in (".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM"):
             s = by_name[name]  # one case family: rebated rim under a 0.500 in head
             self.assertEqual((s["rim"], s["base"]), (12.01, 12.7), name)
@@ -332,7 +332,7 @@ class CatalogueTests(unittest.TestCase):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "neck", "case", "oal", "bullet")
         drawn = {  # AECC drawings on municion.org, mm
-            "5.75 mm Velo-Dog": (7.78, 6.37, 6.25, 29.41, 35.24, 5.65),
+            "5.75 mm Velo-Dog": (7.8, 6.42, 6.3, 29.6, 35.6, 5.79),  # now the C.I.P. sheet
             ".32 Long Rimfire": (9.51, 8.09, 8.09, 20.0, 30.85, 7.92),
             ".22 Extra Long": (6.95, 5.74, 5.72, 19.83, 29.89, 5.63),
             ".55 Boys": (20.3, 20.14, 15.51, 99.11, 133.64, 14.36),

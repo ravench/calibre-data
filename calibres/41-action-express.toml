@@ -14,13 +14,14 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 10.0
-base = 11.0
-neck = 11.0
+# C.I.P. 41 Act Exp, maximum cartridge.
+rim = 9.96
+base = 11.05
+neck = 11.03
 case_length = 22.0
-overall_length = 30.0
-bullet = 10.4
-sources = ["https://en.wikipedia.org/wiki/.41_Action_Express"]
+overall_length = 29.25
+bullet = 10.41
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page67.pdf"]
 
 [introduced]
 year = 1986

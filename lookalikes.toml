@@ -357,8 +357,9 @@ calibres = [".450 Adams", ".45 Webley"]
 
 [[group]]
 # COTW 18 p. 522: the Mk I and the .476 share one case, the .455 Webley (Mk II) is it shortened.
+# All three take a .455 in bullet (C.I.P. 455 MK II G1 11.57 mm), so only the length tells them apart.
 name = ".476 Enfield"
-differ_by = ["length", "bore"]
+differ_by = ["length"]
 calibres = [".476 Enfield", ".455 Webley Mk I", ".455 Webley"]
 
 [[group]]

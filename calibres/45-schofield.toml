@@ -12,13 +12,15 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.45_Schofield"]
 
 [mm]
-rim = 13.2
-base = 12.2
-neck = 12.2
-case_length = 27.9
-overall_length = 36.3
-bullet = 11.5
-sources = ["https://en.wikipedia.org/wiki/.45_Schofield"]
+# C.I.P. 45 S&W Schofield, maximum cartridge.
+# Bullet: .454 in like the rest of the .45 Colt family (the sheet's G1 is 11.58).
+rim = 12.95
+base = 12.19
+neck = 12.19
+case_length = 27.69
+overall_length = 36.32
+bullet = 11.53
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page82.pdf"]
 
 [introduced]
 year = 1875
@@ -29,9 +31,9 @@ size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.45_Schofield"]
 
 [case_head]
-# .055 in.
-rim_thickness = 1.4
-sources = ["book:cotw-18 p. 529"]
+# C.I.P. 45 S&W Schofield
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page82.pdf"]
 
 [bullet]
 type = "lead"

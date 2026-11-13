@@ -16,13 +16,14 @@ origin_sources = [
 rare = true
 
 [mm]
-rim = 12.3
-base = 11.6
-neck = 11.6
-case_length = 28.0
-overall_length = 38.0
-bullet = 11.5
-sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
+# C.I.P. 44 Colt, maximum cartridge.
+rim = 13.06
+base = 11.58
+neck = 11.55
+case_length = 27.94
+overall_length = 38.1
+bullet = 11.25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page70.pdf"]
 
 [introduced]
 year = 1871

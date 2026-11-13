@@ -14,13 +14,14 @@ origin_sources = [
 ]
 
 [mm]
-rim = 13.1
-base = 11.6
-neck = 11.6
-case_length = 24.6
-overall_length = 36.3
-bullet = 10.9
-sources = ["https://en.wikipedia.org/wiki/.44_S%26W_Russian"]
+# C.I.P. 44 S&W Russian, maximum cartridge.
+rim = 13.08
+base = 11.61
+neck = 11.59
+case_length = 24.64
+overall_length = 36.32
+bullet = 10.98
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page73.pdf"]
 
 [introduced]
 year = 1870
@@ -31,9 +32,9 @@ size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.44_S%26W_Russian"]
 
 [case_head]
-# .050 in.
-rim_thickness = 1.27
-sources = ["book:cotw-18 p. 528"]
+# C.I.P. 44 S&W Russian
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page73.pdf"]
 
 [bullet]
 type = "lead"
