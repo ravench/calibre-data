@@ -6,7 +6,9 @@ categories = ["cannon"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["20x138b", "20 mm solothurn", "20 mm long solothurn"]
-origin = "CH"
+# Germany made and used most of them (Flak 30 and 38): Waffenfabrik Solothurn, a Swiss front company
+# of Rheinmetall, developed it (Raven 2026-11-13).
+origin = "DE"
 origin_sources = []
 obsolete = true
 rare = true
