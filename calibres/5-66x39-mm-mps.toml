@@ -35,9 +35,9 @@ sources = ["book:cotw-18 p. 573"]
 
 [shoulder_angle]
 # AECC drawing of the 5.66x39.5 APS round on municion.org: SØ 9.20, NØ 6.16, SL 29.50, NL 5.80, CL 39.50.
+# naboje.org's drawing gives 19.1 (https://naboje.org/en/node/11131).
 degrees = 19.9
-# naboje.org's drawing gives 19.1.
-sources = ["https://municion.org/producto/566-x-395-aps-russian-underwater-rifle/", "https://naboje.org/en/node/11131"]
+sources = ["https://municion.org/producto/566-x-395-aps-russian-underwater-rifle/"]
 
 [case_head]
 # from the 5.45x39 mm case; C.I.P. 5,45 x 39

@@ -35,9 +35,9 @@ sources = ["https://municion.org/producto/5-x-58-sturtevant/"]
 
 [shoulder_angle]
 # AECC drawing on municion.org: SØ 10.77, NØ 6.03, SL 44.40, NL 7.50, CL 57.73.
+# naboje.org's drawing gives 21.9 (https://naboje.org/en/node/10606).
 degrees = 22.1
-# naboje.org's drawing gives 21.9.
-sources = ["https://municion.org/producto/5-x-58-sturtevant/", "https://naboje.org/en/node/10606"]
+sources = ["https://municion.org/producto/5-x-58-sturtevant/"]
 
 [case_head]
 # .045 in.

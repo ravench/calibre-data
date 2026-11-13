@@ -30,6 +30,7 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 454"]
 
 [shoulder_angle]
+# Our shoulder-to-neck step is wider than the drawing's, so the drawn neck comes out about 1.6 mm shorter.
 # AECC drawing on municion.org: SØ 16.71, NØ 15.64, SL 59.30, NL 12.30, CL 75.70.
 degrees = 7.4
 sources = ["https://municion.org/producto/577-tyrannosaur/"]
