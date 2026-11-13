@@ -3,7 +3,7 @@
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = "8 mm Nambu"
 categories = ["handgun"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "round"
 aliases = ["nambu", "8nambu"]
 

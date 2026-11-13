@@ -2,7 +2,7 @@
 # shoulder heights estimated for drawing.
 name = "6.5x50 mm SR Arisaka"
 categories = ["rifle"]
-kind = "rimless"
+kind = "semi-rimmed"
 # Nose: round, as first loaded (the Wikipedia page below); pointed service bullets came only from 1898
 # (COTW 18 p. 553).
 profile = "round"

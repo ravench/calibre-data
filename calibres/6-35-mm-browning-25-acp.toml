@@ -1,6 +1,6 @@
 name = "6.35 mm Browning (.25 ACP)"
 categories = ["handgun"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "round"
 aliases = ["6.35", "25acp", "25auto", "6,35"]
 

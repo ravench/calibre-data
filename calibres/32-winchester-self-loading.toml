@@ -2,7 +2,7 @@
 # The second round for the Winchester Model 1905 self-loading rifle; semi-rimmed like the .35 WSL.
 name = ".32 Winchester Self-Loading"
 categories = ["rifle"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "round"
 aliases = ["32wsl", "32 wsl"]
 

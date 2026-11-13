@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import SPITZER, ROUND, FLAT, PATCHED, CRIMPED, RIMLESS, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import SPITZER, ROUND, FLAT, PATCHED, CRIMPED, RIMLESS, SEMI_RIMMED, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -372,9 +372,9 @@ class OutlineTests(unittest.TestCase):
     def test_unsourced_shoulders_keep_the_default(self):
         self.assertEqual(cartridges.shoulder_angle("New calibre"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
-    # Rimless and belted cases without an extractor groove from a C.I.P. sheet (or a parent case that has
+    # Rimless, semi-rimmed and belted cases without an extractor groove from a C.I.P. sheet (or a parent case that has
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
-    # rimless or belted calibre needs a head in CASE_HEADS or a place here.
+    # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
         ".22 ARC", ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".26 Nosler", ".27 Nosler",
         ".277 SIG Fury", ".28 Nosler", ".30 Carbine", ".30 Nosler", ".30 Remington AR",
@@ -414,7 +414,7 @@ class OutlineTests(unittest.TestCase):
     }
 
     def rimless(self):
-        return {s["name"]: s for _, s in outline.specs() if s["kind"] in (RIMLESS, BELTED)}
+        return {s["name"]: s for _, s in outline.specs() if s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)}
 
     def test_every_rimless_head_is_sourced_or_listed(self):
         self.assertEqual(set(self.rimless()) - set(cartridges.CASE_HEADS), self.HEAD_UNSOURCED)
@@ -440,7 +440,7 @@ class OutlineTests(unittest.TestCase):
                 (r0, h0), (r1, h1) = prof[3], prof[4]
                 self.assertEqual(r0, groove / 2)
                 self.assertGreaterEqual(h0, thick)
-                if s["kind"] == RIMLESS:
+                if s["kind"] in (RIMLESS, SEMI_RIMMED):
                     self.assertEqual(h1, top_at)
                     if h0 > thick:  # the ramp keeps its angle unless it would cut into the rim
                         self.assertAlmostEqual(math.degrees(math.atan2(r1 - r0, h1 - h0)), angle, places=6)
@@ -468,7 +468,7 @@ class OutlineTests(unittest.TestCase):
         drawn = 0
         for _, s in outline.specs():
             t = cartridges.rim_thickness(s["name"])
-            if t is None or s["kind"] not in (RIMMED, RIMFIRE, RIMLESS, BELTED):
+            if t is None or s["kind"] not in (RIMMED, RIMFIRE, RIMLESS, SEMI_RIMMED, BELTED):
                 continue
             with self.subTest(s["name"]):
                 # The thinnest: .020 in., the 5 mm Bergmann pistol round; the thickest: .100 in., the Werndl M77.

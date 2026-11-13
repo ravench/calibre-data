@@ -2,7 +2,7 @@
 # Jeffery's long-range target round, on the .276 Enfield case.
 name = ".303 Magnum"
 categories = ["rifle"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "spitzer"
 aliases = ["303 magnum", "303mag"]
 

@@ -3,7 +3,7 @@
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = "9 mm Browning Long"
 categories = ["handgun"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "round"
 aliases = ["9browninglong", "9x20sr"]
 

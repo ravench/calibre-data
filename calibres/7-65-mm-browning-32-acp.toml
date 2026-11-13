@@ -1,6 +1,6 @@
 name = "7.65 mm Browning (.32 ACP)"
 categories = ["handgun"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "round"
 aliases = ["7.65browning", "32acp", "32auto", "7,65"]
 display_aliases = [".32 ACP", ".32 Auto"]

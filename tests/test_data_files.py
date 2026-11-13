@@ -260,6 +260,21 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, WIN, r"unknown key 'shoulder_ad' in \[mm\] \(did you mean \"shoulder_at\"\?\)",
                                line=c.line_of(WIN, "shoulder_ad ="))
 
+    def test_semi_rimmed_cases(self):
+        # Semi-rimmed: a rim a little wider than the base with an extractor groove in front of it,
+        # recorded as its own kind like belted (Raven, 2026-11-13). Case type G or H in the COTW 18 dimension
+        # tables, plus the .25 ACP, 9 mm Browning Long (9x20 SR) and .303 Magnum, which other sources call so.
+        semi = {s["name"] for _, items in cartridges.ALL_CATALOGUE for s in items
+                if s["kind"] == cartridges.SEMI_RIMMED}
+        self.assertEqual(semi, {
+            ".220 Swift", ".280 Ross", ".303 Magnum", ".32 Winchester Self-Loading", ".35 Winchester Self-Loading",
+            ".351 Winchester Self-Loading", ".307 Winchester", ".356 Winchester", "8 mm Nambu", ".38 ACP", ".38 AMU", ".38 Super", ".401 Winchester Self-Loading",
+            ".455 Webley Automatic", ".50-115 Bullard", "45x386 mm SR", "57x348 mm SR", "6.35 mm Browning (.25 ACP)",
+            "6.5x50 mm SR Arisaka", "6.5x53.5 mm SR Daudeteau", "7.65 mm Browning (.32 ACP)", "9 mm Browning Long"})
+        with Copy() as c:
+            c.edit(WIN, 'kind = "rimless"', 'kind = "semi-rimmed"')
+            self.assertProblem(c, WIN, r"semi-rimmed case has a rim wider than its base", line=c.line_of(WIN, "rim ="))
+
     def test_problems_name_the_line_of_the_value(self):
         with Copy() as c:
             c.edit(WIN, "degrees = 20", "degrees = 120")

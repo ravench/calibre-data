@@ -31,7 +31,8 @@ name = ".308 Winchester"
 # gives and have no [primer]; see README.md). The apps and order.toml list a calibre under its first
 # category only; a round that also fits another, such as a black-powder rifle round, lists both.
 categories = ["rifle"]
-# rimless, rimmed, belted, rimfire, shot (shot shell), ball (round ball or BB), minie (Minié
+# rimless, semi-rimmed (rim a little wider than the base, with an extractor groove), rimmed, belted,
+# rimfire, shot (shot shell), ball (round ball or BB), minie (Minié
 # bullet) or pellet (air gun pellet).
 kind = "rimless"
 # The bullet nose of the round as first sold, which the apps draw: spitzer, round, flat, patched
@@ -127,10 +128,10 @@ degrees = 20
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 
 # Rim thickness (R on the C.I.P. sheet, maximum cartridge; or from a book) for every kind of case.
-# Rimless and belted cases add their extractor groove from the C.I.P. sheet, all three or none: head
+# Rimless, semi-rimmed and belted cases add their extractor groove from the C.I.P. sheet, all three or none: head
 # to the top of the groove's ramp (E; belted: to the front of the belt), groove diameter (E1) and
 # the groove's front ramp to the case axis in degrees (delta). Needs a source; without one, leave
-# the table out (or the groove keys) and the head is drawn generic (add a rimless or belted calibre
+# the table out (or the groove keys) and the head is drawn generic (add a rimless, semi-rimmed or belted calibre
 # without a groove to HEAD_UNSOURCED in tests/test_outline.py).
 [case_head]
 # C.I.P. 308 Win.

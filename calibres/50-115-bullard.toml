@@ -3,7 +3,7 @@
 # the USA.
 name = ".50-115 Bullard"
 categories = ["rifle"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "flat"
 aliases = ["50-115 bullard"]
 

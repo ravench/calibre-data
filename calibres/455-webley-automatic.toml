@@ -2,7 +2,7 @@
 # Semi-rimmed, for the Webley self-loading pistol of the Royal Navy (1912); its bullet's nose is nearly flat.
 name = ".455 Webley Automatic"
 categories = ["handgun"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "round"
 aliases = ["455 webley auto", "455 webley automatic", "455 webley self-loading", "455 wsl"]
 
