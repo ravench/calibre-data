@@ -18,13 +18,17 @@ rare = true
 rim = 13.82
 base = 13.82
 shoulder = 13.39
-shoulder_at = 60.1
+shoulder_at = 57.81
 neck = 11.2
 case_length = 72.39
 overall_length = 92.58
 bullet = 10.57
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 453"]
+# shoulder_at: 2.276 in. on the drawing in Hornady's Handbook (7th/8th ed.) on loaddata.com, which agrees
+# with COTW on rim .545, shoulder .527, neck .442 and case 2.850 in.
+sources = [
+  "book:cotw-18 p. 453",
+  "https://loaddata.com/Cartridge/416-Dakota-Hornady-Handbook-of-Cartridge-Reloading-7th-8th-Editions/1737",
+]
 
 [introduced]
 # Ballistic Studies: Don Allen brought out his Dakota rounds in 1992; COTW gives no year.
@@ -34,6 +38,12 @@ sources = ["https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+ca
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
+
+[shoulder_angle]
+# Hornady's Handbook (7th/8th ed.) drawing on loaddata.com: 30 deg; its shoulder (2.276 in.) and neck start
+# (2.350) give 29.9.
+degrees = 30
+sources = ["https://loaddata.com/Cartridge/416-Dakota-Hornady-Handbook-of-Cartridge-Reloading-7th-8th-Editions/1737"]
 
 [case_head]
 # .042 in.

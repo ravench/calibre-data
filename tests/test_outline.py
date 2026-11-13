@@ -281,7 +281,7 @@ class OutlineTests(unittest.TestCase):
         ".38-70 Winchester",
         ".40-70 Peabody What Cheer", ".40-70 Winchester",
         ".400 A-Square DPM", ".400/360 Nitro Express",
-        ".400/375 Belted Nitro Express", ".416 Dakota", ".416 Rimmed",
+        ".400/375 Belted Nitro Express", ".416 Rimmed",
         ".44-77 Sharps & Remington",
         ".45-100 Remington Necked",
         ".45-125 Winchester Express",
