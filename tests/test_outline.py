@@ -306,7 +306,7 @@ class OutlineTests(unittest.TestCase):
         ".32-30 Remington", ".32-40 Remington",
         ".338 Canadian Magnum",
         ".38-70 Winchester", ".38-90 Winchester Express",
-        ".40-70 Peabody What Cheer", ".40-70 Winchester",
+        ".40-70 Peabody What Cheer",
         ".400/360 Nitro Express",
         ".400/375 Belted Nitro Express", ".416 Rimmed",
         ".45-100 Remington Necked",
@@ -400,7 +400,8 @@ class OutlineTests(unittest.TestCase):
         found = {"11x50 mm R Albini": (18.6, 42.5, "naboje.org"),
                  "6.8x45 mm UCC": (45, 36.1, "pacifictoolandgauge"),
                  ".44-77 Sharps & Remington": (4.5, 33.0, "ammo-one1"),
-                 ".450/400 Nitro Express 2⅜ inch": (5.2, 46.1, "tabiical-en-page52")}
+                 ".450/400 Nitro Express 2⅜ inch": (5.2, 46.1, "tabiical-en-page52"),
+                 ".40-70 Winchester": (13.26, 44.45, "winchestercollector")}
         specs = self.bottlenecks()
         for name, (angle, start, source) in found.items():
             with self.subTest(name):
