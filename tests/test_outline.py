@@ -313,7 +313,7 @@ class OutlineTests(unittest.TestCase):
         "7.62x40 mm WT",
         "7x73 mm Vom Hofe Belted", "8.5 mm Mars",
         "8x42 mm R M88", "8x50 mm R Siamese Type 45", "8x52 mm R Siamese Type 66",
-        "8x54 mm Krag-Jørgensen", "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo",
+        "8x54 mm Krag-Jørgensen", "8x59 mm Breda", "8x60 mm R Guedes", "8x63 mm Swedish", "8x71 mm Peterlongo",
         "9.3x53 mm R Swiss", "9.3x53 mm Swiss", "9.3x65 mm R Collath",
         "9.3x72 mm R Sauer", "9.3x75 mm R Nimrod",
         "9.5x47 mm R", "9.5x60 mm R Turkish Mauser", "9.5x73 mm Miller-Greiss Magnum", "9x63 mm",
@@ -335,7 +335,6 @@ class OutlineTests(unittest.TestCase):
     def test_angles_read_from_cip_sheets_found_by_name(self):
         # Half the junction cone angle alpha on each sheet.
         for name, angle, page in [("10.75x68 mm Mauser", 28.0, "tab-i/tabical-en-page74.pdf"),
-                                  ("8x60 mm R Guedes", 19.1, "tab-ii/tabiical-en-page37.pdf"),
                                   (".460 Steyr", 28.3, "tab-i/tabical-en-page151.pdf"),
                                   (".333 Jeffery Rimless", 19.9, "tab-i/tabical-en-page129.pdf"),
                                   (".280 Ross", 26.6, "tab-i/tabical-en-page104.pdf"),
