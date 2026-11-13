@@ -38,7 +38,7 @@ sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81
 
 [shoulder_angle]
 # AECC drawing 11-038-BBC-011
-degrees = 10.2
+degrees = 10.6
 sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
 
 [bullet]
