@@ -14,13 +14,14 @@ origin_sources = [
 rare = true
 
 [mm]
-rim = 20.6
-base = 17.8
-neck = 16.5
-case_length = 76.0
-overall_length = 94.0
-bullet = 15.7
-sources = ["https://en.wikipedia.org/wiki/.600_Nitro_Express"]
+# C.I.P. 600 N.E., maximum cartridge.
+rim = 20.57
+base = 17.78
+neck = 16.51
+case_length = 76.2
+overall_length = 93.98
+bullet = 15.75
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page130.pdf"]
 
 [introduced]
 year = 1899
@@ -32,9 +33,9 @@ size = "large-rifle"
 sources = ["https://municion.org/producto/600-nitro-express-3/"]
 
 [case_head]
-# .06 in.
-rim_thickness = 1.52
-sources = ["book:donnelly p. 695"]
+# C.I.P. 600 N.E.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page130.pdf"]
 
 [bullet]
 type = "softpoint"

@@ -13,13 +13,14 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 13.11
-base = 11.91
+# C.I.P. 400 Purdey 3", maximum cartridge.
+rim = 13.26
+base = 11.99
 neck = 10.85
 case_length = 76.2
 overall_length = 91.44
 bullet = 10.29
-sources = ["book:cotw-18 p. 608"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page103.pdf"]
 
 [introduced]
 # COTW: around 1905.

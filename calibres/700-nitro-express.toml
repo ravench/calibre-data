@@ -11,13 +11,14 @@ origin_sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
 rare = true
 
 [mm]
+# C.I.P. 700 H.&H. Nitro Exp., maximum cartridge.
 rim = 22.6
-base = 19.8
-neck = 18.5
-case_length = 89.0
-overall_length = 107.0
-bullet = 17.8
-sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
+base = 19.86
+neck = 18.54
+case_length = 88.9
+overall_length = 106.68
+bullet = 17.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page131.pdf"]
 
 [introduced]
 year = 1988

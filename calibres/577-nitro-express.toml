@@ -14,17 +14,14 @@ origin_sources = [
 rare = true
 
 [mm]
-rim = 19.0
-base = 16.8
-neck = 15.5
-case_length = 76.0
-overall_length = 94.0
-bullet = 14.9
-# No source yet for case_length.
-sources = [
-  "book:cotw-18 p. 609",
-  "book:donnelly p. 684",
-]
+# C.I.P. 577 N.E. 3", maximum cartridge.
+rim = 19.05
+base = 16.81
+neck = 15.37
+case_length = 76.2
+overall_length = 93.98
+bullet = 14.83
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page128.pdf"]
 
 [introduced]
 unknown = "the source gives only the 1890s"
@@ -35,9 +32,9 @@ size = "berdan-nitro"
 sources = ["book:cotw-18 p. 609"]
 
 [case_head]
-# .052 in.
-rim_thickness = 1.32
-sources = ["book:cotw-18 p. 609"]
+# C.I.P. 577 N.E. 3"
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page128.pdf"]
 
 [bullet]
 type = "softpoint"

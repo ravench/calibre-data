@@ -14,17 +14,14 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 18.97
-base = 16.76
-neck = 15.29
+# C.I.P. 577 Snider, maximum cartridge.
+rim = 19.05
+base = 16.89
+neck = 15.32
 case_length = 50.8
-overall_length = 62.0
-bullet = 14.48
-sources = [
-  "https://en.wikipedia.org/wiki/.577_Snider",
-  "book:cotw-18 p. 574",
-  "book:donnelly p. 686",
-]
+overall_length = 62.74
+bullet = 14.58
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page129.pdf"]
 
 [introduced]
 year = 1866
@@ -35,9 +32,9 @@ size = "large-rifle"
 sources = []
 
 [case_head]
-# .052 in.
-rim_thickness = 1.32
-sources = ["book:cotw-18 p. 574"]
+# C.I.P. 577 Snider
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page129.pdf"]
 
 [bullet]
 type = "lead"
