@@ -30,8 +30,9 @@ year = 1900
 sources = ["book:cotw-18 p. 532"]
 
 [primer]
+# The table gives no primer; 5.47 mm, 2 specimens on municion.org's photos.
 size = "large-rifle"
-sources = []
+sources = ["https://municion.org/producto/5-x-58-sturtevant/"]
 
 [case_head]
 # .045 in.

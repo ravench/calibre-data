@@ -29,8 +29,9 @@ year = 1971
 sources = ["book:cotw-18 p. 535"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# The table gives a Boxer primer without its size; 4.57 mm, 11 specimens on municion.org's photos.
+size = "small-rifle"
+sources = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
 
 [bullet]
 type = "jacketed"

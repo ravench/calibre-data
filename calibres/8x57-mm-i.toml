@@ -30,9 +30,9 @@ year = 1888
 sources = ["https://en.wikipedia.org/wiki/7.92×57mm_Mauser"]
 
 [primer]
-# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+# 5.49 mm, 12 specimens on municion.org's photos of the M 1888 round.
 size = "large-rifle"
-sources = []
+sources = ["https://municion.org/producto/792-x-57-mauser-m-1888/"]
 
 [shoulder_angle]
 # C.I.P. 8 x 57 I

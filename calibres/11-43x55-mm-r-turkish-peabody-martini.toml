@@ -30,8 +30,10 @@ year = 1874
 sources = ["book:cotw-18 p. 565"]
 
 [primer]
-size = "large-rifle"
-sources = []
+# The table gives a Berdan primer without its size; 6.62 mm, 2 specimens on municion.org's photos,
+# the .254 in. one.
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/1143-x-59-r-turkish-martini-peabody-m-1874/"]
 
 [bullet]
 # The military load: a lead bullet over blackpowder.

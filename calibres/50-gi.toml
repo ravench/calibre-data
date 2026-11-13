@@ -26,7 +26,8 @@ year = 2002
 sources = ["book:cotw-18 p. 441"]
 
 [primer]
-# The table gives no primer.
+# The table gives no primer. The municion.org photos read 5.88 mm (2 specimens, scaled by the rebated base), above the
+# large primer band. Unverified.
 size = "large-pistol"
 sources = []
 
