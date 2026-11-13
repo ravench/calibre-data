@@ -41,8 +41,9 @@ ramp_angle = 36.0
 sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Hornady launched it with a 128-grain ELD-X and a 134-grain ELD Match load.
+type = "polymer"
+sources = ["https://www.americanhunter.org/content/hornady-introduces-25-creedmoor", "book:cotw-18 p. 103", "book:cotw-18 p. 104"]
 
 [case]
 material = "brass"

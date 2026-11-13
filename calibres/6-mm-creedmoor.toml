@@ -41,8 +41,10 @@ ramp_angle = 36.0
 sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Hornady's first factory load, announced in October 2016 for 2017, carries a 108-grain ELD Match;
+# COTW 18 p. 97 lists the later V-Max and ELD-X factory loads.
+type = "polymer"
+sources = ["https://press.hornady.com/release/2016/10/28/hornady-announces-new-products-for-2017/", "book:cotw-18 p. 96", "book:cotw-18 p. 97"]
 
 [case]
 material = "brass"

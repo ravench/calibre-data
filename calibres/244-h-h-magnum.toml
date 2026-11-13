@@ -49,8 +49,9 @@ ramp_angle = 45.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page11.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Holland & Holland's factory loads carried 100-grain soft points.
+type = "softpoint"
+sources = ["book:cotw-18 p. 578"]
 
 [case]
 material = "brass"

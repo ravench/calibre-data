@@ -328,12 +328,13 @@ cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outlin
   (copper jacket with the lead core showing at the tip), `polymer` (copper jacket with a plastic
   tip: V-Max, ELD, FTX, SST, AccuBond), `hollowpoint` (copper jacket with a cavity in the nose, only
   where the first factory load was a hollow point: the 5 mm Remington Rimfire Magnum, .22 TCM,
-  .25 NAA, .357 Remington Maximum, .400 Cor-Bon, .40 S&W and .357 SIG; open-tip match bullets count
-  as `jacketed`) or `steel` (a solid steel projectile: the MPS underwater dart). The GP 1890 steel cap
-  is its own profile (`patched`). For a ball, Minié bullet or pellet, what it is made of: `lead`,
-  `steel` or `plastic` (steel BBs and airsoft BBs). `sources = []` means not checked. Steel and
-  plastic need a source; an unchecked type other than `jacketed` (or `lead` for loose projectiles),
-  such as a hunting round's soft point inferred from its use, is listed in `BULLET_INFERRED`.
+  .25 NAA, .357 Remington Maximum, .400 Cor-Bon, .40 S&W, .357 SIG and .480 Ruger; open-tip match
+  bullets count as `jacketed`) or `steel` (a solid steel projectile: the MPS underwater dart). The
+  GP 1890 steel cap is its own profile (`patched`). For a ball, Minié bullet or pellet, what it is
+  made of: `lead`, `steel` or `plastic` (steel BBs and airsoft BBs). `sources = []` means not
+  checked. Steel and plastic need a source; an unchecked type other than `jacketed` (or `lead` for
+  loose projectiles), such as a hunting round's soft point inferred from its use, is listed in
+  `BULLET_INFERRED`.
 - `[bullet]` `jacket`, optional, for a bullet with a jacket (`jacketed`, `softpoint`, `polymer`,
   `hollowpoint`) that is not copper-coloured on the outside, as first sold: `cupronickel` (silver:
   a cupronickel jacket, or a steel one clad or plated with cupronickel or nickel, as on most service

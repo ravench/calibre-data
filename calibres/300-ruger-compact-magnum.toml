@@ -49,8 +49,9 @@ ramp_angle = 35.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Hornady launched it in 2008 with 150-, 165- and 180-grain SST loads.
+type = "polymer"
+sources = ["https://press.hornady.com/release/2008/10/03/ruger-compact-magnum-cartridges-review/", "book:cotw-18 p. 142"]
 
 [case]
 material = "brass"

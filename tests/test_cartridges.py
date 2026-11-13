@@ -793,6 +793,12 @@ class CatalogueTests(unittest.TestCase):
         # Launched with hollow points: Winchester's 180 gr JHP (1990), Federal's JHP (1994).
         self.assertEqual(BULLETS[".40 S&W"][0], HOLLOW_POINT)
         self.assertEqual(BULLETS[".357 SIG"][0], HOLLOW_POINT)
+        # Hornady's 325 gr XTP Magnum (Ruger, 2001); the Creedmoors and the .300 RCM came with
+        # Hornady's tipped bullets.
+        self.assertEqual(BULLETS[".480 Ruger"][0], HOLLOW_POINT)
+        for name in ("6 mm Creedmoor", ".25 Creedmoor", ".300 Ruger Compact Magnum"):
+            self.assertEqual(BULLETS[name][0], POLYMER_TIP, name)
+        self.assertEqual(BULLETS[".244 H&H Magnum"][0], SOFT_POINT)
         self.assertEqual(bullet(".32 NAA"), JACKETED)  # also sold with full metal jackets
 
     def test_case_materials(self):

@@ -33,8 +33,11 @@ size = "small-pistol"
 sources = []
 
 [bullet]
+# municion.org's oldest dated service round (École Centrale de Pyrotechnie, 1912) has a copper-washed
+# jacketed bullet; its lead-bullet round (1940) is a reduced-range load. COTW 18 p. 477 gives a lead
+# military load.
 type = "jacketed"
-sources = []
+sources = ["https://municion.org/ficha-08-027-cbc-010-0001/", "https://municion.org/ficha-08-027-cbc-010-0002/"]
 
 [case]
 material = "brass"

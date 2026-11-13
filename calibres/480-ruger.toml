@@ -39,8 +39,10 @@ rim_thickness = 1.65
 sources = ["book:cotw-18 p. 529"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Launched with Hornady's 325-grain XTP Magnum, a jacketed hollow point and at first the only load
+# (Ruger's release of December 2001; Gunblast).
+type = "hollowpoint"
+sources = ["https://ruger.com/news/2001-12-01.html", "https://gunblast.com/480_Ruger.htm", "book:cotw-18 p. 524"]
 
 [case]
 material = "brass"
