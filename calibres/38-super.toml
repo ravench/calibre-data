@@ -1,6 +1,6 @@
 name = ".38 Super"
 categories = ["handgun"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "round"
 aliases = ["38super", "38 super auto"]
 

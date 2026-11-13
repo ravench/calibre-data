@@ -19,9 +19,9 @@ except ModuleNotFoundError as e:  # Python 3.10 and older
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Kinds
-RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET = (
-    "rimless", "rimmed", "belted", "rimfire", "shot", "ball", "minie", "pellet")
-KINDS = (RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET)
+RIMLESS, SEMI_RIMMED, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET = (
+    "rimless", "semi-rimmed", "rimmed", "belted", "rimfire", "shot", "ball", "minie", "pellet")
+KINDS = (RIMLESS, SEMI_RIMMED, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET)
 LOOSE = (BALL, MINIE, PELLET)  # loose projectiles, not cartridges
 # Bullet profiles. PATCHED: paper-patched lead body with a steel-capped ogive nose (GP 1890).
 # CRIMPED: no bullet; the case mouth is folded shut in a star (blanks and power-tool loads).
@@ -594,6 +594,8 @@ def _read_calibre(f, countries, books=None):
             f.problem(f.line("primer"), f"a {category} round has no [primer] (not a reloading size): remove it")
     elif "primer" not in facts:
         f.problem(None, "a centrefire calibre needs a [primer] table (size and sources, or sources = [] if not checked)")
+    if kind == SEMI_RIMMED and not facts["mm"].get("rim", 0) > facts["mm"].get("base", 0):
+        f.problem(f.line("mm", "rim"), "a semi-rimmed case has a rim wider than its base")
     if category == "cannon" and not 20 <= facts["mm"]["bullet"] <= 57:
         f.problem(f.line("mm", "bullet"), "cannon holds the 20 to 57 mm cannon rounds: bullet is 20 to 57")
     if kind in LOOSE + (SHOT,):
@@ -625,7 +627,7 @@ def _read_calibre(f, countries, books=None):
         groove = [k for k in HEAD_GROOVE if k in facts["case_head"]]
         if kind in (RIMMED, RIMFIRE) and groove:
             f.problem(f.line("case_head"), f"a {kind} case has no extractor groove: [case_head] has only rim_thickness")
-        elif kind not in (RIMMED, RIMFIRE, RIMLESS, BELTED):
+        elif kind not in (RIMMED, RIMFIRE, RIMLESS, SEMI_RIMMED, BELTED):
             f.problem(f.line("case_head"), f"a {kind} calibre has no [case_head]")
         elif groove and len(groove) < len(HEAD_GROOVE):
             f.problem(f.line("case_head"), "[case_head] has ramp_top, groove_diameter and ramp_angle together, "

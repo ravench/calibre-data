@@ -2,7 +2,7 @@
 # Semi-rimmed .38 Special case for the Army Marksmanship Unit's 1911 target pistols; a flush-seated hollow-base wadcutter.
 name = ".38 AMU"
 categories = ["handgun"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "flat"
 aliases = ["38 amu", "38 army marksmanship unit", "38 spl amu", "38 special amu"]
 

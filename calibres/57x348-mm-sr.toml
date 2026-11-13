@@ -3,7 +3,7 @@
 # table the rim and base, Jane's p. 136 the length of the complete round.
 name = "57x348 mm SR"
 categories = ["cannon"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "spitzer"
 aliases = ["57x348sr", "57x347sr", "57x348", "57 mm s-60"]
 origin = "SU"

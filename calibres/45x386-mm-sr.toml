@@ -2,7 +2,7 @@
 # table the rim and base (whole millimetres only).
 name = "45x386 mm SR"
 categories = ["cannon"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "spitzer"
 aliases = ["45x386sr", "45x386"]
 origin = "SU"

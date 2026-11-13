@@ -136,7 +136,7 @@ brass and the case materials made today always need one.
 |---|---|---|
 | `name` | required | The calibre's name as the apps show it, written as in [Names](#names). The file name follows from it (`.22 LR` is `22-lr.toml`); `check.py` gives the right one. |
 | `categories` | required | The categories it is in, the primary one first (see [The files](#the-files)): `rimfire`, `handgun`, `rifle`, `black-powder`, `shotgun`, `air-gun` or `cannon`. Apps that need one category use the first. A second category names the firearms of a round whose first one does not (black-powder and rimfire rounds: `rifle`, `handgun`), with a `# Firearms:` note above it giving the source. |
-| `kind` | required | `rimless`, `rimmed`, `belted`, `rimfire`, `shot` (shot shell), `ball` (round ball or BB), `minie` (Minié bullet) or `pellet` (air gun pellet). |
+| `kind` | required | `rimless`, `semi-rimmed` (a rim a little wider than the base, with an extractor groove: .38 Super, .32 ACP), `rimmed`, `belted`, `rimfire`, `shot` (shot shell), `ball` (round ball or BB), `minie` (Minié bullet) or `pellet` (air gun pellet). |
 | `profile` | required | Bullet nose of the round as first sold (the apps draw it): `spitzer`, `round`, `flat`, `patched` (paper-patched lead body and a steel-capped nose, GP 1890, drawn to the army's 1892 drawing) or `crimped` (no bullet, the mouth folded shut in a star: blanks and power-tool loads). |
 | `profile_today` | optional | The nose of today's usual load, where it is not the first one: the .303 British is drawn `round` but loaded `spitzer` since the Mk VII. Same values as `profile`; for the catalogue only. A `# Today:` comment above it names the source, as `# Nose:` does for `profile`. |
 | `aliases` | required | Search aliases, lower case as people type them (`[]` for none), headstamp spellings among them (`"357 rem mag"`, `"30 wcf"`). Never the name of another calibre. |
@@ -305,9 +305,9 @@ source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
 
 ### `[case_head]`
 
-`rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. Rimless and
-belted cases add their extractor groove where a C.I.P. sheet gives it, all three or none: `ramp_top`
-(E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
+`rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. Rimless,
+semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet gives it, all three or
+none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
 A case made from a parent case without its own sheet keeps the parent's head (the note says which).
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
@@ -315,7 +315,7 @@ its dimension tables, Donnelly as E); the note gives the inches as printed. Book
 rather than the C.I.P. maximum, so a calibre from a book can have a rim up to about 0.3 mm thinner
 than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadcutter 1.5 mm from
 the sheet). A rim without a thickness is
-drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless and belted); rimless and belted
+drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless, semi-rimmed and belted); those
 cases without a groove get a generic one (`HEAD_UNSOURCED` in `tests/test_outline.py` lists them).
 
 ### `[bullet]`, `[case]`, `[current_cases]`

@@ -2,7 +2,7 @@
 # Semi-rimmed; the French Navy's Daudeteau rifle.
 name = "6.5x53.5 mm SR Daudeteau"
 categories = ["rifle"]
-kind = "rimless"
+kind = "semi-rimmed"
 profile = "round"
 aliases = ["6.5daudeteau", "6.5x53.5"]
 
