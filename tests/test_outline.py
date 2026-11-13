@@ -302,7 +302,6 @@ class OutlineTests(unittest.TestCase):
     SHOULDER_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
         # shoulder_at is estimated, as the note in [mm] says).
-        ".246 Purdey Flanged",
         ".275 No. 2 Magnum", ".276 Pedersen",
         ".32-30 Remington", ".32-40 Remington",
         ".338 Canadian Magnum",
@@ -387,7 +386,8 @@ class OutlineTests(unittest.TestCase):
         # (half angle, shoulder start) from AECC drawings on municion.org: atan(((SØ-NØ)/2)/(CL-NL-SL)).
         drawings = {".22 Nosler": (29.9, 35.28), ".38-56 WCF": (6.5, 30.64), "6.5x58 mm Vergueiro": (10.8, 41.0),
                     ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.6, 26.11),
-                    ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75)}
+                    ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
+                    ".246 Purdey Flanged": (16.0, 46.3)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):

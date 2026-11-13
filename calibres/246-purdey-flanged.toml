@@ -14,14 +14,16 @@ rare = true
 [mm]
 rim = 13.82
 base = 12.04
-shoulder = 10.19
-shoulder_at = 48.1
+shoulder = 10.74
+shoulder_at = 46.3
 neck = 7.19
 case_length = 56.9
 overall_length = 75.69
 bullet = 6.43
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 608"]
+# shoulder and shoulder_at: the AECC drawing on municion.org (SØ 10.74; shoulder_at = case_length less
+# CL 56.56 - SL 46.00). COTW gives the shoulder as .401 in. (10.19 mm), but municion.org's side photo
+# of the round puts it at 0.78 of the rim, as the drawing does (10.74/13.74), not 0.74 as COTW does.
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/246-purdey-flanged/"]
 
 [introduced]
 year = 1921
@@ -30,6 +32,12 @@ sources = ["book:cotw-18 p. 578"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.74, NØ 7.27, SL 46.00, NL 4.50, CL 56.56. The side photo on the
+# same site gives 17-20 deg over its two edges.
+degrees = 16.0
+sources = ["https://municion.org/producto/246-purdey-flanged/"]
 
 [bullet]
 type = "softpoint"
