@@ -287,9 +287,10 @@ differ_by = ["bore", "length"]
 calibres = [".333 Jeffery Rimless", ".280 Jeffery"]
 
 [[group]]
-# COTW 18 p. 585: the .303 Magnum uses the .276 Enfield case.
+# COTW 18 p. 585: the .303 Magnum uses the .276 Enfield case, made semi-rimmed (municion.org's .303 Jeffery
+# Magnum semi-rimmed).
 name = ".276 Enfield"
-differ_by = ["bore"]
+differ_by = ["bore", "rim"]
 calibres = [".276 Enfield", ".303 Magnum"]
 
 [[group]]
