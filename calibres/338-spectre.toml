@@ -27,7 +27,8 @@ unknown = "COTW 18 p. 400 gives no year."
 sources = ["book:cotw-18 p. 400"]
 
 [primer]
-# The table gives large rifle, as Hodgdon's data does for the 6.8 mm SPC case it is made from.
+# The table gives large rifle (Hodgdon loads the parent 6.8 mm SPC with large rifle primers too);
+# municion.org's two specimens disagree (4.86 and 5.53 mm).
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 

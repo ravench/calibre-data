@@ -26,10 +26,10 @@ year = 1870
 sources = ["book:cotw-18 p. 508"]
 
 [primer]
-# The table gives no primer. The municion.org photos read 6.33 mm (6 specimens, two of them 6.2 mm):
-# at the edge of the gap between the .241 in. and the .254 in. Berdan primer. Unverified.
-size = "large-pistol"
-sources = []
+# The table gives no primer; 6.33 mm, 6 specimens on municion.org's photos (two of them 6.2 mm), at
+# the lower edge of the .254 in. band, next to the gap where the .241 in. primer falls.
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/113-mm-gasser-mod-1870-74-montenegrin-flat-base/"]
 
 [bullet]
 type = "lead"

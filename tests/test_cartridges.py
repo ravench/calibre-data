@@ -103,12 +103,13 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(PRIMERS[name], SMALL_PISTOL, name)
 
     def test_old_rounds_with_the_large_berdan_primer(self):
-        # Black-powder rifle rounds of the 1870s-80s and the 10.3x65 R Baenziger measure about 6.4 mm
-        # on municion.org's headstamp photos: the .254 in. Berdan primer, not a large rifle one.
+        # Black-powder rifle rounds of the 1870s-80s, the Gasser revolver round and the 10.3x65 R Baenziger
+        # measure about 6.3-6.6 mm on municion.org's headstamp photos: the .254 in. Berdan primer, not a
+        # large one.
         for name in ("11.15x58 mm R Werndl M77", "10.75x58 mm R Russian Berdan", "11.3x50 mm R Beaumont M71",
                      "11x60 mm R Japanese Murata", "10.4x38 mm R Vetterli Centrefire", "8x60 mm R Guedes",
                      ".40-70 Peabody What Cheer", ".44-95 Peabody What Cheer", "10.3x65 mm R Baenziger",
-                     "11.43x55 mm R Turkish Peabody-Martini"):
+                     "11.43x55 mm R Turkish Peabody-Martini", "11.75 mm Montenegrin"):
             self.assertEqual(PRIMERS[name], BERDAN_NITRO, name)
             self.assertTrue(PRIMER_SOURCES[name].startswith("https://municion.org/producto/"), name)
 
@@ -122,8 +123,8 @@ class CatalogueTests(unittest.TestCase):
         # The table's large rifle, as Hodgdon loads the 6.8 mm SPC case it is made from.
         self.assertEqual(PRIMERS[".338 Spectre"], LARGE_RIFLE)
         self.assertEqual(PRIMER_SOURCES[".338 Spectre"], "book:cotw-18 p. 452")
-        # Readings at or past a band's edge stay unverified.
-        for name in ("11.75 mm Montenegrin", ".500 Phantom", ".50 GI"):
+        # Readings past a band's edge stay unverified.
+        for name in (".500 Phantom", ".50 GI"):
             self.assertIn(name, PRIMER_UNVERIFIED, name)
 
     def test_readings_between_two_sizes_stay_unverified(self):
