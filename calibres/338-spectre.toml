@@ -27,10 +27,9 @@ unknown = "COTW 18 p. 400 gives no year."
 sources = ["book:cotw-18 p. 400"]
 
 [primer]
-# The table gives large rifle, but the case is the 6.8 mm SPC's, which takes small rifle
-# primers.
-size = "small-rifle"
-sources = []
+# The table gives large rifle, as Hodgdon's data does for the 6.8 mm SPC case it is made from.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
 
 [shoulder_angle]
 # COTW 18 drawing. COTW says the designer gave neither the angle nor the head-to-shoulder length:

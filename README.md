@@ -280,17 +280,17 @@ page. Shot shells: Hodgdon's shotshell data uses 209-size primers for every gaug
 municion.org: the primer diameter measured on its headstamp photos (median over at least two
 specimens, scaled by the rim diameter, or the base on rebated rims, and raised by 2.5 %, as the
 method reads 9 mm, .38 Special and .308 that much low). It gives the original primer: up to about
-4.65 mm a small one, 5.2-5.75 mm a large one and 6.3-6.8 mm the .254 in. Berdan Nitro primer, when
-at least two thirds of the specimens fall in the band and the middle half of the readings lies
-within 0.6 mm. Readings between two sizes (4.65-5.2 mm, 5.75-6.3 mm, where the .241 in. Berdan
-primer falls) or whose specimens disagree stay unverified (`sources = []`), like the rounds with no
-reloading data, brass maker page or clear headstamp photo yet (old military rounds, Nitro Expresses,
-European hunting rounds). The readings of the first batch (5 November 2026) are raw, not raised by
-2.5 %, and were judged with that batch's bands (Berdan Nitro from about 6.1 mm); they stay as they
-were, except the three that fell between two sizes once raised: the .500/465 Nitro Express keeps the
-Nitro primer from the Cartridges of the World tables, the 11 mm Gras and the 10.3x60 R stay
-unverified. Hodgdon loads .30 Super Carry with small rifle primers; Federal's ammunition and the COTW
-table use small pistol.
+4.65 mm a small one, 5.2-5.75 mm a large one, 6.3-6.8 mm the .254 in. Berdan Nitro primer and about
+8-9 mm the .50 BMG one, when at least two thirds of the specimens fall in the band and the middle
+half of the readings lies within 0.6 mm. Readings between two sizes (4.65-5.2 mm, 5.75-6.3 mm, where
+the .241 in. Berdan primer falls) or whose specimens disagree stay unverified (`sources = []`), like
+the rounds with no reloading data, brass maker page or clear headstamp photo yet (old military
+rounds, Nitro Expresses, European hunting rounds). The readings of the first batch (5 November 2026)
+are raw, not raised by 2.5 %, and were judged with that batch's bands (Berdan Nitro from about
+6.1 mm); they stay as they were, except the three that fell between two sizes once raised: the
+.500/465 Nitro Express keeps the Nitro primer from the Cartridges of the World tables, the 11 mm
+Gras and the 10.3x60 R stay unverified. Hodgdon loads .30 Super Carry with small rifle primers;
+Federal's ammunition and the COTW table use small pistol.
 Cartridges of the World's dimension tables give the primer as a letter (S small rifle, SP small
 pistol, L large rifle, LP large pistol) or, in the European and British tables, as the Berdan
 primer's diameter: .177 in. (4.5 mm) is small, .216-.217 in. (5.5 mm) large and .250-.254 in.

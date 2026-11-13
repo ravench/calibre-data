@@ -28,9 +28,10 @@ year = 2004
 sources = ["book:cotw-18 p. 649"]
 
 [primer]
-# The table gives a Boxer primer; the .50 BMG case it is made from takes the #35 size.
+# The table gives a Boxer primer; the .50 BMG case it is made from takes the #35 size. 8.41 mm,
+# 7 specimens on municion.org's photos.
 size = "bmg-35"
-sources = []
+sources = ["https://municion.org/producto/460-steyr/"]
 
 [case_head]
 # from the .50 BMG case; C.I.P. 50 Browning

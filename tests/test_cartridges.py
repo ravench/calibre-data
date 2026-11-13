@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
-                        PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO,
+                        PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO, BMG_35,
                         SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
                         RARE, is_rare, tags,
@@ -107,9 +107,24 @@ class CatalogueTests(unittest.TestCase):
         # on municion.org's headstamp photos: the .254 in. Berdan primer, not a large rifle one.
         for name in ("11.15x58 mm R Werndl M77", "10.75x58 mm R Russian Berdan", "11.3x50 mm R Beaumont M71",
                      "11x60 mm R Japanese Murata", "10.4x38 mm R Vetterli Centrefire", "8x60 mm R Guedes",
-                     ".40-70 Peabody What Cheer", ".44-95 Peabody What Cheer", "10.3x65 mm R Baenziger"):
+                     ".40-70 Peabody What Cheer", ".44-95 Peabody What Cheer", "10.3x65 mm R Baenziger",
+                     "11.43x55 mm R Turkish Peabody-Martini"):
             self.assertEqual(PRIMERS[name], BERDAN_NITRO, name)
             self.assertTrue(PRIMER_SOURCES[name].startswith("https://municion.org/producto/"), name)
+
+    def test_primers_of_the_third_photo_batch(self):
+        # 6 mm SAW reads 4.57 mm (small), the .460 Steyr 8.41 mm (its .50 BMG case's #35 primer).
+        expected = {"6 mm SAW": SMALL_RIFLE, ".460 Steyr": BMG_35, "8x57 mm I": LARGE_RIFLE,
+                    "5x58 mm Sturtevant": LARGE_RIFLE}
+        for name, primer in expected.items():
+            self.assertEqual(PRIMERS[name], primer, name)
+            self.assertTrue(PRIMER_SOURCES[name].startswith("https://municion.org/producto/"), name)
+        # The table's large rifle, as Hodgdon loads the 6.8 mm SPC case it is made from.
+        self.assertEqual(PRIMERS[".338 Spectre"], LARGE_RIFLE)
+        self.assertEqual(PRIMER_SOURCES[".338 Spectre"], "book:cotw-18 p. 452")
+        # Readings at or past a band's edge stay unverified.
+        for name in ("11.75 mm Montenegrin", ".500 Phantom", ".50 GI"):
+            self.assertIn(name, PRIMER_UNVERIFIED, name)
 
     def test_readings_between_two_sizes_stay_unverified(self):
         # 6.1-6.3 mm may be the .241 in. Berdan primer; the 9.1x40 R's ring is too big for its head.

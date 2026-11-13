@@ -26,7 +26,8 @@ year = 1870
 sources = ["book:cotw-18 p. 508"]
 
 [primer]
-# The table gives no primer.
+# The table gives no primer. The municion.org photos read 6.33 mm (6 specimens, two of them 6.2 mm):
+# at the edge of the gap between the .241 in. and the .254 in. Berdan primer. Unverified.
 size = "large-pistol"
 sources = []
 
