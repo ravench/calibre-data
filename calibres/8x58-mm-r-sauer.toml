@@ -34,9 +34,11 @@ rim_thickness = 1.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf"]
 
 [bullet]
-# A blackpowder round (p. 629); the later factory load was a soft point.
+# A blackpowder Schützen round (p. 629). RWS loaded it with a bare lead bullet (this sheet); DWM
+# (1936), Roth and RWS also with soft points, the factory load the book gives. Which came first is not
+# known; lead is kept for the target round.
 type = "lead"
-sources = []
+sources = ["https://municion.org/ficha-08-058-tbc-010-0006/"]
 
 [case]
 material = "brass"

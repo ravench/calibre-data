@@ -32,10 +32,10 @@ size = "large-rifle"
 sources = []
 
 [bullet]
-# COTW 18 p. 220 gives no load of its own; a lead bullet, as in the other Ballard
-# rounds of its time.
-type = "lead"
-sources = []
+# COTW 18 p. 220 gives no load of its own; municion.org's one sheet (a tinned case, no maker) shows a
+# paper-patched lead bullet.
+type = "paper"
+sources = ["https://municion.org/ficha-10-060-cbc-030-0001/"]
 
 [case]
 material = "brass"

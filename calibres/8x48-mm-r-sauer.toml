@@ -34,9 +34,12 @@ rim_thickness = 1.02
 sources = ["book:cotw-18 p. 651"]
 
 [bullet]
-# A blackpowder round (p. 627); the later DWM load was a soft point.
-type = "lead"
-sources = []
+# A blackpowder round (p. 627), but the only factory load the book gives is DWM's soft point, and all
+# three makers' sheets on municion.org (DWM, Utendoerffer, RWS) show one, two of them with a
+# chrome-coloured jacket; none shows a lead bullet.
+type = "softpoint"
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 627", "https://municion.org/producto/8-x-48-r-sauer-sohn/"]
 
 [case]
 material = "brass"

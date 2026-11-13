@@ -719,8 +719,8 @@ class CatalogueTests(unittest.TestCase):
                                            ".338 Blaser Magnum", ".375 Blaser Magnum", "9.3x66 mm Sako (.370 Sako Magnum)",
                                            "8x57 mm IR", ".275 Rigby",
                                            # The page gives no factory load, or a later one than the original.
-                                           "6.5x40 mm R", "7x75 mm R Vom Hofe Super Express", "8x48 mm R Sauer",
-                                           "8x57 mm R 360", "8x58 mm R Sauer",
+                                           "6.5x40 mm R", "7x75 mm R Vom Hofe Super Express",
+                                           "8x57 mm R 360",
                                            # COTW 18 gives only the weight or handloads.
                                            "9.3x72 mm R Sauer", "9.3x75 mm R Nimrod", "10.75x63 mm Mauser",
                                            "10.25x69 mm R Hunting-Express", "12.17x44 mm R",
@@ -732,7 +732,7 @@ class CatalogueTests(unittest.TestCase):
                                            ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
                                            ".500 Express 3 inch", ".500/450 Magnum Express",
                                            ".32 Protector", "7.7 mm Bittner", ".45 Cowboy Special", ".338-06 A-Square",
-                                           ".40-65 Ballard Everlasting", ".44 Long Centrefire",
+                                           ".44 Long Centrefire",
                                            ".44-75 Ballard Everlasting", ".45-100 Remington Necked",
                                            # Rimfire rounds whose municion.org sheets do not name the bullet's metal.
                                            ".22 CB Cap", ".46 Short Rimfire", ".56-46 Spencer", ".56-50 Spencer",
@@ -749,10 +749,11 @@ class CatalogueTests(unittest.TestCase):
 
     def test_silver_jackets_of_early_service_rounds(self):
         # Raven 2026-11-12: record jackets that are not copper. Cupronickel, or steel clad with it:
-        # COTW 18, Poyer and the rounds' Wikipedia articles; the Kadettenpatrone from Raven's 1964 round.
+        # COTW 18, Poyer and the rounds' Wikipedia articles; the Kadettenpatrone from Raven's 1964 round;
+        # the 8x48 R Sauer soft point from municion.org's sheets.
         silver = {".303 British", "8x50 mm R Lebel", "6 mm Lee Navy", "6.5x50 mm SR Arisaka", ".30-06 Springfield",
                   "8x50 mm R Siamese Type 45", "7.5x55 mm Swiss (GP 11)", "7.5x54.5 mm Swiss (GP 90/23)",
-                  "7.62x38 mm R Nagant", "7.5 mm Kadettenpatrone"}
+                  "7.62x38 mm R Nagant", "7.5 mm Kadettenpatrone", "8x48 mm R Sauer"}
         self.assertEqual(set(JACKETS), silver)
         for name in silver:
             self.assertEqual(jacket(name), CUPRONICKEL, name)
@@ -816,6 +817,18 @@ class CatalogueTests(unittest.TestCase):
             self.assertEqual(BULLETS[name][0], POLYMER_TIP, name)
         self.assertEqual(BULLETS[".244 H&H Magnum"][0], SOFT_POINT)
         self.assertEqual(bullet(".32 NAA"), JACKETED)  # also sold with full metal jackets
+        self.assertEqual(INTRODUCED[".480 Ruger"][0], 2001)  # Ruger's announcement, 1 December 2001
+
+    def test_bullets_from_reread_sheets(self):
+        # The 8x48 R Sauer's only known loads are soft points (COTW's DWM load, three makers' sheets),
+        # two of them silver; the 8x58 R was also loaded with bare lead (RWS); the one .40-65 Ballard
+        # Everlasting sheet shows a paper patch.
+        self.assertEqual(BULLETS["8x48 mm R Sauer"][0], SOFT_POINT)
+        self.assertEqual(jacket("8x48 mm R Sauer"), CUPRONICKEL)
+        self.assertEqual(BULLETS["8x58 mm R Sauer"][0], LEAD)
+        self.assertEqual(BULLETS[".40-65 Ballard Everlasting"][0], PAPER_PATCHED)
+        # Paper or metal patch: the sources disagree, so the Guedes stays unchecked.
+        self.assertIn("8x60 mm R Guedes", BULLET_INFERRED)
 
     def test_case_materials(self):
         names = {s["name"] for _, items in ALL_CATALOGUE for s in items}

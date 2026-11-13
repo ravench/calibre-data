@@ -26,8 +26,10 @@ bullet = 12.1
 sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
 
 [introduced]
-year = 2003
-sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
+# Ruger presented the cartridge, with Hornady's load, on 1 December 2001; Wikipedia gives 2003
+# without a source.
+year = 2001
+sources = ["https://www.ruger.com/news/2001-12-01.html"]
 
 [primer]
 size = "large-pistol"

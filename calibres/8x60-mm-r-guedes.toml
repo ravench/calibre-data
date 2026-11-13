@@ -40,8 +40,12 @@ rim_thickness = 2.03
 sources = ["book:cotw-18 p. 573"]
 
 [bullet]
-# COTW 18 p. 556 gives the military load as a ball over blackpowder, without its material; lead, as in
-# the other blackpowder service rounds of 1885.
+# COTW 18 p. 557 gives the military load as a ball over blackpowder, without its material. Roth's two
+# 1885 rounds on municion.org show a lead bullet with a patch that looks like metal or copper
+# (https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/); ammunitionartifacts.com's page
+# for the 8x60 R Kropatschek M1886 case, which it calls suitable for the Guedes rifle, says the original
+# load had a paper patch. The catalogue has no metal-patched type and the sources disagree, so lead
+# stays unchecked.
 type = "lead"
 sources = []
 
