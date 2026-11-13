@@ -276,11 +276,10 @@ class OutlineTests(unittest.TestCase):
         # shoulder_at is estimated, as the note in [mm] says).
         ".246 Purdey Flanged",
         ".275 No. 2 Magnum", ".276 Pedersen",
-        ".300 Olympic Super Short Magnum",
         ".32-30 Remington", ".32-40 Remington",
         ".338 Canadian Magnum",
         ".38-70 Winchester",
-        ".38-90 Winchester Express", ".40-70 Peabody What Cheer", ".40-70 Winchester",
+        ".40-70 Peabody What Cheer", ".40-70 Winchester",
         ".400 A-Square DPM", ".400/360 Nitro Express",
         ".400/375 Belted Nitro Express", ".416 Dakota", ".416 Rimmed",
         ".44-77 Sharps & Remington",

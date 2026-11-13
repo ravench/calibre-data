@@ -14,13 +14,13 @@ rare = true
 [mm]
 rim = 14.17
 base = 12.12
-shoulder = 11.94
-shoulder_at = 71.5
 neck = 10.03
 case_length = 82.55
 overall_length = 93.98
 bullet = 9.55
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# A straight, tapered case: there is no shoulder on the photo of the gunauction.com listing
+# (https://www.gunauction.com/buy/8333040). COTW 18 prints a .470 in. "shoulder" Ø, probably the body just
+# below the mouth.
 sources = ["book:cotw-18 p. 250"]
 
 [introduced]

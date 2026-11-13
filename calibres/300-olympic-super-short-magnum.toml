@@ -16,13 +16,14 @@ rare = true
 rim = 13.59
 base = 14.1
 shoulder = 13.82
-shoulder_at = 30.3
+shoulder_at = 29.4
 neck = 8.43
 case_length = 42.42
 overall_length = 57.15
 bullet = 7.82
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 452"]
+# shoulder_at: the .25 WSSM's (C.I.P. L1), as COTW 18 p. 394 calls the round the .25 WSSM necked up to .308;
+# the body and shoulder Ø match it.
+sources = ["book:cotw-18 p. 452", "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page91.pdf"]
 
 [introduced]
 year = 2010
@@ -31,6 +32,11 @@ sources = ["book:cotw-18 p. 394"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
+
+[shoulder_angle]
+# The .25 WSSM's (C.I.P. 25 Win. SSM), as the round is that case necked up to .308 (COTW 18 p. 394).
+degrees = 30
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page91.pdf", "book:cotw-18 p. 394"]
 
 [case_head]
 # from the .223 WSSM case; C.I.P. 223 Win. Super Short Mag.
