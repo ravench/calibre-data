@@ -16,13 +16,12 @@ rare = true
 rim = 12.83
 base = 11.61
 shoulder = 9.91
-shoulder_at = 54.6
+shoulder_at = 53.15
 neck = 8.71
 case_length = 63.5
 overall_length = 85.34
 bullet = 7.9
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 608"]
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/375-303-axite-nitro-express-swift-westley-richards/"]
 
 [introduced]
 year = 1905
@@ -31,6 +30,11 @@ sources = ["book:cotw-18 p. 584"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.10, NØ 8.58, SL 52.70, NL 8.10, CL 63.05.
+degrees = 18.7
+sources = ["https://municion.org/producto/375-303-axite-nitro-express-swift-westley-richards/"]
 
 [bullet]
 type = "softpoint"

@@ -16,14 +16,13 @@ rare = true
 rim = 16.54
 base = 14.35
 shoulder = 12.32
-shoulder_at = 71.1
+shoulder_at = 60.45
 neck = 10.87
 case_length = 82.55
 overall_length = 92.2
 bullet = 10.24
 # COTW 5 prints the base as .543 in.; the 18th edition's .565 in. is kept.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251"]
+sources = ["book:cotw-18 p. 251", "https://municion.org/producto/40-110-winchester-express-3-1-4/"]
 
 [introduced]
 year = 1886
@@ -32,6 +31,11 @@ sources = ["book:cotw-18 p. 221"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 12.20, NØ 11.09, SL 60.50, NL 16.90, CL 82.60.
+degrees = 6.1
+sources = ["https://municion.org/producto/40-110-winchester-express-3-1-4/"]
 
 [bullet]
 # Lead: the copper-tubed bullet, a lead bullet with a copper tube in its nose (COTW 18 p. 221); the

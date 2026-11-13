@@ -15,13 +15,12 @@ rare = true
 rim = 13.51
 base = 11.96
 shoulder = 11.1
-shoulder_at = 48.1
+shoulder_at = 41.52
 neck = 7.24
 case_length = 57.4
 overall_length = 77.72
 bullet = 6.17
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 651"]
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/62-x-58-r-forster/"]
 
 [introduced]
 year = 1904
@@ -30,6 +29,11 @@ sources = ["book:cotw-18 p. 615"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
+
+[shoulder_angle]
+# AECC drawing of the 6.2x58 R Förster on municion.org (naboje.org prints the same figures): SØ 10.90, NØ 7.03, SL 42.00, NL 8.10, CL 57.88.
+degrees = 14.0
+sources = ["https://municion.org/producto/62-x-58-r-forster/"]
 
 [case_head]
 # .045 in.

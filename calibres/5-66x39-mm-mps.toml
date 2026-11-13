@@ -17,13 +17,12 @@ rare = true
 rim = 10.01
 base = 10.03
 shoulder = 9.25
-shoulder_at = 31.8
+shoulder_at = 29.83
 neck = 6.25
 case_length = 39.83
 overall_length = 149.86
 bullet = 5.66
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 573"]
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/566-x-395-aps-russian-underwater-rifle/"]
 
 [introduced]
 unknown = "COTW 18 p. 533 gives no year."
@@ -33,6 +32,12 @@ sources = ["book:cotw-18 p. 533"]
 # The table gives SR.
 size = "small-rifle"
 sources = ["book:cotw-18 p. 573"]
+
+[shoulder_angle]
+# AECC drawing of the 5.66x39.5 APS round on municion.org: SØ 9.20, NØ 6.16, SL 29.50, NL 5.80, CL 39.50.
+degrees = 19.9
+# naboje.org's drawing gives 19.1.
+sources = ["https://municion.org/producto/566-x-395-aps-russian-underwater-rifle/", "https://naboje.org/en/node/11131"]
 
 [case_head]
 # from the 5.45x39 mm case; C.I.P. 5,45 x 39

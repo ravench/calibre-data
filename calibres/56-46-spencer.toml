@@ -16,17 +16,21 @@ rare = true
 rim = 16.28
 base = 14.17
 shoulder = 14.1
-shoulder_at = 12.9
+shoulder_at = 17.32
 neck = 12.14
 case_length = 26.29
 overall_length = 40.51
 bullet = 11.81
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 670"]
+sources = ["book:cotw-18 p. 670", "https://naboje.org/en/node/13400"]
 
 [introduced]
 year = 1866
 sources = ["book:cotw-18 p. 667"]
+
+[shoulder_angle]
+# Drawing on naboje.org (P2, H1, L1, Lk, L3): SØ 14.00, NØ 12.35, SL 17.20, NL 6.00, CL 26.17.
+degrees = 15.5
+sources = ["https://naboje.org/en/node/13400"]
 
 [bullet]
 # COTW 18 p. 667 does not name the bullet's material; lead, as in the other rimfire rounds of its time.

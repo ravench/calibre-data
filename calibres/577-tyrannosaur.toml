@@ -14,13 +14,12 @@ rare = true
 rim = 17.48
 base = 17.48
 shoulder = 17.09
-shoulder_at = 59.9
+shoulder_at = 59.55
 neck = 15.6
 case_length = 75.95
 overall_length = 94.23
 bullet = 14.86
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 454"]
+sources = ["book:cotw-18 p. 454", "https://municion.org/producto/577-tyrannosaur/"]
 
 [introduced]
 year = 1993
@@ -29,6 +28,11 @@ sources = ["book:cotw-18 p. 449"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 454"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 16.71, NØ 15.64, SL 59.30, NL 12.30, CL 75.70.
+degrees = 7.4
+sources = ["https://municion.org/producto/577-tyrannosaur/"]
 
 [case_head]
 # .060 in.
