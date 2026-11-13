@@ -307,7 +307,7 @@ class OutlineTests(unittest.TestCase):
         ".338 Canadian Magnum",
         ".38-70 Winchester", ".38-90 Winchester Express",
         ".40-70 Peabody What Cheer", ".40-70 Winchester",
-        ".400 A-Square DPM", ".400/360 Nitro Express",
+        ".400/360 Nitro Express",
         ".400/375 Belted Nitro Express", ".416 Rimmed",
         ".45-100 Remington Necked",
         ".45-125 Winchester Express",
@@ -387,7 +387,7 @@ class OutlineTests(unittest.TestCase):
         drawings = {".22 Nosler": (29.9, 35.28), ".38-56 WCF": (6.5, 30.64), "6.5x58 mm Vergueiro": (10.8, 41.0),
                     ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.6, 26.11),
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
-                    ".246 Purdey Flanged": (16.0, 46.3)}
+                    ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):

@@ -13,14 +13,18 @@ rare = true
 [mm]
 rim = 13.46
 base = 13.23
-shoulder = 13.21
-shoulder_at = 60.6
-neck = 11.43
+shoulder = 12.48
+shoulder_at = 59.1
+neck = 11.06
 case_length = 72.39
 overall_length = 91.44
 bullet = 10.41
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 453"]
+# shoulder, neck and shoulder_at: the AECC drawing on municion.org (shoulder 12.48 at 57.7 mm, neck 11.06
+# from 59.1 mm to the mouth at 71.0; shoulder_at = case_length less 71.0 - 57.7). COTW gives .520 and .450 in.
+# (13.21, 11.43 mm), but the side photo of the same round shows the drawing's shoulder/rim and neck/rim
+# ratios (0.93, 0.81; COTW 0.98, 0.85), and the drawing's shoulder is that of its blown-out .375 H&H
+# siblings (.416 Hoffman 12.47, .416 Remington 12.4). The case length stays COTW's 72.39 (the specimen: 71.0).
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/400-a-square-dpm-belted/"]
 
 [introduced]
 # COTW: introduced in 2006, like the 400 Pondoro of 1992 on a .416 Rigby case.
@@ -30,6 +34,12 @@ sources = ["book:cotw-18 p. 418"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: shoulder 12.48 at 57.7 mm to neck 11.06 at 59.1 mm. The side photo on the
+# same page gives about 20 deg on both edges at 11-12 px/mm, where rounded corners shorten the cone.
+degrees = 26.9
+sources = ["https://municion.org/producto/400-a-square-dpm-belted/"]
 
 [case_head]
 # from the .375 H&H Magnum case; C.I.P. 375 H&H Mag.
