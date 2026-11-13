@@ -17,13 +17,14 @@ rare = true
 rim = 17.22
 base = 14.73
 shoulder = 13.59
-shoulder_at = 38.5
+shoulder_at = 42.5
 neck = 11.99
 case_length = 50.8
 overall_length = 66.04
 bullet = 11.05
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 574"]
+# shoulder_at: L1 on naboje.org's drawing, whose shoulder, neck and case length agree with COTW within
+# 0.4 mm.
+sources = ["book:cotw-18 p. 574", "https://naboje.org/node/11147"]
 
 [introduced]
 year = 1867
@@ -32,6 +33,12 @@ sources = ["book:cotw-18 p. 562"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# Drawing on naboje.org (P2, H1, L1, L3; the neck start read off the drawing's scale): SØ 13.38, NØ 12.13,
+# SL 42.50, NL 6.14, CL 50.50. naboje.org's photo of the round gives about 18 deg (15-22 over its two edges).
+degrees = 18.6
+sources = ["https://naboje.org/node/11147"]
 
 [bullet]
 # The military load: a paper-patched lead bullet over blackpowder.

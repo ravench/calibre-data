@@ -16,12 +16,12 @@ rare = true
 rim = 15.65
 base = 13.84
 shoulder = 11.58
-shoulder_at = 49.5
+shoulder_at = 46.1
 neck = 10.85
 case_length = 60.45
 overall_length = 74.93
 bullet = 10.34
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 5.2 degrees).
 sources = ["book:cotw-18 p. 608"]
 
 [introduced]
@@ -32,6 +32,14 @@ sources = ["book:cotw-18 p. 593"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# The 10.3x60 R's (C.I.P. 10,3 x 60 R), assumed, not measured: COTW 18 p. 645 calls that round the
+# Swiss version of this one. Its diameters are not the same (C.I.P. neck 11.26 against COTW's 10.85 mm,
+# shoulder 12.50 against 11.58 mm), but both are the long, gentle taper of the .450 cases, like the
+# 3¼ inch (C.I.P. 5.6 deg), not the 3 inch's 15.
+degrees = 5.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page52.pdf"]
 
 [case_head]
 # .035 in.

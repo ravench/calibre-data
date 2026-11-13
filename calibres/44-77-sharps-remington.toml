@@ -16,13 +16,17 @@ rare = true
 rim = 15.88
 base = 13.11
 shoulder = 12.75
-shoulder_at = 45.1
+shoulder_at = 33.0
 neck = 11.86
 case_length = 57.15
 overall_length = 77.47
 bullet = 11.33
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251"]
+# shoulder_at from the ammo-one photo in [shoulder_angle]: 578 px above the head, 32.4-33.4 mm by case
+# length, ruler (17.6 px/mm) or rim (17.3 px/mm).
+sources = [
+  "book:cotw-18 p. 251",
+  "https://www.ammo-one1.com/product/44-77-sharps-remington-limit-one-cartridge-per-customer/",
+]
 
 [introduced]
 year = 1869
@@ -32,6 +36,14 @@ sources = ["book:cotw-18 p. 235"]
 # The table gives L-B1: a large rifle or a Berdan #1 primer.
 size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
+
+[shoulder_angle]
+# ammo-one's photo of a new round on JBA brass beside an inch ruler, not an original: no drawing or
+# photo of an original was found, and its rim, body and neck match our diameters (neck 11.6-11.8,
+# body 12.7-12.9 mm). The case reads 1-3 % long against ours. A long, gentle shoulder from about 32-33 mm to 39-40 mm above the head; its two
+# edges give 3.8 and 5.2 deg, the same at three thresholds.
+degrees = 4.5
+sources = ["https://www.ammo-one1.com/product/44-77-sharps-remington-limit-one-cartridge-per-customer/"]
 
 [bullet]
 type = "paper"

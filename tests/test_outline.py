@@ -302,26 +302,23 @@ class OutlineTests(unittest.TestCase):
     SHOULDER_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
         # shoulder_at is estimated, as the note in [mm] says).
-        ".246 Purdey Flanged",
         ".275 No. 2 Magnum", ".276 Pedersen",
         ".32-30 Remington", ".32-40 Remington",
         ".338 Canadian Magnum",
         ".38-70 Winchester", ".38-90 Winchester Express",
-        ".40-70 Peabody What Cheer", ".40-70 Winchester",
-        ".400 A-Square DPM", ".400/360 Nitro Express",
+        ".40-70 Peabody What Cheer",
+        ".400/360 Nitro Express",
         ".400/375 Belted Nitro Express", ".416 Rimmed",
-        ".44-77 Sharps & Remington",
         ".45-100 Remington Necked",
         ".45-125 Winchester Express",
-        ".450/400 Nitro Express 2⅜ inch", ".50-115 Bullard",
+        ".50-115 Bullard",
         ".500/450 Magnum Express", ".500/450 Nitro Express", ".500/450 No. 1 Express",
         ".56-52 Spencer Necked", ".577/500 Nitro Express",
         ".577/500 No. 2 Express", "10.25x69 mm R Hunting-Express", "10.4x47 mm R Italian Vetterli",
         "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan",
         "10.8x47 mm R Martini Target",
-        "11.4x50 mm R Brazilian Comblain", "11x53 mm R Comblain", "11x50 mm R Albini",
+        "11.4x50 mm R Brazilian Comblain", "11x53 mm R Comblain",
         "11x52 mm R Beaumont M71/78", "6.5x53.5 mm SR Daudeteau",
-        "6.8x45 mm UCC",
         "6x57 mm Mauser", "6x58 mm Forster", "7 mm Canadian Magnum",
         "8.5 mm Mars",
         "9.3x75 mm R Nimrod",
@@ -389,12 +386,27 @@ class OutlineTests(unittest.TestCase):
         # (half angle, shoulder start) from AECC drawings on municion.org: atan(((SØ-NØ)/2)/(CL-NL-SL)).
         drawings = {".22 Nosler": (29.9, 35.28), ".38-56 WCF": (6.5, 30.64), "6.5x58 mm Vergueiro": (10.8, 41.0),
                     ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.6, 26.11),
-                    ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75)}
+                    ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
+                    ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):
                 self.assertEqual(cartridges.shoulder_angle(name), angle)
                 self.assertIn("municion.org", cartridges.SHOULDER_ANGLES[name][1])
+                self.assertEqual(specs[name]["sh_at"], start)
+
+    def test_shoulders_from_other_drawings_and_photos(self):
+        # (half angle, shoulder start, a word of the source) for angles from drawings, prints and photos.
+        found = {"11x50 mm R Albini": (18.6, 42.5, "naboje.org"),
+                 "6.8x45 mm UCC": (45, 36.1, "pacifictoolandgauge"),
+                 ".44-77 Sharps & Remington": (4.5, 33.0, "ammo-one1"),
+                 ".450/400 Nitro Express 2⅜ inch": (5.2, 46.1, "tabiical-en-page52"),
+                 ".40-70 Winchester": (13.26, 44.45, "winchestercollector")}
+        specs = self.bottlenecks()
+        for name, (angle, start, source) in found.items():
+            with self.subTest(name):
+                self.assertEqual(cartridges.shoulder_angle(name), angle)
+                self.assertIn(source, cartridges.SHOULDER_ANGLES[name][1])
                 self.assertEqual(specs[name]["sh_at"], start)
 
     def test_unsourced_shoulders_keep_the_default(self):

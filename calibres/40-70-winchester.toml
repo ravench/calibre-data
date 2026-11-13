@@ -15,13 +15,14 @@ rare = true
 rim = 15.34
 base = 12.8
 shoulder = 12.6
-shoulder_at = 49.3
+shoulder_at = 44.45
 neck = 10.92
 case_length = 60.96
 overall_length = 72.39
 bullet = 10.29
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 251"]
+# shoulder_at: 1.75 in. on the dimension drawing in Bert H.'s post (2 June 2024) on the Winchester Arms
+# Collectors forum; its rim, base, shoulder and neck diameters and its case and overall lengths are COTW's to the thou.
+sources = ["book:cotw-18 p. 251", "https://winchestercollector.org/forum/winchester-swap-meet/wtb-40-70-wcf/"]
 
 [introduced]
 year = 1894
@@ -30,6 +31,11 @@ sources = ["book:cotw-18 p. 223"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
+
+[shoulder_angle]
+# The same drawing: 13.26 deg, as its .496 shoulder, .430 neck and .510 neck length on a 2.40 case give.
+degrees = 13.26
+sources = ["https://winchestercollector.org/forum/winchester-swap-meet/wtb-40-70-wcf/"]
 
 [bullet]
 type = "lead"
