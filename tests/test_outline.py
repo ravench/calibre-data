@@ -276,11 +276,11 @@ class OutlineTests(unittest.TestCase):
         # shoulder_at is estimated, as the note in [mm] says).
         ".242 Rimless Nitro Express", ".244 Halger Magnum", ".246 Purdey Flanged",
         ".25-20 Single-Shot", ".25-36 Marlin", ".256 Gibbs Magnum", ".256 Newton", ".26 BSA",
-        ".275 H&H Magnum", ".275 No. 2 Magnum", ".276 Enfield", ".276 Pedersen", ".277 Wolverine",
-        ".280 British", ".280 Jeffery", ".280 Ross", ".297/250 Rook", ".30 Borchardt", ".30 Newton",
+        ".275 No. 2 Magnum", ".276 Enfield", ".276 Pedersen", ".277 Wolverine",
+        ".280 British", ".280 Jeffery", ".297/250 Rook", ".30 Borchardt", ".30 Newton",
         ".300 Dakota", ".300 Olympic Super Short Magnum", ".303 Magnum",
         ".32-30 Remington", ".32-40 Bullard", ".32-40 Remington", ".33 BSA", ".33 XC", ".330 Dakota",
-        ".333 Jeffery Rimless", ".338 A-Square", ".338 Canadian Magnum", ".338 Excaliber",
+        ".338 A-Square", ".338 Canadian Magnum", ".338 Excaliber",
         ".35 Newton", ".360 Mars", ".360 No. 2 Nitro Express",
         ".375 A-Square", ".375 Dakota", ".375/303 Westley Richards", ".38-45 Bullard", ".38-70 Winchester",
         ".38-72 Winchester", ".38-90 Winchester Express", ".40-110 Winchester Express", ".40-50 Sharps Necked",
@@ -291,14 +291,14 @@ class OutlineTests(unittest.TestCase):
         ".44-77 Sharps & Remington", ".44-90 Remington Special", ".44-90 Sharps Necked",
         ".44-95 Peabody What Cheer", ".440 Cor-Bon", ".45 Blaser", ".45-100 Remington Necked",
         ".45-125 Winchester Express", ".45-50 Peabody Sporting", ".450 Assegai", ".450 Dakota",
-        ".450/400 Nitro Express 2⅜ inch", ".458 Canadian Magnum", ".460 A-Square Short", ".460 Steyr",
+        ".450/400 Nitro Express 2⅜ inch", ".458 Canadian Magnum", ".460 A-Square Short",
         ".475 Bishop Short Magnum", ".476 Nitro Express", ".50 Remington Army", ".50-115 Bullard",
         ".500 A-Square", ".500/450 Magnum Express", ".500/450 Nitro Express", ".500/450 No. 1 Express",
         ".56-46 Spencer", ".56-52 Spencer Necked", ".577 Tyrannosaur", ".577/500 Nitro Express",
         ".577/500 No. 2 Express", "10.15x61 mm R Jarmann", "10.15x63 mm R Serbian Mauser",
         "10.25x69 mm R Hunting-Express", "10.4x47 mm R Italian Vetterli",
         "10.5x47 mm R", "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan",
-        "10.75x63 mm Mauser", "10.75x68 mm Mauser", "10.8x47 mm R Martini Target",
+        "10.75x63 mm Mauser", "10.8x47 mm R Martini Target",
         "11.15x58 mm R Spanish Remington", "11.15x58 mm R Werndl M77", "11.2x60 mm Schüler",
         "11.2x72 mm Schüler", "11.3x50 mm R Beaumont M71", "11.43x50 mm R Egyptian Remington",
         "11.43x55 mm R Turkish Peabody-Martini", "11.4x50 mm R Brazilian Comblain", "11x50 mm R Albini",
@@ -331,6 +331,17 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(name):
                 self.assertTrue(2 <= angle <= 55, angle)
                 self.assertTrue(url.startswith("https://") or url.startswith("book:"), url)
+
+    def test_angles_read_from_cip_sheets_found_by_name(self):
+        # Half the junction cone angle alpha on each sheet.
+        for name, angle, page in [("10.75x68 mm Mauser", 28.0, "tab-i/tabical-en-page74.pdf"),
+                                  (".460 Steyr", 28.3, "tab-i/tabical-en-page151.pdf"),
+                                  (".333 Jeffery Rimless", 19.9, "tab-i/tabical-en-page129.pdf"),
+                                  (".280 Ross", 26.6, "tab-i/tabical-en-page104.pdf"),
+                                  (".275 H&H Magnum", 32.0, "tab-iii/tabiiical-en-page15.pdf")]:
+            with self.subTest(name):
+                self.assertEqual(cartridges.SHOULDER_ANGLES[name][0], angle)
+                self.assertTrue(cartridges.SHOULDER_ANGLES[name][1].endswith(page))
 
     def test_shoulders_are_drawn_at_their_own_angle(self):
         # Regression: every shoulder used to be drawn at one shared 32-degree slope.

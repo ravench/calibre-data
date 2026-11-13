@@ -14,13 +14,13 @@ rare = true
 rim = 12.4
 base = 12.5
 shoulder = 11.94
-shoulder_at = 56.5
+shoulder_at = 53.35
 neck = 11.3
 case_length = 67.82
 overall_length = 80.26
 bullet = 10.77
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 652"]
+# shoulder_at from C.I.P. L1.
+sources = ["book:cotw-18 p. 652", "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf"]
 
 [introduced]
 # COTW: the early 1920s; the decade's first year is kept.
@@ -32,6 +32,11 @@ sources = ["book:cotw-18 p. 647"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
+
+[shoulder_angle]
+# C.I.P. 10,75 x 68
+degrees = 28.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf"]
 
 [bullet]
 type = "softpoint"
