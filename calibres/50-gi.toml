@@ -8,7 +8,7 @@ profile = "flat"
 aliases = ["50 gi", "50gi"]
 
 origin = "US"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/5388"]
 rare = true
 
 [mm]

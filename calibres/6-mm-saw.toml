@@ -7,7 +7,7 @@ profile = "spitzer"
 aliases = ["6mm saw", "6x45 saw"]
 
 origin = "US"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/10010"]
 obsolete = true
 rare = true
 

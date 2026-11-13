@@ -8,7 +8,7 @@ profile = "round"
 aliases = ["5.2x68", "5.2 mondragon"]
 
 origin = "CH"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/10304"]
 obsolete = true
 rare = true
 
