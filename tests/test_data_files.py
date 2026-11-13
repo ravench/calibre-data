@@ -740,6 +740,24 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, 'type = "softpoint"', 'type = "softpoint"\njacket = "steel"')
             self.assertEqual(c.problems(), [])
 
+    def test_a_patch_length(self):
+        vetterli = "calibres/10-4x38-mm-r-vetterli.toml"
+        with Copy() as c:
+            c.edit(vetterli, 'type = "paper"', 'type = "paper"\npatch_length = 9.4')
+            self.assertEqual(c.problems(), [])
+            self.assertEqual(load(c.dir)["PATCH_LENGTHS"]["10.4x38 mm R Vetterli"][0], 9.4)
+        with Copy() as c:
+            c.edit(vetterli, 'type = "paper"', 'type = "paper"\npatch_length = 18.1')
+            c.edit(WIN, 'type = "softpoint"', 'type = "softpoint"\npatch_length = 5')
+            self.assertProblem(c, vetterli, r"patch_length is the paper showing above the case mouth in mm: above 0 "
+                                            r"and below the exposed bullet \(18.01\)",
+                               line=c.line_of(vetterli, "patch_length ="))
+            self.assertProblem(c, WIN, r'only a paper-patched bullet \(type = "paper"\) has a \[bullet\] patch_length')
+        with Copy() as c:
+            c.edit(vetterli, 'type = "paper"\nsources = ["https://en.wikipedia.org/wiki/.41_Swiss"]',
+                   'type = "paper"\npatch_length = 9.4\nsources = []')
+            self.assertProblem(c, vetterli, r"\[bullet\] a patch_length needs a source")
+
     def test_order_toml_names_without_a_file(self):
         with Copy() as c:
             c.edit("order.toml", '".22 LR"', '".22 LRR"')

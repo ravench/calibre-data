@@ -47,6 +47,22 @@ class OutlineTests(unittest.TestCase):
                 steel = s["profile"] == PATCHED or bullet(s["name"]) == STEEL or jacket(s["name"]) == STEEL
                 self.assertEqual(o.get("bulletMaterial") == "steel", steel and has_bullet, s["name"])
 
+    def test_a_patch_length_sets_the_paper_band(self):
+        # Paper over half the exposed bullet unless [bullet] patch_length gives the paper above the mouth.
+        name = "10.4x38 mm R Vetterli"
+        s = {x["name"]: x for _, x in outline.specs()}[name]
+        def band():
+            ys = [float(v) for v in re.findall(r"[ML][\d.]+ ([\d.]+)", outline.outline(s)["patch"])]
+            return round(max(ys) - min(ys), 2)
+        self.assertIsNone(cartridges.patch_length(name))
+        self.assertAlmostEqual(band(), (s["oal"] - s["case"]) / 2, places=1)
+        cartridges.PATCH_LENGTHS[name] = (6.0, None)
+        try:
+            self.assertEqual(cartridges.patch_length(name), 6.0)
+            self.assertAlmostEqual(band(), 6.0, places=1)
+        finally:
+            del cartridges.PATCH_LENGTHS[name]
+
     def test_gp_1890_bullet_follows_the_1892_drawing(self):
         # «Patrone, Modell 1890» (Thun, 1 Feb 1892): 23.7 mm out of the case, paper over the first
         # 12.7, the capped nose the last 11; 8.15 where the paper ends, 7.95 on the cap; an R 22 ogive

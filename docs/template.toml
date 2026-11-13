@@ -149,7 +149,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 # plastic). sources = [] when not checked. Optional for a bullet with a jacket: jacket = "cupronickel"
 # (a silver jacket: cupronickel, or steel clad or plated with it or with nickel) or "steel" (bare or
 # lacquered); a copper-coloured jacket leaves it out. The comment names the source of the metal, or the
-# round in hand it comes from.
+# round in hand it comes from. Optional for a paper bullet: patch_length = <mm of paper showing above the
+# case mouth>, with a source; without it half the exposed bullet is drawn wrapped.
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
