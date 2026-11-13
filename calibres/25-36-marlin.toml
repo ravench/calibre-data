@@ -15,13 +15,12 @@ rare = true
 rim = 12.67
 base = 10.57
 shoulder = 9.09
-shoulder_at = 45.8
+shoulder_at = 36.02
 neck = 7.14
 case_length = 53.85
 overall_length = 63.5
 bullet = 6.53
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 249"]
+sources = ["book:cotw-18 p. 249", "https://municion.org/producto/25-36-marlin/"]
 
 [introduced]
 year = 1895
@@ -30,6 +29,11 @@ sources = ["book:cotw-18 p. 189"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 249"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 8.92, NØ 7.21, SL 36.00, NL 13.90, CL 53.83.
+degrees = 12.3
+sources = ["https://municion.org/producto/25-36-marlin/"]
 
 [case_head]
 # .056 in.

@@ -15,13 +15,12 @@ rare = true
 rim = 7.14
 base = 7.14
 shoulder = 7.04
-shoulder_at = 11.8
+shoulder_at = 11.27
 neck = 5.66
 case_length = 18.03
 overall_length = 25.65
 bullet = 5.13
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 527"]
+sources = ["book:cotw-18 p. 527", "https://municion.org/producto/5-mm-clement/"]
 
 [introduced]
 year = 1897
@@ -30,6 +29,12 @@ sources = ["book:cotw-18 p. 457"]
 [primer]
 size = "small-pistol"
 sources = []
+
+[shoulder_angle]
+# Short cone (about 2 mm): a 0.1 mm reading step moves the angle by about 1 degree.
+# AECC drawing on municion.org: SØ 6.98, NØ 5.57, SL 11.50, NL 5.00, CL 18.26.
+degrees = 21.8
+sources = ["https://municion.org/producto/5-mm-clement/"]
 
 [case_head]
 # .025 in.

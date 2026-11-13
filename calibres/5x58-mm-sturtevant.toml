@@ -16,13 +16,12 @@ rare = true
 rim = 11.84
 base = 11.84
 shoulder = 10.77
-shoulder_at = 48.8
+shoulder_at = 44.51
 neck = 5.99
 case_length = 57.84
 overall_length = 85.7
 bullet = 5.18
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
-sources = ["book:cotw-18 p. 573"]
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/5-x-58-sturtevant/"]
 
 [introduced]
 # COTW: from the turn of the century; 1900 is kept.
@@ -32,6 +31,12 @@ sources = ["book:cotw-18 p. 532"]
 [primer]
 # The table gives no primer; 5.47 mm, 2 specimens on municion.org's photos.
 size = "large-rifle"
+sources = ["https://municion.org/producto/5-x-58-sturtevant/"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 10.77, NØ 6.03, SL 44.40, NL 7.50, CL 57.73.
+# naboje.org's drawing gives 21.9 (https://naboje.org/en/node/10606).
+degrees = 22.1
 sources = ["https://municion.org/producto/5-x-58-sturtevant/"]
 
 [case_head]
