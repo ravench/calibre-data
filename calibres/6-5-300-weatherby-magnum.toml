@@ -13,11 +13,11 @@ origin_sources = ["https://en.wikipedia.org/wiki/6.5-300_Weatherby_Magnum"]
 
 [mm]
 # SAAMI 6.5-300 Weatherby Magnum, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 12.5 at 58.38).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 13.5
 base = 13.0
-shoulder = 12.57
-shoulder_at = 58.35
+shoulder = 12.5
+shoulder_at = 58.38
 neck = 7.49
 case_length = 71.76
 overall_length = 91.44

@@ -10,7 +10,7 @@ origin_sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
 
 [mm]
 # SAAMI 30 Nosler, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.41 at 53.72).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 13.56
 base = 13.97
 shoulder = 13.41

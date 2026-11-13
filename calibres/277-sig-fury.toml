@@ -13,7 +13,7 @@ rare = true
 
 [mm]
 # SAAMI 277 SIG Fury, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 11.71 at 41.43).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 11.99
 base = 11.95
 shoulder = 11.71

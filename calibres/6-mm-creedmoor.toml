@@ -10,11 +10,11 @@ origin_sources = []
 
 [mm]
 # SAAMI 6mm Creedmoor, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 11.74 at 37.85).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 11.99
 base = 11.95
-shoulder = 11.73
-shoulder_at = 37.49
+shoulder = 11.74
+shoulder_at = 37.85
 neck = 7.01
 case_length = 48.77
 overall_length = 71.12

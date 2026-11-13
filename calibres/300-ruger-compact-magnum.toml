@@ -15,11 +15,11 @@ rare = true
 
 [mm]
 # SAAMI 300 Ruger Compact Magnum, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.08 at 41.47).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 13.51
 base = 13.51
-shoulder = 13.1
-shoulder_at = 42.44
+shoulder = 13.08
+shoulder_at = 41.47
 neck = 8.64
 case_length = 53.34
 overall_length = 72.14

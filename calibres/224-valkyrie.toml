@@ -11,11 +11,11 @@ rare = true
 
 [mm]
 # SAAMI 224 Valkyrie, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 10.24 at 30.56).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 10.72
 base = 10.69
 shoulder = 10.24
-shoulder_at = 31.5
+shoulder_at = 30.56
 neck = 6.5
 case_length = 40.64
 overall_length = 57.4

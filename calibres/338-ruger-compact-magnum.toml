@@ -14,11 +14,11 @@ rare = true
 
 [mm]
 # SAAMI 338 Ruger Compact Magnum, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.1 at 39.85).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 13.51
 base = 13.51
 shoulder = 13.1
-shoulder_at = 40.34
+shoulder_at = 39.85
 neck = 9.37
 case_length = 51.18
 overall_length = 72.14

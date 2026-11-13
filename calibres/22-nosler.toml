@@ -15,11 +15,11 @@ rare = true
 
 [mm]
 # SAAMI 22 Nosler, maximum cartridge.
-# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 10.16 at 35.29).
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 9.6
 base = 10.69
 shoulder = 10.16
-shoulder_at = 35.28
+shoulder_at = 35.29
 neck = 6.46
 case_length = 44.7
 overall_length = 57.4
