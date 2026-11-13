@@ -15,17 +15,15 @@ origin_sources = [
 ]
 
 [mm]
-rim = 12.9
-base = 12.2
-neck = 12.2
-case_length = 32.6
-overall_length = 40.6
-bullet = 11.5
-# No source yet for rim.
-sources = [
-  "book:donnelly p. 591",
-  "book:cotw-18 p. 529",
-]
+# SAAMI 45 Colt, maximum cartridge; bullet .454 in from COTW 18 like its lookalikes (SAAMI's
+# lead bullet is .4560 in max)
+rim = 13.0
+base = 12.19
+neck = 12.19
+case_length = 32.64
+overall_length = 40.64
+bullet = 11.53
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=59", "book:cotw-18 p. 529"]
 
 [introduced]
 # designed 1872, produced from 1873
@@ -37,9 +35,9 @@ size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
 
 [case_head]
-# .055 in.
-rim_thickness = 1.4
-sources = ["book:cotw-18 p. 529"]
+# SAAMI 45 Colt
+rim_thickness = 1.52
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=59"]
 
 [bullet]
 type = "lead"

@@ -9,13 +9,14 @@ origin = "US"
 origin_sources = ["book:ammo-encyclopedia-2 p. 630"]
 
 [mm]
+# SAAMI 10mm Automatic, maximum cartridge
 rim = 10.8
 base = 10.8
-neck = 10.7
+neck = 10.74
 case_length = 25.2
 overall_length = 32.0
 bullet = 10.17
-sources = ["book:cotw-18 p. 528"]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=36"]
 
 [introduced]
 year = 1983

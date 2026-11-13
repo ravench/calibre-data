@@ -479,7 +479,7 @@ class OutlineTests(unittest.TestCase):
 
     def test_rim_thicknesses_follow_their_sources(self):
         values = {".30-30 Winchester": 1.6, "11x60 mm R Mauser": 2.4, ".470 Nitro Express": 1.02,  # C.I.P. R
-                  ".22 LR": 1.02, ".38 Special": 1.37,  # .040 and .054 in, COTW 18
+                  ".22 LR": 1.02, ".38 Special": 1.5,  # .040 in, COTW 18; .059 in, SAAMI
                   "7.62x38 mm R Nagant": 1.22}  # .048 in, Donnelly
         for name, t in values.items():
             self.assertEqual(cartridges.rim_thickness(name), t, name)

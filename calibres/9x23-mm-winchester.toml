@@ -14,13 +14,14 @@ origin_sources = [
 rare = true
 
 [mm]
+# SAAMI 9x23 Winchester, maximum cartridge
 rim = 10.01
 base = 9.93
 neck = 9.68
 case_length = 22.86
 overall_length = 33.02
 bullet = 9.04
-sources = ["https://en.wikipedia.org/wiki/9×23mm_Winchester"]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=35"]
 
 [introduced]
 # 1992 is the patent on the 9x23 Super
@@ -32,9 +33,9 @@ size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/9×23mm_Winchester"]
 
 [case_head]
-# .042 in.
-rim_thickness = 1.07
-sources = ["book:cotw-18 p. 528"]
+# SAAMI 9x23 Winchester
+rim_thickness = 1.27
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=35"]
 
 [bullet]
 type = "jacketed"
