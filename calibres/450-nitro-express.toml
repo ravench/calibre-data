@@ -12,13 +12,14 @@ origin_sources = ["https://en.wikipedia.org/wiki/.450_Nitro_Express"]
 rare = true
 
 [mm]
-rim = 15.8
-base = 13.8
-neck = 12.2
-case_length = 83.0
-overall_length = 100.0
-bullet = 11.6
-sources = ["https://en.wikipedia.org/wiki/.450_Nitro_Express"]
+# C.I.P. 450 N.E. 3"1/4, maximum cartridge.
+rim = 15.85
+base = 13.84
+neck = 12.22
+case_length = 82.55
+overall_length = 100.33
+bullet = 11.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page115.pdf"]
 
 [introduced]
 year = 1898
@@ -30,9 +31,9 @@ size = "berdan-nitro"
 sources = ["book:cotw-18 p. 608"]
 
 [case_head]
-# .040 in.
-rim_thickness = 1.02
-sources = ["book:cotw-18 p. 608"]
+# C.I.P. 450 N.E. 3"1/4
+rim_thickness = 1.07
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page115.pdf"]
 
 [bullet]
 type = "softpoint"

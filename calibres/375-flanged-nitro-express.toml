@@ -11,13 +11,14 @@ origin_sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
 rare = true
 
 [mm]
-rim = 13.31
-base = 11.52
-neck = 10.08
-case_length = 63.13
-overall_length = 77.58
-bullet = 9.48
-sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
+# C.I.P. 375 Fl. N.E. 2"1/2, maximum cartridge.
+rim = 13.41
+base = 11.68
+neck = 10.19
+case_length = 63.5
+overall_length = 82.55
+bullet = 9.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page93.pdf"]
 
 [introduced]
 year = 1899
