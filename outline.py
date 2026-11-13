@@ -13,7 +13,7 @@ from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POIN
 
 N = 14  # samples per curve
 BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
-# mm, rim thickness of a case whose [case_head] gives none: rimmed, rimfire, rimless or belted
+# mm, rim thickness of a case whose [case_head] gives none: rimmed, rimfire, rimless, semi-rimmed or belted
 RIMMED_RIM, RIMFIRE_RIM, RIMLESS_RIM = 1.5, 1.1, 1.3
 
 

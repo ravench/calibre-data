@@ -160,7 +160,7 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
 }
 TOP_KEYS = {"name", "categories", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
             "origin_candidates", "origin_sources", "worldwide", "obsolete", "rare"}
-# [case_head] keys beside rim_thickness: the extractor groove of a rimless or belted case, all three
+# [case_head] keys beside rim_thickness: the extractor groove of a rimless, semi-rimmed or belted case, all three
 # or none.
 HEAD_GROOVE = ("ramp_top", "groove_diameter", "ramp_angle")
 FACTS = {  # table: (required keys, optional keys, sources: "required", "optional" or "may be empty")

@@ -469,8 +469,8 @@ A group's `name` is the parent's name or the family's, such as `8x57 mm` for the
 rounds. It is unique and never the name of a calibre outside the group. `LOOKALIKE_NAMES` lists the
 names in the order of `LOOKALIKES`.
 
-A group's cases share one design; `differ_by` says what tells them apart: `rim` (rimmed or rimless
-twin), `bore` (bullet diameter), `length` (case length), `seating` (a wadcutter seated flush or
+A group's cases share one design; `differ_by` says what tells them apart: `rim` (rimmed, semi-rimmed or
+rimless twin), `bore` (bullet diameter), `length` (case length), `seating` (a wadcutter seated flush or
 nearly so), `load` (C.I.P., SAAMI or the service gives the same case a hotter load or another
 chamber that the older or weaker guns must not fire) or `ignition` (rimfire and centrefire versions
 of one cartridge: a rimfire gun cannot fire the centrefire one, nor the other way round). Each
@@ -521,7 +521,7 @@ the apps do not know or that is missing from `order.toml`, names in `order.toml`
 needs Python 3.11 or newer.
 
 The tests (`python3 -m unittest discover -s tests`) also check the catalogue as a whole: a bottleneck
-case without a shoulder angle or a rimless or belted case without an extractor groove in its
+case without a shoulder angle or a rimless, semi-rimmed or belted case without an extractor groove in its
 `[case_head]` must be listed in
 `tests/test_outline.py`, and calibres that look exactly the same need a group in `lookalikes.toml`.
 
