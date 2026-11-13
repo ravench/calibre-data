@@ -13,7 +13,8 @@ origin_sources = [
 worldwide = true
 
 [mm]
-# SAAMI 357 Magnum, maximum cartridge; bullet: the jacketed bullet (lead .3590 in)
+# SAAMI 357 Magnum, maximum cartridge.
+# Bullet: the jacketed bullet (lead .3590 in).
 rim = 11.18
 base = 9.63
 neck = 9.63

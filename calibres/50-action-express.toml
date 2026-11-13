@@ -11,7 +11,7 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.50_Action_Express"]
 
 [mm]
-# SAAMI 50 Action Express, maximum cartridge
+# SAAMI 50 Action Express, maximum cartridge.
 rim = 13.08
 base = 13.79
 neck = 13.44

@@ -13,18 +13,17 @@ origin_sources = [
 rare = true
 
 [mm]
-rim = 13.5
-base = 13.5
+# SAAMI 338 Ruger Compact Magnum, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.1 at 39.85).
+rim = 13.51
+base = 13.51
 shoulder = 13.1
 shoulder_at = 40.34
-neck = 9.4
-case_length = 51.2
-overall_length = 72.1
-bullet = 8.6
-sources = [
-  "https://en.wikipedia.org/wiki/.338_Ruger_Compact_Magnum",
-  "https://municion.org/producto/338-ruger-compact-magnum/",
-]
+neck = 9.37
+case_length = 51.18
+overall_length = 72.14
+bullet = 8.61
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=140", "https://en.wikipedia.org/wiki/.338_Ruger_Compact_Magnum", "https://municion.org/producto/338-ruger-compact-magnum/"]
 
 [introduced]
 year = 2008

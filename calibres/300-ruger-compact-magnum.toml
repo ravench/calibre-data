@@ -14,18 +14,17 @@ origin_sources = [
 rare = true
 
 [mm]
-rim = 13.5
-base = 13.5
+# SAAMI 300 Ruger Compact Magnum, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.08 at 41.47).
+rim = 13.51
+base = 13.51
 shoulder = 13.1
 shoulder_at = 42.44
-neck = 8.6
-case_length = 53.0
-overall_length = 71.8
-bullet = 7.82
-sources = [
-  "https://en.wikipedia.org/wiki/.300_Ruger_Compact_Magnum",
-  "https://municion.org/producto/300-ruger-compact-magnum/",
-]
+neck = 8.64
+case_length = 53.34
+overall_length = 72.14
+bullet = 7.85
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=122", "https://en.wikipedia.org/wiki/.300_Ruger_Compact_Magnum", "https://municion.org/producto/300-ruger-compact-magnum/"]
 
 [introduced]
 year = 2007

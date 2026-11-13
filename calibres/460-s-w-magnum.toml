@@ -8,7 +8,7 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
 
 [mm]
-# SAAMI 460 S&W Magnum, maximum cartridge
+# SAAMI 460 S&W Magnum, maximum cartridge.
 rim = 13.21
 base = 12.14
 neck = 12.14

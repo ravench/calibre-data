@@ -14,7 +14,7 @@ origin_sources = [
 rare = true
 
 [mm]
-# SAAMI 9x23 Winchester, maximum cartridge
+# SAAMI 9x23 Winchester, maximum cartridge.
 rim = 10.01
 base = 9.93
 neck = 9.68

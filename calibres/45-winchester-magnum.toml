@@ -14,7 +14,7 @@ origin_sources = [
 rare = true
 
 [mm]
-# SAAMI 45 Winchester Magnum, maximum cartridge
+# SAAMI 45 Winchester Magnum, maximum cartridge.
 rim = 12.19
 base = 12.09
 neck = 12.01

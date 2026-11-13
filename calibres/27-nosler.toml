@@ -11,19 +11,17 @@ origin_sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
 rare = true
 
 [mm]
-rim = 13.6
-base = 14.0
+# SAAMI 27 Nosler, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.42 at 53.56).
+rim = 13.56
+base = 13.97
 shoulder = 13.6
 shoulder_at = 53.57
-neck = 7.8
-case_length = 65.8
-overall_length = 84.8
-bullet = 7.04
-# No source yet for rim, shoulder and neck.
-sources = [
-  "book:cotw-18 p. 451",
-  "https://www.nosler.com/",
-]
+neck = 7.98
+case_length = 65.79
+overall_length = 84.84
+bullet = 7.06
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=99", "book:cotw-18 p. 451", "https://www.nosler.com/"]
 
 [introduced]
 year = 2020
@@ -39,9 +37,9 @@ degrees = 35
 sources = ["https://www.nosler.com/"]
 
 [case_head]
-# .050 in.
+# SAAMI 27 Nosler
 rim_thickness = 1.27
-sources = ["book:cotw-18 p. 451"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=99"]
 
 [bullet]
 type = "polymer"

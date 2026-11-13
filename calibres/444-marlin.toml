@@ -13,13 +13,14 @@ origin_sources = [
 ]
 
 [mm]
-rim = 13.1
-base = 11.95
-neck = 11.5
-case_length = 56.5
-overall_length = 65.0
-bullet = 10.9
-sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
+# SAAMI 444 Marlin, maximum cartridge.
+rim = 13.06
+base = 11.93
+neck = 11.51
+case_length = 56.52
+overall_length = 65.28
+bullet = 10.94
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=167"]
 
 [introduced]
 year = 1964
@@ -30,9 +31,9 @@ size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
 
 [case_head]
-# .058 in.
-rim_thickness = 1.47
-sources = ["book:cotw-18 p. 177"]
+# SAAMI 444 Marlin
+rim_thickness = 1.6
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=167"]
 
 [bullet]
 type = "softpoint"

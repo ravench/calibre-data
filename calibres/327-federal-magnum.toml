@@ -14,7 +14,7 @@ origin_sources = [
 ]
 
 [mm]
-# SAAMI 327 Federal Magnum, maximum cartridge
+# SAAMI 327 Federal Magnum, maximum cartridge.
 rim = 9.53
 base = 8.56
 neck = 8.56

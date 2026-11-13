@@ -9,7 +9,7 @@ origin = "US"
 origin_sources = ["book:ammo-encyclopedia-2 p. 630"]
 
 [mm]
-# SAAMI 10mm Automatic, maximum cartridge
+# SAAMI 10mm Automatic, maximum cartridge.
 rim = 10.8
 base = 10.8
 neck = 10.74

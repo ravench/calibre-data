@@ -10,18 +10,17 @@ origin_sources = ["https://en.wikipedia.org/wiki/.224_Valkyrie"]
 rare = true
 
 [mm]
-rim = 10.7
+# SAAMI 224 Valkyrie, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 10.24 at 30.56).
+rim = 10.72
 base = 10.69
 shoulder = 10.24
 shoulder_at = 31.5
 neck = 6.5
-case_length = 41.0
+case_length = 40.64
 overall_length = 57.4
 bullet = 5.7
-sources = [
-  "https://en.wikipedia.org/wiki/.224_Valkyrie",
-  "https://municion.org/producto/224-valkyrie/",
-]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=86", "https://en.wikipedia.org/wiki/.224_Valkyrie", "https://municion.org/producto/224-valkyrie/"]
 
 [introduced]
 year = 2017

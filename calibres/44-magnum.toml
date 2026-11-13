@@ -12,7 +12,8 @@ origin_sources = [
 worldwide = true
 
 [mm]
-# SAAMI 44 Remington Magnum, maximum cartridge; bullet: the .429 in groove diameter (the lead bullet is .4320 in)
+# SAAMI 44 Remington Magnum, maximum cartridge.
+# Bullet: the .429 in groove diameter (the lead bullet is .4320 in).
 rim = 13.06
 base = 11.61
 neck = 11.58

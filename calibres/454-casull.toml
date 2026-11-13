@@ -8,7 +8,7 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
 
 [mm]
-# SAAMI 454 Casull, maximum cartridge
+# SAAMI 454 Casull, maximum cartridge.
 rim = 13.0
 base = 12.13
 neck = 12.13

@@ -9,20 +9,17 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
 
 [mm]
-rim = 13.6
-base = 14.0
+# SAAMI 26 Nosler, maximum cartridge.
+# Shoulder and shoulder_at unchanged, from the sources after SAAMI (SAAMI: 13.4 at 55.01).
+rim = 13.56
+base = 13.97
 shoulder = 13.6
 shoulder_at = 55.58
-neck = 7.6
-case_length = 65.8
-overall_length = 84.8
-bullet = 6.7
-# No source yet for shoulder.
-sources = [
-  "https://en.wikipedia.org/wiki/.28_Nosler",
-  "https://municion.org/producto/26-nosler/",
-  "book:cotw-18 p. 175",
-]
+neck = 7.54
+case_length = 65.79
+overall_length = 84.84
+bullet = 6.72
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=96", "https://en.wikipedia.org/wiki/.28_Nosler", "https://municion.org/producto/26-nosler/", "book:cotw-18 p. 175"]
 
 [introduced]
 year = 2013
@@ -38,9 +35,9 @@ degrees = 38.7
 sources = ["https://municion.org/producto/26-nosler/"]
 
 [case_head]
-# .05 in.
+# SAAMI 26 Nosler
 rim_thickness = 1.27
-sources = ["book:cotw-18 p. 175"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=96"]
 
 [bullet]
 type = "polymer"

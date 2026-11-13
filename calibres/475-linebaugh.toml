@@ -11,7 +11,7 @@ origin_sources = ["https://en.wikipedia.org/wiki/.475_Linebaugh"]
 rare = true
 
 [mm]
-# SAAMI 475 Linebaugh, maximum cartridge
+# SAAMI 475 Linebaugh, maximum cartridge.
 rim = 13.77
 base = 12.8
 neck = 12.8

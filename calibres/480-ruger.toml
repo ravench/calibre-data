@@ -17,7 +17,7 @@ origin_sources = [
 rare = true
 
 [mm]
-# SAAMI 480 Ruger, maximum cartridge
+# SAAMI 480 Ruger, maximum cartridge.
 rim = 13.77
 base = 12.8
 neck = 12.8

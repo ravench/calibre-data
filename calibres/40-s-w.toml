@@ -12,7 +12,7 @@ origin_sources = [
 worldwide = true
 
 [mm]
-# SAAMI 40 Smith & Wesson, maximum cartridge
+# SAAMI 40 Smith & Wesson, maximum cartridge.
 rim = 10.77
 base = 10.77
 neck = 10.74

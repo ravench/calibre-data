@@ -11,7 +11,7 @@ origin_sources = [
 ]
 
 [mm]
-# SAAMI 9x18 Makarov, maximum cartridge
+# SAAMI 9x18 Makarov, maximum cartridge.
 rim = 9.95
 base = 9.94
 neck = 9.91

@@ -11,7 +11,7 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
 
 [mm]
-# SAAMI 32 Smith & Wesson, maximum cartridge
+# SAAMI 32 Smith & Wesson, maximum cartridge.
 rim = 9.6
 base = 8.61
 neck = 8.61
