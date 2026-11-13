@@ -4,7 +4,7 @@ import math, os, re, sys, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
 import cartridges  # noqa: E402
-from cartridges import SPITZER, ROUND, FLAT, PATCHED, CRIMPED, RIMLESS, SEMI_RIMMED, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE, RIMLESS, SEMI_RIMMED, BELTED, RIMMED, RIMFIRE, LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, HYBRID, PAPER, SHOT, CASES, BALL, MINIE, PELLET, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
 
 PATH = re.compile(r"^M[\d.]+ [\d.]+( L[\d.]+ [\d.]+)* Z$")
 
@@ -77,6 +77,17 @@ class OutlineTests(unittest.TestCase):
         by_name = {s["name"]: s for _, s in outline.specs()}
         self.assertEqual(outline.outline(by_name[".303 British"])["bulletMaterial"], "cupronickel")
         self.assertNotIn("bulletMaterial", outline.outline(by_name["9x19 mm"]))
+
+    def test_a_ball_nose_is_the_sphere_out_of_the_mouth(self):
+        # The Flobert Bosquette: an 8.84 ball, 4.8 mm of it out of a 10.18 case.
+        pts = outline.bullet_profile(4.42, 10.18, 14.98, BALL_NOSE)
+        self.assertEqual(pts[-1], (0, 14.98))
+        centre = 14.98 - 4.42
+        for x, y in pts[:-1]:
+            self.assertAlmostEqual(x * x + (y - centre) ** 2, 4.42 ** 2, places=6)
+        self.assertAlmostEqual(max(x for x, _ in pts), 4.42, places=2)  # the equator shows
+        flobert = next(s for _, s in outline.specs() if s["name"] == "9 mm Flobert Bosquette")
+        self.assertEqual(outline.outline(flobert)["bulletMaterial"], "lead")
 
     def test_loose_projectiles_name_only_non_lead_materials(self):
         for _, s in outline.specs():

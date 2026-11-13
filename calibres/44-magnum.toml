@@ -40,8 +40,9 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.44_Magnum"]
 
 [case]
+# naboje.org: a brass case with a Boxer primer.
 material = "brass"
-sources = []
+sources = ["https://naboje.org/node/3106"]
 
 [current_cases]
 # CCI Blazer's aluminium cases.

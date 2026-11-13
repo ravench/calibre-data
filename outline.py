@@ -8,7 +8,7 @@ millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bot
 import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED  # noqa: E402
+from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
 from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
@@ -75,6 +75,12 @@ def bullet_profile(r, y0, top, profile):
         start = y0 + band
         return [(r, y0), (r, start), (cap, start)] + ogive_nose(cap, start, top, OGIVE_RADIUS / CAP_RADIUS,
                                                                   TIP_RADIUS / CAP_RADIUS)
+    elif profile == BALL_NOSE:
+        # A sphere of the bullet's width, its top at the tip: the arc from the case mouth up, by angle
+        # so the top is as smooth as the sides.
+        centre, a0 = top - r, math.asin(max(-1, min(1, (y0 - (top - r)) / r)))
+        angles = (a0 + (math.pi / 2 - a0) * i / (2 * N) for i in range(2 * N))
+        return [(r * math.cos(a), centre + r * math.sin(a)) for a in angles] + [(0, top)]
     else:
         cyl, tip, f = 0.30, 0.55, lambda t: math.sqrt(max(0, 1 - t * t))
     start = y0 + cyl * e

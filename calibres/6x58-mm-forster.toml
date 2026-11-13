@@ -7,7 +7,7 @@ profile = "spitzer"
 aliases = ["6x58"]
 
 origin = "DE"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/13746"]
 obsolete = true
 rare = true
 

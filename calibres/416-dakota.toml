@@ -10,7 +10,7 @@ profile = "round"
 aliases = ["416 dakota"]
 
 origin = "US"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/19109"]
 obsolete = true
 rare = true
 

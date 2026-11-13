@@ -25,8 +25,9 @@ KINDS = (RIMLESS, SEMI_RIMMED, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLE
 LOOSE = (BALL, MINIE, PELLET)  # loose projectiles, not cartridges
 # Bullet profiles. PATCHED: paper-patched lead body with a steel-capped ogive nose (GP 1890).
 # CRIMPED: no bullet; the case mouth is folded shut in a star (blanks and power-tool loads).
-SPITZER, ROUND, FLAT, PATCHED, CRIMPED = "spitzer", "round", "flat", "patched", "crimped"
-PROFILES = (SPITZER, ROUND, FLAT, PATCHED, CRIMPED)
+# BALL: a round ball seated in the case, drawn as the part of the sphere out of the mouth (9 mm Flobert Bosquette).
+SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE = "spitzer", "round", "flat", "patched", "crimped", "ball"
+PROFILES = (SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE)
 # How names write numbers and units (README.md, Names); other spellings belong in the aliases.
 NAME_RULES = (
     (re.compile(r"[\d¼½¾](mm|inch)\b", re.I), "a space between the number and the unit: '9 mm', '3 inch'"),

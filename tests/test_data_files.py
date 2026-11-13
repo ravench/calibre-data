@@ -275,6 +275,17 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, 'kind = "rimless"', 'kind = "semi-rimmed"')
             self.assertProblem(c, WIN, r"semi-rimmed case has a rim wider than its base", line=c.line_of(WIN, "rim ="))
 
+    def test_416_rigby_no_2_is_the_416_rigby_with_a_rim(self):
+        # C.I.P. sheets: the No. 2 (2019) keeps the .416 Rigby's body, shoulder, neck and cone behind a 17 mm rim.
+        by_name = {s["name"]: s for _, items in cartridges.ALL_CATALOGUE for s in items}
+        rigby, no2 = by_name[".416 Rigby"], by_name[".416 Rigby No. 2"]
+        self.assertEqual(no2["kind"], cartridges.RIMMED)
+        for key in ("base", "shoulder", "sh_at", "neck", "case"):
+            self.assertAlmostEqual(no2[key], rigby[key], delta=0.1, msg=key)
+        self.assertGreater(no2["rim"], rigby["rim"] + 2)
+        self.assertEqual(cartridges.shoulder_angle(".416 Rigby No. 2"), cartridges.shoulder_angle(".416 Rigby"))
+        self.assertEqual(cartridges.lookalikes(".416 Rigby"), [".416 Rigby No. 2"])
+
     def test_problems_name_the_line_of_the_value(self):
         with Copy() as c:
             c.edit(WIN, "degrees = 20", "degrees = 120")

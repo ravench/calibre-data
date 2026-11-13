@@ -31,8 +31,9 @@ diameter = 3.0
 sources = ["https://municion.org/producto/425-mm-lilliput/"]
 
 [bullet]
+# naboje.org: loaded with a full metal jacket bullet of about 1 g.
 type = "jacketed"
-sources = []
+sources = ["https://naboje.org/node/2217"]
 
 [case]
 material = "brass"

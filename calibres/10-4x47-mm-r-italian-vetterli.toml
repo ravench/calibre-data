@@ -9,7 +9,7 @@ aliases = ["10.4x47r", "italian vetterli"]
 display_aliases = ["10.4 mm Vetterli M1870"]
 
 origin = "IT"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/1366"]
 obsolete = true
 rare = true
 

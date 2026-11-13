@@ -7,7 +7,7 @@ profile = "round"
 aliases = ["9mm win mag", "9mm winchester magnum", "9 mm win mag", "9x29"]
 
 origin = "US"
-origin_sources = []
+origin_sources = ["https://naboje.org/node/4996"]
 obsolete = true
 rare = true
 

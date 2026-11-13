@@ -38,5 +38,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38_S%26W"]
 
 [case]
+# naboje.org: a brass case, sometimes nickel-plated.
 material = "brass"
-sources = []
+sources = ["https://naboje.org/node/3003"]

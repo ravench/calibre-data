@@ -48,8 +48,9 @@ ramp_angle = 38.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page56.pdf"]
 
 [bullet]
+# naboje.org: the first military round had a round-nose bullet with a lead core in a clad steel jacket.
 type = "jacketed"
-sources = []
+sources = ["https://naboje.org/node/3223"]
 
 [case]
 material = "brass"

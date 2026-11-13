@@ -3,7 +3,7 @@ import os, sys, unittest
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from cartridges import (WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
+from cartridges import (BALL_NOSE, WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO, BMG_35,
                         SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
@@ -406,7 +406,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(tuple(by_name[".320 Revolver"][k] for k in keys),
                          (RIMMED, 9.55, 8.12, 8.12, 16.6, 26.7, 8.0, "round"))
         self.assertEqual(tuple(by_name["9 mm Flobert Bosquette"][k] for k in keys),
-                         (RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, "round"))
+                         (RIMFIRE, 10.16, 8.85, 8.85, 10.18, 14.98, 8.84, BALL_NOSE))
         self.assertEqual(INTRODUCED[".320 Revolver"][0], 1868)
         self.assertEqual(origin(".320 Revolver")[0], "GB")
         self.assertEqual(origin("9 mm Flobert Bosquette")[0], "FR")
@@ -729,7 +729,7 @@ class CatalogueTests(unittest.TestCase):
                                            # COTW 18 gives a ball without its material.
                                            "8x60 mm R Guedes",
                                            # No factory load on the page, or a later one than the original.
-                                           ".242 Rimless Nitro Express", ".280 Jeffery", ".297/250 Rook",
+                                           ".242 Rimless Nitro Express", ".280 Jeffery",
                                            ".500 Express 3 inch", ".500/450 Magnum Express",
                                            ".32 Protector", "7.7 mm Bittner", ".45 Cowboy Special", ".338-06 A-Square",
                                            ".40-65 Ballard Everlasting", ".44 Long Centrefire",
@@ -744,7 +744,7 @@ class CatalogueTests(unittest.TestCase):
                                            # A-Square's and Hoffman's: handloads or bullet weights only.
                                            ".338 Excaliber", ".375 A-Square", ".416 Hoffman",
                                            ".460 A-Square Short", ".500 A-Square", ".416 Rimmed",
-                                           ".450 Assegai", ".400 A-Square DPM"})
+                                           ".450 Assegai", ".400 A-Square DPM", ".416 Rigby No. 2"})
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_silver_jackets_of_early_service_rounds(self):
