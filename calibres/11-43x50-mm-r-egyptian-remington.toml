@@ -33,6 +33,7 @@ size = "large-rifle"
 sources = []
 
 [shoulder_angle]
+# Drawing of the drawn flat-base case; the coiled case has a wider neck.
 # AECC drawing on municion.org: SØ 13.56, NØ 12.51, SL 33.44, NL 11.96, CL 48.53.
 degrees = 9.5
 sources = ["https://municion.org/producto/43-egyptian-remington-flat-base/"]

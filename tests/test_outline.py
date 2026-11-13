@@ -294,7 +294,7 @@ class OutlineTests(unittest.TestCase):
         ".577/500 No. 2 Express", "10.25x69 mm R Hunting-Express", "10.4x47 mm R Italian Vetterli",
         "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan",
         "10.8x47 mm R Martini Target",
-        "11.4x50 mm R Brazilian Comblain", "11x50 mm R Albini",
+        "11.4x50 mm R Brazilian Comblain", "11x53 mm R Comblain", "11x50 mm R Albini",
         "11x52 mm R Beaumont M71/78", "5 mm Clement", "5.66x39 mm MPS",
         "5x58 mm Sturtevant",
         "6.5x53.5 mm SR Daudeteau",

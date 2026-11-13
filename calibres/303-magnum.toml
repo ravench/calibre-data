@@ -31,6 +31,7 @@ size = "large-rifle"
 sources = []
 
 [shoulder_angle]
+# The drawing is of the .303 Jeffery Magnum semi-rimmed, the same case (rim 14.15 over a 13.46 base).
 # AECC drawing on municion.org: SØ 11.60, NØ 8.83, SL 44.40, NL 9.80, CL 59.60.
 degrees = 14.4
 sources = ["https://municion.org/producto/303-jeffery-magnum-semi-rimmed/"]

@@ -30,7 +30,7 @@ year = 1867
 sources = ["https://en.wikipedia.org/wiki/.41_Swiss"]
 
 [shoulder_angle]
-# AECC drawing 11-038-BBC-011
+# AECC drawing 11-038-BBC-011 on municion.org: SØ 13.60, NØ 11.70, SL 27.00, NL 6.00, CL 38.10.
 degrees = 10.6
 sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
 

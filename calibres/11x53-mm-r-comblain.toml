@@ -17,12 +17,13 @@ rare = true
 rim = 17.09
 base = 14.6
 shoulder = 13.51
-shoulder_at = 45.22
+shoulder_at = 40.8
 neck = 11.68
 case_length = 53.34
 overall_length = 70.1
 bullet = 11.07
-sources = ["book:cotw-18 p. 574", "https://municion.org/producto/11-x-53-r-brazilian-comblain-model-1889/"]
+# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+sources = ["book:cotw-18 p. 574"]
 
 [introduced]
 year = 1871
@@ -31,11 +32,6 @@ sources = ["book:cotw-18 p. 563"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.23, NØ 11.76, SL 45.20, NL 6.20, CL 53.32.
-degrees = 20.9
-sources = ["https://municion.org/producto/11-x-53-r-brazilian-comblain-model-1889/"]
 
 [case_head]
 # .082 in.
