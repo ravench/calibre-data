@@ -20,7 +20,10 @@ neck = 10.03
 case_length = 82.55
 overall_length = 93.98
 bullet = 9.55
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# A long, gentle shoulder, not a straight case: COTW 18 calls the case bottlenecked (case type A), and Donnelly
+# draws a .240 in. shoulder at about 9 deg (not used, like his other angles). It looks like a plain taper on
+# small photos (gunauction.com 8333040). No source yet for shoulder_at (estimated: a neck one calibre long
+# and the shoulder at 32 degrees).
 sources = ["book:cotw-18 p. 250"]
 
 [introduced]

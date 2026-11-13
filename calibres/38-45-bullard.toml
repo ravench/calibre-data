@@ -14,13 +14,13 @@ rare = true
 [mm]
 rim = 13.36
 base = 11.53
-shoulder = 11.38
-shoulder_at = 35.2
 neck = 10.08
 case_length = 45.72
 overall_length = 57.4
 bullet = 9.47
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# A straight, tapered case: there is no shoulder on municion.org's AECC drawing
+# (https://municion.org/producto/38-45-190-bullard/) or naboje.org's photo (https://naboje.org/node/19456).
+# COTW 18 prints a .448 in. "shoulder" Ø, probably the body just below the mouth.
 sources = ["book:cotw-18 p. 250"]
 
 [introduced]
