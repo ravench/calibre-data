@@ -89,11 +89,14 @@ MEASUREMENTS, SHOULDER_ANGLE, GROOVE, RIM_THICKNESS, SHOULDER_MOVED = GAPS = (
 def gaps(s):
     """The GAPS of a calibre's drawing, in their order: () when every drawn dimension comes from a source
     (well_sourced allows a little less). Bullet type, case material and the nose are not counted: they colour the
-    drawing or are schematic anyway, like a shot shell's brass head and crimp, which differ from load to load."""
+    drawing or are schematic anyway, like a shot shell's brass head and crimp, which differ from load to load.
+    A star-crimped blank's mouth is schematic too (Raven 2026-11-14: "treat the crimp as a sketch"): no sheet gives
+    the crimp's size, so an unsourced mouth on a CRIMPED case is no gap; the data still lists it as unsourced."""
     name, found = s["name"], []
     cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
     drawn = ("rim", "base", "neck", "case", "oal", "bullet") + (("sh_at",) if s["shoulder"] else ()) if cartridge else ()
-    if unsourced(name) or any(s[k] is None for k in drawn):  # a cannon round may leave measurements out
+    missing = set(unsourced(name)) - ({"mouth"} if s["profile"] == CRIMPED else set())
+    if missing or any(s[k] is None for k in drawn):  # a cannon round may leave measurements out
         found.append(MEASUREMENTS)
     if cartridge:
         bottleneck = s["shoulder"] and s["profile"] != CRIMPED
