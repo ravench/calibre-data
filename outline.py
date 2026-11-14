@@ -15,6 +15,10 @@ N = 14  # samples per curve
 BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
 # mm, rim thickness of a case whose [case_head] gives none: rimmed, rimfire, rimless, semi-rimmed or belted
 RIMMED_RIM, RIMFIRE_RIM, RIMLESS_RIM = 1.5, 1.1, 1.3
+# Extractor groove of a case whose [case_head] gives none, as a share of the rim diameter: the median of
+# the sourced grooves (0.869; half of them lie between 0.86 and 0.89). The extractor grips the rim, so
+# the groove follows the rim, not the body: it stays below a rebated rim too.
+GENERIC_GROOVE = 0.87
 
 
 def case_profile(s):
@@ -38,10 +42,11 @@ def case_profile(s):
             ramp_start = max(thick, top_at - (base - groove) / slope)
             pts = [(rim, 0), (rim, thick), (groove, thick), (groove, ramp_start), (base, top_at)]
     else:
-        # Generic groove (82 % of the base) behind the calibre's own rim thickness where a source gives it.
+        # Generic groove (GENERIC_GROOVE) behind the calibre's own rim thickness where a source gives it.
+        # Under a rebated rim the ramp climbs on at 45 degrees until it reaches the wider body.
         t = rim_thickness(s["name"]) or RIMLESS_RIM
-        groove = base * 0.82
-        pts = [(rim, 0), (rim, t), (groove, t), (groove, t + 1.3), (base, t + 2.0)]
+        groove = rim * GENERIC_GROOVE
+        pts = [(rim, 0), (rim, t), (groove, t), (groove, t + 1.3), (base, t + 2.0 + max(0, base - rim))]
         if k == BELTED:
             pts[-1] = (rim, t + 2.0)
             pts += [(rim, t + 4.9), (base * 0.985, t + 4.9)]

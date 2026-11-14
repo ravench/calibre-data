@@ -535,16 +535,33 @@ class OutlineTests(unittest.TestCase):
             return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(by_name[name])[:n]]
         self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
         self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
-        self.assertEqual(head("9x23 mm Largo", 5), [(4.95, 0), (4.95, 1.3), (4.0631, 1.3), (4.0631, 2.6), (4.955, 3.3)])
-        self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.2574, 1.3), (8.2574, 2.6), (10.15, 3.3),
+        self.assertEqual(head(".276 Pedersen", 5), [(5.73, 0), (5.73, 1.3), (4.9851, 1.3), (4.9851, 2.6), (5.7, 3.3)])
+        self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.8305, 1.3), (8.8305, 2.6), (10.15, 3.3),
                                                (10.15, 6.2), (9.919, 6.2)])
 
     def test_a_generic_groove_follows_the_rim_thickness(self):
-        # .308 Norma Magnum: rim .048 in (COTW 18), no C.I.P. groove; the generic groove and belt move up with it.
-        s = next(s for _, s in outline.specs() if s["name"] == ".308 Norma Magnum")
+        # .400/375 Belted Nitro Express: rim .062 in (COTW 18), no C.I.P. groove; the generic groove and belt
+        # move up with it.
+        s = next(s for _, s in outline.specs() if s["name"] == ".400/375 Belted Nitro Express")
         self.assertEqual([(round(r, 4), round(h, 4)) for r, h in outline.case_profile(s)[:7]],
-                         [(6.75, 0), (6.75, 1.22), (5.33, 1.22), (5.33, 2.52), (6.75, 3.22), (6.75, 6.12),
-                          (6.4025, 6.12)])
+                         [(5.92, 0), (5.92, 1.57), (5.1504, 1.57), (5.1504, 2.87), (5.92, 3.57), (5.92, 6.47),
+                          (5.6047, 6.47)])
+
+    def test_a_generic_groove_follows_the_rim(self):
+        # The extractor grips the rim, so a groove no source gives is a share of the rim, not of the body. The
+        # share is the median of the sourced grooves (review 2026-11-13: the old 82 % of the base was deeper than
+        # 224 of the 233 sourced ones, and wider than the rim under the rebated rim of the .475 Bishop Short Magnum).
+        heads, specs = cartridges.CASE_HEADS, self.rimless()
+        sourced = sorted(head[2] / specs[name]["rim"] for name, head in heads.items())
+        self.assertAlmostEqual(sourced[len(sourced) // 2], outline.GENERIC_GROOVE, delta=0.01)
+        for name in set(specs) - set(heads):
+            with self.subTest(name):
+                s = specs[name]
+                (rim, _), (groove, _), (_, floor), (body, top) = outline.case_profile(s)[1:5]
+                self.assertAlmostEqual(groove, rim * outline.GENERIC_GROOVE)
+                self.assertLess(groove, min(rim, body))
+                # the ramp is 0.7 mm high; under a rebated rim it climbs on at 45 degrees to the wider body
+                self.assertAlmostEqual(top - floor, 0.7 + max(0, s["base"] - s["rim"]) / 2)
 
 if __name__ == "__main__":
     unittest.main()
