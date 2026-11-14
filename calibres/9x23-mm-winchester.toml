@@ -36,7 +36,7 @@ sources = ["https://en.wikipedia.org/wiki/9×23mm_Winchester"]
 # SAAMI 9x23 Winchester: rim thickness 0.050, groove 0.347 at 25 degrees, groove width 0.035,
 # body 0.3911; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 25)
 rim_thickness = 1.27
-ramp_top = 3.37
+ramp_top = 3.36
 groove_diameter = 8.81
 ramp_angle = 25.0
 sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=35"]

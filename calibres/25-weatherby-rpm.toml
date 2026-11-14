@@ -39,7 +39,7 @@ sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-
 # SAAMI 25 Weatherby RPM: rim thickness 0.054, groove 0.409 at 40 degrees, groove width 0.040,
 # body 0.5000; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 40)
 rim_thickness = 1.37
-ramp_top = 3.77
+ramp_top = 3.76
 groove_diameter = 10.39
 ramp_angle = 40.0
 sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"]

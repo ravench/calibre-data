@@ -49,14 +49,14 @@ degrees = 20.4
 sources = ["https://municion.org/producto/400-375-belted-nitro-express-holland-holland/"]
 
 [case_head]
-# .062 in. (Donnelly); groove from the AECC drawing 09-063-BFC-020 (municion.org): RT 1.00, GØ 10.30, GW 0.90, the
-# ramp up to the belt (LØ 12.06) ends at HL 3.00 and the belt (LW 2.42) at 5.42; ramp angle from HL = RT + GW + ((LØ -
-# GØ)/2)/tan(angle).
-rim_thickness = 1.57
+# AECC drawing 09-063-BFC-020 (municion.org): RT 1.00, GØ 10.30, GW 0.90, the ramp up to the belt (LØ 12.06) ends at
+# HL 3.00 and the belt (LW 2.42) at 5.42; ramp angle from HL = RT + GW + ((LØ - GØ)/2)/tan(angle). Donnelly gives the
+# rim .062 in. (1.57): more than 0.3 mm over the drawing's, so the whole head is the drawing's.
+rim_thickness = 1.0
 ramp_top = 5.42
 groove_diameter = 10.3
 ramp_angle = 39.0
-sources = ["book:donnelly p. 515", "https://municion.org/producto/400-375-belted-nitro-express-holland-holland/"]
+sources = ["https://municion.org/producto/400-375-belted-nitro-express-holland-holland/"]
 
 [bullet]
 type = "softpoint"
