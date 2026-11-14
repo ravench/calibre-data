@@ -22,10 +22,11 @@ class GapTests(unittest.TestCase):
                 (".308 Winchester", ()),
                 ("12/70", ()),  # its loaded length is SAAMI's
                 (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
-                (".69 Minié", ("measurements",)),  # no source at all
+                (".69 Minié", ()),  # the Altered Musket drawing: 1.1 in long
+                (".58 Minié", ()),  # the Harpers Ferry drawing: 1.05 in long
                 ("4.5 mm Diabolo (.177)", ()),  # its length from RWS
                 ("5.5 mm Diabolo (.22)", ()),
-                ("7.5 mm Kadettenpatrone", ("measurements",)),  # Raven's overall length
+                ("7.5 mm Kadettenpatrone", ()),  # its length: Raven measured it (measured:raven)
                 (".25 Stevens", ("rim_thickness",)),
                 ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
             with self.subTest(name):
@@ -34,11 +35,22 @@ class GapTests(unittest.TestCase):
             for s in items:
                 self.assertLessEqual(set(outline.gaps(s)), set(outline.GAPS), s["name"])
 
+    def test_a_crimped_blanks_mouth_is_a_sketch(self):
+        # Raven 2026-11-14: "treat the crimp as a sketch". No sheet gives a star crimp's size: the mouth stays
+        # listed as unsourced, but it keeps no blank from being well sourced.
+        for name in (".22 Long Knall", "6 mm Flobert Knall", "9 mm R Knall", ".320 Knall", ".45 Knall"):
+            with self.subTest(name):
+                self.assertEqual(cartridges.unsourced(name), ("mouth",))
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+        s = dict(self.spec(".45 Knall"), profile=FLAT)  # on any other profile it would still be a gap
+        self.assertEqual(outline.gaps(s)[:1], ("measurements",))
+
     def test_gaps_follow_the_tables(self):
         for _, s in outline.specs():
             gaps, name = outline.gaps(s), s["name"]
             cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
-            self.assertEqual("measurements" in gaps, bool(cartridges.unsourced(name)), name)
+            crimp = {"mouth"} if s["profile"] == CRIMPED else set()  # a sketch (Raven 2026-11-14)
+            self.assertEqual("measurements" in gaps, bool(set(cartridges.unsourced(name)) - crimp), name)
             self.assertEqual("rim_thickness" in gaps, cartridge and name not in cartridges.RIM_THICKNESS, name)
             self.assertEqual("groove" in gaps, s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)
                              and name not in cartridges.CASE_HEADS, name)
@@ -87,6 +99,15 @@ class GapTests(unittest.TestCase):
         self.assertFalse(outline.well_sourced(self.spec(".56-52 Spencer Necked")))
         passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 589 of 759 on 2026-11-14
         self.assertTrue(0 < passing < len(outline.specs()))
+
+    def test_popular_calibres_are_well_sourced(self):
+        # Raven's list of popular calibres that failed the rule on 2026-11-14, as they get sourced.
+        # SAAMI's groove diameter; the ramp's top from rim thickness + groove width (the "+ .010" dimension) + ramp.
+        for name, top, groove in [("6 mm GT", 3.84, 10.39), (".22 Nosler", 4.12, 8.43), (".277 SIG Fury", 3.86, 10.36),
+                                  (".33 Nosler", 3.73, 12.07)]:
+            with self.subTest(name):
+                self.assertTrue(outline.well_sourced(self.spec(name)))
+                self.assertEqual(cartridges.case_head(name)[1:3], (top, groove))
 
 
 class OutlineTests(unittest.TestCase):
@@ -502,10 +523,9 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".22 Nosler", ".25 Weatherby RPM", ".27 Nosler", ".277 SIG Fury", ".30 Remington AR",
-        ".32 Winchester Self-Loading", ".33 Nosler", ".35 S&W Auto", ".35 Winchester Self-Loading",
-        ".401 Winchester Self-Loading", "12.7x108 mm", "5.8x42 mm", "6 mm GT", "6.5x58 mm Vergueiro",
-        "7.92x107 mm DS", "9x23 mm Winchester",
+        ".25 Weatherby RPM", ".27 Nosler", ".30 Remington AR", ".32 Winchester Self-Loading", ".35 S&W Auto",
+        ".35 Winchester Self-Loading", ".401 Winchester Self-Loading", "12.7x108 mm", "5.8x42 mm",
+        "6.5x58 mm Vergueiro", "7.92x107 mm DS", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum",
         ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt",

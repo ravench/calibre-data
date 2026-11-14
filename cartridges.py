@@ -201,6 +201,9 @@ GROUP_KEYS = ("name", "differ_by", "calibres")
 # A printed book as a source: "book:<id> p. <page>", the id of a book in books.toml. A manual that
 # numbers its pages by chapter has pages such as "14-13" (chapter 14, page 13).
 BOOK_SOURCE = re.compile(r"book:(?P<id>[^\s]+) p\. (?P<page>[1-9][0-9]*(?:-[1-9][0-9]*)?)")
+# Raven's own measurement as a source: "measured:raven <date>", the day Raven measured the round with a
+# caliper (Raven 2026-11-14: "Accept my manual measurements as sources"). Say in a comment what was measured.
+MEASURED_SOURCE = re.compile(r"measured:raven (?P<date>20[0-9]{2}-[01][0-9]-[0-3][0-9])")
 BOOK_KEYS = ("title", "year", "edition", "authors", "editors", "publisher", "place", "isbn")
 # [[colour_codes]]: what a painted bullet tip, cartridge base or primer annulus means, a table for each
 # code. `part` says where the paint is (PARTS). A tip's colours are listed from the tip down (["red",
@@ -371,12 +374,17 @@ def _check_sources(f, table, data, rule, books=None, nth=0, key="sources"):
             if books is not None and book["id"] not in books:
                 f.problem(f.line(table, key, nth), f"{label} source {u!r} names no book in books.toml"
                                                     f"{_close(book['id'], books)}")
+        elif MEASURED_SOURCE.fullmatch(u):
+            pass
+        elif u.startswith("measured:"):
+            f.problem(f.line(table, key, nth), f"{label} source {u!r} must be written measured:raven <YYYY-MM-DD>, "
+                                                f"e.g. \"measured:raven 2026-11-08\"")
         elif u.startswith("book:"):
             f.problem(f.line(table, key, nth), f"{label} source {u!r} must be written book:<id> p. <page>, "
                                                 f"e.g. \"book:cotw-18 p. 176\"")
         elif not re.fullmatch(r"https://[^\s\"<>]+\.[^\s\"<>]+", u):
             f.problem(f.line(table, key, nth), f"{label} source {u!r} is not a https:// web address "
-                                                f"or a book page (book:<id> p. <page>)")
+                                                f"a book page (book:<id> p. <page>) or measured:raven <YYYY-MM-DD>")
     if len(set(urls)) != len(urls):
         f.problem(f.line(table, key, nth), f"{label} lists a source twice")
     return urls

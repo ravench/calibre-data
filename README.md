@@ -123,6 +123,9 @@ edition of *Cartridges of the World*. A manual that numbers its pages by chapter
 text or tables into this repository. A book that is not in `books.toml` yet needs an entry there
 first (title and year; edition, authors, editors, publisher, place and ISBN where it has them).
 
+Raven's own caliper measurement of a round is a source too: `measured:raven 2026-11-08`, the day it
+was measured. Say in a comment which round (headstamp, maker) and which values were measured.
+
 An empty list `sources = []` means the values have not been checked against a source yet. That is
 allowed for the measurements, the primer (then it counts as unverified), the bullet and a brass
 case; a year, a shoulder angle, a case head, a steel or plastic bullet, a case material other than
