@@ -96,8 +96,9 @@ class GapTests(unittest.TestCase):
             self.assertIn("groove", outline.gaps(self.spec(name)))
 
     def test_aecc_drawings_source_sporting_rifle_heads(self):
-        # Sporting rifle rounds of about 1900 to 1940 with no C.I.P. sheet: the groove from the AECC drawing
-        # (municion.org), behind the book's rim thickness where one gives it (the two BSA rounds, the .400/375).
+        # Sporting rifle rounds of about 1900 to 1940 with no C.I.P. sheet: the head from the AECC drawing
+        # (municion.org). Donnelly's rim thickness stays on the two BSA rounds (within 0.3 mm of the drawing's); on
+        # the .400/375 it is .062 in. against the drawing's 1.00, so that head is the drawing's throughout.
         heads = {".242 Rimless Nitro Express": (1.19, 3.56, 10.41, 26.0), ".303 Magnum": (1.18, 2.65, 12.2, 52.0),
                  ".425 Westley Richards Magnum": (1.12, 3.52, 10.39, 50.0),
                  "11.2x60 mm Schüler": (1.26, 3.9, 10.25, 49.0), "11.2x72 mm Schüler": (1.2, 4.05, 10.27, 44.0),
@@ -105,7 +106,7 @@ class GapTests(unittest.TestCase):
                  "9x63 mm": (1.2, 3.1, 10.2, 46.0), "9x71 mm Peterlongo": (1.2, 3.25, 10.22, 46.0),
                  # Belted: the ramp's top is the front of the belt (HL + LW on the drawing).
                  ".26 BSA": (1.24, 5.3, 11.92, 37.0), ".33 BSA": (1.3, 5.05, 11.69, 40.0),
-                 ".400/375 Belted Nitro Express": (1.57, 5.42, 10.3, 39.0),
+                 ".400/375 Belted Nitro Express": (1.0, 5.42, 10.3, 39.0),
                  "7x73 mm Vom Hofe Belted": (1.12, 4.55, 11.98, 47.0)}
         for name, head in heads.items():
             with self.subTest(name):
