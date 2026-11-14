@@ -319,7 +319,7 @@ class OutlineTests(unittest.TestCase):
         self.assertTrue(s["neck"] < max(xs) - min(xs) < s["base"], xs)
 
     def test_crimped_blank_is_a_case_narrowing_to_the_mouth(self):
-        s = next(s for _, s in outline.specs() if s["name"] == ".22 Blank (5.6/11)")
+        s = next(s for _, s in outline.specs() if s["name"] == ".22 SH (5.6/11)")
         self.assertEqual(s["profile"], CRIMPED)
         o = outline.outline(s)
         self.assertNotIn("bullet", o, "a blank has no bullet")
@@ -332,7 +332,7 @@ class OutlineTests(unittest.TestCase):
         self.assertLess(s["neck"], s["base"])
 
     def test_rimmed_alarm_blank_draws_a_rim_and_a_crimp(self):
-        s = next(s for _, s in outline.specs() if s["name"] == "9 mm R Knall")
+        s = next(s for _, s in outline.specs() if s["name"] == "9 mm R Blanc")
         o = outline.outline(s)
         self.assertNotIn("bullet", o)
         pts = points(o["case"])

@@ -1,20 +1,21 @@
 # Alarm and starter blanks from C.I.P. Tab. VIII, maximum cartridge (sheets 1991-07-29 to
-# 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm P.A.K., length = L3.
+# 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm PA Blanc, length = L3.
 # Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base,
-# the ratio of the measured .22 Blank (5.6/11), because C.I.P. gives no crimp size.
-name = ".315 Knall"
+# the ratio of the measured .22 SH (5.6/11), because C.I.P. gives no crimp size.
+# The name is the sheet's title, «320 Court Blanc»; in German the round is sold as «Knall».
+name = ".320 Court Blanc"
 categories = ["handgun"]
-kind = "rimless"
-profile = "flat"
-aliases = ["315knall", "315", "315blanc"]
+kind = "rimmed"
+profile = "crimped"
+aliases = ["320knall", "320", "320blanc", "320courtblanc", "320kurzknall"]
+display_aliases = [".320 Knall"]
 
 [mm]
-rim = 8.0
-base = 8.0
-neck = 8.0
-case_length = 17.65
-overall_length = 17.65
-bullet = 8.0
+rim = 9.55
+base = 8.09
+mouth = 4.9
+length = 16.0
+unsourced = ["mouth"]
 sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
 [introduced]
@@ -28,12 +29,9 @@ size = "small-pistol"
 sources = []
 
 [case_head]
-# C.I.P. 315 Blanc
-rim_thickness = 1.27
-ramp_top = 3.33
-groove_diameter = 6.55
-ramp_angle = 30.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page5.pdf"]
+# R on the C.I.P. 320 Court Blanc sheet
+rim_thickness = 1.32
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page7.pdf"]
 
 [case]
 material = "brass"

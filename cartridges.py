@@ -216,7 +216,7 @@ MEANINGS = ("ball", "armour-piercing", "incendiary", "explosive", "tracer", "spo
 
 def is_blank(profile, rim, base, neck, bullet, case_length, overall_length):
     """A blank without a bullet: star-crimped (CRIMPED), or closed inside the case, a plain cylinder with
-    nothing above the mouth (the 9 mm P.A.K., the 8 mm and .315 Knall)."""
+    nothing above the mouth (the 9 mm PA Blanc, the 8 mm and .315 Blanc)."""
     return profile == CRIMPED or (case_length is not None and overall_length == case_length
                                   and rim == base == neck == bullet)
 

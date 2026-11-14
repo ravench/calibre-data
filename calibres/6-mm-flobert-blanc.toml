@@ -1,19 +1,20 @@
 # Alarm and starter blanks from C.I.P. Tab. VIII, maximum cartridge (sheets 1991-07-29 to
-# 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm P.A.K., length = L3.
+# 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm PA Blanc, length = L3.
 # Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base,
-# the ratio of the measured .22 Blank (5.6/11), because C.I.P. gives no crimp size.
-name = ".22 Long Knall"
+# the ratio of the measured .22 SH (5.6/11), because C.I.P. gives no crimp size.
+# The name is the sheet's title, «6 mm Flobert Blanc»; in German the round is sold as «Knall».
+name = "6 mm Flobert Blanc"
 categories = ["rimfire"]
 kind = "rimfire"
 profile = "crimped"
-aliases = ["22longknall", "22langknall", "22longblank", "5.6/16", "5.6x16"]
-display_aliases = [".22 lang Knall", "Setzkartusche 5.6/16"]
+aliases = ["6mmflobert", "6mmknall", "6mmflobertblanc", "flobertknall", "6mmflobertknall"]
+display_aliases = ["6 mm Flobert Knall"]
 
 [mm]
-rim = 7.06
-base = 5.74
+rim = 7.15
+base = 5.75
 mouth = 3.4
-length = 15.0
+length = 6.6
 unsourced = ["mouth"]
 sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
@@ -23,9 +24,9 @@ year = 1991
 sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
 [case_head]
-# R on the C.I.P. 22 Long Blanc sheet
-rim_thickness = 1.09
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page3.pdf"]
+# R on the C.I.P. 6 mm Flobert Blanc sheet
+rim_thickness = 1.15
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page4.pdf"]
 
 [case]
 material = "brass"
