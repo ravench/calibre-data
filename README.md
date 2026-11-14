@@ -344,11 +344,12 @@ belted case, up to a belt that ends 4.3 mm in front of the rim.
   `BULLET_INFERRED`.
 - `[bullet]` `jacket`, optional, for a bullet with a jacket (`jacketed`, `softpoint`, `polymer`,
   `hollowpoint`) that is not copper-coloured on the outside, as first sold: `cupronickel` (silver:
-  a cupronickel jacket, or a steel one clad or plated with cupronickel or nickel, as on most service
-  rounds of the 1890s and 1900s) or `steel` (bare or lacquered steel). Gilding metal, tombac, copper
-  and copper-plated or copper-washed steel jackets are copper and leave the key out. The comment
-  above it says which source names the metal or, when none does, which round in hand it comes from
-  and that round's year.
+  a jacket of cupronickel or nickel silver (maillechort), or a steel or brass one clad or plated
+  with cupronickel or nickel, as on most service rounds of the 1890s and 1900s) or `steel` (bare,
+  greased or lacquered steel). Gilding metal, tombac, copper and copper-plated or copper-washed
+  steel jackets are copper and leave the key out. The comment above it says which source names the
+  metal or, when none does, which round it comes from (one in hand, or a collection's sheet of a
+  dated round) and that round's year.
 - `[bullet]` `patch_length`, optional, for a paper-patched bullet (`paper`): the paper showing above
   the case mouth, in mm, from a source. The bullet's `sources` name the type, so a comment right above
   `patch_length` says which source gives the length, or which round it was measured on (the check

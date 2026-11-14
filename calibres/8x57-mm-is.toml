@@ -46,9 +46,11 @@ ramp_angle = 36.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page57.pdf"]
 
 [bullet]
-# The military table lists the S-Patrone ball load.
+# The military table lists the S-Patrone ball load. Its pointed S bullet had a steel jacket clad with
+# cupronickel (Ammo Encyclopedia p. 71).
 type = "jacketed"
-sources = ["book:cotw-18 p. 556"]
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 556", "book:ammo-encyclopedia-2 p. 71"]
 
 [case]
 material = "brass"

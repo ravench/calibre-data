@@ -154,9 +154,10 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 # lead core showing at the tip), polymer (jacket with a plastic tip), hollowpoint (a cavity in the nose, where nearly every load is one) or
 # steel (a solid steel dart). Balls, Minié bullets and pellets give what they are made of: lead, steel or plastic (steel needs a source, and so does
 # plastic). sources = [] when not checked. Optional for a bullet with a jacket: jacket = "cupronickel"
-# (a silver jacket: cupronickel, or steel clad or plated with it or with nickel) or "steel" (bare or
-# lacquered); a copper-coloured jacket leaves it out. The comment names the source of the metal, or the
-# round in hand it comes from. Optional for a paper bullet: patch_length = <mm of paper showing above the
+# (a silver jacket: cupronickel or nickel silver, or steel or brass clad or plated with cupronickel or
+# nickel) or "steel" (bare, greased or lacquered); a copper-coloured jacket leaves it out. The comment
+# names the source of the metal, or the round it comes from (one in hand, or a collection's sheet of a
+# dated round). Optional for a paper bullet: patch_length = <mm of paper showing above the
 # case mouth>, with a comment right above it naming its source or the round it was measured on; without
 # it half the exposed bullet is drawn wrapped (not for GP 1890).
 [bullet]

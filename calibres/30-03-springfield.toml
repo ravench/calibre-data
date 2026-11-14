@@ -45,8 +45,12 @@ ramp_angle = 36.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
 
 [bullet]
+# The .30-03 kept the 220-grain round-nosed bullet of the .30-01, which had a cupronickel jacket
+# (C. Punnett, "An Introduction to Collecting .30-06 Cartridges", International Ammunition
+# Association).
 type = "jacketed"
-sources = []
+jacket = "cupronickel"
+sources = ["https://cartridgecollectors.org/an-introduction-to-collecting-30-06-cartridges/"]
 
 [case]
 material = "brass"

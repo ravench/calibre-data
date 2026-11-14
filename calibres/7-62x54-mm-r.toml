@@ -45,8 +45,16 @@ rim_thickness = 1.6
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf"]
 
 [bullet]
+# The round-nosed bullet of 1891 had a cupronickel jacket over a lead core; tombac jackets replaced
+# cupronickel in the early 1930s (7.62x54r.net's page on the Russian and Soviet headstamps, in the
+# copy sks-files.com keeps as a PDF). municion.org's page calls the Tsarist bullets chrome-coloured.
 type = "jacketed"
-sources = ["book:cotw-18 p. 549"]
+jacket = "cupronickel"
+sources = [
+  "book:cotw-18 p. 549",
+  "https://sks-files.com/Pictures/Russian/FAQ/Russian_Soviet_7_62x54r_headstamps.pdf",
+  "https://municion.org/producto/762-x-54-r-russian-mosin-nagant-m-1891-1908/",
+]
 
 [case]
 # municion.org says the case is brass; steel came in 1935.

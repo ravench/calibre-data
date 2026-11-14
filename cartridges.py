@@ -123,8 +123,9 @@ BRASS, COPPER, STEEL, NICKEL, PAPER, HYBRID = "brass", "copper", "steel", "nicke
 ALUMINIUM = "aluminium"
 PLASTIC = "plastic"
 # What a jacket looks like on the outside, where it is not copper-coloured (gilding metal, tombac, copper,
-# copper-plated or -washed steel): CUPRONICKEL (silver: cupronickel, or steel clad or plated with it or
-# with nickel) or STEEL (bare or lacquered steel). Only bullets with a jacket have one.
+# copper-plated or -washed steel): CUPRONICKEL (silver: cupronickel or nickel silver, or steel or brass clad
+# or plated with cupronickel or nickel) or STEEL (bare, greased or lacquered steel). Only bullets with a
+# jacket have one.
 CUPRONICKEL = "cupronickel"
 JACKET_METALS = (CUPRONICKEL, STEEL)
 # What tells lookalikes apart (differ_by in lookalikes.toml).
