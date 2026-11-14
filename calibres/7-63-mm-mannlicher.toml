@@ -30,9 +30,14 @@ size = "small-pistol"
 sources = ["https://municion.org/producto/763-mm-mannlicher/"]
 
 [case_head]
-# .030 in.
-rim_thickness = 0.76
-sources = ["book:cotw-18 p. 527"]
+# AECC drawing 08-021-CGC-010 (municion.org): RT 1.09, HL 2.40, GØ 7.81, GW 0.90, HØ 8.78; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle). Cartridges of the World's table gives the rim .030 in. (0.76): more than 0.3 mm
+# under the drawing's, so the whole head is the drawing's (a thinner rim under its HL would stretch the groove).
+rim_thickness = 1.09
+ramp_top = 2.4
+groove_diameter = 7.81
+ramp_angle = 50.0
+sources = ["https://municion.org/producto/763-mm-mannlicher/"]
 
 [bullet]
 type = "jacketed"

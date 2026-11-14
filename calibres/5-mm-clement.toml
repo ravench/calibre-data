@@ -37,9 +37,13 @@ degrees = 21.8
 sources = ["https://municion.org/producto/5-mm-clement/"]
 
 [case_head]
-# .025 in.
+# .025 in. (COTW); groove from the AECC drawing 05-018-BGC-020 (municion.org): RT 0.53, HL 1.75, GØ 5.61, GW 0.70,
+# HØ 7.13; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 0.64
-sources = ["book:cotw-18 p. 527"]
+ramp_top = 1.75
+groove_diameter = 5.61
+ramp_angle = 56.0
+sources = ["book:cotw-18 p. 527", "https://municion.org/producto/5-mm-clement/"]
 
 [bullet]
 type = "jacketed"
