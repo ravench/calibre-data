@@ -12,6 +12,7 @@ rare = true
 
 [mm]
 rim = 14.7
+belt = 15.33
 base = 14.78
 shoulder = 14.0
 shoulder_at = 61.1
@@ -19,8 +20,8 @@ neck = 10.29
 case_length = 72.39
 overall_length = 92.71
 bullet = 9.52
-# The table gives the belt, .603 in., in the rim column; the rim is the .378 Weatherby Magnum's (R1 on its
-# C.I.P. sheet), as the belt is drawn at the rim diameter. shoulder_at: case_length less the 11.3 mm from
+# The table gives the belt, .603 in., in the rim column; rim and belt are the .378 Weatherby Magnum's (R1 and R3
+# on its C.I.P. sheet). shoulder_at: case_length less the 11.3 mm from
 # the mouth measured on the jww.de photo (see [shoulder_angle]).
 sources = [
   "book:cotw-18 p. 452",

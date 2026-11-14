@@ -187,7 +187,8 @@ Most cartridges (C.I.P. letters of the maximum cartridge in brackets):
 
 | Key | Meaning |
 |---|---|
-| `rim` | Rim diameter (R1); the belt for belted cases where it is wider. |
+| `rim` | Rim diameter (R1). |
+| `belt` | Belted cases only, where the belt is wider than the rim: the belt's diameter (R3). The .378 Weatherby Magnum's is 15.33 mm in front of a 14.71 mm rim. Without it the belt is drawn as wide as the rim, so a belted case with a rim narrower than its base needs it; the H&H belt (R3 13.56 over R1 13.51) is close enough to its rim to leave out. |
 | `base` | Body diameter just above the head (P1). |
 | `shoulder` | Bottleneck cases only: diameter where the shoulder starts (P2). |
 | `shoulder_at` | Bottleneck cases only: distance from the head to where the shoulder starts (L1). |
@@ -493,7 +494,7 @@ lists.
 
 `import cartridges` reads the files once. `CATALOGUE` names each category as the apps know it
 (`Randfeuer` for `rimfire`, see `CATEGORIES`) and lists each calibre under its primary category; `ALL_CATALOGUE` adds the categories not yet
-in the apps (`Kanone`), whose dicts have `None` for a measurement no source gives. Besides the tables, `tags(name)` gives `[]`,
+in the apps (`Kanone`), whose dicts have `None` for a measurement no source gives. A dict's `belt` is the belt's diameter where the file gives one, else `None`. Besides the tables, `tags(name)` gives `[]`,
 `["obsolete"]`, `["rare"]` or both; `origin(name)` gives `(code, name, flag)` or `None` (`COUNTRY_NAMES[code]` the name in `en`, `de`, `fr` and `it`) and
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,

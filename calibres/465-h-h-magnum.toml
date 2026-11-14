@@ -12,6 +12,8 @@ rare = true
 
 [mm]
 rim = 14.7
+# The belt, R3 on the C.I.P. sheet, is wider than the rim.
+belt = 15.33
 base = 14.8
 shoulder = 13.5
 shoulder_at = 53.5

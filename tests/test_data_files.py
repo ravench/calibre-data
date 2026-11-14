@@ -366,6 +366,26 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, "ramp_angle = 36.0\n", "")
             self.assertProblem(c, WIN, r"ramp_top, groove_diameter and ramp_angle together, or only rim_thickness")
 
+    def test_a_belt_wider_than_the_rim_has_its_diameter(self):
+        files = [f"calibres/{f}.toml" for f in ("378-weatherby-magnum", "460-a-square-short", "416-weatherby-magnum",
+                                                "300-winchester-magnum", "300-h-h-magnum", "23x152-mm-b")]
+        wby, short, wide, win_mag, hh, cannon = files
+        with Copy() as c:
+            c.edit(wby, "belt = 15.33\n", "")                             # a rim of 14.7 under a body of 14.8
+            c.edit(short, "belt = 15.33", "belt = 14.78")                 # no wider than its body
+            c.edit(wide, "belt = 15.33", "belt = 18.33")                  # a slip of the pen: a fifth wider than the body
+            c.edit(win_mag, "rim = 13.51\n", "rim = 13.51\nbelt = 13.2\n")  # narrower than its rim
+            c.edit(WIN, "rim = 11.9\n", "rim = 11.9\nbelt = 12.5\n")       # a rimless case
+            c.edit(hh, "rim = 13.5\n", "rim = 13.5\nbelt = 13.56\n")       # stays valid: R3 on its sheet, 0.05 over R1
+            c.edit(cannon, "rim = 34.6\n", "")                            # stays valid: a cannon round without its rim
+            self.assertEqual(sorted((p[0], p[1], p[2].split(":")[0]) for p in c.problems()), sorted([
+                (wby, c.line_of(wby, "rim ="), "a belted case with a rim narrower than its base needs [mm] belt (R3 on the C.I.P. sheets)"),
+                (short, c.line_of(short, "belt ="), "[mm] belt 14.78 is the belt's diameter (R3 on the C.I.P. sheets) where it is wider than the rim"),
+                (wide, c.line_of(wide, "belt ="), "[mm] belt 18.33 is the belt's diameter (R3 on the C.I.P. sheets) where it is wider than the rim"),
+                (win_mag, c.line_of(win_mag, "belt ="), "[mm] belt 13.2 is the belt's diameter (R3 on the C.I.P. sheets) where it is wider than the rim"),
+                (WIN, c.line_of(WIN, "belt ="), "only a belted case has a [mm] belt"),
+            ]))
+
     def test_a_shot_shell_has_no_case_head(self):
         with Copy() as c:
             shell = "calibres/12-70.toml"
