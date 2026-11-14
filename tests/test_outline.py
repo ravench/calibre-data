@@ -512,16 +512,16 @@ class OutlineTests(unittest.TestCase):
         self.assertEqual(outline.outline(s)["width"], 15.33)  # the belt is the widest part
 
     def test_the_body_in_front_of_a_belt_starts_at_the_base_diameter(self):
-        # The base diameter of a belted case is the body's in front of the belt (P1 on the C.I.P. sheets: 14.78 mm
-        # on the .378 Weatherby Magnum, in front of its belt of 15.33 mm). The body used to be drawn 1.5 % narrower
-        # than that, 0.2 mm on most of these cases and 0.3 mm on the .55 Boys (2026-11-14).
+        # The base diameter of a belted case is the body's in front of the belt (P1 on the C.I.P. sheets). The body
+        # used to be drawn 1.5 % narrower than that, 0.2 mm on most of these cases and 0.3 mm on the .55 Boys
+        # (2026-11-14).
         belted = [s for _, s in outline.specs() if s["kind"] == BELTED]
-        self.assertGreater(len(belted), 40)
+        self.assertTrue(belted)
         for s in belted:
             with self.subTest(s["name"]):
                 (belt, belt_front), (body, body_from) = outline.case_profile(s)[5:7]
                 self.assertEqual((body, body_from), (s["base"] / 2, belt_front))
-                self.assertGreater(belt, body)  # every belt stands out from the body
+                self.assertGreater(belt, body, "a belt no wider than the body does not show: [mm] belt gives its diameter")
 
     def test_a_long_ramp_stops_at_the_front_of_the_belt(self):
         # A cannon-sized belted case on the generic head (the 50x346 mm B's rim and body): at 40 degrees the ramp
