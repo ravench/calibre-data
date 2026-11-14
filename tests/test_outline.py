@@ -78,6 +78,15 @@ class GapTests(unittest.TestCase):
         passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 589 of 759 on 2026-11-14
         self.assertTrue(0 < passing < len(outline.specs()))
 
+    def test_popular_calibres_are_well_sourced(self):
+        # Raven's list of popular calibres that failed the rule on 2026-11-14, as they get sourced.
+        # SAAMI's groove diameter; the ramp's top from rim thickness + groove width (the "+ .010" dimension) + ramp.
+        for name, top, groove in [("6 mm GT", 3.84, 10.39), (".22 Nosler", 4.12, 8.43), (".277 SIG Fury", 3.86, 10.36),
+                                  (".33 Nosler", 3.73, 12.07)]:
+            with self.subTest(name):
+                self.assertTrue(outline.well_sourced(self.spec(name)))
+                self.assertEqual(cartridges.case_head(name)[1:3], (top, groove))
+
 
 class OutlineTests(unittest.TestCase):
     def test_every_calibre_has_a_valid_outline_inside_its_box(self):
@@ -492,11 +501,10 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".22 Nosler", ".25 Weatherby RPM", ".27 Nosler", ".277 SIG Fury", ".30 Remington AR",
-        ".32 Winchester Self-Loading", ".33 Nosler", ".35 S&W Auto", ".35 Winchester Self-Loading",
-        ".351 Winchester Self-Loading", ".375 CheyTac", ".401 Winchester Self-Loading", ".408 CheyTac",
-        ".458 SOCOM", "12.7x108 mm", "5.8x42 mm", "6 mm GT", "6.5x58 mm Vergueiro", "7.5 FK",
-        "7.92x107 mm DS", "9x23 mm Winchester",
+        ".25 Weatherby RPM", ".27 Nosler", ".30 Remington AR", ".32 Winchester Self-Loading", ".35 S&W Auto",
+        ".35 Winchester Self-Loading", ".351 Winchester Self-Loading", ".375 CheyTac",
+        ".401 Winchester Self-Loading", ".408 CheyTac", ".458 SOCOM", "12.7x108 mm", "5.8x42 mm",
+        "6.5x58 mm Vergueiro", "7.5 FK", "7.92x107 mm DS", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum",
         ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt",
