@@ -31,6 +31,9 @@ sources = ["book:cotw-18 p. 527"]
 [case_head]
 # C.I.P. 30 Super Carry
 rim_thickness = 1.27
+ramp_top = 2.98
+groove_diameter = 7.57
+ramp_angle = 35.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/30-super-carry-250223-en.pdf"]
 
 [bullet]
