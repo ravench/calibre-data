@@ -676,6 +676,8 @@ class CheckTests(unittest.TestCase):
         for name, keys in cartridges.UNSOURCED.items():
             self.assertTrue(keys, name)
         for path in os.listdir(os.path.join(ROOT, "calibres")):  # the list replaced these notes (2026-11-14)
+            if not path.endswith(".toml"):
+                continue
             with open(os.path.join(ROOT, "calibres", path), encoding="utf-8") as f:
                 self.assertNotIn("No source yet for", f.read(), path)
         wrong, whole = r"\[mm\] unsourced lists the measurements of this \[mm\]", r"when none has, leave it out"
@@ -688,11 +690,13 @@ class CheckTests(unittest.TestCase):
                 ("neck = 5.7\n", 'neck = 5.7\nunsourced = "neck"\n', wrong),
                 ("neck = 5.7\n", 'neck = 5.7\nunsourced = ["rim", "base", "neck", "case_length", "overall_length", '
                                  '"bullet"]\n', whole),
-                (LR_MM, 'unsourced = ["neck"]\nsources = []', whole)]:
+                (LR_MM, 'unsourced = ["neck"]\nsources = []', whole),
+                (LR_MM, 'unsourced = ["neck"]', r"\[mm\] needs a sources list")]:  # the one problem
             with self.subTest(new), Copy() as c:
                 c.edit(LR, old, new)
                 if problem:
                     self.assertProblem(c, LR, problem)
+                    self.assertEqual(len(c.problems()), 1)
                 else:
                     self.assertEqual(c.problems(), [])
 

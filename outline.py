@@ -89,7 +89,7 @@ MEASUREMENTS, SHOULDER_ANGLE, GROOVE, RIM_THICKNESS, SHOULDER_MOVED = GAPS = (
 def gaps(s):
     """The GAPS of a calibre's drawing, in their order: () when every drawn dimension comes from a source
     (well_sourced allows a little less). Bullet type, case material and the nose are not counted: they colour the
-    drawing or are schematic anyway."""
+    drawing or are schematic anyway, like a shot shell's brass head and crimp, which differ from load to load."""
     name, found = s["name"], []
     cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
     drawn = ("rim", "base", "neck", "case", "oal", "bullet") + (("sh_at",) if s["shoulder"] else ()) if cartridge else ()
@@ -103,7 +103,7 @@ def gaps(s):
             found.append(GROOVE)
         if rim_thickness(name) is None:
             found.append(RIM_THICKNESS)
-        if bottleneck and MEASUREMENTS not in found and s["sh_at"] > s["case"] - shoulder_run(s) - MIN_NECK:
+        if bottleneck and None not in (s["sh_at"], s["neck"]) and s["sh_at"] > s["case"] - shoulder_run(s) - MIN_NECK:
             found.append(SHOULDER_MOVED)
     return tuple(found)
 

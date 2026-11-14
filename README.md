@@ -217,7 +217,7 @@ Short forms:
 
 `sources` lists every page the measurements come from, the page of most of them first. When only
 some of them have a source, `unsourced` lists the others (estimated, or measured on one round), with
-a note above it saying where they come from; with no source at all, `sources = []` says the same of
+a note above it saying where they come from, where that is known; with no source at all, `sources = []` says the same of
 every measurement. `cartridges.unsourced(name)` gives them, and `outline.gaps` counts them (see
 [Well sourced](#well-sourced)):
 
@@ -524,7 +524,8 @@ same):
 
 A calibre is well sourced when it has none of them, or only `rim_thickness`: a default rim is off by
 about half a millimetre at worst. Bullet type, case material and the nose are not counted: they
-colour the drawing or are schematic anyway.
+colour the drawing or are schematic anyway, like a shot shell's brass head and crimp, which differ
+from load to load.
 
 ## Adding or changing a calibre
 

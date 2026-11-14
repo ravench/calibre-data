@@ -332,7 +332,7 @@ def _check_unsourced(f, mm):
     if not _is_text_list(keys) or not keys or len(set(keys)) != len(keys) or any(k not in measured for k in keys):
         f.problem(line, "[mm] unsourced lists the measurements of this [mm] that no source gives, each once: "
                         'unsourced = ["shoulder_at"]')
-    elif not mm.get("sources") or len(keys) == len(measured):
+    elif mm.get("sources") == [] or len(keys) == len(measured):
         f.problem(line, "[mm] unsourced names the measurements without a source while the others have one: "
                         "when none has, leave it out and write sources = []")
 

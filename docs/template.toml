@@ -97,7 +97,7 @@ bullet = 7.85          # bullet diameter (G1)
 # sources: every page the measurements come from, the page of most of them first: web addresses or
 # pages of a book in books.toml ("book:cotw-18 p. 176": the page number printed in the book).
 # [] when none is checked yet. When only some have a source, list the others above it, with a note
-# saying where they come from (estimated, or measured on one round):
+# saying where they come from, where that is known (estimated, or measured on one round):
 # unsourced = ["shoulder_at"]
 sources = [
   "book:cotw-18 p. 176",
