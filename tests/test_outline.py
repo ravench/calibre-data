@@ -135,11 +135,11 @@ class GapTests(unittest.TestCase):
                 self.assertTrue(outline.well_sourced(self.spec(name)))
                 self.assertEqual(cartridges.case_head(name)[1:3], (top, groove))
 
-    def test_more_heads_from_saami_drawings_and_a_parent_case(self):
+    def test_more_heads_from_saami_drawings_and_a_related_case(self):
         # SAAMI drawings (Z299.4, Z299.3 and the .25 Weatherby RPM's public introduction): ramp top and groove
         # diameter, worked out as above. The .25 Weatherby RPM has the head of the 6.5 and the .338.
         for name, top, groove in [(".27 Nosler", 3.73, 12.07), (".30 Remington AR", 4.03, 10.87),
-                                  ("9x23 mm Winchester", 3.37, 8.81), (".25 Weatherby RPM", 3.77, 10.39)]:
+                                  ("9x23 mm Winchester", 3.36, 8.81), (".25 Weatherby RPM", 3.76, 10.39)]:
             with self.subTest(name):
                 self.assertEqual(outline.gaps(self.spec(name)), ())
                 self.assertEqual(cartridges.case_head(name)[1:3], (top, groove))
@@ -561,9 +561,10 @@ class OutlineTests(unittest.TestCase):
     def test_unsourced_shoulders_keep_the_default(self):
         self.assertEqual(cartridges.shoulder_angle("New calibre"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
-    # Rimless, semi-rimmed and belted cases without an extractor groove from a drawing (C.I.P., SAAMI, AECC) (or a parent case that has
-    # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
-    # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
+    # Rimless, semi-rimmed and belted cases without an extractor groove from a drawing (C.I.P., SAAMI, AECC) of
+    # their own or of a related case (its parent, or a case made from it); they get the generic groove, behind
+    # their own rim thickness where a source gives one. A new rimless, semi-rimmed or belted calibre needs a head
+    # in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
         ".351 Winchester Self-Loading", ".375 CheyTac", ".408 CheyTac", ".458 SOCOM", "5.8x42 mm", "7.5 FK",
         "7.92x107 mm DS",
