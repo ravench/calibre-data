@@ -13,6 +13,8 @@ rare = true
 
 [mm]
 rim = 20.3
+# The belt on the AECC drawing; antitank.co.uk gives its outside diameter as 0.850 in.
+belt = 21.59
 base = 20.14
 shoulder = 18.03
 shoulder_at = 75.0
@@ -20,7 +22,7 @@ neck = 15.51
 case_length = 99.11
 overall_length = 133.64
 bullet = 14.36
-sources = ["https://municion.org/producto/55-boys/"]
+sources = ["https://municion.org/producto/55-boys/", "https://www.antitank.co.uk/ammunition-boys.htm"]
 
 [introduced]
 year = 1936

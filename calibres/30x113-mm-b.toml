@@ -1,7 +1,7 @@
 # The round of the ADEN Mk 4 and later aircraft cannon (the earlier ADEN marks had 30x86 B and
 # 30x111 B cases) and of the French DEFA. Its name gives the bore and case length (Jane's table
-# measures the case at 111.99 mm); KNDS gives the cartridge length, Jane's table the belt (33.78 mm;
-# the rim is 33.30) and the neck.
+# measures the case at 111.99 mm); KNDS gives the cartridge length, Jane's table the rim, the belt
+# and the neck.
 name = "30x113 mm B"
 categories = ["cannon"]
 kind = "belted"
@@ -11,7 +11,8 @@ origin = "GB"
 origin_sources = []
 
 [mm]
-rim = 33.78
+rim = 33.3
+belt = 33.78
 neck = 30.87
 case_length = 113.0
 overall_length = 200.0

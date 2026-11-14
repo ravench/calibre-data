@@ -12,6 +12,7 @@ rare = true
 
 [mm]
 rim = 14.7
+belt = 15.33
 base = 14.78
 shoulder = 14.22
 shoulder_at = 52.27
@@ -19,8 +20,8 @@ neck = 12.29
 case_length = 63.5
 overall_length = 88.9
 bullet = 11.63
-# The table gives the belt, .603 in., in the rim column; the rim is the .460 Weatherby Magnum's (R1 on its
-# C.I.P. sheet); the belt is in [case_head].
+# The table gives the belt, .603 in., in the rim column; rim and belt are the .460 Weatherby Magnum's (R1 and R3
+# on its C.I.P. sheet).
 sources = [
   "book:cotw-18 p. 453",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf",
@@ -41,13 +42,11 @@ degrees = 24.5
 sources = ["https://municion.org/producto/460-a-square-short-belted/"]
 
 [case_head]
-# from the .460 Weatherby Magnum case; C.I.P. sheet. The belt (R3 15.33; .603 in. in Cartridges of the World)
-# is wider than the rim.
+# from the .460 Weatherby Magnum case; C.I.P. sheet
 rim_thickness = 1.6
 ramp_top = 6.4
 groove_diameter = 12.57
 ramp_angle = 45.0
-belt_diameter = 15.33
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
 
 [bullet]

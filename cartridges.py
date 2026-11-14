@@ -27,6 +27,9 @@ LOOSE = (BALL, MINIE, PELLET)  # loose projectiles, not cartridges
 # the case is semi-rimmed or rimmed. A coarse guard, not the line between the kinds: the semi-rimmed ones
 # start lower, at the 8 mm Nambu's 0.27.
 RIMLESS_OVERHANG = 0.3
+# The most a belt is wider than the rim and the body next to it, as a factor (widest today: the .55 Boys' 1.06).
+# A coarse guard against a slip of the pen.
+BELT_PROUD = 1.1
 # Bullet profiles. PATCHED: paper-patched lead body with a steel-capped ogive nose (GP 1890).
 # CRIMPED: no bullet; the case mouth is folded shut in a star (blanks and power-tool loads).
 # BALL: a round ball seated in the case, drawn as the part of the sphere out of the mouth (9 mm Flobert Bosquette).
@@ -54,9 +57,10 @@ CATEGORIES = {"rimfire": "Randfeuer", "handgun": "Kurzwaffe", "rifle": "Langwaff
 NOT_IN_APPS = ("cannon",)
 
 
-def c(name, kind, rim, base, shoulder, neck, case, sh_at, oal, bullet, profile, aliases=()):
-    return dict(name=name, kind=kind, rim=rim, base=base, shoulder=shoulder, neck=neck,
-                case=case, sh_at=sh_at, oal=oal, bullet=bullet, profile=profile, aliases=list(aliases))
+def c(name, kind, rim, base, shoulder, neck, case, sh_at, oal, bullet, profile, aliases=(), belt=None):
+    """`belt`: the belt's diameter where a belted case's is wider than its rim, else None."""
+    return dict(name=name, kind=kind, rim=rim, base=base, shoulder=shoulder, neck=neck, case=case,
+                sh_at=sh_at, oal=oal, bullet=bullet, profile=profile, aliases=list(aliases), belt=belt)
 
 
 def straight(name, kind, rim, base, neck, case, oal, bullet, profile, aliases=()):
@@ -153,15 +157,16 @@ def slug(name):
 
 
 # Measurements by shape: the short forms of balls, Minié bullets, pellets, shot shells and crimped
-# blanks, and the full form of every other cartridge (shoulder and shoulder_at only for bottlenecks).
-MM_FULL = ("rim", "base", "shoulder", "shoulder_at", "neck", "case_length", "overall_length", "bullet")
+# blanks, and the full form of every other cartridge (shoulder and shoulder_at only for bottlenecks, belt
+# only for a belt wider than the rim).
+MM_FULL = ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "case_length", "overall_length", "bullet")
 MM_SHAPES = {  # shape: (required keys, optional keys)
     "ball": (("diameter",), ()),
     "loose": (("diameter", "length"), ()),
     "shot": (("diameter", "rim", "length"), ("case_length",)),
     "blank": (("rim", "base", "mouth", "length"), ()),
-    "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"), ("shoulder", "shoulder_at")),
-    "partial": (("case_length", "bullet"), ("rim", "base", "shoulder", "shoulder_at", "neck", "overall_length")),
+    "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"), ("belt", "shoulder", "shoulder_at")),
+    "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length")),
 }
 TOP_KEYS = {"name", "categories", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
             "origin_candidates", "origin_sources", "worldwide", "obsolete", "rare"}
@@ -173,8 +178,7 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "introduced": ((), ("year", "unknown"), "optional"),
     "primer": (("size",), ("diameter",), "may be empty"),  # diameter: measured mm, required for miniature
     "shoulder_angle": (("degrees",), (), "required"),
-    # belt_diameter: the belt of a belted case, where it is wider than the rim
-    "case_head": (("rim_thickness",), HEAD_GROOVE + ("belt_diameter",), "required"),
+    "case_head": (("rim_thickness",), HEAD_GROOVE, "required"),
     "bullet": (("type",), ("jacket", "patch_length"), "may be empty"),
     "case": (("material",), (), "may be empty"),  # every case but brass needs a source
     "current_cases": (("materials",), (), "required"),
@@ -237,7 +241,7 @@ def _entry(name, kind, profile, aliases, m, category=None):
     if shape == "blank":
         return blank(name, m["rim"], m["base"], m["mouth"], m["length"], aliases, kind=kind)
     return c(name, kind, m.get("rim"), m.get("base"), m.get("shoulder"), m.get("neck"), m["case_length"],
-             m.get("shoulder_at"), m.get("overall_length"), m["bullet"], profile, aliases)
+             m.get("shoulder_at"), m.get("overall_length"), m["bullet"], profile, aliases, m.get("belt"))
 
 
 class _File:
@@ -617,6 +621,13 @@ def _read_calibre(f, countries, books=None):
     if kind == RIMLESS and round(facts["mm"].get("rim", 0) - facts["mm"].get("base", 0), 3) > RIMLESS_OVERHANG:
         f.problem(f.line("mm", "rim"), f"a rimless case has a rim at most {RIMLESS_OVERHANG} mm wider than its base: "
                                        "with a wider one it is semi-rimmed or rimmed")
+    belt, widest = facts["mm"].get("belt"), max(facts["mm"].get("rim", 0), facts["mm"].get("base", 0))
+    if belt is not None and not (kind == BELTED and (not widest or widest < belt <= widest * BELT_PROUD)):
+        f.problem(f.line("mm", "belt"), "[mm] belt is the belt of a belted case (R3 on the C.I.P. sheets) where it is "
+                                        "wider than the rim: wider than rim and base, by a tenth at most")
+    elif belt is None and kind == BELTED and facts["mm"].get("rim", 0) < facts["mm"].get("base", 0):
+        f.problem(f.line("mm", "rim"), "a belted case with a rim narrower than its base needs [mm] belt (R3 on the "
+                                       "C.I.P. sheets): without it the belt is drawn as wide as the rim")
     if category == "cannon" and not 20 <= facts["mm"]["bullet"] <= 57:
         f.problem(f.line("mm", "bullet"), "cannon holds the 20 to 57 mm cannon rounds: bullet is 20 to 57")
     if kind in LOOSE + (SHOT,):
@@ -669,13 +680,6 @@ def _read_calibre(f, countries, books=None):
         elif groove and len(groove) < len(HEAD_GROOVE):
             f.problem(f.line("case_head"), "[case_head] has ramp_top, groove_diameter and ramp_angle together, "
                                            "or only rim_thickness")
-    belt = facts.get("case_head", {}).get("belt_diameter")
-    if belt is not None and (kind != BELTED or belt <= m.get("base", 0)):
-        f.problem(f.line("case_head", "belt_diameter"), "[case_head] belt_diameter is the belt of a belted case (R3 on "
-                                                        "the C.I.P. sheets), wider than the body in front of it ([mm] base)")
-    elif belt is None and kind == BELTED and m.get("rim", 0) < m.get("base", 0):
-        f.problem(f.line("mm", "rim"), "a belted case with a rim narrower than its base needs [case_head] belt_diameter "
-                                       "(R3 on the C.I.P. sheets): without it the belt is drawn as wide as the rim")
     aliases = d.get("aliases", []) if _is_text_list(d.get("aliases")) else []
     entry = _entry(name, kind, profile, aliases, facts["mm"], category)
     return entry, d, facts
@@ -873,7 +877,7 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "BELT_DIAMETERS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
                          "CURRENT_CASES", "SOURCES", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
@@ -920,8 +924,6 @@ def load(root=ROOT):
             if "case_head" in facts:
                 h = facts["case_head"]
                 t["RIM_THICKNESS"][n] = (h["rim_thickness"], first("case_head"))
-                if "belt_diameter" in h:
-                    t["BELT_DIAMETERS"][n] = h["belt_diameter"]
                 if "ramp_top" in h:
                     t["CASE_HEADS"][n] = (h["rim_thickness"], h["ramp_top"], h["groove_diameter"], h["ramp_angle"],
                                           first("case_head"))
@@ -983,8 +985,6 @@ SHOULDER_ANGLES = _t["SHOULDER_ANGLES"]
 CASE_HEADS = _t["CASE_HEADS"]
 # {name: (rim thickness, first source)}: every case with a [case_head], CASE_HEADS' ones too.
 RIM_THICKNESS = _t["RIM_THICKNESS"]
-# {name: belt diameter R3}: the belted cases whose belt is wider than the rim; the others' is as wide as the rim.
-BELT_DIAMETERS = _t["BELT_DIAMETERS"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
 # code: {"en", "de", "fr", "it"}: the country's name in the apps' languages (Kaliberfinder's
@@ -1046,11 +1046,6 @@ def rim_thickness(name):
     """The rim's thickness in mm, or None where no source gives it."""
     entry = RIM_THICKNESS.get(name)
     return entry[0] if entry else None
-
-
-def belt_diameter(name):
-    """The belt's diameter in mm where a belted case's [case_head] gives it, or None: a belt as wide as the rim."""
-    return BELT_DIAMETERS.get(name)
 
 
 def categories(name):

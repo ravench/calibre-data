@@ -1,5 +1,5 @@
 # The round of the Mauser BK-27 aircraft cannon. Its name gives the bore and case length; Jane's
-# table gives the belt (34.49 mm; the rim is 34.11) and the neck, its p. 96 the length. The year is
+# table gives the rim, the belt and the neck, its p. 96 the length. The year is
 # the gun's first year of production (Wikipedia gives no year of service).
 name = "27x145 mm B"
 categories = ["cannon"]
@@ -10,7 +10,8 @@ origin = "DE"
 origin_sources = ["https://en.wikipedia.org/wiki/Mauser_BK-27"]
 
 [mm]
-rim = 34.49
+rim = 34.11
+belt = 34.49
 neck = 28.7
 case_length = 145.0
 overall_length = 243.0

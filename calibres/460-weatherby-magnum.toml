@@ -12,6 +12,8 @@ rare = true
 
 [mm]
 rim = 14.7
+# The belt (R3 on the C.I.P. sheet) is wider than the rim (R1 14.71).
+belt = 15.33
 base = 14.8
 shoulder = 14.2
 shoulder_at = 60.39
@@ -38,12 +40,11 @@ degrees = 28.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
 
 [case_head]
-# C.I.P. 460 Weath. Mag.: R 1.60, E 6.40, E1 12.57, delta 45°. The belt (R3 15.33) is wider than the rim (R1 14.71).
+# C.I.P. 460 Weath. Mag.: R 1.60, E 6.40, E1 12.57, delta 45°.
 rim_thickness = 1.6
 ramp_top = 6.4
 groove_diameter = 12.57
 ramp_angle = 45.0
-belt_diameter = 15.33
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
 
 [bullet]

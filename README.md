@@ -187,7 +187,8 @@ Most cartridges (C.I.P. letters of the maximum cartridge in brackets):
 
 | Key | Meaning |
 |---|---|
-| `rim` | Rim diameter (R1). A belt wider than the rim is `belt_diameter` in `[case_head]`. |
+| `rim` | Rim diameter (R1). |
+| `belt` | Belted cases only, where the belt is wider than the rim: the belt's diameter (R3). The .378 Weatherby Magnum's is 15.33 mm in front of a 14.71 mm rim. Without it the belt is drawn as wide as the rim, so a belted case with a rim narrower than its base needs it. |
 | `base` | Body diameter just above the head (P1). |
 | `shoulder` | Bottleneck cases only: diameter where the shoulder starts (P2). |
 | `shoulder_at` | Bottleneck cases only: distance from the head to where the shoulder starts (L1). |
@@ -307,9 +308,6 @@ source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
 semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet gives it, all three or
 none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
-A belt is drawn as wide as the rim. Where it is wider, `belt_diameter` (R3) gives it: the .378 Weatherby
-Magnum's belt is 15.33 mm in front of a 14.71 mm rim, and a belted case whose rim is narrower than its
-base needs it.
 A case made from a parent case without its own sheet keeps the parent's head (the note says which).
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
 its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal
@@ -491,11 +489,11 @@ lists.
 
 `import cartridges` reads the files once. `CATALOGUE` names each category as the apps know it
 (`Randfeuer` for `rimfire`, see `CATEGORIES`) and lists each calibre under its primary category; `ALL_CATALOGUE` adds the categories not yet
-in the apps (`Kanone`), whose dicts have `None` for a measurement no source gives. Besides the tables, `tags(name)` gives `[]`,
+in the apps (`Kanone`), whose dicts have `None` for a measurement no source gives. A dict's `belt` is the belt's diameter where the file gives one, else `None`. Besides the tables, `tags(name)` gives `[]`,
 `["obsolete"]`, `["rare"]` or both; `origin(name)` gives `(code, name, flag)` or `None` (`COUNTRY_NAMES[code]` the name in `en`, `de`, `fr` and `it`) and
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
-`case_head(name)`, `rim_thickness(name)`, `belt_diameter(name)`, `lookalikes(name)` and `categories(name)` look up one value; `sources(name, table)` lists every source
+`case_head(name)`, `rim_thickness(name)`, `lookalikes(name)` and `categories(name)` look up one value; `sources(name, table)` lists every source
 of a table (`"mm"`, `"introduced"`, `"primer"`, `"origin"`, ...). `COLOUR_CODES` holds the tip, base and annulus colour codes, each
 with its own sources, and `FIRED_BY` the firearms of a round. A problem in the files stops the import with a
 `DataError` that lists them all.

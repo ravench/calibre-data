@@ -19,10 +19,10 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(s["name"]):
                 o = outline.outline(s)
                 self.assertAlmostEqual(o["height"], s["oal"], places=2)
-                widest = max(s["rim"], s["base"], s["bullet"], cartridges.belt_diameter(s["name"]) or 0)
-                self.assertAlmostEqual(o["width"], widest, places=2)
                 paths = [o[k] for k in ("case", "head", "bullet", "patch", "tip") if k in o]
                 self.assertTrue(paths)
+                xs = [x for d in paths for x, _ in points(d)]
+                self.assertAlmostEqual(max(xs) - min(xs), o["width"], delta=0.02)  # the box is as wide as the drawing
                 for d in paths:
                     self.assertRegex(d, PATH)
                     for x, y in points(d):
@@ -495,7 +495,7 @@ class OutlineTests(unittest.TestCase):
                         self.assertAlmostEqual(math.degrees(math.atan2(r1 - r0, h1 - h0)), angle, places=6)
                 else:
                     self.assertAlmostEqual(math.degrees(math.atan2(r1 - r0, h1 - h0)), angle, places=6)
-                    belt = cartridges.belt_diameter(name) or s["rim"]  # as wide as the rim unless the file gives it
+                    belt = s["belt"] or s["rim"]  # as wide as the rim unless the file gives it
                     self.assertEqual(prof[5], (belt / 2, top_at))  # front of the belt
                 heights = [h for _, h in prof]
                 self.assertEqual(heights, sorted(heights))
@@ -589,10 +589,10 @@ class OutlineTests(unittest.TestCase):
         # Semi-rimmed (rim 9.91 mm on a 8.93 mm body): the groove is 90 % of the body, not level with it.
         self.assertEqual(head(".32 Winchester Self-Loading", 5),
                          [(4.955, 0), (4.955, 1.27), (4.0185, 1.27), (4.0185, 2.27), (4.465, 2.8021)])
-        # Belted: the ramp ends on the belt, which ends 4.3 mm in front of the rim; behind a rim of .062 in
-        # (COTW 18) groove and belt move up with it.
-        self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.8305, 1.3), (8.8305, 2.3), (10.15, 3.8725),
-                                               (10.15, 5.6), (9.919, 5.6)])
+        # Belted: the ramp ends on the belt, which ends 4.3 mm in front of the rim (the .55 Boys' own belt, 21.59 mm,
+        # stands over its 20.3 mm rim); behind a rim of .062 in (COTW 18) groove and belt move up with it.
+        self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.8305, 1.3), (8.8305, 2.3), (10.795, 4.6412),
+                                               (10.795, 5.6), (9.919, 5.6)])
         self.assertEqual(head(".400/375 Belted Nitro Express", 7),
                          [(5.92, 0), (5.92, 1.57), (5.121, 1.57), (5.121, 2.57), (5.92, 3.5222), (5.92, 5.87), (5.6047, 5.87)])
         for name in self.HEAD_UNSOURCED:
