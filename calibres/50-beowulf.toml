@@ -28,9 +28,13 @@ size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
 
 [case_head]
-# .055 in.
+# .055 in. (COTW); groove from the AECC drawing 13-042-CRC-030 (municion.org): RT 1.31, HL 4.70,
+# GØ 9.23, GW 1.65, HØ 13.71; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.4
-sources = ["book:cotw-18 p. 453"]
+ramp_top = 4.7
+groove_diameter = 9.23
+ramp_angle = 52.0
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/50-beowulf/"]
 
 [bullet]
 type = "jacketed"

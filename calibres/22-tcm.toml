@@ -14,15 +14,15 @@ origin_sources = []
 rare = true
 
 [mm]
-rim = 9.6
-base = 9.55
+# Rim, base and case length from the AECC drawing 06-026-BGC-010 (municion.org: RØ 9.53, HØ 9.46, CL 26.04).
+rim = 9.53
+base = 9.46
 shoulder = 9.19
 shoulder_at = 17.72
 neck = 6.48
-case_length = 25.96
+case_length = 26.04
 overall_length = 32.13
 bullet = 5.7
-unsourced = ["rim", "base", "case_length"]
 sources = [
   "book:cotw-18 p. 451",
   "https://municion.org/producto/22-tuason-craig-micromagnum/",
@@ -44,9 +44,13 @@ degrees = 18.8
 sources = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]
 
 [case_head]
-# .049 in.
+# .049 in. (COTW); groove from the AECC drawing 06-026-BGC-010 (municion.org): RT 1.22, HL 3.28,
+# GØ 8.20, GW 1.05, HØ 9.46; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.24
-sources = ["book:cotw-18 p. 451"]
+ramp_top = 3.28
+groove_diameter = 8.2
+ramp_angle = 32.0
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/22-tuason-craig-micromagnum/"]
 
 [bullet]
 # Armscor, its only maker, loads it with jacketed hollow points only.
