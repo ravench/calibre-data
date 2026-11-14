@@ -37,10 +37,10 @@ degrees = 35
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=134"]
 
 [case_head]
-# SAAMI 33 Nosler: rim thickness 0.050, groove 0.475 at 32 degrees, groove width 0.035,
+# SAAMI 33 Nosler: rim thickness 0.050, groove 0.475 at 32 degrees, groove width 0.037,
 # body 0.5500; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 32)
 rim_thickness = 1.27
-ramp_top = 3.68
+ramp_top = 3.73
 groove_diameter = 12.07
 ramp_angle = 32.0
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=134"]

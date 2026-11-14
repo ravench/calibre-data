@@ -65,10 +65,12 @@ class GapTests(unittest.TestCase):
 
     def test_popular_calibres_are_well_sourced(self):
         # Raven's list of popular calibres that failed the rule on 2026-11-14, as they get sourced.
-        for name, groove in [("6 mm GT", 10.39), (".22 Nosler", 8.43), (".277 SIG Fury", 10.36), (".33 Nosler", 12.07)]:
+        # SAAMI's groove diameter; the ramp's top from rim thickness + groove width (the "+ .010" dimension) + ramp.
+        for name, top, groove in [("6 mm GT", 3.84, 10.39), (".22 Nosler", 4.12, 8.43), (".277 SIG Fury", 3.86, 10.36),
+                                  (".33 Nosler", 3.73, 12.07)]:
             with self.subTest(name):
                 self.assertTrue(outline.well_sourced(self.spec(name)))
-                self.assertEqual(cartridges.case_head(name)[2], groove)  # SAAMI's groove diameter
+                self.assertEqual(cartridges.case_head(name)[1:3], (top, groove))
 
 
 class OutlineTests(unittest.TestCase):

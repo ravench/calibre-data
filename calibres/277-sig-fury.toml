@@ -38,10 +38,10 @@ degrees = 30
 sources = ["https://www.xxlreloading.com/"]
 
 [case_head]
-# SAAMI 277 SIG Fury: rim thickness 0.054, groove 0.408 at 36 degrees, groove width 0.039,
+# SAAMI 277 SIG Fury: rim thickness 0.054, groove 0.408 at 36 degrees, groove width 0.055,
 # body 0.4703; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 36)
 rim_thickness = 1.37
-ramp_top = 3.45
+ramp_top = 3.86
 groove_diameter = 10.36
 ramp_angle = 36.0
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=103"]
