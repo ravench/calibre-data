@@ -3,7 +3,7 @@
 # Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base,
 # the ratio of the measured .22 blank above, because C.I.P. gives no crimp size.
 name = ".320 Knall"
-categories = ["rimfire"]
+categories = ["handgun"]
 kind = "rimmed"
 profile = "crimped"
 aliases = ["320knall", "320", "320blanc"]

@@ -1,7 +1,9 @@
 # Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
 name = ".308 Marlin Express"
 categories = ["rifle"]
-kind = "rimless"
+# Semi-rimmed like its parent, the .307 Winchester (Wikipedia): the rim is 1 mm wider than the base and
+# the C.I.P. sheet draws an extractor groove in front of it. COTW 18 p. 176 lists it as rimmed (type A).
+kind = "semi-rimmed"
 profile = "spitzer"
 aliases = ["308me"]
 
