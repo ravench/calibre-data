@@ -34,11 +34,22 @@ class GapTests(unittest.TestCase):
             for s in items:
                 self.assertLessEqual(set(outline.gaps(s)), set(outline.GAPS), s["name"])
 
+    def test_a_crimped_blanks_mouth_is_a_sketch(self):
+        # Raven 2026-11-14: "treat the crimp as a sketch". No sheet gives a star crimp's size: the mouth stays
+        # listed as unsourced, but it keeps no blank from being well sourced.
+        for name in (".22 Long Knall", "6 mm Flobert Knall", "9 mm R Knall", ".320 Knall", ".45 Knall"):
+            with self.subTest(name):
+                self.assertEqual(cartridges.unsourced(name), ("mouth",))
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+        s = dict(self.spec(".45 Knall"), profile=FLAT)  # on any other profile it would still be a gap
+        self.assertEqual(outline.gaps(s)[:1], ("measurements",))
+
     def test_gaps_follow_the_tables(self):
         for _, s in outline.specs():
             gaps, name = outline.gaps(s), s["name"]
             cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
-            self.assertEqual("measurements" in gaps, bool(cartridges.unsourced(name)), name)
+            crimp = {"mouth"} if s["profile"] == CRIMPED else set()  # a sketch (Raven 2026-11-14)
+            self.assertEqual("measurements" in gaps, bool(set(cartridges.unsourced(name)) - crimp), name)
             self.assertEqual("rim_thickness" in gaps, cartridge and name not in cartridges.RIM_THICKNESS, name)
             self.assertEqual("groove" in gaps, s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)
                              and name not in cartridges.CASE_HEADS, name)
