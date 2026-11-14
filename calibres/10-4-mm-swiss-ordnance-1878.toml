@@ -1,6 +1,7 @@
 # Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
 # the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
+# The AECC drawing 11-020-CBC-020 (municion.org) agrees within 0.07 mm.
 name = "10.4 mm Swiss Ordnance 1878"
 categories = ["handgun"]
 kind = "rimmed"

@@ -422,7 +422,7 @@ class OutlineTests(unittest.TestCase):
     def test_unsourced_shoulders_keep_the_default(self):
         self.assertEqual(cartridges.shoulder_angle("New calibre"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
-    # Rimless, semi-rimmed and belted cases without an extractor groove from a C.I.P. sheet (or a parent case that has
+    # Rimless, semi-rimmed and belted cases without an extractor groove from a drawing (C.I.P., SAAMI, AECC) (or a parent case that has
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
