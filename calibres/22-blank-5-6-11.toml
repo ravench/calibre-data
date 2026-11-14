@@ -1,16 +1,16 @@
 # .22 crimped blank, the size of the yellow/green/red power-tool loads and starter pistol
-# blanks. C.I.P. lists this size as «22 SH (5,6/11)»: a 5.6 mm (.22) case, 11 mm long. Its «6,8/11»
-# is the .27 calibre load (rim 8.50, body 6.86), which this entry was named after by mistake
-# (a rename changes the apps' id for it, so it waits for Raven's decision). Raven's captures of
+# blanks. C.I.P. lists this size as «22 SH (5,6/11)»: a 5.6 mm (.22) case, 11 mm long.
+# Until 2026-11-14 this entry was named «.22 Blank (6.8/11)» by mistake: C.I.P.'s «6,8/11» is
+# the .27 calibre load (rim 8.50, body 6.86), which is not in the catalogue. Raven's captures of
 # fired blanks of this entry measure about 11.4 x 6.9 mm: the .22's rim, not 8.50.
 # Crimp shape after fired ones in Raven's photos (2026-11-04): the star opens on firing but the
 # petals stay narrower than the body.
-name = ".22 Blank (6.8/11)"
+name = ".22 Blank (5.6/11)"
 categories = ["rimfire"]
 kind = "rimfire"
 profile = "crimped"
-aliases = ["22blank", "6.8/11", "6.8x11", "platzpatrone", "kartusche", "setzkartusche", "bolzensetzer"]
-display_aliases = [".22 Platzpatrone", "Setzkartusche 6.8/11"]
+aliases = ["22blank", "5.6/11", "5.6x11", "platzpatrone", "kartusche", "setzkartusche", "bolzensetzer"]
+display_aliases = [".22 Platzpatrone", "Setzkartusche 5.6/11"]
 
 [mm]
 # C.I.P. 22 SH (5,6/11), maximum cartridge: rim R1, base P1, length L6 (crimped; the open case L3 is

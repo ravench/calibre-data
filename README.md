@@ -40,7 +40,7 @@ the apps read those whole.
   poster the same tables as before (`CATALOGUE`, `INTRODUCED`, `PRIMERS`, `ORIGIN`, ...).
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side (today .308 Win / 7.62
-  NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (e.g. the .22 blank 6.8/11) has no bullet:
+  NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (e.g. the .22 blank 5.6/11) has no bullet:
   its case narrows to the star crimp. A wadcutter seated flush (.32 S&W Long Wadcutter) shows no
   bullet either. `bulletMaterial` is `steel` (GP 1890 cap, the MPS dart, or a steel jacket),
   `cupronickel` (a silver jacket) or `lead`; a cartridge's bullet is copper when it is missing (a
@@ -170,7 +170,7 @@ a choice, follow the calibre's family (`.25 WSSM` like `.223 WSSM`, `.38-56 WCF`
   them apart: `.450/400 Nitro Express 3 inch`, `10.4 mm Swiss Ordnance 1872 Rimfire`,
   `.44 Henry Centrefire`.
 - A cartridge with two common names gets the other one in brackets, mostly the metric one first:
-  `9 mm Browning kurz (.380 ACP)`, `9.3x66 mm Sako (.370 Sako Magnum)`, `.22 Blank (6.8/11)`. Swiss
+  `9 mm Browning kurz (.380 ACP)`, `9.3x66 mm Sako (.370 Sako Magnum)`, `.22 Blank (5.6/11)`. Swiss
   service rounds carry their service name: `7.5x55 mm Swiss (GP 11)`, `5.6 mm GP 90`.
 - Round balls, BBs and pellets: the size they are sold as, and in brackets the real diameter or the
   other size people know them by: `.44 Rundkugel (.454)`, `4.5 mm Diabolo (.177)`,

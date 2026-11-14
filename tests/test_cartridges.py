@@ -372,12 +372,15 @@ class CatalogueTests(unittest.TestCase):
 
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}
-        b = by_name[".22 Blank (6.8/11)"]
+        b = by_name[".22 Blank (5.6/11)"]
         self.assertEqual(b["kind"], RIMFIRE)
         self.assertEqual((b["rim"], b["case"], b["oal"]), (7.06, 11.1, 11.1))  # C.I.P. 22 SH (5,6/11)
         self.assertEqual(b["base"], by_name[".22 Short"]["base"], "same .22 case body")
         self.assertIn("platzpatrone", b["aliases"])
         self.assertFalse(is_obsolete(b["name"]))
+        # C.I.P.'s 6,8/11 is the .27 calibre load, which the catalogue does not hold: nothing answers to it.
+        self.assertIn("5.6/11", b["aliases"])
+        self.assertFalse([s["name"] for s in ALL if "6.8/11" in s["name"] or {"6.8/11", "6.8x11"} & set(s["aliases"])])
 
     def test_alarm_blanks_keep_the_cip_values(self):
         by_name = {s["name"]: s for s in ALL}
@@ -561,9 +564,9 @@ class CatalogueTests(unittest.TestCase):
         sizes = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)}
         blanks = {s["name"] for s in ALL
                   if is_blank(s["profile"], s["rim"], s["base"], s["neck"], s["bullet"], s["case"], s["oal"])}
-        self.assertEqual(len(blanks), 9)  # 9 mm P.A.K., .22 Blank (6.8/11) and the seven Knall rounds
+        self.assertEqual(len(blanks), 9)  # 9 mm P.A.K., .22 Blank (5.6/11) and the seven Knall rounds
         self.assertFalse(blanks & sizes)
-        self.assertLessEqual(sizes | {".22 Blank (6.8/11)"}, set(INTRODUCED_UNKNOWN))  # no single launch year
+        self.assertLessEqual(sizes | {".22 Blank (5.6/11)"}, set(INTRODUCED_UNKNOWN))  # no single launch year
         self.assertIn("9 mm P.A.K.", blanks)
         for name in sizes | blanks:
             self.assertIsNone(origin(name), name)
@@ -685,7 +688,7 @@ class CatalogueTests(unittest.TestCase):
                     self.assertEqual(s["name"] in BULLET_INFERRED, unchecked and bullet(s["name"]) != usual, s["name"])
                 else:
                     self.assertIsNone(bullet(s["name"]), s["name"])
-        for name in ("12/70", ".22 Blank (6.8/11)", "9 mm P.A.K.", "8 mm Knall", ".315 Knall"):
+        for name in ("12/70", ".22 Blank (5.6/11)", "9 mm P.A.K.", "8 mm Knall", ".315 Knall"):
             self.assertIsNone(bullet(name), name)
         self.assertEqual(bullet("7.62x38 mm R Nagant"), JACKETED)  # seated inside the case, not a blank
         self.assertEqual(bullet("5.66x39 mm MPS"), STEEL)

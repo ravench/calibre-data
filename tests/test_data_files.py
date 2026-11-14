@@ -102,7 +102,7 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(cats[".22 LR"], ("Randfeuer", "Langwaffe", "Kurzwaffe"))
         self.assertEqual(cats[".44-40 WCF"], ("Schwarzpulver", "Langwaffe", "Kurzwaffe"))
         self.assertEqual(cats["10.4x38 mm R Vetterli"], ("Schwarzpulver", "Langwaffe", "Randfeuer"))
-        self.assertEqual(cats[".22 Blank (6.8/11)"], ("Randfeuer",))  # a blank is fired by neither
+        self.assertEqual(cats[".22 Blank (5.6/11)"], ("Randfeuer",))  # a blank is fired by neither
         kinds = {s["name"]: s["kind"] for _, items in cartridges.ALL_CATALOGUE for s in items}
         for name, c in cats.items():
             with self.subTest(name):
@@ -228,7 +228,7 @@ class LoadTests(unittest.TestCase):
     def test_short_forms_build_the_same_dicts_as_the_helpers(self):
         self.assertEqual(next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == "12/70"),
                          cartridges.shot("12/70", 20.6, 22.45, 61.09, ["12", "12/70", "12ga", "12gauge"], 70.0))
-        blank = next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == ".22 Blank (6.8/11)")
+        blank = next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == ".22 Blank (5.6/11)")
         self.assertEqual((blank["neck"], blank["oal"], blank["profile"]), (3.4, 11.1, "crimped"))
 
 
@@ -711,7 +711,7 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, WIN, r"both shoulder and shoulder_at")
 
     def test_a_case_narrows_from_its_base_to_its_mouth(self):
-        acp, rem, blank = "calibres/45-acp.toml", "calibres/223-remington.toml", "calibres/22-blank-6-8-11.toml"
+        acp, rem, blank = "calibres/45-acp.toml", "calibres/223-remington.toml", "calibres/22-blank-5-6-11.toml"
         with Copy() as c:
             c.edit(WIN, "shoulder = 11.5", "shoulder = 11.95")  # over its base of 11.9
             c.edit(rem, "neck = 6.4", "neck = 9.03")            # over its shoulder of 9.0
@@ -803,7 +803,7 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, WIN, r"a rimless calibre's \[bullet\] type is one of jacketed, lead")
             self.assertProblem(c, ball, r"a ball calibre's \[bullet\] type is one of lead, steel, plastic")
             self.assertProblem(c, "calibres/12-70.toml", r"shot shells, blanks and cannon rounds have no \[bullet\]")
-        blank, cannon = "calibres/22-blank-6-8-11.toml", "calibres/20x102-mm.toml"
+        blank, cannon = "calibres/22-blank-5-6-11.toml", "calibres/20x102-mm.toml"
         pak = "calibres/9-mm-p-a-k.toml"
         with Copy() as c:
             c.edit(ball, f'type = "lead"\n{HORNADY_490}', 'type = "steel"\nsources = []')
