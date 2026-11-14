@@ -70,14 +70,14 @@ worldwide = true
 # ---------------------------------------------------------------------------------------------
 
 [mm]
-rim = 11.9            # rim diameter (R1); the belt for belted cases where it is wider
-base = 11.9           # body diameter just above the head (P1)
-shoulder = 11.5       # bottleneck cases only: diameter where the shoulder starts (P2)
-shoulder_at = 39.62   # bottleneck cases only: head to where the shoulder starts (L1)
-neck = 8.7            # neck diameter at the mouth (H2)
-case_length = 51.2    # case length (L3)
+rim = 11.9             # rim diameter (R1); the belt for belted cases where it is wider
+base = 11.9            # body diameter just above the head (P1)
+shoulder = 11.5        # bottleneck cases only: diameter where the shoulder starts (P2)
+shoulder_at = 39.62    # bottleneck cases only: head to where the shoulder starts (L1)
+neck = 8.7             # neck diameter at the mouth (H2)
+case_length = 51.2     # case length (L3)
 overall_length = 71.12 # cartridge length (L6)
-bullet = 7.82         # bullet diameter (G1)
+bullet = 7.82          # bullet diameter (G1)
 # A straight case leaves out shoulder and shoulder_at. The neck length and body taper are not
 # stored: the drawing works them out from these values and the shoulder angle.
 #

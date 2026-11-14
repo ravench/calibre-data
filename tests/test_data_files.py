@@ -404,8 +404,9 @@ class CheckTests(unittest.TestCase):
             c.edit(LR, LR_MM, 'sources = [\n  "book:cotw-18 p. 670",\n  "https://saami.org/",\n]')
             self.assertEqual(c.problems(), [])
             self.assertEqual(load(c.dir)["SOURCES"][(".22 LR", "mm")], ["book:cotw-18 p. 670", "https://saami.org/"])
-        self.assertEqual(sources(".22 LR", "mm")[1:], ["book:janes-ammo-2002 p. 681", "book:cotw-18 p. 670",
-                                                       "book:tm-43-0001-27 p. 3-5"])
+        self.assertEqual(sources(".22 LR", "mm"), [
+            "https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=22",
+            "book:janes-ammo-2002 p. 681", "book:cotw-18 p. 670", "book:tm-43-0001-27 p. 3-5"])
         self.assertEqual(cartridges.BOOKS["cotw-18"]["isbn"], "978-1-959265-46-7")
 
     def test_a_manual_numbered_by_chapter_has_pages_like_14_13(self):

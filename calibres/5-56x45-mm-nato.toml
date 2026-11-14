@@ -13,7 +13,7 @@ worldwide = true
 rim = 9.6
 base = 9.6
 shoulder = 9.0
-# shoulder_at: L1 36.52 on the C.I.P. drawing on Wikipedia (File:.223_Remington.svg).
+# shoulder_at: L1 on the C.I.P. 223 Rem. sheet.
 shoulder_at = 36.52
 neck = 6.4
 case_length = 44.7
@@ -23,6 +23,7 @@ sources = [
   "book:hornady-10 p. 174",
   "book:cotw-18 p. 573",
   "https://en.wikipedia.org/wiki/.223_Remington",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf",
 ]
 
 [introduced]
