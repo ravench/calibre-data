@@ -32,7 +32,8 @@ degrees = 30
 sources = ["https://saami.org/wp-content/uploads/2026/04/Public-Introduction-8.6-BLACKOUT-2026-04-07.pdf"]
 
 [case_head]
-# same case head as its parent, the 6.5 Creedmoor (Wikipedia); C.I.P. 6,5 Creedmoor
+# same case head as its parent, the 6.5 Creedmoor (Wikipedia); C.I.P. 6,5 Creedmoor.
+# SAAMI's 8.6 Blackout drawing gives the same rim thickness, groove width and 36 degree angle.
 rim_thickness = 1.37
 ramp_top = 3.84
 groove_diameter = 10.39
@@ -40,6 +41,7 @@ ramp_angle = 36.0
 sources = [
   "https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf",
   "https://en.wikipedia.org/wiki/8.6_Blackout",
+  "https://saami.org/wp-content/uploads/2026/04/Public-Introduction-8.6-BLACKOUT-2026-04-07.pdf",
 ]
 
 [bullet]

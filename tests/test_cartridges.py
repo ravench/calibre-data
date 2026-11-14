@@ -555,8 +555,10 @@ class CatalogueTests(unittest.TestCase):
         # blank() and the plain-cylinder alarm rounds from straight()) are trade sizes made everywhere:
         # none of them has a country.
         sizes = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)}
-        blanks = {s["name"] for s in ALL if s["oal"] == s["case"] and s["bullet"] == s["base"]} - sizes
+        blanks = {s["name"] for s in ALL
+                  if is_blank(s["profile"], s["rim"], s["base"], s["neck"], s["bullet"], s["case"], s["oal"])}
         self.assertEqual(len(blanks), 9)  # 9 mm P.A.K., .22 Blank (6.8/11) and the seven Knall rounds
+        self.assertFalse(blanks & sizes)
         self.assertLessEqual(sizes | {".22 Blank (6.8/11)"}, set(INTRODUCED_UNKNOWN))  # no single launch year
         self.assertIn("9 mm P.A.K.", blanks)
         for name in sizes | blanks:
