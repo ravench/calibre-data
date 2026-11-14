@@ -25,7 +25,7 @@ class GapTests(unittest.TestCase):
                 (".69 Minié", ("measurements",)),  # no source at all
                 ("4.5 mm Diabolo (.177)", ()),  # its length from RWS
                 ("5.5 mm Diabolo (.22)", ()),
-                ("7.5 mm Kadettenpatrone", ("measurements",)),  # Raven's overall length
+                ("7.5 mm Kadettenpatrone", ()),  # its length: Raven measured it (measured:raven)
                 (".25 Stevens", ("rim_thickness",)),
                 ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
             with self.subTest(name):

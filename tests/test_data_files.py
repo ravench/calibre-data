@@ -467,6 +467,16 @@ class CheckTests(unittest.TestCase):
                 self.assertProblem(c, LR, pattern, line=c.line_of(LR, f'["{source}"]'))
                 self.assertOnlyProblems(c, LR, pattern)
 
+    def test_ravens_measurement_is_a_source(self):
+        # Raven 2026-11-14: "Accept my manual measurements as sources".
+        with Copy() as c:
+            c.edit(LR, LR_MM, 'sources = ["measured:raven 2026-11-08"]')
+            self.assertEqual(c.problems(), [])
+        for source in ("measured:raven", "measured:raven 8.11.2026", "measured:someone 2026-11-08"):
+            with self.subTest(source), Copy() as c:
+                c.edit(LR, LR_MM, f'sources = ["{source}"]')
+                self.assertProblem(c, LR, r"must be written measured:raven <YYYY-MM-DD>", line=c.line_of(LR, f'["{source}"]'))
+
     def test_a_book_page_can_source_every_table_but_only_once(self):
         with Copy() as c:
             c.edit(LR, 'sources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]',
