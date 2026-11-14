@@ -104,7 +104,7 @@ class GapTests(unittest.TestCase):
     def test_well_sourced_allows_a_default_rim_only(self):
         self.assertTrue(outline.well_sourced(self.spec(".308 Winchester")))
         self.assertTrue(outline.well_sourced(self.spec(".25 Stevens")))  # rim thickness only
-        self.assertFalse(outline.well_sourced(self.spec("9x23 mm Winchester")))  # generic groove
+        self.assertFalse(outline.well_sourced(self.spec(".50 GI")))  # generic groove
         self.assertFalse(outline.well_sourced(self.spec(".56-52 Spencer Necked")))
         passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 606 of 759 before these sheets
         self.assertTrue(0 < passing < len(outline.specs()))
@@ -117,6 +117,22 @@ class GapTests(unittest.TestCase):
             with self.subTest(name):
                 self.assertTrue(outline.well_sourced(self.spec(name)))
                 self.assertEqual(cartridges.case_head(name)[1:3], (top, groove))
+
+    def test_more_heads_from_saami_drawings_and_a_parent_case(self):
+        # SAAMI drawings (Z299.4, Z299.3 and the .25 Weatherby RPM's public introduction): ramp top and groove
+        # diameter, worked out as above. The .25 Weatherby RPM has the head of the 6.5 and the .338.
+        for name, top, groove in [(".27 Nosler", 3.73, 12.07), (".30 Remington AR", 4.03, 10.87),
+                                  ("9x23 mm Winchester", 3.37, 8.81), (".25 Weatherby RPM", 3.77, 10.39)]:
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                self.assertEqual(cartridges.case_head(name)[1:3], (top, groove))
+                self.assertIn("saami.org", cartridges.sources(name, "case_head")[0])
+        self.assertEqual(cartridges.case_head(".25 Weatherby RPM"), cartridges.case_head("6.5 Weatherby RPM"))
+        # The .44 Auto Mag has no sheet; the .357 Auto Mag, the same case necked down, has one (C.I.P. Tab. IV).
+        self.assertEqual(outline.gaps(self.spec(".44 Auto Mag")), ())
+        self.assertEqual(cartridges.case_head(".44 Auto Mag"), (1.37, 3.56, 10.4, 45.0))
+        self.assertEqual(cartridges.sources(".44 Auto Mag", "case_head"),
+                         ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page49.pdf", "book:cotw-18 p. 320"])
 
 
 class OutlineTests(unittest.TestCase):
@@ -532,13 +548,13 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".25 Weatherby RPM", ".27 Nosler", ".30 Remington AR", ".35 S&W Auto", ".351 Winchester Self-Loading",
-        ".375 CheyTac", ".408 CheyTac", ".458 SOCOM", "5.8x42 mm", "7.5 FK", "7.92x107 mm DS", "9x23 mm Winchester",
+        ".35 S&W Auto", ".351 Winchester Self-Loading", ".375 CheyTac", ".408 CheyTac", ".458 SOCOM", "5.8x42 mm",
+        "7.5 FK", "7.92x107 mm DS",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".26 BSA", ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery",
         ".30 Borchardt", ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".303 Magnum", ".33 BSA", ".330 Dakota",
         ".338 Canadian Magnum", ".338 Lehigh", ".35 Newton", ".360 Mars", ".375 Dakota",
-        ".400/375 Belted Nitro Express", ".416 Dakota", ".425 Westley Richards Magnum", ".44 Auto Mag", ".45 Mars Long",
+        ".400/375 Belted Nitro Express", ".416 Dakota", ".425 Westley Richards Magnum", ".45 Mars Long",
         ".45 Mars Short", ".45 Remington Thompson", ".45-70 Auto", ".450 Dakota", ".455 Webley Automatic",
         ".458 Canadian Magnum", ".475 Bishop Short Magnum", ".50 GI", ".50-115 Bullard", ".500 Phantom",
         ".577 Tyrannosaur", "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor", "10.75x57 mm Mannlicher",

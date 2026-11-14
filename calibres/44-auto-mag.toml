@@ -29,9 +29,13 @@ size = "large-pistol"
 sources = ["book:cotw-18 p. 528"]
 
 [case_head]
-# .048 in.
-rim_thickness = 1.22
-sources = ["book:cotw-18 p. 528"]
+# C.I.P. 357 Auto Mag.: R, E, E1, delta. The .357 is this case necked down (COTW 18 p. 320); C.I.P. has no
+# sheet for the .44. Cartridges of the World's table gives the rim .048 in. (1.22).
+rim_thickness = 1.37
+ramp_top = 3.56
+groove_diameter = 10.4
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page49.pdf", "book:cotw-18 p. 320"]
 
 [bullet]
 type = "jacketed"
