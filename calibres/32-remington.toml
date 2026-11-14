@@ -1,4 +1,4 @@
-# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+# Batch 8 (2026-11): old American sporting rounds; now from the C.I.P. sheet (see [mm]).
 name = ".32 Remington"
 categories = ["rifle"]
 kind = "rimless"
@@ -11,15 +11,15 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 10.7
-base = 10.7
-shoulder = 10.06
+# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 10.72
+base = 10.71
+shoulder = 10.19
 shoulder_at = 38.05
-neck = 8.74
-case_length = 52.1
-overall_length = 64.1
-bullet = 8.13
-unsourced = ["case_length", "overall_length"]
+neck = 8.73
+case_length = 52.07
+overall_length = 64.14
+bullet = 8.15
 sources = [
   "book:cotw-18 p. 250",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page127.pdf",

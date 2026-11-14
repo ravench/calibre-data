@@ -7,11 +7,14 @@ aliases = ["58", "58minie"]
 obsolete = true
 
 [mm]
-# Diameter: about .575 in for a .58 rifle-musket, depending on the mould. No page found gives a length.
-diameter = 14.6
-length = 25.0
-unsourced = ["length"]
-sources = ["https://www.riflemagazine.com/minie-and-roundballs"]
+# The Harpers Ferry drawing «New Rifle-Musket Ball, Calibre .58» (James H. Burton): diameter .5775 in,
+# length 1.05 in, 500 grains; the riflemagazine page gives about .575 in for later moulds.
+diameter = 14.67
+length = 26.67
+sources = [
+  "https://commons.wikimedia.org/wiki/File:Minie_ball_design_harpers_ferry_burton.jpg",
+  "https://www.riflemagazine.com/minie-and-roundballs",
+]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
