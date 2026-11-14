@@ -33,6 +33,15 @@ sources = ["https://en.wikipedia.org/wiki/9×23mm_Largo"]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/9×23mm_Largo"]
 
+[case_head]
+# AECC drawing 09-023-CGC-020 (municion.org): RT 1.38, HL 3.75, GØ 7.73, GW 1.00, HØ 9.67;
+# ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.38
+ramp_top = 3.75
+groove_diameter = 7.73
+ramp_angle = 35.0
+sources = ["https://municion.org/producto/9-x-23-bergmann-bayard-largo/"]
+
 [bullet]
 type = "jacketed"
 sources = []

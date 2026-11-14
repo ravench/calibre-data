@@ -43,9 +43,13 @@ degrees = 15.5
 sources = ["https://municion.org/producto/8-mm-nambu-m-1914/"]
 
 [case_head]
-# .042 in.
+# .042 in. (Donnelly); groove from the AECC drawing 08-022-BGC-040 (municion.org): RT 0.92, HL 2.02,
+# GØ 9.22, GW 0.70, HØ 10.23; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.07
-sources = ["book:donnelly p. 860"]
+ramp_top = 2.02
+groove_diameter = 9.22
+ramp_angle = 52.0
+sources = ["book:donnelly p. 860", "https://municion.org/producto/8-mm-nambu-m-1914/"]
 
 [bullet]
 type = "jacketed"

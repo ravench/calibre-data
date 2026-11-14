@@ -23,7 +23,8 @@ class GapTests(unittest.TestCase):
                 ("12/70", ()),  # its loaded length is SAAMI's
                 (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
                 (".69 Minié", ("measurements",)),  # no source at all
-                ("4.5 mm Diabolo (.177)", ("measurements",)),  # no length
+                ("4.5 mm Diabolo (.177)", ()),  # its length from RWS
+                ("5.5 mm Diabolo (.22)", ()),
                 ("7.5 mm Kadettenpatrone", ("measurements",)),  # Raven's overall length
                 (".25 Stevens", ("rim_thickness",)),
                 ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
@@ -54,6 +55,20 @@ class GapTests(unittest.TestCase):
         self.assertEqual(outline.gaps(s)[0], "measurements")
         self.assertIn("shoulder_moved", outline.gaps(s))
         self.assertLess(max(h for r, h in outline.case_profile(s) if r == s["shoulder"] / 2), s["sh_at"])
+
+    def test_aecc_drawings_source_popular_calibres(self):
+        # Popular calibres that failed the well-sourced rule on 2026-11-14, now with a head from an AECC drawing
+        # (municion.org) or, for the .338 Weatherby RPM, from the SAAMI drawing of the 6.5 Weatherby RPM, its case.
+        for name, groove in [("7.7x58 mm Arisaka", 10.32), ("8 mm Nambu", 9.22), ("9x23 mm Largo", 7.73),
+                             (".22 TCM", 8.2), (".50 Beowulf", 9.23), (".55 Boys", 17.18), (".338 Weatherby RPM", 10.39)]:
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                self.assertEqual(cartridges.case_head(name)[2], groove)
+        self.assertEqual(cartridges.case_head(".338 Weatherby RPM"), cartridges.case_head("6.5 Weatherby RPM"))
+        # The Boys' belt (21.59 mm) stands over its 20.3 mm rim; the drawing's belt ends 9 mm up.
+        boys = [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(self.spec(".55 Boys"))[:7]]
+        self.assertEqual(boys, [(10.15, 0), (10.15, 2.08), (8.59, 2.08), (8.59, 3.08), (10.795, 4.9302), (10.795, 9.0),
+                                (10.07, 9.0)])
 
     def test_well_sourced_allows_a_default_rim_only(self):
         self.assertTrue(outline.well_sourced(self.spec(".308 Winchester")))
@@ -486,17 +501,10 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".22 TCM", ".25 Weatherby RPM", ".27 Nosler",
-        ".30 Remington AR",
-        ".32 Winchester Self-Loading",
-        ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading",
-        ".351 Winchester Self-Loading", ".375 CheyTac",
-        ".401 Winchester Self-Loading", ".408 CheyTac",
-        ".458 SOCOM", ".50 Beowulf",
-        ".55 Boys", "12.7x108 mm", "5.8x42 mm",
-        "6.5x58 mm Vergueiro", "7.5 FK",
-        "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
-        "9x23 mm Largo", "9x23 mm Winchester",
+        ".25 Weatherby RPM", ".27 Nosler", ".30 Remington AR", ".32 Winchester Self-Loading", ".35 S&W Auto",
+        ".35 Winchester Self-Loading", ".351 Winchester Self-Loading", ".375 CheyTac",
+        ".401 Winchester Self-Loading", ".408 CheyTac", ".458 SOCOM", "12.7x108 mm", "5.8x42 mm",
+        "6.5x58 mm Vergueiro", "7.5 FK", "7.92x107 mm DS", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum",
         ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt",
@@ -531,7 +539,7 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(name):
                 s = self.rimless()[name]
                 self.assertTrue(url.startswith("https://") or url.startswith("book:"), url)
-                self.assertTrue(0.7 < thick < 2.5 and 2.0 < top_at < 7.0 and 10 <= angle <= 75)
+                self.assertTrue(0.7 < thick < 2.5 and 2.0 < top_at < 9.5 and 10 <= angle <= 75)  # the .55 Boys: 9.0
                 self.assertLess(groove, min(s["rim"], s["base"]))
 
     def test_heads_are_drawn_from_their_own_groove(self):
@@ -634,7 +642,7 @@ class OutlineTests(unittest.TestCase):
         self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
         self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
         self.assertEqual(head(".276 Pedersen", 2), [(5.73, 0), (5.73, 1.3)])
-        self.assertEqual(head(".55 Boys", 2), [(10.15, 0), (10.15, 1.3)])
+        self.assertEqual(head(".275 H&H Magnum", 2), [(6.755, 0), (6.755, 1.3)])
 
     def test_generic_heads_are_fitted_to_the_sourced_ones(self):
         # Review 2026-11-13: the old generic groove, 82 % of the base, was deeper than 224 of the 233 sourced
@@ -665,10 +673,9 @@ class OutlineTests(unittest.TestCase):
         # Semi-rimmed (rim 9.91 mm on a 8.93 mm body): the groove is 90 % of the body, not level with it.
         self.assertEqual(head(".32 Winchester Self-Loading", 5),
                          [(4.955, 0), (4.955, 1.27), (4.0185, 1.27), (4.0185, 2.27), (4.465, 2.8021)])
-        # Belted: the ramp ends on the belt, which ends 4.3 mm in front of the rim (the .55 Boys' own belt, 21.59 mm,
-        # stands over its 20.3 mm rim); behind a rim of .062 in (COTW 18) groove and belt move up with it.
-        self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.8305, 1.3), (8.8305, 2.3), (10.795, 4.6412),
-                                               (10.795, 5.6), (10.07, 5.6)])
+        # Belted: the ramp ends on the belt, which ends 4.3 mm in front of the default 1.3 mm rim.
+        self.assertEqual(head(".275 H&H Magnum", 7), [(6.755, 0), (6.755, 1.3), (5.8635, 1.3), (5.8635, 2.3),
+                                                      (6.755, 3.3624), (6.755, 5.6), (6.515, 5.6)])
         self.assertEqual(head(".400/375 Belted Nitro Express", 7),
                          [(5.92, 0), (5.92, 1.57), (5.121, 1.57), (5.121, 2.57), (5.92, 3.5222), (5.92, 5.87), (5.69, 5.87)])
         for name in self.HEAD_UNSOURCED:
