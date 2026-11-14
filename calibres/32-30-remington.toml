@@ -37,7 +37,7 @@ sources = ["book:cotw-18 p. 250"]
 
 [shoulder_angle]
 # The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 41.48 - NL 7.30 -
-# SL 31.00 = 3.18 mm). The specimen's own cone (4.1 degrees) between the book's diameters would start the neck
+# SL 31.00 = 3.18 mm). The specimen's own cone (4.0 degrees) between the book's diameters would start the neck
 # 1.6 mm after the specimen's.
 degrees = 5.7
 sources = ["https://municion.org/producto/32-30-125-remington-hepburn/"]
