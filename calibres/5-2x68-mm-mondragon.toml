@@ -38,9 +38,13 @@ degrees = 49.6
 sources = ["https://municion.org/producto/52-x-676-mondragon-original/"]
 
 [case_head]
-# .067 in.
+# .067 in. (COTW); groove from the AECC drawing 05-068-BGC-010 (municion.org): RT 1.63, HL 3.73,
+# GØ 10.30, GW 0.60, HØ 12.48; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.7
-sources = ["book:cotw-18 p. 573"]
+ramp_top = 3.73
+groove_diameter = 10.3
+ramp_angle = 36.0
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/52-x-676-mondragon-original/"]
 
 [bullet]
 # naboje.org: smokeless powder and a full metal jacket bullet.

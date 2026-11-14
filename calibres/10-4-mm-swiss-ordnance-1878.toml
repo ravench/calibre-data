@@ -18,7 +18,10 @@ neck = 10.8
 case_length = 20.0
 overall_length = 32.0
 bullet = 10.76
-sources = ["https://en.wikipedia.org/wiki/10.4mm_Swiss_Centerfire"]
+sources = [
+  "https://en.wikipedia.org/wiki/10.4mm_Swiss_Centerfire",
+  "https://municion.org/producto/104-mm-swiss-cf-m-1878/",
+]
 
 [introduced]
 year = 1878
@@ -27,6 +30,11 @@ sources = ["https://en.wikipedia.org/wiki/10.4mm_Swiss_Centerfire"]
 [primer]
 size = "large-pistol"
 sources = []
+
+[case_head]
+# RT on the AECC drawing 11-020-CBC-020 (municion.org).
+rim_thickness = 1.08
+sources = ["https://municion.org/producto/104-mm-swiss-cf-m-1878/"]
 
 [bullet]
 type = "lead"

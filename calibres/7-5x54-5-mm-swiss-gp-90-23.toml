@@ -50,6 +50,15 @@ sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
 degrees = 27.8
 sources = ["https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
+[case_head]
+# AECC drawing 08-054-BGC-085 (municion.org): RT 1.56, HL 3.60, GØ 10.26, GW 1.00, HØ 12.52;
+# ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.56
+ramp_top = 3.6
+groove_diameter = 10.26
+ramp_angle = 47.0
+sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
+
 [bullet]
 # cupronickel-jacketed round nose (Poyer p. 50: 80 % copper, 20 % nickel; swisswaffen: steel jacket)
 type = "jacketed"

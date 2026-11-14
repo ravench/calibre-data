@@ -69,9 +69,14 @@ degrees = 33.5
 sources = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321"]
 
 [case_head]
-# 1892 drawing; the groove is a curved cove with no ramp angle, so no groove keys
+# Rim thickness and groove diameter from the 1892 drawing (a curved cove 10.2 across). The cove has no
+# ramp, so ramp top and angle come from the AECC drawing 08-054-BGC-040 «M.1890-1903» (municion.org):
+# RT 1.65, HL 3.40, GØ 10.25, GW 0.30, HØ 12.49; angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.6
-sources = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321"]
+ramp_top = 3.4
+groove_diameter = 10.2
+ramp_angle = 38.0
+sources = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321", "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
 [bullet]
 # Paper: the lead body wrapped in paper (see above); profile = "patched" draws its steel cap.

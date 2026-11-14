@@ -37,6 +37,15 @@ sources = []
 degrees = 16.0
 sources = ["https://municion.org/producto/93-x-53-swiss-m89-n/"]
 
+[case_head]
+# AECC drawing 09-053-BGC-012 (municion.org): RT 1.66, HL 3.46, GØ 10.26, GW 0.99, HØ 12.54;
+# ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.66
+ramp_top = 3.46
+groove_diameter = 10.26
+ramp_angle = 55.0
+sources = ["https://municion.org/producto/93-x-53-swiss-m89-n/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 639"]

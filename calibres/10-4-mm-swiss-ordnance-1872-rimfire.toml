@@ -25,6 +25,11 @@ sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]
 year = 1872
 sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]
 
+[case_head]
+# RT on the AECC drawing 11-018-CBR-010 (municion.org).
+rim_thickness = 1.5
+sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/104-mm-swiss-rf-m-1872/"]
