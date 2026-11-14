@@ -303,13 +303,14 @@ def _is_text_list(v):
 
 
 def _check_widths(f, mm):
-    """A case narrows from its base to its mouth: [mm] base, then shoulder, then neck. A wider value further up is
-    a typing mistake or a rounding one (the .17 WSM's shoulder: .269 in is 6.83 mm on the drawing, not 6.86)."""
-    widths = [(k, mm[k]) for k in ("base", "shoulder", "neck") if _is_number(mm.get(k))]
+    """A case narrows from its base to its mouth: [mm] base, then shoulder, then neck, or a blank's base, then the
+    mouth of its crimp. A wider value further up is a mistake (the .17 WSM's shoulder was its chamber's)."""
+    widths = [(k, mm[k]) for k in ("base", "shoulder", "neck", "mouth") if _is_number(mm.get(k)) and mm[k] > 0]
     for (wide, a), (narrow, b) in zip(widths, widths[1:]):
-        if round(b - a, 3) > (MOUTH_SLACK if (wide, narrow) == ("base", "neck") else 0):
-            f.problem(f.line("mm", narrow), f"[mm] {narrow} {b} is wider than {wide} {a}: a case narrows from "
-                                            "its base to its mouth")
+        slack = MOUTH_SLACK if (wide, narrow) == ("base", "neck") else 0  # a straight case: a cylinder
+        if round(b - a, 3) > slack:
+            f.problem(f.line("mm", narrow), f"[mm] {narrow} {b} is {f'more than {slack} ' if slack else ''}wider than "
+                                            f"{wide} {a}: a case narrows from its base to its mouth")
 
 
 def _check_keys(f, table, data, allowed, required):
