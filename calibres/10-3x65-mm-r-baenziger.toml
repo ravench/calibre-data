@@ -29,6 +29,11 @@ sources = ["book:cotw-18 p. 646"]
 size = "berdan-nitro"
 sources = ["https://municion.org/producto/103-x-65-r-banziger/"]
 
+[case_head]
+# RT on the AECC drawing 11-065-CBC-010 (municion.org).
+rim_thickness = 2.34
+sources = ["https://municion.org/producto/103-x-65-r-banziger/"]
+
 [bullet]
 # COTW: a lead or soft-point bullet.
 type = "lead"

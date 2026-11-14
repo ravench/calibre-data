@@ -422,7 +422,7 @@ class OutlineTests(unittest.TestCase):
     def test_unsourced_shoulders_keep_the_default(self):
         self.assertEqual(cartridges.shoulder_angle("New calibre"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
-    # Rimless, semi-rimmed and belted cases without an extractor groove from a C.I.P. sheet (or a parent case that has
+    # Rimless, semi-rimmed and belted cases without an extractor groove from a drawing (C.I.P., SAAMI, AECC) (or a parent case that has
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
@@ -435,7 +435,6 @@ class OutlineTests(unittest.TestCase):
         ".458 SOCOM", ".50 Beowulf",
         ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm GT",
         "6.5x58 mm Vergueiro", "7.5 FK",
-        "7.5x53.5 mm Swiss (Patrone Modell 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone",
         "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
         "9x23 mm Largo", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
@@ -450,7 +449,7 @@ class OutlineTests(unittest.TestCase):
         ".577 Tyrannosaur", "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor",
         "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser", "11.2x60 mm Schüler",
         "11.2x72 mm Schüler", "12.04 Bibamufu", "2.7 mm Kolibri", "3 mm Kolibri", "4.25 mm Liliput",
-        "4.85x49 mm British", "5 mm Bergmann", "5 mm Clement", "5.2x68 mm Mondragón", "5.8x21 mm DAP92",
+        "4.85x49 mm British", "5 mm Bergmann", "5 mm Clement", "5.8x21 mm DAP92",
         "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW", "6.17 Lazzeroni Flash", "6.17 Lazzeroni Spitfire",
         "6.5 mm Bergmann", "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser",
         "6.71 Lazzeroni Blackbird", "6.71 Lazzeroni Phantom", "6x58 mm Forster", "7 mm Canadian Magnum",
@@ -458,7 +457,7 @@ class OutlineTests(unittest.TestCase):
         "7.21 Lazzeroni Tomahawk", "7.63 mm Mannlicher", "7.65 mm Roth-Sauer", "7.82 Lazzeroni Patriot",
         "7.82 Lazzeroni Warbird", "7.92x24 mm", "7x73 mm Vom Hofe Belted", "8.5 mm Mars",
         "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan", "8x59 mm Breda", "8x63 mm Swedish",
-        "8x71 mm Peterlongo", "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle", "9.3x53 mm Swiss",
+        "8x71 mm Peterlongo", "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle",
         "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn", "9.8 mm Auto Colt", "9x63 mm", "9x71 mm Peterlongo",
     }
 

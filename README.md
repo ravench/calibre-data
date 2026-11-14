@@ -77,7 +77,7 @@ shoulder_at = 39.62
 neck = 8.7
 case_length = 51.2
 overall_length = 71.12
-bullet = 7.82
+bullet = 7.85
 sources = [
   "book:cotw-18 p. 176",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf",

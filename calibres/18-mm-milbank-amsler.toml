@@ -27,6 +27,11 @@ sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
 year = 1867
 sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
 
+[case_head]
+# RT on the AECC drawing 18-026-CBR-010 (municion.org), the standard Thun round.
+rim_thickness = 1.74
+sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
