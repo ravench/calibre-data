@@ -55,6 +55,16 @@ class GapTests(unittest.TestCase):
         self.assertIn("shoulder_moved", outline.gaps(s))
         self.assertLess(max(h for r, h in outline.case_profile(s) if r == s["shoulder"] / 2), s["sh_at"])
 
+    def test_cip_sheets_source_popular_calibres(self):
+        # Popular calibres that failed the well-sourced rule on 2026-11-14 and have a C.I.P. sheet.
+        for name, groove in [(".408 CheyTac", 13.8), (".375 CheyTac", 13.8), (".458 SOCOM", 10.34), ("7.5 FK", 8.6),
+                             (".32 Remington", 9.09), (".351 Winchester Self-Loading", 9.02), (".50-70 Government", None)]:
+            with self.subTest(name):
+                self.assertTrue(outline.well_sourced(self.spec(name)))
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                if groove:
+                    self.assertEqual(cartridges.case_head(name)[2], groove)  # E1
+
     def test_well_sourced_allows_a_default_rim_only(self):
         self.assertTrue(outline.well_sourced(self.spec(".308 Winchester")))
         self.assertTrue(outline.well_sourced(self.spec(".25 Stevens")))  # rim thickness only
@@ -446,7 +456,7 @@ class OutlineTests(unittest.TestCase):
         # (half angle, shoulder start) from AECC drawings on municion.org: atan(((SØ-NØ)/2)/(CL-NL-SL)).
         # The .22 Nosler's start is SAAMI's 35.29 (the drawing: 35.28).
         drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64), "6.5x58 mm Vergueiro": (10.8, 41.0),
-                    ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.6, 26.11),
+                    "10.4x38 mm R Vetterli": (10.6, 26.11),
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
                     ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1)}
         specs = self.bottlenecks()
@@ -477,17 +487,11 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".27 Nosler",
-        ".277 SIG Fury", ".30 Remington AR",
-        ".32 Winchester Self-Loading", ".33 Nosler",
-        ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading",
-        ".351 Winchester Self-Loading", ".375 CheyTac",
-        ".401 Winchester Self-Loading", ".408 CheyTac",
-        ".458 SOCOM", ".50 Beowulf",
-        ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm GT",
-        "6.5x58 mm Vergueiro", "7.5 FK",
-        "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
-        "9x23 mm Largo", "9x23 mm Winchester",
+        ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".27 Nosler", ".277 SIG Fury", ".30 Remington AR",
+        ".32 Winchester Self-Loading", ".33 Nosler", ".338 Weatherby RPM", ".35 S&W Auto",
+        ".35 Winchester Self-Loading", ".401 Winchester Self-Loading", ".50 Beowulf", ".55 Boys",
+        "12.7x108 mm", "5.8x42 mm", "6 mm GT", "6.5x58 mm Vergueiro", "7.7x58 mm Arisaka", "7.92x107 mm DS",
+        "8 mm Nambu", "9x23 mm Largo", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum",
         ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt",

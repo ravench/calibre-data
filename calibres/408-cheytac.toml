@@ -10,16 +10,19 @@ origin_sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 rare = true
 
 [mm]
+# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
 rim = 16.25
 base = 16.18
 shoulder = 15.24
-shoulder_at = 62.02
+shoulder_at = 62.23
 neck = 11.12
 case_length = 77.21
 overall_length = 115.5
 bullet = 10.36
-unsourced = ["shoulder_at"]
-sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
+sources = [
+  "https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf",
+]
 
 [introduced]
 year = 2001
@@ -29,14 +32,18 @@ sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 
-[shoulder_angle]
-degrees = 22.1
-sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
-
 [case_head]
-# .065 in.
-rim_thickness = 1.65
-sources = ["book:cotw-18 p. 453"]
+# C.I.P. 408 Chey Tac: R, E, E1, delta
+rim_thickness = 1.6
+ramp_top = 4.47
+groove_diameter = 13.8
+ramp_angle = 53.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf"]
+
+[shoulder_angle]
+# C.I.P. 408 Chey Tac: half the cone angle alpha 44°08'46"
+degrees = 22.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf"]
 
 [bullet]
 type = "jacketed"

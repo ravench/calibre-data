@@ -12,6 +12,7 @@ origin_sources = []
 rare = true
 
 [mm]
+# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
 rim = 16.25
 base = 16.18
 shoulder = 15.22
@@ -20,8 +21,10 @@ neck = 10.31
 case_length = 76.91
 overall_length = 113.4
 bullet = 9.52
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 453"]
+sources = [
+  "book:cotw-18 p. 453",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/375-chey-tac-170627-en.pdf",
+]
 
 [introduced]
 # infobox says 2009, text has .375 variants by 2007; C.I.P. 2017
@@ -32,15 +35,18 @@ sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
 
-[shoulder_angle]
-# AECC drawing 10-077-BGC-030
-degrees = 20
-sources = ["https://municion.org/producto/375-cheyenne-tactical/"]
-
 [case_head]
-# .063 in.
+# C.I.P. 375 Chey Tac: R, E, E1, delta
 rim_thickness = 1.6
-sources = ["book:cotw-18 p. 453"]
+ramp_top = 4.47
+groove_diameter = 13.8
+ramp_angle = 53.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/375-chey-tac-170627-en.pdf"]
+
+[shoulder_angle]
+# C.I.P. 375 Chey Tac: half the cone angle alpha 43°54'38"
+degrees = 22.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/375-chey-tac-170627-en.pdf"]
 
 [bullet]
 type = "jacketed"

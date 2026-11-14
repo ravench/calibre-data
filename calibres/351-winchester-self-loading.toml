@@ -14,13 +14,17 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 10.4
-base = 9.7
-neck = 9.5
-case_length = 35.1
-overall_length = 48.4
-bullet = 8.9
-sources = ["https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading"]
+# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 10.41
+base = 9.66
+neck = 9.58
+case_length = 35.05
+overall_length = 48.26
+bullet = 8.94
+sources = [
+  "https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/351-win-sl-en.pdf",
+]
 
 [introduced]
 year = 1906
@@ -31,8 +35,11 @@ size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.351_Winchester_Self-Loading"]
 
 [case_head]
-# R on the C.I.P. sheet.
+# C.I.P. 351 Win. SL: R, E, E1, delta
 rim_thickness = 1.27
+ramp_top = 3.72
+groove_diameter = 9.02
+ramp_angle = 10.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/351-win-sl-en.pdf"]
 
 [bullet]

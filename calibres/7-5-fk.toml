@@ -11,16 +11,19 @@ origin_sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
 rare = true
 
 [mm]
+# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
 rim = 10.8
 base = 10.8
-shoulder = 10.8
-shoulder_at = 20.85
-neck = 8.5
+shoulder = 10.75
+shoulder_at = 21.01
+neck = 8.45
 case_length = 27.0
 overall_length = 35.0
 bullet = 7.8
-unsourced = ["shoulder_at"]
-sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
+sources = [
+  "https://en.wikipedia.org/wiki/7.5_FK",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/7-5-fk-200922-en.pdf",
+]
 
 [introduced]
 year = 2009
@@ -30,14 +33,18 @@ sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
 
-[shoulder_angle]
-degrees = 30
-sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
-
 [case_head]
-# .055 in.
+# C.I.P. 7,5 FK: R, E, E1, delta
 rim_thickness = 1.4
-sources = ["book:cotw-18 p. 527"]
+ramp_top = 3.65
+groove_diameter = 8.6
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/7-5-fk-200922-en.pdf"]
+
+[shoulder_angle]
+# C.I.P. 7,5 FK: half the cone angle alpha 60 degrees
+degrees = 30.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/7-5-fk-200922-en.pdf"]
 
 [bullet]
 type = "jacketed"
