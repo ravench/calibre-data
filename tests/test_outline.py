@@ -63,6 +63,13 @@ class GapTests(unittest.TestCase):
         passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 589 of 759 on 2026-11-14
         self.assertTrue(0 < passing < len(outline.specs()))
 
+    def test_popular_calibres_are_well_sourced(self):
+        # Raven's list of popular calibres that failed the rule on 2026-11-14, as they get sourced.
+        for name, groove in [("6 mm GT", 10.39), (".22 Nosler", 8.43), (".277 SIG Fury", 10.36), (".33 Nosler", 12.07)]:
+            with self.subTest(name):
+                self.assertTrue(outline.well_sourced(self.spec(name)))
+                self.assertEqual(cartridges.case_head(name)[2], groove)  # SAAMI's groove diameter
+
 
 class OutlineTests(unittest.TestCase):
     def test_every_calibre_has_a_valid_outline_inside_its_box(self):
@@ -477,14 +484,14 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".27 Nosler",
-        ".277 SIG Fury", ".30 Remington AR",
-        ".32 Winchester Self-Loading", ".33 Nosler",
+        ".22 TCM", ".25 Weatherby RPM", ".27 Nosler",
+        ".30 Remington AR",
+        ".32 Winchester Self-Loading",
         ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading",
         ".351 Winchester Self-Loading", ".375 CheyTac",
         ".401 Winchester Self-Loading", ".408 CheyTac",
         ".458 SOCOM", ".50 Beowulf",
-        ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm GT",
+        ".55 Boys", "12.7x108 mm", "5.8x42 mm",
         "6.5x58 mm Vergueiro", "7.5 FK",
         "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
         "9x23 mm Largo", "9x23 mm Winchester",

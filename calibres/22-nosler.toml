@@ -40,8 +40,12 @@ degrees = 29.9
 sources = ["https://municion.org/producto/22-nosler/"]
 
 [case_head]
-# SAAMI 22 Nosler
+# SAAMI 22 Nosler: rim thickness 0.045, groove 0.332 at 27 degrees, groove width 0.027,
+# body 0.4207; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 27)
 rim_thickness = 1.14
+ramp_top = 4.04
+groove_diameter = 8.43
+ramp_angle = 27.0
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=78"]
 
 [bullet]
