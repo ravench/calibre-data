@@ -315,14 +315,19 @@ calibres `shoulder_at` is the sheet's L1. A bottleneck case without one is drawn
 source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
 
 An AECC specimen drawing (municion.org) gives a shoulder as well: `shoulder_at` is the drawing's
-shoulder start carried from the mouth (`case_length` − (CL − SL)) and the angle is
-atan(((SØ − NØ)/2)/(CL − NL − SL)). The drawing counts when its case is within 1.5 mm of the file's
-and its shoulder and neck diameters are within 0.5 mm. A drawing that misses one of these limits
-still gives the shoulder when Donnelly's *Handloader's Manual of Cartridge Conversions* prints the
-same start (his J) within 0.5 mm: the angle then runs between the file's diameters over the
-drawing's shoulder length. Donnelly on his own is not a source for a shoulder: on 54 calibres with a
-C.I.P. sheet his start is within 0.5 mm of the sheet's L1 on 34 and more than 1.5 mm off on 8, and
-his printed angles are not used.
+shoulder start carried from the mouth (`case_length` − (CL − SL)) and the angle is the specimen's
+cone, atan(((SØ − NØ)/2)/(CL − NL − SL)). The drawing counts when its case is within 1.5 mm of the
+file's and its shoulder and neck diameters are within 0.5 mm. On a shallow cone a small difference
+in diameter is a long one in length: where the specimen's cone, drawn between the file's diameters,
+would start the neck more than 1.5 mm from the specimen's, the angle runs between the file's
+diameters over the drawing's shoulder length (CL − NL − SL) instead, so that the shoulder starts and
+ends where the drawing shows (.32-30 Remington, the 3¼ in. .500/450).
+
+A drawing that misses one of the size limits still gives the shoulder, in that second way, when
+Donnelly's *Handloader's Manual of Cartridge Conversions* prints the same start (his J) within
+0.5 mm. Donnelly on his own is not a source for a shoulder: on 54 calibres with a C.I.P. sheet his
+start is within 0.5 mm of the sheet's L1 on 34 and more than 1.5 mm off on 8, and his printed angles
+are not used.
 
 ### `[case_head]`
 
