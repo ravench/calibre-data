@@ -32,9 +32,14 @@ size = "large-pistol"
 sources = []
 
 [case_head]
-# .048 in.
+# .048 in. (COTW); groove from the AECC drawing 13-022-CRC-040 (municion.org): RT 1.10, HL 5.30, GØ 9.83, GW 1.10,
+# HØ 13.38; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle). The specimen's case (CL 21.90) is 0.9 mm shorter
+# than the book's.
 rim_thickness = 1.22
-sources = ["book:cotw-18 p. 453"]
+ramp_top = 5.3
+groove_diameter = 9.83
+ramp_angle = 30.0
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/50-gi/"]
 
 [bullet]
 type = "jacketed"

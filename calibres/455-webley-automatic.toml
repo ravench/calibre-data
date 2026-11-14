@@ -29,6 +29,15 @@ sources = ["book:cotw-18 p. 522"]
 size = "large-pistol"
 sources = []
 
+[case_head]
+# AECC drawing 12-023-CDC-030 (municion.org): RT 1.18, HL 4.00, GØ 11.06, GW 1.67, HØ 12.08; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.18
+ramp_top = 4.0
+groove_diameter = 11.06
+ramp_angle = 24.0
+sources = ["https://municion.org/producto/455-webley-scott-automatic-mk-i-m-1913-type-5/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 522"]
