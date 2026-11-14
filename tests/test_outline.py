@@ -24,8 +24,8 @@ class GapTests(unittest.TestCase):
                 (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
                 (".69 Minié", ("measurements",)),  # no source at all
                 ("4.5 mm Diabolo (.177)", ("measurements",)),  # no length
-                ("7.5 mm Kadettenpatrone", ("measurements", "groove", "rim_thickness")),
-                ("10.4 mm Swiss Ordnance 1878", ("rim_thickness",)),
+                ("7.5 mm Kadettenpatrone", ("measurements",)),  # Raven's caliper values; head from the GP 90/23
+                (".25 Stevens", ("rim_thickness",)),
                 ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
             with self.subTest(name):
                 self.assertEqual(outline.gaps(self.spec(name)), gaps)
@@ -57,8 +57,8 @@ class GapTests(unittest.TestCase):
 
     def test_well_sourced_allows_a_default_rim_only(self):
         self.assertTrue(outline.well_sourced(self.spec(".308 Winchester")))
-        self.assertTrue(outline.well_sourced(self.spec("10.4 mm Swiss Ordnance 1878")))  # rim thickness only
-        self.assertFalse(outline.well_sourced(self.spec("7.5x53.5 mm Swiss (GP 1890)")))  # generic groove
+        self.assertTrue(outline.well_sourced(self.spec(".25 Stevens")))  # rim thickness only
+        self.assertFalse(outline.well_sourced(self.spec("9x23 mm Winchester")))  # generic groove
         self.assertFalse(outline.well_sourced(self.spec(".56-52 Spencer Necked")))
         passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 589 of 759 on 2026-11-14
         self.assertTrue(0 < passing < len(outline.specs()))

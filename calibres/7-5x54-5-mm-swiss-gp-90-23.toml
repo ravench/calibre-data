@@ -11,7 +11,9 @@
 # cartridge M90/23» in the army's part numbers (Labbett p. 118).
 # Case: swissrifles.com/ammo (http only, so not a listed source) gives 2.15 in (54.6) case,
 # .500 in (12.7) rim, .496 in (12.6) head and a .3075 in (7.8) bullet; Poyer p. 50 gives 7.5x54.5.
-# Shoulder, neck and head to shoulder are Raven's caliper values for the Kadettenpatrone (same case, 1964). The AECC drawing 08-054-BGC-085 gives the length as 77.44.
+# All values but the case length from the AECC drawing 08-054-BGC-085 (municion.org): RØ 12.62, HØ 12.52, SØ 11.65,
+# SL 44.50, NØ 8.47, CL 54.40, TL 77.44, BØ 7.75. Its case length 54.40 is kept at 54.6 (swissrifles, and
+# Raven's GP 90/23-case Kadettenpatrone measures 54.8; Poyer gives 7.5x54.5).
 name = "7.5x54.5 mm Swiss (GP 90/23)"
 categories = ["rifle"]
 kind = "rimless"
@@ -24,15 +26,18 @@ origin_sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
 obsolete = true
 
 [mm]
-rim = 12.7
-base = 12.6
-shoulder = 11.5
-shoulder_at = 45.0
-neck = 8.6
+rim = 12.62
+base = 12.52
+shoulder = 11.65
+shoulder_at = 44.5
+neck = 8.47
 case_length = 54.6
-overall_length = 77.0
-bullet = 7.8
-sources = ["book:poyer p. 50"]
+overall_length = 77.44
+bullet = 7.75
+sources = [
+  "book:poyer p. 50",
+  "https://municion.org/producto/75-x-545-swiss-gp-90-23/",
+]
 
 [introduced]
 # 1923: the Solothurn contract of 9 January 1923 (minutes Nr. 75, PDF p. 36-42); swisswaffen and Poyer
