@@ -42,8 +42,9 @@ def main(root=ROOT):
     import cartridges
     t = cartridges.load(root)
     names = [s["name"] for _, items in t["ALL_CATALOGUE"] for s in items]
-    unsourced = sum(1 for n in names if not t["SOURCES"].get((n, "mm")))
-    print(f"All {len(names)} calibre files are fine ({unsourced} still have no source for their measurements).")
+    none = sum(1 for n in names if not t["SOURCES"].get((n, "mm")))
+    print(f"All {len(names)} calibre files are fine ({len(t['UNSOURCED'])} still have a measurement without a source, "
+          f"{none} of them no source for any).")
     return 0
 
 

@@ -22,7 +22,7 @@ neck = 12.32
 case_length = 40.0
 overall_length = 57.4
 bullet = 11.63
-# No source yet for shoulder_at.
+unsourced = ["shoulder_at"]
 sources = ["https://en.wikipedia.org/wiki/.458_SOCOM"]
 
 [introduced]

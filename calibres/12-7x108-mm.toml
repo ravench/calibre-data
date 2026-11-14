@@ -19,7 +19,7 @@ neck = 13.95
 case_length = 108.0
 overall_length = 147.5
 bullet = 12.98
-# No source yet for shoulder_at.
+unsourced = ["shoulder_at"]
 sources = ["https://en.wikipedia.org/wiki/12.7×108mm"]
 
 [introduced]

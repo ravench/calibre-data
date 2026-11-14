@@ -19,7 +19,7 @@ neck = 9.8
 case_length = 56.8
 overall_length = 81.0
 bullet = 9.1
-# No source yet for rim, shoulder, neck and overall_length.
+unsourced = ["rim", "shoulder", "neck", "overall_length"]
 sources = [
   "book:cotw-18 p. 652",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page67.pdf",

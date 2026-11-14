@@ -8,13 +8,17 @@ worldwide = true
 
 [mm]
 # C.I.P. Cal. 20, Tab. VII, maximum cartridge: diameter d1, rim g; case_length is the length in the
-# marking. The sheet gives no closed (crimped) length.
+# marking.
+# length: the loaded shell closed with a folded (star) crimp, the maximum on SAAMI's cartridge drawing
+# 20 gauge 3" (2.695 in., Z299.2 p. 29; the tolerance is -6.35). The C.I.P. sheet gives no closed length.
 diameter = 17.7
 rim = 19.4
-length = 70.0
+length = 68.45
 case_length = 76.0
-# No source yet for length.
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/tabvii-20-en.pdf"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/tabvii-20-en.pdf",
+  "https://saami.org/wp-content/uploads/2025/09/ANSI-SAAMI-Z299.2-Shotshell-2019-Approved-2025-09-23.pdf",
+]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.

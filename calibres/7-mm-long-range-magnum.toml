@@ -21,7 +21,8 @@ case_length = 63.86
 overall_length = 84.84
 bullet = 7.21
 # The table prints .0528 in. for the rim and base; .528 in. is meant.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at the angle below).
+# shoulder_at estimated: a neck one calibre long and the shoulder at the angle below.
+unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 451"]
 
 [introduced]

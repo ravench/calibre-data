@@ -20,7 +20,7 @@ neck = 6.65
 case_length = 42.2
 overall_length = 58.0
 bullet = 6.0
-# No source yet for bullet.
+unsourced = ["bullet"]
 sources = [
   "https://en.wikipedia.org/wiki/5.8×42mm",
   "https://www.small-arms.org/",

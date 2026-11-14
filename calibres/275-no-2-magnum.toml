@@ -23,7 +23,8 @@ overall_length = 82.55
 bullet = 7.29
 # COTW 18 p. 608 gives this name the row of the .275 Flanged Magnum (Holland), as COTW 5 p. 266 shows;
 # these are COTW 5's 7mm Rigby Magnum row, whose neck it prints as 1315 (.315 in.).
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+unsourced = ["shoulder_at"]
 sources = ["book:cotw-5 p. 266"]
 
 [introduced]
