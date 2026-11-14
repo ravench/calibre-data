@@ -53,8 +53,16 @@ ramp_angle = 35.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page50.pdf"]
 
 [bullet]
+# No text found names the jacket. municion.org's sheets of two early military rounds call the
+# round-nosed bullet steel and name no plating: FN's of 1894 (F.N 94) and the Buenos Aires arsenal's
+# of 1897 (A G 97).
 type = "jacketed"
-sources = ["book:cotw-18 p. 551"]
+jacket = "steel"
+sources = [
+  "book:cotw-18 p. 551",
+  "https://municion.org/ficha-08-053-bgc-030-0076/",
+  "https://municion.org/ficha-08-053-bgc-030-0004/",
+]
 
 [case]
 # municion.org's photos show brass cases (DWM's, FN's and the Argentine arsenals').

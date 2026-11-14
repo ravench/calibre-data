@@ -45,8 +45,14 @@ rim_thickness = 1.63
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
 
 [bullet]
+# The service load's 220-grain round-nosed bullet had a cupronickel jacket; the 230-grain bullet
+# tried first had a steel one (Gunmart, "The 30-40 Krag", 2016).
 type = "jacketed"
-sources = ["book:cotw-18 p. 546"]
+jacket = "cupronickel"
+sources = [
+  "book:cotw-18 p. 546",
+  "https://www.gunmart.net/shooting-advice/getting-started/the-30-40-krag",
+]
 
 [case]
 material = "brass"

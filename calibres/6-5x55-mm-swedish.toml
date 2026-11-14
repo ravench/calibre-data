@@ -48,8 +48,16 @@ ramp_angle = 45.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page23.pdf"]
 
 [bullet]
+# No text found names the jacket of the round-nosed bullet of 1894. municion.org's sheets of
+# Raufoss's military rounds show it silver: a chrome-coloured round-nosed bullet on the one of 1912
+# (R 2 P 1912), a steel jacket, "chromed", on the one of 1924.
 type = "jacketed"
-sources = ["book:cotw-18 p. 539"]
+jacket = "cupronickel"
+sources = [
+  "book:cotw-18 p. 539",
+  "https://municion.org/ficha-07-055-bgc-020-0073/",
+  "https://municion.org/ficha-07-055-bgc-020-0074/",
+]
 
 [case]
 material = "brass"

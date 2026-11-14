@@ -39,8 +39,10 @@ degrees = 10
 sources = ["https://municion.org/producto/55-boys/"]
 
 [bullet]
+# All Boys bullets had steel jackets clad with cupronickel (Ammo Encyclopedia p. 563).
 type = "jacketed"
-sources = []
+jacket = "cupronickel"
+sources = ["book:ammo-encyclopedia-2 p. 563"]
 
 [case]
 material = "brass"

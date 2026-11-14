@@ -45,8 +45,16 @@ ramp_angle = 74.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page20.pdf"]
 
 [bullet]
+# The ball cartridge of 1891 got a jacket of maillechort (nickel silver), says carcanorifle.com;
+# municion.org's page calls it nickel-plated brass. Silver either way. From 1940 the jacket was steel
+# plated with maillechort or tombac.
 type = "jacketed"
-sources = ["book:cotw-18 p. 540"]
+jacket = "cupronickel"
+sources = [
+  "book:cotw-18 p. 540",
+  "https://www.carcanorifle.com/6-5x52",
+  "https://municion.org/producto/65-x-52-italian-carcano-m-1891/",
+]
 
 [case]
 # municion.org says the case is brass.

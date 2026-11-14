@@ -51,8 +51,17 @@ ramp_angle = 32.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page33.pdf"]
 
 [bullet]
+# No text found names the jacket of the first bullet. municion.org's sheets of early military rounds
+# do: nickel-plated brass on Oviedo's of 1897 (S.B 18 97 O), steel plated with cupronickel on
+# Karlsruhe's of 1902 (D M 19 02 K), maillechort on Seville's of 1909 (A 19 09 PS). Silver every time.
 type = "jacketed"
-sources = ["book:cotw-18 p. 542"]
+jacket = "cupronickel"
+sources = [
+  "book:cotw-18 p. 542",
+  "https://municion.org/ficha-07-057-bgc-080-0146/",
+  "https://municion.org/ficha-07-057-bgc-080-0152/",
+  "https://municion.org/ficha-07-057-bgc-080-0141/",
+]
 
 [case]
 material = "brass"

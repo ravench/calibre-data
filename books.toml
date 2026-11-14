@@ -184,3 +184,13 @@ publisher = "North Cape Publications"
 place = "Tustin, California"
 year = 2010
 isbn = "978-1-882391-32-5"
+
+# Each cartridge has a numbered entry (CFR: centrefire rifle) that describes one round in hand: its
+# case, primer, bullet, load and headstamp.
+[hoyem-2]
+title = "The History and Development of Small Arms Ammunition, Volume Two: Centerfire: Primitive, and Martial Long Arms"
+authors = "George A. Hoyem"
+publisher = "Armory Publications"
+place = "Tacoma, Washington"
+year = 1982
+isbn = "0-9604982-9-X"
