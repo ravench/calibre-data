@@ -15,7 +15,8 @@ origin_sources = [
 ]
 
 [mm]
-rim = 12.0
+# Midway between C.I.P. (12.10) and SAAMI (12.01).
+rim = 12.055
 base = 12.0
 shoulder = 10.9
 shoulder_at = 43.84
@@ -27,6 +28,7 @@ sources = [
   "book:donnelly p. 828",
   "book:cotw-18 p. 573",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page33.pdf",
+  "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=58",
 ]
 
 [introduced]

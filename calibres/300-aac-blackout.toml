@@ -12,12 +12,12 @@ worldwide = true
 [mm]
 rim = 9.6
 base = 9.6
-shoulder = 9.1
+shoulder = 9.16
 shoulder_at = 27.2
 neck = 8.48
 case_length = 34.7
 overall_length = 57.4
-bullet = 7.8
+bullet = 7.85
 sources = [
   "book:hornady-10 p. 435",
   "book:cotw-18 p. 176",
