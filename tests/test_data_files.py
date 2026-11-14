@@ -229,7 +229,7 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == "12/70"),
                          cartridges.shot("12/70", 20.6, 22.45, 61.09, ["12", "12/70", "12ga", "12gauge"], 70.0))
         blank = next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == ".22 Blank (6.8/11)")
-        self.assertEqual((blank["neck"], blank["oal"], blank["profile"]), (3.4, 11.0, "crimped"))
+        self.assertEqual((blank["neck"], blank["oal"], blank["profile"]), (3.4, 11.1, "crimped"))
 
 
 class CheckTests(unittest.TestCase):

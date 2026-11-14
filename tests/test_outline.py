@@ -70,6 +70,36 @@ class GapTests(unittest.TestCase):
         self.assertEqual(boys, [(10.15, 0), (10.15, 2.08), (8.59, 2.08), (8.59, 3.08), (10.795, 4.9302), (10.795, 9.0),
                                 (10.07, 9.0)])
 
+    def test_cip_sheets_found_under_another_title_source_their_calibres(self):
+        # Calibres that failed the rule on 2026-11-14 and have a C.I.P. sheet after all, most of them under another
+        # title (the Vergueiro as «6,5 x 58 Mauser», the .275 H&H as «275 Belt. N.E.», the 7.92x24 as «7,92 x 24
+        # VBR»). Rim R1, case L3, half the cone angle alpha, groove E1 (None: straight case, rimmed case).
+        sheets = {
+            "6.5x58 mm Vergueiro": (11.8, 58.0, 15.0, 10.2), ".275 H&H Magnum": (13.51, 63.5, 32.0, 11.94),
+            ".280 Ross": (14.22, 66.32, 26.6, 12.45), ".333 Jeffery Rimless": (13.79, 62.86, 19.9, 12.37),
+            "10.75x68 mm Mauser": (12.57, 68.0, 28.0, 10.6), ".256 Gibbs Magnum": (12.09, 55.25, 20.1, 10.41),
+            ".45 Blaser": (12.01, 55.0, 10.0, 10.39), "12.7x108 mm": (21.8, 108.0, 17.8, 18.0),
+            "7.21 Lazzeroni Firebird": (14.76, 71.37, 30.0, 12.95),
+            "7.82 Lazzeroni Warbird": (14.76, 71.37, 30.0, 12.95), "7.92x24 mm": (9.14, 24.0, None, 7.87),
+            ".32 Winchester Self-Loading": (9.91, 32.77, None, 8.64),
+            ".35 Winchester Self-Loading": (10.29, 29.31, None, 9.02),
+            ".401 Winchester Self-Loading": (11.68, 38.1, None, 10.31),
+            ".475 No. 2 Nitro Express": (17.14, 88.9, 6.1, None), ".577/450 Martini-Henry": (19.3, 59.08, 15.8, None),
+            "9x57 mm Mauser": (11.95, 56.8, 19.1, 10.5),
+        }
+        for name, (rim, case, angle, groove) in sheets.items():
+            with self.subTest(name):
+                s = self.spec(name)
+                self.assertEqual(outline.gaps(s), ())
+                self.assertEqual((s["rim"], s["case"]), (rim, case))
+                self.assertEqual(cartridges.SHOULDER_ANGLES.get(name, (None,))[0], angle)
+                self.assertEqual((cartridges.case_head(name) or (None,) * 3)[2], groove)
+                self.assertIn("bobp.cip-bobp.org/uploads/tdcc/", cartridges.sources(name, "mm")[0])
+        # The .32 Winchester Self-Loading has no groove: a 3.7 degree cone runs from the rim's front (1.27 mm) up to
+        # the body 3.49 mm from the base.
+        cone = [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(self.spec(".32 Winchester Self-Loading"))[:5]]
+        self.assertEqual(cone, [(4.955, 0), (4.955, 1.27), (4.32, 1.27), (4.32, 1.27), (4.465, 3.49)])
+
     def test_well_sourced_allows_a_default_rim_only(self):
         self.assertTrue(outline.well_sourced(self.spec(".308 Winchester")))
         self.assertTrue(outline.well_sourced(self.spec(".25 Stevens")))  # rim thickness only
@@ -469,7 +499,7 @@ class OutlineTests(unittest.TestCase):
     def test_municion_shoulders_follow_the_aecc_drawings(self):
         # (half angle, shoulder start) from AECC drawings on municion.org: atan(((SØ-NØ)/2)/(CL-NL-SL)).
         # The .22 Nosler's start is SAAMI's 35.29 (the drawing: 35.28).
-        drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64), "6.5x58 mm Vergueiro": (10.8, 41.0),
+        drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64),
                     ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.6, 26.11),
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
                     ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1)}
@@ -501,29 +531,29 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".25 Weatherby RPM", ".27 Nosler", ".30 Remington AR", ".32 Winchester Self-Loading", ".35 S&W Auto",
-        ".35 Winchester Self-Loading", ".351 Winchester Self-Loading", ".375 CheyTac",
-        ".401 Winchester Self-Loading", ".408 CheyTac", ".458 SOCOM", "12.7x108 mm", "5.8x42 mm",
-        "6.5x58 mm Vergueiro", "7.5 FK", "7.92x107 mm DS", "9x23 mm Winchester",
+        ".25 Weatherby RPM", ".27 Nosler", ".30 Remington AR", ".35 S&W Auto",
+        ".351 Winchester Self-Loading", ".375 CheyTac",
+        ".408 CheyTac", ".458 SOCOM", "5.8x42 mm",
+        "7.5 FK", "7.92x107 mm DS", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum",
-        ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt",
+        ".242 Rimless Nitro Express", ".26 BSA",
+        ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".30 Borchardt",
         ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".303 Magnum", ".33 BSA", ".330 Dakota",
-        ".333 Jeffery Rimless", ".338 Canadian Magnum", ".338 Lehigh", ".35 Newton", ".360 Mars",
+        ".338 Canadian Magnum", ".338 Lehigh", ".35 Newton", ".360 Mars",
         ".375 Dakota", ".400/375 Belted Nitro Express", ".416 Dakota", ".425 Westley Richards Magnum",
-        ".44 Auto Mag", ".45 Blaser", ".45 Mars Long", ".45 Mars Short", ".45 Remington Thompson",
+        ".44 Auto Mag", ".45 Mars Long", ".45 Mars Short", ".45 Remington Thompson",
         ".45-70 Auto", ".450 Dakota", ".455 Webley Automatic",
         ".458 Canadian Magnum", ".475 Bishop Short Magnum", ".50 GI", ".50-115 Bullard", ".500 Phantom",
         ".577 Tyrannosaur", "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor",
-        "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "10.75x68 mm Mauser", "11.2x60 mm Schüler",
+        "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "11.2x60 mm Schüler",
         "11.2x72 mm Schüler", "12.04 Bibamufu", "2.7 mm Kolibri", "3 mm Kolibri", "4.25 mm Liliput",
         "4.85x49 mm British", "5 mm Bergmann", "5 mm Clement", "5.8x21 mm DAP92",
         "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW", "6.17 Lazzeroni Flash", "6.17 Lazzeroni Spitfire",
         "6.5 mm Bergmann", "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser",
         "6.71 Lazzeroni Blackbird", "6.71 Lazzeroni Phantom", "6x58 mm Forster", "7 mm Canadian Magnum",
-        "7 mm Dakota", "7 mm Nambu", "7.21 Lazzeroni Firebird", "7.21 Lazzeroni Firehawk",
+        "7 mm Dakota", "7 mm Nambu", "7.21 Lazzeroni Firehawk",
         "7.21 Lazzeroni Tomahawk", "7.63 mm Mannlicher", "7.65 mm Roth-Sauer", "7.82 Lazzeroni Patriot",
-        "7.82 Lazzeroni Warbird", "7.92x24 mm", "7x73 mm Vom Hofe Belted", "8.5 mm Mars",
+        "7x73 mm Vom Hofe Belted", "8.5 mm Mars",
         "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan", "8x59 mm Breda", "8x63 mm Swedish",
         "8x71 mm Peterlongo", "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle",
         "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn", "9.8 mm Auto Colt", "9x63 mm", "9x71 mm Peterlongo",
@@ -539,7 +569,9 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(name):
                 s = self.rimless()[name]
                 self.assertTrue(url.startswith("https://") or url.startswith("book:"), url)
-                self.assertTrue(0.7 < thick < 2.5 and 2.0 < top_at < 9.5 and 10 <= angle <= 75)  # the .55 Boys: 9.0
+                # The .55 Boys: 9.0. The Winchester self-loading cases have no groove but a shallow cone from the
+                # rim to the body: 3.7, 7 and 8 degrees on their C.I.P. sheets.
+                self.assertTrue(0.7 < thick < 2.5 and 2.0 < top_at < 9.5 and 3 <= angle <= 75)
                 self.assertLess(groove, min(s["rim"], s["base"]))
 
     def test_heads_are_drawn_from_their_own_groove(self):
@@ -642,7 +674,7 @@ class OutlineTests(unittest.TestCase):
         self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
         self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
         self.assertEqual(head(".276 Pedersen", 2), [(5.73, 0), (5.73, 1.3)])
-        self.assertEqual(head(".275 H&H Magnum", 2), [(6.755, 0), (6.755, 1.3)])
+        self.assertEqual(head("7x73 mm Vom Hofe Belted", 2), [(6.77, 0), (6.77, 1.3)])
 
     def test_generic_heads_are_fitted_to_the_sourced_ones(self):
         # Review 2026-11-13: the old generic groove, 82 % of the base, was deeper than 224 of the 233 sourced
@@ -670,12 +702,12 @@ class OutlineTests(unittest.TestCase):
         # Rebated (rim 12.01 mm on a 14.94 mm body): the groove is below the rim, the ramp climbs on to the body.
         self.assertEqual(head(".475 Bishop Short Magnum", 5),
                          [(6.005, 0), (6.005, 1.37), (5.2244, 1.37), (5.2244, 2.37), (7.47, 5.0463)])
-        # Semi-rimmed (rim 9.91 mm on a 8.93 mm body): the groove is 90 % of the body, not level with it.
-        self.assertEqual(head(".32 Winchester Self-Loading", 5),
-                         [(4.955, 0), (4.955, 1.27), (4.0185, 1.27), (4.0185, 2.27), (4.465, 2.8021)])
+        # Semi-rimmed (rim 12.7 mm on a 12.04 mm body): the groove is 90 % of the body, not level with it.
+        self.assertEqual(head(".455 Webley Automatic", 5),
+                         [(6.35, 0), (6.35, 1.3), (5.418, 1.3), (5.418, 2.3), (6.02, 3.0174)])
         # Belted: the ramp ends on the belt, which ends 4.3 mm in front of the default 1.3 mm rim.
-        self.assertEqual(head(".275 H&H Magnum", 7), [(6.755, 0), (6.755, 1.3), (5.8635, 1.3), (5.8635, 2.3),
-                                                      (6.755, 3.3624), (6.755, 5.6), (6.515, 5.6)])
+        self.assertEqual(head("7x73 mm Vom Hofe Belted", 7), [(6.77, 0), (6.77, 1.3), (5.8899, 1.3), (5.8899, 2.3),
+                                                              (6.77, 3.3489), (6.77, 5.6), (6.695, 5.6)])
         self.assertEqual(head(".400/375 Belted Nitro Express", 7),
                          [(5.92, 0), (5.92, 1.57), (5.121, 1.57), (5.121, 2.57), (5.92, 3.5222), (5.92, 5.87), (5.69, 5.87)])
         for name in self.HEAD_UNSOURCED:

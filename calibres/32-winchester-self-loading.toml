@@ -12,6 +12,7 @@ obsolete = true
 rare = true
 
 [mm]
+# C.I.P. 32 Win. SL, maximum cartridge: rim R1, base P1, neck H2, case L3, length L6, bullet G1.
 rim = 9.91
 base = 8.93
 neck = 8.81
@@ -30,8 +31,11 @@ size = "small-rifle"
 sources = ["book:cotw-18 p. 250"]
 
 [case_head]
-# R on the C.I.P. sheet.
+# C.I.P. 32 Win. SL: R, E, E1, delta. The groove is a shallow cone that starts at the rim (delta 3°44'24")
 rim_thickness = 1.27
+ramp_top = 3.49
+groove_diameter = 8.64
+ramp_angle = 3.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page79.pdf"]
 
 [bullet]

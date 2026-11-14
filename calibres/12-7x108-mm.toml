@@ -1,4 +1,4 @@
-# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+# Batch 7 (2026-11); now from the C.I.P. sheet (see [mm]).
 name = "12.7x108 mm"
 categories = ["rifle"]
 kind = "rimless"
@@ -11,16 +11,19 @@ origin_sources = ["https://en.wikipedia.org/wiki/12.7×108mm"]
 rare = true
 
 [mm]
-rim = 21.7
-base = 21.75
-shoulder = 18.9
-shoulder_at = 88.13
-neck = 13.95
+# C.I.P. 12,7 x 108, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 21.8
+base = 21.85
+shoulder = 19.05
+shoulder_at = 84.8
+neck = 13.9
 case_length = 108.0
-overall_length = 147.5
-bullet = 12.98
-unsourced = ["shoulder_at"]
-sources = ["https://en.wikipedia.org/wiki/12.7×108mm"]
+overall_length = 147.0
+bullet = 13.01
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/12-7-x-108-170419-en.pdf",
+  "https://en.wikipedia.org/wiki/12.7×108mm",
+]
 
 [introduced]
 year = 1934
@@ -32,13 +35,17 @@ size = "bmg-35"
 sources = ["https://municion.org/producto/127-x-108-russian-dshk-rimless/"]
 
 [shoulder_angle]
-degrees = 18.2
-sources = ["https://en.wikipedia.org/wiki/12.7%C3%97108mm"]
+# C.I.P. 12,7 x 108: half the cone angle alpha 35°32'34"
+degrees = 17.8
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/12-7-x-108-170419-en.pdf"]
 
 [case_head]
-# .075 in.
-rim_thickness = 1.9
-sources = ["book:cotw-18 p. 574"]
+# C.I.P. 12,7 x 108: R, E, E1, delta
+rim_thickness = 2.0
+ramp_top = 6.3
+groove_diameter = 18.0
+ramp_angle = 38.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/12-7-x-108-170419-en.pdf"]
 
 [bullet]
 # COTW 18 says the round appeared with armour-piercing bullets and lists armour-piercing incendiary

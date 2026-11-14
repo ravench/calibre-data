@@ -1,4 +1,4 @@
-# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Measurements from the C.I.P. sheet (maximum cartridge).
 # A boar round for short Blaser actions: rebated rim and a long neck.
 name = ".45 Blaser"
 categories = ["rifle"]
@@ -11,15 +11,20 @@ origin_sources = ["https://municion.org/producto/45-blaser/"]
 rare = true
 
 [mm]
+# C.I.P. 45 Blaser, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
 rim = 12.01
 base = 13.03
 shoulder = 12.98
-shoulder_at = 41.07
-neck = 12.34
-case_length = 54.86
-overall_length = 68.58
-bullet = 11.63
-sources = ["book:cotw-18 p. 652", "https://municion.org/producto/45-blaser/"]
+shoulder_at = 40.74
+neck = 12.36
+case_length = 55.0
+overall_length = 68.5
+bullet = 11.64
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/45-blaser-220214-en.pdf",
+  "book:cotw-18 p. 652",
+  "https://municion.org/producto/45-blaser/",
+]
 
 [introduced]
 # naboje.org: developed in Germany in 2001; COTW 18 p. 649 gives no year.
@@ -32,14 +37,17 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 652"]
 
 [shoulder_angle]
-# AECC drawing on municion.org: SØ 12.92, NØ 12.33, SL 41.00, NL 11.00, CL 54.79.
-degrees = 6.0
-sources = ["https://municion.org/producto/45-blaser/"]
+# C.I.P. 45 Blaser: half the cone angle alpha 19°58'44"
+degrees = 10.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/45-blaser-220214-en.pdf"]
 
 [case_head]
-# .054 in.
+# C.I.P. 45 Blaser: R, E, E1, delta
 rim_thickness = 1.37
-sources = ["book:cotw-18 p. 652"]
+ramp_top = 4.39
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/45-blaser-220214-en.pdf"]
 
 [bullet]
 type = "softpoint"

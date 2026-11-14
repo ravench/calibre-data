@@ -1,5 +1,6 @@
-# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
-# VBR-Belgium's PDW and pistol round; the rim is a little smaller than the body.
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# VBR-Belgium's PDW and pistol round, a straight case that tapers to the mouth. The dimension table of
+# Cartridges of the World (18th ed., p. 527) has its rim and neck diameters in the wrong columns.
 name = "7.92x24 mm"
 categories = ["handgun"]
 kind = "rimless"
@@ -11,13 +12,17 @@ origin_sources = []
 rare = true
 
 [mm]
-rim = 8.61
-base = 9.14
-neck = 9.14
-case_length = 23.88
-overall_length = 32.41
+# C.I.P. 7,92 x 24 VBR, maximum cartridge: rim R1, base P1, neck H2, case L3, length L6, bullet G1.
+rim = 9.14
+base = 9.06
+neck = 8.62
+case_length = 24.0
+overall_length = 32.1
 bullet = 7.92
-sources = ["book:cotw-18 p. 527"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page52.pdf",
+  "book:cotw-18 p. 527",
+]
 
 [introduced]
 year = 2006
@@ -28,9 +33,12 @@ size = "small-pistol"
 sources = ["book:cotw-18 p. 527"]
 
 [case_head]
-# .050 in.
+# C.I.P. 7,92 x 24 VBR: R, E, E1, delta
 rim_thickness = 1.27
-sources = ["book:cotw-18 p. 527"]
+ramp_top = 2.9
+groove_diameter = 7.87
+ramp_angle = 37.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page52.pdf"]
 
 [bullet]
 type = "jacketed"

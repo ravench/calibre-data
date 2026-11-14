@@ -1,4 +1,4 @@
-# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Measurements from the C.I.P. sheet (maximum cartridge).
 name = "10.75x68 mm Mauser"
 categories = ["rifle"]
 kind = "rimless"
@@ -11,16 +11,19 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 12.4
-base = 12.5
-shoulder = 11.94
+# C.I.P. 10,75 x 68, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 12.57
+base = 12.57
+shoulder = 12.2
 shoulder_at = 53.35
-neck = 11.3
-case_length = 67.82
-overall_length = 80.26
-bullet = 10.77
-# shoulder_at from C.I.P. L1.
-sources = ["book:cotw-18 p. 652", "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf"]
+neck = 11.51
+case_length = 68.0
+overall_length = 81.0
+bullet = 10.78
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf",
+  "book:cotw-18 p. 652",
+]
 
 [introduced]
 # COTW: the early 1920s; the decade's first year is kept.
@@ -34,8 +37,16 @@ diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
 
 [shoulder_angle]
-# C.I.P. 10,75 x 68
+# C.I.P. 10,75 x 68: half the cone angle alpha 55°54'58"
 degrees = 28.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf"]
+
+[case_head]
+# C.I.P. 10,75 x 68: R, E, E1, delta
+rim_thickness = 1.3
+ramp_top = 3.6
+groove_diameter = 10.6
+ramp_angle = 37.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf"]
 
 [bullet]

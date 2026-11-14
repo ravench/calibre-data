@@ -374,7 +374,7 @@ class CatalogueTests(unittest.TestCase):
         by_name = {s["name"]: s for s in ALL}
         b = by_name[".22 Blank (6.8/11)"]
         self.assertEqual(b["kind"], RIMFIRE)
-        self.assertEqual((b["rim"], b["case"], b["oal"]), (6.8, 11.0, 11.0))
+        self.assertEqual((b["rim"], b["case"], b["oal"]), (7.06, 11.1, 11.1))  # C.I.P. 22 SH (5,6/11)
         self.assertEqual(b["base"], by_name[".22 Short"]["base"], "same .22 case body")
         self.assertIn("platzpatrone", b["aliases"])
         self.assertFalse(is_obsolete(b["name"]))

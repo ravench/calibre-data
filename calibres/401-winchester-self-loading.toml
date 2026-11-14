@@ -1,4 +1,4 @@
-# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+# Batch 8 (2026-11); now from the C.I.P. sheet (see [mm]).
 name = ".401 Winchester Self-Loading"
 categories = ["rifle"]
 kind = "semi-rimmed"
@@ -11,13 +11,15 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 11.6
-base = 10.9
-neck = 10.9
-case_length = 38.0
-overall_length = 50.9
-bullet = 10.33
+# C.I.P. 401 Win. SL, maximum cartridge: rim R1, base P1, neck H2, case L3, length L6, bullet G1.
+rim = 11.68
+base = 11.0
+neck = 10.99
+case_length = 38.1
+overall_length = 50.93
+bullet = 10.34
 sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page105.pdf",
   "book:cotw-18 p. 251",
   "book:donnelly p. 516",
 ]
@@ -33,9 +35,12 @@ size = "large-rifle"
 sources = ["https://municion.org/producto/401-winchester-self-loading/"]
 
 [case_head]
-# .055 in.
-rim_thickness = 1.4
-sources = ["book:cotw-18 p. 251"]
+# C.I.P. 401 Win. SL: R, E, E1, delta. The groove is a shallow cone that starts at the rim (delta 7°)
+rim_thickness = 1.52
+ramp_top = 4.3
+groove_diameter = 10.31
+ramp_angle = 7.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page105.pdf"]
 
 [bullet]
 type = "softpoint"

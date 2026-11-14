@@ -276,8 +276,9 @@ differ_by = ["length"]
 calibres = [".297/230 Morris Short", ".297/230 Morris Long"]
 
 [[group]]
+# Both from their C.I.P. sheets: the same case and length, the Flanged with a wider rim.
 name = ".280 Ross"
-differ_by = ["rim", "length"]
+differ_by = ["rim"]
 calibres = [".280 Ross", ".280 Flanged"]
 
 [[group]]

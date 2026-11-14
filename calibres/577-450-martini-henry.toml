@@ -14,19 +14,16 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 19.0
-base = 17.0
-shoulder = 16.0
+# C.I.P. 577/450 Sld. Mart. H., maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 19.3
+base = 17.07
+shoulder = 16.15
 shoulder_at = 35.71
-neck = 12.3
-case_length = 59.7
-overall_length = 79.0
-bullet = 11.6
-unsourced = ["case_length", "overall_length"]
-sources = [
-  "book:cotw-18 p. 574",
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf",
-]
+neck = 12.83
+case_length = 59.08
+overall_length = 81.28
+bullet = 11.81
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf"]
 
 [introduced]
 year = 1871
@@ -37,7 +34,7 @@ size = "large-rifle"
 sources = []
 
 [shoulder_angle]
-# C.I.P. 577/450 Sld. Mart. H.
+# C.I.P. 577/450 Sld. Mart. H.: half the cone angle alpha 31°35'57"
 degrees = 15.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf"]
 
