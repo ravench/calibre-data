@@ -22,10 +22,11 @@ class GapTests(unittest.TestCase):
                 (".308 Winchester", ()),
                 ("12/70", ()),  # its loaded length is SAAMI's
                 (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
-                (".69 Minié", ("measurements",)),  # no source at all
+                (".69 Minié", ()),  # the Altered Musket drawing: 1.1 in long
+                (".58 Minié", ()),  # the Harpers Ferry drawing: 1.05 in long
                 ("4.5 mm Diabolo (.177)", ()),  # its length from RWS
                 ("5.5 mm Diabolo (.22)", ()),
-                ("7.5 mm Kadettenpatrone", ("measurements",)),  # Raven's overall length
+                ("7.5 mm Kadettenpatrone", ()),  # its length: Raven measured it (measured:raven)
                 (".25 Stevens", ("rim_thickness",)),
                 ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
             with self.subTest(name):
@@ -34,11 +35,22 @@ class GapTests(unittest.TestCase):
             for s in items:
                 self.assertLessEqual(set(outline.gaps(s)), set(outline.GAPS), s["name"])
 
+    def test_a_crimped_blanks_mouth_is_a_sketch(self):
+        # Raven 2026-11-14: "treat the crimp as a sketch". No sheet gives a star crimp's size: the mouth stays
+        # listed as unsourced, but it keeps no blank from being well sourced.
+        for name in (".22 Long Knall", "6 mm Flobert Knall", "9 mm R Knall", ".320 Knall", ".45 Knall"):
+            with self.subTest(name):
+                self.assertEqual(cartridges.unsourced(name), ("mouth",))
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+        s = dict(self.spec(".45 Knall"), profile=FLAT)  # on any other profile it would still be a gap
+        self.assertEqual(outline.gaps(s)[:1], ("measurements",))
+
     def test_gaps_follow_the_tables(self):
         for _, s in outline.specs():
             gaps, name = outline.gaps(s), s["name"]
             cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
-            self.assertEqual("measurements" in gaps, bool(cartridges.unsourced(name)), name)
+            crimp = {"mouth"} if s["profile"] == CRIMPED else set()  # a sketch (Raven 2026-11-14)
+            self.assertEqual("measurements" in gaps, bool(set(cartridges.unsourced(name)) - crimp), name)
             self.assertEqual("rim_thickness" in gaps, cartridge and name not in cartridges.RIM_THICKNESS, name)
             self.assertEqual("groove" in gaps, s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)
                              and name not in cartridges.CASE_HEADS, name)
@@ -55,6 +67,16 @@ class GapTests(unittest.TestCase):
         self.assertEqual(outline.gaps(s)[0], "measurements")
         self.assertIn("shoulder_moved", outline.gaps(s))
         self.assertLess(max(h for r, h in outline.case_profile(s) if r == s["shoulder"] / 2), s["sh_at"])
+
+    def test_cip_sheets_source_popular_calibres(self):
+        # Popular calibres that failed the well-sourced rule on 2026-11-14 and have a C.I.P. sheet.
+        for name, groove in [(".408 CheyTac", 13.8), (".375 CheyTac", 13.8), (".458 SOCOM", 10.34), ("7.5 FK", 8.6),
+                             (".32 Remington", 9.09), (".351 Winchester Self-Loading", 9.02), (".50-70 Government", None)]:
+            with self.subTest(name):
+                self.assertTrue(outline.well_sourced(self.spec(name)))
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                if groove:
+                    self.assertEqual(cartridges.case_head(name)[2], groove)  # E1
 
     def test_aecc_drawings_source_popular_calibres(self):
         # Popular calibres that failed the well-sourced rule on 2026-11-14, now with a head from an AECC drawing
@@ -714,8 +736,7 @@ class OutlineTests(unittest.TestCase):
     def test_municion_shoulders_follow_the_aecc_drawings(self):
         # (half angle, shoulder start) from AECC drawings on municion.org: atan(((SØ-NØ)/2)/(CL-NL-SL)).
         # The .22 Nosler's start is SAAMI's 35.29 (the drawing: 35.28).
-        drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64),
-                    ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.6, 26.11),
+        drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64), "10.4x38 mm R Vetterli": (10.6, 26.11),
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
                     ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1),
                     ".400/375 Belted Nitro Express": (20.4, 43.82), ".276 Pedersen": (10.8, 40.95),
@@ -749,7 +770,6 @@ class OutlineTests(unittest.TestCase):
     # their own rim thickness where a source gives one. A new rimless, semi-rimmed or belted calibre needs a head
     # in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".351 Winchester Self-Loading", ".375 CheyTac", ".408 CheyTac", ".458 SOCOM", "7.5 FK",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".30 USA Rimless", ".360 Mars", ".45 Remington Thompson", ".45-70 Auto", ".455 Webley Automatic", ".50 GI",
         ".50-115 Bullard", "10.75x63 mm Mauser", "5 mm Bergmann", "6.17 Lazzeroni Flash", "6.71 Lazzeroni Blackbird",
