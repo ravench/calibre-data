@@ -111,7 +111,6 @@ class LoadTests(unittest.TestCase):
                         self.assertRegex(f.read(), r"(?m)^# Firearms: .+\ncategories = ")
                 if c[0] == "Schwarzpulver" and kinds[name] not in cartridges.LOOSE:  # balls and Minié bullets: none
                     self.assertTrue({"Langwaffe", "Kurzwaffe"} & set(c))
-                    self.assertEqual("Randfeuer" in c, kinds[name] == cartridges.RIMFIRE)
                 if c[0] in ("Kurzwaffe", "Langwaffe", "Flinte", "Luftdruck", "Kanone"):
                     self.assertEqual(len(c), 1)
 
@@ -264,17 +263,38 @@ class CheckTests(unittest.TestCase):
     def test_semi_rimmed_cases(self):
         # Semi-rimmed: a rim a little wider than the base with an extractor groove in front of it,
         # recorded as its own kind like belted (Raven, 2026-11-13). Case type G or H in the COTW 18 dimension
-        # tables, plus the .25 ACP, 9 mm Browning Long (9x20 SR) and .303 Magnum, which other sources call so.
+        # tables, plus the .25 ACP, 9 mm Browning Long (9x20 SR), .303 Magnum and .308 Marlin Express (the
+        # .307 Winchester's case, which COTW lists as rimmed), which other sources call so.
         semi = {s["name"] for _, items in cartridges.ALL_CATALOGUE for s in items
                 if s["kind"] == cartridges.SEMI_RIMMED}
         self.assertEqual(semi, {
             ".220 Swift", ".280 Ross", ".303 Magnum", ".32 Winchester Self-Loading", ".35 Winchester Self-Loading",
-            ".351 Winchester Self-Loading", ".307 Winchester", ".356 Winchester", "8 mm Nambu", ".38 ACP", ".38 AMU", ".38 Super", ".401 Winchester Self-Loading",
+            ".351 Winchester Self-Loading", ".307 Winchester", ".308 Marlin Express", ".356 Winchester", "8 mm Nambu", ".38 ACP", ".38 AMU", ".38 Super", ".401 Winchester Self-Loading",
             ".455 Webley Automatic", ".50-115 Bullard", "45x386 mm SR", "57x348 mm SR", "6.35 mm Browning (.25 ACP)",
             "6.5x50 mm SR Arisaka", "6.5x53.5 mm SR Daudeteau", "7.65 mm Browning (.32 ACP)", "9 mm Browning Long"})
         with Copy() as c:
             c.edit(WIN, 'kind = "rimless"', 'kind = "semi-rimmed"')
             self.assertProblem(c, WIN, r"semi-rimmed case has a rim wider than its base", line=c.line_of(WIN, "rim ="))
+            # and the other way round: a rim that wide is not a rimless case's
+            swift = "calibres/220-swift.toml"
+            c.edit(swift, 'kind = "semi-rimmed"', 'kind = "rimless"')
+            self.assertProblem(c, swift, r"rimless case has a rim at most 0\.3 mm wider than its base",
+                               line=c.line_of(swift, "rim ="))
+        with Copy() as c:  # exactly 0.3 mm is still rimless, whatever binary floats make of 4.1 + 0.3
+            c.edit(WIN, "rim = 11.9", "rim = 4.4")
+            c.edit(WIN, "base = 11.9", "base = 4.1")
+            self.assertFalse([p for p in c.problems() if "rimless case" in p[2]])
+
+    def test_the_rimfire_category_holds_the_rimfire_cases(self):
+        # Both ways: no centrefire round is in it (the 9 mm P.A.K. and five Knall blanks were, next to the
+        # .22 blank, until 2026-11; they are handgun rounds), and a rimfire one of another category lists it too.
+        with Copy() as c:
+            pak = "calibres/9-mm-p-a-k.toml"
+            c.edit(pak, 'categories = ["handgun"]', 'categories = ["handgun", "rimfire"]')
+            c.edit(LR, 'categories = ["rimfire", "rifle", "handgun"]', 'categories = ["rifle", "handgun"]')
+            self.assertProblem(c, pak, r"the rimfire category holds only rimfire cases: remove it from this rimless",
+                               line=c.line_of(pak, "categories ="))
+            self.assertProblem(c, LR, r"a rimfire calibre lists the rimfire category", line=c.line_of(LR, "categories ="))
 
     def test_416_rigby_no_2_is_the_416_rigby_with_a_rim(self):
         # C.I.P. sheets: the No. 2 (2019) keeps the .416 Rigby's body, shoulder, neck and cone behind a 17 mm rim.

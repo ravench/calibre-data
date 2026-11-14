@@ -40,9 +40,12 @@ degrees = 24.7
 sources = ["https://municion.org/producto/416-barrett-sniper/"]
 
 [case_head]
-# .083 in.
+# C.I.P. 416 Barrett
 rim_thickness = 2.11
-sources = ["book:cotw-18 p. 453"]
+ramp_top = 6.22
+groove_diameter = 17.27
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/416-barrett-250313-en.pdf"]
 
 [bullet]
 type = "jacketed"

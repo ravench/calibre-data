@@ -1,5 +1,5 @@
 """python3 -m unittest discover -s tests"""
-import math, os, re, sys, unittest
+import math, os, re, statistics, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
@@ -183,9 +183,15 @@ class OutlineTests(unittest.TestCase):
             self.assertEqual(o.get("headMaterial") == "steel", case_material(s["name"]) == HYBRID, s["name"])
         fury = outline.outline(next(s for _, s in outline.specs() if s["name"] == ".277 SIG Fury"))
         ys = [y for _, y in points(fury["head"])]
-        # y grows from the tip: the head runs from the base up to HYBRID_HEAD.
+        # y grows from the tip: the head runs from the base up to where the body starts, the top of the extractor
+        # groove's ramp, wherever the calibre's head puts it (a fixed 3.3 mm cut through the ramp once the Fury
+        # had its own rim thickness).
+        s = next(s for _, s in outline.specs() if s["name"] == ".277 SIG Fury")
+        (body, ramp_top), (_, body_end) = outline.case_profile(s)[4:6]
+        self.assertEqual(body, s["base"] / 2)
+        self.assertLess(ramp_top, body_end)
         self.assertAlmostEqual(max(ys), fury["height"], places=2)
-        self.assertAlmostEqual(min(ys), fury["height"] - outline.HYBRID_HEAD, places=2)
+        self.assertAlmostEqual(min(ys), fury["height"] - ramp_top, places=2)
 
     def test_paper_case_stands_on_a_brass_head(self):
         for _, s in outline.specs():
@@ -418,18 +424,18 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".22 ARC", ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".26 Nosler", ".27 Nosler",
-        ".277 SIG Fury", ".28 Nosler", ".30 Carbine", ".30 Nosler", ".30 Remington AR",
-        ".30 Super Carry", ".308 Norma Magnum", ".32 Winchester Self-Loading", ".33 Nosler", ".338 ARC",
-        ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading", ".350 Legend",
-        ".351 Winchester Self-Loading", ".375 CheyTac", ".400 Legend",
-        ".401 Winchester Self-Loading", ".408 CheyTac", ".416 Barrett",
-        ".450 Bushmaster", ".458 SOCOM", ".50 Beowulf",
-        ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm ARC", "6 mm GT", "6.5 Weatherby RPM",
-        "6.5 mm Grendel", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
+        ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".27 Nosler",
+        ".277 SIG Fury", ".30 Remington AR",
+        ".32 Winchester Self-Loading", ".33 Nosler",
+        ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading",
+        ".351 Winchester Self-Loading", ".375 CheyTac",
+        ".401 Winchester Self-Loading", ".408 CheyTac",
+        ".458 SOCOM", ".50 Beowulf",
+        ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm GT",
+        "6.5x58 mm Vergueiro", "7.5 FK",
         "7.5x53.5 mm Swiss (GP 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone",
         "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
-        "8.6 Blackout", "9x23 mm Largo", "9x23 mm Winchester",
+        "9x23 mm Largo", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum",
         ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt",
@@ -534,16 +540,50 @@ class OutlineTests(unittest.TestCase):
             return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(by_name[name])[:n]]
         self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
         self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
-        self.assertEqual(head("9x23 mm Largo", 5), [(4.95, 0), (4.95, 1.3), (4.0631, 1.3), (4.0631, 2.6), (4.955, 3.3)])
-        self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.2574, 1.3), (8.2574, 2.6), (10.15, 3.3),
-                                               (10.15, 6.2), (9.919, 6.2)])
+        self.assertEqual(head(".276 Pedersen", 2), [(5.73, 0), (5.73, 1.3)])
+        self.assertEqual(head(".55 Boys", 2), [(10.15, 0), (10.15, 1.3)])
 
-    def test_a_generic_groove_follows_the_rim_thickness(self):
-        # .308 Norma Magnum: rim .048 in (COTW 18), no C.I.P. groove; the generic groove and belt move up with it.
-        s = next(s for _, s in outline.specs() if s["name"] == ".308 Norma Magnum")
-        self.assertEqual([(round(r, 4), round(h, 4)) for r, h in outline.case_profile(s)[:7]],
-                         [(6.75, 0), (6.75, 1.22), (5.33, 1.22), (5.33, 2.52), (6.75, 3.22), (6.75, 6.12),
-                          (6.4025, 6.12)])
+    def test_generic_heads_are_fitted_to_the_sourced_ones(self):
+        # Review 2026-11-13: the old generic groove, 82 % of the base, was deeper than 224 of the 233 sourced
+        # ones (half of them by 0.6 mm and more) and wider than the rim under a rebated one. The generic head,
+        # worked out for the cases that have a sourced one, stays close to it: half of them are within 0.2 mm
+        # in the groove's diameter and within 0.25 mm in the ramp's top or the belt's front.
+        specs = self.rimless()
+        grooves, tops = [], []
+        for name, (thick, top_at, groove, _, _) in cartridges.CASE_HEADS.items():
+            head = outline.generic_head(specs[name])
+            self.assertEqual(head[0], thick, name)
+            tops.append(abs(head[1] - top_at))
+            grooves.append(abs(head[2] - groove))
+        self.assertLess(statistics.median(grooves), 0.2)
+        self.assertLess(statistics.median(tops), 0.25)
+
+    def test_generic_heads_are_drawn_for_every_kind_of_rim(self):
+        specs = self.rimless()
+
+        def head(name, n):
+            self.assertIn(name, self.HEAD_UNSOURCED)
+            return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(specs[name])[:n]]
+        # Rimless: the groove is 87 % of the rim, 1 mm long, and a 40 degree ramp leads up to the body.
+        self.assertEqual(head(".276 Pedersen", 5), [(5.73, 0), (5.73, 1.3), (4.9851, 1.3), (4.9851, 2.3), (5.7, 3.152)])
+        # Rebated (rim 12.01 mm on a 14.94 mm body): the groove is below the rim, the ramp climbs on to the body.
+        self.assertEqual(head(".475 Bishop Short Magnum", 5),
+                         [(6.005, 0), (6.005, 1.37), (5.2244, 1.37), (5.2244, 2.37), (7.47, 5.0463)])
+        # Semi-rimmed (rim 9.91 mm on a 8.93 mm body): the groove is 90 % of the body, not level with it.
+        self.assertEqual(head(".32 Winchester Self-Loading", 5),
+                         [(4.955, 0), (4.955, 1.27), (4.0185, 1.27), (4.0185, 2.27), (4.465, 2.8021)])
+        # Belted: the ramp ends on the belt, which ends 4.3 mm in front of the rim; behind a rim of .062 in
+        # (COTW 18) groove and belt move up with it.
+        self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.8305, 1.3), (8.8305, 2.3), (10.15, 3.8725),
+                                               (10.15, 5.6), (9.919, 5.6)])
+        self.assertEqual(head(".400/375 Belted Nitro Express", 7),
+                         [(5.92, 0), (5.92, 1.57), (5.121, 1.57), (5.121, 2.57), (5.92, 3.5222), (5.92, 5.87), (5.6047, 5.87)])
+        for name in self.HEAD_UNSOURCED:
+            with self.subTest(name):
+                s, prof = specs[name], outline.case_profile(specs[name])
+                self.assertLess(prof[2][0], min(s["rim"], s["base"]) / 2)  # a groove, below the rim and the body
+                heights = [h for _, h in prof]
+                self.assertEqual(heights, sorted(heights))
 
 if __name__ == "__main__":
     unittest.main()

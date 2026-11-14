@@ -37,9 +37,12 @@ degrees = 30
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-grendel.pdf", "https://www.rifleshootermag.com/editorial/6-5-grendel-evolution/84008"]
 
 [case_head]
-# .059 in.
+# C.I.P. 6,5 Grendel
 rim_thickness = 1.5
-sources = ["book:cotw-18 p. 175"]
+ramp_top = 3.5
+groove_diameter = 9.6
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-grendel.pdf"]
 
 [bullet]
 # Alexander Arms' own loads on the page include an open-tip match bullet, which counts as

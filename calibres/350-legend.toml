@@ -28,9 +28,12 @@ size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
 
 [case_head]
-# SAAMI 350 Legend
+# C.I.P. 350 Legend
 rim_thickness = 1.14
-sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=147"]
+ramp_top = 3.5
+groove_diameter = 8.43
+ramp_angle = 25.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/350-legend-200421-en.pdf"]
 
 [bullet]
 type = "softpoint"

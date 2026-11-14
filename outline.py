@@ -12,39 +12,64 @@ from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIML
 from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
-BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
+# mm, groove floor where no source gives its length: belted cases (as drawn on the C.I.P. sheets) and
+# generic heads (the sourced rimless floors: median 0.95)
+GROOVE_FLOOR = 1.0
 # mm, rim thickness of a case whose [case_head] gives none: rimmed, rimfire, rimless, semi-rimmed or belted
 RIMMED_RIM, RIMFIRE_RIM, RIMLESS_RIM = 1.5, 1.1, 1.3
+# Head of a rimless, semi-rimmed or belted case whose [case_head] gives no groove, fitted to the sourced ones
+# (generic_head). The groove's diameter is a share of the rim's (their median: 0.869; half of them lie between
+# 0.86 and 0.89): the extractor grips the rim, so the groove stays below a rebated rim too. It is at most a
+# share of the base's, which keeps it below the body of a semi-rimmed case (their median: 0.898).
+GENERIC_GROOVE, GENERIC_GROOVE_OF_BASE = 0.87, 0.9
+# The ramp's angle to the case axis in degrees: one for every size and kind (their median: 36; behind the
+# 1 mm floor, 40 puts the ramp's top closest to theirs, and angles by size or kind come no closer). On a
+# belted case, the distance from the rim's front to the belt's front (their median: 4.32 mm, the H&H belt).
+GENERIC_RAMP, GENERIC_BELT = 40.0, 4.3
+
+
+def ramp_run(groove, outer, angle):
+    """Length along the axis of the ramp from a groove out to `outer` (diameters), `angle` degrees to the axis."""
+    return (outer - groove) / 2 / math.tan(math.radians(angle))
+
+
+def generic_head(s):
+    """(rim thickness, ramp top or belt front, groove diameter, ramp angle) like cartridges.case_head, for a
+    rimless, semi-rimmed or belted case without one: the calibre's own rim thickness where a source gives it,
+    and a ramp top that leaves the groove a GROOVE_FLOOR long floor, however far a rebated rim leaves the
+    ramp to climb."""
+    thick = rim_thickness(s["name"]) or RIMLESS_RIM
+    groove = min(s["rim"] * GENERIC_GROOVE, s["base"] * GENERIC_GROOVE_OF_BASE)
+    if s["kind"] == BELTED:
+        return thick, thick + GENERIC_BELT, groove, GENERIC_RAMP
+    return thick, thick + GROOVE_FLOOR + ramp_run(groove, s["base"], GENERIC_RAMP), groove, GENERIC_RAMP
+
+
+def rim_and_groove(s):
+    """Right half of the case's head, from the base to where the body starts, as (radius, height): the rim and,
+    on a rimless, semi-rimmed or belted case, the extractor groove with its ramp (and the belt)."""
+    rim, base, k = s["rim"] / 2, s["base"] / 2, s["kind"]
+    if k in (RIMMED, RIMFIRE):
+        h = rim_thickness(s["name"]) or (RIMFIRE_RIM if k == RIMFIRE else RIMMED_RIM)
+        return [(rim, 0), (rim, h), (base, h)]
+    # Rim, extractor groove and its front ramp at the calibre's own values (cartridges.CASE_HEADS), or at
+    # the generic ones where no source gives them.
+    thick, top_at, groove_dia, ramp_angle = case_head(s["name"]) or generic_head(s)
+    groove = groove_dia / 2
+    if k == BELTED:
+        # The ramp climbs to the belt (rim diameter), which ends at E; the sheets give no groove
+        # width, so the groove floor is drawn GROOVE_FLOOR long.
+        ramp_end = thick + GROOVE_FLOOR + ramp_run(groove_dia, s["rim"], ramp_angle)
+        return [(rim, 0), (rim, thick), (groove, thick), (groove, thick + GROOVE_FLOOR),
+                (rim, ramp_end), (rim, top_at), (base * 0.985, top_at)]
+    ramp_start = max(thick, top_at - ramp_run(groove_dia, s["base"], ramp_angle))
+    return [(rim, 0), (rim, thick), (groove, thick), (groove, ramp_start), (base, top_at)]
 
 
 def case_profile(s):
     """Right half of the case, bottom to top, as (radius, height)."""
-    rim, base, case = s["rim"] / 2, s["base"] / 2, s["case"]
-    k = s["kind"]
-    if k in (RIMMED, RIMFIRE):
-        h = rim_thickness(s["name"]) or (RIMFIRE_RIM if k == RIMFIRE else RIMMED_RIM)
-        pts = [(rim, 0), (rim, h), (base, h)]
-    elif case_head(s["name"]):
-        # Rim, extractor groove and its front ramp at the calibre's own values (cartridges.CASE_HEADS).
-        thick, top_at, groove_dia, ramp_angle = case_head(s["name"])
-        groove, slope = groove_dia / 2, math.tan(math.radians(ramp_angle))
-        if k == BELTED:
-            # The ramp climbs to the belt (rim diameter), which ends at E; the sheets give no groove
-            # width, so the groove floor is drawn BELTED_GROOVE long.
-            ramp_end = thick + BELTED_GROOVE + (rim - groove) / slope
-            pts = [(rim, 0), (rim, thick), (groove, thick), (groove, thick + BELTED_GROOVE),
-                   (rim, ramp_end), (rim, top_at), (base * 0.985, top_at)]
-        else:
-            ramp_start = max(thick, top_at - (base - groove) / slope)
-            pts = [(rim, 0), (rim, thick), (groove, thick), (groove, ramp_start), (base, top_at)]
-    else:
-        # Generic groove (82 % of the base) behind the calibre's own rim thickness where a source gives it.
-        t = rim_thickness(s["name"]) or RIMLESS_RIM
-        groove = base * 0.82
-        pts = [(rim, 0), (rim, t), (groove, t), (groove, t + 1.3), (base, t + 2.0)]
-        if k == BELTED:
-            pts[-1] = (rim, t + 2.0)
-            pts += [(rim, t + 4.9), (base * 0.985, t + 4.9)]
+    base, case = s["base"] / 2, s["case"]
+    pts = rim_and_groove(s)
     top = s["neck"] / 2
     if s["profile"] == CRIMPED:
         # Star crimp: the petals bend in over the front 38 % of the case, then turn in at the mouth.
@@ -143,10 +168,6 @@ PAPER_BAND = 0.5
 # Share of the exposed bullet that is the bare lead tip of a SOFT_POINT bullet, or the plastic tip of
 # a POLYMER_TIP bullet.
 TIP_SHARE = 0.14
-
-# Height of the steel head of a HYBRID case, from the base (mm): rim, extractor groove and the
-# start of the body (.277 Fury).
-HYBRID_HEAD = 3.3
 
 # Height of the brass base cup of a PAPER case, from the base (mm): Boxer's Snider case is
 # paper-covered brass foil in a brass cup; the paper starts 12.2-12.7 mm up on Raven's photos (2026-11-06).
@@ -253,7 +274,8 @@ def outline(s):
             if jacket(s["name"]) not in (None, COPPER):
                 paths["bulletMaterial"] = jacket(s["name"])  # "cupronickel" or "steel"; copper is not named
         if case_material(s["name"]) == HYBRID:
-            paths["head"] = to_path(mirror(head_profile(prof, HYBRID_HEAD)), H, hw)
+            # The steel head holds the rim and the extractor groove, up to where the body starts (.277 Fury).
+            paths["head"] = to_path(mirror(head_profile(prof, rim_and_groove(s)[-1][1])), H, hw)
             paths["headMaterial"] = "steel"
         elif case_material(s["name"]) == PAPER:  # brass head, no headMaterial
             paths["head"] = to_path(mirror(head_profile(prof, PAPER_HEAD)), H, hw)

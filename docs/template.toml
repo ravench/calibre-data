@@ -30,8 +30,10 @@ name = ".308 Winchester"
 # cannon (20 to 57 mm cannon rounds, in the catalogue only: they may leave out measurements no source
 # gives and have no [primer]; see README.md). The apps and order.toml list a calibre under its first
 # category only; a round that also fits another, such as a black-powder rifle round, lists both.
+# rimfire is listed by every rimfire calibre and by no other (a centrefire blank is a handgun round).
 categories = ["rifle"]
-# rimless, semi-rimmed (rim a little wider than the base, with an extractor groove), rimmed, belted,
+# rimless (the rim at most 0.3 mm wider than the base), semi-rimmed (rim a little wider than the base,
+# with an extractor groove), rimmed, belted,
 # rimfire, shot (shot shell), ball (round ball or BB), minie (Minié
 # bullet) or pellet (air gun pellet).
 kind = "rimless"

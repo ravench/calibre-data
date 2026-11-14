@@ -1,7 +1,7 @@
 # Alarm and starter blanks from C.I.P. Tab. VIII, maximum cartridge (sheets 1991-07-29 to
 # 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm P.A.K., length = L3.
 # Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base,
-# the ratio of the measured .22 blank above, because C.I.P. gives no crimp size.
+# the ratio of the measured .22 Blank (6.8/11), because C.I.P. gives no crimp size.
 name = "6 mm Flobert Knall"
 categories = ["rimfire"]
 kind = "rimfire"
