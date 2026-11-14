@@ -12,9 +12,9 @@ origin_sources = [
 worldwide = true
 
 [mm]
-rim = 7.9
-base = 7.9
-shoulder = 7.8
+rim = 7.8
+base = 7.95
+shoulder = 7.95
 shoulder_at = 23.15
 neck = 6.4
 case_length = 28.9

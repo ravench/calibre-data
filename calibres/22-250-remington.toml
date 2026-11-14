@@ -17,13 +17,15 @@ base = 11.93
 shoulder = 10.5
 shoulder_at = 38.48
 neck = 6.45
-case_length = 48.6
+# Midway between C.I.P. (48.46) and SAAMI (48.56).
+case_length = 48.51
 overall_length = 59.69
 bullet = 5.7
 sources = [
   "book:cotw-18 p. 175",
   "book:donnelly p. 128",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf",
+  "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=79",
 ]
 
 [introduced]
