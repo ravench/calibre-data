@@ -323,6 +323,20 @@ def _check_widths(f, mm):
                                             f"{wide} {a}: a case narrows from its base to its mouth")
 
 
+def _check_unsourced(f, mm):
+    """[mm] unsourced: the measurements that no page in sources gives (estimated, or measured on one round)."""
+    if "unsourced" not in mm:
+        return
+    keys, line = mm["unsourced"], f.line("mm", "unsourced")
+    measured = [k for k in mm if k not in ("sources", "unsourced")]
+    if not _is_text_list(keys) or not keys or len(set(keys)) != len(keys) or any(k not in measured for k in keys):
+        f.problem(line, "[mm] unsourced lists the measurements of this [mm] that no source gives, each once: "
+                        'unsourced = ["shoulder_at"]')
+    elif not mm.get("sources") or len(keys) == len(measured):
+        f.problem(line, "[mm] unsourced names the measurements without a source while the others have one: "
+                        "when none has, leave it out and write sources = []")
+
+
 def _check_keys(f, table, data, allowed, required):
     for k in data:
         if k not in allowed:
@@ -563,18 +577,19 @@ def _read_calibre(f, countries, books=None):
             if _shape(kind, profile, category) == "cartridge" and ("shoulder" in data) != ("shoulder_at" in data):
                 f.problem(f.line("mm"), "[mm] needs both shoulder and shoulder_at (bottleneck) or neither (straight case)")
                 ok = False
-        allowed = set(req) | set(opt) | {"sources"}
+        allowed = set(req) | set(opt) | {"sources"} | ({"unsourced"} if t == "mm" else set())
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)
         urls = _check_sources(f, t, data, rule, books)
         for k, v in data.items():
-            if k == "sources" or k not in allowed:
+            if k in ("sources", "unsourced") or k not in allowed:
                 continue
             if t == "mm" or t == "case_head" or k == "degrees":
                 if not _is_number(v) or v <= 0:
                     f.problem(f.line(t, k), f"[{t}] {k} must be a number above 0, without quotes")
         if t == "mm":
             _check_widths(f, data)
+            _check_unsourced(f, data)
         if t == "introduced":
             if ("year" in data) == ("unknown" in data):
                 f.problem(f.line(t), "[introduced] has either year (with sources) or unknown (the reason)")
@@ -899,7 +914,7 @@ def load(root=ROOT):
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
-                         "CURRENT_CASES", "SOURCES", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES",
+                         "CURRENT_CASES", "SOURCES", "UNSOURCED", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
                                "ORIGIN_UNVERIFIED")}
@@ -927,6 +942,11 @@ def load(root=ROOT):
                     sets["ORIGIN_UNVERIFIED"].add(n)
             for fact, data in facts.items():
                 t["SOURCES"][(n, fact)] = list(data["sources"])
+            mm = facts["mm"]
+            # Without any source, no measurement has one.
+            without = mm.get("unsourced") or ([] if mm["sources"] else [k for k in mm if k != "sources"])
+            if without:
+                t["UNSOURCED"][n] = tuple(without)
             first = lambda fact: facts[fact]["sources"][0] if facts[fact]["sources"] else None  # noqa: E731
             i = facts["introduced"]
             if "year" in i:
@@ -1029,6 +1049,9 @@ CURRENT_CASES = _t["CURRENT_CASES"]  # {name: (other case materials made today, 
 LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the file's order
 LOOKALIKE_NAMES = _t["LOOKALIKE_NAMES"]  # each group's name, in the same order
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
+# {name: ([mm] keys without a source)}: the file's [mm] unsourced list, or every measurement where [mm] has
+# no source at all; calibres whose measurements all have one are not in it.
+UNSOURCED = _t["UNSOURCED"]
 BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
 # {name: [{part, colours, meaning, description or None, countries, sources}]}: what a painted bullet tip,
 # cartridge base or primer annulus means, from the [[colour_codes]] tables (part "tip", "base" or "annulus"; a tip's colours from
@@ -1049,6 +1072,12 @@ def sources(name, fact):
     or "fired_by"), or "origin" for origin_sources; [] when nothing is checked yet or the calibre has no
     such table."""
     return list(SOURCES.get((name, fact), []))
+
+
+def unsourced(name):
+    """The [mm] keys of a calibre's measurements that no source gives, such as ("shoulder_at",) for an
+    estimated shoulder height; () when every one has a source."""
+    return UNSOURCED.get(name, ())
 
 
 def shoulder_angle(name):

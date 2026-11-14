@@ -6,13 +6,17 @@ aliases = ["28", "28/70"]
 
 [mm]
 # C.I.P. Cal. 28, Tab. VII, maximum cartridge: diameter d1, rim g; case_length is the length in the
-# marking. The sheet gives no closed (crimped) length.
+# marking.
+# length: the loaded shell closed with a folded (star) crimp, the maximum on SAAMI's cartridge drawing
+# 28 gauge 2 3/4" (2.500 in., Z299.2 p. 31; the tolerance is -6.35). The C.I.P. sheet gives no closed length.
 diameter = 15.85
 rim = 17.4
-length = 64.0
+length = 63.5
 case_length = 70.0
-# No source yet for length.
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/tabvii-28-eng-2.pdf"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/tabvii-28-eng-2.pdf",
+  "https://saami.org/wp-content/uploads/2025/09/ANSI-SAAMI-Z299.2-Shotshell-2019-Approved-2025-09-23.pdf",
+]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.

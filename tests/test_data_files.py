@@ -227,7 +227,7 @@ class LoadTests(unittest.TestCase):
 
     def test_short_forms_build_the_same_dicts_as_the_helpers(self):
         self.assertEqual(next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == "12/70"),
-                         cartridges.shot("12/70", 20.6, 22.45, 64.0, ["12", "12/70", "12ga", "12gauge"], 70.0))
+                         cartridges.shot("12/70", 20.6, 22.45, 61.09, ["12", "12/70", "12ga", "12gauge"], 70.0))
         blank = next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == ".22 Blank (6.8/11)")
         self.assertEqual((blank["neck"], blank["oal"], blank["profile"]), (3.4, 11.0, "crimped"))
 
@@ -668,6 +668,33 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.edit(LR, LR_MM + "\n", "")
             self.assertProblem(c, LR, r"\[mm\] needs a sources list")
+
+    def test_unsourced_lists_the_measurements_without_a_source(self):
+        self.assertEqual(cartridges.unsourced(".56-52 Spencer Necked"), ("shoulder_at",))
+        self.assertEqual(cartridges.unsourced(".69 Minié"), ("diameter", "length"))  # no source at all: every one
+        self.assertEqual(cartridges.unsourced(".308 Winchester"), ())
+        for name, keys in cartridges.UNSOURCED.items():
+            self.assertTrue(keys, name)
+        for path in os.listdir(os.path.join(ROOT, "calibres")):  # the list replaced these notes (2026-11-14)
+            with open(os.path.join(ROOT, "calibres", path), encoding="utf-8") as f:
+                self.assertNotIn("No source yet for", f.read(), path)
+        wrong, whole = r"\[mm\] unsourced lists the measurements of this \[mm\]", r"when none has, leave it out"
+        for old, new, problem in [
+                ("neck = 5.7\n", 'neck = 5.7\nunsourced = ["neck"]\n', None),
+                ("neck = 5.7\n", 'neck = 5.7\nunsourced = ["shoulder"]\n', wrong),  # not in this [mm]
+                ("neck = 5.7\n", 'neck = 5.7\nunsourced = ["neck", "neck"]\n', wrong),
+                ("neck = 5.7\n", 'neck = 5.7\nunsourced = ["sources"]\n', wrong),
+                ("neck = 5.7\n", 'neck = 5.7\nunsourced = []\n', wrong),
+                ("neck = 5.7\n", 'neck = 5.7\nunsourced = "neck"\n', wrong),
+                ("neck = 5.7\n", 'neck = 5.7\nunsourced = ["rim", "base", "neck", "case_length", "overall_length", '
+                                 '"bullet"]\n', whole),
+                (LR_MM, 'unsourced = ["neck"]\nsources = []', whole)]:
+            with self.subTest(new), Copy() as c:
+                c.edit(LR, old, new)
+                if problem:
+                    self.assertProblem(c, LR, problem)
+                else:
+                    self.assertEqual(c.problems(), [])
 
     def test_missing_measurement(self):
         with Copy() as c:

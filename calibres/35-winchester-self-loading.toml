@@ -17,7 +17,7 @@ neck = 9.6
 case_length = 29.3
 overall_length = 42.0
 bullet = 8.9
-# No source yet for base, neck, case_length and overall_length.
+unsourced = ["base", "neck", "case_length", "overall_length"]
 sources = ["book:cotw-18 p. 250"]
 
 [introduced]

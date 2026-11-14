@@ -13,6 +13,53 @@ def points(d):
     return [tuple(map(float, p.split())) for p in d[1:-2].split(" L")]
 
 
+class GapTests(unittest.TestCase):
+    def spec(self, name):
+        return next(s for _, items in cartridges.ALL_CATALOGUE for s in items if s["name"] == name)
+
+    def test_gaps_name_what_the_drawing_has_no_source_for(self):
+        for name, gaps in [
+                (".308 Winchester", ()),
+                ("12/70", ()),  # its loaded length is SAAMI's
+                (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
+                (".69 Minié", ("measurements",)),  # no source at all
+                ("4.5 mm Diabolo (.177)", ("measurements",)),  # no length
+                ("7.5 mm Kadettenpatrone", ("measurements", "groove", "rim_thickness")),
+                ("10.4 mm Swiss Ordnance 1878", ("rim_thickness",)),
+                ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), gaps)
+        for _, items in cartridges.ALL_CATALOGUE:
+            for s in items:
+                self.assertLessEqual(set(outline.gaps(s)), set(outline.GAPS), s["name"])
+
+    def test_gaps_follow_the_tables(self):
+        for _, s in outline.specs():
+            gaps, name = outline.gaps(s), s["name"]
+            cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
+            self.assertEqual("measurements" in gaps, bool(cartridges.unsourced(name)), name)
+            self.assertEqual("rim_thickness" in gaps, cartridge and name not in cartridges.RIM_THICKNESS, name)
+            self.assertEqual("groove" in gaps, s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)
+                             and name not in cartridges.CASE_HEADS, name)
+            self.assertEqual("shoulder_angle" in gaps, cartridge and bool(s["shoulder"]) and s["profile"] != CRIMPED
+                             and name not in cartridges.SHOULDER_ANGLES, name)
+
+    def test_a_shoulder_the_drawing_moves_back_is_a_gap(self):
+        s = dict(self.spec(".308 Winchester"))
+        self.assertEqual(outline.gaps(s), ())
+        s["sh_at"] = s["case"] - outline.shoulder_run(s) - 1.0  # 1 mm of neck: under MIN_NECK
+        self.assertEqual(outline.gaps(s), ("shoulder_moved",))
+        self.assertLess(max(h for r, h in outline.case_profile(s) if r == s["shoulder"] / 2), s["sh_at"])
+
+    def test_well_sourced_allows_a_default_rim_only(self):
+        self.assertTrue(outline.well_sourced(self.spec(".308 Winchester")))
+        self.assertTrue(outline.well_sourced(self.spec("10.4 mm Swiss Ordnance 1878")))  # rim thickness only
+        self.assertFalse(outline.well_sourced(self.spec("7.5x53.5 mm Swiss (GP 1890)")))  # generic groove
+        self.assertFalse(outline.well_sourced(self.spec(".56-52 Spencer Necked")))
+        passing = sum(outline.well_sourced(s) for _, s in outline.specs())
+        self.assertGreater(passing, 580)  # 589 of 759 on 2026-11-14
+
+
 class OutlineTests(unittest.TestCase):
     def test_every_calibre_has_a_valid_outline_inside_its_box(self):
         for _, s in outline.specs():

@@ -8,7 +8,7 @@ millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bot
 import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
+from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, unsourced, SHOULDER_ANGLES, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
 from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
@@ -70,6 +70,50 @@ def rim_and_groove(s):
     return [(rim, 0), (rim, thick), (groove, thick), (groove, ramp_start), (base, top_at)]
 
 
+MIN_NECK = 1.2  # mm of neck a bottleneck case is drawn with at least: a shoulder too far forward moves back
+
+
+def shoulder_run(s):
+    """Length along the axis of a bottleneck case's shoulder, which runs at the calibre's own angle to the
+    axis (cartridges.SHOULDER_ANGLES)."""
+    return (s["shoulder"] - s["neck"]) / 2 / math.tan(math.radians(shoulder_angle(s["name"])))
+
+
+# What can keep a drawing from being the calibre's own shape (gaps): a measurement without a source
+# ([mm] unsourced, or no [mm] source at all), a bottleneck's shoulder at the default angle, the generic
+# extractor groove, a rim of default thickness, and a shoulder the drawing had to move back to leave a neck.
+MEASUREMENTS, SHOULDER_ANGLE, GROOVE, RIM_THICKNESS, SHOULDER_MOVED = GAPS = (
+    "measurements", "shoulder_angle", "groove", "rim_thickness", "shoulder_moved")
+
+
+def gaps(s):
+    """The GAPS of a calibre's drawing, in their order: () when every drawn dimension comes from a source
+    (well_sourced allows a little less). Bullet type, case material and the nose are not counted: they colour the
+    drawing or are schematic anyway."""
+    name, found = s["name"], []
+    cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
+    drawn = ("rim", "base", "neck", "case", "oal", "bullet") + (("sh_at",) if s["shoulder"] else ()) if cartridge else ()
+    if unsourced(name) or any(s[k] is None for k in drawn):  # a cannon round may leave measurements out
+        found.append(MEASUREMENTS)
+    if cartridge:
+        bottleneck = s["shoulder"] and s["profile"] != CRIMPED
+        if bottleneck and name not in SHOULDER_ANGLES:
+            found.append(SHOULDER_ANGLE)
+        if s["kind"] not in (RIMMED, RIMFIRE) and case_head(name) is None:
+            found.append(GROOVE)
+        if rim_thickness(name) is None:
+            found.append(RIM_THICKNESS)
+        if bottleneck and MEASUREMENTS not in found and s["sh_at"] > s["case"] - shoulder_run(s) - MIN_NECK:
+            found.append(SHOULDER_MOVED)
+    return tuple(found)
+
+
+def well_sourced(s):
+    """True for a calibre that is well sourced and likely draws correctly: its drawing has no gaps but, at
+    most, a rim of default thickness, which is off by about half a millimetre at worst (Raven, 2026-11-14)."""
+    return not set(gaps(s)) - {RIM_THICKNESS}
+
+
 def case_profile(s):
     """Right half of the case, bottom to top, as (radius, height)."""
     base, case = s["base"] / 2, s["case"]
@@ -80,9 +124,8 @@ def case_profile(s):
         return pts + [(base, case * (1 - CRIMP_LENGTH)), ((base + top) / 2, case - 0.35), (top, case)]
     if s["shoulder"]:
         sh = s["shoulder"] / 2
-        # The shoulder runs at the calibre's own angle to the axis (cartridges.SHOULDER_ANGLES).
-        run = (sh - top) / math.tan(math.radians(shoulder_angle(s["name"])))
-        sh_at = min(s["sh_at"], case - run - 1.2)
+        run = shoulder_run(s)
+        sh_at = min(s["sh_at"], case - run - MIN_NECK)
         pts += [(sh, sh_at), (top, sh_at + run), (top, case)]
     else:
         pts += [(top, case)]

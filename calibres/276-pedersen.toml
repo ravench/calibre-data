@@ -23,7 +23,8 @@ neck = 7.98
 case_length = 51.31
 overall_length = 72.39
 bullet = 7.24
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 573"]
 
 [introduced]
