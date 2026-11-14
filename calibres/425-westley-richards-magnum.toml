@@ -35,6 +35,15 @@ sources = []
 degrees = 8.0
 sources = ["https://municion.org/producto/425-westley-richards-magnum/"]
 
+[case_head]
+# AECC drawing 11-067-BRC-010 (municion.org): RT 1.12, HL 3.52, GØ 10.39, GW 1.00, HØ 13.77; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.12
+ramp_top = 3.52
+groove_diameter = 10.39
+ramp_angle = 50.0
+sources = ["https://municion.org/producto/425-westley-richards-magnum/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 596"]

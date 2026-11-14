@@ -16,15 +16,22 @@ rare = true
 
 [mm]
 rim = 11.84
+belt = 12.06
 base = 11.38
 shoulder = 11.05
-shoulder_at = 42.42
+shoulder_at = 43.82
 neck = 10.08
 case_length = 63.5
 overall_length = 76.2
 bullet = 9.52
-# The table's base is the belt; the body in front of it and shoulder_at are Donnelly's.
-sources = ["book:cotw-18 p. 608", "book:donnelly p. 515"]
+# The table's base is the belt; the body in front of it is Donnelly's.
+# belt and shoulder_at from the AECC drawing 09-063-BFC-020 (municion.org): LØ 12.06 over a rim of RØ 11.78, and
+# SL 43.70 on a case of CL 63.38, taken from the mouth (case_length - (CL - SL)). Donnelly's shoulder starts at 42.42.
+sources = [
+  "book:cotw-18 p. 608",
+  "book:donnelly p. 515",
+  "https://municion.org/producto/400-375-belted-nitro-express-holland-holland/",
+]
 
 [introduced]
 year = 1905
@@ -36,10 +43,20 @@ size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
 
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 11.00, NØ 10.12, SL 43.70, NL 18.50, CL 63.38.
+degrees = 20.4
+sources = ["https://municion.org/producto/400-375-belted-nitro-express-holland-holland/"]
+
 [case_head]
-# .062 in.
+# .062 in. (Donnelly); groove from the AECC drawing 09-063-BFC-020 (municion.org): RT 1.00, GØ 10.30, GW 0.90, the
+# ramp up to the belt (LØ 12.06) ends at HL 3.00 and the belt (LW 2.42) at 5.42; ramp angle from HL = RT + GW + ((LØ -
+# GØ)/2)/tan(angle).
 rim_thickness = 1.57
-sources = ["book:donnelly p. 515"]
+ramp_top = 5.42
+groove_diameter = 10.3
+ramp_angle = 39.0
+sources = ["book:donnelly p. 515", "https://municion.org/producto/400-375-belted-nitro-express-holland-holland/"]
 
 [bullet]
 type = "softpoint"

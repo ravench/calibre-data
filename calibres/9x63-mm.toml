@@ -37,6 +37,15 @@ sources = ["book:cotw-18 p. 652"]
 degrees = 11.9
 sources = ["https://municion.org/producto/9-x-63-hessmer/"]
 
+[case_head]
+# AECC drawing 09-063-BGC-010 (municion.org): RT 1.20, HL 3.10, GØ 10.20, GW 1.10, HØ 11.88; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.2
+ramp_top = 3.1
+groove_diameter = 10.2
+ramp_angle = 46.0
+sources = ["https://municion.org/producto/9-x-63-hessmer/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 638"]

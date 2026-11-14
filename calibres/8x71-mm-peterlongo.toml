@@ -36,6 +36,15 @@ sources = ["book:cotw-18 p. 651"]
 degrees = 20.5
 sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
 
+[case_head]
+# AECC drawing 08-071-BGC-030 (municion.org): RT 1.23, HL 3.00, GØ 10.32, GW 0.75, HØ 11.84; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.23
+ramp_top = 3.0
+groove_diameter = 10.32
+ramp_angle = 37.0
+sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 630"]

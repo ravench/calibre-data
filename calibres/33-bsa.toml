@@ -44,9 +44,14 @@ degrees = 14.7
 sources = ["https://municion.org/producto/33-bsa-belted-rimless-nitro-express/"]
 
 [case_head]
-# .051 in.
+# .051 in. (Donnelly); groove from the AECC drawing 09-061-BFC-010 (municion.org): RT 1.10, GØ 11.69, GW 0.85, the
+# ramp up to the belt (LØ 13.45) ends at HL 3.00 and the belt (LW 2.05) at 5.05; ramp angle from HL = RT + GW + ((LØ -
+# GØ)/2)/tan(angle).
 rim_thickness = 1.3
-sources = ["book:donnelly p. 382"]
+ramp_top = 5.05
+groove_diameter = 11.69
+ramp_angle = 40.0
+sources = ["book:donnelly p. 382", "https://municion.org/producto/33-bsa-belted-rimless-nitro-express/"]
 
 [bullet]
 type = "softpoint"

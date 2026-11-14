@@ -41,6 +41,15 @@ sources = ["book:cotw-18 p. 608"]
 degrees = 19.9
 sources = ["https://municion.org/producto/242-rimless-nitro-express-vickers/"]
 
+[case_head]
+# AECC drawing 06-061-BGC-020 (municion.org): RT 1.19, HL 3.56, GØ 10.41, GW 0.90, HØ 11.84; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.19
+ramp_top = 3.56
+groove_diameter = 10.41
+ramp_angle = 26.0
+sources = ["https://municion.org/producto/242-rimless-nitro-express-vickers/"]
+
 [bullet]
 # COTW gives no factory load.
 type = "softpoint"

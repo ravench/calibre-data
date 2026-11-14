@@ -39,6 +39,15 @@ sources = ["book:cotw-18 p. 652"]
 degrees = 9.7
 sources = ["https://municion.org/producto/112-x-72-schuler/"]
 
+[case_head]
+# AECC drawing 11-072-BRC-010 (municion.org): RT 1.20, HL 4.05, GØ 10.27, GW 1.13, HØ 13.59; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.2
+ramp_top = 4.05
+groove_diameter = 10.27
+ramp_angle = 44.0
+sources = ["https://municion.org/producto/112-x-72-schuler/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 648"]

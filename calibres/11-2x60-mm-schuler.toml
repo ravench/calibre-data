@@ -39,6 +39,15 @@ sources = ["book:cotw-18 p. 652"]
 degrees = 3.8
 sources = ["https://municion.org/producto/112-x-60-schuler/"]
 
+[case_head]
+# AECC drawing 11-060-BRC-010 (municion.org): RT 1.26, HL 3.90, GØ 10.25, GW 1.46, HØ 13.00; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.26
+ramp_top = 3.9
+groove_diameter = 10.25
+ramp_angle = 49.0
+sources = ["https://municion.org/producto/112-x-60-schuler/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 649"]

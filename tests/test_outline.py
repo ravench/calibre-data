@@ -87,6 +87,37 @@ class GapTests(unittest.TestCase):
         # The book's thinner rim stays in front of the drawing's groove (6.5 mm Bergmann: .025 in.; the drawing 1.00).
         self.assertEqual(cartridges.case_head("6.5 mm Bergmann")[:2], (0.64, 1.9))
 
+    def test_aecc_drawings_source_sporting_rifle_heads(self):
+        # Sporting rifle rounds of about 1900 to 1940 with no C.I.P. sheet: the groove from the AECC drawing
+        # (municion.org), behind the book's rim thickness where one gives it (the two BSA rounds, the .400/375).
+        heads = {".242 Rimless Nitro Express": (1.19, 3.56, 10.41, 26.0), ".303 Magnum": (1.18, 2.65, 12.2, 52.0),
+                 ".425 Westley Richards Magnum": (1.12, 3.52, 10.39, 50.0),
+                 "11.2x60 mm Schüler": (1.26, 3.9, 10.25, 49.0), "11.2x72 mm Schüler": (1.2, 4.05, 10.27, 44.0),
+                 "6.5x61 mm Mauser": (1.45, 3.6, 10.43, 36.0), "8x71 mm Peterlongo": (1.23, 3.0, 10.32, 37.0),
+                 "9x63 mm": (1.2, 3.1, 10.2, 46.0), "9x71 mm Peterlongo": (1.2, 3.25, 10.22, 46.0),
+                 # Belted: the ramp's top is the front of the belt (HL + LW on the drawing).
+                 ".26 BSA": (1.24, 5.3, 11.92, 37.0), ".33 BSA": (1.3, 5.05, 11.69, 40.0),
+                 ".400/375 Belted Nitro Express": (1.57, 5.42, 10.3, 39.0),
+                 "7x73 mm Vom Hofe Belted": (1.12, 4.55, 11.98, 47.0)}
+        for name, head in heads.items():
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                self.assertEqual(cartridges.case_head(name), head)
+                self.assertIn("municion.org", cartridges.sources(name, "case_head")[-1])
+        # A head from the drawing does not close the other gaps: the 10.75x57's drawing shows no shoulder.
+        self.assertEqual(cartridges.case_head("10.75x57 mm Mannlicher"), (1.2, 3.2, 10.0, 29.0))
+        self.assertEqual(outline.gaps(self.spec("10.75x57 mm Mannlicher")), ("measurements", "shoulder_angle"))
+        # The .280 Jeffery is the .333 Jeffery case necked down: the head of the .333's C.I.P. sheet.
+        self.assertEqual(outline.gaps(self.spec(".280 Jeffery")), ())
+        self.assertEqual(cartridges.case_head(".280 Jeffery"), cartridges.case_head(".333 Jeffery Rimless"))
+        self.assertEqual(cartridges.sources(".280 Jeffery", "case_head"),
+                         ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf", "book:cotw-18 p. 582"])
+        # Two drawings show a belt wider than the rim: 12.06 over 11.84 mm and 13.88 over 13.54 mm.
+        for name, belt, front in [(".400/375 Belted Nitro Express", 12.06, 5.42), ("7x73 mm Vom Hofe Belted", 13.88, 4.55)]:
+            s = self.spec(name)
+            self.assertEqual(s["belt"], belt)
+            self.assertEqual(outline.case_profile(s)[5], (belt / 2, front))
+
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
         # Calibres that failed the rule on 2026-11-14 and now take every measurement and the head from their C.I.P.
         # sheet, some found under another title (the Vergueiro as «6,5 x 58 Mauser», the .256 Gibbs as «256 Mag.
@@ -431,7 +462,7 @@ class OutlineTests(unittest.TestCase):
             ".243 WSSM": (29.1, 6.4, 42.3), ".25 WSSM": (29.2, 7.4, 42.57),
             ".338-378 Weatherby Magnum": (60.4, 9.78, 73.7), "7 mm Remington SAUM": (38.95, 7.5, 51.52),
             ".458 SOCOM": (30.0, 9.15, 40.0), "8x58 mm R Danish Krag": (41.0, 11.2, 57.7),
-            ".416 Barrett": (63.5, 12.17, 82.95),
+            ".416 Barrett": (63.5, 12.17, 82.95), ".400/375 Belted Nitro Express": (43.7, 18.5, 63.38),
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
@@ -454,8 +485,7 @@ class OutlineTests(unittest.TestCase):
         ".338 Canadian Magnum",
         ".38-70 Winchester", ".38-90 Winchester Express",
         ".40-70 Peabody What Cheer",
-        ".400/360 Nitro Express",
-        ".400/375 Belted Nitro Express", ".416 Rimmed",
+        ".400/360 Nitro Express", ".416 Rimmed",
         ".45-100 Remington Necked",
         ".45-125 Winchester Express",
         ".50-115 Bullard",
@@ -536,7 +566,8 @@ class OutlineTests(unittest.TestCase):
         drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64),
                     ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.6, 26.11),
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
-                    ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1)}
+                    ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1),
+                    ".400/375 Belted Nitro Express": (20.4, 43.82)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):
@@ -568,20 +599,18 @@ class OutlineTests(unittest.TestCase):
         ".351 Winchester Self-Loading", ".375 CheyTac", ".408 CheyTac", ".458 SOCOM", "5.8x42 mm", "7.5 FK",
         "7.92x107 mm DS",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        ".242 Rimless Nitro Express", ".26 BSA", ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery",
-        ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".303 Magnum", ".33 BSA", ".330 Dakota", ".338 Canadian Magnum",
-        ".338 Lehigh", ".35 Newton", ".360 Mars", ".375 Dakota", ".400/375 Belted Nitro Express", ".416 Dakota",
-        ".425 Westley Richards Magnum", ".45 Remington Thompson", ".45-70 Auto", ".450 Dakota", ".455 Webley Automatic",
-        ".458 Canadian Magnum", ".475 Bishop Short Magnum", ".50 GI", ".50-115 Bullard", ".500 Phantom",
-        ".577 Tyrannosaur", "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor", "10.75x57 mm Mannlicher",
-        "10.75x63 mm Mauser", "11.2x60 mm Schüler", "11.2x72 mm Schüler", "12.04 Bibamufu", "4.85x49 mm British",
-        "5 mm Bergmann", "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW", "6.17 Lazzeroni Flash",
-        "6.17 Lazzeroni Spitfire", "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser",
+        ".276 Enfield", ".276 Pedersen", ".280 British", ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".330 Dakota",
+        ".338 Canadian Magnum", ".338 Lehigh", ".35 Newton", ".360 Mars", ".375 Dakota", ".416 Dakota",
+        ".45 Remington Thompson", ".45-70 Auto", ".450 Dakota", ".455 Webley Automatic", ".458 Canadian Magnum",
+        ".475 Bishop Short Magnum", ".50 GI", ".50-115 Bullard", ".500 Phantom", ".577 Tyrannosaur",
+        "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor", "10.75x63 mm Mauser", "12.04 Bibamufu",
+        "4.85x49 mm British", "5 mm Bergmann", "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW",
+        "6.17 Lazzeroni Flash", "6.17 Lazzeroni Spitfire", "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau",
         "6.71 Lazzeroni Blackbird", "6.71 Lazzeroni Phantom", "6x58 mm Forster", "7 mm Canadian Magnum", "7 mm Dakota",
         "7.21 Lazzeroni Firehawk", "7.21 Lazzeroni Tomahawk", "7.65 mm Roth-Sauer", "7.82 Lazzeroni Patriot",
-        "7x73 mm Vom Hofe Belted", "8.5 mm Mars", "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan", "8x59 mm Breda",
-        "8x63 mm Swedish", "8x71 mm Peterlongo", "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle",
-        "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn", "9.8 mm Auto Colt", "9x63 mm", "9x71 mm Peterlongo",
+        "8.5 mm Mars", "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan", "8x59 mm Breda", "8x63 mm Swedish",
+        "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle", "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn",
+        "9.8 mm Auto Colt",
     }
 
     SHALLOW_CONES = {".32 Winchester Self-Loading": 3.7, ".35 Winchester Self-Loading": 8.0,
@@ -708,7 +737,9 @@ class OutlineTests(unittest.TestCase):
         self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
         self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
         self.assertEqual(head(".276 Pedersen", 2), [(5.73, 0), (5.73, 1.3)])
-        self.assertEqual(head("7x73 mm Vom Hofe Belted", 2), [(6.77, 0), (6.77, 1.3)])
+        # Every belted case in the catalogue has a rim thickness now: one made up for the test.
+        belted = cartridges.c("A belted case", BELTED, 13.54, 13.39, 12.27, 8.0, 72.9, 52.04, 98.55, 7.21, SPITZER)
+        self.assertEqual([(round(r, 4), round(h, 4)) for r, h in outline.case_profile(belted)[:2]], [(6.77, 0), (6.77, 1.3)])
 
     def test_generic_heads_are_fitted_to_the_sourced_ones(self):
         # Review 2026-11-13: the old generic groove, 82 % of the base, was deeper than 224 of the 233 sourced
@@ -739,11 +770,11 @@ class OutlineTests(unittest.TestCase):
         # Semi-rimmed (rim 12.7 mm on a 12.04 mm body): the groove is 90 % of the body, not level with it.
         self.assertEqual(head(".455 Webley Automatic", 5),
                          [(6.35, 0), (6.35, 1.3), (5.418, 1.3), (5.418, 2.3), (6.02, 3.0174)])
-        # Belted: the ramp ends on the belt, which ends 4.3 mm in front of the default 1.3 mm rim.
-        self.assertEqual(head("7x73 mm Vom Hofe Belted", 7), [(6.77, 0), (6.77, 1.3), (5.8899, 1.3), (5.8899, 2.3),
-                                                              (6.77, 3.3489), (6.77, 5.6), (6.695, 5.6)])
-        self.assertEqual(head(".400/375 Belted Nitro Express", 7),
-                         [(5.92, 0), (5.92, 1.57), (5.121, 1.57), (5.121, 2.57), (5.92, 3.5222), (5.92, 5.87), (5.69, 5.87)])
+        # Belted: the ramp ends on the belt, which ends 4.3 mm in front of the default 1.3 mm rim. Every belted
+        # case in the catalogue has its own head now, so this one is made up (a rim of 13.54 mm, a body of 13.39).
+        belted = cartridges.c("A belted case", BELTED, 13.54, 13.39, 12.27, 8.0, 72.9, 52.04, 98.55, 7.21, SPITZER)
+        self.assertEqual([(round(r, 4), round(h, 4)) for r, h in outline.case_profile(belted)[:7]],
+                         [(6.77, 0), (6.77, 1.3), (5.8899, 1.3), (5.8899, 2.3), (6.77, 3.3489), (6.77, 5.6), (6.695, 5.6)])
         for name in self.HEAD_UNSOURCED:
             with self.subTest(name):
                 s, prof = specs[name], outline.case_profile(specs[name])
