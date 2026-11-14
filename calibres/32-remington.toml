@@ -1,4 +1,4 @@
-# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+# Batch 8 (2026-11): old American sporting rounds; now from the C.I.P. sheet (see [mm]).
 name = ".32 Remington"
 categories = ["rifle"]
 kind = "rimless"

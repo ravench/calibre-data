@@ -14,7 +14,7 @@ obsolete = true
 rare = true
 
 [mm]
-# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+# C.I.P. maximum cartridge: rim R1, base P1, neck H2, case L3, length L6, bullet G1.
 rim = 16.92
 base = 14.48
 neck = 13.73
