@@ -40,9 +40,13 @@ degrees = 35
 sources = ["https://www.thefirearmblog.com/"]
 
 [case_head]
-# .054 in.
+# .054 in. (COTW). The 6.5 Weatherby RPM is this case necked down (same rim, body and rim thickness):
+# groove, ramp and angle from its SAAMI drawing (see that file).
 rim_thickness = 1.37
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.77
+groove_diameter = 10.39
+ramp_angle = 40.0
+sources = ["book:cotw-18 p. 452", "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=51"]
 
 [bullet]
 type = "jacketed"

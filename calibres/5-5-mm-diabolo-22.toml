@@ -7,11 +7,10 @@ aliases = ["5.5", "5.5mm"]
 worldwide = true
 
 [mm]
-# Diameter: H&N Field Target Trophy .22, head sizes 5.53-5.55 mm. No maker page found gives a length.
+# Diameter: H&N Field Target Trophy .22, head sizes 5.53-5.55 mm. Length: RWS Meisterkugeln 5.50 mm, 6.4 mm.
 diameter = 5.5
-length = 6.5
-unsourced = ["length"]
-sources = ["https://hn-sport.de/en/node/58"]
+length = 6.4
+sources = ["https://hn-sport.de/en/node/58", "https://rws-ammunition.com/en/products/air-gun-pellets/rws-meisterkugeln-0-91-g-oe-5-50-mm"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
