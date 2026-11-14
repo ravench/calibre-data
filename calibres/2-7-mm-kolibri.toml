@@ -30,6 +30,15 @@ size = "miniature"
 diameter = 2.2
 sources = ["https://municion.org/producto/27-mm-kolibri/"]
 
+[case_head]
+# AECC drawing 03-009-CGC-010 (municion.org): RT 0.41, HL 1.31, GØ 3.09, GW 0.55, HØ 3.52; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 0.41
+ramp_top = 1.31
+groove_diameter = 3.09
+ramp_angle = 32.0
+sources = ["https://municion.org/producto/27-mm-kolibri/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 456"]

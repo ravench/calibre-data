@@ -31,6 +31,15 @@ sources = ["https://en.wikipedia.org/wiki/.35_S%26W_Auto"]
 size = "small-pistol"
 sources = ["https://municion.org/producto/35-smith-wesson-automatic/"]
 
+[case_head]
+# AECC drawing 08-017-CGC-030 (municion.org): RT 1.09, HL 3.34, GØ 7.56, GW 0.80, HØ 8.83; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.09
+ramp_top = 3.34
+groove_diameter = 7.56
+ramp_angle = 24.0
+sources = ["https://municion.org/producto/35-smith-wesson-automatic/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 475"]

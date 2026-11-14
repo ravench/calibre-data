@@ -14,16 +14,19 @@ origin_sources = [
 rare = true
 
 [mm]
+# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
 rim = 12.01
-base = 13.74
-shoulder = 13.49
-shoulder_at = 30.0
-neck = 12.32
-case_length = 40.0
-overall_length = 57.4
+base = 13.83
+shoulder = 13.56
+shoulder_at = 29.91
+neck = 12.34
+case_length = 40.13
+overall_length = 57.15
 bullet = 11.63
-unsourced = ["shoulder_at"]
-sources = ["https://en.wikipedia.org/wiki/.458_SOCOM"]
+sources = [
+  "https://en.wikipedia.org/wiki/.458_SOCOM",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/458-socom-210827-en.pdf",
+]
 
 [introduced]
 year = 2000
@@ -33,15 +36,18 @@ sources = ["https://en.wikipedia.org/wiki/.458_SOCOM"]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.458_SOCOM"]
 
-[shoulder_angle]
-# AECC drawing
-degrees = 35.2
-sources = ["https://municion.org/producto/458-socom/"]
-
 [case_head]
-# .048 in.
-rim_thickness = 1.22
-sources = ["book:cotw-18 p. 453"]
+# C.I.P. 458 Socom: R, E, E1, delta
+rim_thickness = 1.32
+ramp_top = 4.35
+groove_diameter = 10.34
+ramp_angle = 47.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/458-socom-210827-en.pdf"]
+
+[shoulder_angle]
+# C.I.P. 458 Socom: half the cone angle alpha 50 degrees
+degrees = 25.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/458-socom-210827-en.pdf"]
 
 [bullet]
 type = "jacketed"

@@ -34,9 +34,13 @@ degrees = 15.9
 sources = ["https://municion.org/producto/58-x-21-china-pistol/"]
 
 [case_head]
-# .044 in.
+# .044 in. (COTW); groove from the AECC drawing 06-021-BGC-030 (municion.org): RT 1.13, HL 2.94, GØ 6.79, GW 0.85,
+# HØ 7.95; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.12
-sources = ["book:cotw-18 p. 527"]
+ramp_top = 2.94
+groove_diameter = 6.79
+ramp_angle = 31.0
+sources = ["book:cotw-18 p. 527", "https://municion.org/producto/58-x-21-china-pistol/"]
 
 [bullet]
 type = "jacketed"

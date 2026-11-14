@@ -22,10 +22,11 @@ class GapTests(unittest.TestCase):
                 (".308 Winchester", ()),
                 ("12/70", ()),  # its loaded length is SAAMI's
                 (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
-                (".69 Minié", ("measurements",)),  # no source at all
+                (".69 Minié", ()),  # the Altered Musket drawing: 1.1 in long
+                (".58 Minié", ()),  # the Harpers Ferry drawing: 1.05 in long
                 ("4.5 mm Diabolo (.177)", ()),  # its length from RWS
                 ("5.5 mm Diabolo (.22)", ()),
-                ("7.5 mm Kadettenpatrone", ("measurements",)),  # Raven's overall length
+                ("7.5 mm Kadettenpatrone", ()),  # its length: Raven measured it (measured:raven)
                 (".25 Stevens", ("rim_thickness",)),
                 ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
             with self.subTest(name):
@@ -34,11 +35,22 @@ class GapTests(unittest.TestCase):
             for s in items:
                 self.assertLessEqual(set(outline.gaps(s)), set(outline.GAPS), s["name"])
 
+    def test_a_crimped_blanks_mouth_is_a_sketch(self):
+        # Raven 2026-11-14: "treat the crimp as a sketch". No sheet gives a star crimp's size: the mouth stays
+        # listed as unsourced, but it keeps no blank from being well sourced.
+        for name in (".22 Long Blanc", "6 mm Flobert Blanc", "9 mm R Blanc", ".320 Court Blanc", ".45 K Blanc"):
+            with self.subTest(name):
+                self.assertEqual(cartridges.unsourced(name), ("mouth",))
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+        s = dict(self.spec(".45 K Blanc"), profile=FLAT)  # on any other profile it would still be a gap
+        self.assertEqual(outline.gaps(s)[:1], ("measurements",))
+
     def test_gaps_follow_the_tables(self):
         for _, s in outline.specs():
             gaps, name = outline.gaps(s), s["name"]
             cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
-            self.assertEqual("measurements" in gaps, bool(cartridges.unsourced(name)), name)
+            crimp = {"mouth"} if s["profile"] == CRIMPED else set()  # a sketch (Raven 2026-11-14)
+            self.assertEqual("measurements" in gaps, bool(set(cartridges.unsourced(name)) - crimp), name)
             self.assertEqual("rim_thickness" in gaps, cartridge and name not in cartridges.RIM_THICKNESS, name)
             self.assertEqual("groove" in gaps, s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)
                              and name not in cartridges.CASE_HEADS, name)
@@ -56,6 +68,16 @@ class GapTests(unittest.TestCase):
         self.assertIn("shoulder_moved", outline.gaps(s))
         self.assertLess(max(h for r, h in outline.case_profile(s) if r == s["shoulder"] / 2), s["sh_at"])
 
+    def test_cip_sheets_source_popular_calibres(self):
+        # Popular calibres that failed the well-sourced rule on 2026-11-14 and have a C.I.P. sheet.
+        for name, groove in [(".408 CheyTac", 13.8), (".375 CheyTac", 13.8), (".458 SOCOM", 10.34), ("7.5 FK", 8.6),
+                             (".32 Remington", 9.09), (".351 Winchester Self-Loading", 9.02), (".50-70 Government", None)]:
+            with self.subTest(name):
+                self.assertTrue(outline.well_sourced(self.spec(name)))
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                if groove:
+                    self.assertEqual(cartridges.case_head(name)[2], groove)  # E1
+
     def test_aecc_drawings_source_popular_calibres(self):
         # Popular calibres that failed the well-sourced rule on 2026-11-14, now with a head from an AECC drawing
         # (municion.org) or, for the .338 Weatherby RPM, from the SAAMI drawing of the 6.5 Weatherby RPM, its case.
@@ -69,6 +91,31 @@ class GapTests(unittest.TestCase):
         boys = [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(self.spec(".55 Boys"))[:7]]
         self.assertEqual(boys, [(10.15, 0), (10.15, 2.08), (8.59, 2.08), (8.59, 3.08), (10.795, 4.9302), (10.795, 9.0),
                                 (10.07, 9.0)])
+
+    def test_aecc_drawings_source_pistol_heads(self):
+        # Twelve pistol rounds with no C.I.P. or SAAMI sheet: rim thickness, ramp top, groove and ramp angle from
+        # the AECC drawing (municion.org). A book's rim thickness stays where it is within 0.3 mm of the drawing's.
+        heads = {".35 S&W Auto": (1.09, 3.34, 7.56, 24.0), ".30 Borchardt": (1.1, 2.5, 8.55, 42.0),
+                 "2.7 mm Kolibri": (0.41, 1.31, 3.09, 32.0), "3 mm Kolibri": (0.85, 1.48, 3.38, 44.0),
+                 "4.25 mm Liliput": (0.54, 1.35, 4.37, 34.0), "7 mm Nambu": (0.98, 2.53, 7.81, 36.0),
+                 # The book's rim was .025 and .030 in., over 0.3 mm thinner than the drawing's: the drawing's.
+                 "6.5 mm Bergmann": (1.0, 1.9, 8.63, 35.0), "7.63 mm Mannlicher": (1.09, 2.4, 7.81, 50.0),
+                 # The book's rim: .040, .040, .025 and .044 in. (the drawings: 1.07, 1.00, 0.53 and 1.13).
+                 ".45 Mars Long": (1.02, 3.55, 10.25, 38.0), ".45 Mars Short": (1.02, 3.1, 10.3, 40.0),
+                 "5 mm Clement": (0.64, 1.75, 5.61, 56.0), "5.8x21 mm DAP92": (1.12, 2.94, 6.79, 31.0)}
+        for name, head in heads.items():
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                self.assertEqual(cartridges.case_head(name), head)
+                self.assertIn("municion.org", cartridges.sources(name, "case_head")[-1])
+        for name in ("6.5 mm Bergmann", "7.63 mm Mannlicher"):
+            self.assertEqual(len(cartridges.sources(name, "case_head")), 1)  # the book no longer backs a value
+        # The smallest head: the 2.7 mm Kolibri's rim is 0.41 mm thick and its groove ends 1.31 mm up.
+        kolibri = [(round(r, 3), round(h, 3)) for r, h in outline.case_profile(self.spec("2.7 mm Kolibri"))[:5]]
+        self.assertEqual(kolibri, [(1.78, 0), (1.78, 0.41), (1.545, 0.41), (1.545, 0.934), (1.78, 1.31)])
+        # The other two Mars rounds stay on the generic head: their drawings do not fit the book's rim and base.
+        for name in (".360 Mars", "8.5 mm Mars"):
+            self.assertIn("groove", outline.gaps(self.spec(name)))
 
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
         # Calibres that failed the rule on 2026-11-14 and now take every measurement and the head from their C.I.P.
@@ -104,7 +151,7 @@ class GapTests(unittest.TestCase):
     def test_well_sourced_allows_a_default_rim_only(self):
         self.assertTrue(outline.well_sourced(self.spec(".308 Winchester")))
         self.assertTrue(outline.well_sourced(self.spec(".25 Stevens")))  # rim thickness only
-        self.assertFalse(outline.well_sourced(self.spec("9x23 mm Winchester")))  # generic groove
+        self.assertFalse(outline.well_sourced(self.spec(".50 GI")))  # generic groove
         self.assertFalse(outline.well_sourced(self.spec(".56-52 Spencer Necked")))
         passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 606 of 759 before these sheets
         self.assertTrue(0 < passing < len(outline.specs()))
@@ -117,6 +164,22 @@ class GapTests(unittest.TestCase):
             with self.subTest(name):
                 self.assertTrue(outline.well_sourced(self.spec(name)))
                 self.assertEqual(cartridges.case_head(name)[1:3], (top, groove))
+
+    def test_more_heads_from_saami_drawings_and_a_related_case(self):
+        # SAAMI drawings (Z299.4, Z299.3 and the .25 Weatherby RPM's public introduction): ramp top and groove
+        # diameter, worked out as above. The .25 Weatherby RPM has the head of the 6.5 and the .338.
+        for name, top, groove in [(".27 Nosler", 3.73, 12.07), (".30 Remington AR", 4.03, 10.87),
+                                  ("9x23 mm Winchester", 3.36, 8.81), (".25 Weatherby RPM", 3.76, 10.39)]:
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                self.assertEqual(cartridges.case_head(name)[1:3], (top, groove))
+                self.assertIn("saami.org", cartridges.sources(name, "case_head")[0])
+        self.assertEqual(cartridges.case_head(".25 Weatherby RPM"), cartridges.case_head("6.5 Weatherby RPM"))
+        # The .44 Auto Mag has no sheet; the .357 Auto Mag, the same case necked down, has one (C.I.P. Tab. IV).
+        self.assertEqual(outline.gaps(self.spec(".44 Auto Mag")), ())
+        self.assertEqual(cartridges.case_head(".44 Auto Mag"), (1.37, 3.56, 10.4, 45.0))
+        self.assertEqual(cartridges.sources(".44 Auto Mag", "case_head"),
+                         ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page49.pdf", "book:cotw-18 p. 320"])
 
 
 class OutlineTests(unittest.TestCase):
@@ -500,8 +563,7 @@ class OutlineTests(unittest.TestCase):
     def test_municion_shoulders_follow_the_aecc_drawings(self):
         # (half angle, shoulder start) from AECC drawings on municion.org: atan(((SØ-NØ)/2)/(CL-NL-SL)).
         # The .22 Nosler's start is SAAMI's 35.29 (the drawing: 35.28).
-        drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64),
-                    ".458 SOCOM": (35.2, 30.0), "10.4x38 mm R Vetterli": (10.6, 26.11),
+        drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64), "10.4x38 mm R Vetterli": (10.6, 26.11),
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
                     ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1)}
         specs = self.bottlenecks()
@@ -528,34 +590,34 @@ class OutlineTests(unittest.TestCase):
     def test_unsourced_shoulders_keep_the_default(self):
         self.assertEqual(cartridges.shoulder_angle("New calibre"), cartridges.DEFAULT_SHOULDER_ANGLE)
 
-    # Rimless, semi-rimmed and belted cases without an extractor groove from a drawing (C.I.P., SAAMI, AECC) (or a parent case that has
-    # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
-    # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
+    # Rimless, semi-rimmed and belted cases without an extractor groove from a drawing (C.I.P., SAAMI, AECC) of
+    # their own or of a related case (its parent, or a case made from it); they get the generic groove, behind
+    # their own rim thickness where a source gives one. A new rimless, semi-rimmed or belted calibre needs a head
+    # in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".25 Weatherby RPM", ".27 Nosler", ".30 Remington AR", ".35 S&W Auto", ".351 Winchester Self-Loading",
-        ".375 CheyTac", ".408 CheyTac", ".458 SOCOM", "5.8x42 mm", "7.5 FK", "7.92x107 mm DS", "9x23 mm Winchester",
+        "5.8x42 mm", "7.92x107 mm DS",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".26 BSA", ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery",
-        ".30 Borchardt", ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".303 Magnum", ".33 BSA", ".330 Dakota",
-        ".338 Canadian Magnum", ".338 Lehigh", ".35 Newton", ".360 Mars", ".375 Dakota",
-        ".400/375 Belted Nitro Express", ".416 Dakota", ".425 Westley Richards Magnum", ".44 Auto Mag", ".45 Mars Long",
-        ".45 Mars Short", ".45 Remington Thompson", ".45-70 Auto", ".450 Dakota", ".455 Webley Automatic",
+        ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".303 Magnum", ".33 BSA", ".330 Dakota", ".338 Canadian Magnum",
+        ".338 Lehigh", ".35 Newton", ".360 Mars", ".375 Dakota", ".400/375 Belted Nitro Express", ".416 Dakota",
+        ".425 Westley Richards Magnum", ".45 Remington Thompson", ".45-70 Auto", ".450 Dakota", ".455 Webley Automatic",
         ".458 Canadian Magnum", ".475 Bishop Short Magnum", ".50 GI", ".50-115 Bullard", ".500 Phantom",
         ".577 Tyrannosaur", "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor", "10.75x57 mm Mannlicher",
-        "10.75x63 mm Mauser", "11.2x60 mm Schüler", "11.2x72 mm Schüler", "12.04 Bibamufu", "2.7 mm Kolibri",
-        "3 mm Kolibri", "4.25 mm Liliput", "4.85x49 mm British", "5 mm Bergmann", "5 mm Clement", "5.8x21 mm DAP92",
-        "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW", "6.17 Lazzeroni Flash", "6.17 Lazzeroni Spitfire",
-        "6.5 mm Bergmann", "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser",
+        "10.75x63 mm Mauser", "11.2x60 mm Schüler", "11.2x72 mm Schüler", "12.04 Bibamufu", "4.85x49 mm British",
+        "5 mm Bergmann", "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW", "6.17 Lazzeroni Flash",
+        "6.17 Lazzeroni Spitfire", "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser",
         "6.71 Lazzeroni Blackbird", "6.71 Lazzeroni Phantom", "6x58 mm Forster", "7 mm Canadian Magnum", "7 mm Dakota",
-        "7 mm Nambu", "7.21 Lazzeroni Firehawk", "7.21 Lazzeroni Tomahawk", "7.63 mm Mannlicher", "7.65 mm Roth-Sauer",
-        "7.82 Lazzeroni Patriot", "7x73 mm Vom Hofe Belted", "8.5 mm Mars", "8.59 Lazzeroni Galaxy",
-        "8.59 Lazzeroni Titan", "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo", "9 mm Winchester Magnum",
-        "9.09 Lazzeroni Eagle", "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn", "9.8 mm Auto Colt", "9x63 mm",
-        "9x71 mm Peterlongo",
+        "7.21 Lazzeroni Firehawk", "7.21 Lazzeroni Tomahawk", "7.65 mm Roth-Sauer", "7.82 Lazzeroni Patriot",
+        "7x73 mm Vom Hofe Belted", "8.5 mm Mars", "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan", "8x59 mm Breda",
+        "8x63 mm Swedish", "8x71 mm Peterlongo", "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle",
+        "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn", "9.8 mm Auto Colt", "9x63 mm", "9x71 mm Peterlongo",
     }
 
     SHALLOW_CONES = {".32 Winchester Self-Loading": 3.7, ".35 Winchester Self-Loading": 8.0,
                      ".401 Winchester Self-Loading": 7.0}
+    # Small pistol heads: a rim under 0.7 mm thick or a groove that ends less than 2 mm up, on their AECC drawings
+    # (the 5 mm Clement's rim is the book's).
+    SMALL_HEADS = {"2.7 mm Kolibri", "3 mm Kolibri", "4.25 mm Liliput", "5 mm Clement", "6.5 mm Bergmann"}
 
     def rimless(self):
         return {s["name"]: s for _, s in outline.specs() if s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)}
@@ -568,7 +630,8 @@ class OutlineTests(unittest.TestCase):
                 s = self.rimless()[name]
                 self.assertTrue(url.startswith("https://") or url.startswith("book:"), url)
                 # The .55 Boys: 9.0.
-                self.assertTrue(0.7 < thick < 2.5 and 2.0 < top_at < 9.5)
+                low = (0.4, 1.3) if name in self.SMALL_HEADS else (0.7, 2.0)
+                self.assertTrue(low[0] < thick < 2.5 and low[1] < top_at < 9.5)
                 # A groove's front ramp is 10 degrees or more. Three Winchester self-loading cases have a shallow
                 # cone in its place on their C.I.P. sheets: from the rim's front on the .32 and .401, after a
                 # 0.64 mm groove floor on the .35.
@@ -653,7 +716,8 @@ class OutlineTests(unittest.TestCase):
                 continue
             with self.subTest(s["name"]):
                 # The thinnest: .020 in., the 5 mm Bergmann pistol round; the thickest: .100 in., the Werndl M77.
-                self.assertTrue(0.5 <= t <= 2.54, t)
+                # Under that only the 2.7 mm Kolibri, 0.41 mm on its AECC drawing.
+                self.assertTrue(0.5 <= t <= 2.54 or (s["name"], t) == ("2.7 mm Kolibri", 0.41), t)
                 self.assertEqual(outline.case_profile(s)[1], (s["rim"] / 2, t))
                 drawn += 1
         self.assertGreater(drawn, 330)

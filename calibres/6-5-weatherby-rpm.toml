@@ -41,7 +41,7 @@ sources = ["https://web.archive.org/web/2022/https://saami.org/wp-content/upload
 # SAAMI 6.5 Wby RPM: rim thickness .054, groove .409 at 40 degrees, groove width .040,
 # body .500; ramp_top = rim thickness + groove width + ramp height ((.500 - .409) / 2 / tan 40)
 rim_thickness = 1.37
-ramp_top = 3.77
+ramp_top = 3.76
 groove_diameter = 10.39
 ramp_angle = 40.0
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=51"]

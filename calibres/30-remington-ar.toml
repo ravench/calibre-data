@@ -39,8 +39,12 @@ degrees = 25
 sources = ["https://en.wikipedia.org/wiki/.30_Remington_AR"]
 
 [case_head]
-# SAAMI 30 Remington AR
+# SAAMI 30 Remington AR: rim thickness 0.054, groove 0.428 at 36 degrees, groove width 0.055,
+# body 0.5000; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 36)
 rim_thickness = 1.37
+ramp_top = 4.03
+groove_diameter = 10.87
+ramp_angle = 36.0
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=110"]
 
 [bullet]

@@ -36,6 +36,15 @@ sources = ["https://municion.org/producto/765-mm-borchardt/"]
 degrees = 16.1
 sources = ["https://municion.org/producto/765-mm-borchardt/"]
 
+[case_head]
+# AECC drawing 08-025-BGC-040 (municion.org): RT 1.10, HL 2.50, GØ 8.55, GW 0.65, HØ 9.90; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.1
+ramp_top = 2.5
+groove_diameter = 8.55
+ramp_angle = 42.0
+sources = ["https://municion.org/producto/765-mm-borchardt/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 467"]

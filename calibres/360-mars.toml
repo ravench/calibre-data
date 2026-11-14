@@ -37,7 +37,9 @@ degrees = 20.3
 sources = ["https://municion.org/producto/360-mars-gabbett-fairfax/"]
 
 [case_head]
-# .040 in.
+# .040 in. The groove stays the generic one: the AECC drawing 09-026-BGC-030 (municion.org) of a specimen has a
+# smaller head (RØ 11.78, HØ 12.03) than the book's table, which prints one rim and base for all four Mars rounds,
+# and no third source was found.
 rim_thickness = 1.02
 sources = ["book:cotw-18 p. 528"]
 
