@@ -671,7 +671,7 @@ class CheckTests(unittest.TestCase):
 
     def test_unsourced_lists_the_measurements_without_a_source(self):
         self.assertEqual(cartridges.unsourced(".56-52 Spencer Necked"), ("shoulder_at",))
-        self.assertEqual(cartridges.unsourced(".69 Minié"), ("diameter", "length"))  # no source at all: every one
+        self.assertEqual(cartridges.unsourced(".22 Blank (6.8/11)"), ("rim", "base", "mouth", "length"))  # no source at all
         self.assertEqual(cartridges.unsourced(".308 Winchester"), ())
         for name, keys in cartridges.UNSOURCED.items():
             self.assertTrue(keys, name)

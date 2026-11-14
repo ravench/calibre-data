@@ -22,7 +22,8 @@ class GapTests(unittest.TestCase):
                 (".308 Winchester", ()),
                 ("12/70", ()),  # its loaded length is SAAMI's
                 (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
-                (".69 Minié", ("measurements",)),  # no source at all
+                (".69 Minié", ()),  # the Altered Musket drawing: 1.1 in long
+                (".58 Minié", ()),  # the Harpers Ferry drawing: 1.05 in long
                 ("4.5 mm Diabolo (.177)", ()),  # its length from RWS
                 ("5.5 mm Diabolo (.22)", ()),
                 ("7.5 mm Kadettenpatrone", ("measurements",)),  # Raven's overall length
