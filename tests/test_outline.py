@@ -82,7 +82,7 @@ class OutlineTests(unittest.TestCase):
         (x0, y0), (x1, y1) = next((a, b) for a, b in zip(nose, nose[1:]) if a[1] <= mid <= b[1])
         self.assertAlmostEqual(x0 + (x1 - x0) * (mid - y0) / (y1 - y0), 3.36, delta=0.05)
         by_name = {s["name"]: s for _, s in outline.specs()}
-        o = outline.outline(by_name["7.5x53.5 mm Swiss (GP 1890)"])
+        o = outline.outline(by_name["7.5x53.5 mm Swiss (Patrone Modell 1890)"])
         ys = [y for _, y in points(o["patch"])]
         self.assertAlmostEqual(max(ys) - min(ys), 12.7, places=1)
 
@@ -435,7 +435,7 @@ class OutlineTests(unittest.TestCase):
         ".458 SOCOM", ".50 Beowulf",
         ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm GT",
         "6.5x58 mm Vergueiro", "7.5 FK",
-        "7.5x53.5 mm Swiss (GP 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone",
+        "7.5x53.5 mm Swiss (Patrone Modell 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone",
         "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
         "9x23 mm Largo", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.

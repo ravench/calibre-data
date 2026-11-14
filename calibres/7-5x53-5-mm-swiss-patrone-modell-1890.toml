@@ -29,7 +29,7 @@
 # C.I.P. has no sheet. Cartridges of the World (14th ed., 2014) has one entry for the whole family,
 # under the 7.5x55 name with GP 11 measurements. It keeps GP 11 apart by its bigger bullet (.308 for
 # .299) and stronger load, which the 1889 rifle must not fire.
-name = "7.5x53.5 mm Swiss (GP 1890)"
+name = "7.5x53.5 mm Swiss (Patrone Modell 1890)"
 categories = ["rifle"]
 kind = "rimless"
 profile = "patched"
