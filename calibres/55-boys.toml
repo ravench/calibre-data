@@ -38,6 +38,15 @@ sources = ["https://municion.org/producto/55-boys/"]
 degrees = 10
 sources = ["https://municion.org/producto/55-boys/"]
 
+[case_head]
+# AECC drawing 14-099-BFC-020 (municion.org): RT 2.08, GØ 17.18, GW 2.26, the ramp up to the belt
+# (LØ 21.59) ends at HL 6.20 and the belt (LW 2.80) at 9.00; ramp angle from HL = RT + GW + ((LØ - GØ)/2)/tan(angle).
+rim_thickness = 2.08
+ramp_top = 9.0
+groove_diameter = 17.18
+ramp_angle = 50.0
+sources = ["https://municion.org/producto/55-boys/"]
+
 [bullet]
 # All Boys bullets had steel jackets clad with cupronickel (Ammo Encyclopedia p. 563).
 type = "jacketed"

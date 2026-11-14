@@ -37,9 +37,13 @@ degrees = 16.1
 sources = ["https://municion.org/producto/77-x-58-japanese-rimless-arisaka-type-99/"]
 
 [case_head]
-# .042 in.
+# .042 in. (COTW); groove from the AECC drawing 08-058-BGC-020 (municion.org): RT 1.18, HL 3.07,
+# GØ 10.32, GW 1.16, HØ 12.01; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.07
-sources = ["book:cotw-18 p. 573"]
+ramp_top = 3.07
+groove_diameter = 10.32
+ramp_angle = 49.0
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/77-x-58-japanese-rimless-arisaka-type-99/"]
 
 [bullet]
 type = "jacketed"
