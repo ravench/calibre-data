@@ -16,14 +16,20 @@ rare = true
 rim = 16.81
 base = 14.76
 shoulder = 14.0
-shoulder_at = 31.8
+shoulder_at = 25.15
 neck = 10.87
 case_length = 44.7
 overall_length = 72.39
 bullet = 10.36
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 251"]
+# shoulder_at from the AECC drawing 10-043-BBC-030 (municion.org): SL 22.90 on a case of CL 42.45, taken from the mouth
+# (case_length - (CL - SL)). Donnelly prints the same start (J .988 in. = 25.10). The specimen's case
+# is 2.25 mm shorter than the book's; its neck (NL 9.60) and shoulder length (9.95) are Donnelly's (H .380 in.,
+# K .392 in.) within 0.05 mm.
+sources = [
+  "book:cotw-18 p. 251",
+  "https://municion.org/producto/40-70-peabody-martini-what-cheer/",
+  "book:donnelly p. 500",
+]
 
 [introduced]
 # COTW: introduced in 1877 or 1878.
@@ -36,9 +42,14 @@ sources = ["book:cotw-18 p. 225"]
 size = "berdan-nitro"
 sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
 
+[shoulder_angle]
+# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 42.45 - NL 9.60 -
+# SL 22.90 = 9.95 mm). Donnelly's lengths (K .392 in.) give the same; his printed angles are not used.
+degrees = 8.9
+sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
+
 [case_head]
-# AECC drawing 10-043-BBC-030 (municion.org): RT 1.87. Its shoulder is not taken: the specimen's case (CL 42.45) is
-# 2.25 mm shorter than the book's.
+# AECC drawing 10-043-BBC-030 (municion.org): RT 1.87.
 rim_thickness = 1.87
 sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
 

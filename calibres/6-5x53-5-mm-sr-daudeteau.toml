@@ -15,14 +15,15 @@ rare = true
 rim = 13.31
 base = 12.45
 shoulder = 11.84
-shoulder_at = 43.0
+shoulder_at = 39.48
 neck = 7.57
 case_length = 53.09
 overall_length = 76.71
 bullet = 6.68
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 651"]
+# shoulder_at from the AECC drawing 07-053-BDC-010 (municion.org): SL 39.75 on a case of CL 53.36, taken from the mouth
+# (case_length - (CL - SL)). Donnelly prints the start 0.14 mm later (J 1.56 in. = 39.62). The drawing's
+# shoulder diameter (SØ 11.26) is 0.58 mm narrower than the book's, which stays.
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/65-x-53-sr-daudeteau-n12/", "book:donnelly p. 768"]
 
 [introduced]
 year = 1895
@@ -31,6 +32,12 @@ sources = ["book:cotw-18 p. 617"]
 [primer]
 size = "large-rifle"
 sources = []
+
+[shoulder_angle]
+# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 53.36 - NL 8.20 -
+# SL 39.75 = 5.41 mm). Donnelly's shorter shoulder (K .17 in.) would give 26; his printed angles are not used.
+degrees = 21.5
+sources = ["https://municion.org/producto/65-x-53-sr-daudeteau-n12/"]
 
 [case_head]
 # AECC drawing 07-053-BDC-010 (municion.org): RT 1.80, HL 3.25, GØ 11.31, GW 0.75, HØ 12.45; ramp angle from HL = RT +
