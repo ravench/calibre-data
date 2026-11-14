@@ -21,15 +21,18 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 12.7
-base = 12.6
-shoulder = 11.5
-shoulder_at = 45.0
-neck = 8.6
+# The case and bullet of the GP 90/23 (same chamber: its AECC drawing 08-054-BGC-085, within 0.15 mm of
+# Raven's caliper values above, the shoulder position 0.5 mm); the length is Raven's round.
+rim = 12.62
+base = 12.52
+shoulder = 11.65
+shoulder_at = 44.5
+neck = 8.47
 case_length = 54.6
 overall_length = 77.5
-bullet = 7.8
-sources = []
+bullet = 7.75
+unsourced = ["overall_length"]
+sources = ["book:poyer p. 50", "https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
 
 [introduced]
 # Federal Council decision of 8 September 1897 on the «Ordonnanz für Kadettengewehrpatronen» (report

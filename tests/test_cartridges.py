@@ -177,8 +177,12 @@ class CatalogueTests(unittest.TestCase):
         # Raven 2026-11-08: a variant of GP 1890, but technically its own cartridge; measured on one round.
         by_name = {s["name"]: s for s in ALL}
         kp, gp = by_name["7.5 mm Kadettenpatrone"], by_name["7.5x54.5 mm Swiss (GP 90/23)"]
+        # Raven's caliper values; the case and bullet are drawn to the GP 90/23's AECC drawing (2026-11-14), which they
+        # match within 0.15 mm, and the length is his round's.
         measured = {"rim": 12.7, "base": 12.6, "shoulder": 11.5, "neck": 8.6, "sh_at": 45.0, "oal": 77.5, "bullet": 7.8}
-        self.assertEqual({k: kp[k] for k in measured}, measured)
+        for k, v in measured.items():
+            self.assertAlmostEqual(kp[k], v, delta=0.51 if k == "sh_at" else 0.16, msg=k)
+        self.assertEqual(kp["oal"], 77.5)
         self.assertEqual(kp["case"], 54.6, "measured 54.8 on a 1964 round, drawn on the GP 90/23's case")
         # A late round on the longer case of 1923: Schiesstagebuch offers the two as one chamber.
         chamber = ("kind", "rim", "base", "shoulder", "neck", "case", "sh_at", "bullet")
@@ -200,7 +204,7 @@ class CatalogueTests(unittest.TestCase):
         by_name = {s["name"]: s for s in ALL}
         gp, gp23 = by_name["7.5x53.5 mm Swiss (Patrone Modell 1890)"], by_name["7.5x54.5 mm Swiss (GP 90/23)"]
         self.assertEqual((gp["case"], gp["rim"], gp["base"]), (53.5, 12.5, 12.4))
-        self.assertEqual((gp23["case"], gp23["rim"], gp23["base"]), (54.6, 12.7, 12.6))
+        self.assertEqual((gp23["case"], gp23["rim"], gp23["base"]), (54.6, 12.62, 12.52))  # AECC drawing, case kept at 54.6
         self.assertEqual(by_name["7.5x55 mm Swiss (GP 11)"]["case"], 55.6)
         self.assertIn("gp90/03", gp["aliases"], "the 90/03 only changed the primer")
         self.assertIn("gp90/23", gp23["aliases"])
