@@ -82,6 +82,8 @@ overall_length = 71.12 # cartridge length (L6)
 bullet = 7.82          # bullet diameter (G1)
 # A straight case leaves out shoulder and shoulder_at. The neck length and body taper are not
 # stored: the drawing works them out from these values and the shoulder angle.
+# A case narrows from its base to its mouth: the check reports a shoulder wider than the base and a
+# neck wider than the shoulder (on a straight case the neck may be up to 0.05 wider than the base).
 #
 # Other calibres use short forms instead:
 #   kind = "ball":                     diameter
