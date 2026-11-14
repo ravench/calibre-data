@@ -7,9 +7,11 @@ aliases = ["58", "58minie"]
 obsolete = true
 
 [mm]
+# Diameter: about .575 in for a .58 rifle-musket, depending on the mould. No page found gives a length.
 diameter = 14.6
 length = 25.0
-sources = []
+# No source yet for length.
+sources = ["https://www.riflemagazine.com/minie-and-roundballs"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.

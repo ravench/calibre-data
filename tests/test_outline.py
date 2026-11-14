@@ -425,18 +425,18 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".22 ARC", ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".26 Nosler", ".27 Nosler",
-        ".277 SIG Fury", ".28 Nosler", ".30 Carbine", ".30 Nosler", ".30 Remington AR",
-        ".30 Super Carry", ".308 Norma Magnum", ".32 Winchester Self-Loading", ".33 Nosler", ".338 ARC",
-        ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading", ".350 Legend",
-        ".351 Winchester Self-Loading", ".375 CheyTac", ".400 Legend",
-        ".401 Winchester Self-Loading", ".408 CheyTac", ".416 Barrett",
-        ".450 Bushmaster", ".458 SOCOM", ".50 Beowulf",
-        ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm ARC", "6 mm GT", "6.5 Weatherby RPM",
-        "6.5 mm Grendel", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
+        ".22 Nosler", ".22 TCM", ".25 Weatherby RPM", ".27 Nosler",
+        ".277 SIG Fury", ".30 Remington AR",
+        ".32 Winchester Self-Loading", ".33 Nosler",
+        ".338 Weatherby RPM", ".35 S&W Auto", ".35 Winchester Self-Loading",
+        ".351 Winchester Self-Loading", ".375 CheyTac",
+        ".401 Winchester Self-Loading", ".408 CheyTac",
+        ".458 SOCOM", ".50 Beowulf",
+        ".55 Boys", "12.7x108 mm", "5.8x42 mm", "6 mm GT",
+        "6.5x58 mm Vergueiro", "7.5 FK",
         "7.5x53.5 mm Swiss (GP 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone",
         "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
-        "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
+        "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
         ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum",

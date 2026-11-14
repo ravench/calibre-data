@@ -7,9 +7,11 @@ aliases = ["5.5", "5.5mm"]
 worldwide = true
 
 [mm]
+# Diameter: H&N Field Target Trophy .22, head sizes 5.53-5.55 mm. No maker page found gives a length.
 diameter = 5.5
 length = 6.5
-sources = []
+# No source yet for length.
+sources = ["https://hn-sport.de/en/node/58"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.

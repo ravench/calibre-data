@@ -33,9 +33,12 @@ degrees = 30
 sources = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"]
 
 [case_head]
-# .059 in.
+# C.I.P. 338 ARC
 rim_thickness = 1.5
-sources = ["book:cotw-18 p. 176"]
+ramp_top = 3.53
+groove_diameter = 9.55
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/338-arc-250223-en.pdf"]
 
 [bullet]
 type = "jacketed"

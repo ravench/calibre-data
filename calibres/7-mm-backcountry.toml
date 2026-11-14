@@ -36,9 +36,17 @@ degrees = 30
 sources = ["https://saami.org/wp-content/uploads/2025/01/Public-Introduction-7mm-Backcountry-2025-01-27.pdf"]
 
 [case_head]
-# .049 in.
+# from the .30-06 case (Wikipedia); C.I.P. 30-06 Spring.
+# SAAMI's 7mm Backcountry drawing gives the same rim thickness, groove diameter and groove width.
 rim_thickness = 1.24
-sources = ["book:cotw-18 p. 175"]
+ramp_top = 3.16
+groove_diameter = 10.39
+ramp_angle = 36.0
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf",
+  "https://en.wikipedia.org/wiki/7mm_Backcountry",
+  "https://saami.org/wp-content/uploads/2025/01/Public-Introduction-7mm-Backcountry-2025-01-27.pdf",
+]
 
 [bullet]
 type = "polymer"

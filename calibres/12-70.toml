@@ -7,11 +7,14 @@ aliases = ["12", "12/70", "12ga", "12gauge"]
 worldwide = true
 
 [mm]
+# C.I.P. Cal. 12, Tab. VII, maximum cartridge: diameter d1, rim g; case_length is the length in the
+# marking. The sheet gives no closed (crimped) length.
 diameter = 20.6
-rim = 22.3
+rim = 22.45
 length = 64.0
 case_length = 70.0
-sources = []
+# No source yet for length.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/12-55-en.pdf"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.

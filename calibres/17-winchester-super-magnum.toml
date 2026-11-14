@@ -11,10 +11,11 @@ origin_sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
 
 [mm]
 # SAAMI 17 Winchester Super Magnum, maximum cartridge.
-# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+# Shoulder: the body is a cylinder on the cartridge drawing (.269 CYL), as wide as the base; the 6.86 that
+# stood here is the chamber's (.2700). shoulder_at: SAAMI's .9619, where the body and shoulder lines meet.
 rim = 8.46
 base = 6.83
-shoulder = 6.86
+shoulder = 6.83
 shoulder_at = 24.43
 neck = 5.0
 case_length = 30.48

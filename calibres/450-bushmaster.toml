@@ -27,9 +27,12 @@ size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
 [case_head]
-# SAAMI 450 Bushmaster
+# C.I.P. 450 Bushmaster
 rim_thickness = 1.37
-sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=169"]
+ramp_top = 3.77
+groove_diameter = 10.39
+ramp_angle = 40.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page149.pdf"]
 
 [bullet]
 type = "polymer"

@@ -38,8 +38,11 @@ sources = [
 ]
 
 [case_head]
-# R on the C.I.P. sheet.
+# C.I.P. 6 mm ARC
 rim_thickness = 1.5
+ramp_top = 3.52
+groove_diameter = 9.55
+ramp_angle = 45.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-mm-arc-en.pdf"]
 
 [bullet]

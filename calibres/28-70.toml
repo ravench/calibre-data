@@ -5,11 +5,14 @@ profile = "flat"
 aliases = ["28", "28/70"]
 
 [mm]
-diameter = 16.0
-rim = 17.5
+# C.I.P. Cal. 28, Tab. VII, maximum cartridge: diameter d1, rim g; case_length is the length in the
+# marking. The sheet gives no closed (crimped) length.
+diameter = 15.85
+rim = 17.4
 length = 64.0
 case_length = 70.0
-sources = []
+# No source yet for length.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/tabvii-28-eng-2.pdf"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.

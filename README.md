@@ -201,6 +201,11 @@ The neck length is not stored: the drawing runs the shoulder in from `shoulder_a
 angle until it reaches the neck diameter, and the rest up to `case_length` is the neck (at least
 1.2 mm). The body taper follows from `base`, `shoulder` and `shoulder_at`.
 
+A case narrows from its base to its mouth, so the check reports a `shoulder` wider than the `base`,
+a `neck` wider than the `shoulder` and a blank's `mouth` wider than its `base`. On a straight case the
+`neck` may be up to 0.05 mm wider than the `base`: books measure old cases to a thousandth of an inch,
+and a cylinder comes out that little wider at either end.
+
 Short forms:
 
 | Calibre | Keys |
