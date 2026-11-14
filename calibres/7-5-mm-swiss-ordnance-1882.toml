@@ -16,12 +16,16 @@ obsolete = true
 
 [mm]
 rim = 10.4
-base = 8.4
+# C.I.P. P1; the case tapers to 8.4 at the mouth (H2).
+base = 9.0
 neck = 8.4
 case_length = 22.8
 overall_length = 34.6
 bullet = 8.0
-sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]
+sources = [
+  "https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page8.pdf",
+]
 
 [introduced]
 # adopted 1882; 1880 is the design
