@@ -18,14 +18,15 @@ rare = true
 rim = 11.46
 base = 11.4
 shoulder = 9.88
-shoulder_at = 42.5
+shoulder_at = 40.95
 neck = 7.98
 case_length = 51.31
 overall_length = 72.39
 bullet = 7.24
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 573"]
+# shoulder_at from the AECC drawing 07-051-BGC-075 (municion.org): SL 41.05 on a case of CL 51.41, taken from the
+# mouth (case_length - (CL - SL)). This is the PD-42 case; the later T2 case (drawing 07-053-BGC-040) is 0.8 mm longer
+# and has a wider head.
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/276-pedersen-xpl-pd-42-case-pc-48-bullet/"]
 
 [introduced]
 # COTW: developed from 1923 to 1932.
@@ -35,6 +36,20 @@ sources = ["book:cotw-18 p. 543"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.276_Pedersen"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 9.75, NØ 8.10, SL 41.05, NL 6.05, CL 51.41.
+degrees = 10.8
+sources = ["https://municion.org/producto/276-pedersen-xpl-pd-42-case-pc-48-bullet/"]
+
+[case_head]
+# AECC drawing 07-051-BGC-075 (municion.org): RT 1.20, HL 3.79, GØ 9.60, GW 1.41, HØ 11.39; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.2
+ramp_top = 3.79
+groove_diameter = 9.6
+ramp_angle = 37.0
+sources = ["https://municion.org/producto/276-pedersen-xpl-pd-42-case-pc-48-bullet/"]
 
 [bullet]
 type = "jacketed"

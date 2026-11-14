@@ -37,6 +37,15 @@ sources = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
 degrees = 20.7
 sources = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
 
+[case_head]
+# AECC drawing 06-045-BGC-030 (municion.org): RT 1.18, HL 3.54, GØ 8.80, GW 0.90, HØ 10.28; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.18
+ramp_top = 3.54
+groove_diameter = 8.8
+ramp_angle = 27.0
+sources = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 536"]

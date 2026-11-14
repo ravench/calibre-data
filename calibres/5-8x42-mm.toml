@@ -20,10 +20,12 @@ neck = 6.65
 case_length = 42.2
 overall_length = 58.0
 bullet = 6.0
-unsourced = ["bullet"]
+# bullet: BØ 6.00 on the AECC drawing 06-042-BGC-010 (municion.org), whose rim, base, shoulder and neck are the
+# file's.
 sources = [
   "https://en.wikipedia.org/wiki/5.8×42mm",
   "https://www.small-arms.org/",
+  "https://municion.org/producto/58-x-42-chinese-assault-rifle/",
 ]
 
 [introduced]
@@ -38,6 +40,15 @@ sources = []
 # small-arms.org (QBQ club) 5.8x42 dimension drawing: 49 deg full cone angle, shoulder at 34 mm, neck at 37.2 mm
 degrees = 24.5
 sources = ["https://www.small-arms.org/"]
+
+[case_head]
+# AECC drawing 06-042-BGC-010 (municion.org): RT 1.42, HL 3.45, GØ 8.64, GW 1.14, HØ 10.40; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.42
+ramp_top = 3.45
+groove_diameter = 8.64
+ramp_angle = 45.0
+sources = ["https://municion.org/producto/58-x-42-chinese-assault-rifle/"]
 
 [bullet]
 type = "jacketed"

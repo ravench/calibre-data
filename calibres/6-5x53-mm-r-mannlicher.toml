@@ -17,13 +17,18 @@ rare = true
 rim = 13.4
 base = 11.48
 shoulder = 10.75
-shoulder_at = 43.33
+shoulder_at = 41.15
 neck = 7.55
 case_length = 53.5
 overall_length = 77.47
 bullet = 6.65
-unsourced = ["shoulder_at"]
-sources = ["https://en.wikipedia.org/wiki/6.5×53mmR"]
+# shoulder_at from the AECC drawing 07-054-BBC-010 (municion.org): SL 41.20 on a case of CL 53.55, taken from the
+# mouth (case_length - (CL - SL)). The specimen's cone is 19.1 degrees; at the 25 degrees below the neck starts
+# 1.4 mm before the specimen's.
+sources = [
+  "https://en.wikipedia.org/wiki/6.5×53mmR",
+  "https://municion.org/producto/65-x-535-r-dutch-mannlicher-m-1895/",
+]
 
 [introduced]
 year = 1892
