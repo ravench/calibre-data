@@ -317,8 +317,10 @@ rather than the C.I.P. maximum, so a calibre from a book can have a rim up to ab
 than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadcutter 1.5 mm from
 the sheet). A rim without a thickness is
 drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless, semi-rimmed and belted); those
-cases without a groove get a generic one, 87 % of the rim diameter, the median of the sourced grooves
-(`GENERIC_GROOVE` in `outline.py`; `HEAD_UNSOURCED` in `tests/test_outline.py` lists them).
+cases without a groove get a generic head fitted to the sourced ones (`generic_head` in `outline.py`;
+`HEAD_UNSOURCED` in `tests/test_outline.py` lists them): a groove of 87 % of the rim diameter and at
+most 90 % of the base diameter, 1 mm long, then a ramp at 40° to the axis up to the body or, on a
+belted case, up to a belt that ends 4.3 mm in front of the rim.
 
 ### `[bullet]`, `[case]`, `[current_cases]`
 

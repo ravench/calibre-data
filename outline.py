@@ -12,13 +12,32 @@ from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIML
 from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
-BELTED_GROOVE = 1.0  # mm, groove floor of a belted case (as drawn on the C.I.P. sheets)
+# mm, groove floor where no source gives its length: belted cases (as drawn on the C.I.P. sheets) and
+# generic heads (the sourced rimless floors: median 0.95)
+GROOVE_FLOOR = 1.0
 # mm, rim thickness of a case whose [case_head] gives none: rimmed, rimfire, rimless, semi-rimmed or belted
 RIMMED_RIM, RIMFIRE_RIM, RIMLESS_RIM = 1.5, 1.1, 1.3
-# Extractor groove of a case whose [case_head] gives none, as a share of the rim diameter: the median of
-# the sourced grooves (0.869; half of them lie between 0.86 and 0.89). The extractor grips the rim, so
-# the groove follows the rim, not the body: it stays below a rebated rim too.
-GENERIC_GROOVE = 0.87
+# Head of a rimless, semi-rimmed or belted case whose [case_head] gives no groove, fitted to the sourced ones
+# (generic_head). The groove's diameter is a share of the rim's (their median: 0.869; half of them lie between
+# 0.86 and 0.89): the extractor grips the rim, so the groove stays below a rebated rim too. It is at most a
+# share of the base's, which keeps it below the body of a semi-rimmed case (their median: 0.898).
+GENERIC_GROOVE, GENERIC_GROOVE_OF_BASE = 0.87, 0.9
+# The ramp's angle to the case axis in degrees (their median: 36, and 45 on cases from 14 mm up; behind a
+# 1 mm floor, 40 puts the ramp's top closest to theirs) and, on a belted case, the distance from the rim's
+# front to the belt's front (their median: 4.32 mm, the H&H belt).
+GENERIC_RAMP, GENERIC_BELT = 40.0, 4.3
+
+
+def generic_head(s):
+    """(rim thickness, ramp top or belt front, groove diameter, ramp angle) like cartridges.case_head, for a
+    rimless, semi-rimmed or belted case without one: the calibre's own rim thickness where a source gives it,
+    a GROOVE_FLOOR long groove and a ramp up to the body, however far a rebated rim leaves it to climb."""
+    thick = rim_thickness(s["name"]) or RIMLESS_RIM
+    groove = min(s["rim"] * GENERIC_GROOVE, s["base"] * GENERIC_GROOVE_OF_BASE)
+    if s["kind"] == BELTED:
+        return thick, thick + GENERIC_BELT, groove, GENERIC_RAMP
+    ramp = (s["base"] - groove) / 2 / math.tan(math.radians(GENERIC_RAMP))
+    return thick, thick + GROOVE_FLOOR + ramp, groove, GENERIC_RAMP
 
 
 def case_profile(s):
@@ -28,28 +47,20 @@ def case_profile(s):
     if k in (RIMMED, RIMFIRE):
         h = rim_thickness(s["name"]) or (RIMFIRE_RIM if k == RIMFIRE else RIMMED_RIM)
         pts = [(rim, 0), (rim, h), (base, h)]
-    elif case_head(s["name"]):
-        # Rim, extractor groove and its front ramp at the calibre's own values (cartridges.CASE_HEADS).
-        thick, top_at, groove_dia, ramp_angle = case_head(s["name"])
+    else:
+        # Rim, extractor groove and its front ramp at the calibre's own values (cartridges.CASE_HEADS), or
+        # at the generic ones where no source gives them.
+        thick, top_at, groove_dia, ramp_angle = case_head(s["name"]) or generic_head(s)
         groove, slope = groove_dia / 2, math.tan(math.radians(ramp_angle))
         if k == BELTED:
             # The ramp climbs to the belt (rim diameter), which ends at E; the sheets give no groove
-            # width, so the groove floor is drawn BELTED_GROOVE long.
-            ramp_end = thick + BELTED_GROOVE + (rim - groove) / slope
-            pts = [(rim, 0), (rim, thick), (groove, thick), (groove, thick + BELTED_GROOVE),
+            # width, so the groove floor is drawn GROOVE_FLOOR long.
+            ramp_end = thick + GROOVE_FLOOR + (rim - groove) / slope
+            pts = [(rim, 0), (rim, thick), (groove, thick), (groove, thick + GROOVE_FLOOR),
                    (rim, ramp_end), (rim, top_at), (base * 0.985, top_at)]
         else:
             ramp_start = max(thick, top_at - (base - groove) / slope)
             pts = [(rim, 0), (rim, thick), (groove, thick), (groove, ramp_start), (base, top_at)]
-    else:
-        # Generic groove (GENERIC_GROOVE) behind the calibre's own rim thickness where a source gives it.
-        # Under a rebated rim the ramp climbs on at 45 degrees until it reaches the wider body.
-        t = rim_thickness(s["name"]) or RIMLESS_RIM
-        groove = rim * GENERIC_GROOVE
-        pts = [(rim, 0), (rim, t), (groove, t), (groove, t + 1.3), (base, t + 2.0 + max(0, base - rim))]
-        if k == BELTED:
-            pts[-1] = (rim, t + 2.0)
-            pts += [(rim, t + 4.9), (base * 0.985, t + 4.9)]
     top = s["neck"] / 2
     if s["profile"] == CRIMPED:
         # Star crimp: the petals bend in over the front 38 % of the case, then turn in at the mouth.
