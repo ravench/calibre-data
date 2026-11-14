@@ -8,7 +8,7 @@ millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bot
 import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
+from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, belt_diameter, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
 from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
@@ -57,11 +57,13 @@ def rim_and_groove(s):
     thick, top_at, groove_dia, ramp_angle = case_head(s["name"]) or generic_head(s)
     groove = groove_dia / 2
     if k == BELTED:
-        # The ramp climbs to the belt (rim diameter), which ends at E; the sheets give no groove
-        # width, so the groove floor is drawn GROOVE_FLOOR long.
-        ramp_end = thick + GROOVE_FLOOR + ramp_run(groove_dia, s["rim"], ramp_angle)
+        # The ramp climbs to the belt, which ends at E; the sheets give no groove width, so the groove floor
+        # is drawn GROOVE_FLOOR long. The belt is as wide as the rim unless the calibre gives its own diameter
+        # (.378 Weatherby Magnum: a belt of 15.33 mm in front of a 14.71 mm rim).
+        belt_dia = belt_diameter(s["name"]) or s["rim"]
+        ramp_end = thick + GROOVE_FLOOR + ramp_run(groove_dia, belt_dia, ramp_angle)
         return [(rim, 0), (rim, thick), (groove, thick), (groove, thick + GROOVE_FLOOR),
-                (rim, ramp_end), (rim, top_at), (base * 0.985, top_at)]
+                (belt_dia / 2, ramp_end), (belt_dia / 2, top_at), (base * 0.985, top_at)]
     ramp_start = max(thick, top_at - ramp_run(groove_dia, s["base"], ramp_angle))
     return [(rim, 0), (rim, thick), (groove, thick), (groove, ramp_start), (base, top_at)]
 
@@ -221,7 +223,7 @@ def to_path(poly, height, half_width):
 
 def outline(s):
     k = s["kind"]
-    width = max(s["rim"], s["base"], s["bullet"])
+    width = max(s["rim"], s["base"], s["bullet"], belt_diameter(s["name"]) or 0)
     hw = width / 2
     H = s["oal"]
     paths = {}

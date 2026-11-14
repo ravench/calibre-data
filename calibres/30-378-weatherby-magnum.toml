@@ -39,11 +39,12 @@ degrees = 53
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page17.pdf"]
 
 [case_head]
-# C.I.P. ?
+# C.I.P. 30-378 Weath. Mag.: R 1.60, E 6.40, E1 12.57, delta 45°. The belt (R3 15.33) is wider than the rim (R1 14.71).
 rim_thickness = 1.6
 ramp_top = 6.4
 groove_diameter = 12.57
 ramp_angle = 45.0
+belt_diameter = 15.33
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page17.pdf"]
 
 [bullet]

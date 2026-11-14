@@ -19,7 +19,8 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(s["name"]):
                 o = outline.outline(s)
                 self.assertAlmostEqual(o["height"], s["oal"], places=2)
-                self.assertAlmostEqual(o["width"], max(s["rim"], s["base"], s["bullet"]), places=2)
+                widest = max(s["rim"], s["base"], s["bullet"], cartridges.belt_diameter(s["name"]) or 0)
+                self.assertAlmostEqual(o["width"], widest, places=2)
                 paths = [o[k] for k in ("case", "head", "bullet", "patch", "tip") if k in o]
                 self.assertTrue(paths)
                 for d in paths:
@@ -494,10 +495,25 @@ class OutlineTests(unittest.TestCase):
                         self.assertAlmostEqual(math.degrees(math.atan2(r1 - r0, h1 - h0)), angle, places=6)
                 else:
                     self.assertAlmostEqual(math.degrees(math.atan2(r1 - r0, h1 - h0)), angle, places=6)
-                    self.assertEqual(prof[5], (s["rim"] / 2, top_at))  # front of the belt
+                    belt = cartridges.belt_diameter(name) or s["rim"]  # as wide as the rim unless the file gives it
+                    self.assertEqual(prof[5], (belt / 2, top_at))  # front of the belt
                 heights = [h for _, h in prof]
                 self.assertEqual(heights, sorted(heights))
         self.assertGreater(len({h[:4] for h in cartridges.CASE_HEADS.values()}), 40)
+
+    def test_a_belt_wider_than_the_rim_is_drawn_at_its_own_diameter(self):
+        # C.I.P. 378 Weath. Mag.: rim R1 14.71, belt R3 15.33 up to E 6.40, body P1 14.78. The belt used to be
+        # drawn at the rim's diameter, below the body: the ten cases on this head showed no belt at all (2026-11-14).
+        s = self.rimless()[".378 Weatherby Magnum"]
+        prof = [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(s)[:7]]
+        self.assertEqual(prof[:4], [(7.35, 0), (7.35, 1.6), (6.285, 1.6), (6.285, 2.6)])  # rim and groove
+        self.assertEqual(prof[4:6], [(7.665, 3.98), (7.665, 6.4)])  # the belt, after a 45 degree ramp
+        self.assertLess(prof[6][0], 7.4)  # the body in front of it
+        self.assertEqual(outline.outline(s)["width"], 15.33)  # the belt is the widest part
+        for _, s in outline.specs():  # every belt stands out from the body
+            if s["kind"] == BELTED:
+                with self.subTest(s["name"]):
+                    self.assertGreaterEqual(outline.case_profile(s)[5][0], s["base"] / 2)
 
     def test_heads_follow_the_sheets(self):
         # (R rim thickness, E, E1 groove diameter, ramp angle) on the C.I.P. sheets.

@@ -72,7 +72,7 @@ worldwide = true
 # ---------------------------------------------------------------------------------------------
 
 [mm]
-rim = 11.9             # rim diameter (R1); the belt for belted cases where it is wider
+rim = 11.9             # rim diameter (R1); a belt wider than the rim is belt_diameter in [case_head]
 base = 11.9            # body diameter just above the head (P1)
 shoulder = 11.5        # bottleneck cases only: diameter where the shoulder starts (P2)
 shoulder_at = 39.62    # bottleneck cases only: head to where the shoulder starts (L1)
@@ -132,7 +132,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 # Rim thickness (R on the C.I.P. sheet, maximum cartridge; or from a book) for every kind of case.
 # Rimless, semi-rimmed and belted cases add their extractor groove from the C.I.P. sheet, all three or none: head
 # to the top of the groove's ramp (E; belted: to the front of the belt), groove diameter (E1) and
-# the groove's front ramp to the case axis in degrees (delta). Needs a source; without one, leave
+# the groove's front ramp to the case axis in degrees (delta). A belted case whose belt is wider than its
+# rim adds belt_diameter (R3); without it the belt is drawn as wide as the rim. Needs a source; without one, leave
 # the table out (or the groove keys) and the head is drawn generic (add a rimless, semi-rimmed or belted calibre
 # without a groove to HEAD_UNSOURCED in tests/test_outline.py).
 [case_head]

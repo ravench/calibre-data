@@ -173,7 +173,8 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "introduced": ((), ("year", "unknown"), "optional"),
     "primer": (("size",), ("diameter",), "may be empty"),  # diameter: measured mm, required for miniature
     "shoulder_angle": (("degrees",), (), "required"),
-    "case_head": (("rim_thickness",), HEAD_GROOVE, "required"),
+    # belt_diameter: the belt of a belted case, where it is wider than the rim
+    "case_head": (("rim_thickness",), HEAD_GROOVE + ("belt_diameter",), "required"),
     "bullet": (("type",), ("jacket", "patch_length"), "may be empty"),
     "case": (("material",), (), "may be empty"),  # every case but brass needs a source
     "current_cases": (("materials",), (), "required"),
@@ -668,6 +669,13 @@ def _read_calibre(f, countries, books=None):
         elif groove and len(groove) < len(HEAD_GROOVE):
             f.problem(f.line("case_head"), "[case_head] has ramp_top, groove_diameter and ramp_angle together, "
                                            "or only rim_thickness")
+    belt = facts.get("case_head", {}).get("belt_diameter")
+    if belt is not None and (kind != BELTED or belt <= m.get("base", 0)):
+        f.problem(f.line("case_head", "belt_diameter"), "[case_head] belt_diameter is the belt of a belted case (R3 on "
+                                                        "the C.I.P. sheets), wider than the body in front of it ([mm] base)")
+    elif belt is None and kind == BELTED and m.get("rim", 0) < m.get("base", 0):
+        f.problem(f.line("mm", "rim"), "a belted case with a rim narrower than its base needs [case_head] belt_diameter "
+                                       "(R3 on the C.I.P. sheets): without it the belt is drawn as wide as the rim")
     aliases = d.get("aliases", []) if _is_text_list(d.get("aliases")) else []
     entry = _entry(name, kind, profile, aliases, facts["mm"], category)
     return entry, d, facts
@@ -865,7 +873,7 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "BELT_DIAMETERS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
                          "CURRENT_CASES", "SOURCES", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
@@ -912,6 +920,8 @@ def load(root=ROOT):
             if "case_head" in facts:
                 h = facts["case_head"]
                 t["RIM_THICKNESS"][n] = (h["rim_thickness"], first("case_head"))
+                if "belt_diameter" in h:
+                    t["BELT_DIAMETERS"][n] = h["belt_diameter"]
                 if "ramp_top" in h:
                     t["CASE_HEADS"][n] = (h["rim_thickness"], h["ramp_top"], h["groove_diameter"], h["ramp_angle"],
                                           first("case_head"))
@@ -973,6 +983,8 @@ SHOULDER_ANGLES = _t["SHOULDER_ANGLES"]
 CASE_HEADS = _t["CASE_HEADS"]
 # {name: (rim thickness, first source)}: every case with a [case_head], CASE_HEADS' ones too.
 RIM_THICKNESS = _t["RIM_THICKNESS"]
+# {name: belt diameter R3}: the belted cases whose belt is wider than the rim; the others' is as wide as the rim.
+BELT_DIAMETERS = _t["BELT_DIAMETERS"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
 # code: {"en", "de", "fr", "it"}: the country's name in the apps' languages (Kaliberfinder's
@@ -1034,6 +1046,11 @@ def rim_thickness(name):
     """The rim's thickness in mm, or None where no source gives it."""
     entry = RIM_THICKNESS.get(name)
     return entry[0] if entry else None
+
+
+def belt_diameter(name):
+    """The belt's diameter in mm where a belted case's [case_head] gives it, or None: a belt as wide as the rim."""
+    return BELT_DIAMETERS.get(name)
 
 
 def categories(name):

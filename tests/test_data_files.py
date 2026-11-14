@@ -366,6 +366,19 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, "ramp_angle = 36.0\n", "")
             self.assertProblem(c, WIN, r"ramp_top, groove_diameter and ramp_angle together, or only rim_thickness")
 
+    def test_a_belt_wider_than_the_rim_has_its_diameter(self):
+        wby, short, mag = "calibres/378-weatherby-magnum.toml", "calibres/460-a-square-short.toml", "calibres/300-h-h-magnum.toml"
+        with Copy() as c:
+            c.edit(wby, "belt_diameter = 15.33\n", "")                        # a rim of 14.7 under a body of 14.8
+            c.edit(short, "belt_diameter = 15.33", "belt_diameter = 14.78")   # no wider than its body
+            c.edit(WIN, "ramp_angle = 36.0\n", "ramp_angle = 36.0\nbelt_diameter = 12.5\n")  # a rimless case
+            c.edit(mag, "ramp_angle = 35.0\n", "ramp_angle = 35.0\nbelt_diameter = 13.51\n")  # allowed: as wide as its rim
+            self.assertEqual([(p[0], p[1], p[2][:60]) for p in c.problems()], [
+                (WIN, c.line_of(WIN, "belt_diameter ="), "[case_head] belt_diameter is the belt of a belted case (R3 o"),
+                (wby, c.line_of(wby, "rim ="), "a belted case with a rim narrower than its base needs [case_"),
+                (short, c.line_of(short, "belt_diameter ="), "[case_head] belt_diameter is the belt of a belted case (R3 o"),
+            ])
+
     def test_a_shot_shell_has_no_case_head(self):
         with Copy() as c:
             shell = "calibres/12-70.toml"

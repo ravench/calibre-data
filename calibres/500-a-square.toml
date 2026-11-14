@@ -21,7 +21,7 @@ case_length = 73.66
 overall_length = 95.0
 bullet = 12.95
 # The table gives the belt, .603 in., in the rim column; the rim is the .460 Weatherby Magnum's (R1 on its
-# C.I.P. sheet), as the belt is drawn at the rim diameter.
+# C.I.P. sheet); the belt is in [case_head].
 sources = [
   "book:cotw-18 p. 453",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf",
@@ -43,11 +43,13 @@ degrees = 18.7
 sources = ["https://municion.org/producto/500-a-square-belted-type-2/"]
 
 [case_head]
-# from the .460 Weatherby Magnum case; C.I.P. sheet
+# from the .460 Weatherby Magnum case; C.I.P. sheet. The belt (R3 15.33; .603 in. in Cartridges of the World)
+# is wider than the rim.
 rim_thickness = 1.6
 ramp_top = 6.4
 groove_diameter = 12.57
 ramp_angle = 45.0
+belt_diameter = 15.33
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
 
 [bullet]
