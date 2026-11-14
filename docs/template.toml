@@ -80,8 +80,9 @@ neck = 8.7             # neck diameter at the mouth (H2)
 case_length = 51.2     # case length (L3)
 overall_length = 71.12 # cartridge length (L6)
 bullet = 7.82          # bullet diameter (G1)
-# A belted case whose belt is wider than its rim adds belt, the belt's diameter (R3): belt = 15.33 on the
-# .378 Weatherby Magnum, in front of a 14.71 mm rim. Without it the belt is drawn as wide as the rim.
+# A belted case gives base in front of its belt. One whose belt is wider than its rim adds belt, the belt's
+# diameter (R3): belt = 15.33 on the .378 Weatherby Magnum, in front of a 14.71 mm rim. Without it the belt is
+# drawn as wide as the rim.
 # A straight case leaves out shoulder and shoulder_at. The neck length and body taper are not
 # stored: the drawing works them out from these values and the shoulder angle.
 # A case narrows from its base to its mouth: the check reports a shoulder wider than the base and a
