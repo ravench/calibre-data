@@ -24,8 +24,8 @@ class GapTests(unittest.TestCase):
                 (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
                 (".69 Minié", ("measurements",)),  # no source at all
                 ("4.5 mm Diabolo (.177)", ("measurements",)),  # no length
-                ("7.5 mm Kadettenpatrone", ("measurements", "groove", "rim_thickness")),
-                ("10.4 mm Swiss Ordnance 1878", ("rim_thickness",)),
+                ("7.5 mm Kadettenpatrone", ("measurements",)),  # Raven's overall length
+                (".25 Stevens", ("rim_thickness",)),
                 ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
             with self.subTest(name):
                 self.assertEqual(outline.gaps(self.spec(name)), gaps)
@@ -57,8 +57,8 @@ class GapTests(unittest.TestCase):
 
     def test_well_sourced_allows_a_default_rim_only(self):
         self.assertTrue(outline.well_sourced(self.spec(".308 Winchester")))
-        self.assertTrue(outline.well_sourced(self.spec("10.4 mm Swiss Ordnance 1878")))  # rim thickness only
-        self.assertFalse(outline.well_sourced(self.spec("7.5x53.5 mm Swiss (GP 1890)")))  # generic groove
+        self.assertTrue(outline.well_sourced(self.spec(".25 Stevens")))  # rim thickness only
+        self.assertFalse(outline.well_sourced(self.spec("9x23 mm Winchester")))  # generic groove
         self.assertFalse(outline.well_sourced(self.spec(".56-52 Spencer Necked")))
         passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 589 of 759 on 2026-11-14
         self.assertTrue(0 < passing < len(outline.specs()))
@@ -133,7 +133,7 @@ class OutlineTests(unittest.TestCase):
         (x0, y0), (x1, y1) = next((a, b) for a, b in zip(nose, nose[1:]) if a[1] <= mid <= b[1])
         self.assertAlmostEqual(x0 + (x1 - x0) * (mid - y0) / (y1 - y0), 3.36, delta=0.05)
         by_name = {s["name"]: s for _, s in outline.specs()}
-        o = outline.outline(by_name["7.5x53.5 mm Swiss (GP 1890)"])
+        o = outline.outline(by_name["7.5x53.5 mm Swiss (Patrone Modell 1890)"])
         ys = [y for _, y in points(o["patch"])]
         self.assertAlmostEqual(max(ys) - min(ys), 12.7, places=1)
 

@@ -502,7 +502,7 @@ class CheckTests(unittest.TestCase):
                 self.assertOnlyProblems(c, "books.toml", pattern)
 
     def test_fired_by_lists_the_firearms_of_a_round(self):
-        self.assertEqual(cartridges.FIRED_BY["7.5x53.5 mm Swiss (GP 1890)"],
+        self.assertEqual(cartridges.FIRED_BY["7.5x53.5 mm Swiss (Patrone Modell 1890)"],
                          (("Schmidt-Rubin M1889",), "https://en.wikipedia.org/wiki/7.5×55mm_Swiss"))
         self.assertEqual(sources(".577 Snider", "fired_by"), ["https://en.wikipedia.org/wiki/.577_Snider"])
         self.assertNotIn(".308 Winchester", cartridges.FIRED_BY)
@@ -845,7 +845,7 @@ class CheckTests(unittest.TestCase):
                                line=c.line_of(vetterli, "patch_length ="))
             self.assertProblem(c, WIN, r'only a paper-patched bullet \(type = "paper"\) of a cartridge has a \[bullet\] patch_length$')
         with Copy() as c:
-            gp, ball = "calibres/7-5x53-5-mm-swiss-gp-1890.toml", "calibres/36-rundkugel-375.toml"
+            gp, ball = "calibres/7-5x53-5-mm-swiss-patrone-modell-1890.toml", "calibres/36-rundkugel-375.toml"
             c.edit(gp, 'type = "paper"', 'type = "paper"\npatch_length = 5')
             c.edit(ball, 'type = "lead"', 'type = "lead"\npatch_length = 2')
             c.edit(vetterli, 'type = "paper"', noted + "0")
