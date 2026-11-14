@@ -14,16 +14,17 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 16.9
-base = 14.2
-neck = 13.4
-case_length = 44.5
-overall_length = 57.0
-bullet = 13.0
-unsourced = ["rim", "base", "neck"]
+# C.I.P. maximum cartridge: rim R1, base P1, neck H2, case L3, length L6, bullet G1.
+rim = 16.92
+base = 14.48
+neck = 13.73
+case_length = 45.01
+overall_length = 57.15
+bullet = 13.08
 sources = [
   "book:donnelly p. 658",
   "book:cotw-18 p. 574",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/50-70-govt-170428-en.pdf",
 ]
 
 [introduced]
@@ -35,9 +36,9 @@ size = "large-rifle"
 sources = ["https://www.starlinebrass.com/50-70-govt-brass"]
 
 [case_head]
-# .060 in.
-rim_thickness = 1.52
-sources = ["book:cotw-18 p. 574"]
+# C.I.P. 50-70 Govt.: R (COTW gives .060 in.)
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/50-70-govt-170428-en.pdf"]
 
 [bullet]
 type = "lead"
