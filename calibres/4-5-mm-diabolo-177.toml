@@ -7,11 +7,10 @@ aliases = ["4.5", "4.5mm", "177", "luftgewehr", "lg", "lp"]
 worldwide = true
 
 [mm]
-# Diameter: H&N Finale Match, head sizes 4.49-4.50 mm. No maker page found gives a length.
+# Diameter: H&N Finale Match, head sizes 4.49-4.50 mm. Length: RWS Meisterkugeln 4.49 mm (match wadcutter), 5.5 mm.
 diameter = 4.5
 length = 5.5
-unsourced = ["length"]
-sources = ["https://www.hn-sport.de/en/target-shooting/finale-match-heavy-177"]
+sources = ["https://www.hn-sport.de/en/target-shooting/finale-match-heavy-177", "https://rws-ammunition.com/en/products/air-gun-pellets/rws-meisterkugeln-0-53-g-oe-4-49-mm"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.

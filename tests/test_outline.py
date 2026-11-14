@@ -23,7 +23,8 @@ class GapTests(unittest.TestCase):
                 ("12/70", ()),  # its loaded length is SAAMI's
                 (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
                 (".69 Minié", ("measurements",)),  # no source at all
-                ("4.5 mm Diabolo (.177)", ("measurements",)),  # no length
+                ("4.5 mm Diabolo (.177)", ()),  # its length from RWS
+                ("5.5 mm Diabolo (.22)", ()),
                 ("7.5 mm Kadettenpatrone", ("measurements",)),  # Raven's overall length
                 (".25 Stevens", ("rim_thickness",)),
                 ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
