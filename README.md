@@ -319,7 +319,8 @@ none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head 
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
 The .32 and .401 Winchester Self-Loading have no groove floor on their sheets: a shallow cone (3.7° and
 7°) runs from the rim's front up to the body at E, and the drawing follows it.
-A case made from a parent case without its own sheet keeps the parent's head (the note says which).
+A case made from a parent case without its own sheet keeps the parent's head (the note says which); a parent
+without a sheet takes the head of a case made from it that has one (.44 Auto Mag: C.I.P. 357 Auto Mag.).
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
 its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal
 rather than the C.I.P. maximum, so a calibre from a book can have a rim up to about 0.3 mm thinner
