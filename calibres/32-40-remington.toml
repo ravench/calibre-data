@@ -34,6 +34,12 @@ sources = ["book:cotw-18 p. 199"]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 250"]
 
+[case_head]
+# AECC drawing 08-054-TBC-020 (municion.org): RT 1.60. Its shoulder is not taken: the drawing's (SØ 9.70) is 0.6 mm
+# wider than the book's.
+rim_thickness = 1.6
+sources = ["https://municion.org/producto/32-40-150-remington-hepburn/"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 199"]

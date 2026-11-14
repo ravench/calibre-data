@@ -34,6 +34,12 @@ sources = ["book:cotw-18 p. 201"]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 250"]
 
+[case_head]
+# AECC drawing 08-041-BBC-050 (municion.org): RT 1.39. Its shoulder is not taken: the specimen's cone (SØ 8.94 to
+# NØ 8.49 over 3.18 mm), drawn between the book's diameters, would start the neck 1.6 mm after the specimen's.
+rim_thickness = 1.39
+sources = ["https://municion.org/producto/32-30-125-remington-hepburn/"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 201"]

@@ -14,14 +14,15 @@ rare = true
 rim = 9.6
 base = 9.55
 shoulder = 8.97
-shoulder_at = 36.1
+shoulder_at = 36.53
 neck = 7.21
 case_length = 44.7
 overall_length = 54.23
 bullet = 6.53
-# shoulder_at estimated: a neck one calibre long and the shoulder at the angle below.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 451"]
+# shoulder_at from the AECC drawing 06-045-BDC-020 (municion.org): SL 36.05 on a case of CL 44.22, taken from the
+# mouth (case_length - (CL - SL)). The specimen's cone is 18.2 degrees; at the book's 23 the neck starts 0.7 mm before
+# the specimen's.
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/25-45-sharps/"]
 
 [introduced]
 year = 2008

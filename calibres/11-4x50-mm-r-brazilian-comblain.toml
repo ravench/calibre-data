@@ -35,6 +35,12 @@ sources = ["book:cotw-18 p. 567"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# AECC drawing 11-053-BBC-030 (municion.org): RT 2.28. Its shoulder is not taken: the specimen's case (CL 53.32) is
+# 2.0 mm longer than the file's and its neck 0.8 mm narrower.
+rim_thickness = 2.28
+sources = ["https://municion.org/producto/11-x-53-r-brazilian-comblain-model-1889/"]
+
 [bullet]
 # The military load: a lead bullet over blackpowder.
 type = "lead"

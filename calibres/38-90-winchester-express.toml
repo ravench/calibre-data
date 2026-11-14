@@ -35,6 +35,12 @@ sources = ["book:cotw-18 p. 215"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 250"]
 
+[case_head]
+# AECC drawing 09-083-BBC-010 (municion.org): RT 1.68. Its shoulder is not taken: the drawing's (SØ 10.95) is 1.0 mm
+# narrower than the book's.
+rim_thickness = 1.68
+sources = ["https://municion.org/producto/38-90-217-winchester-express/"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 215"]

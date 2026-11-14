@@ -36,6 +36,12 @@ sources = ["book:cotw-18 p. 225"]
 size = "berdan-nitro"
 sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
 
+[case_head]
+# AECC drawing 10-043-BBC-030 (municion.org): RT 1.87. Its shoulder is not taken: the specimen's case (CL 42.45) is
+# 2.25 mm shorter than the book's.
+rim_thickness = 1.87
+sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 226"]

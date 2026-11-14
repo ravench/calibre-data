@@ -16,14 +16,14 @@ rare = true
 rim = 16.76
 base = 14.66
 shoulder = 13.46
-shoulder_at = 57.3
+shoulder_at = 47.3
 neck = 12.32
 case_length = 69.85
 overall_length = 85.85
 bullet = 11.63
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 608"]
+# shoulder_at from the AECC drawing 11-070-BBC-020 (municion.org): SL 47.33 on a case of CL 69.88, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/500-450-westley-richards-n1-express/"]
 
 [introduced]
 unknown = "COTW 18 p. 597 dates the oldest .500/450 to 1871 but gives no year for this one."
@@ -34,6 +34,16 @@ sources = ["book:cotw-18 p. 597"]
 size = "berdan-nitro"
 diameter = 6.38
 sources = ["book:cotw-5 p. 266"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.44, NØ 12.32, SL 47.33, NL 19.35, CL 69.88.
+degrees = 9.9
+sources = ["https://municion.org/producto/500-450-westley-richards-n1-express/"]
+
+[case_head]
+# AECC drawing 11-070-BBC-020 (municion.org): RT 1.45.
+rim_thickness = 1.45
+sources = ["https://municion.org/producto/500-450-westley-richards-n1-express/"]
 
 [bullet]
 # A blackpowder round.
