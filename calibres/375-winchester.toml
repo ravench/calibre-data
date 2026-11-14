@@ -29,6 +29,11 @@ sources = ["https://en.wikipedia.org/wiki/.375_Winchester"]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
+[case_head]
+# R on the C.I.P. 375 Win. sheet
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page97.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.375_Winchester"]

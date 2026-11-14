@@ -429,8 +429,7 @@ class OutlineTests(unittest.TestCase):
         "6.5 mm Grendel", "6.5x58 mm Vergueiro", "7 mm Backcountry", "7.5 FK",
         "7.5x53.5 mm Swiss (GP 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone",
         "7.7x58 mm Arisaka", "7.92x107 mm DS", "8 mm Nambu",
-        "8.6 Blackout", "9 mm P.A.K.", "9x23 mm Largo", "9x23 mm Winchester",
-        ".315 Knall", "8 mm Knall",  # alarm blanks: head not read from C.I.P. Tab. VIII yet
+        "8.6 Blackout", "9x23 mm Largo", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".242 Rimless Nitro Express", ".256 Gibbs Magnum", ".26 BSA", ".275 H&H Magnum",
         ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".280 Ross", ".30 Borchardt",

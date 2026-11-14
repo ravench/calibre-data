@@ -27,6 +27,11 @@ sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_
 size = "small-pistol"
 sources = []
 
+[case_head]
+# R on the C.I.P. 380 R Blanc / 9 mm R Blanc sheet
+rim_thickness = 1.25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page11.pdf"]
+
 [case]
 material = "brass"
 sources = []
