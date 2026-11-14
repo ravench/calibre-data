@@ -14,14 +14,14 @@ rare = true
 rim = 13.82
 base = 13.82
 shoulder = 13.31
-shoulder_at = 59.4
+shoulder_at = 59.09
 neck = 8.08
 case_length = 71.12
 overall_length = 90.17
 bullet = 7.21
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 452"]
+# shoulder_at from the AECC drawing 07-071-BGC-030 (municion.org): SL 59.00 on a case of CL 71.03, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/721-mm-lazzeroni-firehawk/"]
 
 [introduced]
 year = 1996
@@ -37,9 +37,13 @@ degrees = 30
 sources = ["book:cotw-18 p. 387"]
 
 [case_head]
-# .055 in.
+# .055 in. (COTW); groove from the AECC drawing 07-071-BGC-030 (municion.org): RT 1.50, HL 3.50, GØ 12.25, GW 1.14,
+# HØ 13.82; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.4
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.5
+groove_diameter = 12.25
+ramp_angle = 42.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/721-mm-lazzeroni-firehawk/"]
 
 [bullet]
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 387).

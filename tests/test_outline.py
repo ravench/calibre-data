@@ -197,6 +197,45 @@ class GapTests(unittest.TestCase):
         self.assertEqual(cartridges.unsourced("5.8x42 mm"), ())
         self.assertIn("municion.org", cartridges.sources("5.8x42 mm", "mm")[-1])
 
+    def test_aecc_drawings_source_lazzeroni_rounds(self):
+        # Lazzeroni's rounds without a C.I.P. sheet (the Firebird and the Warbird have one). Twelve take the groove
+        # and the shoulder's start from their AECC drawing (municion.org): the groove behind the rim thickness of
+        # Cartridges of the World, the start (case_length - (CL - SL)) under the book's 30-degree shoulder.
+        drawn = {"10.57 Lazzeroni Maverick": ((1.52, 3.8, 12.7, 46.0), 39.67),
+                 "10.57 Lazzeroni Meteor": ((1.52, 3.5, 12.66, 45.0), 59.21),
+                 "12.04 Bibamufu": ((1.52, 3.56, 13.25, 42.0), 59.0),
+                 "7.21 Lazzeroni Firehawk": ((1.4, 3.5, 12.25, 42.0), 59.09),
+                 "7.21 Lazzeroni Tomahawk": ((1.52, 3.85, 12.72, 42.0), 39.69),
+                 "7.82 Lazzeroni Patriot": ((1.52, 3.9, 12.67, 36.0), 39.71),
+                 "8.59 Lazzeroni Galaxy": ((1.52, 3.7, 12.72, 44.0), 39.57),
+                 "8.59 Lazzeroni Titan": ((1.52, 3.5, 13.0, 43.0), 59.04),
+                 "9.53 Lazzeroni Hellcat": ((1.52, 3.8, 12.7, 46.0), 39.95),
+                 "9.53 Lazzeroni Saturn": ((1.52, 4.0, 12.55, 38.0), 58.91),
+                 "6.17 Lazzeroni Spitfire": ((1.27, 3.12, 11.88, 48.0), 40.66),
+                 "6.71 Lazzeroni Phantom": ((1.4, 3.2, 12.03, 53.0), 40.19)}
+        for name, (head, start) in drawn.items():
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                self.assertEqual(cartridges.unsourced(name), ())
+                self.assertEqual(cartridges.case_head(name), head)
+                self.assertEqual(self.spec(name)["sh_at"], start)
+                self.assertEqual(cartridges.shoulder_angle(name), 30)
+                self.assertTrue(cartridges.sources(name, "case_head")[0].startswith("book:cotw-18 p. "))
+                self.assertIn("municion.org", cartridges.sources(name, "case_head")[1])
+                self.assertIn("municion.org", cartridges.sources(name, "mm")[-1])
+        # The Scramjet's drawing has a 21-degree cone that starts 2.5 mm before the book's 30-degree shoulder would:
+        # only its head is taken. The Eagle is the Patriot's case necked up and has that head; no drawing of its own.
+        self.assertEqual(cartridges.case_head("6.53 Lazzeroni Scramjet"), (1.4, 3.22, 11.83, 52.0))
+        self.assertEqual(cartridges.case_head("9.09 Lazzeroni Eagle"), cartridges.case_head("7.82 Lazzeroni Patriot"))
+        self.assertEqual(cartridges.sources("9.09 Lazzeroni Eagle", "case_head")[1:],
+                         ["https://municion.org/producto/782-mm-lazzeroni-patriot/", "book:cotw-18 p. 410"])
+        for name in ("6.53 Lazzeroni Scramjet", "9.09 Lazzeroni Eagle"):
+            self.assertEqual(outline.gaps(self.spec(name)), ("measurements",))
+            self.assertEqual(cartridges.unsourced(name), ("shoulder_at",))
+        # The Flash and the Blackbird have no drawing.
+        for name in ("6.17 Lazzeroni Flash", "6.71 Lazzeroni Blackbird"):
+            self.assertEqual(outline.gaps(self.spec(name)), ("measurements", "groove"))
+
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
         # Calibres that failed the rule on 2026-11-14 and now take every measurement and the head from their C.I.P.
         # sheet, some found under another title (the Vergueiro as «6,5 x 58 Mauser», the .256 Gibbs as «256 Mag.
@@ -544,6 +583,12 @@ class OutlineTests(unittest.TestCase):
             ".416 Barrett": (63.5, 12.17, 82.95), ".400/375 Belted Nitro Express": (43.7, 18.5, 63.38),
             "7 mm Long Range Magnum": (49.91, 9.7, 63.85), ".276 Pedersen": (41.05, 6.05, 51.41),
             "6.5x53 mm R Mannlicher": (41.2, 7.5, 53.55),
+            "10.57 Lazzeroni Maverick": (39.2, 9.55, 51.6), "10.57 Lazzeroni Meteor": (59.0, 9.0, 70.91),
+            "12.04 Bibamufu": (59.0, 9.8, 71.12), "7.21 Lazzeroni Firehawk": (59.0, 7.0, 71.03),
+            "7.21 Lazzeroni Tomahawk": (39.5, 6.6, 51.88), "7.82 Lazzeroni Patriot": (39.2, 6.85, 51.56),
+            "8.59 Lazzeroni Galaxy": (39.0, 8.0, 51.5), "8.59 Lazzeroni Titan": (59.0, 8.0, 71.08),
+            "9.53 Lazzeroni Hellcat": (39.38, 8.6, 51.5), "9.53 Lazzeroni Saturn": (58.6, 8.83, 70.81),
+            "6.17 Lazzeroni Spitfire": (40.5, 5.85, 51.91), "6.71 Lazzeroni Phantom": (40.0, 6.0, 51.88),
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
@@ -670,12 +715,8 @@ class OutlineTests(unittest.TestCase):
         ".351 Winchester Self-Loading", ".375 CheyTac", ".408 CheyTac", ".458 SOCOM", "7.5 FK",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".30 USA Rimless", ".360 Mars", ".45 Remington Thompson", ".45-70 Auto", ".455 Webley Automatic", ".50 GI",
-        ".50-115 Bullard", "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor", "10.75x63 mm Mauser", "12.04 Bibamufu",
-        "5 mm Bergmann", "6.17 Lazzeroni Flash", "6.17 Lazzeroni Spitfire", "6.53 Lazzeroni Scramjet",
-        "6.71 Lazzeroni Blackbird", "6.71 Lazzeroni Phantom", "6x58 mm Forster", "7.21 Lazzeroni Firehawk",
-        "7.21 Lazzeroni Tomahawk", "7.65 mm Roth-Sauer", "7.82 Lazzeroni Patriot", "8.5 mm Mars",
-        "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan", "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle",
-        "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn", "9.8 mm Auto Colt",
+        ".50-115 Bullard", "10.75x63 mm Mauser", "5 mm Bergmann", "6.17 Lazzeroni Flash", "6.71 Lazzeroni Blackbird",
+        "6x58 mm Forster", "7.65 mm Roth-Sauer", "8.5 mm Mars", "9 mm Winchester Magnum", "9.8 mm Auto Colt",
     }
 
     SHALLOW_CONES = {".32 Winchester Self-Loading": 3.7, ".35 Winchester Self-Loading": 8.0,

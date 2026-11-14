@@ -14,14 +14,14 @@ rare = true
 rim = 14.66
 base = 14.66
 shoulder = 14.15
-shoulder_at = 39.5
+shoulder_at = 39.71
 neck = 8.64
 case_length = 52.07
 overall_length = 71.12
 bullet = 7.82
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 452"]
+# shoulder_at from the AECC drawing 08-052-BGC-009 (municion.org): SL 39.20 on a case of CL 51.56, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/782-mm-lazzeroni-patriot/"]
 
 [introduced]
 year = 1997
@@ -37,9 +37,13 @@ degrees = 30
 sources = ["book:cotw-18 p. 394"]
 
 [case_head]
-# .060 in.
+# .060 in. (COTW); groove from the AECC drawing 08-052-BGC-009 (municion.org): RT 1.57, HL 3.90, GØ 12.67, GW 1.00,
+# HØ 14.63; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.52
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.9
+groove_diameter = 12.67
+ramp_angle = 36.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/782-mm-lazzeroni-patriot/"]
 
 [bullet]
 # Soft point inferred: Lazzeroni loads premium hunting bullets; the page gives weights only.

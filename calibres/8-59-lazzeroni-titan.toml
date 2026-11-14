@@ -14,14 +14,14 @@ rare = true
 rim = 14.66
 base = 14.66
 shoulder = 14.15
-shoulder_at = 58.4
+shoulder_at = 59.04
 neck = 9.37
 case_length = 71.12
 overall_length = 91.44
 bullet = 8.59
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 452"]
+# shoulder_at from the AECC drawing 09-071-BGC-005 (municion.org): SL 59.00 on a case of CL 71.08, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/859-mm-lazzeroni-titan/"]
 
 [introduced]
 # COTW: designed in 1994 from a design of 1992.
@@ -38,9 +38,13 @@ degrees = 30
 sources = ["book:cotw-18 p. 404"]
 
 [case_head]
-# .060 in.
+# .060 in. (COTW); groove from the AECC drawing 09-071-BGC-005 (municion.org): RT 1.40, HL 3.50, GØ 13.00, GW 1.20,
+# HØ 14.65; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.52
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.5
+groove_diameter = 13.0
+ramp_angle = 43.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/859-mm-lazzeroni-titan/"]
 
 [bullet]
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 404).

@@ -14,14 +14,14 @@ rare = true
 rim = 14.66
 base = 14.66
 shoulder = 14.15
-shoulder_at = 58.1
+shoulder_at = 59.21
 neck = 11.3
 case_length = 71.12
 overall_length = 91.95
 bullet = 10.57
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 453"]
+# shoulder_at from the AECC drawing 11-071-BGC-020 (municion.org): SL 59.00 on a case of CL 70.91, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/1057-mm-lazzeroni-meteor/"]
 
 [introduced]
 year = 1997
@@ -37,9 +37,13 @@ degrees = 30
 sources = ["book:cotw-18 p. 425"]
 
 [case_head]
-# .060 in.
+# .060 in. (COTW); groove from the AECC drawing 11-071-BGC-020 (municion.org): RT 1.40, HL 3.50, GØ 12.66, GW 1.10,
+# HØ 14.66; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.52
-sources = ["book:cotw-18 p. 453"]
+ramp_top = 3.5
+groove_diameter = 12.66
+ramp_angle = 45.0
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/1057-mm-lazzeroni-meteor/"]
 
 [bullet]
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 425).

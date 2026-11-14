@@ -14,14 +14,14 @@ rare = true
 rim = 14.66
 base = 14.66
 shoulder = 14.15
-shoulder_at = 39.6
+shoulder_at = 39.69
 neck = 8.08
 case_length = 52.07
 overall_length = 71.12
 bullet = 7.21
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 452"]
+# shoulder_at from the AECC drawing 07-052-BGC-025 (municion.org): SL 39.50 on a case of CL 51.88, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/721-mm-lazzeroni-tomahawk/"]
 
 [introduced]
 year = 1997
@@ -37,9 +37,13 @@ degrees = 30
 sources = ["book:cotw-18 p. 387"]
 
 [case_head]
-# .060 in.
+# .060 in. (COTW); groove from the AECC drawing 07-052-BGC-025 (municion.org): RT 1.48, HL 3.85, GØ 12.72, GW 1.30,
+# HØ 14.65; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.52
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.85
+groove_diameter = 12.72
+ramp_angle = 42.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/721-mm-lazzeroni-tomahawk/"]
 
 [bullet]
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 387).
