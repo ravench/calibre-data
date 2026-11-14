@@ -22,7 +22,8 @@ case_length = 44.45
 overall_length = 56.64
 bullet = 11.2
 # COTW 18 (and COTW 5) give a 1.75 in. case, 2.5 mm short of the 47 mm in the name.
-# No source yet for shoulder_at (estimated: a neck one calibre long and the shoulder at 32 degrees).
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 652"]
 
 [introduced]

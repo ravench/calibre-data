@@ -10,7 +10,7 @@ worldwide = true
 # Diameter: H&N Finale Match, head sizes 4.49-4.50 mm. No maker page found gives a length.
 diameter = 4.5
 length = 5.5
-# No source yet for length.
+unsourced = ["length"]
 sources = ["https://www.hn-sport.de/en/target-shooting/finale-match-heavy-177"]
 
 [introduced]

@@ -216,10 +216,14 @@ Short forms:
 | `profile = "crimped"` | `rim`, `base`, `mouth` (at the star crimp), `length` |
 
 `sources` lists every page the measurements come from, the page of most of them first. When only
-some of them have a source, a note above the list names the others:
+some of them have a source, `unsourced` lists the others (estimated, or measured on one round), with
+a note above it saying where they come from, where that is known; with no source at all, `sources = []` says the same of
+every measurement. `cartridges.unsourced(name)` gives them, and `outline.gaps` counts them (see
+[Well sourced](#well-sourced)):
 
 ```toml
-# No source yet for case_length.
+# case_length estimated from the name.
+unsourced = ["case_length"]
 sources = [
   "https://en.wikipedia.org/wiki/7×64mm",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page24.pdf",
@@ -499,10 +503,29 @@ in the apps (`Kanone`), whose dicts have `None` for a measurement no source give
 `["obsolete"]`, `["rare"]` or both; `origin(name)` gives `(code, name, flag)` or `None` (`COUNTRY_NAMES[code]` the name in `en`, `de`, `fr` and `it`) and
 `origin_candidates(name)` the open candidates the same way; `is_worldwide(name)`, `bullet(name)`,
 `case_material(name)`, `current_case_materials(name)`, `loose_material(name)`, `shoulder_angle(name)`,
-`case_head(name)`, `rim_thickness(name)`, `lookalikes(name)` and `categories(name)` look up one value; `sources(name, table)` lists every source
+`case_head(name)`, `rim_thickness(name)`, `unsourced(name)`, `lookalikes(name)` and `categories(name)` look up one value; `sources(name, table)` lists every source
 of a table (`"mm"`, `"introduced"`, `"primer"`, `"origin"`, ...). `COLOUR_CODES` holds the tip, base and annulus colour codes, each
 with its own sources, and `FIRED_BY` the firearms of a round. A problem in the files stops the import with a
 `DataError` that lists them all.
+
+## Well sourced
+
+`outline.gaps(spec)` names what can keep a calibre's drawing from being its own shape, and
+`outline.well_sourced(spec)` is the rule the poster uses to choose its calibres (the apps can use the
+same):
+
+| Gap | Meaning |
+|---|---|
+| `measurements` | A measurement in `[mm]` has no source: it is listed in `unsourced`, `[mm]` has no source at all, or a cannon round leaves it out. |
+| `shoulder_angle` | A bottleneck case without `[shoulder_angle]`: its shoulder is drawn at 32°. |
+| `groove` | A rimless, semi-rimmed or belted case without the extractor groove in `[case_head]`: it gets the generic head. |
+| `rim_thickness` | No `rim_thickness` in `[case_head]`: the rim is drawn at the default thickness. |
+| `shoulder_moved` | The measurements leave less than 1.2 mm of neck in front of the shoulder, so the drawing moves the shoulder back (none today). |
+
+A calibre is well sourced when it has none of them, or only `rim_thickness`: a default rim is off by
+about half a millimetre at worst. Bullet type, case material and the nose are not counted: they
+colour the drawing or are schematic anyway, like a shot shell's brass head and crimp, which differ
+from load to load.
 
 ## Adding or changing a calibre
 

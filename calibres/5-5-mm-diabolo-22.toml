@@ -10,7 +10,7 @@ worldwide = true
 # Diameter: H&N Field Target Trophy .22, head sizes 5.53-5.55 mm. No maker page found gives a length.
 diameter = 5.5
 length = 6.5
-# No source yet for length.
+unsourced = ["length"]
 sources = ["https://hn-sport.de/en/node/58"]
 
 [introduced]

@@ -19,7 +19,7 @@ neck = 8.5
 case_length = 27.0
 overall_length = 35.0
 bullet = 7.8
-# No source yet for shoulder_at.
+unsourced = ["shoulder_at"]
 sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
 
 [introduced]
