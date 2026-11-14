@@ -37,9 +37,13 @@ degrees = 21.4
 sources = ["https://municion.org/producto/458-canadian-magnum-by-nass/"]
 
 [case_head]
-# .046 in.
+# .046 in. (COTW); groove from the AECC drawing 12-072-BGC-020 (municion.org): RT 1.10, HL 3.50, GØ 11.85, GW 1.00,
+# HØ 13.76; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.17
-sources = ["book:cotw-18 p. 453"]
+ramp_top = 3.5
+groove_diameter = 11.85
+ramp_angle = 34.0
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/458-canadian-magnum-by-nass/"]
 
 [bullet]
 # Soft point inferred from its use as a hunting round; the page gives weights only.

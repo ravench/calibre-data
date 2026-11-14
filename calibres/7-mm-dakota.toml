@@ -37,9 +37,13 @@ degrees = 26.4
 sources = ["https://municion.org/producto/7-mm-dakota/"]
 
 [case_head]
-# .042 in.
+# .042 in. (COTW); groove from the AECC drawing 07-063-BGC-050 (municion.org): RT 1.16, HL 3.25, GØ 12.11, GW 0.80,
+# HØ 13.80; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.07
-sources = ["book:cotw-18 p. 451"]
+ramp_top = 3.25
+groove_diameter = 12.11
+ramp_angle = 33.0
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/7-mm-dakota/"]
 
 [bullet]
 # Soft point inferred from its use as a hunting round; the page gives weights only.

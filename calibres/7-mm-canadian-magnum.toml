@@ -33,9 +33,15 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 
 [case_head]
-# .046 in.
+# .046 in. (COTW); groove from the AECC drawing 08-072-BGC-025 (municion.org) of the .300 Canadian Magnum: the
+# Canadian Magnums are one case necked to each calibre (COTW 18 pp. 198 and 388; its table gives them one rim, base
+# and length). RT 1.20, HL 3.60, GØ 11.81, GW 0.90, HØ 13.75; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+# No drawing of the 7 mm itself was found.
 rim_thickness = 1.17
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.6
+groove_diameter = 11.81
+ramp_angle = 33.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/300-canadian-magnum/", "book:cotw-18 p. 388"]
 
 [bullet]
 # Soft point inferred from its use as a hunting round; the page gives weights only.

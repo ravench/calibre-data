@@ -36,9 +36,13 @@ degrees = 7.4
 sources = ["https://municion.org/producto/577-tyrannosaur/"]
 
 [case_head]
-# .060 in.
+# .060 in. (COTW); groove from the AECC drawing 15-075-BGC-030 (municion.org): RT 1.28, HL 3.50, GØ 16.10, GW 1.28,
+# HØ 17.55; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.52
-sources = ["book:cotw-18 p. 454"]
+ramp_top = 3.5
+groove_diameter = 16.1
+ramp_angle = 38.0
+sources = ["book:cotw-18 p. 454", "https://municion.org/producto/577-tyrannosaur/"]
 
 [bullet]
 # A-Square's factory load: a monolithic solid.

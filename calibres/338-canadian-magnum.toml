@@ -33,9 +33,14 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 
 [case_head]
-# .046 in.
+# .046 in. (COTW); groove from the AECC drawing 10-072-BGC-030 (municion.org) of the .375 Canadian Magnum, which is
+# this case with a wider neck (COTW 18 p. 211): RT 1.10, HL 3.45, GØ 11.84, GW 1.00, HØ 13.75; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle). No drawing of the .338 itself was found.
 rim_thickness = 1.17
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.45
+groove_diameter = 11.84
+ramp_angle = 35.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/375-canadian-magnum-by-nass/", "book:cotw-18 p. 211"]
 
 [bullet]
 # Soft point inferred from its use as a hunting round; the page gives weights only.

@@ -15,15 +15,15 @@ rare = true
 rim = 13.41
 base = 13.41
 shoulder = 12.98
-shoulder_at = 52.4
+shoulder_at = 49.92
 neck = 8.08
 case_length = 63.86
 overall_length = 84.84
 bullet = 7.21
 # The table prints .0528 in. for the rim and base; .528 in. is meant.
-# shoulder_at estimated: a neck one calibre long and the shoulder at the angle below.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 451"]
+# shoulder_at from the AECC drawing 07-064-BGC-65W (municion.org): SL 49.91 on a case of CL 63.85, taken from the
+# mouth (case_length - (CL - SL)). The drawing's cone, 30.0 degrees, is the book's.
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/7-mm-lrm/"]
 
 [introduced]
 year = 2010
