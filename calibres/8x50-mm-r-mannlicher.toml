@@ -44,8 +44,9 @@ rim_thickness = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf"]
 
 [bullet]
-# The first round for the Mannlicher M 1888, loaded with black powder, had a round-nosed bullet in a
-# steel jacket under a heavy coat of grease (Hoyem vol. 2 p. 179); smokeless powder soon replaced it.
+# Hoyem (vol. 2 p. 179) describes a round headstamped 1891, still loaded with black powder as for the
+# Mannlicher M 1888: a round-nosed bullet in a steel jacket under a heavy coat of grease. No source
+# found names the jacket of the smokeless load that replaced it.
 type = "jacketed"
 jacket = "steel"
 sources = ["book:cotw-18 p. 554", "book:hoyem-2 p. 179"]

@@ -750,7 +750,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(bullet("9x19 mm"), JACKETED)
 
     def test_silver_and_steel_jackets_of_service_rounds(self):
-        # Raven 2026-11-12: record jackets that are not copper. Cupronickel, or steel clad with it:
+        # Raven 2026-11-12: record jackets that are not copper. Silver (cupronickel, or steel clad with it):
         # COTW 18, Poyer and the rounds' Wikipedia articles; the Kadettenpatrone from Raven's 1964 round;
         # the 8x48 R Sauer soft point from municion.org's sheets.
         silver = {".303 British", "8x50 mm R Lebel", "6 mm Lee Navy", "6.5x50 mm SR Arisaka", ".30-06 Springfield",
@@ -761,7 +761,7 @@ class CatalogueTests(unittest.TestCase):
                   "7.62x54 mm R", ".55 Boys",
                   # ... and municion.org's sheets of dated military rounds, where no text does.
                   "7x57 mm Mauser", "6.5x55 mm Swedish", "6.5x54 mm Mannlicher-Schönauer"}
-        # Bare steel: the greased bullet of the Mannlicher M 1888 (Hoyem) and the Belgian Mauser's on two sheets.
+        # Steel: the greased bullet of an 8x50 R of 1891 (Hoyem) and the 7.65x53's on FN's and Buenos Aires's sheets.
         steel = {"8x50 mm R Mannlicher", "7.65x53 mm Argentine"}
         self.assertEqual(JACKETS, {**dict.fromkeys(silver, CUPRONICKEL), **dict.fromkeys(steel, STEEL)})
         for name, metal in JACKETS.items():

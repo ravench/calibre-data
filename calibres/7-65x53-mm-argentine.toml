@@ -54,8 +54,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page50.pdf"]
 
 [bullet]
 # No text found names the jacket. municion.org's sheets of two early military rounds call the
-# round-nosed bullet steel and name no plating: FN's of 1894 (F.N 94) and the Buenos Aires arsenal's
-# of 1897 (A G 97).
+# round-nosed bullet steel: FN's of 1894 (F.N 94) and the Buenos Aires arsenal's of 1897 (A G 97).
+# Neither says whether the steel is plated, so it stands as steel; a plated one would be cupronickel.
 type = "jacketed"
 jacket = "steel"
 sources = [

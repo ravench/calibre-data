@@ -46,8 +46,9 @@ ramp_angle = 33.2
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page22.pdf"]
 
 [bullet]
-# No text found names the jacket. municion.org's sheet of a military round that Hirtenberg made for
-# the Greek army in 1908 (H Ε Σ 1908) calls the round-nosed bullet nickel-plated.
+# No source found names the jacket of the first load, so a military round of 1908 stands in for it:
+# municion.org's sheet of one that Hirtenberg made for the Greek army (H Ε Σ 1908) calls the
+# round-nosed bullet nickel-plated.
 type = "jacketed"
 jacket = "cupronickel"
 sources = ["book:cotw-18 p. 537", "https://municion.org/ficha-07-054-bgc-030-0009/"]

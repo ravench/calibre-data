@@ -46,8 +46,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf
 
 [bullet]
 # The round-nosed bullet of 1891 had a cupronickel jacket over a lead core; tombac jackets replaced
-# cupronickel in the early 1930s (7.62x54r.net's page on the Russian and Soviet headstamps, kept as a
-# PDF on sks-files.com). municion.org's page calls the Tsarist bullets chrome-coloured.
+# cupronickel in the early 1930s (7.62x54r.net's page on the Russian and Soviet headstamps, in the
+# copy sks-files.com keeps as a PDF). municion.org's page calls the Tsarist bullets chrome-coloured.
 type = "jacketed"
 jacket = "cupronickel"
 sources = [
