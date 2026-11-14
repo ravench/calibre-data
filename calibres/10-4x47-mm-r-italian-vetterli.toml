@@ -17,14 +17,14 @@ rare = true
 rim = 16.1
 base = 13.72
 shoulder = 13.13
-shoulder_at = 35.0
+shoulder_at = 34.75
 neck = 11.1
 case_length = 47.5
 overall_length = 62.48
 bullet = 10.92
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 574"]
+# shoulder_at from the AECC drawing 11-048-BBC-005 (municion.org): SL 34.70 on a case of CL 47.45, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 574", "https://municion.org/ficha-11-048-bbc-005-0005/"]
 
 [introduced]
 year = 1870
@@ -34,8 +34,13 @@ sources = ["book:cotw-18 p. 561"]
 size = "large-rifle"
 sources = []
 
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.00, NØ 11.15, SL 34.70, NL 9.00, CL 47.45.
+degrees = 13.9
+sources = ["https://municion.org/ficha-11-048-bbc-005-0005/"]
+
 [case_head]
-# .058 in.
+# .058 in. (COTW); the AECC drawing 11-048-BBC-005 (municion.org) has RT 1.60.
 rim_thickness = 1.47
 sources = ["book:cotw-18 p. 574"]
 

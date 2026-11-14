@@ -266,6 +266,12 @@ class GapTests(unittest.TestCase):
         self.assertEqual(cartridges.rim_thickness(name), 1.45)
         for part in ("mm", "case_head"):
             self.assertIn("municion.org", cartridges.sources(name, part)[-1])
+        # The Italian Vetterli takes the shoulder from its drawing and keeps the book's rim thickness.
+        name = "10.4x47 mm R Italian Vetterli"
+        self.assertEqual(outline.gaps(self.spec(name)), ())
+        self.assertEqual((self.spec(name)["sh_at"], cartridges.shoulder_angle(name)), (34.75, 13.9))
+        self.assertEqual(cartridges.rim_thickness(name), 1.47)
+        self.assertIn("municion.org", cartridges.sources(name, "mm")[-1])
         # The .25-45 Sharps keeps the book's 23 degrees and takes the drawing's shoulder start.
         self.assertEqual(self.spec(".25-45 Sharps")["sh_at"], 36.53)
         self.assertEqual(cartridges.shoulder_angle(".25-45 Sharps"), 23)
@@ -638,6 +644,7 @@ class OutlineTests(unittest.TestCase):
             "9.53 Lazzeroni Hellcat": (39.38, 8.6, 51.5), "9.53 Lazzeroni Saturn": (58.6, 8.83, 70.81),
             "6.17 Lazzeroni Spitfire": (40.5, 5.85, 51.91), "6.71 Lazzeroni Phantom": (40.0, 6.0, 51.88),
             ".500/450 No. 1 Express": (47.33, 19.35, 69.88), ".25-45 Sharps": (36.05, 5.4, 44.22),
+            "10.4x47 mm R Italian Vetterli": (34.7, 9.0, 47.45),
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
@@ -659,10 +666,10 @@ class OutlineTests(unittest.TestCase):
         ".38-90 Winchester Express", ".40-70 Peabody What Cheer", ".400/360 Nitro Express", ".416 Rimmed",
         ".45-100 Remington Necked", ".45-125 Winchester Express", ".50-115 Bullard", ".500/450 Magnum Express",
         ".500/450 Nitro Express", ".56-52 Spencer Necked", ".577/500 Nitro Express", ".577/500 No. 2 Express",
-        "10.25x69 mm R Hunting-Express", "10.4x47 mm R Italian Vetterli", "10.75x57 mm Mannlicher",
-        "10.75x58 mm R Russian Berdan", "10.8x47 mm R Martini Target", "11.4x50 mm R Brazilian Comblain",
-        "11x53 mm R Comblain", "11x52 mm R Beaumont M71/78", "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser",
-        "6x58 mm Forster", "7 mm Canadian Magnum", "8.5 mm Mars", "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
+        "10.25x69 mm R Hunting-Express", "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan",
+        "10.8x47 mm R Martini Target", "11.4x50 mm R Brazilian Comblain", "11x53 mm R Comblain",
+        "11x52 mm R Beaumont M71/78", "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "6x58 mm Forster",
+        "7 mm Canadian Magnum", "8.5 mm Mars", "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
     }
 
     def bottlenecks(self):
@@ -731,7 +738,7 @@ class OutlineTests(unittest.TestCase):
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
                     ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1),
                     ".400/375 Belted Nitro Express": (20.4, 43.82), ".276 Pedersen": (10.8, 40.95),
-                    ".500/450 No. 1 Express": (9.9, 47.3)}
+                    ".500/450 No. 1 Express": (9.9, 47.3), "10.4x47 mm R Italian Vetterli": (13.9, 34.75)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):
