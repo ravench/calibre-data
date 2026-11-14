@@ -15,7 +15,7 @@ from cartridges import (BALL_NOSE, WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_
                         CASES, BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID, case_material,
                         CURRENT_CASES, current_case_materials, PLASTIC, loose_material, CARTRIDGE_BULLETS, LOOSE_BULLETS, is_blank,
                         PROFILE_TODAY, LOOKALIKES, LOOKALIKE_NAMES, RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, lookalikes,
-                        BOOK_SOURCE, SOURCES)
+                        BOOK_SOURCE, MEASURED_SOURCE, SOURCES)
 
 ALL = [s for _, items in CATALOGUE for s in items]  # the calibres in the apps
 APP_NAMES = {s["name"] for s in ALL}
@@ -25,7 +25,7 @@ CATEGORIES = {"Randfeuer", "Kurzwaffe", "Langwaffe", "Schwarzpulver", "Flinte", 
 
 def is_source(s):
     """A web address or a page of a book in books.toml."""
-    return s.startswith("https://") or bool(BOOK_SOURCE.fullmatch(s))
+    return s.startswith("https://") or bool(BOOK_SOURCE.fullmatch(s)) or bool(MEASURED_SOURCE.fullmatch(s))
 
 
 class CatalogueTests(unittest.TestCase):
