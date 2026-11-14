@@ -30,6 +30,15 @@ size = "miniature"
 diameter = 3.0
 sources = ["https://municion.org/producto/425-mm-lilliput/"]
 
+[case_head]
+# AECC drawing 04-010-CGC-010 (municion.org): RT 0.54, HL 1.35, GØ 4.37, GW 0.35, HØ 5.00; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 0.54
+ramp_top = 1.35
+groove_diameter = 4.37
+ramp_angle = 34.0
+sources = ["https://municion.org/producto/425-mm-lilliput/"]
+
 [bullet]
 # naboje.org: loaded with a full metal jacket bullet of about 1 g.
 type = "jacketed"

@@ -30,9 +30,13 @@ size = "small-pistol"
 sources = ["https://municion.org/producto/763-mm-mannlicher/"]
 
 [case_head]
-# .030 in.
+# .030 in. (COTW); groove from the AECC drawing 08-021-CGC-010 (municion.org): RT 1.09, HL 2.40, GØ 7.81, GW 0.90,
+# HØ 8.78; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 0.76
-sources = ["book:cotw-18 p. 527"]
+ramp_top = 2.4
+groove_diameter = 7.81
+ramp_angle = 50.0
+sources = ["book:cotw-18 p. 527", "https://municion.org/producto/763-mm-mannlicher/"]
 
 [bullet]
 type = "jacketed"
