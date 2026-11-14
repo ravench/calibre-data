@@ -20,7 +20,6 @@ neck = 6.4
 case_length = 28.9
 overall_length = 40.5
 bullet = 5.7
-# No source yet for neck, case_length, overall_length and bullet.
 sources = [
   "book:cotw-18 p. 573",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page7.pdf",

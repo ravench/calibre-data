@@ -26,6 +26,7 @@ sources = [
   "book:donnelly p. 152",
   "book:cotw-18 p. 175",
   "https://en.wikipedia.org/wiki/.223_Remington",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf",
 ]
 
 [introduced]

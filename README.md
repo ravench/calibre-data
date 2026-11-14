@@ -76,9 +76,8 @@ shoulder = 11.5
 shoulder_at = 39.62
 neck = 8.7
 case_length = 51.2
-overall_length = 71.1
+overall_length = 71.12
 bullet = 7.82
-# No source yet for overall_length.
 sources = [
   "book:cotw-18 p. 176",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf",
@@ -211,9 +210,7 @@ Short forms:
 | `profile = "crimped"` | `rim`, `base`, `mouth` (at the star crimp), `length` |
 
 `sources` lists every page the measurements come from, the page of most of them first. When only
-some of them have a source, a note above the list names the others, as in the example above (the
-shoulder position is from the C.I.P. sheet there, the other diameters and the case length from the
-book):
+some of them have a source, a note above the list names the others:
 
 ```toml
 # No source yet for case_length.

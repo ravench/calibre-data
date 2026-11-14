@@ -12,14 +12,13 @@ origin_sources = [
 
 [mm]
 rim = 9.6
-base = 9.6
-shoulder = 9.3
+base = 9.56
+shoulder = 9.14
 shoulder_at = 39.08
-neck = 6.0
+neck = 5.87
 case_length = 47.0
 overall_length = 57.4
 bullet = 5.2
-# No source yet for rim, base, shoulder and neck.
 sources = [
   "book:cotw-18 p. 175",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page79.pdf",

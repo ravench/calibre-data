@@ -13,11 +13,10 @@ rim = 14.9
 base = 14.9
 shoulder = 13.82
 shoulder_at = 54.9
-neck = 9.3
+neck = 9.41
 case_length = 69.2
 overall_length = 93.5
 bullet = 8.6
-# No source yet for neck.
 sources = [
   "book:hornady-10 p. 668",
   "book:cotw-18 p. 176",

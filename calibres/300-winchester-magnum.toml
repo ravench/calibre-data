@@ -18,10 +18,9 @@ base = 13.0
 shoulder = 12.4
 shoulder_at = 55.78
 neck = 8.6
-case_length = 66.7
+case_length = 66.55
 overall_length = 84.8
 bullet = 7.82
-# No source yet for case_length.
 sources = [
   "book:donnelly p. 346",
   "book:cotw-18 p. 176",

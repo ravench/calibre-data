@@ -17,9 +17,8 @@ shoulder = 11.6
 shoulder_at = 39.7
 neck = 8.5
 case_length = 53.6
-overall_length = 77.2
+overall_length = 77.16
 bullet = 7.92
-# No source yet for overall_length.
 sources = [
   "book:hornady-10 p. 489",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf",

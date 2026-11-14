@@ -1,4 +1,4 @@
-# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+# Rifle batch 3 (2026-11): first added from the page named in INTRODUCED, now C.I.P.'s (see [mm]).
 name = "6.5 mm Grendel"
 categories = ["rifle"]
 kind = "rimless"
@@ -9,16 +9,19 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
 
 [mm]
+# C.I.P. 6,5 Grendel, maximum cartridge.
 rim = 11.2
-base = 11.15
-shoulder = 10.87
-shoulder_at = 29.07
+base = 11.22
+shoulder = 10.92
+shoulder_at = 29.23
 neck = 7.44
-case_length = 38.7
-overall_length = 57.5
+case_length = 38.61
+overall_length = 57.4
 bullet = 6.71
-# No source yet for shoulder_at.
-sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-grendel.pdf",
+  "https://en.wikipedia.org/wiki/6.5mm_Grendel",
+]
 
 [introduced]
 year = 2003
@@ -29,8 +32,9 @@ size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
 
 [shoulder_angle]
+# C.I.P.: alpha 60 degrees.
 degrees = 30
-sources = ["https://www.rifleshootermag.com/editorial/6-5-grendel-evolution/84008"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-grendel.pdf", "https://www.rifleshootermag.com/editorial/6-5-grendel-evolution/84008"]
 
 [case_head]
 # .059 in.

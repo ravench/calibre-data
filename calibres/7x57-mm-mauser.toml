@@ -23,7 +23,6 @@ neck = 8.2
 case_length = 57.0
 overall_length = 78.0
 bullet = 7.24
-# No source yet for case_length and overall_length.
 sources = [
   "book:donnelly p. 828",
   "book:cotw-18 p. 573",

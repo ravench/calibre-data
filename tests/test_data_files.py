@@ -9,7 +9,8 @@ import check  # noqa: E402
 from cartridges import load, slug, DataError, sources  # noqa: E402
 
 LR = "calibres/22-lr.toml"
-LR_MM = ('sources = [\n  "book:janes-ammo-2002 p. 681",\n  "book:cotw-18 p. 670",\n'
+LR_MM = ('sources = [\n  "https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=22",\n'
+         '  "book:janes-ammo-2002 p. 681",\n  "book:cotw-18 p. 670",\n'
          '  "book:tm-43-0001-27 p. 3-5",\n]')  # the sources of .22 LR's [mm]
 WIN = "calibres/308-winchester.toml"
 KEY = {app: key for key, app in cartridges.CATEGORIES.items()}  # "Langwaffe": "rifle"
@@ -368,8 +369,8 @@ class CheckTests(unittest.TestCase):
                  (WIN, 'size = "large-rifle"', 'size = "large rifle"', r"\[primer\] size 'large rifle'"),
                  (LR, 'type = "lead"', 'type = "fmj"', r"\[bullet\] type 'fmj' is not one of jacketed"),
                  (LR, 'origin = "US"', 'origin = "USA"', r"origin 'USA' is not a code in countries.toml"),
-                 (LR, "rim = 6.9", 'rim = "6.9"', r"\[mm\] rim must be a number"),
-                 (LR, "rim = 6.9", "rim = -6.9", r"\[mm\] rim must be a number above 0"),
+                 (LR, "rim = 7.06", 'rim = "7.06"', r"\[mm\] rim must be a number"),
+                 (LR, "rim = 7.06", "rim = -7.06", r"\[mm\] rim must be a number above 0"),
                  (LR, "year = 1887", "year = 18887", r"year must be a year"),
                  (LR, "worldwide = true", 'worldwide = "yes"', r"worldwide must be true or false"),
                  (WIN, "degrees = 20", "degrees = 120", r"degrees is the angle to the case axis")]
@@ -403,8 +404,9 @@ class CheckTests(unittest.TestCase):
             c.edit(LR, LR_MM, 'sources = [\n  "book:cotw-18 p. 670",\n  "https://saami.org/",\n]')
             self.assertEqual(c.problems(), [])
             self.assertEqual(load(c.dir)["SOURCES"][(".22 LR", "mm")], ["book:cotw-18 p. 670", "https://saami.org/"])
-        self.assertEqual(sources(".22 LR", "mm"), ["book:janes-ammo-2002 p. 681", "book:cotw-18 p. 670",
-                                                   "book:tm-43-0001-27 p. 3-5"])
+        self.assertEqual(sources(".22 LR", "mm"), [
+            "https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=22",
+            "book:janes-ammo-2002 p. 681", "book:cotw-18 p. 670", "book:tm-43-0001-27 p. 3-5"])
         self.assertEqual(cartridges.BOOKS["cotw-18"]["isbn"], "978-1-959265-46-7")
 
     def test_a_manual_numbered_by_chapter_has_pages_like_14_13(self):
