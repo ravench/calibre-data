@@ -1,4 +1,4 @@
-# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+# Rifle batch 3 (2026-11): first added from the page named in INTRODUCED, now C.I.P.'s shoulder and length.
 name = ".17 Hornet"
 categories = ["rifle"]
 kind = "rimmed"
@@ -11,17 +11,17 @@ origin_sources = ["https://en.wikipedia.org/wiki/.17_Hornet"]
 [mm]
 rim = 8.9
 base = 7.6
-shoulder = 7.3
-shoulder_at = 26.83
+shoulder = 7.47
+shoulder_at = 26.6
 neck = 4.9
 case_length = 34.3
-overall_length = 43.8
+overall_length = 43.69
 bullet = 4.4
-# No source yet for shoulder.
 sources = [
   "book:cotw-18 p. 175",
   "https://municion.org/producto/17-hornet/",
   "book:hornady-10 p. 130",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf",
 ]
 
 [introduced]
@@ -34,9 +34,9 @@ size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
 [shoulder_angle]
-# AECC drawing 04-035-BBC-57W
-degrees = 21
-sources = ["https://municion.org/producto/17-hornet/"]
+# C.I.P. 17 Hornet: alpha 50 degrees (the AECC drawing 04-035-BBC-57W reads 21).
+degrees = 25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

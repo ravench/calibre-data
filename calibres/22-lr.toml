@@ -14,14 +14,15 @@ origin_sources = [
 worldwide = true
 
 [mm]
-rim = 6.9
+# Rim: SAAMI 22 Long Rifle - Sporting, maximum cartridge (.278 in).
+rim = 7.06
 base = 5.7
 neck = 5.7
 case_length = 15.6
 overall_length = 25.4
 bullet = 5.7
-# No source yet for rim.
 sources = [
+  "https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=22",
   "book:janes-ammo-2002 p. 681",
   "book:cotw-18 p. 670",
   "book:tm-43-0001-27 p. 3-5",

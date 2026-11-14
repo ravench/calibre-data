@@ -10,18 +10,19 @@ origin_sources = []
 worldwide = true
 
 [mm]
+# C.I.P. 308 Win. lists 7,62 x 51 as an alternative name; its values are the .308's.
 rim = 11.9
 base = 11.9
 shoulder = 11.5
 shoulder_at = 39.62
 neck = 8.7
 case_length = 51.2
-overall_length = 71.1
+overall_length = 71.12
 bullet = 7.82
-# No source yet for shoulder, shoulder_at and neck.
 sources = [
   "book:cotw-18 p. 573",
   "book:tm-43-0001-27 p. 11-17",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf",
 ]
 
 [introduced]

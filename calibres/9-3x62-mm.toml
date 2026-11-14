@@ -15,11 +15,10 @@ rim = 12.0
 base = 12.0
 shoulder = 11.5
 shoulder_at = 51.79
-neck = 10.0
+neck = 9.92
 case_length = 62.0
 overall_length = 83.6
 bullet = 9.3
-# No source yet for shoulder and neck.
 # Hornady p. 700 gives case_length on its Max. Case Length line; its drawing prints 2.431 in, the
 # trim length.
 sources = [
