@@ -36,9 +36,12 @@ degrees = 30
 sources = ["https://www.outdoorlife.com/guns/22-arc-review/"]
 
 [case_head]
-# .059 in.
+# C.I.P. 22 ARC
 rim_thickness = 1.5
-sources = ["book:cotw-18 p. 175"]
+ramp_top = 3.49
+groove_diameter = 9.6
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/22-arc-en.pdf"]
 
 [bullet]
 type = "polymer"

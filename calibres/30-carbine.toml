@@ -30,9 +30,12 @@ size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
 
 [case_head]
-# SAAMI 30 Carbine
+# C.I.P. 30 Carbine
 rim_thickness = 1.27
-sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=108"]
+ramp_top = 2.9
+groove_diameter = 7.87
+ramp_angle = 37.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page106.pdf"]
 
 [bullet]
 type = "jacketed"

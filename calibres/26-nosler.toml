@@ -35,9 +35,12 @@ degrees = 35
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=96"]
 
 [case_head]
-# SAAMI 26 Nosler
+# C.I.P. 26 Nosler
 rim_thickness = 1.27
-sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=96"]
+ramp_top = 3.75
+groove_diameter = 12.07
+ramp_angle = 32.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/26-nosler-211012-en.pdf"]
 
 [bullet]
 type = "polymer"

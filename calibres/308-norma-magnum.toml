@@ -36,9 +36,12 @@ degrees = 24.8
 sources = ["https://municion.org/producto/308-norma-magnum-belted/"]
 
 [case_head]
-# .048 in.
-rim_thickness = 1.22
-sources = ["book:cotw-18 p. 651"]
+# C.I.P. 308 Norma Mag.; E is to the top of the belt's ramp
+rim_thickness = 1.25
+ramp_top = 5.56
+groove_diameter = 11.6
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/308-norma-mag-en.pdf"]
 
 [bullet]
 type = "softpoint"

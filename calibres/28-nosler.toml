@@ -34,9 +34,12 @@ degrees = 35
 sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
 
 [case_head]
-# SAAMI 28 Nosler
+# C.I.P. 28 Nosler
 rim_thickness = 1.27
-sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=104"]
+ramp_top = 3.74
+groove_diameter = 12.07
+ramp_angle = 32.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/28-nosler-230324-en.pdf"]
 
 [bullet]
 type = "polymer"
