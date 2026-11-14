@@ -39,7 +39,8 @@ degrees = 30.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page44.pdf"]
 
 [case_head]
-# C.I.P. 7,21 Firebird: R, E, E1, delta
+# C.I.P. 7,21 Firebird: R, E, E1, delta. E as printed; the sheet's own R, e min, E1 and delta give 3.94,
+# which the Warbird sheet prints for the same head.
 rim_thickness = 1.65
 ramp_top = 3.99
 groove_diameter = 12.95

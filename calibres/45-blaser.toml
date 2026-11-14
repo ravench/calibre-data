@@ -23,7 +23,6 @@ bullet = 11.64
 sources = [
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/45-blaser-220214-en.pdf",
   "book:cotw-18 p. 652",
-  "https://municion.org/producto/45-blaser/",
 ]
 
 [introduced]

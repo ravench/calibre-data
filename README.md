@@ -317,6 +317,8 @@ source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
 semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet gives it, all three or
 none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
+The .32 and .401 Winchester Self-Loading have no groove floor on their sheets: a shallow cone (3.7° and
+7°) runs from the rim's front up to the body at E, and the drawing follows it.
 A case made from a parent case without its own sheet keeps the parent's head (the note says which).
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
 its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal

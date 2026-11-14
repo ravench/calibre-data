@@ -15,6 +15,7 @@ rare = true
 
 [mm]
 # C.I.P. 577/450 Sld. Mart. H., maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+# The sheet is the later solid drawn case («Sld.»); the first rolled foil cases have no sheet.
 rim = 19.3
 base = 17.07
 shoulder = 16.15

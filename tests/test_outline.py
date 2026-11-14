@@ -71,9 +71,10 @@ class GapTests(unittest.TestCase):
                                 (10.07, 9.0)])
 
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
-        # Calibres that failed the rule on 2026-11-14 and have a C.I.P. sheet after all, most of them under another
-        # title (the Vergueiro as «6,5 x 58 Mauser», the .275 H&H as «275 Belt. N.E.», the 7.92x24 as «7,92 x 24
-        # VBR»). Rim R1, case L3, half the cone angle alpha, groove E1 (None: straight case, rimmed case).
+        # Calibres that failed the rule on 2026-11-14 and now take every measurement and the head from their C.I.P.
+        # sheet, some found under another title (the Vergueiro as «6,5 x 58 Mauser», the .256 Gibbs as «256 Mag.
+        # Gibbs», the 7.92x24 as «7,92 x 24 VBR»). Rim R1, case L3, half the cone angle alpha, groove E1 (None:
+        # straight case, rimmed case).
         sheets = {
             "6.5x58 mm Vergueiro": (11.8, 58.0, 15.0, 10.2), ".275 H&H Magnum": (13.51, 63.5, 32.0, 11.94),
             ".280 Ross": (14.22, 66.32, 26.6, 12.45), ".333 Jeffery Rimless": (13.79, 62.86, 19.9, 12.37),
@@ -95,8 +96,8 @@ class GapTests(unittest.TestCase):
                 self.assertEqual(cartridges.SHOULDER_ANGLES.get(name, (None,))[0], angle)
                 self.assertEqual((cartridges.case_head(name) or (None,) * 3)[2], groove)
                 self.assertIn("bobp.cip-bobp.org/uploads/tdcc/", cartridges.sources(name, "mm")[0])
-        # The .32 Winchester Self-Loading has no groove: a 3.7 degree cone runs from the rim's front (1.27 mm) up to
-        # the body 3.49 mm from the base.
+        # The .32 Winchester Self-Loading has no groove floor: a 3.7 degree cone runs from the rim's front (1.27 mm)
+        # up to the body 3.49 mm from the base.
         cone = [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(self.spec(".32 Winchester Self-Loading"))[:5]]
         self.assertEqual(cone, [(4.955, 0), (4.955, 1.27), (4.32, 1.27), (4.32, 1.27), (4.465, 3.49)])
 
@@ -105,7 +106,7 @@ class GapTests(unittest.TestCase):
         self.assertTrue(outline.well_sourced(self.spec(".25 Stevens")))  # rim thickness only
         self.assertFalse(outline.well_sourced(self.spec("9x23 mm Winchester")))  # generic groove
         self.assertFalse(outline.well_sourced(self.spec(".56-52 Spencer Necked")))
-        passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 589 of 759 on 2026-11-14
+        passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 606 of 759 before these sheets
         self.assertTrue(0 < passing < len(outline.specs()))
 
     def test_popular_calibres_are_well_sourced(self):
@@ -531,33 +532,30 @@ class OutlineTests(unittest.TestCase):
     # one); they get the generic groove, behind their own rim thickness where a source gives one. A new
     # rimless, semi-rimmed or belted calibre needs a head in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
-        ".25 Weatherby RPM", ".27 Nosler", ".30 Remington AR", ".35 S&W Auto",
-        ".351 Winchester Self-Loading", ".375 CheyTac",
-        ".408 CheyTac", ".458 SOCOM", "5.8x42 mm",
-        "7.5 FK", "7.92x107 mm DS", "9x23 mm Winchester",
+        ".25 Weatherby RPM", ".27 Nosler", ".30 Remington AR", ".35 S&W Auto", ".351 Winchester Self-Loading",
+        ".375 CheyTac", ".408 CheyTac", ".458 SOCOM", "5.8x42 mm", "7.5 FK", "7.92x107 mm DS", "9x23 mm Winchester",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        ".242 Rimless Nitro Express", ".26 BSA",
-        ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery", ".30 Borchardt",
-        ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".303 Magnum", ".33 BSA", ".330 Dakota",
-        ".338 Canadian Magnum", ".338 Lehigh", ".35 Newton", ".360 Mars",
-        ".375 Dakota", ".400/375 Belted Nitro Express", ".416 Dakota", ".425 Westley Richards Magnum",
-        ".44 Auto Mag", ".45 Mars Long", ".45 Mars Short", ".45 Remington Thompson",
-        ".45-70 Auto", ".450 Dakota", ".455 Webley Automatic",
+        ".242 Rimless Nitro Express", ".26 BSA", ".276 Enfield", ".276 Pedersen", ".280 British", ".280 Jeffery",
+        ".30 Borchardt", ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".303 Magnum", ".33 BSA", ".330 Dakota",
+        ".338 Canadian Magnum", ".338 Lehigh", ".35 Newton", ".360 Mars", ".375 Dakota",
+        ".400/375 Belted Nitro Express", ".416 Dakota", ".425 Westley Richards Magnum", ".44 Auto Mag", ".45 Mars Long",
+        ".45 Mars Short", ".45 Remington Thompson", ".45-70 Auto", ".450 Dakota", ".455 Webley Automatic",
         ".458 Canadian Magnum", ".475 Bishop Short Magnum", ".50 GI", ".50-115 Bullard", ".500 Phantom",
-        ".577 Tyrannosaur", "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor",
-        "10.75x57 mm Mannlicher", "10.75x63 mm Mauser", "11.2x60 mm Schüler",
-        "11.2x72 mm Schüler", "12.04 Bibamufu", "2.7 mm Kolibri", "3 mm Kolibri", "4.25 mm Liliput",
-        "4.85x49 mm British", "5 mm Bergmann", "5 mm Clement", "5.8x21 mm DAP92",
+        ".577 Tyrannosaur", "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor", "10.75x57 mm Mannlicher",
+        "10.75x63 mm Mauser", "11.2x60 mm Schüler", "11.2x72 mm Schüler", "12.04 Bibamufu", "2.7 mm Kolibri",
+        "3 mm Kolibri", "4.25 mm Liliput", "4.85x49 mm British", "5 mm Bergmann", "5 mm Clement", "5.8x21 mm DAP92",
         "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW", "6.17 Lazzeroni Flash", "6.17 Lazzeroni Spitfire",
         "6.5 mm Bergmann", "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau", "6.5x61 mm Mauser",
-        "6.71 Lazzeroni Blackbird", "6.71 Lazzeroni Phantom", "6x58 mm Forster", "7 mm Canadian Magnum",
-        "7 mm Dakota", "7 mm Nambu", "7.21 Lazzeroni Firehawk",
-        "7.21 Lazzeroni Tomahawk", "7.63 mm Mannlicher", "7.65 mm Roth-Sauer", "7.82 Lazzeroni Patriot",
-        "7x73 mm Vom Hofe Belted", "8.5 mm Mars",
-        "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan", "8x59 mm Breda", "8x63 mm Swedish",
-        "8x71 mm Peterlongo", "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle",
-        "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn", "9.8 mm Auto Colt", "9x63 mm", "9x71 mm Peterlongo",
+        "6.71 Lazzeroni Blackbird", "6.71 Lazzeroni Phantom", "6x58 mm Forster", "7 mm Canadian Magnum", "7 mm Dakota",
+        "7 mm Nambu", "7.21 Lazzeroni Firehawk", "7.21 Lazzeroni Tomahawk", "7.63 mm Mannlicher", "7.65 mm Roth-Sauer",
+        "7.82 Lazzeroni Patriot", "7x73 mm Vom Hofe Belted", "8.5 mm Mars", "8.59 Lazzeroni Galaxy",
+        "8.59 Lazzeroni Titan", "8x59 mm Breda", "8x63 mm Swedish", "8x71 mm Peterlongo", "9 mm Winchester Magnum",
+        "9.09 Lazzeroni Eagle", "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn", "9.8 mm Auto Colt", "9x63 mm",
+        "9x71 mm Peterlongo",
     }
+
+    SHALLOW_CONES = {".32 Winchester Self-Loading": 3.7, ".35 Winchester Self-Loading": 8.0,
+                     ".401 Winchester Self-Loading": 7.0}
 
     def rimless(self):
         return {s["name"]: s for _, s in outline.specs() if s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)}
@@ -569,9 +567,12 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(name):
                 s = self.rimless()[name]
                 self.assertTrue(url.startswith("https://") or url.startswith("book:"), url)
-                # The .55 Boys: 9.0. The Winchester self-loading cases have no groove but a shallow cone from the
-                # rim to the body: 3.7, 7 and 8 degrees on their C.I.P. sheets.
-                self.assertTrue(0.7 < thick < 2.5 and 2.0 < top_at < 9.5 and 3 <= angle <= 75)
+                # The .55 Boys: 9.0.
+                self.assertTrue(0.7 < thick < 2.5 and 2.0 < top_at < 9.5)
+                # A groove's front ramp is 10 degrees or more. Three Winchester self-loading cases have a shallow
+                # cone in its place on their C.I.P. sheets: from the rim's front on the .32 and .401, after a
+                # 0.64 mm groove floor on the .35.
+                self.assertTrue(10 <= angle <= 75 or self.SHALLOW_CONES.get(name) == angle, angle)
                 self.assertLess(groove, min(s["rim"], s["base"]))
 
     def test_heads_are_drawn_from_their_own_groove(self):

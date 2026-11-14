@@ -22,11 +22,7 @@ neck = 7.7
 case_length = 58.0
 overall_length = 82.5
 bullet = 6.7
-sources = [
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page25.pdf",
-  "https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro",
-  "https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/",
-]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page25.pdf"]
 
 [introduced]
 year = 1904
