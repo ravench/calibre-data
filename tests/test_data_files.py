@@ -110,7 +110,6 @@ class LoadTests(unittest.TestCase):
                         self.assertRegex(f.read(), r"(?m)^# Firearms: .+\ncategories = ")
                 if c[0] == "Schwarzpulver" and kinds[name] not in cartridges.LOOSE:  # balls and Minié bullets: none
                     self.assertTrue({"Langwaffe", "Kurzwaffe"} & set(c))
-                    self.assertEqual("Randfeuer" in c, kinds[name] == cartridges.RIMFIRE)
                 if c[0] in ("Kurzwaffe", "Langwaffe", "Flinte", "Luftdruck", "Kanone"):
                     self.assertEqual(len(c), 1)
 
@@ -280,6 +279,10 @@ class CheckTests(unittest.TestCase):
             c.edit(swift, 'kind = "semi-rimmed"', 'kind = "rimless"')
             self.assertProblem(c, swift, r"rimless case has a rim at most 0\.3 mm wider than its base",
                                line=c.line_of(swift, "rim ="))
+        with Copy() as c:  # exactly 0.3 mm is still rimless, whatever binary floats make of 4.1 + 0.3
+            c.edit(WIN, "rim = 11.9", "rim = 4.4")
+            c.edit(WIN, "base = 11.9", "base = 4.1")
+            self.assertFalse([p for p in c.problems() if "rimless case" in p[2]])
 
     def test_the_rimfire_category_holds_the_rimfire_cases(self):
         # Both ways: no centrefire round is in it (the 9 mm P.A.K. and five Knall blanks were, next to the
@@ -288,9 +291,9 @@ class CheckTests(unittest.TestCase):
             pak = "calibres/9-mm-p-a-k.toml"
             c.edit(pak, 'categories = ["handgun"]', 'categories = ["handgun", "rimfire"]')
             c.edit(LR, 'categories = ["rimfire", "rifle", "handgun"]', 'categories = ["rifle", "handgun"]')
-            for rel in (pak, LR):
-                self.assertProblem(c, rel, r"the rimfire category holds the rimfire cases and no others",
-                                   line=c.line_of(rel, "categories ="))
+            self.assertProblem(c, pak, r"the rimfire category holds only rimfire cases: remove it from this rimless",
+                               line=c.line_of(pak, "categories ="))
+            self.assertProblem(c, LR, r"a rimfire calibre lists the rimfire category", line=c.line_of(LR, "categories ="))
 
     def test_416_rigby_no_2_is_the_416_rigby_with_a_rim(self):
         # C.I.P. sheets: the No. 2 (2019) keeps the .416 Rigby's body, shoulder, neck and cone behind a 17 mm rim.

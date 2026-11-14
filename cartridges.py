@@ -24,7 +24,8 @@ RIMLESS, SEMI_RIMMED, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET = (
 KINDS = (RIMLESS, SEMI_RIMMED, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET)
 LOOSE = (BALL, MINIE, PELLET)  # loose projectiles, not cartridges
 # mm, the most a rimless case's rim stands over its base (widest today: the 20x102 mm's 0.28); with more
-# the case is semi-rimmed. The semi-rimmed ones start lower, at the 8 mm Nambu's 0.27.
+# the case is semi-rimmed or rimmed. A coarse guard, not the line between the kinds: the semi-rimmed ones
+# start lower, at the 8 mm Nambu's 0.27.
 RIMLESS_OVERHANG = 0.3
 # Bullet profiles. PATCHED: paper-patched lead body with a steel-capped ogive nose (GP 1890).
 # CRIMPED: no bullet; the case mouth is folded shut in a star (blanks and power-tool loads).
@@ -604,14 +605,17 @@ def _read_calibre(f, countries, books=None):
             f.problem(f.line("primer"), f"a {category} round has no [primer] (not a reloading size): remove it")
     elif "primer" not in facts:
         f.problem(None, "a centrefire calibre needs a [primer] table (size and sources, or sources = [] if not checked)")
-    if kind in KINDS and (kind == RIMFIRE) != ("rimfire" in cats):
-        f.problem(f.line(None, "categories"), "the rimfire category holds the rimfire cases and no others: a "
-                                              "rimfire calibre lists it, a centrefire one is under handgun or rifle")
+    if kind == RIMFIRE and "rimfire" not in cats:
+        f.problem(f.line(None, "categories"), "a rimfire calibre lists the rimfire category (after its first one, "
+                                              "if that is another)")
+    elif kind in KINDS and kind != RIMFIRE and "rimfire" in cats:
+        f.problem(f.line(None, "categories"), f"the rimfire category holds only rimfire cases: remove it from this "
+                                              f"{kind} calibre (a centrefire blank is a handgun round)")
     if kind == SEMI_RIMMED and not facts["mm"].get("rim", 0) > facts["mm"].get("base", 0):
         f.problem(f.line("mm", "rim"), "a semi-rimmed case has a rim wider than its base")
-    if kind == RIMLESS and facts["mm"].get("rim", 0) > facts["mm"].get("base", 0) + RIMLESS_OVERHANG:
+    if kind == RIMLESS and round(facts["mm"].get("rim", 0) - facts["mm"].get("base", 0), 3) > RIMLESS_OVERHANG:
         f.problem(f.line("mm", "rim"), f"a rimless case has a rim at most {RIMLESS_OVERHANG} mm wider than its base: "
-                                       "with a wider one it is semi-rimmed")
+                                       "with a wider one it is semi-rimmed or rimmed")
     if category == "cannon" and not 20 <= facts["mm"]["bullet"] <= 57:
         f.problem(f.line("mm", "bullet"), "cannon holds the 20 to 57 mm cannon rounds: bullet is 20 to 57")
     if kind in LOOSE + (SHOT,):
