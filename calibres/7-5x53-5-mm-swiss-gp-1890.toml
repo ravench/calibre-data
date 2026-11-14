@@ -20,7 +20,7 @@
 # Case: the 1892 drawing gives case 53.5 (54.8 before necking), rim 12.5 and 1.6 thick, 12.4 in
 # front of the groove, shoulder 11.5 at 44.5 from the head, neck 8.85 at its base and 8.5 at the
 # mouth (7 long), cartridge 77.2 (+0.5/-0.2), all values below. Its extractor groove is a curved
-# cove (10.2 across, radius 1.5), so no ramp angle. Its primer is a Berdan cap, 4.92 across, on an
+# cove (10.2 across, radius 1.5) with no ramp; [case_head] takes the ramp from the AECC drawing. Its primer is a Berdan cap, 4.92 across, on an
 # anvil in the case with two flash holes. swissrifles.com/ammo (http only, so not a listed source)
 # gives 2.106 in (53.5) case, .492 in (12.5) rim and .488 in (12.4) head for the GP 90 and 90/03,
 # Poyer p. 50 gives 7.5x53.5; Raven's paper-patched GP round of June 1906 (headstamp «6 T T 06»)
@@ -69,9 +69,14 @@ degrees = 33.5
 sources = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321"]
 
 [case_head]
-# 1892 drawing; the groove is a curved cove with no ramp angle, so no groove keys
+# Rim thickness and groove diameter from the 1892 drawing (a curved cove 10.2 across). The cove has no
+# ramp, so ramp top and angle come from the AECC drawing 08-054-BGC-040 «M.1890-1903» (municion.org):
+# RT 1.65, HL 3.40, GØ 10.25, GW 0.30, HØ 12.49; angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.6
-sources = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321"]
+ramp_top = 3.4
+groove_diameter = 10.2
+ramp_angle = 38.0
+sources = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321", "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
 [bullet]
 # Paper: the lead body wrapped in paper (see above); profile = "patched" draws its steel cap.

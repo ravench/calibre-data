@@ -11,7 +11,7 @@
 # cartridge M90/23» in the army's part numbers (Labbett p. 118).
 # Case: swissrifles.com/ammo (http only, so not a listed source) gives 2.15 in (54.6) case,
 # .500 in (12.7) rim, .496 in (12.6) head and a .3075 in (7.8) bullet; Poyer p. 50 gives 7.5x54.5.
-# Shoulder, neck and head to shoulder are Raven's caliper values for the Kadettenpatrone (same case, 1964). Length is an estimate: no source gives it.
+# Shoulder, neck and head to shoulder are Raven's caliper values for the Kadettenpatrone (same case, 1964). The AECC drawing 08-054-BGC-085 gives the length as 77.44.
 name = "7.5x54.5 mm Swiss (GP 90/23)"
 categories = ["rifle"]
 kind = "rimless"
@@ -46,9 +46,18 @@ size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
 
 [shoulder_angle]
-# the GP 1890 case
-degrees = 27.8
-sources = ["https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
+# AECC drawing 08-054-BGC-085: SØ 11.65, NØ 8.47, SL 44.50, NL 7.15, CL 54.40.
+degrees = 30.0
+sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
+
+[case_head]
+# AECC drawing 08-054-BGC-085 (municion.org): RT 1.56, HL 3.60, GØ 10.26, GW 1.00, HØ 12.52;
+# ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.56
+ramp_top = 3.6
+groove_diameter = 10.26
+ramp_angle = 47.0
+sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
 
 [bullet]
 # cupronickel-jacketed round nose (Poyer p. 50: 80 % copper, 20 % nickel; swisswaffen: steel jacket)
