@@ -8,9 +8,11 @@ obsolete = true
 rare = true
 
 [mm]
-diameter = 17.3
-length = 27.0
-sources = []
+# «Expanding balls for rifle muskets», the Altered Musket (the .69 musket, rifled): diameter .685 in, length 1.1 in
+# (heavy ball, 730 grains; light ball 650 grains).
+diameter = 17.4
+length = 27.94
+sources = ["https://papercartridges.com/blog/f/minié-burton-and-the-us-regulation-rifle-musket-bullet"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
