@@ -19,10 +19,11 @@ class OutlineTests(unittest.TestCase):
             with self.subTest(s["name"]):
                 o = outline.outline(s)
                 self.assertAlmostEqual(o["height"], s["oal"], places=2)
+                self.assertAlmostEqual(o["width"], max(s["rim"], s["base"], s["bullet"], s["belt"] or 0), places=2)
                 paths = [o[k] for k in ("case", "head", "bullet", "patch", "tip") if k in o]
                 self.assertTrue(paths)
                 xs = [x for d in paths for x, _ in points(d)]
-                self.assertAlmostEqual(max(xs) - min(xs), o["width"], delta=0.02)  # the box is as wide as the drawing
+                self.assertAlmostEqual(max(xs) - min(xs), o["width"], delta=0.02)  # and the drawing fills the box
                 for d in paths:
                     self.assertRegex(d, PATH)
                     for x, y in points(d):
@@ -514,6 +515,15 @@ class OutlineTests(unittest.TestCase):
             if s["kind"] == BELTED:
                 with self.subTest(s["name"]):
                     self.assertGreaterEqual(outline.case_profile(s)[5][0], s["base"] / 2)
+
+    def test_a_long_ramp_stops_at_the_front_of_the_belt(self):
+        # A cannon-sized belted case on the generic head (the 50x346 mm B's rim and body): at 40 degrees the ramp
+        # would end 2 mm beyond the belt's front, and the outline would turn back on itself.
+        s = cartridges.c("a 50 mm belted case", BELTED, 68.0, 68.0, None, 52.0, 346.0, None, 500.0, 50.0, SPITZER)
+        prof = outline.case_profile(s)
+        self.assertEqual(prof[4], (34.0, 5.6))  # the ramp ends where the belt does
+        heights = [h for _, h in prof]
+        self.assertEqual(heights, sorted(heights))
 
     def test_heads_follow_the_sheets(self):
         # (R rim thickness, E, E1 groove diameter, ramp angle) on the C.I.P. sheets.

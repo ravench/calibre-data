@@ -60,8 +60,9 @@ def rim_and_groove(s):
         # The ramp climbs to the belt, which ends at E; the sheets give no groove width, so the groove floor
         # is drawn GROOVE_FLOOR long. The belt is as wide as the rim unless the calibre gives its own diameter
         # (.378 Weatherby Magnum: a belt of 15.33 mm in front of a 14.71 mm rim).
-        belt_dia = s.get("belt") or s["rim"]
-        ramp_end = thick + GROOVE_FLOOR + ramp_run(groove_dia, belt_dia, ramp_angle)
+        belt_dia = s["belt"] or s["rim"]
+        # A long ramp (a wide belt, or a big case on the generic head) stops at the front of the belt.
+        ramp_end = min(top_at, thick + GROOVE_FLOOR + ramp_run(groove_dia, belt_dia, ramp_angle))
         return [(rim, 0), (rim, thick), (groove, thick), (groove, thick + GROOVE_FLOOR),
                 (belt_dia / 2, ramp_end), (belt_dia / 2, top_at), (base * 0.985, top_at)]
     ramp_start = max(thick, top_at - ramp_run(groove_dia, s["base"], ramp_angle))
@@ -223,7 +224,7 @@ def to_path(poly, height, half_width):
 
 def outline(s):
     k = s["kind"]
-    width = max(s["rim"], s["base"], s["bullet"], s.get("belt") or 0)
+    width = max(s["rim"], s["base"], s["bullet"], s["belt"] or 0)
     hw = width / 2
     H = s["oal"]
     paths = {}

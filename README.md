@@ -188,7 +188,7 @@ Most cartridges (C.I.P. letters of the maximum cartridge in brackets):
 | Key | Meaning |
 |---|---|
 | `rim` | Rim diameter (R1). |
-| `belt` | Belted cases only, where the belt is wider than the rim: the belt's diameter (R3). The .378 Weatherby Magnum's is 15.33 mm in front of a 14.71 mm rim. Without it the belt is drawn as wide as the rim, so a belted case with a rim narrower than its base needs it. |
+| `belt` | Belted cases only, where the belt is wider than the rim: the belt's diameter (R3). The .378 Weatherby Magnum's is 15.33 mm in front of a 14.71 mm rim. Without it the belt is drawn as wide as the rim, so a belted case with a rim narrower than its base needs it; the H&H belt (R3 13.56 over R1 13.51) is close enough to its rim to leave out. |
 | `base` | Body diameter just above the head (P1). |
 | `shoulder` | Bottleneck cases only: diameter where the shoulder starts (P2). |
 | `shoulder_at` | Bottleneck cases only: distance from the head to where the shoulder starts (L1). |

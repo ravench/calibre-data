@@ -12,7 +12,7 @@ rare = true
 
 [mm]
 rim = 14.71
-# The belt (R3 on the C.I.P. sheet) is wider than the rim (R1 14.71).
+# The belt, R3 on the C.I.P. sheet, is wider than the rim.
 belt = 15.33
 base = 14.8
 shoulder = 14.2
@@ -40,7 +40,7 @@ degrees = 36.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page33.pdf"]
 
 [case_head]
-# C.I.P. 416 Weath. Mag.: R 1.60, E 6.40, E1 12.57, delta 45°.
+# C.I.P. ?
 rim_thickness = 1.6
 ramp_top = 6.4
 groove_diameter = 12.57

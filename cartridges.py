@@ -27,7 +27,7 @@ LOOSE = (BALL, MINIE, PELLET)  # loose projectiles, not cartridges
 # the case is semi-rimmed or rimmed. A coarse guard, not the line between the kinds: the semi-rimmed ones
 # start lower, at the 8 mm Nambu's 0.27.
 RIMLESS_OVERHANG = 0.3
-# The most a belt is wider than the rim and the body next to it, as a factor (widest today: the .55 Boys' 1.06).
+# The most a belt is wider than the wider of rim and body, as a factor (widest today: the .55 Boys' 1.06).
 # A coarse guard against a slip of the pen.
 BELT_PROUD = 1.1
 # Bullet profiles. PATCHED: paper-patched lead body with a steel-capped ogive nose (GP 1890).
@@ -638,11 +638,14 @@ def _read_calibre(f, countries, books=None):
     if kind == RIMLESS and round(facts["mm"].get("rim", 0) - facts["mm"].get("base", 0), 3) > RIMLESS_OVERHANG:
         f.problem(f.line("mm", "rim"), f"a rimless case has a rim at most {RIMLESS_OVERHANG} mm wider than its base: "
                                        "with a wider one it is semi-rimmed or rimmed")
-    belt, widest = facts["mm"].get("belt"), max(facts["mm"].get("rim", 0), facts["mm"].get("base", 0))
-    if belt is not None and not (kind == BELTED and (not widest or widest < belt <= widest * BELT_PROUD)):
-        f.problem(f.line("mm", "belt"), "[mm] belt is the belt of a belted case (R3 on the C.I.P. sheets) where it is "
-                                        "wider than the rim: wider than rim and base, by a tenth at most")
-    elif belt is None and kind == BELTED and facts["mm"].get("rim", 0) < facts["mm"].get("base", 0):
+    belt, rim, base = (facts["mm"].get(k) for k in ("belt", "rim", "base"))
+    widest = max(rim or 0, base or 0)  # a cannon round may leave out either
+    if belt is not None and kind != BELTED:
+        f.problem(f.line("mm", "belt"), "only a belted case has a [mm] belt")
+    elif belt is not None and widest and not widest < belt <= widest * BELT_PROUD:
+        f.problem(f.line("mm", "belt"), f"[mm] belt {belt} is the belt's diameter (R3 on the C.I.P. sheets) where it is "
+                                        f"wider than the rim: above rim and base ({widest}), by a tenth at most")
+    elif belt is None and kind == BELTED and profile != CRIMPED and rim and base and rim < base:  # a blank has no belt key
         f.problem(f.line("mm", "rim"), "a belted case with a rim narrower than its base needs [mm] belt (R3 on the "
                                        "C.I.P. sheets): without it the belt is drawn as wide as the rim")
     if category == "cannon" and not 20 <= facts["mm"]["bullet"] <= 57:
