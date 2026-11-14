@@ -508,12 +508,20 @@ class OutlineTests(unittest.TestCase):
         prof = [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(s)[:7]]
         self.assertEqual(prof[:4], [(7.35, 0), (7.35, 1.6), (6.285, 1.6), (6.285, 2.6)])  # rim and groove
         self.assertEqual(prof[4:6], [(7.665, 3.98), (7.665, 6.4)])  # the belt, after a 45 degree ramp
-        self.assertLess(prof[6][0], 7.4)  # the body in front of it
+        self.assertEqual(prof[6], (7.4, 6.4))  # the body in front of it, at the base diameter
         self.assertEqual(outline.outline(s)["width"], 15.33)  # the belt is the widest part
-        for _, s in outline.specs():  # every belt stands out from the body
-            if s["kind"] == BELTED:
-                with self.subTest(s["name"]):
-                    self.assertGreaterEqual(outline.case_profile(s)[5][0], s["base"] / 2)
+
+    def test_the_body_in_front_of_a_belt_starts_at_the_base_diameter(self):
+        # The base diameter of a belted case is the body's in front of the belt (P1 on the C.I.P. sheets: 14.78 mm
+        # on the .378 Weatherby Magnum, in front of its belt of 15.33 mm). The body used to be drawn 1.5 % narrower
+        # than that, 0.2 mm on most of these cases and 0.3 mm on the .55 Boys (2026-11-14).
+        belted = [s for _, s in outline.specs() if s["kind"] == BELTED]
+        self.assertGreater(len(belted), 40)
+        for s in belted:
+            with self.subTest(s["name"]):
+                (belt, belt_front), (body, body_from) = outline.case_profile(s)[5:7]
+                self.assertEqual((body, body_from), (s["base"] / 2, belt_front))
+                self.assertGreater(belt, body)  # every belt stands out from the body
 
     def test_a_long_ramp_stops_at_the_front_of_the_belt(self):
         # A cannon-sized belted case on the generic head (the 50x346 mm B's rim and body): at 40 degrees the ramp
@@ -601,9 +609,9 @@ class OutlineTests(unittest.TestCase):
         # Belted: the ramp ends on the belt, which ends 4.3 mm in front of the rim (the .55 Boys' own belt, 21.59 mm,
         # stands over its 20.3 mm rim); behind a rim of .062 in (COTW 18) groove and belt move up with it.
         self.assertEqual(head(".55 Boys", 7), [(10.15, 0), (10.15, 1.3), (8.8305, 1.3), (8.8305, 2.3), (10.795, 4.6412),
-                                               (10.795, 5.6), (9.919, 5.6)])
+                                               (10.795, 5.6), (10.07, 5.6)])
         self.assertEqual(head(".400/375 Belted Nitro Express", 7),
-                         [(5.92, 0), (5.92, 1.57), (5.121, 1.57), (5.121, 2.57), (5.92, 3.5222), (5.92, 5.87), (5.6047, 5.87)])
+                         [(5.92, 0), (5.92, 1.57), (5.121, 1.57), (5.121, 2.57), (5.92, 3.5222), (5.92, 5.87), (5.69, 5.87)])
         for name in self.HEAD_UNSOURCED:
             with self.subTest(name):
                 s, prof = specs[name], outline.case_profile(specs[name])
