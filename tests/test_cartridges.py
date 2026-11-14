@@ -92,7 +92,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(PRIMER_MM[".577/500 No. 2 Express"], 6.38)  # .251 in.
         self.assertEqual(PRIMER_MM[".297/230 Morris Short"], 4.5)  # .177 in.
         self.assertEqual(PRIMER_MM[".450 Nitro Express"], PRIMER_DIAMETERS[BERDAN_NITRO])  # .254 in. is the size
-        self.assertEqual(PRIMER_MM["7.5x53.5 mm Swiss (GP 1890)"], 4.92)  # the 1892 drawing
+        self.assertEqual(PRIMER_MM["7.5x53.5 mm Swiss (Patrone Modell 1890)"], 4.92)  # the 1892 drawing
         self.assertEqual(PRIMER_MM[".308 Winchester"], PRIMER_DIAMETERS[LARGE_RIFLE])
 
     def test_original_primers_from_headstamp_photos(self):
@@ -169,7 +169,7 @@ class CatalogueTests(unittest.TestCase):
     def test_swiss_service_rounds(self):
         by_name = {s["name"]: s for s in ALL}
         self.assertIn("gp11", by_name["7.5x55 mm Swiss (GP 11)"]["aliases"])
-        self.assertIn("gp1890", by_name["7.5x53.5 mm Swiss (GP 1890)"]["aliases"])
+        self.assertIn("gp1890", by_name["7.5x53.5 mm Swiss (Patrone Modell 1890)"]["aliases"])
         self.assertIn("gp90", by_name["5.6 mm GP 90"]["aliases"], "GP 90 means the 5.6 mm Stgw 90 round")
         self.assertEqual(by_name["12/70"]["kind"], SHOT)
 
@@ -187,7 +187,7 @@ class CatalogueTests(unittest.TestCase):
         # A late round on the longer case of 1923: Schiesstagebuch offers the two as one chamber.
         chamber = ("kind", "rim", "base", "shoulder", "neck", "case", "sh_at", "bullet")
         self.assertEqual([kp[k] for k in chamber], [gp[k] for k in chamber])
-        self.assertNotEqual(kp["profile"], by_name["7.5x53.5 mm Swiss (GP 1890)"]["profile"],
+        self.assertNotEqual(kp["profile"], by_name["7.5x53.5 mm Swiss (Patrone Modell 1890)"]["profile"],
                             "a jacketed round nose, not the paper-patched bullet")
         self.assertEqual(kp["kind"], RIMLESS)
         self.assertEqual(kp["profile"], "round")
@@ -202,7 +202,7 @@ class CatalogueTests(unittest.TestCase):
         # Raven 2026-11-11: his 1906 GP round measures 53.5; Poyer p. 50/54 and swissrifles.com give 53.5 for
         # the GP 90 and 90/03 and the longer case only from the GP 90/23 of 1923, a calibre of its own.
         by_name = {s["name"]: s for s in ALL}
-        gp, gp23 = by_name["7.5x53.5 mm Swiss (GP 1890)"], by_name["7.5x54.5 mm Swiss (GP 90/23)"]
+        gp, gp23 = by_name["7.5x53.5 mm Swiss (Patrone Modell 1890)"], by_name["7.5x54.5 mm Swiss (GP 90/23)"]
         self.assertEqual((gp["case"], gp["rim"], gp["base"]), (53.5, 12.5, 12.4))
         self.assertEqual((gp23["case"], gp23["rim"], gp23["base"]), (54.6, 12.62, 12.52))  # AECC drawing, case kept at 54.6
         self.assertEqual(by_name["7.5x55 mm Swiss (GP 11)"]["case"], 55.6)
@@ -213,16 +213,16 @@ class CatalogueTests(unittest.TestCase):
 
     def test_gp1890_follows_the_1892_drawing(self):
         # «Patrone, Modell 1890», Eidg. Munitionsfabrik Thun, 1 Feb 1892 (Federal Archives E27#1000/721#18612*).
-        gp = next(s for s in ALL if s["name"] == "7.5x53.5 mm Swiss (GP 1890)")
+        gp = next(s for s in ALL if s["name"] == "7.5x53.5 mm Swiss (Patrone Modell 1890)")
         self.assertEqual((gp["case"], gp["shoulder"], gp["sh_at"], gp["neck"], gp["oal"], gp["bullet"]),
                          (53.5, 11.5, 44.5, 8.5, 77.2, 8.15))
         self.assertIn("patrone modell 1890", gp["aliases"])
         # Federal Council decisions of 1 July 1890 and 6 March 1903 (Federal Archives minutes).
-        self.assertEqual(INTRODUCED["7.5x53.5 mm Swiss (GP 1890)"][0], 1890)
+        self.assertEqual(INTRODUCED["7.5x53.5 mm Swiss (Patrone Modell 1890)"][0], 1890)
         self.assertIn("gewehrpatrone 1890/1903", gp["aliases"])
         self.assertEqual(bullet("7.5x54.5 mm Swiss (GP 90/23)"), JACKETED)
         self.assertEqual(lookalikes("7.5 mm Kadettenpatrone"),
-                         ["7.5x53.5 mm Swiss (GP 1890)", "7.5x54.5 mm Swiss (GP 90/23)"])
+                         ["7.5x53.5 mm Swiss (Patrone Modell 1890)", "7.5x54.5 mm Swiss (GP 90/23)"])
 
     def test_swiss_army_pistol_round_names(self):
         # Raven 2026-11-08: 9 mm Para is «Pistolenpatrone 41» (Pist Pat 41) in the Swiss Army; the
@@ -454,7 +454,7 @@ class CatalogueTests(unittest.TestCase):
 
     def test_obsolete_calibres_are_known(self):
         self.assertLessEqual(OBSOLETE, NAMES)
-        self.assertTrue(is_obsolete("7.5x53.5 mm Swiss (GP 1890)"))
+        self.assertTrue(is_obsolete("7.5x53.5 mm Swiss (Patrone Modell 1890)"))
         self.assertFalse(is_obsolete("7.5x55 mm Swiss (GP 11)"))
         self.assertFalse(is_obsolete("9x19 mm"))
 
@@ -505,7 +505,7 @@ class CatalogueTests(unittest.TestCase):
             self.assertTrue(flag is None or len(flag) == 2, code)
 
     def test_known_origins(self):
-        for name in ("5.6 mm GP 90", "7.5x55 mm Swiss (GP 11)", "7.5x53.5 mm Swiss (GP 1890)",
+        for name in ("5.6 mm GP 90", "7.5x55 mm Swiss (GP 11)", "7.5x53.5 mm Swiss (Patrone Modell 1890)",
                      "7.5 mm Swiss Ordnance 1882"):
             self.assertEqual(ORIGIN[name], "CH")
         # Raven 2026-11-08: the tag tilts to the main adopter, user or producer where only the developer differs
@@ -774,7 +774,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(jacket("9x19 mm"), COPPER)
         self.assertEqual(jacket(".308 Winchester"), COPPER)  # soft point: a copper jacket
         self.assertIsNone(jacket(".22 LR"))  # lead
-        self.assertIsNone(jacket("7.5x53.5 mm Swiss (GP 1890)"))  # paper-patched lead under a cap
+        self.assertIsNone(jacket("7.5x53.5 mm Swiss (Patrone Modell 1890)"))  # paper-patched lead under a cap
 
     def test_rounds_older_than_jacketed_bullets_are_not_jacketed(self):
         # Jacketed bullets came with smokeless powder (Rubin 1882, Lebel 1886); the Swiss 1882 revolver
