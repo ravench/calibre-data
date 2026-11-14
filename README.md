@@ -324,10 +324,10 @@ diameters over the drawing's shoulder length (CL − NL − SL) instead, so that
 ends where the drawing shows (.32-30 Remington, the 3¼ in. .500/450).
 
 A drawing that misses one of the size limits still gives the shoulder, in that second way, when
-Donnelly's *Handloader's Manual of Cartridge Conversions* prints the same start (his J) within
-0.5 mm. Donnelly on his own is not a source for a shoulder: on 54 calibres with a C.I.P. sheet his
-start is within 0.5 mm of the sheet's L1 on 34 and more than 1.5 mm off on 8, and his printed angles
-are not used.
+Donnelly's *Handloader's Manual of Cartridge Conversions* prints the same shoulder: its start (his
+J) and its end (J + K) within 0.5 mm of the drawing's, both taken from the mouth. Donnelly on his
+own is not a source for a shoulder: on 54 calibres with a C.I.P. sheet his start is within 0.5 mm of
+the sheet's L1 on 34 and more than 1.5 mm off on 8, and his printed angles are not used.
 
 ### `[case_head]`
 
