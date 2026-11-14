@@ -161,6 +161,10 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
 }
 TOP_KEYS = {"name", "categories", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
             "origin_candidates", "origin_sources", "worldwide", "obsolete", "rare"}
+# mm the mouth of a case without a shoulder may be wider than its base: books measure old cases to a thousandth
+# of an inch, and a cylinder comes out that little wider at either end (.32 Extra Short Rimfire: neck .318,
+# base .317 in Cartridges of the World).
+MOUTH_SLACK = 0.05
 # [case_head] keys beside rim_thickness: the extractor groove of a rimless, semi-rimmed or belted case, all three
 # or none.
 HEAD_GROOVE = ("ramp_top", "groove_diameter", "ramp_angle")
@@ -296,6 +300,16 @@ def _note_above(f, line):
 
 def _is_text_list(v):
     return isinstance(v, list) and all(isinstance(x, str) for x in v)
+
+
+def _check_widths(f, mm):
+    """A case narrows from its base to its mouth: [mm] base, then shoulder, then neck. A wider value further up is
+    a typing mistake or a rounding one (the .17 WSM's shoulder: .269 in is 6.83 mm on the drawing, not 6.86)."""
+    widths = [(k, mm[k]) for k in ("base", "shoulder", "neck") if _is_number(mm.get(k))]
+    for (wide, a), (narrow, b) in zip(widths, widths[1:]):
+        if round(b - a, 3) > (MOUTH_SLACK if (wide, narrow) == ("base", "neck") else 0):
+            f.problem(f.line("mm", narrow), f"[mm] {narrow} {b} is wider than {wide} {a}: a case narrows from "
+                                            "its base to its mouth")
 
 
 def _check_keys(f, table, data, allowed, required):
@@ -548,6 +562,8 @@ def _read_calibre(f, countries, books=None):
             if t == "mm" or t == "case_head" or k == "degrees":
                 if not _is_number(v) or v <= 0:
                     f.problem(f.line(t, k), f"[{t}] {k} must be a number above 0, without quotes")
+        if t == "mm":
+            _check_widths(f, data)
         if t == "introduced":
             if ("year" in data) == ("unknown" in data):
                 f.problem(f.line(t), "[introduced] has either year (with sources) or unknown (the reason)")

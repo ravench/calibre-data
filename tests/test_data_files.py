@@ -637,6 +637,19 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, "shoulder_at = 39.62\n", "")
             self.assertProblem(c, WIN, r"both shoulder and shoulder_at")
 
+    def test_a_case_narrows_from_its_base_to_its_mouth(self):
+        acp, rem = "calibres/45-acp.toml", "calibres/223-remington.toml"
+        with Copy() as c:
+            c.edit(WIN, "shoulder = 11.5", "shoulder = 11.95")  # over its base of 11.9
+            c.edit(rem, "neck = 6.4", "neck = 9.4")             # over its shoulder of 9.0
+            c.edit(acp, "neck = 12.01", "neck = 12.15")         # a straight case: 0.06 over its base of 12.09
+            c.edit(LR, "neck = 5.7", "neck = 5.75")             # 0.05 over its base is still within MOUTH_SLACK
+            self.assertEqual(sorted(c.problems()), [
+                (rem, c.line_of(rem, "neck ="), "[mm] neck 9.4 is wider than shoulder 9.0: a case narrows from its base to its mouth"),
+                (WIN, c.line_of(WIN, "shoulder ="), "[mm] shoulder 11.95 is wider than base 11.9: a case narrows from its base to its mouth"),
+                (acp, c.line_of(acp, "neck ="), "[mm] neck 12.15 is wider than base 12.09: a case narrows from its base to its mouth"),
+            ])
+
     def test_names_write_numbers_and_units_one_way(self):
         for name, pattern in [("7.62x51mm Test", r"a space between the number and the unit"),
                               (".450/400 Test 3inch", r"a space between the number and the unit"),
