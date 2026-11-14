@@ -5,11 +5,14 @@ profile = "flat"
 aliases = [".410", "410"]
 
 [mm]
-diameter = 11.8
-rim = 13.3
+# C.I.P. Cal. 410, Tab. VII, maximum cartridge: diameter d1, rim g; case_length is the length in the
+# marking. The sheet gives no closed (crimped) length.
+diameter = 12.0
+rim = 13.6
 length = 70.0
 case_length = 76.0
-sources = []
+# No source yet for length.
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/410-en-6.pdf"]
 
 [introduced]
 # Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
