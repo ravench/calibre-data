@@ -26,6 +26,14 @@ sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_
 size = "small-pistol"
 sources = []
 
+[case_head]
+# C.I.P. 9 mm PA Blanc
+rim_thickness = 1.25
+ramp_top = 2.97
+groove_diameter = 8.3
+ramp_angle = 40.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page10.pdf"]
+
 [case]
 material = "brass"
 sources = []

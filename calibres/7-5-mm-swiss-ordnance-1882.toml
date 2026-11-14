@@ -32,6 +32,11 @@ sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]
 
+[case_head]
+# R on the C.I.P. 7,5 Ord. Suisse sheet
+rim_thickness = 1.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page8.pdf"]
+
 [bullet]
 # First loaded with a plain lead bullet over black powder (about 100 gr); a copper-alloy jacket
 # came in 1889 (municion.org). COTW 18 gives the military load as lead.

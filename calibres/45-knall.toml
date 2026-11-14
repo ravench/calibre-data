@@ -26,6 +26,11 @@ sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_
 size = "small-pistol"
 sources = []
 
+[case_head]
+# R on the C.I.P. 45 K Blanc sheet
+rim_thickness = 1.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page12.pdf"]
+
 [case]
 material = "brass"
 sources = []

@@ -27,6 +27,14 @@ sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_
 size = "small-pistol"
 sources = []
 
+[case_head]
+# C.I.P. 315 Blanc
+rim_thickness = 1.27
+ramp_top = 3.33
+groove_diameter = 6.55
+ramp_angle = 30.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page5.pdf"]
+
 [case]
 material = "brass"
 sources = []

@@ -21,6 +21,11 @@ sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_
 year = 1991
 sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
+[case_head]
+# R on the C.I.P. 6 mm Flobert Blanc sheet
+rim_thickness = 1.15
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page4.pdf"]
+
 [case]
 material = "brass"
 sources = []
