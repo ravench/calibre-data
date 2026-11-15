@@ -1001,7 +1001,7 @@ class CheckTests(unittest.TestCase):
         # Each case breaks the .308 Winchester group, which is not the first. The problem is on the
         # group's line (0 its first key, name; -1 its [[group]]; 1 and 2 the next keys).
         with open(os.path.join(ROOT, LOOK), encoding="utf-8") as f:
-            gp90_line = f.read().split("\n").index('calibres = [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"]') - 2
+            gp90_line = f.read().split("\n").index('calibres = [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial", "5.6 mm GP 90"]') - 2
         cases = [('differ_by = ["load"]', 'differ_by = ["lode"]', r'differ_by lists one or more of .*did you mean "load"', 1),
                  ('differ_by = ["load"]', "differ_by = 5", r"differ_by lists one or more of", 1),
                  ('differ_by = ["load"]', 'diff_by = ["load"]', r"unknown key 'diff_by'.*did you mean \"differ_by\"", 1),
@@ -1012,8 +1012,8 @@ class CheckTests(unittest.TestCase):
                  ('name = ".308 Winchester"\n', "", r"\[\[group\]\] needs 'name'", -1),
                  ('name = ".308 Winchester"', "name = 5", r"name is the group's name, as text", 0),
                  ('name = ".308 Winchester"', 'name = " .308 Winchester"', r"without spaces around it", 0),
-                 ('name = ".308 Winchester"', 'name = ".223 remington"',
-                  rf"name '.223 remington' is already the name of the group on line {gp90_line}$", 0),
+                 ('name = ".308 Winchester"', 'name = "5.56x45 mm"',
+                  rf"name '5.56x45 mm' is already the name of the group on line {gp90_line}$", 0),
                  ('name = ".308 Winchester"', 'name = ".30-06 Springfield"',
                   r"name '.30-06 Springfield' names the calibre '.30-06 Springfield', which is not in this group", 0),
                  ('name = ".308 Winchester"', 'name = "30-06"',

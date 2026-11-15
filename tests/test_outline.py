@@ -830,7 +830,7 @@ class OutlineTests(unittest.TestCase):
     def test_identical_groups(self):
         self.assertEqual(outline.identical_groups(), [
             [".38 Super", ".38 ACP"],  # one SAAMI drawing (.38 Super Automatic +P / .38 Automatic)
-            [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"],
+            [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90", "5.56 Commercial"],
             ["7.62x51 mm NATO", ".308 Winchester"],
             [".500/450 Nitro Express", ".500/450 Magnum Express"],
         ])

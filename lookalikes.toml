@@ -4,9 +4,9 @@
 # (see Lookalikes in README.md). A calibre is in one group at most.
 
 [[group]]
-name = ".223 Remington"
+name = "5.56x45 mm"
 differ_by = ["load"]
-calibres = [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"]
+calibres = [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial", "5.6 mm GP 90"]
 
 [[group]]
 # The Swiss 7.5 mm rounds of the IG 89: the 1890 round, its 1923 rework on a 1 mm longer case, and the

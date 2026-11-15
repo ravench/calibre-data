@@ -1066,7 +1066,7 @@ class CatalogueTests(unittest.TestCase):
             if SEATING not in differs:
                 self.assertEqual(bore, BORE in differs, names)
             self.assertEqual(length, LENGTH in differs, names)
-        self.assertEqual(lookalikes("5.6 mm GP 90"), [".223 Remington", "5.56x45 mm NATO"])
+        self.assertEqual(lookalikes("5.6 mm GP 90"), [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial"])
         self.assertEqual(lookalikes("7x65 mm R"), ["7x64 mm"])
         self.assertEqual(lookalikes("8x57 mm I"), ["8x57 mm IS", "8x57 mm IRS", "8x57 mm IR"])
         self.assertEqual(lookalikes(".275 Rigby"), ["7x57 mm Mauser", "7x57 mm R"])
@@ -1074,11 +1074,13 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(lookalikes("7.62x25 mm Tokarev"), [".30 Borchardt", "7.63x25 mm Mauser"])
 
     def test_lookalike_groups_have_names(self):
-        # Raven 2026-11-11: a group's name is one of its calibres' or the family's own.
+        # Raven 2026-11-11/15: a group's name is what its calibres have in common (the family's), which
+        # may be one of its calibres' names, never another calibre's.
         self.assertEqual(len(LOOKALIKE_NAMES), len(LOOKALIKES))
         self.assertEqual(len(set(LOOKALIKE_NAMES)), len(LOOKALIKE_NAMES))
         groups = dict(zip(LOOKALIKE_NAMES, (names for _, names in LOOKALIKES)))
         self.assertEqual(groups[".308 Winchester"], [".308 Winchester", "7.62x51 mm NATO"])
+        self.assertEqual(groups["5.56x45 mm"], [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial", "5.6 mm GP 90"])
         self.assertEqual(groups["7.63x25 mm"], [".30 Borchardt", "7.63x25 mm Mauser", "7.62x25 mm Tokarev"])
         for title, names in groups.items():
             self.assertTrue(title not in NAMES or title in names, title)
