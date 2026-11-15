@@ -282,6 +282,14 @@ class GapTests(unittest.TestCase):
         self.assertEqual(outline.gaps(self.spec(name)), ())
         self.assertEqual((self.spec(name)["sh_at"], cartridges.shoulder_angle(name)), (31.18, 4.0))
         self.assertEqual(cartridges.rim_thickness(name), 1.39)
+        # The Russian Berdan takes the shoulder from its drawing; the book's rim thickness stays, and the drawing's
+        # head (13.09 mm against the book's 14.40) is not used.
+        name = "10.75x58 mm R Russian Berdan"
+        self.assertEqual(outline.gaps(self.spec(name)), ())
+        self.assertEqual((self.spec(name)["sh_at"], cartridges.shoulder_angle(name)), (38.45, 7.9))
+        self.assertEqual(cartridges.rim_thickness(name), 2.03)
+        self.assertEqual(cartridges.sources(name, "case_head"), ["book:cotw-18 p. 574"])
+        self.assertIn("municion.org", cartridges.sources(name, "mm")[-1])
         # The sources cross the names of the two Comblain rounds, so each takes the drawing that has its sizes:
         # the 11.4x50 the one titled «11 mm Chilean Comblain Rifle M 1874» (shoulder and rim thickness), the 11x53
         # the one titled «11 x 53 R Brazilian-Comblain Model 1889» (shoulder; the book's rim thickness stays).
@@ -671,7 +679,7 @@ class OutlineTests(unittest.TestCase):
             "10.4x47 mm R Italian Vetterli": (34.7, 9.0, 47.45),
             "7 mm Canadian Magnum": (58.75, 6.7, 71.63), ".338 Canadian Magnum": (59.82, 8.15, 71.72),
             ".32-30 Remington": (31.0, 7.3, 41.48), "11.4x50 mm R Brazilian Comblain": (43.2, 4.5, 50.23),
-            "11x53 mm R Comblain": (45.2, 6.2, 53.32),
+            "11x53 mm R Comblain": (45.2, 6.2, 53.32), "10.75x58 mm R Russian Berdan": (39.0, 12.2, 57.45),
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
@@ -693,9 +701,9 @@ class OutlineTests(unittest.TestCase):
         ".38-90 Winchester Express", ".40-70 Peabody What Cheer", ".400/360 Nitro Express", ".416 Rimmed",
         ".45-100 Remington Necked", ".45-125 Winchester Express", ".50-115 Bullard", ".500/450 Magnum Express",
         ".500/450 Nitro Express", ".56-52 Spencer Necked", ".577/500 Nitro Express", ".577/500 No. 2 Express",
-        "10.25x69 mm R Hunting-Express", "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan",
-        "10.8x47 mm R Martini Target", "11x52 mm R Beaumont M71/78", "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser",
-        "6x58 mm Forster", "8.5 mm Mars", "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
+        "10.25x69 mm R Hunting-Express", "10.75x57 mm Mannlicher", "10.8x47 mm R Martini Target",
+        "11x52 mm R Beaumont M71/78", "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "6x58 mm Forster", "8.5 mm Mars",
+        "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
     }
 
     def bottlenecks(self):
@@ -766,7 +774,7 @@ class OutlineTests(unittest.TestCase):
                     ".500/450 No. 1 Express": (9.9, 47.3), "10.4x47 mm R Italian Vetterli": (13.9, 34.75),
                     "7 mm Canadian Magnum": (23.6, 59.0), ".338 Canadian Magnum": (28.1, 59.98),
                     ".32-30 Remington": (4.0, 31.18), "11.4x50 mm R Brazilian Comblain": (9.1, 44.28),
-                    "11x53 mm R Comblain": (20.9, 45.22)}
+                    "11x53 mm R Comblain": (20.9, 45.22), "10.75x58 mm R Russian Berdan": (7.9, 38.45)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):
