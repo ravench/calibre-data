@@ -9,13 +9,15 @@ origin = "US"
 origin_sources = []
 
 [mm]
+# SAAMI 8.6 Blackout, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 11.99
 base = 11.95
-shoulder = 11.78
+shoulder = 11.77
 shoulder_at = 32.26
 neck = 9.3
 case_length = 42.8
-overall_length = 71.4
+overall_length = 71.37
 bullet = 8.61
 sources = ["https://saami.org/wp-content/uploads/2026/04/Public-Introduction-8.6-BLACKOUT-2026-04-07.pdf"]
 

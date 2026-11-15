@@ -9,9 +9,11 @@ origin = "US"
 origin_sources = ["https://en.wikipedia.org/wiki/7mm_Backcountry"]
 
 [mm]
+# SAAMI 7mm Backcountry, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 11.99
 base = 11.93
-shoulder = 11.65
+shoulder = 11.63
 shoulder_at = 51.35
 neck = 8.05
 case_length = 61.39
