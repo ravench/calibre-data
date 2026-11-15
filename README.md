@@ -40,8 +40,8 @@ the apps read those whole.
   poster the same tables as before (`CATALOGUE`, `INTRODUCED`, `PRIMERS`, `ORIGIN`, ...).
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side (today .308 Win / 7.62
-  NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (e.g. the .22 blank 5.6/11) has no bullet:
-  its case narrows to the star crimp. A wadcutter seated flush (.32 S&W Long Wadcutter) shows no
+  NATO and .223 Rem / 5.56 NATO / 5.56 Commercial / GP 90). A crimped blank (e.g. the .22 blank
+  5.6/11) has no bullet: its case narrows to the star crimp. A wadcutter seated flush (.32 S&W Long Wadcutter) shows no
   bullet either. `bulletMaterial` is `steel` (GP 1890 cap, the MPS dart, or a steel jacket),
   `cupronickel` (a silver jacket) or `lead`; a cartridge's bullet is copper when it is missing (a
   ball, Minié bullet or pellet is lead). A hollow point's `bullet` has
@@ -582,14 +582,15 @@ name and its calibres, the parent first:
 
 ```toml
 [[group]]
-name = ".308 Winchester"
+name = "7.62x51 mm"
 differ_by = ["load"]
 calibres = [".308 Winchester", "7.62x51 mm NATO"]
 ```
 
-A group's `name` is the parent's name or the family's, such as `8x57 mm` for the four 8x57 mm
-rounds. It is unique and never the name of a calibre outside the group. `LOOKALIKE_NAMES` lists the
-names in the order of `LOOKALIKES`.
+A group's `name` is what its calibres have in common, such as `8x57 mm` for the four 8x57 mm
+rounds or `5.56x45 mm` for the .223 Rem., 5.56 NATO, 5.56 Commercial and GP 90; it may be a
+member's name where that is the common one. It is unique and never the name of a calibre outside
+the group. `LOOKALIKE_NAMES` lists the names in the order of `LOOKALIKES`.
 
 A group's cases share one design; `differ_by` says what tells them apart: `rim` (rimmed, semi-rimmed or
 rimless twin), `bore` (bullet diameter), `length` (case length), `seating` (a wadcutter seated flush or

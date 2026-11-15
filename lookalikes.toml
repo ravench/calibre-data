@@ -4,9 +4,9 @@
 # (see Lookalikes in README.md). A calibre is in one group at most.
 
 [[group]]
-name = ".223 Remington"
+name = "5.56x45 mm"
 differ_by = ["load"]
-calibres = [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"]
+calibres = [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial", "5.6 mm GP 90"]
 
 [[group]]
 # The Swiss 7.5 mm rounds of the IG 89: the 1890 round, its 1923 rework on a 1 mm longer case, and the
@@ -17,12 +17,12 @@ differ_by = ["bore", "length", "load"]
 calibres = ["7.5x53.5 mm Swiss (Patrone Modell 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone"]
 
 [[group]]
-name = ".308 Winchester"
+name = "7.62x51 mm"
 differ_by = ["load"]
 calibres = [".308 Winchester", "7.62x51 mm NATO"]
 
 [[group]]
-name = ".38 ACP"
+name = ".38 Auto"
 differ_by = ["load"]
 calibres = [".38 ACP", ".38 Super"]
 
@@ -266,7 +266,7 @@ calibres = ["6.5x55 mm Swedish", "8x54 mm Krag-Jørgensen"]
 
 [[group]]
 # The Nitro Express is the Magnum Express case loaded with cordite.
-name = ".500/450 Magnum Express"
+name = ".500/450 3¼ inch"
 differ_by = ["load"]
 calibres = [".500/450 Magnum Express", ".500/450 Nitro Express"]
 
@@ -394,7 +394,7 @@ calibres = [".45 Colt", ".45 Schofield", ".45 Colt Government", ".45 Cowboy Spec
 
 [[group]]
 # Two C.I.P. sheets: the same case, Norma's with a longer overall length for longer bullets.
-name = "6 mm BR Remington"
+name = "6 mm BR"
 differ_by = ["load"]
 calibres = ["6 mm BR Remington", "6 mm BR Norma"]
 
