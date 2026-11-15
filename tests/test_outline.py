@@ -516,7 +516,7 @@ class GapTests(unittest.TestCase):
         self.assertLess(max(abs(sister["rim"] - s["rim"]), abs(sister["rim"] - naboje_rim)), 0.5)
         self.assertLess(abs(sister["base"] - s["base"]), 0.5)
         # naboje.org often shows an AECC drawing again, which would be one measurement. These two were measured
-        # apart: of the ten labels they share only the bullet's diameter is the same (AECC: mouth 11.32, neck 11.38,
+        # apart: of the labels they share only the bullet's diameter is the same (AECC: mouth 11.32, neck 11.38,
         # shoulder 12.10 at 52.50, head 12.54, groove 11.00, case 62.98, rim thickness 1.15, overall 82.10;
         # naboje.org: 11.29, 11.32, 12.00 at 51.80, 12.52, 11.10, 62.72, 1.09, 79.50). The file's rim, rim thickness
         # and groove are the AECC drawing's and none of them is naboje.org's.
