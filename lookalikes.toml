@@ -22,7 +22,7 @@ differ_by = ["load"]
 calibres = [".308 Winchester", "7.62x51 mm NATO"]
 
 [[group]]
-name = ".38 ACP"
+name = ".38 Auto"
 differ_by = ["load"]
 calibres = [".38 ACP", ".38 Super"]
 
@@ -34,7 +34,7 @@ calibres = ["9x19 mm", "9 mm Glisenti"]
 [[group]]
 # Straight rimless 9 mm cases of other lengths: the 9 mm Mauser and the 9 mm Winchester Magnum, which
 # COTW 18 likens to the Mauser (p. 480).
-name = "9x23 mm"
+name = "9x23 mm Largo"
 differ_by = ["load", "length"]
 calibres = ["9x23 mm Largo", "9x23 mm Winchester", "9 mm Mauser", "9 mm Winchester Magnum"]
 
@@ -266,7 +266,7 @@ calibres = ["6.5x55 mm Swedish", "8x54 mm Krag-Jørgensen"]
 
 [[group]]
 # The Nitro Express is the Magnum Express case loaded with cordite.
-name = ".500/450"
+name = ".500/450 3¼ inch"
 differ_by = ["load"]
 calibres = [".500/450 Magnum Express", ".500/450 Nitro Express"]
 
@@ -342,7 +342,7 @@ calibres = [".32 Short Colt", ".32 Long Colt"]
 
 [[group]]
 # Both are the 10 mm Auto case necked down to 9 mm (COTW 18 p. 486); the chambers differ.
-name = "9x25 mm"
+name = "9x25 mm Dillon"
 differ_by = ["load"]
 calibres = ["9x25 mm Dillon", "9x25 mm Super Auto G"]
 
