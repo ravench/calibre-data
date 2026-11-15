@@ -339,6 +339,15 @@ J) and its end (J + K) within 0.5 mm of the drawing's, both taken from the mouth
 own is not a source for a shoulder: on 54 calibres with a C.I.P. sheet his start is within 0.5 mm of
 the sheet's L1 on 34 and more than 1.5 mm off on 8, and his printed angles are not used.
 
+A dimensioned drawing on naboje.org, the Czech collectors' catalogue, counts like an AECC drawing,
+within the same limits. Its newer drawings carry the C.I.P. letters (P2 at L1, H1 at L2, case L3).
+The older ones label the shoulder's start but not the neck's, which is then read off the picture:
+the rows of the image at the mouth and at the line where the neck starts, at the scale that the
+labelled case length gives. That holds only for a picture that is to scale, so its other labelled
+lengths (overall length, shoulder start, rim thickness) must sit on their rows within 0.2 mm
+(.577/500 Nitro Express). The picture of the .577/500 No. 2 Express is up to 0.9 mm off its own
+labels and is not read.
+
 ### `[case_head]`
 
 `rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. Rimless,
@@ -362,7 +371,9 @@ ramp; on a belted case the belt's front is HL + LW): `ramp_top` is HL, `groove_d
 belted case the ramp climbs to the belt, so the belt's diameter LØ takes the place of HØ. A
 specimen drawing counts only when its rim and head diameters are within 0.5 mm of the file's. A
 calibre without a drawing takes the groove of a sister round's drawing, behind its own rim
-thickness, when a source says that the two share the head (.416 Dakota: the .375 Dakota's).
+thickness, when a source says that the two share the head (.416 Dakota: the .375 Dakota's). A
+naboje.org drawing with the C.I.P. letters gives the head in the same way and within the same
+limits: R, e, E, E1 and P1 stand for RT, GW, HL, GØ and HØ (6x58 mm Forster).
 
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
 its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal

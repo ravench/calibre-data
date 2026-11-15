@@ -15,14 +15,14 @@ rare = true
 rim = 11.89
 base = 11.94
 shoulder = 11.1
-shoulder_at = 48.1
+shoulder_at = 41.27
 neck = 7.21
 case_length = 57.4
 overall_length = 77.72
 bullet = 6.17
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 651"]
+# shoulder_at: L1 of naboje.org's drawing (L3 57.93, L1 41.80), carried from the mouth. Its rim, base, shoulder and
+# neck are within 0.2 mm of the book's and its case is 0.53 mm longer.
+sources = ["book:cotw-18 p. 651", "https://naboje.org/node/13746"]
 
 [introduced]
 year = 1904
@@ -32,10 +32,20 @@ sources = ["book:cotw-18 p. 615"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
 
+[shoulder_angle]
+# Drawing on naboje.org, labelled with the C.I.P. letters: P2 10.93, H1 7.07, L1 41.80, L2 49.88, L3 57.93. The
+# rimmed sister's AECC drawing shows the same shoulder (14.0° from 41.52 mm).
+degrees = 13.4
+sources = ["https://naboje.org/node/13746"]
+
 [case_head]
-# .045 in.
+# .045 in.; groove from naboje.org's drawing: R 1.43, e 1.00, E 3.70, E1 10.04, P1 11.87; ramp angle from
+# E = R + e + ((P1 - E1)/2)/tan(angle).
 rim_thickness = 1.14
-sources = ["book:cotw-18 p. 651"]
+ramp_top = 3.7
+groove_diameter = 10.04
+ramp_angle = 36.0
+sources = ["book:cotw-18 p. 651", "https://naboje.org/node/13746"]
 
 [bullet]
 type = "softpoint"

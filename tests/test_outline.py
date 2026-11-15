@@ -404,10 +404,51 @@ class GapTests(unittest.TestCase):
                 self.assertIn("municion.org", cartridges.SHOULDER_ANGLES[name][1])
         # Donnelly alone is no source for a shoulder: these have an entry of his and no drawing that shows theirs. The
         # Daudeteau's drawing starts the shoulder where he does (0.14 mm apart) but ends it 0.95 mm later.
-        for name in (".45-100 Remington Necked", "10.25x69 mm R Hunting-Express", "6x57 mm Mauser", "6x58 mm Forster",
+        for name in (".45-100 Remington Necked", "10.25x69 mm R Hunting-Express", "6x57 mm Mauser",
                      "10.75x57 mm Mannlicher", ".50-115 Bullard", "6.5x53.5 mm SR Daudeteau"):
             self.assertIn(name, OutlineTests.SHOULDER_UNSOURCED)
             self.assertEqual(cartridges.unsourced(name), ("shoulder_at",))
+
+    def test_naboje_drawings_count_like_aecc_drawings(self):
+        # Dimensioned drawings on naboje.org within the limits of the AECC rule: case within 1.5 mm, rim, base,
+        # shoulder and neck within 0.5 mm. shoulder_at is the drawing's shoulder start carried from the mouth and the
+        # half angle the specimen's cone. The 6x58 mm Forster's drawing has the C.I.P. letters (NL = L3 - L2); on the
+        # .577/500 Nitro Express the neck start is read off the picture, which shows its labelled lengths to scale.
+        # name: (shoulder_at, half angle, node, the drawing's rim, base, SØ, NØ, SL, NL, CL)
+        drawings = {
+            ".577/500 Nitro Express": (59.96, 8.9, 1356, 18.42, 16.36, 14.83, 13.56, 59.85, 15.5, 79.39),
+            "6x58 mm Forster": (41.27, 13.4, 13746, 11.8, 11.87, 10.93, 7.07, 41.8, 8.05, 57.93),
+        }
+        for name, (start, angle, node, rim, base, so, no, sl, nl, cl) in drawings.items():
+            with self.subTest(name):
+                s = self.spec(name)
+                self.assertEqual(outline.gaps(s), ())
+                self.assertEqual(cartridges.unsourced(name), ())
+                self.assertEqual((s["sh_at"], cartridges.shoulder_angle(name)), (start, angle))
+                self.assertLess(abs(cl - s["case"]), 1.5)
+                sizes = [(rim, "rim"), (base, "base"), (so, "shoulder"), (no, "neck")]
+                self.assertLess(max(abs(size - s[key]) for size, key in sizes), 0.5)
+                self.assertAlmostEqual(s["sh_at"], s["case"] - (cl - sl), delta=0.005)
+                self.assertAlmostEqual(math.degrees(math.atan((so - no) / 2 / (cl - nl - sl))), angle, delta=0.05)
+                top = s["neck"] / 2  # the neck the outline draws, against the specimen's
+                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
+                self.assertLess(abs((s["case"] - neck_start) - nl), 1.5)
+                url = "https://naboje.org/node/%d" % node
+                self.assertEqual(cartridges.sources(name, "mm")[-1], url)
+                self.assertEqual(cartridges.SHOULDER_ANGLES[name][1], url)
+        # The picture of the .577/500 Nitro Express is to scale: the image rows of its tip, mouth, neck start,
+        # shoulder, rim top and base, against the labelled overall length, shoulder start and rim thickness.
+        tip, mouth, neck, shoulder, rim_top, bottom = 20, 120, 227, 254.5, 658, 668
+        per_mm = (bottom - mouth) / 79.39
+        for rows, label in [(bottom - tip, 93.87), (bottom - shoulder, 59.85), (bottom - rim_top, 1.45)]:
+            self.assertAlmostEqual(rows / per_mm, label, delta=0.2)
+        self.assertAlmostEqual((neck - mouth) / per_mm, 15.5, delta=0.01)
+        # The Forster's head: the book's rim thickness (.045 in.) is within 0.3 mm of the drawing's R 1.43 and stays.
+        self.assertEqual(cartridges.case_head("6x58 mm Forster"), (1.14, 3.7, 10.04, 36.0))
+        self.assertLess(1.43 - cartridges.rim_thickness("6x58 mm Forster"), 0.3)
+        self.assertAlmostEqual(math.degrees(math.atan((11.87 - 10.04) / 2 / (3.7 - 1.43 - 1.0))), 36.0, delta=0.5)
+        self.assertEqual(cartridges.sources("6x58 mm Forster", "case_head"),
+                         ["book:cotw-18 p. 651", "https://naboje.org/node/13746"])
 
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
         # Calibres that failed the rule on 2026-11-14 and now take every measurement and the head from their C.I.P.
@@ -795,10 +836,9 @@ class OutlineTests(unittest.TestCase):
         # shoulder_at is estimated, as the note in [mm] says).
         ".275 No. 2 Magnum", ".32-40 Remington", ".38-70 Winchester",
         ".400/360 Nitro Express", ".416 Rimmed", ".45-100 Remington Necked", ".45-125 Winchester Express",
-        ".50-115 Bullard", ".56-52 Spencer Necked", ".577/500 Nitro Express", ".577/500 No. 2 Express",
+        ".50-115 Bullard", ".56-52 Spencer Necked", ".577/500 No. 2 Express",
         "10.25x69 mm R Hunting-Express", "10.75x57 mm Mannlicher", "10.8x47 mm R Martini Target",
-        "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "6x58 mm Forster", "8.5 mm Mars", "9.3x75 mm R Nimrod",
-        "9x70 mm R Mauser",
+        "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "8.5 mm Mars", "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
     }
 
     def bottlenecks(self):
@@ -880,7 +920,8 @@ class OutlineTests(unittest.TestCase):
 
     def test_shoulders_from_other_drawings_and_photos(self):
         # (half angle, shoulder start, a word of the source) for angles from drawings, prints and photos.
-        found = {"11x50 mm R Albini": (18.6, 42.5, "naboje.org"),
+        found = {"11x50 mm R Albini": (18.6, 42.5, "naboje.org"), ".577/500 Nitro Express": (8.9, 59.96, "naboje.org"),
+                 "6x58 mm Forster": (13.4, 41.27, "naboje.org"),
                  "6.8x45 mm UCC": (45, 36.1, "pacifictoolandgauge"),
                  ".44-77 Sharps & Remington": (4.5, 33.0, "ammo-one1"),
                  ".40-70 Winchester": (13.26, 44.45, "winchestercollector")}
@@ -901,7 +942,7 @@ class OutlineTests(unittest.TestCase):
     HEAD_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".30 USA Rimless", ".360 Mars", ".45-70 Auto", ".50-115 Bullard", "10.75x63 mm Mauser", "6.17 Lazzeroni Flash",
-        "6.71 Lazzeroni Blackbird", "6x58 mm Forster", "8.5 mm Mars",
+        "6.71 Lazzeroni Blackbird", "8.5 mm Mars",
     }
 
     SHALLOW_CONES = {".32 Winchester Self-Loading": 3.7, ".35 Winchester Self-Loading": 8.0,
