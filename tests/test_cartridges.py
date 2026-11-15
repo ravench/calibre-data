@@ -337,11 +337,11 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(rf72["kind"], RIMFIRE)
 
     def test_9mm_pak_keeps_the_cip_blank_values(self):
-        pak = {s["name"]: s for s in ALL}["9 mm P.A.K."]
+        pak = {s["name"]: s for s in ALL}["9 mm PA Blanc"]
         self.assertEqual((pak["rim"], pak["base"], pak["case"], pak["oal"]), (9.5, 9.5, 22.5, 22.5))
         self.assertNotEqual(pak["profile"], "crimped")  # closed inside the case, no star crimp
         self.assertEqual(pak["neck"], pak["base"])
-        self.assertFalse(is_rare("9 mm P.A.K."))
+        self.assertFalse(is_rare("9 mm PA Blanc"))
 
     def test_32_wadcutter_is_its_own_cip_cartridge(self):
         # C.I.P. "32 S&W Long Wad Cut." (Tab. IV page 46): maximum cartridge R1, P1, H2, L3, G1; seated flush.
@@ -397,24 +397,55 @@ class CatalogueTests(unittest.TestCase):
 
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}
-        b = by_name[".22 Blank (6.8/11)"]
+        b = by_name[".22 SH (5.6/11)"]
         self.assertEqual(b["kind"], RIMFIRE)
         self.assertEqual((b["rim"], b["case"], b["oal"]), (7.06, 11.1, 11.1))  # C.I.P. 22 SH (5,6/11)
         self.assertEqual(b["base"], by_name[".22 Short"]["base"], "same .22 case body")
         self.assertIn("platzpatrone", b["aliases"])
         self.assertFalse(is_obsolete(b["name"]))
+        # C.I.P.'s 6,8/11 is the .27 calibre load, which the catalogue does not hold: nothing answers to it.
+        self.assertIn("5.6/11", b["aliases"])
+        self.assertFalse([s["name"] for s in ALL if "6.8/11" in s["name"] or {"6.8/11", "6.8x11"} & set(s["aliases"])])
+
+    def test_blanks_carry_the_title_of_their_cip_sheet(self):
+        # Raven, 2026-11-14: blanks and tool loads have no maker's name, so only the official one is used: the
+        # title of the C.I.P. sheet in the catalogue's notation (a leading dot on inch sizes, a decimal point).
+        # The names they are sold under stay as display aliases and search aliases; «.22 Blank» was made up here.
+        titles = {  # name: (C.I.P. title as printed, a display alias, a search alias)
+            ".22 SH (5.6/11)": ("22 SH (5,6/11)", ".22 Blank", "22blank"),
+            ".22 Long Blanc": ("22 Long Blanc", ".22 lang Knall", "22longknall"),
+            "6 mm Flobert Blanc": ("6 mm Flobert Blanc", "6 mm Flobert Knall", "flobertknall"),
+            ".315 Blanc": ("315 Blanc", ".315 Knall", "315knall"),
+            "8 mm Blanc": ("8 mm Blanc", "8 mm Knall", "8mmknall"),
+            ".320 Court Blanc": ("320 Court Blanc", ".320 Knall", "320knall"),
+            "9 mm PA Blanc": ("9 mm PA Blanc", "9 mm P.A.K.", "9mmpak"),
+            "9 mm R Blanc": ("380R Blanc/9 mm R Blanc", "9 mm R Knall", "9mmrk"),
+            ".45 K Blanc": ("45 K Blanc", ".45 Knall", "45knall"),
+        }
+        by_name = {s["name"]: s for s in ALL}
+        blanks = {s["name"] for s in ALL
+                  if is_blank(s["profile"], s["rim"], s["base"], s["neck"], s["bullet"], s["case"], s["oal"])}
+        self.assertEqual(blanks, set(titles))
+        for name, (title, shown, alias) in titles.items():
+            with self.subTest(name):
+                printed = title.split("/")[-1] if "Blanc/" in title else title  # the metric one of a double title
+                self.assertEqual(name.lstrip(".").replace(".", ","), printed)
+                self.assertIn(shown, DISPLAY_ALIASES[name])
+                self.assertIn(alias, by_name[name]["aliases"])
+        self.assertIn(".380 R Blanc", DISPLAY_ALIASES["9 mm R Blanc"])  # the other half of the double title
+        self.assertFalse([n for n in by_name if "Knall" in n or "P.A.K." in n or "Blank" in n])
 
     def test_alarm_blanks_keep_the_cip_values(self):
         by_name = {s["name"]: s for s in ALL}
         keys = ("kind", "rim", "base", "case", "oal", "profile")
         sheet = {  # C.I.P. Tab. VIII maximum cartridge, mm
-            "8 mm Knall": (RIMLESS, 8.0, 8.0, 20.3, 20.3, "flat"),
-            ".315 Knall": (RIMLESS, 8.0, 8.0, 17.65, 17.65, "flat"),
-            "9 mm R Knall": (RIMMED, 11.0, 9.58, 17.5, 17.5, "crimped"),
-            ".320 Knall": (RIMMED, 9.55, 8.09, 16.0, 16.0, "crimped"),
-            ".45 Knall": (RIMMED, 13.0, 12.1, 16.6, 16.6, "crimped"),
-            ".22 Long Knall": (RIMFIRE, 7.06, 5.74, 15.0, 15.0, "crimped"),
-            "6 mm Flobert Knall": (RIMFIRE, 7.15, 5.75, 6.6, 6.6, "crimped"),
+            "8 mm Blanc": (RIMLESS, 8.0, 8.0, 20.3, 20.3, "flat"),
+            ".315 Blanc": (RIMLESS, 8.0, 8.0, 17.65, 17.65, "flat"),
+            "9 mm R Blanc": (RIMMED, 11.0, 9.58, 17.5, 17.5, "crimped"),
+            ".320 Court Blanc": (RIMMED, 9.55, 8.09, 16.0, 16.0, "crimped"),
+            ".45 K Blanc": (RIMMED, 13.0, 12.1, 16.6, 16.6, "crimped"),
+            ".22 Long Blanc": (RIMFIRE, 7.06, 5.74, 15.0, 15.0, "crimped"),
+            "6 mm Flobert Blanc": (RIMFIRE, 7.15, 5.75, 6.6, 6.6, "crimped"),
         }
         for name, values in sheet.items():
             with self.subTest(name):
@@ -425,8 +456,8 @@ class CatalogueTests(unittest.TestCase):
                 self.assertFalse(is_rare(name))
                 self.assertEqual(INTRODUCED[name][0], 1991)
                 self.assertEqual(name in PRIMERS, s["kind"] != RIMFIRE)
-        self.assertIsNone(origin("6 mm Flobert Knall"))  # blanks have no country (2026-11-07)
-        self.assertIn("9mmrk", by_name["9 mm R Knall"]["aliases"])
+        self.assertIsNone(origin("6 mm Flobert Blanc"))  # blanks have no country (2026-11-07)
+        self.assertIn("9mmrk", by_name["9 mm R Blanc"]["aliases"])
 
     def test_rounds_from_ravens_bag_keep_their_sources(self):
         # 2026-11-08: .320 Revolver from the C.I.P. «320 Short» sheet, 9 mm Flobert from Wikipedia's infobox.
@@ -586,10 +617,10 @@ class CatalogueTests(unittest.TestCase):
         sizes = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)}
         blanks = {s["name"] for s in ALL
                   if is_blank(s["profile"], s["rim"], s["base"], s["neck"], s["bullet"], s["case"], s["oal"])}
-        self.assertEqual(len(blanks), 9)  # 9 mm P.A.K., .22 Blank (6.8/11) and the seven Knall rounds
+        self.assertEqual(len(blanks), 9)  # the .22 SH (5.6/11) and the eight alarm blanks of C.I.P. Tab. VIII
         self.assertFalse(blanks & sizes)
-        self.assertLessEqual(sizes | {".22 Blank (6.8/11)"}, set(INTRODUCED_UNKNOWN))  # no single launch year
-        self.assertIn("9 mm P.A.K.", blanks)
+        self.assertLessEqual(sizes | {".22 SH (5.6/11)"}, set(INTRODUCED_UNKNOWN))  # no single launch year
+        self.assertIn("9 mm PA Blanc", blanks)
         for name in sizes | blanks:
             self.assertIsNone(origin(name), name)
             self.assertNotIn(name, ORIGIN_UNDECIDED)
@@ -710,7 +741,7 @@ class CatalogueTests(unittest.TestCase):
                     self.assertEqual(s["name"] in BULLET_INFERRED, unchecked and bullet(s["name"]) != usual, s["name"])
                 else:
                     self.assertIsNone(bullet(s["name"]), s["name"])
-        for name in ("12/70", ".22 Blank (6.8/11)", "9 mm P.A.K.", "8 mm Knall", ".315 Knall"):
+        for name in ("12/70", ".22 SH (5.6/11)", "9 mm PA Blanc", "8 mm Blanc", ".315 Blanc"):
             self.assertIsNone(bullet(name), name)
         self.assertEqual(bullet("7.62x38 mm R Nagant"), JACKETED)  # seated inside the case, not a blank
         self.assertEqual(bullet("5.66x39 mm MPS"), STEEL)

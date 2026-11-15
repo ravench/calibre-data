@@ -38,11 +38,11 @@ class GapTests(unittest.TestCase):
     def test_a_crimped_blanks_mouth_is_a_sketch(self):
         # Raven 2026-11-14: "treat the crimp as a sketch". No sheet gives a star crimp's size: the mouth stays
         # listed as unsourced, but it keeps no blank from being well sourced.
-        for name in (".22 Long Knall", "6 mm Flobert Knall", "9 mm R Knall", ".320 Knall", ".45 Knall"):
+        for name in (".22 Long Blanc", "6 mm Flobert Blanc", "9 mm R Blanc", ".320 Court Blanc", ".45 K Blanc"):
             with self.subTest(name):
                 self.assertEqual(cartridges.unsourced(name), ("mouth",))
                 self.assertEqual(outline.gaps(self.spec(name)), ())
-        s = dict(self.spec(".45 Knall"), profile=FLAT)  # on any other profile it would still be a gap
+        s = dict(self.spec(".45 K Blanc"), profile=FLAT)  # on any other profile it would still be a gap
         self.assertEqual(outline.gaps(s)[:1], ("measurements",))
 
     def test_gaps_follow_the_tables(self):
@@ -801,7 +801,7 @@ class OutlineTests(unittest.TestCase):
         self.assertTrue(s["neck"] < max(xs) - min(xs) < s["base"], xs)
 
     def test_crimped_blank_is_a_case_narrowing_to_the_mouth(self):
-        s = next(s for _, s in outline.specs() if s["name"] == ".22 Blank (6.8/11)")
+        s = next(s for _, s in outline.specs() if s["name"] == ".22 SH (5.6/11)")
         self.assertEqual(s["profile"], CRIMPED)
         o = outline.outline(s)
         self.assertNotIn("bullet", o, "a blank has no bullet")
@@ -814,7 +814,7 @@ class OutlineTests(unittest.TestCase):
         self.assertLess(s["neck"], s["base"])
 
     def test_rimmed_alarm_blank_draws_a_rim_and_a_crimp(self):
-        s = next(s for _, s in outline.specs() if s["name"] == "9 mm R Knall")
+        s = next(s for _, s in outline.specs() if s["name"] == "9 mm R Blanc")
         o = outline.outline(s)
         self.assertNotIn("bullet", o)
         pts = points(o["case"])

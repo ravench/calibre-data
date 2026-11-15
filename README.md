@@ -40,7 +40,7 @@ the apps read those whole.
   poster the same tables as before (`CATALOGUE`, `INTRODUCED`, `PRIMERS`, `ORIGIN`, ...).
 - `outline.py`: the side view of each calibre as SVG path data (`outline(spec)`), and
   `identical_groups()`, the calibres that look exactly the same from the side (today .308 Win / 7.62
-  NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (e.g. the .22 blank 6.8/11) has no bullet:
+  NATO and .223 Rem / 5.56 NATO / GP 90). A crimped blank (e.g. the .22 blank 5.6/11) has no bullet:
   its case narrows to the star crimp. A wadcutter seated flush (.32 S&W Long Wadcutter) shows no
   bullet either. `bulletMaterial` is `steel` (GP 1890 cap, the MPS dart, or a steel jacket),
   `cupronickel` (a silver jacket) or `lead`; a cartridge's bullet is copper when it is missing (a
@@ -173,13 +173,17 @@ a choice, follow the calibre's family (`.25 WSSM` like `.223 WSSM`, `.38-56 WCF`
   them apart: `.450/400 Nitro Express 3 inch`, `10.4 mm Swiss Ordnance 1872 Rimfire`,
   `.44 Henry Centrefire`.
 - A cartridge with two common names gets the other one in brackets, mostly the metric one first:
-  `9 mm Browning kurz (.380 ACP)`, `9.3x66 mm Sako (.370 Sako Magnum)`, `.22 Blank (6.8/11)`. Swiss
+  `9 mm Browning kurz (.380 ACP)`, `9.3x66 mm Sako (.370 Sako Magnum)`. Swiss
   service rounds carry their service name: `7.5x55 mm Swiss (GP 11)`, `5.6 mm GP 90`.
+- Blanks and tool loads have no maker's name, so they carry the title of their C.I.P. sheet, in this
+  notation (leading dot, decimal point): `.22 SH (5.6/11)` for C.I.P.'s «22 SH (5,6/11)», `9 mm PA Blanc`,
+  `.320 Court Blanc`, `9 mm R Blanc` for «380R Blanc/9 mm R Blanc». The names they are sold under
+  (`9 mm P.A.K.`, `8 mm Knall`, `.22 Blank`) are `display_aliases`.
 - Round balls, BBs and pellets: the size they are sold as, and in brackets the real diameter or the
   other size people know them by: `.44 Rundkugel (.454)`, `4.5 mm Diabolo (.177)`,
   `4.4 mm Stahl-BB (.177 BB)`, `6 mm Airsoft-BB`. Minié bullets by bore: `.58 Minié`.
 - Shot shells: gauge/case length in mm, `12/70`, `.410/76`.
-- English, except for rounds known in Switzerland by another name, for example `Knall`,
+- English, except for rounds known in Switzerland by another name, for example
   `Rundkugel`, `Diabolo`, `Stahl-BB`, `Kadettenpatrone`, `Browning kurz`, `7.65 mm Longue`.
 - Short forms and other spellings (`.308 Win`, `9 mm Para`, `12,7x99 mm NATO`) go in
   `display_aliases` or `aliases`, which keep a name as it is printed elsewhere.
@@ -419,7 +423,7 @@ belted case, up to a belt that ends 4.3 mm in front of the rim.
 
 - `[bullet]` `type`, in every calibre with a bullet (not shot shells, cannon rounds or blanks: star-
   crimped ones and closed plain cylinders, overall length = case length and rim = base = neck =
-  bullet, such as the 9 mm P.A.K.); no type is taken for granted. For a cartridge, the bullet it was
+  bullet, such as the 9 mm PA Blanc); no type is taken for granted. For a cartridge, the bullet it was
   first sold with: `jacketed` (a full metal jacket or another all-copper bullet), `lead` (bare lead,
   also lubricated or wax coated), `paper` (lead wrapped in paper below the nose), `softpoint`
   (copper jacket with the lead core showing at the tip), `polymer` (copper jacket with a plastic
