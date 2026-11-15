@@ -680,7 +680,7 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, LR, r"\[mm\] needs a sources list")
 
     def test_unsourced_lists_the_measurements_without_a_source(self):
-        self.assertEqual(cartridges.unsourced(".56-52 Spencer Necked"), ("shoulder_at",))
+        self.assertEqual(cartridges.unsourced(".577/500 No. 2 Express"), ("shoulder_at",))
         self.assertEqual(cartridges.unsourced(".308 Winchester"), ())
         with Copy() as c:  # no source at all: every measurement is without one (no calibre is in that state today)
             c.edit(LR, LR_MM, "sources = []")

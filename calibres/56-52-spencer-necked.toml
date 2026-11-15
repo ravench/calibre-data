@@ -16,21 +16,31 @@ rare = true
 rim = 16.31
 base = 14.22
 shoulder = 14.17
-shoulder_at = 12.4
+shoulder_at = 15.16
 neck = 13.89
 case_length = 25.91
 overall_length = 42.16
 bullet = 13.33
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 670"]
+# shoulder_at from the AECC drawing 13-026-BBR-010 (municion.org, the longest case): SL 16.00 on a case of CL 26.75,
+# taken from the mouth (case_length - (CL - SL)). Its shoulder is the book's within 0.03 mm, its neck is 0.29 mm
+# narrower and its case 0.84 mm longer. The drawing of the shortest case (13-024-BBR-010: CL 24.30, SL 13.30, NL 5.00)
+# is 1.61 mm shorter than the book's, outside the limit: from the mouth its shoulder starts 0.25 mm further back and
+# its neck is 2 mm shorter.
+sources = ["book:cotw-18 p. 670", "https://municion.org/producto/56-52-spencer-rimfire-longest-case/"]
 
 [introduced]
 year = 1866
 sources = ["book:cotw-18 p. 668"]
 
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.20, NØ 13.60, SL 16.00, NL 7.00, CL 26.75. The half angle runs between the
+# book's diameters over the drawing's shoulder length (3.75 mm): the specimen's own cone (4.6 degrees) would leave a
+# neck 2.0 mm longer than the specimen's, over the 1.5 mm the rule allows.
+degrees = 2.1
+sources = ["https://municion.org/producto/56-52-spencer-rimfire-longest-case/"]
+
 [case_head]
-# .065 in.
+# .065 in. (COTW); the AECC drawing 13-026-BBR-010 (municion.org) has RT 1.75.
 rim_thickness = 1.65
 sources = ["book:cotw-18 p. 670"]
 

@@ -21,7 +21,7 @@ class GapTests(unittest.TestCase):
         for name, gaps in [
                 (".308 Winchester", ()),
                 ("12/70", ()),  # its loaded length is SAAMI's
-                (".56-52 Spencer Necked", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
+                (".577/500 No. 2 Express", ("measurements", "shoulder_angle")),  # shoulder_at estimated, 32 degrees
                 (".69 Minié", ()),  # the Altered Musket drawing: 1.1 in long
                 (".58 Minié", ()),  # the Harpers Ferry drawing: 1.05 in long
                 ("4.5 mm Diabolo (.177)", ()),  # its length from RWS
@@ -62,7 +62,7 @@ class GapTests(unittest.TestCase):
         self.assertEqual(outline.gaps(s), ())
         s["sh_at"] = s["case"] - outline.shoulder_run(s) - 1.0  # 1 mm of neck: under MIN_NECK
         self.assertEqual(outline.gaps(s), ("shoulder_moved",))
-        s["name"] = ".56-52 Spencer Necked"  # also beside a measurement without a source (at that calibre's angle)
+        s["name"] = ".577/500 No. 2 Express"  # also beside a measurement without a source (at that calibre's angle)
         s["sh_at"] = s["case"] - outline.shoulder_run(s) - 1.0
         self.assertEqual(outline.gaps(s)[0], "measurements")
         self.assertIn("shoulder_moved", outline.gaps(s))
@@ -347,8 +347,9 @@ class GapTests(unittest.TestCase):
         # own cone, drawn between the file's diameters, would leave a neck more than 1.5 mm longer or shorter than the
         # specimen's: on a shallow cone a small difference in diameter is a long one in length. The half angle runs
         # between the file's diameters over the drawing's shoulder length (CL - NL - SL) instead, so the shoulder
-        # starts and ends where the drawing shows. The first two share one case and one drawing; the other seven had
-        # the specimen's cone until the walk in test_every_recorded_municion_reading_keeps_its_neck found them.
+        # starts and ends where the drawing shows. The first two share one case and one drawing; the next seven had
+        # the specimen's cone until the walk in test_every_recorded_municion_reading_keeps_its_neck found them. The
+        # Spencer's drawing is of the longest case; the shortest is outside the size limit on the case length.
         # name: (shoulder_at, half angle, the specimen's own cone, the drawing's SØ, NØ, SL, NL, CL)
         shallow = {
             ".500/450 Magnum Express": (61.08, 2.5, 4.4, 13.19, 12.25, 61.0, 15.4, 82.47),
@@ -360,6 +361,7 @@ class GapTests(unittest.TestCase):
             ".40-70 Sharps Necked": (35.68, 7.8, 5.9, 12.42, 11.01, 35.7, 14.6, 57.17),
             ".577 Tyrannosaur": (59.55, 10.3, 7.4, 16.71, 15.64, 59.3, 12.3, 75.7),
             "9.3x65 mm R Collath": (55.16, 16.4, 5.9, 10.22, 9.9, 55.1, 8.3, 64.96),
+            ".56-52 Spencer Necked": (15.16, 2.1, 4.6, 14.2, 13.6, 16.0, 7.0, 26.75),
         }
         for name, (start, angle, own, so, no, sl, nl, cl) in shallow.items():
             with self.subTest(name):
@@ -422,17 +424,20 @@ class GapTests(unittest.TestCase):
             self.assertIn(name, OutlineTests.SHOULDER_UNSOURCED)
             self.assertEqual(cartridges.unsourced(name), ("shoulder_at",))
 
-    def test_naboje_drawings_count_like_aecc_drawings(self):
-        # Dimensioned drawings on naboje.org within the limits of the AECC rule: case within 1.5 mm, rim, base,
-        # shoulder and neck within 0.5 mm. shoulder_at is the drawing's shoulder start carried from the mouth and the
-        # half angle the specimen's cone. The 6x58 mm Forster's drawing has the C.I.P. letters (NL = L3 - L2); on the
-        # .577/500 Nitro Express the neck start is read off the picture, which shows its labelled lengths to scale.
-        # name: (shoulder_at, half angle, node, the drawing's rim, base, SØ, NØ, SL, NL, CL)
+    def test_aecc_drawings_filed_under_other_names(self):
+        # AECC drawings that municion.org files under a name the file does not carry, found through the pages' other
+        # names, the list of all pages and the catalogue codes: the .577/500 Nitro Express as «.577/.500 Express
+        # 3 1/8″», the 6x58 mm Forster as «6,2 x 58 Förster», the .416 Rimmed as «.416 Chapuis» (the page gives
+        # «.416 Rimmed» as its other name). The limits are the AECC rule's: case within 1.5 mm, rim, base, shoulder
+        # and neck within 0.5 mm. shoulder_at is SL carried from the mouth and the half angle the specimen's cone.
+        # name: (shoulder_at, half angle, page, the drawing's RØ, HØ, SØ, NØ, SL, NL, CL)
         drawings = {
-            ".577/500 Nitro Express": (59.96, 8.9, 1356, 18.42, 16.36, 14.83, 13.56, 59.85, 15.5, 79.39),
-            "6x58 mm Forster": (41.27, 13.4, 13746, 11.8, 11.87, 10.93, 7.07, 41.8, 8.05, 57.93),
+            ".577/500 Nitro Express": (59.96, 8.9, "577-500-express-3-1-8",
+                                       18.42, 16.36, 14.83, 13.56, 59.85, 15.5, 79.39),
+            "6x58 mm Forster": (41.27, 13.4, "62-x-58-forster", 11.8, 11.87, 10.93, 7.07, 41.8, 8.05, 57.93),
+            ".416 Rimmed": (69.12, 16.1, "416-chapuis", 16.57, 14.64, 13.9, 11.18, 69.0, 10.0, 83.7),
         }
-        for name, (start, angle, node, rim, base, so, no, sl, nl, cl) in drawings.items():
+        for name, (start, angle, page, rim, base, so, no, sl, nl, cl) in drawings.items():
             with self.subTest(name):
                 s = self.spec(name)
                 self.assertEqual(outline.gaps(s), ())
@@ -443,47 +448,74 @@ class GapTests(unittest.TestCase):
                 self.assertLess(max(abs(size - s[key]) for size, key in sizes), 0.5)
                 self.assertAlmostEqual(s["sh_at"], s["case"] - (cl - sl), delta=0.005)
                 self.assertAlmostEqual(math.degrees(math.atan((so - no) / 2 / (cl - nl - sl))), angle, delta=0.05)
-                top = s["neck"] / 2  # the neck the outline draws, against the specimen's
-                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
-                self.assertLess(abs((s["case"] - neck_start) - nl), 1.5)
-                url = "https://naboje.org/node/%d" % node
+                url = "https://municion.org/producto/%s/" % page
                 self.assertEqual(cartridges.sources(name, "mm")[-1], url)
                 self.assertEqual(cartridges.SHOULDER_ANGLES[name][1], url)
-        # The picture of the .577/500 Nitro Express is to scale: the image rows of its tip, mouth, neck start,
-        # shoulder, rim top and base, against the labelled overall length, shoulder start and rim thickness.
-        tip, mouth, neck, shoulder, rim_top, bottom = 20, 120, 227, 254.5, 658, 668
-        per_mm = (bottom - mouth) / 79.39
-        for rows, label in [(bottom - tip, 93.87), (bottom - shoulder, 59.85), (bottom - rim_top, 1.45)]:
-            self.assertAlmostEqual(rows / per_mm, label, delta=0.2)
-        self.assertAlmostEqual((neck - mouth) / per_mm, 15.5, delta=0.01)
-        # The Forster's head: the book's rim thickness (.045 in.) is within 0.3 mm of the drawing's R 1.43 and stays.
-        self.assertEqual(cartridges.case_head("6x58 mm Forster"), (1.14, 3.7, 10.04, 36.0))
-        self.assertLess(1.43 - cartridges.rim_thickness("6x58 mm Forster"), 0.3)
-        self.assertAlmostEqual(math.degrees(math.atan((11.87 - 10.04) / 2 / (3.7 - 1.43 - 1.0))), 36.0, delta=0.5)
-        self.assertEqual(cartridges.sources("6x58 mm Forster", "case_head"),
-                         ["book:cotw-18 p. 651", "https://naboje.org/node/13746"])
+        # Two heads, as the README takes a head from an AECC drawing: rim and head within 0.5 mm of the file's, the
+        # book's rim thickness stays within 0.3 mm of the drawing's RT, the ramp angle from HL = RT + GW +
+        # ((HØ - GØ)/2)/tan(angle). The .30 USA Rimless is filed as «.30 Blake» (other name «.30 Krag Rimless»; UMC
+        # loaded it for the Blake rifle, COTW 18 p. 197).
+        # name: (the head, page, the book's page, the drawing's RØ, HØ, RT, HL, GØ, GW)
+        heads = {
+            "6x58 mm Forster": ((1.14, 3.7, 10.04, 36.0), "62-x-58-forster", 651, 11.8, 11.87, 1.43, 3.7, 10.04, 1.0),
+            ".30 USA Rimless": ((1.37, 3.9, 10.0, 28.0), "30-blake", 250, 11.59, 11.57, 1.55, 3.9, 10.0, 0.85),
+        }
+        for name, (head, page, book, rim, base, rt, hl, groove, gw) in heads.items():
+            with self.subTest(name):
+                s = self.spec(name)
+                self.assertEqual(outline.gaps(s), ())
+                self.assertEqual(cartridges.case_head(name), head)
+                self.assertLess(max(abs(rim - s["rim"]), abs(base - s["base"])), 0.5)
+                self.assertLess(abs(rt - head[0]), 0.3)
+                self.assertEqual((head[1], head[2]), (hl, groove))
+                self.assertAlmostEqual(math.degrees(math.atan((base - groove) / 2 / (hl - rt - gw))), head[3], delta=0.5)
+                self.assertEqual(cartridges.sources(name, "case_head"),
+                                 ["book:cotw-18 p. %d" % book, "https://municion.org/producto/%s/" % page])
+        # The .30 Blake drawing's shoulder is not taken: it is labelled 11.59 mm, wider than the head and 1.00 mm
+        # more than the book's. The shoulder stays the rimmed twin's (the C.I.P. sheet of the .30-40 Krag).
+        usa = self.spec(".30 USA Rimless")
+        self.assertGreater(abs(11.59 - usa["shoulder"]), 0.5)
+        self.assertIn("cip-bobp.org", cartridges.SHOULDER_ANGLES[".30 USA Rimless"][1])
+        self.assertEqual(cartridges.sources(".30 USA Rimless", "mm")[-1], cartridges.SHOULDER_ANGLES[".30 USA Rimless"][1])
+        # naboje.org shows the drawings of the .577/500 and the Forster again (nodes 1356 and 13746): one measurement,
+        # not two, so the files cite the AECC drawing for the shoulder and the head.
+        for name in (".577/500 Nitro Express", "6x58 mm Forster"):
+            cited = cartridges.sources(name, "mm") + [cartridges.SHOULDER_ANGLES[name][1]]
+            self.assertFalse([url for url in cited if "naboje.org" in url], name)
 
-    def test_two_specimen_drawings_and_the_books_text_outweigh_its_table(self):
-        # Cartridges of the World's table gives the 10.75x63 mm Mauser a rebated rim of .467 in. in every edition.
-        # Two specimen drawings of different collections show a rimless case (AECC: rim 12.60 on a head of 12.54;
-        # naboje.org: 12.50 on 12.52): within 0.5 mm of each other and more than 0.5 mm from the table. The book's
-        # own text stands with them (the dimensions of the 10.75x68 mm but for the length), and so does the C.I.P.
-        # sheet of the 10.75x68. The file takes the AECC drawing's rim and, with it, the drawing's head.
+    def test_specimens_measured_apart_outweigh_a_books_table(self):
+        # The literature gives the 10.75x63 mm Mauser a rebated head: the table of Cartridges of the World has a rim
+        # of .467 in. under a head of .493 in. in every edition, and Donnelly (p. 958) repeats it. No specimen shows
+        # one. Two drawings have a rim as wide as the head (AECC, of two DWM cartridges: 12.60 on 12.54; naboje.org,
+        # of an RWS one: 12.50 on 12.52): within 0.5 mm of each other and more than 0.5 mm from the table. The book's
+        # own text stands with them (practically the dimensions of the 10.75x68 mm but for the length), and so does
+        # the C.I.P. sheet of the 10.75x68. The file takes the AECC drawing's rim and, with it, the drawing's head.
         name, table, aecc, naboje = "10.75x63 mm Mauser", 0.467 * 25.4, 12.6, 12.5
         s, sister = self.spec(name), self.spec("10.75x68 mm Mauser")
         self.assertEqual(s["rim"], aecc)
         self.assertLess(abs(aecc - naboje), 0.5)
         self.assertGreater(min(aecc - table, naboje - table), 0.5)
+        self.assertLess(max(abs(aecc - 12.54), abs(naboje - 12.52)), 0.1)  # each rim on its own head: not rebated
+        self.assertGreater(0.493 * 25.4 - table, 0.5)  # the table's rim under its own head: rebated
         self.assertLess(max(abs(sister["rim"] - aecc), abs(sister["rim"] - naboje)), 0.5)
         self.assertLess(abs(sister["base"] - s["base"]), 0.5)
-        self.assertEqual(cartridges.sources(name, "mm"), ["book:cotw-18 p. 652",
-                                                           "https://municion.org/producto/1075-x-63-g-mauser/",
-                                                           "https://naboje.org/node/11259"])
+        # naboje.org often shows an AECC drawing again, which would be one measurement. These two were measured
+        # apart: they differ on every other label they share but the bullet's diameter.
+        # bullet, mouth, neck start, shoulder, shoulder start, head, groove, case, rim thickness, overall length
+        aecc_labels = (10.76, 11.32, 11.38, 12.10, 52.50, 12.54, 11.00, 62.98, 1.15, 82.10)
+        naboje_labels = (10.76, 11.29, 11.32, 12.00, 51.80, 12.52, 11.10, 62.72, 1.09, 79.50)
+        self.assertEqual(sum(a != n for a, n in zip(aecc_labels, naboje_labels)), 9)
+        # Only the AECC drawing gives a value, so only its page is a source of the measurements.
+        self.assertEqual(cartridges.sources(name, "mm"),
+                         ["book:cotw-18 p. 652", "https://municion.org/producto/1075-x-63-g-mauser/"])
         # The head: HL = RT + GW + ((HØ - GØ)/2)/tan(angle) on the AECC drawing, whose head diameter is the file's.
+        # Donnelly's rim thickness (.06 in.) is more than 0.3 mm from the drawing's, so the whole head is the
+        # drawing's.
         self.assertEqual(cartridges.case_head(name), (1.15, 3.7, 11.0, 30.0))
         self.assertAlmostEqual(math.degrees(math.atan((12.54 - 11.0) / 2 / (3.7 - 1.15 - 1.2))), 30.0, delta=0.5)
         self.assertLess(abs(12.54 - s["base"]), 0.5)
-        self.assertIn("municion.org", cartridges.sources(name, "case_head")[0])
+        self.assertGreater(0.06 * 25.4 - 1.15, 0.3)
+        self.assertEqual(cartridges.sources(name, "case_head"), ["https://municion.org/producto/1075-x-63-g-mauser/"])
         self.assertEqual(outline.gaps(s), ())
 
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
@@ -521,7 +553,7 @@ class GapTests(unittest.TestCase):
         self.assertTrue(outline.well_sourced(self.spec(".308 Winchester")))
         self.assertTrue(outline.well_sourced(self.spec(".25 Stevens")))  # rim thickness only
         self.assertFalse(outline.well_sourced(self.spec(".45-70 Auto")))  # generic groove
-        self.assertFalse(outline.well_sourced(self.spec(".56-52 Spencer Necked")))
+        self.assertFalse(outline.well_sourced(self.spec(".577/500 No. 2 Express")))
         passing = sum(outline.well_sourced(s) for _, s in outline.specs())  # 606 of 759 before these sheets
         self.assertTrue(0 < passing < len(outline.specs()))
 
@@ -856,6 +888,9 @@ class OutlineTests(unittest.TestCase):
             ".450/400 Nitro Express 2⅜ inch": (40.48, 16.7, 60.63),
             "7 mm Canadian Magnum": (58.75, 6.7, 71.63), ".338 Canadian Magnum": (59.82, 8.15, 71.72),
             ".32-30 Remington": (31.0, 7.3, 41.48), "10.75x58 mm R Russian Berdan": (39.0, 12.2, 57.45),
+            # Filed under other names (test_aecc_drawings_filed_under_other_names).
+            ".577/500 Nitro Express": (59.85, 15.5, 79.39), "6x58 mm Forster": (41.8, 8.05, 57.93),
+            ".416 Rimmed": (69.0, 10.0, 83.7), ".56-52 Spencer Necked": (16.0, 7.0, 26.75),
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
@@ -894,7 +929,7 @@ class OutlineTests(unittest.TestCase):
                 neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
                 self.assertLess(abs((s["case"] - neck_start) - neck_length), 1.5)
                 self.assertLess(abs((s["case"] - s["sh_at"]) - (case_length - shoulder_start)), 0.6)
-        self.assertGreaterEqual(len(walked), 113)  # the notes keep the format the walk reads
+        self.assertGreaterEqual(len(walked), 117)  # the notes keep the format the walk reads
         self.assertLessEqual(older, walked)
 
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
@@ -903,8 +938,8 @@ class OutlineTests(unittest.TestCase):
         # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
         # shoulder_at is estimated, as the note in [mm] says).
         ".275 No. 2 Magnum", ".32-40 Remington", ".38-70 Winchester",
-        ".400/360 Nitro Express", ".416 Rimmed", ".45-100 Remington Necked", ".45-125 Winchester Express",
-        ".50-115 Bullard", ".56-52 Spencer Necked", ".577/500 No. 2 Express",
+        ".400/360 Nitro Express", ".45-100 Remington Necked", ".45-125 Winchester Express",
+        ".50-115 Bullard", ".577/500 No. 2 Express",
         "10.25x69 mm R Hunting-Express", "10.75x57 mm Mannlicher", "10.8x47 mm R Martini Target",
         "11.4x50 mm R Brazilian Comblain", "11x53 mm R Comblain",
         "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "8.5 mm Mars", "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
@@ -978,7 +1013,9 @@ class OutlineTests(unittest.TestCase):
                     ".500/450 No. 1 Express": (9.9, 47.3), "10.4x47 mm R Italian Vetterli": (13.9, 34.75),
                     ".450/400 Nitro Express 2⅜ inch": (11.5, 40.3),
                     "7 mm Canadian Magnum": (23.6, 59.0), ".338 Canadian Magnum": (28.1, 59.98),
-                    ".32-30 Remington": (4.0, 31.18), "10.75x58 mm R Russian Berdan": (7.9, 38.45)}
+                    ".32-30 Remington": (4.0, 31.18), "10.75x58 mm R Russian Berdan": (7.9, 38.45),
+                    ".577/500 Nitro Express": (8.9, 59.96), "6x58 mm Forster": (13.4, 41.27),
+                    ".416 Rimmed": (16.1, 69.12), ".56-52 Spencer Necked": (2.1, 15.16)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):
@@ -988,8 +1025,7 @@ class OutlineTests(unittest.TestCase):
 
     def test_shoulders_from_other_drawings_and_photos(self):
         # (half angle, shoulder start, a word of the source) for angles from drawings, prints and photos.
-        found = {"11x50 mm R Albini": (18.6, 42.5, "naboje.org"), ".577/500 Nitro Express": (8.9, 59.96, "naboje.org"),
-                 "6x58 mm Forster": (13.4, 41.27, "naboje.org"),
+        found = {"11x50 mm R Albini": (18.6, 42.5, "naboje.org"),
                  "6.8x45 mm UCC": (45, 36.1, "pacifictoolandgauge"),
                  ".44-77 Sharps & Remington": (4.5, 33.0, "ammo-one1"),
                  ".40-70 Winchester": (13.26, 44.45, "winchestercollector")}
@@ -1009,7 +1045,7 @@ class OutlineTests(unittest.TestCase):
     # in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        ".30 USA Rimless", ".360 Mars", ".45-70 Auto", ".50-115 Bullard", "6.17 Lazzeroni Flash",
+        ".360 Mars", ".45-70 Auto", ".50-115 Bullard", "6.17 Lazzeroni Flash",
         "6.71 Lazzeroni Blackbird", "8.5 mm Mars",
     }
 
@@ -1167,8 +1203,8 @@ class OutlineTests(unittest.TestCase):
             self.assertIn(name, self.HEAD_UNSOURCED)
             return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(specs[name])[:n]]
         # Rimless: the groove is 87 % of the rim, 1 mm long, and a 40 degree ramp leads up to the body.
-        self.assertEqual(head(".30 USA Rimless", 5),
-                         [(5.79, 0), (5.79, 1.37), (5.0373, 1.37), (5.0373, 2.37), (5.765, 3.2372)])
+        self.assertEqual(head("6.17 Lazzeroni Flash", 5),
+                         [(6.73, 0), (6.73, 1.27), (5.8551, 1.27), (5.8551, 2.27), (6.73, 3.3127)])
         # Rebated (rim 12.01 mm on a 14.94 mm body): the groove is below the rim, the ramp climbs on to the body.
         # The rebated cases of the catalogue have their own heads now, so this one is made up.
         rebated = cartridges.c("A rebated case", RIMLESS, 12.01, 14.94, 14.66, 12.8, 55.78, 40.88, 72.39, 12.06, SPITZER)

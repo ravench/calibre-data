@@ -1,4 +1,4 @@
-# Measurements from Cartridges of the World, 18th ed. (inches converted to mm); the rim from two specimen drawings.
+# Measurements from Cartridges of the World, 18th ed. (inches converted to mm); the rim and the head from specimens.
 # The older and shorter case of the 10.75x68 mm.
 name = "10.75x63 mm Mauser"
 categories = ["rifle"]
@@ -12,10 +12,17 @@ obsolete = true
 rare = true
 
 [mm]
-# rim: the book's table has a rebated rim of .467 in. (11.86 mm) in every edition, but its text gives the round the
-# dimensions of the 10.75x68 mm but for the length (C.I.P. 10,75 x 68: rim and base 12.57), and two specimen
-# drawings show a rimless case: AECC 11-063-BGC-010 on municion.org (rim 12.60 on a head of 12.54) and naboje.org
-# (12.50 on 12.52). The rim is the AECC drawing's.
+# rim: the literature describes a rebated head, and no specimen shows one; the file follows the specimens.
+# For a rebated head: the table of Cartridges of the World has a rim of .467 in. (11.86 mm) under a head of .493 in.
+# and the letter for a rebated case, in every edition; Donnelly (p. 958) repeats it from the fourth edition; the
+# history on naboje.org's page says that the head was made to fit the bolts of the 8x57 mm rifles.
+# For a rimless one: the AECC drawing 11-063-BGC-010 on municion.org (two cartridges headstamped DWM 515) has a rim
+# of 12.60 on a head of 12.54; the drawing on naboje.org (node 11259, an RWS cartridge) has 12.50 on 12.52 and was
+# measured apart, as it differs from the AECC drawing on most of its other sizes; on the photographs of all three
+# cartridges the rim is as wide as the head. The book's text (p. 647) gives the round practically the dimensions of
+# the 10.75x68 mm but for the length (C.I.P. 10,75 x 68: rim and base 12.57) and takes DWM's case 515 for probably
+# the same round.
+# The rim is the AECC drawing's.
 rim = 12.6
 base = 12.52
 shoulder = 12.17
@@ -24,11 +31,7 @@ neck = 11.35
 case_length = 62.74
 overall_length = 81.79
 bullet = 10.77
-sources = [
-  "book:cotw-18 p. 652",
-  "https://municion.org/producto/1075-x-63-g-mauser/",
-  "https://naboje.org/node/11259",
-]
+sources = ["book:cotw-18 p. 652", "https://municion.org/producto/1075-x-63-g-mauser/"]
 
 [introduced]
 # COTW: about 1910.
@@ -45,9 +48,10 @@ degrees = 10.3
 sources = ["https://municion.org/producto/1075-x-63-g-mauser/"]
 
 [case_head]
-# AECC drawing: RT 1.15, HL 3.70, GØ 11.00, GW 1.20, HØ 12.54; ramp angle from
-# HL = RT + GW + ((HØ - GØ)/2)/tan(angle). naboje.org's drawing: rim thickness 1.09, groove 11.10. The book gives no
-# rim thickness.
+# AECC drawing 11-063-BGC-010 (municion.org): RT 1.15, HL 3.70, GØ 11.00, GW 1.20, HØ 12.54; ramp angle from
+# HL = RT + GW + ((HØ - GØ)/2)/tan(angle). naboje.org's drawing: rim thickness 1.09, groove 11.10. Cartridges of the
+# World gives no rim thickness; Donnelly's .06 in. (1.52 mm, p. 958) belongs to the rebated head he describes and
+# is 0.37 mm from the drawing's, so the whole head is the drawing's.
 rim_thickness = 1.15
 ramp_top = 3.7
 groove_diameter = 11.0
