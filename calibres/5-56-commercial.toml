@@ -1,5 +1,6 @@
-# SAAMI's own commercial 5.56 standard (2026). Its maximum cartridge is the SAAMI 223 Remington one;
-# only its chamber (longer, wider throat, 7 in twist) and its pressure limit (62,000 psi) differ.
+# SAAMI's own commercial 5.56 standard (2026). Its maximum cartridge is the SAAMI 223 Remington one
+# but for .0001 in on the body; its chamber (longer, wider throat, 7 in twist) and its pressure
+# limit (62,000 psi) differ.
 # SAAMI says it does not imply NATO conformance, and that 5.56 ammunition in a chamber marked
 # 223 Remington only is unsafe.
 name = "5.56 Commercial"
@@ -8,6 +9,7 @@ kind = "rimless"
 profile = "spitzer"
 aliases = ["5.56comm", "5.56 comm", "556comm"]
 
+# SAAMI, the US standards body, introduced it.
 origin = "US"
 origin_sources = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.56-Commercial-2026-06-22-FINAL-Rev-3.pdf#page=1"]
 
@@ -17,6 +19,7 @@ origin_sources = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduct
 rim = 9.6
 base = 9.58
 shoulder = 9.0
+# shoulder_at: C.I.P. L1 36.52 as for the .223 Rem., SAAMI 36.527.
 shoulder_at = 36.52
 neck = 6.43
 case_length = 44.7
