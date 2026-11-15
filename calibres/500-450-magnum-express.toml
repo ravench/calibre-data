@@ -36,6 +36,14 @@ sources = ["book:cotw-18 p. 598"]
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 608"]
 
+[case_head]
+# AECC drawing 11-083-BBC-030 (municion.org): RT 1.04. municion.org lists this 3¼ in. case for the blackpowder, the
+# nitro-for-black and the Nitro Express loads. Its shoulder is not taken: the specimen's (SØ 13.19) is 0.49 mm wider
+# than the book's, and its cone, drawn between the book's diameters, would leave a neck 2.6 mm longer than the
+# specimen's (NL 15.40), over the 1.5 mm the rule allows.
+rim_thickness = 1.04
+sources = ["https://municion.org/producto/500-450-express-3-1-4-bp-nbp-ne/"]
+
 [bullet]
 # A blackpowder express round of the 1870s (COTW 18 p. 598), lead like the express bullets of its time;
 # the page lists its factory loads as soft points.

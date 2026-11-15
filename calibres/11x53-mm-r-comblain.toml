@@ -22,7 +22,11 @@ neck = 11.68
 case_length = 53.34
 overall_length = 70.1
 bullet = 11.07
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees. The AECC drawing 11-053-BBC-030
+# (municion.org), «11 x 53 R Brazilian-Comblain Model 1889», has this row's diameters within 0.3 mm and its length
+# within 0.02 mm, and would start the shoulder at 45.22 mm with a neck of 6.2 mm. It is not taken: its page says that
+# the Brazilian round differs from the Belgian 11x53 R in its shorter neck, and the page of drawing 12-050-BBC-020
+# gives the Belgian round a neck of a fifth of the case, which no drawing of the 53 mm case shows.
 unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 574"]
 

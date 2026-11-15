@@ -16,14 +16,15 @@ rare = true
 rim = 11.1
 base = 9.6
 shoulder = 9.07
-shoulder_at = 33.2
+shoulder_at = 31.18
 neck = 8.43
 case_length = 41.66
 overall_length = 51.05
 bullet = 7.92
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 250"]
+# shoulder_at from the AECC drawing 08-041-BBC-050 (municion.org): SL 31.00 on a case of CL 41.48, taken from the
+# mouth (case_length - (CL - SL)). The specimen's cone, drawn between the book's diameters, leaves a neck 1.40 mm
+# shorter than the specimen's (NL 7.30), inside the 1.5 mm the rule allows.
+sources = ["book:cotw-18 p. 250", "https://municion.org/producto/32-30-125-remington-hepburn/"]
 
 [introduced]
 # COTW: first made in November 1884.
@@ -33,6 +34,16 @@ sources = ["book:cotw-18 p. 201"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 250"]
+
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 8.94, NØ 8.49, SL 31.00, NL 7.30, CL 41.48.
+degrees = 4.0
+sources = ["https://municion.org/producto/32-30-125-remington-hepburn/"]
+
+[case_head]
+# AECC drawing 08-041-BBC-050 (municion.org): RT 1.39; the book gives none.
+rim_thickness = 1.39
+sources = ["https://municion.org/producto/32-30-125-remington-hepburn/"]
 
 [bullet]
 type = "lead"

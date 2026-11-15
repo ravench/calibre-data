@@ -32,6 +32,12 @@ sources = ["book:cotw-18 p. 217"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 250"]
 
+[case_head]
+# AECC drawing 09-059-BBC-030 (municion.org): RT 1.72. Its shoulder is not taken: the drawing's (SØ 11.68) is 1.0 mm
+# wider than the book's.
+rim_thickness = 1.72
+sources = ["https://municion.org/producto/38-70-winchester-cf-marlin-colt/"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 217"]
