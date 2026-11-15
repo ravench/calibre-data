@@ -12,17 +12,20 @@ obsolete = true
 rare = true
 
 [mm]
-# rim: the literature describes a rebated head, and no specimen shows one; the file follows the specimens.
+# rim: the literature describes a rebated head, and none of the three specimens found has one; the file follows
+# the specimens.
 # For a rebated head: the table of Cartridges of the World has a rim of .467 in. (11.86 mm) under a head of .493 in.
-# and the letter for a rebated case, in every edition; Donnelly (p. 958) repeats it from the fourth edition; the
-# history on naboje.org's page says that the head was made to fit the bolts of the 8x57 mm rifles.
-# For a rimless one: the AECC drawing 11-063-BGC-010 on municion.org (two cartridges headstamped DWM 515) has a rim
-# of 12.60 on a head of 12.54; the drawing on naboje.org (node 11259, an RWS cartridge) has 12.50 on 12.52 and was
-# measured apart, as it differs from the AECC drawing on most of its other sizes; on the photographs of all three
-# cartridges the rim is as wide as the head. The book's text (p. 647) gives the round practically the dimensions of
-# the 10.75x68 mm but for the length (C.I.P. 10,75 x 68: rim and base 12.57) and takes DWM's case 515 for probably
-# the same round.
-# The rim is the AECC drawing's.
+# and the letter for a rebated case, in the five editions in the library (1st, 2nd, 5th, 14th, 18th); Donnelly
+# (p. 958) repeats it from the fourth; the history on naboje.org's page says that the head was made to fit the bolts
+# of the 8x57 mm rifles.
+# For a rimless one: the AECC drawing 11-063-BGC-010 on municion.org, whose page shows two cartridges headstamped
+# DWM 515, has a rim of 12.60 on a head of 12.54; the drawing on naboje.org (node 11259, an RWS cartridge) has 12.50
+# on 12.52 and was measured apart, as it differs from the AECC drawing on most of its other sizes; on the
+# photographs of all three cartridges the rim is as wide as the head. The book's text (p. 647) gives the round
+# practically the dimensions of the 10.75x68 mm but for the length (C.I.P. 10,75 x 68: rim and base 12.57).
+# The rim is the AECC drawing's, so it is that of a DWM 515 case, which the book takes only for probably the same
+# round. RWS, the maker it names for most of the cartridges, made the one that measures 12.50. naboje.org shows
+# further specimens only to registered users; they were not seen.
 rim = 12.6
 base = 12.52
 shoulder = 12.17

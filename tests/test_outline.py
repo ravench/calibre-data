@@ -496,36 +496,40 @@ class GapTests(unittest.TestCase):
 
     def test_specimens_measured_apart_outweigh_a_books_table(self):
         # The literature gives the 10.75x63 mm Mauser a rebated head: the table of Cartridges of the World has a rim
-        # of .467 in. under a head of .493 in. in every edition, and Donnelly (p. 958) repeats it. No specimen shows
-        # one. Two drawings have a rim as wide as the head (AECC, of two DWM cartridges: 12.60 on 12.54; naboje.org,
-        # of an RWS one: 12.50 on 12.52): within 0.5 mm of each other and more than 0.5 mm from the table. The book's
-        # own text stands with them (practically the dimensions of the 10.75x68 mm but for the length), and so does
-        # the C.I.P. sheet of the 10.75x68. The file takes the AECC drawing's rim and, with it, the drawing's head.
-        name, table, aecc, naboje = "10.75x63 mm Mauser", 0.467 * 25.4, 12.6, 12.5
+        # of .467 in. under a head of .493 in. in the five editions in the library, and Donnelly (p. 958) repeats it.
+        # None of the three specimens found has one. Two drawings have a rim as wide as the head (the AECC's, on a
+        # page with two DWM cartridges: 12.60 on 12.54; naboje.org's, of an RWS one: 12.50 on 12.52): within 0.5 mm
+        # of each other and more than 0.5 mm from the table. The book's own text stands with them (practically the
+        # dimensions of the 10.75x68 mm but for the length), and so does the C.I.P. sheet of the 10.75x68. The file
+        # takes the AECC drawing's rim and, with it, the drawing's head.
+        name, table, naboje_rim = "10.75x63 mm Mauser", 0.467 * 25.4, 12.5
         s, sister = self.spec(name), self.spec("10.75x68 mm Mauser")
-        self.assertEqual(s["rim"], aecc)
-        self.assertLess(abs(aecc - naboje), 0.5)
-        self.assertGreater(min(aecc - table, naboje - table), 0.5)
-        self.assertLess(max(abs(aecc - 12.54), abs(naboje - 12.52)), 0.1)  # each rim on its own head: not rebated
-        self.assertGreater(0.493 * 25.4 - table, 0.5)  # the table's rim under its own head: rebated
-        self.assertLess(max(abs(sister["rim"] - aecc), abs(sister["rim"] - naboje)), 0.5)
+        head = cartridges.case_head(name)
+        self.assertEqual(s["rim"], 12.6)  # the AECC drawing's RØ
+        self.assertLess(abs(s["rim"] - naboje_rim), 0.5)
+        self.assertGreater(min(s["rim"], naboje_rim) - table, 0.5)
+        self.assertLess(abs(s["rim"] - s["base"]), 0.1)  # the file's rim on its head: not rebated
+        self.assertGreater(s["base"] - table, 0.5)  # the table's rim under the same head: rebated
+        self.assertLess(max(abs(sister["rim"] - s["rim"]), abs(sister["rim"] - naboje_rim)), 0.5)
         self.assertLess(abs(sister["base"] - s["base"]), 0.5)
         # naboje.org often shows an AECC drawing again, which would be one measurement. These two were measured
-        # apart: they differ on every other label they share but the bullet's diameter.
-        # bullet, mouth, neck start, shoulder, shoulder start, head, groove, case, rim thickness, overall length
-        aecc_labels = (10.76, 11.32, 11.38, 12.10, 52.50, 12.54, 11.00, 62.98, 1.15, 82.10)
-        naboje_labels = (10.76, 11.29, 11.32, 12.00, 51.80, 12.52, 11.10, 62.72, 1.09, 79.50)
-        self.assertEqual(sum(a != n for a, n in zip(aecc_labels, naboje_labels)), 9)
+        # apart: of the ten labels they share only the bullet's diameter is the same (AECC: mouth 11.32, neck 11.38,
+        # shoulder 12.10 at 52.50, head 12.54, groove 11.00, case 62.98, rim thickness 1.15, overall 82.10;
+        # naboje.org: 11.29, 11.32, 12.00 at 51.80, 12.52, 11.10, 62.72, 1.09, 79.50). The file's rim, rim thickness
+        # and groove are the AECC drawing's and none of them is naboje.org's.
+        self.assertEqual((head[0], head[2]), (1.15, 11.0))
+        self.assertTrue(all(ours != theirs for ours, theirs in zip((s["rim"], head[0], head[2]), (12.5, 1.09, 11.1))))
         # Only the AECC drawing gives a value, so only its page is a source of the measurements.
         self.assertEqual(cartridges.sources(name, "mm"),
                          ["book:cotw-18 p. 652", "https://municion.org/producto/1075-x-63-g-mauser/"])
-        # The head: HL = RT + GW + ((HØ - GØ)/2)/tan(angle) on the AECC drawing, whose head diameter is the file's.
-        # Donnelly's rim thickness (.06 in.) is more than 0.3 mm from the drawing's, so the whole head is the
-        # drawing's.
-        self.assertEqual(cartridges.case_head(name), (1.15, 3.7, 11.0, 30.0))
-        self.assertAlmostEqual(math.degrees(math.atan((12.54 - 11.0) / 2 / (3.7 - 1.15 - 1.2))), 30.0, delta=0.5)
+        # The head: HL = RT + GW + ((HØ - GØ)/2)/tan(angle) on the AECC drawing (HØ 12.54, GW 1.20), whose head
+        # diameter is the file's. Donnelly's rim thickness (.06 in.) is more than 0.3 mm from the drawing's, so the
+        # whole head is the drawing's.
+        self.assertEqual(head, (1.15, 3.7, 11.0, 30.0))
+        self.assertAlmostEqual(math.degrees(math.atan((12.54 - head[2]) / 2 / (head[1] - head[0] - 1.2))), head[3],
+                               delta=0.5)
         self.assertLess(abs(12.54 - s["base"]), 0.5)
-        self.assertGreater(0.06 * 25.4 - 1.15, 0.3)
+        self.assertGreater(0.06 * 25.4 - head[0], 0.3)
         self.assertEqual(cartridges.sources(name, "case_head"), ["https://municion.org/producto/1075-x-63-g-mauser/"])
         self.assertEqual(outline.gaps(s), ())
 
