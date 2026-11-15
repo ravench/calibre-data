@@ -1,14 +1,14 @@
-# The Soviet 30 mm case of the GSh-6-30 aircraft and AK-630 naval guns (electric primer) and the
-# 2A42 (percussion primer): the two loadings do not interchange. Its name gives the bore and case
-# length (Jane's p. 97 and Koll measure the 2A42 case at 164 mm, Jane's p. 98 the AK-630 case at
-# 165 mm), Rapid Fire's table the rim and base, Jane's and Koll the length of the 2A42 and AO-18
-# rounds (Koll gives 289.5 to 291.0 mm), the AECC specimen drawing of a 2A42 round on municion.org
+# The Soviet round of the 2A42 and 2A72 infantry fighting vehicle cannon and the 2A38 air defence gun,
+# with a KV-3 percussion primer (Jane's p. 96); the aircraft and naval round on the same case has an
+# electric primer (30x165 mm GSh-30). Its name gives the bore and case length (Jane's p. 97 and Koll
+# measure the case at 164 mm), Rapid Fire's table the rim and base, Jane's and Koll the length of the
+# round (Koll gives 289.5 to 291.0 mm), the AECC specimen drawing of a 2A42 round on municion.org
 # (titled 30 x 164) the shoulder, the neck and the head.
-name = "30x165 mm"
+name = "30x165 mm 2A42"
 categories = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
-aliases = ["30x165"]
+aliases = ["30 mm 2a42", "30 mm 2a72", "2a42"]
 origin = "SU"
 origin_sources = ["https://en.wikipedia.org/wiki/Shipunov_2A42"]
 
@@ -24,7 +24,6 @@ bullet = 30.0
 sources = [
   "book:rapid-fire p. 228",
   "book:janes-ammo-2002 p. 97",
-  "book:janes-ammo-2002 p. 98",
   "book:koll p. 281",
   "book:koll p. 298",
   "https://en.wikipedia.org/wiki/Shipunov_2A42",
@@ -32,12 +31,12 @@ sources = [
 ]
 
 [introduced]
-year = 1975
-sources = ["https://en.wikipedia.org/wiki/Gryazev-Shipunov_GSh-6-30"]
+# The 2A42 entered service in 1980.
+year = 1980
+sources = ["https://en.wikipedia.org/wiki/Shipunov_2A42"]
 
 [shoulder_angle]
 # AECC drawing 30-164-BGC-020 on municion.org: SØ 37.72, NØ 31.58, SL 134.30, NL 21.15, CL 164.86, TL 291.03.
-# The drawing of the naval round (30-164-BGE-010) agrees: SØ 37.68, NØ 31.82, SL 134.00, NL 21.60, CL 164.75.
 degrees = 18.1
 sources = ["https://municion.org/producto/30-x-164-russian-ao-18-for-2a38m-2a42-2a732-army-guns/"]
 
@@ -51,6 +50,6 @@ ramp_angle = 43.0
 sources = ["https://municion.org/producto/30-x-164-russian-ao-18-for-2a38m-2a42-2a732-army-guns/"]
 
 [case]
-# Lacquered or zinc-plated steel (2A42); coated steel for the aircraft guns.
+# Lacquered or zinc-plated steel.
 material = "steel"
-sources = ["book:janes-ammo-2002 p. 96", "book:janes-ammo-2002 p. 99"]
+sources = ["book:janes-ammo-2002 p. 96"]

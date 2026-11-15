@@ -1,0 +1,55 @@
+# The round of the American GAU-8 Avenger (A-10, 1977), later of the Mk 44 Bushmaster II: an aluminium
+# case with a percussion primer (Jane's p. 112). It grew from the Oerlikon KCA's round (30x173 mm KCA),
+# which has a steel case and an electric primer. Its name gives the bore and case length; Wikipedia
+# and KNDS give the cartridge length, the AECC specimen drawing of a GAU-8 round on municion.org the
+# diameters, the shoulder and the head; the drawing's round (TL 266.50) is 23.5 mm shorter than the
+# service rounds.
+name = "30x173 mm GAU-8"
+categories = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30x173", "30 mm gau-8", "30 mm mk 44"]
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
+
+[mm]
+rim = 43.91
+base = 43.61
+shoulder = 40.48
+shoulder_at = 144.1
+neck = 31.49
+case_length = 173.0
+overall_length = 290.0
+bullet = 30.0
+sources = [
+  "https://municion.org/producto/30-x-173-us-xpl-gau-8/",
+  "https://en.wikipedia.org/wiki/GAU-8_Avenger",
+  "https://knds.com/en/products/ammunition/30x173-mm",
+]
+
+[introduced]
+year = 1977
+sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
+
+[shoulder_angle]
+# AECC drawing 30-173-BGC-020 on municion.org: SØ 40.48, NØ 31.49, SL 144.00, NL 15.30, CL 172.90, TL 266.50.
+degrees = 18.3
+sources = ["https://municion.org/producto/30-x-173-us-xpl-gau-8/"]
+
+[case_head]
+# The AECC drawing 30-173-BGC-020 (municion.org): RØ 43.91, HØ 43.61, RT 4.22, GØ 37.88, GW 3.67,
+# the ramp ends at HL 11.35; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 4.22
+ramp_top = 11.35
+groove_diameter = 37.88
+ramp_angle = 40.0
+sources = ["https://municion.org/producto/30-x-173-us-xpl-gau-8/"]
+
+[case]
+material = "aluminium"
+sources = ["book:janes-ammo-2002 p. 112", "book:janes-ammo-2002 p. 113"]
+
+[current_cases]
+# The MK 30-2 fires steel cases on this round (p. 113).
+materials = ["steel"]
+sources = ["book:janes-ammo-2002 p. 113"]

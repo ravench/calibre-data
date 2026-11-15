@@ -369,7 +369,7 @@ class CheckTests(unittest.TestCase):
 
     def test_a_belt_wider_than_the_rim_has_its_diameter(self):
         files = [f"calibres/{f}.toml" for f in ("378-weatherby-magnum", "460-a-square-short", "416-weatherby-magnum",
-                                                "300-winchester-magnum", "300-h-h-magnum", "23x152-mm-b")]
+                                                "300-winchester-magnum", "300-h-h-magnum", "23x152-mm-b-vya")]
         wby, short, wide, win_mag, hh, cannon = files
         with Copy() as c:
             c.edit(wby, "belt = 15.33\n", "")                             # a rim of 14.7 under a body of 14.8
@@ -641,6 +641,10 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.write(LOOK, c.read(LOOK) + '\n[[group]]\nname = "x"\ndiffer_by = ["bore"]\ncalibres = [".50 BMG", "20x138 mm B"]\n')
             self.assertOnlyProblems(c, LOOK, r"'20x138 mm B' is a cannon calibre, which the apps do not show yet")
+        with Copy() as c:  # a group of cannon rounds only is fine: it stays out of the apps' groups
+            c.write(LOOK, c.read(LOOK) + '\n[[group]]\nname = "20 mm"\ndiffer_by = ["gun"]\n'
+                                         'calibres = ["20x139 mm", "20x139 mm FMK"]\n')
+            self.assertEqual(c.problems(), [])
         with Copy() as c:  # other categories still need every measurement
             c.edit(WIN, "neck = 8.7\n", "")
             self.assertOnlyProblems(c, WIN, r"\[mm\] needs 'neck'")
@@ -1052,7 +1056,7 @@ class CheckTests(unittest.TestCase):
             self.assertOnlyProblems(c, LOOK, r"missing")
 
     def test_lookalikes_are_read_from_one_file(self):
-        groups = {tuple(names): diff for diff, names in cartridges.LOOKALIKES}
+        groups = {tuple(names): diff for diff, names in cartridges.ALL_LOOKALIKES}
         self.assertEqual(groups[(".308 Winchester", "7.62x51 mm NATO")], ("load",))
         with open(os.path.join(ROOT, LOOK), encoding="utf-8") as f:
             self.assertEqual(len(groups), sum(l == "[[group]]" for l in f.read().split("\n")))

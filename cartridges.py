@@ -130,6 +130,8 @@ CUPRONICKEL = "cupronickel"
 JACKET_METALS = (CUPRONICKEL, STEEL)
 # What tells lookalikes apart (differ_by in lookalikes.toml).
 RIM, BORE, LENGTH, SEATING, LOAD, IGNITION = "rim", "bore", "length", "seating", "load", "ignition"
+# Cannon loadings of one case that only their own gun fires (another primer or headspace).
+GUN = "gun"
 
 
 # ---- Reading and checking the files --------------------------------------------------------------
@@ -196,7 +198,7 @@ LOOSE_BULLETS = (LEAD, STEEL, PLASTIC)
 BULLET_TYPES = CARTRIDGE_BULLETS + (PLASTIC,)
 CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID)
 CURRENT_CASE_MATERIALS = (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM)
-DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION)
+DIFFER_BY = (RIM, BORE, LENGTH, SEATING, LOAD, IGNITION, GUN)
 GROUP_KEYS = ("name", "differ_by", "calibres")
 # A printed book as a source: "book:<id> p. <page>", the id of a book in books.toml. A manual that
 # numbers its pages by chapter has pages such as "14-13" (chapter 14, page 13).
@@ -852,7 +854,7 @@ def load(root=ROOT):
         rest = sorted(n for n in files if n not in listed)
         catalogue.append((CATEGORIES[cat], [files[n] for n in listed + rest]))
 
-    lookalikes, group_names = [], []
+    lookalikes, group_names, hidden_groups = [], [], set()
     lf = read("lookalikes.toml")
     if lf:
         _check_keys(lf, None, lf.data, {"group"}, ())
@@ -909,11 +911,15 @@ def load(root=ROOT):
                     lf.problem(at("calibres"), f"{n!r} is not a calibre{_close(n, by_name)}")
                 elif n in grouped:
                     lf.problem(at("calibres"), f"{n!r} is already in the group on line {grouped[n]}")
-                elif by_name[n][0] in NOT_IN_APPS:
+                elif by_name[n][0] in NOT_IN_APPS and not all(by_name.get(m, ("",))[0] == by_name[n][0] for m in names):
+                    # A group of cannon rounds only is kept apart from the apps (ALL_LOOKALIKES); a group that
+                    # mixed them with the apps' calibres would reach the apps.
                     lf.problem(at("calibres"), f"{n!r} is a {by_name[n][0]} calibre, which the apps do not show yet")
                 else:
                     grouped[n] = at()
             if named:  # otherwise reported above
+                if all(by_name.get(n, ("",))[0] in NOT_IN_APPS for n in names):
+                    hidden_groups.add(len(lookalikes))
                 lookalikes.append((tuple(diff), list(names)))
                 group_names.append(title)
 
@@ -999,8 +1005,10 @@ def load(root=ROOT):
     t["WORLDWIDE"] = frozenset(t["WORLDWIDE"])
     hidden = {CATEGORIES[cat] for cat in NOT_IN_APPS}
     t.update(CATALOGUE=[(cat, items) for cat, items in catalogue if cat not in hidden], ALL_CATALOGUE=catalogue,
-             COUNTRIES=countries, COUNTRY_NAMES=country_names, BOOKS=books or {}, LOOKALIKES=lookalikes,
-             LOOKALIKE_NAMES=group_names)
+             COUNTRIES=countries, COUNTRY_NAMES=country_names, BOOKS=books or {},
+             LOOKALIKES=[g for i, g in enumerate(lookalikes) if i not in hidden_groups],
+             LOOKALIKE_NAMES=[g for i, g in enumerate(group_names) if i not in hidden_groups],
+             ALL_LOOKALIKES=lookalikes, ALL_LOOKALIKE_NAMES=group_names)
     return t
 
 
@@ -1056,6 +1064,9 @@ CASES = _t["CASES"]  # {name: (material, first source)}
 CURRENT_CASES = _t["CURRENT_CASES"]  # {name: (other case materials made today, first source)}
 LOOKALIKES = _t["LOOKALIKES"]  # [(what tells them apart, calibres)], in the file's order
 LOOKALIKE_NAMES = _t["LOOKALIKE_NAMES"]  # each group's name, in the same order
+# The same with the groups of the categories not in the apps (cannon rounds), as ALL_CATALOGUE.
+ALL_LOOKALIKES = _t["ALL_LOOKALIKES"]
+ALL_LOOKALIKE_NAMES = _t["ALL_LOOKALIKE_NAMES"]
 SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
 # {name: ([mm] keys without a source)}: the file's [mm] unsourced list, or every measurement where [mm] has
 # no source at all; calibres whose measurements all have one are not in it.
@@ -1182,7 +1193,7 @@ def loose_material(name):
 
 def lookalikes(name):
     """The other calibres of `name`'s lookalike group, parent first; [] when it has none."""
-    for _, names in LOOKALIKES:
+    for _, names in ALL_LOOKALIKES:
         if name in names:
             return [n for n in names if n != name]
     return []
