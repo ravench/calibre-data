@@ -19,14 +19,20 @@ rare = true
 rim = 16.18
 base = 14.4
 shoulder = 12.85
-shoulder_at = 44.8
+shoulder_at = 38.45
 neck = 11.4
 case_length = 56.9
 overall_length = 74.93
 bullet = 10.92
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 574"]
+# shoulder_at from the AECC drawing 11-058-BBC-070 (municion.org): SL 39.00 on a case of CL 57.45, taken from the
+# mouth (case_length - (CL - SL)). The drawing's shoulder and neck diameters are the book's within 0.2 mm; its cone,
+# drawn between the book's diameters, leaves a neck 1.03 mm longer than the specimen's (NL 12.20), inside the 1.5 mm
+# the rule allows. The drawing prints a head of 13.09 mm against the book's 14.40, so nothing of the head is taken
+# from it.
+sources = [
+  "book:cotw-18 p. 574",
+  "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/",
+]
 
 [introduced]
 year = 1868
@@ -40,8 +46,13 @@ sources = [
   "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-mauser-a/",
 ]
 
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.04, NØ 11.31, SL 39.00, NL 12.20, CL 57.45.
+degrees = 7.9
+sources = ["https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/"]
+
 [case_head]
-# .080 in.
+# .080 in. (COTW); the AECC drawing 11-058-BBC-070 (municion.org) has RT 2.30.
 rim_thickness = 2.03
 sources = ["book:cotw-18 p. 574"]
 
