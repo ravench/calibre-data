@@ -120,15 +120,15 @@ class GapTests(unittest.TestCase):
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
         # Calibres that failed the rule on 2026-11-14 and now take every measurement and the head from their C.I.P.
         # sheet, some found under another title (the Vergueiro as «6,5 x 58 Mauser», the .256 Gibbs as «256 Mag.
-        # Gibbs», the 7.92x24 as «7,92 x 24 VBR»). Rim R1, case L3, half the cone angle alpha, groove E1 (None:
-        # straight case, rimmed case).
+        # Gibbs», the .275 H&H Magnum as «275 Belt. N.E.»). Rim R1, case L3, half the cone angle alpha, groove E1
+        # (None: straight case, rimmed case).
         sheets = {
             "6.5x58 mm Vergueiro": (11.8, 58.0, 15.0, 10.2), ".275 H&H Magnum": (13.51, 63.5, 32.0, 11.94),
             ".280 Ross": (14.22, 66.32, 26.6, 12.45), ".333 Jeffery Rimless": (13.79, 62.86, 19.9, 12.37),
             "10.75x68 mm Mauser": (12.57, 68.0, 28.0, 10.6), ".256 Gibbs Magnum": (12.09, 55.25, 20.1, 10.41),
             ".45 Blaser": (12.01, 55.0, 10.0, 10.39), "12.7x108 mm": (21.8, 108.0, 17.8, 18.0),
             "7.21 Lazzeroni Firebird": (14.76, 71.37, 30.0, 12.95),
-            "7.82 Lazzeroni Warbird": (14.76, 71.37, 30.0, 12.95), "7.92x24 mm": (9.14, 24.0, None, 7.87),
+            "7.82 Lazzeroni Warbird": (14.76, 71.37, 30.0, 12.95), "7.92x24 mm VBR": (9.14, 24.0, None, 7.87),
             ".32 Winchester Self-Loading": (9.91, 32.77, None, 8.64),
             ".35 Winchester Self-Loading": (10.29, 29.31, None, 9.02),
             ".401 Winchester Self-Loading": (11.68, 38.1, None, 10.31),

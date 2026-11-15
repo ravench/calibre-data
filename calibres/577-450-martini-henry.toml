@@ -3,7 +3,7 @@ name = ".577/450 Martini-Henry"
 categories = ["black-powder", "rifle"]
 kind = "rimmed"
 profile = "round"
-aliases = ["martini-henry", "577/450"]
+aliases = ["martini-henry", "577/450", "577/450 sld. mart. h."]
 
 origin = "GB"
 origin_sources = [

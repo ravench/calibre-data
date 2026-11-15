@@ -5,6 +5,8 @@ kind = "rimless"
 # Nose: no source gives the first service bullet's nose (1904); left pointed.
 profile = "spitzer"
 aliases = ["6.5x58", "6.5vergueiro", "6.5portuguese"]
+# C.I.P. lists it as «6,5 x 58 Mauser», the German trade name; Cartridges of the World as the 6.5x58 mm Portuguese.
+display_aliases = ["6.5x58 mm Mauser"]
 
 origin = "PT"
 origin_sources = ["https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro"]

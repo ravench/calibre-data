@@ -4,7 +4,7 @@ name = ".32 Winchester Self-Loading"
 categories = ["rifle"]
 kind = "semi-rimmed"
 profile = "round"
-aliases = ["32wsl", "32 wsl"]
+aliases = ["32wsl", "32 wsl", "32 win. sl"]
 
 origin = "US"
 origin_sources = ["book:ammo-encyclopedia-2 p. 411"]

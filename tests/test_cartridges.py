@@ -68,6 +68,31 @@ class CatalogueTests(unittest.TestCase):
         for name, aliases in DISPLAY_ALIASES.items():
             self.assertLessEqual(len(aliases), 2, name)
 
+    def test_cip_sheet_titles_find_their_calibres(self):
+        # Typed as printed, the title of its C.I.P. sheet finds each of these calibres: the apps compare a search
+        # with the name, the display aliases and the aliases in lower case, without spaces and «mm», a comma as a
+        # point (CaliberCatalog.normalizedAlias). The name stays the long form; only the 7.92x24 took the title's
+        # «VBR» into its name.
+        def key(text):
+            return text.lower().replace("×", "x").replace(",", ".").replace(" ", "").replace("mm", "").strip(".")
+        titles = {
+            "6.5x58 mm Vergueiro": "6,5 x 58 Mauser", ".275 H&H Magnum": "275 Belt. N.E.",
+            ".280 Ross": "280 Riml. N.E. Ross", ".333 Jeffery Rimless": "333 Riml. N.E.",
+            "10.75x68 mm Mauser": "10,75 x 68", ".256 Gibbs Magnum": "256 Mag. Gibbs", ".45 Blaser": "45 Blaser",
+            "12.7x108 mm": "12,7 x 108", "7.21 Lazzeroni Firebird": "7,21 Firebird",
+            "7.82 Lazzeroni Warbird": "7,82 Warbird", "7.92x24 mm VBR": "7,92 x 24 VBR",
+            ".32 Winchester Self-Loading": "32 Win. SL", ".35 Winchester Self-Loading": "35 Win. SL",
+            ".401 Winchester Self-Loading": "401 Win. SL", ".475 No. 2 Nitro Express": "475 No 2 N.E. 3''1/2",
+            ".577/450 Martini-Henry": "577/450 Sld. Mart. H.", "9x57 mm Mauser": "9 x 57",
+        }
+        by_name = {s["name"]: s for s in ALL}
+        for name, title in titles.items():
+            with self.subTest(name):
+                known = [name, *DISPLAY_ALIASES.get(name, ()), *by_name[name]["aliases"]]
+                self.assertTrue(any(key(title) in key(k) for k in known), title)
+        self.assertEqual(DISPLAY_ALIASES["6.5x58 mm Vergueiro"], ["6.5x58 mm Mauser"])
+        self.assertNotIn("7.92x24 mm", NAMES)
+
     def test_every_centrefire_calibre_has_a_primer(self):
         centrefire = {s["name"] for s in ALL if s["kind"] not in (RIMFIRE, BALL, MINIE, PELLET)}
         self.assertEqual(set(PRIMERS), centrefire)
@@ -697,7 +722,7 @@ class CatalogueTests(unittest.TestCase):
                      ".356 TSW", ".45 ACP", ".45 GAP", "4.6x30 mm", ".30 Super Carry", "8 mm Nambu", "9 mm Glisenti",
                      "9 mm Browning Long", "9x23 mm Steyr", "9x18 mm Ultra", ".41 Action Express",
                      ".45 Winchester Magnum", ".45 HP", ".45 Mars Long", ".455 Webley Automatic", "5 mm Clement",
-                     "6.5 mm Bergmann", "7 mm Nambu", "7.65 mm Roth-Sauer", "7.92x24 mm", "8.5 mm Mars",
+                     "6.5 mm Bergmann", "7 mm Nambu", "7.65 mm Roth-Sauer", "7.92x24 mm VBR", "8.5 mm Mars",
                      "9 mm Mauser", "9 mm Winchester Magnum", ".223 Remington", "5.56x45 mm NATO", "7x57 mm Mauser",
                      "7.62x39 mm", "7.62x51 mm NATO", ".30-06 Springfield", ".303 British", "8x57 mm IS",
                      ".30-40 Krag", "7.92x33 mm Kurz", "6.8 mm Remington SPC", "6.5 mm Grendel", ".30 Carbine",
