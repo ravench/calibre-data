@@ -567,7 +567,7 @@ name and its calibres, the parent first:
 
 ```toml
 [[group]]
-name = ".308 Winchester"
+name = "7.62x51 mm"
 differ_by = ["load"]
 calibres = [".308 Winchester", "7.62x51 mm NATO"]
 ```

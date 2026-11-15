@@ -15,7 +15,7 @@ LR_MM = ('sources = [\n  "https://saami.org/wp-content/uploads/2026/05/SAAMI-Z29
 WIN = "calibres/308-winchester.toml"
 KEY = {app: key for key, app in cartridges.CATEGORIES.items()}  # "Langwaffe": "rifle"
 LOOK = "lookalikes.toml"
-NATO_GROUP = 'name = ".308 Winchester"\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]'
+NATO_GROUP = 'name = "7.62x51 mm"\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]'
 TIP = ('\n[[colour_codes]]\npart = "tip"\ncolours = ["black"]\nmeaning = ["armour-piercing"]\n'
        'sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]\n')
 
@@ -998,7 +998,7 @@ class CheckTests(unittest.TestCase):
                                line=c.read(LOOK).count("\n"))
 
     def test_lookalike_groups(self):
-        # Each case breaks the .308 Winchester group, which is not the first. The problem is on the
+        # Each case breaks the 7.62x51 mm group, which is not the first. The problem is on the
         # group's line (0 its first key, name; -1 its [[group]]; 1 and 2 the next keys).
         with open(os.path.join(ROOT, LOOK), encoding="utf-8") as f:
             gp90_line = f.read().split("\n").index('calibres = [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial", "5.6 mm GP 90"]') - 2
@@ -1009,14 +1009,14 @@ class CheckTests(unittest.TestCase):
                  ('\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]', "", r"\[\[group\]\] needs 'calibres'", -1),
                  ('calibres = [".308 Winchester", "7.62x51 mm NATO"]', 'calibres = [".308 Winchester"]',
                   r"calibres lists two or more", 2),
-                 ('name = ".308 Winchester"\n', "", r"\[\[group\]\] needs 'name'", -1),
-                 ('name = ".308 Winchester"', "name = 5", r"name is the group's name, as text", 0),
-                 ('name = ".308 Winchester"', 'name = " .308 Winchester"', r"without spaces around it", 0),
-                 ('name = ".308 Winchester"', 'name = "5.56x45 mm"',
+                 ('name = "7.62x51 mm"\n', "", r"\[\[group\]\] needs 'name'", -1),
+                 ('name = "7.62x51 mm"', "name = 5", r"name is the group's name, as text", 0),
+                 ('name = "7.62x51 mm"', 'name = " 7.62x51 mm"', r"without spaces around it", 0),
+                 ('name = "7.62x51 mm"', 'name = "5.56x45 mm"',
                   rf"name '5.56x45 mm' is already the name of the group on line {gp90_line}$", 0),
-                 ('name = ".308 Winchester"', 'name = ".30-06 Springfield"',
+                 ('name = "7.62x51 mm"', 'name = ".30-06 Springfield"',
                   r"name '.30-06 Springfield' names the calibre '.30-06 Springfield', which is not in this group", 0),
-                 ('name = ".308 Winchester"', 'name = "30-06"',
+                 ('name = "7.62x51 mm"', 'name = "30-06"',
                   r"name '30-06' names the calibre '.30-06 Springfield', which is not in this group", 0)]
         for old, new, pattern, offset in cases:
             with self.subTest(new), Copy() as c:

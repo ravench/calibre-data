@@ -17,7 +17,7 @@ differ_by = ["bore", "length", "load"]
 calibres = ["7.5x53.5 mm Swiss (Patrone Modell 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone"]
 
 [[group]]
-name = ".308 Winchester"
+name = "7.62x51 mm"
 differ_by = ["load"]
 calibres = [".308 Winchester", "7.62x51 mm NATO"]
 
@@ -34,7 +34,7 @@ calibres = ["9x19 mm", "9 mm Glisenti"]
 [[group]]
 # Straight rimless 9 mm cases of other lengths: the 9 mm Mauser and the 9 mm Winchester Magnum, which
 # COTW 18 likens to the Mauser (p. 480).
-name = "9x23 mm Largo"
+name = "9x23 mm"
 differ_by = ["load", "length"]
 calibres = ["9x23 mm Largo", "9x23 mm Winchester", "9 mm Mauser", "9 mm Winchester Magnum"]
 
@@ -266,7 +266,7 @@ calibres = ["6.5x55 mm Swedish", "8x54 mm Krag-Jørgensen"]
 
 [[group]]
 # The Nitro Express is the Magnum Express case loaded with cordite.
-name = ".500/450 Magnum Express"
+name = ".500/450"
 differ_by = ["load"]
 calibres = [".500/450 Magnum Express", ".500/450 Nitro Express"]
 
@@ -342,7 +342,7 @@ calibres = [".32 Short Colt", ".32 Long Colt"]
 
 [[group]]
 # Both are the 10 mm Auto case necked down to 9 mm (COTW 18 p. 486); the chambers differ.
-name = "9x25 mm Dillon"
+name = "9x25 mm"
 differ_by = ["load"]
 calibres = ["9x25 mm Dillon", "9x25 mm Super Auto G"]
 
@@ -394,7 +394,7 @@ calibres = [".45 Colt", ".45 Schofield", ".45 Colt Government", ".45 Cowboy Spec
 
 [[group]]
 # Two C.I.P. sheets: the same case, Norma's with a longer overall length for longer bullets.
-name = "6 mm BR Remington"
+name = "6 mm BR"
 differ_by = ["load"]
 calibres = ["6 mm BR Remington", "6 mm BR Norma"]
 
