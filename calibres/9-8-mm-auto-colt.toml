@@ -30,6 +30,15 @@ sources = ["book:cotw-18 p. 496"]
 size = "small-pistol"
 sources = []
 
+[case_head]
+# AECC drawing 10-023-CGC-030 (municion.org): RT 1.21, HL 3.65, GØ 8.70, GW 0.95, HØ 10.26; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.21
+ramp_top = 3.65
+groove_diameter = 8.7
+ramp_angle = 28.0
+sources = ["https://municion.org/producto/98-mm-acp-winchester/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 496"]

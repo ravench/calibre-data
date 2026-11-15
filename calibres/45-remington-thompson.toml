@@ -30,9 +30,14 @@ size = "large-pistol"
 sources = ["book:cotw-18 p. 574"]
 
 [case_head]
-# .044 in.
+# .044 in. (COTW); groove from the AECC drawing 11-026-CGC-010 (municion.org): RT 1.20, HL 4.33, GØ 9.99, GW 0.77,
+# HØ 12.00; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle). The specimen's case (CL 26.00) is 2.45 mm shorter
+# than the book's; its rim, head and overall length are the book's within 0.25 mm.
 rim_thickness = 1.12
-sources = ["book:cotw-18 p. 574"]
+ramp_top = 4.33
+groove_diameter = 9.99
+ramp_angle = 23.0
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/45-thompson-model-1923/"]
 
 [bullet]
 type = "jacketed"

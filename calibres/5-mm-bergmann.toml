@@ -29,9 +29,13 @@ size = "small-pistol"
 sources = []
 
 [case_head]
-# .020 in.
+# .020 in. (COTW); groove from the AECC drawing 05-015-TGC-010 (municion.org): RT 0.67, HL 1.35, GØ 6.40, GW 0.45,
+# HØ 6.89; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle). This is the 1896 type with a groove.
 rim_thickness = 0.51
-sources = ["book:cotw-18 p. 527"]
+ramp_top = 1.35
+groove_diameter = 6.4
+ramp_angle = 47.0
+sources = ["book:cotw-18 p. 527", "https://municion.org/producto/5-mm-bergmann-n2-rimless-1896/"]
 
 [bullet]
 type = "jacketed"
