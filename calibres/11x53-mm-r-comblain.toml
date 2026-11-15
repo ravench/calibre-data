@@ -17,16 +17,18 @@ rare = true
 rim = 17.09
 base = 14.6
 shoulder = 13.51
-shoulder_at = 45.22
+shoulder_at = 40.8
 neck = 11.68
 case_length = 53.34
 overall_length = 70.1
 bullet = 11.07
-# shoulder_at from the AECC drawing 11-053-BBC-030 (municion.org), carried from the mouth. The sources cross the
-# names of the Comblain rounds, so the drawings are assigned by size. This one is titled «11 x 53 R Brazilian-Comblain
-# Model 1889» and is within 0.3 mm of the book's row for this round on every diameter of the case, and 0.02 mm on
-# its length (see the 11.4x50 mm R Brazilian Comblain for the other drawing).
-sources = ["book:cotw-18 p. 574", "https://municion.org/producto/11-x-53-r-brazilian-comblain-model-1889/"]
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees. The AECC drawing 11-053-BBC-030
+# (municion.org), «11 x 53 R Brazilian-Comblain Model 1889», has this row's diameters within 0.3 mm and its length
+# within 0.02 mm, and would start the shoulder at 45.22 mm with a neck of 6.2 mm. It is not taken: its page says that
+# the Brazilian round differs from the Belgian 11x53 R in its shorter neck, and the page of drawing 12-050-BBC-020
+# gives the Belgian round a neck of a fifth of the case, which no drawing of the 53 mm case shows.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 574"]
 
 [introduced]
 year = 1871
@@ -36,13 +38,8 @@ sources = ["book:cotw-18 p. 563"]
 size = "large-rifle"
 sources = []
 
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.23, NØ 11.76, SL 45.20, NL 6.20, CL 53.32.
-degrees = 20.9
-sources = ["https://municion.org/producto/11-x-53-r-brazilian-comblain-model-1889/"]
-
 [case_head]
-# .082 in. (COTW); the AECC drawing 11-053-BBC-030 (municion.org) has RT 2.28.
+# .082 in.
 rim_thickness = 2.08
 sources = ["book:cotw-18 p. 574"]
 

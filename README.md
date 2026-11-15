@@ -325,9 +325,11 @@ diameters are within 0.5 mm. `shoulder_at` is the drawing's shoulder start carri
 an angle that another source gives stays. The file's diameters differ a little from the specimen's,
 so the cone drawn between them is a little longer or shorter: the neck it leaves must be within
 1.5 mm of the specimen's neck length NL, or the drawing's shoulder is not taken
-(`test_necks_start_where_the_municion_drawings_show`). A drawing goes to the calibre whose sizes it
-has, whatever its title: the sources cross the names of the two Comblain rounds, and the notes in
-their files say which drawing each one takes.
+(`test_necks_start_where_the_municion_drawings_show`). A drawing with another round's title is not
+taken on its sizes alone: not where its page says that its round differs from this one in the neck
+or the shoulder, and not where the drawings of several rounds fit and start the shoulder in different
+places. The two Comblain rounds stay estimates for these reasons, and the notes in their files say
+what each drawing shows.
 
 ### `[case_head]`
 
