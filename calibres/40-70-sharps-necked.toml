@@ -36,8 +36,10 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
 
 [shoulder_angle]
-# AECC drawing on municion.org: SØ 12.42, NØ 11.01, SL 35.70, NL 14.60, CL 57.17.
-degrees = 5.9
+# AECC drawing on municion.org: SØ 12.42, NØ 11.01, SL 35.70, NL 14.60, CL 57.17. The half angle runs between the
+# book's diameters over the drawing's shoulder length (6.87 mm): the specimen's own cone (5.9 degrees) would leave a
+# neck 2.2 mm shorter than the specimen's, over the 1.5 mm the rule allows.
+degrees = 7.8
 sources = ["https://municion.org/producto/40-70-330-sharps-necked-2-1-4-case/"]
 
 [bullet]

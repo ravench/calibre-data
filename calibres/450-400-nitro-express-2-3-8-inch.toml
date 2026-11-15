@@ -21,9 +21,10 @@ neck = 10.85
 case_length = 60.45
 overall_length = 74.93
 bullet = 10.34
-# shoulder: .486 in., the first, second and revised fifth editions of COTW (p. 235, 235, 266) and Donnelly. The
-# 14th and 18th print .456, taken for a misprint: the AECC specimen measures 12.40 and the Swiss sister round's
-# C.I.P. sheet (10,3 x 60 R) has 12.50.
+# shoulder: .486 in., as the first, second and revised fifth editions of COTW print it (p. 235, 235, 266). The 14th
+# and 18th print .456 in a row that they revised (five other sizes differ as well). The file keeps .486 because the
+# specimens stand with it: the AECC specimen measures 12.40 and the Swiss sister round's C.I.P. sheet (10,3 x 60 R)
+# has 12.50. Donnelly prints .486 too, but names COTW's fourth edition as his source, so he is no second witness.
 # shoulder_at from the AECC drawing 10-060-BBC-050 (municion.org): SL 40.48 on a case of CL 60.63, taken from the mouth
 # (case_length - (CL - SL)); the 10,3 x 60 R sheet starts its shoulder at 40.80.
 sources = ["book:cotw-18 p. 608", "book:cotw-5 p. 266", "https://municion.org/producto/450-400-express-2-3-8/"]
