@@ -12,10 +12,12 @@ origin_sources = []
 rare = true
 
 [mm]
+# SAAMI 25 Weatherby RPM, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
 rim = 12.01
 base = 12.7
-shoulder = 12.14
-shoulder_at = 50.48
+shoulder = 12.09
+shoulder_at = 50.51
 neck = 7.37
 case_length = 60.96
 overall_length = 84.84

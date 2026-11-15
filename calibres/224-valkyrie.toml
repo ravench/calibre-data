@@ -31,9 +31,9 @@ size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.224_Valkyrie"]
 
 [shoulder_angle]
-# AECC drawing 06-042-BGC-090
-degrees = 29.5
-sources = ["https://municion.org/producto/224-valkyrie/"]
+# SAAMI 224 Valkyrie: 30 degrees (the AECC drawing 06-042-BGC-090 reads 29.5).
+degrees = 30
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=86"]
 
 [case_head]
 # 6.8 SPC case necked down; C.I.P. 6,8 mm Rem. SPC

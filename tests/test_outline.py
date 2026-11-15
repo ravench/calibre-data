@@ -932,7 +932,7 @@ class OutlineTests(unittest.TestCase):
         # it out another way. Nine of them are in the list of test_necks_start_where_the_municion_drawings_show.
         # A new angle from a drawing records its reading, so no name is added here.
         no_reading = {
-            ".17 Winchester Super Magnum", ".22 Nosler", ".22 TCM", ".224 Valkyrie", ".25 NAA",
+            ".17 Winchester Super Magnum", ".22 Nosler", ".22 TCM", ".25 NAA",
             ".256 Winchester Magnum", ".308 Norma Magnum", ".32 NAA", ".38-56 WCF", ".38-90 Winchester Express",
             ".40-70 Peabody What Cheer", ".400 A-Square DPM", ".400 Cor-Bon", ".416 Barrett",
             ".500/450 Magnum Express", ".500/450 Nitro Express", ".55 Boys", "11x52 mm R Beaumont M71/78",

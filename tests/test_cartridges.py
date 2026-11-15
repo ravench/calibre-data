@@ -3,7 +3,7 @@ import os, sys, unittest
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from cartridges import (BALL_NOSE, WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
+from cartridges import (SHOULDER_ANGLES, BALL_NOSE, WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO, BMG_35,
                         SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
                         INTRODUCED, INTRODUCED_UNKNOWN, OBSOLETE, is_obsolete, SPITZER,
@@ -306,12 +306,28 @@ class CatalogueTests(unittest.TestCase):
         by_name = {s["name"]: s for s in ALL}
         keys = ("rim", "base", "shoulder", "neck", "case", "sh_at", "oal", "bullet")
         self.assertEqual(tuple(by_name[".25 Weatherby RPM"][k] for k in keys),
-                         (12.01, 12.7, 12.14, 7.37, 60.96, 50.48, 84.84, 6.53))
+                         (12.01, 12.7, 12.09, 7.37, 60.96, 50.51, 84.84, 6.53))
         self.assertEqual(tuple(by_name[".300 HAM'R"][k] for k in ("rim", "case", "oal")), (9.6, 40.72, 57.4))
         for name in (".25 Weatherby RPM", "6.5 Weatherby RPM", ".338 Weatherby RPM"):
             s = by_name[name]  # one case family: rebated rim under a 0.500 in head
             self.assertEqual((s["rim"], s["base"]), (12.01, 12.7), name)
         self.assertEqual(ORIGIN[".300 HAM'R"], "US")
+
+    def test_recent_saami_rounds_keep_the_drawing_values(self):
+        # SAAMI maximum cartridge (Z299.4 or the introduction sheet): the shoulder is the intersection
+        # diameter, where the body and shoulder lines meet, and the neck the cylinder up to the mouth.
+        by_name = {s["name"]: s for s in ALL}
+        keys = ("rim", "base", "shoulder", "sh_at", "neck", "case", "oal")
+        drawing = {
+            ".22 Creedmoor": (11.99, 11.95, 11.74, 37.85, 6.5, 48.77, 68.58),
+            ".25 Creedmoor": (12.0, 11.95, 11.74, 37.85, 7.32, 48.77, 71.76),
+            "7 mm Backcountry": (11.99, 11.93, 11.63, 51.35, 8.05, 61.39, 84.84),
+            "8.6 Blackout": (11.99, 11.95, 11.77, 32.26, 9.3, 42.8, 71.37),
+            ".224 Valkyrie": (10.72, 10.69, 10.24, 30.56, 6.5, 40.64, 57.4),
+        }
+        for name, values in drawing.items():
+            self.assertEqual(tuple(by_name[name][k] for k in keys), values, name)
+        self.assertEqual(SHOULDER_ANGLES[".224 Valkyrie"][0], 30)
 
     def test_blaser_family_keeps_the_cip_values(self):
         by_name = {s["name"]: s for s in ALL}
