@@ -35,8 +35,10 @@ diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
 
 [shoulder_angle]
-# AECC drawing on municion.org: SØ 12.76, NØ 11.95, SL 35.00, NL 19.10, CL 60.25.
-degrees = 3.8
+# AECC drawing on municion.org: SØ 12.76, NØ 11.95, SL 35.00, NL 19.10, CL 60.25. The half angle runs between the
+# book's diameters over the drawing's shoulder length (6.15 mm): the specimen's own cone (3.8 degrees) would leave a
+# neck 2.8 mm shorter than the specimen's, over the 1.5 mm the rule allows.
+degrees = 5.5
 sources = ["https://municion.org/producto/112-x-60-schuler/"]
 
 [case_head]

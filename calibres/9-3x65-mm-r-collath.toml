@@ -31,8 +31,10 @@ size = "large-rifle"
 sources = []
 
 [shoulder_angle]
-# AECC drawing on municion.org: SØ 10.22, NØ 9.90, SL 55.10, NL 8.30, CL 64.96.
-degrees = 5.9
+# AECC drawing on municion.org: SØ 10.22, NØ 9.90, SL 55.10, NL 8.30, CL 64.96. The half angle runs between the book's
+# diameters over the drawing's shoulder length (1.56 mm): the specimen's own cone (5.9 degrees) would leave a neck 2.9
+# mm shorter than the specimen's, over the 1.5 mm the rule allows.
+degrees = 16.4
 sources = ["https://municion.org/producto/93-x-65-r-collath-tesco/"]
 
 [bullet]
