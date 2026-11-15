@@ -237,6 +237,13 @@ One measurement that no page gives can come from an AECC specimen drawing (munic
 sizes are the file's, and the note says which (5.8x42 mm: the bullet, BØ 6.00 on a drawing with the
 file's rim, base, shoulder and neck).
 
+A book's table gives way to the specimens in one case: two drawings of different collections (AECC
+and naboje.org) agree with each other within 0.5 mm, both are more than 0.5 mm from the table, and
+another source stands with them (the book's own text, or the C.I.P. sheet of a sister round). The
+file then takes the AECC drawing's value and the note names the sources. So far that is the rim of
+the 10.75x63 mm Mauser: Cartridges of the World's table has a rebated rim of .467 in., its text the
+dimensions of the 10.75x68 mm but for the length, and both specimens are rimless.
+
 These lists were filled in from the history of this repository in November 2026: each measurement
 counts the page it was taken from when the calibre was added or the value last changed, as the
 commits and notes say. Values the notes call estimated (most shoulder positions before the C.I.P.
