@@ -3,6 +3,9 @@
 # Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base,
 # the ratio of the measured .22 SH (5.6/11), because C.I.P. gives no crimp size.
 # The name is the sheet's title, «22 Long Blanc»; in German the round is sold as «Knall».
+# C.I.P. lists the power-tool load of this size on a sheet of its own, «22 (5,6/16)» (Tab. VI p. 4): the same rim
+# and body (R1 7.06, P1 5.74) and 0.5 mm more crimped length (L6 15.50). This entry stands for both, with
+# «Setzkartusche 5.6/16» as its second name, until the tool load has a file of its own.
 name = ".22 Long Blanc"
 categories = ["rimfire"]
 kind = "rimfire"
