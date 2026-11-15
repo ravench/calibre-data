@@ -1,15 +1,14 @@
-# The Soviet round of the VYa-23 aircraft cannon and, with a steel case and a different headspace,
-# of the ZU-23-2 anti-aircraft gun: the two loadings do not interchange. The name gives the bore and
-# case length, the Wikipedia infobox the cartridge length and the AECC specimen drawing of a VYa round
-# on municion.org the diameters (RØ, LØ, HØ, SØ, NØ), the shoulder and the head: its belt (LØ 34.64)
-# is what the infobox calls the rim, its rim (RØ 33.38) what the infobox gives as the rim's thickness
-# (33.4). The drawing of the ZU-23 round (23-152-BFC-010) shows a thicker
-# rim (3.88 against 2.85 mm) and, carried from the mouth, a shoulder starting 1.4 mm nearer the head.
-name = "23x152 mm B"
+# The Soviet round of the VYa-23 aircraft cannon: a brass case with a screwed-in percussion primer.
+# The ZU-23-2's round on the same case (23x152 mm B ZU-23) does not interchange with it (Jane's).
+# The name gives the bore and case length, the Wikipedia infobox the cartridge length and the AECC
+# specimen drawing of a VYa round on municion.org the diameters (RØ, LØ, HØ, SØ, NØ), the shoulder
+# and the head: its belt (LØ 34.64) is what the infobox calls the rim, its rim (RØ 33.38) what the
+# infobox gives as the rim's thickness (33.4).
+name = "23x152 mm B VYa"
 categories = ["cannon"]
 kind = "belted"
 profile = "spitzer"
-aliases = ["23x152b", "23x152", "23 mm zu-23"]
+aliases = ["23x152b", "23x152", "23 mm vya"]
 origin = "SU"
 origin_sources = ["https://en.wikipedia.org/wiki/23%C3%97152mmB"]
 
@@ -47,10 +46,5 @@ ramp_angle = 44.0
 sources = ["https://municion.org/producto/23-x-152-b-russian-vya-23-aircraft/"]
 
 [case]
-# Brass for the VYa-23, the first gun; steel for the ZU-23 (see [current_cases]).
 material = "brass"
-sources = ["book:janes-ammo-2002 p. 91"]
-
-[current_cases]
-materials = ["steel"]
 sources = ["book:janes-ammo-2002 p. 91"]

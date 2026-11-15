@@ -664,3 +664,20 @@ calibres = [".338 Lapua Magnum", ".33 XC"]
 name = ".416 Rigby"
 differ_by = ["rim"]
 calibres = [".416 Rigby", ".416 Rigby No. 2"]
+
+[[group]]
+# Cannon rounds (catalogue only): loadings of one case that only their own gun fires, with another
+# primer (Jane's pp. 91, 96-99, 105 and 112; p. 91 calls the two 23x152 B not interchangeable).
+name = "23x152 mm B"
+differ_by = ["gun"]
+calibres = ["23x152 mm B VYa", "23x152 mm B ZU-23"]
+
+[[group]]
+name = "30x165 mm"
+differ_by = ["gun"]
+calibres = ["30x165 mm GSh-30", "30x165 mm 2A42"]
+
+[[group]]
+name = "30x173 mm"
+differ_by = ["gun"]
+calibres = ["30x173 mm KCA", "30x173 mm GAU-8"]
