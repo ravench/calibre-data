@@ -13,7 +13,7 @@ worldwide = true
 
 [mm]
 # C.I.P. 223 Rem. and SAAMI 223 Remington, maximum cartridge; they agree to 0.01 mm except the
-# base: C.I.P. P1 9.58 at the head, SAAMI 9.548 at 5.08 mm from it (the body tapers).
+# base: C.I.P. P1 9.58 at 3.13 mm from the head, SAAMI 9.548 at 5.08 mm (the body tapers).
 rim = 9.6
 base = 9.58
 shoulder = 9.0
