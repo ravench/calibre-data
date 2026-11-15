@@ -324,20 +324,27 @@ diameters are within 0.5 mm. `shoulder_at` is the drawing's shoulder start carri
 (`case_length` − (CL − SL)), and the angle is the specimen's cone, atan(((SØ − NØ)/2)/(CL − NL − SL));
 an angle that another source gives stays. The file's diameters differ a little from the specimen's,
 so the cone drawn between them is a little longer or shorter: the neck it leaves must be within
-1.5 mm of the specimen's neck length NL (`test_necks_start_where_the_municion_drawings_show`). Where
-another source's angle leaves a neck further off, the two disagree and the drawing's shoulder is
-not taken (6.53 Lazzeroni Scramjet). Where the specimen's own cone does, it is a shallow one, on
-which a small difference in diameter is a long one in length: the angle then runs between the
-file's diameters over the drawing's shoulder length (CL − NL − SL), so that the shoulder starts and
-ends where the drawing shows (the 3¼ in. .500/450). A drawing goes to the calibre whose sizes it
-has, whatever its title: the sources cross the names of the two Comblain rounds, and the notes in
-their files say which drawing each one takes.
+1.5 mm of the specimen's neck length NL (`test_necks_start_where_the_municion_drawings_show` for
+the drawings listed there, `test_every_recorded_municion_reading_keeps_its_neck` for every reading
+that a file records in the note under `[shoulder_angle]`). Where another source's angle leaves a
+neck further off, the two disagree and the drawing's shoulder is not taken (6.53 Lazzeroni
+Scramjet). Where the specimen's own cone does, it is a shallow one, on which a small difference in
+diameter is a long one in length: the angle then runs between the file's diameters over the
+drawing's shoulder length (CL − NL − SL), so that the shoulder starts and ends where the drawing
+shows (the 3¼ in. .500/450 and seven more,
+`test_shallow_shoulders_run_over_the_drawings_shoulder_length`). The two 10.4x38 mm R Vetterli
+rounds are older than this rule and still start the shoulder 1.0 mm before their drawing does. A
+drawing with another round's title is not taken on its sizes alone: not where its page says that
+its round differs from this one in the neck or the shoulder, and not where the drawings of several
+rounds fit and start the shoulder in different places. The two Comblain rounds stay estimates for
+these reasons, and the notes in their files say what each drawing shows.
 
 A drawing that misses one of the size limits still gives the shoulder, in that second way, when
 Donnelly's *Handloader's Manual of Cartridge Conversions* prints the same shoulder: its start (his
 J) and its end (J + K) within 0.5 mm of the drawing's, both taken from the mouth. Donnelly on his
-own is not a source for a shoulder: on 54 calibres with a C.I.P. sheet his start is within 0.5 mm of
-the sheet's L1 on 34 and more than 1.5 mm off on 8, and his printed angles are not used.
+own is not a source for a shoulder: against the official drawings of some sixty calibres (C.I.P.
+sheets, and SAAMI's where the file follows those) his start is within 0.5 mm on about two thirds and
+more than 1.5 mm off on about one in seven, and his printed angles are not used.
 
 ### `[case_head]`
 

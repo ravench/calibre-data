@@ -34,8 +34,10 @@ size = "small-rifle"
 sources = ["book:cotw-18 p. 250"]
 
 [shoulder_angle]
-# AECC drawing on municion.org: SØ 10.22, NØ 8.60, SL 23.60, NL 14.00, CL 46.73.
-degrees = 5.1
+# AECC drawing on municion.org: SØ 10.22, NØ 8.60, SL 23.60, NL 14.00, CL 46.73. The half angle runs between the
+# book's diameters over the drawing's shoulder length (9.13 mm): the specimen's own cone (5.1 degrees) would leave a
+# neck 2.4 mm shorter than the specimen's, over the 1.5 mm the rule allows.
+degrees = 6.4
 sources = ["https://municion.org/producto/32-40-150-bullard/"]
 
 [bullet]
