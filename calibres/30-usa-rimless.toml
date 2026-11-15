@@ -38,9 +38,18 @@ degrees = 21.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
 
 [case_head]
-# .054 in.
+# .054 in. (COTW); groove from the AECC drawing 08-059-BGC-050 (municion.org): RT 1.55, HL 3.90, GØ 10.00, GW 0.85,
+# HØ 11.57; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle). The page files the round as «.30 Blake»: the
+# rimless .30-40 Krag, with «.30 Krag Rimless» as another name, which is how COTW 18 (p. 197) describes this round,
+# loaded by UMC for the Blake rifle. The page lists three specimens, one headstamped U.M.C. .30 U.S.A. and two by
+# O.P.M. (South Africa, no year given) marked 30 BLAKE, and does not say which the drawing measures. The drawing's
+# rim (11.59) and head are within 0.05 mm of the book's. Its shoulder is not used: it is labelled 11.59, wider than
+# the head and 1.00 mm more than the book's.
 rim_thickness = 1.37
-sources = ["book:cotw-18 p. 250"]
+ramp_top = 3.9
+groove_diameter = 10.0
+ramp_angle = 28.0
+sources = ["book:cotw-18 p. 250", "https://municion.org/producto/30-blake/"]
 
 [bullet]
 type = "jacketed"

@@ -346,6 +346,22 @@ own is not a source for a shoulder: against the official drawings of some sixty 
 sheets, and SAAMI's where the file follows those) his start is within 0.5 mm on about two thirds and
 more than 1.5 mm off on about one in seven, and his printed angles are not used.
 
+municion.org files some rounds under another name than the file's: the .577/500 Nitro Express as
+«.577/.500 Express 3 1/8″», the 6x58 mm Forster as «6,2 x 58 Förster», the .416 Rimmed as «.416
+Chapuis», the .30 USA Rimless as «.30 Blake». Such a page is found through its other names
+(SINÓNIMOS), which the site's search reads, through the list of all pages, and through the catalogue
+code, which starts with the bullet's diameter and the case length in mm
+(`test_aecc_drawings_filed_under_other_names`). Such a drawing counts when the page names the round
+as the file does (the .416 Rimmed is the page's other name), or when the page and a book describe
+one round: the page's .30 Blake is the rimless .30-40 Krag, with a UMC cartridge among its
+specimens, and the book's .30 USA Rimless is the rimless .30-40 Krag that UMC loaded for the Blake
+rifle. It does not count where the page leaves open which round its drawing shows: the longest
+necked .56-52 Spencer case shares its page with the straight round, the page says that such cases
+come necked or tapered and are hard to tell apart, and the other necked drawing, of a case 0.11 mm
+outside the limit, has a neck 2.0 mm shorter. The round keeps its estimate. naboje.org, the Czech
+collectors' catalogue, shows many AECC drawings again, some without the neck length. That is the
+same measurement and not a second one: the file cites the AECC drawing.
+
 ### `[case_head]`
 
 `rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. Rimless,

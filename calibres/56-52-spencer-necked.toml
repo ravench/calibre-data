@@ -22,6 +22,14 @@ case_length = 25.91
 overall_length = 42.16
 bullet = 13.33
 # shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+# No drawing is taken for it. municion.org has two necked .56-52 drawings near the book's case of 25.91 mm, and they
+# do not agree on the neck. The longest case (13-026-BBR-010: CL 26.75, SL 16.00, NL 7.00, SØ 14.20, NØ 13.60) is
+# within the size limits, but its page is the one this catalogue uses for the straight .56-52, it says that the
+# longest cases come necked or tapered and are hard to tell apart, and the drawing fits the straight round's row as
+# well. The shortest case (13-024-BBR-010: CL 24.30, SL 13.30, NL 5.00, SØ 13.90, NØ 13.68) is the page titled
+# «necked» and is 1.61 mm shorter than the book's, just outside the limit. From the mouth the two start the shoulder
+# 0.25 mm apart (it would be at 15.16 or 14.91 mm here), but their necks are 7.0 and 5.0 mm long. A French case is
+# shorter still (13-023-BBR-010: CL 22.04).
 unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 670"]
 

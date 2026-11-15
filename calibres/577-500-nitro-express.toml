@@ -16,14 +16,15 @@ rare = true
 rim = 18.21
 base = 16.38
 shoulder = 14.86
-shoulder_at = 65.4
+shoulder_at = 59.96
 neck = 13.36
 case_length = 79.5
 overall_length = 95.0
 bullet = 12.9
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 609"]
+# shoulder_at from the AECC drawing 13-079-BBC-020 (municion.org, filed as «.577/.500 Express 3 1/8″»): SL 59.85 on a
+# case of CL 79.39, taken from the mouth (case_length - (CL - SL)). Its rim, base, shoulder, neck and case length are
+# within 0.25 mm of the book's. naboje.org shows the same drawing without the neck length (node 1356).
+sources = ["book:cotw-18 p. 609", "https://municion.org/producto/577-500-express-3-1-8/"]
 
 [introduced]
 unknown = "Blackpowder first; COTW 18 p. 603 gives no year."
@@ -35,8 +36,13 @@ size = "berdan-nitro"
 diameter = 6.38
 sources = ["book:cotw-18 p. 609"]
 
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 14.83, NØ 13.56, SL 59.85, NL 15.50, CL 79.39.
+degrees = 8.9
+sources = ["https://municion.org/producto/577-500-express-3-1-8/"]
+
 [case_head]
-# .055 in.
+# .055 in. (COTW); the AECC drawing 13-079-BBC-020 (municion.org) has RT 1.45.
 rim_thickness = 1.4
 sources = ["book:cotw-18 p. 609"]
 

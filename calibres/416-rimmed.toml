@@ -14,14 +14,17 @@ rare = true
 rim = 16.89
 base = 14.55
 shoulder = 13.94
-shoulder_at = 71.2
+shoulder_at = 69.12
 neck = 11.33
 case_length = 83.82
 overall_length = 104.14
 bullet = 10.57
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 453"]
+# shoulder_at from the AECC drawing 11-084-BBC-010 (municion.org): SL 69.00 on a case of CL 83.70, taken from the mouth
+# (case_length - (CL - SL)). The page files the round as «.416 Chapuis» and gives «.416 Rimmed» as its other name:
+# made for a Chapuis double rifle, sold by A-Square as the .416 Rimmed with the old headstamp (the specimen's reads
+# A-SQUARE 416 CHAPUIS). The drawing's rim is 0.32 mm smaller than the book's; its base, shoulder, neck and case
+# length are within 0.2 mm. Its bullet label (BØ 10.14) looks like a slip, a .416 bullet is 10.57 mm, and is not used.
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/416-chapuis/"]
 
 [introduced]
 # COTW: designed about 1991.
@@ -32,8 +35,13 @@ sources = ["book:cotw-18 p. 426"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
 
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.90, NØ 11.18, SL 69.00, NL 10.00, CL 83.70.
+degrees = 16.1
+sources = ["https://municion.org/producto/416-chapuis/"]
+
 [case_head]
-# .060 in.
+# .060 in. (COTW); the AECC drawing 11-084-BBC-010 (municion.org) has RT 1.42.
 rim_thickness = 1.52
 sources = ["book:cotw-18 p. 453"]
 
