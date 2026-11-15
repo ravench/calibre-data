@@ -2,7 +2,7 @@ name = "5.56x45 mm NATO"
 categories = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
-aliases = ["5.56", "556", "5.56x45", "5.56nato"]
+aliases = ["5.56", "556", "5.56x45", "5.56nato", "5.56comm"]
 
 # the union that standardised it in 1980 (with the Belgian SS109 load); the case is the US .223/M193 of 1963: US, BE
 origin = "NATO"
@@ -10,6 +10,8 @@ origin_sources = []
 worldwide = true
 
 [mm]
+# SAAMI's 5.56 Commercial (2026) draws the same cartridge as its 223 Remington (body 9.550
+# instead of 9.548); only the chamber differs (longer throat, 7 in twist, 62,000 psi).
 rim = 9.6
 base = 9.58
 shoulder = 9.0
@@ -20,6 +22,7 @@ case_length = 44.7
 overall_length = 57.4
 bullet = 5.70
 sources = [
+  "https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.56-Commercial-2026-06-22-FINAL-Rev-3.pdf#page=2",
   "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84",
   "book:hornady-10 p. 174",
   "book:cotw-18 p. 573",
