@@ -23,7 +23,7 @@ bullet = 10.57
 # (case_length - (CL - SL)). The page files the round as «.416 Chapuis» and gives «.416 Rimmed» as its other name:
 # made for a Chapuis double rifle, sold by A-Square as the .416 Rimmed with the old headstamp (the specimen's reads
 # A-SQUARE 416 CHAPUIS). The drawing's rim is 0.32 mm smaller than the book's; its base, shoulder, neck and case
-# length are within 0.15 mm.
+# length are within 0.2 mm. Its bullet label (BØ 10.14) is a slip, a .416 bullet is 10.57 mm, and is not used.
 sources = ["book:cotw-18 p. 453", "https://municion.org/producto/416-chapuis/"]
 
 [introduced]

@@ -331,7 +331,7 @@ neck further off, the two disagree and the drawing's shoulder is not taken (6.53
 Scramjet). Where the specimen's own cone does, it is a shallow one, on which a small difference in
 diameter is a long one in length: the angle then runs between the file's diameters over the
 drawing's shoulder length (CL − NL − SL), so that the shoulder starts and ends where the drawing
-shows (the 3¼ in. .500/450, the .56-52 Spencer Necked and seven more,
+shows (the 3¼ in. .500/450 and seven more,
 `test_shallow_shoulders_run_over_the_drawings_shoulder_length`). The two 10.4x38 mm R Vetterli
 rounds are older than this rule and still start the shoulder 1.0 mm before their drawing does. A
 drawing with another round's title is not taken on its sizes alone: not where its page says that
@@ -351,10 +351,15 @@ municion.org files some rounds under another name than the file's: the .577/500 
 Chapuis», the .30 USA Rimless as «.30 Blake». Such a page is found through its other names
 (SINÓNIMOS), which the site's search reads, through the list of all pages, and through the catalogue
 code, which starts with the bullet's diameter and the case length in mm
-(`test_aecc_drawings_filed_under_other_names`). Such a drawing counts when the page or a book says
-that the two names are one round. naboje.org, the Czech collectors' catalogue, shows many AECC
-drawings again, some without the neck length. That is the same measurement and not a second one:
-the file cites the AECC drawing.
+(`test_aecc_drawings_filed_under_other_names`). Such a drawing counts when the page names the round
+as the file does (the .416 Rimmed is the page's other name), or when the page and a book describe
+one round: the page's .30 Blake is the rimless .30-40 Krag, with a UMC cartridge among its
+specimens, and the book's .30 USA Rimless is the rimless .30-40 Krag that UMC loaded for the Blake
+rifle. It does not count where the specimens of one round disagree: the two necked .56-52 Spencer
+drawings start the shoulder 0.25 mm apart, but their necks are 7.0 and 5.0 mm long, and the round
+keeps its estimate. naboje.org, the Czech collectors' catalogue, shows many AECC drawings again,
+some without the neck length. That is the same measurement and not a second one: the file cites the
+AECC drawing.
 
 ### `[case_head]`
 
