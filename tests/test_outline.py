@@ -497,6 +497,45 @@ class GapTests(unittest.TestCase):
             cited = cartridges.sources(name, "mm") + [cartridges.SHOULDER_ANGLES[name][1]]
             self.assertFalse([url for url in cited if "naboje.org" in url], name)
 
+    def test_specimens_measured_apart_outweigh_a_books_table(self):
+        # The literature gives the 10.75x63 mm Mauser a rebated head: the table of Cartridges of the World has a rim
+        # of .467 in. under a head of .493 in. in the five editions in the library, and Donnelly (p. 958) repeats it.
+        # None of the three specimens found has one. Two drawings have a rim as wide as the head (the AECC's, on a
+        # page with two DWM cartridges: 12.60 on 12.54; naboje.org's, of an RWS one: 12.50 on 12.52): within 0.5 mm
+        # of each other and more than 0.5 mm from the table. The book's own text stands with them (practically the
+        # dimensions of the 10.75x68 mm but for the length), and so does the C.I.P. sheet of the 10.75x68. The file
+        # takes the AECC drawing's rim and, with it, the drawing's head.
+        name, table, naboje_rim = "10.75x63 mm Mauser", 0.467 * 25.4, 12.5
+        s, sister = self.spec(name), self.spec("10.75x68 mm Mauser")
+        head = cartridges.case_head(name)
+        self.assertEqual(s["rim"], 12.6)  # the AECC drawing's RØ
+        self.assertLess(abs(s["rim"] - naboje_rim), 0.5)
+        self.assertGreater(min(s["rim"], naboje_rim) - table, 0.5)
+        self.assertLess(abs(s["rim"] - s["base"]), 0.1)  # the file's rim on its head: not rebated
+        self.assertGreater(s["base"] - table, 0.5)  # the table's rim under the same head: rebated
+        self.assertLess(max(abs(sister["rim"] - s["rim"]), abs(sister["rim"] - naboje_rim)), 0.5)
+        self.assertLess(abs(sister["base"] - s["base"]), 0.5)
+        # naboje.org often shows an AECC drawing again, which would be one measurement. These two were measured
+        # apart: of the labels they share only the bullet's diameter is the same (AECC: mouth 11.32, neck 11.38,
+        # shoulder 12.10 at 52.50, head 12.54, groove 11.00, case 62.98, rim thickness 1.15, overall 82.10;
+        # naboje.org: 11.29, 11.32, 12.00 at 51.80, 12.52, 11.10, 62.72, 1.09, 79.50). The file's rim, rim thickness
+        # and groove are the AECC drawing's and none of them is naboje.org's.
+        self.assertEqual((head[0], head[2]), (1.15, 11.0))
+        self.assertTrue(all(ours != theirs for ours, theirs in zip((s["rim"], head[0], head[2]), (12.5, 1.09, 11.1))))
+        # Only the AECC drawing gives a value, so only its page is a source of the measurements.
+        self.assertEqual(cartridges.sources(name, "mm"),
+                         ["book:cotw-18 p. 652", "https://municion.org/producto/1075-x-63-g-mauser/"])
+        # The head: HL = RT + GW + ((HØ - GØ)/2)/tan(angle) on the AECC drawing (HØ 12.54, GW 1.20), whose head
+        # diameter is the file's. Donnelly's rim thickness (.06 in.) is more than 0.3 mm from the drawing's, so the
+        # whole head is the drawing's.
+        self.assertEqual(head, (1.15, 3.7, 11.0, 30.0))
+        self.assertAlmostEqual(math.degrees(math.atan((12.54 - head[2]) / 2 / (head[1] - head[0] - 1.2))), head[3],
+                               delta=0.5)
+        self.assertLess(abs(12.54 - s["base"]), 0.5)
+        self.assertGreater(0.06 * 25.4 - head[0], 0.3)
+        self.assertEqual(cartridges.sources(name, "case_head"), ["https://municion.org/producto/1075-x-63-g-mauser/"])
+        self.assertEqual(outline.gaps(s), ())
+
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
         # Calibres that failed the rule on 2026-11-14 and now take every measurement and the head from their C.I.P.
         # sheet, some found under another title (the Vergueiro as «6,5 x 58 Mauser», the .256 Gibbs as «256 Mag.
@@ -1039,7 +1078,7 @@ class OutlineTests(unittest.TestCase):
     # in CASE_HEADS or a place here.
     HEAD_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        ".360 Mars", ".45-70 Auto", ".50-115 Bullard", "10.75x63 mm Mauser", "6.17 Lazzeroni Flash",
+        ".360 Mars", ".45-70 Auto", ".50-115 Bullard", "6.17 Lazzeroni Flash",
         "6.71 Lazzeroni Blackbird", "8.5 mm Mars",
     }
 
@@ -1168,10 +1207,12 @@ class OutlineTests(unittest.TestCase):
             return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(by_name[name])[:n]]
         self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
         self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
-        self.assertEqual(head("10.75x63 mm Mauser", 2), [(5.93, 0), (5.93, 1.3)])
-        # Every belted case in the catalogue has a rim thickness now: one made up for the test.
-        belted = cartridges.c("A belted case", BELTED, 13.54, 13.39, 12.27, 8.0, 72.9, 52.04, 98.55, 7.21, SPITZER)
-        self.assertEqual([(round(r, 4), round(h, 4)) for r, h in outline.case_profile(belted)[:2]], [(6.77, 0), (6.77, 1.3)])
+        # Every rimless and every belted case in the catalogue has a rim thickness now: two made up for the test.
+        made_up = [(RIMLESS, 11.86, 12.52, 12.17, 11.35, 62.74, 52.26, 81.79, 10.77, [(5.93, 0), (5.93, 1.3)]),
+                   (BELTED, 13.54, 13.39, 12.27, 8.0, 72.9, 52.04, 98.55, 7.21, [(6.77, 0), (6.77, 1.3)])]
+        for kind, *sizes, rim in made_up:
+            case = cartridges.c("A case", kind, *sizes, SPITZER)
+            self.assertEqual([(round(r, 4), round(h, 4)) for r, h in outline.case_profile(case)[:2]], rim)
 
     def test_generic_heads_are_fitted_to_the_sourced_ones(self):
         # Review 2026-11-13: the old generic groove, 82 % of the base, was deeper than 224 of the 233 sourced
