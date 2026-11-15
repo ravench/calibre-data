@@ -1170,7 +1170,7 @@ class OutlineTests(unittest.TestCase):
             ".308 Winchester": (1.37, 3.85, 10.39, 36.0), "9x19 mm": (1.27, 2.98, 8.79, 35.0),
             ".45 ACP": (1.24, 4.11, 10.16, 26.0), ".300 Winchester Magnum": (1.27, 5.59, 12.07, 35.0),
             "7.5x55 mm Swiss (GP 11)": (1.65, 3.46, 10.3, 51.8), ".50 BMG": (2.26, 6.23, 17.27, 36.0),
-            "5.6 mm GP 90": (1.14, 3.15, 8.43, 25.0),  # .223 case, via the .300 BLK sheet
+            "5.6 mm GP 90": (1.14, 3.13, 8.43, 25.0),  # .223 case, via the 223 Rem. sheet
         }
         for name, values in sheets.items():
             self.assertEqual(cartridges.case_head(name), values, name)
