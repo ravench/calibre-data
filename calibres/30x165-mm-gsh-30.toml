@@ -1,9 +1,9 @@
 # The Soviet 30 mm round of the GSh-30 aircraft cannon family (GSh-30-1, GSh-30-2, GSh-6-30) and the
 # AO-18 gun of the naval AK-630, with an electric primer (Jane's pp. 98-99); the 2A42's round on the
-# same case has a percussion primer (30x165 mm 2A42). Its name gives the bore and case length (Jane's
-# p. 98 measures the AK-630 case at 165 mm), Rapid Fire's table the rim and base, Jane's p. 99 the
-# length of the aircraft rounds (p. 98 gives the AK-630's 290 to 291 mm), the AECC specimen drawing of a naval round on municion.org (titled
-# 30 x 164) the shoulder, the neck and the head.
+# same case has a percussion primer (30x165 mm 2A42). Its name gives the bore and case length
+# (Jane's p. 98 measures the AK-630 case at 165 mm), Rapid Fire's table the rim and base, Jane's p.
+# 99 the length of the aircraft rounds (p. 98 gives the AK-630's 290 to 291 mm), the AECC specimen
+# drawing of a naval round on municion.org (titled 30 x 164) the shoulder, the neck and the head.
 name = "30x165 mm GSh-30"
 categories = ["cannon"]
 kind = "rimless"
