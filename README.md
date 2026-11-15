@@ -355,11 +355,12 @@ code, which starts with the bullet's diameter and the case length in mm
 as the file does (the .416 Rimmed is the page's other name), or when the page and a book describe
 one round: the page's .30 Blake is the rimless .30-40 Krag, with a UMC cartridge among its
 specimens, and the book's .30 USA Rimless is the rimless .30-40 Krag that UMC loaded for the Blake
-rifle. It does not count where the specimens of one round disagree: the two necked .56-52 Spencer
-drawings start the shoulder 0.25 mm apart, but their necks are 7.0 and 5.0 mm long, and the round
-keeps its estimate. naboje.org, the Czech collectors' catalogue, shows many AECC drawings again,
-some without the neck length. That is the same measurement and not a second one: the file cites the
-AECC drawing.
+rifle. It does not count where the page leaves open which round its drawing shows: the longest
+necked .56-52 Spencer case shares its page with the straight round, the page says that such cases
+come necked or tapered and are hard to tell apart, and the other necked drawing, of a case 0.11 mm
+outside the limit, has a neck 2.0 mm shorter. The round keeps its estimate. naboje.org, the Czech
+collectors' catalogue, shows many AECC drawings again, some without the neck length. That is the
+same measurement and not a second one: the file cites the AECC drawing.
 
 ### `[case_head]`
 

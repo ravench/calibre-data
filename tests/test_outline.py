@@ -364,8 +364,9 @@ class GapTests(unittest.TestCase):
         for name, (start, angle, own, so, no, sl, nl, cl) in shallow.items():
             with self.subTest(name):
                 s = self.spec(name)
-                # Nothing is left open but, on four of them, a rim thickness that no source gives.
-                self.assertEqual(outline.gaps(s), () if cartridges.rim_thickness(name) else ("rim_thickness",))
+                # Nothing is left open but, on these four, a rim thickness that no source gives.
+                no_rim = {".32-40 Bullard", ".40-110 Winchester Express", ".40-70 Sharps Necked", "9.3x65 mm R Collath"}
+                self.assertEqual(outline.gaps(s), ("rim_thickness",) if name in no_rim else ())
                 self.assertEqual((s["sh_at"], cartridges.shoulder_angle(name)), (start, angle))
                 self.assertLess(abs(cl - s["case"]), 1.5)
                 self.assertLess(max(abs(so - s["shoulder"]), abs(no - s["neck"])), 0.5)
@@ -482,7 +483,9 @@ class GapTests(unittest.TestCase):
         (sl1, nl1, cl1), (sl2, nl2, cl2) = (16.0, 7.0, 26.75), (13.3, 5.0, 24.3)
         self.assertLess(abs(cl1 - spencer["case"]), 1.5)
         self.assertGreater(abs(cl2 - spencer["case"]), 1.5)
-        self.assertAlmostEqual((cl1 - sl1) - (cl2 - sl2), -0.25, delta=0.005)
+        starts = [round(spencer["case"] - (cl - sl), 2) for sl, cl in ((sl1, cl1), (sl2, cl2))]
+        self.assertEqual(starts, [15.16, 14.91])  # carried from the mouth; the file keeps its estimate
+        self.assertEqual(spencer["sh_at"], 12.4)
         self.assertGreater(abs(nl1 - nl2), 1.5)
         self.assertEqual(cartridges.unsourced(".56-52 Spencer Necked"), ("shoulder_at",))
         self.assertEqual(cartridges.sources(".56-52 Spencer Necked", "mm"), ["book:cotw-18 p. 670"])
