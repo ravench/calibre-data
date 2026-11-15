@@ -326,18 +326,101 @@ class GapTests(unittest.TestCase):
         self.assertIsNone(cartridges.rim_thickness("11.4x50 mm R Brazilian Comblain"))
         self.assertEqual(cartridges.rim_thickness("11x53 mm R Comblain"), 2.08)
         self.assertEqual(cartridges.sources("11x53 mm R Comblain", "case_head"), ["book:cotw-18 p. 574"])
-        # Six drawings fit the book's rim and base but not its shoulder or case length: the rim thickness only.
-        # The two 3¼ in. .500/450 loads share one case and one drawing.
-        for name, rim in [(".32-40 Remington", 1.6), (".38-70 Winchester", 1.72),
-                          (".38-90 Winchester Express", 1.68), (".40-70 Peabody What Cheer", 1.87),
-                          (".500/450 Magnum Express", 1.04), (".500/450 Nitro Express", 1.04)]:
+        # Two drawings fit the book's rim and base but not its shoulder or case length: the rim thickness only.
+        # (Four more give their shoulder in the next two tests.)
+        for name, rim in [(".32-40 Remington", 1.6), (".38-70 Winchester", 1.72)]:
             with self.subTest(name):
                 self.assertEqual(cartridges.rim_thickness(name), rim)
                 self.assertIn("municion.org", cartridges.sources(name, "case_head")[0])
                 self.assertEqual(outline.gaps(self.spec(name)), ("measurements", "shoulder_angle"))
                 self.assertEqual(cartridges.unsourced(name), ("shoulder_at",))
+        for name, rim in [(".38-90 Winchester Express", 1.68), (".40-70 Peabody What Cheer", 1.87),
+                          (".500/450 Magnum Express", 1.04), (".500/450 Nitro Express", 1.04)]:
+            self.assertEqual(cartridges.rim_thickness(name), rim)
+            self.assertIn("municion.org", cartridges.sources(name, "case_head")[0])
+        # The two 3¼ in. .500/450 loads share one case and one drawing.
         self.assertEqual(outline.case_profile(self.spec(".500/450 Magnum Express")),
                          outline.case_profile(self.spec(".500/450 Nitro Express")))
+
+    def test_shallow_shoulders_run_over_the_drawings_shoulder_length(self):
+        # These AECC drawings fit the file (case within 1.5 mm, shoulder and neck within 0.5 mm), but the specimen's
+        # own cone, drawn between the file's diameters, would leave a neck more than 1.5 mm longer or shorter than the
+        # specimen's: on a shallow cone a small difference in diameter is a long one in length. The half angle runs
+        # between the file's diameters over the drawing's shoulder length (CL - NL - SL) instead, so the shoulder
+        # starts and ends where the drawing shows. The first two share one case and one drawing; the other seven had
+        # the specimen's cone until the walk in test_every_recorded_municion_reading_keeps_its_neck found them.
+        # name: (shoulder_at, half angle, the specimen's own cone, the drawing's SØ, NØ, SL, NL, CL)
+        shallow = {
+            ".500/450 Magnum Express": (61.08, 2.5, 4.4, 13.19, 12.25, 61.0, 15.4, 82.47),
+            ".500/450 Nitro Express": (61.08, 2.5, 4.4, 13.19, 12.25, 61.0, 15.4, 82.47),
+            "11.2x60 mm Schüler": (34.44, 5.5, 3.8, 12.76, 11.95, 35.0, 19.1, 60.25),
+            "11.43x50 mm R Egyptian Remington": (34.19, 14.3, 9.5, 13.56, 12.51, 33.44, 11.96, 48.53),
+            ".32-40 Bullard": (23.86, 6.4, 5.1, 10.22, 8.6, 23.6, 14.0, 46.73),
+            ".40-110 Winchester Express": (60.45, 7.9, 6.1, 12.2, 11.09, 60.5, 16.9, 82.6),
+            ".40-70 Sharps Necked": (35.68, 7.8, 5.9, 12.42, 11.01, 35.7, 14.6, 57.17),
+            ".577 Tyrannosaur": (59.55, 10.3, 7.4, 16.71, 15.64, 59.3, 12.3, 75.7),
+            "9.3x65 mm R Collath": (55.16, 16.4, 5.9, 10.22, 9.9, 55.1, 8.3, 64.96),
+        }
+        for name, (start, angle, own, so, no, sl, nl, cl) in shallow.items():
+            with self.subTest(name):
+                s = self.spec(name)
+                self.assertTrue(outline.well_sourced(s))
+                self.assertNotIn("shoulder_angle", outline.gaps(s))
+                self.assertEqual((s["sh_at"], cartridges.shoulder_angle(name)), (start, angle))
+                self.assertLess(abs(cl - s["case"]), 1.5)
+                self.assertLess(max(abs(so - s["shoulder"]), abs(no - s["neck"])), 0.5)
+                self.assertAlmostEqual(s["sh_at"], s["case"] - (cl - sl), delta=0.005)
+                run = cl - nl - sl
+                step = (s["shoulder"] - s["neck"]) / 2
+                self.assertAlmostEqual(math.degrees(math.atan((so - no) / 2 / run)), own, delta=0.05)
+                self.assertAlmostEqual(math.degrees(math.atan(step / run)), angle, delta=0.05)
+                # What test_necks_start_where_the_municion_drawings_show would find with the specimen's own cone.
+                own_neck = s["sh_at"] + step / math.tan(math.radians(own))
+                self.assertGreater(abs((s["case"] - own_neck) - nl), 1.5)
+                self.assertEqual(cartridges.sources(name, "mm")[-1], cartridges.SHOULDER_ANGLES[name][1])
+                self.assertIn("municion.org", cartridges.SHOULDER_ANGLES[name][1])
+
+    def test_shoulders_that_donnelly_and_an_aecc_drawing_agree_on(self):
+        # An AECC drawing that misses a size limit (shoulder diameter, case length) gives the shoulder all the same
+        # where Donnelly's Handloader's Manual prints the same shoulder: its start (his J) and its end (J + K) within
+        # 0.5 mm of the drawing's, both taken from the mouth. shoulder_at is the drawing's SL carried from the mouth
+        # and the half angle runs between the file's diameters over the drawing's shoulder length (CL - NL - SL).
+        # His printed angles are not used.
+        # His J runs from the head and is set beside shoulder_at as it is, so his case (A) must be the file's.
+        # name: (shoulder_at, half angle, Donnelly's A, J and K in inches, his page, the drawing's SL, NL, CL)
+        agreed = {
+            ".38-90 Winchester Express": (59.95, 9.7, 3.25, 2.36, 0.24, 489, 60.0, 17.0, 82.6),
+            ".40-70 Peabody What Cheer": (25.15, 8.9, 1.76, 0.988, 0.392, 500, 22.9, 9.6, 42.45),
+            "11x52 mm R Beaumont M71/78": (34.67, 7.1, 2.04, 1.36, 0.18, 554, 33.9, 12.65, 51.05),
+        }
+        for name, (start, angle, a, j, k, page, sl, nl, cl) in agreed.items():
+            with self.subTest(name):
+                s = self.spec(name)
+                self.assertEqual(outline.gaps(s), ())
+                self.assertEqual(cartridges.unsourced(name), ())
+                self.assertEqual((s["sh_at"], cartridges.shoulder_angle(name)), (start, angle))
+                self.assertAlmostEqual(a * 25.4, s["case"], delta=0.13)  # two decimals of an inch
+                self.assertAlmostEqual(s["sh_at"], s["case"] - (cl - sl), delta=0.005)
+                self.assertLess(abs(s["sh_at"] - j * 25.4), 0.5)
+                self.assertLess(abs((s["case"] - nl) - (j + k) * 25.4), 0.5)
+                run = cl - nl - sl
+                cone = math.degrees(math.atan((s["shoulder"] - s["neck"]) / 2 / run))
+                self.assertAlmostEqual(cone, angle, delta=0.05)
+                top = s["neck"] / 2  # the drawn neck is the specimen's, measured from the mouth
+                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
+                self.assertLess(abs((s["case"] - neck_start) - nl), 0.1)
+                found = cartridges.sources(name, "mm")
+                self.assertIn("municion.org", found[1])
+                self.assertEqual(found[2], "book:donnelly p. %d" % page)
+                self.assertIn("municion.org", cartridges.SHOULDER_ANGLES[name][1])
+        # Donnelly alone is no source for a shoulder: these have an entry of his and no drawing that shows theirs. The
+        # Daudeteau's drawing starts the shoulder where he does (0.14 mm apart) but ends it 0.95 mm later. The drawings
+        # that fit the two Comblain rounds are of other rounds (test_aecc_drawings_source_old_rimmed_rounds).
+        for name in (".45-100 Remington Necked", "10.25x69 mm R Hunting-Express", "6x57 mm Mauser", "6x58 mm Forster",
+                     "10.75x57 mm Mannlicher", ".50-115 Bullard", "6.5x53.5 mm SR Daudeteau",
+                     "11x53 mm R Comblain", "11.4x50 mm R Brazilian Comblain"):
+            self.assertIn(name, OutlineTests.SHOULDER_UNSOURCED)
+            self.assertEqual(cartridges.unsourced(name), ("shoulder_at",))
 
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
         # Calibres that failed the rule on 2026-11-14 and now take every measurement and the head from their C.I.P.
@@ -696,6 +779,17 @@ class OutlineTests(unittest.TestCase):
             "6.17 Lazzeroni Spitfire": (40.5, 5.85, 51.91), "6.71 Lazzeroni Phantom": (40.0, 6.0, 51.88),
             ".500/450 No. 1 Express": (47.33, 19.35, 69.88), ".25-45 Sharps": (36.05, 5.4, 44.22),
             "10.4x47 mm R Italian Vetterli": (34.7, 9.0, 47.45),
+            # Confirmed by Donnelly (test_shoulders_that_donnelly_and_an_aecc_drawing_agree_on).
+            ".38-90 Winchester Express": (60.0, 17.0, 82.6), "11x52 mm R Beaumont M71/78": (33.9, 12.65, 51.05),
+            ".40-70 Peabody What Cheer": (22.9, 9.6, 42.45),
+            # The angle over the drawing's shoulder length
+            # (test_shallow_shoulders_run_over_the_drawings_shoulder_length).
+            ".500/450 Magnum Express": (61.0, 15.4, 82.47), ".500/450 Nitro Express": (61.0, 15.4, 82.47),
+            "11.2x60 mm Schüler": (35.0, 19.1, 60.25), "11.43x50 mm R Egyptian Remington": (33.44, 11.96, 48.53),
+            ".32-40 Bullard": (23.6, 14.0, 46.73), ".40-110 Winchester Express": (60.5, 16.9, 82.6),
+            ".40-70 Sharps Necked": (35.7, 14.6, 57.17), ".577 Tyrannosaur": (59.3, 12.3, 75.7),
+            "9.3x65 mm R Collath": (55.1, 8.3, 64.96),
+            ".450/400 Nitro Express 2⅜ inch": (40.48, 16.7, 60.63),
             "7 mm Canadian Magnum": (58.75, 6.7, 71.63), ".338 Canadian Magnum": (59.82, 8.15, 71.72),
             ".32-30 Remington": (31.0, 7.3, 41.48), "10.75x58 mm R Russian Berdan": (39.0, 12.2, 57.45),
         }
@@ -710,19 +804,47 @@ class OutlineTests(unittest.TestCase):
                 self.assertLess(abs((s["case"] - neck_start) - neck_length), 1.5)
                 self.assertLess((s["case"] - s["sh_at"]) - (case_length - shoulder_start), 0.6)
 
+    def test_every_recorded_municion_reading_keeps_its_neck(self):
+        # The same two checks without a list: every calibre whose shoulder angle cites municion.org and whose file
+        # records the drawing's reading in the note under [shoulder_angle] ("SØ .., NØ .., SL .., NL .., CL .."), so
+        # that a drawing added later is held to the rule as well. The two Vetterli rounds are left out: their [mm]
+        # are older than the rule and start the shoulder 1.0 mm before the drawing they cite, which is for a change
+        # of its own to settle.
+        older = {"10.4x38 mm R Vetterli", "10.4x38 mm R Vetterli Centrefire"}
+        reading = re.compile(r"SØ (\d+\.\d+), NØ \d+\.\d+, SL (\d+\.\d+), NL (\d+\.\d+), CL (\d+\.\d+)")
+        folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "calibres")
+        specs = {s["name"]: s for _, s in outline.specs()}
+        walked = set()
+        for name, (_, url) in cartridges.SHOULDER_ANGLES.items():
+            with open(os.path.join(folder, cartridges.slug(name) + ".toml"), encoding="utf-8") as f:
+                found = reading.search(f.read().split("[shoulder_angle]")[1])
+            if "municion.org" not in url or not found:
+                continue
+            walked.add(name)
+            if name in older:
+                continue
+            _, shoulder_start, neck_length, case_length = map(float, found.groups())
+            with self.subTest(name):
+                s = specs[name]
+                top = s["neck"] / 2
+                neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
+                self.assertLess(abs((s["case"] - neck_start) - neck_length), 1.5)
+                self.assertLess(abs((s["case"] - s["sh_at"]) - (case_length - shoulder_start)), 0.6)
+        self.assertGreaterEqual(len(walked), 113)  # the notes keep the format the walk reads
+        self.assertLessEqual(older, walked)
+
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
     # or article giving the angle was found yet. Remove a name here when its angle is added.
     SHOULDER_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
         # shoulder_at is estimated, as the note in [mm] says).
         ".275 No. 2 Magnum", ".32-40 Remington", ".38-70 Winchester",
-        ".38-90 Winchester Express", ".40-70 Peabody What Cheer", ".400/360 Nitro Express", ".416 Rimmed",
-        ".45-100 Remington Necked", ".45-125 Winchester Express", ".50-115 Bullard", ".500/450 Magnum Express",
-        ".500/450 Nitro Express", ".56-52 Spencer Necked", ".577/500 Nitro Express", ".577/500 No. 2 Express",
+        ".400/360 Nitro Express", ".416 Rimmed", ".45-100 Remington Necked", ".45-125 Winchester Express",
+        ".50-115 Bullard", ".56-52 Spencer Necked", ".577/500 Nitro Express", ".577/500 No. 2 Express",
         "10.25x69 mm R Hunting-Express", "10.75x57 mm Mannlicher", "10.8x47 mm R Martini Target",
-        "11.4x50 mm R Brazilian Comblain", "11x52 mm R Beaumont M71/78", "11x53 mm R Comblain",
-        "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "6x58 mm Forster", "8.5 mm Mars",
-        "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
+        "11.4x50 mm R Brazilian Comblain", "11x53 mm R Comblain",
+        "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "6x58 mm Forster", "8.5 mm Mars", "9.3x75 mm R Nimrod",
+        "9x70 mm R Mauser",
     }
 
     def bottlenecks(self):
@@ -791,6 +913,7 @@ class OutlineTests(unittest.TestCase):
                     ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1),
                     ".400/375 Belted Nitro Express": (20.4, 43.82), ".276 Pedersen": (10.8, 40.95),
                     ".500/450 No. 1 Express": (9.9, 47.3), "10.4x47 mm R Italian Vetterli": (13.9, 34.75),
+                    ".450/400 Nitro Express 2⅜ inch": (11.5, 40.3),
                     "7 mm Canadian Magnum": (23.6, 59.0), ".338 Canadian Magnum": (28.1, 59.98),
                     ".32-30 Remington": (4.0, 31.18), "10.75x58 mm R Russian Berdan": (7.9, 38.45)}
         specs = self.bottlenecks()
@@ -805,7 +928,6 @@ class OutlineTests(unittest.TestCase):
         found = {"11x50 mm R Albini": (18.6, 42.5, "naboje.org"),
                  "6.8x45 mm UCC": (45, 36.1, "pacifictoolandgauge"),
                  ".44-77 Sharps & Remington": (4.5, 33.0, "ammo-one1"),
-                 ".450/400 Nitro Express 2⅜ inch": (5.2, 46.1, "tabiical-en-page52"),
                  ".40-70 Winchester": (13.26, 44.45, "winchestercollector")}
         specs = self.bottlenecks()
         for name, (angle, start, source) in found.items():

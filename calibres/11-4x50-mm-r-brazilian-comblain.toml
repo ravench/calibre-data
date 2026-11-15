@@ -27,7 +27,9 @@ bullet = 11.48
 # in three places: «11 mm Chilean Comblain Rifle M 1874» (12-050-BBC-060) at 44.28 mm, «11 mm Belgian Infantry
 # Mle1876 Short Neck» (12-050-BBC-020) at 42.74 mm and the Belgian 1871 round (11-051-BBC-090) at 37.90 mm. None is
 # titled as this round: municion.org lists «11,4 x 50 R Brazilian Comblain M74» as another name of its 53 mm round
-# (11-053-BBC-030, Model 1889). No shoulder is taken, and no rim thickness.
+# (11-053-BBC-030, Model 1889). No shoulder is taken, and no rim thickness. Donnelly (p. 981: J 1.69 in., K .16 in.)
+# starts the shoulder 0.2 mm from the Mle1876 drawing's start and ends it 0.2 mm from the Chilean drawing's end, so
+# he decides for neither.
 unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 574"]
 

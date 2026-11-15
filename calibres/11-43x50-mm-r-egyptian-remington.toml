@@ -34,8 +34,10 @@ sources = []
 
 [shoulder_angle]
 # Drawing of the drawn flat-base case; the coiled case has a wider neck.
-# AECC drawing on municion.org: SØ 13.56, NØ 12.51, SL 33.44, NL 11.96, CL 48.53.
-degrees = 9.5
+# AECC drawing on municion.org: SØ 13.56, NØ 12.51, SL 33.44, NL 11.96, CL 48.53. The half angle runs between the
+# book's diameters over the drawing's shoulder length (3.13 mm): the specimen's own cone (9.5 degrees) would leave a
+# neck 1.7 mm shorter than the specimen's, over the 1.5 mm the rule allows.
+degrees = 14.3
 sources = ["https://municion.org/producto/43-egyptian-remington-flat-base/"]
 
 [case_head]

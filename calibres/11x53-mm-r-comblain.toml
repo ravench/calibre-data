@@ -26,7 +26,9 @@ bullet = 11.07
 # (municion.org), «11 x 53 R Brazilian-Comblain Model 1889», has this row's diameters within 0.3 mm and its length
 # within 0.02 mm, and would start the shoulder at 45.22 mm with a neck of 6.2 mm. It is not taken: its page says that
 # the Brazilian round differs from the Belgian 11x53 R in its shorter neck, and the page of drawing 12-050-BBC-020
-# gives the Belgian round a neck of a fifth of the case, which no drawing of the 53 mm case shows.
+# gives the Belgian round a neck of a fifth of the case, which no drawing of the 53 mm case shows. Donnelly (p. 967)
+# prints such a neck (H .38 in., 9.65 mm) behind a shoulder that starts at 38.86 mm (J 1.53 in.); on his own he is
+# not a source.
 unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 574"]
 

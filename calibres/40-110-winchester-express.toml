@@ -33,9 +33,10 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
 
 [shoulder_angle]
-# Our shoulder-to-neck step is wider than the drawing's, so the drawn neck comes out about 1.6 mm shorter.
-# AECC drawing on municion.org: SØ 12.20, NØ 11.09, SL 60.50, NL 16.90, CL 82.60.
-degrees = 6.1
+# AECC drawing on municion.org: SØ 12.20, NØ 11.09, SL 60.50, NL 16.90, CL 82.60. The half angle runs between the
+# book's diameters over the drawing's shoulder length (5.20 mm): the specimen's own cone (6.1 degrees) would leave a
+# neck 1.6 mm shorter than the specimen's, over the 1.5 mm the rule allows.
+degrees = 7.9
 sources = ["https://municion.org/producto/40-110-winchester-express-3-1-4/"]
 
 [bullet]

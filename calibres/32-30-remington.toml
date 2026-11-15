@@ -23,7 +23,8 @@ overall_length = 51.05
 bullet = 7.92
 # shoulder_at from the AECC drawing 08-041-BBC-050 (municion.org): SL 31.00 on a case of CL 41.48, taken from the
 # mouth (case_length - (CL - SL)). The specimen's cone, drawn between the book's diameters, leaves a neck 1.40 mm
-# shorter than the specimen's (NL 7.30), inside the 1.5 mm the rule allows.
+# shorter than the specimen's (NL 7.30), inside the 1.5 mm the rule allows. Donnelly starts the shoulder 1.2 mm
+# later (J 1.275 in.).
 sources = ["book:cotw-18 p. 250", "https://municion.org/producto/32-30-125-remington-hepburn/"]
 
 [introduced]

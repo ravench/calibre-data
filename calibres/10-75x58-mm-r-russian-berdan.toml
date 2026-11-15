@@ -28,8 +28,9 @@ bullet = 10.92
 # mouth (case_length - (CL - SL)). The drawing's shoulder and neck diameters are the book's within 0.2 mm; its cone,
 # drawn between the book's diameters, leaves a neck 1.03 mm longer than the specimen's (NL 12.20), inside the 1.5 mm
 # the rule allows. The drawing prints a head of 13.09 mm against the book's 14.40, so nothing of the head is taken
-# from it. A second specimen (11-058-BBC-072, Mauser A base) would start the shoulder 4.2 mm lower; its shoulder and
-# neck are 0.8 and 0.6 mm wider than the book's, outside the limits, so it does not count.
+# from it. Donnelly (p. 957) prints the same shoulder: its start 0.41 mm later (J 1.53 in.) and its end 0.26 mm
+# after the specimen's. A second specimen (11-058-BBC-072, Mauser A base) would start the shoulder 4.2 mm lower; its
+# shoulder and neck are 0.8 and 0.6 mm wider than the book's, outside the limits, so it does not count.
 sources = [
   "book:cotw-18 p. 574",
   "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/",

@@ -17,14 +17,15 @@ rare = true
 rim = 16.36
 base = 14.48
 shoulder = 12.7
-shoulder_at = 70.5
+shoulder_at = 61.08
 neck = 12.17
 case_length = 82.55
 overall_length = 99.31
 bullet = 11.63
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 608"]
+# shoulder_at from the AECC drawing 11-083-BBC-030 (municion.org): SL 61.00 on a case of CL 82.47, taken from the mouth
+# (case_length - (CL - SL)). The drawing's shoulder (SØ 13.19) is 0.49 mm wider than the book's, its neck (NØ 12.25)
+# 0.08 mm. Donnelly starts the shoulder 1.4 mm earlier (J 2.35 in.) and the neck 0.3 mm later.
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/500-450-express-3-1-4-bp-nbp-ne/"]
 
 [introduced]
 # COTW: the 1870s; the decade's first year is kept.
@@ -36,11 +37,16 @@ sources = ["book:cotw-18 p. 598"]
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 608"]
 
+[shoulder_angle]
+# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 82.47 - NL 15.40 -
+# SL 61.00 = 6.07 mm). The specimen's own cone (4.4 degrees) between the book's diameters would leave a neck
+# 2.6 mm longer than the specimen's (NL 15.40), over the 1.5 mm the rule allows.
+degrees = 2.5
+sources = ["https://municion.org/producto/500-450-express-3-1-4-bp-nbp-ne/"]
+
 [case_head]
 # AECC drawing 11-083-BBC-030 (municion.org): RT 1.04. municion.org lists this 3¼ in. case for the blackpowder, the
-# nitro-for-black and the Nitro Express loads. Its shoulder is not taken: the specimen's (SØ 13.19) is 0.49 mm wider
-# than the book's, and its cone, drawn between the book's diameters, would leave a neck 2.6 mm longer than the
-# specimen's (NL 15.40), over the 1.5 mm the rule allows.
+# nitro-for-black and the Nitro Express loads.
 rim_thickness = 1.04
 sources = ["https://municion.org/producto/500-450-express-3-1-4-bp-nbp-ne/"]
 
