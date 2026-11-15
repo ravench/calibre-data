@@ -233,6 +233,10 @@ sources = [
 ]
 ```
 
+One measurement that no page gives can come from an AECC specimen drawing (municion.org) whose other
+sizes are the file's, and the note says which (5.8x42 mm: the bullet, BØ 6.00 on a drawing with the
+file's rim, base, shoulder and neck).
+
 These lists were filled in from the history of this repository in November 2026: each measurement
 counts the page it was taken from when the calibre was added or the value last changed, as the
 commits and notes say. Values the notes call estimated (most shoulder positions before the C.I.P.
@@ -314,14 +318,20 @@ alpha/2). C.I.P. sheets print the full cone angle alpha, so their value is halve
 calibres `shoulder_at` is the sheet's L1. A bottleneck case without one is drawn at 32° until a
 source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
 
-An AECC specimen drawing (municion.org) gives a shoulder as well: `shoulder_at` is the drawing's
-shoulder start carried from the mouth (`case_length` − (CL − SL)) and the angle is the specimen's
-cone, atan(((SØ − NØ)/2)/(CL − NL − SL)). The drawing counts when its case is within 1.5 mm of the
-file's and its shoulder and neck diameters are within 0.5 mm. On a shallow cone a small difference
-in diameter is a long one in length: where the specimen's cone, drawn between the file's diameters,
-would start the neck more than 1.5 mm from the specimen's, the angle runs between the file's
-diameters over the drawing's shoulder length (CL − NL − SL) instead, so that the shoulder starts and
-ends where the drawing shows (.32-30 Remington, the 3¼ in. .500/450).
+An AECC specimen drawing (municion.org) gives a shoulder where no sheet or SAAMI drawing does. The
+drawing counts when its case length is within 1.5 mm of the file's and its shoulder and neck
+diameters are within 0.5 mm. `shoulder_at` is the drawing's shoulder start carried from the mouth
+(`case_length` − (CL − SL)), and the angle is the specimen's cone, atan(((SØ − NØ)/2)/(CL − NL − SL));
+an angle that another source gives stays. The file's diameters differ a little from the specimen's,
+so the cone drawn between them is a little longer or shorter: the neck it leaves must be within
+1.5 mm of the specimen's neck length NL (`test_necks_start_where_the_municion_drawings_show`). Where
+another source's angle leaves a neck further off, the two disagree and the drawing's shoulder is
+not taken (6.53 Lazzeroni Scramjet). Where the specimen's own cone does, it is a shallow one, on
+which a small difference in diameter is a long one in length: the angle then runs between the
+file's diameters over the drawing's shoulder length (CL − NL − SL), so that the shoulder starts and
+ends where the drawing shows (the 3¼ in. .500/450). A drawing goes to the calibre whose sizes it
+has, whatever its title: the sources cross the names of the two Comblain rounds, and the notes in
+their files say which drawing each one takes.
 
 A drawing that misses one of the size limits still gives the shoulder, in that second way, when
 Donnelly's *Handloader's Manual of Cartridge Conversions* prints the same shoulder: its start (his
@@ -339,6 +349,8 @@ The .32 and .401 Winchester Self-Loading have no groove floor on their sheets: a
 7°) runs from the rim's front up to the body at E, and the drawing follows it.
 A case made from a parent case without its own sheet keeps the parent's head (the note says which); a parent
 without a sheet takes the head of a case made from it that has one (.44 Auto Mag: C.I.P. 357 Auto Mag.).
+A parent whose head the maker altered does not pass it on: Dakota enlarged the rim of the .404 Jeffery case
+(Cartridges of the World), so the Dakota rounds made from it take the groove of their own drawings.
 
 Without a C.I.P. sheet the groove can come from two other drawings, in this order. A SAAMI drawing
 gives the rim thickness, the groove's diameter, width and angle and the body diameter in inches:
@@ -346,8 +358,11 @@ gives the rim thickness, the groove's diameter, width and angle and the body dia
 and then converted. An AECC specimen drawing (municion.org) gives the head in mm as RT (rim
 thickness), GØ and GW (groove diameter and width), HØ (head diameter) and HL (base to the top of the
 ramp; on a belted case the belt's front is HL + LW): `ramp_top` is HL, `groove_diameter` is GØ and
-`ramp_angle` follows from HL = RT + GW + ((HØ − GØ)/2)/tan(angle), rounded to a whole degree. A
-specimen drawing counts only when its rim and head diameters are within 0.5 mm of the file's.
+`ramp_angle` follows from HL = RT + GW + ((HØ − GØ)/2)/tan(angle), rounded to a whole degree. On a
+belted case the ramp climbs to the belt, so the belt's diameter LØ takes the place of HØ. A
+specimen drawing counts only when its rim and head diameters are within 0.5 mm of the file's. A
+calibre without a drawing takes the groove of a sister round's drawing, behind its own rim
+thickness, when a source says that the two share the head (.416 Dakota: the .375 Dakota's).
 
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
 its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal
@@ -356,7 +371,9 @@ than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadc
 the sheet). Beside an AECC drawing the book's rim thickness stays when the two are within 0.3 mm of
 each other; when they are further apart the whole head is the drawing's, because HL is measured from
 the base and another rim under it would change the groove's width (6.5 mm Bergmann: .025 in. in the
-book, 1.00 mm on the drawing). A rim without a thickness is
+book, 1.00 mm on the drawing). Where no book gives a rim thickness, the drawing's RT is taken, on a
+rimmed case too and also where the drawing's shoulder is not (.38-70 Winchester); its rim and head
+diameters must be within 0.5 mm of the file's. A rim without a thickness is
 drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless, semi-rimmed and belted); those
 cases without a groove get a generic head fitted to the sourced ones (`generic_head` in `outline.py`;
 `HEAD_UNSOURCED` in `tests/test_outline.py` lists them): a groove of 87 % of the rim diameter and at

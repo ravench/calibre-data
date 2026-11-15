@@ -23,8 +23,8 @@ case_length = 53.5
 overall_length = 77.47
 bullet = 6.65
 # shoulder_at from the AECC drawing 07-054-BBC-010 (municion.org): SL 41.20 on a case of CL 53.55, taken from the
-# mouth (case_length - (CL - SL)). The specimen's cone is 19.1 degrees; at the 25 degrees below the neck starts
-# 1.4 mm before the specimen's.
+# mouth (case_length - (CL - SL)). The specimen's cone is 19.1 degrees; at the 25 degrees below the neck is 1.42 mm
+# longer than the specimen's (NL 7.50), inside the 1.5 mm the rule allows.
 sources = [
   "https://en.wikipedia.org/wiki/6.5×53mmR",
   "https://municion.org/producto/65-x-535-r-dutch-mannlicher-m-1895/",

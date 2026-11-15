@@ -39,8 +39,8 @@ sources = ["book:cotw-18 p. 608"]
 
 [shoulder_angle]
 # The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 82.47 - NL 15.40 -
-# SL 61.00 = 6.07 mm). The specimen's own cone (4.4 degrees) between the book's diameters would start the neck
-# 2.5 mm before the specimen's.
+# SL 61.00 = 6.07 mm). The specimen's own cone (4.4 degrees) between the book's diameters would leave a neck
+# 2.6 mm longer than the specimen's (NL 15.40), over the 1.5 mm the rule allows.
 degrees = 2.5
 sources = ["https://municion.org/producto/500-450-express-3-1-4-bp-nbp-ne/"]
 
