@@ -37,9 +37,13 @@ degrees = 26.1
 sources = ["https://municion.org/producto/300-dakota/"]
 
 [case_head]
-# .046 in.
+# .046 in. (COTW); groove from the AECC drawing 08-065-BGC-060 (municion.org): RT 1.18, HL 3.30, GØ 12.12, GW 0.90,
+# HØ 13.80; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.17
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.3
+groove_diameter = 12.12
+ramp_angle = 35.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/300-dakota/"]
 
 [bullet]
 # Soft point inferred from its use as a hunting round; the page gives weights only.

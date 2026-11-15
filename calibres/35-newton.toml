@@ -38,6 +38,15 @@ sources = []
 degrees = 21.0
 sources = ["https://municion.org/producto/35-newton/"]
 
+[case_head]
+# AECC drawing 09-064-BGC-040 (municion.org): RT 1.17, HL 3.10, GØ 11.65, GW 1.00, HØ 13.33; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.17
+ramp_top = 3.1
+groove_diameter = 11.65
+ramp_angle = 42.0
+sources = ["https://municion.org/producto/35-newton/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 209"]

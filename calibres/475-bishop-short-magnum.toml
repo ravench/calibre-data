@@ -39,9 +39,13 @@ degrees = 10.2
 sources = ["https://municion.org/producto/475-bishop-short-magnum/"]
 
 [case_head]
-# .054 in.
+# .054 in. (COTW); groove from the AECC drawing 12-055-BRC-020 (municion.org): RT 1.30, HL 4.70, GØ 10.40, GW 1.20,
+# HØ 15.00; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.37
-sources = ["book:cotw-18 p. 453"]
+ramp_top = 4.7
+groove_diameter = 10.4
+ramp_angle = 46.0
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/475-bishop-short-magnum/"]
 
 [bullet]
 type = "jacketed"

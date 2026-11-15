@@ -14,14 +14,15 @@ rare = true
 rim = 13.51
 base = 13.82
 shoulder = 13.46
-shoulder_at = 60.4
+shoulder_at = 59.0
 neck = 8.18
 case_length = 71.88
 overall_length = 91.44
 bullet = 7.21
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 452"]
+# shoulder_at from the AECC drawing 07-072-BRC-011 (municion.org), carried from the mouth. The drawing is titled
+# «7 mm Imperial Magnum»: its page says the range was sold as NASS Magnum, then as Imperial Magnum and last as
+# Canadian Magnum. The specimen's case is within 0.25 mm of the book on every size.
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/7-mm-imperial-magnum/"]
 
 [introduced]
 # COTW: developed about 1989.
@@ -32,10 +33,19 @@ sources = ["book:cotw-18 p. 388"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.38, NØ 7.97, SL 58.75, NL 6.70, CL 71.63.
+degrees = 23.6
+sources = ["https://municion.org/producto/7-mm-imperial-magnum/"]
+
 [case_head]
-# .046 in.
+# .046 in. (COTW); groove from the AECC drawing 07-072-BRC-011 (municion.org, «7 mm Imperial Magnum»): RT 1.18,
+# HL 3.30, GØ 11.65, GW 1.12, HØ 13.75; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.17
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.3
+groove_diameter = 11.65
+ramp_angle = 46.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/7-mm-imperial-magnum/"]
 
 [bullet]
 # Soft point inferred from its use as a hunting round; the page gives weights only.

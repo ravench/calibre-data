@@ -149,6 +149,41 @@ class GapTests(unittest.TestCase):
             self.assertEqual(s["belt"], belt)
             self.assertEqual(outline.case_profile(s)[5], (belt / 2, front))
 
+    def test_aecc_drawings_and_parent_cases_source_american_magnums(self):
+        # American magnums and wildcats of 1913 to 2012 without a C.I.P. or SAAMI sheet. Twelve have the groove of their
+        # own AECC drawing (municion.org), behind the book's rim thickness where one gives it. The drawings of the 7 mm
+        # and .338 Canadian Magnum carry the range's earlier name, Imperial Magnum.
+        heads = {".30 Newton": (1.28, 3.23, 11.57, 41.0), ".35 Newton": (1.17, 3.1, 11.65, 42.0),
+                 "7 mm Dakota": (1.07, 3.25, 12.11, 33.0), ".300 Dakota": (1.17, 3.3, 12.12, 35.0),
+                 ".330 Dakota": (1.14, 3.28, 12.13, 43.0), ".375 Dakota": (1.17, 3.2, 12.08, 42.0),
+                 "7 mm Canadian Magnum": (1.17, 3.3, 11.65, 46.0), ".338 Canadian Magnum": (1.17, 3.55, 11.8, 38.0),
+                 ".458 Canadian Magnum": (1.17, 3.5, 11.85, 34.0), ".475 Bishop Short Magnum": (1.37, 4.7, 10.4, 46.0),
+                 ".500 Phantom": (1.31, 3.9, 11.75, 57.0), ".577 Tyrannosaur": (1.52, 3.5, 16.1, 38.0)}
+        for name, head in heads.items():
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                self.assertEqual(cartridges.case_head(name), head)
+                self.assertIn("municion.org", cartridges.sources(name, "case_head")[-1])
+        # Two are a parent case with a C.I.P. sheet: the whole head is the parent's.
+        for name, parent, page in [(".450 Dakota", ".416 Rigby", "book:cotw-18 p. 435"),
+                                   (".338 Lehigh", "6.5 mm Grendel", "book:cotw-18 p. 402")]:
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+                self.assertEqual(cartridges.case_head(name), cartridges.case_head(parent))
+                self.assertEqual(cartridges.sources(name, "case_head"), cartridges.sources(parent, "case_head") + [page])
+        # The .416 Dakota has no drawing of its own: the groove of the .375 Dakota's drawing (the same altered .404
+        # Jeffery head on a shorter case) behind its own rim thickness.
+        self.assertEqual(cartridges.case_head(".416 Dakota"), (1.07,) + cartridges.case_head(".375 Dakota")[1:])
+        self.assertEqual(cartridges.sources(".416 Dakota", "case_head"),
+                         ["book:cotw-18 p. 453", "https://municion.org/producto/375-dakota/", "book:cotw-18 p. 424"])
+        self.assertEqual(outline.gaps(self.spec(".416 Dakota")), ())
+        # The .50-115 Bullard's drawing gives its rim only.
+        self.assertEqual(cartridges.rim_thickness(".50-115 Bullard"), 1.5)
+        self.assertIn("groove", outline.gaps(self.spec(".50-115 Bullard")))
+        # 7 mm Long Range Magnum: the shoulder starts where its drawing shows it.
+        self.assertEqual(self.spec("7 mm Long Range Magnum")["sh_at"], 49.92)
+        self.assertEqual(outline.gaps(self.spec("7 mm Long Range Magnum")), ())
+
     def test_cip_sheets_found_under_another_title_source_their_calibres(self):
         # Calibres that failed the rule on 2026-11-14 and now take every measurement and the head from their C.I.P.
         # sheet, some found under another title (the Vergueiro as «6,5 x 58 Mauser», the .256 Gibbs as «256 Mag.
@@ -496,6 +531,8 @@ class OutlineTests(unittest.TestCase):
             ".338-378 Weatherby Magnum": (60.4, 9.78, 73.7), "7 mm Remington SAUM": (38.95, 7.5, 51.52),
             ".458 SOCOM": (30.0, 9.15, 40.0), "8x58 mm R Danish Krag": (41.0, 11.2, 57.7),
             ".416 Barrett": (63.5, 12.17, 82.95), ".400/375 Belted Nitro Express": (43.7, 18.5, 63.38),
+            "7 mm Long Range Magnum": (49.91, 9.7, 63.85),
+            "7 mm Canadian Magnum": (58.75, 6.7, 71.63), ".338 Canadian Magnum": (59.82, 8.15, 71.72),
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
@@ -515,7 +552,6 @@ class OutlineTests(unittest.TestCase):
         # shoulder_at is estimated, as the note in [mm] says).
         ".275 No. 2 Magnum", ".276 Pedersen",
         ".32-30 Remington", ".32-40 Remington",
-        ".338 Canadian Magnum",
         ".38-70 Winchester", ".38-90 Winchester Express",
         ".40-70 Peabody What Cheer",
         ".400/360 Nitro Express", ".416 Rimmed",
@@ -529,7 +565,7 @@ class OutlineTests(unittest.TestCase):
         "10.8x47 mm R Martini Target",
         "11.4x50 mm R Brazilian Comblain", "11x53 mm R Comblain",
         "11x52 mm R Beaumont M71/78", "6.5x53.5 mm SR Daudeteau",
-        "6x57 mm Mauser", "6x58 mm Forster", "7 mm Canadian Magnum",
+        "6x57 mm Mauser", "6x58 mm Forster",
         "8.5 mm Mars",
         "9.3x75 mm R Nimrod",
         "9x70 mm R Mauser",
@@ -599,7 +635,8 @@ class OutlineTests(unittest.TestCase):
         drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64), "10.4x38 mm R Vetterli": (10.6, 26.11),
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
                     ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1),
-                    ".400/375 Belted Nitro Express": (20.4, 43.82)}
+                    ".400/375 Belted Nitro Express": (20.4, 43.82),
+                    "7 mm Canadian Magnum": (23.6, 59.0), ".338 Canadian Magnum": (28.1, 59.98)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):
@@ -631,18 +668,15 @@ class OutlineTests(unittest.TestCase):
     HEAD_UNSOURCED = {
         "5.8x42 mm", "7.92x107 mm DS",
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
-        ".276 Enfield", ".276 Pedersen", ".280 British", ".30 Newton", ".30 USA Rimless", ".300 Dakota", ".330 Dakota",
-        ".338 Canadian Magnum", ".338 Lehigh", ".35 Newton", ".360 Mars", ".375 Dakota", ".416 Dakota",
-        ".45 Remington Thompson", ".45-70 Auto", ".450 Dakota", ".455 Webley Automatic", ".458 Canadian Magnum",
-        ".475 Bishop Short Magnum", ".50 GI", ".50-115 Bullard", ".500 Phantom", ".577 Tyrannosaur",
-        "10.57 Lazzeroni Maverick", "10.57 Lazzeroni Meteor", "10.75x63 mm Mauser", "12.04 Bibamufu",
-        "4.85x49 mm British", "5 mm Bergmann", "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW",
-        "6.17 Lazzeroni Flash", "6.17 Lazzeroni Spitfire", "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau",
-        "6.71 Lazzeroni Blackbird", "6.71 Lazzeroni Phantom", "6x58 mm Forster", "7 mm Canadian Magnum", "7 mm Dakota",
-        "7.21 Lazzeroni Firehawk", "7.21 Lazzeroni Tomahawk", "7.65 mm Roth-Sauer", "7.82 Lazzeroni Patriot",
-        "8.5 mm Mars", "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan", "8x59 mm Breda", "8x63 mm Swedish",
-        "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle", "9.53 Lazzeroni Hellcat", "9.53 Lazzeroni Saturn",
-        "9.8 mm Auto Colt",
+        ".276 Enfield", ".276 Pedersen", ".280 British", ".30 USA Rimless", ".360 Mars", ".45 Remington Thompson",
+        ".45-70 Auto", ".455 Webley Automatic", ".50 GI", ".50-115 Bullard", "10.57 Lazzeroni Maverick",
+        "10.57 Lazzeroni Meteor", "10.75x63 mm Mauser", "12.04 Bibamufu", "4.85x49 mm British", "5 mm Bergmann",
+        "5x58 mm Sturtevant", "6 mm Lee Navy", "6 mm SAW", "6.17 Lazzeroni Flash", "6.17 Lazzeroni Spitfire",
+        "6.53 Lazzeroni Scramjet", "6.5x53.5 mm SR Daudeteau", "6.71 Lazzeroni Blackbird", "6.71 Lazzeroni Phantom",
+        "6x58 mm Forster", "7.21 Lazzeroni Firehawk", "7.21 Lazzeroni Tomahawk", "7.65 mm Roth-Sauer",
+        "7.82 Lazzeroni Patriot", "8.5 mm Mars", "8.59 Lazzeroni Galaxy", "8.59 Lazzeroni Titan", "8x59 mm Breda",
+        "8x63 mm Swedish", "9 mm Winchester Magnum", "9.09 Lazzeroni Eagle", "9.53 Lazzeroni Hellcat",
+        "9.53 Lazzeroni Saturn", "9.8 mm Auto Colt",
     }
 
     SHALLOW_CONES = {".32 Winchester Self-Loading": 3.7, ".35 Winchester Self-Loading": 8.0,
@@ -799,8 +833,10 @@ class OutlineTests(unittest.TestCase):
         # Rimless: the groove is 87 % of the rim, 1 mm long, and a 40 degree ramp leads up to the body.
         self.assertEqual(head(".276 Pedersen", 5), [(5.73, 0), (5.73, 1.3), (4.9851, 1.3), (4.9851, 2.3), (5.7, 3.152)])
         # Rebated (rim 12.01 mm on a 14.94 mm body): the groove is below the rim, the ramp climbs on to the body.
-        self.assertEqual(head(".475 Bishop Short Magnum", 5),
-                         [(6.005, 0), (6.005, 1.37), (5.2244, 1.37), (5.2244, 2.37), (7.47, 5.0463)])
+        # The rebated cases of the catalogue have their own heads now, so this one is made up.
+        rebated = cartridges.c("A rebated case", RIMLESS, 12.01, 14.94, 14.66, 12.8, 55.78, 40.88, 72.39, 12.06, SPITZER)
+        self.assertEqual([(round(r, 4), round(h, 4)) for r, h in outline.case_profile(rebated)[:5]],
+                         [(6.005, 0), (6.005, 1.3), (5.2244, 1.3), (5.2244, 2.3), (7.47, 4.9763)])
         # Semi-rimmed (rim 12.7 mm on a 12.04 mm body): the groove is 90 % of the body, not level with it.
         self.assertEqual(head(".455 Webley Automatic", 5),
                          [(6.35, 0), (6.35, 1.3), (5.418, 1.3), (5.418, 2.3), (6.02, 3.0174)])

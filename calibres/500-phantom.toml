@@ -31,6 +31,15 @@ sources = ["book:cotw-18 p. 442"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# AECC drawing 13-039-BRC-030 (municion.org): RT 1.31, HL 3.90, GØ 11.75, GW 1.30, HØ 15.71; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.31
+ramp_top = 3.9
+groove_diameter = 11.75
+ramp_angle = 57.0
+sources = ["https://municion.org/producto/500-phantom/"]
+
 [bullet]
 type = "jacketed"
 sources = []

@@ -36,9 +36,14 @@ degrees = 29
 sources = ["book:cotw-18 p. 402"]
 
 [case_head]
-# .053 in.
-rim_thickness = 1.35
-sources = ["book:cotw-18 p. 452"]
+# C.I.P. 6,5 Grendel: R, E, E1, delta. The round is based on the 6.5 mm Grendel (COTW 18 p. 402), with a shorter case
+# and a wider neck, and C.I.P. has no sheet for it. Cartridges of the World's table gives the rim .053 in. (1.35); the
+# AECC drawing 09-036-BGC-030 (municion.org) of a specimen: RT 1.08, HL 3.40, GØ 9.29.
+rim_thickness = 1.5
+ramp_top = 3.5
+groove_diameter = 9.6
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-grendel.pdf", "book:cotw-18 p. 402"]
 
 [bullet]
 type = "jacketed"

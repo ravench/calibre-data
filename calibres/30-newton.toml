@@ -35,6 +35,15 @@ sources = ["book:cotw-18 p. 250"]
 degrees = 20.1
 sources = ["https://municion.org/producto/30-newton/"]
 
+[case_head]
+# AECC drawing 08-064-BGC-040 (municion.org): RT 1.28, HL 3.23, GØ 11.57, GW 0.95, HØ 13.33; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.28
+ramp_top = 3.23
+groove_diameter = 11.57
+ramp_angle = 41.0
+sources = ["https://municion.org/producto/30-newton/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 198"]

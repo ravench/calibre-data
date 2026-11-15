@@ -33,6 +33,12 @@ sources = ["book:cotw-18 p. 245"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 252"]
 
+[case_head]
+# AECC drawing 13-055-BDC-010 (municion.org): RT 1.50. The drawing gives no groove width, so the groove stays the
+# generic one.
+rim_thickness = 1.5
+sources = ["https://municion.org/producto/50-115-300-bullard/"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 245"]

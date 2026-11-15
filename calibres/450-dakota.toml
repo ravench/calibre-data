@@ -38,9 +38,14 @@ degrees = 22.5
 sources = ["https://municion.org/producto/450-dakota/"]
 
 [case_head]
-# .058 in.
-rim_thickness = 1.47
-sources = ["book:cotw-18 p. 453"]
+# C.I.P. 416 Rigby: R, E, E1, delta. Dakota made this round on the .416 Rigby case, blown out (COTW 18 p. 435), and
+# C.I.P. has no sheet for it. Cartridges of the World's table gives the rim .058 in. (1.47); the AECC drawing
+# 12-074-BGC-020 (municion.org) of a specimen: RT 1.55, HL 4.00, GØ 12.43.
+rim_thickness = 1.65
+ramp_top = 3.81
+groove_diameter = 12.7
+ramp_angle = 39.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf", "book:cotw-18 p. 435"]
 
 [bullet]
 # Soft point inferred from its use as a hunting round; the page gives weights only.

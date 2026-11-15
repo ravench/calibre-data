@@ -46,9 +46,14 @@ degrees = 30
 sources = ["https://loaddata.com/Cartridge/416-Dakota-Hornady-Handbook-of-Cartridge-Reloading-7th-8th-Editions/1737"]
 
 [case_head]
-# .042 in.
+# .042 in. (COTW); groove from the AECC drawing 10-065-BGC-020 (municion.org) of the .375 Dakota, which has the same
+# modified .404 Jeffery head on a shorter case (COTW 18 pp. 415 and 424): RT 1.25, HL 3.20, GØ 12.08, GW 1.00, HØ 13.80;
+# ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle). No drawing of the .416 itself was found.
 rim_thickness = 1.07
-sources = ["book:cotw-18 p. 453"]
+ramp_top = 3.2
+groove_diameter = 12.08
+ramp_angle = 42.0
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/375-dakota/", "book:cotw-18 p. 424"]
 
 [bullet]
 # Soft point inferred from its use as a hunting round; the page gives weights only.
