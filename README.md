@@ -22,11 +22,12 @@ names they show (`CATEGORIES` in `cartridges.py`), so a new category needs a cha
 `cannon` (`Kanone`, the 20 to 57 mm rounds of automatic and autoloading cannon; rounds fired
 only by hand-loaded tank, naval and artillery guns stay out) is in the catalogue only, not yet in
 the apps (`NOT_IN_APPS`): its calibres are in `ALL_CATALOGUE` and the per-calibre tables but not in
-`CATALOGUE`, so the apps' JSON does not change. No C.I.P. or SAAMI sheet covers them, so a cannon file keeps only the
+`CATALOGUE`, so Schiesstagebuch's JSON does not change (Kaliberfinder reads `ALL_CATALOGUE` and shows
+them only behind its developer switch). No C.I.P. or SAAMI sheet covers them, so a cannon file keeps only the
 measurements a source gives (`bullet` and `case_length` are required, the others optional; the name
 gives both, 35x228 being a 35 mm round with a 228 mm case). It has no
-`[primer]` (cannon primers are not reloading sizes), no `display_aliases` and no lookalike group:
-the apps read those whole.
+`[primer]` (cannon primers are not reloading sizes) and no `display_aliases`; its lookalike groups
+hold cannon rounds only (see [Lookalikes](#lookalikes)).
 
 - `order.toml`: the order the apps and the poster list the calibres in. A calibre that is not listed
   comes after the listed ones of its category, by name, so a new calibre needs no entry here.
@@ -172,6 +173,8 @@ a choice, follow the calibre's family (`.25 WSSM` like `.223 WSSM`, `.38-56 WCF`
 - Where two cartridges would get the same name, the case length, the year or the ignition tells
   them apart: `.450/400 Nitro Express 3 inch`, `10.4 mm Swiss Ordnance 1872 Rimfire`,
   `.44 Henry Centrefire`.
+- Cannon loadings of one case that only their own gun fires carry the gun after the case:
+  `23x152 mm B VYa`, `30x165 mm 2A42`, `30x173 mm GAU-8`. Their group carries the case alone.
 - A cartridge with two common names gets the other one in brackets, mostly the metric one first:
   `9 mm Browning kurz (.380 ACP)`, `9.3x66 mm Sako (.370 Sako Magnum)`. Swiss
   service rounds carry their service name: `7.5x55 mm Swiss (GP 11)`, `5.6 mm GP 90`.
@@ -590,8 +593,8 @@ A group's `name` is the parent's name or the family's, such as `8x57 mm` for the
 rounds. It is unique and never the name of a calibre outside the group. `LOOKALIKE_NAMES` lists the
 names in the order of `LOOKALIKES`.
 
-A group may also hold cannon rounds, and then cannon rounds only. Such a group stays out of the apps,
-as the rounds do: `LOOKALIKES` and `LOOKALIKE_NAMES` leave it out, `ALL_LOOKALIKES` and
+A group may also hold cannon rounds, and then cannon rounds only. Such a group stays out of the apps'
+groups: `LOOKALIKES` and `LOOKALIKE_NAMES` leave it out, `ALL_LOOKALIKES` and
 `ALL_LOOKALIKE_NAMES` have every group, and `lookalikes(name)` reads them all. A cannon round made
 in loadings that only their own gun fires is a calibre per loading, each with its own drawing, in a
 group named by what they share (Raven 2026-11-15): `23x152 mm B` (VYa and ZU-23), `30x165 mm`
@@ -602,7 +605,7 @@ rimless twin), `bore` (bullet diameter), `length` (case length), `seating` (a wa
 nearly so), `load` (C.I.P., SAAMI or the service gives the same case a hotter load or another
 chamber that the older or weaker guns must not fire), `ignition` (rimfire and centrefire versions
 of one cartridge: a rimfire gun cannot fire the centrefire one, nor the other way round) or `gun`
-(cannon loadings of one case that only their own gun fires: another primer or headspace). Each
+(cannon loadings of one case that only their own gun fires: another primer). Each
 calibre is in at most one group. Other names of the same cartridge are search aliases, not groups.
 The groups were judged against Cartridges of the World (14th ed., 2014) and the C.I.P. and SAAMI
 lists.

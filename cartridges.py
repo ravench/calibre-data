@@ -52,8 +52,8 @@ CATEGORIES = {"rimfire": "Randfeuer", "handgun": "Kurzwaffe", "rifle": "Langwaff
               "cannon": "Kanone"}
 # Categories for the catalogue only, not yet in the apps: their calibres are in ALL_CATALOGUE and
 # the per-calibre tables but not in CATALOGUE, may leave out measurements no source gives (only bullet
-# and case_length are required) and have no [primer] (cannon primers are not reloading sizes),
-# display_aliases or lookalike group, the parts the apps' generators read whole.
+# and case_length are required) and have no [primer] (cannon primers are not reloading sizes) or
+# display_aliases. Their lookalike groups hold cannon rounds only and are in ALL_LOOKALIKES alone.
 NOT_IN_APPS = ("cannon",)
 
 
@@ -130,7 +130,7 @@ CUPRONICKEL = "cupronickel"
 JACKET_METALS = (CUPRONICKEL, STEEL)
 # What tells lookalikes apart (differ_by in lookalikes.toml).
 RIM, BORE, LENGTH, SEATING, LOAD, IGNITION = "rim", "bore", "length", "seating", "load", "ignition"
-# Cannon loadings of one case that only their own gun fires (another primer or headspace).
+# Cannon loadings of one case that only their own gun fires (another primer).
 GUN = "gun"
 
 

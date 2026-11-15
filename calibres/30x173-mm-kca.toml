@@ -8,7 +8,7 @@ name = "30x173 mm KCA"
 categories = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
-aliases = ["30 mm kca", "30 mm oerlikon kca", "304 rk", "gau-9"]
+aliases = ["30x173", "30 mm kca", "30 mm oerlikon kca", "30 mm 304 rk", "30 mm gau-9"]
 origin = "CH"
 origin_sources = ["https://en.wikipedia.org/wiki/Oerlikon_KCA"]
 
@@ -21,7 +21,11 @@ neck = 31.5
 case_length = 173.0
 overall_length = 290.47
 bullet = 30.0
-sources = ["book:janes-ammo-2002 p. 682", "book:janes-ammo-2002 p. 105", "https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/"]
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "book:janes-ammo-2002 p. 105",
+  "https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/",
+]
 
 [introduced]
 unknown = "Wikipedia dates the KCA's design to the 1950s and 1960s and its production only to the 1970s"

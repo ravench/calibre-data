@@ -667,7 +667,7 @@ calibres = [".416 Rigby", ".416 Rigby No. 2"]
 
 [[group]]
 # Cannon rounds (catalogue only): loadings of one case that only their own gun fires, with another
-# primer or headspace (Jane's pp. 91, 96-99, 105 and 112).
+# primer (Jane's pp. 91, 96-99, 105 and 112; p. 91 calls the two 23x152 B not interchangeable).
 name = "23x152 mm B"
 differ_by = ["gun"]
 calibres = ["23x152 mm B VYa", "23x152 mm B ZU-23"]

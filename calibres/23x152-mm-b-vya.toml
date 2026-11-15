@@ -8,7 +8,7 @@ name = "23x152 mm B VYa"
 categories = ["cannon"]
 kind = "belted"
 profile = "spitzer"
-aliases = ["23x152b", "23x152", "23 mm vya", "vya-23"]
+aliases = ["23x152b", "23x152", "23 mm vya"]
 origin = "SU"
 origin_sources = ["https://en.wikipedia.org/wiki/23%C3%97152mmB"]
 

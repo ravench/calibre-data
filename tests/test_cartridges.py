@@ -1086,12 +1086,17 @@ class CatalogueTests(unittest.TestCase):
 
     def test_cannon_loadings_of_one_case_are_calibres_of_their_own(self):
         # Raven 2026-11-15: cannon rounds that exist in variants become a calibre each, in a group named by
-        # what they share. Only their own gun fires them (another primer or headspace, Jane's 2002).
+        # what they share. Only their own gun fires them (another primer, Jane's 2002).
         groups = dict(zip(cartridges.ALL_LOOKALIKE_NAMES, cartridges.ALL_LOOKALIKES))
         self.assertEqual(groups["23x152 mm B"], (("gun",), ["23x152 mm B VYa", "23x152 mm B ZU-23"]))
         self.assertEqual(groups["30x165 mm"], (("gun",), ["30x165 mm GSh-30", "30x165 mm 2A42"]))
         self.assertEqual(groups["30x173 mm"], (("gun",), ["30x173 mm KCA", "30x173 mm GAU-8"]))
         self.assertEqual(lookalikes("30x173 mm GAU-8"), ["30x173 mm KCA"])
+        # Their names follow the group-name rule too: unique, and no calibre outside the group.
+        self.assertEqual(len(set(cartridges.ALL_LOOKALIKE_NAMES)), len(cartridges.ALL_LOOKALIKE_NAMES))
+        every = {spec["name"] for _, specs in cartridges.ALL_CATALOGUE for spec in specs}
+        for title in ("23x152 mm B", "30x165 mm", "30x173 mm"):
+            self.assertNotIn(title, every)
         # The apps' groups leave them out, as CATALOGUE leaves out the cannon rounds.
         self.assertNotIn("30x173 mm", LOOKALIKE_NAMES)
         self.assertEqual(len(cartridges.ALL_LOOKALIKES), len(LOOKALIKES) + 3)
