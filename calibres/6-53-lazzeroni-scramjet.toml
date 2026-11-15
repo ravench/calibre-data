@@ -22,7 +22,8 @@ bullet = 6.53
 # shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees. The AECC drawing
 # 07-071-BGC-020 (municion.org) has the shoulder start 2.5 mm earlier (SL 57.02 on a case of CL 70.93) and a
 # neck of NL 6.87: a cone of 21 degrees, not the book's 30. With the book's angle from the drawing's start the
-# neck would begin 2.2 mm before the drawing's, so neither is taken until a third source settles it.
+# neck would be 2.18 mm longer than the drawing's, over the 1.5 mm the rule allows, so neither is taken until a
+# third source settles it.
 unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 451"]
 
