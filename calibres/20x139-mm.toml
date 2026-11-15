@@ -1,7 +1,7 @@
 # Hispano-Suiza's round for the HS 820, later the Rheinmetall Rh 202's. Its name gives the bore and
-# case length; KNDS gives the cartridge length, Rapid Fire's table the rim and base, the AECC specimen
-# drawing on municion.org the shoulder, the neck (Jane's table: 21.49) and the head. Jane's entry
-# (p. 87) gives a 28.4 mm rim, its dimension table (p. 682) 30.00 mm.
+# case length; KNDS gives the cartridge length, Rapid Fire's table the rim and base, Jane's table the
+# neck (the AECC specimen drawing on municion.org: 21.45), the drawing the shoulder and the head.
+# Jane's entry (p. 87) gives a 28.4 mm rim, its dimension table (p. 682) 30.00 mm.
 name = "20x139 mm"
 categories = ["cannon"]
 kind = "rimless"
@@ -15,7 +15,7 @@ rim = 28.5
 base = 28.5
 shoulder = 27.48
 shoulder_at = 115.2
-neck = 21.45
+neck = 21.49
 case_length = 139.0
 overall_length = 213.0
 bullet = 20.0
@@ -24,6 +24,7 @@ sources = [
   "https://knds.com/en/products/ammunition/20x139-mm",
   "https://en.wikipedia.org/wiki/Hispano-Suiza_HS.820",
   "book:janes-ammo-2002 p. 87",
+  "book:janes-ammo-2002 p. 682",
   "https://municion.org/producto/20-x-139-hispano-hs-820-a-rh-202-m-693-f1/",
 ]
 
@@ -32,15 +33,15 @@ unknown = "the sources date the HS 820 only to after 1945; the later Rh 202 reac
 sources = ["https://en.wikipedia.org/wiki/Hispano-Suiza_HS.820", "https://en.wikipedia.org/wiki/Rheinmetall_Mk_20_Rh-202"]
 
 [shoulder_angle]
-# AECC drawing 20-139-BGC-010 on municion.org: SØ 27.48, NØ 21.45, SL 115.00, NL 12.30, CL 138.80.
+# AECC drawing 20-139-BGC-010 on municion.org: SØ 27.48, NØ 21.45, SL 115.00, NL 12.30, CL 138.80, TL 213.00.
 degrees = 14.7
 sources = ["https://municion.org/producto/20-x-139-hispano-hs-820-a-rh-202-m-693-f1/"]
 
 [case_head]
 # Rapid Fire's table gives the rim 3.5 mm thick, 0.46 mm more than the drawing: the whole head is the
 # drawing's. Either way it is thicker than the 2.6 mm of the Swiss 20x139 FMK it grew from.
-# The AECC drawing 20-139-BGC-010 (municion.org): RT 3.04, GØ 24.81, GW 3.06, HØ 28.40, the ramp
-# ends at HL 7.70; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+# The AECC drawing 20-139-BGC-010 (municion.org): RØ 28.37, HØ 28.40, RT 3.04, GØ 24.81, GW 3.06,
+# the ramp ends at HL 7.70; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 3.04
 ramp_top = 7.7
 groove_diameter = 24.81

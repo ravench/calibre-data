@@ -40,7 +40,7 @@ class GapTests(unittest.TestCase):
 
     def test_cannon_rounds_with_a_specimen_drawing_are_well_sourced(self):
         # 2026-11-15: eleven AECC drawings (municion.org) and naboje.org's 34x239 gave these their shoulders and
-        # heads. The others lack a drawing that shows the shoulder (or, the 27x145 mm B, one that fits Jane's neck).
+        # heads (the 30x173 and 23x152 B from the drawings of the loading they describe). The others lack a drawing that shows the shoulder (or, the 27x145 mm B, one that fits Jane's neck).
         drawn = {"20x102 mm", "20x110 mm Hispano", "20x138 mm B", "20x139 mm", "23x152 mm B", "24x138 mm", "25x137 mm",
                  "30x113 mm B", "30x165 mm", "30x173 mm", "34x239 mm", "35x228 mm"}
         cannon = dict(cartridges.ALL_CATALOGUE)["Kanone"]
@@ -1117,7 +1117,7 @@ class OutlineTests(unittest.TestCase):
                 # The .55 Boys: 9.0.
                 low = (0.4, 1.3) if name in self.SMALL_HEADS else (0.7, 2.0)
                 high = (2.5, 9.5)
-                if s["bullet"] >= 20:  # a cannon round: the 35x228 mm's rim is 5.08 mm thick, the 20x138 mm B's belt ends at 15.34
+                if cartridges.categories(name)[0] == "Kanone":  # a cannon round: the 35x228 mm's rim is 5.08 mm thick, the 20x138 mm B's belt ends at 15.34
                     low, high = (1.5, 5.0), (6.0, 16.0)
                 self.assertTrue(low[0] < thick < high[0] and low[1] < top_at < high[1])
                 # A groove's front ramp is 10 degrees or more. Three Winchester self-loading cases have a shallow

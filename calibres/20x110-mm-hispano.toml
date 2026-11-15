@@ -2,7 +2,7 @@
 # «20 mm Kanone 1948/73» (Hispano Mk V) of the Schützenpanzer 63/73, and Swiss aircraft such as the
 # Doflug D-3802/3803 and EKW C-36 carried the gun (Wikipedia). Its name gives the bore and case
 # length, Rapid Fire's table the rim and base, the AECC specimen drawing on municion.org the shoulder,
-# the neck, the head and the length of the round.
+# the neck, the head and the length of the round (TL).
 name = "20x110 mm Hispano"
 categories = ["cannon"]
 kind = "rimless"
@@ -34,13 +34,13 @@ year = 1938
 sources = ["https://en.wikipedia.org/wiki/Hispano-Suiza_HS.404"]
 
 [shoulder_angle]
-# AECC drawing 20-110-BGC-010 on municion.org: SØ 24.03, NØ 20.58, SL 95.10, NL 9.05, CL 109.93.
+# AECC drawing 20-110-BGC-010 on municion.org: SØ 24.03, NØ 20.58, SL 95.10, NL 9.05, CL 109.93, TL 182.94.
 degrees = 16.6
 sources = ["https://municion.org/producto/20-x-110-hispano-hs-404-804-mle-1938/"]
 
 [case_head]
-# The AECC drawing 20-110-BGC-010 (municion.org): RT 2.47, GØ 21.91, GW 3.16, HØ 24.84, the ramp
-# ends at HL 6.50; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+# The AECC drawing 20-110-BGC-010 (municion.org): RØ 24.76, HØ 24.84, RT 2.47, GØ 21.91, GW 3.16,
+# the ramp ends at HL 6.50; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 2.47
 ramp_top = 6.5
 groove_diameter = 21.91

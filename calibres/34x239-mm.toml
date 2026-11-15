@@ -31,7 +31,7 @@ sources = ["https://www.bocn.co.uk/threads/34x-239-flab-kan-38.60661"]
 
 [shoulder_angle]
 # The naboje.org drawing (labelled like a C.I.P. sheet): P2 45.05 at L1 196.70, H1 35.24 at L2 215.40,
-# case L3 239.80; angle = atan(((P2 - H1)/2)/(L2 - L1)).
+# case L3 239.80, round L6 365.20; angle = atan(((P2 - H1)/2)/(L2 - L1)).
 degrees = 14.7
 sources = ["https://naboje.org/en/node/14433"]
 

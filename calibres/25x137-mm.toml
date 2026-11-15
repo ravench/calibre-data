@@ -1,7 +1,8 @@
 # The Swiss round of the Oerlikon KBA, a NATO standard, also fired by the M242 Bushmaster. Its name
 # gives the bore and case length (Jane's table measures the case at 136.5 mm); Jane's table gives
-# the diameters, TM 43-0001-27 (the M791) and Jane's p. 89 the round length. Wikipedia's text has KBA
-# deliveries to the Netherlands from 1971, its infobox production from 1973 and service from 1975.
+# the rim, base and neck, the AECC specimen drawing on municion.org the shoulder and the head,
+# TM 43-0001-27 (the M791) and Jane's p. 89 the round length. Wikipedia's text has KBA deliveries to
+# the Netherlands from 1971, its infobox production from 1973 and service from 1975.
 name = "25x137 mm"
 categories = ["cannon"]
 kind = "rimless"
@@ -11,7 +12,6 @@ origin = "CH"
 origin_sources = ["https://en.wikipedia.org/wiki/Oerlikon_KBA"]
 
 [mm]
-# The shoulder from the AECC specimen drawing on municion.org.
 rim = 37.8
 base = 37.99
 shoulder = 35.58
@@ -34,13 +34,13 @@ year = 1971
 sources = ["https://en.wikipedia.org/wiki/Oerlikon_KBA"]
 
 [shoulder_angle]
-# AECC drawing 25-137-BGC-010 on municion.org: SØ 35.58, NØ 26.14, SL 109.50, NL 12.40, CL 136.63.
+# AECC drawing 25-137-BGC-010 on municion.org: SØ 35.58, NØ 26.14, SL 109.50, NL 12.40, CL 136.63, TL 222.86.
 degrees = 17.8
 sources = ["https://municion.org/producto/25-x-137-swiss-oerlikon-kba-mecanic-primer/"]
 
 [case_head]
-# The AECC drawing 25-137-BGC-010 (municion.org): RT 4.01, GØ 33.97, GW 4.09, HØ 38.07, the ramp
-# ends at HL 9.74; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+# The AECC drawing 25-137-BGC-010 (municion.org): RØ 37.86, HØ 38.07, RT 4.01, GØ 33.97, GW 4.09,
+# the ramp ends at HL 9.74; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 4.01
 ramp_top = 9.74
 groove_diameter = 33.97

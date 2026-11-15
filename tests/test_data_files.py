@@ -378,7 +378,7 @@ class CheckTests(unittest.TestCase):
             c.edit(win_mag, "rim = 13.51\n", "rim = 13.51\nbelt = 13.2\n")  # narrower than its rim
             c.edit(WIN, "rim = 11.9\n", "rim = 11.9\nbelt = 12.5\n")       # a rimless case
             c.edit(hh, "rim = 13.5\n", "rim = 13.5\nbelt = 13.56\n")       # stays valid: R3 on its sheet, 0.05 over R1
-            c.edit(cannon, "rim = 33.33\n", "")                           # stays valid: a cannon round without its rim
+            c.edit(cannon, "rim = 33.38\n", "")                           # stays valid: a cannon round without its rim
             self.assertEqual(sorted((p[0], p[1], p[2].split(":")[0]) for p in c.problems()), sorted([
                 (wby, c.line_of(wby, "rim ="), "a belted case with a rim narrower than its base needs [mm] belt (R3 on the C.I.P. sheets)"),
                 (short, c.line_of(short, "belt ="), "[mm] belt 14.78 is the belt's diameter (R3 on the C.I.P. sheets) where it is wider than the rim"),

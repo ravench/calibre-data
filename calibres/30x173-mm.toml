@@ -1,6 +1,9 @@
 # The round of the American GAU-8 Avenger (A-10, 1977) and the Swiss Oerlikon KCA (Saab Viggen, dated
 # only "1970s"), later of the Mk 44 Bushmaster II and the Mauser MK 30. Its name gives the bore and
-# case length; Wikipedia and KNDS give the cartridge length, Jane's table the diameters.
+# case length; Wikipedia and KNDS give the cartridge length, Jane's table the rim, base and neck, the
+# AECC specimen drawing of a GAU-8 round on municion.org the shoulder and the head. The KCA round's
+# drawing (30-173-BGE-010: SØ 40.08, NØ 31.40, SL 145.50, NL 15.30, CL 173.32) starts the shoulder
+# 1.1 mm nearer the mouth; the AECC calls the GAU-8 round a slightly different version of it.
 name = "30x173 mm"
 categories = ["cannon"]
 kind = "rimless"
@@ -10,11 +13,10 @@ origin_candidates = ["CH", "US"]
 origin_sources = []
 
 [mm]
-# The shoulder from the AECC specimen drawing of a KCA round on municion.org.
 rim = 43.99
 base = 43.99
-shoulder = 40.08
-shoulder_at = 145.18
+shoulder = 40.48
+shoulder_at = 144.1
 neck = 31.5
 case_length = 173.0
 overall_length = 290.0
@@ -24,7 +26,7 @@ sources = [
   "https://en.wikipedia.org/wiki/GAU-8_Avenger",
   "https://knds.com/en/products/ammunition/30x173-mm",
   "https://en.wikipedia.org/wiki/30_mm_caliber",
-  "https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/",
+  "https://municion.org/producto/30-x-173-us-xpl-gau-8/",
 ]
 
 [introduced]
@@ -32,20 +34,18 @@ year = 1977
 sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
 
 [shoulder_angle]
-# AECC drawing 30-173-BGE-010 on municion.org: SØ 40.08, NØ 31.40, SL 145.50, NL 15.30, CL 173.32.
-# A KCA round. The page's GAU-8 round (30-173-BGC-020: SØ 40.48, NØ 31.49, SL 144.00, NL 15.30, CL 172.90)
-# starts its shoulder 1.1 mm further back from the mouth.
-degrees = 19.1
-sources = ["https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/"]
+# AECC drawing 30-173-BGC-020 on municion.org: SØ 40.48, NØ 31.49, SL 144.00, NL 15.30, CL 172.90, TL 266.50.
+degrees = 18.3
+sources = ["https://municion.org/producto/30-x-173-us-xpl-gau-8/"]
 
 [case_head]
-# The AECC drawing 30-173-BGE-010 (municion.org): RT 4.39, GØ 37.88, GW 3.75, HØ 43.58, the ramp
-# ends at HL 11.20; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
-rim_thickness = 4.39
-ramp_top = 11.2
+# The AECC drawing 30-173-BGC-020 (municion.org): RØ 43.91, HØ 43.61, RT 4.22, GØ 37.88, GW 3.67,
+# the ramp ends at HL 11.35; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 4.22
+ramp_top = 11.35
 groove_diameter = 37.88
-ramp_angle = 43.0
-sources = ["https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/"]
+ramp_angle = 40.0
+sources = ["https://municion.org/producto/30-x-173-us-xpl-gau-8/"]
 
 [case]
 # Aluminium: the GAU-8's rounds, in service first (1977, see [introduced]).
