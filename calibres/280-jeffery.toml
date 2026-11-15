@@ -42,6 +42,15 @@ sources = ["book:cotw-18 p. 608"]
 degrees = 19.8
 sources = ["https://municion.org/producto/280-jeffery-rimless-nitro-express/"]
 
+[case_head]
+# C.I.P. 333 Riml. N.E.: R, E, E1, delta. This is the .333 Jeffery case necked down (COTW 18 p. 582) and C.I.P.
+# has no sheet for it. The AECC drawing 07-063-BGC-130 (municion.org) of a specimen: RT 1.21, HL 3.05, GØ 12.23.
+rim_thickness = 1.27
+ramp_top = 3.3
+groove_diameter = 12.37
+ramp_angle = 36.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf", "book:cotw-18 p. 582"]
+
 [bullet]
 # COTW gives no factory load.
 type = "softpoint"

@@ -36,6 +36,15 @@ sources = []
 degrees = 14.4
 sources = ["https://municion.org/producto/303-jeffery-magnum-semi-rimmed/"]
 
+[case_head]
+# AECC drawing 08-060-BDC-010 (municion.org): RT 1.18, HL 2.65, GØ 12.20, GW 1.00, HØ 13.40; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.18
+ramp_top = 2.65
+groove_diameter = 12.2
+ramp_angle = 52.0
+sources = ["https://municion.org/producto/303-jeffery-magnum-semi-rimmed/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 585"]

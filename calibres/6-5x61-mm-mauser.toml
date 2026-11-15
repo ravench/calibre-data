@@ -35,6 +35,15 @@ sources = ["book:cotw-18 p. 651"]
 degrees = 24.7
 sources = ["https://municion.org/producto/65-x-61-mauser/"]
 
+[case_head]
+# AECC drawing 07-061-BGC-030 (municion.org): RT 1.45, HL 3.60, GØ 10.43, GW 1.00, HØ 12.10; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.45
+ramp_top = 3.6
+groove_diameter = 10.43
+ramp_angle = 36.0
+sources = ["https://municion.org/producto/65-x-61-mauser/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 619"]

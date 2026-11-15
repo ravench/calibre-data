@@ -34,6 +34,15 @@ sources = ["book:cotw-18 p. 647"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# AECC drawing 11-057-BGC-010 (municion.org): RT 1.20, HL 3.20, GØ 10.00, GW 0.35, HØ 11.85; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle). The groove is narrow on this specimen (GW 0,35 as printed).
+rim_thickness = 1.2
+ramp_top = 3.2
+groove_diameter = 10.0
+ramp_angle = 29.0
+sources = ["https://municion.org/producto/1075-x-57-mauser/"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 647"]
