@@ -150,11 +150,13 @@ class GapTests(unittest.TestCase):
             self.assertEqual(outline.case_profile(s)[5], (belt / 2, front))
 
     def test_aecc_drawings_and_parent_cases_source_american_magnums(self):
-        # American magnums and wildcats of 1913 to 2012 without a C.I.P. or SAAMI sheet. Ten have the groove of their
-        # own AECC drawing (municion.org), behind the book's rim thickness where one gives it.
+        # American magnums and wildcats of 1913 to 2012 without a C.I.P. or SAAMI sheet. Twelve have the groove of their
+        # own AECC drawing (municion.org), behind the book's rim thickness where one gives it. The drawings of the 7 mm
+        # and .338 Canadian Magnum carry the range's earlier name, Imperial Magnum.
         heads = {".30 Newton": (1.28, 3.23, 11.57, 41.0), ".35 Newton": (1.17, 3.1, 11.65, 42.0),
                  "7 mm Dakota": (1.07, 3.25, 12.11, 33.0), ".300 Dakota": (1.17, 3.3, 12.12, 35.0),
                  ".330 Dakota": (1.14, 3.28, 12.13, 43.0), ".375 Dakota": (1.17, 3.2, 12.08, 42.0),
+                 "7 mm Canadian Magnum": (1.17, 3.3, 11.65, 46.0), ".338 Canadian Magnum": (1.17, 3.55, 11.8, 38.0),
                  ".458 Canadian Magnum": (1.17, 3.5, 11.85, 34.0), ".475 Bishop Short Magnum": (1.37, 4.7, 10.4, 46.0),
                  ".500 Phantom": (1.31, 3.9, 11.75, 57.0), ".577 Tyrannosaur": (1.52, 3.5, 16.1, 38.0)}
         for name, head in heads.items():
@@ -169,22 +171,13 @@ class GapTests(unittest.TestCase):
                 self.assertEqual(outline.gaps(self.spec(name)), ())
                 self.assertEqual(cartridges.case_head(name), cartridges.case_head(parent))
                 self.assertEqual(cartridges.sources(name, "case_head"), cartridges.sources(parent, "case_head") + [page])
-        # Three have no drawing of their own: the groove of a sister round's drawing behind their own rim thickness.
-        for name, sister, own in [(".416 Dakota", ".375 Dakota", 1.07), (".338 Canadian Magnum", None, 1.17),
-                                  ("7 mm Canadian Magnum", None, 1.17)]:
-            with self.subTest(name):
-                head = cartridges.case_head(name)
-                self.assertEqual(head[0], own)
-                self.assertNotIn("groove", outline.gaps(self.spec(name)))
-                if sister:
-                    self.assertEqual(head[1:], cartridges.case_head(sister)[1:])
-                self.assertIn("municion.org", cartridges.sources(name, "case_head")[1])
-                self.assertTrue(cartridges.sources(name, "case_head")[2].startswith("book:cotw-18 p. "))
-        self.assertEqual(cartridges.case_head(".338 Canadian Magnum")[1:], (3.45, 11.84, 35.0))  # the .375's drawing
-        self.assertEqual(cartridges.case_head("7 mm Canadian Magnum")[1:], (3.6, 11.81, 33.0))  # the .300's drawing
+        # The .416 Dakota has no drawing of its own: the groove of the .375 Dakota's drawing (the same altered .404
+        # Jeffery head on a shorter case) behind its own rim thickness.
+        self.assertEqual(cartridges.case_head(".416 Dakota"), (1.07,) + cartridges.case_head(".375 Dakota")[1:])
+        self.assertEqual(cartridges.sources(".416 Dakota", "case_head"),
+                         ["book:cotw-18 p. 453", "https://municion.org/producto/375-dakota/", "book:cotw-18 p. 424"])
         self.assertEqual(outline.gaps(self.spec(".416 Dakota")), ())
-        # The Canadian Magnums' shoulders have no source yet; the .50-115 Bullard's drawing gives its rim only.
-        self.assertEqual(outline.gaps(self.spec(".338 Canadian Magnum")), ("measurements", "shoulder_angle"))
+        # The .50-115 Bullard's drawing gives its rim only.
         self.assertEqual(cartridges.rim_thickness(".50-115 Bullard"), 1.5)
         self.assertIn("groove", outline.gaps(self.spec(".50-115 Bullard")))
         # 7 mm Long Range Magnum: the shoulder starts where its drawing shows it.
@@ -539,8 +532,10 @@ class OutlineTests(unittest.TestCase):
 
     def test_necks_start_where_the_municion_drawings_show(self):
         # AECC specimen drawings on municion.org: (shoulder start SL, neck length NL, case length CL), mm.
-        # sh_at sits where the drawn neck begins (CL - NL) minus the calibre's shoulder, and never
-        # well before the drawn shoulder start. Calibres with a C.I.P. sheet follow the sheet
+        # The neck the outline draws is as long as the specimen's (NL) within 1.5 mm, and sh_at is never
+        # well before the drawn shoulder start. Both are taken from the mouth, as the README's rule carries
+        # the start, so a case a little longer or shorter than the specimen's does not count twice (the
+        # size limit on the case length is its own check). Calibres with a C.I.P. sheet follow the sheet
         # instead (test_cip_shoulders_follow_the_sheets), which wins over a measured specimen.
         drawn = {
             "4.6x30 mm": (18.77, 8.98, 30.58), ".32-20 Winchester": (19.0, 11.0, 33.18),
@@ -566,6 +561,7 @@ class OutlineTests(unittest.TestCase):
             ".416 Barrett": (63.5, 12.17, 82.95), ".400/375 Belted Nitro Express": (43.7, 18.5, 63.38),
             "7 mm Long Range Magnum": (49.91, 9.7, 63.85), ".276 Pedersen": (41.05, 6.05, 51.41),
             "6.5x53 mm R Mannlicher": (41.2, 7.5, 53.55),
+            "7 mm Canadian Magnum": (58.75, 6.7, 71.63), ".338 Canadian Magnum": (59.82, 8.15, 71.72),
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
@@ -575,22 +571,22 @@ class OutlineTests(unittest.TestCase):
                 s = specs[name]
                 top = s["neck"] / 2
                 neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
-                self.assertLess(abs(neck_start - (case_length - neck_length)), 1.5)
-                self.assertGreater(s["sh_at"], shoulder_start - 0.6)
+                self.assertLess(abs((s["case"] - neck_start) - neck_length), 1.5)
+                self.assertLess((s["case"] - s["sh_at"]) - (case_length - shoulder_start), 0.6)
 
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
     # or article giving the angle was found yet. Remove a name here when its angle is added.
     SHOULDER_UNSOURCED = {
         # Measured only from a dimension table in Cartridges of the World, which gives no angle (their
         # shoulder_at is estimated, as the note in [mm] says).
-        ".275 No. 2 Magnum", ".32-30 Remington", ".32-40 Remington", ".338 Canadian Magnum", ".38-70 Winchester",
+        ".275 No. 2 Magnum", ".32-30 Remington", ".32-40 Remington", ".38-70 Winchester",
         ".38-90 Winchester Express", ".40-70 Peabody What Cheer", ".400/360 Nitro Express", ".416 Rimmed",
         ".45-100 Remington Necked", ".45-125 Winchester Express", ".50-115 Bullard", ".500/450 Magnum Express",
         ".500/450 Nitro Express", ".500/450 No. 1 Express", ".56-52 Spencer Necked", ".577/500 Nitro Express",
         ".577/500 No. 2 Express", "10.25x69 mm R Hunting-Express", "10.4x47 mm R Italian Vetterli",
         "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan", "10.8x47 mm R Martini Target",
         "11.4x50 mm R Brazilian Comblain", "11x53 mm R Comblain", "11x52 mm R Beaumont M71/78",
-        "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "6x58 mm Forster", "7 mm Canadian Magnum", "8.5 mm Mars",
+        "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "6x58 mm Forster", "8.5 mm Mars",
         "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
     }
 
@@ -658,7 +654,8 @@ class OutlineTests(unittest.TestCase):
         drawings = {".22 Nosler": (29.9, 35.29), ".38-56 WCF": (6.5, 30.64), "10.4x38 mm R Vetterli": (10.6, 26.11),
                     ".280 British": (19.4, 30.97), "6 mm Lee Navy": (18.3, 43.75),
                     ".246 Purdey Flanged": (16.0, 46.3), ".400 A-Square DPM": (26.9, 59.1),
-                    ".400/375 Belted Nitro Express": (20.4, 43.82), ".276 Pedersen": (10.8, 40.95)}
+                    ".400/375 Belted Nitro Express": (20.4, 43.82), ".276 Pedersen": (10.8, 40.95),
+                    "7 mm Canadian Magnum": (23.6, 59.0), ".338 Canadian Magnum": (28.1, 59.98)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):

@@ -314,6 +314,15 @@ alpha/2). C.I.P. sheets print the full cone angle alpha, so their value is halve
 calibres `shoulder_at` is the sheet's L1. A bottleneck case without one is drawn at 32° until a
 source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
 
+An AECC specimen drawing (municion.org) gives a shoulder where no sheet or SAAMI drawing does. The
+drawing counts when its case length is within 1.5 mm of the file's and its shoulder and neck
+diameters are within 0.5 mm. `shoulder_at` is the drawing's shoulder start carried from the mouth
+(`case_length` − (CL − SL)), and the angle is the specimen's cone, atan(((SØ − NØ)/2)/(CL − NL − SL));
+an angle that another source gives stays. The file's diameters differ a little from the specimen's,
+so the cone drawn between them is a little longer or shorter: the neck it leaves must be within
+1.5 mm of the specimen's neck length NL, or the drawing's shoulder is not taken
+(`test_necks_start_where_the_municion_drawings_show`).
+
 ### `[case_head]`
 
 `rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. Rimless,
@@ -324,6 +333,8 @@ The .32 and .401 Winchester Self-Loading have no groove floor on their sheets: a
 7°) runs from the rim's front up to the body at E, and the drawing follows it.
 A case made from a parent case without its own sheet keeps the parent's head (the note says which); a parent
 without a sheet takes the head of a case made from it that has one (.44 Auto Mag: C.I.P. 357 Auto Mag.).
+A parent whose head the maker altered does not pass it on: Dakota enlarged the rim of the .404 Jeffery case
+(Cartridges of the World), so the Dakota rounds made from it take the groove of their own drawings.
 
 Without a C.I.P. sheet the groove can come from two other drawings, in this order. A SAAMI drawing
 gives the rim thickness, the groove's diameter, width and angle and the body diameter in inches:
@@ -331,8 +342,11 @@ gives the rim thickness, the groove's diameter, width and angle and the body dia
 and then converted. An AECC specimen drawing (municion.org) gives the head in mm as RT (rim
 thickness), GØ and GW (groove diameter and width), HØ (head diameter) and HL (base to the top of the
 ramp; on a belted case the belt's front is HL + LW): `ramp_top` is HL, `groove_diameter` is GØ and
-`ramp_angle` follows from HL = RT + GW + ((HØ − GØ)/2)/tan(angle), rounded to a whole degree. A
-specimen drawing counts only when its rim and head diameters are within 0.5 mm of the file's.
+`ramp_angle` follows from HL = RT + GW + ((HØ − GØ)/2)/tan(angle), rounded to a whole degree. On a
+belted case the ramp climbs to the belt, so the belt's diameter LØ takes the place of HØ. A
+specimen drawing counts only when its rim and head diameters are within 0.5 mm of the file's. A
+calibre without a drawing takes the groove of a sister round's drawing, behind its own rim
+thickness, when a source says that the two share the head (.416 Dakota: the .375 Dakota's).
 
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
 its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal
