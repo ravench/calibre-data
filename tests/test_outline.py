@@ -694,8 +694,8 @@ class OutlineTests(unittest.TestCase):
         ".45-100 Remington Necked", ".45-125 Winchester Express", ".50-115 Bullard", ".500/450 Magnum Express",
         ".500/450 Nitro Express", ".56-52 Spencer Necked", ".577/500 Nitro Express", ".577/500 No. 2 Express",
         "10.25x69 mm R Hunting-Express", "10.75x57 mm Mannlicher", "10.75x58 mm R Russian Berdan",
-        "10.8x47 mm R Martini Target", "11x52 mm R Beaumont M71/78", "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser", "6x58 mm Forster",
-        "8.5 mm Mars", "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
+        "10.8x47 mm R Martini Target", "11x52 mm R Beaumont M71/78", "6.5x53.5 mm SR Daudeteau", "6x57 mm Mauser",
+        "6x58 mm Forster", "8.5 mm Mars", "9.3x75 mm R Nimrod", "9x70 mm R Mauser",
     }
 
     def bottlenecks(self):
