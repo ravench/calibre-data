@@ -4,7 +4,7 @@ name = ".280 Ross"
 categories = ["rifle"]
 kind = "semi-rimmed"
 profile = "spitzer"
-aliases = ["280ross", "280 ross", "280 rimless"]
+aliases = ["280ross", "280 ross", "280 rimless", "280 riml. n.e. ross"]
 
 origin = "GB"
 origin_sources = ["book:ammo-encyclopedia-2 p. 394"]

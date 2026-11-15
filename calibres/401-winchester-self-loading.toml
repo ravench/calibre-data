@@ -3,7 +3,7 @@ name = ".401 Winchester Self-Loading"
 categories = ["rifle"]
 kind = "semi-rimmed"
 profile = "round"
-aliases = ["401wsl"]
+aliases = ["401wsl", "401 win. sl"]
 
 origin = "US"
 origin_sources = ["book:ammo-encyclopedia-2 p. 436"]

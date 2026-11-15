@@ -5,7 +5,7 @@ name = ".256 Gibbs Magnum"
 categories = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
-aliases = ["256 gibbs", "256gibbs"]
+aliases = ["256 gibbs", "256gibbs", "256 mag. gibbs"]
 
 origin = "GB"
 origin_sources = ["https://municion.org/producto/256-gibbs-magnum/"]
