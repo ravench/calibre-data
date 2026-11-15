@@ -186,7 +186,7 @@ class GapTests(unittest.TestCase):
 
     def test_aecc_drawings_source_military_rifle_rounds(self):
         # Service and trial rifle rounds of 1893 to 1987 without a C.I.P. sheet: the head from the AECC drawing
-        # (municion.org), behind the book's rim thickness on the 4.85 mm British and the Sturtevant.
+        # (municion.org), behind the book's rim thickness on the 4.85 mm British, the Sturtevant and the Daudeteau.
         heads = {".276 Enfield": (1.2, 3.36, 11.16, 43.0), ".280 British": (1.21, 3.46, 10.04, 33.0),
                  "7.92x107 mm DS": (1.54, 3.8, 14.38, 40.0), "4.85x49 mm British": (1.04, 3.1, 8.35, 29.0),
                  "5x58 mm Sturtevant": (1.15, 3.2, 10.2, 38.0), "6 mm Lee Navy": (1.4, 3.0, 9.65, 49.0),
@@ -198,8 +198,11 @@ class GapTests(unittest.TestCase):
                 self.assertEqual(outline.gaps(self.spec(name)), ())
                 self.assertEqual(cartridges.case_head(name), head)
                 self.assertIn("municion.org", cartridges.sources(name, "case_head")[-1])
-        # The Daudeteau's drawing does not fit the book's shoulder, so only its head is taken.
-        self.assertEqual(cartridges.case_head("6.5x53.5 mm SR Daudeteau"), (1.8, 3.25, 11.31, 39.0))
+        # The Daudeteau's drawing does not fit the book's shoulder, so only its head is taken. The book's rim
+        # thickness (.065 in. in the military table) is within 0.3 mm of the drawing's 1.80 and stays.
+        self.assertEqual(cartridges.case_head("6.5x53.5 mm SR Daudeteau"), (1.65, 3.25, 11.31, 39.0))
+        self.assertEqual(cartridges.sources("6.5x53.5 mm SR Daudeteau", "case_head"),
+                         ["book:cotw-18 p. 573", "https://municion.org/producto/65-x-53-sr-daudeteau-n12/"])
         self.assertEqual(outline.gaps(self.spec("6.5x53.5 mm SR Daudeteau")), ("measurements", "shoulder_angle"))
         # The .276 Pedersen (the PD-42 case) is drawn with its own shoulder now, 10.8 degrees from 40.95 mm.
         self.assertEqual(cartridges.shoulder_angle(".276 Pedersen"), 10.8)
