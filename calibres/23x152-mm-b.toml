@@ -2,7 +2,8 @@
 # of the ZU-23-2 anti-aircraft gun: the two loadings do not interchange. The name gives the bore and
 # case length, the Wikipedia infobox the cartridge length and the AECC specimen drawing of a VYa round
 # on municion.org the diameters (RØ, LØ, HØ, SØ, NØ), the shoulder and the head: its belt (LØ 34.64)
-# is what the infobox calls the rim. The drawing of the ZU-23 round (23-152-BFC-010) shows a thicker
+# is what the infobox calls the rim, its rim (RØ 33.38) what the infobox gives as the rim's thickness
+# (33.4). The drawing of the ZU-23 round (23-152-BFC-010) shows a thicker
 # rim (3.88 against 2.85 mm) and, carried from the mouth, a shoulder starting 1.4 mm nearer the head.
 name = "23x152 mm B"
 categories = ["cannon"]

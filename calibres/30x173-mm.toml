@@ -35,6 +35,7 @@ sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
 
 [shoulder_angle]
 # AECC drawing 30-173-BGC-020 on municion.org: SØ 40.48, NØ 31.49, SL 144.00, NL 15.30, CL 172.90, TL 266.50.
+# The specimen's round (TL) is 23.5 mm shorter than the service rounds; the file keeps their 290 mm.
 degrees = 18.3
 sources = ["https://municion.org/producto/30-x-173-us-xpl-gau-8/"]
 
