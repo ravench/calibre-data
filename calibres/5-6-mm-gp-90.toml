@@ -14,14 +14,15 @@ origin_sources = ["https://en.wikipedia.org/wiki/SIG_SG_550"]
 # A 5.56x45 mm round (SIG SG 550 page); values from the C.I.P. 223 Rem. sheet, maximum cartridge,
 # as for the .223 Remington and 5.56x45 mm NATO.
 rim = 9.6
-base = 9.6
+base = 9.58
 shoulder = 9.0
 shoulder_at = 36.52
-neck = 6.4
+neck = 6.43
 case_length = 44.7
 overall_length = 57.4
-bullet = 5.7
+bullet = 5.70
 sources = [
+  "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf",
   "https://en.wikipedia.org/wiki/.223_Remington",
   "https://en.wikipedia.org/wiki/SIG_SG_550",
@@ -39,15 +40,15 @@ sources = []
 [shoulder_angle]
 # same case as .223 Rem
 degrees = 23
-sources = ["https://en.wikipedia.org/wiki/.223_Remington"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf", "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84"]
 
 [case_head]
-# same case as the .223 Rem.; C.I.P. 300 AAC Blackout
+# C.I.P. 223 Rem. (E 3.13); SAAMI gives the same rim, groove and ramp angle.
 rim_thickness = 1.14
-ramp_top = 3.15
+ramp_top = 3.13
 groove_diameter = 8.43
 ramp_angle = 25.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf", "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84"]
 
 [bullet]
 type = "jacketed"

@@ -3,6 +3,7 @@ import os, sys, unittest
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+import cartridges  # noqa: E402
 from cartridges import (SHOULDER_ANGLES, BALL_NOSE, WORLDWIDE, CATALOGUE, ALL_CATALOGUE, DISPLAY_ALIASES, PRIMERS, PRIMER_DIAMETERS, PRIMER_MM, MINIATURE,  # noqa: E402
                         PRIMER_SOURCES, PRIMER_UNVERIFIED, BERDAN_NITRO, BMG_35,
                         SMALL_PISTOL, LARGE_PISTOL, SMALL_RIFLE, LARGE_RIFLE,
@@ -614,7 +615,7 @@ class CatalogueTests(unittest.TestCase):
         # every two-state case was decided 2026-11-07/08; #52 then added the C.I.P. "DE/FI" wadcutter and
         # the cannon rounds the GAU-8/KCA 30 mm round, and 2026-11-12 the Hispano 20x110 (French firm or its
         # Geneva arm)
-        self.assertEqual(set(ORIGIN_UNDECIDED), {".32 S&W Long Wadcutter", "30x173 mm", "20x110 mm Hispano"})
+        self.assertEqual(set(ORIGIN_UNDECIDED), {".32 S&W Long Wadcutter", "20x110 mm Hispano"})
         self.assertEqual(origin_candidates("9x19 mm"), ())  # decided
         self.assertEqual(origin_candidates("12/70"), ())  # a gauge, nothing to decide
         with patch.dict(ORIGIN_UNDECIDED, {"5.56x45 mm NATO": ("US", "BE")}):
@@ -947,8 +948,8 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(current_case_materials(".45-70 Government"), (BRASS,))
         self.assertEqual(current_case_materials("9x19 mm"), (STEEL, ALUMINIUM))
         self.assertEqual(current_case_materials("7.5x55 mm Swiss (GP 11)"), ())
-        # The ZU-23's steel case followed the VYa-23's brass one (Jane's 2002 p. 91).
-        self.assertEqual(current_case_materials("23x152 mm B"), (STEEL,))
+        # The VYa-23's round stays brass; the ZU-23's steel one is a calibre of its own (Jane's 2002 p. 91).
+        self.assertEqual(current_case_materials("23x152 mm B VYa"), ())
         # Raven 2026-11-11: aluminium too. CCI's Blazer Aluminum line; the Apache's LW30 rounds (Jane's p. 112).
         for name in ("6.35 mm Browning (.25 ACP)", "7.65 mm Browning (.32 ACP)", "9 mm Browning kurz (.380 ACP)",
                      ".38 Special", ".357 Magnum", ".40 S&W", "10 mm Auto", ".44 Special", ".44 Magnum",
@@ -959,7 +960,7 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(current_case_materials(".44 Colt"), (BRASS,))
         self.assertEqual(current_case_materials(".45 ACP"), (STEEL, ALUMINIUM))
         # The GAU-8's aluminium case first, the KCA's steel too (Jane's 2002 pp. 105, 112-113).
-        self.assertEqual(current_case_materials("30x173 mm"), (STEEL,))
+        self.assertEqual(current_case_materials("30x173 mm GAU-8"), (STEEL,))
         # Copper and wartime steel first, brass today.
         self.assertEqual(current_case_materials(".22 Short"), (BRASS,))
         self.assertEqual(current_case_materials("7.92x33 mm Kurz"), (BRASS,))
@@ -969,9 +970,9 @@ class CatalogueTests(unittest.TestCase):
         # these. Rounds whose sources give brass or steel alike (9x18 mm Makarov, 12.7x108 mm, 7.62x45 mm
         # vz. 52, 20x102 mm, 20x139 mm, 30x113 mm B) stay brass.
         expected = {"7.92x33 mm Kurz": STEEL, "5.45x18 mm": STEEL, "5.8x42 mm": STEEL, "9x39 mm": STEEL,
-                    "6 mm SAW": STEEL, ".22 Short": COPPER, "27x145 mm B": STEEL, "30x165 mm": STEEL,
-                    "30x173 mm": ALUMINIUM, "35x228 mm": STEEL, "23x152 mm B": BRASS, "40x311 mm R": BRASS,
-                    "40x365 mm R": BRASS}
+                    "6 mm SAW": STEEL, ".22 Short": COPPER, "27x145 mm B": STEEL, "30x165 mm 2A42": STEEL,
+                    "30x165 mm GSh-30": STEEL, "30x173 mm GAU-8": ALUMINIUM, "30x173 mm KCA": STEEL, "35x228 mm": STEEL,
+                    "23x152 mm B VYa": BRASS, "23x152 mm B ZU-23": STEEL, "40x311 mm R": BRASS, "40x365 mm R": BRASS}
         for name, material in expected.items():
             self.assertEqual(case_material(name), material, name)
             self.assertTrue(CASES[name][1], name)
@@ -1082,7 +1083,7 @@ class CatalogueTests(unittest.TestCase):
             if SEATING not in differs:
                 self.assertEqual(bore, BORE in differs, names)
             self.assertEqual(length, LENGTH in differs, names)
-        self.assertEqual(lookalikes("5.6 mm GP 90"), [".223 Remington", "5.56x45 mm NATO"])
+        self.assertEqual(lookalikes("5.6 mm GP 90"), [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial"])
         self.assertEqual(lookalikes("7x65 mm R"), ["7x64 mm"])
         self.assertEqual(lookalikes("8x57 mm I"), ["8x57 mm IS", "8x57 mm IRS", "8x57 mm IR"])
         self.assertEqual(lookalikes(".275 Rigby"), ["7x57 mm Mauser", "7x57 mm R"])
@@ -1090,14 +1091,33 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(lookalikes("7.62x25 mm Tokarev"), [".30 Borchardt", "7.63x25 mm Mauser"])
 
     def test_lookalike_groups_have_names(self):
-        # Raven 2026-11-11: a group's name is one of its calibres' or the family's own.
+        # Raven 2026-11-11/15: a group's name is what its calibres have in common (the family's), which
+        # may be one of its calibres' names, never another calibre's.
         self.assertEqual(len(LOOKALIKE_NAMES), len(LOOKALIKES))
         self.assertEqual(len(set(LOOKALIKE_NAMES)), len(LOOKALIKE_NAMES))
         groups = dict(zip(LOOKALIKE_NAMES, (names for _, names in LOOKALIKES)))
-        self.assertEqual(groups[".308 Winchester"], [".308 Winchester", "7.62x51 mm NATO"])
+        self.assertEqual(groups["7.62x51 mm"], [".308 Winchester", "7.62x51 mm NATO"])
+        self.assertEqual(groups["5.56x45 mm"], [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial", "5.6 mm GP 90"])
         self.assertEqual(groups["7.63x25 mm"], [".30 Borchardt", "7.63x25 mm Mauser", "7.62x25 mm Tokarev"])
         for title, names in groups.items():
             self.assertTrue(title not in NAMES or title in names, title)
+
+    def test_cannon_loadings_of_one_case_are_calibres_of_their_own(self):
+        # Raven 2026-11-15: cannon rounds that exist in variants become a calibre each, in a group named by
+        # what they share. Only their own gun fires them (another primer, Jane's 2002).
+        groups = dict(zip(cartridges.ALL_LOOKALIKE_NAMES, cartridges.ALL_LOOKALIKES))
+        self.assertEqual(groups["23x152 mm B"], (("gun",), ["23x152 mm B VYa", "23x152 mm B ZU-23"]))
+        self.assertEqual(groups["30x165 mm"], (("gun",), ["30x165 mm GSh-30", "30x165 mm 2A42"]))
+        self.assertEqual(groups["30x173 mm"], (("gun",), ["30x173 mm KCA", "30x173 mm GAU-8"]))
+        self.assertEqual(lookalikes("30x173 mm GAU-8"), ["30x173 mm KCA"])
+        # Their names follow the group-name rule too: unique, and no calibre outside the group.
+        self.assertEqual(len(set(cartridges.ALL_LOOKALIKE_NAMES)), len(cartridges.ALL_LOOKALIKE_NAMES))
+        every = {spec["name"] for _, specs in cartridges.ALL_CATALOGUE for spec in specs}
+        for title in ("23x152 mm B", "30x165 mm", "30x173 mm"):
+            self.assertNotIn(title, every)
+        # The apps' groups leave them out, as CATALOGUE leaves out the cannon rounds.
+        self.assertNotIn("30x173 mm", LOOKALIKE_NAMES)
+        self.assertEqual(len(cartridges.ALL_LOOKALIKES), len(LOOKALIKES) + 3)
 
     def test_rimfire_and_centrefire_versions_are_calibres_of_their_own(self):
         # Raven 2026-11-09: a cartridge made in numbers both as rimfire and centrefire gets a file for each

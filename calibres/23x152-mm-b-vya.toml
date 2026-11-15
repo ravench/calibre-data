@@ -1,0 +1,50 @@
+# The Soviet round of the VYa-23 aircraft cannon: a brass case with a screwed-in percussion primer.
+# The ZU-23-2's round on the same case (23x152 mm B ZU-23) does not interchange with it (Jane's).
+# The name gives the bore and case length, the Wikipedia infobox the cartridge length and the AECC
+# specimen drawing of a VYa round on municion.org the diameters (RØ, LØ, HØ, SØ, NØ), the shoulder
+# and the head: its belt (LØ 34.64) is what the infobox calls the rim, its rim (RØ 33.38) what the
+# infobox gives as the rim's thickness (33.4).
+name = "23x152 mm B VYa"
+categories = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["23x152b", "23x152", "23 mm vya"]
+origin = "SU"
+origin_sources = ["https://en.wikipedia.org/wiki/23%C3%97152mmB"]
+
+[mm]
+rim = 33.38
+belt = 34.64
+base = 33.2
+shoulder = 31.27
+shoulder_at = 113.45
+neck = 23.71
+case_length = 152.0
+overall_length = 235.6
+bullet = 23.0
+sources = [
+  "https://municion.org/producto/23-x-152-b-russian-vya-23-aircraft/",
+  "https://en.wikipedia.org/wiki/23%C3%97152mmB",
+]
+
+[introduced]
+year = 1941
+sources = ["https://en.wikipedia.org/wiki/Volkov-Yartsev_VYa-23"]
+
+[shoulder_angle]
+# AECC drawing 23-152-BFC-020 on municion.org: SØ 31.27, NØ 23.71, SL 112.50, NL 18.05, CL 151.05, TL 235.62.
+degrees = 10.4
+sources = ["https://municion.org/producto/23-x-152-b-russian-vya-23-aircraft/"]
+
+[case_head]
+# The AECC drawing 23-152-BFC-020 (municion.org): RØ 33.38, HØ 33.20, LØ 34.64, RT 2.85, GØ 28.84, GW 2.46,
+# the ramp ends at HL 8.35; the belt (LW 2.60) ends at 10.95; ramp angle from HL = RT + GW + ((LØ - GØ)/2)/tan(angle).
+rim_thickness = 2.85
+ramp_top = 10.95
+groove_diameter = 28.84
+ramp_angle = 44.0
+sources = ["https://municion.org/producto/23-x-152-b-russian-vya-23-aircraft/"]
+
+[case]
+material = "brass"
+sources = ["book:janes-ammo-2002 p. 91"]

@@ -1,7 +1,8 @@
 # Hispano-Suiza's round for the HS 404 and its later versions. The Swiss Army fired it from the
 # «20 mm Kanone 1948/73» (Hispano Mk V) of the Schützenpanzer 63/73, and Swiss aircraft such as the
 # Doflug D-3802/3803 and EKW C-36 carried the gun (Wikipedia). Its name gives the bore and case
-# length, Rapid Fire's table the rim and base.
+# length, Rapid Fire's table the rim and base, the AECC specimen drawing on municion.org the shoulder,
+# the neck, the head and the length of the round (TL).
 name = "20x110 mm Hispano"
 categories = ["cannon"]
 kind = "rimless"
@@ -15,14 +16,36 @@ origin_sources = []
 [mm]
 rim = 24.8
 base = 24.8
+shoulder = 24.03
+shoulder_at = 95.17
+neck = 20.58
 case_length = 110.0
+overall_length = 182.94
 bullet = 20.0
-sources = ["book:rapid-fire p. 226", "https://en.wikipedia.org/wiki/Hispano-Suiza_HS.404"]
+sources = [
+  "book:rapid-fire p. 226",
+  "https://en.wikipedia.org/wiki/Hispano-Suiza_HS.404",
+  "https://municion.org/producto/20-x-110-hispano-hs-404-804-mle-1938/",
+]
 
 [introduced]
 # A French aircraft version was made in 1938; the first use the article names is in 1940.
 year = 1938
 sources = ["https://en.wikipedia.org/wiki/Hispano-Suiza_HS.404"]
+
+[shoulder_angle]
+# AECC drawing 20-110-BGC-010 on municion.org: SØ 24.03, NØ 20.58, SL 95.10, NL 9.05, CL 109.93, TL 182.94.
+degrees = 16.6
+sources = ["https://municion.org/producto/20-x-110-hispano-hs-404-804-mle-1938/"]
+
+[case_head]
+# The AECC drawing 20-110-BGC-010 (municion.org): RØ 24.76, HØ 24.84, RT 2.47, GØ 21.91, GW 3.16,
+# the ramp ends at HL 6.50; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 2.47
+ramp_top = 6.5
+groove_diameter = 21.91
+ramp_angle = 59.0
+sources = ["https://municion.org/producto/20-x-110-hispano-hs-404-804-mle-1938/"]
 
 [case]
 material = "brass"

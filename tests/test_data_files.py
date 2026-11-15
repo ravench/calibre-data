@@ -15,7 +15,7 @@ LR_MM = ('sources = [\n  "https://saami.org/wp-content/uploads/2026/05/SAAMI-Z29
 WIN = "calibres/308-winchester.toml"
 KEY = {app: key for key, app in cartridges.CATEGORIES.items()}  # "Langwaffe": "rifle"
 LOOK = "lookalikes.toml"
-NATO_GROUP = 'name = ".308 Winchester"\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]'
+NATO_GROUP = 'name = "7.62x51 mm"\ndiffer_by = ["load"]\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]'
 TIP = ('\n[[colour_codes]]\npart = "tip"\ncolours = ["black"]\nmeaning = ["armour-piercing"]\n'
        'sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]\n')
 
@@ -119,7 +119,7 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(cartridges.ALL_CATALOGUE[:-1], cartridges.CATALOGUE)
         cannon = dict(cartridges.ALL_CATALOGUE)["Kanone"]
         self.assertIn("20x138 mm B", [s["name"] for s in cannon])
-        self.assertIsNone(next(s for s in cannon if s["name"] == "20x138 mm B")["sh_at"])  # no source gives it
+        self.assertIsNone(next(s for s in cannon if s["name"] == "57x441 mm R")["sh_at"])  # no source gives it
         self.assertNotIn("20x138 mm B", cartridges.PRIMERS)
         self.assertTrue(all(20 <= s["bullet"] <= 57 for s in cannon))
         self.assertLessEqual({"20x102 mm", "35x228 mm", "40x365 mm R", "57x348 mm SR"}, {s["name"] for s in cannon})
@@ -130,7 +130,8 @@ class LoadTests(unittest.TestCase):
         cannon = {s["name"] for s in dict(cartridges.ALL_CATALOGUE)["Kanone"]}
         self.assertLessEqual({"20x110 mm Hispano", "20x139 mm FMK", "24x138 mm", "34x239 mm"}, cannon)
         self.assertEqual(cartridges.rim_thickness("20x139 mm FMK"), 2.6)
-        self.assertEqual(cartridges.rim_thickness("20x139 mm"), 3.5)
+        # Rapid Fire gives the HS 820 case a 3.5 mm rim; its AECC drawing, 3.04 mm (2026-11-15).
+        self.assertEqual(cartridges.rim_thickness("20x139 mm"), 3.04)
         for name in ("20x139 mm FMK", "24x138 mm", "34x239 mm"):
             self.assertEqual(cartridges.origin(name)[0], "CH", name)
 
@@ -368,7 +369,7 @@ class CheckTests(unittest.TestCase):
 
     def test_a_belt_wider_than_the_rim_has_its_diameter(self):
         files = [f"calibres/{f}.toml" for f in ("378-weatherby-magnum", "460-a-square-short", "416-weatherby-magnum",
-                                                "300-winchester-magnum", "300-h-h-magnum", "23x152-mm-b")]
+                                                "300-winchester-magnum", "300-h-h-magnum", "23x152-mm-b-vya")]
         wby, short, wide, win_mag, hh, cannon = files
         with Copy() as c:
             c.edit(wby, "belt = 15.33\n", "")                             # a rim of 14.7 under a body of 14.8
@@ -377,7 +378,7 @@ class CheckTests(unittest.TestCase):
             c.edit(win_mag, "rim = 13.51\n", "rim = 13.51\nbelt = 13.2\n")  # narrower than its rim
             c.edit(WIN, "rim = 11.9\n", "rim = 11.9\nbelt = 12.5\n")       # a rimless case
             c.edit(hh, "rim = 13.5\n", "rim = 13.5\nbelt = 13.56\n")       # stays valid: R3 on its sheet, 0.05 over R1
-            c.edit(cannon, "rim = 34.6\n", "")                            # stays valid: a cannon round without its rim
+            c.edit(cannon, "rim = 33.38\n", "")                           # stays valid: a cannon round without its rim
             self.assertEqual(sorted((p[0], p[1], p[2].split(":")[0]) for p in c.problems()), sorted([
                 (wby, c.line_of(wby, "rim ="), "a belted case with a rim narrower than its base needs [mm] belt (R3 on the C.I.P. sheets)"),
                 (short, c.line_of(short, "belt ="), "[mm] belt 14.78 is the belt's diameter (R3 on the C.I.P. sheets) where it is wider than the rim"),
@@ -625,7 +626,7 @@ class CheckTests(unittest.TestCase):
     def test_cannon_rounds_need_only_the_bullet_and_case_length(self):
         rel = "calibres/20x138-mm-b.toml"
         with Copy() as c:
-            c.edit(rel, "rim = 28.48\nbase = 26.86\nshoulder = 25.5\n", "")
+            c.edit(rel, "rim = 26.86\nbelt = 28.48\nbase = 26.86\nshoulder = 25.49\nshoulder_at = 102.93\n", "")
             c.edit(rel, "overall_length = 202.7\n", "")
             c.write(rel, c.read(rel) + TIP)  # colour codes too
             self.assertEqual(c.problems(), [])
@@ -640,6 +641,10 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.write(LOOK, c.read(LOOK) + '\n[[group]]\nname = "x"\ndiffer_by = ["bore"]\ncalibres = [".50 BMG", "20x138 mm B"]\n')
             self.assertOnlyProblems(c, LOOK, r"'20x138 mm B' is a cannon calibre, which the apps do not show yet")
+        with Copy() as c:  # a group of cannon rounds only is fine: it stays out of the apps' groups
+            c.write(LOOK, c.read(LOOK) + '\n[[group]]\nname = "20 mm"\ndiffer_by = ["gun"]\n'
+                                         'calibres = ["20x139 mm", "20x139 mm FMK"]\n')
+            self.assertEqual(c.problems(), [])
         with Copy() as c:  # other categories still need every measurement
             c.edit(WIN, "neck = 8.7\n", "")
             self.assertOnlyProblems(c, WIN, r"\[mm\] needs 'neck'")
@@ -727,7 +732,7 @@ class CheckTests(unittest.TestCase):
         acp, rem, blank = "calibres/45-acp.toml", "calibres/223-remington.toml", "calibres/22-sh-5-6-11.toml"
         with Copy() as c:
             c.edit(WIN, "shoulder = 11.5", "shoulder = 11.95")  # over its base of 11.9
-            c.edit(rem, "neck = 6.4", "neck = 9.03")            # over its shoulder of 9.0
+            c.edit(rem, "neck = 6.43", "neck = 9.03")           # over its shoulder of 9.0
             c.edit(blank, "mouth = 3.4", "mouth = 5.8")         # a blank's crimp over its base of 5.74
             c.edit(acp, "neck = 12.01", "neck = 12.15")         # a straight case: 0.06 over its base of 12.09
             c.edit(LR, "neck = 5.7", "neck = 5.75")             # 0.05 over its base is still within MOUTH_SLACK
@@ -998,10 +1003,10 @@ class CheckTests(unittest.TestCase):
                                line=c.read(LOOK).count("\n"))
 
     def test_lookalike_groups(self):
-        # Each case breaks the .308 Winchester group, which is not the first. The problem is on the
+        # Each case breaks the 7.62x51 mm group, which is not the first. The problem is on the
         # group's line (0 its first key, name; -1 its [[group]]; 1 and 2 the next keys).
         with open(os.path.join(ROOT, LOOK), encoding="utf-8") as f:
-            gp90_line = f.read().split("\n").index('calibres = [".223 Remington", "5.56x45 mm NATO", "5.6 mm GP 90"]') - 2
+            gp90_line = f.read().split("\n").index('calibres = [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial", "5.6 mm GP 90"]') - 2
         cases = [('differ_by = ["load"]', 'differ_by = ["lode"]', r'differ_by lists one or more of .*did you mean "load"', 1),
                  ('differ_by = ["load"]', "differ_by = 5", r"differ_by lists one or more of", 1),
                  ('differ_by = ["load"]', 'diff_by = ["load"]', r"unknown key 'diff_by'.*did you mean \"differ_by\"", 1),
@@ -1009,14 +1014,14 @@ class CheckTests(unittest.TestCase):
                  ('\ncalibres = [".308 Winchester", "7.62x51 mm NATO"]', "", r"\[\[group\]\] needs 'calibres'", -1),
                  ('calibres = [".308 Winchester", "7.62x51 mm NATO"]', 'calibres = [".308 Winchester"]',
                   r"calibres lists two or more", 2),
-                 ('name = ".308 Winchester"\n', "", r"\[\[group\]\] needs 'name'", -1),
-                 ('name = ".308 Winchester"', "name = 5", r"name is the group's name, as text", 0),
-                 ('name = ".308 Winchester"', 'name = " .308 Winchester"', r"without spaces around it", 0),
-                 ('name = ".308 Winchester"', 'name = ".223 remington"',
-                  rf"name '.223 remington' is already the name of the group on line {gp90_line}$", 0),
-                 ('name = ".308 Winchester"', 'name = ".30-06 Springfield"',
+                 ('name = "7.62x51 mm"\n', "", r"\[\[group\]\] needs 'name'", -1),
+                 ('name = "7.62x51 mm"', "name = 5", r"name is the group's name, as text", 0),
+                 ('name = "7.62x51 mm"', 'name = " 7.62x51 mm"', r"without spaces around it", 0),
+                 ('name = "7.62x51 mm"', 'name = "5.56x45 mm"',
+                  rf"name '5.56x45 mm' is already the name of the group on line {gp90_line}$", 0),
+                 ('name = "7.62x51 mm"', 'name = ".30-06 Springfield"',
                   r"name '.30-06 Springfield' names the calibre '.30-06 Springfield', which is not in this group", 0),
-                 ('name = ".308 Winchester"', 'name = "30-06"',
+                 ('name = "7.62x51 mm"', 'name = "30-06"',
                   r"name '30-06' names the calibre '.30-06 Springfield', which is not in this group", 0)]
         for old, new, pattern, offset in cases:
             with self.subTest(new), Copy() as c:
@@ -1051,7 +1056,7 @@ class CheckTests(unittest.TestCase):
             self.assertOnlyProblems(c, LOOK, r"missing")
 
     def test_lookalikes_are_read_from_one_file(self):
-        groups = {tuple(names): diff for diff, names in cartridges.LOOKALIKES}
+        groups = {tuple(names): diff for diff, names in cartridges.ALL_LOOKALIKES}
         self.assertEqual(groups[(".308 Winchester", "7.62x51 mm NATO")], ("load",))
         with open(os.path.join(ROOT, LOOK), encoding="utf-8") as f:
             self.assertEqual(len(groups), sum(l == "[[group]]" for l in f.read().split("\n")))

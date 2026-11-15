@@ -1,5 +1,6 @@
 # The round of the M61 Vulcan rotary cannon and its successors. Its name gives the bore and case
-# length; Jane's table gives the diameters, TM 43-0001-27 the length of the M56 round (6.615 in).
+# length; Jane's table gives the diameters, TM 43-0001-27 the length of the M56 round (6.615 in),
+# the AECC specimen drawing on municion.org the shoulder and the head.
 name = "20x102 mm"
 categories = ["cannon"]
 kind = "rimless"
@@ -11,6 +12,8 @@ origin_sources = ["https://en.wikipedia.org/wiki/M61_Vulcan"]
 [mm]
 rim = 29.49
 base = 29.21
+shoulder = 26.54
+shoulder_at = 84.74
 neck = 20.6
 case_length = 102.0
 overall_length = 168.0
@@ -19,11 +22,26 @@ sources = [
   "book:janes-ammo-2002 p. 682",
   "https://en.wikipedia.org/wiki/M61_Vulcan",
   "book:tm-43-0001-27 p. 14-13",
+  "https://municion.org/producto/20-x-102-us-vulcan-m-50-series/",
 ]
 
 [introduced]
 year = 1959
 sources = ["https://en.wikipedia.org/wiki/M61_Vulcan"]
+
+[shoulder_angle]
+# AECC drawing 20-102-BGE-010 on municion.org: SØ 26.54, NØ 20.82, SL 84.10, NL 8.70, CL 101.36, TL 167.17.
+degrees = 18.5
+sources = ["https://municion.org/producto/20-x-102-us-vulcan-m-50-series/"]
+
+[case_head]
+# The AECC drawing 20-102-BGE-010 (municion.org): RØ 29.44, HØ 29.16, RT 2.46, GØ 25.38, GW 2.96,
+# the ramp ends at HL 7.35; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 2.46
+ramp_top = 7.35
+groove_diameter = 25.38
+ramp_angle = 44.0
+sources = ["https://municion.org/producto/20-x-102-us-vulcan-m-50-series/"]
 
 [case]
 material = "brass"

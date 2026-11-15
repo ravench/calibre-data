@@ -1,6 +1,7 @@
 # The Swiss round of the 24 mm Pzw Kan 38, the semi-automatic gun of the Panzerwagen 39, and of the
 # Tankbüchse 41 anti-tank rifle. Its name gives the bore and case length, Rapid Fire's table the rim
-# and base.
+# and base, the AECC specimen drawing on municion.org the shoulder, the neck, the head (a rebated rim)
+# and the length of the round (TL).
 name = "24x138 mm"
 categories = ["cannon"]
 kind = "rimless"
@@ -12,14 +13,35 @@ origin_sources = ["https://municion.org/producto/24-x-138-swiss-k-38/"]
 [mm]
 rim = 31.4
 base = 32.0
+shoulder = 31.1
+shoulder_at = 114.9
+neck = 25.2
 case_length = 138.0
+overall_length = 210.0
 bullet = 24.0
-sources = ["book:rapid-fire p. 227"]
+sources = [
+  "book:rapid-fire p. 227",
+  "https://municion.org/producto/24-x-138-swiss-k-38/",
+]
 
 [introduced]
 # The gun was developed in 1938 (Pzw Kan 38); the first Panzerwagen 39 reached the troops in May 1939.
 year = 1938
 sources = ["https://www.tankarchives.com/2017/06/praga-ltl-and-pzw-39-tanks-for-neutrals.html"]
+
+[shoulder_angle]
+# AECC drawing 24-138-BGE-010 on municion.org: SØ 31.10, NØ 25.20, SL 115.30, NL 12.55, CL 138.40, TL 210.00.
+degrees = 15.6
+sources = ["https://municion.org/producto/24-x-138-swiss-k-38/"]
+
+[case_head]
+# The AECC drawing 24-138-BGE-010 (municion.org): RØ 31.40, HØ 32.40, RT 1.95, GØ 27.50, GW 3.40,
+# the ramp ends at HL 10.10; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.95
+ramp_top = 10.1
+groove_diameter = 27.5
+ramp_angle = 27.0
+sources = ["https://municion.org/producto/24-x-138-swiss-k-38/"]
 
 [case]
 material = "brass"

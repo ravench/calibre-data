@@ -38,12 +38,12 @@ degrees = 30
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=116"]
 
 [case_head]
-# made from .223 Rem. cases; C.I.P. 300 AAC Blackout
+# made from .223 Rem. cases; the C.I.P. 223 Rem. head
 rim_thickness = 1.14
-ramp_top = 3.15
+ramp_top = 3.13
 groove_diameter = 8.43
 ramp_angle = 25.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf"]
 
 [bullet]
 type = "jacketed"
