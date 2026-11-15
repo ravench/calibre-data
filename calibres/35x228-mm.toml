@@ -11,8 +11,12 @@ origin = "CH"
 origin_sources = ["https://en.wikipedia.org/wiki/Oerlikon_GDF"]
 
 [mm]
+# The shoulder and neck from the AECC specimen drawing on municion.org.
 rim = 54.5
 base = 55.1
+shoulder = 51.88
+shoulder_at = 191.37
+neck = 36.97
 case_length = 228.0
 overall_length = 387.0
 bullet = 35.0
@@ -22,11 +26,27 @@ sources = [
   "book:janes-ammo-2002 p. 117",
   "https://en.wikipedia.org/wiki/Oerlikon_GDF",
   "https://www.nammo.com/products/ammunition/medium-caliber-ammunition/35-mm-series/35-mm-x-228-tp-and-tp-t/",
+  "https://municion.org/producto/35-x-228-oerlikon-flab-k-63/",
 ]
 
 [introduced]
 year = 1963
 sources = ["https://en.wikipedia.org/wiki/Oerlikon_GDF"]
+
+[shoulder_angle]
+# AECC drawing 35-228-BGC-010 on municion.org: SØ 51.88, NØ 36.97, SL 191.00, NL 13.00, CL 227.63.
+# The drawing labels its sizes without letters; they are read as on the AECC's other drawings.
+degrees = 17.5
+sources = ["https://municion.org/producto/35-x-228-oerlikon-flab-k-63/"]
+
+[case_head]
+# The AECC drawing 35-228-BGC-010 (municion.org): RT 5.08, GØ 48.10, GW 4.69, HØ 54.73, the ramp
+# ends at HL 13.80; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 5.08
+ramp_top = 13.8
+groove_diameter = 48.1
+ramp_angle = 39.0
+sources = ["https://municion.org/producto/35-x-228-oerlikon-flab-k-63/"]
 
 [case]
 # Drawn low-carbon steel.

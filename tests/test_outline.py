@@ -28,7 +28,10 @@ class GapTests(unittest.TestCase):
                 ("5.5 mm Diabolo (.22)", ()),
                 ("7.5 mm Kadettenpatrone", ()),  # its length: Raven measured it (measured:raven)
                 (".25 Stevens", ("rim_thickness",)),
-                ("20x138 mm B", ("measurements", "shoulder_angle", "groove", "rim_thickness"))]:  # no shoulder_at given
+                ("20x138 mm B", ()),  # its AECC drawing (2026-11-15)
+                ("24x138 mm", ()),
+                ("27x145 mm B", ("measurements", "groove", "rim_thickness")),  # no base: Jane's neck and the drawing's differ
+                ("57x441 mm R", ("measurements", "rim_thickness"))]:  # no neck from any source
             with self.subTest(name):
                 self.assertEqual(outline.gaps(self.spec(name)), gaps)
         for _, items in cartridges.ALL_CATALOGUE:
@@ -910,7 +913,7 @@ class OutlineTests(unittest.TestCase):
             ".577/500 Nitro Express": (59.85, 15.5, 79.39), "6x58 mm Forster": (41.8, 8.05, 57.93),
             ".416 Rimmed": (69.0, 10.0, 83.7),
         }
-        specs = {s["name"]: s for _, s in outline.specs()}
+        specs = {s["name"]: s for _, items in cartridges.ALL_CATALOGUE for s in items}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
             if cartridges.SHOULDER_ANGLES.get(name, (0, ""))[1].startswith("https://bobp.cip-bobp.org/uploads/tdcc/"):  # a C.I.P. sheet
                 continue
@@ -941,7 +944,7 @@ class OutlineTests(unittest.TestCase):
         }
         reading = re.compile(r"SØ (\d+\.\d+), NØ \d+\.\d+, SL (\d+\.\d+), NL (\d+\.\d+), CL (\d+\.\d+)")
         folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "calibres")
-        specs = {s["name"]: s for _, s in outline.specs()}
+        specs = {s["name"]: s for _, items in cartridges.ALL_CATALOGUE for s in items}
         walked, unread = set(), set()
         for name, (_, url) in cartridges.SHOULDER_ANGLES.items():
             if "municion.org" not in url:
@@ -979,7 +982,9 @@ class OutlineTests(unittest.TestCase):
     }
 
     def bottlenecks(self):
-        return {s["name"]: s for _, s in outline.specs() if s["shoulder"] and s["profile"] != CRIMPED}
+        # The cannon rounds too (catalogue only), since the AECC drawings gave them their shoulders (2026-11-15).
+        return {s["name"]: s for _, items in cartridges.ALL_CATALOGUE for s in items
+                if s["shoulder"] and s["profile"] != CRIMPED}
 
     def test_every_bottleneck_has_a_sourced_angle_or_is_listed(self):
         sourced = set(cartridges.SHOULDER_ANGLES)
@@ -1080,6 +1085,8 @@ class OutlineTests(unittest.TestCase):
         # Measured only from a dimension table in Cartridges of the World, which gives no groove.
         ".360 Mars", ".45-70 Auto", ".50-115 Bullard", "6.17 Lazzeroni Flash",
         "6.71 Lazzeroni Blackbird", "8.5 mm Mars",
+        # Cannon rounds without a specimen drawing that shows the head (catalogue only).
+        "20x139 mm FMK", "27x145 mm B", "34x239 mm", "45x386 mm SR", "50x346 mm B", "57x348 mm SR",
     }
 
     SHALLOW_CONES = {".32 Winchester Self-Loading": 3.7, ".35 Winchester Self-Loading": 8.0,
@@ -1089,7 +1096,8 @@ class OutlineTests(unittest.TestCase):
     SMALL_HEADS = {"2.7 mm Kolibri", "3 mm Kolibri", "4.25 mm Liliput", "5 mm Bergmann", "5 mm Clement", "6.5 mm Bergmann"}
 
     def rimless(self):
-        return {s["name"]: s for _, s in outline.specs() if s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)}
+        return {s["name"]: s for _, items in cartridges.ALL_CATALOGUE for s in items
+                if s["kind"] in (RIMLESS, SEMI_RIMMED, BELTED)}
 
     def test_every_rimless_head_is_sourced_or_listed(self):
         self.assertEqual(set(self.rimless()) - set(cartridges.CASE_HEADS), self.HEAD_UNSOURCED)
@@ -1100,7 +1108,10 @@ class OutlineTests(unittest.TestCase):
                 self.assertTrue(url.startswith("https://") or url.startswith("book:"), url)
                 # The .55 Boys: 9.0.
                 low = (0.4, 1.3) if name in self.SMALL_HEADS else (0.7, 2.0)
-                self.assertTrue(low[0] < thick < 2.5 and low[1] < top_at < 9.5)
+                high = (2.5, 9.5)
+                if s["bullet"] >= 20:  # a cannon round: the 35x228 mm's rim is 5.08 mm thick, the 20x138 mm B's belt ends at 15.34
+                    low, high = (1.5, 5.0), (6.0, 16.0)
+                self.assertTrue(low[0] < thick < high[0] and low[1] < top_at < high[1])
                 # A groove's front ramp is 10 degrees or more. Three Winchester self-loading cases have a shallow
                 # cone in its place on their C.I.P. sheets: from the rim's front on the .32 and .401, after a
                 # 0.64 mm groove floor on the .35.
@@ -1252,6 +1263,8 @@ class OutlineTests(unittest.TestCase):
         self.assertEqual([(round(r, 4), round(h, 4)) for r, h in outline.case_profile(belted)[:7]],
                          [(6.77, 0), (6.77, 1.3), (5.8899, 1.3), (5.8899, 2.3), (6.77, 3.3489), (6.77, 5.6), (6.695, 5.6)])
         for name in self.HEAD_UNSOURCED:
+            if None in (specs[name]["base"], specs[name]["neck"]):  # a cannon round without the sizes to draw it
+                continue
             with self.subTest(name):
                 s, prof = specs[name], outline.case_profile(specs[name])
                 self.assertLess(prof[2][0], min(s["rim"], s["base"]) / 2)  # a groove, below the rim and the body

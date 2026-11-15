@@ -11,8 +11,10 @@ origin = "GB"
 origin_sources = []
 
 [mm]
+# The base (HØ) from the AECC specimen drawing on municion.org, a DEFA round.
 rim = 33.3
 belt = 33.78
+base = 32.0
 neck = 30.87
 case_length = 113.0
 overall_length = 200.0
@@ -21,11 +23,21 @@ sources = [
   "https://knds.com/en/products/ammunition/30x113-mm-b",
   "https://en.wikipedia.org/wiki/30_mm_caliber",
   "book:janes-ammo-2002 p. 682",
+  "https://municion.org/producto/30-x-113-b-french-defa-30-550/",
 ]
 
 [introduced]
 year = 1955
 sources = ["https://en.wikipedia.org/wiki/30_mm_caliber"]
+
+[case_head]
+# The AECC drawing 30-113-CFE-010 (municion.org): RT 3.14, GØ 26.87, GW 3.82, LØ 33.62, the ramp
+# ends at HL 10.50, the belt (LW 3.60) ends at 14.10; ramp angle from HL = RT + GW + ((LØ - GØ)/2)/tan(angle).
+rim_thickness = 3.14
+ramp_top = 14.1
+groove_diameter = 26.87
+ramp_angle = 44.0
+sources = ["https://municion.org/producto/30-x-113-b-french-defa-30-550/"]
 
 [case]
 material = "brass"

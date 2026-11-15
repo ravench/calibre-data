@@ -10,8 +10,11 @@ origin_candidates = ["CH", "US"]
 origin_sources = []
 
 [mm]
+# The shoulder from the AECC specimen drawing of a KCA round on municion.org.
 rim = 43.99
 base = 43.99
+shoulder = 40.08
+shoulder_at = 145.18
 neck = 31.5
 case_length = 173.0
 overall_length = 290.0
@@ -21,11 +24,28 @@ sources = [
   "https://en.wikipedia.org/wiki/GAU-8_Avenger",
   "https://knds.com/en/products/ammunition/30x173-mm",
   "https://en.wikipedia.org/wiki/30_mm_caliber",
+  "https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/",
 ]
 
 [introduced]
 year = 1977
 sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
+
+[shoulder_angle]
+# AECC drawing 30-173-BGE-010 on municion.org: SØ 40.08, NØ 31.40, SL 145.50, NL 15.30, CL 173.32.
+# A KCA round. The page's GAU-8 round (30-173-BGC-020: SØ 40.48, NØ 31.49, SL 144.00, NL 15.30, CL 172.90)
+# starts its shoulder 1.1 mm further back from the mouth.
+degrees = 19.1
+sources = ["https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/"]
+
+[case_head]
+# The AECC drawing 30-173-BGE-010 (municion.org): RT 4.39, GØ 37.88, GW 3.75, HØ 43.58, the ramp
+# ends at HL 11.20; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 4.39
+ramp_top = 11.2
+groove_diameter = 37.88
+ramp_angle = 43.0
+sources = ["https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/"]
 
 [case]
 # Aluminium: the GAU-8's rounds, in service first (1977, see [introduced]).

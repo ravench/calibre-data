@@ -282,6 +282,16 @@ lengths. When `cannon` grew to 57 mm, the same table gave the eight 45 to 57 mm 
 Table 1 (pp. 230-231) their rim and base, and four Swiss Army cannon rounds the catalogue lacked
 (20x110 Hispano, the Swiss 20x139 FMK, 24x138 and 34x239) theirs.
 
+No book gives a cannon case's shoulder or extractor groove. The AECC specimen drawings on
+municion.org do for eleven of the rounds (20x102, 20x110 Hispano, 20x138 B, 20x139, 23x152 B,
+24x138, 25x137, 30x113 B, 30x165, 30x173, 35x228): they give the shoulder, the head and, where no
+book does, the neck and the round's length, under the rules for small-arms drawings above (case
+within 1.5 mm, rim, head, shoulder and neck within 0.5 mm of what the file has from the books). The
+drawings of the 20x138 B and 23x152 B show that the Wikipedia infoboxes these two files followed
+give the belt as the rim, so their diameters are now the drawing's. Jane's table gives the 27x145 B
+a neck 0.8 mm narrower than its drawing, which is therefore not taken. The 20x139's rim is the
+drawing's 3.04 mm (Rapid Fire: 3.5 mm), the whole head coming from the drawing.
+
 ### `[introduced]`
 
 `year` with `sources`: the year the calibre was first introduced, released as factory ammunition or
