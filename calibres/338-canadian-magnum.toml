@@ -14,14 +14,16 @@ rare = true
 rim = 13.51
 base = 13.82
 shoulder = 13.46
-shoulder_at = 60.0
+shoulder_at = 59.98
 neck = 9.37
 case_length = 71.88
 overall_length = 91.44
 bullet = 8.59
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 452"]
+# shoulder_at from the AECC drawing 09-072-BRC-010 (municion.org), carried from the mouth. The drawing is titled
+# «.338 Imperial Magnum» and its page lists the .338 Canadian Magnum among the other names: the range was sold as
+# NASS Magnum, then as Imperial Magnum and last as Canadian Magnum. The specimen's case is within 0.16 mm of the book
+# on every size.
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/338-imperial-magnum/"]
 
 [introduced]
 # COTW: developed about 1989.
@@ -32,15 +34,19 @@ sources = ["book:cotw-18 p. 403"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.39, NØ 9.39, SL 59.82, NL 8.15, CL 71.72.
+degrees = 28.1
+sources = ["https://municion.org/producto/338-imperial-magnum/"]
+
 [case_head]
-# .046 in. (COTW); groove from the AECC drawing 10-072-BGC-030 (municion.org) of the .375 Canadian Magnum, which is
-# this case with a wider neck (COTW 18 p. 211): RT 1.10, HL 3.45, GØ 11.84, GW 1.00, HØ 13.75; ramp angle from HL = RT +
-# GW + ((HØ - GØ)/2)/tan(angle). No drawing of the .338 itself was found.
+# .046 in. (COTW); groove from the AECC drawing 09-072-BRC-010 (municion.org, «.338 Imperial Magnum»): RT 1.18,
+# HL 3.55, GØ 11.80, GW 1.12, HØ 13.77; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.17
-ramp_top = 3.45
-groove_diameter = 11.84
-ramp_angle = 35.0
-sources = ["book:cotw-18 p. 452", "https://municion.org/producto/375-canadian-magnum-by-nass/", "book:cotw-18 p. 211"]
+ramp_top = 3.55
+groove_diameter = 11.8
+ramp_angle = 38.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/338-imperial-magnum/"]
 
 [bullet]
 # Soft point inferred from its use as a hunting round; the page gives weights only.
