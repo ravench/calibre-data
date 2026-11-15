@@ -37,7 +37,7 @@ sources = ["book:cotw-18 p. 609"]
 
 [shoulder_angle]
 # Drawing on naboje.org: SØ 14.83, NØ 13.56, SL 59.85, CL 79.39 and NL 15.50, the neck start read off the drawing's
-# scale: the picture shows the case, the shoulder start, the rim and the overall length as labelled, within 0.05 mm.
+# scale: the picture shows the case, the shoulder start, the rim and the overall length as labelled, within 0.1 mm.
 degrees = 8.9
 sources = ["https://naboje.org/node/1356"]
 
