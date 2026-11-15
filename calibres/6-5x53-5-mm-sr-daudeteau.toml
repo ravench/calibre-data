@@ -32,6 +32,16 @@ sources = ["book:cotw-18 p. 617"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# .065 in. (COTW's military table, p. 573; the sporting table on p. 651, which the measurements follow, gives none);
+# groove from the AECC drawing 07-053-BDC-010 (municion.org): RT 1.80, HL 3.25, GØ 11.31, GW 0.75, HØ 12.45; ramp
+# angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.65
+ramp_top = 3.25
+groove_diameter = 11.31
+ramp_angle = 39.0
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/65-x-53-sr-daudeteau-n12/"]
+
 [bullet]
 # The service or target load, full metal jacket; p. 617 also lists soft points.
 type = "jacketed"

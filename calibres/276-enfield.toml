@@ -39,6 +39,15 @@ sources = []
 degrees = 17.5
 sources = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"]
 
+[case_head]
+# AECC drawing 07-060-BGC-059 (municion.org): RT 1.20, HL 3.36, GØ 11.16, GW 0.97, HØ 13.38; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.2
+ramp_top = 3.36
+groove_diameter = 11.16
+ramp_angle = 43.0
+sources = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 542"]

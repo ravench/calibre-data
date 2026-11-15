@@ -39,6 +39,15 @@ sources = ["book:cotw-18 p. 249"]
 degrees = 18.3
 sources = ["https://municion.org/producto/6-mm-us-lee-navy/"]
 
+[case_head]
+# AECC drawing 06-060-BGC-010 (municion.org): RT 1.40, HL 3.00, GØ 9.65, GW 0.90, HØ 11.25; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.4
+ramp_top = 3.0
+groove_diameter = 9.65
+ramp_angle = 49.0
+sources = ["https://municion.org/producto/6-mm-us-lee-navy/"]
+
 [bullet]
 # The first Navy ball: a round-nose lead-core bullet in a steel jacket coated with cupronickel
 # (Wikipedia).

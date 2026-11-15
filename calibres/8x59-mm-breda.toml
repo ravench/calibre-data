@@ -38,6 +38,15 @@ sources = ["https://en.wikipedia.org/wiki/8×59mm_Rb_Breda"]
 degrees = 18.8
 sources = ["https://municion.org/producto/8-x-59-italian-breda-mg-m-1935/"]
 
+[case_head]
+# AECC drawing 08-059-BRC-010 (municion.org): RT 1.40, HL 3.50, GØ 10.36, GW 1.15, HØ 12.49; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.4
+ramp_top = 3.5
+groove_diameter = 10.36
+ramp_angle = 48.0
+sources = ["https://municion.org/producto/8-x-59-italian-breda-mg-m-1935/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 557"]

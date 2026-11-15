@@ -233,6 +233,10 @@ sources = [
 ]
 ```
 
+One measurement that no page gives can come from an AECC specimen drawing (municion.org) whose other
+sizes are the file's, and the note says which (5.8x42 mm: the bullet, BØ 6.00 on a drawing with the
+file's rim, base, shoulder and neck).
+
 These lists were filled in from the history of this repository in November 2026: each measurement
 counts the page it was taken from when the calibre was added or the value last changed, as the
 commits and notes say. Values the notes call estimated (most shoulder positions before the C.I.P.

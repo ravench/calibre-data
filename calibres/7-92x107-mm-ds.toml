@@ -38,6 +38,15 @@ sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur
 degrees = 31.2
 sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
 
+[case_head]
+# AECC drawing 08-107-BGC-020 (municion.org): RT 1.54, HL 3.80, GØ 14.38, GW 1.00, HØ 16.46; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.54
+ramp_top = 3.8
+groove_diameter = 14.38
+ramp_angle = 40.0
+sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
+
 [bullet]
 type = "jacketed"
 sources = []

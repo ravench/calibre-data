@@ -39,6 +39,15 @@ sources = ["https://en.wikipedia.org/wiki/8×63mm_patron_m/32"]
 degrees = 16.7
 sources = ["https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
 
+[case_head]
+# AECC drawing 08-063-BGC-010 (municion.org): RT 1.42, HL 3.25, GØ 10.34, GW 1.00, HØ 12.43; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.42
+ramp_top = 3.25
+groove_diameter = 10.34
+ramp_angle = 52.0
+sources = ["https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 556"]
