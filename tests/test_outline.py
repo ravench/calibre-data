@@ -469,8 +469,10 @@ class OutlineTests(unittest.TestCase):
 
     def test_necks_start_where_the_municion_drawings_show(self):
         # AECC specimen drawings on municion.org: (shoulder start SL, neck length NL, case length CL), mm.
-        # sh_at sits where the drawn neck begins (CL - NL) minus the calibre's shoulder, and never
-        # well before the drawn shoulder start. Calibres with a C.I.P. sheet follow the sheet
+        # The neck the outline draws is as long as the specimen's (NL) within 1.5 mm, and sh_at is never
+        # well before the drawn shoulder start. Both are taken from the mouth, as the README's rule carries
+        # the start, so a case a little longer or shorter than the specimen's does not count twice (the
+        # size limit on the case length is its own check). Calibres with a C.I.P. sheet follow the sheet
         # instead (test_cip_shoulders_follow_the_sheets), which wins over a measured specimen.
         drawn = {
             "4.6x30 mm": (18.77, 8.98, 30.58), ".32-20 Winchester": (19.0, 11.0, 33.18),
@@ -503,8 +505,8 @@ class OutlineTests(unittest.TestCase):
                 s = specs[name]
                 top = s["neck"] / 2
                 neck_start = next(h for r, h in outline.case_profile(s) if abs(r - top) < 1e-9 and h > s["sh_at"])
-                self.assertLess(abs(neck_start - (case_length - neck_length)), 1.5)
-                self.assertGreater(s["sh_at"], shoulder_start - 0.6)
+                self.assertLess(abs((s["case"] - neck_start) - neck_length), 1.5)
+                self.assertLess((s["case"] - s["sh_at"]) - (case_length - shoulder_start), 0.6)
 
     # Bottleneck calibres still drawn with DEFAULT_SHOULDER_ANGLE: no C.I.P. sheet, SAAMI drawing
     # or article giving the angle was found yet. Remove a name here when its angle is added.
