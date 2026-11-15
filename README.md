@@ -325,7 +325,9 @@ diameters are within 0.5 mm. `shoulder_at` is the drawing's shoulder start carri
 an angle that another source gives stays. The file's diameters differ a little from the specimen's,
 so the cone drawn between them is a little longer or shorter: the neck it leaves must be within
 1.5 mm of the specimen's neck length NL, or the drawing's shoulder is not taken
-(`test_necks_start_where_the_municion_drawings_show`).
+(`test_necks_start_where_the_municion_drawings_show`). A drawing goes to the calibre whose sizes it
+has, whatever its title: the sources cross the names of the two Comblain rounds, and the notes in
+their files say which drawing each one takes.
 
 ### `[case_head]`
 
@@ -359,7 +361,9 @@ than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadc
 the sheet). Beside an AECC drawing the book's rim thickness stays when the two are within 0.3 mm of
 each other; when they are further apart the whole head is the drawing's, because HL is measured from
 the base and another rim under it would change the groove's width (6.5 mm Bergmann: .025 in. in the
-book, 1.00 mm on the drawing). A rim without a thickness is
+book, 1.00 mm on the drawing). Where no book gives a rim thickness, the drawing's RT is taken, on a
+rimmed case too and also where the drawing's shoulder is not (.38-70 Winchester); its rim and head
+diameters must be within 0.5 mm of the file's. A rim without a thickness is
 drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless, semi-rimmed and belted); those
 cases without a groove get a generic head fitted to the sourced ones (`generic_head` in `outline.py`;
 `HEAD_UNSOURCED` in `tests/test_outline.py` lists them): a groove of 87 % of the rim diameter and at
