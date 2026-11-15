@@ -23,7 +23,8 @@ case_length = 58.0
 overall_length = 78.0
 bullet = 8.2
 # shoulder_at from the AECC drawing 08-058-BBC-040 (municion.org): SL 41.00 on a case of CL 57.70, taken from the
-# mouth (case_length - (CL - SL)).
+# mouth (case_length - (CL - SL)). The specimen's cone is 12.3 degrees; at the 16.5 degrees below the neck is 0.49 mm
+# longer than the specimen's (NL 11.20).
 sources = [
   "https://en.wikipedia.org/wiki/8×58mmR_Danish_Krag",
   "https://municion.org/producto/8-x-58-r-danish-krag-jorgensen-m-1889/",

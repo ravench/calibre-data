@@ -17,14 +17,17 @@ rare = true
 rim = 17.32
 base = 14.94
 shoulder = 13.46
-shoulder_at = 39.1
+shoulder_at = 44.28
 neck = 12.55
 case_length = 51.31
 overall_length = 66.55
 bullet = 11.48
-# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 574"]
+# shoulder_at from the AECC drawing 12-050-BBC-060 (municion.org), carried from the mouth. The sources cross the
+# names of the Comblain rounds, so the drawings are assigned by size. This one is titled «11 mm Chilean Comblain
+# Rifle M 1874» (also 11,6 x 50 R) and is within 0.15 mm of the book's row for this round on every diameter of the
+# case, and 1.1 mm on its length. Municion.org lists «11,4 x 50 R Brazilian Comblain M74» as another name of its
+# 53 mm round (drawing 11-053-BBC-030, Model 1889), whose sizes are those of the book's 11x53 mm R Comblain.
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/11-mm-chilean-comblain-rifle-m-1874/"]
 
 [introduced]
 # M74 is the model year; COTW gives no other.
@@ -35,11 +38,15 @@ sources = ["book:cotw-18 p. 567"]
 size = "large-rifle"
 sources = []
 
+[shoulder_angle]
+# AECC drawing on municion.org: SØ 13.35, NØ 12.54, SL 43.20, NL 4.50, CL 50.23.
+degrees = 9.1
+sources = ["https://municion.org/producto/11-mm-chilean-comblain-rifle-m-1874/"]
+
 [case_head]
-# AECC drawing 11-053-BBC-030 (municion.org): RT 2.28. Its shoulder is not taken: the specimen's case (CL 53.32) is
-# 2.0 mm longer than the file's and its neck 0.8 mm narrower.
-rim_thickness = 2.28
-sources = ["https://municion.org/producto/11-x-53-r-brazilian-comblain-model-1889/"]
+# AECC drawing 12-050-BBC-060 (municion.org): RT 1.95; the book gives none.
+rim_thickness = 1.95
+sources = ["https://municion.org/producto/11-mm-chilean-comblain-rifle-m-1874/"]
 
 [bullet]
 # The military load: a lead bullet over blackpowder.
