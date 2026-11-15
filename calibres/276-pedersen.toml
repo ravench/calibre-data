@@ -24,8 +24,10 @@ case_length = 51.31
 overall_length = 72.39
 bullet = 7.24
 # shoulder_at from the AECC drawing 07-051-BGC-075 (municion.org): SL 41.05 on a case of CL 51.41, taken from the
-# mouth (case_length - (CL - SL)). This is the PD-42 case; the later T2 case (drawing 07-053-BGC-040) is 0.8 mm longer
-# and has a wider head.
+# mouth (case_length - (CL - SL)). This is the PD-42 case, one of four .276 Pedersen specimens on municion.org. The T2
+# case (drawing 07-053-BGC-040) is 0.8 mm longer and has a wider head, and one is semi-rimmed (07-051-BDC-020). The
+# FB-9892 case (07-051-BGC-090) fits the book as well as the PD-42 and has the same shoulder within 0.11 mm and 0.2
+# degrees; only its groove differs (GW 1.70, a ramp of 46 degrees).
 sources = ["book:cotw-18 p. 573", "https://municion.org/producto/276-pedersen-xpl-pd-42-case-pc-48-bullet/"]
 
 [introduced]

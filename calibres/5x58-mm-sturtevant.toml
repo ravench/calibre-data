@@ -40,7 +40,7 @@ degrees = 22.1
 sources = ["https://municion.org/producto/5-x-58-sturtevant/"]
 
 [case_head]
-# .045 in. (COTW); groove from the AECC drawing 05-058-BGC-010 (municion.org): RT 1.14, HL 3.20, GØ 10.20, GW 1.00,
+# .0453 in. (COTW); groove from the AECC drawing 05-058-BGC-010 (municion.org): RT 1.14, HL 3.20, GØ 10.20, GW 1.00,
 # HØ 11.86; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.15
 ramp_top = 3.2
