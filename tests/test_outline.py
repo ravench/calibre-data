@@ -301,6 +301,14 @@ class GapTests(unittest.TestCase):
         self.assertEqual(outline.gaps(self.spec(name)), ())
         self.assertEqual((self.spec(name)["sh_at"], cartridges.shoulder_angle(name)), (31.18, 4.0))
         self.assertEqual(cartridges.rim_thickness(name), 1.39)
+        # The Russian Berdan takes the shoulder from its drawing; the book's rim thickness stays, and the drawing's
+        # head (13.09 mm against the book's 14.40) is not used.
+        name = "10.75x58 mm R Russian Berdan"
+        self.assertEqual(outline.gaps(self.spec(name)), ())
+        self.assertEqual((self.spec(name)["sh_at"], cartridges.shoulder_angle(name)), (38.45, 7.9))
+        self.assertEqual(cartridges.rim_thickness(name), 2.03)
+        self.assertEqual(cartridges.sources(name, "case_head"), ["book:cotw-18 p. 574"])
+        self.assertIn("municion.org", cartridges.sources(name, "mm")[-1])
         # The sources cross the names of the two Comblain rounds, so each takes the drawing that has its sizes:
         # the 11.4x50 the one titled «11 mm Chilean Comblain Rifle M 1874» (shoulder and rim thickness), the 11x53
         # the one titled «11 x 53 R Brazilian-Comblain Model 1889» (shoulder; the book's rim thickness stays).
@@ -364,15 +372,14 @@ class GapTests(unittest.TestCase):
                 self.assertIn("municion.org", cartridges.SHOULDER_ANGLES[name][1])
 
     def test_shoulders_that_donnelly_and_an_aecc_drawing_agree_on(self):
-        # An AECC drawing that misses a size limit (shoulder diameter, case length) or the neck test gives the
-        # shoulder all the same where Donnelly's Handloader's Manual prints the same shoulder: its start (his J) and
-        # its end (J + K) within 0.5 mm of the drawing's, both taken from the mouth. shoulder_at is the drawing's SL
-        # carried from the mouth and the half angle runs between the file's diameters over the drawing's shoulder
-        # length (CL - NL - SL). His printed angles are not used.
+        # An AECC drawing that misses a size limit (shoulder diameter, case length) gives the shoulder all the same
+        # where Donnelly's Handloader's Manual prints the same shoulder: its start (his J) and its end (J + K) within
+        # 0.5 mm of the drawing's, both taken from the mouth. shoulder_at is the drawing's SL carried from the mouth
+        # and the half angle runs between the file's diameters over the drawing's shoulder length (CL - NL - SL).
+        # His printed angles are not used.
         # name: (shoulder_at, half angle, Donnelly's J and K in inches, his page, the drawing's SL, NL, CL)
         agreed = {
             ".38-90 Winchester Express": (59.95, 9.7, 2.36, 0.24, 489, 60.0, 17.0, 82.6),
-            "10.75x58 mm R Russian Berdan": (38.45, 6.6, 1.53, 0.24, 957, 39.0, 12.2, 57.45),
             ".40-70 Peabody What Cheer": (25.15, 8.9, 0.988, 0.392, 500, 22.9, 9.6, 42.45),
             "11x52 mm R Beaumont M71/78": (34.67, 7.1, 1.36, 0.18, 554, 33.9, 12.65, 51.05),
         }
@@ -761,15 +768,14 @@ class OutlineTests(unittest.TestCase):
             "10.4x47 mm R Italian Vetterli": (34.7, 9.0, 47.45),
             # Confirmed by Donnelly (test_shoulders_that_donnelly_and_an_aecc_drawing_agree_on); the .40-70 Peabody What
             # Cheer is not here because its specimen's case is 2.25 mm shorter than the book's.
-            ".38-90 Winchester Express": (60.0, 17.0, 82.6), "10.75x58 mm R Russian Berdan": (39.0, 12.2, 57.45),
-            "11x52 mm R Beaumont M71/78": (33.9, 12.65, 51.05),
+            ".38-90 Winchester Express": (60.0, 17.0, 82.6), "11x52 mm R Beaumont M71/78": (33.9, 12.65, 51.05),
             # The angle over the drawing's shoulder length
             # (test_shallow_shoulders_run_over_the_drawings_shoulder_length).
             ".500/450 Magnum Express": (61.0, 15.4, 82.47), ".500/450 Nitro Express": (61.0, 15.4, 82.47),
             ".450/400 Nitro Express 2⅜ inch": (40.48, 16.7, 60.63),
             "7 mm Canadian Magnum": (58.75, 6.7, 71.63), ".338 Canadian Magnum": (59.82, 8.15, 71.72),
             ".32-30 Remington": (31.0, 7.3, 41.48), "11.4x50 mm R Brazilian Comblain": (43.2, 4.5, 50.23),
-            "11x53 mm R Comblain": (45.2, 6.2, 53.32),
+            "11x53 mm R Comblain": (45.2, 6.2, 53.32), "10.75x58 mm R Russian Berdan": (39.0, 12.2, 57.45),
         }
         specs = {s["name"]: s for _, s in outline.specs()}
         for name, (shoulder_start, neck_length, case_length) in drawn.items():
@@ -864,7 +870,7 @@ class OutlineTests(unittest.TestCase):
                     ".450/400 Nitro Express 2⅜ inch": (11.5, 40.3),
                     "7 mm Canadian Magnum": (23.6, 59.0), ".338 Canadian Magnum": (28.1, 59.98),
                     ".32-30 Remington": (4.0, 31.18), "11.4x50 mm R Brazilian Comblain": (9.1, 44.28),
-                    "11x53 mm R Comblain": (20.9, 45.22)}
+                    "11x53 mm R Comblain": (20.9, 45.22), "10.75x58 mm R Russian Berdan": (7.9, 38.45)}
         specs = self.bottlenecks()
         for name, (angle, start) in drawings.items():
             with self.subTest(name):

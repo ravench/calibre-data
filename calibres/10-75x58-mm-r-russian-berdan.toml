@@ -24,14 +24,15 @@ neck = 11.4
 case_length = 56.9
 overall_length = 74.93
 bullet = 10.92
-# shoulder_at from the AECC drawing 11-058-BBC-070 (municion.org): SL 39.00 on a case of CL 57.45, taken from the mouth
-# (case_length - (CL - SL)). Donnelly prints the start 0.41 mm later (J 1.53 in. = 38.86). The drawing's shoulder
-# and neck diameters are the book's within 0.2 mm; its own cone between the book's diameters would start the neck
-# 1.56 mm early, so the angle runs over the drawing's shoulder length.
+# shoulder_at from the AECC drawing 11-058-BBC-070 (municion.org): SL 39.00 on a case of CL 57.45, taken from the
+# mouth (case_length - (CL - SL)). The drawing's shoulder and neck diameters are the book's within 0.2 mm; its cone,
+# drawn between the book's diameters, leaves a neck 1.03 mm longer than the specimen's (NL 12.20), inside the 1.5 mm
+# the rule allows. The drawing prints a head of 13.09 mm against the book's 14.40, so nothing of the head is taken
+# from it. Donnelly (p. 957) prints the same shoulder: its start 0.41 mm later (J 1.53 in.) and its end 0.26 mm
+# after the specimen's.
 sources = [
   "book:cotw-18 p. 574",
   "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/",
-  "book:donnelly p. 957",
 ]
 
 [introduced]
@@ -47,9 +48,8 @@ sources = [
 ]
 
 [shoulder_angle]
-# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 57.45 - NL 12.20 -
-# SL 39.00 = 6.25 mm). Donnelly's lengths (K .240 in.) give 6.8; his printed angles are not used.
-degrees = 6.6
+# AECC drawing on municion.org: SØ 13.04, NØ 11.31, SL 39.00, NL 12.20, CL 57.45.
+degrees = 7.9
 sources = ["https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/"]
 
 [case_head]
