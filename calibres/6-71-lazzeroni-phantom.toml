@@ -14,14 +14,14 @@ rare = true
 rim = 13.46
 base = 13.46
 shoulder = 12.95
-shoulder_at = 40.7
+shoulder_at = 40.19
 neck = 7.54
 case_length = 52.07
 overall_length = 71.12
 bullet = 6.71
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 451"]
+# shoulder_at from the AECC drawing 07-052-BGC-024 (municion.org): SL 40.00 on a case of CL 51.88, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/671-mm-lazzeroni-phantom/"]
 
 [introduced]
 year = 1997
@@ -37,9 +37,13 @@ degrees = 30
 sources = ["book:cotw-18 p. 376"]
 
 [case_head]
-# .055 in.
+# .055 in. (COTW); groove from the AECC drawing 07-052-BGC-024 (municion.org): RT 1.36, HL 3.20, GØ 12.03, GW 1.30,
+# HØ 13.46; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.4
-sources = ["book:cotw-18 p. 451"]
+ramp_top = 3.2
+groove_diameter = 12.03
+ramp_angle = 53.0
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/671-mm-lazzeroni-phantom/"]
 
 [bullet]
 # Soft point: the Nosler Partition (COTW 18 p. 377).

@@ -39,9 +39,14 @@ degrees = 30
 sources = ["book:cotw-18 p. 410"]
 
 [case_head]
-# .060 in.
+# .060 in. (COTW); groove from the AECC drawing 08-052-BGC-009 (municion.org) of the 7.82 Patriot, whose case the
+# Eagle uses (COTW 18 p. 410): RT 1.57, HL 3.90, GØ 12.67, GW 1.00, HØ 14.63; ramp angle from
+# HL = RT + GW + ((HØ - GØ)/2)/tan(angle). No drawing of the Eagle itself was found.
 rim_thickness = 1.52
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 3.9
+groove_diameter = 12.67
+ramp_angle = 36.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/782-mm-lazzeroni-patriot/", "book:cotw-18 p. 410"]
 
 [bullet]
 # Soft point inferred: Lazzeroni loads premium hunting bullets; the page gives weights only.

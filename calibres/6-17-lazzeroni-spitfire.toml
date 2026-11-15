@@ -15,14 +15,14 @@ rare = true
 rim = 13.46
 base = 13.46
 shoulder = 12.95
-shoulder_at = 40.7
+shoulder_at = 40.66
 neck = 6.99
 case_length = 52.07
 overall_length = 71.12
 bullet = 6.17
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 451"]
+# shoulder_at from the AECC drawing 06-052-BGC-027 (municion.org): SL 40.50 on a case of CL 51.91, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/617-mm-lazzeroni-spitfire/"]
 
 [introduced]
 year = 1997
@@ -38,9 +38,13 @@ degrees = 30
 sources = ["book:cotw-18 p. 366"]
 
 [case_head]
-# .050 in.
+# .050 in. (COTW); groove from the AECC drawing 06-052-BGC-027 (municion.org): RT 1.25, HL 3.12, GØ 11.88, GW 1.16,
+# HØ 13.44; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.27
-sources = ["book:cotw-18 p. 451"]
+ramp_top = 3.12
+groove_diameter = 11.88
+ramp_angle = 48.0
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/617-mm-lazzeroni-spitfire/"]
 
 [bullet]
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 366).

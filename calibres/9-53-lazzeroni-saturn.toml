@@ -14,14 +14,14 @@ rare = true
 rim = 14.66
 base = 14.66
 shoulder = 14.15
-shoulder_at = 58.2
+shoulder_at = 58.91
 neck = 10.26
 case_length = 71.12
 overall_length = 91.44
 bullet = 9.52
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 452"]
+# shoulder_at from the AECC drawing 10-071-BGC-010 (municion.org): SL 58.60 on a case of CL 70.81, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/953-mm-lazzeroni-saturn/"]
 
 [introduced]
 year = 1996
@@ -37,9 +37,13 @@ degrees = 30
 sources = ["book:cotw-18 p. 416"]
 
 [case_head]
-# .060 in.
+# .060 in. (COTW); groove from the AECC drawing 10-071-BGC-010 (municion.org): RT 1.56, HL 4.00, GØ 12.55, GW 1.10,
+# HØ 14.62; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
 rim_thickness = 1.52
-sources = ["book:cotw-18 p. 452"]
+ramp_top = 4.0
+groove_diameter = 12.55
+ramp_angle = 38.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/953-mm-lazzeroni-saturn/"]
 
 [bullet]
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 416).
