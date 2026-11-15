@@ -291,6 +291,8 @@ drawings of the 20x138 B and 23x152 B show that the Wikipedia infoboxes these tw
 give the belt as the rim, so their diameters are now the drawing's. Jane's table gives the 27x145 B
 a neck 0.8 mm narrower than its drawing, which is therefore not taken. The 20x139's rim is the
 drawing's 3.04 mm (Rapid Fire: 3.5 mm), the whole head coming from the drawing.
+The Swiss 34x239 has no AECC drawing; naboje.org's own drawing of it, labelled like a C.I.P. sheet,
+gives the same sizes under the same rules.
 
 ### `[introduced]`
 

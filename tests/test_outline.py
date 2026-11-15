@@ -38,6 +38,14 @@ class GapTests(unittest.TestCase):
             for s in items:
                 self.assertLessEqual(set(outline.gaps(s)), set(outline.GAPS), s["name"])
 
+    def test_cannon_rounds_with_a_specimen_drawing_are_well_sourced(self):
+        # 2026-11-15: eleven AECC drawings (municion.org) and naboje.org's 34x239 gave these their shoulders and
+        # heads. The others lack a drawing that shows the shoulder (or, the 27x145 mm B, one that fits Jane's neck).
+        drawn = {"20x102 mm", "20x110 mm Hispano", "20x138 mm B", "20x139 mm", "23x152 mm B", "24x138 mm", "25x137 mm",
+                 "30x113 mm B", "30x165 mm", "30x173 mm", "34x239 mm", "35x228 mm"}
+        cannon = dict(cartridges.ALL_CATALOGUE)["Kanone"]
+        self.assertEqual({s["name"] for s in cannon if outline.well_sourced(s)}, drawn)
+
     def test_a_crimped_blanks_mouth_is_a_sketch(self):
         # Raven 2026-11-14: "treat the crimp as a sketch". No sheet gives a star crimp's size: the mouth stays
         # listed as unsourced, but it keeps no blank from being well sourced.
@@ -1086,7 +1094,7 @@ class OutlineTests(unittest.TestCase):
         ".360 Mars", ".45-70 Auto", ".50-115 Bullard", "6.17 Lazzeroni Flash",
         "6.71 Lazzeroni Blackbird", "8.5 mm Mars",
         # Cannon rounds without a specimen drawing that shows the head (catalogue only).
-        "20x139 mm FMK", "27x145 mm B", "34x239 mm", "45x386 mm SR", "50x346 mm B", "57x348 mm SR",
+        "20x139 mm FMK", "27x145 mm B", "45x386 mm SR", "50x346 mm B", "57x348 mm SR",
     }
 
     SHALLOW_CONES = {".32 Winchester Self-Loading": 3.7, ".35 Winchester Self-Loading": 8.0,
