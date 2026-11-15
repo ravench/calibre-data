@@ -1,4 +1,4 @@
-# Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
+# Batch 12 (2026-11); now from the C.I.P. sheet (see [mm]).
 name = ".475 No. 2 Nitro Express"
 categories = ["rifle"]
 kind = "rimmed"
@@ -11,18 +11,18 @@ origin_sources = ["https://en.wikipedia.org/wiki/.475_No._2_Nitro_Express"]
 rare = true
 
 [mm]
-rim = 16.9
-base = 14.6
-shoulder = 13.9
+# C.I.P. 475 No 2 N.E. 3''1/2, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 17.14
+base = 14.73
+shoulder = 13.97
 shoulder_at = 69.21
-neck = 13.0
-case_length = 89.0
-overall_length = 108.0
-bullet = 12.3
-unsourced = ["overall_length", "bullet"]
+neck = 12.88
+case_length = 88.9
+overall_length = 109.98
+bullet = 12.27
 sources = [
-  "book:cotw-18 p. 609",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page120.pdf",
+  "book:cotw-18 p. 609",
 ]
 
 [introduced]
@@ -34,7 +34,7 @@ size = "berdan-nitro"
 sources = ["https://municion.org/producto/475-n2-nitro-express-jeffery-3-1-2/"]
 
 [shoulder_angle]
-# C.I.P. 475 No 2 N.E. 3''1/2
+# C.I.P. 475 No 2 N.E. 3''1/2: half the cone angle alpha 12°14'48"
 degrees = 6.1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page120.pdf"]
 

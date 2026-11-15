@@ -229,7 +229,7 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == "12/70"),
                          cartridges.shot("12/70", 20.6, 22.45, 61.09, ["12", "12/70", "12ga", "12gauge"], 70.0))
         blank = next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == ".22 Blank (6.8/11)")
-        self.assertEqual((blank["neck"], blank["oal"], blank["profile"]), (3.4, 11.0, "crimped"))
+        self.assertEqual((blank["neck"], blank["oal"], blank["profile"]), (3.4, 11.1, "crimped"))
 
 
 class CheckTests(unittest.TestCase):
@@ -681,8 +681,11 @@ class CheckTests(unittest.TestCase):
 
     def test_unsourced_lists_the_measurements_without_a_source(self):
         self.assertEqual(cartridges.unsourced(".56-52 Spencer Necked"), ("shoulder_at",))
-        self.assertEqual(cartridges.unsourced(".22 Blank (6.8/11)"), ("rim", "base", "mouth", "length"))  # no source at all
         self.assertEqual(cartridges.unsourced(".308 Winchester"), ())
+        with Copy() as c:  # no source at all: every measurement is without one (no calibre is in that state today)
+            c.edit(LR, LR_MM, "sources = []")
+            self.assertEqual(load(c.dir)["UNSOURCED"][".22 LR"],
+                             ("rim", "base", "neck", "case_length", "overall_length", "bullet"))
         for name, keys in cartridges.UNSOURCED.items():
             self.assertTrue(keys, name)
         for path in os.listdir(os.path.join(ROOT, "calibres")):  # the list replaced these notes (2026-11-14)

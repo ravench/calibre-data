@@ -320,12 +320,28 @@ source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
 semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet gives it, all three or
 none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
-A case made from a parent case without its own sheet keeps the parent's head (the note says which).
+The .32 and .401 Winchester Self-Loading have no groove floor on their sheets: a shallow cone (3.7° and
+7°) runs from the rim's front up to the body at E, and the drawing follows it.
+A case made from a parent case without its own sheet keeps the parent's head (the note says which); a parent
+without a sheet takes the head of a case made from it that has one (.44 Auto Mag: C.I.P. 357 Auto Mag.).
+
+Without a C.I.P. sheet the groove can come from two other drawings, in this order. A SAAMI drawing
+gives the rim thickness, the groove's diameter, width and angle and the body diameter in inches:
+`ramp_top` is rim thickness + groove width + ((body − groove)/2)/tan(angle), worked out in inches
+and then converted. An AECC specimen drawing (municion.org) gives the head in mm as RT (rim
+thickness), GØ and GW (groove diameter and width), HØ (head diameter) and HL (base to the top of the
+ramp; on a belted case the belt's front is HL + LW): `ramp_top` is HL, `groove_diameter` is GØ and
+`ramp_angle` follows from HL = RT + GW + ((HØ − GØ)/2)/tan(angle), rounded to a whole degree. A
+specimen drawing counts only when its rim and head diameters are within 0.5 mm of the file's.
+
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
 its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal
 rather than the C.I.P. maximum, so a calibre from a book can have a rim up to about 0.3 mm thinner
 than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadcutter 1.5 mm from
-the sheet). A rim without a thickness is
+the sheet). Beside an AECC drawing the book's rim thickness stays when the two are within 0.3 mm of
+each other; when they are further apart the whole head is the drawing's, because HL is measured from
+the base and another rim under it would change the groove's width (6.5 mm Bergmann: .025 in. in the
+book, 1.00 mm on the drawing). A rim without a thickness is
 drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless, semi-rimmed and belted); those
 cases without a groove get a generic head fitted to the sourced ones (`generic_head` in `outline.py`;
 `HEAD_UNSOURCED` in `tests/test_outline.py` lists them): a groove of 87 % of the rim diameter and at

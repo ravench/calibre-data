@@ -1,4 +1,4 @@
-# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Measurements from the C.I.P. sheet (maximum cartridge).
 # Lazzeroni's .284 long magnum, the 7.82 Warbird necked down.
 name = "7.21 Lazzeroni Firebird"
 categories = ["rifle"]
@@ -11,17 +11,19 @@ origin_sources = ["https://municion.org/producto/721-mm-lazzeroni-firebird/"]
 rare = true
 
 [mm]
-rim = 14.66
-base = 14.66
-shoulder = 14.15
+# C.I.P. 7,21 Firebird, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 14.76
+base = 14.73
+shoulder = 14.22
 shoulder_at = 58.7
-neck = 8.08
-case_length = 71.12
-overall_length = 91.44
-bullet = 7.21
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 452"]
+neck = 8.15
+case_length = 71.37
+overall_length = 92.2
+bullet = 7.24
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page44.pdf",
+  "book:cotw-18 p. 452",
+]
 
 [introduced]
 year = 1998
@@ -32,14 +34,18 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 
 [shoulder_angle]
-# COTW 18 p. 388: a 30-degree shoulder.
-degrees = 30
-sources = ["book:cotw-18 p. 388"]
+# C.I.P. 7,21 Firebird: half the cone angle alpha 60°01'59"
+degrees = 30.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page44.pdf"]
 
 [case_head]
-# .060 in.
-rim_thickness = 1.52
-sources = ["book:cotw-18 p. 452"]
+# C.I.P. 7,21 Firebird: R, E, E1, delta. E as printed; the sheet's own R, e min, E1 and delta give 3.94,
+# which the Warbird sheet prints for the same head.
+rim_thickness = 1.65
+ramp_top = 3.99
+groove_diameter = 12.95
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page44.pdf"]
 
 [bullet]
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 388).

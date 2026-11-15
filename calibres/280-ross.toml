@@ -1,4 +1,4 @@
-# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
+# Measurements from the C.I.P. sheet (maximum cartridge).
 # Semi-rimmed; designed by F. W. Jones for the Canadian Ross straight-pull rifle. GB kept as origin.
 name = ".280 Ross"
 categories = ["rifle"]
@@ -12,16 +12,19 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 14.12
-base = 13.56
-shoulder = 10.26
+# C.I.P. 280 Riml. N.E. Ross, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 14.22
+base = 13.59
+shoulder = 10.72
 shoulder_at = 55.4
-neck = 8.05
-case_length = 65.79
-overall_length = 88.9
+neck = 8.13
+case_length = 66.32
+overall_length = 87.88
 bullet = 7.29
-# shoulder_at from C.I.P. L1.
-sources = ["book:cotw-18 p. 608", "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page104.pdf"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page104.pdf",
+  "book:cotw-18 p. 608",
+]
 
 [introduced]
 year = 1906
@@ -34,8 +37,16 @@ diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
 
 [shoulder_angle]
-# C.I.P. 280 Riml. N.E. Ross
+# C.I.P. 280 Riml. N.E. Ross: half the cone angle alpha 53°07'48"
 degrees = 26.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page104.pdf"]
+
+[case_head]
+# C.I.P. 280 Riml. N.E. Ross: R, E, E1, delta
+rim_thickness = 1.52
+ramp_top = 3.58
+groove_diameter = 12.45
+ramp_angle = 28.7
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page104.pdf"]
 
 [bullet]

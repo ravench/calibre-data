@@ -36,6 +36,15 @@ sources = ["https://municion.org/producto/7-mm-nambu/"]
 degrees = 15.6
 sources = ["https://municion.org/producto/7-mm-nambu/"]
 
+[case_head]
+# AECC drawing 07-020-BGC-010 (municion.org): RT 0.98, HL 2.53, GØ 7.81, GW 0.80, HØ 8.91; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 0.98
+ramp_top = 2.53
+groove_diameter = 7.81
+ramp_angle = 36.0
+sources = ["https://municion.org/producto/7-mm-nambu/"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 464"]

@@ -1,5 +1,5 @@
-# Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
-# Lazzeroni's .308 long magnum, on its .577 in. case.
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# Lazzeroni's .308 long magnum, on its .577 in. case (C.I.P. maximum 14.73 mm).
 name = "7.82 Lazzeroni Warbird"
 categories = ["rifle"]
 kind = "rimless"
@@ -11,17 +11,19 @@ origin_sources = ["https://municion.org/producto/782-mm-lazzeroni-warbird/"]
 rare = true
 
 [mm]
-rim = 14.66
-base = 14.66
-shoulder = 14.15
-shoulder_at = 58.5
-neck = 8.64
-case_length = 71.12
-overall_length = 91.44
-bullet = 7.82
-# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
-unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 452"]
+# C.I.P. 7,82 Warbird, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 14.76
+base = 14.73
+shoulder = 14.22
+shoulder_at = 58.7
+neck = 8.76
+case_length = 71.37
+overall_length = 92.2
+bullet = 7.84
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page51.pdf",
+  "book:cotw-18 p. 452",
+]
 
 [introduced]
 year = 1995
@@ -32,14 +34,17 @@ size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
 
 [shoulder_angle]
-# COTW 18 p. 395: a 30-degree shoulder.
-degrees = 30
-sources = ["book:cotw-18 p. 395"]
+# C.I.P. 7,82 Warbird: half the cone angle alpha 60°01'36"
+degrees = 30.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page51.pdf"]
 
 [case_head]
-# .060 in.
-rim_thickness = 1.52
-sources = ["book:cotw-18 p. 452"]
+# C.I.P. 7,82 Warbird: R, E, E1, delta
+rim_thickness = 1.65
+ramp_top = 3.94
+groove_diameter = 12.95
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page51.pdf"]
 
 [bullet]
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 395).

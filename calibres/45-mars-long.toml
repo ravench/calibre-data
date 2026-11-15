@@ -30,9 +30,14 @@ size = "large-pistol"
 sources = []
 
 [case_head]
-# .040 in.
+# .040 in. (COTW); groove from the AECC drawing 11-028-TGC-010 (municion.org): RT 1.07, HL 3.55, GØ 10.25, GW 0.93,
+# HØ 12.65; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle). The drawing's case is 1.5 mm shorter than the
+# book's.
 rim_thickness = 1.02
-sources = ["book:cotw-18 p. 529"]
+ramp_top = 3.55
+groove_diameter = 10.25
+ramp_angle = 38.0
+sources = ["book:cotw-18 p. 529", "https://municion.org/producto/450-mars-long-case/"]
 
 [bullet]
 type = "jacketed"

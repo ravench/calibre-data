@@ -1,4 +1,4 @@
-# Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
+# Batch 12 (2026-11); now from the C.I.P. sheet (see [mm]).
 name = "6.5x58 mm Vergueiro"
 categories = ["rifle"]
 kind = "rimless"
@@ -13,18 +13,16 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 11.78
-base = 11.88
-shoulder = 10.94
-shoulder_at = 41.0
-neck = 7.56
-case_length = 57.85
-overall_length = 81.5
-bullet = 6.65
-sources = [
-  "https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro",
-  "https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/",
-]
+# C.I.P. 6,5 x 58 Mauser, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 11.8
+base = 11.95
+shoulder = 10.95
+shoulder_at = 42.52
+neck = 7.7
+case_length = 58.0
+overall_length = 82.5
+bullet = 6.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page25.pdf"]
 
 [introduced]
 year = 1904
@@ -36,14 +34,17 @@ size = "large-rifle"
 sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]
 
 [shoulder_angle]
-# AECC drawing 07-058-BGC-030
-degrees = 10.8
-sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]
+# C.I.P. 6,5 x 58 Mauser: half the cone angle alpha 30°01'18"
+degrees = 15.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page25.pdf"]
 
 [case_head]
-# .052 in.
-rim_thickness = 1.32
-sources = ["book:donnelly p. 775"]
+# C.I.P. 6,5 x 58 Mauser: R, E, E1, delta
+rim_thickness = 1.5
+ramp_top = 3.4
+groove_diameter = 10.2
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page25.pdf"]
 
 [bullet]
 type = "jacketed"
