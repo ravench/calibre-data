@@ -331,7 +331,7 @@ neck further off, the two disagree and the drawing's shoulder is not taken (6.53
 Scramjet). Where the specimen's own cone does, it is a shallow one, on which a small difference in
 diameter is a long one in length: the angle then runs between the file's diameters over the
 drawing's shoulder length (CL − NL − SL), so that the shoulder starts and ends where the drawing
-shows (the 3¼ in. .500/450 and seven more,
+shows (the 3¼ in. .500/450, the .56-52 Spencer Necked and seven more,
 `test_shallow_shoulders_run_over_the_drawings_shoulder_length`). The two 10.4x38 mm R Vetterli
 rounds are older than this rule and still start the shoulder 1.0 mm before their drawing does. A
 drawing with another round's title is not taken on its sizes alone: not where its page says that
@@ -346,14 +346,15 @@ own is not a source for a shoulder: against the official drawings of some sixty 
 sheets, and SAAMI's where the file follows those) his start is within 0.5 mm on about two thirds and
 more than 1.5 mm off on about one in seven, and his printed angles are not used.
 
-A dimensioned drawing on naboje.org, the Czech collectors' catalogue, counts like an AECC drawing,
-within the same limits. Its newer drawings carry the C.I.P. letters (P2 at L1, H1 at L2, case L3).
-The older ones label the shoulder's start but not the neck's, which is then read off the picture:
-the rows of the image at the mouth and at the line where the neck starts, at the scale that the
-labelled case length gives. That holds only for a picture that is to scale, so its other labelled
-lengths (overall length, shoulder start, rim thickness) must sit on their rows within 0.2 mm
-(.577/500 Nitro Express). The picture of the .577/500 No. 2 Express is up to 0.9 mm off its own
-labels and is not read.
+municion.org files some rounds under another name than the file's: the .577/500 Nitro Express as
+«.577/.500 Express 3 1/8″», the 6x58 mm Forster as «6,2 x 58 Förster», the .416 Rimmed as «.416
+Chapuis», the .30 USA Rimless as «.30 Blake». Such a page is found through its other names
+(SINÓNIMOS), which the site's search reads, through the list of all pages, and through the catalogue
+code, which starts with the bullet's diameter and the case length in mm
+(`test_aecc_drawings_filed_under_other_names`). Such a drawing counts when the page or a book says
+that the two names are one round. naboje.org, the Czech collectors' catalogue, shows many AECC
+drawings again, some without the neck length. That is the same measurement and not a second one:
+the file cites the AECC drawing.
 
 ### `[case_head]`
 
@@ -378,9 +379,7 @@ ramp; on a belted case the belt's front is HL + LW): `ramp_top` is HL, `groove_d
 belted case the ramp climbs to the belt, so the belt's diameter LØ takes the place of HØ. A
 specimen drawing counts only when its rim and head diameters are within 0.5 mm of the file's. A
 calibre without a drawing takes the groove of a sister round's drawing, behind its own rim
-thickness, when a source says that the two share the head (.416 Dakota: the .375 Dakota's). A
-naboje.org drawing with the C.I.P. letters gives the head in the same way and within the same
-limits: R, e, E, E1 and P1 stand for RT, GW, HL, GØ and HØ (6x58 mm Forster).
+thickness, when a source says that the two share the head (.416 Dakota: the .375 Dakota's).
 
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
 its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal

@@ -21,9 +21,10 @@ neck = 13.36
 case_length = 79.5
 overall_length = 95.0
 bullet = 12.9
-# shoulder_at: the shoulder start of naboje.org's drawing (.577/.500 Express 3 1/8 in.: case 79.39, shoulder at 59.85),
-# carried from the mouth. Its rim, base, shoulder, neck and case length are within 0.25 mm of the book's.
-sources = ["book:cotw-18 p. 609", "https://naboje.org/node/1356"]
+# shoulder_at from the AECC drawing 13-079-BBC-020 (municion.org, filed as «.577/.500 Express 3 1/8″»): SL 59.85 on a
+# case of CL 79.39, taken from the mouth (case_length - (CL - SL)). Its rim, base, shoulder, neck and case length are
+# within 0.25 mm of the book's. naboje.org shows the same drawing without the neck length (node 1356).
+sources = ["book:cotw-18 p. 609", "https://municion.org/producto/577-500-express-3-1-8/"]
 
 [introduced]
 unknown = "Blackpowder first; COTW 18 p. 603 gives no year."
@@ -36,13 +37,12 @@ diameter = 6.38
 sources = ["book:cotw-18 p. 609"]
 
 [shoulder_angle]
-# Drawing on naboje.org: SØ 14.83, NØ 13.56, SL 59.85, CL 79.39 and NL 15.50, the neck start read off the drawing's
-# scale: the picture shows the case, the shoulder start, the rim and the overall length as labelled, within 0.1 mm.
+# AECC drawing on municion.org: SØ 14.83, NØ 13.56, SL 59.85, NL 15.50, CL 79.39.
 degrees = 8.9
-sources = ["https://naboje.org/node/1356"]
+sources = ["https://municion.org/producto/577-500-express-3-1-8/"]
 
 [case_head]
-# .055 in. (the naboje.org drawing: 1.45 mm).
+# .055 in. (COTW); the AECC drawing 13-079-BBC-020 (municion.org) has RT 1.45.
 rim_thickness = 1.4
 sources = ["book:cotw-18 p. 609"]
 
