@@ -86,7 +86,7 @@ class CatalogueTests(unittest.TestCase):
             ".577/450 Martini-Henry": "577/450 Sld. Mart. H.", "9x57 mm Mauser": "9 x 57",
         }
         by_name = {s["name"]: s for s in ALL}
-        for name, title in titles.items():
+        for name, title in [*titles.items(), (".475 No. 2 Nitro Express", '475 No 2 N.E. 3"1/2')]:  # as printed
             with self.subTest(name):
                 known = [name, *DISPLAY_ALIASES.get(name, ()), *by_name[name]["aliases"]]
                 self.assertTrue(any(key(title) in key(k) for k in known), title)
