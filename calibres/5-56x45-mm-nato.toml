@@ -10,8 +10,9 @@ origin_sources = []
 worldwide = true
 
 [mm]
-# SAAMI's 5.56 Commercial (2026) draws the same cartridge as its 223 Remington (body 9.550
-# instead of 9.548); only the chamber differs (longer throat, 7 in twist, 62,000 psi).
+# Sources: SAAMI's 5.56 Commercial (2026) draws the same cartridge as its 223 Remington (body
+# 9.550 instead of 9.548); its chamber (longer, wider throat, 7 in twist) and pressure limit
+# (62,000 psi) differ. SAAMI says it does not imply NATO conformance.
 rim = 9.6
 base = 9.58
 shoulder = 9.0
