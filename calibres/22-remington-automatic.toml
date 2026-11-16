@@ -16,16 +16,13 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 7.62
+rim = 7.4
 base = 6.2
 neck = 6.2
 case_length = 16.8
 overall_length = 23.4
 bullet = 5.7
-sources = [
-  "https://en.wikipedia.org/wiki/.22_Remington_Automatic",
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf",
-]
+sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]
 
 [introduced]
 # with the Model 16
