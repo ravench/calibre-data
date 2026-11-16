@@ -397,7 +397,8 @@ same measurement and not a second one: the file cites the AECC drawing.
 
 ### `[case_head]`
 
-`rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. A sheet titled with
+`rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case, shot shells too
+(t on the Tab. VII sheets; a shell's head has nothing else, and without it its rim is drawn 1.5 mm thick). A sheet titled with
 another name of the round, or a load on the same case, counts when the sheet's rim, head and case
 length are within 0.5 mm of the file's and, for another name, a source gives it (the .450 Adams's is
 «450 Short»; the 9 mm Flobert Bosquette takes the bulleted «9 mm Flobert à balle»). Rimless,
@@ -638,7 +639,7 @@ same):
 | `measurements` | A measurement in `[mm]` has no source: it is listed in `unsourced`, `[mm]` has no source at all, or a cannon round leaves it out. |
 | `shoulder_angle` | A bottleneck case without `[shoulder_angle]`: its shoulder is drawn at 32°. |
 | `groove` | A rimless, semi-rimmed or belted case without the extractor groove in `[case_head]`: it gets the generic head. |
-| `rim_thickness` | No `rim_thickness` in `[case_head]`: the rim is drawn at the default thickness. |
+| `rim_thickness` | No `rim_thickness` in `[case_head]`: the rim is drawn at the default thickness. Not reported for shot shells, whose head is not checked. |
 | `shoulder_moved` | The measurements leave less than 1.2 mm of neck in front of the shoulder, so the drawing moves the shoulder back (none today). |
 
 A calibre is well sourced when it has none of them, or only `rim_thickness`: a default rim is off by

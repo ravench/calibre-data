@@ -1273,6 +1273,21 @@ class OutlineTests(unittest.TestCase):
         for name in (".44 Long Rimfire", ".58 Miller"):
             self.assertIsNone(cartridges.rim_thickness(name), name)
 
+    def test_shot_shells_draw_their_rim_at_its_cip_thickness(self):
+        # t on the C.I.P. Tab. VII sheets, maximum cartridge (2026-11-16); before, every shell's rim was 1.5 mm.
+        thickness = {"12/70": 1.85, "12/76": 1.85, "12/89": 1.85, "16/70": 1.65, "20/70": 1.55, "20/76": 1.55,
+                     "28/70": 1.55, ".410/76": 1.55}
+        shells = {s["name"]: s for _, s in outline.specs() if s["kind"] == SHOT}
+        self.assertEqual(set(shells), set(thickness))
+        for name, t in thickness.items():
+            with self.subTest(name):
+                self.assertEqual(cartridges.rim_thickness(name), t)
+                self.assertIn("tab-vii", cartridges.sources(name, "case_head")[0])
+                s = shells[name]
+                head = points(outline.outline(s)["head"])
+                # The head's outline runs out to the rim and up to t before it steps in to the hull.
+                self.assertIn(round(s["oal"] - t, 2), {round(y, 2) for _, y in head})
+
     def test_rims_without_a_source_keep_the_old_drawing(self):
         # A rim no source gives a thickness is drawn as before rim thicknesses came in (2026-11-11).
         by_name = {s["name"]: s for _, s in outline.specs()}
