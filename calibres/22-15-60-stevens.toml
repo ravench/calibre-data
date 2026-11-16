@@ -28,11 +28,6 @@ sources = ["book:cotw-18 p. 183"]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 249"]
 
-[case_head]
-# AECC drawing 06-051-CBC-020 (municion.org): RT 1.61, RØ 8.68, HØ 6.75.
-rim_thickness = 1.61
-sources = ["https://municion.org/producto/22-15-60-stevens/"]
-
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 183"]

@@ -30,6 +30,7 @@ sources = ["book:cotw-18 p. 250"]
 
 [case_head]
 # AECC drawing 08-045-CBC-010 (municion.org): RT 1.45, RØ 10.42, HØ 8.80, CL 44.63.
+# Donnelly (p. 366) prints .042 in. (1.07 mm), more than 0.3 mm from the drawing's.
 rim_thickness = 1.45
 sources = ["https://municion.org/producto/32-ideal/"]
 

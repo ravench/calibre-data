@@ -27,7 +27,7 @@ year = 1864
 sources = ["book:cotw-18 p. 666"]
 
 [case_head]
-# AECC drawing 12-028-CBR-010 (municion.org): RT 1.60, RØ 13.57, HØ 11.69.
+# AECC drawing 12-028-CBR-010 (municion.org, titled .46 Carbine RF): RT 1.60, RØ 13.57, HØ 11.69.
 rim_thickness = 1.6
 sources = ["https://municion.org/producto/46-carbine-rf/"]
 

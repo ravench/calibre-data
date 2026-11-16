@@ -34,11 +34,6 @@ sources = ["book:cotw-18 p. 651"]
 degrees = 17.0
 sources = ["https://municion.org/producto/65-x-27-r-p-tesching/"]
 
-[case_head]
-# AECC drawing 07-027-BBC-010 (municion.org): RT 1.18, RØ 10.82, HØ 9.62.
-rim_thickness = 1.18
-sources = ["https://municion.org/producto/65-x-27-r-p-tesching/"]
-
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 616"]

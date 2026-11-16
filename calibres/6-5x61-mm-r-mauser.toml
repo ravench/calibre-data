@@ -34,11 +34,6 @@ sources = ["book:cotw-18 p. 651"]
 degrees = 21.7
 sources = ["https://municion.org/producto/65-x-61-r-mauser/"]
 
-[case_head]
-# AECC drawing 07-061-BBC-010 (municion.org): RT 1.56, RØ 13.53, HØ 12.17.
-rim_thickness = 1.56
-sources = ["https://municion.org/producto/65-x-61-r-mauser/"]
-
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 619"]

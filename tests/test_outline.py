@@ -1246,9 +1246,10 @@ class OutlineTests(unittest.TestCase):
                       cartridges.sources(".22 Remington Automatic", "mm"))
 
     def test_specimen_drawings_give_the_rim_thickness_where_no_book_does(self):
-        # 2026-11-16: no table prints these rims' thickness, so it is RT on an AECC drawing (municion.org) or the
-        # rim thickness on a naboje.org drawing, of a specimen whose rim and head diameters are within 0.5 mm of
-        # the file's rim and base. name: (rim thickness, the drawing's rim and head diameters)
+        # 2026-11-16: no book gives these rims' thickness for the file's case (Donnelly's .32 Ideal, .042 in., is
+        # 0.38 mm from the drawing's, so the drawing's whole head counts), so it is RT on an AECC drawing
+        # (municion.org) or the rim thickness on a naboje.org drawing, of a specimen whose rim and head diameters
+        # are within 0.5 mm of the file's rim and base. name: (rim thickness, the drawing's rim and head diameters)
         drawings = {
             ".32 Short Rimfire": (1.23, 9.47, 8.02), ".32 Long Rimfire": (1.3, 9.51, 8.09),
             ".25 Stevens Short": (1.3, 8.6, 7.06), ".25 Short Rimfire": (1.06, 7.47, 6.21),
@@ -1259,11 +1260,8 @@ class OutlineTests(unittest.TestCase):
             ".46 Short Rimfire": (1.5, 13.45, 11.69), ".46 Long Rimfire": (1.6, 13.57, 11.69),
             ".46 Extra Long Rimfire": (1.57, 13.34, 11.58), ".50 Remington Navy Rimfire": (1.64, 16.35, 14.24),
             ".38 Long Rimfire": (1.3, 11.07, 9.58), ".56-46 Spencer": (1.8, 16.18, 14.22),
-            ".50 Remington Army": (1.53, 16.91, 14.32), ".22-15-60 Stevens": (1.61, 8.68, 6.75),
-            "6.5x27 mm R": (1.18, 10.82, 9.62), "6.5x61 mm R Mauser": (1.56, 13.53, 12.17),
-            "8x50 mm R Siamese Type 45": (1.53, 13.93, 12.39), "7.7 mm Bittner": (1.25, 10.0, 8.53),
-            ".32 Ideal": (1.45, 10.42, 8.8), "11.5x57 mm R Spanish Reformado": (1.92, 16.48, 13.35),
-            "9.3x57 mm R": (1.25, 12.44, 10.87)}
+            ".50 Remington Army": (1.53, 16.91, 14.32), "8x50 mm R Siamese Type 45": (1.53, 13.93, 12.39),
+            "7.7 mm Bittner": (1.25, 10.0, 8.53), ".32 Ideal": (1.45, 10.42, 8.8), "9.3x57 mm R": (1.25, 12.44, 10.87)}
         spec = {s["name"]: s for _, s in outline.specs()}
         for name, (t, rim, head) in drawings.items():
             with self.subTest(name):
