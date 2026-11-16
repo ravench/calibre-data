@@ -38,6 +38,11 @@ sources = ["book:cotw-18 p. 652"]
 degrees = 11.1
 sources = ["https://municion.org/producto/105-x-47-r-mb-target/"]
 
+[case_head]
+# .09 in.
+rim_thickness = 2.29
+sources = ["book:donnelly p. 952"]
+
 [bullet]
 # A blackpowder target round (COTW 18 p. 646); the page gives only a cast-bullet handload.
 type = "lead"

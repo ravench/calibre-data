@@ -41,6 +41,11 @@ sources = []
 degrees = 7.7
 sources = ["https://municion.org/producto/40-90-500-peabody-martini-what-cheer-n3/"]
 
+[case_head]
+# .07 in.
+rim_thickness = 1.78
+sources = ["book:donnelly p. 508"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 226"]

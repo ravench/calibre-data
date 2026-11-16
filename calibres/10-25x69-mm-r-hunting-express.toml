@@ -36,6 +36,11 @@ sources = ["book:cotw-18 p. 645"]
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 652"]
 
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:donnelly p. 945"]
+
 [bullet]
 # A blackpowder round (COTW 18 p. 645); only the later smokeless load had a soft point.
 type = "lead"

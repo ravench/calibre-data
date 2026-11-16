@@ -30,6 +30,11 @@ sources = ["book:cotw-18 p. 566"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 982"]
+
 [bullet]
 # The military load: a lead bullet over blackpowder.
 type = "lead"

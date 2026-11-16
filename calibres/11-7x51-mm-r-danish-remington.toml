@@ -34,6 +34,11 @@ sources = ["book:cotw-18 p. 569"]
 size = "large-rifle"
 sources = ["https://municion.org/producto/117-x-516-r-danish-remington-cf-m-1867-96-carbines/"]
 
+[case_head]
+# .057 in.
+rim_thickness = 1.45
+sources = ["book:donnelly p. 993"]
+
 [bullet]
 # The military load: a lead bullet over blackpowder.
 type = "lead"

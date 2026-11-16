@@ -33,6 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/.360_No._5_Rook"]
 size = "small-pistol"
 sources = ["https://municion.org/producto/360-n-5-revolver-rifle/"]
 
+[case_head]
+# .05 in.
+rim_thickness = 1.27
+sources = ["book:donnelly p. 443"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.360_No._5_Rook"]

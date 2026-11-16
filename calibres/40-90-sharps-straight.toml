@@ -33,6 +33,11 @@ sources = ["book:cotw-18 p. 220"]
 size = "large-rifle"
 sources = ["https://municion.org/producto/40-90-370-sharps-straight-3-1-4-case/"]
 
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:donnelly p. 509"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 220"]

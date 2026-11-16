@@ -37,6 +37,11 @@ sources = []
 degrees = 16.4
 sources = ["https://municion.org/producto/93-x-65-r-collath-tesco/"]
 
+[case_head]
+# .053 in.
+rim_thickness = 1.35
+sources = ["book:donnelly p. 929"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 642"]

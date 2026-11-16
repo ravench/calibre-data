@@ -28,6 +28,12 @@ sources = ["book:cotw-18 p. 195"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 249"]
 
+[case_head]
+# .06 in.
+# Donnelly's entry is titled .28-30 Stevens: rim .412 in., case 2.51 in., as the file.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 279"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 196"]

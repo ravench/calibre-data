@@ -36,6 +36,11 @@ sources = ["https://municion.org/producto/8-x-52-r-siamese-type-66/"]
 degrees = 19.6
 sources = ["https://municion.org/producto/8-x-52-r-siamese-type-66/"]
 
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:donnelly p. 876"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 553"]

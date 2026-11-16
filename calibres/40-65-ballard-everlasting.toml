@@ -31,6 +31,11 @@ sources = ["book:cotw-18 p. 220"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# .07 in.
+rim_thickness = 1.78
+sources = ["book:donnelly p. 496"]
+
 [bullet]
 # COTW 18 p. 220 gives no load of its own. municion.org's one sheet
 # (https://municion.org/ficha-10-060-cbc-030-0001/: a tinned case, no maker or headstamp) shows a

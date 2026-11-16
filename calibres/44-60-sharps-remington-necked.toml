@@ -38,6 +38,11 @@ sources = ["book:cotw-18 p. 251"]
 degrees = 7.7
 sources = ["https://municion.org/producto/44-60-396-sharps-necked-1-7-8/"]
 
+[case_head]
+# .068 in.
+rim_thickness = 1.73
+sources = ["book:donnelly p. 574"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 237"]

@@ -36,6 +36,11 @@ sources = ["book:cotw-18 p. 251"]
 degrees = 9.5
 sources = ["https://municion.org/producto/40-90-300-bullard/"]
 
+[case_head]
+# .058 in.
+rim_thickness = 1.47
+sources = ["book:donnelly p. 525"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 227"]

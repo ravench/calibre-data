@@ -30,6 +30,12 @@ sources = ["book:cotw-18 p. 231"]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 251"]
 
+[case_head]
+# .052 in.
+# Donnelly's entry is titled .44 Ballard Long: rim .506 in., case 1.09 in., as the file.
+rim_thickness = 1.32
+sources = ["book:donnelly p. 558"]
+
 [bullet]
 # COTW 18 p. 231 gives only the weight of the original blackpowder load.
 type = "lead"

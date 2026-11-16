@@ -34,6 +34,11 @@ sources = ["book:cotw-18 p. 651"]
 degrees = 14.2
 sources = ["https://municion.org/producto/6-x-295-r-d-z-tesching/"]
 
+[case_head]
+# .05 in.
+rim_thickness = 1.27
+sources = ["book:donnelly p. 741"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 614"]

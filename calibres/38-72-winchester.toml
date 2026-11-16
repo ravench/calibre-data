@@ -35,6 +35,11 @@ sources = ["book:cotw-18 p. 250"]
 degrees = 4.0
 sources = ["https://municion.org/producto/38-72-winchester-cf/"]
 
+[case_head]
+# .061 in.
+rim_thickness = 1.55
+sources = ["book:donnelly p. 488"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 216"]

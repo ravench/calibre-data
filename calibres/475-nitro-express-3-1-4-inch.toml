@@ -30,6 +30,12 @@ sources = ["book:cotw-18 p. 601"]
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 609"]
 
+[case_head]
+# .053 in.
+# Donnelly's entry is titled .475 Nitro Express: rim .621 in. as the file, case 3.30 in.
+rim_thickness = 1.35
+sources = ["book:donnelly p. 648"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 601"]
