@@ -30,6 +30,11 @@ sources = ["book:cotw-18 p. 644"]
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 652"]
 
+[case_head]
+# naboje.org drawing: rim thickness 1.25, rim 12.44, head 10.87, case 57.14.
+rim_thickness = 1.25
+sources = ["https://naboje.org/node/4355"]
+
 [bullet]
 # COTW: old catalogues list one bullet for the whole family; the 9.3x72 mm R's is a soft point.
 type = "softpoint"

@@ -26,6 +26,13 @@ sources = ["https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"]
 year = 1845
 sources = ["https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"]
 
+[case_head]
+# C.I.P. R on the sheet «9 mm Flobert à balle», the bulleted 9 mm Flobert on the same case (R1 10.50,
+# L3 10.50, P1 8.80; its L6 18.10 is the longer bullet's). R1 is 0.34 mm over the file's rim; Raven's
+# specimen measured 10.3. The Wikipedia page cited in [mm] gives 1.35.
+rim_thickness = 1.45
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page10.pdf"]
+
 [bullet]
 # a 00 buckshot ball
 type = "lead"

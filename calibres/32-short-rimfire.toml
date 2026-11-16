@@ -25,6 +25,11 @@ sources = ["https://municion.org/producto/32-short-rf/"]
 year = 1865
 sources = ["https://municion.org/producto/32-short-rf/"]
 
+[case_head]
+# AECC drawing 08-014-CBR-020 (municion.org): RT 1.23, RØ 9.47, HØ 8.02.
+rim_thickness = 1.23
+sources = ["https://municion.org/producto/32-short-rf/"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/32-short-rf/"]

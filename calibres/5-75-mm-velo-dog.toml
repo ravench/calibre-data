@@ -28,6 +28,11 @@ sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 size = "small-pistol"
 sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page3.pdf"]
+
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 460"]

@@ -29,6 +29,11 @@ sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]
 year = 1914
 sources = ["https://gunsmagazine.com/our-experts/remington-model-16/"]
 
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.29
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]

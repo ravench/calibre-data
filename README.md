@@ -398,7 +398,10 @@ same measurement and not a second one: the file cites the AECC drawing.
 ### `[case_head]`
 
 `rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case, shot shells too
-(t on the Tab. VII sheets; a shell's head has nothing else, and without it its rim is drawn 1.5 mm thick). Rimless,
+(t on the Tab. VII sheets; a shell's head has nothing else, and without it its rim is drawn 1.5 mm thick). A sheet titled with
+another name of the round, or a load on the same case, counts when the sheet's rim, head and case
+length are within 0.5 mm of the file's and, for another name, a source gives it (the .450 Adams's is
+«450 Short»; the 9 mm Flobert Bosquette takes the bulleted «9 mm Flobert à balle»). Rimless,
 semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet gives it, all three or
 none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
@@ -431,7 +434,7 @@ than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadc
 the sheet). Beside an AECC drawing the book's rim thickness stays when the two are within 0.3 mm of
 each other; when they are further apart the whole head is the drawing's, because HL is measured from
 the base and another rim under it would change the groove's width (6.5 mm Bergmann: .025 in. in the
-book, 1.00 mm on the drawing). Where no book gives a rim thickness, the drawing's RT is taken, on a
+book, 1.00 mm on the drawing). Where no book gives a rim thickness, the drawing's RT (or the rim thickness on a naboje.org drawing) is taken, on a
 rimmed case too and also where the drawing's shoulder is not (.38-70 Winchester); its rim and head
 diameters must be within 0.5 mm of the file's. A rim without a thickness is
 drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless, semi-rimmed and belted); those
