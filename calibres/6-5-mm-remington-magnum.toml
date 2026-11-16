@@ -10,6 +10,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/6.5mm_Remington_Magnum",
   "book:ammo-encyclopedia-2 p. 387",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page1.pdf",
 ]
 obsolete = true
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
@@ -21,6 +22,8 @@ rim = 13.51
 base = 13.03
 shoulder = 12.6
 shoulder_at = 43.18
+neck_at = 48.49
+neck_base = 7.63
 neck = 7.6
 case_length = 55.1
 overall_length = 71.1
@@ -49,6 +52,7 @@ rim_thickness = 1.27
 ramp_top = 5.59
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page1.pdf"]
 
 [bullet]

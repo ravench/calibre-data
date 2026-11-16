@@ -9,6 +9,7 @@ origin = "GB"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.577/450_Martini–Henry",
   "book:ammo-encyclopedia-2 p. 564",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf",
 ]
 obsolete = true
 rare = true
@@ -20,6 +21,8 @@ rim = 19.3
 base = 17.07
 shoulder = 16.15
 shoulder_at = 35.71
+neck_at = 41.17
+neck_base = 13.06
 neck = 12.83
 case_length = 59.08
 overall_length = 81.28
