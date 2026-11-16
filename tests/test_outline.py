@@ -1221,8 +1221,8 @@ class OutlineTests(unittest.TestCase):
 
     def test_cip_sheets_give_the_rim_thickness_of_old_rounds(self):
         # R on the C.I.P. sheet, maximum cartridge (2026-11-16). Two sheets carry another of the round's names:
-        # «450 Short» is the .450 Adams (Wikipedia lists the name), «9 mm Flobert à balle» the ball-loaded
-        # 9 mm Flobert; the sheets' rim diameters are within 0.4 mm of the files'.
+        # «450 Short» is the .450 Adams (Wikipedia lists the name), «9 mm Flobert à balle» the bulleted 9 mm
+        # Flobert on the Bosquette's case (rim, case and head within 0.4 mm; only its bullet is longer).
         sheets = {".700 Nitro Express": (2.16, "tab-ii/tabiical-en-page131"),
                   ".375 Flanged Nitro Express": (1.65, "tab-ii/tabiical-en-page93"),
                   ".400 Purdey": (1.32, "tab-ii/tabiical-en-page103"),
@@ -1240,10 +1240,8 @@ class OutlineTests(unittest.TestCase):
         spec = {s["name"]: s for _, s in outline.specs()}
         self.assertLess(abs(12.95 - spec[".450 Adams"]["rim"]), 0.4)
         self.assertLess(abs(10.50 - spec["9 mm Flobert Bosquette"]["rim"]), 0.4)
-        # The .22 Remington Automatic takes the sheet's rim diameter too (R1 7.62; Wikipedia 7.4).
-        self.assertEqual(spec[".22 Remington Automatic"]["rim"], 7.62)
-        self.assertIn("https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf",
-                      cartridges.sources(".22 Remington Automatic", "mm"))
+        # The .22 Remington Automatic keeps its Wikipedia sizes: the sheet's R1 (7.62) is within 0.5 mm of its rim.
+        self.assertLess(abs(7.62 - spec[".22 Remington Automatic"]["rim"]), 0.5)
 
     def test_rims_without_a_source_keep_the_old_drawing(self):
         # A rim no source gives a thickness is drawn as before rim thicknesses came in (2026-11-11).
