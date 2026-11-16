@@ -33,6 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
 
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page70.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/44-colt-remington-army-revolver/"]

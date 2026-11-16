@@ -35,6 +35,11 @@ sources = []
 degrees = 15.0
 sources = ["https://municion.org/producto/8-x-50-r-siamese-type-45/"]
 
+[case_head]
+# AECC drawing 08-050-BBC-080 (municion.org): RT 1.53, RØ 13.93, HØ 12.39.
+rim_thickness = 1.53
+sources = ["https://municion.org/producto/8-x-50-r-siamese-type-45/"]
+
 [bullet]
 # Round nose with a cupronickel jacket (COTW 18 p. 552).
 type = "jacketed"

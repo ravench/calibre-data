@@ -31,6 +31,11 @@ sources = ["book:cotw-18 p. 592"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.32
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page103.pdf"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 592"]
