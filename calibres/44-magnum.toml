@@ -1,5 +1,6 @@
 name = ".44 Magnum"
-guns = ["handgun"]
+# Guns: https://www.henryusa.com/wp-content/uploads/mediakit/Henry-Big-Boy-Rifles-Spec-Sheet.pdf https://www.americanrifleman.org/articles/2020/8/19/rossi-r92-a-top-selling-lever-action-rifle/ (Henry Big Boy, Rossi R92 lever actions).
+guns = ["handgun", "rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["44mag", "44magnum", "44remmag", "44remingtonmagnum", "44 rem mag", "44 rem magnum"]

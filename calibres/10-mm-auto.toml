@@ -1,5 +1,6 @@
 name = "10 mm Auto"
-guns = ["handgun"]
+# Guns: https://en.wikipedia.org/wiki/Heckler_%26_Koch_MP5 (the MP5/10, 1992 to 2000).
+guns = ["handgun", "rifle"]
 kind = "rimless"
 profile = "flat"
 aliases = ["10mm", "10auto"]

@@ -1,5 +1,6 @@
 name = ".44 Special"
-guns = ["handgun"]
+# Guns: https://www.henryusa.com/wp-content/uploads/mediakit/Henry-Big-Boy-Rifles-Spec-Sheet.pdf (Henry Big Boy in .44 Magnum/.44 Special).
+guns = ["handgun", "rifle"]
 kind = "rimmed"
 # Nose: round, the 246-grain lead bullet of the first loads (COTW 18 pp. 504-505, photo and load table).
 profile = "round"

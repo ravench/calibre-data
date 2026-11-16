@@ -1,5 +1,6 @@
 name = ".454 Casull"
-guns = ["handgun"]
+# Guns: https://www.americanrifleman.org/articles/2020/8/19/rossi-r92-a-top-selling-lever-action-rifle/ (Rossi R92 lever action).
+guns = ["handgun", "rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["454casull"]

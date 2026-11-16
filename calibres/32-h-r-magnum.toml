@@ -1,5 +1,6 @@
 name = ".32 H&R Magnum"
-guns = ["handgun"]
+# Guns: https://www.henryusa.com/wp-content/uploads/mediakit/Henry-Big-Boy-Rifles-Spec-Sheet.pdf (Henry Big Boy in .327 Federal Magnum/.32 H&R Magnum).
+guns = ["handgun", "rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = []

@@ -1,6 +1,7 @@
 # Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
 name = ".221 Remington Fireball"
-guns = ["handgun"]
+# Guns: https://en.wikipedia.org/wiki/Remington_XP-100 (introduced with the XP-100 pistol; Remington 700 rifle since 2002).
+guns = ["handgun", "rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["221fireball"]

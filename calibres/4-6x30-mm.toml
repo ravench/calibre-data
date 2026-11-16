@@ -1,5 +1,6 @@
 name = "4.6x30 mm"
-guns = ["handgun"]
+# Guns: https://en.wikipedia.org/wiki/Heckler_%26_Koch_MP7 (H&K MP7, made for it).
+guns = ["handgun", "rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["4.6x30"]

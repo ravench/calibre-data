@@ -1,5 +1,6 @@
 name = ".69 Minié"
-guns = []
+# Guns: https://papercartridges.com/blog/f/minié-burton-and-the-us-regulation-rifle-musket-bullet https://en.wikipedia.org/wiki/Springfield_Model_1842 (the .69 musket, rifled: the Altered Musket).
+guns = ["rifle"]
 black_powder = true
 kind = "minie"
 profile = "round"

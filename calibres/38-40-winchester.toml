@@ -2,7 +2,8 @@
 # the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = ".38-40 Winchester"
-guns = ["handgun"]
+# Guns: https://en.wikipedia.org/wiki/Winchester_rifle#Model_1873 (the Winchester 1873 rifle, later made in .38-40).
+guns = ["handgun", "rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["38-40", "38wcf"]

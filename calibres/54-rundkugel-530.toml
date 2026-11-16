@@ -1,5 +1,6 @@
 name = ".54 Rundkugel (.530)"
-guns = []
+# Guns: https://www.hornady.com/muzzleloading/browse/54-cal-530-lead-balls (Hornady .530 ball, 54 calibre) https://en.wikipedia.org/wiki/Hawken_rifle (Hawken round balls averaged .54 inch).
+guns = ["rifle"]
 black_powder = true
 kind = "ball"
 profile = "round"

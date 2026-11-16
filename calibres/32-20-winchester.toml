@@ -2,7 +2,8 @@
 # the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = ".32-20 Winchester"
-guns = ["handgun"]
+# Guns: https://en.wikipedia.org/wiki/Winchester_rifle#Model_1873 (the Winchester 1873 rifle, later made in .32-20).
+guns = ["handgun", "rifle"]
 kind = "rimmed"
 profile = "flat"
 # The 32-20 Marlin (COTW 18 p. 200) was this round loaded for the Marlin 1894, with a lighter bullet.
