@@ -141,6 +141,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 # the groove's front ramp to the case axis in degrees (delta). Needs a source; without one, leave
 # the table out (or the groove keys) and the head is drawn generic (add a rimless, semi-rimmed or belted calibre
 # without a groove to HEAD_UNSOURCED in tests/test_outline.py).
+# A rimmed case whose rim stands on a foot above the base («Mauser base» on the AECC drawings) adds foot, the
+# base to the rim's underside in mm; rim_thickness still runs from the base to the rim's front.
 [case_head]
 # C.I.P. 308 Win.
 rim_thickness = 1.37

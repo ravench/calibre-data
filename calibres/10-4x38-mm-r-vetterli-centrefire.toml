@@ -41,6 +41,13 @@ sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81
 degrees = 10.6
 sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
 
+[case_head]
+# AECC drawing 11-038-BBC-011: HL 1.90 from the base to the rim's front. The rim stands on a foot («Mauser
+# base») that the drawing does not dimension: 6 of those 15 px.
+rim_thickness = 1.9
+foot = 0.8
+sources = ["https://municion.org/producto/104-x-38-r-swiss-vetterli-cf-m-1869-81/"]
+
 [bullet]
 type = "paper"
 sources = ["https://municion.org/ficha-11-038-bbc-011-0001/"]

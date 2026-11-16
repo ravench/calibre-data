@@ -8,7 +8,7 @@ millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bot
 import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, unsourced, SHOULDER_ANGLES, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
+from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, foot, unsourced, SHOULDER_ANGLES, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
 from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
@@ -26,6 +26,9 @@ GENERIC_GROOVE, GENERIC_GROOVE_OF_BASE = 0.87, 0.9
 # 1 mm floor, 40 puts the ramp's top closest to theirs, and angles by size or kind come no closer). On a
 # belted case, the distance from the rim's front to the belt's front (their median: 4.32 mm, the H&H belt).
 GENERIC_RAMP, GENERIC_BELT = 40.0, 4.3
+# A rim standing on a foot («Mauser base», 10.4x38 mm R Vetterli Centrefire): the AECC drawings draw the foot 75 %
+# as wide as the rim at the base and widening at about 30 degrees to the axis up to the rim; none dimensions it.
+FOOT_SHARE, FOOT_BEVEL = 0.75, 30.0
 
 
 def ramp_run(groove, outer, angle):
@@ -46,11 +49,16 @@ def generic_head(s):
 
 
 def rim_and_groove(s):
-    """Right half of the case's head, from the base to where the body starts, as (radius, height): the rim and,
+    """Right half of the case's head, from the base to where the body starts, as (radius, height): the rim (on its foot where it has one) and,
     on a rimless, semi-rimmed or belted case, the extractor groove with its ramp (and the belt)."""
     rim, base, k = s["rim"] / 2, s["base"] / 2, s["kind"]
     if k in (RIMMED, RIMFIRE):
         h = rim_thickness(s["name"]) or (RIMFIRE_RIM if k == RIMFIRE else RIMMED_RIM)
+        f = foot(s["name"])
+        if f:
+            # rim_thickness runs from the base to the rim's front, as a caliper on the base reads it.
+            r0 = FOOT_SHARE * rim
+            return [(r0, 0), (min(base, r0 + f * math.tan(math.radians(FOOT_BEVEL))), f), (rim, f), (rim, h), (base, h)]
         return [(rim, 0), (rim, h), (base, h)]
     # Rim, extractor groove and its front ramp at the calibre's own values (cartridges.CASE_HEADS), or at
     # the generic ones where no source gives them.

@@ -46,7 +46,10 @@ sources = ["https://municion.org/producto/1115-x-58-r-austrian-werndl-rifle-mod-
 [case_head]
 # .100 in.
 rim_thickness = 2.54
-sources = ["book:cotw-18 p. 574"]
+# The rim stands on a foot (AECC drawing 11-058-BBC-030, «Mauser base»), not dimensioned there: 4 of the
+# 12 px from the base to the rim's front, whose HL is 1.99.
+foot = 0.7
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/1115-x-58-r-austrian-werndl-rifle-mod-1877/"]
 
 [bullet]
 # The military load: a paper-patched lead bullet over blackpowder.

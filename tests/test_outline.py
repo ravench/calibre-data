@@ -1164,6 +1164,26 @@ class OutlineTests(unittest.TestCase):
         self.assertEqual(prof[6], (7.4, 6.4))  # the body in front of it, at the base diameter
         self.assertEqual(outline.outline(s)["width"], 15.33)  # the belt is the widest part
 
+    def test_a_rim_on_a_foot_stands_above_the_base(self):
+        # 10.4x38 R Swiss Vetterli CF (AECC 11-038-BBC-011): HL 1.90 from the base to the rim's front, the rim on a
+        # foot of about 0.8 mm («Mauser base»). It used to be drawn with the rim flat on the base (2026-11-16).
+        by_name = {s["name"]: s for _, s in outline.specs()}
+        s = by_name["10.4x38 mm R Vetterli Centrefire"]
+        prof = [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(s)[:5]]
+        foot_top = round(0.75 * 7.85 + 0.8 * math.tan(math.radians(30)), 4)
+        self.assertEqual(prof, [(5.8875, 0), (foot_top, 0.8), (7.85, 0.8), (7.85, 1.9), (6.81, 1.9)])
+        footed = {n for n in by_name if cartridges.foot(n)}
+        self.assertEqual(footed, {"10.4x38 mm R Vetterli Centrefire", "10.15x63 mm R Serbian Mauser",
+                                  "10.15x61 mm R Jarmann", "11.15x58 mm R Werndl M77", "11x59 mm R Gras",
+                                  "9.5x60 mm R Turkish Mauser"})
+        for n in footed:
+            with self.subTest(n):
+                s = by_name[n]
+                (r0, h0), (r1, h1), (rim, h2) = outline.case_profile(s)[:3]
+                self.assertEqual((h0, h1, h2), (0, cartridges.foot(n), cartridges.foot(n)))
+                self.assertLess(r0, r1)
+                self.assertLess(r1, min(rim, s["base"] / 2 + 1e-9) + 1e-9)
+
     def test_the_body_in_front_of_a_belt_starts_at_the_base_diameter(self):
         # The base diameter of a belted case is the body's in front of the belt (P1 on the C.I.P. sheets). The body
         # used to be drawn 1.5 % narrower than that, 0.2 mm on most of these cases and 0.3 mm on the .55 Boys
@@ -1208,7 +1228,8 @@ class OutlineTests(unittest.TestCase):
                 # The thinnest: .020 in., the 5 mm Bergmann pistol round; the thickest: .100 in., the Werndl M77.
                 # Under that only the 2.7 mm Kolibri, 0.41 mm on its AECC drawing.
                 self.assertTrue(0.5 <= t <= 2.54 or (s["name"], t) == ("2.7 mm Kolibri", 0.41), t)
-                self.assertEqual(outline.case_profile(s)[1], (s["rim"] / 2, t))
+                # A rim on a foot (test_a_rim_on_a_foot_stands_above_the_base) starts two points later.
+                self.assertEqual(outline.case_profile(s)[3 if cartridges.foot(s["name"]) else 1], (s["rim"] / 2, t))
                 drawn += 1
         self.assertGreater(drawn, 330)
 
