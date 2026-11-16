@@ -397,7 +397,9 @@ same measurement and not a second one: the file cites the AECC drawing.
 
 ### `[case_head]`
 
-`rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. Rimless,
+`rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. A sheet titled with
+another name of the round counts when a source gives that name and the sheet's rim diameter is within
+0.5 mm of the file's (the .450 Adams's is «450 Short»). Rimless,
 semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet gives it, all three or
 none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).

@@ -1219,6 +1219,32 @@ class OutlineTests(unittest.TestCase):
         for name, t in values.items():
             self.assertEqual(cartridges.rim_thickness(name), t, name)
 
+    def test_cip_sheets_give_the_rim_thickness_of_old_rounds(self):
+        # R on the C.I.P. sheet, maximum cartridge (2026-11-16). Two sheets carry another of the round's names:
+        # «450 Short» is the .450 Adams (Wikipedia lists the name), «9 mm Flobert à balle» the ball-loaded
+        # 9 mm Flobert; the sheets' rim diameters are within 0.4 mm of the files'.
+        sheets = {".700 Nitro Express": (2.16, "tab-ii/tabiical-en-page131"),
+                  ".375 Flanged Nitro Express": (1.65, "tab-ii/tabiical-en-page93"),
+                  ".400 Purdey": (1.32, "tab-ii/tabiical-en-page103"),
+                  "8 mm Lebel revolver": (1.5, "tab-iv/tabivcal-en-page16"),
+                  "5.75 mm Velo-Dog": (1.3, "tab-iv/tabivcal-en-page3"),
+                  ".44 Colt": (1.52, "tab-iv/tabivcal-en-page70"),
+                  ".450 Adams": (1.1, "tab-iv/tabivcal-en-page85"),
+                  ".22 Remington Automatic": (1.29, "tab-v/22-rem-auto-en"),
+                  "9 mm Flobert Bosquette": (1.45, "tab-v/tabvcal-en-page10")}
+        for name, (t, sheet) in sheets.items():
+            with self.subTest(name):
+                self.assertEqual(cartridges.rim_thickness(name), t)
+                self.assertEqual(cartridges.sources(name, "case_head"),
+                                 ["https://bobp.cip-bobp.org/uploads/tdcc/%s.pdf" % sheet])
+        spec = {s["name"]: s for _, s in outline.specs()}
+        self.assertLess(abs(12.95 - spec[".450 Adams"]["rim"]), 0.4)
+        self.assertLess(abs(10.50 - spec["9 mm Flobert Bosquette"]["rim"]), 0.4)
+        # The .22 Remington Automatic takes the sheet's rim diameter too (R1 7.62; Wikipedia 7.4).
+        self.assertEqual(spec[".22 Remington Automatic"]["rim"], 7.62)
+        self.assertIn("https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf",
+                      cartridges.sources(".22 Remington Automatic", "mm"))
+
     def test_rims_without_a_source_keep_the_old_drawing(self):
         # A rim no source gives a thickness is drawn as before rim thicknesses came in (2026-11-11).
         by_name = {s["name"]: s for _, s in outline.specs()}
@@ -1227,7 +1253,7 @@ class OutlineTests(unittest.TestCase):
             self.assertIsNone(cartridges.rim_thickness(name), name)
             return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(by_name[name])[:n]]
         self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
-        self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
+        self.assertEqual(head(".32 Long Rimfire", 3), [(4.755, 0), (4.755, 1.1), (4.045, 1.1)])
         # Every rimless and every belted case in the catalogue has a rim thickness now: two made up for the test.
         made_up = [(RIMLESS, 11.86, 12.52, 12.17, 11.35, 62.74, 52.26, 81.79, 10.77, [(5.93, 0), (5.93, 1.3)]),
                    (BELTED, 13.54, 13.39, 12.27, 8.0, 72.9, 52.04, 98.55, 7.21, [(6.77, 0), (6.77, 1.3)])]

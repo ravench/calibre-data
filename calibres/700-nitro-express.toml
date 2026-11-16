@@ -28,6 +28,11 @@ sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
 
+[case_head]
+# C.I.P. R.
+rim_thickness = 2.16
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page131.pdf"]
+
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]

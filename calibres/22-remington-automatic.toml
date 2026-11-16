@@ -16,18 +16,26 @@ obsolete = true
 rare = true
 
 [mm]
-rim = 7.4
+rim = 7.62
 base = 6.2
 neck = 6.2
 case_length = 16.8
 overall_length = 23.4
 bullet = 5.7
-sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]
+sources = [
+  "https://en.wikipedia.org/wiki/.22_Remington_Automatic",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf",
+]
 
 [introduced]
 # with the Model 16
 year = 1914
 sources = ["https://gunsmagazine.com/our-experts/remington-model-16/"]
+
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.29
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf"]
 
 [bullet]
 type = "lead"
