@@ -45,6 +45,7 @@ rim_thickness = 2.11
 ramp_top = 6.22
 groove_diameter = 17.27
 ramp_angle = 36.0
+groove_width = 1.96
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/416-barrett-250313-en.pdf"]
 
 [bullet]

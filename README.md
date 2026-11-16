@@ -412,7 +412,7 @@ semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet giv
 none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
 Beside them `groove_width` gives the width of the groove's floor (e min on the sheet, a minimum: the
-groove of any case is at least that wide). It is at least 0.3 mm and at most 0.1 mm over what
+groove of any case is at least that wide). It is at least 0.3 mm and at most 0.15 mm over what
 `ramp_top` leaves after the rim and the front ramp up to the base (up to the rim on a belted case). The
 drawing does not use it yet.
 The .32 and .401 Winchester Self-Loading have no groove floor on their sheets: a shallow cone (3.7° and

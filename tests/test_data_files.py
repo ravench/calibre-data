@@ -791,7 +791,7 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             # ramp_top 3.85 less the 1.37 rim and the 36° ramp from 10.39 up to the 11.9 base leaves 1.44
             c.edit(WIN, "groove_width = 1.4", "groove_width = 1.6")
-            self.assertProblem(c, WIN, r"groove_width is the groove's floor: from 0.3 to the 1.54")
+            self.assertProblem(c, WIN, r"groove_width is the groove's floor: from 0.3 to the 1.59")
         with Copy() as c:
             c.edit(WIN, "groove_width = 1.4", "groove_width = 0.1")
             self.assertProblem(c, WIN, r"groove_width is the groove's floor")
