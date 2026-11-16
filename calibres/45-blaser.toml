@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["45blaser", "45 blaser"]
 
 origin = "DE"
-origin_sources = ["https://municion.org/producto/45-blaser/"]
+origin_sources = [
+  "https://municion.org/producto/45-blaser/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/45-blaser-220214-en.pdf",
+]
 rare = true
 
 [mm]
@@ -16,6 +19,8 @@ rim = 12.01
 base = 13.03
 shoulder = 12.98
 shoulder_at = 40.74
+neck_at = 42.5
+neck_base = 12.36
 neck = 12.36
 case_length = 55.0
 overall_length = 68.5
@@ -46,6 +51,7 @@ rim_thickness = 1.37
 ramp_top = 4.39
 groove_diameter = 10.39
 ramp_angle = 36.0
+groove_width = 1.2
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/45-blaser-220214-en.pdf"]
 
 [bullet]

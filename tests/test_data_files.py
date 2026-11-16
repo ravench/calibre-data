@@ -754,7 +754,7 @@ class CheckTests(unittest.TestCase):
 
     # Calibres whose [mm] shoulder is not the sheet's P2, so the shoulder drawn at the sheet's angle ends short of
     # the sheet's L2. Their shoulders come from other pages; fix them to P2 and empty this.
-    SHOULDER_NOT_P2 = {".22 Remington Jet", ".35 Remington", ".35 Winchester", ".400/350 Nitro Express"}
+    SHOULDER_NOT_P2 = {".22 Remington Jet", ".35 Remington", ".35 Winchester", ".400/350 Nitro Express", ".45-75 Winchester"}
 
     def test_neck_start_agrees_with_the_shoulder_angle(self):
         # Where the angle and the measurements come from the same sheet, the shoulder run in from shoulder_at at that

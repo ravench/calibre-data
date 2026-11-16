@@ -9,7 +9,10 @@ profile = "round"
 aliases = ["45schofield", "45s&w"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.45_Schofield"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.45_Schofield",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page82.pdf",
+]
 
 [mm]
 # C.I.P. 45 S&W Schofield, maximum cartridge.

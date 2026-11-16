@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.50_BMG",
   "book:ammo-encyclopedia-2 p. 493",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page152.pdf",
 ]
 worldwide = true
 
@@ -17,6 +18,8 @@ rim = 20.4
 base = 20.4
 shoulder = 18.14
 shoulder_at = 76.34
+neck_at = 83.3
+neck_base = 14.22
 neck = 14.22
 case_length = 99.31
 overall_length = 138.43
@@ -45,6 +48,7 @@ rim_thickness = 2.26
 ramp_top = 6.23
 groove_diameter = 17.27
 ramp_angle = 36.0
+groove_width = 1.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page152.pdf"]
 
 [bullet]
