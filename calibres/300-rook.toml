@@ -9,7 +9,10 @@ aliases = ["300 rook", "300/295 rook"]
 display_aliases = [".300/295 Rook"]
 
 origin = "GB"
-origin_sources = ["book:ammo-encyclopedia-2 p. 399"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 399",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/300-295-rook-rifle-en.pdf",
+]
 obsolete = true
 rare = true
 

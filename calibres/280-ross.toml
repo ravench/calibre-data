@@ -7,7 +7,10 @@ profile = "spitzer"
 aliases = ["280ross", "280 ross", "280 rimless", "280 riml. n.e. ross"]
 
 origin = "GB"
-origin_sources = ["book:ammo-encyclopedia-2 p. 394"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 394",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page104.pdf",
+]
 obsolete = true
 rare = true
 
@@ -17,6 +20,8 @@ rim = 14.22
 base = 13.59
 shoulder = 10.72
 shoulder_at = 55.4
+neck_at = 57.99
+neck_base = 8.13
 neck = 8.13
 case_length = 66.32
 overall_length = 87.88
@@ -47,6 +52,7 @@ rim_thickness = 1.52
 ramp_top = 3.58
 groove_diameter = 12.45
 ramp_angle = 28.7
+groove_width = 1.02
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page104.pdf"]
 
 [bullet]

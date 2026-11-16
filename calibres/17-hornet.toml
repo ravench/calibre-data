@@ -6,13 +6,18 @@ profile = "spitzer"
 aliases = ["17hornet"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.17_Hornet"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.17_Hornet",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf",
+]
 
 [mm]
 rim = 8.9
 base = 7.6
 shoulder = 7.47
 shoulder_at = 26.6
+neck_at = 29.32
+neck_base = 4.93
 neck = 4.9
 case_length = 34.3
 overall_length = 43.69

@@ -6,13 +6,18 @@ profile = "spitzer"
 aliases = ["17rem"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.17_Remington"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.17_Remington",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page77.pdf",
+]
 
 [mm]
 rim = 9.6
 base = 9.6
 shoulder = 9.0
 shoulder_at = 34.31
+neck_at = 39.01
+neck_base = 5.05
 neck = 5.1
 case_length = 45.6
 overall_length = 54.6
@@ -41,6 +46,7 @@ rim_thickness = 1.14
 ramp_top = 3.13
 groove_diameter = 8.43
 ramp_angle = 25.0
+groove_width = 0.76
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page77.pdf"]
 
 [bullet]

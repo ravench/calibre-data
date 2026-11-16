@@ -11,6 +11,7 @@ origin = "AT"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.376_Steyr",
   "book:ammo-encyclopedia-2 p. 345",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page144.pdf",
 ]
 rare = true
 
@@ -19,6 +20,8 @@ rim = 12.55
 base = 12.73
 shoulder = 12.02
 shoulder_at = 48.09
+neck_at = 50.97
+neck_base = 10.23
 neck = 10.11
 case_length = 59.69
 overall_length = 79.0
@@ -47,6 +50,7 @@ rim_thickness = 1.3
 ramp_top = 3.2
 groove_diameter = 11.2
 ramp_angle = 43.0
+groove_width = 1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page144.pdf"]
 
 [bullet]

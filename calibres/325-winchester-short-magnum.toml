@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.325_WSM",
   "book:ammo-encyclopedia-2 p. 330",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page128.pdf",
 ]
 # Still made, but hardly ever found:
 rare = true
@@ -18,6 +19,8 @@ rim = 13.6
 base = 14.1
 shoulder = 13.7
 shoulder_at = 42.25
+neck_at = 45.52
+neck_base = 9.09
 neck = 8.9
 case_length = 53.3
 overall_length = 72.6
@@ -46,6 +49,7 @@ rim_thickness = 1.37
 ramp_top = 3.35
 groove_diameter = 12.19
 ramp_angle = 45.0
+groove_width = 1.02
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page128.pdf"]
 
 [bullet]

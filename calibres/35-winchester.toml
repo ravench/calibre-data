@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.35_Winchester",
   "book:ammo-encyclopedia-2 p. 417",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page86.pdf",
 ]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
@@ -19,6 +20,8 @@ rim = 13.7
 base = 11.6
 shoulder = 10.5
 shoulder_at = 51.4
+neck_at = 53.34
+neck_base = 9.8
 neck = 9.6
 case_length = 61.0
 overall_length = 80.0

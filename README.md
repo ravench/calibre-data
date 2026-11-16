@@ -202,14 +202,17 @@ Most cartridges (C.I.P. letters of the maximum cartridge in brackets):
 | `base` | Body diameter just above the head (P1): on a belted case, in front of the belt. |
 | `shoulder` | Bottleneck cases only: diameter where the shoulder starts (P2). |
 | `shoulder_at` | Bottleneck cases only: distance from the head to where the shoulder starts (L1). |
+| `neck_at` | Optional, bottleneck cases only: distance from the head to where the neck starts, at the shoulder's front end (L2). |
+| `neck_base` | Optional, bottleneck cases only: neck diameter where the neck starts (H1); at least `neck` less 0.15 mm (a book's rounded neck can be a little wider than the sheet's H1) and at most `shoulder`. |
 | `neck` | Neck diameter at the mouth (H2). |
 | `case_length` | Case length (L3). |
 | `overall_length` | Cartridge length (L6). |
 | `bullet` | Bullet diameter (G1). |
 
-The neck length is not stored: the drawing runs the shoulder in from `shoulder_at` at the shoulder
-angle until it reaches the neck diameter, and the rest up to `case_length` is the neck (at least
-1.2 mm). The body taper follows from `base`, `shoulder` and `shoulder_at`.
+The drawing does not use `neck_at` and `neck_base` yet: it runs the shoulder in from `shoulder_at` at
+the shoulder angle until it reaches the neck diameter, and the rest up to `case_length` is the neck
+(at least 1.2 mm). `neck_at` lies between `shoulder_at` and `case_length`; the [mm] `sources` cover
+both keys, like every other measurement. The body taper follows from `base`, `shoulder` and `shoulder_at`.
 
 A case narrows from its base to its mouth, so the check reports a `shoulder` wider than the `base`,
 a `neck` wider than the `shoulder` and a blank's `mouth` wider than its `base`. On a straight case the
@@ -405,6 +408,9 @@ length are within 0.5 mm of the file's and, for another name, a source gives it 
 semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet gives it, all three or
 none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
+Beside them `groove_width` gives the width of the groove's floor (e min on the sheet, a minimum: the
+groove of any case is at least that wide), shorter than `ramp_top` less `rim_thickness`; the drawing
+does not use it yet.
 The .32 and .401 Winchester Self-Loading have no groove floor on their sheets: a shallow cone (3.7° and
 7°) runs from the rim's front up to the body at E, and the drawing follows it.
 A case made from a parent case without its own sheet keeps the parent's head (the note says which); a parent
@@ -566,7 +572,10 @@ counts only when it names the same state; where it names several (the .25 ACP's 
 Belgium"), one of them must be it. Pages that name another state are not listed: they are the
 two-state cases decided above, and a few known errors (Wikipedia's "Belgium" for the 7.5 mm 1882 and
 "Canada" for the .300 Remington Ultra Magnum). An empty list means no such page was found yet. `ORIGIN_SOURCES` gives the first page,
-`ORIGIN_UNVERIFIED` the calibres without one.
+`ORIGIN_UNVERIFIED` the calibres without one. The calibre's own C.I.P. sheet counts as a page too
+when its "Country of Origin" names the same state (added 16 November 2026); a sheet shared by several
+calibres counts only for the one it is titled after. Sheets that name another state are not listed
+(the Blaser magnums' SE, the H&H magnums' US).
 
 ### Rare
 

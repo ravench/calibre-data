@@ -8,7 +8,10 @@ profile = "spitzer"
 aliases = ["256 gibbs", "256gibbs", "256 mag. gibbs"]
 
 origin = "GB"
-origin_sources = ["https://municion.org/producto/256-gibbs-magnum/"]
+origin_sources = [
+  "https://municion.org/producto/256-gibbs-magnum/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page95.pdf",
+]
 obsolete = true
 rare = true
 
@@ -18,6 +21,8 @@ rim = 12.09
 base = 12.01
 shoulder = 10.82
 shoulder_at = 44.83
+neck_at = 49.2
+neck_base = 7.62
 neck = 7.52
 case_length = 55.25
 overall_length = 77.47
@@ -48,6 +53,7 @@ rim_thickness = 1.02
 ramp_top = 3.18
 groove_diameter = 10.41
 ramp_angle = 35.1
+groove_width = 1.02
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page95.pdf"]
 
 [bullet]

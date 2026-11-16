@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.22_Savage_Hi-Power",
   "book:ammo-encyclopedia-2 p. 267",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page57.pdf",
 ]
 # Still made, but hardly ever found:
 rare = true
@@ -18,6 +19,8 @@ rim = 12.85
 base = 10.7
 shoulder = 9.2
 shoulder_at = 35.52
+neck_at = 41.04
+neck_base = 6.45
 neck = 6.4
 case_length = 52.0
 overall_length = 63.5

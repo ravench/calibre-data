@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.348_Winchester",
   "book:ammo-encyclopedia-2 p. 416",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page85.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 15.5
 base = 14.0
 shoulder = 12.3
 shoulder_at = 41.91
+neck_at = 45.83
+neck_base = 9.61
 neck = 9.61
 case_length = 57.3
 overall_length = 71.0

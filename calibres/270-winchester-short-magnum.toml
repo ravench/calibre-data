@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.270_Winchester_Short_Magnum",
   "book:ammo-encyclopedia-2 p. 298",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page100.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 13.6
 base = 14.1
 shoulder = 13.67
 shoulder_at = 42.25
+neck_at = 46.31
+neck_base = 7.98
 neck = 7.98
 case_length = 53.3
 overall_length = 72.6
@@ -44,6 +47,7 @@ rim_thickness = 1.37
 ramp_top = 3.35
 groove_diameter = 12.19
 ramp_angle = 45.0
+groove_width = 1.02
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page100.pdf"]
 
 [bullet]

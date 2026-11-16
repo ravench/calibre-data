@@ -10,7 +10,10 @@ profile = "spitzer"
 aliases = ["338me"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.338_Marlin_Express"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.338_Marlin_Express",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page84.pdf",
+]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
@@ -20,6 +23,8 @@ rim = 14.05
 base = 12.89
 shoulder = 12.52
 shoulder_at = 37.03
+neck_at = 40.43
+neck_base = 9.35
 neck = 9.35
 case_length = 48.01
 overall_length = 62.23

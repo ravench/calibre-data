@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.35_Remington",
   "book:ammo-encyclopedia-2 p. 338",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page136.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 11.7
 base = 11.6
 shoulder = 10.3
 shoulder_at = 39.1
+neck_at = 40.24
+neck_base = 9.83
 neck = 9.8
 case_length = 48.8
 overall_length = 64.1
@@ -44,6 +47,7 @@ rim_thickness = 1.24
 ramp_top = 3.14
 groove_diameter = 10.16
 ramp_angle = 34.0
+groove_width = 0.76
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page136.pdf"]
 
 [bullet]

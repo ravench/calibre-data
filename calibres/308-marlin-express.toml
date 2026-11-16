@@ -11,6 +11,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.308_Marlin_Express",
   "book:ammo-encyclopedia-2 p. 326",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page124.pdf",
 ]
 obsolete = true
 rare = true
@@ -20,6 +21,8 @@ rim = 12.9
 base = 11.9
 shoulder = 11.5
 shoulder_at = 37.08
+neck_at = 41.16
+neck_base = 8.56
 neck = 8.7
 case_length = 48.5
 overall_length = 66.0
@@ -48,6 +51,7 @@ rim_thickness = 1.6
 ramp_top = 3.72
 groove_diameter = 10.41
 ramp_angle = 25.0
+groove_width = 0.46
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page124.pdf"]
 
 [bullet]

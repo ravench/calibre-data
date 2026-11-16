@@ -7,13 +7,18 @@ profile = "round"
 aliases = ["35whelen"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.35_Whelen"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.35_Whelen",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page137.pdf",
+]
 
 [mm]
 rim = 12.0
 base = 12.0
 shoulder = 11.2
 shoulder_at = 49.48
+neck_at = 51.6
+neck_base = 9.86
 neck = 9.8
 case_length = 63.3
 overall_length = 84.8
@@ -42,6 +47,7 @@ rim_thickness = 1.24
 ramp_top = 3.16
 groove_diameter = 10.39
 ramp_angle = 36.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page137.pdf"]
 
 [bullet]
