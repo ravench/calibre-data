@@ -27,3 +27,8 @@ unknown = "not a single cartridge"
 [primer]
 size = "shotshell-209"
 sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# C.I.P. Cal. 20, Tab. VII, maximum cartridge: rim thickness t 1.55 (rim g 19.40).
+rim_thickness = 1.55
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/tabvii-20-en.pdf"]
