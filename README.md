@@ -636,7 +636,7 @@ same):
 | `measurements` | A measurement in `[mm]` has no source: it is listed in `unsourced`, `[mm]` has no source at all, or a cannon round leaves it out. |
 | `shoulder_angle` | A bottleneck case without `[shoulder_angle]`: its shoulder is drawn at 32°. |
 | `groove` | A rimless, semi-rimmed or belted case without the extractor groove in `[case_head]`: it gets the generic head. |
-| `rim_thickness` | No `rim_thickness` in `[case_head]`: the rim is drawn at the default thickness. |
+| `rim_thickness` | No `rim_thickness` in `[case_head]`: the rim is drawn at the default thickness. Not reported for shot shells, whose head is not checked. |
 | `shoulder_moved` | The measurements leave less than 1.2 mm of neck in front of the shoulder, so the drawing moves the shoulder back (none today). |
 
 A calibre is well sourced when it has none of them, or only `rim_thickness`: a default rim is off by
