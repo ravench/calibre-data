@@ -387,11 +387,17 @@ class CheckTests(unittest.TestCase):
                 (WIN, c.line_of(WIN, "belt ="), "only a belted case has a [mm] belt"),
             ]))
 
-    def test_a_shot_shell_has_no_case_head(self):
+    def test_a_shot_shell_head_has_only_its_rim_thickness(self):
+        # The C.I.P. Tab. VII sheets give a shot shell's rim thickness (t), no extractor groove (2026-11-16).
         with Copy() as c:
             shell = "calibres/12-70.toml"
-            c.write(shell, c.read(shell) + '\n[case_head]\nrim_thickness = 1.5\nsources = ["https://saami.org/"]\n')
-            self.assertProblem(c, shell, r"a shot calibre has no \[case_head\]")
+            c.edit(shell, "rim_thickness = 1.85\n", "rim_thickness = 1.85\nramp_top = 2.0\ngroove_diameter = 20.0\n"
+                                                     "ramp_angle = 30.0\n")
+            self.assertProblem(c, shell, r"a shot case has no extractor groove")
+        with Copy() as c:
+            ball = "calibres/58-minie.toml"
+            c.write(ball, c.read(ball) + '\n[case_head]\nrim_thickness = 1.5\nsources = ["https://saami.org/"]\n')
+            self.assertProblem(c, ball, r"a minie calibre has no \[case_head\]")
 
     def test_a_rimmed_case_head_has_no_groove(self):
         with Copy() as c:

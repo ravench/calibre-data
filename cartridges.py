@@ -719,9 +719,9 @@ def _read_calibre(f, countries, books=None):
                 f.problem(line, "a comment above patch_length names the source that gives it, or the round it was measured on")
     if "case_head" in facts:
         groove = [k for k in HEAD_GROOVE if k in facts["case_head"]]
-        if kind in (RIMMED, RIMFIRE) and groove:
+        if kind in (RIMMED, RIMFIRE, SHOT) and groove:
             f.problem(f.line("case_head"), f"a {kind} case has no extractor groove: [case_head] has only rim_thickness")
-        elif kind not in (RIMMED, RIMFIRE, RIMLESS, SEMI_RIMMED, BELTED):
+        elif kind not in (RIMMED, RIMFIRE, RIMLESS, SEMI_RIMMED, BELTED, SHOT):
             f.problem(f.line("case_head"), f"a {kind} calibre has no [case_head]")
         elif groove and len(groove) < len(HEAD_GROOVE):
             f.problem(f.line("case_head"), "[case_head] has ramp_top, groove_diameter and ramp_angle together, "
