@@ -34,6 +34,12 @@ sources = ["book:cotw-18 p. 651"]
 degrees = 21.7
 sources = ["https://municion.org/producto/65-x-61-r-mauser/"]
 
+[case_head]
+# .055 in.
+# The AECC drawing 07-061-BBC-010 (municion.org) has RT 1.56, within 0.3 mm.
+rim_thickness = 1.4
+sources = ["book:donnelly p. 779"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 619"]

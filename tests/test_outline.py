@@ -1220,7 +1220,7 @@ class OutlineTests(unittest.TestCase):
 
     def test_donnelly_rim_thicknesses_convert_his_inches(self):
         # A rim thickness from Donnelly's Handloader's Manual (his E) keeps the inches he prints in the note above
-        # it, and the value is those inches in mm to two decimals. 84 came in on 2026-11-16, each from an entry whose
+        # it, and the value is those inches in mm to two decimals. 87 came in on 2026-11-16, each from an entry whose
         # rim diameter (his D) is within 0.5 mm of the file's rim and whose case length (his A) is within 1.5 mm.
         found = 0
         for path in glob.glob(os.path.join(cartridges.ROOT, "calibres", "*.toml")):
@@ -1235,14 +1235,16 @@ class OutlineTests(unittest.TestCase):
                 self.assertIsNotNone(inches)
                 self.assertEqual(round(float(inches.group(1)) * 25.4, 2), float(head.group(2)))
                 found += 1
-        self.assertGreaterEqual(found, 91)
+        self.assertGreaterEqual(found, 94)
         for name, t, page in [(".44 Henry Centrefire", 1.63, 563), ("9.3x72 mm R Sauer", 1.19, 932),
                               (".40-90 Peabody What Cheer", 1.78, 508), ("11x60 mm R Japanese Murata", 2.36, 963)]:
             self.assertEqual(cartridges.rim_thickness(name), t, name)
             self.assertEqual(cartridges.sources(name, "case_head"), ["book:donnelly p. %d" % page])
-        # Two entries Donnelly prints under the file's name are another case: no rim thickness from them.
-        self.assertIsNone(cartridges.rim_thickness(".50 Remington Army"))  # his case is .570 in., the file's .875
-        self.assertIsNone(cartridges.rim_thickness("9.3x57 mm R"))  # his is the necked Mauser round, rim .563 in.
+        # Entries that are another case give no rim thickness: two Donnelly prints under the file's name (.50
+        # Remington Army: his case is .570 in., the file's .875; 9.3x57 mm R: his is the necked Mauser round, rim
+        # .563 in.), and his .400/360 2 3/4", which is the Purdey case (bullet .367 in.), not the file's .358 one.
+        for name in (".50 Remington Army", "9.3x57 mm R", ".400/360 Nitro Express"):
+            self.assertNotIn("book:donnelly", " ".join(cartridges.sources(name, "case_head")), name)
 
     def test_rims_without_a_source_keep_the_old_drawing(self):
         # A rim no source gives a thickness is drawn as before rim thicknesses came in (2026-11-11).

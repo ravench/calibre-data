@@ -39,12 +39,6 @@ sources = ["book:cotw-18 p. 589"]
 size = "large-rifle"
 sources = []
 
-[case_head]
-# .063 in.
-# Donnelly's rim is .572 in., 0.46 mm under the file's.
-rim_thickness = 1.6
-sources = ["book:donnelly p. 514"]
-
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 589"]
