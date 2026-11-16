@@ -32,6 +32,11 @@ sources = ["book:cotw-18 p. 667"]
 degrees = 15.5
 sources = ["https://naboje.org/en/node/13400"]
 
+[case_head]
+# naboje.org drawing: R 1.80, R1 16.18, P1 14.22, L3 26.17.
+rim_thickness = 1.8
+sources = ["https://naboje.org/en/node/13400"]
+
 [bullet]
 # COTW 18 p. 667 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
 type = "lead"

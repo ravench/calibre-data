@@ -26,6 +26,11 @@ sources = ["book:cotw-18 p. 670"]
 year = 1865
 sources = ["book:cotw-18 p. 667"]
 
+[case_head]
+# AECC drawing 13-022-CBR-020 (municion.org): RT 1.64, RØ 16.35, HØ 14.24.
+rim_thickness = 1.64
+sources = ["https://municion.org/producto/50-remington-navy-m-1865-rf/"]
+
 [bullet]
 # COTW 18 p. 667 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"

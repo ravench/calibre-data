@@ -26,6 +26,11 @@ sources = ["book:cotw-18 p. 670"]
 year = 1864
 sources = ["book:cotw-18 p. 666"]
 
+[case_head]
+# AECC drawing 12-028-CBR-010 (municion.org): RT 1.60, RØ 13.57, HØ 11.69.
+rim_thickness = 1.6
+sources = ["https://municion.org/producto/46-carbine-rf/"]
+
 [bullet]
 # COTW 18 p. 666 does not name the bullet's material; municion.org's page for the round
 # says the original bullet was lead.

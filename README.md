@@ -429,7 +429,7 @@ than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadc
 the sheet). Beside an AECC drawing the book's rim thickness stays when the two are within 0.3 mm of
 each other; when they are further apart the whole head is the drawing's, because HL is measured from
 the base and another rim under it would change the groove's width (6.5 mm Bergmann: .025 in. in the
-book, 1.00 mm on the drawing). Where no book gives a rim thickness, the drawing's RT is taken, on a
+book, 1.00 mm on the drawing). Where no book gives a rim thickness, the drawing's RT (or the rim thickness on a naboje.org drawing) is taken, on a
 rimmed case too and also where the drawing's shoulder is not (.38-70 Winchester); its rim and head
 diameters must be within 0.5 mm of the file's. A rim without a thickness is
 drawn 1.5 mm thick (rimmed), 1.1 mm (rimfire) or 1.3 mm (rimless, semi-rimmed and belted); those

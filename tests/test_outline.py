@@ -1245,6 +1245,38 @@ class OutlineTests(unittest.TestCase):
         self.assertIn("https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf",
                       cartridges.sources(".22 Remington Automatic", "mm"))
 
+    def test_specimen_drawings_give_the_rim_thickness_where_no_book_does(self):
+        # 2026-11-16: no table prints these rims' thickness, so it is RT on an AECC drawing (municion.org) or the
+        # rim thickness on a naboje.org drawing, of a specimen whose rim and head diameters are within 0.5 mm of
+        # the file's rim and base. name: (rim thickness, the drawing's rim and head diameters)
+        drawings = {
+            ".32 Short Rimfire": (1.23, 9.47, 8.02), ".32 Long Rimfire": (1.3, 9.51, 8.09),
+            ".25 Stevens Short": (1.3, 8.6, 7.06), ".25 Short Rimfire": (1.06, 7.47, 6.21),
+            ".30 Short Rimfire": (1.35, 8.66, 7.37), ".30 Long Rimfire": (1.28, 8.75, 7.45),
+            ".32 Extra Short Rimfire": (1.28, 9.64, 8.02), ".32 Extra Long Rimfire": (1.26, 9.65, 8.03),
+            ".38 Short Rimfire": (1.7, 11.03, 9.57), ".38 Extra Long Rimfire": (1.49, 11.0, 9.57),
+            ".41 Long Rimfire": (1.34, 12.02, 10.37), ".41 Short": (1.53, 11.98, 10.33),
+            ".46 Short Rimfire": (1.5, 13.45, 11.69), ".46 Long Rimfire": (1.6, 13.57, 11.69),
+            ".46 Extra Long Rimfire": (1.57, 13.34, 11.58), ".50 Remington Navy Rimfire": (1.64, 16.35, 14.24),
+            ".38 Long Rimfire": (1.3, 11.07, 9.58), ".56-46 Spencer": (1.8, 16.18, 14.22),
+            ".50 Remington Army": (1.53, 16.91, 14.32), ".22-15-60 Stevens": (1.61, 8.68, 6.75),
+            "6.5x27 mm R": (1.18, 10.82, 9.62), "6.5x61 mm R Mauser": (1.56, 13.53, 12.17),
+            "8x50 mm R Siamese Type 45": (1.53, 13.93, 12.39), "7.7 mm Bittner": (1.25, 10.0, 8.53),
+            ".32 Ideal": (1.45, 10.42, 8.8), "11.5x57 mm R Spanish Reformado": (1.92, 16.48, 13.35),
+            "9.3x57 mm R": (1.25, 12.44, 10.87)}
+        spec = {s["name"]: s for _, s in outline.specs()}
+        for name, (t, rim, head) in drawings.items():
+            with self.subTest(name):
+                self.assertEqual(cartridges.rim_thickness(name), t)
+                source = cartridges.sources(name, "case_head")[0]
+                self.assertTrue(source.startswith(("https://municion.org/producto/", "https://naboje.org/")), source)
+                self.assertLess(abs(rim - spec[name]["rim"]), 0.5)
+                self.assertLess(abs(head - spec[name]["base"]), 0.5)
+        # Drawings that miss the rule give nothing: the .44 Long Rimfire's head (11.10) is 0.53 mm under the file's,
+        # the .58 Musket page's rim (16.34) 1.7 mm under the .58 Miller's.
+        for name in (".44 Long Rimfire", ".58 Miller"):
+            self.assertIsNone(cartridges.rim_thickness(name), name)
+
     def test_rims_without_a_source_keep_the_old_drawing(self):
         # A rim no source gives a thickness is drawn as before rim thicknesses came in (2026-11-11).
         by_name = {s["name"]: s for _, s in outline.specs()}
@@ -1252,8 +1284,8 @@ class OutlineTests(unittest.TestCase):
         def head(name, n):
             self.assertIsNone(cartridges.rim_thickness(name), name)
             return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(by_name[name])[:n]]
-        self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
-        self.assertEqual(head(".32 Long Rimfire", 3), [(4.755, 0), (4.755, 1.1), (4.045, 1.1)])
+        self.assertEqual(head(".58 Miller", 3), [(9.005, 0), (9.005, 1.1), (7.975, 1.1)])
+        self.assertEqual(head(".44 Long Rimfire", 3), [(6.665, 0), (6.665, 1.1), (5.815, 1.1)])
         # Every rimless and every belted case in the catalogue has a rim thickness now: two made up for the test.
         made_up = [(RIMLESS, 11.86, 12.52, 12.17, 11.35, 62.74, 52.26, 81.79, 10.77, [(5.93, 0), (5.93, 1.3)]),
                    (BELTED, 13.54, 13.39, 12.27, 8.0, 72.9, 52.04, 98.55, 7.21, [(6.77, 0), (6.77, 1.3)])]

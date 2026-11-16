@@ -26,6 +26,11 @@ sources = ["book:cotw-18 p. 670"]
 year = 1876
 sources = ["book:cotw-18 p. 664"]
 
+[case_head]
+# AECC drawing 08-029-CBR-010 (municion.org): RT 1.26, RØ 9.65, HØ 8.03.
+rim_thickness = 1.26
+sources = ["https://municion.org/producto/32-extra-long-rf/"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 664"]
