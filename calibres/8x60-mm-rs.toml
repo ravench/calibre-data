@@ -6,7 +6,10 @@ profile = "spitzer"
 aliases = ["8x60rs"]
 
 origin = "DE"
-origin_sources = ["https://municion.org/producto/8-x-60-r-s-mauser/"]
+origin_sources = [
+  "https://municion.org/producto/8-x-60-r-s-mauser/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page38.pdf",
+]
 # Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
 # the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
 rare = true
@@ -16,6 +19,8 @@ rim = 13.4
 base = 12.03
 shoulder = 10.95
 shoulder_at = 48.22
+neck_at = 50.92
+neck_base = 9.08
 neck = 9.08
 case_length = 60.0
 overall_length = 83.6

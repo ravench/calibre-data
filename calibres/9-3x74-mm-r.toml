@@ -9,6 +9,7 @@ origin = "DE"
 origin_sources = [
   "https://en.wikipedia.org/wiki/9.3×74mmR",
   "book:ammo-encyclopedia-2 p. 349",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page51.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 13.35
 base = 11.9
 shoulder = 10.4
 shoulder_at = 59
+neck_at = 61.5
+neck_base = 9.92
 neck = 9.92
 case_length = 74.7
 overall_length = 94.5

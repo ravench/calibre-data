@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["9.3x53r"]
 
 origin = "FI"
-origin_sources = ["https://municion.org/producto/93-x-53-r-finnish/"]
+origin_sources = [
+  "https://municion.org/producto/93-x-53-r-finnish/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page49.pdf",
+]
 rare = true
 
 [mm]
@@ -15,6 +18,8 @@ rim = 14.4
 base = 12.42
 shoulder = 11.61
 shoulder_at = 39.61
+neck_at = 41.94
+neck_base = 9.96
 neck = 9.9
 case_length = 53.3
 overall_length = 76.0

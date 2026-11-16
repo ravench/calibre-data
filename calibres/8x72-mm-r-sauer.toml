@@ -7,7 +7,9 @@ profile = "round"
 aliases = ["8x72r", "8x72r sauer"]
 
 origin = "DE"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page41.pdf",
+]
 obsolete = true
 rare = true
 
