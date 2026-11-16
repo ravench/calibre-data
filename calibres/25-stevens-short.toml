@@ -25,6 +25,11 @@ sources = ["book:cotw-18 p. 670"]
 year = 1902
 sources = ["book:cotw-18 p. 661"]
 
+[case_head]
+# AECC drawing 06-015-CBR-030 (municion.org): RT 1.30, RØ 8.60, HØ 7.06.
+rim_thickness = 1.3
+sources = ["https://municion.org/producto/25-stevens-short-rf/"]
+
 [bullet]
 # COTW 18 p. 661 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"

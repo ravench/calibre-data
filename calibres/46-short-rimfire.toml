@@ -26,6 +26,12 @@ sources = ["book:cotw-18 p. 670"]
 year = 1870
 sources = ["book:cotw-18 p. 667"]
 
+[case_head]
+# AECC drawing 12-022-CBR-010 (municion.org, long case): RT 1.50, RØ 13.45, HØ 11.69,
+# CL 21.83. The short-case drawing on the other page gives RT 1.58.
+rim_thickness = 1.5
+sources = ["https://municion.org/producto/46-short-rf-long-case/"]
+
 [bullet]
 # COTW 18 p. 667 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
 type = "lead"

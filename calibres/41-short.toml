@@ -25,6 +25,11 @@ sources = ["https://en.wikipedia.org/wiki/.41_Short"]
 year = 1863
 sources = ["https://en.wikipedia.org/wiki/.41_Short"]
 
+[case_head]
+# AECC drawing 10-012-CBR-010 (municion.org): RT 1.53, RØ 11.98, HØ 10.33, CL 12.00.
+rim_thickness = 1.53
+sources = ["https://municion.org/producto/41-short-derringer-rf/"]
+
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.41_Short"]

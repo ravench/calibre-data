@@ -26,6 +26,11 @@ sources = ["book:cotw-18 p. 670"]
 year = 1865
 sources = ["book:cotw-18 p. 664"]
 
+[case_head]
+# naboje.org drawing: rim thickness 1.30, rim 11.07, head 9.58, case 22.25.
+rim_thickness = 1.3
+sources = ["https://naboje.org/node/10530"]
+
 [bullet]
 # COTW 18 p. 664 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"

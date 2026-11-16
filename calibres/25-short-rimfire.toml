@@ -26,6 +26,11 @@ sources = ["book:cotw-18 p. 670"]
 year = 1860
 sources = ["book:cotw-18 p. 661"]
 
+[case_head]
+# AECC drawing 06-012-CBR-010 (municion.org): RT 1.06, RØ 7.47, HØ 6.21.
+rim_thickness = 1.06
+sources = ["https://municion.org/producto/25-bacon-bliss-rf-short/"]
+
 [bullet]
 # COTW 18 p. 661 does not name the bullet's material; municion.org's page for the round
 # says the original bullet was lead.
