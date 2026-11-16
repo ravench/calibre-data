@@ -211,8 +211,11 @@ Most cartridges (C.I.P. letters of the maximum cartridge in brackets):
 
 The drawing does not use `neck_at` and `neck_base` yet: it runs the shoulder in from `shoulder_at` at
 the shoulder angle until it reaches the neck diameter, and the rest up to `case_length` is the neck
-(at least 1.2 mm). `neck_at` lies between `shoulder_at` and `case_length`; the [mm] `sources` cover
-both keys, like every other measurement. The body taper follows from `base`, `shoulder` and `shoulder_at`.
+(at least 1.2 mm). The two keys come together. `neck_at` lies between `shoulder_at` and `case_length`,
+at least 1.2 mm short of the mouth, and where `[shoulder_angle]` cites the same sheet, the shoulder run
+in at that angle from `shoulder_at` must reach `neck_base` within 0.3 mm of `neck_at`
+(`test_neck_start_agrees_with_the_shoulder_angle`). The [mm] `sources` cover both keys, like every
+other measurement. The body taper follows from `base`, `shoulder` and `shoulder_at`.
 
 A case narrows from its base to its mouth, so the check reports a `shoulder` wider than the `base`,
 a `neck` wider than the `shoulder` and a blank's `mouth` wider than its `base`. On a straight case the
@@ -409,8 +412,9 @@ semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet giv
 none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
 Beside them `groove_width` gives the width of the groove's floor (e min on the sheet, a minimum: the
-groove of any case is at least that wide), shorter than `ramp_top` less `rim_thickness`; the drawing
-does not use it yet.
+groove of any case is at least that wide). It is at least 0.3 mm and at most 0.05 mm over what
+`ramp_top` leaves after the rim and the front ramp up to the base (up to the rim on a belted case). The
+drawing does not use it yet.
 The .32 and .401 Winchester Self-Loading have no groove floor on their sheets: a shallow cone (3.7° and
 7°) runs from the rim's front up to the body at E, and the drawing follows it.
 A case made from a parent case without its own sheet keeps the parent's head (the note says which); a parent

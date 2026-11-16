@@ -1,5 +1,5 @@
 """The TOML files and their checks: python3 -m unittest discover -s tests"""
-import io, os, re, shutil, subprocess, sys, tempfile, tomllib, unittest
+import io, math, os, re, shutil, subprocess, sys, tempfile, tomllib, unittest
 from contextlib import redirect_stdout
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -746,13 +746,53 @@ class CheckTests(unittest.TestCase):
             self.assertProblem(c, WIN, r"neck_base 8.5 is the neck's diameter")
             self.assertProblem(c, acp, r"neck_at and neck_base are for bottleneck cases")
         with Copy() as c:
+            c.edit(WIN, "neck_base = 8.72\n", "")
+            self.assertProblem(c, WIN, r"neck_at and neck_base together")
+        with Copy() as c:
             c.edit(WIN, "neck_base = 8.72", "neck_base = 8.56")   # within NECK_SLACK of the neck
             self.assertEqual(c.problems(), [])
+
+    # Calibres whose [mm] shoulder is not the sheet's P2, so the shoulder drawn at the sheet's angle ends short of
+    # the sheet's L2. Their shoulders come from other pages; fix them to P2 and empty this.
+    SHOULDER_NOT_P2 = {".22 Remington Jet", ".35 Remington", ".35 Winchester", ".400/350 Nitro Express"}
+
+    def test_neck_start_agrees_with_the_shoulder_angle(self):
+        # Where the angle and the measurements come from the same sheet, the shoulder run in from shoulder_at at that
+        # angle reaches neck_base at neck_at (a misread L2 or H1 shows up here), and the neck is at least 1.2 mm long.
+        entries = {e["name"]: e for _, items in cartridges.ALL_CATALOGUE for e in items}
+        checked = set()
+        for name, (at, base) in cartridges.NECKS.items():
+            e = entries[name]
+            self.assertGreaterEqual(e["case"] - at, 1.2, name)
+            if name not in cartridges.SHOULDER_ANGLES:
+                continue
+            degrees, url = cartridges.SHOULDER_ANGLES[name]
+            if url not in cartridges.sources(name, "mm"):
+                continue
+            run = (e["shoulder"] - base) / 2 / math.tan(math.radians(degrees))
+            off = abs(at - e["sh_at"] - run) > 0.3
+            self.assertEqual(off, name in self.SHOULDER_NOT_P2, f"{name}: L2 {at}, shoulder ends at {e['sh_at'] + run:.2f}")
+            checked.add(name)
+        self.assertGreater(len(checked), 80)
+
+    def test_a_sheet_names_the_origin_of_one_calibre(self):
+        # A C.I.P. sheet shared by several calibres counts as an origin source only for the one it is titled after.
+        seen = {}
+        for name, urls in ((n, cartridges.sources(n, "origin")) for n in cartridges.ORIGIN):
+            for u in urls:
+                if "cip-bobp.org" in u:
+                    self.assertNotIn(u, seen, f"{name} and {seen.get(u)}")
+                    seen[u] = name
+        self.assertEqual(seen["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"], ".308 Winchester")
 
     def test_groove_width(self):
         self.assertEqual(cartridges.GROOVE_WIDTHS[".308 Winchester"][0], 1.4)  # C.I.P. e min
         with Copy() as c:
-            c.edit(WIN, "groove_width = 1.4", "groove_width = 2.6")  # ramp_top 3.85 less the 1.37 rim leaves 2.48
+            # ramp_top 3.85 less the 1.37 rim and the 36° ramp from 10.39 up to the 11.9 base leaves 1.44
+            c.edit(WIN, "groove_width = 1.4", "groove_width = 1.6")
+            self.assertProblem(c, WIN, r"groove_width is the groove's floor: from 0.3 to the 1.49")
+        with Copy() as c:
+            c.edit(WIN, "groove_width = 1.4", "groove_width = 0.1")
             self.assertProblem(c, WIN, r"groove_width is the groove's floor")
         with Copy() as c:
             c.edit(WIN, "ramp_top = 3.85\ngroove_diameter = 10.39\nramp_angle = 36.0\n", "")

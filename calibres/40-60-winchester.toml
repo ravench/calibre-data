@@ -8,7 +8,10 @@ profile = "flat"
 aliases = ["40-60 winchester", "40-60 wcf"]
 
 origin = "US"
-origin_sources = ["https://municion.org/producto/40-60-winchester-cf/"]
+origin_sources = [
+  "https://municion.org/producto/40-60-winchester-cf/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page101.pdf",
+]
 obsolete = true
 rare = true
 
@@ -17,6 +20,8 @@ rim = 16.0
 base = 12.85
 shoulder = 11.3
 shoulder_at = 31.07
+neck_at = 36.71
+neck_base = 10.91
 neck = 10.91
 case_length = 47.5
 overall_length = 57.28

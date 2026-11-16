@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["400hh", "400h&h"]
 
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.400_H%26H_Magnum"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.400_H%26H_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page30.pdf",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 
@@ -15,6 +18,8 @@ rim = 13.5
 base = 13.0
 shoulder = 12.5
 shoulder_at = 50.4
+neck_at = 55.02
+neck_base = 11.2
 neck = 11.2
 case_length = 72.3
 overall_length = 90.2
@@ -43,6 +48,7 @@ rim_thickness = 1.27
 ramp_top = 5.59
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page30.pdf"]
 
 [bullet]

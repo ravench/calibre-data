@@ -9,7 +9,7 @@ countries.toml, books.toml and lookalikes.toml (README.md lists every field). Th
 checks them and builds the tables the apps' generators, outline.py and the poster use.
 `python3 check.py` lists every problem in the files.
 """
-import difflib, os, re, unicodedata
+import difflib, math, os, re, unicodedata
 
 try:
     import tomllib
@@ -350,6 +350,17 @@ def _check_neck(f, mm):
                                              f"neck {mm['neck']} to shoulder {mm['shoulder']}")
 
 
+def _groove_room(head, mm, kind):
+    """How long the groove's floor can be: ramp_top less the rim and the front ramp up to the base (up to the
+    rim on a belted case, whose ramp climbs to the belt). None when a value is missing or not a number."""
+    vals = [head.get(k) for k in ("ramp_top", "rim_thickness", "groove_diameter", "ramp_angle", GROOVE_WIDTH)]
+    top = mm.get("rim") if kind == BELTED else mm.get("base")
+    if not all(_is_number(v) for v in vals + [top]):
+        return None
+    ramp = max(top - head["groove_diameter"], 0) / 2 / math.tan(math.radians(head["ramp_angle"]))
+    return head["ramp_top"] - head["rim_thickness"] - ramp
+
+
 def _check_unsourced(f, mm):
     """[mm] unsourced: the measurements that no page in sources gives (estimated, or measured on one round)."""
     if "unsourced" not in mm:
@@ -611,6 +622,8 @@ def _read_calibre(f, countries, books=None):
                 ok = False
             elif any(k in data for k in NECK_KEYS) and "shoulder" not in data:
                 f.problem(f.line("mm"), "[mm] neck_at and neck_base are for bottleneck cases (with shoulder and shoulder_at)")
+            elif ("neck_at" in data) != ("neck_base" in data):
+                f.problem(f.line("mm"), "[mm] has neck_at and neck_base together (C.I.P. L2 and H1), or neither")
         allowed = set(req) | set(opt) | {"sources"} | ({"unsourced"} if t == "mm" else set())
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)
@@ -754,10 +767,11 @@ def _read_calibre(f, countries, books=None):
         elif GROOVE_WIDTH in facts["case_head"] and not groove:
             f.problem(f.line("case_head", GROOVE_WIDTH), "[case_head] groove_width goes with the groove "
                                                          "(ramp_top, groove_diameter and ramp_angle)")
-        elif GROOVE_WIDTH in facts["case_head"] and _is_number(facts["case_head"][GROOVE_WIDTH]) and not (
-                facts["case_head"][GROOVE_WIDTH] < facts["case_head"]["ramp_top"] - facts["case_head"]["rim_thickness"]):
-            f.problem(f.line("case_head", GROOVE_WIDTH), "[case_head] groove_width is the groove's floor, shorter than "
-                                                         "ramp_top less rim_thickness")
+        elif GROOVE_WIDTH in facts["case_head"] and (room := _groove_room(facts["case_head"], m, kind)) is not None \
+                and not 0.3 <= facts["case_head"][GROOVE_WIDTH] <= room + 0.05:
+            f.problem(f.line("case_head", GROOVE_WIDTH), f"[case_head] groove_width is the groove's floor: from 0.3 to "
+                                                         f"the {room + 0.05:.2f} that ramp_top leaves after the rim and "
+                                                         f"the ramp")
     aliases = d.get("aliases", []) if _is_text_list(d.get("aliases")) else []
     entry = _entry(name, kind, profile, aliases, facts["mm"], category)
     return entry, d, facts
