@@ -5,13 +5,18 @@ profile = "spitzer"
 aliases = ["6.5prc"]
 
 origin = "US"
-origin_sources = ["https://municion.org/producto/65-mm-prc/"]
+origin_sources = [
+  "https://municion.org/producto/65-mm-prc/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-prc-180709-en.pdf",
+]
 
 [mm]
 rim = 13.51
 base = 13.51
 shoulder = 13.1
 shoulder_at = 39.84
+neck_at = 44.65
+neck_base = 7.54
 neck = 7.54
 case_length = 51.56
 overall_length = 75.06
@@ -43,6 +48,7 @@ rim_thickness = 1.27
 ramp_top = 3.24
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = [
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-prc-180709-en.pdf",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf",

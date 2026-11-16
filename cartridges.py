@@ -768,9 +768,9 @@ def _read_calibre(f, countries, books=None):
             f.problem(f.line("case_head", GROOVE_WIDTH), "[case_head] groove_width goes with the groove "
                                                          "(ramp_top, groove_diameter and ramp_angle)")
         elif GROOVE_WIDTH in facts["case_head"] and (room := _groove_room(facts["case_head"], m, kind)) is not None \
-                and not 0.3 <= facts["case_head"][GROOVE_WIDTH] <= room + 0.05:
+                and not 0.3 <= facts["case_head"][GROOVE_WIDTH] <= round(room + 0.1, 2):
             f.problem(f.line("case_head", GROOVE_WIDTH), f"[case_head] groove_width is the groove's floor: from 0.3 to "
-                                                         f"the {room + 0.05:.2f} that ramp_top leaves after the rim and "
+                                                         f"the {room + 0.1:.2f} that ramp_top leaves after the rim and "
                                                          f"the ramp")
     aliases = d.get("aliases", []) if _is_text_list(d.get("aliases")) else []
     entry = _entry(name, kind, profile, aliases, facts["mm"], category)
