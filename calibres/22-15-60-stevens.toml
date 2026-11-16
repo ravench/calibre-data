@@ -28,6 +28,12 @@ sources = ["book:cotw-18 p. 183"]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 249"]
 
+[case_head]
+# .072 in.
+# The AECC drawing 06-051-CBC-020 (municion.org) has RT 1.61, within 0.3 mm.
+rim_thickness = 1.83
+sources = ["book:donnelly p. 123"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 183"]

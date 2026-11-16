@@ -32,6 +32,11 @@ sources = ["book:cotw-18 p. 234"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# .072 in.
+rim_thickness = 1.83
+sources = ["book:donnelly p. 577"]
+
 [bullet]
 # COTW 18 p. 235 gives no factory load; the Ballard catalogues listed a patched .44 bullet,
 # probably for this case.

@@ -30,6 +30,11 @@ sources = ["book:cotw-18 p. 644"]
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 652"]
 
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 930"]
+
 [bullet]
 # COTW: old catalogues list one bullet for the whole family; the 9.3x72 mm R's is a soft point.
 type = "softpoint"

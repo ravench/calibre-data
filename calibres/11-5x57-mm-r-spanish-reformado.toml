@@ -29,6 +29,12 @@ sources = ["book:cotw-18 p. 567"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# .08 in.
+# The AECC drawing 11-058-CBC-030 (municion.org, the M1871/89 round) has RT 1.92, within 0.3 mm.
+rim_thickness = 2.03
+sources = ["book:donnelly p. 989"]
+
 [bullet]
 # The military load was a brass-covered bullet over blackpowder (COTW 18 p. 567); drawn as lead,
 # its core, as the catalogue has no brass-covered type.

@@ -1,5 +1,5 @@
 """python3 -m unittest discover -s tests"""
-import math, os, re, statistics, sys, unittest
+import glob, math, os, re, statistics, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
@@ -326,7 +326,7 @@ class GapTests(unittest.TestCase):
         # Model 1889, whose page says it differs from the Belgian round in its shorter neck; three drawings of other
         # rounds fit the 11.4x50 and start the shoulder up to 6.4 mm apart. No drawing is cited for either.
         for name, start, gaps in [
-                ("11.4x50 mm R Brazilian Comblain", 39.1, ("measurements", "shoulder_angle", "rim_thickness")),
+                ("11.4x50 mm R Brazilian Comblain", 39.1, ("measurements", "shoulder_angle")),
                 ("11x53 mm R Comblain", 40.8, ("measurements", "shoulder_angle"))]:
             with self.subTest(name):
                 s = self.spec(name)
@@ -336,7 +336,7 @@ class GapTests(unittest.TestCase):
                 self.assertEqual(cartridges.unsourced(name), ("shoulder_at",))
                 self.assertEqual(cartridges.shoulder_angle(name), cartridges.DEFAULT_SHOULDER_ANGLE)
                 self.assertEqual(cartridges.sources(name, "mm"), ["book:cotw-18 p. 574"])
-        self.assertIsNone(cartridges.rim_thickness("11.4x50 mm R Brazilian Comblain"))
+        self.assertEqual(cartridges.rim_thickness("11.4x50 mm R Brazilian Comblain"), 2.16)  # .085 in., Donnelly
         self.assertEqual(cartridges.rim_thickness("11x53 mm R Comblain"), 2.08)
         self.assertEqual(cartridges.sources("11x53 mm R Comblain", "case_head"), ["book:cotw-18 p. 574"])
         # Two drawings fit the book's rim and base but not its shoulder or case length: the rim thickness only.
@@ -377,9 +377,8 @@ class GapTests(unittest.TestCase):
         for name, (start, angle, own, so, no, sl, nl, cl) in shallow.items():
             with self.subTest(name):
                 s = self.spec(name)
-                # Nothing is left open but, on these four, a rim thickness that no source gives.
-                no_rim = {".32-40 Bullard", ".40-110 Winchester Express", ".40-70 Sharps Necked", "9.3x65 mm R Collath"}
-                self.assertEqual(outline.gaps(s), ("rim_thickness",) if name in no_rim else ())
+                # Nothing is left open (the last four take their rim thickness from Donnelly).
+                self.assertEqual(outline.gaps(s), ())
                 self.assertEqual((s["sh_at"], cartridges.shoulder_angle(name)), (start, angle))
                 self.assertLess(abs(cl - s["case"]), 1.5)
                 self.assertLess(max(abs(so - s["shoulder"]), abs(no - s["neck"])), 0.5)
@@ -1218,6 +1217,34 @@ class OutlineTests(unittest.TestCase):
                   "7.62x38 mm R Nagant": 1.22}  # .048 in, Donnelly
         for name, t in values.items():
             self.assertEqual(cartridges.rim_thickness(name), t, name)
+
+    def test_donnelly_rim_thicknesses_convert_his_inches(self):
+        # A rim thickness from Donnelly's Handloader's Manual (his E) keeps the inches he prints in the note above
+        # it, and the value is those inches in mm to two decimals. 87 came in on 2026-11-16, each from an entry whose
+        # rim diameter (his D) is within 0.5 mm of the file's rim and whose case length (his A) is within 1.5 mm.
+        found = 0
+        for path in glob.glob(os.path.join(cartridges.ROOT, "calibres", "*.toml")):
+            with open(path, encoding="utf-8") as f:
+                text = f.read()
+            head = re.search(r"^\[case_head\]\n((?:#.*\n)*)rim_thickness = ([0-9.]+)\n(?:.*\n)*?sources = \[(.*)\]",
+                             text, re.M)
+            if not head or "book:donnelly" not in head.group(3):
+                continue
+            with self.subTest(os.path.basename(path)):
+                inches = re.match(r"# (\.[0-9]+) in\.", head.group(1))
+                self.assertIsNotNone(inches)
+                self.assertEqual(round(float(inches.group(1)) * 25.4, 2), float(head.group(2)))
+                found += 1
+        self.assertGreaterEqual(found, 94)
+        for name, t, page in [(".44 Henry Centrefire", 1.63, 563), ("9.3x72 mm R Sauer", 1.19, 932),
+                              (".40-90 Peabody What Cheer", 1.78, 508), ("11x60 mm R Japanese Murata", 2.36, 963)]:
+            self.assertEqual(cartridges.rim_thickness(name), t, name)
+            self.assertEqual(cartridges.sources(name, "case_head"), ["book:donnelly p. %d" % page])
+        # Entries that are another case give no rim thickness: two Donnelly prints under the file's name (.50
+        # Remington Army: his case is .570 in., the file's .875; 9.3x57 mm R: his is the necked Mauser round, rim
+        # .563 in.), and his .400/360 2 3/4", which is the Purdey case (bullet .367 in.), not the file's .358 one.
+        for name in (".50 Remington Army", "9.3x57 mm R", ".400/360 Nitro Express"):
+            self.assertNotIn("book:donnelly", " ".join(cartridges.sources(name, "case_head")), name)
 
     def test_cip_sheets_give_the_rim_thickness_of_old_rounds(self):
         # R on the C.I.P. sheet, maximum cartridge (2026-11-16). Two sheets carry another of the round's names:

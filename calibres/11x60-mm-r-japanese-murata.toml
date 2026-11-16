@@ -38,6 +38,11 @@ sources = ["https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mause
 degrees = 6.0
 sources = ["https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mauser-base/"]
 
+[case_head]
+# .093 in.
+rim_thickness = 2.36
+sources = ["book:donnelly p. 963"]
+
 [bullet]
 # The military load: a lead bullet over blackpowder.
 type = "lead"

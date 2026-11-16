@@ -39,6 +39,11 @@ sources = ["https://municion.org/producto/1143-x-59-r-turkish-martini-peabody-m-
 degrees = 8.5
 sources = ["https://municion.org/producto/1143-x-59-r-turkish-martini-peabody-m-1874/"]
 
+[case_head]
+# .064 in.
+rim_thickness = 1.63
+sources = ["book:donnelly p. 986"]
+
 [bullet]
 # The military load: a lead bullet over blackpowder.
 type = "lead"

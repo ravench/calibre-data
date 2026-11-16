@@ -37,6 +37,11 @@ sources = ["book:cotw-18 p. 251"]
 degrees = 13.26
 sources = ["https://winchestercollector.org/forum/winchester-swap-meet/wtb-40-70-wcf/"]
 
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:donnelly p. 504"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 223"]

@@ -39,6 +39,11 @@ sources = []
 degrees = 16.0
 sources = ["https://municion.org/producto/246-purdey-flanged/"]
 
+[case_head]
+# .062 in.
+rim_thickness = 1.57
+sources = ["book:donnelly p. 197"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 578"]

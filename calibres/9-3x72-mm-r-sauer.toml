@@ -37,6 +37,11 @@ sources = ["book:cotw-18 p. 652"]
 degrees = 8.9
 sources = ["https://municion.org/producto/93-x-72-r-sauer-sohn/"]
 
+[case_head]
+# .047 in.
+rim_thickness = 1.19
+sources = ["book:donnelly p. 932"]
+
 [bullet]
 # COTW gives only its weight.
 type = "softpoint"

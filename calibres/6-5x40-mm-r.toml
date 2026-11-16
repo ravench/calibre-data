@@ -28,6 +28,11 @@ sources = ["book:cotw-18 p. 616", "https://naboje.org/node/22010"]
 size = "large-rifle"
 sources = []
 
+[case_head]
+# .07 in.
+rim_thickness = 1.78
+sources = ["book:donnelly p. 764"]
+
 [bullet]
 # A blackpowder round (p. 616): lead, like the others of its time.
 type = "lead"

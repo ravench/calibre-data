@@ -45,6 +45,11 @@ sources = ["book:cotw-18 p. 251"]
 degrees = 4.5
 sources = ["https://www.ammo-one1.com/product/44-77-sharps-remington-limit-one-cartridge-per-customer/"]
 
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:donnelly p. 575"]
+
 [bullet]
 type = "paper"
 sources = ["book:cotw-18 p. 236"]

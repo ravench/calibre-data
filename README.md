@@ -425,7 +425,10 @@ calibre without a drawing takes the groove of a sister round's drawing, behind i
 thickness, when a source says that the two share the head (.416 Dakota: the .375 Dakota's).
 
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
-its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal
+its dimension tables, Donnelly as E); the note gives the inches as printed. In November 2026 the rimmed rounds
+without one took Donnelly's E where his entry is the file's case: its rim diameter (his D) within
+0.5 mm of the file's rim and its case length (his A) within 1.5 mm. Where his entry has another
+title (the .44-90 load of the .44-95 Peabody case, a Ballard name), the note says so. Book values are nominal
 rather than the C.I.P. maximum, so a calibre from a book can have a rim up to about 0.3 mm thinner
 than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadcutter 1.5 mm from
 the sheet). Beside an AECC drawing the book's rim thickness stays when the two are within 0.3 mm of

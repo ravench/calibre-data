@@ -40,6 +40,11 @@ sources = [
 size = "small-rifle"
 sources = ["book:cotw-18 p. 251"]
 
+[case_head]
+# .064 in.
+rim_thickness = 1.63
+sources = ["book:donnelly p. 563"]
+
 [bullet]
 # Winchester: flat-nosed lead with one grease groove, brass case.
 type = "lead"
