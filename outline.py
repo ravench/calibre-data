@@ -277,10 +277,10 @@ def outline(s):
     paths = {}
     if k == SHOT:
         r, rim, L = s["base"] / 2, s["rim"] / 2, s["oal"]  # the loaded shell as crimped, not the opened hull
-        head = 0.2 * L
-        hull = [(r * 0.98, 1.5), (r * 0.98, L - 2.2), (r * 0.8, L - 0.6), (r * 0.35, L)]
+        head, t = 0.2 * L, rim_thickness(s["name"]) or RIMMED_RIM
+        hull = [(r * 0.98, t), (r * 0.98, L - 2.2), (r * 0.8, L - 0.6), (r * 0.35, L)]
         paths["case"] = to_path(mirror(hull), H, hw)
-        paths["head"] = to_path(mirror([(rim, 0), (rim, 1.5), (r, 1.5), (r, head)]), H, hw)
+        paths["head"] = to_path(mirror([(rim, 0), (rim, t), (r, t), (r, head)]), H, hw)
     elif k == BALL:
         r = s["bullet"] / 2
         circ = [(r * math.sin(math.pi * i / (2 * N)), r - r * math.cos(math.pi * i / (2 * N))) for i in range(0, 2 * N + 1)]
