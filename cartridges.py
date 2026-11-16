@@ -532,8 +532,10 @@ def _read_calibre(f, countries, books=None):
     else:
         for g in guns:
             if g not in GUNS:
-                key = {app: key for key, app in CATEGORIES.items()}.get(g)
-                hint = f" (write {key} for {g})" if key in GUNS else _close(g, GUNS)
+                key = {app: key for key, app in CATEGORIES.items()}.get(g, g)
+                hint = (" (a rimfire round has kind = \"rimfire\"; its category follows from that)" if key == "rimfire"
+                        else " (write black_powder = true for a black-powder round)" if key == "black-powder"
+                        else f" (write {key} for {g})" if key in GUNS and key != g else _close(g, GUNS))
                 f.problem(f.line(None, "guns"), f"gun {g!r} is not one of {', '.join(GUNS)}{hint}")
         if len(set(guns)) != len(guns):
             f.problem(f.line(None, "guns"), "guns lists a gun twice")
