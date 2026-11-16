@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Holland & Holland's first belted case, the world's first.
 name = ".400/375 Belted Nitro Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "round"
 aliases = ["400/375", "400/375 h&h"]

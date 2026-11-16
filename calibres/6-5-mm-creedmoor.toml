@@ -1,5 +1,5 @@
 name = "6.5 mm Creedmoor"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6.5cm", "6.5creedmoor", "65cm", "creedmoor"]

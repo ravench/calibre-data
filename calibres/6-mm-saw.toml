@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Frankford Arsenal's trial round for the US Army squad automatic weapon.
 name = "6 mm SAW"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6mm saw", "6x45 saw"]

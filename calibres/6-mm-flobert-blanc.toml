@@ -4,7 +4,7 @@
 # the ratio of the measured .22 SH (5.6/11), because C.I.P. gives no crimp size.
 # The name is the sheet's title, «6 mm Flobert Blanc»; in German the round is sold as «Knall».
 name = "6 mm Flobert Blanc"
-categories = ["rimfire"]
+guns = []
 kind = "rimfire"
 profile = "crimped"
 aliases = ["6mmflobert", "6mmknall", "6mmflobertblanc", "flobertknall", "6mmflobertknall"]

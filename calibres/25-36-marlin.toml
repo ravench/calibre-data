@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Marlin Model 93 lever action; like the .25-35 Winchester, but a little longer.
 name = ".25-36 Marlin"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["25-36", "25-37"]

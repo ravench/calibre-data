@@ -1,5 +1,5 @@
 name = "9 mm Browning kurz (.380 ACP)"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["380acp", "380auto", "9kurz", "9mmkurz", "9mm k"]

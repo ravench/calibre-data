@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .45 Winchester Magnum case cut down for 1911 pistols; still too long for a .45 ACP chamber.
 name = ".451 Detonics Magnum"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["451 detonics", "451 detonics magnum"]

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Lazzeroni's .416 short magnum for a 2.8 in. action, on its .577 in. case.
 name = "10.57 Lazzeroni Maverick"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["10.57 maverick", "10.57mm maverick", "lazzeroni maverick"]

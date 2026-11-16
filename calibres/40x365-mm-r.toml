@@ -3,7 +3,7 @@
 # PFHE and AP-T rounds differ). Wikipedia's text has it in Swedish service in 1951, its infobox
 # 1952.
 name = "40x365 mm R"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["40x365r", "40x364r", "40 mm bofors l/70"]

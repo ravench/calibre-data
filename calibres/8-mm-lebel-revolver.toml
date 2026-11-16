@@ -2,7 +2,7 @@
 # the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = "8 mm Lebel revolver"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["8lebelrev", "8mm1892"]

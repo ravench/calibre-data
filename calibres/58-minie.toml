@@ -1,5 +1,6 @@
 name = ".58 Minié"
-categories = ["black-powder"]
+guns = []
+black_powder = true
 kind = "minie"
 profile = "round"
 aliases = ["58", "58minie"]

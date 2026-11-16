@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # Lancaster's rimmed counterpart of the .280 Ross, for single-shot and double rifles.
 name = ".280 Flanged"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["280 flanged", "280 lancaster"]

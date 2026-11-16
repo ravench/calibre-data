@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Mars pistol of 1900, for a time the most powerful handgun round.
 name = ".45 Mars Long"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["45 mars long", "45 mars"]

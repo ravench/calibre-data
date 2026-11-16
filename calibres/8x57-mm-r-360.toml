@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # On the 9.3x72 mm R case, a copy of the British .360 No. 2.
 name = "8x57 mm R 360"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["8x57r360", "8x57r 360"]

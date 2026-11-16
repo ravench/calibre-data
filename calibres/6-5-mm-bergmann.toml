@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # One of Theodor Bergmann's pistol rounds of 1894-96, the earliest year kept.
 name = "6.5 mm Bergmann"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["6.5bergmann", "6.5 bergmann"]

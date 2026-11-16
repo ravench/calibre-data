@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Marty ter Weeme's shortened 6.8 mm SPC case necked up to .338, for subsonic loads in AR-15 rifles.
 name = ".338 Spectre"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["338 spectre"]

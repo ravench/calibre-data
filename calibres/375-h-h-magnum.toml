@@ -1,6 +1,6 @@
 # Rim R1, shoulder P2, neck H2 and bullet G1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
 name = ".375 H&H Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "round"
 aliases = ["375h&h", "375hh", "375 h&h mag"]

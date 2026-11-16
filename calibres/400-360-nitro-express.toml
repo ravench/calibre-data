@@ -2,7 +2,7 @@
 # Purdey, Westley Richards, Evans and Fraser each made one; they do not interchange. The table gives
 # one with a .358 in. bullet (the Purdey's is .367 in.).
 name = ".400/360 Nitro Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["400/360", "400/360 ne"]

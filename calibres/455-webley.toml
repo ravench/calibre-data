@@ -2,7 +2,7 @@
 # the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = ".455 Webley"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["455webley", "455"]

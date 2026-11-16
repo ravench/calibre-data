@@ -1,6 +1,6 @@
 # Batch 12 (2026-11); now from the C.I.P. sheet (see [mm]).
 name = ".475 No. 2 Nitro Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 # The C.I.P. sheet prints an inch mark in its title (3"1/2); the PDF's text holds two apostrophes, which is what a

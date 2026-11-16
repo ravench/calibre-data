@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Lazzeroni's .243 long magnum, on its .530 in. case. No loaded rounds offered since 2022 (COTW 18 p. 366).
 name = "6.17 Lazzeroni Flash"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6.17 flash", "6.17mm flash", "lazzeroni flash"]

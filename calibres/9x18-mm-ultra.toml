@@ -1,6 +1,6 @@
 # Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
 name = "9x18 mm Ultra"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 # Nose: a truncated cone, as in both factory loads (COTW 18 p. 478).
 profile = "flat"

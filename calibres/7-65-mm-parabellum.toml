@@ -1,6 +1,6 @@
 # Swiss Army box label «Pistolen-Patronen Cal. 7,65 mm» (Raven's 1938 M+F Thun box); Ordonnanzpistole 1900.
 name = "7.65 mm Parabellum"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["7.65para", "30luger", "pistolenpatrone 7.65"]

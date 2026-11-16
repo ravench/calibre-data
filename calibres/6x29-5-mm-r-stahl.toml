@@ -1,6 +1,6 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 name = "6x29.5 mm R Stahl"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["6x29.5r"]

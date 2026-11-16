@@ -1,5 +1,5 @@
 name = "7x57 mm Mauser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 # Nose: round, as first loaded (the Wikipedia page below); pointed service bullets came only from 1898
 # (COTW 18 p. 553).

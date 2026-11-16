@@ -1,6 +1,6 @@
 # Batch 8 (2026-11): old American sporting rounds; now from the C.I.P. sheet (see [mm]).
 name = ".32 Remington"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["32rem"]

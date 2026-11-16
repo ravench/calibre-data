@@ -1,6 +1,6 @@
 # .45 Super: a hotter load in the .45 ACP case that neither C.I.P. nor SAAMI lists, so a search alias (Raven 2026-11-08).
 name = ".45 ACP"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["45acp", "45auto", "45", "11.43", "45acp+p", "45auto+p", "45automaticmatch", "45super"]

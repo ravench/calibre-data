@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # One of the Stevens Everlasting rounds, for the tip-up rifles of 1875.
 name = ".38-45 Stevens"
-# Firearms: book:cotw-18 p. 210.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 210.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["38-45 stevens"]

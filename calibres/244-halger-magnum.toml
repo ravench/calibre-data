@@ -2,7 +2,7 @@
 # Halger of Hamburg, introduced in the 1920s: the decade's first year is kept.
 # Rimless, the 6.5x57 mm case necked down (p. 615); the table on p. 651 types it rimmed.
 name = ".244 Halger Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["244halger", "244 halger"]

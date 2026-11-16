@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Lazzeroni's .264 long magnum, on its .544 in. case. Chambered only on special order (COTW 18 p. 376).
 name = "6.71 Lazzeroni Blackbird"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6.71 blackbird", "6.71mm blackbird", "lazzeroni blackbird"]

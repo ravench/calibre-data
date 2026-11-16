@@ -7,7 +7,7 @@
 # and body (R1 7.06, P1 5.74) and 0.5 mm more crimped length (L6 15.50). This entry stands for both, with
 # «Setzkartusche 5.6/16» as its second name, until the tool load has a file of its own.
 name = ".22 Long Blanc"
-categories = ["rimfire"]
+guns = []
 kind = "rimfire"
 profile = "crimped"
 aliases = ["22longknall", "22langknall", "22longblank", "5.6/16", "5.6x16", "22longblanc"]

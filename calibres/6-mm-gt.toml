@@ -1,6 +1,6 @@
 # Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); first added from the page named in INTRODUCED, now SAAMI's (see [mm]).
 name = "6 mm GT"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6gt", "6mmgt"]

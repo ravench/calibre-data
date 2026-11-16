@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Miller and Greiss of Munich, on the .404 Jeffery case.
 name = "9.5x73 mm Miller-Greiss Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["9.5x73", "9.5x73 miller-greiss"]

@@ -1,7 +1,7 @@
 # The round of the Bofors 57 mm m/47 aircraft cannon (anti-ship). Its name gives the bore and case
 # length, Rapid Fire's table the rim and base.
 name = "57x230 mm R"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["57x230r", "57x230", "57 mm bofors m/47"]

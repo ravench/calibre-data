@@ -1,7 +1,8 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 name = ".50-90 Sharps"
-# Firearms: book:cotw-18 p. 243.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 243.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["50-90", "50sharps"]

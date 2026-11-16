@@ -1,6 +1,6 @@
 # Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".450 Marlin"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "flat"
 aliases = ["450marlin"]

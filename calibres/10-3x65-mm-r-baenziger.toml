@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A Swiss target round for Martini rifles: the brass 2.5 in. .410 shell with a thicker rim and a bullet.
 name = "10.3x65 mm R Baenziger"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["10.3x65r", "10.3x65r baenziger"]

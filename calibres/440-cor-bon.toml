@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Cor-Bon's .50 Action Express necked down to .44 (.429 in.) for semi-automatic hunting pistols.
 name = ".440 Cor-Bon"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "flat"
 aliases = ["440 cor-bon", "440 corbon"]

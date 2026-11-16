@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # A boar round for short Blaser actions: rebated rim and a long neck.
 name = ".45 Blaser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["45blaser", "45 blaser"]

@@ -1,6 +1,6 @@
 # Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
 name = ".460 Weatherby Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "round"
 aliases = ["460wby"]

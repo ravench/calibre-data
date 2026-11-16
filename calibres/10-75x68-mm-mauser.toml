@@ -1,6 +1,6 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 name = "10.75x68 mm Mauser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["10.75x68"]

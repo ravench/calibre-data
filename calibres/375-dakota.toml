@@ -2,7 +2,7 @@
 # The .404 Jeffery case shortened and necked down, to match the .375 H&H from a .30-06-length action.
 # Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 415).
 name = ".375 Dakota"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["375 dakota"]

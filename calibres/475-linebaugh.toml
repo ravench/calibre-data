@@ -1,6 +1,6 @@
 # Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
 name = ".475 Linebaugh"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["475linebaugh"]

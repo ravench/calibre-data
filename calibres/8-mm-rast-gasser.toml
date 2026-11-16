@@ -2,7 +2,7 @@
 # The Austro-Hungarian Rast-Gasser M1898 service revolver round. Not obsolete: Fiocchi still loads it
 # (COTW 18 p. 476).
 name = "8 mm Rast-Gasser"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["8rastgasser", "8 rast-gasser", "8mm gasser"]

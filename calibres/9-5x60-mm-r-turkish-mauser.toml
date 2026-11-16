@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Ottoman Mauser M1887; Mauser's last blackpowder round.
 name = "9.5x60 mm R Turkish Mauser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["9.5x60r", "9.5 turkish"]

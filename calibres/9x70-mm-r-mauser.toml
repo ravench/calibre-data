@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The British .400/360 Westley Richards case, loaded lighter and faster in Germany.
 name = "9x70 mm R Mauser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["9x70r", "400/360 westley richards"]

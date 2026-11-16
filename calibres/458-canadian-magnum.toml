@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # North American Shooting Systems' rebated rimless magnum for long actions, without a belt.
 name = ".458 Canadian Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 # Nose: round, as on the other dangerous-game rounds; the page gives none.
 profile = "round"

@@ -2,7 +2,7 @@
 # The 6.5x57 mm with the case 1.5 mm shorter (55.25 against 56.7 mm), for Gibbs's Mauser-type rifles. The table of Cartridges of the
 # World (18th ed., p. 608) marks it rimmed, but its p. 579 and the C.I.P. sheet say rimless.
 name = ".256 Gibbs Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["256 gibbs", "256gibbs", "256 mag. gibbs"]

@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # Lazzeroni's .308 long magnum, on its .577 in. case (C.I.P. maximum 14.73 mm).
 name = "7.82 Lazzeroni Warbird"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7.82 warbird", "7.82mm warbird", "lazzeroni warbird"]

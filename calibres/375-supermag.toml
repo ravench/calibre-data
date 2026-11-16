@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # One of Elgin Gates's long SuperMag revolver rounds for silhouette shooting; Dan Wesson made the revolvers.
 name = ".375 SuperMag"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["375 supermag", "375 super mag", "375 super magnum"]

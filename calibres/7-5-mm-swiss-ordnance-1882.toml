@@ -3,7 +3,7 @@
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 # Cartridges of the World: interchangeable with the Swedish and Norwegian Nagant rounds; only the bullet lube differs.
 name = "7.5 mm Swiss Ordnance 1882"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["7.5ord", "7.5revolver", "revolver82", "7.5nagant", "7.5norwegiannagant"]

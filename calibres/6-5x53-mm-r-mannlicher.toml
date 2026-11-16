@@ -1,6 +1,6 @@
 # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = "6.5x53 mm R Mannlicher"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["6.5x53r", "6.5dutch"]

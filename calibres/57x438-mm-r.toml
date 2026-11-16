@@ -2,7 +2,7 @@
 # table), and of the later naval L/70 (Wikipedia). Its name gives the bore and case length, Rapid Fire's
 # table the rim and base, NavWeaps the length of the L/70's complete round.
 name = "57x438 mm R"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["57x438r", "57x438", "57 mm bofors l/60", "57 mm bofors l/70", "sak-57"]

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A rimless .30-40 Krag.
 name = ".30 USA Rimless"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["30 usa", "30 usa rimless", "30-40 rimless"]

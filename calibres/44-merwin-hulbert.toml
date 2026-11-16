@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Merwin & Hulbert revolvers; Winchester loaded it from 1882.
 name = ".44 Merwin & Hulbert"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["44 merwin & hulbert", "44 merwin hulbert", "44 m&h"]

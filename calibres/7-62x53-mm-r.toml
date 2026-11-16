@@ -1,6 +1,6 @@
 # Finnish service round (1918) on the 7.62x54 R case with a narrower bore; its own C.I.P. sheet in SHOULDER_ANGLES.
 name = "7.62x53 mm R"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["7.62x53r", "762x53r"]

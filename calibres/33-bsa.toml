@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # BSA's belted round for its sporting rifles on the Enfield action.
 name = ".33 BSA"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["33 bsa", "33bsa", "330 bsa"]

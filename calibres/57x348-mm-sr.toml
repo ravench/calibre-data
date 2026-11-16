@@ -2,7 +2,7 @@
 # Its name (Jane's p. 135; Rapid Fire calls it 57x347SR) gives the bore and case length, Rapid Fire's
 # table the rim and base, Jane's p. 136 the length of the complete round.
 name = "57x348 mm SR"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "semi-rimmed"
 profile = "spitzer"
 aliases = ["57x348sr", "57x347sr", "57x348", "57 mm s-60"]

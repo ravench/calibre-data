@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Lazzeroni's .375 long magnum, on its .577 in. case.
 name = "9.53 Lazzeroni Saturn"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["9.53 saturn", "9.53mm saturn", "lazzeroni saturn"]

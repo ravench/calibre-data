@@ -1,5 +1,5 @@
 name = ".204 Ruger"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = []

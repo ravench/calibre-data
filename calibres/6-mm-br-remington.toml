@@ -2,7 +2,7 @@
 # Remington's factory version of the 6 mm BR. C.I.P. gives the 6 mm BR Norma the same case with a
 # longer overall length.
 name = "6 mm BR Remington"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6mm br remington", "6mm br rem", "6mmbrrem"]

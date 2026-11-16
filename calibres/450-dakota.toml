@@ -2,7 +2,7 @@
 # Unlike the other Dakota rounds, an improved full-length .416 Rigby case.
 # Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 436).
 name = ".450 Dakota"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 # Nose: round, as on the other dangerous-game rounds; the page gives none.
 profile = "round"

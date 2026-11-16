@@ -1,6 +1,6 @@
 # SAAMI drawing (Wilson Combat copy, rev. 2022-04-11); case length after the SAAMI datasheet.
 name = ".300 HAM'R"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["300hamr", "hamr"]

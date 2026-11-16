@@ -1,5 +1,5 @@
 name = "10 mm Auto"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "flat"
 aliases = ["10mm", "10auto"]

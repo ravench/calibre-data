@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .32 Long Centrefire lengthened, for the Ballard and other single-shot rifles.
 name = ".32 Extra Long Centrefire"
-# Firearms: book:cotw-18 p. 202.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 202.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["32 extra long cf", "32 ballard extra long", "32 extra long centerfire"]

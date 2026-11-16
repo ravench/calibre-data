@@ -1,7 +1,7 @@
 # Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
 # shoulder heights estimated for drawing.
 name = "6.5x50 mm SR Arisaka"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "semi-rimmed"
 # Nose: round, as first loaded (the Wikipedia page below); pointed service bullets came only from 1898
 # (COTW 18 p. 553).

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A little longer than the .450 Revolver; the two interchange in most revolvers.
 name = ".45 Webley"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["45 webley", "45 webley revolver"]

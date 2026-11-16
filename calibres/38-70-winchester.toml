@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Winchester Model 1886 lever action; dropped within a few years.
 name = ".38-70 Winchester"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["38-70", "38-70 winchester"]

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Charles Newton's .30-06 case necked to 6.5 mm; Western loaded it from 1913 to 1938.
 name = ".256 Newton"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["256 newton"]

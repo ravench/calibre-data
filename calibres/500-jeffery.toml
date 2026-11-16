@@ -1,6 +1,6 @@
 # Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
 name = ".500 Jeffery"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 # COTW 18 p. 650 lists it as the 12.5x70 mm Schüler; its table row (p. 652) gives this case but for the length.

@@ -1,7 +1,7 @@
 # Rigby's rimmed .416 Rigby for double rifles such as its Rising Bite, worked out with Eckhard Stief:
 # the .416 Rigby's body, shoulder and neck behind a 17 mm rim (C.I.P. sheets).
 name = ".416 Rigby No. 2"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["416 rigby no 2", "416 rigby n2", "416 rigby n°2", "416 rimmed rigby"]

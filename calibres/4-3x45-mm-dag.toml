@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Dynamit Nobel's trial round for the Heckler & Koch G11 work: the 5.56x45 mm case necked down.
 name = "4.3x45 mm DAG"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["4.3x45", "4.3 dag"]

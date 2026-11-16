@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Westley Richards, for single-shot and double rifles.
 name = ".476 Nitro Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["476 ne", "476 westley richards"]

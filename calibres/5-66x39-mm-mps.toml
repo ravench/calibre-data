@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The underwater dart of the APS rifle, on a sealed 5.45x39 mm case; the dart is about 120 mm long.
 name = "5.66x39 mm MPS"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["5.66x39", "mps"]

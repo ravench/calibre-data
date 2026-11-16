@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # A-Square's .30 magnum on its own beltless case with a .580 in. head.
 name = ".300 Pegasus"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["300 pegasus", "300 a-square pegasus"]

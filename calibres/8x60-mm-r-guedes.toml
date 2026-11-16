@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Portuguese Guedes single-shot rifle, made by Steyr.
 name = "8x60 mm R Guedes"
-# Firearms: book:cotw-18 p. 556.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 556.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["8x60r guedes", "8 mm guedes"]

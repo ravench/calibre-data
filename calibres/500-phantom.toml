@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Teppo Jutsu and Garber Supply's .50 for AR-10 rifles, on a rebated, beltless short magnum case.
 name = ".500 Phantom"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["500 phantom"]

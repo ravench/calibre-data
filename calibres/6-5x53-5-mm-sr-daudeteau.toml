@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Semi-rimmed; the French Navy's Daudeteau rifle.
 name = "6.5x53.5 mm SR Daudeteau"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "semi-rimmed"
 profile = "round"
 aliases = ["6.5daudeteau", "6.5x53.5"]

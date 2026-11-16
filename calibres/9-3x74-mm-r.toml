@@ -1,6 +1,6 @@
 # Rim R1, shoulder P2, neck H2 and case L3 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
 name = "9.3x74 mm R"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["9.3x74r"]

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Schofield case length with the Colt rim, so it fired in both army revolvers.
 name = ".45 Colt Government"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["45 colt government", "45 government revolver", "45 revolver ball"]

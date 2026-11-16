@@ -1,5 +1,5 @@
 name = "7.62x54 mm R"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 # Nose: round: the round of 1891 is older than its pointed bullet of 1909 (COTW 18 p. 548).
 profile = "round"

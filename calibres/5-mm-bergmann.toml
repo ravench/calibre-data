@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Bergmann No. 2 pistol; the first cases had no rim or extractor groove.
 name = "5 mm Bergmann"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["5bergmann", "5 bergmann"]

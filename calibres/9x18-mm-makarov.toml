@@ -1,5 +1,5 @@
 name = "9x18 mm Makarov"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["makarov", "9x18", "9mm mak"]

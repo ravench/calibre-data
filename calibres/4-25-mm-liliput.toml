@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # First for the Austrian Erika pistol (1913-14, the earliest year kept), later the German Liliput.
 name = "4.25 mm Liliput"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["4.25liliput", "4.25 erika", "4.25mm erika auto"]

@@ -3,7 +3,7 @@
 # says Dakota stopped making it.
 # Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 424).
 name = ".416 Dakota"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 # Nose: round, as on the other dangerous-game rounds; the page gives none.
 profile = "round"

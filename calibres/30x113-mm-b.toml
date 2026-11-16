@@ -3,7 +3,7 @@
 # measures the case at 111.99 mm); KNDS gives the cartridge length, Jane's table the rim, the belt
 # and the neck, the AECC specimen drawing of a DEFA round on municion.org the base (HØ) and the head.
 name = "30x113 mm B"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["30x113b", "30 mm aden", "30 mm defa"]

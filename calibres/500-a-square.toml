@@ -2,7 +2,7 @@
 # Arthur Alphin's first A-Square round: the .460 Weatherby Magnum case
 # necked up and blown out.
 name = ".500 A-Square"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "round"
 aliases = ["500 a-square", "500 a-sq"]

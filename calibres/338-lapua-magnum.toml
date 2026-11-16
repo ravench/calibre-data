@@ -1,5 +1,5 @@
 name = ".338 Lapua Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["338lm", "338lapua", "338", "8.58x71", "8.58x70", "8.6x70", "338 lapua mag"]

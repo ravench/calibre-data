@@ -1,5 +1,5 @@
 name = ".45 GAP"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["45gap"]

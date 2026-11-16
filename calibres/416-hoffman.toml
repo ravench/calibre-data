@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .375 H&H Magnum case necked up and improved, loaded by A-Square.
 name = ".416 Hoffman"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "round"
 aliases = ["416 hoffman"]

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A rimless, rebated smokeless version of the 11 mm Mauser M1871.
 name = "11.2x60 mm Schüler"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["11.2x60", "11.2x60 schuler", "11.15x59.8"]

@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # Mauser's round for its Export pistol of 1908, longer and stronger than the 9 mm Luger; revived in 1933 for the Neuhausen and Steyr-Solothurn submachine guns.
 name = "9 mm Mauser"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["9mm mauser", "9x25 mauser", "9mm mauser export", "9 mm mauser export"]

@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # Swiss P (RUAG Ammotec, Thun): a sniper round with a rebated rim.
 name = ".375 Swiss P"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["375swissp", "375 swiss p", "9.5x70"]

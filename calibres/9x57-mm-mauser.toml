@@ -1,6 +1,6 @@
 # Batch 7 (2026-11); now from the C.I.P. sheet (see [mm]).
 name = "9x57 mm Mauser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["9x57"]

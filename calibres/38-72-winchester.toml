@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Winchester Model 1895 box-magazine lever action; a nearly straight case.
 name = ".38-72 Winchester"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["38-72", "38-72 winchester"]

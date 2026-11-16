@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .35-30 Maynard 1882 lengthened.
 name = ".35-40 Maynard 1882"
-# Firearms: book:cotw-18 p. 210.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 210.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["35-40 maynard", "35-40 maynard 1882"]

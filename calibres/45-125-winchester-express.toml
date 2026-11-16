@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A long bottleneck case, a special-order chambering for the Winchester single-shot rifle; loaded until 1916.
 name = ".45-125 Winchester Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["45-125 winchester", "45-125 express", "45 express"]

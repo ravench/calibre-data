@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Army's 1871 version of the .50 Remington pistol round, for the rolling-block pistol; a slight bottleneck.
 name = ".50 Remington Army"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["50 remington army", "50 rem army", "50 remington m71"]

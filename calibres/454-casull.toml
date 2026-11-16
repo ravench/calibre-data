@@ -1,5 +1,5 @@
 name = ".454 Casull"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["454casull"]

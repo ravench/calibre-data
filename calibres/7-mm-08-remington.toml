@@ -1,5 +1,5 @@
 name = "7 mm-08 Remington"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7mm-08", "7-08", "7mm-08 rem"]

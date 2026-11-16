@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For Gustav Bittner's lever-action repeating pistol, made in Bohemia about 1893.
 name = "7.7 mm Bittner"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["7.7bittner", "7.7 bittner"]

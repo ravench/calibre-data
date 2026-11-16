@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Probably the first American commercial 7 mm round, designed by Charles H. Herrick for Stevens.
 name = ".28-30-120 Stevens"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["28-30", "28-30-120", "28-30 stevens"]

@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A blackpowder express round on a 2 13/16 in. case.
 name = ".577/500 No. 2 Express"
-# Firearms: book:cotw-18 p. 603.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 603.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["577/500 no 2", "577/500 no. 2"]

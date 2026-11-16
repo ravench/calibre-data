@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Rebated rim, for the Mauser magnum action of Krieghoff-Schüler rifles.
 name = "11.2x72 mm Schüler"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["11.2x72", "11.2x72 schuler"]

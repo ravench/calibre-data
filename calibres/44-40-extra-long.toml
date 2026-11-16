@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A longer body and neck than the .44-40 WCF.
 name = ".44-40 Extra Long"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["44-40 extra long", "44-40 xl"]

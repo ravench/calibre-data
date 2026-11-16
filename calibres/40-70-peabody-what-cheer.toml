@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Peabody-Martini rifles of the Providence Tool Co.; a short body and a long, sloping shoulder.
 name = ".40-70 Peabody What Cheer"
-# Firearms: book:cotw-18 p. 225.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 225.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["40-70 peabody", "40-70 what cheer"]

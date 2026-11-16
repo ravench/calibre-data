@@ -1,5 +1,5 @@
 name = "4.6x30 mm"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["4.6x30"]

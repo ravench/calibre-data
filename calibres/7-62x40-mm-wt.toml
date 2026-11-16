@@ -2,7 +2,7 @@
 # Wilson Combat's .30 round for AR-15 rifles, from Kurt Buchert's 7.62x40 USA: the 5.56x45 mm case shortened
 # and necked up. COTW 18 p. 249: the factory load is no longer made.
 name = "7.62x40 mm WT"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7.62x40 wt", "7.62x40 wilson tactical", "7.62x40 usa", "7.62x40"]

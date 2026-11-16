@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # Holland & Holland's belted 7 mm, with the .375 H&H one of the first magnums.
 name = ".275 H&H Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["275hh", "275 h&h", "275 belted magnum", "275 belt. n.e."]

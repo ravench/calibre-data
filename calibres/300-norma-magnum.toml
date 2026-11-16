@@ -1,5 +1,5 @@
 name = ".300 Norma Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["300norma", "300nm"]

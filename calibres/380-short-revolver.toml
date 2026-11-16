@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # For Webley revolvers, from about 1868; the .38 Short Colt was copied from it.
 name = ".380 Short Revolver"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["380 revolver", "380 short revolver", "380 rev", "380 webley revolver"]

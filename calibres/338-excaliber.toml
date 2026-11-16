@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A-Square's .338 on the beltless .580 in. case of the .300 Pegasus.
 name = ".338 Excaliber"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["338 excaliber", "338 a-square excaliber"]

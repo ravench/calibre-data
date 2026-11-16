@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The first straight case made for Stevens, designed by Capt. W. L. Carpenter.
 name = ".25-25 Stevens"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["25-25", "25-25 stevens"]

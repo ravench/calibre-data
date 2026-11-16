@@ -1,6 +1,6 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 name = "6.5x27 mm R"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["6.5x27r", "6.5r ronezewsky", "ronezewsky"]

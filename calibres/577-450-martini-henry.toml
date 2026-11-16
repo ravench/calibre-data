@@ -1,6 +1,7 @@
 name = ".577/450 Martini-Henry"
-# Firearms: book:cotw-18 p. 567.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 567.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["martini-henry", "577/450", "577/450 sld. mart. h."]

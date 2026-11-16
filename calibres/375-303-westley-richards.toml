@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For Westley Richards doubles with Lancaster oval-bore rifling, falling-block and Lee-action rifles.
 name = ".375/303 Westley Richards"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["375/303", "375/303 axite"]

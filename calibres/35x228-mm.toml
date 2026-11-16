@@ -3,7 +3,7 @@
 # Jane's the length of the Oerlikon rounds, the AECC specimen drawing on municion.org the shoulder,
 # the neck and the head. Jane's gives Denel's copy of the case a largest diameter of 54.66 mm (p. 122).
 name = "35x228 mm"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["35x228", "35 mm oerlikon"]

@@ -1,7 +1,7 @@
 # Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
 # shoulder heights estimated for drawing.
 name = ".22 Hornet"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 # Nose: round, the blunt soft point in the photo (COTW 18 p. 84); Winchester first loaded it in 1930.
 # Today's factory loads are pointed and blunt alike (p. 85), so there is no single nose of today.

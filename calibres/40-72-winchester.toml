@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Winchester Model 1895 box-magazine lever action; loaded until 1936.
 name = ".40-72 Winchester"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-72", "40-72 winchester"]
