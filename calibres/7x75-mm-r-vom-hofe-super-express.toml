@@ -6,7 +6,10 @@ profile = "spitzer"
 aliases = ["7x75r", "7x75r se"]
 
 origin = "DE"
-origin_sources = ["https://municion.org/producto/7-x-75-r-super-express-vom-hofe/"]
+origin_sources = [
+  "https://municion.org/producto/7-x-75-r-super-express-vom-hofe/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page27.pdf",
+]
 obsolete = true
 rare = true
 
@@ -15,6 +18,8 @@ rim = 13.35
 base = 11.9
 shoulder = 10.7
 shoulder_at = 59.0
+neck_at = 66.8
+neck_base = 7.95
 neck = 7.95
 case_length = 75.0
 overall_length = 97.0

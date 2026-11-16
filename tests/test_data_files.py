@@ -212,9 +212,10 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(set(cartridges.ORIGIN_SOURCES) | cartridges.ORIGIN_UNVERIFIED, named)
         self.assertEqual(set(cartridges.ORIGIN_SOURCES) & cartridges.ORIGIN_UNVERIFIED, set())
         self.assertGreater(len(cartridges.ORIGIN_SOURCES), 600)
-        # The three kinds of source: Wikipedia's infobox, the Ammo Encyclopedia, municion.org's PAÍS.
+        # The kinds of source: Wikipedia's infobox, the Ammo Encyclopedia, a C.I.P. sheet, municion.org's PAÍS.
         self.assertEqual(cartridges.sources("7.5x55 mm Swiss (GP 11)", "origin"),
-                         ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss", "book:ammo-encyclopedia-2 p. 513"])
+                         ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss", "book:ammo-encyclopedia-2 p. 513",
+                          "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page46.pdf"])
         self.assertEqual(cartridges.ORIGIN_SOURCES["9.3x72 mm R Sauer"],
                          "https://municion.org/producto/93-x-72-r-sauer-sohn/")
         # Two-state cases whose pages name the other state, and open ones, stay unverified.
@@ -754,7 +755,7 @@ class CheckTests(unittest.TestCase):
 
     # Calibres whose [mm] shoulder is not the sheet's P2, so the shoulder drawn at the sheet's angle ends short of
     # the sheet's L2. Their shoulders come from other pages; fix them to P2 and empty this.
-    SHOULDER_NOT_P2 = {".22 Remington Jet", ".35 Remington", ".35 Winchester", ".400/350 Nitro Express", ".45-75 Winchester", ".500/465 Nitro Express"}
+    SHOULDER_NOT_P2 = {".22 Remington Jet", ".35 Remington", ".35 Winchester", ".400/350 Nitro Express", ".45-75 Winchester", "8x56 mm R Mannlicher", ".500/465 Nitro Express"}
 
     def test_neck_start_agrees_with_the_shoulder_angle(self):
         # Where the angle and the measurements come from the same sheet, the shoulder run in from shoulder_at at that

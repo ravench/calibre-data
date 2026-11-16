@@ -17,6 +17,8 @@ rim = 9.98
 base = 9.9
 shoulder = 9.61
 shoulder_at = 15.58
+neck_at = 17.62
+neck_base = 8.48
 neck = 8.4
 case_length = 21.6
 overall_length = 29.8
@@ -46,6 +48,7 @@ rim_thickness = 1.22
 ramp_top = 3.69
 groove_diameter = 8.79
 ramp_angle = 20.0
+groove_width = 0.9
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page14.pdf"]
 
 [bullet]

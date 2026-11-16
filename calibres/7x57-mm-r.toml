@@ -10,13 +10,18 @@ profile_today = "spitzer"
 aliases = ["7x57r"]
 
 origin = "DE"
-origin_sources = ["https://municion.org/producto/7-x-57-r-mauser/"]
+origin_sources = [
+  "https://municion.org/producto/7-x-57-r-mauser/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page22.pdf",
+]
 
 [mm]
 rim = 13.5
 base = 12.05
 shoulder = 10.92
 shoulder_at = 43.8
+neck_at = 47.37
+neck_base = 8.25
 neck = 8.25
 case_length = 57.0
 overall_length = 78.0

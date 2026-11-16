@@ -8,6 +8,7 @@ origin = "FR"
 origin_sources = [
   "https://en.wikipedia.org/wiki/7.5×54mm_French",
   "book:ammo-encyclopedia-2 p. 512",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page45.pdf",
 ]
 
 [mm]
@@ -15,6 +16,8 @@ rim = 12.25
 base = 12.25
 shoulder = 11.2
 shoulder_at = 42.79
+neck_at = 46.42
+neck_base = 8.66
 neck = 8.6
 case_length = 54.0
 overall_length = 76.0
@@ -44,6 +47,7 @@ rim_thickness = 1.4
 ramp_top = 3.2
 groove_diameter = 10.5
 ramp_angle = 41.2
+groove_width = 0.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page45.pdf"]
 
 [bullet]

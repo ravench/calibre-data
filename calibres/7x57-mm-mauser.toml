@@ -12,6 +12,7 @@ origin = "DE"
 origin_sources = [
   "https://en.wikipedia.org/wiki/7×57mm_Mauser",
   "book:ammo-encyclopedia-2 p. 509",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page33.pdf",
 ]
 
 [mm]
@@ -20,6 +21,8 @@ rim = 12.055
 base = 12.0
 shoulder = 10.9
 shoulder_at = 43.84
+neck_at = 47.41
+neck_base = 8.25
 neck = 8.2
 case_length = 57.0
 overall_length = 78.0
@@ -50,6 +53,7 @@ rim_thickness = 1.15
 ramp_top = 3.04
 groove_diameter = 10.7
 ramp_angle = 32.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page33.pdf"]
 
 [bullet]
