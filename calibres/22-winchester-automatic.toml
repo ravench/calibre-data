@@ -36,3 +36,8 @@ sources = ["book:cotw-18 p. 670"]
 # COTW 18 p. 657 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"
 sources = ["https://municion.org/ficha-06-017-cbr-010-0003/"]
+
+[case]
+# municion.org's photos: Winchester's own cases are copper, as are Peters', Western's and Remington-UMC's.
+material = "copper"
+sources = ["https://municion.org/producto/22-winchester-rf-automatic/"]

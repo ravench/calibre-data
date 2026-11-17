@@ -37,3 +37,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]
+
+[case]
+# municion.org's photos: Remington-UMC's cases are copper (Western's too; one Peters case is brass).
+material = "copper"
+sources = ["https://municion.org/producto/22-remington-rf-automatic/"]

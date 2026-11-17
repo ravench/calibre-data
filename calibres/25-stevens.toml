@@ -28,3 +28,8 @@ sources = ["https://en.wikipedia.org/wiki/.25_Stevens"]
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/25-stevens-short-rf/"]
+
+[case]
+# municion.org's photos: the early US makers' cases (Union Metallic Cartridge Co., Winchester, Peters, United States Cartridge Co.) are copper; Western's is brass, a few are nickel-plated.
+material = "copper"
+sources = ["https://municion.org/producto/25-stevens-rf/"]
