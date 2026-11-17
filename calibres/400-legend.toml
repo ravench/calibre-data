@@ -38,7 +38,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/400-legend-231009-en.pd
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.400_Legend"]
-
-[case]
-material = "brass"
-sources = []

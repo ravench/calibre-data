@@ -43,7 +43,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page110.pd
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 239"]
-
-[case]
-material = "brass"
-sources = []

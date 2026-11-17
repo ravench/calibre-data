@@ -43,7 +43,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf
 # known; lead is kept for the target round.
 type = "lead"
 sources = ["https://municion.org/ficha-08-058-tbc-010-0006/"]
-
-[case]
-material = "brass"
-sources = []

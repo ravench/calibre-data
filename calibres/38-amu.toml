@@ -44,7 +44,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page59.pdf
 # The military load's hollow-base wadcutter.
 type = "lead"
 sources = ["book:cotw-18 p. 488"]
-
-[case]
-material = "brass"
-sources = []

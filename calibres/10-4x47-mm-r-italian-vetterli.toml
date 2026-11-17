@@ -52,7 +52,3 @@ sources = ["book:cotw-18 p. 574"]
 # earliest sheet, an 1873 Italian arsenal round, shows a bare lead one.
 type = "lead"
 sources = ["https://municion.org/ficha-11-048-bbc-005-0005/"]
-
-[case]
-material = "brass"
-sources = []

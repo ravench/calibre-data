@@ -52,7 +52,3 @@ sources = [
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.30_Nosler"]
-
-[case]
-material = "brass"
-sources = []

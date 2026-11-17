@@ -38,7 +38,3 @@ sources = ["https://municion.org/producto/77-mm-bittner/"]
 # A revolver-type round of its time; COTW 18 p. 466 gives no load.
 type = "lead"
 sources = []
-
-[case]
-material = "brass"
-sources = []

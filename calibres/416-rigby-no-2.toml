@@ -49,7 +49,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/416rigbyn2-180516-en.p
 # Assumed from the .416 Rigby; no factory load found yet.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

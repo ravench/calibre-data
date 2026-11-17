@@ -38,7 +38,3 @@ sources = ["book:cotw-18 p. 453"]
 # Cor-Bon's factory load: Swift's A-Frame, a bonded soft point.
 type = "softpoint"
 sources = ["book:cotw-18 p. 431"]
-
-[case]
-material = "brass"
-sources = []

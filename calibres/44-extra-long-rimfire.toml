@@ -30,7 +30,3 @@ sources = ["book:cotw-18 p. 666"]
 # COTW 18 p. 666 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"
 sources = ["https://municion.org/ficha-11-038-cbr-010-0001/"]
-
-[case]
-material = "brass"
-sources = []

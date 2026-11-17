@@ -57,7 +57,3 @@ sources = ["book:donnelly p. 860", "https://municion.org/producto/8-mm-nambu-m-1
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 476"]
-
-[case]
-material = "brass"
-sources = []

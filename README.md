@@ -100,10 +100,6 @@ sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 # C.I.P. 308 Win.
 degrees = 20
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
-
-[case]
-material = "brass"
-sources = []
 ```
 
 Text goes in quotes, numbers and `true` don't. Lines starting with `#` are notes for people; the
@@ -132,9 +128,9 @@ Raven's own caliper measurement of a round is a source too: `measured:raven 2026
 was measured. Say in a comment which round (headstamp, maker) and which values were measured.
 
 An empty list `sources = []` means the values have not been checked against a source yet. That is
-allowed for the measurements, the primer (then it counts as unverified), the bullet and a brass
-case; a year, a shoulder angle, a case head, a steel or plastic bullet, a case material other than
-brass and the case materials made today always need one.
+allowed for the measurements, the primer (then it counts as unverified) and the bullet; a year, a
+shoulder angle, a case head, a steel or plastic bullet, a case material and the case materials made
+today always need one.
 `sources(name, table)` in `cartridges.py` gives the whole list (`table` `"origin"` for `origin_sources`); the old tables (`INTRODUCED`,
 `SHOULDER_ANGLES`, ...) keep the first one.
 
@@ -499,12 +495,13 @@ belted case, up to a belt that ends 4.3 mm in front of the rim.
   `patch_length` says which source gives the length, or which round it was measured on (the check
   wants that comment). Without it the paper band is drawn over half the exposed bullet. Not for the
   GP 1890 (`patched` profile), whose band follows its 1892 drawing.
-- `[case]` `material`, in every calibre with a case (not shot shells, balls, Minié bullets or
-  pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated steel,
-  `aluminium`, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case) or `hybrid`
-  (brass body on a steel head). Every material but brass needs a source; brass may have
-  `sources = []` while it is not checked. The outlines name only the materials that are not brass
-  (`caseMaterial`).
+- `[case]` `material`, only where a source shows or names it, brass too (not for shot shells, balls,
+  Minié bullets or pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated
+  steel, `aluminium`, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case) or
+  `hybrid` (brass body on a steel head). It always needs a source; a comment above `material` says
+  what the source shows (a municion.org photo of an early maker's case head, a book's text). Without
+  `[case]` the material is unknown, and the outline draws the case as brass. The outlines name only
+  the materials that are not brass (`caseMaterial`).
 - `[current_cases]` `materials`: other case materials made today (brass .45-70, steel 9x19, CCI
   Blazer's aluminium), never the original's own (brass only where the original is not brass); the
   original stays the drawn one.

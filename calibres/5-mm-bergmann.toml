@@ -41,7 +41,3 @@ sources = ["book:cotw-18 p. 527", "https://municion.org/producto/5-mm-bergmann-n
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

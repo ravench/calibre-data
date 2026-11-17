@@ -41,7 +41,3 @@ sources = ["book:donnelly p. 443"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.360_No._5_Rook"]
-
-[case]
-material = "brass"
-sources = []

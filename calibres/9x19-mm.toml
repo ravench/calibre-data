@@ -43,10 +43,6 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page28.pdf
 type = "jacketed"
 sources = ["book:cotw-18 p. 482"]
 
-[case]
-material = "brass"
-sources = []
-
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases; CCI Blazer's aluminium cases.
 materials = ["steel", "aluminium"]

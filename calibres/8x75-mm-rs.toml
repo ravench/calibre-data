@@ -53,7 +53,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page42.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://municion.org/producto/8-x-75-r-behr/"]
-
-[case]
-material = "brass"
-sources = []

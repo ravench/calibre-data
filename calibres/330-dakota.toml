@@ -52,7 +52,3 @@ sources = ["book:cotw-18 p. 452", "https://municion.org/producto/330-dakota/"]
 # Soft point inferred from its use as a hunting round; the page gives weights only.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

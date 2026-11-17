@@ -67,7 +67,3 @@ sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
 type = "jacketed"
 jacket = "cupronickel"
 sources = []
-
-[case]
-material = "brass"
-sources = []

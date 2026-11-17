@@ -48,7 +48,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-grendel.pdf", "book
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

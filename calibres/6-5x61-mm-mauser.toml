@@ -50,7 +50,3 @@ sources = ["https://municion.org/producto/65-x-61-mauser/"]
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 619"]
-
-[case]
-material = "brass"
-sources = []

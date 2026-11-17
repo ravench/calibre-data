@@ -44,7 +44,3 @@ sources = ["book:cotw-18 p. 574", "https://municion.org/producto/45-thompson-mod
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

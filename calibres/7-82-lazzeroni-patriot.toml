@@ -49,7 +49,3 @@ sources = ["book:cotw-18 p. 452", "https://municion.org/producto/782-mm-lazzeron
 # Soft point inferred: Lazzeroni loads premium hunting bullets; the page gives weights only.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

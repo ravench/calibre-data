@@ -47,7 +47,3 @@ sources = ["https://municion.org/producto/8-x-50-r-siamese-type-45/"]
 type = "jacketed"
 jacket = "cupronickel"
 sources = ["book:cotw-18 p. 552"]
-
-[case]
-material = "brass"
-sources = []

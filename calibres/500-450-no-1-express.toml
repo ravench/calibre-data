@@ -52,7 +52,3 @@ sources = ["https://municion.org/producto/500-450-westley-richards-n1-express/"]
 # A blackpowder round.
 type = "lead"
 sources = ["book:cotw-18 p. 597"]
-
-[case]
-material = "brass"
-sources = []

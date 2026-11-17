@@ -42,7 +42,3 @@ sources = ["https://municion.org/producto/455-webley-scott-automatic-mk-i-m-1913
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 522"]
-
-[case]
-material = "brass"
-sources = []

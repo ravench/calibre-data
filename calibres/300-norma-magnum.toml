@@ -45,7 +45,3 @@ sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf"]
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

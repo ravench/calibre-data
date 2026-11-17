@@ -49,7 +49,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page38.pdf
 # COTW 18 lists Norma's and RWS's soft-point factory loads for the 8x60 RS.
 type = "softpoint"
 sources = ["book:cotw-18 p. 634"]
-
-[case]
-material = "brass"
-sources = []

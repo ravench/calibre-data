@@ -46,7 +46,3 @@ sources = ["book:donnelly p. 932"]
 # COTW gives only its weight.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

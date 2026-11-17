@@ -55,7 +55,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/7-5-fk-200922-en.pdf"]
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

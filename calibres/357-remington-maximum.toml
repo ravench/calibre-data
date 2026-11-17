@@ -40,7 +40,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page52.pdf
 # The factory load: a jacketed hollow point.
 type = "hollowpoint"
 sources = ["book:cotw-18 p. 489"]
-
-[case]
-material = "brass"
-sources = []

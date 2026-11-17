@@ -57,7 +57,3 @@ sources = ["https://municion.org/producto/6-mm-us-lee-navy/"]
 type = "jacketed"
 jacket = "cupronickel"
 sources = ["https://en.wikipedia.org/wiki/6mm_Lee_Navy"]
-
-[case]
-material = "brass"
-sources = []

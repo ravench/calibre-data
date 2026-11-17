@@ -43,7 +43,3 @@ ramp_top = 12.39
 groove_diameter = 43.02
 ramp_angle = 27.0
 sources = ["https://naboje.org/en/node/14433"]
-
-[case]
-material = "brass"
-sources = []

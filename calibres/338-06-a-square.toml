@@ -50,7 +50,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"
 # COTW 18 p. 206 lists only handloads with soft-point bullets.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

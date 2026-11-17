@@ -43,7 +43,3 @@ sources = ["book:cotw-18 p. 529", "https://municion.org/producto/450-mars-long-c
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 510"]
-
-[case]
-material = "brass"
-sources = []

@@ -54,7 +54,3 @@ sources = ["https://municion.org/producto/112-x-72-schuler/"]
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 648"]
-
-[case]
-material = "brass"
-sources = []

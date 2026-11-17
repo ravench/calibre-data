@@ -54,7 +54,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf"
 # Soft point inferred from its use as a hunting round; the page gives weights only.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

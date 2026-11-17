@@ -41,7 +41,3 @@ sources = ["book:donnelly p. 989"]
 # its core, as the catalogue has no brass-covered type.
 type = "lead"
 sources = []
-
-[case]
-material = "brass"
-sources = []

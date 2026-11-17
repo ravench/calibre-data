@@ -52,7 +52,3 @@ sources = ["book:cotw-18 p. 452", "https://municion.org/producto/953-mm-lazzeron
 # Soft point: the Nosler Partition (COTW 18 p. 413).
 type = "softpoint"
 sources = ["book:cotw-18 p. 413"]
-
-[case]
-material = "brass"
-sources = []

@@ -49,7 +49,3 @@ sources = ["book:donnelly p. 776"]
 # The service or target load, full metal jacket; p. 620 also lists soft points.
 type = "jacketed"
 sources = ["book:cotw-18 p. 620"]
-
-[case]
-material = "brass"
-sources = []

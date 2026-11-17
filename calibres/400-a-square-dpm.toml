@@ -56,7 +56,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page27.p
 # Inferred: A-Square made its own big-game bullets for it; the page names no type (p. 419).
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

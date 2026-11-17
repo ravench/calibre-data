@@ -19,7 +19,3 @@ sources = ["book:rapid-fire p. 230", "https://en.wikipedia.org/wiki/5_cm_Flak_41
 # The FlaK 41 entered service in 1941.
 year = 1941
 sources = ["https://en.wikipedia.org/wiki/5_cm_Flak_41"]
-
-[case]
-material = "brass"
-sources = []

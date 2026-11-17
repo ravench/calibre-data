@@ -42,7 +42,3 @@ sources = ["https://municion.org/producto/98-mm-acp-winchester/"]
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 496"]
-
-[case]
-material = "brass"
-sources = []

@@ -38,7 +38,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page149.pdf"
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.450_Bushmaster"]
-
-[case]
-material = "brass"
-sources = []

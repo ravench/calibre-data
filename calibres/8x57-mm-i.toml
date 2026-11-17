@@ -59,7 +59,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page56.pdf"]
 type = "jacketed"
 jacket = "cupronickel"
 sources = ["https://naboje.org/node/3223"]
-
-[case]
-material = "brass"
-sources = []

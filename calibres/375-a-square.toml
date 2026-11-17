@@ -58,7 +58,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page29.p
 # no type (p. 416).
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

@@ -56,7 +56,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page29.p
 # A-Square's first factory load: a Nosler Ballistic Tip.
 type = "polymer"
 sources = ["book:cotw-18 p. 402"]
-
-[case]
-material = "brass"
-sources = []

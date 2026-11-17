@@ -58,7 +58,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf"
 # COTW gives no factory load.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

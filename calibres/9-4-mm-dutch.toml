@@ -42,7 +42,3 @@ sources = ["book:cotw-18 p. 528"]
 # of the Dutch state arsenal (Artillerie Inrichtingen).
 type = "lead"
 sources = ["https://municion.org/ficha-10-021-cbc-010-0002/"]
-
-[case]
-material = "brass"
-sources = []

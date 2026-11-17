@@ -65,10 +65,6 @@ sources = [
   "https://municion.org/ficha-07-055-bgc-020-0074/",
 ]
 
-[case]
-material = "brass"
-sources = []
-
 [[colour_codes]]
 part = "base"
 colours = ["black"]

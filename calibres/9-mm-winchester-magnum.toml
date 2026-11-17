@@ -42,7 +42,3 @@ sources = ["book:cotw-18 p. 528", "https://municion.org/producto/9-mm-winchester
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 480"]
-
-[case]
-material = "brass"
-sources = []

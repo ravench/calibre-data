@@ -56,7 +56,3 @@ sources = ["https://municion.org/producto/55-boys/"]
 type = "jacketed"
 jacket = "cupronickel"
 sources = ["book:ammo-encyclopedia-2 p. 563"]
-
-[case]
-material = "brass"
-sources = []

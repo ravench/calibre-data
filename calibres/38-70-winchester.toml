@@ -41,7 +41,3 @@ sources = ["https://municion.org/producto/38-70-winchester-cf-marlin-colt/"]
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 217"]
-
-[case]
-material = "brass"
-sources = []

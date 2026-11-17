@@ -44,7 +44,3 @@ sources = ["book:donnelly p. 993"]
 # The military load: a lead bullet over blackpowder.
 type = "lead"
 sources = ["book:cotw-18 p. 569"]
-
-[case]
-material = "brass"
-sources = []

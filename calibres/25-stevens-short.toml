@@ -34,7 +34,3 @@ sources = ["https://municion.org/producto/25-stevens-short-rf/"]
 # COTW 18 p. 661 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"
 sources = ["https://municion.org/ficha-06-015-cbr-030-0004/"]
-
-[case]
-material = "brass"
-sources = []

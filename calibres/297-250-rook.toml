@@ -51,7 +51,3 @@ sources = ["book:donnelly p. 293"]
 # naboje.org: loaded with black powder and a lead bullet.
 type = "lead"
 sources = ["https://naboje.org/node/4173"]
-
-[case]
-material = "brass"
-sources = []

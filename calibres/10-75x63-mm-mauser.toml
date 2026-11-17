@@ -68,7 +68,3 @@ sources = ["https://municion.org/producto/1075-x-63-g-mauser/"]
 # COTW gives only its weight.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

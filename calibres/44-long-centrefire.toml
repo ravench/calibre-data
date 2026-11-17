@@ -41,7 +41,3 @@ sources = ["book:donnelly p. 558"]
 # COTW 18 p. 231 gives only the weight of the original blackpowder load.
 type = "lead"
 sources = []
-
-[case]
-material = "brass"
-sources = []

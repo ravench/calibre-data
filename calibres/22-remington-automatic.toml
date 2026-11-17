@@ -37,7 +37,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf"]
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]
-
-[case]
-material = "brass"
-sources = []

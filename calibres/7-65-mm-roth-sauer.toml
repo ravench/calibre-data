@@ -42,7 +42,3 @@ sources = ["https://municion.org/producto/765-mm-roth-sauer/"]
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 465"]
-
-[case]
-material = "brass"
-sources = []

@@ -38,7 +38,3 @@ sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimf
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.22_Long"]
-
-[case]
-material = "brass"
-sources = []

@@ -24,7 +24,3 @@ sources = [
 [introduced]
 unknown = "neither Rapid Fire's table nor Wikipedia gives the year the first L/60 gun entered service."
 sources = ["https://en.wikipedia.org/wiki/Bofors_57_mm_gun"]
-
-[case]
-material = "brass"
-sources = []

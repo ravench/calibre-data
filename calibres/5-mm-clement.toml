@@ -51,7 +51,3 @@ sources = ["book:cotw-18 p. 527", "https://municion.org/producto/5-mm-clement/"]
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 457"]
-
-[case]
-material = "brass"
-sources = []

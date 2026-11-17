@@ -39,7 +39,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page131.pd
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
-
-[case]
-material = "brass"
-sources = []

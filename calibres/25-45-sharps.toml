@@ -52,7 +52,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf"]
 # The Sharps Rifle Company's factory load: Speer's Hot-Cor soft point.
 type = "softpoint"
 sources = ["book:cotw-18 p. 368"]
-
-[case]
-material = "brass"
-sources = []

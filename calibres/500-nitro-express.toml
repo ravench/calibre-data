@@ -40,7 +40,3 @@ sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-C
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.500_Nitro_Express"]
-
-[case]
-material = "brass"
-sources = []

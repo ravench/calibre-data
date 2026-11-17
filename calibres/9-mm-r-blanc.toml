@@ -32,7 +32,3 @@ sources = []
 # R on the C.I.P. 380 R Blanc / 9 mm R Blanc sheet
 rim_thickness = 1.25
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page11.pdf"]
-
-[case]
-material = "brass"
-sources = []

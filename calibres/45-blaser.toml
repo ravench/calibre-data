@@ -57,7 +57,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/45-blaser-220214-en.pdf
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 649"]
-
-[case]
-material = "brass"
-sources = []

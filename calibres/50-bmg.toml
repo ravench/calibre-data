@@ -55,10 +55,6 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page152.pdf"
 type = "jacketed"
 sources = ["book:cotw-18 p. 570"]
 
-[case]
-material = "brass"
-sources = []
-
 [[colour_codes]]
 part = "tip"
 colours = ["black"]

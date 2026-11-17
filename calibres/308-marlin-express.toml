@@ -57,7 +57,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page124.pdf"
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.308_Marlin_Express"]
-
-[case]
-material = "brass"
-sources = []

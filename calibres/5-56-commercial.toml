@@ -58,7 +58,3 @@ sources = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.5
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

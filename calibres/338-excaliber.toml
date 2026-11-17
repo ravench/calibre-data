@@ -50,7 +50,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-pegasus-en.pdf"]
 # boat-tail soft points (p. 406).
 type = "polymer"
 sources = []
-
-[case]
-material = "brass"
-sources = []

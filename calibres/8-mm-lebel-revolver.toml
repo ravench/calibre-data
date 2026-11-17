@@ -45,7 +45,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page16.pdf
 # military load.
 type = "jacketed"
 sources = ["https://municion.org/ficha-08-027-cbc-010-0001/", "https://municion.org/ficha-08-027-cbc-010-0002/"]
-
-[case]
-material = "brass"
-sources = []

@@ -48,7 +48,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page27.pdf
 # A hunting round; COTW 18 p. 624 has no factory data.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

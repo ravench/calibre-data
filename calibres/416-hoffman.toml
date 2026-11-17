@@ -50,7 +50,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page27.p
 # Inferred: the factory load gives the weight only; the page's handloads use soft points (p. 427).
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

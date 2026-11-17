@@ -54,7 +54,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page132.pdf"
 # Lapua's Scenar match factory load; an open-tip match bullet counts as jacketed.
 type = "jacketed"
 sources = ["book:cotw-18 p. 153"]
-
-[case]
-material = "brass"
-sources = []

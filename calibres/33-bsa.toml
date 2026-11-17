@@ -59,7 +59,3 @@ sources = ["book:donnelly p. 382", "https://municion.org/producto/33-bsa-belted-
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 586"]
-
-[case]
-material = "brass"
-sources = []

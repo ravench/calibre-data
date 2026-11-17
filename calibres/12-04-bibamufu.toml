@@ -53,7 +53,3 @@ sources = ["book:cotw-18 p. 252", "https://municion.org/producto/1204-mm-lazzero
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

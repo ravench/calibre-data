@@ -47,7 +47,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/28-nosler-230324-en.pdf
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
-
-[case]
-material = "brass"
-sources = []

@@ -40,7 +40,3 @@ sources = ["book:cotw-18 p. 453", "https://municion.org/producto/50-beowulf/"]
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 441"]
-
-[case]
-material = "brass"
-sources = []

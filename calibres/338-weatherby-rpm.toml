@@ -51,7 +51,3 @@ sources = ["book:cotw-18 p. 452", "https://saami.org/wp-content/uploads/2026/10/
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

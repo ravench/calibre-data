@@ -37,7 +37,3 @@ sources = ["https://en.wikipedia.org/wiki/2.34_mm_Rimfire"]
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

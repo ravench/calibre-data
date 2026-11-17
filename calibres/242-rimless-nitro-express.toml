@@ -57,7 +57,3 @@ sources = ["https://municion.org/producto/242-rimless-nitro-express-vickers/"]
 # COTW gives no factory load.
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

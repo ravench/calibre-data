@@ -51,7 +51,3 @@ sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.22_Creedmoor"]
-
-[case]
-material = "brass"
-sources = []

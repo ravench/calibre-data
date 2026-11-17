@@ -52,7 +52,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page76.pdf
 # Cor-Bon's factory loads: jacketed hollow points.
 type = "hollowpoint"
 sources = ["book:cotw-18 p. 419"]
-
-[case]
-material = "brass"
-sources = []

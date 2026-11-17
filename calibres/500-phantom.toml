@@ -44,7 +44,3 @@ sources = ["https://municion.org/producto/500-phantom/"]
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

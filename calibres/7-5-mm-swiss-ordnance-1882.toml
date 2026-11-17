@@ -50,7 +50,3 @@ sources = [
   "https://municion.org/producto/75-mm-swiss-ordnance-revolver-m-1882-86/",
   "book:cotw-18 p. 475",
 ]
-
-[case]
-material = "brass"
-sources = []

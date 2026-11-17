@@ -52,7 +52,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-pegasus-en.pdf"]
 # A-Square's factory loads: Nosler Ballistic Tips.
 type = "polymer"
 sources = ["book:cotw-18 p. 393"]
-
-[case]
-material = "brass"
-sources = []

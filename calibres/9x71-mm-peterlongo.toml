@@ -53,7 +53,3 @@ sources = ["https://municion.org/producto/9-x-71-peterlongo/"]
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 636"]
-
-[case]
-material = "brass"
-sources = []

@@ -36,7 +36,3 @@ sources = ["book:cotw-18 p. 529"]
 # COTW 18 p. 518 does not say; light cowboy-action loads are lead.
 type = "lead"
 sources = []
-
-[case]
-material = "brass"
-sources = []

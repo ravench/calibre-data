@@ -58,7 +58,3 @@ sources = ["https://municion.org/producto/500-450-express-3-1-4-bp-nbp-ne/"]
 # the page lists its factory loads as soft points.
 type = "lead"
 sources = []
-
-[case]
-material = "brass"
-sources = []

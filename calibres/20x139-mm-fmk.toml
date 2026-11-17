@@ -27,7 +27,3 @@ sources = ["book:rapid-fire p. 227"]
 # from 1939.
 year = 1938
 sources = ["https://www.vtg.admin.ch/dam/de/sd-web/5R5TuTlao8Qv/Geschichte_LW_ausgemusterte_Mittel_DE.pdf"]
-
-[case]
-material = "brass"
-sources = []

@@ -51,7 +51,3 @@ sources = ["https://municion.org/producto/7-mm-nambu/"]
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 464"]
-
-[case]
-material = "brass"
-sources = []

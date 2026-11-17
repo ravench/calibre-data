@@ -47,7 +47,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/22-arc-en.pdf"]
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.22_ARC"]
-
-[case]
-material = "brass"
-sources = []

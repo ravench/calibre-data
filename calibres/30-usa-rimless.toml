@@ -57,7 +57,3 @@ sources = ["book:cotw-18 p. 250", "https://municion.org/producto/30-blake/"]
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

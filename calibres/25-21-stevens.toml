@@ -38,7 +38,3 @@ sources = ["book:donnelly p. 213"]
 # COTW 18 p. 188 lists only handloads; municion.org's sheet shows a lead bullet.
 type = "lead"
 sources = ["https://municion.org/ficha-06-052-cbc-010-0001/"]
-
-[case]
-material = "brass"
-sources = []

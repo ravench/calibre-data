@@ -45,7 +45,3 @@ sources = ["https://municion.org/producto/9-x-23-bergmann-bayard-largo/"]
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

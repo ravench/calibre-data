@@ -73,10 +73,6 @@ type = "jacketed"
 jacket = "cupronickel"
 sources = ["book:poyer p. 50"]
 
-[case]
-material = "brass"
-sources = []
-
 [fired_by]
 firearms = ["Schmidt-Rubin M1889"]
 sources = ["https://fchm.ch/munition/zentralfeuerpatronen/schmidt-rubin-patrone/"]

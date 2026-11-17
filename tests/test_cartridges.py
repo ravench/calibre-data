@@ -927,11 +927,11 @@ class CatalogueTests(unittest.TestCase):
         for name, (material, url) in CASES.items():
             self.assertIn(name, names)
             self.assertIn(material, (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID), name)
-            if material != BRASS:
-                self.assertTrue(is_source(url), name)
-        # Every calibre with a case names its material, brass too; shot shells and loose projectiles have none.
-        self.assertEqual(set(CASES), {s["name"] for _, items in ALL_CATALOGUE for s in items
-                                      if s["kind"] not in (SHOT, BALL, MINIE, PELLET)})
+            self.assertTrue(is_source(url), name)
+        # A case material is written only with a source, brass too; shot shells and loose projectiles have none.
+        # Without one it is unknown and drawn as brass.
+        self.assertLessEqual(set(CASES), {s["name"] for _, items in ALL_CATALOGUE for s in items
+                                          if s["kind"] not in (SHOT, BALL, MINIE, PELLET)})
         self.assertEqual(case_material(".44 Henry"), COPPER)
         self.assertEqual(case_material("5.45x39 mm"), STEEL)
         self.assertEqual(case_material(".577 Snider"), PAPER)

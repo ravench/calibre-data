@@ -49,7 +49,3 @@ sources = ["book:cotw-18 p. 574", "https://municion.org/producto/95-x-60-r-turki
 # The military load: a paper-patched lead bullet over blackpowder.
 type = "paper"
 sources = ["book:cotw-18 p. 559"]
-
-[case]
-material = "brass"
-sources = []

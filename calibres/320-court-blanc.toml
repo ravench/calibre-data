@@ -32,7 +32,3 @@ sources = []
 # R on the C.I.P. 320 Court Blanc sheet
 rim_thickness = 1.32
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page7.pdf"]
-
-[case]
-material = "brass"
-sources = []

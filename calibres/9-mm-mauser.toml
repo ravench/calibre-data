@@ -44,7 +44,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/9-mm-mauser-en.pdf"]
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 479"]
-
-[case]
-material = "brass"
-sources = []

@@ -55,7 +55,3 @@ sources = ["book:cotw-18 p. 573", "https://municion.org/producto/485-x-49-britis
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 532"]
-
-[case]
-material = "brass"
-sources = []

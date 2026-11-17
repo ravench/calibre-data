@@ -50,7 +50,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf"
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 467"]
-
-[case]
-material = "brass"
-sources = []

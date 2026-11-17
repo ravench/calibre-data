@@ -41,7 +41,3 @@ sources = ["book:cotw-18 p. 608"]
 # COTW: the blackpowder loads had bare or paper-patched lead bullets.
 type = "lead"
 sources = ["book:cotw-18 p. 588"]
-
-[case]
-material = "brass"
-sources = []

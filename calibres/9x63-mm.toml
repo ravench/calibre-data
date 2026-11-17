@@ -52,7 +52,3 @@ sources = ["https://municion.org/producto/9-x-63-hessmer/"]
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 638"]
-
-[case]
-material = "brass"
-sources = []

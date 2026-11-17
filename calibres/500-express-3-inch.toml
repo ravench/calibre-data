@@ -44,7 +44,3 @@ sources = ["book:cotw-18 p. 609"]
 # p. 604, is a later Nitro-for-Black soft point.
 type = "lead"
 sources = []
-
-[case]
-material = "brass"
-sources = []

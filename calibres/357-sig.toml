@@ -57,7 +57,3 @@ sources = [
   "https://www.chuckhawks.com/subscribers/handgun_cartridge_page/357sig.htm",
   "book:cotw-18 p. 492",
 ]
-
-[case]
-material = "brass"
-sources = []

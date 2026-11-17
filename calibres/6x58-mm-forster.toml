@@ -54,7 +54,3 @@ sources = ["book:cotw-18 p. 651", "https://municion.org/producto/62-x-58-forster
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 615"]
-
-[case]
-material = "brass"
-sources = []

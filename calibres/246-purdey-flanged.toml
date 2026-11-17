@@ -49,7 +49,3 @@ sources = ["book:donnelly p. 197"]
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 578"]
-
-[case]
-material = "brass"
-sources = []

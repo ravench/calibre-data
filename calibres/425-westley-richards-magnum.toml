@@ -50,7 +50,3 @@ sources = ["https://municion.org/producto/425-westley-richards-magnum/"]
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 596"]
-
-[case]
-material = "brass"
-sources = []

@@ -54,7 +54,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf"]
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

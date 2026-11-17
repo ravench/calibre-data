@@ -40,7 +40,3 @@ sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimf
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
-
-[case]
-material = "brass"
-sources = []

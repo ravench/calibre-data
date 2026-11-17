@@ -56,7 +56,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.p
 # Inferred: the page gives only A-Square's handloads, with soft points (p. 435).
 type = "softpoint"
 sources = []
-
-[case]
-material = "brass"
-sources = []

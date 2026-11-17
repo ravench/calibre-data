@@ -40,10 +40,6 @@ ramp_angle = 44.0
 groove_width = 3.82
 sources = ["https://municion.org/producto/30-x-113-b-french-defa-30-550/"]
 
-[case]
-material = "brass"
-sources = []
-
 [current_cases]
 # The LW30 rounds of the M230 (AH-64 Apache), Aden/DEFA pattern (p. 111), have aluminium cases (p. 112).
 materials = ["aluminium"]

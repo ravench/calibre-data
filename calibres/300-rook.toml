@@ -44,7 +44,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/300-295-rook-rifle-en.
 # A blackpowder rook round.
 type = "lead"
 sources = ["book:cotw-18 p. 583"]
-
-[case]
-material = "brass"
-sources = []

@@ -44,7 +44,3 @@ sources = ["https://municion.org/producto/425-mm-lilliput/"]
 # naboje.org: loaded with a full metal jacket bullet of about 1 g.
 type = "jacketed"
 sources = ["https://naboje.org/node/2217"]
-
-[case]
-material = "brass"
-sources = []

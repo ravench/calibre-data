@@ -59,7 +59,3 @@ sources = ["https://municion.org/producto/276-pedersen-xpl-pd-42-case-pc-48-bull
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 543"]
-
-[case]
-material = "brass"
-sources = []

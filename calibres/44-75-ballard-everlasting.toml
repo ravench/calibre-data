@@ -43,7 +43,3 @@ sources = ["book:donnelly p. 577"]
 # probably for this case.
 type = "paper"
 sources = []
-
-[case]
-material = "brass"
-sources = []

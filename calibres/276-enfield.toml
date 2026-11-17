@@ -54,7 +54,3 @@ sources = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 542"]
-
-[case]
-material = "brass"
-sources = []

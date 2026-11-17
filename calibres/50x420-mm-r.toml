@@ -20,7 +20,3 @@ sources = ["book:rapid-fire p. 230", "https://en.wikipedia.org/wiki/5_cm_Pak_38"
 # The PaK 38 entered service in 1940.
 year = 1940
 sources = ["https://en.wikipedia.org/wiki/5_cm_Pak_38"]
-
-[case]
-material = "brass"
-sources = []

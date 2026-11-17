@@ -30,7 +30,3 @@ unknown = "a family of blanks and power-tool loads with no single launch"
 # R on the C.I.P. 22 SH (5,6/11) sheet
 rim_thickness = 1.12
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vi/tabvical-en-page3.pdf"]
-
-[case]
-material = "brass"
-sources = []

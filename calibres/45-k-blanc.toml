@@ -32,7 +32,3 @@ sources = []
 # R on the C.I.P. 45 K Blanc sheet
 rim_thickness = 1.2
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page12.pdf"]
-
-[case]
-material = "brass"
-sources = []
