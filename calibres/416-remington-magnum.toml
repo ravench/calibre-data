@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.416_Remington_Magnum",
   "book:ammo-encyclopedia-2 p. 350",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page31.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 13.5
 base = 13.0
 shoulder = 12.4
 shoulder_at = 60.69
+neck_at = 61.74
+neck_base = 11.38
 neck = 11.4
 case_length = 72.4
 overall_length = 91.4
@@ -44,6 +47,7 @@ rim_thickness = 1.27
 ramp_top = 5.59
 groove_diameter = 12.06
 ramp_angle = 35.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page31.pdf"]
 
 [bullet]

@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.250-3000_Savage",
   "book:ammo-encyclopedia-2 p. 287",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page93.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 12.01
 base = 11.86
 shoulder = 10.25
 shoulder_at = 38.4
+neck_at = 41.6
+neck_base = 7.33
 neck = 7.25
 case_length = 48.56
 overall_length = 63.88
@@ -44,6 +47,7 @@ rim_thickness = 1.24
 ramp_top = 3.14
 groove_diameter = 10.39
 ramp_angle = 36.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page93.pdf"]
 
 [bullet]

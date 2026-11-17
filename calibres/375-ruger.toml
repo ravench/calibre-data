@@ -6,13 +6,18 @@ profile = "round"
 aliases = ["375ruger"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.375_Ruger"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.375_Ruger",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf",
+]
 
 [mm]
 rim = 13.5
 base = 13.5
 shoulder = 13.1
 shoulder_at = 55.36
+neck_at = 57.78
+neck_base = 10.29
 neck = 10.3
 case_length = 65.5
 overall_length = 84.8
@@ -41,6 +46,7 @@ rim_thickness = 1.27
 ramp_top = 3.24
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]
 
 [bullet]

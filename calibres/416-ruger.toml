@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["416ruger"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.416_Ruger"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.416_Ruger",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page147.pdf",
+]
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
 rare = true
@@ -16,6 +19,8 @@ rim = 13.5
 base = 13.5
 shoulder = 13.0
 shoulder_at = 55.37
+neck_at = 56.93
+neck_base = 11.28
 neck = 11.3
 case_length = 65.3
 overall_length = 84.8
@@ -44,6 +49,7 @@ rim_thickness = 1.27
 ramp_top = 3.25
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page147.pdf"]
 
 [bullet]

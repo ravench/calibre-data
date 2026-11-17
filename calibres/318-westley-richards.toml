@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["318wr", "318rne"]
 
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.318_Westley_Richards"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.318_Westley_Richards",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page126.pdf",
+]
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
 rare = true
@@ -16,6 +19,8 @@ rim = 11.8
 base = 11.8
 shoulder = 11.1
 shoulder_at = 49.63
+neck_at = 51.87
+neck_base = 9.14
 neck = 9.1
 case_length = 60.1
 overall_length = 85.1
@@ -46,6 +51,7 @@ rim_thickness = 1.27
 ramp_top = 3.51
 groove_diameter = 10.52
 ramp_angle = 25.6
+groove_width = 0.81
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page126.pdf"]
 
 [bullet]

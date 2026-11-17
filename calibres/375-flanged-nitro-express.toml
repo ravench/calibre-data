@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["375flne", "370flanged"]
 
 origin = "GB"
-origin_sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
+origin_sources = [
+  "https://municion.org/producto/375-flanged-nitro-express/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page93.pdf",
+]
 rare = true
 
 [mm]

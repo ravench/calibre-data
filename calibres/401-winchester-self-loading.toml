@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["401wsl", "401 win. sl"]
 
 origin = "US"
-origin_sources = ["book:ammo-encyclopedia-2 p. 436"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 436",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page105.pdf",
+]
 obsolete = true
 rare = true
 

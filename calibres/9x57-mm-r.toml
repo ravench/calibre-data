@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["9x57r"]
 
 origin = "DE"
-origin_sources = ["book:ammo-encyclopedia-2 p. 431"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 431",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page48.pdf",
+]
 obsolete = true
 # Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
 # the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
@@ -17,6 +20,8 @@ rim = 13.4
 base = 11.96
 shoulder = 10.95
 shoulder_at = 46.14
+neck_at = 47.76
+neck_base = 9.83
 neck = 9.83
 case_length = 56.8
 overall_length = 81.0

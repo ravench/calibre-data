@@ -8,7 +8,9 @@ profile = "round"
 aliases = ["45-110 sharps", "45-2 7/8 sharps", "45 sharps 2 7/8"]
 
 origin = "US"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/45-110-sharps-170428-en.pdf",
+]
 obsolete = true
 rare = true
 

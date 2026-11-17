@@ -5,13 +5,18 @@ profile = "round"
 aliases = ["tokarev", "7.62tok", "7.62x25"]
 
 origin = "SU"
-origin_sources = ["https://en.wikipedia.org/wiki/7.62×25mm_Tokarev"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7.62×25mm_Tokarev",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf",
+]
 
 [mm]
 rim = 9.95
 base = 9.83
 shoulder = 9.48
 shoulder_at = 19.6
+neck_at = 21.04
+neck_base = 8.49
 neck = 8.49
 case_length = 25.0
 overall_length = 35.2
@@ -38,6 +43,7 @@ rim_thickness = 1.32
 ramp_top = 3.34
 groove_diameter = 8.65
 ramp_angle = 30.0
+groove_width = 1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf"]
 
 [bullet]

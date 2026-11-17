@@ -7,13 +7,18 @@ profile = "spitzer"
 aliases = ["8x56r"]
 
 origin = "AT"
-origin_sources = ["https://en.wikipedia.org/wiki/8×56mmR"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×56mmR",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page31.pdf",
+]
 
 [mm]
 rim = 14.05
 base = 12.47
 shoulder = 12.0
 shoulder_at = 37.03
+neck_at = 49.53
+neck_base = 9.1
 neck = 9.2
 case_length = 55.63
 overall_length = 75.91

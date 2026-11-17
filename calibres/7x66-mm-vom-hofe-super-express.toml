@@ -6,7 +6,10 @@ profile = "spitzer"
 aliases = ["7x66", "7mm se", "7x66se"]
 
 origin = "DE"
-origin_sources = ["https://municion.org/producto/7-x-66-super-express-vom-hofe/"]
+origin_sources = [
+  "https://municion.org/producto/7-x-66-super-express-vom-hofe/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page42.pdf",
+]
 obsolete = true
 rare = true
 
@@ -15,6 +18,8 @@ rim = 13.0
 base = 13.85
 shoulder = 12.7
 shoulder_at = 53.6
+neck_at = 57.52
+neck_base = 8.17
 neck = 8.17
 case_length = 66.0
 overall_length = 84.0
@@ -40,6 +45,7 @@ rim_thickness = 1.3
 ramp_top = 3.7
 groove_diameter = 11.5
 ramp_angle = 40.0
+groove_width = 1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page42.pdf"]
 
 [bullet]

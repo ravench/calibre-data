@@ -9,6 +9,7 @@ origin = "GB"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.577_Nitro_Express",
   "book:ammo-encyclopedia-2 p. 369",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page128.pdf",
 ]
 # Still made, but hardly ever found:
 rare = true

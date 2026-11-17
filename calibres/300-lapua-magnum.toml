@@ -6,7 +6,10 @@ profile = "spitzer"
 aliases = ["300lapua", "300lm"]
 
 origin = "FI"
-origin_sources = ["https://en.wikipedia.org/wiki/.300_Lapua_Magnum"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.300_Lapua_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page116.pdf",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 
@@ -15,6 +18,8 @@ rim = 14.93
 base = 14.91
 shoulder = 13.82
 shoulder_at = 54.9
+neck_at = 60.31
+neck_base = 8.78
 neck = 8.73
 case_length = 69.73
 overall_length = 94.5
@@ -43,6 +48,7 @@ rim_thickness = 1.52
 ramp_top = 3.12
 groove_diameter = 13.24
 ramp_angle = 50.0
+groove_width = 0.9
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page116.pdf"]
 
 [bullet]

@@ -8,6 +8,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.204_Ruger",
   "book:ammo-encyclopedia-2 p. 263",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page79.pdf",
 ]
 
 [mm]
@@ -15,6 +16,8 @@ rim = 9.6
 base = 9.56
 shoulder = 9.14
 shoulder_at = 39.08
+neck_at = 41.91
+neck_base = 5.87
 neck = 5.87
 case_length = 47.0
 overall_length = 57.4
@@ -43,6 +46,7 @@ rim_thickness = 1.14
 ramp_top = 3.11
 groove_diameter = 8.43
 ramp_angle = 25.0
+groove_width = 0.76
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page79.pdf"]
 
 [bullet]

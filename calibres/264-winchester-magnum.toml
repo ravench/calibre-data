@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.264_Winchester_Magnum",
   "book:ammo-encyclopedia-2 p. 392",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page13.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 13.5
 base = 13.1
 shoulder = 12.5
 shoulder_at = 51.82
+neck_at = 57.05
+neck_base = 7.59
 neck = 7.6
 case_length = 64.0
 overall_length = 85.0
@@ -44,6 +47,7 @@ rim_thickness = 1.27
 ramp_top = 5.59
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page13.pdf"]
 
 [bullet]

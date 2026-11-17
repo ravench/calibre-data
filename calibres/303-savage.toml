@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.303_Savage",
   "book:ammo-encyclopedia-2 p. 401",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf",
 ]
 obsolete = true
 rare = true
@@ -18,6 +19,8 @@ rim = 12.8
 base = 11.2
 shoulder = 10.5
 shoulder_at = 34.33
+neck_at = 37.54
+neck_base = 8.66
 neck = 8.5
 case_length = 51.2
 overall_length = 64.0

@@ -8,6 +8,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.32_S%26W_Long",
   "book:ammo-encyclopedia-2 p. 620",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/32s-w-long-190829-en.pdf",
 ]
 
 [mm]

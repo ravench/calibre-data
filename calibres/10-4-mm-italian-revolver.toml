@@ -7,7 +7,9 @@ profile = "round"
 aliases = ["10.4 italian", "10.4 ord. it.", "10.35 glisenti", "10.35 italian revolver", "10.4 italian revolver"]
 
 origin = "IT"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page33.pdf",
+]
 obsolete = true
 rare = true
 
@@ -16,6 +18,8 @@ rim = 13.2
 base = 11.8
 shoulder = 11.23
 shoulder_at = 13.0
+neck_at = 14.22
+neck_base = 10.86
 neck = 10.86
 case_length = 19.8
 overall_length = 30.2

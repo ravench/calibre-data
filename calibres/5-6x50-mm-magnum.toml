@@ -6,13 +6,18 @@ profile = "spitzer"
 aliases = ["5.6x50", "5.6x50mag"]
 
 origin = "DE"
-origin_sources = ["https://en.wikipedia.org/wiki/5.6×50mm_Magnum"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/5.6×50mm_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page4.pdf",
+]
 
 [mm]
 rim = 9.6
 base = 9.56
 shoulder = 9.0
 shoulder_at = 40.26
+neck_at = 43.23
+neck_base = 6.48
 neck = 6.48
 case_length = 50.0
 overall_length = 61.3
@@ -41,6 +46,7 @@ rim_thickness = 1.14
 ramp_top = 3.1
 groove_diameter = 8.44
 ramp_angle = 25.8
+groove_width = 0.8
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page4.pdf"]
 
 [bullet]

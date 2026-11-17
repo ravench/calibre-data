@@ -8,7 +8,9 @@ profile = "round"
 aliases = ["297/230 short", "297/230 morris"]
 
 origin = "GB"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page65.pdf",
+]
 obsolete = true
 rare = true
 
@@ -17,6 +19,8 @@ rim = 9.02
 base = 7.59
 shoulder = 7.37
 shoulder_at = 8.71
+neck_at = 10.49
+neck_base = 6.2
 neck = 6.15
 case_length = 14.99
 overall_length = 22.61

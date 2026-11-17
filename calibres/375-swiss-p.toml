@@ -8,7 +8,10 @@ aliases = ["375swissp", "375 swiss p", "9.5x70"]
 display_aliases = ["9.5x70 mm"]
 
 origin = "CH"
-origin_sources = ["https://municion.org/producto/375-swiss-p/"]
+origin_sources = [
+  "https://municion.org/producto/375-swiss-p/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/375-swiss-p-180302-en.pdf",
+]
 rare = true
 
 [mm]
@@ -16,6 +19,8 @@ rim = 14.93
 base = 15.73
 shoulder = 14.8
 shoulder_at = 57.43
+neck_at = 61.85
+neck_base = 10.3
 neck = 10.3
 case_length = 69.85
 overall_length = 93.5
@@ -42,6 +47,7 @@ rim_thickness = 1.52
 ramp_top = 3.81
 groove_diameter = 13.24
 ramp_angle = 50.0
+groove_width = 1.25
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/375-swiss-p-180302-en.pdf"]
 
 [bullet]

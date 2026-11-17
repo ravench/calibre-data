@@ -9,7 +9,7 @@ countries.toml, books.toml and lookalikes.toml (README.md lists every field). Th
 checks them and builds the tables the apps' generators, outline.py and the poster use.
 `python3 check.py` lists every problem in the files.
 """
-import difflib, os, re, unicodedata
+import difflib, math, os, re, unicodedata
 
 try:
     import tomllib
@@ -162,13 +162,19 @@ def slug(name):
 # Measurements by shape: the short forms of balls, Minié bullets, pellets, shot shells and crimped
 # blanks, and the full form of every other cartridge (shoulder and shoulder_at only for bottlenecks, belt
 # only for a belt wider than the rim).
-MM_FULL = ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "case_length", "overall_length", "bullet")
+MM_FULL = ("rim", "belt", "base", "shoulder", "shoulder_at", "neck_at", "neck_base", "neck", "case_length",
+           "overall_length", "bullet")
+# Bottleneck cases only: where the neck starts (C.I.P. L2, head to the shoulder's front end) and the neck's
+# diameter there (H1). The drawing does not use them yet.
+NECK_KEYS = ("neck_at", "neck_base")
+NECK_SLACK = 0.15
 MM_SHAPES = {  # shape: (required keys, optional keys)
     "ball": (("diameter",), ()),
     "loose": (("diameter", "length"), ()),
     "shot": (("diameter", "rim", "length"), ("case_length",)),
     "blank": (("rim", "base", "mouth", "length"), ()),
-    "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"), ("belt", "shoulder", "shoulder_at")),
+    "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"),
+                  ("belt", "shoulder", "shoulder_at") + NECK_KEYS),
     "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length")),
 }
 TOP_KEYS = {"name", "categories", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
@@ -180,12 +186,14 @@ MOUTH_SLACK = 0.05
 # [case_head] keys beside rim_thickness: the extractor groove of a rimless, semi-rimmed or belted case, all three
 # or none.
 HEAD_GROOVE = ("ramp_top", "groove_diameter", "ramp_angle")
+# Optional beside them: the groove's width at its floor (C.I.P. e min, a minimum), not used by the drawing yet.
+GROOVE_WIDTH = "groove_width"
 FACTS = {  # table: (required keys, optional keys, sources: "required", "optional" or "may be empty")
     "mm": ((), (), "may be empty"),  # keys by shape, above
     "introduced": ((), ("year", "unknown"), "optional"),
     "primer": (("size",), ("diameter",), "may be empty"),  # diameter: measured mm, required for miniature
     "shoulder_angle": (("degrees",), (), "required"),
-    "case_head": (("rim_thickness",), HEAD_GROOVE, "required"),
+    "case_head": (("rim_thickness",), HEAD_GROOVE + (GROOVE_WIDTH,), "required"),
     "bullet": (("type",), ("jacket", "patch_length"), "may be empty"),
     "case": (("material",), (), "may be empty"),  # every case but brass needs a source
     "current_cases": (("materials",), (), "required"),
@@ -326,6 +334,31 @@ def _check_widths(f, mm):
         if round(b - a, 3) > slack:
             f.problem(f.line("mm", narrow), f"[mm] {narrow} {b} is {f'more than {slack} ' if slack else ''}wider than "
                                             f"{wide} {a}: a case narrows from its base to its mouth")
+
+
+def _check_neck(f, mm):
+    """neck_at lies between shoulder_at and case_length; neck_base between the neck and the shoulder. neck_base
+    may be up to NECK_SLACK below the neck: a book's rounded neck can be wider than the C.I.P. H1 (.17 Remington:
+    neck 5.1 from Cartridges of the World, H1 5.05)."""
+    num = lambda k: mm[k] if _is_number(mm.get(k)) and mm[k] > 0 else None  # noqa: E731
+    at, base = num("neck_at"), num("neck_base")
+    if at is not None and num("shoulder_at") and num("case_length") and not num("shoulder_at") < at < num("case_length"):
+        f.problem(f.line("mm", "neck_at"), f"[mm] neck_at {at} is where the neck starts: past shoulder_at "
+                                           f"{mm['shoulder_at']} and short of case_length {mm['case_length']}")
+    if base is not None and num("neck") and num("shoulder") and not num("neck") - NECK_SLACK <= base <= num("shoulder"):
+        f.problem(f.line("mm", "neck_base"), f"[mm] neck_base {base} is the neck's diameter where it starts: from "
+                                             f"neck {mm['neck']} to shoulder {mm['shoulder']}")
+
+
+def _groove_room(head, mm, kind):
+    """How long the groove's floor can be: ramp_top less the rim and the front ramp up to the base (up to the
+    rim on a belted case, whose ramp climbs to the belt). None when a value is missing or not a number."""
+    vals = [head.get(k) for k in ("ramp_top", "rim_thickness", "groove_diameter", "ramp_angle", GROOVE_WIDTH)]
+    top = mm.get("rim") if kind == BELTED else mm.get("base")
+    if not all(_is_number(v) for v in vals + [top]):
+        return None
+    ramp = max(top - head["groove_diameter"], 0) / 2 / math.tan(math.radians(head["ramp_angle"]))
+    return head["ramp_top"] - head["rim_thickness"] - ramp
 
 
 def _check_unsourced(f, mm):
@@ -587,6 +620,10 @@ def _read_calibre(f, countries, books=None):
             if _shape(kind, profile, category) == "cartridge" and ("shoulder" in data) != ("shoulder_at" in data):
                 f.problem(f.line("mm"), "[mm] needs both shoulder and shoulder_at (bottleneck) or neither (straight case)")
                 ok = False
+            elif any(k in data for k in NECK_KEYS) and "shoulder" not in data:
+                f.problem(f.line("mm"), "[mm] neck_at and neck_base are for bottleneck cases (with shoulder and shoulder_at)")
+            elif ("neck_at" in data) != ("neck_base" in data):
+                f.problem(f.line("mm"), "[mm] has neck_at and neck_base together (C.I.P. L2 and H1), or neither")
         allowed = set(req) | set(opt) | {"sources"} | ({"unsourced"} if t == "mm" else set())
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)
@@ -599,6 +636,7 @@ def _read_calibre(f, countries, books=None):
                     f.problem(f.line(t, k), f"[{t}] {k} must be a number above 0, without quotes")
         if t == "mm":
             _check_widths(f, data)
+            _check_neck(f, data)
             _check_unsourced(f, data)
         if t == "introduced":
             if ("year" in data) == ("unknown" in data):
@@ -726,6 +764,14 @@ def _read_calibre(f, countries, books=None):
         elif groove and len(groove) < len(HEAD_GROOVE):
             f.problem(f.line("case_head"), "[case_head] has ramp_top, groove_diameter and ramp_angle together, "
                                            "or only rim_thickness")
+        elif GROOVE_WIDTH in facts["case_head"] and not groove:
+            f.problem(f.line("case_head", GROOVE_WIDTH), "[case_head] groove_width goes with the groove "
+                                                         "(ramp_top, groove_diameter and ramp_angle)")
+        elif GROOVE_WIDTH in facts["case_head"] and (room := _groove_room(facts["case_head"], m, kind)) is not None \
+                and not 0.3 <= facts["case_head"][GROOVE_WIDTH] <= round(room + 0.15, 2):
+            f.problem(f.line("case_head", GROOVE_WIDTH), f"[case_head] groove_width is the groove's floor: from 0.3 to "
+                                                         f"the {room + 0.15:.2f} that ramp_top leaves after the rim and "
+                                                         f"the ramp")
     aliases = d.get("aliases", []) if _is_text_list(d.get("aliases")) else []
     entry = _entry(name, kind, profile, aliases, facts["mm"], category)
     return entry, d, facts
@@ -927,7 +973,7 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
                          "CURRENT_CASES", "SOURCES", "UNSOURCED", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
@@ -974,11 +1020,15 @@ def load(root=ROOT):
                     t["PRIMER_SOURCES"][n] = first("primer")
                 else:
                     sets["PRIMER_UNVERIFIED"].add(n)
+            if "neck_at" in mm or "neck_base" in mm:
+                t["NECKS"][n] = (mm.get("neck_at"), mm.get("neck_base"))
             if "shoulder_angle" in facts:
                 t["SHOULDER_ANGLES"][n] = (facts["shoulder_angle"]["degrees"], first("shoulder_angle"))
             if "case_head" in facts:
                 h = facts["case_head"]
                 t["RIM_THICKNESS"][n] = (h["rim_thickness"], first("case_head"))
+                if GROOVE_WIDTH in h:
+                    t["GROOVE_WIDTHS"][n] = (h[GROOVE_WIDTH], first("case_head"))
                 if "ramp_top" in h:
                     t["CASE_HEADS"][n] = (h["rim_thickness"], h["ramp_top"], h["groove_diameter"], h["ramp_angle"],
                                           first("case_head"))
@@ -1042,6 +1092,11 @@ SHOULDER_ANGLES = _t["SHOULDER_ANGLES"]
 CASE_HEADS = _t["CASE_HEADS"]
 # {name: (rim thickness, first source)}: every case with a [case_head], CASE_HEADS' ones too.
 RIM_THICKNESS = _t["RIM_THICKNESS"]
+# {name: (width of the extractor groove's floor, first [case_head] source)}: the C.I.P. e min, where given.
+GROOVE_WIDTHS = _t["GROOVE_WIDTHS"]
+# {name: (neck_at, neck_base)}: where a bottleneck case's neck starts and its diameter there (C.I.P. L2 and
+# H1), either None when not given; the [mm] sources cover them.
+NECKS = _t["NECKS"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
 # code: {"en", "de", "fr", "it"}: the country's name in the apps' languages (Kaliberfinder's

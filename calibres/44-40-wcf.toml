@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.44-40_Winchester",
   "book:ammo-encyclopedia-2 p. 353",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page108.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 13.34
 base = 11.97
 shoulder = 11.6
 shoulder_at = 23.58
+neck_at = 25.79
+neck_base = 11.29
 neck = 11.25
 case_length = 33.2
 overall_length = 40.44

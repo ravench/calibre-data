@@ -8,7 +8,10 @@ profile = "round"
 aliases = ["30sc", "30supercarry"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.30_Super_Carry"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30_Super_Carry",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/30-super-carry-250223-en.pdf",
+]
 
 [mm]
 # C.I.P. 30 Super Carry, maximum cartridge.
@@ -34,6 +37,7 @@ rim_thickness = 1.27
 ramp_top = 2.98
 groove_diameter = 7.57
 ramp_angle = 35.0
+groove_width = 0.89
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/30-super-carry-250223-en.pdf"]
 
 [bullet]

@@ -5,13 +5,18 @@ profile = "spitzer"
 aliases = ["6arc"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/6mm_ARC"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6mm_ARC",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-mm-arc-en.pdf",
+]
 
 [mm]
 rim = 11.2
 base = 11.2
 shoulder = 10.9
 shoulder_at = 28.47
+neck_at = 31.9
+neck_base = 6.96
 neck = 6.96
 case_length = 37.85
 overall_length = 57.4
@@ -43,6 +48,7 @@ rim_thickness = 1.5
 ramp_top = 3.52
 groove_diameter = 9.55
 ramp_angle = 45.0
+groove_width = 1.19
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-mm-arc-en.pdf"]
 
 [bullet]

@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["350rigby"]
 
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.350_Rigby"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.350_Rigby",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 
@@ -15,6 +18,8 @@ rim = 13.36
 base = 13.16
 shoulder = 11.43
 shoulder_at = 57.15
+neck_at = 57.99
+neck_base = 9.75
 neck = 9.7
 case_length = 69.85
 overall_length = 90.8
@@ -44,6 +49,7 @@ rim_thickness = 1.52
 ramp_top = 3.81
 groove_diameter = 11.61
 ramp_angle = 26.9
+groove_width = 0.76
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf"]
 
 [bullet]

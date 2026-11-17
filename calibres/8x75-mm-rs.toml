@@ -9,7 +9,10 @@ profile = "spitzer"
 aliases = ["8x75rs"]
 
 origin = "DE"
-origin_sources = ["https://municion.org/producto/8-x-75-r-behr/"]
+origin_sources = [
+  "https://municion.org/producto/8-x-75-r-behr/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page42.pdf",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 
@@ -18,6 +21,8 @@ rim = 13.35
 base = 11.9
 shoulder = 10.4
 shoulder_at = 66.2
+neck_at = 69.06
+neck_base = 9.08
 neck = 9.08
 case_length = 74.6
 overall_length = 96.0

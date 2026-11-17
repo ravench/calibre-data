@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["9x25 sag", "9mm sag", "9x25 super auto g", "9 mm super auto grillmayer", "9 sag"]
 
 origin = "AT"
-origin_sources = ["https://municion.org/producto/9-x-25-super-auto-g/"]
+origin_sources = [
+  "https://municion.org/producto/9-x-25-super-auto-g/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/9-x-25-super-auto-g-en.pdf",
+]
 rare = true
 
 [mm]
@@ -15,6 +18,8 @@ rim = 10.85
 base = 10.8
 shoulder = 10.72
 shoulder_at = 18.51
+neck_at = 20
+neck_base = 9.64
 neck = 9.63
 case_length = 25.35
 overall_length = 32.7
@@ -40,6 +45,7 @@ rim_thickness = 1.4
 ramp_top = 3.62
 groove_diameter = 8.85
 ramp_angle = 45.0
+groove_width = 1.25
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/9-x-25-super-auto-g-en.pdf"]
 
 [bullet]

@@ -10,7 +10,10 @@ profile_today = "spitzer"
 aliases = ["275rigby", "275hvrigby", "275bore"]
 
 origin = "GB"
-origin_sources = ["https://municion.org/producto/275-rigby/"]
+origin_sources = [
+  "https://municion.org/producto/275-rigby/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page101.pdf",
+]
 # Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
 # the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
 rare = true
@@ -20,6 +23,8 @@ rim = 12.06
 base = 12.04
 shoulder = 10.87
 shoulder_at = 43.79
+neck_at = 47.35
+neck_base = 8.23
 neck = 8.23
 case_length = 56.9
 overall_length = 77.98
@@ -49,6 +54,7 @@ rim_thickness = 1.09
 ramp_top = 2.97
 groove_diameter = 10.54
 ramp_angle = 35.0
+groove_width = 0.81
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page101.pdf"]
 
 [bullet]
