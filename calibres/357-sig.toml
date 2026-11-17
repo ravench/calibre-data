@@ -7,13 +7,18 @@ aliases = ["357sig"]
 
 # SIGARMS (Exeter NH) with Federal 1994: CH
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.357_SIG"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.357_SIG",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page53.pdf",
+]
 
 [mm]
 rim = 10.77
 base = 10.77
 shoulder = 10.7
 shoulder_at = 16.48
+neck_at = 18.16
+neck_base = 9.68
 neck = 9.68
 case_length = 21.97
 overall_length = 28.96
@@ -42,6 +47,7 @@ rim_thickness = 1.4
 ramp_top = 3.59
 groove_diameter = 8.81
 ramp_angle = 43.0
+groove_width = 1.14
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page53.pdf"]
 
 [bullet]

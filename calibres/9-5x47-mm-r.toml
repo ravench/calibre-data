@@ -38,6 +38,11 @@ sources = ["book:cotw-18 p. 652"]
 degrees = 6.1
 sources = ["https://municion.org/producto/95-x-47-r-mb-stahl/"]
 
+[case_head]
+# .09 in.
+rim_thickness = 2.29
+sources = ["book:donnelly p. 938"]
+
 [bullet]
 # A blackpowder target round (COTW 18 p. 644); municion.org's sheet shows a lead bullet.
 type = "lead"

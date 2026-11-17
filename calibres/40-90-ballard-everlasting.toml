@@ -32,6 +32,12 @@ sources = ["book:cotw-18 p. 218"]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 250"]
 
+[case_head]
+# .046 in.
+# Donnelly's entry is titled .40-85 Ballard: rim .545 in., case 2.94 in., as the file.
+rim_thickness = 1.17
+sources = ["book:donnelly p. 507"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 219"]

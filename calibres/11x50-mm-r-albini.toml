@@ -40,6 +40,11 @@ sources = []
 degrees = 18.6
 sources = ["https://naboje.org/node/11147"]
 
+[case_head]
+# .075 in.
+rim_thickness = 1.9
+sources = ["book:donnelly p. 966"]
+
 [bullet]
 # The military load: a paper-patched lead bullet over blackpowder.
 type = "paper"

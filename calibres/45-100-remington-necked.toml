@@ -35,6 +35,11 @@ sources = ["book:cotw-18 p. 243"]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 252"]
 
+[case_head]
+# .062 in.
+rim_thickness = 1.57
+sources = ["book:donnelly p. 608"]
+
 [bullet]
 # COTW 18 p. 243 gives no load; a lead bullet, as in the other blackpowder rounds of its time.
 type = "lead"

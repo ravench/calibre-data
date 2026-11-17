@@ -6,7 +6,10 @@ profile = "spitzer"
 aliases = ["8x65rs"]
 
 origin = "DE"
-origin_sources = ["https://en.wikipedia.org/wiki/8×64mm_S"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×64mm_S",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page40.pdf",
+]
 # Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
 # the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
 rare = true
@@ -16,6 +19,8 @@ rim = 13.32
 base = 11.99
 shoulder = 10.85
 shoulder_at = 51.8
+neck_at = 55.59
+neck_base = 8.96
 neck = 8.96
 case_length = 65.0
 overall_length = 87.5

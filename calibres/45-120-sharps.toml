@@ -9,7 +9,10 @@ profile = "round"
 aliases = ["45-120 sharps", "45-125 sharps", "45-3 1/4 sharps"]
 
 origin = "US"
-origin_sources = ["https://municion.org/producto/45-120-sharps-straight-3-1-4/"]
+origin_sources = [
+  "https://municion.org/producto/45-120-sharps-straight-3-1-4/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/45-120-sharps-3-1-4-180803-en.pdf",
+]
 obsolete = true
 rare = true
 

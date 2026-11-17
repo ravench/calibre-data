@@ -6,13 +6,18 @@ profile = "spitzer"
 aliases = ["6mmrem", "244rem"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/6mm_Remington"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6mm_Remington",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page16.pdf",
+]
 
 [mm]
 rim = 12.0
 base = 12.0
 shoulder = 10.9
 shoulder_at = 43.81
+neck_at = 47.81
+neck_base = 7.01
 neck = 7.0
 case_length = 56.7
 overall_length = 71.8
@@ -41,6 +46,7 @@ rim_thickness = 1.24
 ramp_top = 3.4
 groove_diameter = 10.36
 ramp_angle = 34.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page16.pdf"]
 
 [bullet]

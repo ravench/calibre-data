@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["velodog", "5.75velodog", "5.5velodog", "5.5x30r"]
 
 origin = "FR"
-origin_sources = ["https://municion.org/producto/56-mm-velo-dog/"]
+origin_sources = [
+  "https://municion.org/producto/56-mm-velo-dog/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page3.pdf",
+]
 rare = true
 
 [mm]
@@ -27,6 +30,11 @@ sources = ["https://municion.org/producto/56-mm-velo-dog/"]
 # 4.15 mm, 8 specimens
 size = "small-pistol"
 sources = ["https://municion.org/producto/56-mm-velo-dog/"]
+
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.3
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page3.pdf"]
 
 [bullet]
 type = "jacketed"

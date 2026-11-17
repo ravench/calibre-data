@@ -7,13 +7,18 @@ profile = "spitzer"
 aliases = ["7x65r"]
 
 origin = "DE"
-origin_sources = ["https://en.wikipedia.org/wiki/7×64mm"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7×64mm",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page24.pdf",
+]
 
 [mm]
 rim = 13.32
 base = 11.89
 shoulder = 10.8
 shoulder_at = 51.5
+neck_at = 55.36
+neck_base = 7.95
 neck = 7.95
 case_length = 65.0
 overall_length = 83.6

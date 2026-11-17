@@ -29,6 +29,11 @@ sources = ["book:cotw-18 p. 477"]
 size = "small-pistol"
 sources = []
 
+[case_head]
+# .058 in.
+rim_thickness = 1.47
+sources = ["book:donnelly p. 839"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 477"]

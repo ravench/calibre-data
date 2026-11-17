@@ -9,7 +9,10 @@ profile = "round"
 aliases = ["9.3x72r"]
 
 origin = "DE"
-origin_sources = ["https://municion.org/producto/93-x-72-r/"]
+origin_sources = [
+  "https://municion.org/producto/93-x-72-r/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page50.pdf",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 

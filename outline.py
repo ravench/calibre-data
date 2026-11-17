@@ -1,6 +1,6 @@
 """Side-view outlines of the catalogue cartridges, shared by both apps and the poster.
 
-outline(spec) returns {"width", "height", "case"?, "head"?, "bullet"?, "patch"?, "tip"?, "bulletMaterial"?,
+outline(spec) returns {"width", "height", "case"?, "head"?, "bullet"?, "patch"?, "tip"?, "cavity"?, "bulletMaterial"?,
 "tipMaterial"?, "caseMaterial"?, "headMaterial"?, "currentCaseMaterials"?}:
 millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bottom
 (y = overall length), centred in `width`.
@@ -236,14 +236,15 @@ PAPER_HEAD = 12.7
 HOLLOW_MOUTH, HOLLOW_DEPTH = 0.3, 0.8
 
 
-def hollow_profile(r, y0, top, profile):
-    """Right half of a hollow-point bullet: the round's own nose, cut off where it is as wide as the
-    cavity's mouth, with the cavity below the cut (at most 0.3 of the exposed bullet deep)."""
+def cavity_profile(r, y0, top, profile):
+    """Right half of a hollow-point bullet's cavity, a hidden line inside the round's full nose (tester,
+    2026-11-16): its mouth where the nose is as wide as it, and its apex below (at most 0.3 of the exposed
+    bullet deep)."""
     pts, m = bullet_profile(r, y0, top, profile), HOLLOW_MOUTH * r
     i = next(i for i, (x, _) in enumerate(pts) if x <= m)
     (xa, ya), (xb, yb) = pts[i - 1], pts[i]
     y = ya + (xa - m) / (xa - xb) * (yb - ya)
-    return pts[:i] + [(m, y), (0, y - min(HOLLOW_DEPTH * r, 0.3 * (y - y0)))]
+    return [(m, y), (0, y - min(HOLLOW_DEPTH * r, 0.3 * (y - y0)))]
 
 
 def tip_profile(right, top, share=TIP_SHARE):
@@ -285,10 +286,10 @@ def outline(s):
     paths = {}
     if k == SHOT:
         r, rim, L = s["base"] / 2, s["rim"] / 2, s["oal"]  # the loaded shell as crimped, not the opened hull
-        head = 0.2 * L
-        hull = [(r * 0.98, 1.5), (r * 0.98, L - 2.2), (r * 0.8, L - 0.6), (r * 0.35, L)]
+        head, t = 0.2 * L, rim_thickness(s["name"]) or RIMMED_RIM
+        hull = [(r * 0.98, t), (r * 0.98, L - 2.2), (r * 0.8, L - 0.6), (r * 0.35, L)]
         paths["case"] = to_path(mirror(hull), H, hw)
-        paths["head"] = to_path(mirror([(rim, 0), (rim, 1.5), (r, 1.5), (r, head)]), H, hw)
+        paths["head"] = to_path(mirror([(rim, 0), (rim, t), (r, t), (r, head)]), H, hw)
     elif k == BALL:
         r = s["bullet"] / 2
         circ = [(r * math.sin(math.pi * i / (2 * N)), r - r * math.cos(math.pi * i / (2 * N))) for i in range(0, 2 * N + 1)]
@@ -310,8 +311,10 @@ def outline(s):
         if s["oal"] > s["case"] + 0.1:
             kind = bullet(s["name"])
             r, y0, top = s["bullet"] / 2, s["case"], s["oal"]
-            right = hollow_profile(r, y0, top, s["profile"]) if kind == HOLLOW_POINT else bullet_profile(r, y0, top, s["profile"])
+            right = bullet_profile(r, y0, top, s["profile"])
             paths["bullet"] = to_path(mirror(right), H, hw)
+            if kind == HOLLOW_POINT:
+                paths["cavity"] = to_path(mirror(cavity_profile(r, y0, top, s["profile"])), H, hw)
             if s["profile"] == PATCHED:
                 # The bullet path is the whole silhouette (steel cap colour); the paper band goes on top.
                 paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"])), H, hw)

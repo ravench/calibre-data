@@ -38,6 +38,11 @@ sources = ["book:cotw-18 p. 651"]
 degrees = 17.8
 sources = ["https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/"]
 
+[case_head]
+# .062 in.
+rim_thickness = 1.57
+sources = ["book:donnelly p. 776"]
+
 [bullet]
 # The service or target load, full metal jacket; p. 620 also lists soft points.
 type = "jacketed"

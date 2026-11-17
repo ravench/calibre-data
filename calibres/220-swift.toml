@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.220_Swift",
   "book:ammo-encyclopedia-2 p. 271",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page83.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 12.0
 base = 11.3
 shoulder = 10.2
 shoulder_at = 43.76
+neck_at = 48.41
+neck_base = 6.64
 neck = 6.6
 case_length = 56.0
 overall_length = 68.1
@@ -44,6 +47,7 @@ rim_thickness = 1.24
 ramp_top = 2.89
 groove_diameter = 10.82
 ramp_angle = 15.0
+groove_width = 0.64
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page83.pdf"]
 
 [bullet]

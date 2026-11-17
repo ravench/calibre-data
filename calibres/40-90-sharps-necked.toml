@@ -40,6 +40,11 @@ sources = []
 degrees = 10.6
 sources = ["https://municion.org/producto/40-90-370-sharps-necked-2-5-8-case/"]
 
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 502"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 221"]

@@ -14,6 +14,7 @@ origin = "JP"
 origin_sources = [
   "https://en.wikipedia.org/wiki/6.5×50mmSR_Arisaka",
   "book:ammo-encyclopedia-2 p. 500",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page13.pdf",
 ]
 
 [mm]
@@ -21,6 +22,8 @@ rim = 12.08
 base = 11.45
 shoulder = 10.4
 shoulder_at = 38.92
+neck_at = 43.4
+neck_base = 7.4
 neck = 7.37
 case_length = 51.0
 overall_length = 76.0
@@ -49,6 +52,7 @@ rim_thickness = 1.5
 ramp_top = 2.3
 groove_diameter = 10.4
 ramp_angle = 60.0
+groove_width = 0.6
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page13.pdf"]
 
 [bullet]

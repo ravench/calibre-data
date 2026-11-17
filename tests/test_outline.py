@@ -1,5 +1,5 @@
 """python3 -m unittest discover -s tests"""
-import math, os, re, statistics, sys, unittest
+import glob, math, os, re, statistics, sys, unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import outline  # noqa: E402
@@ -326,7 +326,7 @@ class GapTests(unittest.TestCase):
         # Model 1889, whose page says it differs from the Belgian round in its shorter neck; three drawings of other
         # rounds fit the 11.4x50 and start the shoulder up to 6.4 mm apart. No drawing is cited for either.
         for name, start, gaps in [
-                ("11.4x50 mm R Brazilian Comblain", 39.1, ("measurements", "shoulder_angle", "rim_thickness")),
+                ("11.4x50 mm R Brazilian Comblain", 39.1, ("measurements", "shoulder_angle")),
                 ("11x53 mm R Comblain", 40.8, ("measurements", "shoulder_angle"))]:
             with self.subTest(name):
                 s = self.spec(name)
@@ -336,7 +336,7 @@ class GapTests(unittest.TestCase):
                 self.assertEqual(cartridges.unsourced(name), ("shoulder_at",))
                 self.assertEqual(cartridges.shoulder_angle(name), cartridges.DEFAULT_SHOULDER_ANGLE)
                 self.assertEqual(cartridges.sources(name, "mm"), ["book:cotw-18 p. 574"])
-        self.assertIsNone(cartridges.rim_thickness("11.4x50 mm R Brazilian Comblain"))
+        self.assertEqual(cartridges.rim_thickness("11.4x50 mm R Brazilian Comblain"), 2.16)  # .085 in., Donnelly
         self.assertEqual(cartridges.rim_thickness("11x53 mm R Comblain"), 2.08)
         self.assertEqual(cartridges.sources("11x53 mm R Comblain", "case_head"), ["book:cotw-18 p. 574"])
         # Two drawings fit the book's rim and base but not its shoulder or case length: the rim thickness only.
@@ -377,9 +377,8 @@ class GapTests(unittest.TestCase):
         for name, (start, angle, own, so, no, sl, nl, cl) in shallow.items():
             with self.subTest(name):
                 s = self.spec(name)
-                # Nothing is left open but, on these four, a rim thickness that no source gives.
-                no_rim = {".32-40 Bullard", ".40-110 Winchester Express", ".40-70 Sharps Necked", "9.3x65 mm R Collath"}
-                self.assertEqual(outline.gaps(s), ("rim_thickness",) if name in no_rim else ())
+                # Nothing is left open (the last four take their rim thickness from Donnelly).
+                self.assertEqual(outline.gaps(s), ())
                 self.assertEqual((s["sh_at"], cartridges.shoulder_angle(name)), (start, angle))
                 self.assertLess(abs(cl - s["case"]), 1.5)
                 self.assertLess(max(abs(so - s["shoulder"]), abs(no - s["neck"])), 0.5)
@@ -725,28 +724,34 @@ class OutlineTests(unittest.TestCase):
                 lead = bullet(s["name"]) in (LEAD, PAPER_PATCHED)
                 self.assertEqual(o.get("bulletMaterial") == "lead", lead, s["name"])
 
-    def test_hollow_points_have_a_cavity_in_the_nose(self):
+    def test_hollow_points_have_a_cavity_inside_the_full_nose(self):
         names = [s["name"] for _, s in outline.specs() if bullet(s["name"]) == HOLLOW_POINT]
         self.assertIn(".22 TCM", names)
         for _, s in outline.specs():
             o = outline.outline(s)
             if "bullet" not in o:
                 continue
-            centre = [y for x, y in points(o["bullet"]) if abs(x - o["width"] / 2) < 0.01]
-            # The nose is the highest point (y 0) unless a cavity is cut into it.
-            self.assertEqual(min(centre) > 0.1, s["name"] in names, s["name"])
+            self.assertEqual("cavity" in o, s["name"] in names, s["name"])
+            # The nose is drawn in full: its tip is the highest point (y 0), the cavity a hidden line below.
+            self.assertAlmostEqual(min(y for _, y in points(o["bullet"])), 0, places=2, msg=s["name"])
+            if "cavity" in o:
+                (mx, my), (ax, ay), (lx, ly) = points(o["cavity"])
+                self.assertAlmostEqual(ax, o["width"] / 2, places=2, msg=s["name"])
+                self.assertGreater(ay, my, s["name"])  # the apex lies below the mouth (y grows downwards)
+                self.assertAlmostEqual(lx, o["width"] - mx, places=2, msg=s["name"])
+                self.assertEqual(ly, my, s["name"])
+                self.assertGreater(mx, o["width"] / 2 - s["bullet"] / 2, s["name"])  # within the bullet
 
-    def test_a_hollow_point_keeps_the_round_s_nose_up_to_its_cavity(self):
+    def test_a_cavity_opens_where_the_nose_is_as_wide_as_its_mouth(self):
         for profile in (SPITZER, ROUND, FLAT):
-            nose, hollow = outline.bullet_profile(3, 10, 20, profile), outline.hollow_profile(3, 10, 20, profile)
-            (mx, my), (ax, ay) = hollow[-2:]
-            self.assertEqual(hollow[:-2], nose[:len(hollow) - 2], profile)
+            (mx, my), (ax, ay) = outline.cavity_profile(3, 10, 20, profile)
             self.assertAlmostEqual(mx, outline.HOLLOW_MOUTH * 3)
             self.assertEqual(ax, 0)
             self.assertLess(ay, my)
             self.assertLessEqual(my, 20)
-        self.assertEqual(outline.hollow_profile(3, 10, 20, FLAT)[-2][1], 20)  # the cavity opens in the flat
-        self.assertLess(outline.hollow_profile(3, 10, 20, SPITZER)[-2][1], 20)  # a pointed nose is cut short
+            self.assertGreaterEqual(ay, 10 + 0.7 * (my - 10), profile)  # at most 0.3 of the exposed bullet deep
+        self.assertEqual(outline.cavity_profile(3, 10, 20, FLAT)[0][1], 20)  # the mouth opens in the flat
+        self.assertLess(outline.cavity_profile(3, 10, 20, SPITZER)[0][1], 20)  # below a pointed nose's tip
 
     def test_soft_points_show_a_lead_tip_at_the_front_of_the_bullet(self):
         for _, s in outline.specs():
@@ -1175,7 +1180,7 @@ class OutlineTests(unittest.TestCase):
         footed = {n for n in by_name if cartridges.foot(n)}
         self.assertEqual(footed, {"10.4x38 mm R Vetterli Centrefire", "10.15x63 mm R Serbian Mauser",
                                   "10.15x61 mm R Jarmann", "11.15x58 mm R Werndl M77", "11x59 mm R Gras",
-                                  "9.5x60 mm R Turkish Mauser"})
+                                  "9.5x60 mm R Turkish Mauser", "11x60 mm R Japanese Murata"})
         for n in footed:
             with self.subTest(n):
                 s = by_name[n]
@@ -1240,6 +1245,103 @@ class OutlineTests(unittest.TestCase):
         for name, t in values.items():
             self.assertEqual(cartridges.rim_thickness(name), t, name)
 
+    def test_donnelly_rim_thicknesses_convert_his_inches(self):
+        # A rim thickness from Donnelly's Handloader's Manual (his E) keeps the inches he prints in the note above
+        # it, and the value is those inches in mm to two decimals. 87 came in on 2026-11-16, each from an entry whose
+        # rim diameter (his D) is within 0.5 mm of the file's rim and whose case length (his A) is within 1.5 mm.
+        found = 0
+        for path in glob.glob(os.path.join(cartridges.ROOT, "calibres", "*.toml")):
+            with open(path, encoding="utf-8") as f:
+                text = f.read()
+            head = re.search(r"^\[case_head\]\n((?:#.*\n)*)rim_thickness = ([0-9.]+)\n(?:.*\n)*?sources = \[(.*)\]",
+                             text, re.M)
+            if not head or "book:donnelly" not in head.group(3):
+                continue
+            with self.subTest(os.path.basename(path)):
+                inches = re.match(r"# (\.[0-9]+) in\.", head.group(1))
+                self.assertIsNotNone(inches)
+                self.assertEqual(round(float(inches.group(1)) * 25.4, 2), float(head.group(2)))
+                found += 1
+        self.assertGreaterEqual(found, 94)
+        for name, t, page in [(".44 Henry Centrefire", 1.63, 563), ("9.3x72 mm R Sauer", 1.19, 932),
+                              (".40-90 Peabody What Cheer", 1.78, 508), ("11x60 mm R Japanese Murata", 2.36, 963)]:
+            self.assertEqual(cartridges.rim_thickness(name), t, name)
+            self.assertEqual(cartridges.sources(name, "case_head"), ["book:donnelly p. %d" % page])
+        # Entries that are another case give no rim thickness: two Donnelly prints under the file's name (.50
+        # Remington Army: his case is .570 in., the file's .875; 9.3x57 mm R: his is the necked Mauser round, rim
+        # .563 in.), and his .400/360 2 3/4", which is the Purdey case (bullet .367 in.), not the file's .358 one.
+        for name in (".50 Remington Army", "9.3x57 mm R", ".400/360 Nitro Express"):
+            self.assertNotIn("book:donnelly", " ".join(cartridges.sources(name, "case_head")), name)
+
+    def test_cip_sheets_give_the_rim_thickness_of_old_rounds(self):
+        # R on the C.I.P. sheet, maximum cartridge (2026-11-16). Two sheets carry another of the round's names:
+        # «450 Short» is the .450 Adams (Wikipedia lists the name), «9 mm Flobert à balle» the bulleted 9 mm
+        # Flobert on the Bosquette's case (rim, case and head within 0.4 mm; only its bullet is longer).
+        sheets = {".700 Nitro Express": (2.16, "tab-ii/tabiical-en-page131"),
+                  ".375 Flanged Nitro Express": (1.65, "tab-ii/tabiical-en-page93"),
+                  ".400 Purdey": (1.32, "tab-ii/tabiical-en-page103"),
+                  "8 mm Lebel revolver": (1.5, "tab-iv/tabivcal-en-page16"),
+                  "5.75 mm Velo-Dog": (1.3, "tab-iv/tabivcal-en-page3"),
+                  ".44 Colt": (1.52, "tab-iv/tabivcal-en-page70"),
+                  ".450 Adams": (1.1, "tab-iv/tabivcal-en-page85"),
+                  ".22 Remington Automatic": (1.29, "tab-v/22-rem-auto-en"),
+                  "9 mm Flobert Bosquette": (1.45, "tab-v/tabvcal-en-page10")}
+        for name, (t, sheet) in sheets.items():
+            with self.subTest(name):
+                self.assertEqual(cartridges.rim_thickness(name), t)
+                self.assertEqual(cartridges.sources(name, "case_head"),
+                                 ["https://bobp.cip-bobp.org/uploads/tdcc/%s.pdf" % sheet])
+        spec = {s["name"]: s for _, s in outline.specs()}
+        self.assertLess(abs(12.95 - spec[".450 Adams"]["rim"]), 0.4)
+        self.assertLess(abs(10.50 - spec["9 mm Flobert Bosquette"]["rim"]), 0.4)
+        # The .22 Remington Automatic keeps its Wikipedia sizes: the sheet's R1 (7.62) is within 0.5 mm of its rim.
+        self.assertLess(abs(7.62 - spec[".22 Remington Automatic"]["rim"]), 0.5)
+
+    def test_specimen_drawings_give_the_rim_thickness_where_no_book_does(self):
+        # 2026-11-16: no book gives these rims' thickness for the file's case (Donnelly's .32 Ideal, .042 in., is
+        # 0.38 mm from the drawing's, so the drawing's whole head counts), so it is RT on an AECC drawing
+        # (municion.org) or the rim thickness on a naboje.org drawing, of a specimen whose rim and head diameters
+        # are within 0.5 mm of the file's rim and base. name: (rim thickness, the drawing's rim and head diameters)
+        drawings = {
+            ".32 Short Rimfire": (1.23, 9.47, 8.02), ".32 Long Rimfire": (1.3, 9.51, 8.09),
+            ".25 Stevens Short": (1.3, 8.6, 7.06), ".25 Short Rimfire": (1.06, 7.47, 6.21),
+            ".30 Short Rimfire": (1.35, 8.66, 7.37), ".30 Long Rimfire": (1.28, 8.75, 7.45),
+            ".32 Extra Short Rimfire": (1.28, 9.64, 8.02), ".32 Extra Long Rimfire": (1.26, 9.65, 8.03),
+            ".38 Short Rimfire": (1.7, 11.03, 9.57), ".38 Extra Long Rimfire": (1.49, 11.0, 9.57),
+            ".41 Long Rimfire": (1.34, 12.02, 10.37), ".41 Short": (1.53, 11.98, 10.33),
+            ".46 Short Rimfire": (1.5, 13.45, 11.69), ".46 Long Rimfire": (1.6, 13.57, 11.69),
+            ".46 Extra Long Rimfire": (1.57, 13.34, 11.58), ".50 Remington Navy Rimfire": (1.64, 16.35, 14.24),
+            ".38 Long Rimfire": (1.3, 11.07, 9.58), ".56-46 Spencer": (1.8, 16.18, 14.22),
+            ".50 Remington Army": (1.53, 16.91, 14.32), "8x50 mm R Siamese Type 45": (1.53, 13.93, 12.39),
+            "7.7 mm Bittner": (1.25, 10.0, 8.53), ".32 Ideal": (1.45, 10.42, 8.8), "9.3x57 mm R": (1.25, 12.44, 10.87)}
+        spec = {s["name"]: s for _, s in outline.specs()}
+        for name, (t, rim, head) in drawings.items():
+            with self.subTest(name):
+                self.assertEqual(cartridges.rim_thickness(name), t)
+                source = cartridges.sources(name, "case_head")[0]
+                self.assertTrue(source.startswith(("https://municion.org/producto/", "https://naboje.org/")), source)
+                self.assertLess(abs(rim - spec[name]["rim"]), 0.5)
+                self.assertLess(abs(head - spec[name]["base"]), 0.5)
+        # Drawings that miss the rule give nothing: the .44 Long Rimfire's head (11.10) is 0.53 mm under the file's,
+        # the .58 Musket page's rim (16.34) 1.7 mm under the .58 Miller's.
+        for name in (".44 Long Rimfire", ".58 Miller"):
+            self.assertIsNone(cartridges.rim_thickness(name), name)
+
+    def test_shot_shells_draw_their_rim_at_its_cip_thickness(self):
+        # t on the C.I.P. Tab. VII sheets, maximum cartridge (2026-11-16); before, every shell's rim was 1.5 mm.
+        thickness = {"12/70": 1.85, "12/76": 1.85, "12/89": 1.85, "16/70": 1.65, "20/70": 1.55, "20/76": 1.55,
+                     "28/70": 1.55, ".410/76": 1.55}
+        shells = {s["name"]: s for _, s in outline.specs() if s["kind"] == SHOT}
+        self.assertEqual(set(shells), set(thickness))
+        for name, t in thickness.items():
+            with self.subTest(name):
+                self.assertEqual(cartridges.rim_thickness(name), t)
+                self.assertIn("tab-vii", cartridges.sources(name, "case_head")[0])
+                s = shells[name]
+                head = points(outline.outline(s)["head"])
+                # The head's outline runs out to the rim and up to t before it steps in to the hull.
+                self.assertIn(round(s["oal"] - t, 2), {round(y, 2) for _, y in head})
+
     def test_rims_without_a_source_keep_the_old_drawing(self):
         # A rim no source gives a thickness is drawn as before rim thicknesses came in (2026-11-11).
         by_name = {s["name"]: s for _, s in outline.specs()}
@@ -1247,8 +1349,8 @@ class OutlineTests(unittest.TestCase):
         def head(name, n):
             self.assertIsNone(cartridges.rim_thickness(name), name)
             return [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(by_name[name])[:n]]
-        self.assertEqual(head(".32 Short Rimfire", 3), [(4.735, 0), (4.735, 1.1), (4.01, 1.1)])
-        self.assertEqual(head(".44 Colt", 3), [(6.53, 0), (6.53, 1.5), (5.79, 1.5)])
+        self.assertEqual(head(".58 Miller", 3), [(9.005, 0), (9.005, 1.1), (7.975, 1.1)])
+        self.assertEqual(head(".44 Long Rimfire", 3), [(6.665, 0), (6.665, 1.1), (5.815, 1.1)])
         # Every rimless and every belted case in the catalogue has a rim thickness now: two made up for the test.
         made_up = [(RIMLESS, 11.86, 12.52, 12.17, 11.35, 62.74, 52.26, 81.79, 10.77, [(5.93, 0), (5.93, 1.3)]),
                    (BELTED, 13.54, 13.39, 12.27, 8.0, 72.9, 52.04, 98.55, 7.21, [(6.77, 0), (6.77, 1.3)])]

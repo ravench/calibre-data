@@ -11,6 +11,7 @@ origin = "FR"
 origin_sources = [
   "https://en.wikipedia.org/wiki/8mm_French_Ordnance",
   "book:ammo-encyclopedia-2 p. 693",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page16.pdf",
 ]
 obsolete = true
 rare = true
@@ -32,6 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/8mm_French_Ordnance"]
 [primer]
 size = "small-pistol"
 sources = []
+
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page16.pdf"]
 
 [bullet]
 # municion.org's oldest dated service round (École Centrale de Pyrotechnie, 1912) has a copper-washed

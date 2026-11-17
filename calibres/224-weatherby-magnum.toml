@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.224_Weatherby_Magnum",
   "book:ammo-encyclopedia-2 p. 376",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page8.pdf",
 ]
 obsolete = true
 # Still made, but hardly ever found:
@@ -19,6 +20,8 @@ rim = 10.9
 base = 10.5
 shoulder = 10.0
 shoulder_at = 39.01
+neck_at = 41.03
+neck_base = 6.4
 neck = 6.4
 case_length = 48.8
 overall_length = 59.2
@@ -47,6 +50,7 @@ rim_thickness = 1.27
 ramp_top = 5.03
 groove_diameter = 9.37
 ramp_angle = 45.0
+groove_width = 1.14
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page8.pdf"]
 
 [bullet]

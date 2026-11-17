@@ -5,7 +5,10 @@ profile = "spitzer"
 aliases = ["270", "270win"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.270_Winchester"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.270_Winchester",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page99.pdf",
+]
 worldwide = true
 
 [mm]
@@ -13,6 +16,8 @@ rim = 12.0
 base = 12.0
 shoulder = 11.2
 shoulder_at = 49.49
+neck_at = 54.77
+neck_base = 7.87
 neck = 7.8
 case_length = 64.5
 overall_length = 84.8
@@ -43,6 +48,7 @@ rim_thickness = 1.24
 ramp_top = 3.16
 groove_diameter = 10.39
 ramp_angle = 36.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page99.pdf"]
 
 [bullet]

@@ -7,13 +7,18 @@ profile = "round"
 aliases = ["10.3x60r"]
 
 origin = "CH"
-origin_sources = ["https://municion.org/producto/103-x-60-r/"]
+origin_sources = [
+  "https://municion.org/producto/103-x-60-r/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page52.pdf",
+]
 
 [mm]
 rim = 15.7
 base = 13.85
 shoulder = 12.5
 shoulder_at = 40.8
+neck_at = 46.8
+neck_base = 11.4
 neck = 11.26
 case_length = 60.8
 overall_length = 78.9

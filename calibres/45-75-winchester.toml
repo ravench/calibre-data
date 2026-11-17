@@ -7,7 +7,10 @@ profile = "flat"
 aliases = ["45-75"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.45-75_Winchester"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.45-75_Winchester",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page113.pdf",
+]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
@@ -17,6 +20,8 @@ rim = 15.81
 base = 14.24
 shoulder = 13.87
 shoulder_at = 26
+neck_at = 33.7
+neck_base = 12.42
 neck = 12.2
 case_length = 47.86
 overall_length = 56.52

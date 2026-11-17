@@ -9,7 +9,9 @@ profile = "round"
 aliases = ["7.92x24", "7.92 vbr"]
 
 origin = "BE"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page52.pdf",
+]
 rare = true
 
 [mm]
@@ -39,6 +41,7 @@ rim_thickness = 1.27
 ramp_top = 2.9
 groove_diameter = 7.87
 ramp_angle = 37.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page52.pdf"]
 
 [bullet]

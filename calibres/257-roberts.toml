@@ -10,6 +10,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.257_Roberts",
   "book:ammo-encyclopedia-2 p. 289",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page96.pdf",
 ]
 
 [mm]
@@ -17,6 +18,8 @@ rim = 12.0
 base = 12.0
 shoulder = 10.9
 shoulder_at = 43.88
+neck_at = 48.55
+neck_base = 7.37
 neck = 7.4
 case_length = 56.7
 overall_length = 70.5
@@ -45,6 +48,7 @@ rim_thickness = 1.24
 ramp_top = 3.2
 groove_diameter = 10.39
 ramp_angle = 36.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page96.pdf"]
 
 [bullet]

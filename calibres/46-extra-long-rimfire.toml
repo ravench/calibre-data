@@ -25,6 +25,11 @@ sources = ["book:cotw-18 p. 670"]
 unknown = "COTW 18 p. 667 places it only after 1871, as the Remington catalogue of that year lacks it."
 sources = ["book:cotw-18 p. 667"]
 
+[case_head]
+# AECC drawing 12-039-CBR-010 (municion.org): RT 1.57, RØ 13.34, HØ 11.58.
+rim_thickness = 1.57
+sources = ["https://municion.org/producto/46-extra-long-rf/"]
+
 [bullet]
 # COTW 18 p. 667 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"

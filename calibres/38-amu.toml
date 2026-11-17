@@ -7,7 +7,10 @@ profile = "flat"
 aliases = ["38 amu", "38 army marksmanship unit", "38 spl amu", "38 special amu"]
 
 origin = "US"
-origin_sources = ["https://municion.org/producto/38-amu/"]
+origin_sources = [
+  "https://municion.org/producto/38-amu/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page59.pdf",
+]
 obsolete = true
 rare = true
 

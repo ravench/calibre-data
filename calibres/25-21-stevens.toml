@@ -29,6 +29,11 @@ sources = ["book:cotw-18 p. 188"]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 249"]
 
+[case_head]
+# .05 in.
+rim_thickness = 1.27
+sources = ["book:donnelly p. 213"]
+
 [bullet]
 # COTW 18 p. 188 lists only handloads; municion.org's sheet shows a lead bullet.
 type = "lead"

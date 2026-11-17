@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["358nm"]
 
 origin = "SE"
-origin_sources = ["https://municion.org/producto/358-norma-magnum-belted/"]
+origin_sources = [
+  "https://municion.org/producto/358-norma-magnum-belted/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page26.pdf",
+]
 rare = true
 
 [mm]
@@ -14,6 +17,8 @@ rim = 13.5
 base = 13.03
 shoulder = 12.45
 shoulder_at = 52.94
+neck_at = 55.66
+neck_base = 9.85
 neck = 9.85
 case_length = 64.0
 overall_length = 85.0
@@ -45,6 +50,7 @@ rim_thickness = 1.25
 ramp_top = 5.56
 groove_diameter = 11.6
 ramp_angle = 45.0
+groove_width = 1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page26.pdf"]
 
 [bullet]

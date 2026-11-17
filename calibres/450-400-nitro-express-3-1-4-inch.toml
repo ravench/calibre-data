@@ -9,6 +9,7 @@ origin = "GB"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.450/400_Nitro_Express",
   "book:ammo-encyclopedia-2 p. 356",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page118.pdf",
 ]
 # Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
 # the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
@@ -19,6 +20,8 @@ rim = 15.85
 base = 13.84
 shoulder = 12.65
 shoulder_at = 50.8
+neck_at = 58.42
+neck_base = 11.15
 neck = 11.05
 case_length = 82.55
 overall_length = 100.33

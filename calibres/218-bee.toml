@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.218_Bee",
   "book:ammo-encyclopedia-2 p. 264",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page54.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 10.4
 base = 8.9
 shoulder = 8.4
 shoulder_at = 23.45
+neck_at = 27.67
+neck_base = 6.18
 neck = 6.1
 case_length = 34.2
 overall_length = 42.7

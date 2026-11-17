@@ -38,6 +38,11 @@ sources = ["book:cotw-18 p. 249"]
 degrees = 5.5
 sources = ["https://municion.org/producto/25-20-single-shot/"]
 
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 211"]
+
 [bullet]
 # COTW 18 p. 187 lists only handloads; municion.org's sheet shows a lead bullet.
 type = "lead"

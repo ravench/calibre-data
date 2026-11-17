@@ -10,6 +10,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.44_Colt",
   "book:ammo-encyclopedia-2 p. 709",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page70.pdf",
 ]
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
@@ -32,6 +33,11 @@ sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
 [primer]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
+
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page70.pdf"]
 
 [bullet]
 type = "lead"

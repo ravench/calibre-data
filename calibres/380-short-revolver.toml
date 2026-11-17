@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["380 revolver", "380 short revolver", "380 rev", "380 webley revolver"]
 
 origin = "GB"
-origin_sources = ["https://municion.org/producto/380-short-revolver-cf/"]
+origin_sources = [
+  "https://municion.org/producto/380-short-revolver-cf/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page65.pdf",
+]
 obsolete = true
 rare = true
 

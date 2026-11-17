@@ -26,6 +26,11 @@ sources = ["book:cotw-18 p. 670"]
 year = 1873
 sources = ["book:cotw-18 p. 662"]
 
+[case_head]
+# AECC drawing 07-016-CBR-010 (municion.org): RT 1.28, RØ 8.75, HØ 7.45.
+rim_thickness = 1.28
+sources = ["https://municion.org/producto/30-long-rf/"]
+
 [bullet]
 # COTW 18 p. 662 does not name the bullet's material; municion.org's sheet shows a lead one.
 type = "lead"

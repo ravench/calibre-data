@@ -8,6 +8,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.223_Remington",
   "book:ammo-encyclopedia-2 p. 275",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf",
 ]
 worldwide = true
 
@@ -19,6 +20,8 @@ base = 9.58
 shoulder = 9.0
 # shoulder_at: C.I.P. L1 36.52, SAAMI 36.527.
 shoulder_at = 36.52
+neck_at = 39.55
+neck_base = 6.43
 neck = 6.43
 case_length = 44.7
 overall_length = 57.4
@@ -51,6 +54,7 @@ rim_thickness = 1.14
 ramp_top = 3.13
 groove_diameter = 8.43
 ramp_angle = 25.0
+groove_width = 0.76
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf", "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84"]
 
 [bullet]

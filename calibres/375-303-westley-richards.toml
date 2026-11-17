@@ -37,6 +37,12 @@ sources = []
 degrees = 18.7
 sources = ["https://municion.org/producto/375-303-axite-nitro-express-swift-westley-richards/"]
 
+[case_head]
+# .065 in.
+# Donnelly's entry is titled .375/303 Axite: rim .505 in. as the file.
+rim_thickness = 1.65
+sources = ["book:donnelly p. 464"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 584"]

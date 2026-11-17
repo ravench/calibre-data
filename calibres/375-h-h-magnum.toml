@@ -9,6 +9,7 @@ origin = "GB"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.375_H%26H_Magnum",
   "book:ammo-encyclopedia-2 p. 342",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page27.pdf",
 ]
 worldwide = true
 
@@ -17,6 +18,8 @@ rim = 13.51
 base = 13.0
 shoulder = 11.37
 shoulder_at = 61.27
+neck_at = 63.44
+neck_base = 10.21
 neck = 10.21
 case_length = 72.4
 overall_length = 91.4
@@ -46,6 +49,7 @@ rim_thickness = 1.27
 ramp_top = 5.59
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page27.pdf"]
 
 [bullet]

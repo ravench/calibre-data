@@ -31,6 +31,11 @@ sources = ["book:cotw-18 p. 508"]
 size = "berdan-nitro"
 sources = ["https://municion.org/producto/113-mm-gasser-mod-1870-74-montenegrin-flat-base/"]
 
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 996"]
+
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 509"]

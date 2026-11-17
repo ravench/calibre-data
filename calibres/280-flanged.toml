@@ -8,7 +8,10 @@ aliases = ["280 flanged", "280 lancaster"]
 display_aliases = [".280 Lancaster", ".280 Flanged Nitro Express"]
 
 origin = "GB"
-origin_sources = ["book:ammo-encyclopedia-2 p. 393"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 393",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page63.pdf",
+]
 obsolete = true
 rare = true
 
@@ -17,6 +20,8 @@ rim = 15.49
 base = 13.69
 shoulder = 10.72
 shoulder_at = 55.4
+neck_at = 57.99
+neck_base = 8.13
 neck = 8.13
 case_length = 66.32
 overall_length = 87.88

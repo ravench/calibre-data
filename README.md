@@ -45,8 +45,8 @@ hold cannon rounds only (see [Lookalikes](#lookalikes)).
   5.6/11) has no bullet: its case narrows to the star crimp. A wadcutter seated flush (.32 S&W Long Wadcutter) shows no
   bullet either. `bulletMaterial` is `steel` (GP 1890 cap, the MPS dart, or a steel jacket),
   `cupronickel` (a silver jacket) or `lead`; a cartridge's bullet is copper when it is missing (a
-  ball, Minié bullet or pellet is lead). A hollow point's `bullet` has
-  its cavity cut into the nose, `tip` is a soft point's lead tip (or a plastic tip, `tipMaterial`
+  ball, Minié bullet or pellet is lead). A hollow point's `cavity` is the
+  hidden line of the cavity in its nose, to draw dashed over the full bullet, `tip` is a soft point's lead tip (or a plastic tip, `tipMaterial`
   `polymer`) drawn over the bullet, `head` the brass head of a shot shell or paper case
   (`headMaterial` `steel`: the steel head of a hybrid case), `patch` the paper band (its `patch_length`, else half the exposed bullet;
   GP 1890 to its 1892 drawing), `caseMaterial`
@@ -202,14 +202,20 @@ Most cartridges (C.I.P. letters of the maximum cartridge in brackets):
 | `base` | Body diameter just above the head (P1): on a belted case, in front of the belt. |
 | `shoulder` | Bottleneck cases only: diameter where the shoulder starts (P2). |
 | `shoulder_at` | Bottleneck cases only: distance from the head to where the shoulder starts (L1). |
+| `neck_at` | Optional, bottleneck cases only: distance from the head to where the neck starts, at the shoulder's front end (L2). |
+| `neck_base` | Optional, bottleneck cases only: neck diameter where the neck starts (H1); at least `neck` less 0.15 mm (a book's rounded neck can be a little wider than the sheet's H1) and at most `shoulder`. |
 | `neck` | Neck diameter at the mouth (H2). |
 | `case_length` | Case length (L3). |
 | `overall_length` | Cartridge length (L6). |
 | `bullet` | Bullet diameter (G1). |
 
-The neck length is not stored: the drawing runs the shoulder in from `shoulder_at` at the shoulder
-angle until it reaches the neck diameter, and the rest up to `case_length` is the neck (at least
-1.2 mm). The body taper follows from `base`, `shoulder` and `shoulder_at`.
+The drawing does not use `neck_at` and `neck_base` yet: it runs the shoulder in from `shoulder_at` at
+the shoulder angle until it reaches the neck diameter, and the rest up to `case_length` is the neck
+(at least 1.2 mm). The two keys come together. `neck_at` lies between `shoulder_at` and `case_length`,
+at least 1.2 mm short of the mouth, and where `[shoulder_angle]` cites the same sheet, the shoulder run
+in at that angle from `shoulder_at` must reach `neck_base` within 0.3 mm of `neck_at`
+(`test_neck_start_agrees_with_the_shoulder_angle`). The [mm] `sources` cover both keys, like every
+other measurement. The body taper follows from `base`, `shoulder` and `shoulder_at`.
 
 A case narrows from its base to its mouth, so the check reports a `shoulder` wider than the `base`,
 a `neck` wider than the `shoulder` and a blank's `mouth` wider than its `base`. On a straight case the
@@ -397,10 +403,18 @@ same measurement and not a second one: the file cites the AECC drawing.
 
 ### `[case_head]`
 
-`rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case. Rimless,
+`rim_thickness` (R on the C.I.P. sheets, maximum cartridge) for every kind of case, shot shells too
+(t on the Tab. VII sheets; a shell's head has nothing else, and without it its rim is drawn 1.5 mm thick). A sheet titled with
+another name of the round, or a load on the same case, counts when the sheet's rim, head and case
+length are within 0.5 mm of the file's and, for another name, a source gives it (the .450 Adams's is
+«450 Short»; the 9 mm Flobert Bosquette takes the bulleted «9 mm Flobert à balle»). Rimless,
 semi-rimmed and belted cases add their extractor groove where a C.I.P. sheet gives it, all three or
 none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head to the front of the belt),
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
+Beside them `groove_width` gives the width of the groove's floor (e min on the sheet, a minimum: the
+groove of any case is at least that wide). It is at least 0.3 mm and at most 0.15 mm over what
+`ramp_top` leaves after the rim and the front ramp up to the base (up to the rim on a belted case). The
+drawing does not use it yet.
 The .32 and .401 Winchester Self-Loading have no groove floor on their sheets: a shallow cone (3.7° and
 7°) runs from the rim's front up to the body at E, and the drawing follows it.
 A case made from a parent case without its own sheet keeps the parent's head (the note says which); a parent
@@ -421,13 +435,16 @@ calibre without a drawing takes the groove of a sister round's drawing, behind i
 thickness, when a source says that the two share the head (.416 Dakota: the .375 Dakota's).
 
 Without a C.I.P. sheet, the rim thickness can come from a book (Cartridges of the World prints it in
-its dimension tables, Donnelly as E); the note gives the inches as printed. Book values are nominal
+its dimension tables, Donnelly as E); the note gives the inches as printed. In November 2026 the rimmed rounds
+without one took Donnelly's E where his entry is the file's case: its rim diameter (his D) within
+0.5 mm of the file's rim and its case length (his A) within 1.5 mm. Where his entry has another
+title (the .44-90 load of the .44-95 Peabody case, a Ballard name), the note says so. Book values are nominal
 rather than the C.I.P. maximum, so a calibre from a book can have a rim up to about 0.3 mm thinner
 than a relative with a C.I.P. sheet (.38 Special 1.37 mm from the book, its wadcutter 1.5 mm from
 the sheet). Beside an AECC drawing the book's rim thickness stays when the two are within 0.3 mm of
 each other; when they are further apart the whole head is the drawing's, because HL is measured from
 the base and another rim under it would change the groove's width (6.5 mm Bergmann: .025 in. in the
-book, 1.00 mm on the drawing). Where no book gives a rim thickness, the drawing's RT is taken, on a
+book, 1.00 mm on the drawing). Where no book gives a rim thickness, the drawing's RT (or the rim thickness on a naboje.org drawing) is taken, on a
 rimmed case too and also where the drawing's shoulder is not (.38-70 Winchester); its rim and head
 diameters must be within 0.5 mm of the file's. A rimmed case whose rim stands on a foot above the base (the AECC drawings' «Mauser base»:
 10.4x38 mm R Vetterli Centrefire, 11x59 mm R Gras and other German, Austrian and Ottoman
@@ -570,7 +587,10 @@ counts only when it names the same state; where it names several (the .25 ACP's 
 Belgium"), one of them must be it. Pages that name another state are not listed: they are the
 two-state cases decided above, and a few known errors (Wikipedia's "Belgium" for the 7.5 mm 1882 and
 "Canada" for the .300 Remington Ultra Magnum). An empty list means no such page was found yet. `ORIGIN_SOURCES` gives the first page,
-`ORIGIN_UNVERIFIED` the calibres without one.
+`ORIGIN_UNVERIFIED` the calibres without one. The calibre's own C.I.P. sheet counts as a page too
+when its "Country of Origin" names the same state (added 16 November 2026); a sheet shared by several
+calibres counts only for the one it is titled after. Sheets that name another state are not listed
+(the Blaser magnums' SE, the H&H magnums' US).
 
 ### Rare
 
@@ -643,7 +663,7 @@ same):
 | `measurements` | A measurement in `[mm]` has no source: it is listed in `unsourced`, `[mm]` has no source at all, or a cannon round leaves it out. |
 | `shoulder_angle` | A bottleneck case without `[shoulder_angle]`: its shoulder is drawn at 32°. |
 | `groove` | A rimless, semi-rimmed or belted case without the extractor groove in `[case_head]`: it gets the generic head. |
-| `rim_thickness` | No `rim_thickness` in `[case_head]`: the rim is drawn at the default thickness. |
+| `rim_thickness` | No `rim_thickness` in `[case_head]`: the rim is drawn at the default thickness. Not reported for shot shells, whose head is not checked. |
 | `shoulder_moved` | The measurements leave less than 1.2 mm of neck in front of the shoulder, so the drawing moves the shoulder back (none today). |
 
 A calibre is well sourced when it has none of them, or only `rim_thickness`: a default rim is off by

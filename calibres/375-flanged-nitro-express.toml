@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["375flne", "370flanged"]
 
 origin = "GB"
-origin_sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
+origin_sources = [
+  "https://municion.org/producto/375-flanged-nitro-express/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page93.pdf",
+]
 rare = true
 
 [mm]
@@ -28,6 +31,11 @@ sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
 # 6.22 mm, 2 specimens
 size = "berdan-nitro"
 sources = ["https://municion.org/producto/375-flanged-nitro-express/"]
+
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page93.pdf"]
 
 [bullet]
 type = "softpoint"

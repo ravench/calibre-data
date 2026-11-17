@@ -9,7 +9,10 @@ profile = "flat"
 aliases = ["50-95", "50-95express"]
 
 origin = "US"
-origin_sources = ["https://municion.org/producto/50-95-300-winchester/"]
+origin_sources = [
+  "https://municion.org/producto/50-95-300-winchester/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page122.pdf",
+]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
@@ -19,6 +22,8 @@ rim = 15.93
 base = 14.27
 shoulder = 14.05
 shoulder_at = 36.63
+neck_at = 38.55
+neck_base = 13.62
 neck = 13.62
 case_length = 49.28
 overall_length = 57.4

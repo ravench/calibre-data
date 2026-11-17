@@ -37,6 +37,12 @@ sources = ["book:cotw-18 p. 609"]
 degrees = 8.1
 sources = ["https://municion.org/producto/476-nitro-express-3-flanged/"]
 
+[case_head]
+# .055 in.
+# Donnelly's entry is titled .476 Westley Richards: rim .643 in., case 3.00 in., as the file.
+rim_thickness = 1.4
+sources = ["book:donnelly p. 650"]
+
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 602"]

@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["375wby"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.375_Weatherby_Magnum"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.375_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page28.pdf",
+]
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
 rare = true
@@ -16,6 +19,8 @@ rim = 13.5
 base = 13.0
 shoulder = 12.5
 shoulder_at = 61.75
+neck_at = 63.65
+neck_base = 10.21
 neck = 10.2
 case_length = 72.6
 overall_length = 91.4
@@ -44,6 +49,7 @@ rim_thickness = 1.3
 ramp_top = 5.56
 groove_diameter = 11.61
 ramp_angle = 45.0
+groove_width = 1.24
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page28.pdf"]
 
 [bullet]

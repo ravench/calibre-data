@@ -39,6 +39,11 @@ sources = ["book:cotw-18 p. 251"]
 degrees = 7.9
 sources = ["https://municion.org/producto/40-110-winchester-express-3-1-4/"]
 
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 510"]
+
 [bullet]
 # Lead: the copper-tubed bullet, a lead bullet with a copper tube in its nose (COTW 18 p. 221); the
 # load table's "SP" (p. 222) is not a jacketed bullet.
