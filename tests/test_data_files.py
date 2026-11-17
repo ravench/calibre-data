@@ -102,8 +102,18 @@ class LoadTests(unittest.TestCase):
         guns = cartridges.CALIBRE_GUNS
         self.assertEqual(guns[".22 LR"], ("rifle", "handgun"))
         self.assertEqual(guns[".44-40 WCF"], ("rifle", "handgun"))
-        self.assertEqual(guns[".22 SH (5.6/11)"], ())  # a blank is fired by neither
         self.assertTrue(cartridges.is_black_powder(".44-40 WCF"))
+        # Handgun rounds factory carbines, lever actions or submachine guns are made for, the balls and
+        # Minié bullets by their guns, the Flobert ball by its garden gun (2026-11-16).
+        self.assertEqual(guns[".357 Magnum"], ("handgun", "rifle"))
+        self.assertEqual(guns["9x19 mm"], ("handgun", "rifle"))
+        self.assertEqual(guns[".36 Rundkugel (.375)"], ("handgun",))
+        self.assertEqual(guns[".58 Minié"], ("rifle",))
+        self.assertEqual(guns["9 mm Flobert Bosquette"], ("shotgun",))
+        self.assertEqual(cartridges.categories(".357 Magnum"), ("Kurzwaffe", "Langwaffe"))
+        # Only blanks name no gun: they are fired by blank and starter pistols and tools, not by a gun.
+        self.assertEqual({n for n, g in guns.items() if not g},
+                         {".22 SH (5.6/11)", ".22 Long Blanc", "6 mm Flobert Blanc"})
         kinds = {s["name"]: s["kind"] for _, items in cartridges.ALL_CATALOGUE for s in items}
         for name, g in guns.items():
             with self.subTest(name):
@@ -111,7 +121,7 @@ class LoadTests(unittest.TestCase):
                 if len(g) > 1 or g and technology:
                     with open(os.path.join(ROOT, "calibres", slug(name) + ".toml"), encoding="utf-8") as f:
                         self.assertRegex(f.read(), r"(?m)^# Guns: .+\nguns = ")
-                if cartridges.is_black_powder(name) and kinds[name] not in cartridges.LOOSE:  # balls, Minié: none
+                if cartridges.is_black_powder(name) and kinds[name] not in cartridges.LOOSE:  # a case, not a ball
                     self.assertTrue({"rifle", "handgun"} & set(g))
                 if "cannon" in g:
                     self.assertEqual(g, ("cannon",))

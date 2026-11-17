@@ -1,5 +1,6 @@
 name = ".36 Rundkugel (.375)"
-guns = []
+# Guns: https://en.wikipedia.org/wiki/Colt_1851_Navy_Revolver (Colt 1851 Navy revolver, .375 to .380 inch ball).
+guns = ["handgun"]
 black_powder = true
 kind = "ball"
 profile = "round"

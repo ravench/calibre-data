@@ -1,5 +1,6 @@
 name = ".50 Rundkugel (.490)"
-guns = []
+# Guns: https://www.hornady.com/muzzleloading/browse/50-cal-490-lead-balls (Hornady .490 ball, 50 calibre) https://en.wikipedia.org/wiki/Hawken_rifle (Hawken rifles, typically .50 or .53 calibre, firing round balls).
+guns = ["rifle"]
 black_powder = true
 kind = "ball"
 profile = "round"

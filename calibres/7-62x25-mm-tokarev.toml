@@ -1,5 +1,6 @@
 name = "7.62x25 mm Tokarev"
-guns = ["handgun"]
+# Guns: https://en.wikipedia.org/wiki/PPSh-41 https://en.wikipedia.org/wiki/PP-19_Bizon (PPSh-41, PP-19 Bizon).
+guns = ["handgun", "rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["tokarev", "7.62tok", "7.62x25"]

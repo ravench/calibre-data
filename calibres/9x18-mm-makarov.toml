@@ -1,5 +1,6 @@
 name = "9x18 mm Makarov"
-guns = ["handgun"]
+# Guns: https://en.wikipedia.org/wiki/PP-19_Bizon (PP-19 Bizon, made for it).
+guns = ["handgun", "rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["makarov", "9x18", "9mm mak"]

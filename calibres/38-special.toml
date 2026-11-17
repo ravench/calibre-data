@@ -1,5 +1,6 @@
 name = ".38 Special"
-guns = ["handgun"]
+# Guns: https://www.henryusa.com/wp-content/uploads/mediakit/Henry-Big-Boy-Rifles-Spec-Sheet.pdf (Henry Big Boy in .357 Magnum/.38 Special).
+guns = ["handgun", "rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["38spl", "38special", "38", "38special+p", "38spl+p", "38s&wspecial", "38coltspecial"]

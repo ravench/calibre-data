@@ -1,5 +1,6 @@
 name = ".58 Minié"
-guns = []
+# Guns: https://en.wikipedia.org/wiki/Springfield_Model_1861 (Springfield 1861 rifle-musket).
+guns = ["rifle"]
 black_powder = true
 kind = "minie"
 profile = "round"

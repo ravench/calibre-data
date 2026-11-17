@@ -1,5 +1,6 @@
 name = ".44 Rundkugel (.454)"
-guns = []
+# Guns: https://en.wikipedia.org/wiki/Colt_Army_Model_1860 (Colt 1860 Army revolver, .454 inch ball).
+guns = ["handgun"]
 black_powder = true
 kind = "ball"
 profile = "round"

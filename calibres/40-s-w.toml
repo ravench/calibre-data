@@ -1,5 +1,6 @@
 name = ".40 S&W"
-guns = ["handgun"]
+# Guns: https://en.wikipedia.org/wiki/Ruger_PC-9 (Ruger Police Carbine PC4, later the PC carbine).
+guns = ["handgun", "rifle"]
 kind = "rimless"
 profile = "flat"
 aliases = ["40s&w", "40sw", "40", "40 s+w"]
