@@ -45,8 +45,8 @@ hold cannon rounds only (see [Lookalikes](#lookalikes)).
   5.6/11) has no bullet: its case narrows to the star crimp. A wadcutter seated flush (.32 S&W Long Wadcutter) shows no
   bullet either. `bulletMaterial` is `steel` (GP 1890 cap, the MPS dart, or a steel jacket),
   `cupronickel` (a silver jacket) or `lead`; a cartridge's bullet is copper when it is missing (a
-  ball, Minié bullet or pellet is lead). A hollow point's `bullet` has
-  its cavity cut into the nose, `tip` is a soft point's lead tip (or a plastic tip, `tipMaterial`
+  ball, Minié bullet or pellet is lead). A hollow point's `cavity` is the
+  hidden line of the cavity in its nose, to draw dashed over the full bullet, `tip` is a soft point's lead tip (or a plastic tip, `tipMaterial`
   `polymer`) drawn over the bullet, `head` the brass head of a shot shell or paper case
   (`headMaterial` `steel`: the steel head of a hybrid case), `patch` the paper band (its `patch_length`, else half the exposed bullet;
   GP 1890 to its 1892 drawing), `caseMaterial`
