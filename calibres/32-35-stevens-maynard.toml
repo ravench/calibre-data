@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A Stevens match round for the New Model Range rifles Nos. 9 and 10.
 name = ".32-35 Stevens & Maynard"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["32-35", "32-35 stevens", "32-35 maynard"]

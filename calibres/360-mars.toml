@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .45 Mars Long necked down, for the Mars pistol of 1900.
 name = ".360 Mars"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["360 mars", "9mm mars"]

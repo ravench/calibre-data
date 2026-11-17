@@ -3,7 +3,7 @@
 # The front is closed inside the case, not star-crimped, so it is a plain cylinder with nothing above the
 # mouth (Raven 2026-11-04).
 name = "9 mm PA Blanc"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "flat"
 aliases = ["9mmpak", "pak", "9pak", "9x22", "9mmpa", "9mmpablanc", "gaspatrone", "reizstoffpatrone", "9mmpaknall"]

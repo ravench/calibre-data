@@ -3,7 +3,7 @@
 # from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
 # shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
 name = ".50-95 WCF"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["50-95", "50-95express"]

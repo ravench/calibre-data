@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # The short Mauser K round.
 name = "8x51 mm Mauser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["8x51mauser", "8x51 mauser k"]

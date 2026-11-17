@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # Westley Richards's answer to the .310 Greener, for Martini and Sherwood target rifles.
 name = ".300 Sherwood"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["300 sherwood", "300sherwood"]

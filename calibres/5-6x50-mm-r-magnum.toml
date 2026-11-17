@@ -1,6 +1,6 @@
 # The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
 name = "5.6x50 mm R Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["5.6x50r", "5.6x50rmag"]

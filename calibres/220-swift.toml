@@ -1,6 +1,6 @@
 # Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".220 Swift"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "semi-rimmed"
 profile = "spitzer"
 aliases = ["220swift"]

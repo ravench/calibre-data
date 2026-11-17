@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The round of the Breda M1937 and M1938 machine guns.
 name = "8x59 mm Breda"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["8x59", "8x59 breda"]

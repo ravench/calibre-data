@@ -6,8 +6,9 @@
 # of the World (14th ed., 2014); no web page with them checked yet. The bullet is seated inside the
 # case, not heeled like the rimfire's.
 name = ".44 Henry Centrefire"
-# Firearms: book:cotw-18 p. 230.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 230.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "flat"
 aliases = ["44henrycf", "44-200"]

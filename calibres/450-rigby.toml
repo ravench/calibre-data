@@ -2,7 +2,7 @@
 # shoulder_at = L1, shoulder = P2, neck = H2, overall_length = L6. Wikipedia's .450 Rigby infobox gives
 # H1 as the shoulder (12.5 mm), which is why it was left out before.
 name = ".450 Rigby"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["450rigby"]

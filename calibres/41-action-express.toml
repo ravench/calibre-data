@@ -1,6 +1,6 @@
 # Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
 name = ".41 Action Express"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "flat"
 aliases = ["41ae"]

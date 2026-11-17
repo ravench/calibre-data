@@ -26,12 +26,15 @@
 # Calibres that are cartridges of their own (.308 Win and 7.62 NATO) each get their own file, never
 # an alias of the other.
 name = ".308 Winchester"
-# The categories, the primary one first: rimfire, handgun, rifle, black-powder, shotgun, air-gun or
-# cannon (20 to 57 mm cannon rounds, in the catalogue only: they may leave out measurements no source
-# gives and have no [primer]; see README.md). The apps and order.toml list a calibre under its first
-# category only; a round that also fits another, such as a black-powder rifle round, lists both.
-# rimfire is listed by every rimfire calibre and by no other (a centrefire blank is a handgun round).
-categories = ["rifle"]
+# The guns that fire it, the main one first: handgun, rifle, shotgun, air-gun or cannon (20 to 57 mm
+# cannon rounds, in the catalogue only: they may leave out measurements no source gives and have no
+# [primer]; see README.md). A second gun, and the guns of a black-powder or rimfire round, need a note
+# "# Guns: <source>." above this line; a black-powder or rimfire round no source names a gun for has
+# guns = []. The category the apps and order.toml list a calibre under follows from this file:
+# black-powder for a black-powder round, else rimfire for a rimfire case, else the first gun.
+guns = ["rifle"]
+# true for a round made for black powder (category black-powder); leave it out for any other.
+# black_powder = true
 # rimless (the rim at most 0.3 mm wider than the base), semi-rimmed (rim a little wider than the base,
 # with an extractor groove), rimmed, belted,
 # rimfire, shot (shot shell), ball (round ball or BB), minie (Minié

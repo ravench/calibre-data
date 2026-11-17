@@ -5,7 +5,7 @@
 # the case mouth, as it is usually loaded (https://bullseyeforum.net/t16197-32-sw-long-wadcutter-oal),
 # so the length is L3 (L6 allows up to 25.40) and no bullet shows from the side.
 name = ".32 S&W Long Wadcutter"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["32wc", "32swlwc", "32longwc", "32 s&w long wc", "32 s&w lwc"]

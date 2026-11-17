@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Sharps Rifle Company's .223 Remington case necked up to .25 for AR-15 rifles.
 name = ".25-45 Sharps"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["25-45 sharps", "25-45"]

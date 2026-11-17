@@ -5,7 +5,7 @@
 # and the head: its belt (LØ 34.64) is what the infobox calls the rim, its rim (RØ 33.38) what the
 # infobox gives as the rim's thickness (33.4).
 name = "23x152 mm B VYa"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["23x152b", "23x152", "23 mm vya"]

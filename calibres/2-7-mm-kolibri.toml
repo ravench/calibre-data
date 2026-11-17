@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The smallest commercial centrefire pistol round, for the Austrian Kolibri pistol; a jacketed bullet.
 name = "2.7 mm Kolibri"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["2.7kolibri", "2.7 kolibri", "2.7mm kolibri auto"]

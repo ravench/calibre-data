@@ -3,7 +3,7 @@
 # submarine gun, which fires the same case. Jane's p. 127 gives the L/60 round 447 mm and the case
 # 62 mm across. Wikipedia's infobox has the L/60 in service in 1934 (the Dutch navy's order).
 name = "40x311 mm R"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["40x311r", "40 mm bofors l/60"]

@@ -1,6 +1,6 @@
 # Rifle batch 3 (2026-11): first added from the page named in INTRODUCED, now C.I.P.'s (see [mm]).
 name = "6.5 mm Grendel"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6.5grendel", "grendel"]

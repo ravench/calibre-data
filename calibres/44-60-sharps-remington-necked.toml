@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A 1.88 in. .44 bottleneck case for the 1869 Sharps sporting rifle; loaded by Remington and Winchester.
 name = ".44-60 Sharps & Remington Necked"
-# Firearms: book:cotw-18 p. 236.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 236.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 # The 44-60 Winchester or Peabody Creedmoor (COTW 18 p. 237) is the same round.

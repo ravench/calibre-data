@@ -1,6 +1,6 @@
 # The 3 1/4 inch original of the .450/400, from its C.I.P. sheet in SHOULDER_ANGLES ("450/400 Mag. N.E. 3\"1/4").
 name = ".450/400 Nitro Express 3¼ inch"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["450/400magnum", "450/400mag", "450/400 3 1/4", "450/400 3.25"]

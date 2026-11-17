@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # North American Shooting Systems' rebated rimless magnum for long actions, without a belt.
 name = "7 mm Canadian Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7mm canadian magnum", "7mm canadian mag", "7mm nass"]

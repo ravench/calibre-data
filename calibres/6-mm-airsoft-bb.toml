@@ -1,7 +1,7 @@
 # BBs: loose balls, not cartridges. Steel BBs (zinc or copper plated) measure 4.3-4.4 mm and
 # are fired from smoothbore .177 BB guns; airsoft BBs are plastic, 6 mm, a few guns take 8 mm.
 name = "6 mm Airsoft-BB"
-categories = ["air-gun"]
+guns = ["air-gun"]
 kind = "ball"
 profile = "round"
 aliases = ["airsoft", "6mmbb", "6mmairsoft"]

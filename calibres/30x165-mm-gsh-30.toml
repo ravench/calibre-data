@@ -5,7 +5,7 @@
 # 99 the length of the aircraft rounds (p. 98 gives the AK-630's 290 to 291 mm), the AECC specimen
 # drawing of a naval round on municion.org (titled 30 x 164) the shoulder, the neck and the head.
 name = "30x165 mm GSh-30"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["30x165", "30 mm gsh-30", "30 mm ak-630", "30 mm ao-18"]

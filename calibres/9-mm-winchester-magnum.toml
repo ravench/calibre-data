@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Wildey gas-operated pistol; reported from 1977, in Winchester's catalogue from 1988.
 name = "9 mm Winchester Magnum"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["9mm win mag", "9mm winchester magnum", "9 mm win mag", "9x29"]

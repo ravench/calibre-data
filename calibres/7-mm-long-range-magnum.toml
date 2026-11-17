@@ -2,7 +2,7 @@
 # Gunwerks' .375 Ruger case necked down to 7 mm. Gunwerks sells it loaded:
 # https://www.eurooptic.com/gunwerks-7-lrm-berger-180gr-hyb-long-range-hunting-ammunition-ay-m6019
 name = "7 mm Long Range Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7 lrm", "7lrm", "7mm lrm", "7 long range magnum"]

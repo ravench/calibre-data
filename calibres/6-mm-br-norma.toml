@@ -1,5 +1,5 @@
 name = "6 mm BR Norma"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6br", "6mmbr"]

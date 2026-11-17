@@ -30,7 +30,7 @@
 # under the 7.5x55 name with GP 11 measurements. It keeps GP 11 apart by its bigger bullet (.308 for
 # .299) and stronger load, which the 1889 rifle must not fire.
 name = "7.5x53.5 mm Swiss (Patrone Modell 1890)"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "patched"
 aliases = ["gp1890", "gp 1890", "gp1890/03", "gp90/03", "gp 90/03", "7.5 mm gp 90", "7.5 mm gp 90/03", "patrone 1890", "gewehrpatrone 1890", "7.5 mm gewehrpatrone 90", "gewehrpatrone 1890/1903", "gp modell 1890", "modell 1890", "patrone modell 1890", "7.5x53.5", "7.5x53", "schmidt-rubin", "ig89"]

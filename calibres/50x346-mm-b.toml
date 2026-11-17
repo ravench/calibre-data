@@ -1,7 +1,7 @@
 # The round of Rheinmetall-Borsig's 5 cm FlaK 41 anti-aircraft gun. Its name gives the bore and case
 # length, Rapid Fire's table the rim and base (whole millimetres only; the belt is not given).
 name = "50x346 mm B"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["50x346b", "50x346", "5 cm flak 41"]

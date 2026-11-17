@@ -1,6 +1,6 @@
 # Rifle batch 3 (2026-11): first added from the page named in INTRODUCED, now C.I.P.'s shoulder and length.
 name = ".17 Hornet"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["17hornet"]

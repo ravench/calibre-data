@@ -1,5 +1,6 @@
 name = ".44 Rundkugel (.454)"
-categories = ["black-powder"]
+guns = []
+black_powder = true
 kind = "ball"
 profile = "round"
 aliases = ["44", "44ball", ".454", "454ball"]

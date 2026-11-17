@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # US Army trial round of the Pedersen rifle; there were several versions.
 name = ".276 Pedersen"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["276pedersen", "276 pedersen", "7x51 pedersen"]

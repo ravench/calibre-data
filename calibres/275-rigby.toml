@@ -1,7 +1,7 @@
 # Rigby's name for the 7x57, but C.I.P. gives the "275 H.V. Rigby" its own sheet (in SHOULDER_ANGLES) at
 # 3200 bar against the 7x57's 3900, so 7x57 ammunition is too hot for its guns: its own calibre (2026-11-08).
 name = ".275 Rigby"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 # Nose: round soft point (photo, COTW 18 p. 580).
 profile = "round"

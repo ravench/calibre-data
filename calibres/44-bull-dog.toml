@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For Webley's British Bull Dog and similar pocket revolvers.
 name = ".44 Bull Dog"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["44 bull dog", "44 bulldog"]

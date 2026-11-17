@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Lazzeroni's round for the largest dangerous game, made at Craig Boddington's request; on special order only.
 name = "12.04 Bibamufu"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["12.04 bibamufu", "bibamufu", "lazzeroni bibamufu"]

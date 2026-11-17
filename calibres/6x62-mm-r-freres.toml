@@ -1,6 +1,6 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 name = "6x62 mm R Frères"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["6x62r", "6x62 r freres"]

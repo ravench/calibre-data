@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .455 Revolver Mk I of 1892, the longer case of the .455 Webley (Mk II, 1897); the .476 Enfield has the same case.
 name = ".455 Webley Mk I"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["455 enfield", "455 colt", "455 mk i", "455 revolver mk i", "455 webley mk1"]

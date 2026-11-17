@@ -4,7 +4,7 @@
 # SAAMI says it does not imply NATO conformance, and that 5.56 ammunition in a chamber marked
 # 223 Remington only is unsafe.
 name = "5.56 Commercial"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["5.56comm", "5.56 comm", "556comm"]

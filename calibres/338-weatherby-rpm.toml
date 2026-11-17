@@ -1,7 +1,7 @@
 # Weatherby RPM family (rebated rim, 6.5-284 body lengthened). The .25 is from the 2026 SAAMI drawing;
 # the 6.5 and .338 share its rim, head and shoulder diameter, with neck and shoulder height estimated.
 name = ".338 Weatherby RPM"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["338rpm", "338wbyrpm"]

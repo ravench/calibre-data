@@ -1,5 +1,5 @@
 name = "9x21 mm IMI"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 # Nose: a blunt truncated cone, seated deep (COTW 18 p. 483).
 profile = "flat"

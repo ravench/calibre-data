@@ -3,7 +3,7 @@
 # steel plate at 500 m; tracer, marked by a red base, burning to about 800 m. Match shooters mostly
 # use the ordinary ball round, which shows how accurate it is.
 name = "7.5x55 mm Swiss (GP 11)"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["gp11", "gp 11", "7.5x55", "7.5", "7.5mm", "7.5swiss", "k31"]

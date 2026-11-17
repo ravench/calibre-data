@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A blackpowder round for single-shot and double rifles.
 name = "10.25x69 mm R Hunting-Express"
-# Firearms: book:cotw-18 p. 645.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 645.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["10.25x69r", "10.15x68r"]

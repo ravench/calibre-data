@@ -2,7 +2,7 @@
 # Designed in Switzerland by Col. Rubin for Manuel Mondragón's rifle; the first version drove the bullet
 # with a piston ring.
 name = "5.2x68 mm Mondragón"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["5.2x68", "5.2 mondragon"]

@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # The .380 Revolver with a longer case.
 name = ".380 Long Revolver"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["380 long revolver", "380 long rev"]

@@ -15,7 +15,7 @@
 # SL 44.50, NØ 8.47, CL 54.40, TL 77.44, BØ 7.75. Its case length 54.40 is kept at 54.6 (swissrifles, and
 # Raven's GP 90/23-case Kadettenpatrone measures 54.8; Poyer gives 7.5x54.5).
 name = "7.5x54.5 mm Swiss (GP 90/23)"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["gp90/23", "gp 90/23", "gp1890/23", "gp 1890/23", "7.5 mm gp 90/23", "patrone 90/23", "scharfe patrone 90/23", "gewehrpatrone 90/23", "7.5x54.5"]

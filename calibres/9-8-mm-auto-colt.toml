@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Colt's round of about 1912, offered to Romania; FN made the same round as the 9.65 mm Browning.
 name = "9.8 mm Auto Colt"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["9.8 colt", "9.8mm auto colt", "9.8 colt auto pistol", "9.65 browning", "9.65mm browning automatic"]

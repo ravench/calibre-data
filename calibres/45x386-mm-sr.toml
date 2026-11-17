@@ -1,7 +1,7 @@
 # The Soviet 45 mm naval anti-aircraft round. Its name gives the bore and case length, Rapid Fire's
 # table the rim and base (whole millimetres only).
 name = "45x386 mm SR"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "semi-rimmed"
 profile = "spitzer"
 aliases = ["45x386sr", "45x386"]

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .378 Weatherby Magnum case changed and necked down to .338.
 name = ".338 A-Square"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["338 a-square", "338 a-sq"]

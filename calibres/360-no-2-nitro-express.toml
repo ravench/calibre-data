@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Eley's round for single-shot and double rifles.
 name = ".360 No. 2 Nitro Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["360 no 2", "360 no. 2"]

@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A Ballard Everlasting case of 1876; the .45-100 Ballard is the same case opened up.
 name = ".44-100 Ballard"
-# Firearms: book:cotw-18 p. 234.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 234.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["44-100 ballard", "44-100 ballard everlasting"]

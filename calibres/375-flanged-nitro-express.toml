@@ -1,7 +1,7 @@
 # .375 Flanged NE (1899, 2.5 in, straight taper) and .55 Boys: measured specimens on municion.org
 # (AECC 10-063-TBC-020, 14-099-BFC-020; Boys belt 21.59 matches antitank.co.uk's 0.850 in).
 name = ".375 Flanged Nitro Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["375flne", "370flanged"]

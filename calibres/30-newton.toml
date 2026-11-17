@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Designed for Fred Adolph as the Adolph Express; Western loaded it until about 1938.
 name = ".30 Newton"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["30 newton", "30 adolph express"]

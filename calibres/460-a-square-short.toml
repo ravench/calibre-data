@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A shortened .460 Weatherby Magnum case, the length of the .458 Winchester Magnum.
 name = ".460 A-Square Short"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "round"
 aliases = ["460 a-square short", "460 short a-square"]

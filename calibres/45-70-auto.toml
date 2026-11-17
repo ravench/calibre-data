@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Phoenix Weaponry's .45-70 Government case turned down to a rebated .473 in. rim for self-loading rifles.
 name = ".45-70 Auto"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["45-70 auto"]

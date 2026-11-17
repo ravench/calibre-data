@@ -4,7 +4,7 @@
 # the ratio of the measured .22 SH (5.6/11), because C.I.P. gives no crimp size.
 # The name is the sheet's title, «8 mm Blanc»; in German the round is sold as «Knall».
 name = "8 mm Blanc"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "flat"
 aliases = ["8mmknall", "8mmpak", "8pak", "8x20", "8mmblanc", "8mmblank"]

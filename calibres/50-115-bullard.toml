@@ -2,7 +2,7 @@
 # The largest Bullard round, for the Bullard repeating rifle: the first semi-rimmed, solid-head case made in
 # the USA.
 name = ".50-115 Bullard"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "semi-rimmed"
 profile = "flat"
 aliases = ["50-115 bullard"]

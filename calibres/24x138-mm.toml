@@ -3,7 +3,7 @@
 # and base, the AECC specimen drawing on municion.org the shoulder, the neck, the head (a rebated rim)
 # and the length of the round (TL).
 name = "24x138 mm"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["24x138", "24 mm pzw kan 38", "24 mm tb 41", "tankbüchse 41"]

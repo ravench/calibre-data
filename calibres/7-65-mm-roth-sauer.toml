@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # First for the Frommer pocket pistol of 1901, later the Roth-Sauer.
 name = "7.65 mm Roth-Sauer"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["7.65 roth-sauer", "7.65rothsauer", "7.65 roth sauer"]

@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # Semi-rimmed; designed by F. W. Jones for the Canadian Ross straight-pull rifle. GB kept as origin.
 name = ".280 Ross"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "semi-rimmed"
 profile = "spitzer"
 aliases = ["280ross", "280 ross", "280 rimless", "280 riml. n.e. ross"]

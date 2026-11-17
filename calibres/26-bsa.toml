@@ -3,7 +3,7 @@
 # BSA's belted round for its sporting rifles on the 1914 Enfield action. The table types it rimless;
 # the entry and its other name say belted.
 name = ".26 BSA"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["26 bsa", "26bsa"]

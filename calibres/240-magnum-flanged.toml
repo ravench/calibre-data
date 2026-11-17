@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # Holland & Holland's rimmed 6 mm for double rifles.
 name = ".240 Magnum Flanged"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["240 flanged", "240 magnum flanged"]

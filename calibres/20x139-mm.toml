@@ -3,7 +3,7 @@
 # neck (the AECC specimen drawing on municion.org: 21.45), the drawing the shoulder and the head.
 # Jane's entry (p. 87) gives a 28.4 mm rim, its dimension table (p. 682) 30.00 mm.
 name = "20x139 mm"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["20x139", "20 mm hs 820"]

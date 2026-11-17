@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A .45 Colt rim on a .45 ACP-length case, for light loads.
 name = ".45 Cowboy Special"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["45 cowboy special", "cowboy 45 special"]

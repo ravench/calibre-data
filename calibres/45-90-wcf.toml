@@ -1,6 +1,6 @@
 # .45-90 WCF: C.I.P. Tab. II "45-90 WM" maximum cartridge, checked against AECC 11-061-BBC-020.
 name = ".45-90 WCF"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["45-90", "4590", "45-90wcf", "45-82", "45-85", "45-90hv"]

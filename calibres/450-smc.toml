@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Triton's .45 ACP outline with a small rifle primer pocket, for higher pressure (2000).
 name = ".450 SMC"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["450 smc", "450 short magnum cartridge", "450 small magnum cartridge"]

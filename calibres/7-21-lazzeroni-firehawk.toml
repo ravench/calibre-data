@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Lazzeroni's .284 long magnum, on its .544 in. case. Chambered only on special order since 1999 (COTW 18 p. 387).
 name = "7.21 Lazzeroni Firehawk"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7.21 firehawk", "7.21mm firehawk", "lazzeroni firehawk"]

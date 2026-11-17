@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Swedish machine-gun round, also for the m/40 rifle.
 name = "8x63 mm Swedish"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["8x63", "8x63 swedish"]

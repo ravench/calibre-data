@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A-Square's rimmed .416 for double rifles, made at the request of European rifle makers.
 name = ".416 Rimmed"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["416 rimmed", "416 a-square rimmed"]

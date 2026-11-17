@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The British round for the EM-2 rifle; NATO chose the 7.62x51 mm instead.
 name = ".280 British"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["280british", "280 british", "7x43"]

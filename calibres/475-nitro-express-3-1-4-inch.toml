@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A straight case, one of the rounds that replaced the banned .450s.
 name = ".475 Nitro Express 3¼ inch"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["475 3 1/4", "475 nitro 3 1/4"]

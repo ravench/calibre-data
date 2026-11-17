@@ -3,7 +3,7 @@
 # VBR-Belgium's PDW and pistol round, a straight case that tapers to the mouth. The dimension table of
 # Cartridges of the World (18th ed., p. 527) has its rim and neck diameters in the wrong columns.
 name = "7.92x24 mm VBR"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["7.92x24", "7.92 vbr"]

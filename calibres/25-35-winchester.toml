@@ -1,6 +1,6 @@
 # Rifle batch 2 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]).
 name = ".25-35 Winchester"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["25-35", "25-35wcf", "6.5x52r"]

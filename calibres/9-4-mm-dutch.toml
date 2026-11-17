@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Dutch M1873 revolver, later the M91; first blackpowder, later smokeless, the last case with a flat-nosed bullet.
 name = "9.4 mm Dutch"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["9.4 dutch", "9.4mm dutch revolver"]

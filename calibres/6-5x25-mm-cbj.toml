@@ -3,7 +3,7 @@
 # sub-calibre bullet in a sabot. CBJ Tech AB loads it for armed forces; COTW 18 p. 373 says it has no plans
 # for commercial sales.
 name = "6.5x25 mm CBJ"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6.5x25 cbj", "6.5x25", "cbj"]

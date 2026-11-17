@@ -1,7 +1,7 @@
 # Added 2026-11: first added from the page named in INTRODUCED, now SAAMI's (see [mm]).
 name = ".17 Winchester Super Magnum"
-# Firearms: book:cotw-18 p. 654.
-categories = ["rimfire", "rifle"]
+# Guns: book:cotw-18 p. 654.
+guns = ["rifle"]
 kind = "rimfire"
 profile = "spitzer"
 aliases = ["17wsm"]

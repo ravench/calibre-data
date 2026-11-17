@@ -1,5 +1,5 @@
 name = ".300 AAC Blackout"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["300blk", "300blackout", "300aac"]

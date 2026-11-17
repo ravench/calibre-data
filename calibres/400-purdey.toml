@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A straight 3 in. case loaded with light cordite for Purdey doubles.
 name = ".400 Purdey"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["400 purdey", "400 purdey light"]

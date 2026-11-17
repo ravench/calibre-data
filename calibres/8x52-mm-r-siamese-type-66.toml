@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Siamese service round with a pointed bullet.
 name = "8x52 mm R Siamese Type 66"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["8x52r", "8x52r siamese"]

@@ -95,24 +95,26 @@ class LoadTests(unittest.TestCase):
         self.assertEqual([cat for cat, _ in cartridges.CATALOGUE],
                          ["Randfeuer", "Kurzwaffe", "Langwaffe", "Schwarzpulver", "Flinte", "Luftdruck"])
 
-    def test_black_powder_and_rimfire_rounds_name_their_firearms(self):
-        # Second categories: the firearms of a round whose first category is not a firearm, from the
-        # source in its "# Firearms:" note (2026-11-12).
-        cats = cartridges.CALIBRE_CATEGORIES
-        self.assertEqual(cats[".22 LR"], ("Randfeuer", "Langwaffe", "Kurzwaffe"))
-        self.assertEqual(cats[".44-40 WCF"], ("Schwarzpulver", "Langwaffe", "Kurzwaffe"))
-        self.assertEqual(cats["10.4x38 mm R Vetterli"], ("Schwarzpulver", "Langwaffe", "Randfeuer"))
-        self.assertEqual(cats[".22 SH (5.6/11)"], ("Randfeuer",))  # a blank is fired by neither
+    def test_guns_beyond_the_category_have_a_source(self):
+        # A round's guns say what fires it; its category follows from them unless it is a black-powder or
+        # rimfire round (2026-11-16). Guns a black-powder or rimfire round names, and a second gun of any
+        # round, come from the source in its "# Guns:" note.
+        guns = cartridges.CALIBRE_GUNS
+        self.assertEqual(guns[".22 LR"], ("rifle", "handgun"))
+        self.assertEqual(guns[".44-40 WCF"], ("rifle", "handgun"))
+        self.assertEqual(guns[".22 SH (5.6/11)"], ())  # a blank is fired by neither
+        self.assertTrue(cartridges.is_black_powder(".44-40 WCF"))
         kinds = {s["name"]: s["kind"] for _, items in cartridges.ALL_CATALOGUE for s in items}
-        for name, c in cats.items():
+        for name, g in guns.items():
             with self.subTest(name):
-                if len(c) > 1:
+                technology = cartridges.is_black_powder(name) or kinds[name] == "rimfire"
+                if len(g) > 1 or g and technology:
                     with open(os.path.join(ROOT, "calibres", slug(name) + ".toml"), encoding="utf-8") as f:
-                        self.assertRegex(f.read(), r"(?m)^# Firearms: .+\ncategories = ")
-                if c[0] == "Schwarzpulver" and kinds[name] not in cartridges.LOOSE:  # balls and Minié bullets: none
-                    self.assertTrue({"Langwaffe", "Kurzwaffe"} & set(c))
-                if c[0] in ("Kurzwaffe", "Langwaffe", "Flinte", "Luftdruck", "Kanone"):
-                    self.assertEqual(len(c), 1)
+                        self.assertRegex(f.read(), r"(?m)^# Guns: .+\nguns = ")
+                if cartridges.is_black_powder(name) and kinds[name] not in cartridges.LOOSE:  # balls, Minié: none
+                    self.assertTrue({"rifle", "handgun"} & set(g))
+                if "cannon" in g:
+                    self.assertEqual(g, ("cannon",))
 
     def test_cannon_rounds_are_in_the_catalogue_but_not_in_the_apps(self):
         self.assertEqual([cat for cat, _ in cartridges.ALL_CATALOGUE][-1], "Kanone")
@@ -287,16 +289,12 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, "base = 11.9", "base = 4.1")
             self.assertFalse([p for p in c.problems() if "rimless case" in p[2]])
 
-    def test_the_rimfire_category_holds_the_rimfire_cases(self):
-        # Both ways: no centrefire round is in it (the 9 mm PA Blanc and five other alarm blanks were, next to the
-        # .22 blank, until 2026-11; they are handgun rounds), and a rimfire one of another category lists it too.
-        with Copy() as c:
-            pak = "calibres/9-mm-pa-blanc.toml"
-            c.edit(pak, 'categories = ["handgun"]', 'categories = ["handgun", "rimfire"]')
-            c.edit(LR, 'categories = ["rimfire", "rifle", "handgun"]', 'categories = ["rifle", "handgun"]')
-            self.assertProblem(c, pak, r"the rimfire category holds only rimfire cases: remove it from this rimless",
-                               line=c.line_of(pak, "categories ="))
-            self.assertProblem(c, LR, r"a rimfire calibre lists the rimfire category", line=c.line_of(LR, "categories ="))
+    def test_the_rimfire_category_follows_from_the_kind(self):
+        # A file does not name its category: a rimfire case is in rimfire, a centrefire blank (the 9 mm PA Blanc)
+        # under its gun, a black-powder rimfire round in black-powder and rimfire (2026-11-16).
+        self.assertEqual(cartridges.categories(".22 LR"), ("Randfeuer", "Langwaffe", "Kurzwaffe"))
+        self.assertEqual(cartridges.categories("9 mm PA Blanc"), ("Kurzwaffe",))
+        self.assertEqual(cartridges.categories("10.4x38 mm R Vetterli"), ("Schwarzpulver", "Langwaffe", "Randfeuer"))
 
     def test_416_rigby_no_2_is_the_416_rigby_with_a_rim(self):
         # C.I.P. sheets: the No. 2 (2019) keeps the .416 Rigby's body, shoulder, neck and cone behind a 17 mm rim.
@@ -995,54 +993,73 @@ class CheckTests(unittest.TestCase):
             c.edit("order.toml", "rifle = [", "Langwaffe = [")
             self.assertProblem(c, "order.toml", r"'Langwaffe' is not one of .* \(write rifle for Langwaffe\)")
         with Copy() as c:
-            c.edit(WIN, 'categories = ["rifle"]', 'categories = ["Langwaffe"]')
-            self.assertOnlyProblems(c, WIN, r"'Langwaffe' is not one of .* \(write rifle for Langwaffe\)")
+            c.edit(WIN, 'guns = ["rifle"]', 'guns = ["Langwaffe"]')
+            self.assertOnlyProblems(c, WIN, r"gun 'Langwaffe' is not one of .* \(write rifle for Langwaffe\)")
 
-    def test_categories_problems(self):
-        old = 'categories = ["rifle"]'
-        for new, pattern in [('categories = []', r"categories must be a list of one or more categories"),
-                             ('categories = "rifle"', r"categories must be a list of one or more categories"),
-                             ('categories = ["rifles"]', r"'rifles' is not one of rimfire, .* \(did you mean \"rifle\"\?\)"),
-                             ('categories = ["rifle", "rifle"]', r"categories lists a category twice"),
-                             ('', r"needs 'categories'")]:
+    def test_guns_problems(self):
+        old = 'guns = ["rifle"]'
+        for new, pattern in [('guns = []', r"guns names at least one gun \(only a black-powder or rimfire round"),
+                             ('guns = "rifle"', r"guns must be a list of handgun, rifle, shotgun, air-gun, cannon"),
+                             ('guns = ["rifles"]', r"gun 'rifles' is not one of handgun, .* \(did you mean \"rifle\"\?\)"),
+                             ('guns = ["black-powder"]', r"gun 'black-powder' is not one of .* \(write black_powder = true"),
+                             ('guns = ["Schwarzpulver"]', r"gun 'Schwarzpulver' is not one of .* \(write black_powder = true"),
+                             ('guns = ["rimfire", "rifle"]', r"gun 'rimfire' is not one of .* \(a rimfire round has kind"),
+                             ('guns = ["rifle", "rifle"]', r"guns lists a gun twice"),
+                             ('guns = ["rifle"]\nblack_powder = "yes"', r"black_powder must be true or false"),
+                             ('categories = ["rifle"]', r"categories is now worked out from guns, black_powder and kind"),
+                             ('', r"needs 'guns'")]:
             with self.subTest(new), Copy() as c:
                 c.edit(WIN, old, new)
                 self.assertProblem(c, WIN, pattern, line=bool(new))
 
-    def test_a_bad_category_on_a_cannon_round_is_its_only_problem(self):
+    def test_a_black_powder_or_rimfire_round_may_name_no_gun(self):
+        with Copy() as c:
+            c.edit(LR, 'guns = ["rifle", "handgun"]', 'guns = []')
+            c.edit("calibres/44-40-wcf.toml", 'guns = ["rifle", "handgun"]', 'guns = []')
+            t = load(c.dir)
+            self.assertEqual(t["CALIBRE_CATEGORIES"][".22 LR"], ("Randfeuer",))
+            self.assertEqual(t["CALIBRE_CATEGORIES"][".44-40 WCF"], ("Schwarzpulver",))
+            self.assertEqual(t["CALIBRE_GUNS"][".44-40 WCF"], ())
+
+    def test_a_bad_gun_on_a_cannon_round_is_its_only_problem(self):
         rel = "calibres/20x138-mm-b.toml"
         with Copy() as c:
-            c.edit(rel, 'categories = ["cannon"]', 'categories = ["cannon", "rifles"]')
+            c.edit(rel, 'guns = ["cannon"]', 'guns = ["cannon", "rifles"]')
             self.assertOnlyProblems(c, rel, r"'rifles' is not one of")
 
-    def test_cannon_rounds_are_in_no_other_category(self):
+    def test_cannon_rounds_are_fired_by_nothing_else(self):
         rel = "calibres/20x138-mm-b.toml"
-        for new in ('categories = ["cannon", "rifle"]', 'categories = ["rifle", "cannon"]'):
+        for new in ('guns = ["cannon", "rifle"]', 'guns = ["rifle", "cannon"]', 'guns = ["cannon"]\nblack_powder = true'):
             with self.subTest(new), Copy() as c:
-                c.edit(rel, 'categories = ["cannon"]', new)
-                self.assertProblem(c, rel, r"cannon is not in the apps yet: a calibre in it is in no other category")
+                c.edit(rel, 'guns = ["cannon"]', new)
+                self.assertProblem(c, rel, r"cannon is not in the apps yet: a calibre fired by it is fired by nothing else")
 
     def test_categories_of_an_unknown_name(self):
         self.assertEqual(cartridges.categories("no such calibre"), ())
+        self.assertEqual(cartridges.guns("no such calibre"), ())
+        self.assertFalse(cartridges.is_black_powder("no such calibre"))
 
-    def test_a_calibre_in_several_categories_is_listed_under_the_first(self):
+    def test_a_calibre_is_listed_under_its_category_only(self):
         with Copy() as c:
-            c.edit(WIN, 'categories = ["rifle"]', 'categories = ["rifle", "black-powder", "handgun"]')
+            c.edit(WIN, 'guns = ["rifle"]', 'guns = ["rifle", "handgun"]')
             t = load(c.dir)
-            self.assertEqual(t["CALIBRE_CATEGORIES"][".308 Winchester"], ("Langwaffe", "Schwarzpulver", "Kurzwaffe"))
+            self.assertEqual(t["CALIBRE_CATEGORIES"][".308 Winchester"], ("Langwaffe", "Kurzwaffe"))
+            self.assertEqual(t["CALIBRE_GUNS"][".308 Winchester"], ("rifle", "handgun"))
             self.assertEqual(t["ALL_CATALOGUE"], cartridges.ALL_CATALOGUE)  # listed once, as before
-            c.edit(WIN, 'categories = ["rifle", "black-powder", "handgun"]', 'categories = ["black-powder", "rifle"]')
+            c.edit(WIN, 'guns = ["rifle", "handgun"]', 'guns = ["rifle"]\nblack_powder = true')
             self.assertProblem(c, "order.toml", r"'.308 Winchester' is not a calibre whose first category is rifle "
                                                 r"\(its first category is black-powder\)")
             c.edit("order.toml", '  ".308 Winchester",\n', "")
-            catalogue = dict(load(c.dir)["ALL_CATALOGUE"])
+            t = load(c.dir)
+            catalogue = dict(t["ALL_CATALOGUE"])
             self.assertIn(".308 Winchester", [s["name"] for s in catalogue["Schwarzpulver"]])
             self.assertNotIn(".308 Winchester", [s["name"] for s in catalogue["Langwaffe"]])
+            self.assertIn(".308 Winchester", t["BLACK_POWDER"])
 
     def test_a_category_without_calibres(self):
         with Copy() as c:
             for fn in os.listdir(c.path("calibres")):
-                if c.read(f"calibres/{fn}").count('categories = ["shotgun"'):
+                if c.read(f"calibres/{fn}").count('guns = ["shotgun"'):
                     os.remove(c.path(f"calibres/{fn}"))
             self.assertProblem(c, "order.toml", r"no calibre has 'shotgun' as its first category")
 

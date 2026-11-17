@@ -2,7 +2,7 @@
 # Jim West's (Wild West Guns) .45 for lever-action rifles. Cor-Bon loaded it, but no longer
 # (COTW 18 p. 431).
 name = ".457 WWG"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["457 wwg", "457 wild west guns"]

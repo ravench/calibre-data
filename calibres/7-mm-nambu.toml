@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the 'Baby' Nambu pistol of Japanese officers, about 1920.
 name = "7 mm Nambu"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["7nambu", "7 nambu", "baby nambu"]

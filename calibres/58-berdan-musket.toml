@@ -2,8 +2,9 @@
 # For Berdan's breech-loading conversion of the Springfield rifled musket; tried by the US Army, never
 # adopted.
 name = ".58 Berdan Musket"
-# Firearms: book:cotw-18 p. 248.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 248.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["58 berdan", "58 us musket", "58 u.s. musket berdan", "58 berdan musket"]

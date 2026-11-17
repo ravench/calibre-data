@@ -8,7 +8,7 @@
 # of the same round (training package of 2026-11-07, filed under GP 1890 with the note
 # "Kadettenpatrone") gave 79.0.
 name = "7.5 mm Kadettenpatrone"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["kadettenpatrone", "kadetten-pat", "kadettenpat", "7.5 mm kadettenpatrone", "7.5 mm kadetten-pat", "cadets", "cadetti", "kg97", "kadettengewehr", "kadettengewehrpatrone"]

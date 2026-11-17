@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Bishop Ammunition & Firearms' .475 for AR-10 and bolt-action rifles.
 name = ".475 Bishop Short Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["475 bishop", "475 bishop short magnum", "475 bsm"]

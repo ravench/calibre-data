@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Lazzeroni's .416 long magnum, on its .577 in. case.
 name = "10.57 Lazzeroni Meteor"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["10.57 meteor", "10.57mm meteor", "lazzeroni meteor"]

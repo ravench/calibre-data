@@ -4,7 +4,7 @@
 # The AECC specimen drawing on municion.org (27-145-BFE-010) gives no shoulder or head here: its neck
 # (NØ 29.51) is 0.8 mm wider than Jane's (28.7), more than its sizes may differ from the file's.
 name = "27x145 mm B"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["27x145b", "27 mm mauser"]

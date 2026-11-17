@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The bottlenecked Werndl round, later also in the Mannlicher M1886.
 name = "11.15x58 mm R Werndl M77"
-# Firearms: book:cotw-18 p. 563.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 563.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["11.15x58r werndl", "werndl m77"]

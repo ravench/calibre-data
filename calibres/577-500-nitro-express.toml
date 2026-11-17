@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .577 case necked to .50; blackpowder first, later a full Nitro Express.
 name = ".577/500 Nitro Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["577/500", "577/500 3 1/8"]

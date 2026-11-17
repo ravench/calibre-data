@@ -2,7 +2,7 @@
 # Lapua necked down (longer neck, wider shoulder), and not the 6x47 mm wildcat on the .222 Remington
 # Magnum case.
 name = "6x47 mm SM"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6x47", "6x47sm", "6x47 sm", "swiss match", "6mm sm"]
