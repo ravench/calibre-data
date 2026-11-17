@@ -35,6 +35,7 @@ rim_thickness = 0.51
 ramp_top = 1.35
 groove_diameter = 6.4
 ramp_angle = 47.0
+groove_width = 0.45
 sources = ["book:cotw-18 p. 527", "https://municion.org/producto/5-mm-bergmann-n2-rimless-1896/"]
 
 [bullet]

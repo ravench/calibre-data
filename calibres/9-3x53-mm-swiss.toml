@@ -16,6 +16,8 @@ rim = 12.47
 base = 12.5
 shoulder = 11.51
 shoulder_at = 44.26
+neck_at = 46.7
+neck_base = 9.98
 neck = 9.88
 case_length = 53.59
 overall_length = 71.12
@@ -44,6 +46,7 @@ rim_thickness = 1.66
 ramp_top = 3.46
 groove_diameter = 10.26
 ramp_angle = 55.0
+groove_width = 0.99
 sources = ["https://municion.org/producto/93-x-53-swiss-m89-n/"]
 
 [bullet]

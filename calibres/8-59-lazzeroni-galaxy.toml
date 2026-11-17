@@ -15,6 +15,8 @@ rim = 14.66
 base = 14.66
 shoulder = 14.15
 shoulder_at = 39.57
+neck_at = 44.07
+neck_base = 9.4
 neck = 9.35
 case_length = 52.07
 overall_length = 71.12
@@ -43,6 +45,7 @@ rim_thickness = 1.52
 ramp_top = 3.7
 groove_diameter = 12.72
 ramp_angle = 44.0
+groove_width = 1.3
 sources = ["book:cotw-18 p. 452", "https://municion.org/producto/859-mm-lazzeroni-galaxy/"]
 
 [bullet]

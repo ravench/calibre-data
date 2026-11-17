@@ -21,6 +21,8 @@ belt = 28.48
 base = 26.86
 shoulder = 25.49
 shoulder_at = 102.93
+neck_at = 128
+neck_base = 20.7
 neck = 20.7
 case_length = 138.0
 overall_length = 202.7
@@ -46,6 +48,7 @@ rim_thickness = 2.43
 ramp_top = 15.34
 groove_diameter = 22.85
 ramp_angle = 43.0
+groove_width = 4.29
 sources = ["https://municion.org/producto/20-x-138-b-rheinmetall-flak-30-38/"]
 
 [case]

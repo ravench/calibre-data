@@ -38,6 +38,7 @@ rim_thickness = 1.12
 ramp_top = 4.33
 groove_diameter = 9.99
 ramp_angle = 23.0
+groove_width = 0.77
 sources = ["book:cotw-18 p. 574", "https://municion.org/producto/45-thompson-model-1923/"]
 
 [bullet]

@@ -16,6 +16,8 @@ rim = 11.89
 base = 11.86
 shoulder = 10.85
 shoulder_at = 51.05
+neck_at = 53.69
+neck_base = 9.71
 neck = 9.75
 case_length = 62.99
 overall_length = 83.31
@@ -44,6 +46,7 @@ rim_thickness = 1.2
 ramp_top = 3.1
 groove_diameter = 10.2
 ramp_angle = 46.0
+groove_width = 1.1
 sources = ["https://municion.org/producto/9-x-63-hessmer/"]
 
 [bullet]

@@ -37,6 +37,7 @@ rim_thickness = 1.09
 ramp_top = 2.4
 groove_diameter = 7.81
 ramp_angle = 50.0
+groove_width = 0.9
 sources = ["https://municion.org/producto/763-mm-mannlicher/"]
 
 [bullet]

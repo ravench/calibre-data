@@ -14,6 +14,8 @@ rim = 12.07
 base = 12.02
 shoulder = 11.0
 shoulder_at = 47.34
+neck_at = 51.6
+neck_base = 8.58
 neck = 8.58
 case_length = 57.8
 overall_length = 79.6
@@ -43,6 +45,7 @@ rim_thickness = 1.07
 ramp_top = 3.07
 groove_diameter = 10.32
 ramp_angle = 49.0
+groove_width = 1.16
 sources = ["book:cotw-18 p. 573", "https://municion.org/producto/77-x-58-japanese-rimless-arisaka-type-99/"]
 
 [bullet]

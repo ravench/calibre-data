@@ -27,6 +27,8 @@ rim = 12.62
 base = 12.52
 shoulder = 11.65
 shoulder_at = 44.5
+neck_at = 47.45
+neck_base = 8.47
 neck = 8.47
 case_length = 54.6
 overall_length = 77.5
@@ -55,6 +57,7 @@ rim_thickness = 1.56
 ramp_top = 3.6
 groove_diameter = 10.26
 ramp_angle = 47.0
+groove_width = 1
 sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
 
 [bullet]

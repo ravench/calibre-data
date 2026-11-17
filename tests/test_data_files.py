@@ -662,7 +662,7 @@ class CheckTests(unittest.TestCase):
     def test_cannon_rounds_need_only_the_bullet_and_case_length(self):
         rel = "calibres/20x138-mm-b.toml"
         with Copy() as c:
-            c.edit(rel, "rim = 26.86\nbelt = 28.48\nbase = 26.86\nshoulder = 25.49\nshoulder_at = 102.93\n", "")
+            c.edit(rel, "rim = 26.86\nbelt = 28.48\nbase = 26.86\nshoulder = 25.49\nshoulder_at = 102.93\nneck_at = 128\nneck_base = 20.7\n", "")
             c.edit(rel, "overall_length = 202.7\n", "")
             c.write(rel, c.read(rel) + TIP)  # colour codes too
             self.assertEqual(c.problems(), [])
@@ -788,6 +788,8 @@ class CheckTests(unittest.TestCase):
     def test_neck_start_agrees_with_the_shoulder_angle(self):
         # Where the angle and the measurements come from the same sheet, the shoulder run in from shoulder_at at that
         # angle reaches neck_base at neck_at (a misread L2 or H1 shows up here), and the neck is at least 1.2 mm long.
+        # An AECC drawing listed after another source (Cartridges of the World) gives the neck, not that source's
+        # shoulder, so it is not held to it.
         entries = {e["name"]: e for _, items in cartridges.ALL_CATALOGUE for e in items}
         checked = set()
         for name, (at, base) in cartridges.NECKS.items():
@@ -796,7 +798,8 @@ class CheckTests(unittest.TestCase):
             if name not in cartridges.SHOULDER_ANGLES:
                 continue
             degrees, url = cartridges.SHOULDER_ANGLES[name]
-            if url not in cartridges.sources(name, "mm"):
+            mm = cartridges.sources(name, "mm")
+            if url not in mm or ("municion.org" in url and url != mm[0]):
                 continue
             run = (e["shoulder"] - base) / 2 / math.tan(math.radians(degrees))
             off = abs(at - e["sh_at"] - run) > 0.3
@@ -816,6 +819,7 @@ class CheckTests(unittest.TestCase):
 
     def test_groove_width(self):
         self.assertEqual(cartridges.GROOVE_WIDTHS[".308 Winchester"][0], 1.4)  # C.I.P. e min
+        self.assertEqual(cartridges.GROOVE_WIDTHS["25x137 mm"][0], 4.09)  # AECC drawing GW
         with Copy() as c:
             # ramp_top 3.85 less the 1.37 rim and the 36° ramp from 10.39 up to the 11.9 base leaves 1.44
             c.edit(WIN, "groove_width = 1.4", "groove_width = 1.6")
@@ -826,6 +830,11 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.edit(WIN, "ramp_top = 3.85\ngroove_diameter = 10.39\nramp_angle = 36.0\n", "")
             self.assertProblem(c, WIN, r"groove_width goes with the groove")
+
+    def test_cannon_neck(self):
+        # A cannon round's [mm] (shape partial) may give the neck start too: the 25x137 mm's AECC drawing has
+        # NL 12.4 and NØ 26.14, so neck_at is case_length 137 less 12.4.
+        self.assertEqual(cartridges.NECKS["25x137 mm"], (124.6, 26.14))
 
     def test_a_case_narrows_from_its_base_to_its_mouth(self):
         acp, rem, blank = "calibres/45-acp.toml", "calibres/223-remington.toml", "calibres/22-sh-5-6-11.toml"

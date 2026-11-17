@@ -37,6 +37,7 @@ rim_thickness = 0.54
 ramp_top = 1.35
 groove_diameter = 4.37
 ramp_angle = 34.0
+groove_width = 0.35
 sources = ["https://municion.org/producto/425-mm-lilliput/"]
 
 [bullet]

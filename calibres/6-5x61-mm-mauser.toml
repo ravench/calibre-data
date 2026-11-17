@@ -16,6 +16,8 @@ rim = 12.17
 base = 12.12
 shoulder = 11.48
 shoulder_at = 47.77
+neck_at = 52.18
+neck_base = 7.49
 neck = 7.52
 case_length = 60.96
 overall_length = 90.17
@@ -42,6 +44,7 @@ rim_thickness = 1.45
 ramp_top = 3.6
 groove_diameter = 10.43
 ramp_angle = 36.0
+groove_width = 1
 sources = ["https://municion.org/producto/65-x-61-mauser/"]
 
 [bullet]

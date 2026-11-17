@@ -41,6 +41,7 @@ rim_thickness = 1.2
 ramp_top = 3.2
 groove_diameter = 10.0
 ramp_angle = 29.0
+groove_width = 0.35
 sources = ["https://municion.org/producto/1075-x-57-mauser/"]
 
 [bullet]

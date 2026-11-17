@@ -18,6 +18,8 @@ rim = 24.8
 base = 24.8
 shoulder = 24.03
 shoulder_at = 95.17
+neck_at = 100.95
+neck_base = 20.58
 neck = 20.58
 case_length = 110.0
 overall_length = 182.94
@@ -45,6 +47,7 @@ rim_thickness = 2.47
 ramp_top = 6.5
 groove_diameter = 21.91
 ramp_angle = 59.0
+groove_width = 3.16
 sources = ["https://municion.org/producto/20-x-110-hispano-hs-404-804-mle-1938/"]
 
 [case]

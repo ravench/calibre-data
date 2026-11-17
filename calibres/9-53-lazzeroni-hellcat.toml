@@ -15,6 +15,8 @@ rim = 14.66
 base = 14.66
 shoulder = 14.15
 shoulder_at = 39.95
+neck_at = 43.47
+neck_base = 10.34
 neck = 10.26
 case_length = 52.07
 overall_length = 71.12
@@ -43,6 +45,7 @@ rim_thickness = 1.52
 ramp_top = 3.8
 groove_diameter = 12.7
 ramp_angle = 46.0
+groove_width = 1.33
 sources = ["book:cotw-18 p. 452", "https://municion.org/producto/953-mm-lazzeroni-hellcat/"]
 
 [bullet]

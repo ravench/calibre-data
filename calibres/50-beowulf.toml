@@ -34,6 +34,7 @@ rim_thickness = 1.4
 ramp_top = 4.7
 groove_diameter = 9.23
 ramp_angle = 52.0
+groove_width = 1.65
 sources = ["book:cotw-18 p. 453", "https://municion.org/producto/50-beowulf/"]
 
 [bullet]

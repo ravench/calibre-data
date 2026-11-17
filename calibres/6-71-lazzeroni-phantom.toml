@@ -15,6 +15,8 @@ rim = 13.46
 base = 13.46
 shoulder = 12.95
 shoulder_at = 40.19
+neck_at = 46.07
+neck_base = 7.6
 neck = 7.54
 case_length = 52.07
 overall_length = 71.12
@@ -43,6 +45,7 @@ rim_thickness = 1.4
 ramp_top = 3.2
 groove_diameter = 12.03
 ramp_angle = 53.0
+groove_width = 1.3
 sources = ["book:cotw-18 p. 451", "https://municion.org/producto/671-mm-lazzeroni-phantom/"]
 
 [bullet]

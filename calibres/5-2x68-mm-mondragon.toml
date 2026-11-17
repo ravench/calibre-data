@@ -17,6 +17,8 @@ rim = 12.47
 base = 12.42
 shoulder = 11.43
 shoulder_at = 61.6
+neck_at = 63.76
+neck_base = 6.31
 neck = 6.17
 case_length = 67.31
 overall_length = 77.72
@@ -44,6 +46,7 @@ rim_thickness = 1.7
 ramp_top = 3.73
 groove_diameter = 10.3
 ramp_angle = 36.0
+groove_width = 0.6
 sources = ["book:cotw-18 p. 573", "https://municion.org/producto/52-x-676-mondragon-original/"]
 
 [bullet]

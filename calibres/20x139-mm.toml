@@ -15,6 +15,8 @@ rim = 28.5
 base = 28.5
 shoulder = 27.48
 shoulder_at = 115.2
+neck_at = 126.7
+neck_base = 21.45
 neck = 21.49
 case_length = 139.0
 overall_length = 213.0
@@ -46,6 +48,7 @@ rim_thickness = 3.04
 ramp_top = 7.7
 groove_diameter = 24.81
 ramp_angle = 48.0
+groove_width = 3.06
 sources = ["https://municion.org/producto/20-x-139-hispano-hs-820-a-rh-202-m-693-f1/"]
 
 [case]

@@ -16,6 +16,8 @@ rim = 9.4
 base = 9.32
 shoulder = 8.25
 shoulder_at = 16.02
+neck_at = 17.6
+neck_base = 7.3
 neck = 7.34
 case_length = 22.1
 overall_length = 31.24
@@ -47,6 +49,7 @@ rim_thickness = 1.0
 ramp_top = 1.9
 groove_diameter = 8.63
 ramp_angle = 35.0
+groove_width = 0.4
 sources = ["https://municion.org/producto/65-mm-bergmann-n3-1896/"]
 
 [bullet]

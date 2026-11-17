@@ -37,6 +37,7 @@ rim_thickness = 0.41
 ramp_top = 1.31
 groove_diameter = 3.09
 ramp_angle = 32.0
+groove_width = 0.55
 sources = ["https://municion.org/producto/27-mm-kolibri/"]
 
 [bullet]

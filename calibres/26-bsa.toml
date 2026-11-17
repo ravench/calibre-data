@@ -19,6 +19,8 @@ rim = 13.46
 base = 13.03
 shoulder = 11.68
 shoulder_at = 49.13
+neck_at = 54.21
+neck_base = 7.81
 neck = 7.75
 case_length = 60.71
 overall_length = 79.5
@@ -53,6 +55,7 @@ rim_thickness = 1.24
 ramp_top = 5.3
 groove_diameter = 11.92
 ramp_angle = 37.0
+groove_width = 1.02
 sources = ["book:donnelly p. 245", "https://municion.org/producto/26-bsa-nitro-express-belted/"]
 
 [bullet]

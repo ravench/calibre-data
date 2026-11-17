@@ -19,6 +19,8 @@ rim = 11.46
 base = 11.4
 shoulder = 9.88
 shoulder_at = 40.95
+neck_at = 45.26
+neck_base = 8.1
 neck = 7.98
 case_length = 51.31
 overall_length = 72.39
@@ -51,6 +53,7 @@ rim_thickness = 1.2
 ramp_top = 3.79
 groove_diameter = 9.6
 ramp_angle = 37.0
+groove_width = 1.41
 sources = ["https://municion.org/producto/276-pedersen-xpl-pd-42-case-pc-48-bullet/"]
 
 [bullet]

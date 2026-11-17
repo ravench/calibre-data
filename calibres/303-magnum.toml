@@ -16,6 +16,8 @@ rim = 14.15
 base = 13.46
 shoulder = 11.73
 shoulder_at = 44.49
+neck_at = 49.89
+neck_base = 8.83
 neck = 8.76
 case_length = 59.69
 overall_length = 82.55
@@ -43,6 +45,7 @@ rim_thickness = 1.18
 ramp_top = 2.65
 groove_diameter = 12.2
 ramp_angle = 52.0
+groove_width = 1
 sources = ["https://municion.org/producto/303-jeffery-magnum-semi-rimmed/"]
 
 [bullet]

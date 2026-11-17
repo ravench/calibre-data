@@ -16,6 +16,8 @@ rim = 13.46
 base = 13.46
 shoulder = 12.95
 shoulder_at = 40.66
+neck_at = 46.22
+neck_base = 7.08
 neck = 6.99
 case_length = 52.07
 overall_length = 71.12
@@ -44,6 +46,7 @@ rim_thickness = 1.27
 ramp_top = 3.12
 groove_diameter = 11.88
 ramp_angle = 48.0
+groove_width = 1.16
 sources = ["book:cotw-18 p. 451", "https://municion.org/producto/617-mm-lazzeroni-spitfire/"]
 
 [bullet]

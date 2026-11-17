@@ -16,6 +16,8 @@ rim = 13.33
 base = 13.28
 shoulder = 12.65
 shoulder_at = 51.41
+neck_at = 55.21
+neck_base = 9.76
 neck = 9.73
 case_length = 64.01
 overall_length = 85.09
@@ -45,6 +47,7 @@ rim_thickness = 1.17
 ramp_top = 3.1
 groove_diameter = 11.65
 ramp_angle = 42.0
+groove_width = 1
 sources = ["https://municion.org/producto/35-newton/"]
 
 [bullet]

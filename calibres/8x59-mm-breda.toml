@@ -19,6 +19,8 @@ rim = 11.91
 base = 12.47
 shoulder = 11.0
 shoulder_at = 49.14
+neck_at = 51.58
+neck_base = 9.14
 neck = 9.07
 case_length = 59.18
 overall_length = 80.52
@@ -45,6 +47,7 @@ rim_thickness = 1.4
 ramp_top = 3.5
 groove_diameter = 10.36
 ramp_angle = 48.0
+groove_width = 1.15
 sources = ["https://municion.org/producto/8-x-59-italian-breda-mg-m-1935/"]
 
 [bullet]

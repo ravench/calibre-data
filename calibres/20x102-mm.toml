@@ -14,6 +14,8 @@ rim = 29.49
 base = 29.21
 shoulder = 26.54
 shoulder_at = 84.74
+neck_at = 93.3
+neck_base = 20.82
 neck = 20.6
 case_length = 102.0
 overall_length = 168.0
@@ -41,6 +43,7 @@ rim_thickness = 2.46
 ramp_top = 7.35
 groove_diameter = 25.38
 ramp_angle = 44.0
+groove_width = 2.96
 sources = ["https://municion.org/producto/20-x-102-us-vulcan-m-50-series/"]
 
 [case]

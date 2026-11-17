@@ -19,6 +19,8 @@ rim = 9.53
 base = 9.46
 shoulder = 9.19
 shoulder_at = 17.72
+neck_at = 22.04
+neck_base = 6.5
 neck = 6.48
 case_length = 26.04
 overall_length = 32.13
@@ -50,6 +52,7 @@ rim_thickness = 1.24
 ramp_top = 3.28
 groove_diameter = 8.2
 ramp_angle = 32.0
+groove_width = 1.05
 sources = ["book:cotw-18 p. 451", "https://municion.org/producto/22-tuason-craig-micromagnum/"]
 
 [bullet]

@@ -51,6 +51,7 @@ rim_thickness = 1.37
 ramp_top = 3.9
 groove_diameter = 10.0
 ramp_angle = 28.0
+groove_width = 0.85
 sources = ["book:cotw-18 p. 250", "https://municion.org/producto/30-blake/"]
 
 [bullet]

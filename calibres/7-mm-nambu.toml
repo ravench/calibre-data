@@ -16,6 +16,8 @@ rim = 9.12
 base = 8.92
 shoulder = 8.56
 shoulder_at = 14.66
+neck_at = 16.41
+neck_base = 7.64
 neck = 7.52
 case_length = 19.81
 overall_length = 26.92
@@ -43,6 +45,7 @@ rim_thickness = 0.98
 ramp_top = 2.53
 groove_diameter = 7.81
 ramp_angle = 36.0
+groove_width = 0.8
 sources = ["https://municion.org/producto/7-mm-nambu/"]
 
 [bullet]

@@ -16,6 +16,8 @@ rim = 11.84
 base = 11.79
 shoulder = 10.67
 shoulder_at = 59.39
+neck_at = 60.92
+neck_base = 9.83
 neck = 9.8
 case_length = 71.12
 overall_length = 82.8
@@ -45,6 +47,7 @@ rim_thickness = 1.2
 ramp_top = 3.25
 groove_diameter = 10.22
 ramp_angle = 46.0
+groove_width = 1.3
 sources = ["https://municion.org/producto/9-x-71-peterlongo/"]
 
 [bullet]

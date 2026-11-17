@@ -17,6 +17,8 @@ rim = 40.0
 base = 40.0
 shoulder = 37.68
 shoulder_at = 134.25
+neck_at = 143.4
+neck_base = 31.82
 neck = 31.82
 case_length = 165.0
 overall_length = 284.0
@@ -44,6 +46,7 @@ rim_thickness = 4.48
 ramp_top = 10.95
 groove_diameter = 34.33
 ramp_angle = 44.0
+groove_width = 3.57
 sources = ["https://municion.org/producto/30-x-164-russian-ao-18-for-navy-aircraft-guns-of-the-gsh-30-family/"]
 
 [case]

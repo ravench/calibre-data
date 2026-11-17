@@ -16,6 +16,8 @@ rim = 13.23
 base = 13.41
 shoulder = 11.68
 shoulder_at = 44.61
+neck_at = 49.99
+neck_base = 8.29
 neck = 8.15
 case_length = 59.69
 overall_length = 82.55
@@ -46,6 +48,7 @@ rim_thickness = 1.2
 ramp_top = 3.36
 groove_diameter = 11.16
 ramp_angle = 43.0
+groove_width = 0.97
 sources = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"]
 
 [bullet]

@@ -16,6 +16,8 @@ rim = 13.82
 base = 13.82
 shoulder = 13.49
 shoulder_at = 50.24
+neck_at = 55.7
+neck_base = 8
 neck = 7.98
 case_length = 63.5
 overall_length = 84.58
@@ -43,6 +45,7 @@ rim_thickness = 1.07
 ramp_top = 3.25
 groove_diameter = 12.11
 ramp_angle = 33.0
+groove_width = 0.8
 sources = ["book:cotw-18 p. 451", "https://municion.org/producto/7-mm-dakota/"]
 
 [bullet]

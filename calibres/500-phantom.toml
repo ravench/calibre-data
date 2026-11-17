@@ -38,6 +38,7 @@ rim_thickness = 1.31
 ramp_top = 3.9
 groove_diameter = 11.75
 ramp_angle = 57.0
+groove_width = 1.3
 sources = ["https://municion.org/producto/500-phantom/"]
 
 [bullet]

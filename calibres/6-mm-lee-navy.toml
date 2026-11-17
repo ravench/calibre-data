@@ -20,6 +20,8 @@ rim = 11.38
 base = 11.3
 shoulder = 10.21
 shoulder_at = 43.75
+neck_at = 48.19
+neck_base = 7.11
 neck = 7.06
 case_length = 59.69
 overall_length = 78.99
@@ -46,6 +48,7 @@ rim_thickness = 1.4
 ramp_top = 3.0
 groove_diameter = 9.65
 ramp_angle = 49.0
+groove_width = 0.9
 sources = ["https://municion.org/producto/6-mm-us-lee-navy/"]
 
 [bullet]

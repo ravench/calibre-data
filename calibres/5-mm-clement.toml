@@ -16,6 +16,8 @@ rim = 7.14
 base = 7.14
 shoulder = 7.04
 shoulder_at = 11.27
+neck_at = 13.03
+neck_base = 5.57
 neck = 5.66
 case_length = 18.03
 overall_length = 25.65
@@ -43,6 +45,7 @@ rim_thickness = 0.64
 ramp_top = 1.75
 groove_diameter = 5.61
 ramp_angle = 56.0
+groove_width = 0.7
 sources = ["book:cotw-18 p. 527", "https://municion.org/producto/5-mm-clement/"]
 
 [bullet]
