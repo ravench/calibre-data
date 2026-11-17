@@ -39,6 +39,7 @@ rim_thickness = 1.22
 ramp_top = 5.3
 groove_diameter = 9.83
 ramp_angle = 30.0
+groove_width = 1.1
 sources = ["book:cotw-18 p. 453", "https://municion.org/producto/50-gi/"]
 
 [bullet]

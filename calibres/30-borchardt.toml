@@ -16,6 +16,8 @@ rim = 9.91
 base = 9.78
 shoulder = 9.4
 shoulder_at = 20.06
+neck_at = 22.15
+neck_base = 8.32
 neck = 8.41
 case_length = 25.15
 overall_length = 34.04
@@ -43,6 +45,7 @@ rim_thickness = 1.1
 ramp_top = 2.5
 groove_diameter = 8.55
 ramp_angle = 42.0
+groove_width = 0.65
 sources = ["https://municion.org/producto/765-mm-borchardt/"]
 
 [bullet]

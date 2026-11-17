@@ -15,6 +15,8 @@ rim = 14.66
 base = 14.66
 shoulder = 14.15
 shoulder_at = 59.04
+neck_at = 63.12
+neck_base = 9.49
 neck = 9.37
 case_length = 71.12
 overall_length = 91.44
@@ -44,6 +46,7 @@ rim_thickness = 1.52
 ramp_top = 3.5
 groove_diameter = 13.0
 ramp_angle = 43.0
+groove_width = 1.2
 sources = ["book:cotw-18 p. 452", "https://municion.org/producto/859-mm-lazzeroni-titan/"]
 
 [bullet]

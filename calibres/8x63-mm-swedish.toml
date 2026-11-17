@@ -19,6 +19,8 @@ rim = 12.17
 base = 12.4
 shoulder = 11.58
 shoulder_at = 50.98
+neck_at = 54.99
+neck_base = 9.1
 neck = 9.04
 case_length = 62.99
 overall_length = 85.34
@@ -46,6 +48,7 @@ rim_thickness = 1.42
 ramp_top = 3.25
 groove_diameter = 10.34
 ramp_angle = 52.0
+groove_width = 1
 sources = ["https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
 
 [bullet]

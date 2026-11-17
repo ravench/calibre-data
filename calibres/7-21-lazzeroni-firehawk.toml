@@ -15,6 +15,8 @@ rim = 13.82
 base = 13.82
 shoulder = 13.31
 shoulder_at = 59.09
+neck_at = 64.12
+neck_base = 8.3
 neck = 8.08
 case_length = 71.12
 overall_length = 90.17
@@ -43,6 +45,7 @@ rim_thickness = 1.4
 ramp_top = 3.5
 groove_diameter = 12.25
 ramp_angle = 42.0
+groove_width = 1.14
 sources = ["book:cotw-18 p. 452", "https://municion.org/producto/721-mm-lazzeroni-firehawk/"]
 
 [bullet]

@@ -30,6 +30,8 @@ rim = 12.6
 base = 12.52
 shoulder = 12.17
 shoulder_at = 52.26
+neck_at = 54.24
+neck_base = 11.38
 neck = 11.35
 case_length = 62.74
 overall_length = 81.79
@@ -59,6 +61,7 @@ rim_thickness = 1.15
 ramp_top = 3.7
 groove_diameter = 11.0
 ramp_angle = 30.0
+groove_width = 1.2
 sources = ["https://municion.org/producto/1075-x-63-g-mauser/"]
 
 [bullet]

@@ -15,6 +15,8 @@ rim = 13.46
 base = 13.46
 shoulder = 12.95
 shoulder_at = 59.7
+neck_at = 64.25
+neck_base = 7.43
 neck = 7.34
 case_length = 71.12
 overall_length = 90.8
@@ -25,7 +27,7 @@ bullet = 6.53
 # neck would be 2.18 mm longer than the drawing's, over the 1.5 mm the rule allows, so neither is taken until a
 # third source settles it.
 unsourced = ["shoulder_at"]
-sources = ["book:cotw-18 p. 451"]
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/653-mm-lazzeroni-scramjet/"]
 
 [introduced]
 year = 1996
@@ -47,6 +49,7 @@ rim_thickness = 1.4
 ramp_top = 3.22
 groove_diameter = 11.83
 ramp_angle = 52.0
+groove_width = 1.2
 sources = ["book:cotw-18 p. 451", "https://municion.org/producto/653-mm-lazzeroni-scramjet/"]
 
 [bullet]

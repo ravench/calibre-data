@@ -37,6 +37,7 @@ rim_thickness = 3.14
 ramp_top = 14.1
 groove_diameter = 26.87
 ramp_angle = 44.0
+groove_width = 3.82
 sources = ["https://municion.org/producto/30-x-113-b-french-defa-30-550/"]
 
 [case]

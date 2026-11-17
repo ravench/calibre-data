@@ -16,6 +16,8 @@ rim = 13.82
 base = 13.82
 shoulder = 13.46
 shoulder_at = 53.65
+neck_at = 57.88
+neck_base = 9.36
 neck = 9.42
 case_length = 65.28
 overall_length = 84.33
@@ -43,6 +45,7 @@ rim_thickness = 1.14
 ramp_top = 3.28
 groove_diameter = 12.13
 ramp_angle = 43.0
+groove_width = 1.18
 sources = ["book:cotw-18 p. 452", "https://municion.org/producto/330-dakota/"]
 
 [bullet]

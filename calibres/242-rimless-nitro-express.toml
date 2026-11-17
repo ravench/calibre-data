@@ -17,6 +17,8 @@ rim = 11.81
 base = 11.81
 shoulder = 10.29
 shoulder_at = 50.46
+neck_at = 55.45
+neck_base = 7.11
 neck = 7.14
 case_length = 60.45
 overall_length = 81.28
@@ -48,6 +50,7 @@ rim_thickness = 1.19
 ramp_top = 3.56
 groove_diameter = 10.41
 ramp_angle = 26.0
+groove_width = 0.9
 sources = ["https://municion.org/producto/242-rimless-nitro-express-vickers/"]
 
 [bullet]

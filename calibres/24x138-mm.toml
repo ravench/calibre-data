@@ -15,6 +15,8 @@ rim = 31.4
 base = 32.0
 shoulder = 31.1
 shoulder_at = 114.9
+neck_at = 125.45
+neck_base = 25.2
 neck = 25.2
 case_length = 138.0
 overall_length = 210.0
@@ -41,6 +43,7 @@ rim_thickness = 1.95
 ramp_top = 10.1
 groove_diameter = 27.5
 ramp_angle = 27.0
+groove_width = 3.4
 sources = ["https://municion.org/producto/24-x-138-swiss-k-38/"]
 
 [case]

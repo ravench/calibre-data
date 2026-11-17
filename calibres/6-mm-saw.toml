@@ -16,6 +16,8 @@ rim = 10.41
 base = 10.41
 shoulder = 9.7
 shoulder_at = 32.01
+neck_at = 35.99
+neck_base = 6.78
 neck = 6.93
 case_length = 45.19
 overall_length = 65.53
@@ -44,6 +46,7 @@ rim_thickness = 1.18
 ramp_top = 3.54
 groove_diameter = 8.8
 ramp_angle = 27.0
+groove_width = 0.9
 sources = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
 
 [bullet]

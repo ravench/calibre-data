@@ -20,6 +20,8 @@ belt = 12.06
 base = 11.38
 shoulder = 11.05
 shoulder_at = 43.82
+neck_at = 45
+neck_base = 10.12
 neck = 10.08
 case_length = 63.5
 overall_length = 76.2
@@ -56,6 +58,7 @@ rim_thickness = 1.0
 ramp_top = 5.42
 groove_diameter = 10.3
 ramp_angle = 39.0
+groove_width = 0.9
 sources = ["https://municion.org/producto/400-375-belted-nitro-express-holland-holland/"]
 
 [bullet]

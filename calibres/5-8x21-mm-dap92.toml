@@ -14,6 +14,8 @@ rim = 7.98
 base = 7.95
 shoulder = 7.77
 shoulder_at = 16.46
+neck_at = 18.56
+neck_base = 6.57
 neck = 6.58
 case_length = 21.01
 overall_length = 32.51
@@ -40,6 +42,7 @@ rim_thickness = 1.12
 ramp_top = 2.94
 groove_diameter = 6.79
 ramp_angle = 31.0
+groove_width = 0.85
 sources = ["book:cotw-18 p. 527", "https://municion.org/producto/58-x-21-china-pistol/"]
 
 [bullet]

@@ -18,6 +18,8 @@ belt = 34.64
 base = 33.2
 shoulder = 31.27
 shoulder_at = 113.45
+neck_at = 133.95
+neck_base = 23.71
 neck = 23.71
 case_length = 152.0
 overall_length = 235.6
@@ -43,6 +45,7 @@ rim_thickness = 2.85
 ramp_top = 10.95
 groove_diameter = 28.84
 ramp_angle = 44.0
+groove_width = 2.46
 sources = ["https://municion.org/producto/23-x-152-b-russian-vya-23-aircraft/"]
 
 [case]

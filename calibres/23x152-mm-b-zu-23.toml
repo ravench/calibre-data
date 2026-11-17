@@ -18,6 +18,8 @@ belt = 34.57
 base = 33.24
 shoulder = 31.65
 shoulder_at = 112.04
+neck_at = 132.6
+neck_base = 23.73
 neck = 23.73
 case_length = 152.0
 overall_length = 236.07
@@ -41,6 +43,7 @@ rim_thickness = 3.88
 ramp_top = 11.95
 groove_diameter = 27.8
 ramp_angle = 43.0
+groove_width = 2.2
 sources = ["https://municion.org/producto/23-x-152-b-russian-zu-or-zsu-anti-aircraft/"]
 
 [case]

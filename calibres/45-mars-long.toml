@@ -37,6 +37,7 @@ rim_thickness = 1.02
 ramp_top = 3.55
 groove_diameter = 10.25
 ramp_angle = 38.0
+groove_width = 0.93
 sources = ["book:cotw-18 p. 529", "https://municion.org/producto/450-mars-long-case/"]
 
 [bullet]

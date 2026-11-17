@@ -17,6 +17,8 @@ rim = 11.81
 base = 13.0
 shoulder = 13.0
 shoulder_at = 34.44
+neck_at = 40.59
+neck_base = 11.95
 neck = 11.81
 case_length = 59.69
 overall_length = 72.64
@@ -48,6 +50,7 @@ rim_thickness = 1.26
 ramp_top = 3.9
 groove_diameter = 10.25
 ramp_angle = 49.0
+groove_width = 1.46
 sources = ["https://municion.org/producto/112-x-60-schuler/"]
 
 [bullet]

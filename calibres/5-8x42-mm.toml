@@ -16,6 +16,8 @@ rim = 10.42
 base = 10.4
 shoulder = 9.35
 shoulder_at = 34.0
+neck_at = 38
+neck_base = 6.65
 neck = 6.65
 case_length = 42.2
 overall_length = 58.0
@@ -48,6 +50,7 @@ rim_thickness = 1.42
 ramp_top = 3.45
 groove_diameter = 8.64
 ramp_angle = 45.0
+groove_width = 1.14
 sources = ["https://municion.org/producto/58-x-42-chinese-assault-rifle/"]
 
 [bullet]

@@ -17,6 +17,8 @@ rim = 11.84
 base = 11.84
 shoulder = 10.77
 shoulder_at = 44.51
+neck_at = 50.34
+neck_base = 6.03
 neck = 5.99
 case_length = 57.84
 overall_length = 85.7
@@ -46,6 +48,7 @@ rim_thickness = 1.15
 ramp_top = 3.2
 groove_diameter = 10.2
 ramp_angle = 38.0
+groove_width = 1
 sources = ["book:cotw-18 p. 573", "https://municion.org/producto/5-x-58-sturtevant/"]
 
 [bullet]

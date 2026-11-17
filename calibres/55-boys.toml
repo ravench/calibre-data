@@ -18,6 +18,8 @@ belt = 21.59
 base = 20.14
 shoulder = 18.03
 shoulder_at = 75.0
+neck_at = 82.11
+neck_base = 15.51
 neck = 15.51
 case_length = 99.11
 overall_length = 133.64
@@ -46,6 +48,7 @@ rim_thickness = 2.08
 ramp_top = 9.0
 groove_diameter = 17.18
 ramp_angle = 50.0
+groove_width = 2.26
 sources = ["https://municion.org/producto/55-boys/"]
 
 [bullet]

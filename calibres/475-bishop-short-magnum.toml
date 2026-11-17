@@ -15,6 +15,8 @@ rim = 12.01
 base = 14.94
 shoulder = 14.66
 shoulder_at = 40.88
+neck_at = 45.88
+neck_base = 12.8
 neck = 12.8
 case_length = 55.78
 overall_length = 72.39
@@ -45,6 +47,7 @@ rim_thickness = 1.37
 ramp_top = 4.7
 groove_diameter = 10.4
 ramp_angle = 46.0
+groove_width = 1.2
 sources = ["book:cotw-18 p. 453", "https://municion.org/producto/475-bishop-short-magnum/"]
 
 [bullet]

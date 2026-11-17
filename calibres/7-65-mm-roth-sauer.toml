@@ -36,6 +36,7 @@ rim_thickness = 1.1
 ramp_top = 2.95
 groove_diameter = 6.93
 ramp_angle = 43.0
+groove_width = 0.99
 sources = ["https://municion.org/producto/765-mm-roth-sauer/"]
 
 [bullet]

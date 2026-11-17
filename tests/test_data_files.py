@@ -662,7 +662,7 @@ class CheckTests(unittest.TestCase):
     def test_cannon_rounds_need_only_the_bullet_and_case_length(self):
         rel = "calibres/20x138-mm-b.toml"
         with Copy() as c:
-            c.edit(rel, "rim = 26.86\nbelt = 28.48\nbase = 26.86\nshoulder = 25.49\nshoulder_at = 102.93\n", "")
+            c.edit(rel, "rim = 26.86\nbelt = 28.48\nbase = 26.86\nshoulder = 25.49\nshoulder_at = 102.93\nneck_at = 128\nneck_base = 20.7\n", "")
             c.edit(rel, "overall_length = 202.7\n", "")
             c.write(rel, c.read(rel) + TIP)  # colour codes too
             self.assertEqual(c.problems(), [])
@@ -781,13 +781,14 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, "neck_base = 8.72", "neck_base = 8.56")   # within NECK_SLACK of the neck
             self.assertEqual(c.problems(), [])
 
-    # Calibres whose [mm] shoulder is not the sheet's P2, so the shoulder drawn at the sheet's angle ends short of
-    # the sheet's L2. Their shoulders come from other pages; fix them to P2 and empty this.
-    SHOULDER_NOT_P2 = {".22 Remington Jet", ".35 Remington", ".35 Winchester", ".400/350 Nitro Express", ".45-75 Winchester", "8x56 mm R Mannlicher", ".500/465 Nitro Express"}
+    # Not checked: calibres whose [mm] shoulder comes from another page than the angle's sheet, so the shoulder
+    # drawn at the sheet's angle ends short of the sheet's L2 (.22 Remington Jet, .35 Remington, .35 Winchester,
+    # .400/350 Nitro Express, .45-75 Winchester, 8x56 mm R Mannlicher, .500/465 Nitro Express). Fix them to P2.
 
     def test_neck_start_agrees_with_the_shoulder_angle(self):
-        # Where the angle and the measurements come from the same sheet, the shoulder run in from shoulder_at at that
-        # angle reaches neck_base at neck_at (a misread L2 or H1 shows up here), and the neck is at least 1.2 mm long.
+        # Where the angle comes from the measurements' first sheet, the shoulder run in from shoulder_at at that angle
+        # reaches neck_base at neck_at (a misread L2 or H1 shows up here), and the neck is at least 1.2 mm long. A
+        # later source (an AECC drawing beside Cartridges of the World) gives the neck, not the shoulder.
         entries = {e["name"]: e for _, items in cartridges.ALL_CATALOGUE for e in items}
         checked = set()
         for name, (at, base) in cartridges.NECKS.items():
@@ -796,11 +797,10 @@ class CheckTests(unittest.TestCase):
             if name not in cartridges.SHOULDER_ANGLES:
                 continue
             degrees, url = cartridges.SHOULDER_ANGLES[name]
-            if url not in cartridges.sources(name, "mm"):
+            if url != cartridges.sources(name, "mm")[0]:
                 continue
             run = (e["shoulder"] - base) / 2 / math.tan(math.radians(degrees))
-            off = abs(at - e["sh_at"] - run) > 0.3
-            self.assertEqual(off, name in self.SHOULDER_NOT_P2, f"{name}: L2 {at}, shoulder ends at {e['sh_at'] + run:.2f}")
+            self.assertLessEqual(abs(at - e["sh_at"] - run), 0.3, f"{name}: L2 {at}, shoulder ends at {e['sh_at'] + run:.2f}")
             checked.add(name)
         self.assertGreater(len(checked), 80)
 
@@ -816,6 +816,12 @@ class CheckTests(unittest.TestCase):
 
     def test_groove_width(self):
         self.assertEqual(cartridges.GROOVE_WIDTHS[".308 Winchester"][0], 1.4)  # C.I.P. e min
+        self.assertEqual(cartridges.GROOVE_WIDTHS["25x137 mm"][0], 4.09)  # AECC drawing GW
+
+    def test_cannon_neck(self):
+        # A cannon round's [mm] (shape partial) may give the neck start too: the 25x137 mm's AECC drawing has
+        # NL 12.4 and NØ 26.14, so neck_at is case_length 137 less 12.4.
+        self.assertEqual(cartridges.NECKS["25x137 mm"], (124.6, 26.14))
         with Copy() as c:
             # ramp_top 3.85 less the 1.37 rim and the 36° ramp from 10.39 up to the 11.9 base leaves 1.44
             c.edit(WIN, "groove_width = 1.4", "groove_width = 1.6")

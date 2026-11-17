@@ -45,6 +45,9 @@ rim = 12.5
 base = 12.4
 shoulder = 11.5
 shoulder_at = 44.5
+# neck_at, neck_base: the 1892 drawing, its shoulder running from 11.5 down to 8.85 over 2 mm.
+neck_at = 46.5
+neck_base = 8.85
 neck = 8.5
 case_length = 53.5
 overall_length = 77.2
@@ -76,6 +79,7 @@ rim_thickness = 1.6
 ramp_top = 3.4
 groove_diameter = 10.2
 ramp_angle = 38.0
+groove_width = 0.3
 sources = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321", "https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
 [bullet]

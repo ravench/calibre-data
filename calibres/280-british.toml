@@ -17,6 +17,8 @@ rim = 12.01
 base = 11.94
 shoulder = 11.38
 shoulder_at = 30.97
+neck_at = 36.08
+neck_base = 7.9
 neck = 7.95
 case_length = 43.43
 overall_length = 64.52
@@ -47,6 +49,7 @@ rim_thickness = 1.21
 ramp_top = 3.46
 groove_diameter = 10.04
 ramp_angle = 33.0
+groove_width = 0.85
 sources = ["https://municion.org/producto/280-british-xpl-for-em-2-assault-rifle/"]
 
 [bullet]

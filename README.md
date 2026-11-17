@@ -217,10 +217,11 @@ Most cartridges (C.I.P. letters of the maximum cartridge in brackets):
 The drawing does not use `neck_at` and `neck_base` yet: it runs the shoulder in from `shoulder_at` at
 the shoulder angle until it reaches the neck diameter, and the rest up to `case_length` is the neck
 (at least 1.2 mm). The two keys come together. `neck_at` lies between `shoulder_at` and `case_length`,
-at least 1.2 mm short of the mouth, and where `[shoulder_angle]` cites the same sheet, the shoulder run
+at least 1.2 mm short of the mouth, and where `[shoulder_angle]` cites the first [mm] source, the shoulder run
 in at that angle from `shoulder_at` must reach `neck_base` within 0.3 mm of `neck_at`
-(`test_neck_start_agrees_with_the_shoulder_angle`). The [mm] `sources` cover both keys, like every
-other measurement. The body taper follows from `base`, `shoulder` and `shoulder_at`.
+(`test_neck_start_agrees_with_the_shoulder_angle`). An AECC drawing listed after a book gives the neck
+only, not the book's shoulder, so it is not held to the angle. The [mm] `sources` cover both keys, like every
+other measurement. Cannon rounds may give them too. The body taper follows from `base`, `shoulder` and `shoulder_at`.
 
 A case narrows from its base to its mouth, so the check reports a `shoulder` wider than the `base`,
 a `neck` wider than the `shoulder` and a blank's `mouth` wider than its `base`. On a straight case the

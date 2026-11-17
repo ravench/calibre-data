@@ -16,6 +16,8 @@ rim = 37.8
 base = 37.99
 shoulder = 35.58
 shoulder_at = 109.87
+neck_at = 124.6
+neck_base = 26.14
 neck = 26.08
 case_length = 137.0
 overall_length = 223.0
@@ -45,6 +47,7 @@ rim_thickness = 4.01
 ramp_top = 9.74
 groove_diameter = 33.97
 ramp_angle = 51.0
+groove_width = 4.09
 sources = ["https://municion.org/producto/25-x-137-swiss-oerlikon-kba-mecanic-primer/"]
 
 [case]

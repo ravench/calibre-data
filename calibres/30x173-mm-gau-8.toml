@@ -17,6 +17,8 @@ rim = 43.91
 base = 43.61
 shoulder = 40.48
 shoulder_at = 144.1
+neck_at = 157.7
+neck_base = 31.49
 neck = 31.49
 case_length = 173.0
 overall_length = 290.0
@@ -43,6 +45,7 @@ rim_thickness = 4.22
 ramp_top = 11.35
 groove_diameter = 37.88
 ramp_angle = 40.0
+groove_width = 3.67
 sources = ["https://municion.org/producto/30-x-173-us-xpl-gau-8/"]
 
 [case]

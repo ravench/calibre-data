@@ -53,6 +53,7 @@ rim_thickness = 1.07
 ramp_top = 3.2
 groove_diameter = 12.08
 ramp_angle = 42.0
+groove_width = 1
 sources = ["book:cotw-18 p. 453", "https://municion.org/producto/375-dakota/", "book:cotw-18 p. 424"]
 
 [bullet]

@@ -16,6 +16,8 @@ rim = 13.33
 base = 13.28
 shoulder = 12.47
 shoulder_at = 51.3
+neck_at = 56.86
+neck_base = 8.57
 neck = 8.64
 case_length = 64.01
 overall_length = 85.09
@@ -42,6 +44,7 @@ rim_thickness = 1.28
 ramp_top = 3.23
 groove_diameter = 11.57
 ramp_angle = 41.0
+groove_width = 0.95
 sources = ["https://municion.org/producto/30-newton/"]
 
 [bullet]

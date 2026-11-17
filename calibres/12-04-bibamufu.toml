@@ -17,6 +17,8 @@ rim = 14.66
 base = 14.66
 shoulder = 14.15
 shoulder_at = 59.0
+neck_at = 61.32
+neck_base = 12.73
 neck = 12.7
 case_length = 71.12
 overall_length = 91.95
@@ -45,6 +47,7 @@ rim_thickness = 1.52
 ramp_top = 3.56
 groove_diameter = 13.25
 ramp_angle = 42.0
+groove_width = 1.14
 sources = ["book:cotw-18 p. 252", "https://municion.org/producto/1204-mm-lazzeroni-bibamufu/"]
 
 [bullet]

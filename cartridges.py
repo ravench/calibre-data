@@ -189,7 +189,8 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
     "blank": (("rim", "base", "mouth", "length"), ()),
     "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"),
                   ("belt", "shoulder", "shoulder_at") + NECK_KEYS),
-    "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length")),
+    "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length")
+                + NECK_KEYS),
 }
 TOP_KEYS = {"name", "guns", "black_powder", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
             "origin_candidates", "origin_sources", "worldwide", "obsolete", "rare"}

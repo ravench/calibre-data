@@ -20,6 +20,8 @@ rim = 10.5
 base = 10.23
 shoulder = 10.0
 shoulder_at = 15.35
+neck_at = 17.68
+neck_base = 8.71
 neck = 8.71
 case_length = 21.43
 overall_length = 31.56
@@ -49,6 +51,7 @@ rim_thickness = 1.07
 ramp_top = 2.02
 groove_diameter = 9.22
 ramp_angle = 52.0
+groove_width = 0.7
 sources = ["book:donnelly p. 860", "https://municion.org/producto/8-mm-nambu-m-1914/"]
 
 [bullet]

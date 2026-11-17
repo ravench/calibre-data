@@ -15,6 +15,8 @@ rim = 14.66
 base = 14.66
 shoulder = 14.15
 shoulder_at = 59.21
+neck_at = 62.12
+neck_base = 11.29
 neck = 11.3
 case_length = 71.12
 overall_length = 91.95
@@ -43,6 +45,7 @@ rim_thickness = 1.52
 ramp_top = 3.5
 groove_diameter = 12.66
 ramp_angle = 45.0
+groove_width = 1.1
 sources = ["book:cotw-18 p. 453", "https://municion.org/producto/1057-mm-lazzeroni-meteor/"]
 
 [bullet]

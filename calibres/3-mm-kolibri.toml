@@ -37,6 +37,7 @@ rim_thickness = 0.85
 ramp_top = 1.48
 groove_diameter = 3.38
 ramp_angle = 44.0
+groove_width = 0.4
 sources = ["https://municion.org/producto/3-mm-kolibri/"]
 
 [bullet]
