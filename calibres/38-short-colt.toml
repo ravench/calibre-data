@@ -46,8 +46,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page55.pdf
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/38-short-colt-long-case/"]
-
-[case]
-# municion.org's photo shows a brass case.
-material = "brass"
-sources = ["https://municion.org/producto/38-short-colt-long-case/"]

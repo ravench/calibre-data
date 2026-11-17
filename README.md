@@ -498,13 +498,15 @@ belted case, up to a belt that ends 4.3 mm in front of the rim.
 - `[case]` `material`, only where a source shows or names it, brass too (not for shot shells, balls,
   Minié bullets or pellets): the original case, `brass`, `copper`, lacquered `steel`, `nickel`-plated
   steel, `aluminium`, `paper` (brass foil covered in paper on a brass head, Boxer's Snider case) or
-  `hybrid` (brass body on a steel head). It always needs a source; a comment above `material` says
-  what the source shows (a municion.org photo of an early maker's case head, a book's text). Without
+  `hybrid` (brass body on a steel head). It always needs a source; a comment above `material` should
+  say what the source shows (a municion.org photo of an early maker's case head, a book's text). A
+  photo counts only where it shows the original case: not a later variant (the .450 Adams Mk II), and
+  not where the written sources give brass or steel alike (20x102, 30x113 B). Without
   `[case]` the material is unknown, and the outline draws the case as brass. The outlines name only
   the materials that are not brass (`caseMaterial`).
 - `[current_cases]` `materials`: other case materials made today (brass .45-70, steel 9x19, CCI
   Blazer's aluminium), never the original's own (brass only where the original is not brass); the
-  original stays the drawn one.
+  original stays the drawn one. An unknown original counts as brass here.
 
 ### `[fired_by]`: the firearms that fire it
 
