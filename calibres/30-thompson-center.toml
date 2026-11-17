@@ -6,7 +6,10 @@ profile = "spitzer"
 aliases = ["30tc"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.30_Thompson_Center"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30_Thompson_Center",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page109.pdf",
+]
 # Still made, but hardly ever found:
 rare = true
 
@@ -15,6 +18,8 @@ rim = 12.01
 base = 11.95
 shoulder = 11.78
 shoulder_at = 38.4
+neck_at = 41.19
+neck_base = 8.56
 neck = 8.56
 case_length = 48.77
 overall_length = 67.56
@@ -43,6 +48,7 @@ rim_thickness = 1.37
 ramp_top = 3.88
 groove_diameter = 10.39
 ramp_angle = 35.0
+groove_width = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page109.pdf"]
 
 [bullet]

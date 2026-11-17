@@ -17,6 +17,8 @@ rim = 13.56
 base = 13.97
 shoulder = 13.44
 shoulder_at = 51.21
+neck_at = 54.1
+neck_base = 9.4
 neck = 9.4
 case_length = 62.48
 overall_length = 84.84
@@ -43,6 +45,7 @@ rim_thickness = 1.27
 ramp_top = 3.73
 groove_diameter = 12.07
 ramp_angle = 32.0
+groove_width = 0.94
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=134"]
 
 [bullet]

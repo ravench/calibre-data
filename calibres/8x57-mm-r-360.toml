@@ -7,7 +7,9 @@ profile = "round"
 aliases = ["8x57r360", "8x57r 360"]
 
 origin = "DE"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page33.pdf",
+]
 obsolete = true
 rare = true
 
@@ -16,6 +18,8 @@ rim = 12.4
 base = 11.0
 shoulder = 9.7
 shoulder_at = 46.0
+neck_at = 48
+neck_base = 8.78
 neck = 8.78
 case_length = 57.0
 overall_length = 77.0

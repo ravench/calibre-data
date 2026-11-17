@@ -8,6 +8,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.30-30_Winchester",
   "book:ammo-encyclopedia-2 p. 324",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page70.pdf",
 ]
 
 [mm]
@@ -15,6 +16,8 @@ rim = 12.8
 base = 10.7
 shoulder = 10.2
 shoulder_at = 36.6
+neck_at = 39.69
+neck_base = 8.46
 neck = 8.38
 case_length = 51.8
 overall_length = 64.8

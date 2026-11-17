@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["10.75x68"]
 
 origin = "DE"
-origin_sources = ["book:ammo-encyclopedia-2 p. 447"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 447",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf",
+]
 obsolete = true
 rare = true
 
@@ -16,6 +19,8 @@ rim = 12.57
 base = 12.57
 shoulder = 12.2
 shoulder_at = 53.35
+neck_at = 54
+neck_base = 11.51
 neck = 11.51
 case_length = 68.0
 overall_length = 81.0
@@ -47,6 +52,7 @@ rim_thickness = 1.3
 ramp_top = 3.6
 groove_diameter = 10.6
 ramp_angle = 37.1
+groove_width = 1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf"]
 
 [bullet]

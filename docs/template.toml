@@ -61,6 +61,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.308_Winchester",
   "book:ammo-encyclopedia-2 p. 327",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf",
 ]
 # Optional, each true or left out:
 # worldwide: in common use worldwide (independent of origin: 9x19 mm is German and worldwide).
@@ -79,6 +80,8 @@ rim = 11.9             # rim diameter (R1)
 base = 11.9            # body diameter just above the head (P1)
 shoulder = 11.5        # bottleneck cases only: diameter where the shoulder starts (P2)
 shoulder_at = 39.62    # bottleneck cases only: head to where the shoulder starts (L1)
+neck_at = 43.48        # optional, bottleneck cases only: head to where the neck starts (L2)
+neck_base = 8.72       # optional, bottleneck cases only: neck diameter where it starts (H1)
 neck = 8.7             # neck diameter at the mouth (H2)
 case_length = 51.2     # case length (L3)
 overall_length = 71.12 # cartridge length (L6)
@@ -86,8 +89,8 @@ bullet = 7.85          # bullet diameter (G1)
 # A belted case gives base in front of its belt. One whose belt is wider than its rim adds belt, the belt's
 # diameter (R3): belt = 15.33 on the .378 Weatherby Magnum, in front of a 14.71 mm rim. Without it the belt is
 # drawn as wide as the rim.
-# A straight case leaves out shoulder and shoulder_at. The neck length and body taper are not
-# stored: the drawing works them out from these values and the shoulder angle.
+# A straight case leaves out shoulder, shoulder_at, neck_at and neck_base. The drawing works the neck
+# length and body taper out from these values and the shoulder angle (it does not use neck_at yet).
 # A case narrows from its base to its mouth: the check reports a shoulder wider than the base and a
 # neck wider than the shoulder (on a straight case the neck may be up to 0.05 wider than the base).
 #
@@ -141,7 +144,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"
 # Rim thickness (R on the C.I.P. sheet, maximum cartridge; or from a book) for every kind of case.
 # Rimless, semi-rimmed and belted cases add their extractor groove from the C.I.P. sheet, all three or none: head
 # to the top of the groove's ramp (E; belted: to the front of the belt), groove diameter (E1) and
-# the groove's front ramp to the case axis in degrees (delta). Needs a source; without one, leave
+# the groove's front ramp to the case axis in degrees (delta), and optionally groove_width, the width of the
+# groove's floor (e min). Needs a source; without one, leave
 # the table out (or the groove keys) and the head is drawn generic (add a rimless, semi-rimmed or belted calibre
 # without a groove to HEAD_UNSOURCED in tests/test_outline.py).
 [case_head]
@@ -150,6 +154,7 @@ rim_thickness = 1.37
 ramp_top = 3.85
 groove_diameter = 10.39
 ramp_angle = 36.0
+groove_width = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 
 # The bullet the cartridge was first sold with, in every calibre with a bullet (not shot shells, blanks

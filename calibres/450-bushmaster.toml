@@ -32,6 +32,7 @@ rim_thickness = 1.37
 ramp_top = 3.77
 groove_diameter = 10.39
 ramp_angle = 40.0
+groove_width = 1.02
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page149.pdf"]
 
 [bullet]

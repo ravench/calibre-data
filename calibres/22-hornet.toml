@@ -9,7 +9,10 @@ profile = "round"
 aliases = ["22hornet", "5.6x35r"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.22_Hornet"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.22_Hornet",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page56.pdf",
+]
 worldwide = true
 
 [mm]
@@ -17,6 +20,8 @@ rim = 8.89
 base = 7.57
 shoulder = 7.01
 shoulder_at = 21.64
+neck_at = 25.8
+neck_base = 6.22
 neck = 6.17
 case_length = 35.64
 overall_length = 43.76

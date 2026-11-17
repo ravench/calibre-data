@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.284_Winchester",
   "book:ammo-encyclopedia-2 p. 310",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page105.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 12.01
 base = 12.72
 shoulder = 12.06
 shoulder_at = 45.08
+neck_at = 47.88
+neck_base = 8.13
 neck = 8.13
 case_length = 55.12
 overall_length = 71.12
@@ -44,6 +47,7 @@ rim_thickness = 1.37
 ramp_top = 3.78
 groove_diameter = 10.39
 ramp_angle = 40.0
+groove_width = 1.02
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page105.pdf"]
 
 [bullet]

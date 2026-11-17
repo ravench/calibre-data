@@ -12,6 +12,7 @@ origin = "GB"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.450/400_Nitro_Express",
   "book:ammo-encyclopedia-2 p. 356",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page117.pdf",
 ]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
@@ -21,6 +22,8 @@ rim = 15.87
 base = 13.92
 shoulder = 13.21
 shoulder_at = 55.26
+neck_at = 59
+neck_base = 11.2
 neck = 11.18
 case_length = 76.2
 overall_length = 95.25

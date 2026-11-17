@@ -8,7 +8,10 @@ profile = "round"
 aliases = ["475no2", "475ne", "475 no 2 n.e. 3''1/2", '475 no 2 n.e. 3"1/2']
 
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.475_No._2_Nitro_Express"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.475_No._2_Nitro_Express",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page120.pdf",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 
@@ -18,6 +21,8 @@ rim = 17.14
 base = 14.73
 shoulder = 13.97
 shoulder_at = 69.21
+neck_at = 74.29
+neck_base = 12.88
 neck = 12.88
 case_length = 88.9
 overall_length = 109.98

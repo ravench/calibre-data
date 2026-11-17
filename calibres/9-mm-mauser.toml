@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["9mm mauser", "9x25 mauser", "9mm mauser export", "9 mm mauser export"]
 
 origin = "DE"
-origin_sources = ["book:ammo-encyclopedia-2 p. 659"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 659",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/9-mm-mauser-en.pdf",
+]
 obsolete = true
 rare = true
 
@@ -35,6 +38,7 @@ rim_thickness = 1.27
 ramp_top = 3.0
 groove_diameter = 8.73
 ramp_angle = 35.0
+groove_width = 0.9
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/9-mm-mauser-en.pdf"]
 
 [bullet]

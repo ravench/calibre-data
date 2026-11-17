@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.225_Winchester",
   "book:ammo-encyclopedia-2 p. 377",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page58.pdf",
 ]
 obsolete = true
 rare = true
@@ -18,6 +19,8 @@ rim = 12.0
 base = 10.7
 shoulder = 10.3
 shoulder_at = 38.86
+neck_at = 42.84
+neck_base = 6.6
 neck = 6.6
 case_length = 49.0
 overall_length = 64.0

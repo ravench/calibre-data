@@ -8,7 +8,9 @@ aliases = ["240 flanged", "240 magnum flanged"]
 display_aliases = [".240 Flanged Nitro Express", ".240 Super Express"]
 
 origin = "GB"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page59.pdf",
+]
 obsolete = true
 rare = true
 
@@ -17,6 +19,8 @@ rim = 12.95
 base = 11.68
 shoulder = 10.29
 shoulder_at = 49.53
+neck_at = 54.61
+neck_base = 7.11
 neck = 7.11
 case_length = 63.5
 overall_length = 82.55

@@ -7,7 +7,9 @@ profile = "round"
 aliases = ["380 long revolver", "380 long rev"]
 
 origin = "GB"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page64.pdf",
+]
 obsolete = true
 rare = true
 

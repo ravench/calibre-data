@@ -10,6 +10,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.350_Remington_Magnum",
   "book:ammo-encyclopedia-2 p. 340",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page25.pdf",
 ]
 
 [mm]
@@ -17,6 +18,8 @@ rim = 13.51
 base = 13.03
 shoulder = 12.6
 shoulder_at = 43.18
+neck_at = 46.1
+neck_base = 9.86
 neck = 9.9
 case_length = 55.1
 overall_length = 71.1
@@ -45,6 +48,7 @@ rim_thickness = 1.27
 ramp_top = 5.59
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page25.pdf"]
 
 [bullet]

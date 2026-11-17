@@ -7,7 +7,10 @@ profile = "spitzer"
 aliases = ["300 pegasus", "300 a-square pegasus"]
 
 origin = "US"
-origin_sources = ["book:ammo-encyclopedia-2 p. 317"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 317",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-pegasus-en.pdf",
+]
 rare = true
 
 [mm]
@@ -15,6 +18,8 @@ rim = 14.73
 base = 14.73
 shoulder = 14.38
 shoulder_at = 62.23
+neck_at = 67.66
+neck_base = 8.61
 neck = 8.59
 case_length = 75.95
 overall_length = 95.25
@@ -40,6 +45,7 @@ rim_thickness = 1.65
 ramp_top = 3.79
 groove_diameter = 12.7
 ramp_angle = 45.0
+groove_width = 1.12
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-pegasus-en.pdf"]
 
 [bullet]

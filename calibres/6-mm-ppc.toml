@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/6mm_PPC",
   "book:ammo-encyclopedia-2 p. 280",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page14.pdf",
 ]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
@@ -18,6 +19,8 @@ rim = 11.3
 base = 11.2
 shoulder = 10.9
 shoulder_at = 27.3
+neck_at = 31
+neck_base = 6.65
 neck = 6.7
 case_length = 38.5
 overall_length = 53.3
@@ -46,6 +49,7 @@ rim_thickness = 1.5
 ramp_top = 3.5
 groove_diameter = 9.6
 ramp_angle = 43.7
+groove_width = 1.2
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page14.pdf"]
 
 [bullet]

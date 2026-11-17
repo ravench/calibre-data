@@ -8,7 +8,9 @@ profile = "spitzer"
 aliases = ["6mm br remington", "6mm br rem", "6mmbrrem"]
 
 origin = "US"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page13.pdf",
+]
 obsolete = true
 rare = true
 
@@ -17,6 +19,8 @@ rim = 12.01
 base = 11.96
 shoulder = 11.68
 shoulder_at = 27.3
+neck_at = 31.44
+neck_base = 6.9
 neck = 6.87
 case_length = 39.62
 overall_length = 55.88
@@ -44,6 +48,7 @@ rim_thickness = 1.37
 ramp_top = 3.85
 groove_diameter = 10.39
 ramp_angle = 36.0
+groove_width = 1.4
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page13.pdf"]
 
 [bullet]

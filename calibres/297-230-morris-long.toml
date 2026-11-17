@@ -9,7 +9,9 @@ profile = "round"
 aliases = ["297/230 long"]
 
 origin = "GB"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page64.pdf",
+]
 obsolete = true
 rare = true
 
@@ -18,6 +20,8 @@ rim = 9.02
 base = 7.59
 shoulder = 7.37
 shoulder_at = 8.71
+neck_at = 10.49
+neck_base = 6.2
 neck = 6.1
 case_length = 20.57
 overall_length = 27.43

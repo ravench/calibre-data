@@ -7,13 +7,18 @@ profile = "spitzer"
 aliases = ["5.45x39", "545x39"]
 
 origin = "SU"
-origin_sources = ["https://en.wikipedia.org/wiki/5.45×39mm"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/5.45×39mm",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page2.pdf",
+]
 
 [mm]
 rim = 10.0
 base = 10.0
 shoulder = 9.25
 shoulder_at = 30
+neck_at = 34
+neck_base = 6.29
 neck = 6.29
 case_length = 39.82
 overall_length = 57.0
@@ -42,6 +47,7 @@ rim_thickness = 1.5
 ramp_top = 3.2
 groove_diameter = 8.6
 ramp_angle = 45.0
+groove_width = 1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page2.pdf"]
 
 [bullet]

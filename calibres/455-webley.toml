@@ -8,7 +8,10 @@ profile = "round"
 aliases = ["455webley", "455"]
 
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.455_Webley",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page87.pdf",
+]
 
 [mm]
 # C.I.P. 455 MK II, maximum cartridge.

@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.33_Winchester",
   "book:ammo-encyclopedia-2 p. 415",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page83.pdf",
 ]
 obsolete = true
 rare = true
@@ -18,6 +19,8 @@ rim = 15.5
 base = 12.9
 shoulder = 11.3
 shoulder_at = 40.96
+neck_at = 44.1
+neck_base = 9.37
 neck = 9.3
 case_length = 54.0
 overall_length = 71.0

@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["45 hp", "45 auto short", "45 automatic short", "45 acp short"]
 
 origin = "AT"
-origin_sources = ["https://municion.org/producto/45-hp/"]
+origin_sources = [
+  "https://municion.org/producto/45-hp/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page81.pdf",
+]
 rare = true
 
 [mm]
@@ -33,6 +36,7 @@ rim_thickness = 1.24
 ramp_top = 4.11
 groove_diameter = 10.16
 ramp_angle = 26.0
+groove_width = 0.89
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page81.pdf"]
 
 [bullet]

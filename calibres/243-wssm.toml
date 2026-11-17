@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.243_Winchester_Super_Short_Magnum",
   "book:ammo-encyclopedia-2 p. 278",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page89.pdf",
 ]
 obsolete = true
 rare = true
@@ -18,6 +19,8 @@ rim = 13.6
 base = 14.1
 shoulder = 13.8
 shoulder_at = 29.21
+neck_at = 35.35
+neck_base = 7.29
 neck = 7.4
 case_length = 42.4
 overall_length = 60.0
@@ -46,6 +49,7 @@ rim_thickness = 1.37
 ramp_top = 3.35
 groove_diameter = 12.19
 ramp_angle = 45.0
+groove_width = 1.02
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page89.pdf"]
 
 [bullet]

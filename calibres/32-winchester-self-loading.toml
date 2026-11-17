@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["32wsl", "32 wsl", "32 win. sl"]
 
 origin = "US"
-origin_sources = ["book:ammo-encyclopedia-2 p. 411"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 411",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page79.pdf",
+]
 obsolete = true
 rare = true
 

@@ -11,6 +11,7 @@ origin = "SU"
 origin_sources = [
   "https://en.wikipedia.org/wiki/5.45×18mm",
   "book:ammo-encyclopedia-2 p. 614",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page2.pdf",
 ]
 
 [mm]
@@ -18,6 +19,8 @@ rim = 7.64
 base = 7.64
 shoulder = 7.4
 shoulder_at = 12.07
+neck_at = 14
+neck_base = 6.26
 neck = 6.26
 case_length = 18.03
 overall_length = 25.0

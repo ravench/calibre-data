@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.44_Special",
   "book:ammo-encyclopedia-2 p. 632",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page74.pdf",
 ]
 
 [mm]

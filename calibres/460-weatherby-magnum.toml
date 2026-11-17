@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["460wby"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.460_Weatherby_Magnum"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.460_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf",
+]
 # Still made, but hardly ever found:
 rare = true
 
@@ -17,6 +20,8 @@ belt = 15.33
 base = 14.8
 shoulder = 14.2
 shoulder_at = 60.39
+neck_at = 62.17
+neck_base = 12.34
 neck = 12.2
 case_length = 74.0
 overall_length = 93.0
@@ -45,6 +50,7 @@ rim_thickness = 1.6
 ramp_top = 6.4
 groove_diameter = 12.57
 ramp_angle = 45.0
+groove_width = 1.24
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
 
 [bullet]

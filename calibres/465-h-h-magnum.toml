@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["465hh", "465h&h"]
 
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.465_H%26H_Magnum"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.465_H%26H_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page38.pdf",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 
@@ -17,6 +20,8 @@ belt = 15.33
 base = 14.8
 shoulder = 13.5
 shoulder_at = 53.5
+neck_at = 58.93
+neck_base = 12.55
 neck = 12.5
 case_length = 73.5
 overall_length = 90.2
@@ -45,6 +50,7 @@ rim_thickness = 1.6
 ramp_top = 6.4
 groove_diameter = 12.57
 ramp_angle = 45.0
+groove_width = 1.24
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page38.pdf"]
 
 [bullet]

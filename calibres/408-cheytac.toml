@@ -6,7 +6,10 @@ profile = "spitzer"
 aliases = ["408cheytac", "408ct", "10.36x77"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf",
+]
 rare = true
 
 [mm]
@@ -15,6 +18,8 @@ rim = 16.25
 base = 16.18
 shoulder = 15.24
 shoulder_at = 62.23
+neck_at = 67.31
+neck_base = 11.12
 neck = 11.12
 case_length = 77.21
 overall_length = 115.5
@@ -38,6 +43,7 @@ rim_thickness = 1.6
 ramp_top = 4.47
 groove_diameter = 13.8
 ramp_angle = 53.7
+groove_width = 2
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf"]
 
 [shoulder_angle]

@@ -12,6 +12,7 @@ origin = "GB"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.303_British",
   "book:ammo-encyclopedia-2 p. 323",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page74.pdf",
 ]
 
 [mm]
@@ -19,6 +20,8 @@ rim = 13.72
 base = 11.7
 shoulder = 10.2
 shoulder_at = 45.47
+neck_at = 48.01
+neck_base = 8.64
 neck = 8.6
 case_length = 56.4
 overall_length = 78.1

@@ -6,7 +6,10 @@ profile = "flat"
 aliases = ["219zipper"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.219_Zipper"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.219_Zipper",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page55.pdf",
+]
 obsolete = true
 rare = true
 
@@ -15,6 +18,8 @@ rim = 12.9
 base = 10.7
 shoulder = 9.3
 shoulder_at = 34.55
+neck_at = 41.18
+neck_base = 6.44
 neck = 6.4
 case_length = 49.2
 overall_length = 57.4

@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.25_Remington",
   "book:ammo-encyclopedia-2 p. 383",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page90.pdf",
 ]
 obsolete = true
 rare = true
@@ -18,6 +19,8 @@ rim = 10.6
 base = 10.6
 shoulder = 10.1
 shoulder_at = 38.05
+neck_at = 41.42
+neck_base = 7.33
 neck = 7.3
 case_length = 52.0
 overall_length = 64.0
@@ -47,6 +50,7 @@ rim_thickness = 1.24
 ramp_top = 3.2
 groove_diameter = 9.09
 ramp_angle = 36.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page90.pdf"]
 
 [bullet]

@@ -11,6 +11,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.44_S%26W_Russian",
   "book:ammo-encyclopedia-2 p. 708",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page73.pdf",
 ]
 
 [mm]

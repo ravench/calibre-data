@@ -9,7 +9,10 @@ profile = "round"
 aliases = ["9.3x66", "370sako"]
 
 origin = "FI"
-origin_sources = ["book:ammo-encyclopedia-2 p. 348"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 348",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page71.pdf",
+]
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
 
@@ -18,6 +21,8 @@ rim = 11.95
 base = 12.13
 shoulder = 11.43
 shoulder_at = 55.8
+neck_at = 58.2
+neck_base = 9.92
 neck = 9.92
 case_length = 66.0
 overall_length = 85.0
@@ -44,6 +49,7 @@ rim_thickness = 1.3
 ramp_top = 3.24
 groove_diameter = 10.5
 ramp_angle = 41.0
+groove_width = 1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page71.pdf"]
 
 [bullet]

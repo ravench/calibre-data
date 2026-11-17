@@ -8,6 +8,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.222_Remington",
   "book:ammo-encyclopedia-2 p. 274",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page84.pdf",
 ]
 worldwide = true
 
@@ -16,6 +17,8 @@ rim = 9.6
 base = 9.6
 shoulder = 9.1
 shoulder_at = 32.13
+neck_at = 35.24
+neck_base = 6.43
 neck = 6.4
 case_length = 43.2
 overall_length = 54.1
@@ -46,6 +49,7 @@ rim_thickness = 1.14
 ramp_top = 3.01
 groove_diameter = 8.43
 ramp_angle = 25.0
+groove_width = 0.64
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page84.pdf"]
 
 [bullet]

@@ -8,7 +8,10 @@ aliases = ["500jeffery", "12.7x70", "12.5x70", "12.5x70 schuler"]
 
 # W. J. Jeffery, London, sold and named it and British hunters shot it (Kynoch); August Schüler, Suhl, made it first as the 12.7x70 Schüler in the 1920s: DE
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.500_Jeffery"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.500_Jeffery",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page153.pdf",
+]
 # Still made, but hardly ever found:
 rare = true
 
@@ -17,6 +20,8 @@ rim = 14.6
 base = 15.7
 shoulder = 15.4
 shoulder_at = 57.61
+neck_at = 61.52
+neck_base = 13.67
 neck = 13.7
 case_length = 70.0
 overall_length = 88.0
@@ -45,6 +50,7 @@ rim_thickness = 1.32
 ramp_top = 3.73
 groove_diameter = 13.77
 ramp_angle = 34.7
+groove_width = 1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page153.pdf"]
 
 [bullet]

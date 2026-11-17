@@ -11,6 +11,7 @@ aliases = ["7.5ord", "7.5revolver", "revolver82", "7.5nagant", "7.5norwegiannaga
 origin = "CH"
 origin_sources = [
   "https://municion.org/producto/75-mm-swiss-ordnance-revolver-m-1882-86/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page8.pdf",
 ]
 obsolete = true
 

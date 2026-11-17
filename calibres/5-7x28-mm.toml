@@ -8,6 +8,7 @@ origin = "BE"
 origin_sources = [
   "https://en.wikipedia.org/wiki/FN_5.7×28mm",
   "book:ammo-encyclopedia-2 p. 482",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page7.pdf",
 ]
 worldwide = true
 
@@ -16,6 +17,8 @@ rim = 7.8
 base = 7.95
 shoulder = 7.95
 shoulder_at = 23.15
+neck_at = 24.27
+neck_base = 6.38
 neck = 6.4
 case_length = 28.9
 overall_length = 40.5
@@ -44,6 +47,7 @@ rim_thickness = 1.14
 ramp_top = 3.38
 groove_diameter = 6.6
 ramp_angle = 25.0
+groove_width = 0.79
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page7.pdf"]
 
 [bullet]

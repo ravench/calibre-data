@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.338_Remington_Ultra_Magnum",
   "book:ammo-encyclopedia-2 p. 336",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page134.pdf",
 ]
 rare = true
 
@@ -17,6 +18,8 @@ rim = 13.6
 base = 14.0
 shoulder = 13.4
 shoulder_at = 58.32
+neck_at = 61.73
+neck_base = 9.43
 neck = 9.4
 case_length = 70.1
 overall_length = 91.4
@@ -46,6 +49,7 @@ rim_thickness = 1.27
 ramp_top = 3.75
 groove_diameter = 12.06
 ramp_angle = 32.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page134.pdf"]
 
 [bullet]

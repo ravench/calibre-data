@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["8x58r sauer"]
 
 origin = "DE"
-origin_sources = ["https://municion.org/producto/8-x-58-r-sauer-sohn/"]
+origin_sources = [
+  "https://municion.org/producto/8-x-58-r-sauer-sohn/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf",
+]
 obsolete = true
 rare = true
 

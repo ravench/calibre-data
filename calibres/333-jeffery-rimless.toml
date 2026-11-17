@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["333 jeffery", "333jeffery", "333 riml. n.e."]
 
 origin = "GB"
-origin_sources = ["https://municion.org/producto/333-jeffery-rimless-nitro-express/"]
+origin_sources = [
+  "https://municion.org/producto/333-jeffery-rimless-nitro-express/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf",
+]
 obsolete = true
 rare = true
 
@@ -17,6 +20,8 @@ rim = 13.79
 base = 13.84
 shoulder = 12.7
 shoulder_at = 44.45
+neck_at = 49.2
+neck_base = 9.27
 neck = 9.22
 case_length = 62.86
 overall_length = 88.9
@@ -47,6 +52,7 @@ rim_thickness = 1.27
 ramp_top = 3.3
 groove_diameter = 12.37
 ramp_angle = 36.0
+groove_width = 1.02
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf"]
 
 [bullet]

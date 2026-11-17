@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.30-06_Springfield",
   "book:ammo-encyclopedia-2 p. 322",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf",
 ]
 worldwide = true
 
@@ -17,6 +18,8 @@ rim = 12.0
 base = 12.0
 shoulder = 11.2
 shoulder_at = 49.49
+neck_at = 53.56
+neck_base = 8.63
 neck = 8.6
 case_length = 63.3
 overall_length = 84.8
@@ -46,6 +49,7 @@ rim_thickness = 1.24
 ramp_top = 3.16
 groove_diameter = 10.39
 ramp_angle = 36.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
 
 [bullet]

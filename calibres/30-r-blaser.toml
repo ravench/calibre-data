@@ -6,13 +6,18 @@ profile = "spitzer"
 aliases = ["30rblaser", "30r"]
 
 origin = "DE"
-origin_sources = ["https://en.wikipedia.org/wiki/.30_R_Blaser"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30_R_Blaser",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page66.pdf",
+]
 
 [mm]
 rim = 13.5
 base = 12.2
 shoulder = 11.2
 shoulder_at = 57.77
+neck_at = 61.16
+neck_base = 8.73
 neck = 8.73
 case_length = 68.0
 overall_length = 95.0

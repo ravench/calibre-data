@@ -8,6 +8,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.22-250_Remington",
   "book:ammo-encyclopedia-2 p. 276",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf",
 ]
 worldwide = true
 
@@ -16,6 +17,8 @@ rim = 12.0
 base = 11.93
 shoulder = 10.5
 shoulder_at = 38.48
+neck_at = 42.26
+neck_base = 6.5
 neck = 6.45
 # Midway between C.I.P. (48.46) and SAAMI (48.56).
 case_length = 48.51
@@ -48,6 +51,7 @@ rim_thickness = 1.24
 ramp_top = 3.22
 groove_diameter = 10.39
 ramp_angle = 34.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf"]
 
 [bullet]

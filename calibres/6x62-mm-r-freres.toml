@@ -6,7 +6,9 @@ profile = "spitzer"
 aliases = ["6x62r", "6x62 r freres"]
 
 origin = "DE"
-origin_sources = []
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page10.pdf",
+]
 rare = true
 
 [mm]
@@ -14,6 +16,8 @@ rim = 13.5
 base = 12.12
 shoulder = 11.53
 shoulder_at = 49.4
+neck_at = 55.75
+neck_base = 6.91
 neck = 6.91
 case_length = 61.75
 overall_length = 82.0

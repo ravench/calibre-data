@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["400/350", "350rigbyflanged"]
 
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.400/350_Nitro_Express"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.400/350_Nitro_Express",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page104.pdf",
+]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
@@ -16,6 +19,8 @@ rim = 13.2
 base = 11.9
 shoulder = 10.5
 shoulder_at = 53.34
+neck_at = 57.15
+neck_base = 9.73
 neck = 9.7
 case_length = 70.0
 overall_length = 93.6

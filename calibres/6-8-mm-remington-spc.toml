@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/6.8mm_Remington_SPC",
   "book:ammo-encyclopedia-2 p. 486",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf",
 ]
 
 [mm]
@@ -16,6 +17,8 @@ rim = 10.7
 base = 10.7
 shoulder = 10.2
 shoulder_at = 33.05
+neck_at = 35.91
+neck_base = 7.77
 neck = 7.8
 case_length = 42.8
 overall_length = 57.4
@@ -44,6 +47,7 @@ rim_thickness = 1.24
 ramp_top = 3.2
 groove_diameter = 9.09
 ramp_angle = 36.0
+groove_width = 0.84
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf"]
 
 [bullet]

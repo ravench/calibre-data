@@ -9,6 +9,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.41_Long_Colt",
   "book:ammo-encyclopedia-2 p. 666",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page68.pdf",
 ]
 obsolete = true
 rare = true

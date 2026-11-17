@@ -9,13 +9,18 @@ profile = "spitzer"
 aliases = ["6.5x57r"]
 
 origin = "DE"
-origin_sources = ["book:ammo-encyclopedia-2 p. 295"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 295",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page15.pdf",
+]
 
 [mm]
 rim = 13.32
 base = 11.92
 shoulder = 10.94
 shoulder_at = 44.5
+neck_at = 49.3
+neck_base = 7.65
 neck = 7.65
 case_length = 56.7
 overall_length = 82.0

@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["700ne"]
 
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.700_Nitro_Express"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.700_Nitro_Express",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page131.pdf",
+]
 # Still made, but hardly ever found:
 rare = true
 

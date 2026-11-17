@@ -5,13 +5,18 @@ profile = "spitzer"
 aliases = ["7prc"]
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/7mm_PRC"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7mm_PRC",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/7-mm-prc-230314-en-1.pdf",
+]
 
 [mm]
 rim = 13.51
 base = 13.51
 shoulder = 13.15
 shoulder_at = 46.21
+neck_at = 50.63
+neck_base = 8.05
 neck = 8.05
 case_length = 57.91
 overall_length = 84.84
@@ -43,6 +48,7 @@ rim_thickness = 1.27
 ramp_top = 3.24
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = [
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/7-mm-prc-230314-en-1.pdf",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf",

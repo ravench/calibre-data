@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["300 sherwood", "300sherwood"]
 
 origin = "GB"
-origin_sources = ["book:ammo-encyclopedia-2 p. 400"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 400",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page73.pdf",
+]
 obsolete = true
 rare = true
 

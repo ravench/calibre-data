@@ -8,7 +8,10 @@ profile = "round"
 aliases = ["38shortcolt"]
 
 origin = "US"
-origin_sources = ["https://municion.org/producto/38-short-colt-long-case/"]
+origin_sources = [
+  "https://municion.org/producto/38-short-colt-long-case/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page55.pdf",
+]
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
 rare = true

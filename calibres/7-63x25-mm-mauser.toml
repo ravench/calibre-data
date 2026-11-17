@@ -11,6 +11,7 @@ origin = "DE"
 origin_sources = [
   "https://en.wikipedia.org/wiki/7.63×25mm_Mauser",
   "book:ammo-encyclopedia-2 p. 650",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page11.pdf",
 ]
 
 [mm]
@@ -18,6 +19,8 @@ rim = 9.98
 base = 9.86
 shoulder = 9.6
 shoulder_at = 19.28
+neck_at = 21.1
+neck_base = 8.46
 neck = 8.46
 case_length = 25.15
 overall_length = 34.8
@@ -46,6 +49,7 @@ rim_thickness = 1.27
 ramp_top = 3.72
 groove_diameter = 8.73
 ramp_angle = 20.0
+groove_width = 0.9
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page11.pdf"]
 
 [bullet]

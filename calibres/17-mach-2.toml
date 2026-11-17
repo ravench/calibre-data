@@ -6,13 +6,18 @@ profile = "spitzer"
 aliases = []
 
 origin = "US"
-origin_sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Mach_2"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.17_Hornady_Mach_2",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page27.pdf",
+]
 
 [mm]
 rim = 7.06
 base = 5.7
 shoulder = 5.7
 shoulder_at = 14.23
+neck_at = 15.48
+neck_base = 4.83
 neck = 4.83
 case_length = 18.14
 overall_length = 25.4

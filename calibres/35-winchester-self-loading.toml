@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["35wsl", "35 win. sl"]
 
 origin = "US"
-origin_sources = ["book:ammo-encyclopedia-2 p. 416"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 416",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page87.pdf",
+]
 obsolete = true
 rare = true
 
@@ -39,6 +42,7 @@ rim_thickness = 1.27
 ramp_top = 4.26
 groove_diameter = 9.02
 ramp_angle = 8.0
+groove_width = 0.64
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page87.pdf"]
 
 [bullet]

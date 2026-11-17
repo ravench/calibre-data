@@ -11,6 +11,7 @@ origin = "FI"
 origin_sources = [
   "https://en.wikipedia.org/wiki/7×33mm_Sako",
   "book:ammo-encyclopedia-2 p. 395",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page32.pdf",
 ]
 obsolete = true
 rare = true
@@ -20,6 +21,8 @@ rim = 10.0
 base = 9.93
 shoulder = 9.52
 shoulder_at = 26.68
+neck_at = 29.1
+neck_base = 7.95
 neck = 7.9
 case_length = 33.33
 overall_length = 44.44
@@ -45,6 +48,7 @@ rim_thickness = 1.27
 ramp_top = 3.05
 groove_diameter = 8.8
 ramp_angle = 32.7
+groove_width = 0.9
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page32.pdf"]
 
 [bullet]

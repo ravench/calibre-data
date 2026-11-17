@@ -6,7 +6,10 @@ profile = "spitzer"
 aliases = ["7.62x53r", "762x53r"]
 
 origin = "FI"
-origin_sources = ["https://en.wikipedia.org/wiki/7.62×53mmR"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7.62×53mmR",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page28.pdf",
+]
 # Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
 # the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
 rare = true
@@ -16,6 +19,8 @@ rim = 14.4
 base = 12.42
 shoulder = 11.61
 shoulder_at = 39.61
+neck_at = 44.05
+neck_base = 8.55
 neck = 8.5
 case_length = 53.5
 overall_length = 77.0

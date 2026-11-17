@@ -9,7 +9,10 @@ profile = "flat"
 aliases = ["40-82"]
 
 origin = "US"
-origin_sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
+origin_sources = [
+  "https://municion.org/producto/40-82-260-winchester-cf-marlin/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page102.pdf",
+]
 obsolete = true
 # Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
 rare = true
@@ -19,6 +22,8 @@ rim = 15.49
 base = 12.92
 shoulder = 11.54
 shoulder_at = 44.91
+neck_at = 49.27
+neck_base = 10.86
 neck = 10.85
 case_length = 60.71
 overall_length = 70.23

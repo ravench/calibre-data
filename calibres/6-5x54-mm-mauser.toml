@@ -7,7 +7,10 @@ profile = "round"
 aliases = ["6.5x54mauser"]
 
 origin = "DE"
-origin_sources = ["book:ammo-encyclopedia-2 p. 388"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 388",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page21.pdf",
+]
 obsolete = true
 rare = true
 
@@ -16,6 +19,8 @@ rim = 11.8
 base = 11.95
 shoulder = 11.1
 shoulder_at = 36.5
+neck_at = 43.05
+neck_base = 7.59
 neck = 7.59
 case_length = 54.0
 overall_length = 68.0
@@ -41,6 +46,7 @@ rim_thickness = 1.5
 ramp_top = 3.6
 groove_diameter = 10.2
 ramp_angle = 38.5
+groove_width = 1
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page21.pdf"]
 
 [bullet]

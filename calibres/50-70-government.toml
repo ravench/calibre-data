@@ -10,6 +10,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.50-70_Government",
   "book:ammo-encyclopedia-2 p. 560",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/50-70-govt-170428-en.pdf",
 ]
 obsolete = true
 rare = true

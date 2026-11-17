@@ -6,7 +6,10 @@ profile = "round"
 aliases = ["404jeffery", "10.75x73", "404rimless", "404rne"]
 
 origin = "GB"
-origin_sources = ["https://en.wikipedia.org/wiki/.404_Jeffery"]
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.404_Jeffery",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page145.pdf",
+]
 # Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
 # and at most 2 listings on any other site:
 rare = true
@@ -16,6 +19,8 @@ rim = 13.79
 base = 13.84
 shoulder = 13.46
 shoulder_at = 50.82
+neck_at = 57.18
+neck_base = 11.56
 neck = 11.48
 case_length = 73.02
 overall_length = 89.66
@@ -44,6 +49,7 @@ rim_thickness = 1.27
 ramp_top = 3.3
 groove_diameter = 12.37
 ramp_angle = 36.04
+groove_width = 1.02
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page145.pdf"]
 
 [bullet]

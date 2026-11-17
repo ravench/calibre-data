@@ -10,6 +10,7 @@ origin = "GB"
 origin_sources = [
   "https://en.wikipedia.org/wiki/.577_Snider",
   "book:ammo-encyclopedia-2 p. 565",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page129.pdf",
 ]
 obsolete = true
 rare = true

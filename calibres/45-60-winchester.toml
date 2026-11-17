@@ -9,7 +9,10 @@ profile = "flat"
 aliases = ["45-60", "45-60 winchester", "45-60 wcf"]
 
 origin = "US"
-origin_sources = ["book:ammo-encyclopedia-2 p. 458"]
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 458",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page110.pdf",
+]
 obsolete = true
 rare = true
 

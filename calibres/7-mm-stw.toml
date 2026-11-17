@@ -10,6 +10,7 @@ origin = "US"
 origin_sources = [
   "https://en.wikipedia.org/wiki/7mm_STW",
   "book:ammo-encyclopedia-2 p. 310",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page4.pdf",
 ]
 # Still made, but hardly ever found:
 rare = true
@@ -19,6 +20,8 @@ rim = 13.51
 base = 13.03
 shoulder = 12.37
 shoulder_at = 60.69
+neck_at = 65.32
+neck_base = 8.05
 neck = 8.05
 case_length = 72.4
 overall_length = 92.71
@@ -48,6 +51,7 @@ rim_thickness = 1.27
 ramp_top = 5.58
 groove_diameter = 12.07
 ramp_angle = 35.0
+groove_width = 0.94
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page4.pdf"]
 
 [bullet]
