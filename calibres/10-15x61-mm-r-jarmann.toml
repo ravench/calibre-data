@@ -40,7 +40,7 @@ sources = ["https://municion.org/producto/1015-x-61-r-jarmann/"]
 # .078 in.
 rim_thickness = 1.98
 # The rim stands on a foot (AECC drawing 10-061-BBC-010, «Mauser base»), not dimensioned there: 5 of the
-# 13 px from the base to the rim's front, whose HL is 2.20.
+# 13 px from the base to the rim's front (HL 2.20), that share of rim_thickness.
 foot = 0.8
 sources = ["book:cotw-18 p. 574", "https://municion.org/producto/1015-x-61-r-jarmann/"]
 

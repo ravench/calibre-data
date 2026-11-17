@@ -58,6 +58,7 @@ def rim_and_groove(s):
         if f:
             # rim_thickness runs from the base to the rim's front, as a caliper on the base reads it.
             r0 = FOOT_SHARE * rim
+            # The bevel stops at the body's radius where it would pass it (11x59 mm R Gras: about 27 degrees).
             return [(r0, 0), (min(base, r0 + f * math.tan(math.radians(FOOT_BEVEL))), f), (rim, f), (rim, h), (base, h)]
         return [(rim, 0), (rim, h), (base, h)]
     # Rim, extractor groove and its front ramp at the calibre's own values (cartridges.CASE_HEADS), or at

@@ -767,7 +767,7 @@ def _read_calibre(f, countries, books=None):
             f.problem(f.line("case_head", "foot"), "only a rimmed case has a foot under its rim")
         elif "foot" in facts["case_head"] and _is_number(facts["case_head"]["foot"]) and \
                 _is_number(facts["case_head"]["rim_thickness"]) and \
-                not facts["case_head"]["foot"] < min(FOOT_MAX, facts["case_head"]["rim_thickness"] - 0.5):
+                not facts["case_head"]["foot"] <= round(min(FOOT_MAX, facts["case_head"]["rim_thickness"] - 0.5), 2):
             f.problem(f.line("case_head", "foot"), f"[case_head] foot is at most {FOOT_MAX:g} mm and leaves the rim "
                                                    "at least 0.5 mm of rim_thickness (base to the rim's front)")
         elif groove and len(groove) < len(HEAD_GROOVE):

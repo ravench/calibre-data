@@ -39,8 +39,8 @@ sources = ["https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
 # .082 in.
 rim_thickness = 2.08
 # The rim stands on a foot (AECC drawing 10-060-BBC-010, «Mauser base»), not dimensioned there: 6 of the
-# 14 px from the base to the rim's front, whose HL is 2.35.
-foot = 1.0
+# 14 px from the base to the rim's front (HL 2.35), that share of rim_thickness.
+foot = 0.9
 sources = ["book:cotw-18 p. 574", "https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
 
 [bullet]

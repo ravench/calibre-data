@@ -447,11 +447,13 @@ the base and another rim under it would change the groove's width (6.5 mm Bergma
 book, 1.00 mm on the drawing). Where no book gives a rim thickness, the drawing's RT (or the rim thickness on a naboje.org drawing) is taken, on a
 rimmed case too and also where the drawing's shoulder is not (.38-70 Winchester); its rim and head
 diameters must be within 0.5 mm of the file's. A rimmed case whose rim stands on a foot above the base (the AECC drawings' «Mauser base»:
-10.4x38 mm R Vetterli Centrefire, 11x59 mm R Gras and other German, Austrian and Ottoman
-cases of the 1870s and 1880s) adds `foot`, the height in mm from the base to the rim's underside.
+10.4x38 mm R Vetterli Centrefire, 11x59 mm R Gras and other European, Ottoman and Japanese
+military cases of the 1870s and 1880s) adds `foot`, the height in mm from the base to the rim's underside.
 `rim_thickness` then still runs from the base to the rim's front, as a caliper set on the base
-reads it and as the drawings' HL gives it. No drawing dimensions the foot: its height is scaled
-from the AECC drawing against HL, and the foot is drawn 75 % as wide as the rim at the base,
+reads it and as the drawings' HL gives it (on a rimmed case HL runs from the base to the rim's front).
+No drawing dimensions the foot: its share of the head on the AECC drawing (pixels from the base
+to the rim's underside, of those to the rim's front) is taken of `rim_thickness`, so the book's
+rim keeps the drawing's proportions, and the foot is drawn 75 % as wide as the rim at the base,
 widening at 30° to the axis, as the AECC drawings show it. A calibre that was also made with a flat
 base (7x57 mm R, 11x60 mm R Mauser, 10.75x58 mm R Russian Berdan) keeps the flat base of its
 C.I.P. sheet or book; the foot is at most 1.5 mm and leaves the rim at least 0.5 mm. A rim without
