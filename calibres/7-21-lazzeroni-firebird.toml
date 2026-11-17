@@ -54,3 +54,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page44.pdf"]
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 388).
 type = "softpoint"
 sources = ["book:cotw-18 p. 388"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/721-mm-lazzeroni-firebird/"]

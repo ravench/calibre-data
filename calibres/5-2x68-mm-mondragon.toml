@@ -53,3 +53,8 @@ sources = ["book:cotw-18 p. 573", "https://municion.org/producto/52-x-676-mondra
 # naboje.org: smokeless powder and a full metal jacket bullet.
 type = "jacketed"
 sources = ["https://naboje.org/node/10304"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/52-x-676-mondragon-original/"]

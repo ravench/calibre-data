@@ -52,3 +52,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"
 [bullet]
 type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.338_Ruger_Compact_Magnum"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/338-ruger-compact-magnum/"]

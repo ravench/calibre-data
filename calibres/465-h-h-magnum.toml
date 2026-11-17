@@ -56,3 +56,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page38.p
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.465_H%26H_Magnum"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/465-holland-holland-magnum-belted/"]

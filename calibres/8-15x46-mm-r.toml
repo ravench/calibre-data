@@ -50,3 +50,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page44.pdf
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 628"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/815-x-46-r-frohn/"]

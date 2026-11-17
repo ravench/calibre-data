@@ -51,3 +51,8 @@ sources = ["https://municion.org/producto/765-mm-borchardt/"]
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 467"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/765-mm-borchardt/"]

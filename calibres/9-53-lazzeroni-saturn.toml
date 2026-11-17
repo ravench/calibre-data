@@ -49,3 +49,8 @@ sources = ["book:cotw-18 p. 452", "https://municion.org/producto/953-mm-lazzeron
 # Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 416).
 type = "softpoint"
 sources = ["book:cotw-18 p. 416"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/953-mm-lazzeroni-saturn/"]

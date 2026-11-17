@@ -51,3 +51,8 @@ sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 630"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/8-x-71-peterlongo/"]

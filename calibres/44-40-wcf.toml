@@ -51,3 +51,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page108.pd
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.44-40_Winchester"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/44-40-winchester-cf/"]

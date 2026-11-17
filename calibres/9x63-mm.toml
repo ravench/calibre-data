@@ -52,3 +52,8 @@ sources = ["https://municion.org/producto/9-x-63-hessmer/"]
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 638"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/9-x-63-hessmer/"]

@@ -47,3 +47,8 @@ sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Cente
 # (Ruger's release of December 2001; Gunblast).
 type = "hollowpoint"
 sources = ["https://ruger.com/news/2001-12-01.html", "https://gunblast.com/480_Ruger.htm", "book:cotw-18 p. 524"]
+
+[case]
+# municion.org's photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/480-ruger/"]
