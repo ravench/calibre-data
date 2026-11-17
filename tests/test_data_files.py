@@ -415,6 +415,26 @@ class CheckTests(unittest.TestCase):
                                                   "ramp_angle = 30.0\n")
             self.assertProblem(c, LR, r"a rimfire case has no extractor groove")
 
+    def test_only_a_rimmed_case_has_a_foot_and_it_stays_under_the_rim(self):
+        gras = "calibres/11x59-mm-r-gras.toml"
+        with Copy() as c:
+            c.edit(WIN, "rim_thickness = 1.37\n", "rim_thickness = 1.37\nfoot = 0.5\n")
+            self.assertProblem(c, WIN, r"only a rimmed case has a foot under its rim")
+        with Copy() as c:
+            c.edit(LR, "rim_thickness = 1.02\n", "rim_thickness = 1.02\nfoot = 0.3\n")
+            self.assertProblem(c, LR, r"only a rimmed case has a foot under its rim")
+        # Gras: rim_thickness 1.9. 1.6 is over 1.5 mm; 1.45 leaves the rim only 0.45 mm.
+        for foot in ("1.6", "1.45"):
+            with Copy() as c:
+                c.edit(gras, "foot = 1.0\n", f"foot = {foot}\n")
+                self.assertProblem(c, gras, r"foot is at most 1.5 mm and leaves the rim at least 0.5 mm")
+        with Copy() as c:
+            c.edit(gras, "foot = 1.0\n", "foot = 0\n")
+            self.assertProblem(c, gras, r"\[case_head\] foot must be a number above 0")
+        with Copy() as c:  # leaves exactly 0.5 mm
+            c.edit(gras, "foot = 1.0\n", "foot = 1.4\n")
+            self.assertEqual(c.problems(), [])
+
     def test_misspelt_table(self):
         with Copy() as c:
             c.edit(WIN, "[shoulder_angle]", "[shoulder_angel]")

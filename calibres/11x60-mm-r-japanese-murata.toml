@@ -42,7 +42,10 @@ sources = ["https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mause
 [case_head]
 # .093 in.
 rim_thickness = 2.36
-sources = ["book:donnelly p. 963"]
+# The rim stands on a foot (AECC drawing 11-060-BBC-040, «Mauser base»), not dimensioned there: 4 of the
+# 11 px from the base to the rim's front (HL 2.00), that share of rim_thickness.
+foot = 0.9
+sources = ["book:donnelly p. 963", "https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mauser-base/"]
 
 [bullet]
 # The military load: a lead bullet over blackpowder.

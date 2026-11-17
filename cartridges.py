@@ -202,12 +202,14 @@ MOUTH_SLACK = 0.05
 HEAD_GROOVE = ("ramp_top", "groove_diameter", "ramp_angle")
 # Optional beside them: the groove's width at its floor (C.I.P. e min, a minimum), not used by the drawing yet.
 GROOVE_WIDTH = "groove_width"
+# mm, the most a rimmed case's foot may lift the rim off the base (the «Mauser base» drawings: 0.7 to 1.1 mm)
+FOOT_MAX = 1.5
 FACTS = {  # table: (required keys, optional keys, sources: "required", "optional" or "may be empty")
     "mm": ((), (), "may be empty"),  # keys by shape, above
     "introduced": ((), ("year", "unknown"), "optional"),
     "primer": (("size",), ("diameter",), "may be empty"),  # diameter: measured mm, required for miniature
     "shoulder_angle": (("degrees",), (), "required"),
-    "case_head": (("rim_thickness",), HEAD_GROOVE + (GROOVE_WIDTH,), "required"),
+    "case_head": (("rim_thickness",), HEAD_GROOVE + (GROOVE_WIDTH, "foot"), "required"),
     "bullet": (("type",), ("jacket", "patch_length"), "may be empty"),
     "case": (("material",), (), "may be empty"),  # every case but brass needs a source
     "current_cases": (("materials",), (), "required"),
@@ -779,6 +781,13 @@ def _read_calibre(f, countries, books=None):
             f.problem(f.line("case_head"), f"a {kind} case has no extractor groove: [case_head] has only rim_thickness")
         elif kind not in (RIMMED, RIMFIRE, RIMLESS, SEMI_RIMMED, BELTED, SHOT):
             f.problem(f.line("case_head"), f"a {kind} calibre has no [case_head]")
+        elif "foot" in facts["case_head"] and kind != RIMMED:
+            f.problem(f.line("case_head", "foot"), "only a rimmed case has a foot under its rim")
+        elif "foot" in facts["case_head"] and _is_number(facts["case_head"]["foot"]) and \
+                _is_number(facts["case_head"]["rim_thickness"]) and \
+                not facts["case_head"]["foot"] <= round(min(FOOT_MAX, facts["case_head"]["rim_thickness"] - 0.5), 2):
+            f.problem(f.line("case_head", "foot"), f"[case_head] foot is at most {FOOT_MAX:g} mm and leaves the rim "
+                                                   "at least 0.5 mm of rim_thickness (base to the rim's front)")
         elif groove and len(groove) < len(HEAD_GROOVE):
             f.problem(f.line("case_head"), "[case_head] has ramp_top, groove_diameter and ramp_angle together, "
                                            "or only rim_thickness")
@@ -991,7 +1000,7 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "RIM_THICKNESS", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "RIM_THICKNESS", "FEET", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
                          "CURRENT_CASES", "SOURCES", "UNSOURCED", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES", "CALIBRE_GUNS",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("BLACK_POWDER", "PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
@@ -1048,6 +1057,8 @@ def load(root=ROOT):
             if "case_head" in facts:
                 h = facts["case_head"]
                 t["RIM_THICKNESS"][n] = (h["rim_thickness"], first("case_head"))
+                if "foot" in h:
+                    t["FEET"][n] = h["foot"]
                 if GROOVE_WIDTH in h:
                     t["GROOVE_WIDTHS"][n] = (h[GROOVE_WIDTH], first("case_head"))
                 if "ramp_top" in h:
@@ -1117,6 +1128,8 @@ SHOULDER_ANGLES = _t["SHOULDER_ANGLES"]
 CASE_HEADS = _t["CASE_HEADS"]
 # {name: (rim thickness, first source)}: every case with a [case_head], CASE_HEADS' ones too.
 RIM_THICKNESS = _t["RIM_THICKNESS"]
+# {name: mm from the base to the underside of the rim}: rimmed cases whose rim stands on a foot («Mauser base»).
+FEET = _t["FEET"]
 # {name: (width of the extractor groove's floor, first [case_head] source)}: the C.I.P. e min, where given.
 GROOVE_WIDTHS = _t["GROOVE_WIDTHS"]
 # {name: (neck_at, neck_base)}: where a bottleneck case's neck starts and its diameter there (C.I.P. L2 and
@@ -1195,6 +1208,11 @@ def rim_thickness(name):
     """The rim's thickness in mm, or None where no source gives it."""
     entry = RIM_THICKNESS.get(name)
     return entry[0] if entry else None
+
+
+def foot(name):
+    """Height in mm of the foot under a rimmed case's rim (the rim's underside above the base), or None."""
+    return FEET.get(name)
 
 
 def categories(name):

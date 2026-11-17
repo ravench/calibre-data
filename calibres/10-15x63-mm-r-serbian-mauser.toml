@@ -42,7 +42,10 @@ sources = ["https://municion.org/producto/1015-x-625-r-serbian-mauser-koka-m-187
 [case_head]
 # .082 in.
 rim_thickness = 2.08
-sources = ["book:cotw-18 p. 574"]
+# The rim stands on a foot (AECC drawing 10-063-BBC-010, «Mauser base»), not dimensioned there: 5 of the
+# 13 px from the base to the rim's front (HL 2.30), that share of rim_thickness.
+foot = 0.8
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/1015-x-625-r-serbian-mauser-koka-m-1878-80/"]
 
 [bullet]
 # The military load: a lead bullet over blackpowder.

@@ -45,7 +45,10 @@ sources = ["https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"]
 [case_head]
 # .075 in.
 rim_thickness = 1.9
-sources = ["book:cotw-18 p. 574"]
+# The rim stands on a foot (AECC drawing 11-059-BBC-010, «Mauser base»), not dimensioned there: 6 of the
+# 12 px from the base to the rim's front (HL 2.24), that share of rim_thickness.
+foot = 1.0
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"]
 
 [bullet]
 type = "paper"
