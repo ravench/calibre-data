@@ -52,3 +52,13 @@ sources = ["book:cotw-18 p. 574"]
 # earliest sheet, an 1873 Italian arsenal round, shows a bare lead one.
 type = "lead"
 sources = ["https://municion.org/ficha-11-048-bbc-005-0005/"]
+
+[case]
+# Raven's own round has a copper case (2026-11-17). On municion.org the 1873 (Stabilimento Pirotecnico)
+# and 1877 (Polverificio di Firenze) cases look copper too; the later arsenal cases there are brass.
+material = "copper"
+sources = [
+  "measured:raven 2026-11-17",
+  "https://municion.org/ficha-11-048-bbc-005-0005/",
+  "https://municion.org/ficha-11-048-bbc-005-0009/",
+]
