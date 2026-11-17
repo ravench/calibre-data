@@ -45,7 +45,3 @@ sources = ["book:cotw-18 p. 451"]
 # Soft point: the Nosler Partition (COTW 18 p. 377).
 type = "softpoint"
 sources = ["book:cotw-18 p. 377"]
-
-[case]
-material = "brass"
-sources = []

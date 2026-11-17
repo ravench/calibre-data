@@ -49,5 +49,6 @@ type = "hollowpoint"
 sources = ["https://ruger.com/news/2001-12-01.html", "https://gunblast.com/480_Ruger.htm", "book:cotw-18 p. 524"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/480-ruger/"]

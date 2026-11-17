@@ -18,7 +18,3 @@ sources = ["book:rapid-fire p. 230"]
 [introduced]
 unknown = "Rapid Fire's table gives no year."
 sources = ["book:rapid-fire p. 230"]
-
-[case]
-material = "brass"
-sources = []

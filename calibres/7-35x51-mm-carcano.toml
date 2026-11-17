@@ -55,5 +55,6 @@ type = "jacketed"
 sources = ["book:cotw-18 p. 544"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/735-x-51-italian-carcano-m-1938/"]

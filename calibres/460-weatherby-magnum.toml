@@ -58,5 +58,6 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.460_Weatherby_Magnum"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/460-weatherby-magnum-belted/"]

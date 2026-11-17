@@ -50,7 +50,3 @@ groove_diameter = 24.81
 ramp_angle = 48.0
 groove_width = 3.06
 sources = ["https://municion.org/producto/20-x-139-hispano-hs-820-a-rh-202-m-693-f1/"]
-
-[case]
-material = "brass"
-sources = []

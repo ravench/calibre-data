@@ -43,5 +43,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.360_No._5_Rook"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/360-n-5-revolver-rifle/"]

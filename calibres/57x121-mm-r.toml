@@ -18,7 +18,3 @@ sources = ["book:rapid-fire p. 231", "https://en.wikipedia.org/wiki/Ho-401_canno
 [introduced]
 unknown = "neither Rapid Fire's table nor Wikipedia gives a year; the gun saw little service in the Second World War."
 sources = ["https://en.wikipedia.org/wiki/Ho-401_cannon"]
-
-[case]
-material = "brass"
-sources = []

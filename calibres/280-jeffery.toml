@@ -60,5 +60,6 @@ type = "softpoint"
 sources = []
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/280-jeffery-rimless-nitro-express/"]

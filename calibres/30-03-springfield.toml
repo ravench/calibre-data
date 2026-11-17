@@ -56,5 +56,6 @@ jacket = "cupronickel"
 sources = ["https://cartridgecollectors.org/an-introduction-to-collecting-30-06-cartridges/"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/30-03-springfield-xpl-us-govt-m-1903/"]

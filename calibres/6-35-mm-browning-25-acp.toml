@@ -45,10 +45,6 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page4.pdf"
 type = "jacketed"
 sources = []
 
-[case]
-material = "brass"
-sources = []
-
 [current_cases]
 # CCI Blazer's aluminium cases.
 materials = ["aluminium"]

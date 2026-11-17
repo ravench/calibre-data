@@ -212,7 +212,7 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "shoulder_angle": (("degrees",), (), "required"),
     "case_head": (("rim_thickness",), HEAD_GROOVE + (GROOVE_WIDTH, "foot"), "required"),
     "bullet": (("type",), ("jacket", "patch_length"), "may be empty"),
-    "case": (("material",), (), "may be empty"),  # every case but brass needs a source
+    "case": (("material",), (), "required"),  # optional table: without it the material is unknown (drawn as brass)
     "current_cases": (("materials",), (), "required"),
     "fired_by": (("firearms",), (), "required"),
 }
@@ -738,11 +738,6 @@ def _read_calibre(f, countries, books=None):
     if kind in LOOSE + (SHOT,):
         if "case" in facts:
             f.problem(f.line("case"), f"a {kind} calibre has no metal case: remove [case]")
-    elif "case" not in facts:
-        f.problem(None, 'needs a [case] table: material = "brass" (sources = [] if not checked) or another '
-                        "material with its sources")
-    elif facts["case"]["material"] != BRASS and not facts["case"]["sources"]:
-        f.problem(f.line("case"), f"[case] material {facts['case']['material']!r} needs a source")
     m = facts["mm"]
     if kind == SHOT or category in NOT_IN_APPS or kind not in LOOSE and is_blank(profile, m.get("rim"), m.get("base"), m.get("neck"),
                                                            m.get("bullet"), m.get("case_length"), m.get("overall_length")):

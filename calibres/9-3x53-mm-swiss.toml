@@ -54,5 +54,6 @@ type = "softpoint"
 sources = ["book:cotw-18 p. 639"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/93-x-53-swiss-m89-n/"]

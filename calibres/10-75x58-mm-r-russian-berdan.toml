@@ -67,5 +67,6 @@ type = "paper"
 sources = ["book:cotw-18 p. 561"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/"]

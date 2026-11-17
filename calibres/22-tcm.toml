@@ -61,5 +61,6 @@ type = "hollowpoint"
 sources = ["book:cotw-18 p. 362", "https://en.wikipedia.org/wiki/.22_TCM"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]

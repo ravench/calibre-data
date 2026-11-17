@@ -54,5 +54,6 @@ type = "hollowpoint"
 sources = ["book:cotw-18 p. 419"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/400-cor-bon/"]

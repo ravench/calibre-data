@@ -37,7 +37,3 @@ sources = ["book:cotw-18 p. 453"]
 [bullet]
 type = "polymer"
 sources = ["book:cotw-18 p. 431"]
-
-[case]
-material = "brass"
-sources = []

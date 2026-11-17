@@ -54,5 +54,6 @@ type = "softpoint"
 sources = ["book:cotw-18 p. 581"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/280-flanged-nitro-express-2-5-8/"]

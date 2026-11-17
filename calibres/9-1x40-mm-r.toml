@@ -36,7 +36,3 @@ sources = ["book:donnelly p. 917"]
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 643"]
-
-[case]
-material = "brass"
-sources = []

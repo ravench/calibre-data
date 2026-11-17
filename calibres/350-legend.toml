@@ -39,7 +39,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/350-legend-200421-en.pd
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.350_Legend"]
-
-[case]
-material = "brass"
-sources = []

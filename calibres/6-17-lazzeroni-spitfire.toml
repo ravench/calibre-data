@@ -55,5 +55,6 @@ type = "softpoint"
 sources = ["book:cotw-18 p. 366"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/617-mm-lazzeroni-spitfire/"]

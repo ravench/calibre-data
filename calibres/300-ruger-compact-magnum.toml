@@ -56,5 +56,6 @@ type = "polymer"
 sources = ["https://press.hornady.com/release/2008/10/03/ruger-compact-magnum-cartridges-review/", "book:cotw-18 p. 142"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/300-ruger-compact-magnum/"]

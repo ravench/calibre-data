@@ -50,7 +50,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page18.pdf
 # Soft points: every factory load in the loading table shared with the rimless twin (COTW 18 p. 621).
 type = "softpoint"
 sources = ["book:cotw-18 p. 621"]
-
-[case]
-material = "brass"
-sources = []

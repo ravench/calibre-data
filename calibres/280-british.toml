@@ -55,7 +55,3 @@ sources = ["https://municion.org/producto/280-british-xpl-for-em-2-assault-rifle
 [bullet]
 type = "jacketed"
 sources = ["book:cotw-18 p. 541"]
-
-[case]
-material = "brass"
-sources = []

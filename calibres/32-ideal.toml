@@ -39,5 +39,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 205"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/32-ideal/"]

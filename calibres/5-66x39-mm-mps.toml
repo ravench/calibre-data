@@ -54,7 +54,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page2.pdf"]
 # A steel dart, not a jacketed bullet.
 type = "steel"
 sources = ["https://en.wikipedia.org/wiki/APS_underwater_rifle"]
-
-[case]
-material = "brass"
-sources = []

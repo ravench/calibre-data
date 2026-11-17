@@ -21,7 +21,3 @@ sources = ["book:rapid-fire p. 231", "https://navweaps.com/Weapons/WNBR_6pounder
 # The naval 6-pounder 7 cwt entered service in 1941.
 year = 1941
 sources = ["https://navweaps.com/Weapons/WNBR_6pounder_m2a.php"]
-
-[case]
-material = "brass"
-sources = []

@@ -56,7 +56,3 @@ sources = ["https://www.tiropratico.com/CIP/Commission%20Internationale%20Perman
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

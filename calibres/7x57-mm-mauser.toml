@@ -68,7 +68,3 @@ sources = [
   "https://municion.org/ficha-07-057-bgc-080-0152/",
   "https://municion.org/ficha-07-057-bgc-080-0141/",
 ]
-
-[case]
-material = "brass"
-sources = []

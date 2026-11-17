@@ -47,7 +47,3 @@ sources = ["book:cotw-18 p. 573", "https://municion.org/producto/65-x-53-sr-daud
 # The service or target load, full metal jacket; p. 617 also lists soft points.
 type = "jacketed"
 sources = ["book:cotw-18 p. 617"]
-
-[case]
-material = "brass"
-sources = []

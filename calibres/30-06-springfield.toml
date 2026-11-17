@@ -58,10 +58,6 @@ type = "jacketed"
 jacket = "cupronickel"
 sources = ["book:cotw-18 p. 547", "https://en.wikipedia.org/wiki/.30-06_Springfield"]
 
-[case]
-material = "brass"
-sources = []
-
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]

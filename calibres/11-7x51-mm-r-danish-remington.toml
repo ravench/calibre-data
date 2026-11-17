@@ -46,5 +46,6 @@ type = "lead"
 sources = ["book:cotw-18 p. 569"]
 
 [case]
+# municion.org's photos: the Haerens Krudt Patronfabrik cases are brass (one looks darker, tarnished).
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/117-x-516-r-danish-remington-cf-m-1867-96-carbines/"]

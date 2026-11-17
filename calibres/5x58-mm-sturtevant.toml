@@ -54,7 +54,3 @@ sources = ["book:cotw-18 p. 573", "https://municion.org/producto/5-x-58-sturteva
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

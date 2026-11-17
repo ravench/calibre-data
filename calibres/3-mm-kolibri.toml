@@ -43,7 +43,3 @@ sources = ["https://municion.org/producto/3-mm-kolibri/"]
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 457"]
-
-[case]
-material = "brass"
-sources = []

@@ -35,7 +35,3 @@ sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Cente
 [bullet]
 type = "jacketed"
 sources = []
-
-[case]
-material = "brass"
-sources = []

@@ -53,5 +53,6 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/7-30_Waters"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/7-30-waters/"]

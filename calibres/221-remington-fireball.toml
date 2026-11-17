@@ -57,5 +57,6 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.221_Remington_Fireball"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/221-remington-fireball/"]

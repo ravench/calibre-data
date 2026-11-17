@@ -56,5 +56,6 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/9.5×57mm_Mannlicher–Schönauer"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/95-x-57-mannlicher-schonauer/"]

@@ -39,7 +39,3 @@ sources = ["book:cotw-18 p. 529"]
 # The lead factory load listed for the 11 mm German Service Revolver, the same round.
 type = "lead"
 sources = ["book:cotw-18 p. 510"]
-
-[case]
-material = "brass"
-sources = []

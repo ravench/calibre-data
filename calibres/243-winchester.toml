@@ -55,8 +55,9 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.243_Winchester"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/243-winchester/"]
 
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.

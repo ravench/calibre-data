@@ -56,10 +56,6 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/12-7-x-108-170419-en.pd
 type = "jacketed"
 sources = ["book:cotw-18 p. 570", "book:cotw-18 p. 571"]
 
-[case]
-material = "brass"
-sources = []
-
 [[colour_codes]]
 part = "tip"
 colours = ["black", "red"]

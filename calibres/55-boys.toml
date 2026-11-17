@@ -58,5 +58,6 @@ jacket = "cupronickel"
 sources = ["book:ammo-encyclopedia-2 p. 563"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/55-boys/"]

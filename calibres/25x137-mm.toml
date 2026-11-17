@@ -49,7 +49,3 @@ groove_diameter = 33.97
 ramp_angle = 51.0
 groove_width = 4.09
 sources = ["https://municion.org/producto/25-x-137-swiss-oerlikon-kba-mecanic-primer/"]
-
-[case]
-material = "brass"
-sources = []

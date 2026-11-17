@@ -59,5 +59,6 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/7mm_STW"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/7-mm-stw-belted/"]

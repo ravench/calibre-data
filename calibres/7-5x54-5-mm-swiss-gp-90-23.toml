@@ -74,8 +74,9 @@ jacket = "cupronickel"
 sources = ["book:poyer p. 50"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
 
 [fired_by]
 firearms = ["Schmidt-Rubin M1889"]

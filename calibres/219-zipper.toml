@@ -52,5 +52,6 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.219_Zipper"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/219-zipper/"]

@@ -61,5 +61,6 @@ jacket = "cupronickel"
 sources = ["https://naboje.org/node/3223"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/792-x-57-mauser-m-1888/"]

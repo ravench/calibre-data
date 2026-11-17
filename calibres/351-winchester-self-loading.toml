@@ -48,5 +48,6 @@ type = "softpoint"
 sources = ["https://municion.org/producto/351-winchester-semi-rimmed-self-loading/"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/351-winchester-semi-rimmed-self-loading/"]

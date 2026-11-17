@@ -40,7 +40,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page85.pdf
 [bullet]
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.450_Adams"]
-
-[case]
-material = "brass"
-sources = []

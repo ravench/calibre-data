@@ -37,7 +37,3 @@ sources = ["book:donnelly p. 764"]
 # A blackpowder round (p. 616): lead, like the others of its time.
 type = "lead"
 sources = []
-
-[case]
-material = "brass"
-sources = []

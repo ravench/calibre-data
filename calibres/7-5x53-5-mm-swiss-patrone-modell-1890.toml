@@ -88,8 +88,9 @@ type = "paper"
 sources = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/75-x-535-swiss-schmidt-rubin-m-1890-1903/"]
 
 [fired_by]
 firearms = ["Schmidt-Rubin M1889"]

@@ -48,5 +48,6 @@ type = "jacketed"
 sources = ["book:cotw-18 p. 553"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/8-x-52-r-siamese-type-66/"]

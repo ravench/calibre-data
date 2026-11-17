@@ -58,10 +58,6 @@ type = "jacketed"
 jacket = "cupronickel"
 sources = ["book:cotw-18 p. 556", "book:ammo-encyclopedia-2 p. 71"]
 
-[case]
-material = "brass"
-sources = []
-
 [[colour_codes]]
 part = "annulus"
 colours = ["black"]

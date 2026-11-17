@@ -38,7 +38,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page10.pdf"]
 # a 00 buckshot ball
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/9_mm_Flobert_Bosquette"]
-
-[case]
-material = "brass"
-sources = []

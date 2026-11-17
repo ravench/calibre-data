@@ -53,5 +53,6 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.22_Remington_Jet"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/22-remington-jet-cf/"]

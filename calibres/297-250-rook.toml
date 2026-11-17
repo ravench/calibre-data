@@ -53,5 +53,6 @@ type = "lead"
 sources = ["https://naboje.org/node/4173"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/297-250-mk-ii-rook-rifle-hh/"]

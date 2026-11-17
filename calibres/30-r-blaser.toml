@@ -48,7 +48,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page66.pdf
 [bullet]
 type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.30_R_Blaser"]
-
-[case]
-material = "brass"
-sources = []

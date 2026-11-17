@@ -41,10 +41,6 @@ sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Cente
 type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38_Special"]
 
-[case]
-material = "brass"
-sources = []
-
 [current_cases]
 # CCI Blazer's aluminium cases.
 materials = ["aluminium"]

@@ -51,7 +51,3 @@ sources = ["https://municion.org/producto/7-x-73-b-vom-hofe-super-express/"]
 [bullet]
 type = "softpoint"
 sources = ["book:cotw-18 p. 623"]
-
-[case]
-material = "brass"
-sources = []

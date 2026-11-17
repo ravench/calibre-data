@@ -46,7 +46,3 @@ sources = ["book:donnelly p. 945"]
 # A blackpowder round (COTW 18 p. 645); only the later smokeless load had a soft point.
 type = "lead"
 sources = []
-
-[case]
-material = "brass"
-sources = []

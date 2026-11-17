@@ -907,13 +907,15 @@ class CheckTests(unittest.TestCase):
             c.edit(k, 'sources = ["https://municion.org/producto/27-mm-kolibri/"]', "sources = []")
             self.assertOnlyProblems(c, k, r"a measured diameter needs a source")
 
-    def test_every_case_names_its_material(self):
+    def test_a_case_material_needs_a_source(self):
+        # [case] is written only where a source shows or names the material, brass too; without it the
+        # material is unknown and the outline draws brass.
+        self.assertNotIn(".308 Winchester", cartridges.CASES)
+        self.assertEqual(cartridges.case_material(".308 Winchester"), cartridges.BRASS)
         with Copy() as c:
-            c.edit(LR, '[case]\nmaterial = "brass"\nsources = []\n', '')
-            c.edit(WIN, '[case]\nmaterial = "brass"', '[case]\nmaterial = "steel"')
-            c.edit("calibres/12-70.toml", "[mm]", '[case]\nmaterial = "brass"\nsources = []\n\n[mm]')
-            self.assertProblem(c, LR, r"needs a \[case\] table", line=False)
-            self.assertProblem(c, WIN, r"\[case\] material 'steel' needs a source")
+            c.edit(WIN, "[current_cases]", '[case]\nmaterial = "brass"\nsources = []\n\n[current_cases]')
+            c.edit("calibres/12-70.toml", "[mm]", '[case]\nmaterial = "brass"\nsources = ["https://example.org"]\n\n[mm]')
+            self.assertProblem(c, WIN, r"\[case\] needs at least one source")
             self.assertProblem(c, "calibres/12-70.toml", r"a shot calibre has no metal case")
 
     def test_every_bullet_names_its_type(self):
@@ -935,9 +937,9 @@ class CheckTests(unittest.TestCase):
             c.edit(ball, f'type = "lead"\n{HORNADY_490}', 'type = "steel"\nsources = []')
             c.edit("calibres/6-mm-airsoft-bb.toml", 'type = "plastic"\nsources = ["https://en.wikipedia.org/wiki/Airsoft_pellets"]',
                    'type = "plastic"\nsources = []')
-            c.edit(blank, "[case]", '[bullet]\ntype = "lead"\nsources = []\n\n[case]')
+            c.edit(blank, "[mm]", '[bullet]\ntype = "lead"\nsources = []\n\n[mm]')
             c.edit(cannon, "[mm]", '[bullet]\ntype = "jacketed"\nsources = []\n\n[mm]')
-            c.edit(pak, "[case]", '[bullet]\ntype = "jacketed"\nsources = []\n\n[case]')
+            c.edit(pak, "[mm]", '[bullet]\ntype = "jacketed"\nsources = []\n\n[mm]')
             self.assertProblem(c, ball, r"\[bullet\] type 'steel' needs a source")
             self.assertProblem(c, "calibres/6-mm-airsoft-bb.toml", r"\[bullet\] type 'plastic' needs a source")
             for rel in (blank, cannon, pak):

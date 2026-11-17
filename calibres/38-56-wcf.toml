@@ -53,5 +53,6 @@ type = "lead"
 sources = ["https://en.wikipedia.org/wiki/.38-56_WCF"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/38-56-winchester-cf-marlincolt/"]

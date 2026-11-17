@@ -55,5 +55,6 @@ type = "lead"
 sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]

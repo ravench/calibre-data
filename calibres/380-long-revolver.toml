@@ -41,5 +41,6 @@ type = "lead"
 sources = ["https://municion.org/ficha-09-025-cbc-020-0003/"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/380-long-revolver-cf/"]

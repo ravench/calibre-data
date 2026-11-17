@@ -40,5 +40,6 @@ type = "polymer"
 sources = ["https://en.wikipedia.org/wiki/.450_Bushmaster"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/450-bushmaster/"]

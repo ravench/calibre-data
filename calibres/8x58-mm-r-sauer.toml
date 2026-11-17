@@ -45,5 +45,6 @@ type = "lead"
 sources = ["https://municion.org/ficha-08-058-tbc-010-0006/"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/8-x-58-r-sauer-sohn/"]

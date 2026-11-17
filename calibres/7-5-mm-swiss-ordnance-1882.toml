@@ -52,5 +52,6 @@ sources = [
 ]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/75-mm-swiss-ordnance-revolver-m-1882-86/"]

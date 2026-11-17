@@ -38,5 +38,6 @@ type = "lead"
 sources = ["https://municion.org/ficha-06-017-cbr-010-0003/"]
 
 [case]
-material = "brass"
-sources = []
+# municion.org's photos: Winchester's own cases are copper, as are Peters', Western's and Remington-UMC's.
+material = "copper"
+sources = ["https://municion.org/producto/22-winchester-rf-automatic/"]

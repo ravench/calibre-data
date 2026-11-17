@@ -56,5 +56,6 @@ type = "softpoint"
 sources = ["book:cotw-18 p. 648"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/112-x-72-schuler/"]

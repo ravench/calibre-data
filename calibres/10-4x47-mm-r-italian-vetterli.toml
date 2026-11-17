@@ -54,5 +54,11 @@ type = "lead"
 sources = ["https://municion.org/ficha-11-048-bbc-005-0005/"]
 
 [case]
-material = "brass"
-sources = []
+# Raven's own round, headstamped with only an acorn, has a copper case (2026-11-17). On municion.org the 1873 (Stabilimento Pirotecnico)
+# and 1877 (Polverificio di Firenze) cases look copper too; the later arsenal cases there are brass.
+material = "copper"
+sources = [
+  "measured:raven 2026-11-17",
+  "https://municion.org/ficha-11-048-bbc-005-0005/",
+  "https://municion.org/ficha-11-048-bbc-005-0009/",
+]

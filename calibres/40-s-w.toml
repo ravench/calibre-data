@@ -47,10 +47,6 @@ sources = [
   "book:cotw-18 p. 498",
 ]
 
-[case]
-material = "brass"
-sources = []
-
 [current_cases]
 # CCI Blazer's aluminium cases.
 materials = ["aluminium"]

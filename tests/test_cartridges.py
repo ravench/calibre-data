@@ -927,14 +927,16 @@ class CatalogueTests(unittest.TestCase):
         for name, (material, url) in CASES.items():
             self.assertIn(name, names)
             self.assertIn(material, (BRASS, COPPER, STEEL, NICKEL, ALUMINIUM, PAPER, HYBRID), name)
-            if material != BRASS:
-                self.assertTrue(is_source(url), name)
-        # Every calibre with a case names its material, brass too; shot shells and loose projectiles have none.
-        self.assertEqual(set(CASES), {s["name"] for _, items in ALL_CATALOGUE for s in items
-                                      if s["kind"] not in (SHOT, BALL, MINIE, PELLET)})
+            self.assertTrue(is_source(url), name)
+        # A case material is written only with a source, brass too; shot shells and loose projectiles have none.
+        # Without one it is unknown and drawn as brass.
+        self.assertLessEqual(set(CASES), {s["name"] for _, items in ALL_CATALOGUE for s in items
+                                          if s["kind"] not in (SHOT, BALL, MINIE, PELLET)})
         self.assertEqual(case_material(".44 Henry"), COPPER)
         self.assertEqual(case_material("5.45x39 mm"), STEEL)
         self.assertEqual(case_material(".577 Snider"), PAPER)
+        self.assertEqual(case_material("5.6 mm GP 90"), BRASS)
+        self.assertNotIn("9x19 mm", CASES)  # unknown: drawn as brass
         self.assertEqual(case_material("9x19 mm"), BRASS)
         self.assertEqual(case_material(".277 SIG Fury"), HYBRID)
 
@@ -967,8 +969,8 @@ class CatalogueTests(unittest.TestCase):
 
     def test_case_materials_checked_2026_11_11(self):
         # Raven 2026-11-11: check every calibre's case material. COTW 18, Jane's 2002 and Gun Digest name
-        # these. Rounds whose sources give brass or steel alike (9x18 mm Makarov, 12.7x108 mm, 7.62x45 mm
-        # vz. 52, 20x102 mm, 20x139 mm, 30x113 mm B) stay brass.
+        # these. Rounds whose sources give brass or steel alike have no [case] (9x18 mm Makarov, 12.7x108 mm,
+        # 20x102 mm, 20x139 mm, 30x113 mm B), except the 7.62x45 mm vz. 52, brass first on naboje.org.
         expected = {"7.92x33 mm Kurz": STEEL, "5.45x18 mm": STEEL, "5.8x42 mm": STEEL, "9x39 mm": STEEL,
                     "6 mm SAW": STEEL, ".22 Short": COPPER, "27x145 mm B": STEEL, "30x165 mm 2A42": STEEL,
                     "30x165 mm GSh-30": STEEL, "30x173 mm GAU-8": ALUMINIUM, "30x173 mm KCA": STEEL, "35x228 mm": STEEL,

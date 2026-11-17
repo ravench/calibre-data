@@ -48,5 +48,6 @@ type = "softpoint"
 sources = ["book:cotw-18 p. 589"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/360-n2-nitro-express-3/"]

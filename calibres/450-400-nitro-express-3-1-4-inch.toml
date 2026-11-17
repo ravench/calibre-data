@@ -52,7 +52,3 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page118.pd
 # Soft points: the Nitro Express load (COTW 18 p. 594).
 type = "softpoint"
 sources = ["book:cotw-18 p. 594"]
-
-[case]
-material = "brass"
-sources = []

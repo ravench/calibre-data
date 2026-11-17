@@ -45,5 +45,6 @@ type = "softpoint"
 sources = []
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/93-x-75-r-nimrod/"]

@@ -44,5 +44,6 @@ type = "softpoint"
 sources = ["https://en.wikipedia.org/wiki/.458_Winchester_Magnum"]
 
 [case]
+# municion.org's photo shows a brass case.
 material = "brass"
-sources = []
+sources = ["https://municion.org/producto/458-winchester-magnum-belted/"]
