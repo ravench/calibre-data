@@ -1266,7 +1266,8 @@ class OutlineTests(unittest.TestCase):
         for name, t, page in [(".44 Henry Centrefire", 1.63, 563), ("9.3x72 mm R Sauer", 1.19, 932),
                               (".40-90 Peabody What Cheer", 1.78, 508), ("11x60 mm R Japanese Murata", 2.36, 963)]:
             self.assertEqual(cartridges.rim_thickness(name), t, name)
-            self.assertEqual(cartridges.sources(name, "case_head"), ["book:donnelly p. %d" % page])
+            # The Murata's foot comes from its AECC drawing (test_a_rim_on_a_foot_stands_above_the_base).
+            self.assertEqual(cartridges.sources(name, "case_head")[0], "book:donnelly p. %d" % page)
         # Entries that are another case give no rim thickness: two Donnelly prints under the file's name (.50
         # Remington Army: his case is .570 in., the file's .875; 9.3x57 mm R: his is the necked Mauser round, rim
         # .563 in.), and his .400/360 2 3/4", which is the Purdey case (bullet .367 in.), not the file's .358 one.
