@@ -5,7 +5,7 @@
 # the length of the round (TL); carried from the mouth, its shoulder starts 1.4 mm nearer the head
 # than the VYa round's.
 name = "23x152 mm B ZU-23"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["23 mm zu-23", "23 mm zsu-23-4"]

@@ -2,7 +2,7 @@
 # A German trial round on the 7.92x57 mm case (DWM case 469A), loaded by Sturtevant in Britain.
 # Rebated rim (COTW type I).
 name = "5x58 mm Sturtevant"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["5x58", "5x58 sturtevant"]

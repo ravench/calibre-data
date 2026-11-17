@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Olympic Arms' shortened WSSM case for its AR-15 rifles.
 name = ".300 Olympic Super Short Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["300 ossm", "300 olympic super short magnum", "300 olympic"]

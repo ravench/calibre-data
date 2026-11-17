@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The rimmed 8x51 mm Mauser for single-shot and combination guns (J bore).
 name = "8x51 mm R Mauser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["8x51r", "8x51rj"]

@@ -2,7 +2,7 @@
 # the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = "7.65 mm Longue"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["7.65longue", "7.65mas", "30pedersen"]

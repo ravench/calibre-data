@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # The .45 ACP case 1 mm shorter, the bullet seated out to the same overall length.
 name = ".45 HP"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["45 hp", "45 auto short", "45 automatic short", "45 acp short"]

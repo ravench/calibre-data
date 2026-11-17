@@ -1,6 +1,6 @@
 # Rim R1 from the C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
 name = ".300 Winchester Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["300winmag", "300wm"]

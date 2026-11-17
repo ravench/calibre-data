@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .44 Magnum lengthened for silhouette shooting; Dan Wesson revolvers.
 name = ".445 SuperMag"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["445 supermag", "445 super mag", "445 gates"]

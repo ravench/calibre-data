@@ -3,8 +3,9 @@
 # World, 14th ed., 2014); Winchester loaded it ("W.R.A.Co. .32 L", municion.org). Measurements and
 # primer from the book; municion.org quotes its bullet, case length and overall length.
 name = ".32 Long Centrefire"
-# Firearms: book:cotw-18 p. 202.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 202.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["32longcf", "32cflong"]

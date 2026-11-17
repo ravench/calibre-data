@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # Horst Grillmayer's 10 mm Auto case necked down to 9 mm (C.I.P. 1991).
 name = "9x25 mm Super Auto G"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["9x25 sag", "9mm sag", "9x25 super auto g", "9 mm super auto grillmayer", "9 sag"]

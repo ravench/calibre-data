@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Spanish, for the Charola-Anitua pistol; named after the Belgian Clement pistol of 1903.
 name = "5 mm Clement"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["5clement", "5mm clement auto", "5 mm charola-anitua"]

@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the New Model Evans lever-action rifle of 1877.
 name = ".44 Evans Long"
-# Firearms: book:cotw-18 p. 229.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 229.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["44 evans long", "44-40 straight", "44-40-300"]

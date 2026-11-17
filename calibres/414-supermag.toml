@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .41 Magnum lengthened to the SuperMag case length.
 name = ".414 SuperMag"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["414 supermag", "414 super mag"]

@@ -1,7 +1,7 @@
 # Swiss Army name «9 mm Pistolenpatrone 41», short «9 mm Pist Pat 41» (Raven's 1955 Thun box «scharfe
 # Pistolenpatronen 41 9 mm»; sigforum.com thread "PISTOLENPATRONE 41 9mm ammo").
 name = "9x19 mm"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["9x19", "9mm", "9mmpara", "9para", "9mmluger", "9luger", "9x19para", "parabellum", "pist pat 41", "pistolenpatrone 41", "9 mm pist pat 41", "9mmluger+p", "9mm+p", "9mm nato"]

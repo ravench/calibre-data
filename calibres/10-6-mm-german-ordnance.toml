@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the German M1879 and M1883 Reichsrevolver. COTW lists it twice, also as the 11 mm German Service Revolver (p. 510) with a heeled .451 in. bullet; this file takes the 10.6 mm row.
 name = "10.6 mm German Ordnance"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["10.6 german", "10.6 reichsrevolver", "10.6mm reichsrevolver", "10.6x25r", "11mm german service", "11 mm german service revolver", "10.55 german"]

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .45 Mars Long necked down, for Gabbett-Fairfax's Mars pistol of 1900: a thin rim and deep groove.
 name = "8.5 mm Mars"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["8.5mars", "8.5 mars", "8mm mars"]

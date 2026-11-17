@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # One of Westley Richards's many blackpowder .500/450s.
 name = ".500/450 No. 1 Express"
-# Firearms: book:cotw-18 p. 597.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 597.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["500/450 no 1", "500/450 no. 1 express"]

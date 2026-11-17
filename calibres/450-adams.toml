@@ -1,6 +1,6 @@
 # Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
 name = ".450 Adams"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["450adams", "450revolver"]

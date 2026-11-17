@@ -1,7 +1,7 @@
 # The first 8x57 (Patrone 88, 1888) with the old .318" (8.09 mm) bullet that the 1905 S bore replaced;
 # values from its C.I.P. sheet in SHOULDER_ANGLES. 8x57 IS ammunition must not be fired in its guns.
 name = "8x57 mm I"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["8x57i", "8x57j", "patrone88"]

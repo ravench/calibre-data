@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Hugo Borchardt's round for his 1893 pistol, made by Loewe in Berlin; the parent of the 7.63x25 mm Mauser.
 name = ".30 Borchardt"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["30 borchardt", "7.65 borchardt", "7.65mm borchardt"]

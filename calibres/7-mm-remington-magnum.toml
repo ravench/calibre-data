@@ -1,5 +1,5 @@
 name = "7 mm Remington Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["7mmremmag", "7rm", "7mm rem mag"]

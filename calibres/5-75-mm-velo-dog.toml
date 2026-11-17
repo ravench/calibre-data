@@ -1,6 +1,6 @@
 # Measured specimens on municion.org (AECC drawings 06-029-CBC-010, 13-035-CGC-010).
 name = "5.75 mm Velo-Dog"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["velodog", "5.75velodog", "5.5velodog", "5.5x30r"]

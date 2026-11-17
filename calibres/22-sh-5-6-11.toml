@@ -7,7 +7,7 @@
 # Crimp shape after fired ones in Raven's photos (2026-11-04): the star opens on firing but the
 # petals stay narrower than the body.
 name = ".22 SH (5.6/11)"
-categories = ["rimfire"]
+guns = []
 kind = "rimfire"
 profile = "crimped"
 aliases = ["22blank", "5.6/11", "5.6x11", "platzpatrone", "kartusche", "setzkartusche", "bolzensetzer", "22sh"]

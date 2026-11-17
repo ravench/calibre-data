@@ -2,7 +2,7 @@
 # The .404 Jeffery case shortened for a .30-06-length action, with a slightly larger rim.
 # Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 393).
 name = ".300 Dakota"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["300 dakota"]

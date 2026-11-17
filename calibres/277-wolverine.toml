@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Mad Dog Weapon Systems' 5.56x45 mm case opened to .277 for AR-15 rifles.
 name = ".277 Wolverine"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["277 wolverine"]

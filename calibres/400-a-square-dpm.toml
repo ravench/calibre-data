@@ -2,7 +2,7 @@
 # and neck (municion.org's drawing, as the [mm] note says).
 # A-Square's Dual Purpose Magnum: the full-length .375 H&H Magnum case blown out to .41.
 name = ".400 A-Square DPM"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "round"
 aliases = ["400 a-square dpm", "400 a-square dual purpose magnum", "400 asdpm"]

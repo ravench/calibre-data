@@ -1,6 +1,6 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 name = "5.6x61 mm R Vom Hofe Super Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["5.6x61r"]

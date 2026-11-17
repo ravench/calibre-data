@@ -1,6 +1,6 @@
 # Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
 name = "7 mm Remington Ultra Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7rum"]

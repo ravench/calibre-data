@@ -5,7 +5,7 @@
 # round (Koll gives 289.5 to 291.0 mm), the AECC specimen drawing of a 2A42 round on municion.org
 # (titled 30 x 164) the shoulder, the neck and the head.
 name = "30x165 mm 2A42"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["30 mm 2a42", "30 mm 2a72"]

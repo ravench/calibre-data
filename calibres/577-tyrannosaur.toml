@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A-Square's .577 for bolt-action backup rifles of African professional hunters.
 name = ".577 Tyrannosaur"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["577 tyrannosaur", "577 t-rex"]

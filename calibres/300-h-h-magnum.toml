@@ -1,7 +1,7 @@
 # Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
 # shoulder heights estimated for drawing.
 name = ".300 H&H Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["300h&h", "300hh", "300 belted rimless magnum"]

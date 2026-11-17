@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A British trial round of the 1977 NATO small-calibre trials; never adopted.
 name = "4.85x49 mm British"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["4.85x49", "4.85 british"]

@@ -43,18 +43,32 @@ NAME_RULES = (
     (re.compile(r"×|\dX\d"), "a plain lower-case x between the sizes: '7.62x51 mm'"),
     (re.compile(r"\d\s+x\s*\d|\d\s*x\s+\d"), "no spaces around the x: '7.62x51 mm'"),
 )
-# Categories: a calibre file's `categories` (and key in order.toml) -> the name the apps and the poster
-# know the category by. A calibre can be in several; the first is its primary category, the one it is
-# listed under in order.toml and CATALOGUE. Those names are German because the apps show them (translated); the apps
-# know only the first six, so a new category needs a change in the apps too.
+# Categories: the shelves the apps, order.toml and the poster sort calibres on -> the name the apps and the
+# poster know the category by. A calibre file does not name them: its category follows from what the round is
+# (black_powder = true: black-powder; kind = "rimfire": rimfire) and else from the first of its guns
+# (_categories). Those names are German because the apps show them (translated); the apps know only the
+# first six, so a new category needs a change in the apps too.
 CATEGORIES = {"rimfire": "Randfeuer", "handgun": "Kurzwaffe", "rifle": "Langwaffe",
               "black-powder": "Schwarzpulver", "shotgun": "Flinte", "air-gun": "Luftdruck",
               "cannon": "Kanone"}
+# The guns a calibre file's `guns` can name: the kinds of gun the round is fired from, the main one first.
+GUNS = ("handgun", "rifle", "shotgun", "air-gun", "cannon")
 # Categories for the catalogue only, not yet in the apps: their calibres are in ALL_CATALOGUE and
 # the per-calibre tables but not in CATALOGUE, may leave out measurements no source gives (only bullet
 # and case_length are required) and have no [primer] (cannon primers are not reloading sizes) or
 # display_aliases. Their lookalike groups hold cannon rounds only and are in ALL_LOOKALIKES alone.
 NOT_IN_APPS = ("cannon",)
+
+
+def _categories(d):
+    """The categories of a calibre file's data, its category (the one it is listed under) first: black-powder
+    for a black-powder round, else rimfire for a rimfire case, else its first gun; then its other guns, and
+    rimfire for a black-powder rimfire case. [] when guns is unusable or names no category."""
+    guns = d.get("guns")
+    if not _is_text_list(guns) or not all(g in GUNS for g in guns):
+        return []
+    tech = (["black-powder"] if d.get("black_powder") is True else []) + (["rimfire"] if d.get("kind") == RIMFIRE else [])
+    return tech[:1] + list(guns) + tech[1:]
 
 
 def c(name, kind, rim, base, shoulder, neck, case, sh_at, oal, bullet, profile, aliases=(), belt=None):
@@ -177,7 +191,7 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
                   ("belt", "shoulder", "shoulder_at") + NECK_KEYS),
     "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length")),
 }
-TOP_KEYS = {"name", "categories", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
+TOP_KEYS = {"name", "guns", "black_powder", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
             "origin_candidates", "origin_sources", "worldwide", "obsolete", "rare"}
 # mm the mouth of a case without a shoulder may be wider than its base: books measure old cases to a thousandth
 # of an inch, and a cylinder comes out that little wider at either end (.32 Extra Short Rimfire: neck .318,
@@ -524,7 +538,7 @@ def _read_calibre(f, countries, books=None):
     d = f.data
     tables = {k for k, v in d.items() if isinstance(v, dict) and k != "colour_codes"}
     top = {k for k in d if k not in tables and k != "colour_codes"}
-    _check_keys(f, None, {k: d[k] for k in top}, TOP_KEYS, ("name", "categories", "kind", "profile", "aliases"))
+    _check_keys(f, None, {k: d[k] for k in top if k != "categories"}, TOP_KEYS, ("name", "guns", "kind", "profile", "aliases"))
     for t in tables:
         if t not in FACTS:
             f.problem(f.line(t), f"unknown table [{t}]{_close(t, FACTS)}; allowed: {', '.join(FACTS)}")
@@ -542,25 +556,35 @@ def _read_calibre(f, countries, books=None):
     expected = slug(name) + ".toml"
     if os.path.basename(f.rel) != expected:
         f.problem(f.line(None, "name"), f"the file of {name!r} must be called {expected}")
-    cats = d.get("categories")
-    category = cats[0] if _is_text_list(cats) and cats and cats[0] in CATEGORIES else None
-    if "categories" not in d:
+    guns, bp = d.get("guns"), d.get("black_powder", False)
+    if "categories" in d:
+        f.problem(f.line(None, "categories"), "categories is now worked out from guns, black_powder and kind: write "
+                                              "guns = [...] (and black_powder = true for a black-powder round) instead")
+    if "guns" not in d:
         pass  # reported by _check_keys
-    elif not _is_text_list(cats) or not cats:
-        f.problem(f.line(None, "categories"), "categories must be a list of one or more categories in quotes, "
-                                              "the primary one first")
+    elif not _is_text_list(guns):
+        f.problem(f.line(None, "guns"), f"guns must be a list of {', '.join(GUNS)} in quotes, the main one first")
     else:
-        for c in cats:
-            if c not in CATEGORIES:
-                key = {app: key for key, app in CATEGORIES.items()}.get(c)
-                hint = f" (write {key} for {c})" if key else _close(c, CATEGORIES)
-                f.problem(f.line(None, "categories"), f"category {c!r} is not one of {', '.join(CATEGORIES)}{hint}")
-        if len(set(cats)) != len(cats):
-            f.problem(f.line(None, "categories"), "categories lists a category twice")
-        hidden = [c for c in cats if c in NOT_IN_APPS]
-        if hidden and len({c for c in cats if c in CATEGORIES}) > len(set(hidden)):
-            f.problem(f.line(None, "categories"), f"{', '.join(hidden)} is not in the apps yet: a calibre in it "
-                                                  "is in no other category")
+        for g in guns:
+            if g not in GUNS:
+                key = {app: key for key, app in CATEGORIES.items()}.get(g, g)
+                hint = (" (a rimfire round has kind = \"rimfire\"; its category follows from that)" if key == "rimfire"
+                        else " (write black_powder = true for a black-powder round)" if key == "black-powder"
+                        else f" (write {key} for {g})" if key in GUNS and key != g else _close(g, GUNS))
+                f.problem(f.line(None, "guns"), f"gun {g!r} is not one of {', '.join(GUNS)}{hint}")
+        if len(set(guns)) != len(guns):
+            f.problem(f.line(None, "guns"), "guns lists a gun twice")
+        if not guns and not bp and kind != RIMFIRE:
+            f.problem(f.line(None, "guns"), "guns names at least one gun (only a black-powder or rimfire round, whose "
+                                            "category does not come from its guns, may leave it empty)")
+        hidden = [g for g in guns if g in NOT_IN_APPS]
+        if hidden and (len({g for g in guns if g in GUNS}) > 1 or bp is True or kind == RIMFIRE):
+            f.problem(f.line(None, "guns"), f"{', '.join(hidden)} is not in the apps yet: a calibre fired by it is "
+                                            "fired by nothing else and is neither black-powder nor rimfire")
+    if "black_powder" in d and not isinstance(bp, bool):
+        f.problem(f.line(None, "black_powder"), "black_powder must be true or false (without quotes)")
+    cats = _categories(d)
+    category = cats[0] if cats else None
     if kind not in KINDS:
         f.problem(f.line(None, "kind"), f"kind {kind!r} is not one of {', '.join(KINDS)}{_close(kind, KINDS)}")
     if profile not in PROFILES:
@@ -683,7 +707,7 @@ def _read_calibre(f, countries, books=None):
         facts[t] = dict(data, sources=urls)
     if "colour_codes" in d:
         _check_colour_codes(f, d["colour_codes"], _shape(kind, profile, category), countries, books)
-    if not ok or category is None or not all(c in CATEGORIES for c in cats):
+    if not ok or category is None:
         return None
     if kind in (RIMFIRE,) + LOOSE:
         if "primer" in facts:
@@ -693,12 +717,6 @@ def _read_calibre(f, countries, books=None):
             f.problem(f.line("primer"), f"a {category} round has no [primer] (not a reloading size): remove it")
     elif "primer" not in facts:
         f.problem(None, "a centrefire calibre needs a [primer] table (size and sources, or sources = [] if not checked)")
-    if kind == RIMFIRE and "rimfire" not in cats:
-        f.problem(f.line(None, "categories"), "a rimfire calibre lists the rimfire category (after its first one, "
-                                              "if that is another)")
-    elif kind in KINDS and kind != RIMFIRE and "rimfire" in cats:
-        f.problem(f.line(None, "categories"), f"the rimfire category holds only rimfire cases: remove it from this "
-                                              f"{kind} calibre (a centrefire blank is a handgun round)")
     if kind == SEMI_RIMMED and not facts["mm"].get("rim", 0) > facts["mm"].get("base", 0):
         f.problem(f.line("mm", "rim"), "a semi-rimmed case has a rim wider than its base")
     if kind == RIMLESS and round(facts["mm"].get("rim", 0) - facts["mm"].get("base", 0), 3) > RIMLESS_OVERHANG:
@@ -854,8 +872,8 @@ def load(root=ROOT):
         if fn.startswith("."):  # .DS_Store and other hidden files
             continue
         if os.path.isdir(os.path.join(cal_dir, fn)):
-            problems.append((rel, None, "calibre files go straight into calibres/, with their categories in the "
-                                        "file (categories = [...]): move them out of this folder"))
+            problems.append((rel, None, "calibre files go straight into calibres/, with their guns in the "
+                                        "file (guns = [...]): move them out of this folder"))
             continue
         if not fn.endswith(".toml"):
             problems.append((rel, None, "only .toml files belong here"))
@@ -865,7 +883,7 @@ def load(root=ROOT):
             continue
         got = _read_calibre(f, countries, books)
         if got:
-            found.setdefault(got[1]["categories"][0], []).append((*got, f))
+            found.setdefault(_categories(got[1])[0], []).append((*got, f))
 
     # Across files: unique names and aliases, the order list, lookalike groups.
     by_name = {}
@@ -983,15 +1001,18 @@ def load(root=ROOT):
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
                          "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "RIM_THICKNESS", "FEET", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
-                         "CURRENT_CASES", "SOURCES", "UNSOURCED", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES",
+                         "CURRENT_CASES", "SOURCES", "UNSOURCED", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES", "CALIBRE_GUNS",
                          "PROFILE_TODAY")}
-    sets = {k: set() for k in ("PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
+    sets = {k: set() for k in ("BLACK_POWDER", "PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
                                "ORIGIN_UNVERIFIED")}
     for _, items in catalogue:
         for e in items:
             n = e["name"]
             _, raw, facts, _ = by_name[n]
-            t["CALIBRE_CATEGORIES"][n] = tuple(CATEGORIES[c] for c in raw["categories"])
+            t["CALIBRE_CATEGORIES"][n] = tuple(CATEGORIES[c] for c in _categories(raw))
+            t["CALIBRE_GUNS"][n] = tuple(raw["guns"])
+            if raw.get("black_powder"):
+                sets["BLACK_POWDER"].add(n)
             if "display_aliases" in raw:
                 t["DISPLAY_ALIASES"][n] = list(raw["display_aliases"])
             for flag in ("obsolete", "rare", "worldwide"):
@@ -1087,6 +1108,10 @@ ALL_CATALOGUE = _t["ALL_CATALOGUE"]
 # {name: (categories by the apps' names, the primary one first)}: every calibre of ALL_CATALOGUE, also
 # in the categories it is not listed under.
 CALIBRE_CATEGORIES = _t["CALIBRE_CATEGORIES"]
+# {name: (guns, the main one first)}: the file's guns, every calibre of ALL_CATALOGUE ("handgun", "rifle" ...,
+# see GUNS). Empty for a black-powder or rimfire round no source names a gun for. BLACK_POWDER: the
+# black-powder rounds (black_powder = true).
+CALIBRE_GUNS, BLACK_POWDER = _t["CALIBRE_GUNS"], _t["BLACK_POWDER"]
 # Printable alternative names (max 2), shown in the app's calibre lists and search, and on the poster.
 DISPLAY_ALIASES = _t["DISPLAY_ALIASES"]
 # Primer size per centrefire calibre; PRIMER_SOURCES has the first source of the checked ones,
@@ -1194,6 +1219,16 @@ def categories(name):
     """A calibre's categories by the apps' names, the primary one first: ("Langwaffe",) for .308 Winchester;
     () for a name that is not a calibre."""
     return CALIBRE_CATEGORIES.get(name, ())
+
+
+def guns(name):
+    """The guns a calibre is fired from, the main one first: ("rifle",) for .308 Winchester, ("rifle", "handgun")
+    for .22 LR; () for a name that is not a calibre."""
+    return CALIBRE_GUNS.get(name, ())
+
+
+def is_black_powder(name):
+    return name in BLACK_POWDER
 
 
 def is_obsolete(name):

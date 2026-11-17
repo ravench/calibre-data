@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Mannlicher pistols of 1900, 1901 and 1905.
 name = "7.63 mm Mannlicher"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["7.63mannlicher", "7.65 mannlicher", "7.63 mannlicher"]

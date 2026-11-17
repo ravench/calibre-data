@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # The magazine-rifle version; a flanged one was made for doubles.
 name = ".333 Jeffery Rimless"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["333 jeffery", "333jeffery", "333 riml. n.e."]

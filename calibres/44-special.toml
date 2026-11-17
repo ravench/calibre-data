@@ -1,5 +1,5 @@
 name = ".44 Special"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 # Nose: round, the 246-grain lead bullet of the first loads (COTW 18 pp. 504-505, photo and load table).
 profile = "round"

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A Swiss target round, like its rimmed twin.
 name = "9.3x53 mm Swiss"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["9.3x53", "9.3x53 swiss"]

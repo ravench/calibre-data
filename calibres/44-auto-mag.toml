@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For Harry Sanford's Auto Mag pistol; cases cut from .30-06 or .308 brass.
 name = ".44 Auto Mag"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["44 auto mag", "44 amp", "44 automag"]

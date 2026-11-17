@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Danish target round, the 8x58 mm R Krag necked down.
 name = "6.5x58 mm R Krag-Jørgensen"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["6.5x58r krag"]

@@ -1,5 +1,5 @@
 name = ".45-70 Government"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["45-70", "4570", "45-70 govt"]

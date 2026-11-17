@@ -1,7 +1,7 @@
 # Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
 # shoulder heights estimated for drawing.
 name = ".257 Roberts"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["257roberts", "257roberts+p"]

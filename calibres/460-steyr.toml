@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .50 BMG case shortened and necked down to 11.64 mm, for countries that restrict .50 calibre guns.
 name = ".460 Steyr"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["460steyr", "460 steyr"]

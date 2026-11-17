@@ -1,5 +1,5 @@
 name = ".308 Winchester"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["308", "308win"]

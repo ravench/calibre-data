@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Smith & Wesson Model 3; the U.S. Army used it from 1871 to 1873.
 name = ".44 S&W American"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["44 s&w american", "44 american", "44 smith & wesson american"]

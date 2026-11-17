@@ -1,5 +1,5 @@
 name = "6 mm ARC"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6arc"]

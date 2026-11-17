@@ -1,5 +1,5 @@
 name = ".38 Special"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["38spl", "38special", "38", "38special+p", "38spl+p", "38s&wspecial", "38coltspecial"]

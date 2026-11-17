@@ -1,6 +1,6 @@
 # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".256 Winchester Magnum"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["256win"]

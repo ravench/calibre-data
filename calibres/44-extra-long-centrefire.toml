@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The centrefire version of the .44 Extra Long rimfire, for the Ballard No. 2 rifle.
 name = ".44 Extra Long Centrefire"
-# Firearms: book:cotw-18 p. 231.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 231.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 # The 44 Wesson Extra Long (COTW 18 p. 232) is this case with a two-groove bullet.

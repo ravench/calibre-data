@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Larger than the 2.7 mm Kolibri, with a lead bullet.
 name = "3 mm Kolibri"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["3kolibri", "3 kolibri"]

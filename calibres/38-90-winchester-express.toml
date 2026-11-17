@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Winchester Model 1885 single-shot; dropped by 1904.
 name = ".38-90 Winchester Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["38-90", "38-90 winchester", "38 express"]

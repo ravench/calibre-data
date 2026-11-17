@@ -1,7 +1,7 @@
 # Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
 # shoulder heights estimated for drawing.
 name = "6.5x52 mm Carcano"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["6.5carcano", "6.5x52"]

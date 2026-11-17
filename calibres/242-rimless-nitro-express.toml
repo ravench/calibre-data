@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Kynoch's round for J. Manton & Co. of Calcutta.
 name = ".242 Rimless Nitro Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["242 rimless", "242 manton"]

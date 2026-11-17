@@ -1,5 +1,5 @@
 name = ".44 Magnum"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["44mag", "44magnum", "44remmag", "44remingtonmagnum", "44 rem mag", "44 rem magnum"]

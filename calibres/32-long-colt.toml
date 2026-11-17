@@ -1,6 +1,6 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 name = ".32 Long Colt"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["32longcolt"]

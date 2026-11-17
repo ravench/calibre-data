@@ -1,6 +1,6 @@
 # Batch 8 (2026-11); now from the C.I.P. sheet (see [mm]).
 name = ".401 Winchester Self-Loading"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "semi-rimmed"
 profile = "round"
 aliases = ["401wsl", "401 win. sl"]

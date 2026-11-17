@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # The .22 Winchester Centerfire of 1885, loaded hotter in Germany for combination guns.
 name = "5.6x35 mm R Vierling (.22 WCF)"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["5.6x35r vierling", "22wcf", "22 wcf"]

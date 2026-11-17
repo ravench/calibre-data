@@ -1,8 +1,9 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # For the Winchester Model 1876; the Kennedy and Colt Lightning rifles took it too. Loaded until 1935.
 name = ".45-60 Winchester"
-# Firearms: book:cotw-18 p. 239.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 239.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "flat"
 aliases = ["45-60", "45-60 winchester", "45-60 wcf"]

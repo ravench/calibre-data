@@ -1,5 +1,5 @@
 name = "6.5x55 mm Swedish"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 # Nose: round: the round is older than the first pointed service bullet, of 1898 (COTW 18 p. 553).
 profile = "round"

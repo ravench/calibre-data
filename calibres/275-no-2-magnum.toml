@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 5th ed. (inches converted to mm).
 # For Rigby double rifles.
 name = ".275 No. 2 Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["275 no 2", "275 no. 2 magnum"]

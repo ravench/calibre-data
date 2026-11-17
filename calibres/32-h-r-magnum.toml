@@ -1,5 +1,5 @@
 name = ".32 H&R Magnum"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = []

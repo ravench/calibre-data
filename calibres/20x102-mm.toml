@@ -2,7 +2,7 @@
 # length; Jane's table gives the diameters, TM 43-0001-27 the length of the M56 round (6.615 in),
 # the AECC specimen drawing on municion.org the shoulder and the head.
 name = "20x102 mm"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["20x102", "20 mm vulcan"]

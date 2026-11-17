@@ -1,5 +1,5 @@
 name = ".357 SIG"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 # Nose: a truncated cone (photo, COTW 18 p. 491).
 profile = "flat"

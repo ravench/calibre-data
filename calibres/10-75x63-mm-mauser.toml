@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm); the rim and the head from specimens.
 # The older and shorter case of the 10.75x68 mm.
 name = "10.75x63 mm Mauser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["10.75x63"]

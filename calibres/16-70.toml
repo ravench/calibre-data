@@ -1,5 +1,5 @@
 name = "16/70"
-categories = ["shotgun"]
+guns = ["shotgun"]
 kind = "shot"
 profile = "flat"
 aliases = ["16", "16/70"]

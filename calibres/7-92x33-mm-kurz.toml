@@ -1,7 +1,7 @@
 # Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
 # shoulder heights estimated for drawing.
 name = "7.92x33 mm Kurz"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7.92kurz", "8mmkurz", "7.92x33"]

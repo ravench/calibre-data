@@ -1,6 +1,6 @@
 # Batch 7 (2026-11); now from the C.I.P. sheet (see [mm]).
 name = "12.7x108 mm"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["12.7x108", "dshk", "12.7x107"]

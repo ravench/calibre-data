@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # North American Shooting Systems' rebated rimless magnum for long actions, without a belt.
 name = ".338 Canadian Magnum"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["338 canadian magnum", "338 canadian mag", "338 nass"]

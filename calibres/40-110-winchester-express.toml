@@ -2,7 +2,7 @@
 # For the Winchester single-shot, to compete with the big Sharps rounds; the bullet was
 # copper-tubed.
 name = ".40-110 Winchester Express"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["40-110", "40-110 winchester", "40 express"]

@@ -1,6 +1,6 @@
 # Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".458 Lott"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "round"
 aliases = ["458lott"]

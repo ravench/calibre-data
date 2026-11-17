@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The .25-25 Stevens shortened, for the Stevens 44 and 44½ single-shot rifles.
 name = ".25-21 Stevens"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["25-21", "25-21 stevens"]

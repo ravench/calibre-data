@@ -2,7 +2,7 @@
 # cannon and the experimental Mauser MK 214A (Rapid Fire's table, which calls it 50x419R). Its name
 # (Wikipedia) gives the bore and case length, Rapid Fire's table the rim and base.
 name = "50x420 mm R"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["50x420r", "50x419r", "50x420", "5 cm pak 38", "5 cm bk 5"]

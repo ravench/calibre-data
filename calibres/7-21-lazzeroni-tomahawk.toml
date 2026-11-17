@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Lazzeroni's .284 short magnum for a 2.8 in. action, on its .577 in. case.
 name = "7.21 Lazzeroni Tomahawk"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7.21 tomahawk", "7.21mm tomahawk", "lazzeroni tomahawk"]

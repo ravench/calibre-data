@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # A changed .378 Weatherby Magnum case, short enough for a .375 H&H magazine.
 name = ".375 A-Square"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["375 a-square", "375 a-sq"]

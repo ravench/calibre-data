@@ -2,7 +2,7 @@
 # Don Allen's 7 mm on the .404 Jeffery case, shortened and with a slightly larger, no longer rebated rim.
 # Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 385).
 name = "7 mm Dakota"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["7mm dakota", "7 dakota"]

@@ -1,6 +1,6 @@
 # Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".25-20 Winchester"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 # The 25-20 Marlin (COTW 18 p. 187) was this round loaded for the Marlin 1894, with another bullet nose.

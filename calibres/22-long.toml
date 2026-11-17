@@ -1,7 +1,7 @@
 # Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = ".22 Long"
-# Firearms: book:cotw-18 p. 658.
-categories = ["rimfire", "handgun", "rifle"]
+# Guns: book:cotw-18 p. 658.
+guns = ["handgun", "rifle"]
 kind = "rimfire"
 profile = "round"
 aliases = ["22long"]

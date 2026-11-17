@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Lazzeroni's .358 short magnum for a 2.8 in. action, the 7.82 Patriot necked up. Lazzeroni seldom chambers rifles for it (COTW 18 p. 410).
 name = "9.09 Lazzeroni Eagle"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["9.09 eagle", "9.09mm eagle", "lazzeroni eagle"]

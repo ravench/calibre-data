@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # German target round; COTW dates it between 1890 and 1900: the earliest year is kept.
 name = "8.15x46 mm R"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["8.15x46r"]

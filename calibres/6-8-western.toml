@@ -1,6 +1,6 @@
 # Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
 name = "6.8 Western"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["6.8western", "68western"]

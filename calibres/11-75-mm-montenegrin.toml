@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the large Gasser revolvers of Montenegro and Austria-Hungary.
 name = "11.75 mm Montenegrin"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["11.75 montenegrin", "11mm austrian gasser", "11 mm gasser", "11.25x36", "11.25x36 montenegrin"]

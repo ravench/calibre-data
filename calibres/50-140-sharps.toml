@@ -2,8 +2,9 @@
 # The .50-90 Sharps case lengthened to 3¼ in., a special-order round; Winchester loaded it with a
 # .512 in. bullet, Sharps used .509 in.
 name = ".50-140 Sharps"
-# Firearms: book:cotw-18 p. 244.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 244.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["50-140 sharps", "50-140 winchester express", "50-3 1/4 sharps"]

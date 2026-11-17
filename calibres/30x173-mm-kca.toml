@@ -5,7 +5,7 @@
 # on municion.org the shoulder, the head and the length of the round (TL); carried from the mouth,
 # its shoulder starts 1.1 mm nearer the mouth than the GAU-8 round's.
 name = "30x173 mm KCA"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["30x173", "30 mm kca", "30 mm oerlikon kca", "30 mm 304 rk", "30 mm gau-9"]

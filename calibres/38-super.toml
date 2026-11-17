@@ -1,5 +1,5 @@
 name = ".38 Super"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "semi-rimmed"
 profile = "round"
 aliases = ["38super", "38 super auto"]

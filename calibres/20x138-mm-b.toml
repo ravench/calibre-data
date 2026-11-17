@@ -4,7 +4,7 @@
 # gives as the rim's thickness. The cartridge length is the infobox's (the drawing's TL: 202.75).
 # The long shallow shoulder runs over 25 mm.
 name = "20x138 mm B"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "belted"
 profile = "spitzer"
 aliases = ["20x138b", "20 mm solothurn", "20 mm long solothurn"]

@@ -2,7 +2,7 @@
 # The US Navy's round for the Lee straight-pull rifle of 1895, made by Winchester; no factory ammunition
 # since 1935.
 name = "6 mm Lee Navy"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["6mm lee navy", "236 navy", "6mm lee"]

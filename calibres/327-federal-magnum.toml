@@ -2,7 +2,7 @@
 # the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 name = ".327 Federal Magnum"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["327fed", "327federal"]

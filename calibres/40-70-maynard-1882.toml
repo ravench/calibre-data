@@ -1,8 +1,9 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The longest of the three .40 Maynard 1882 rounds, with a slightly larger rim and base.
 name = ".40-70 Maynard 1882"
-# Firearms: book:cotw-18 p. 228.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 228.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["40-70 maynard", "40-70 maynard 1882"]

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Bullard repeater; the 40-60 Bullard load used the same case.
 name = ".40-75 Bullard"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "flat"
 aliases = ["40-75 bullard", "40-60 bullard"]

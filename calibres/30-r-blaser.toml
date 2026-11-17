@@ -1,6 +1,6 @@
 # Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
 name = ".30 R Blaser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "spitzer"
 aliases = ["30rblaser", "30r"]

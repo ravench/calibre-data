@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # Thieme & Schlegelmilch (Nimrod) of Suhl; a smokeless round with blackpowder ballistics.
 name = "9.3x75 mm R Nimrod"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["9.3x75r", "9.3x75r nimrod"]

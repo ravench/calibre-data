@@ -3,7 +3,7 @@
 # rounded; shoulder heights of bottleneck cases are estimated for drawing.
 # The AECC drawing 11-020-CBC-020 (municion.org) agrees within 0.07 mm.
 name = "10.4 mm Swiss Ordnance 1878"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["10.4revolver", "revolver78"]

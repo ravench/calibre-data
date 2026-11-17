@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # The Siamese service round from 1902 to the Second World War; Type 45 is the Thai year.
 name = "8x50 mm R Siamese Type 45"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["8x50r siamese", "8x50r type 45"]

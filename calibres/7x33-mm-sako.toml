@@ -2,7 +2,7 @@
 # On the 9x19 mm case head. Full metal jacket, the standard for its birds (COTW 18 p. 621); soft points
 # were made too.
 name = "7x33 mm Sako"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "round"
 aliases = ["7x33", "7x33sako"]

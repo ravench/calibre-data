@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Swedish M1887 Nagant service revolver made by Husqvarna; outside-lubricated bullet.
 name = "7.5 mm Swedish Nagant"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["7.5 swedish nagant", "7.5mm swedish nagant revolver", "7.5swedishnagant"]

@@ -1,6 +1,7 @@
 name = ".50-70 Government"
-# Firearms: book:cotw-18 p. 571.
-categories = ["black-powder", "rifle"]
+# Guns: book:cotw-18 p. 571.
+guns = ["rifle"]
+black_powder = true
 kind = "rimmed"
 profile = "round"
 aliases = ["50-70"]

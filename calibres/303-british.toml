@@ -1,5 +1,5 @@
 name = ".303 British"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 # Nose: round, as first loaded (the Wikipedia page below); pointed service bullets came only from 1898
 # (COTW 18 p. 553).

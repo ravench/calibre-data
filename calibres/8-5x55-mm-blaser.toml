@@ -1,6 +1,6 @@
 # C.I.P. TDCC maximum cartridge (8.5x55 from the 2021 C.I.P. bulletin, sheet 2019-05-22).
 name = "8.5x55 mm Blaser"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["8.5x55", "8.5x55blaser", "85x55"]

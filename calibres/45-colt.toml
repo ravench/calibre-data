@@ -2,7 +2,7 @@
 # Nose", Raven's W-W round photographed 2026-11-08), not the wide flat point; the 1873 original
 # was an "ogival & flat nosed" 255 gr bullet (Wikipedia).
 name = ".45 Colt"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "round"
 aliases = ["45colt", "45lc", "45longcolt"]

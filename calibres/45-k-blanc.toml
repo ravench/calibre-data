@@ -4,7 +4,7 @@
 # the ratio of the measured .22 SH (5.6/11), because C.I.P. gives no crimp size.
 # The name is the sheet's title, «45 K Blanc»; in German the round is sold as «Knall».
 name = ".45 K Blanc"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimmed"
 profile = "crimped"
 aliases = ["45knall", "45k", "45shortknall", "45kblanc"]

@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # AMT's lengthened 10 mm Auto for the AutoMag IV pistol.
 name = "10 mm Magnum"
-categories = ["handgun"]
+guns = ["handgun"]
 kind = "rimless"
 profile = "round"
 aliases = ["10mm magnum", "10 mm mag", "10mm mag"]

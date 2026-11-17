@@ -5,7 +5,7 @@
 # diameters, the shoulder and the head; the drawing's round (TL 266.50) is 23.5 mm shorter than the
 # service rounds.
 name = "30x173 mm GAU-8"
-categories = ["cannon"]
+guns = ["cannon"]
 kind = "rimless"
 profile = "spitzer"
 aliases = ["30 mm gau-8", "30 mm mk 44"]

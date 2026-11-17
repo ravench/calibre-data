@@ -1,7 +1,7 @@
 # Measurements from the C.I.P. sheet (maximum cartridge).
 # The straight 9.3x72 mm R case taken down to 8 mm, for Sauer combination guns.
 name = "8x72 mm R Sauer"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["8x72r", "8x72r sauer"]

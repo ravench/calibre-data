@@ -1,7 +1,7 @@
 # Measurements from Cartridges of the World, 18th ed. (inches converted to mm).
 # For the Stevens 44 and 44½ and other single-shot rifles; an inside-lubricated bullet.
 name = ".32 Ideal"
-categories = ["rifle"]
+guns = ["rifle"]
 kind = "rimmed"
 profile = "round"
 aliases = ["32 ideal", "32-25-100"]
