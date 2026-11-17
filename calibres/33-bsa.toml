@@ -19,6 +19,9 @@ shoulder = 11.51
 shoulder_at = 48.32
 neck_at = 52.86
 neck_base = 9.3
+# AECC drawing on municion.org: SØ 11.68, NØ 9.30, SL 48.10, NL 8.10, CL 60.74.
+shoulder_angle = 14.7
+cite.shoulder_angle = ["https://municion.org/producto/33-bsa-belted-rimless-nitro-express/"]
 neck = 9.37
 case_length = 60.96
 overall_length = 78.74
@@ -39,11 +42,6 @@ sources = ["book:cotw-18 p. 586"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.68, NØ 9.30, SL 48.10, NL 8.10, CL 60.74.
-degrees = 14.7
-sources = ["https://municion.org/producto/33-bsa-belted-rimless-nitro-express/"]
 
 [case_head]
 # .051 in. (Donnelly); groove from the AECC drawing 09-061-BFC-010 (municion.org): RT 1.10, GØ 11.69, GW 0.85, the

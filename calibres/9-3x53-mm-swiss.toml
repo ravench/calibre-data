@@ -18,6 +18,9 @@ shoulder = 11.51
 shoulder_at = 44.26
 neck_at = 46.7
 neck_base = 9.98
+# AECC drawing on municion.org: SØ 11.38, NØ 9.98, SL 43.95, NL 6.89, CL 53.28.
+shoulder_angle = 16.0
+cite.shoulder_angle = ["https://municion.org/producto/93-x-53-swiss-m89-n/"]
 neck = 9.88
 case_length = 53.59
 overall_length = 71.12
@@ -33,11 +36,6 @@ sources = ["book:cotw-18 p. 639"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.38, NØ 9.98, SL 43.95, NL 6.89, CL 53.28.
-degrees = 16.0
-sources = ["https://municion.org/producto/93-x-53-swiss-m89-n/"]
 
 [case_head]
 # AECC drawing 09-053-BGC-012 (municion.org): RT 1.66, HL 3.46, GØ 10.26, GW 0.99, HØ 12.54;

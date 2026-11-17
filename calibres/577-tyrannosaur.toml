@@ -17,6 +17,11 @@ shoulder = 17.09
 shoulder_at = 59.55
 neck_at = 63.65
 neck_base = 15.64
+# AECC drawing on municion.org: SØ 16.71, NØ 15.64, SL 59.30, NL 12.30, CL 75.70. The half angle runs between the
+# book's diameters over the drawing's shoulder length (4.10 mm): the specimen's own cone (7.4 degrees) would leave a
+# neck 1.6 mm shorter than the specimen's, over the 1.5 mm the rule allows.
+shoulder_angle = 10.3
+cite.shoulder_angle = ["https://municion.org/producto/577-tyrannosaur/"]
 neck = 15.6
 case_length = 75.95
 overall_length = 94.23
@@ -30,13 +35,6 @@ sources = ["book:cotw-18 p. 449"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 454"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 16.71, NØ 15.64, SL 59.30, NL 12.30, CL 75.70. The half angle runs between the
-# book's diameters over the drawing's shoulder length (4.10 mm): the specimen's own cone (7.4 degrees) would leave a
-# neck 1.6 mm shorter than the specimen's, over the 1.5 mm the rule allows.
-degrees = 10.3
-sources = ["https://municion.org/producto/577-tyrannosaur/"]
 
 [case_head]
 # .060 in. (COTW); groove from the AECC drawing 15-075-BGC-030 (municion.org): RT 1.28, HL 3.50, GØ 16.10, GW 1.28,

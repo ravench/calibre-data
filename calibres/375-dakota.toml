@@ -18,6 +18,9 @@ shoulder = 13.44
 shoulder_at = 52.32
 neck_at = 55.78
 neck_base = 10.14
+# AECC drawing on municion.org: SØ 13.44, NØ 10.14, SL 52.30, NL 9.50, CL 65.26.
+shoulder_angle = 25.5
+cite.shoulder_angle = ["https://municion.org/producto/375-dakota/"]
 neck = 10.21
 case_length = 65.28
 overall_length = 84.33
@@ -32,11 +35,6 @@ sources = ["https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+ca
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.44, NØ 10.14, SL 52.30, NL 9.50, CL 65.26.
-degrees = 25.5
-sources = ["https://municion.org/producto/375-dakota/"]
 
 [case_head]
 # .046 in. (COTW); groove from the AECC drawing 10-065-BGC-020 (municion.org): RT 1.25, HL 3.20, GØ 12.08, GW 1.00,

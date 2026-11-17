@@ -24,6 +24,8 @@ shoulder = 16.15
 shoulder_at = 35.71
 neck_at = 41.17
 neck_base = 13.06
+# C.I.P. 577/450 Sld. Mart. H.: half the cone angle alpha 31°35'57"
+shoulder_angle = 15.8
 neck = 12.83
 case_length = 59.08
 overall_length = 81.28
@@ -37,11 +39,6 @@ sources = ["https://en.wikipedia.org/wiki/.577/450_Martini–Henry"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# C.I.P. 577/450 Sld. Mart. H.: half the cone angle alpha 31°35'57"
-degrees = 15.8
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

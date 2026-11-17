@@ -18,6 +18,9 @@ shoulder = 12.5
 shoulder_at = 52.57
 neck_at = 54.7
 neck_base = 7.75
+# C.I.P. 270 Weath. Mag.
+shoulder_angle = 48.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page14.pdf"]
 neck = 7.7
 case_length = 65.0
 overall_length = 83.0
@@ -34,11 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/.270_Weatherby_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.270_Weatherby_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 270 Weath. Mag.
-degrees = 48.1
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page14.pdf"]
 
 [case_head]
 # C.I.P. ?

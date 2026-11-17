@@ -18,6 +18,9 @@ shoulder = 14.0
 shoulder_at = 32.85
 neck_at = 41.62
 neck_base = 11.06
+# AECC drawing on municion.org: SØ 14.00, NØ 11.06, SL 32.50, NL 10.20, CL 51.47.
+shoulder_angle = 9.5
+cite.shoulder_angle = ["https://municion.org/producto/40-90-300-bullard/"]
 neck = 10.92
 case_length = 51.82
 overall_length = 64.77
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 227"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 14.00, NØ 11.06, SL 32.50, NL 10.20, CL 51.47.
-degrees = 9.5
-sources = ["https://municion.org/producto/40-90-300-bullard/"]
 
 [case_head]
 # .058 in.

@@ -21,6 +21,8 @@ shoulder = 10.95
 shoulder_at = 46.0
 neck_at = 48.99
 neck_base = 8.99
+# C.I.P. 8 x 57 IR
+shoulder_angle = 18.2
 neck = 8.99
 case_length = 57.0
 overall_length = 82.0
@@ -36,11 +38,6 @@ sources = ["https://municion.org/producto/8-x-57-r-mauser-m88b-hunting/"]
 # Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# C.I.P. 8 x 57 IR
-degrees = 18.2
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page34.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

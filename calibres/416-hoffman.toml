@@ -17,6 +17,9 @@ shoulder = 12.47
 shoulder_at = 61.86
 neck_at = 63.89
 neck_base = 11.22
+# AECC drawing on municion.org: SØ 12.36, NØ 11.22, SL 61.00, NL 8.50, CL 71.53.
+shoulder_angle = 15.7
+cite.shoulder_angle = ["https://municion.org/producto/416-hoffman-belted/"]
 neck = 11.35
 case_length = 72.39
 overall_length = 91.44
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 426", "https://naboje.org/node/19111"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.36, NØ 11.22, SL 61.00, NL 8.50, CL 71.53.
-degrees = 15.7
-sources = ["https://municion.org/producto/416-hoffman-belted/"]
 
 [case_head]
 # from the .375 H&H Magnum case; C.I.P. 375 H&H Mag.

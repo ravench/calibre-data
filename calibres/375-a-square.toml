@@ -16,6 +16,11 @@ belt = 15.33
 base = 14.78
 shoulder = 14.0
 shoulder_at = 61.1
+# Measured on the side photo of the jww.de reloading page (centre cartridge): straight part of the
+# shoulder at 37.8 deg (left edge) and 38.1 (right), 37.4-38.1 over edge thresholds; 8.8 px/mm, neck/body
+# width 0.727 (ours 0.735). The shoulder starts 11.3 mm below the mouth. One photo only.
+shoulder_angle = 37.9
+cite.shoulder_angle = ["https://jww.de/wiederladen-375-a-square-2187/"]
 neck = 10.29
 case_length = 72.39
 overall_length = 92.71
@@ -36,13 +41,6 @@ sources = ["book:cotw-18 p. 415"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
-
-[shoulder_angle]
-# Measured on the side photo of the jww.de reloading page (centre cartridge): straight part of the
-# shoulder at 37.8 deg (left edge) and 38.1 (right), 37.4-38.1 over edge thresholds; 8.8 px/mm, neck/body
-# width 0.727 (ours 0.735). The shoulder starts 11.3 mm below the mouth. One photo only.
-degrees = 37.9
-sources = ["https://jww.de/wiederladen-375-a-square-2187/"]
 
 [case_head]
 # from the .378 Weatherby Magnum case; C.I.P. sheet

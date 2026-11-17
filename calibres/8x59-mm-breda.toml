@@ -21,6 +21,9 @@ shoulder = 11.0
 shoulder_at = 49.14
 neck_at = 51.58
 neck_base = 9.14
+# AECC drawing on municion.org: SØ 10.80, NØ 9.14, SL 48.80, NL 7.60, CL 58.84.
+shoulder_angle = 18.8
+cite.shoulder_angle = ["https://municion.org/producto/8-x-59-italian-breda-mg-m-1935/"]
 neck = 9.07
 case_length = 59.18
 overall_length = 80.52
@@ -34,11 +37,6 @@ sources = ["book:cotw-18 p. 557"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/8×59mm_Rb_Breda"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.80, NØ 9.14, SL 48.80, NL 7.60, CL 58.84.
-degrees = 18.8
-sources = ["https://municion.org/producto/8-x-59-italian-breda-mg-m-1935/"]
 
 [case_head]
 # AECC drawing 08-059-BRC-010 (municion.org): RT 1.40, HL 3.50, GØ 10.36, GW 1.15, HØ 12.49; ramp angle from HL = RT +

@@ -18,6 +18,9 @@ shoulder = 10.74
 shoulder_at = 32.06
 neck_at = 34.96
 neck_base = 8.85
+# AECC drawing on municion.org: SØ 10.70, NØ 8.85, SL 31.80, NL 7.20, CL 41.90.
+shoulder_angle = 17.7
+cite.shoulder_angle = ["https://municion.org/producto/8-x-42-r-mauser-m88d/"]
 neck = 8.81
 case_length = 42.16
 overall_length = 57.91
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 630"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.70, NØ 8.85, SL 31.80, NL 7.20, CL 41.90.
-degrees = 17.7
-sources = ["https://municion.org/producto/8-x-42-r-mauser-m88d/"]
 
 [case_head]
 # .054 in.

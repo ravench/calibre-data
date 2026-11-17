@@ -20,6 +20,8 @@ shoulder = 13.0
 shoulder_at = 52.12
 neck_at = 55.92
 neck_base = 8.61
+# C.I.P. 300 Blaser Mag.
+shoulder_angle = 30
 neck = 8.61
 case_length = 64.2
 overall_length = 84.84
@@ -34,11 +36,6 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page114.pdf"
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# C.I.P. 300 Blaser Mag.
-degrees = 30
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page114.pdf"]
 
 [case_head]
 # C.I.P. 300 Blaser Mag.

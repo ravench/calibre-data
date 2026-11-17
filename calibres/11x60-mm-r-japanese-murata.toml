@@ -20,6 +20,9 @@ shoulder = 13.36
 shoulder_at = 34.74
 neck_at = 42.34
 neck_base = 11.9
+# AECC drawing on municion.org: SØ 13.50, NØ 11.90, SL 34.70, NL 17.60, CL 59.90.
+shoulder_angle = 6.0
+cite.shoulder_angle = ["https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mauser-base/"]
 neck = 11.81
 case_length = 59.94
 overall_length = 79.5
@@ -34,11 +37,6 @@ sources = ["book:cotw-18 p. 562"]
 [primer]
 # 6.37 mm, 3 specimens
 size = "berdan-nitro"
-sources = ["https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mauser-base/"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.50, NØ 11.90, SL 34.70, NL 17.60, CL 59.90.
-degrees = 6.0
 sources = ["https://municion.org/producto/11-x-60-r-japanese-murata-m-1880-mauser-base/"]
 
 [case_head]

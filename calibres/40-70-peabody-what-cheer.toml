@@ -18,6 +18,10 @@ rim = 16.81
 base = 14.76
 shoulder = 14.0
 shoulder_at = 25.15
+# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 42.45 - NL 9.60 -
+# SL 22.90 = 9.95 mm). Donnelly's lengths (K .392 in.) give the same; his printed angles are not used.
+shoulder_angle = 8.9
+cite.shoulder_angle = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
 neck = 10.87
 case_length = 44.7
 overall_length = 72.39
@@ -41,12 +45,6 @@ sources = ["book:cotw-18 p. 225"]
 # The table gives a large rifle primer, but most samples are Berdan primed (COTW 18 p. 225);
 # municion.org's measure 6.57 mm (2 specimens).
 size = "berdan-nitro"
-sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
-
-[shoulder_angle]
-# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 42.45 - NL 9.60 -
-# SL 22.90 = 9.95 mm). Donnelly's lengths (K .392 in.) give the same; his printed angles are not used.
-degrees = 8.9
 sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
 
 [case_head]

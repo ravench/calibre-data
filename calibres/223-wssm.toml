@@ -21,6 +21,9 @@ shoulder = 13.8
 shoulder_at = 29.2
 neck_at = 35.71
 neck_base = 6.91
+# C.I.P. 223 Win. Super Short Mag.
+shoulder_angle = 28
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page87.pdf"]
 neck = 6.9
 case_length = 42.4
 overall_length = 60.0
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/.223_Winchester_Super_Short_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.223_Winchester_Super_Short_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 223 Win. Super Short Mag.
-degrees = 28
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page87.pdf"]
 
 [case_head]
 # C.I.P. 223 Win. Super Short Mag.

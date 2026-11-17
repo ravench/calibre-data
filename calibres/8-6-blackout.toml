@@ -15,6 +15,8 @@ rim = 11.99
 base = 11.95
 shoulder = 11.77
 shoulder_at = 32.26
+# SAAMI drawing
+shoulder_angle = 30
 neck = 9.3
 case_length = 42.8
 overall_length = 71.37
@@ -27,11 +29,6 @@ unknown = "sources give only the 2026 SAAMI acceptance, not when Q introduced it
 [primer]
 size = "large-rifle"
 sources = ["https://www.starlinebrass.com/86-blackout-brass"]
-
-[shoulder_angle]
-# SAAMI drawing
-degrees = 30
-sources = ["https://saami.org/wp-content/uploads/2026/04/Public-Introduction-8.6-BLACKOUT-2026-04-07.pdf"]
 
 [case_head]
 # same case head as its parent, the 6.5 Creedmoor (Wikipedia); C.I.P. 6,5 Creedmoor.

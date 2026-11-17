@@ -17,6 +17,10 @@ rim = 13.59
 base = 14.1
 shoulder = 13.82
 shoulder_at = 29.4
+# The .25 WSSM's (C.I.P. 25 Win. SSM), assumed: COTW 18 p. 394 calls the round that case necked up to
+# .308, and the WSSM rounds keep one shoulder (28-30 deg).
+shoulder_angle = 30
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page91.pdf"]
 neck = 8.43
 case_length = 42.42
 overall_length = 57.15
@@ -33,12 +37,6 @@ sources = ["book:cotw-18 p. 394"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
-
-[shoulder_angle]
-# The .25 WSSM's (C.I.P. 25 Win. SSM), assumed: COTW 18 p. 394 calls the round that case necked up to
-# .308, and the WSSM rounds keep one shoulder (28-30 deg).
-degrees = 30
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page91.pdf"]
 
 [case_head]
 # from the WSSM case (the same head on every WSSM sheet); C.I.P. 223 Win. Super Short Mag.

@@ -21,6 +21,8 @@ shoulder = 10.95
 shoulder_at = 48.22
 neck_at = 50.92
 neck_base = 9.08
+# C.I.P. 8 x 60 RS
+shoulder_angle = 19.1
 neck = 9.08
 case_length = 60.0
 overall_length = 83.6
@@ -34,11 +36,6 @@ unknown = "no launch year found (the rimless 8x60 S is from 1919)"
 # 5.68 mm, 4 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/8-x-60-r-s-mauser/"]
-
-[shoulder_angle]
-# C.I.P. 8 x 60 RS
-degrees = 19.1
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page38.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

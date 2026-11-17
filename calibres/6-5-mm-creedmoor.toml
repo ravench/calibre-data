@@ -16,6 +16,9 @@ rim = 12.0
 base = 12.0
 shoulder = 11.7
 shoulder_at = 37.84
+# C.I.P. 6,5 Creedmoor
+shoulder_angle = 30
+cite.shoulder_angle = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
 neck = 7.5
 case_length = 48.8
 overall_length = 71.8
@@ -33,11 +36,6 @@ sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
-
-[shoulder_angle]
-# C.I.P. 6,5 Creedmoor
-degrees = 30
-sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/6-5-creedmoor-fr.pdf"]
 
 [case_head]
 # C.I.P. 6,5 Creedmoor

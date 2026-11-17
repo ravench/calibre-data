@@ -17,6 +17,9 @@ rim = 8.46
 base = 6.83
 shoulder = 6.83
 shoulder_at = 24.43
+# AECC drawing 04-029-BBR-010
+shoulder_angle = 16.1
+cite.shoulder_angle = ["https://municion.org/producto/17-winchester-super-magnum-rf/"]
 neck = 5.0
 case_length = 30.48
 overall_length = 40.39
@@ -26,11 +29,6 @@ sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimf
 [introduced]
 year = 2013
 sources = ["https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum"]
-
-[shoulder_angle]
-# AECC drawing 04-029-BBR-010
-degrees = 16.1
-sources = ["https://municion.org/producto/17-winchester-super-magnum-rf/"]
 
 [case_head]
 # SAAMI 17 Winchester Super Magnum

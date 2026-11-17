@@ -19,6 +19,9 @@ shoulder = 12.5
 shoulder_at = 51.82
 neck_at = 57.05
 neck_base = 7.59
+# C.I.P. 264 Win. Mag.
+shoulder_angle = 25
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page13.pdf"]
 neck = 7.6
 case_length = 64.0
 overall_length = 85.0
@@ -35,11 +38,6 @@ sources = ["https://en.wikipedia.org/wiki/.264_Winchester_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.264_Winchester_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 264 Win. Mag.
-degrees = 25
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page13.pdf"]
 
 [case_head]
 # C.I.P. 264 Win. Mag.

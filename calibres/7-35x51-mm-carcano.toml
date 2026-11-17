@@ -18,6 +18,9 @@ shoulder = 10.85
 shoulder_at = 41.73
 neck_at = 45.05
 neck_base = 8.2
+# AECC drawing 08-051-BGC-010
+shoulder_angle = 22.2
+cite.shoulder_angle = ["https://municion.org/producto/735-x-51-italian-carcano-m-1938/"]
 neck = 8.32
 case_length = 51.5
 overall_length = 73.5
@@ -34,11 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/7.35×51mm_Carcano"]
 [primer]
 # 5.11 mm, 4 specimens
 size = "large-rifle"
-sources = ["https://municion.org/producto/735-x-51-italian-carcano-m-1938/"]
-
-[shoulder_angle]
-# AECC drawing 08-051-BGC-010
-degrees = 22.2
 sources = ["https://municion.org/producto/735-x-51-italian-carcano-m-1938/"]
 
 [case_head]

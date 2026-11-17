@@ -21,6 +21,9 @@ shoulder = 10.95
 shoulder_at = 46.2
 neck_at = 47.82
 neck_base = 9.83
+# C.I.P. 9 x 57: half the cone angle alpha 38°08'17"
+shoulder_angle = 19.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page67.pdf"]
 neck = 9.83
 case_length = 56.8
 overall_length = 81.0
@@ -40,11 +43,6 @@ sources = ["https://municion.org/producto/9-x-57-mauser/"]
 # 5.36 mm, 8 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/9-x-57-mauser/"]
-
-[shoulder_angle]
-# C.I.P. 9 x 57: half the cone angle alpha 38°08'17"
-degrees = 19.1
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page67.pdf"]
 
 [case_head]
 # C.I.P. 9 x 57: R, E, E1, delta

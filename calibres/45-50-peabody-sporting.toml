@@ -20,6 +20,9 @@ shoulder = 12.9
 shoulder_at = 26.06
 neck_at = 29.67
 neck_base = 12.16
+# AECC drawing on municion.org: SØ 12.85, NØ 12.16, SL 26.30, NL 9.45, CL 39.36.
+shoulder_angle = 5.5
+cite.shoulder_angle = ["https://municion.org/producto/45-50-peabody-martini-sporting/"]
 neck = 12.14
 case_length = 39.12
 overall_length = 52.83
@@ -41,11 +44,6 @@ sources = ["book:cotw-18 p. 237"]
 # The table gives no primer.
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.85, NØ 12.16, SL 26.30, NL 9.45, CL 39.36.
-degrees = 5.5
-sources = ["https://municion.org/producto/45-50-peabody-martini-sporting/"]
 
 [case_head]
 # .065 in.

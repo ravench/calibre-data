@@ -15,6 +15,9 @@ rim = 20.45
 base = 20.45
 shoulder = 18.26
 shoulder_at = 71.4
+# C.I.P. 460 Steyr
+shoulder_angle = 28.3
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page151.pdf"]
 neck = 12.73
 case_length = 92.46
 overall_length = 121.92
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 649"]
 # 7 specimens on municion.org's photos.
 size = "bmg-35"
 sources = ["https://municion.org/producto/460-steyr/"]
-
-[shoulder_angle]
-# C.I.P. 460 Steyr
-degrees = 28.3
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page151.pdf"]
 
 [case_head]
 # from the .50 BMG case; C.I.P. 50 Browning

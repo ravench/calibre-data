@@ -17,6 +17,9 @@ shoulder = 9.04
 shoulder_at = 32.46
 neck_at = 33.66
 neck_base = 7.7
+# AECC drawing on municion.org: SØ 8.90, NØ 7.70, SL 32.35, NL 5.20, CL 38.75.
+shoulder_angle = 26.6
+cite.shoulder_angle = ["https://municion.org/producto/277-wolverine/"]
 neck = 7.85
 case_length = 38.86
 overall_length = 57.4
@@ -30,11 +33,6 @@ sources = ["book:cotw-18 p. 381"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 451"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 8.90, NØ 7.70, SL 32.35, NL 5.20, CL 38.75.
-degrees = 26.6
-sources = ["https://municion.org/producto/277-wolverine/"]
 
 [case_head]
 # made from .223 Rem. cases; the C.I.P. 223 Rem. head

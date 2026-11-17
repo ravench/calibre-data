@@ -17,6 +17,9 @@ shoulder = 8.97
 shoulder_at = 36.53
 neck_at = 39.3
 neck_base = 7.11
+# COTW 18, in the text
+shoulder_angle = 23
+cite.shoulder_angle = ["book:cotw-18 p. 367"]
 neck = 7.21
 case_length = 44.7
 overall_length = 54.23
@@ -33,11 +36,6 @@ sources = ["book:cotw-18 p. 367"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 451"]
-
-[shoulder_angle]
-# COTW 18, in the text
-degrees = 23
-sources = ["book:cotw-18 p. 367"]
 
 [case_head]
 # made from .223 Rem. cases; the C.I.P. 223 Rem. head

@@ -32,6 +32,9 @@ shoulder = 11.65
 shoulder_at = 44.5
 neck_at = 47.45
 neck_base = 8.47
+# AECC drawing 08-054-BGC-085: SØ 11.65, NØ 8.47, SL 44.50, NL 7.15, CL 54.40.
+shoulder_angle = 30.0
+cite.shoulder_angle = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
 neck = 8.47
 case_length = 54.6
 overall_length = 77.44
@@ -51,11 +54,6 @@ sources = ["https://swisswaffen.com/?L=DE&W=GP9075&LP=SM", "https://www.amtsdruc
 # GP 90 family
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
-
-[shoulder_angle]
-# AECC drawing 08-054-BGC-085: SØ 11.65, NØ 8.47, SL 44.50, NL 7.15, CL 54.40.
-degrees = 30.0
-sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
 
 [case_head]
 # AECC drawing 08-054-BGC-085 (municion.org): RT 1.56, HL 3.60, GØ 10.26, GW 1.00, HØ 12.52;

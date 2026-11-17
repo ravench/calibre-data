@@ -21,6 +21,9 @@ shoulder = 13.13
 shoulder_at = 34.75
 neck_at = 38.5
 neck_base = 11.15
+# AECC drawing on municion.org: SØ 13.00, NØ 11.15, SL 34.70, NL 9.00, CL 47.45.
+shoulder_angle = 13.9
+cite.shoulder_angle = ["https://municion.org/producto/1035-x-47-r-italian-vetterli-m-1870-71-m-1890/"]
 neck = 11.1
 case_length = 47.5
 overall_length = 62.48
@@ -36,11 +39,6 @@ sources = ["book:cotw-18 p. 561"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.00, NØ 11.15, SL 34.70, NL 9.00, CL 47.45.
-degrees = 13.9
-sources = ["https://municion.org/producto/1035-x-47-r-italian-vetterli-m-1870-71-m-1890/"]
 
 [case_head]
 # .058 in. (COTW); the AECC drawing 11-048-BBC-005 (municion.org) has RT 1.60.

@@ -17,6 +17,12 @@ shoulder = 10.7
 shoulder_at = 31.4
 neck_at = 33
 neck_base = 9.72
+# C.I.P. 9 x 39: alpha 34 degrees 3 minutes (the AECC drawing 09-039-BGC-010 gives 14.8)
+shoulder_angle = 17.0
+cite.shoulder_angle = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/9-x-39-180314-en1.pdf",
+  "https://municion.org/producto/9-x-39-russian/",
+]
 neck = 9.72
 case_length = 38.7
 overall_length = 56.0
@@ -35,14 +41,6 @@ sources = ["https://municion.org/producto/9-x-39-russian/"]
 [primer]
 size = "large-rifle"
 sources = ["https://www.starlinebrass.com/9x39-brass"]
-
-[shoulder_angle]
-# C.I.P. 9 x 39: alpha 34 degrees 3 minutes (the AECC drawing 09-039-BGC-010 gives 14.8)
-degrees = 17.0
-sources = [
-  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/9-x-39-180314-en1.pdf",
-  "https://municion.org/producto/9-x-39-russian/",
-]
 
 [case_head]
 # C.I.P. 9 x 39 (the same head as the 7,62 x 39 it is necked up from)

@@ -18,6 +18,9 @@ shoulder = 13.46
 shoulder_at = 59.58
 neck_at = 61.06
 neck_base = 12.2
+# AECC drawing on municion.org: SØ 13.36, NØ 12.20, SL 59.20, NL 10.82, CL 71.50.
+shoulder_angle = 21.4
+cite.shoulder_angle = ["https://municion.org/producto/458-canadian-magnum-by-nass/"]
 neck = 12.32
 case_length = 71.88
 overall_length = 91.44
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 435"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.36, NØ 12.20, SL 59.20, NL 10.82, CL 71.50.
-degrees = 21.4
-sources = ["https://municion.org/producto/458-canadian-magnum-by-nass/"]
 
 [case_head]
 # .046 in. (COTW); groove from the AECC drawing 12-072-BGC-020 (municion.org): RT 1.10, HL 3.50, GØ 11.85, GW 1.00,

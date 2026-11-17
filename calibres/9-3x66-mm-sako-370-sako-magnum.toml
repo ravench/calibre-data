@@ -23,6 +23,8 @@ shoulder = 11.43
 shoulder_at = 55.8
 neck_at = 58.2
 neck_base = 9.92
+# C.I.P. 9,3 x 66 Sako
+shoulder_angle = 17.5
 neck = 9.92
 case_length = 66.0
 overall_length = 85.0
@@ -37,11 +39,6 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page71.pdf"]
 [primer]
 size = "large-rifle"
 sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
-
-[shoulder_angle]
-# C.I.P. 9,3 x 66 Sako
-degrees = 17.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page71.pdf"]
 
 [case_head]
 # C.I.P. 9,3 x 66 Sako

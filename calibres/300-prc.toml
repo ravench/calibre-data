@@ -16,6 +16,8 @@ shoulder = 13.08
 shoulder_at = 53.89
 neck_at = 57.72
 neck_base = 8.66
+shoulder_angle = 30
+cite.shoulder_angle = ["https://www.americanrifleman.org/content/tested-hornady-s-300-prc/"]
 neck = 8.66
 case_length = 65.53
 overall_length = 93.98
@@ -29,10 +31,6 @@ sources = ["https://en.wikipedia.org/wiki/Hornady"]
 [primer]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-degrees = 30
-sources = ["https://www.americanrifleman.org/content/tested-hornady-s-300-prc/"]
 
 [case_head]
 # from the .375 Ruger case; C.I.P. 375 Ruger

@@ -15,6 +15,9 @@ rim = 13.51
 base = 13.82
 shoulder = 13.46
 shoulder_at = 59.0
+# AECC drawing on municion.org: SØ 13.38, NØ 7.97, SL 58.75, NL 6.70, CL 71.63.
+shoulder_angle = 23.6
+cite.shoulder_angle = ["https://municion.org/producto/7-mm-imperial-magnum/"]
 neck = 8.18
 case_length = 71.88
 overall_length = 91.44
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 388"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.38, NØ 7.97, SL 58.75, NL 6.70, CL 71.63.
-degrees = 23.6
-sources = ["https://municion.org/producto/7-mm-imperial-magnum/"]
 
 [case_head]
 # .046 in. (COTW); groove from the AECC drawing 07-072-BRC-011 (municion.org, «7 mm Imperial Magnum»): RT 1.18,

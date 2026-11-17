@@ -21,6 +21,8 @@ shoulder = 11.91
 shoulder_at = 50.8
 neck_at = 52.85
 neck_base = 8.1
+# C.I.P. 7 x 61 Super
+shoulder_angle = 42.9
 neck = 8.06
 case_length = 61.0
 overall_length = 83.0
@@ -36,11 +38,6 @@ sources = ["https://en.wikipedia.org/wiki/7%C3%9761mm_Sharpe_%26_Hart"]
 # Rem 9 1/2M
 size = "large-rifle"
 sources = ["https://sierrabullets.com/content/load-data/legacy/284-7mm/7x61mm-sharpe-hart.pdf"]
-
-[shoulder_angle]
-# C.I.P. 7 x 61 Super
-degrees = 42.9
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page2.pdf"]
 
 [case_head]
 # C.I.P. 7 x 61 Super

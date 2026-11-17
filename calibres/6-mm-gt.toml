@@ -19,6 +19,9 @@ shoulder = 11.66
 shoulder_at = 33.12
 neck_at = 36.5
 neck_base = 6.73
+# 4D Reamer Rentals 6mm GT drawing: 35 deg, shoulder at 1.3040 in, neck at 1.4375 in (GA Precision brass photo reads 35-36)
+shoulder_angle = 35
+cite.shoulder_angle = ["https://www.4dreamerrentals.com/"]
 neck = 6.73
 case_length = 43.82
 overall_length = 67.06
@@ -31,11 +34,6 @@ unknown = "sources give only the 2024 SAAMI acceptance"
 [primer]
 size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# 4D Reamer Rentals 6mm GT drawing: 35 deg, shoulder at 1.3040 in, neck at 1.4375 in (GA Precision brass photo reads 35-36)
-degrees = 35
-sources = ["https://www.4dreamerrentals.com/"]
 
 [case_head]
 # SAAMI 6mm GT: rim thickness 0.054, groove 0.409 at 36 degrees, groove width 0.055,

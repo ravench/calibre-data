@@ -20,6 +20,9 @@ shoulder = 11.2
 shoulder_at = 49.49
 neck_at = 53.56
 neck_base = 8.63
+# C.I.P. 30-06 Spring
+shoulder_angle = 17.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
 neck = 8.6
 case_length = 63.3
 overall_length = 84.8
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/.30-06_Springfield"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.30-06_Springfield"]
-
-[shoulder_angle]
-# C.I.P. 30-06 Spring
-degrees = 17.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
 
 [case_head]
 # C.I.P. 30-06 Spring.

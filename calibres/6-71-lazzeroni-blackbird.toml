@@ -15,6 +15,9 @@ rim = 13.82
 base = 13.82
 shoulder = 13.31
 shoulder_at = 59.4
+# COTW 18 p. 376: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 376"]
 neck = 7.54
 case_length = 71.12
 overall_length = 90.8
@@ -30,11 +33,6 @@ sources = ["book:cotw-18 p. 376"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 451"]
-
-[shoulder_angle]
-# COTW 18 p. 376: a 30-degree shoulder.
-degrees = 30
-sources = ["book:cotw-18 p. 376"]
 
 [case_head]
 # .055 in.

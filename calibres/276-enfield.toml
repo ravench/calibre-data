@@ -18,6 +18,9 @@ shoulder = 11.68
 shoulder_at = 44.61
 neck_at = 49.99
 neck_base = 8.29
+# AECC drawing on municion.org: SØ 11.69, NØ 8.29, SL 44.50, NL 9.70, CL 59.58.
+shoulder_angle = 17.5
+cite.shoulder_angle = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"]
 neck = 8.15
 case_length = 59.69
 overall_length = 82.55
@@ -35,11 +38,6 @@ sources = ["book:cotw-18 p. 542"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.69, NØ 8.29, SL 44.50, NL 9.70, CL 59.58.
-degrees = 17.5
-sources = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"]
 
 [case_head]
 # AECC drawing 07-060-BGC-059 (municion.org): RT 1.20, HL 3.36, GØ 11.16, GW 0.97, HØ 13.38; ramp angle from HL = RT +

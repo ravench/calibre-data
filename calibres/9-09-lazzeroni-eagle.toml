@@ -17,6 +17,9 @@ rim = 14.66
 base = 14.66
 shoulder = 14.15
 shoulder_at = 39.2
+# COTW 18 p. 410: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 410"]
 neck = 9.83
 case_length = 52.07
 overall_length = 71.12
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 410"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
-
-[shoulder_angle]
-# COTW 18 p. 410: a 30-degree shoulder.
-degrees = 30
-sources = ["book:cotw-18 p. 410"]
 
 [case_head]
 # .060 in. (COTW); groove from the AECC drawing 08-052-BGC-009 (municion.org) of the 7.82 Patriot, whose case the

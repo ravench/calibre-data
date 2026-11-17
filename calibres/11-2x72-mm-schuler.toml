@@ -19,6 +19,9 @@ shoulder = 12.95
 shoulder_at = 59.96
 neck_at = 63.22
 neck_base = 11.83
+# AECC drawing on municion.org: SØ 12.95, NØ 11.83, SL 60.20, NL 7.90, CL 71.36.
+shoulder_angle = 9.7
+cite.shoulder_angle = ["https://municion.org/producto/112-x-72-schuler/"]
 neck = 11.81
 case_length = 71.12
 overall_length = 97.79
@@ -35,11 +38,6 @@ sources = ["book:cotw-18 p. 648"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.95, NØ 11.83, SL 60.20, NL 7.90, CL 71.36.
-degrees = 9.7
-sources = ["https://municion.org/producto/112-x-72-schuler/"]
 
 [case_head]
 # AECC drawing 11-072-BRC-010 (municion.org): RT 1.20, HL 4.05, GØ 10.27, GW 1.13, HØ 13.59; ramp angle from HL = RT +

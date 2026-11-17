@@ -20,6 +20,9 @@ shoulder = 11.71
 shoulder_at = 41.43
 neck_at = 44.75
 neck_base = 7.87
+# SAAMI 277 Fury drawing shown with xxlreloading.com load data: 30 deg, shoulder .4611 in at 1.6311 in, neck .310 in at 1.7619 in
+shoulder_angle = 30
+cite.shoulder_angle = ["https://www.xxlreloading.com/"]
 neck = 7.87
 case_length = 51.18
 overall_length = 71.76
@@ -33,11 +36,6 @@ sources = ["https://en.wikipedia.org/wiki/.277_Fury"]
 [primer]
 size = "large-rifle"
 sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
-
-[shoulder_angle]
-# SAAMI 277 Fury drawing shown with xxlreloading.com load data: 30 deg, shoulder .4611 in at 1.6311 in, neck .310 in at 1.7619 in
-degrees = 30
-sources = ["https://www.xxlreloading.com/"]
 
 [case_head]
 # SAAMI 277 SIG Fury: rim thickness 0.054, groove 0.408 at 36 degrees, groove width 0.055,

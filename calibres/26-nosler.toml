@@ -17,6 +17,9 @@ shoulder = 13.4
 shoulder_at = 55.01
 neck_at = 59.2
 neck_base = 7.54
+# SAAMI: 35 deg (the AECC drawing 07-066-BRC-040 on municion.org gives 38.7).
+shoulder_angle = 35
+cite.shoulder_angle = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=96"]
 neck = 7.54
 case_length = 65.79
 overall_length = 84.84
@@ -30,11 +33,6 @@ sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
-
-[shoulder_angle]
-# SAAMI: 35 deg (the AECC drawing 07-066-BRC-040 on municion.org gives 38.7).
-degrees = 35
-sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=96"]
 
 [case_head]
 # C.I.P. 26 Nosler

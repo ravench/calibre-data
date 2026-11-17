@@ -17,6 +17,9 @@ shoulder = 13.15
 shoulder_at = 95.28
 neck_at = 98.68
 neck_base = 9.16
+# AECC drawing 08-107-BGC-020
+shoulder_angle = 31.2
+cite.shoulder_angle = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
 neck = 9.23
 case_length = 107.18
 overall_length = 132.0
@@ -33,11 +36,6 @@ sources = ["https://en.wikipedia.org/wiki/7.92×107mm_DS"]
 [primer]
 # 5.64 mm, 4 specimens
 size = "large-rifle"
-sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
-
-[shoulder_angle]
-# AECC drawing 08-107-BGC-020
-degrees = 31.2
 sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
 
 [case_head]

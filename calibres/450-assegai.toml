@@ -17,6 +17,9 @@ shoulder = 13.94
 shoulder_at = 68.92
 neck_at = 72.52
 neck_base = 12.3
+# AECC drawing on municion.org: SØ 13.86, NØ 12.30, SL 68.50, NL 11.30, CL 83.40.
+shoulder_angle = 12.2
+cite.shoulder_angle = ["https://municion.org/producto/450-assegai/"]
 neck = 12.37
 case_length = 83.82
 overall_length = 104.14
@@ -30,11 +33,6 @@ sources = ["book:cotw-18 p. 436"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.86, NØ 12.30, SL 68.50, NL 11.30, CL 83.40.
-degrees = 12.2
-sources = ["https://municion.org/producto/450-assegai/"]
 
 [case_head]
 # .060 in.

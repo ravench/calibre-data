@@ -20,6 +20,9 @@ shoulder = 7.47
 shoulder_at = 13.2
 neck_at = 15.33
 neck_base = 6.73
+# AECC drawing on municion.org: SØ 7.29, NØ 6.73, SL 13.00, NL 5.50, CL 20.63.
+shoulder_angle = 7.5
+cite.shoulder_angle = ["https://municion.org/producto/297-250-mk-ii-rook-rifle-hh/"]
 neck = 6.78
 case_length = 20.83
 overall_length = 27.94
@@ -35,11 +38,6 @@ sources = ["book:cotw-18 p. 578"]
 size = "small-rifle"
 diameter = 4.5
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 7.29, NØ 6.73, SL 13.00, NL 5.50, CL 20.63.
-degrees = 7.5
-sources = ["https://municion.org/producto/297-250-mk-ii-rook-rifle-hh/"]
 
 [case_head]
 # .04 in.

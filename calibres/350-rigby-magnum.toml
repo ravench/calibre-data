@@ -20,6 +20,9 @@ shoulder = 11.43
 shoulder_at = 57.15
 neck_at = 57.99
 neck_base = 9.75
+# C.I.P. 350 Mag. Rigby
+shoulder_angle = 45
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf"]
 neck = 9.7
 case_length = 69.85
 overall_length = 90.8
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/.350_Rigby"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# C.I.P. 350 Mag. Rigby
-degrees = 45
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page138.pdf"]
 
 [case_head]
 # C.I.P. 350 Mag. Rigby

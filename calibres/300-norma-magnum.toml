@@ -12,6 +12,9 @@ rim = 14.9
 base = 14.9
 shoulder = 14.29
 shoulder_at = 48.06
+# C.I.P. 300 Norma Mag
+shoulder_angle = 20.5
+cite.shoulder_angle = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf"]
 neck = 8.68
 case_length = 63.3
 overall_length = 93.5
@@ -28,11 +31,6 @@ sources = ["https://en.wikipedia.org/wiki/.300_Norma_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.300_Norma_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 300 Norma Mag
-degrees = 20.5
-sources = ["https://bobp.expert-it.com/uploads/tdcc/tab-i/300-norma-mag-fr.pdf"]
 
 [case_head]
 # C.I.P. 300 Norma Mag

@@ -19,6 +19,10 @@ rim = 13.82
 base = 13.82
 shoulder = 13.39
 shoulder_at = 57.81
+# Hornady's Handbook (7th/8th ed.) drawing on loaddata.com: 30 deg; its shoulder (2.276 in.) and neck start
+# (2.350) give 29.9.
+shoulder_angle = 30
+cite.shoulder_angle = ["https://loaddata.com/Cartridge/416-Dakota-Hornady-Handbook-of-Cartridge-Reloading-7th-8th-Editions/1737"]
 neck = 11.2
 case_length = 72.39
 overall_length = 92.58
@@ -38,12 +42,6 @@ sources = ["https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+ca
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
-
-[shoulder_angle]
-# Hornady's Handbook (7th/8th ed.) drawing on loaddata.com: 30 deg; its shoulder (2.276 in.) and neck start
-# (2.350) give 29.9.
-degrees = 30
-sources = ["https://loaddata.com/Cartridge/416-Dakota-Hornady-Handbook-of-Cartridge-Reloading-7th-8th-Editions/1737"]
 
 [case_head]
 # .042 in. (COTW); groove from the AECC drawing 10-065-BGC-020 (municion.org) of the .375 Dakota, which has the same

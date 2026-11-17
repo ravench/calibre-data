@@ -21,6 +21,8 @@ shoulder = 14.8
 shoulder_at = 57.43
 neck_at = 61.85
 neck_base = 10.3
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 27.0
 neck = 10.3
 case_length = 69.85
 overall_length = 93.5
@@ -35,11 +37,6 @@ sources = ["book:cotw-18 p. 559"]
 # The table gives LRM: a large rifle magnum primer.
 size = "large-rifle"
 sources = ["book:cotw-18 p. 574"]
-
-[shoulder_angle]
-# Half the cone angle alpha on the C.I.P. sheet.
-degrees = 27.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/375-swiss-p-180302-en.pdf"]
 
 [case_head]
 # R and the extractor groove on the C.I.P. sheet.

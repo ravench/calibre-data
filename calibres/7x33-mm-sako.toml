@@ -23,6 +23,8 @@ shoulder = 9.52
 shoulder_at = 26.68
 neck_at = 29.1
 neck_base = 7.95
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 18.0
 neck = 7.9
 case_length = 33.33
 overall_length = 44.44
@@ -36,11 +38,6 @@ sources = ["book:cotw-18 p. 621"]
 [primer]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/7×33mm_Sako"]
-
-[shoulder_angle]
-# Half the cone angle alpha on the C.I.P. sheet.
-degrees = 18.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page32.pdf"]
 
 [case_head]
 # R and the extractor groove on the C.I.P. sheet.

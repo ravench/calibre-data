@@ -22,6 +22,9 @@ shoulder = 10.0
 shoulder_at = 15.35
 neck_at = 17.68
 neck_base = 8.71
+# AECC drawing 08-022-BGC-040
+shoulder_angle = 15.5
+cite.shoulder_angle = ["https://municion.org/producto/8-mm-nambu-m-1914/"]
 neck = 8.71
 case_length = 21.43
 overall_length = 31.56
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/8×22mm_Nambu"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/8×22mm_Nambu"]
-
-[shoulder_angle]
-# AECC drawing 08-022-BGC-040
-degrees = 15.5
-sources = ["https://municion.org/producto/8-mm-nambu-m-1914/"]
 
 [case_head]
 # .042 in. (Donnelly); groove from the AECC drawing 08-022-BGC-040 (municion.org): RT 0.92, HL 2.02,

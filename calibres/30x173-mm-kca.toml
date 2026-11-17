@@ -19,6 +19,9 @@ shoulder = 40.08
 shoulder_at = 145.18
 neck_at = 157.7
 neck_base = 31.4
+# AECC drawing 30-173-BGE-010 on municion.org: SØ 40.08, NØ 31.40, SL 145.50, NL 15.30, CL 173.32, TL 290.47.
+shoulder_angle = 19.1
+cite.shoulder_angle = ["https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/"]
 neck = 31.5
 case_length = 173.0
 overall_length = 290.47
@@ -32,11 +35,6 @@ sources = [
 [introduced]
 unknown = "Wikipedia dates the KCA's design to the 1950s and 1960s and its production only to the 1970s"
 sources = ["https://en.wikipedia.org/wiki/Oerlikon_KCA"]
-
-[shoulder_angle]
-# AECC drawing 30-173-BGE-010 on municion.org: SØ 40.08, NØ 31.40, SL 145.50, NL 15.30, CL 173.32, TL 290.47.
-degrees = 19.1
-sources = ["https://municion.org/producto/30-x-173-swiss-oerlikon-rk-302-short-neck-kca/"]
 
 [case_head]
 # The AECC drawing 30-173-BGE-010 (municion.org): RØ 43.88, HØ 43.58, RT 4.39, GØ 37.88, GW 3.75,

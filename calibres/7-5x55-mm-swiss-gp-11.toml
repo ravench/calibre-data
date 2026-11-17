@@ -23,6 +23,9 @@ shoulder = 11.6
 shoulder_at = 44.58
 neck_at = 47.085
 neck_base = 8.68
+# C.I.P. 7,5 x 55 Suisse
+shoulder_angle = 30.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page46.pdf"]
 neck = 8.5
 case_length = 55.6
 overall_length = 77.5
@@ -40,11 +43,6 @@ sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
-
-[shoulder_angle]
-# C.I.P. 7,5 x 55 Suisse
-degrees = 30.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page46.pdf"]
 
 [case_head]
 # C.I.P. 7,5 x 55 Suisse

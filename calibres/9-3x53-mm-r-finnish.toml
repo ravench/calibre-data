@@ -20,6 +20,8 @@ shoulder = 11.61
 shoulder_at = 39.61
 neck_at = 41.94
 neck_base = 9.96
+# C.I.P. 9,3 x 53 R Finnish
+shoulder_angle = 19.5
 neck = 9.9
 case_length = 53.3
 overall_length = 76.0
@@ -36,11 +38,6 @@ sources = ["https://municion.org/producto/93-x-53-r-finnish/"]
 # 5.52 mm, 3 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/93-x-53-r-finnish/"]
-
-[shoulder_angle]
-# C.I.P. 9,3 x 53 R Finnish
-degrees = 19.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page49.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

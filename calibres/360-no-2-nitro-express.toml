@@ -18,6 +18,9 @@ shoulder = 13.13
 shoulder_at = 55
 neck_at = 62.2
 neck_base = 9.98
+# AECC drawing on municion.org: SØ 13.15, NØ 9.98, SL 55.00, NL 14.00, CL 76.20.
+shoulder_angle = 12.4
+cite.shoulder_angle = ["https://municion.org/producto/360-n2-nitro-express-3/"]
 neck = 9.98
 case_length = 76.2
 overall_length = 97.79
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 589"]
 # The table gives a .254 in. Berdan primer.
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.15, NØ 9.98, SL 55.00, NL 14.00, CL 76.20.
-degrees = 12.4
-sources = ["https://municion.org/producto/360-n2-nitro-express-3/"]
 
 [case_head]
 # .045 in.

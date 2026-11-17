@@ -19,6 +19,9 @@ shoulder = 37.68
 shoulder_at = 134.25
 neck_at = 143.4
 neck_base = 31.82
+# AECC drawing 30-164-BGE-010 on municion.org: SØ 37.68, NØ 31.82, SL 134.00, NL 21.60, CL 164.75, TL 283.70.
+shoulder_angle = 17.8
+cite.shoulder_angle = ["https://municion.org/producto/30-x-164-russian-ao-18-for-navy-aircraft-guns-of-the-gsh-30-family/"]
 neck = 31.82
 case_length = 165.0
 overall_length = 284.0
@@ -33,11 +36,6 @@ sources = [
 [introduced]
 year = 1975
 sources = ["https://en.wikipedia.org/wiki/Gryazev-Shipunov_GSh-6-30"]
-
-[shoulder_angle]
-# AECC drawing 30-164-BGE-010 on municion.org: SØ 37.68, NØ 31.82, SL 134.00, NL 21.60, CL 164.75, TL 283.70.
-degrees = 17.8
-sources = ["https://municion.org/producto/30-x-164-russian-ao-18-for-navy-aircraft-guns-of-the-gsh-30-family/"]
 
 [case_head]
 # The AECC drawing 30-164-BGE-010 (municion.org): RØ 39.89, HØ 39.89, RT 4.48, GØ 34.33, GW 3.57,

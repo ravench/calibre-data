@@ -18,6 +18,10 @@ shoulder = 11.1
 shoulder_at = 41.27
 neck_at = 49.35
 neck_base = 7.07
+# AECC drawing on municion.org: SØ 10.93, NØ 7.07, SL 41.80, NL 8.05, CL 57.93. The rimmed sister's AECC drawing
+# shows the same shoulder (14.0° from 41.52 mm).
+shoulder_angle = 13.4
+cite.shoulder_angle = ["https://municion.org/producto/62-x-58-forster/"]
 neck = 7.21
 case_length = 57.4
 overall_length = 77.72
@@ -34,12 +38,6 @@ sources = ["book:cotw-18 p. 615"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.93, NØ 7.07, SL 41.80, NL 8.05, CL 57.93. The rimmed sister's AECC drawing
-# shows the same shoulder (14.0° from 41.52 mm).
-degrees = 13.4
-sources = ["https://municion.org/producto/62-x-58-forster/"]
 
 [case_head]
 # .045 in. (COTW); groove from the AECC drawing 06-058-BGC-020 (municion.org): RT 1.43, HL 3.70, GØ 10.04, GW 1.00,

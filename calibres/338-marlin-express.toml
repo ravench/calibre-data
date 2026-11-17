@@ -25,6 +25,8 @@ shoulder = 12.52
 shoulder_at = 37.03
 neck_at = 40.43
 neck_base = 9.35
+# C.I.P. 338 Marlin Express
+shoulder_angle = 25
 neck = 9.35
 case_length = 48.01
 overall_length = 62.23
@@ -38,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/.338_Marlin_Express"]
 [primer]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# C.I.P. 338 Marlin Express
-degrees = 25
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page84.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

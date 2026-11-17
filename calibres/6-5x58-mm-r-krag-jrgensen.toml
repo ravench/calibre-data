@@ -18,6 +18,9 @@ shoulder = 11.68
 shoulder_at = 41.67
 neck_at = 48.27
 neck_base = 7.67
+# AECC drawing on municion.org: SØ 11.90, NØ 7.67, SL 41.80, NL 9.90, CL 58.30.
+shoulder_angle = 17.8
+cite.shoulder_angle = ["https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/"]
 neck = 7.62
 case_length = 58.17
 overall_length = 82.55
@@ -34,11 +37,6 @@ sources = ["book:cotw-18 p. 620"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.90, NØ 7.67, SL 41.80, NL 9.90, CL 58.30.
-degrees = 17.8
-sources = ["https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/"]
 
 [case_head]
 # .062 in.

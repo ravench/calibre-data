@@ -20,6 +20,8 @@ shoulder = 11.53
 shoulder_at = 53.25
 neck_at = 55.36
 neck_base = 8.0
+shoulder_angle = 40
+cite.shoulder_angle = ["https://en.wikipedia.org/wiki/.280_Ackley_Improved"]
 neck = 8.0
 case_length = 64.14
 overall_length = 84.58
@@ -35,10 +37,6 @@ sources = ["https://municion.org/producto/280-ackley-improved/"]
 [primer]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-degrees = 40
-sources = ["https://en.wikipedia.org/wiki/.280_Ackley_Improved"]
 
 [case_head]
 # fire-formed .280 Rem.; C.I.P. 280 Rem.

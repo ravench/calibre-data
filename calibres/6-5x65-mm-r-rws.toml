@@ -21,6 +21,8 @@ shoulder = 10.97
 shoulder_at = 53.85
 neck_at = 58.52
 neck_base = 7.57
+# C.I.P. 6,5 x 65 R RWS
+shoulder_angle = 20
 neck = 7.57
 case_length = 65.0
 overall_length = 85.0
@@ -36,11 +38,6 @@ sources = ["https://municion.org/producto/65-x-65-r-rws/"]
 # 5.46 mm, 2 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/65-x-65-r-rws/"]
-
-[shoulder_angle]
-# C.I.P. 6,5 x 65 R RWS
-degrees = 20
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page17.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

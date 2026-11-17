@@ -16,6 +16,9 @@ rim = 13.16
 base = 12.01
 shoulder = 10.72
 shoulder_at = 59.26
+# AECC drawing on municion.org: SØ 10.65, NØ 10.05, SL 59.30, NL 10.70, CL 71.92.
+shoulder_angle = 8.9
+cite.shoulder_angle = ["https://municion.org/producto/93-x-72-r-sauer-sohn/"]
 neck = 9.91
 case_length = 71.88
 overall_length = 84.84
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 640", "https://naboje.org/node/6766"]
 # The table gives a .254 in. Berdan primer.
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 652"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.65, NØ 10.05, SL 59.30, NL 10.70, CL 71.92.
-degrees = 8.9
-sources = ["https://municion.org/producto/93-x-72-r-sauer-sohn/"]
 
 [case_head]
 # .047 in.

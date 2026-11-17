@@ -17,6 +17,9 @@ shoulder = 13.46
 shoulder_at = 59.98
 neck_at = 63.73
 neck_base = 9.39
+# AECC drawing on municion.org: SØ 13.39, NØ 9.39, SL 59.82, NL 8.15, CL 71.72.
+shoulder_angle = 28.1
+cite.shoulder_angle = ["https://municion.org/producto/338-imperial-magnum/"]
 neck = 9.37
 case_length = 71.88
 overall_length = 91.44
@@ -35,11 +38,6 @@ sources = ["book:cotw-18 p. 403"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.39, NØ 9.39, SL 59.82, NL 8.15, CL 71.72.
-degrees = 28.1
-sources = ["https://municion.org/producto/338-imperial-magnum/"]
 
 [case_head]
 # .046 in. (COTW); groove from the AECC drawing 09-072-BRC-010 (municion.org, «.338 Imperial Magnum»): RT 1.18,

@@ -20,6 +20,8 @@ shoulder = 10.75
 shoulder_at = 41.15
 neck_at = 46
 neck_base = 7.5
+shoulder_angle = 25
+cite.shoulder_angle = ["https://en.wikipedia.org/wiki/6.5%C3%9753mmR"]
 neck = 7.55
 case_length = 53.5
 overall_length = 77.47
@@ -39,10 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/6.5×53mmR"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-degrees = 25
-sources = ["https://en.wikipedia.org/wiki/6.5%C3%9753mmR"]
 
 [case_head]
 # .066 in.

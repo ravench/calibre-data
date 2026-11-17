@@ -21,6 +21,9 @@ shoulder = 9.19
 shoulder_at = 17.72
 neck_at = 22.04
 neck_base = 6.5
+# AECC drawing 06-026-BGC-010
+shoulder_angle = 18.8
+cite.shoulder_angle = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]
 neck = 6.48
 case_length = 26.04
 overall_length = 32.13
@@ -39,11 +42,6 @@ sources = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]
 [primer]
 size = "small-pistol"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# AECC drawing 06-026-BGC-010
-degrees = 18.8
-sources = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]
 
 [case_head]
 # .049 in. (COTW); groove from the AECC drawing 06-026-BGC-010 (municion.org): RT 1.22, HL 3.28,

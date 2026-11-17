@@ -20,6 +20,10 @@ shoulder = 13.41
 shoulder_at = 34.67
 neck_at = 39.17
 neck_base = 12.73
+# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 51.05 - NL 12.65 -
+# SL 33.90 = 4.50 mm). Donnelly's lengths (K .18 in.) give 7.0; his printed angles are not used.
+shoulder_angle = 7.1
+cite.shoulder_angle = ["https://municion.org/producto/113-x-51-r-dutch-beaumont-mle-1871-78/"]
 neck = 12.29
 case_length = 51.82
 overall_length = 64.52
@@ -40,12 +44,6 @@ sources = ["book:cotw-18 p. 568"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 51.05 - NL 12.65 -
-# SL 33.90 = 4.50 mm). Donnelly's lengths (K .18 in.) give 7.0; his printed angles are not used.
-degrees = 7.1
-sources = ["https://municion.org/producto/113-x-51-r-dutch-beaumont-mle-1871-78/"]
 
 [case_head]
 # .065 in. (COTW); the AECC drawing 11-051-BBC-071 (municion.org) has RT 1.65.

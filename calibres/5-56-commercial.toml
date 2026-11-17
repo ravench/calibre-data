@@ -23,6 +23,8 @@ shoulder = 9.0
 shoulder_at = 36.52
 neck_at = 39.55
 neck_base = 6.43
+shoulder_angle = 23
+cite.shoulder_angle = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.56-Commercial-2026-06-22-FINAL-Rev-3.pdf#page=2"]
 neck = 6.43
 case_length = 44.7
 overall_length = 57.4
@@ -40,10 +42,6 @@ sources = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.5
 [primer]
 size = "small-rifle"
 sources = []
-
-[shoulder_angle]
-degrees = 23
-sources = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.56-Commercial-2026-06-22-FINAL-Rev-3.pdf#page=2"]
 
 [case_head]
 # SAAMI 5.56 COMM: rim thickness .045, groove .332 and .030 wide, ramp 25 degrees; E as on the

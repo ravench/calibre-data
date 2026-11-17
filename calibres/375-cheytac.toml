@@ -21,6 +21,9 @@ shoulder = 15.22
 shoulder_at = 62.28
 neck_at = 68.37
 neck_base = 10.31
+# C.I.P. 375 Chey Tac: half the cone angle alpha 43°54'38"
+shoulder_angle = 22.0
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/375-chey-tac-170627-en.pdf"]
 neck = 10.31
 case_length = 76.91
 overall_length = 113.4
@@ -46,11 +49,6 @@ ramp_top = 4.47
 groove_diameter = 13.8
 ramp_angle = 53.7
 groove_width = 2
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/375-chey-tac-170627-en.pdf"]
-
-[shoulder_angle]
-# C.I.P. 375 Chey Tac: half the cone angle alpha 43°54'38"
-degrees = 22.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/375-chey-tac-170627-en.pdf"]
 
 [bullet]

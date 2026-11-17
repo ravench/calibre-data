@@ -21,6 +21,9 @@ shoulder = 12.8
 shoulder_at = 42.24
 neck_at = 46.94
 neck_base = 11.8
+# AECC drawing on municion.org: SØ 12.68, NØ 11.80, SL 42.40, NL 15.04, CL 62.14.
+shoulder_angle = 5.3
+cite.shoulder_angle = ["https://municion.org/producto/44-90-remington-2-7-16-special-creedmoor/"]
 neck = 11.84
 case_length = 61.98
 overall_length = 78.23
@@ -37,11 +40,6 @@ sources = ["book:cotw-18 p. 233"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.68, NØ 11.80, SL 42.40, NL 15.04, CL 62.14.
-degrees = 5.3
-sources = ["https://municion.org/producto/44-90-remington-2-7-16-special-creedmoor/"]
 
 [case_head]
 # .075 in.

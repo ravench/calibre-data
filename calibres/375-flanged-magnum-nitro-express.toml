@@ -20,6 +20,8 @@ shoulder = 11.43
 shoulder_at = 60.96
 neck_at = 63.5
 neck_base = 10.29
+# C.I.P. 375 Fl. Mag. N.E.
+shoulder_angle = 12.6
 neck = 10.29
 case_length = 74.68
 overall_length = 96.52
@@ -36,11 +38,6 @@ sources = ["https://municion.org/producto/375-holland-holland-flanged-magnum-ne/
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# C.I.P. 375 Fl. Mag. N.E.
-degrees = 12.6
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page94.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

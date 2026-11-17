@@ -22,6 +22,9 @@ shoulder = 13.56
 shoulder_at = 29.91
 neck_at = 31.15
 neck_base = 12.4
+# C.I.P. 458 Socom: half the cone angle alpha 50 degrees
+shoulder_angle = 25.0
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/458-socom-210827-en.pdf"]
 neck = 12.34
 case_length = 40.13
 overall_length = 57.15
@@ -46,11 +49,6 @@ ramp_top = 4.35
 groove_diameter = 10.34
 ramp_angle = 47.0
 groove_width = 1.4
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/458-socom-210827-en.pdf"]
-
-[shoulder_angle]
-# C.I.P. 458 Socom: half the cone angle alpha 50 degrees
-degrees = 25.0
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/458-socom-210827-en.pdf"]
 
 [bullet]

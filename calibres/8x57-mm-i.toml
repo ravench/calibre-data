@@ -22,6 +22,8 @@ shoulder = 10.95
 shoulder_at = 46.2
 neck_at = 49.03
 neck_base = 8.99
+# C.I.P. 8 x 57 I
+shoulder_angle = 19.1
 neck = 8.99
 case_length = 57.0
 overall_length = 82.0
@@ -38,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/7.92×57mm_Mauser"]
 # 5.49 mm, 12 specimens on municion.org's photos of the M 1888 round.
 size = "large-rifle"
 sources = ["https://municion.org/producto/792-x-57-mauser-m-1888/"]
-
-[shoulder_angle]
-# C.I.P. 8 x 57 I
-degrees = 19.1
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page56.pdf"]
 
 [case_head]
 # C.I.P. 8 x 57 I

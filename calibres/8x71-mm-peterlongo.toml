@@ -18,6 +18,9 @@ shoulder = 10.72
 shoulder_at = 59.4
 neck_at = 61.92
 neck_base = 8.9
+# AECC drawing on municion.org: SØ 10.78, NØ 8.90, SL 59.00, NL 9.20, CL 70.72.
+shoulder_angle = 20.5
+cite.shoulder_angle = ["https://municion.org/producto/8-x-71-peterlongo/"]
 neck = 8.86
 case_length = 71.12
 overall_length = 83.31
@@ -32,11 +35,6 @@ sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.78, NØ 8.90, SL 59.00, NL 9.20, CL 70.72.
-degrees = 20.5
-sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
 
 [case_head]
 # AECC drawing 08-071-BGC-030 (municion.org): RT 1.23, HL 3.00, GØ 10.32, GW 0.75, HØ 11.84; ramp angle from HL = RT +

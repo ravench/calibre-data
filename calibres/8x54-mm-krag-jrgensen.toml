@@ -18,6 +18,9 @@ shoulder = 11.05
 shoulder_at = 43.25
 neck_at = 46.15
 neck_base = 9
+# AECC drawing on municion.org: SØ 11.10, NØ 9.00, SL 43.10, NL 7.70, CL 53.70.
+shoulder_angle = 19.9
+cite.shoulder_angle = ["https://municion.org/producto/8-x-54-krag-jorgensen/"]
 neck = 8.92
 case_length = 53.85
 overall_length = 72.39
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 633", "https://naboje.org/node/10967"]
 [primer]
 # 5.59 mm, 2 specimens
 size = "large-rifle"
-sources = ["https://municion.org/producto/8-x-54-krag-jorgensen/"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.10, NØ 9.00, SL 43.10, NL 7.70, CL 53.70.
-degrees = 19.9
 sources = ["https://municion.org/producto/8-x-54-krag-jorgensen/"]
 
 [case_head]

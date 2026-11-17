@@ -18,6 +18,9 @@ shoulder = 8.86
 shoulder_at = 36.3
 neck_at = 41.5
 neck_base = 4.88
+# AECC drawing on municion.org: SØ 8.91, NØ 4.88, SL 36.20, NL 3.20, CL 44.60.
+shoulder_angle = 21.2
+cite.shoulder_angle = ["https://municion.org/producto/43-x-45-german-xpl-dag/"]
 neck = 5.03
 case_length = 44.7
 overall_length = 57.4
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 532"]
 [primer]
 # 4.44 mm, 2 specimens
 size = "small-rifle"
-sources = ["https://municion.org/producto/43-x-45-german-xpl-dag/"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 8.91, NØ 4.88, SL 36.20, NL 3.20, CL 44.60.
-degrees = 21.2
 sources = ["https://municion.org/producto/43-x-45-german-xpl-dag/"]
 
 [case_head]

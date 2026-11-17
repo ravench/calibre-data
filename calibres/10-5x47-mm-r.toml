@@ -18,6 +18,9 @@ rim = 15.01
 base = 13.03
 shoulder = 12.6
 shoulder_at = 26.26
+# AECC drawing on municion.org: SØ 12.59, NØ 11.20, SL 26.31, NL 17.20, CL 47.04.
+shoulder_angle = 11.1
+cite.shoulder_angle = ["https://municion.org/producto/105-x-47-r-mb-target/"]
 neck = 11.3
 case_length = 46.99
 overall_length = 60.96
@@ -33,11 +36,6 @@ sources = ["book:cotw-18 p. 646"]
 # The table gives a .254 in. Berdan primer.
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 652"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.59, NØ 11.20, SL 26.31, NL 17.20, CL 47.04.
-degrees = 11.1
-sources = ["https://municion.org/producto/105-x-47-r-mb-target/"]
 
 [case_head]
 # .09 in.

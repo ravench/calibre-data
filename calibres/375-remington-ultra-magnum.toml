@@ -20,6 +20,9 @@ shoulder = 13.34
 shoulder_at = 60.64
 neck_at = 63.28
 neck_base = 10.29
+# C.I.P. 375 Rem. Ultra Mag.
+shoulder_angle = 30
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page142.pdf"]
 neck = 10.29
 case_length = 72.4
 overall_length = 91.4
@@ -36,11 +39,6 @@ sources = ["https://en.wikipedia.org/wiki/.375_Remington_Ultra_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.375_Remington_Ultra_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 375 Rem. Ultra Mag.
-degrees = 30
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page142.pdf"]
 
 [case_head]
 # C.I.P. 375 Rem. Ultra Mag.

@@ -21,6 +21,9 @@ shoulder = 10.5
 shoulder_at = 53.34
 neck_at = 57.15
 neck_base = 9.73
+# C.I.P. 400/350 N.E.
+shoulder_angle = 6.8
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page104.pdf"]
 neck = 9.7
 case_length = 70.0
 overall_length = 93.6
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.400/350_Nitro_Express"]
 # 5.53 mm, 3 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/400-350-rigby-flanged-nitro-express/"]
-
-[shoulder_angle]
-# C.I.P. 400/350 N.E.
-degrees = 6.8
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page104.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

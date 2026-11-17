@@ -17,6 +17,9 @@ shoulder = 31.1
 shoulder_at = 114.9
 neck_at = 125.45
 neck_base = 25.2
+# AECC drawing 24-138-BGE-010 on municion.org: SØ 31.10, NØ 25.20, SL 115.30, NL 12.55, CL 138.40, TL 210.00.
+shoulder_angle = 15.6
+cite.shoulder_angle = ["https://municion.org/producto/24-x-138-swiss-k-38/"]
 neck = 25.2
 case_length = 138.0
 overall_length = 210.0
@@ -30,11 +33,6 @@ sources = [
 # The gun was developed in 1938 (Pzw Kan 38); the first Panzerwagen 39 reached the troops in May 1939.
 year = 1938
 sources = ["https://www.tankarchives.com/2017/06/praga-ltl-and-pzw-39-tanks-for-neutrals.html"]
-
-[shoulder_angle]
-# AECC drawing 24-138-BGE-010 on municion.org: SØ 31.10, NØ 25.20, SL 115.30, NL 12.55, CL 138.40, TL 210.00.
-degrees = 15.6
-sources = ["https://municion.org/producto/24-x-138-swiss-k-38/"]
 
 [case_head]
 # The AECC drawing 24-138-BGE-010 (municion.org): RØ 31.40, HØ 32.40, RT 1.95, GØ 27.50, GW 3.40,

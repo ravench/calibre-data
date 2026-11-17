@@ -22,6 +22,9 @@ shoulder = 12.37
 shoulder_at = 60.69
 neck_at = 65.32
 neck_base = 8.05
+# C.I.P. 7 mm STW
+shoulder_angle = 25
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page4.pdf"]
 neck = 8.05
 case_length = 72.4
 overall_length = 92.71
@@ -39,11 +42,6 @@ sources = ["https://en.wikipedia.org/wiki/7mm_STW"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/7mm_STW"]
-
-[shoulder_angle]
-# C.I.P. 7 mm STW
-degrees = 25
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page4.pdf"]
 
 [case_head]
 # C.I.P. 7 mm STW

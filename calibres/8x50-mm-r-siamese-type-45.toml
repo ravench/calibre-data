@@ -18,6 +18,9 @@ shoulder = 11.43
 shoulder_at = 37.61
 neck_at = 42.29
 neck_base = 8.9
+# AECC drawing on municion.org: SØ 11.40, NØ 8.90, SL 37.70, NL 8.00, CL 50.38.
+shoulder_angle = 15.0
+cite.shoulder_angle = ["https://municion.org/producto/8-x-50-r-siamese-type-45/"]
 neck = 8.81
 case_length = 50.29
 overall_length = 75.44
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 552"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.40, NØ 8.90, SL 37.70, NL 8.00, CL 50.38.
-degrees = 15.0
-sources = ["https://municion.org/producto/8-x-50-r-siamese-type-45/"]
 
 [case_head]
 # AECC drawing 08-050-BBC-080 (municion.org): RT 1.53, RØ 13.93, HØ 12.39.

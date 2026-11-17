@@ -18,6 +18,10 @@ shoulder = 11.94
 shoulder_at = 59.95
 neck_at = 65.55
 neck_base = 10.02
+# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 82.60 - NL 17.00 -
+# SL 60.00 = 5.60 mm). Donnelly's lengths (K .240 in.) give 8.9; his printed angles are not used.
+shoulder_angle = 9.7
+cite.shoulder_angle = ["https://municion.org/producto/38-90-217-winchester-express/"]
 neck = 10.03
 case_length = 82.55
 overall_length = 93.98
@@ -36,12 +40,6 @@ sources = ["book:cotw-18 p. 215"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 250"]
-
-[shoulder_angle]
-# The book's shoulder and neck diameters over the shoulder length of the AECC drawing (CL 82.60 - NL 17.00 -
-# SL 60.00 = 5.60 mm). Donnelly's lengths (K .240 in.) give 8.9; his printed angles are not used.
-degrees = 9.7
-sources = ["https://municion.org/producto/38-90-217-winchester-express/"]
 
 [case_head]
 # AECC drawing 09-083-BBC-010 (municion.org): RT 1.68.

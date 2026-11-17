@@ -18,6 +18,9 @@ shoulder = 9.3
 shoulder_at = 24.77
 neck_at = 27.3
 neck_base = 7.14
+# AECC drawing 06-033-BBC-040
+shoulder_angle = 22.3
+cite.shoulder_angle = ["https://municion.org/producto/256-winchester-magnum/"]
 neck = 7.2
 case_length = 32.5
 overall_length = 40.4
@@ -34,11 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/.256_Winchester_Magnum"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.256_Winchester_Magnum"]
-
-[shoulder_angle]
-# AECC drawing 06-033-BBC-040
-degrees = 22.3
-sources = ["https://municion.org/producto/256-winchester-magnum/"]
 
 [case_head]
 # .055 in.

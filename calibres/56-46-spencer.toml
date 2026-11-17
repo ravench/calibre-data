@@ -17,6 +17,9 @@ rim = 16.28
 base = 14.17
 shoulder = 14.1
 shoulder_at = 17.32
+# Drawing on naboje.org (P2, H1, L1, Lk, L3): SØ 14.00, NØ 12.35, SL 17.20, NL 6.00, CL 26.17.
+shoulder_angle = 15.5
+cite.shoulder_angle = ["https://naboje.org/en/node/13400"]
 neck = 12.14
 case_length = 26.29
 overall_length = 40.51
@@ -26,11 +29,6 @@ sources = ["book:cotw-18 p. 670", "https://naboje.org/en/node/13400"]
 [introduced]
 year = 1866
 sources = ["book:cotw-18 p. 667"]
-
-[shoulder_angle]
-# Drawing on naboje.org (P2, H1, L1, Lk, L3): SØ 14.00, NØ 12.35, SL 17.20, NL 6.00, CL 26.17.
-degrees = 15.5
-sources = ["https://naboje.org/en/node/13400"]
 
 [case_head]
 # naboje.org drawing: R 1.80, R1 16.18, P1 14.22, L3 26.17.

@@ -23,6 +23,9 @@ shoulder = 13.61
 shoulder_at = 32.76
 neck_at = 38.66
 neck_base = 11.8
+# AECC drawing on municion.org: SØ 13.36, NØ 11.80, SL 33.00, NL 19.00, CL 57.90.
+shoulder_angle = 7.5
+cite.shoulder_angle = ["https://municion.org/producto/1115-x-58-r-austrian-werndl-rifle-mod-1877/"]
 neck = 11.84
 case_length = 57.66
 overall_length = 76.71
@@ -39,11 +42,6 @@ sources = ["book:cotw-18 p. 563"]
 [primer]
 # 6.44 mm, 10 specimens
 size = "berdan-nitro"
-sources = ["https://municion.org/producto/1115-x-58-r-austrian-werndl-rifle-mod-1877/"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.36, NØ 11.80, SL 33.00, NL 19.00, CL 57.90.
-degrees = 7.5
 sources = ["https://municion.org/producto/1115-x-58-r-austrian-werndl-rifle-mod-1877/"]
 
 [case_head]

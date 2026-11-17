@@ -20,6 +20,9 @@ shoulder = 13.46
 shoulder_at = 47.3
 neck_at = 50.5
 neck_base = 12.32
+# AECC drawing on municion.org: SØ 13.44, NØ 12.32, SL 47.33, NL 19.35, CL 69.88.
+shoulder_angle = 9.9
+cite.shoulder_angle = ["https://municion.org/producto/500-450-westley-richards-n1-express/"]
 neck = 12.32
 case_length = 69.85
 overall_length = 85.85
@@ -37,11 +40,6 @@ sources = ["book:cotw-18 p. 597"]
 size = "berdan-nitro"
 diameter = 6.38
 sources = ["book:cotw-5 p. 266"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.44, NØ 12.32, SL 47.33, NL 19.35, CL 69.88.
-degrees = 9.9
-sources = ["https://municion.org/producto/500-450-westley-richards-n1-express/"]
 
 [case_head]
 # AECC drawing 11-070-BBC-020 (municion.org): RT 1.45.

@@ -16,6 +16,8 @@ rim = 12.01
 base = 11.96
 shoulder = 11.59
 shoulder_at = 34.69
+# C.I.P. 6 x 47 SM: alpha 60°30'
+shoulder_angle = 30.25
 neck = 6.87
 case_length = 47.0
 overall_length = 66.0
@@ -39,11 +41,6 @@ sources = [
   "https://forum.accurateshooter.com/threads/6x47-swiss-match.3677423/",
   "https://en.wikipedia.org/wiki/6.5×47mm_Lapua",
 ]
-
-[shoulder_angle]
-# C.I.P. 6 x 47 SM: alpha 60°30'
-degrees = 30.25
-sources = ["https://www.tiropratico.com/CIP/Commission%20Internationale%20Permanente/6x47.pdf"]
 
 [case_head]
 # C.I.P. 6 x 47 SM

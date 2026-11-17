@@ -18,6 +18,9 @@ shoulder = 12.95
 shoulder_at = 40.66
 neck_at = 46.22
 neck_base = 7.08
+# COTW 18 p. 366: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 366"]
 neck = 6.99
 case_length = 52.07
 overall_length = 71.12
@@ -33,11 +36,6 @@ sources = ["book:cotw-18 p. 366"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 451"]
-
-[shoulder_angle]
-# COTW 18 p. 366: a 30-degree shoulder.
-degrees = 30
-sources = ["book:cotw-18 p. 366"]
 
 [case_head]
 # .050 in. (COTW); groove from the AECC drawing 06-052-BGC-027 (municion.org): RT 1.25, HL 3.12, GØ 11.88, GW 1.16,

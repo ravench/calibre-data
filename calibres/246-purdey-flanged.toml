@@ -18,6 +18,10 @@ shoulder = 10.74
 shoulder_at = 46.3
 neck_at = 52.4
 neck_base = 7.27
+# AECC drawing on municion.org: SØ 10.74, NØ 7.27, SL 46.00, NL 4.50, CL 56.56. The side photo on the
+# same site gives 17-20 deg over its two edges.
+shoulder_angle = 16.0
+cite.shoulder_angle = ["https://municion.org/producto/246-purdey-flanged/"]
 neck = 7.19
 case_length = 56.9
 overall_length = 75.69
@@ -34,12 +38,6 @@ sources = ["book:cotw-18 p. 578"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.74, NØ 7.27, SL 46.00, NL 4.50, CL 56.56. The side photo on the
-# same site gives 17-20 deg over its two edges.
-degrees = 16.0
-sources = ["https://municion.org/producto/246-purdey-flanged/"]
 
 [case_head]
 # .062 in.

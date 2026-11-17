@@ -79,6 +79,9 @@ rim = 11.9
 base = 11.9
 shoulder = 11.5
 shoulder_at = 39.62
+# C.I.P. 308 Win.
+shoulder_angle = 20
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 neck = 8.7
 case_length = 51.2
 overall_length = 71.12
@@ -95,11 +98,6 @@ sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
-
-[shoulder_angle]
-# C.I.P. 308 Win.
-degrees = 20
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 ```
 
 Text goes in quotes, numbers and `true` don't. Lines starting with `#` are notes for people; the
@@ -131,7 +129,14 @@ An empty list `sources = []` means the values have not been checked against a so
 allowed for the measurements, the primer (then it counts as unverified) and the bullet; a year, a
 shoulder angle, a case head, a steel or plastic bullet, a case material and the case materials made
 today always need one.
-`sources(name, table)` in `cartridges.py` gives the whole list (`table` `"origin"` for `origin_sources`); the old tables (`INTRODUCED`,
+A single measurement whose sources differ from the rest of `[mm]` lists its own in `cite.<key>`, written
+below it: the shoulder angle of the .308 Winchester comes from the C.I.P. sheet only. The table's
+`sources` then cover the other measurements. A `cite` that lists the same sources as the table (in any
+order) is reported: leave it out. A measurement in `unsourced` has no `cite`, and one with a `cite` is not
+in `unsourced`. Only `[mm]` has `cite`.
+
+`sources(name, table)` in `cartridges.py` gives the whole list (`table` `"origin"` for `origin_sources`, an
+`[mm]` key for its `cite`, `"shoulder_angle"` for the angle's own sources or the `[mm]` ones); the old tables (`INTRODUCED`,
 `SHOULDER_ANGLES`, ...) keep the first one.
 
 ### Top of the file
@@ -205,6 +210,7 @@ Most cartridges (C.I.P. letters of the maximum cartridge in brackets):
 | `shoulder_at` | Bottleneck cases only: distance from the head to where the shoulder starts (L1). |
 | `neck_at` | Optional, bottleneck cases only: distance from the head to where the neck starts, at the shoulder's front end (L2). |
 | `neck_base` | Optional, bottleneck cases only: neck diameter where the neck starts (H1); at least `neck` less 0.15 mm (a book's rounded neck can be a little wider than the sheet's H1) and at most `shoulder`. |
+| `shoulder_angle` | Bottleneck cases only: the shoulder's angle to the case axis in degrees (see Shoulder angle below). |
 | `neck` | Neck diameter at the mouth (H2). |
 | `case_length` | Case length (L3). |
 | `overall_length` | Cartridge length (L6). |
@@ -213,7 +219,7 @@ Most cartridges (C.I.P. letters of the maximum cartridge in brackets):
 The drawing does not use `neck_at` and `neck_base` yet: it runs the shoulder in from `shoulder_at` at
 the shoulder angle until it reaches the neck diameter, and the rest up to `case_length` is the neck
 (at least 1.2 mm). The two keys come together. `neck_at` lies between `shoulder_at` and `case_length`,
-at least 1.2 mm short of the mouth, and where `[shoulder_angle]` cites the same sheet, the shoulder run
+at least 1.2 mm short of the mouth, and where `shoulder_angle` comes from the same sheet, the shoulder run
 in at that angle from `shoulder_at` must reach `neck_base` within 0.3 mm of `neck_at`
 (`test_neck_start_agrees_with_the_shoulder_angle`). An AECC drawing listed after another source gives the
 neck only, not that source's shoulder, so it is not held to the angle. The [mm] `sources` cover both keys, like every
@@ -352,9 +358,9 @@ pistol, L large rifle, LP large pistol) or, in the European and British tables, 
 primer's diameter: .177 in. (4.5 mm) is small, .216-.217 in. (5.5 mm) large and .250-.254 in.
 Berdan Nitro.
 
-### `[shoulder_angle]`
+### Shoulder angle
 
-Bottleneck cases: `degrees` between the shoulder and the case axis (the American convention,
+Bottleneck cases: `[mm]` `shoulder_angle`, the degrees between the shoulder and the case axis (the American convention,
 alpha/2). C.I.P. sheets print the full cone angle alpha, so their value is halved; for those
 calibres `shoulder_at` is the sheet's L1. A bottleneck case without one is drawn at 32° until a
 source is found (`SHOULDER_UNSOURCED` in `tests/test_outline.py` lists them).
@@ -367,7 +373,7 @@ an angle that another source gives stays. The file's diameters differ a little f
 so the cone drawn between them is a little longer or shorter: the neck it leaves must be within
 1.5 mm of the specimen's neck length NL (`test_necks_start_where_the_municion_drawings_show` for
 the drawings listed there, `test_every_recorded_municion_reading_keeps_its_neck` for every reading
-that a file records in the note under `[shoulder_angle]`). Where another source's angle leaves a
+that a file records in the note above `shoulder_angle`). Where another source's angle leaves a
 neck further off, the two disagree and the drawing's shoulder is not taken (6.53 Lazzeroni
 Scramjet). Where the specimen's own cone does, it is a shallow one, on which a small difference in
 diameter is a long one in length: the angle then runs between the file's diameters over the
@@ -668,7 +674,7 @@ same):
 | Gap | Meaning |
 |---|---|
 | `measurements` | A measurement in `[mm]` has no source: it is listed in `unsourced`, `[mm]` has no source at all, or a cannon round leaves it out. |
-| `shoulder_angle` | A bottleneck case without `[shoulder_angle]`: its shoulder is drawn at 32°. |
+| `shoulder_angle` | A bottleneck case without `shoulder_angle` in `[mm]`: its shoulder is drawn at 32°. |
 | `groove` | A rimless, semi-rimmed or belted case without the extractor groove in `[case_head]`: it gets the generic head. |
 | `rim_thickness` | No `rim_thickness` in `[case_head]`: the rim is drawn at the default thickness. Not reported for shot shells, whose head is not checked. |
 | `shoulder_moved` | The measurements leave less than 1.2 mm of neck in front of the shoulder, so the drawing moves the shoulder back (none today). |

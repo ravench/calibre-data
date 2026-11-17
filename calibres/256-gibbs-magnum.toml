@@ -23,6 +23,9 @@ shoulder = 10.82
 shoulder_at = 44.83
 neck_at = 49.2
 neck_base = 7.62
+# C.I.P. 256 Mag. Gibbs: half the cone angle alpha 40°13'07"
+shoulder_angle = 20.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page95.pdf"]
 neck = 7.52
 case_length = 55.25
 overall_length = 77.47
@@ -41,11 +44,6 @@ sources = ["book:cotw-18 p. 579"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# C.I.P. 256 Mag. Gibbs: half the cone angle alpha 40°13'07"
-degrees = 20.1
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page95.pdf"]
 
 [case_head]
 # C.I.P. 256 Mag. Gibbs: R, E, E1, delta

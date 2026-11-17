@@ -17,6 +17,9 @@ shoulder = 10.7
 shoulder_at = 19.9
 neck_at = 20.9
 neck_base = 9.6
+# AECC drawing 09-025-BGC-020
+shoulder_angle = 27.5
+cite.shoulder_angle = ["https://municion.org/producto/9-x-25-dillon/"]
 neck = 9.7
 case_length = 25.1
 overall_length = 31.8
@@ -33,11 +36,6 @@ sources = ["https://en.wikipedia.org/wiki/9×25mm_Dillon"]
 [primer]
 size = "large-pistol"
 sources = ["https://en.wikipedia.org/wiki/9×25mm_Dillon"]
-
-[shoulder_angle]
-# AECC drawing 09-025-BGC-020
-degrees = 27.5
-sources = ["https://municion.org/producto/9-x-25-dillon/"]
 
 [case_head]
 # 10 mm Auto case necked down; C.I.P. 10 mm Auto

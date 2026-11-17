@@ -18,6 +18,9 @@ shoulder = 9.7
 shoulder_at = 32.01
 neck_at = 35.99
 neck_base = 6.78
+# AECC drawing on municion.org: SØ 9.79, NØ 6.78, SL 31.90, NL 9.20, CL 45.08.
+shoulder_angle = 20.7
+cite.shoulder_angle = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
 neck = 6.93
 case_length = 45.19
 overall_length = 65.53
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 535"]
 [primer]
 # The table gives a Boxer primer without its size; 4.57 mm, 11 specimens on municion.org's photos.
 size = "small-rifle"
-sources = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 9.79, NØ 6.78, SL 31.90, NL 9.20, CL 45.08.
-degrees = 20.7
 sources = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
 
 [case_head]

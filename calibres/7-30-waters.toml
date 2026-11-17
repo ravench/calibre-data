@@ -21,6 +21,9 @@ shoulder = 10.2
 shoulder_at = 40.29
 neck_at = 44.02
 neck_base = 7.83
+# C.I.P. 7-30 Waters
+shoulder_angle = 17.2
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page20.pdf"]
 neck = 7.8
 case_length = 52.0
 overall_length = 64.0
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/7-30_Waters"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/7-30_Waters"]
-
-[shoulder_angle]
-# C.I.P. 7-30 Waters
-degrees = 17.2
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page20.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

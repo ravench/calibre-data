@@ -18,6 +18,9 @@ shoulder = 10.85
 shoulder_at = 47.04
 neck_at = 52.53
 neck_base = 10.05
+# AECC drawing on municion.org: SØ 10.82, NØ 10.05, SL 47.00, NL 13.00, CL 65.49.
+shoulder_angle = 4.0
+cite.shoulder_angle = ["https://municion.org/producto/38-72-winchester-cf/"]
 neck = 10.08
 case_length = 65.53
 overall_length = 80.26
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 216"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 250"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.82, NØ 10.05, SL 47.00, NL 13.00, CL 65.49.
-degrees = 4.0
-sources = ["https://municion.org/producto/38-72-winchester-cf/"]
 
 [case_head]
 # .061 in.

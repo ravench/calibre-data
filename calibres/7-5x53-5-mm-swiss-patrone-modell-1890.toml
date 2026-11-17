@@ -48,6 +48,9 @@ shoulder_at = 44.5
 # neck_at, neck_base: the 1892 drawing, its shoulder running from 11.5 down to 8.85 over 2 mm.
 neck_at = 46.5
 neck_base = 8.85
+# From the 1892 drawing: 11.5 down to 8.85 over 2 mm, atan(1.325 / 2) (the AECC drawing has 27.8)
+shoulder_angle = 33.5
+cite.shoulder_angle = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321"]
 neck = 8.5
 case_length = 53.5
 overall_length = 77.2
@@ -65,11 +68,6 @@ sources = ["https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/70007611.pdf
 size = "large-rifle"
 diameter = 4.92
 sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss", "https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321"]
-
-[shoulder_angle]
-# From the 1892 drawing: 11.5 down to 8.85 over 2 mm, atan(1.325 / 2) (the AECC drawing has 27.8)
-degrees = 33.5
-sources = ["https://www.recherche.bar.admin.ch/recherche/link/de/archiv/einheit/1445321"]
 
 [case_head]
 # Rim thickness and groove diameter from the 1892 drawing (a curved cove 10.2 across). The cove has no

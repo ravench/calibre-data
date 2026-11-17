@@ -16,6 +16,9 @@ rim = 12.01
 base = 12.7
 shoulder = 12.04
 shoulder_at = 54.85
+# SAAMI 338 WBY RPM drawing (issued 2022-01-16) shown by The Firearm Blog: 35 deg, shoulder .4739 in at 2.1595 in, neck .364 in at 2.2380 in
+shoulder_angle = 35
+cite.shoulder_angle = ["https://www.thefirearmblog.com/"]
 neck = 9.25
 case_length = 64.77
 overall_length = 82.55
@@ -33,11 +36,6 @@ sources = ["https://www.thefirearmblog.com/blog/2022/08/02/weatherby-338-wby-rpm
 [primer]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# SAAMI 338 WBY RPM drawing (issued 2022-01-16) shown by The Firearm Blog: 35 deg, shoulder .4739 in at 2.1595 in, neck .364 in at 2.2380 in
-degrees = 35
-sources = ["https://www.thefirearmblog.com/"]
 
 [case_head]
 # .054 in. (COTW). The 6.5 Weatherby RPM is this case necked down (same rim, body and rim thickness):

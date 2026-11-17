@@ -18,6 +18,9 @@ shoulder = 14.33
 shoulder_at = 14.36
 neck_at = 15.72
 neck_base = 13.6
+# AECC drawing on municion.org: SØ 14.27, NØ 13.60, SL 14.15, NL 6.50, CL 22.01.
+shoulder_angle = 13.8
+cite.shoulder_angle = ["https://municion.org/producto/50-remington-army-m-1871/"]
 neck = 13.51
 case_length = 22.22
 overall_length = 31.5
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 526"]
 # First made with an inside primer (COTW 18 p. 526); the table gives none.
 size = "large-pistol"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 14.27, NØ 13.60, SL 14.15, NL 6.50, CL 22.01.
-degrees = 13.8
-sources = ["https://municion.org/producto/50-remington-army-m-1871/"]
 
 [case_head]
 # AECC drawing 13-022-BBC-041 (municion.org): RT 1.53, RØ 16.91, HØ 14.32.

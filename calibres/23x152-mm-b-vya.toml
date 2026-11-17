@@ -20,6 +20,9 @@ shoulder = 31.27
 shoulder_at = 113.45
 neck_at = 133.95
 neck_base = 23.71
+# AECC drawing 23-152-BFC-020 on municion.org: SØ 31.27, NØ 23.71, SL 112.50, NL 18.05, CL 151.05, TL 235.62.
+shoulder_angle = 10.4
+cite.shoulder_angle = ["https://municion.org/producto/23-x-152-b-russian-vya-23-aircraft/"]
 neck = 23.71
 case_length = 152.0
 overall_length = 235.6
@@ -32,11 +35,6 @@ sources = [
 [introduced]
 year = 1941
 sources = ["https://en.wikipedia.org/wiki/Volkov-Yartsev_VYa-23"]
-
-[shoulder_angle]
-# AECC drawing 23-152-BFC-020 on municion.org: SØ 31.27, NØ 23.71, SL 112.50, NL 18.05, CL 151.05, TL 235.62.
-degrees = 10.4
-sources = ["https://municion.org/producto/23-x-152-b-russian-vya-23-aircraft/"]
 
 [case_head]
 # The AECC drawing 23-152-BFC-020 (municion.org): RØ 33.38, HØ 33.20, LØ 34.64, RT 2.85, GØ 28.84, GW 2.46,

@@ -17,6 +17,8 @@ shoulder = 11.5
 shoulder_at = 39.62
 neck_at = 43.48
 neck_base = 8.72
+shoulder_angle = 20
+cite.shoulder_angle = ["https://en.wikipedia.org/wiki/7.62%C3%9751mm_NATO"]
 neck = 8.7
 case_length = 51.2
 overall_length = 71.12
@@ -34,10 +36,6 @@ sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
-
-[shoulder_angle]
-degrees = 20
-sources = ["https://en.wikipedia.org/wiki/7.62%C3%9751mm_NATO"]
 
 [case_head]
 # same case as the .308 Win.; C.I.P. 308 Win.

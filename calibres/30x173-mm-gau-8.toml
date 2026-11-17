@@ -19,6 +19,9 @@ shoulder = 40.48
 shoulder_at = 144.1
 neck_at = 157.7
 neck_base = 31.49
+# AECC drawing 30-173-BGC-020 on municion.org: SØ 40.48, NØ 31.49, SL 144.00, NL 15.30, CL 172.90, TL 266.50.
+shoulder_angle = 18.3
+cite.shoulder_angle = ["https://municion.org/producto/30-x-173-us-xpl-gau-8/"]
 neck = 31.49
 case_length = 173.0
 overall_length = 290.0
@@ -32,11 +35,6 @@ sources = [
 [introduced]
 year = 1977
 sources = ["https://en.wikipedia.org/wiki/GAU-8_Avenger"]
-
-[shoulder_angle]
-# AECC drawing 30-173-BGC-020 on municion.org: SØ 40.48, NØ 31.49, SL 144.00, NL 15.30, CL 172.90, TL 266.50.
-degrees = 18.3
-sources = ["https://municion.org/producto/30-x-173-us-xpl-gau-8/"]
 
 [case_head]
 # The AECC drawing 30-173-BGC-020 (municion.org): RØ 43.91, HØ 43.61, RT 4.22, GØ 37.88, GW 3.67,

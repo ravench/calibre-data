@@ -16,6 +16,9 @@ rim = 15.34
 base = 12.8
 shoulder = 12.6
 shoulder_at = 44.45
+# The same drawing: 13.26 deg, as its .496 shoulder, .430 neck and .510 neck length on a 2.40 case give.
+shoulder_angle = 13.26
+cite.shoulder_angle = ["https://winchestercollector.org/forum/winchester-swap-meet/wtb-40-70-wcf/"]
 neck = 10.92
 case_length = 60.96
 overall_length = 72.39
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 223"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 251"]
-
-[shoulder_angle]
-# The same drawing: 13.26 deg, as its .496 shoulder, .430 neck and .510 neck length on a 2.40 case give.
-degrees = 13.26
-sources = ["https://winchestercollector.org/forum/winchester-swap-meet/wtb-40-70-wcf/"]
 
 [case_head]
 # .059 in.

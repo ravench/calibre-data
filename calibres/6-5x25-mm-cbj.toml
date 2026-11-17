@@ -17,6 +17,9 @@ rim = 9.98
 base = 9.91
 shoulder = 9.63
 shoulder_at = 16.99
+# COTW 18 drawing
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 373"]
 neck = 7.29
 case_length = 24.99
 overall_length = 29.69
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 373"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 451"]
-
-[shoulder_angle]
-# COTW 18 drawing
-degrees = 30
-sources = ["book:cotw-18 p. 373"]
 
 [case_head]
 # from the 9x19 mm case; C.I.P. 9 mm Luger

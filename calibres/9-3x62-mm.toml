@@ -18,6 +18,9 @@ shoulder = 11.5
 shoulder_at = 51.79
 neck_at = 54.22
 neck_base = 9.92
+# C.I.P. 9,3 x 62
+shoulder_angle = 17.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page69.pdf"]
 neck = 9.92
 case_length = 62.0
 overall_length = 83.6
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/9.3×62mm"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/9.3×62mm"]
-
-[shoulder_angle]
-# C.I.P. 9,3 x 62
-degrees = 17.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page69.pdf"]
 
 [case_head]
 # C.I.P. 9,3 x 62

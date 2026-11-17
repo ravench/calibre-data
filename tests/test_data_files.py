@@ -184,6 +184,12 @@ class LoadTests(unittest.TestCase):
     def test_sources_function(self):
         self.assertEqual(sources(".22 LR", "introduced"), ["https://en.wikipedia.org/wiki/.22_Long_Rifle"])
         self.assertEqual(sources(".22 LR", "shoulder_angle"), [])
+        # the angle's own cite, else the [mm] sources
+        self.assertEqual(sources(".308 Winchester", "shoulder_angle"),
+                         ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"])
+        self.assertEqual(cartridges.SHOULDER_ANGLES[".308 Winchester"],
+                         (20, "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"))
+        self.assertEqual(sources("7.62x25 mm Tokarev", "shoulder_angle"), sources("7.62x25 mm Tokarev", "mm"))  # no cite
         self.assertEqual(sources("No such calibre", "mm"), [])
 
     def test_most_calibres_name_the_source_of_their_measurements(self):
@@ -319,9 +325,9 @@ class CheckTests(unittest.TestCase):
 
     def test_problems_name_the_line_of_the_value(self):
         with Copy() as c:
-            c.edit(WIN, "degrees = 20", "degrees = 120")
+            c.edit(WIN, "shoulder_angle = 20", "shoulder_angle = 120")
             c.edit(LR, 'kind = "rimfire"', 'kind = "rimfre"')
-            self.assertProblem(c, WIN, r"degrees is the angle", line=c.line_of(WIN, "degrees = 120"))
+            self.assertProblem(c, WIN, r"shoulder_angle is the angle", line=c.line_of(WIN, "shoulder_angle = 120"))
             self.assertProblem(c, LR, r"kind 'rimfre'", line=c.line_of(LR, "kind ="))
         with Copy() as c:
             c.edit(LR, 'kind = "rimfire"', 'kind = "rimfire')
@@ -437,8 +443,8 @@ class CheckTests(unittest.TestCase):
 
     def test_misspelt_table(self):
         with Copy() as c:
-            c.edit(WIN, "[shoulder_angle]", "[shoulder_angel]")
-            self.assertProblem(c, WIN, r"unknown table \[shoulder_angel\].*shoulder_angle")
+            c.edit(WIN, "[case_head]", "[case_haed]")
+            self.assertProblem(c, WIN, r"unknown table \[case_haed\].*case_head")
 
     def test_values_that_are_not_allowed(self):
         cases = [(LR, 'kind = "rimfire"', 'kind = "rimfre"', r"kind 'rimfre'.*did you mean \"rimfire\""),
@@ -450,7 +456,7 @@ class CheckTests(unittest.TestCase):
                  (LR, "rim = 7.06", "rim = -7.06", r"\[mm\] rim must be a number above 0"),
                  (LR, "year = 1887", "year = 18887", r"year must be a year"),
                  (LR, "worldwide = true", 'worldwide = "yes"', r"worldwide must be true or false"),
-                 (WIN, "degrees = 20", "degrees = 120", r"degrees is the angle to the case axis")]
+                 (WIN, "shoulder_angle = 20", "shoulder_angle = 120", r"shoulder_angle is the angle to the case axis")]
         for rel, old, new, pattern in cases:
             with self.subTest(new), Copy() as c:
                 c.edit(rel, old, new)
@@ -663,6 +669,8 @@ class CheckTests(unittest.TestCase):
         rel = "calibres/20x138-mm-b.toml"
         with Copy() as c:
             c.edit(rel, "rim = 26.86\nbelt = 28.48\nbase = 26.86\nshoulder = 25.49\nshoulder_at = 102.93\nneck_at = 128\nneck_base = 20.7\n", "")
+            c.edit(rel, "shoulder_angle = 5.5\n", "")  # with the shoulder, so its cite goes too
+            c.edit(rel, 'cite.shoulder_angle = ["https://municion.org/producto/20-x-138-b-rheinmetall-flak-30-38/"]\n', "")
             c.edit(rel, "overall_length = 202.7\n", "")
             c.write(rel, c.read(rel) + TIP)  # colour codes too
             self.assertEqual(c.problems(), [])
@@ -763,6 +771,56 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.edit(WIN, "shoulder_at = 39.62\n", "")
             self.assertProblem(c, WIN, r"both shoulder and shoulder_at")
+
+    def test_shoulder_angle_in_mm(self):
+        cite = 'cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]'
+        mm_sources = '"book:cotw-18 p. 176",\n  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf",'
+        for old, new, problem in [
+                (cite, "", None),  # the [mm] sources then cover the angle
+                (cite + "\n", "", None),
+                (cite, 'cite.shoulder_angle = ["book:cotw-18 p. 176", '
+                       '"https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]', r"repeats the \[mm\] sources"),
+                (cite, 'cite.neck_angle = ["https://example.org/a"]', r"cite.neck_angle names no measurement"),
+                (cite, 'cite.sources = ["https://example.org/a"]', r"cite.sources names no measurement"),
+                (cite, 'cite.shoulder_angle = []', r"\[mm\] cite.shoulder_angle needs at least one source"),
+                (cite, 'cite.shoulder_angle = ["book:cotw-18 p. 176", "book:cotw-18 p. 176"]', r"cite.shoulder_angle lists a source twice"),
+                (cite, 'cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf", '
+                       '"book:cotw-18 p. 176"]', r"repeats the \[mm\] sources"),  # in another order
+                (cite, 'cite.neck = ["https://example.org/a"]', None),  # any measurement may name its own
+                (cite, 'unsourced = 5', r"\[mm\] unsourced lists the measurements"),  # reported, no crash
+                (cite, 'cite.shoulder_angle = ["example.org"]', r"is not a https:// web address"),
+                (cite, 'cite = "https://example.org/a"', r"cite names a measurement's own sources"),
+                (cite, 'unsourced = ["shoulder_angle"]', r"shoulder_angle needs a source"),
+                (cite, 'unsourced = ["shoulder_angle"]\n' + cite, r"in unsourced and has a cite"),
+                ("shoulder_angle = 20", "shoulder_angle = 0", r"must be a number above 0"),
+                ("shoulder_angle = 20", "shoulder_angle = 90", r"above 0 and below 90"),
+                ("shoulder_angle = 20", 'shoulder_angle = "20"', r"must be a number")]:
+            with self.subTest(new), Copy() as c:
+                c.edit(WIN, old, new)
+                if problem:
+                    self.assertProblem(c, WIN, problem)
+                else:
+                    self.assertEqual(c.problems(), [])
+        with Copy() as c:  # [mm] without sources: the cited angle still has one
+            c.edit(WIN, mm_sources, "")
+            self.assertEqual(c.problems(), [])
+            t = load(c.dir)
+            self.assertNotIn("shoulder_angle", t["UNSOURCED"][".308 Winchester"])
+            self.assertEqual(t["SOURCES"][(".308 Winchester", "shoulder_angle")],
+                             ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"])
+        with Copy() as c:  # cite is for [mm] only
+            c.edit(WIN, "\n[case_head]\n", '\n[case_head]\ncite.rim_thickness = ["https://example.org/a"]\n')
+            self.assertProblem(c, WIN, r"unknown key 'cite' in \[case_head\]")
+        with Copy() as c:  # no source anywhere
+            c.edit(WIN, cite + "\n", "")
+            c.edit(WIN, mm_sources, "")
+            self.assertProblem(c, WIN, r"\[mm\] shoulder_angle needs a source")
+        with Copy() as c:  # a straight case has no shoulder angle
+            c.edit("calibres/45-acp.toml", "case_length", "shoulder_angle = 20\ncase_length")
+            self.assertProblem(c, "calibres/45-acp.toml", r"shoulder_angle is for bottleneck cases")
+        with Copy() as c:  # the old table
+            c.edit(WIN, "\n[case_head]", "\n[shoulder_angle]\ndegrees = 20\nsources = []\n\n[case_head]")
+            self.assertProblem(c, WIN, r"\[shoulder_angle\] is now part of \[mm\]")
 
     def test_neck_start(self):
         self.assertEqual(cartridges.NECKS[".308 Winchester"], (43.48, 8.72))  # C.I.P. L2 and H1

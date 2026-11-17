@@ -20,6 +20,9 @@ shoulder = 11.2
 shoulder_at = 49.48
 neck_at = 55.52
 neck_base = 7.39
+# C.I.P. 25-06 Rem.
+shoulder_angle = 17.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page92.pdf"]
 neck = 7.4
 case_length = 63.3
 overall_length = 82.6
@@ -36,11 +39,6 @@ sources = ["https://en.wikipedia.org/wiki/.25-06_Remington"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.25-06_Remington"]
-
-[shoulder_angle]
-# C.I.P. 25-06 Rem.
-degrees = 17.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page92.pdf"]
 
 [case_head]
 # C.I.P. 25-06 Rem.?

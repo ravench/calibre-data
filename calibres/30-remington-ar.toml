@@ -22,6 +22,8 @@ shoulder = 12.41
 shoulder_at = 27.13
 neck_at = 31.12
 neck_base = 8.66
+shoulder_angle = 25
+cite.shoulder_angle = ["https://en.wikipedia.org/wiki/.30_Remington_AR"]
 neck = 8.66
 case_length = 38.86
 overall_length = 57.4
@@ -35,10 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/.30_Remington_AR"]
 [primer]
 size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-degrees = 25
-sources = ["https://en.wikipedia.org/wiki/.30_Remington_AR"]
 
 [case_head]
 # SAAMI 30 Remington AR: rim thickness 0.054, groove 0.428 at 36 degrees, groove width 0.055,

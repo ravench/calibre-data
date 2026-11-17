@@ -182,15 +182,17 @@ MM_FULL = ("rim", "belt", "base", "shoulder", "shoulder_at", "neck_at", "neck_ba
 # diameter there (H1). The drawing does not use them yet.
 NECK_KEYS = ("neck_at", "neck_base")
 NECK_SLACK = 0.15
+# Bottleneck cases only: the shoulder's half cone angle to the case axis in degrees (drawn at 32 without it).
+ANGLE_KEY = "shoulder_angle"
 MM_SHAPES = {  # shape: (required keys, optional keys)
     "ball": (("diameter",), ()),
     "loose": (("diameter", "length"), ()),
     "shot": (("diameter", "rim", "length"), ("case_length",)),
     "blank": (("rim", "base", "mouth", "length"), ()),
     "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"),
-                  ("belt", "shoulder", "shoulder_at") + NECK_KEYS),
-    "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length")
-                + NECK_KEYS),
+                  ("belt", "shoulder", "shoulder_at", ANGLE_KEY) + NECK_KEYS),
+    "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length",
+                                       ANGLE_KEY) + NECK_KEYS),
 }
 TOP_KEYS = {"name", "guns", "black_powder", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
             "origin_candidates", "origin_sources", "worldwide", "obsolete", "rare"}
@@ -209,7 +211,6 @@ FACTS = {  # table: (required keys, optional keys, sources: "required", "optiona
     "mm": ((), (), "may be empty"),  # keys by shape, above
     "introduced": ((), ("year", "unknown"), "optional"),
     "primer": (("size",), ("diameter",), "may be empty"),  # diameter: measured mm, required for miniature
-    "shoulder_angle": (("degrees",), (), "required"),
     "case_head": (("rim_thickness",), HEAD_GROOVE + (GROOVE_WIDTH, "foot"), "required"),
     "bullet": (("type",), ("jacket", "patch_length"), "may be empty"),
     "case": (("material",), (), "required"),  # optional table: without it the material is unknown (drawn as brass)
@@ -315,7 +316,7 @@ class _File:
                 break
             if table and i > start and re.match(r"\s*\[", lines[i]):
                 break
-            if key and re.match(rf"\s*\"?{re.escape(key)}\"?\s*=", lines[i]):
+            if key and re.match(rf"\s*\"?{re.escape(key)}\"?\s*[=.]", lines[i]):  # cite.x = …: the line of cite
                 return i + 1
         return None
 
@@ -378,12 +379,41 @@ def _groove_room(head, mm, kind):
     return head["ramp_top"] - head["rim_thickness"] - ramp
 
 
+# [mm] keys that are not measurements: cite holds the sources of single measurements whose source differs
+# from the table's (cite.shoulder_angle = ["https://…"]).
+MM_LISTS = ("sources", "unsourced", "cite")
+
+
+def _check_cite(f, mm, books):
+    """[mm] cite: the sources of one measurement where they differ from [mm] sources; the shoulder angle
+    needs a source, its own or the table's."""
+    cite = mm.get("cite", {})
+    if not isinstance(cite, dict):
+        f.problem(f.line("mm", "cite"), '[mm] cite names a measurement\'s own sources: cite.shoulder_angle = ["https://…"]')
+        return
+    unsourced = mm["unsourced"] if _is_text_list(mm.get("unsourced")) else []  # else _check_unsourced reports it
+    same = lambda a, b: _is_text_list(a) and _is_text_list(b) and set(a) == set(b)  # noqa: E731
+    for k, v in cite.items():
+        line = f.line("mm", "cite." + k)
+        if k not in mm or k in MM_LISTS:
+            f.problem(line, f"[mm] cite.{k} names no measurement of this [mm]")
+        elif k in unsourced:
+            f.problem(line, f"[mm] {k} is in unsourced and has a cite: it is one or the other")
+        elif same(v, mm.get("sources")):
+            f.problem(line, f"[mm] cite.{k} repeats the [mm] sources: leave it out")
+        else:
+            _check_sources(f, "mm", {"cite." + k: v}, "required", books, key="cite." + k, label=f"[mm] cite.{k}")
+    if ANGLE_KEY in mm and ANGLE_KEY not in cite and (not mm.get("sources") or ANGLE_KEY in unsourced):
+        f.problem(f.line("mm", ANGLE_KEY), f"[mm] {ANGLE_KEY} needs a source: the [mm] sources or its own "
+                                           f'cite.{ANGLE_KEY} = ["https://…"]')
+
+
 def _check_unsourced(f, mm):
     """[mm] unsourced: the measurements that no page in sources gives (estimated, or measured on one round)."""
     if "unsourced" not in mm:
         return
     keys, line = mm["unsourced"], f.line("mm", "unsourced")
-    measured = [k for k in mm if k not in ("sources", "unsourced")]
+    measured = [k for k in mm if k not in MM_LISTS]
     if not _is_text_list(keys) or not keys or len(set(keys)) != len(keys) or any(k not in measured for k in keys):
         f.problem(line, "[mm] unsourced lists the measurements of this [mm] that no source gives, each once: "
                         'unsourced = ["shoulder_at"]')
@@ -403,11 +433,11 @@ def _check_keys(f, table, data, allowed, required):
             f.problem(f.line(table), f"[{table}] needs {k!r}" if table else f"needs {k!r}")
 
 
-def _check_sources(f, table, data, rule, books=None, nth=0, key="sources"):
+def _check_sources(f, table, data, rule, books=None, nth=0, key="sources", label=None):
     """The sources of one table (the `nth` of a [[table]]): web addresses and book pages (`books`: the
     ids in books.toml, or None when books.toml could not be read). Without a table, the list is the
     top-level `key` (origin_sources)."""
-    label = key if table is None else f"[[{table}]]" if table == "colour_codes" else f"[{table}]"
+    label = label or (key if table is None else f"[[{table}]]" if table == "colour_codes" else f"[{table}]")
     if key not in data:
         if rule != "optional":
             f.problem(f.line(table, nth=nth), f"{label} needs a sources list (an empty list [] when nothing is checked yet)"
@@ -541,7 +571,10 @@ def _read_calibre(f, countries, books=None):
     top = {k for k in d if k not in tables and k != "colour_codes"}
     _check_keys(f, None, {k: d[k] for k in top if k != "categories"}, TOP_KEYS, ("name", "guns", "kind", "profile", "aliases"))
     for t in tables:
-        if t not in FACTS:
+        if t == ANGLE_KEY:
+            f.problem(f.line(t), f"[{t}] is now part of [mm]: write {ANGLE_KEY} = <degrees> in [mm], and "
+                                 f"cite.{ANGLE_KEY} = [...] below it when its sources differ from the [mm] sources")
+        elif t not in FACTS:
             f.problem(f.line(t), f"unknown table [{t}]{_close(t, FACTS)}; allowed: {', '.join(FACTS)}")
     if "mm" not in tables:
         f.problem(None, "needs a [mm] table with the measurements")
@@ -649,22 +682,27 @@ def _read_calibre(f, countries, books=None):
                 ok = False
             elif any(k in data for k in NECK_KEYS) and "shoulder" not in data:
                 f.problem(f.line("mm"), "[mm] neck_at and neck_base are for bottleneck cases (with shoulder and shoulder_at)")
+            elif ANGLE_KEY in data and "shoulder" not in data:
+                f.problem(f.line("mm", ANGLE_KEY), f"[mm] {ANGLE_KEY} is for bottleneck cases (with shoulder and shoulder_at)")
             elif ("neck_at" in data) != ("neck_base" in data):
                 f.problem(f.line("mm"), "[mm] has neck_at and neck_base together (C.I.P. L2 and H1), or neither")
-        allowed = set(req) | set(opt) | {"sources"} | ({"unsourced"} if t == "mm" else set())
+        allowed = set(req) | set(opt) | ({"sources"} if t != "mm" else set(MM_LISTS))
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)
         urls = _check_sources(f, t, data, rule, books)
         for k, v in data.items():
-            if k in ("sources", "unsourced") or k not in allowed:
+            if k in MM_LISTS or k not in allowed:
                 continue
-            if t == "mm" or t == "case_head" or k == "degrees":
+            if t == "mm" or t == "case_head":
                 if not _is_number(v) or v <= 0:
                     f.problem(f.line(t, k), f"[{t}] {k} must be a number above 0, without quotes")
         if t == "mm":
             _check_widths(f, data)
             _check_neck(f, data)
             _check_unsourced(f, data)
+            _check_cite(f, data, books)
+            if _is_number(data.get(ANGLE_KEY)) and data[ANGLE_KEY] >= 90:  # 0 and below: the number check above
+                f.problem(f.line(t, ANGLE_KEY), f"[mm] {ANGLE_KEY} is the angle to the case axis, above 0 and below 90")
         if t == "introduced":
             if ("year" in data) == ("unknown" in data):
                 f.problem(f.line(t), "[introduced] has either year (with sources) or unknown (the reason)")
@@ -702,8 +740,6 @@ def _read_calibre(f, countries, books=None):
                                                  "without spaces around them")
             elif len({a.casefold() for a in arms}) != len(arms):
                 f.problem(f.line(t, "firearms"), "[fired_by] firearms lists a firearm twice")
-        if t == "shoulder_angle" and _is_number(data.get("degrees")) and not 0 < data["degrees"] < 90:
-            f.problem(f.line(t, "degrees"), "[shoulder_angle] degrees is the angle to the case axis, above 0 and below 90")
         ok = ok and len(f.problems) == before
         facts[t] = dict(data, sources=urls)
     if "colour_codes" in d:
@@ -1030,7 +1066,8 @@ def load(root=ROOT):
                 t["SOURCES"][(n, fact)] = list(data["sources"])
             mm = facts["mm"]
             # Without any source, no measurement has one.
-            without = mm.get("unsourced") or ([] if mm["sources"] else [k for k in mm if k != "sources"])
+            without = mm.get("unsourced") or ([] if mm["sources"] else [k for k in mm if k not in MM_LISTS
+                                                                         and k not in mm.get("cite", {})])
             if without:
                 t["UNSOURCED"][n] = tuple(without)
             first = lambda fact: facts[fact]["sources"][0] if facts[fact]["sources"] else None  # noqa: E731
@@ -1048,8 +1085,12 @@ def load(root=ROOT):
                     sets["PRIMER_UNVERIFIED"].add(n)
             if "neck_at" in mm or "neck_base" in mm:
                 t["NECKS"][n] = (mm.get("neck_at"), mm.get("neck_base"))
-            if "shoulder_angle" in facts:
-                t["SHOULDER_ANGLES"][n] = (facts["shoulder_angle"]["degrees"], first("shoulder_angle"))
+            for k, cited in mm.get("cite", {}).items():
+                t["SOURCES"][(n, k)] = list(cited)
+            if ANGLE_KEY in mm:
+                angle_sources = mm.get("cite", {}).get(ANGLE_KEY, mm["sources"])
+                t["SOURCES"][(n, ANGLE_KEY)] = list(angle_sources)
+                t["SHOULDER_ANGLES"][n] = (mm[ANGLE_KEY], angle_sources[0])
             if "case_head" in facts:
                 h = facts["case_head"]
                 t["RIM_THICKNESS"][n] = (h["rim_thickness"], first("case_head"))
@@ -1176,9 +1217,9 @@ PROFILE_TODAY = _t["PROFILE_TODAY"]
 
 def sources(name, fact):
     """Every source of one of a calibre's values, as listed in its file: fact is the table name
-    ("mm", "introduced", "primer", "shoulder_angle", "case_head", "bullet", "case", "current_cases"
-    or "fired_by"), or "origin" for origin_sources; [] when nothing is checked yet or the calibre has no
-    such table."""
+    ("mm", "introduced", "primer", "case_head", "bullet", "case", "current_cases" or "fired_by"), "origin"
+    for origin_sources, or an [mm] key with its own sources (cite.<key>) and "shoulder_angle"; [] when nothing
+    is checked yet or the calibre has no such table."""
     return list(SOURCES.get((name, fact), []))
 
 

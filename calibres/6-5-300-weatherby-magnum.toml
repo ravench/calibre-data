@@ -18,6 +18,9 @@ rim = 13.5
 base = 13.0
 shoulder = 12.5
 shoulder_at = 58.38
+# SAAMI drawing (double radius; chord through the .4920 datum and neck start)
+shoulder_angle = 46.4
+cite.shoulder_angle = ["https://jagdfibel.de/images/0/0e/65300.pdf"]
 neck = 7.49
 case_length = 71.76
 overall_length = 91.44
@@ -30,11 +33,6 @@ unknown = "sources give only the 2017 SAAMI drawing"
 [primer]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# SAAMI drawing (double radius; chord through the .4920 datum and neck start)
-degrees = 46.4
-sources = ["https://jagdfibel.de/images/0/0e/65300.pdf"]
 
 [case_head]
 # .300 Wby case necked down; C.I.P. ?

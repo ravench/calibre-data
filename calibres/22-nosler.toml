@@ -22,6 +22,9 @@ shoulder = 10.16
 shoulder_at = 35.29
 neck_at = 38.48
 neck_base = 6.46
+# AECC drawing 06-045-BRC-050
+shoulder_angle = 29.9
+cite.shoulder_angle = ["https://municion.org/producto/22-nosler/"]
 neck = 6.46
 case_length = 44.7
 overall_length = 57.4
@@ -35,11 +38,6 @@ sources = ["https://bulletin.accurateshooter.com/2017/01/22-nosler-more-details-
 [primer]
 size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# AECC drawing 06-045-BRC-050
-degrees = 29.9
-sources = ["https://municion.org/producto/22-nosler/"]
 
 [case_head]
 # SAAMI 22 Nosler: rim thickness 0.045, groove 0.332 at 27 degrees, groove width 0.030,

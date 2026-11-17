@@ -23,6 +23,8 @@ shoulder = 9.28
 shoulder_at = 27.05
 neck_at = 30.6
 neck_base = 5.18
+# C.I.P. 17 Rem. Fireball
+shoulder_angle = 30
 neck = 5.18
 case_length = 35.81
 overall_length = 46.48
@@ -37,11 +39,6 @@ sources = ["https://en.wikipedia.org/wiki/.17_Remington_Fireball"]
 [primer]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.17_Remington_Fireball"]
-
-[shoulder_angle]
-# C.I.P. 17 Rem. Fireball
-degrees = 30
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page78.pdf"]
 
 [case_head]
 # C.I.P. 17 Rem. Fireball

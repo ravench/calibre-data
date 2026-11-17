@@ -18,6 +18,9 @@ shoulder = 9.4
 shoulder_at = 20.06
 neck_at = 22.15
 neck_base = 8.32
+# AECC drawing on municion.org: SØ 9.53, NØ 8.32, SL 19.60, NL 3.00, CL 24.69.
+shoulder_angle = 16.1
+cite.shoulder_angle = ["https://municion.org/producto/765-mm-borchardt/"]
 neck = 8.41
 case_length = 25.15
 overall_length = 34.04
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 467"]
 [primer]
 # 4.49 mm, 3 specimens
 size = "small-pistol"
-sources = ["https://municion.org/producto/765-mm-borchardt/"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 9.53, NØ 8.32, SL 19.60, NL 3.00, CL 24.69.
-degrees = 16.1
 sources = ["https://municion.org/producto/765-mm-borchardt/"]
 
 [case_head]

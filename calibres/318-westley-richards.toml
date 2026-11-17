@@ -21,6 +21,9 @@ shoulder = 11.1
 shoulder_at = 49.63
 neck_at = 51.87
 neck_base = 9.14
+# C.I.P. 318 Riml. N.E.
+shoulder_angle = 25
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page126.pdf"]
 neck = 9.1
 case_length = 60.1
 overall_length = 85.1
@@ -39,11 +42,6 @@ sources = ["https://en.wikipedia.org/wiki/.318_Westley_Richards"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# C.I.P. 318 Riml. N.E.
-degrees = 25
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page126.pdf"]
 
 [case_head]
 # C.I.P. 318 Riml. N.E.

@@ -18,6 +18,9 @@ shoulder = 12.5
 shoulder_at = 59.62
 neck_at = 61.86
 neck_base = 8.56
+# C.I.P. 300 Weath. Mag.
+shoulder_angle = 41.3
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page19.pdf"]
 neck = 8.5
 case_length = 71.8
 overall_length = 90.5
@@ -34,11 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/.300_Weatherby_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.300_Weatherby_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 300 Weath. Mag.
-degrees = 41.3
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page19.pdf"]
 
 [case_head]
 # C.I.P. ?
