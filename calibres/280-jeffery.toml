@@ -19,6 +19,9 @@ shoulder = 12.8
 shoulder_at = 49.33
 neck_at = 55.3
 neck_base = 8.16
+# AECC drawing on municion.org: SØ 12.47, NØ 8.16, SL 49.36, NL 8.20, CL 63.53.
+shoulder_angle = 19.8
+cite.shoulder_angle = ["https://municion.org/producto/280-jeffery-rimless-nitro-express/"]
 neck = 8.05
 case_length = 63.5
 overall_length = 87.63
@@ -38,11 +41,6 @@ sources = ["book:cotw-18 p. 582"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.47, NØ 8.16, SL 49.36, NL 8.20, CL 63.53.
-degrees = 19.8
-sources = ["https://municion.org/producto/280-jeffery-rimless-nitro-express/"]
 
 [case_head]
 # C.I.P. 333 Riml. N.E.: R, E, E1, delta. This is the .333 Jeffery case necked down (COTW 18 p. 582) and C.I.P.

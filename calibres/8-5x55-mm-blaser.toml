@@ -13,6 +13,8 @@ rim = 13.59
 base = 13.84
 shoulder = 13.17
 shoulder_at = 42.38
+# C.I.P. sheet p7: atan((P2-H2)/2/(L2-L1))
+shoulder_angle = 30
 neck = 9.36
 case_length = 54.7
 overall_length = 75.84
@@ -27,11 +29,6 @@ sources = ["https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vest
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# C.I.P. sheet p7: atan((P2-H2)/2/(L2-L1))
-degrees = 30
-sources = ["https://cuzzs.gov.cz/userfiles/documents/CIP/02092021/Mimoradny_Vestnik_%202021_DEF.pdf"]
 
 [case_head]
 # C.I.P. sheet p7

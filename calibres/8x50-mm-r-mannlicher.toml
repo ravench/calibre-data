@@ -18,6 +18,9 @@ shoulder = 12.01
 shoulder_at = 38.29
 neck_at = 44.17
 neck_base = 9.04
+# C.I.P. 8 x 50 R
+shoulder_angle = 14.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf"]
 neck = 9.03
 case_length = 50.38
 overall_length = 76.21
@@ -34,11 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/8×50mmR_Mannlicher"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# C.I.P. 8 x 50 R
-degrees = 14.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page30.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

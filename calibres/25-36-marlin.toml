@@ -18,6 +18,9 @@ shoulder = 9.09
 shoulder_at = 36.02
 neck_at = 39.95
 neck_base = 7.21
+# AECC drawing on municion.org: SØ 8.92, NØ 7.21, SL 36.00, NL 13.90, CL 53.83.
+shoulder_angle = 12.3
+cite.shoulder_angle = ["https://municion.org/producto/25-36-marlin/"]
 neck = 7.14
 case_length = 53.85
 overall_length = 63.5
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 189"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 249"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 8.92, NØ 7.21, SL 36.00, NL 13.90, CL 53.83.
-degrees = 12.3
-sources = ["https://municion.org/producto/25-36-marlin/"]
 
 [case_head]
 # .056 in.

@@ -17,6 +17,9 @@ shoulder = 8.84
 shoulder_at = 19.57
 neck_at = 22.32
 neck_base = 7.3
+# AECC drawing on municion.org: SØ 8.98, NØ 7.30, SL 19.50, NL 4.60, CL 26.85.
+shoulder_angle = 17.0
+cite.shoulder_angle = ["https://municion.org/producto/65-x-27-r-p-tesching/"]
 neck = 7.21
 case_length = 26.92
 overall_length = 39.12
@@ -30,11 +33,6 @@ sources = ["book:cotw-18 p. 616"]
 [primer]
 size = "small-rifle"
 sources = ["book:cotw-18 p. 651"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 8.98, NØ 7.30, SL 19.50, NL 4.60, CL 26.85.
-degrees = 17.0
-sources = ["https://municion.org/producto/65-x-27-r-p-tesching/"]
 
 [case_head]
 # .051 in.

@@ -18,6 +18,9 @@ shoulder = 8.25
 shoulder_at = 16.02
 neck_at = 17.6
 neck_base = 7.3
+# AECC drawing on municion.org: SØ 8.38, NØ 7.30, SL 15.70, NL 4.50, CL 21.78.
+shoulder_angle = 18.9
+cite.shoulder_angle = ["https://municion.org/producto/65-mm-bergmann-n3-1896/"]
 neck = 7.34
 case_length = 22.1
 overall_length = 31.24
@@ -35,11 +38,6 @@ sources = [
   "https://municion.org/producto/65-mm-bergmann-n3-1894-grooveless/",
   "https://municion.org/producto/65-mm-bergmann-n3-1896/",
 ]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 8.38, NØ 7.30, SL 15.70, NL 4.50, CL 21.78.
-degrees = 18.9
-sources = ["https://municion.org/producto/65-mm-bergmann-n3-1896/"]
 
 [case_head]
 # AECC drawing 07-022-BGC-010 (municion.org): RT 1.00, HL 1.90, GØ 8.63, GW 0.40, HØ 9.34; ramp angle from HL = RT +

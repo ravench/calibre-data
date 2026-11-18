@@ -22,6 +22,8 @@ shoulder = 10.95
 shoulder_at = 42.52
 neck_at = 48.58
 neck_base = 7.7
+# C.I.P. 6,5 x 58 Mauser: half the cone angle alpha 30°01'18"
+shoulder_angle = 15.0
 neck = 7.7
 case_length = 58.0
 overall_length = 82.5
@@ -36,11 +38,6 @@ sources = ["https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro"]
 # 5.28 mm, 8 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]
-
-[shoulder_angle]
-# C.I.P. 6,5 x 58 Mauser: half the cone angle alpha 30°01'18"
-degrees = 15.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page25.pdf"]
 
 [case_head]
 # C.I.P. 6,5 x 58 Mauser: R, E, E1, delta

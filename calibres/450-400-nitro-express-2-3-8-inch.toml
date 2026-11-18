@@ -20,6 +20,11 @@ shoulder = 12.34
 shoulder_at = 40.3
 neck_at = 43.75
 neck_base = 11
+# AECC drawing on municion.org: SØ 12.40, NØ 11.00, SL 40.48, NL 16.70, CL 60.63. (Until this drawing was read the
+# angle was assumed to be the 5.2 degrees of the 10.3x60 R, which COTW 18 p. 645 calls the Swiss version of this
+# round; that case has a longer shoulder and a shorter neck.)
+shoulder_angle = 11.5
+cite.shoulder_angle = ["https://municion.org/producto/450-400-express-2-3-8/"]
 neck = 10.85
 case_length = 60.45
 overall_length = 74.93
@@ -40,13 +45,6 @@ sources = ["book:cotw-18 p. 593"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.40, NØ 11.00, SL 40.48, NL 16.70, CL 60.63. (Until this drawing was read the
-# angle was assumed to be the 5.2 degrees of the 10.3x60 R, which COTW 18 p. 645 calls the Swiss version of this
-# round; that case has a longer shoulder and a shorter neck.)
-degrees = 11.5
-sources = ["https://municion.org/producto/450-400-express-2-3-8/"]
 
 [case_head]
 # .035 in. (COTW); the AECC drawing 10-060-BBC-050 (municion.org) has RT 0.92.

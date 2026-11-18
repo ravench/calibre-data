@@ -15,6 +15,9 @@ shoulder = 12.5
 shoulder_at = 53.05
 neck_at = 57.25
 neck_base = 8.53
+# AECC drawing 08-065-BFC-010
+shoulder_angle = 24.8
+cite.shoulder_angle = ["https://municion.org/producto/308-norma-magnum-belted/"]
 neck = 8.1
 case_length = 65.0
 overall_length = 85.0
@@ -31,11 +34,6 @@ sources = ["https://en.wikipedia.org/wiki/.308_Norma_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.308_Norma_Magnum"]
-
-[shoulder_angle]
-# AECC drawing 08-065-BFC-010
-degrees = 24.8
-sources = ["https://municion.org/producto/308-norma-magnum-belted/"]
 
 [case_head]
 # C.I.P. 308 Norma Mag.; on a belted case E is the front end of the belt

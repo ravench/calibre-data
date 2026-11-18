@@ -21,6 +21,8 @@ shoulder = 11.61
 shoulder_at = 39.61
 neck_at = 44.05
 neck_base = 8.55
+# C.I.P. 7,62 x 53 R
+shoulder_angle = 19
 neck = 8.5
 case_length = 53.5
 overall_length = 77.0
@@ -36,11 +38,6 @@ sources = ["https://en.wikipedia.org/wiki/7.62×53mmR"]
 # Vihtavuori's data for the 7.62x53 R loads Lapua cases with large rifle primers.
 size = "large-rifle"
 sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
-
-[shoulder_angle]
-# C.I.P. 7,62 x 53 R
-degrees = 19
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page28.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

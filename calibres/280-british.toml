@@ -19,6 +19,9 @@ shoulder = 11.38
 shoulder_at = 30.97
 neck_at = 36.08
 neck_base = 7.9
+# AECC drawing on municion.org: SØ 11.49, NØ 7.90, SL 30.90, NL 7.35, CL 43.36.
+shoulder_angle = 19.4
+cite.shoulder_angle = ["https://municion.org/producto/280-british-xpl-for-em-2-assault-rifle/"]
 neck = 7.95
 case_length = 43.43
 overall_length = 64.52
@@ -36,11 +39,6 @@ sources = ["book:cotw-18 p. 541"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.49, NØ 7.90, SL 30.90, NL 7.35, CL 43.36.
-degrees = 19.4
-sources = ["https://municion.org/producto/280-british-xpl-for-em-2-assault-rifle/"]
 
 [case_head]
 # AECC drawing 07-043-BGC-040 (municion.org): RT 1.21, HL 3.46, GØ 10.04, GW 0.85, HØ 11.88; ramp angle from HL = RT +

@@ -17,6 +17,8 @@ shoulder = 13.4
 shoulder_at = 55.02
 neck_at = 58.79
 neck_base = 8.13
+shoulder_angle = 35
+cite.shoulder_angle = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
 neck = 8.13
 case_length = 65.79
 overall_length = 84.84
@@ -30,10 +32,6 @@ sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
-
-[shoulder_angle]
-degrees = 35
-sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
 
 [case_head]
 # C.I.P. 28 Nosler

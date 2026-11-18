@@ -19,6 +19,9 @@ shoulder = 10.95
 shoulder_at = 45.86
 neck_at = 47.36
 neck_base = 10
+# C.I.P. 9,3 x 57
+shoulder_angle = 17.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page68.pdf"]
 neck = 10.0
 case_length = 56.5
 overall_length = 81.0
@@ -35,11 +38,6 @@ sources = ["https://en.wikipedia.org/wiki/9.3×57mm_Mauser"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/9.3×57mm_Mauser"]
-
-[shoulder_angle]
-# C.I.P. 9,3 x 57
-degrees = 17.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page68.pdf"]
 
 [case_head]
 # C.I.P. 9,3 x 57

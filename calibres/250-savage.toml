@@ -19,6 +19,9 @@ shoulder = 10.25
 shoulder_at = 38.4
 neck_at = 41.6
 neck_base = 7.33
+# C.I.P. 250 Savage
+shoulder_angle = 26.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page93.pdf"]
 neck = 7.25
 case_length = 48.56
 overall_length = 63.88
@@ -35,11 +38,6 @@ sources = ["https://en.wikipedia.org/wiki/.250-3000_Savage"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.250-3000_Savage"]
-
-[shoulder_angle]
-# C.I.P. 250 Savage
-degrees = 26.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page93.pdf"]
 
 [case_head]
 # C.I.P. 250 Savage

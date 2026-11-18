@@ -20,6 +20,8 @@ shoulder = 11.23
 shoulder_at = 13.0
 neck_at = 14.22
 neck_base = 10.86
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 8.6
 neck = 10.86
 case_length = 19.8
 overall_length = 30.2
@@ -34,11 +36,6 @@ sources = ["book:cotw-18 p. 504"]
 # The table gives a Berdan primer without its size.
 size = "large-pistol"
 sources = []
-
-[shoulder_angle]
-# Half the cone angle alpha on the C.I.P. sheet.
-degrees = 8.6
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page33.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

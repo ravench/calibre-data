@@ -18,6 +18,9 @@ shoulder = 11.55
 shoulder_at = 46.5
 neck_at = 48.02
 neck_base = 10.23
+# C.I.P. 9,5 x 57 Mannl. Sch.
+shoulder_angle = 21.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page72.pdf"]
 neck = 10.16
 case_length = 57.15
 overall_length = 74.9
@@ -36,11 +39,6 @@ sources = ["https://en.wikipedia.org/wiki/9.5×57mm_Mannlicher–Schönauer"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
-
-[shoulder_angle]
-# C.I.P. 9,5 x 57 Mannl. Sch.
-degrees = 21.1
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page72.pdf"]
 
 [case_head]
 # C.I.P. 9,5 x 57 Mannl. Sch.

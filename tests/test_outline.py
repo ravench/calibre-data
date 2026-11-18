@@ -941,7 +941,7 @@ class OutlineTests(unittest.TestCase):
 
     def test_every_recorded_municion_reading_keeps_its_neck(self):
         # The same two checks without a list: every calibre whose shoulder angle cites municion.org and whose file
-        # records the drawing's reading in the note under [shoulder_angle] ("SØ .., NØ .., SL .., NL .., CL .."), so
+        # records the drawing's reading in the note above shoulder_angle in [mm] ("SØ .., NØ .., SL .., NL .., CL .."), so
         # that a drawing added later is held to the rule as well. The two Vetterli rounds are left out: their [mm]
         # are older than the rule and start the shoulder 1.0 mm before the drawing they cite, which is for a change
         # of its own to settle.
@@ -965,7 +965,11 @@ class OutlineTests(unittest.TestCase):
             if "municion.org" not in url:
                 continue
             with open(os.path.join(folder, cartridges.slug(name) + ".toml"), encoding="utf-8") as f:
-                found = reading.search(f.read().split("[shoulder_angle]")[1])
+                above = f.read().split("\n[mm]\n")[1].split("\nshoulder_angle =")[0].split("\n")
+                note = []
+                while above and above[-1].startswith("#"):
+                    note.insert(0, above.pop())
+                found = reading.search("\n".join(note))
             if not found:
                 unread.add(name)
                 continue

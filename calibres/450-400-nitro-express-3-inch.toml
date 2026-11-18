@@ -24,6 +24,8 @@ shoulder = 13.21
 shoulder_at = 55.26
 neck_at = 59
 neck_base = 11.2
+# C.I.P. 450/400 N.E. 3''
+shoulder_angle = 15
 neck = 11.18
 case_length = 76.2
 overall_length = 95.25
@@ -39,11 +41,6 @@ sources = ["https://www.americanhunter.org/content/behind-the-bullet-450-400-3-n
 # 5.16 mm, 6 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/450-400-express-2-3-8/"]
-
-[shoulder_angle]
-# C.I.P. 450/400 N.E. 3''
-degrees = 15
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page117.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

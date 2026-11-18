@@ -21,6 +21,9 @@ shoulder = 11.5
 shoulder_at = 39.62
 neck_at = 41.91
 neck_base = 9.86
+# C.I.P. 356 Win.
+shoulder_angle = 20
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page90.pdf"]
 neck = 9.9
 case_length = 51.2
 overall_length = 65.0
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/.356_Winchester"]
 [primer]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# C.I.P. 356 Win.
-degrees = 20
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page90.pdf"]
 
 [case_head]
 # R and the extractor groove on the C.I.P. sheet.

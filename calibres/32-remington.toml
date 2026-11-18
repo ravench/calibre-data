@@ -21,6 +21,9 @@ shoulder = 10.19
 shoulder_at = 38.05
 neck_at = 39.67
 neck_base = 8.81
+# C.I.P. 32 Rem.
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page127.pdf"]
 neck = 8.73
 case_length = 52.07
 overall_length = 64.14
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.32_Remington"]
 # 5.11 mm, 4 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/32-remington/"]
-
-[shoulder_angle]
-# C.I.P. 32 Rem.
-degrees = 23
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page127.pdf"]
 
 [case_head]
 # C.I.P. 32 Rem.

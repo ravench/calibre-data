@@ -20,6 +20,8 @@ shoulder = 10.72
 shoulder_at = 18.51
 neck_at = 20
 neck_base = 9.64
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 19.9
 neck = 9.63
 case_length = 25.35
 overall_length = 32.7
@@ -33,11 +35,6 @@ sources = ["book:cotw-18 p. 486"]
 [primer]
 size = "large-pistol"
 sources = ["book:cotw-18 p. 528"]
-
-[shoulder_angle]
-# Half the cone angle alpha on the C.I.P. sheet.
-degrees = 19.9
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/9-x-25-super-auto-g-en.pdf"]
 
 [case_head]
 # R and the extractor groove on the C.I.P. sheet.

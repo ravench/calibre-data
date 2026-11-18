@@ -18,6 +18,8 @@ shoulder = 9.48
 shoulder_at = 19.6
 neck_at = 21.04
 neck_base = 8.49
+# C.I.P. 7,62 x 25 Tokarev
+shoulder_angle = 19
 neck = 8.49
 case_length = 25.0
 overall_length = 35.2
@@ -32,11 +34,6 @@ sources = ["https://en.wikipedia.org/wiki/7.62×25mm_Tokarev"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/7.62×25mm_Tokarev"]
-
-[shoulder_angle]
-# C.I.P. 7,62 x 25 Tokarev
-degrees = 19
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page9.pdf"]
 
 [case_head]
 # C.I.P. 7,62 x 25 Tokarev

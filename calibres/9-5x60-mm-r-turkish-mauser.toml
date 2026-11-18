@@ -18,6 +18,9 @@ shoulder = 12.37
 shoulder_at = 35.4
 neck_at = 42.2
 neck_base = 10.4
+# AECC drawing on municion.org: SØ 12.03, NØ 10.40, SL 35.00, NL 18.00, CL 59.80.
+shoulder_angle = 6.8
+cite.shoulder_angle = ["https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
 neck = 10.44
 case_length = 60.2
 overall_length = 75.44
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 559"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.03, NØ 10.40, SL 35.00, NL 18.00, CL 59.80.
-degrees = 6.8
-sources = ["https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
 
 [case_head]
 # .082 in.

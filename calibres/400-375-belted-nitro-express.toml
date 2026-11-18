@@ -22,6 +22,9 @@ shoulder = 11.05
 shoulder_at = 43.82
 neck_at = 45
 neck_base = 10.12
+# AECC drawing on municion.org: SØ 11.00, NØ 10.12, SL 43.70, NL 18.50, CL 63.38.
+shoulder_angle = 20.4
+cite.shoulder_angle = ["https://municion.org/producto/400-375-belted-nitro-express-holland-holland/"]
 neck = 10.08
 case_length = 63.5
 overall_length = 76.2
@@ -44,11 +47,6 @@ sources = ["book:cotw-18 p. 590"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.00, NØ 10.12, SL 43.70, NL 18.50, CL 63.38.
-degrees = 20.4
-sources = ["https://municion.org/producto/400-375-belted-nitro-express-holland-holland/"]
 
 [case_head]
 # AECC drawing 09-063-BFC-020 (municion.org): RT 1.00, GØ 10.30, GW 0.90, the ramp up to the belt (LØ 12.06) ends at

@@ -22,6 +22,9 @@ shoulder = 13.5
 shoulder_at = 53.5
 neck_at = 58.93
 neck_base = 12.55
+# C.I.P. 465 H&H Belt. Mag.
+shoulder_angle = 5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page38.pdf"]
 neck = 12.5
 case_length = 73.5
 overall_length = 90.2
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.465_H%26H_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.465_H%26H_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 465 H&H Belt. Mag.
-degrees = 5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page38.pdf"]
 
 [case_head]
 # C.I.P. ?

@@ -18,6 +18,9 @@ shoulder = 12.4
 shoulder_at = 52.55
 neck_at = 54.66
 neck_base = 7.92
+# C.I.P. 7 mm Weath. Mag.
+shoulder_angle = 47.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page5.pdf"]
 neck = 7.9
 case_length = 64.7
 overall_length = 83.8
@@ -34,11 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/7mm_Weatherby_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 7 mm Weath. Mag.
-degrees = 47.1
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page5.pdf"]
 
 [case_head]
 # C.I.P. 7 mm Weath. Mag.

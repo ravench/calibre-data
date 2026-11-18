@@ -18,6 +18,9 @@ shoulder = 10.59
 shoulder_at = 43.82
 neck_at = 46.45
 neck_base = 8.61
+# Half the cone angle alpha on the rimmed twin's C.I.P. sheet.
+shoulder_angle = 21.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
 neck = 8.46
 case_length = 58.67
 overall_length = 78.74
@@ -33,11 +36,6 @@ sources = ["book:cotw-18 p. 197"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 250"]
-
-[shoulder_angle]
-# Half the cone angle alpha on the rimmed twin's C.I.P. sheet.
-degrees = 21.1
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
 
 [case_head]
 # .054 in. (COTW); groove from the AECC drawing 08-059-BGC-050 (municion.org): RT 1.55, HL 3.90, GØ 10.00, GW 0.85,

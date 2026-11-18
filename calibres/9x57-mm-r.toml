@@ -22,6 +22,8 @@ shoulder = 10.95
 shoulder_at = 46.14
 neck_at = 47.76
 neck_base = 9.83
+# C.I.P. 9 x 57 R
+shoulder_angle = 19.1
 neck = 9.83
 case_length = 56.8
 overall_length = 81.0
@@ -39,11 +41,6 @@ sources = ["https://municion.org/producto/9-x-57-r-mauser/"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
-
-[shoulder_angle]
-# C.I.P. 9 x 57 R
-degrees = 19.1
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page48.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

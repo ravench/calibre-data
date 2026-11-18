@@ -22,6 +22,9 @@ shoulder = 8.7
 shoulder_at = 22.35
 neck_at = 23.85
 neck_base = 8.4
+# C.I.P. 32-20 Win.
+shoulder_angle = 5.7
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page81.pdf"]
 neck = 8.3
 case_length = 33.4
 overall_length = 40.4
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.32-20_Winchester"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.32-20_Winchester"]
-
-[shoulder_angle]
-# C.I.P. 32-20 Win.
-degrees = 5.7
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page81.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

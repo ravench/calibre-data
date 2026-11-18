@@ -22,6 +22,8 @@ shoulder = 12.65
 shoulder_at = 50.8
 neck_at = 58.42
 neck_base = 11.15
+# C.I.P. 450/400 Mag. N.E. 3"1/4
+shoulder_angle = 5.6
 neck = 11.05
 case_length = 82.55
 overall_length = 100.33
@@ -37,11 +39,6 @@ sources = ["https://en.wikipedia.org/wiki/.450/400_Nitro_Express"]
 # The table gives a .254 in. Berdan primer.
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# C.I.P. 450/400 Mag. N.E. 3"1/4
-degrees = 5.6
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page118.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

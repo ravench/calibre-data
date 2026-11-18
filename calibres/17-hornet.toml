@@ -18,6 +18,9 @@ shoulder = 7.47
 shoulder_at = 26.6
 neck_at = 29.32
 neck_base = 4.93
+# C.I.P. 17 Hornet: alpha 50 degrees (the AECC drawing 04-035-BBC-57W reads 21).
+shoulder_angle = 25
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf"]
 neck = 4.9
 case_length = 34.3
 overall_length = 43.69
@@ -37,11 +40,6 @@ sources = ["https://municion.org/producto/17-hornet/"]
 [primer]
 size = "small-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# C.I.P. 17 Hornet: alpha 50 degrees (the AECC drawing 04-035-BBC-57W reads 21).
-degrees = 25
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

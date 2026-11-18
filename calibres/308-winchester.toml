@@ -19,6 +19,9 @@ shoulder = 11.5
 shoulder_at = 39.62
 neck_at = 43.48
 neck_base = 8.72
+# C.I.P. 308 Win.
+shoulder_angle = 20
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 neck = 8.7
 case_length = 51.2
 overall_length = 71.12
@@ -35,11 +38,6 @@ sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
-
-[shoulder_angle]
-# C.I.P. 308 Win.
-degrees = 20
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
 
 [case_head]
 # C.I.P. 308 Win.

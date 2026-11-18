@@ -23,6 +23,9 @@ shoulder = 13.0
 shoulder_at = 36.4
 neck_at = 40.05
 neck_base = 11.85
+# C.I.P. 11,15 x 60 R
+shoulder_angle = 8.95
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page53.pdf"]
 neck = 11.85
 case_length = 60.35
 overall_length = 78.0
@@ -39,11 +42,6 @@ sources = ["https://en.wikipedia.org/wiki/11×60mm_Mauser"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/11×60mm_Mauser"]
-
-[shoulder_angle]
-# C.I.P. 11,15 x 60 R
-degrees = 8.95
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page53.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

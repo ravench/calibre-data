@@ -20,6 +20,9 @@ shoulder = 13.82
 shoulder_at = 54.9
 neck_at = 60.31
 neck_base = 8.78
+# C.I.P. 300 Lapua Mag.
+shoulder_angle = 25
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page116.pdf"]
 neck = 8.73
 case_length = 69.73
 overall_length = 94.5
@@ -36,11 +39,6 @@ sources = ["https://en.wikipedia.org/wiki/.300_Lapua_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.300_Lapua_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 300 Lapua Mag.
-degrees = 25
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page116.pdf"]
 
 [case_head]
 # C.I.P. 300 Lapua Mag.

@@ -18,6 +18,9 @@ shoulder = 13.72
 shoulder_at = 44.84
 neck_at = 51.06
 neck_base = 11.64
+# AECC drawing on municion.org: SØ 13.39, NØ 11.64, SL 45.00, NL 16.00, CL 67.22.
+shoulder_angle = 8.0
+cite.shoulder_angle = ["https://municion.org/producto/425-westley-richards-magnum/"]
 neck = 11.58
 case_length = 67.06
 overall_length = 83.82
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 596"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.39, NØ 11.64, SL 45.00, NL 16.00, CL 67.22.
-degrees = 8.0
-sources = ["https://municion.org/producto/425-westley-richards-magnum/"]
 
 [case_head]
 # AECC drawing 11-067-BRC-010 (municion.org): RT 1.12, HL 3.52, GØ 10.39, GW 1.00, HØ 13.77; ramp angle from HL = RT +

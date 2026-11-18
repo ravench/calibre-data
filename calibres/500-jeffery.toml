@@ -22,6 +22,9 @@ shoulder = 15.4
 shoulder_at = 57.61
 neck_at = 61.52
 neck_base = 13.67
+# C.I.P. 500 Jeffery
+shoulder_angle = 12.6
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page153.pdf"]
 neck = 13.7
 case_length = 70.0
 overall_length = 88.0
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.500_Jeffery"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.500_Jeffery"]
-
-[shoulder_angle]
-# C.I.P. 500 Jeffery
-degrees = 12.6
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page153.pdf"]
 
 [case_head]
 # C.I.P. ?

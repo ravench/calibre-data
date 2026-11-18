@@ -20,6 +20,8 @@ shoulder = 14.38
 shoulder_at = 62.23
 neck_at = 67.66
 neck_base = 8.61
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 28.0
 neck = 8.59
 case_length = 75.95
 overall_length = 95.25
@@ -33,11 +35,6 @@ sources = ["book:cotw-18 p. 393"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
-
-[shoulder_angle]
-# Half the cone angle alpha on the C.I.P. sheet.
-degrees = 28.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-pegasus-en.pdf"]
 
 [case_head]
 # R and the extractor groove on the C.I.P. sheet.

@@ -22,6 +22,9 @@ shoulder = 11.54
 shoulder_at = 23.42
 neck_at = 27.28
 neck_base = 10.62
+# C.I.P. 38-40 Win.
+shoulder_angle = 6.8
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page98.pdf"]
 neck = 10.58
 case_length = 33.1
 overall_length = 40.0
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.38-40_Winchester"]
 [primer]
 size = "large-pistol"
 sources = ["https://www.starlinebrass.com/38-40-brass"]
-
-[shoulder_angle]
-# C.I.P. 38-40 Win.
-degrees = 6.8
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page98.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

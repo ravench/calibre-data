@@ -19,6 +19,9 @@ shoulder = 11.05
 shoulder_at = 44.57
 neck_at = 50.5
 neck_base = 7.28
+# AECC drawing on municion.org: SØ 10.76, NØ 7.28, SL 44.30, NL 6.65, CL 56.88.
+shoulder_angle = 16.4
+cite.shoulder_angle = ["https://municion.org/producto/244-halger-magnum-rimless/"]
 neck = 7.29
 case_length = 57.15
 overall_length = 77.22
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 615"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.76, NØ 7.28, SL 44.30, NL 6.65, CL 56.88.
-degrees = 16.4
-sources = ["https://municion.org/producto/244-halger-magnum-rimless/"]
 
 [case_head]
 # from the 6.5x57 mm case; C.I.P. 6,5 x 57

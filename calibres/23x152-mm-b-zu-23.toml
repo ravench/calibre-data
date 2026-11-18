@@ -20,6 +20,8 @@ shoulder = 31.65
 shoulder_at = 112.04
 neck_at = 132.6
 neck_base = 23.73
+# AECC drawing 23-152-BFC-010 on municion.org: SØ 31.65, NØ 23.73, SL 111.25, NL 19.40, CL 151.21, TL 236.07.
+shoulder_angle = 10.9
 neck = 23.73
 case_length = 152.0
 overall_length = 236.07
@@ -30,11 +32,6 @@ sources = ["https://municion.org/producto/23-x-152-b-russian-zu-or-zsu-anti-airc
 # The ZU-23-2 entered service in 1960.
 year = 1960
 sources = ["https://en.wikipedia.org/wiki/ZU-23-2"]
-
-[shoulder_angle]
-# AECC drawing 23-152-BFC-010 on municion.org: SØ 31.65, NØ 23.73, SL 111.25, NL 19.40, CL 151.21, TL 236.07.
-degrees = 10.9
-sources = ["https://municion.org/producto/23-x-152-b-russian-zu-or-zsu-anti-aircraft/"]
 
 [case_head]
 # The AECC drawing 23-152-BFC-010 (municion.org): RØ 33.33, HØ 33.24, LØ 34.57, RT 3.88, GØ 27.80, GW 2.20,

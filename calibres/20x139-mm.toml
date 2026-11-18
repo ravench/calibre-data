@@ -17,6 +17,9 @@ shoulder = 27.48
 shoulder_at = 115.2
 neck_at = 126.7
 neck_base = 21.45
+# AECC drawing 20-139-BGC-010 on municion.org: SØ 27.48, NØ 21.45, SL 115.00, NL 12.30, CL 138.80, TL 213.00.
+shoulder_angle = 14.7
+cite.shoulder_angle = ["https://municion.org/producto/20-x-139-hispano-hs-820-a-rh-202-m-693-f1/"]
 neck = 21.49
 case_length = 139.0
 overall_length = 213.0
@@ -33,11 +36,6 @@ sources = [
 [introduced]
 unknown = "the sources date the HS 820 only to after 1945; the later Rh 202 reached units in 1972"
 sources = ["https://en.wikipedia.org/wiki/Hispano-Suiza_HS.820", "https://en.wikipedia.org/wiki/Rheinmetall_Mk_20_Rh-202"]
-
-[shoulder_angle]
-# AECC drawing 20-139-BGC-010 on municion.org: SØ 27.48, NØ 21.45, SL 115.00, NL 12.30, CL 138.80, TL 213.00.
-degrees = 14.7
-sources = ["https://municion.org/producto/20-x-139-hispano-hs-820-a-rh-202-m-693-f1/"]
 
 [case_head]
 # Rapid Fire's table gives the rim 3.5 mm thick, 0.46 mm more than the drawing: the whole head is the

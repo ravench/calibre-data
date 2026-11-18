@@ -19,6 +19,9 @@ shoulder = 14.22
 shoulder_at = 59.01
 neck_at = 61.26
 neck_base = 12.29
+# AECC drawing on municion.org: SØ 14.15, NØ 12.29, SL 58.65, NL 12.40, CL 73.30.
+shoulder_angle = 22.5
+cite.shoulder_angle = ["https://municion.org/producto/450-dakota/"]
 neck = 12.32
 case_length = 73.66
 overall_length = 95.0
@@ -33,11 +36,6 @@ sources = ["book:cotw-18 p. 435", "https://www.ballisticstudies.com/Knowledgebas
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 14.15, NØ 12.29, SL 58.65, NL 12.40, CL 73.30.
-degrees = 22.5
-sources = ["https://municion.org/producto/450-dakota/"]
 
 [case_head]
 # C.I.P. 416 Rigby: R, E, E1, delta. Dakota made this round on the .416 Rigby case, blown out (COTW 18 p. 435), and

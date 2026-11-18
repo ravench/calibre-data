@@ -22,6 +22,9 @@ shoulder = 10.21
 shoulder_at = 43.75
 neck_at = 48.19
 neck_base = 7.11
+# AECC drawing on municion.org: SØ 10.04, NØ 7.11, SL 43.70, NL 11.50, CL 59.64.
+shoulder_angle = 18.3
+cite.shoulder_angle = ["https://municion.org/producto/6-mm-us-lee-navy/"]
 neck = 7.06
 case_length = 59.69
 overall_length = 78.99
@@ -35,11 +38,6 @@ sources = ["book:cotw-18 p. 186"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 249"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.04, NØ 7.11, SL 43.70, NL 11.50, CL 59.64.
-degrees = 18.3
-sources = ["https://municion.org/producto/6-mm-us-lee-navy/"]
 
 [case_head]
 # AECC drawing 06-060-BGC-010 (municion.org): RT 1.40, HL 3.00, GØ 9.65, GW 0.90, HØ 11.25; ramp angle from HL = RT +

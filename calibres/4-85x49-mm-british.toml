@@ -22,6 +22,9 @@ shoulder = 8.97
 shoulder_at = 36.12
 neck_at = 40.44
 neck_base = 5.59
+# AECC drawing on municion.org: SØ 8.97, NØ 5.59, SL 36.20, NL 8.45, CL 48.97.
+shoulder_angle = 21.4
+cite.shoulder_angle = ["https://municion.org/producto/485-x-49-british-xpl/"]
 neck = 5.59
 case_length = 48.89
 overall_length = 62.36
@@ -36,11 +39,6 @@ sources = ["book:cotw-18 p. 532"]
 [primer]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/4.85×49mm"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 8.97, NØ 5.59, SL 36.20, NL 8.45, CL 48.97.
-degrees = 21.4
-sources = ["https://municion.org/producto/485-x-49-british-xpl/"]
 
 [case_head]
 # .041 in. (COTW); groove from the AECC drawing 05-049-BGC-010 (municion.org): RT 1.13, HL 3.10, GØ 8.35, GW 0.90,

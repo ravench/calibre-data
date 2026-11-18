@@ -19,6 +19,9 @@ shoulder = 10.2
 shoulder_at = 33.05
 neck_at = 35.91
 neck_base = 7.77
+# C.I.P. 6,8 mm Rem. SPC
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf"]
 neck = 7.8
 case_length = 42.8
 overall_length = 57.4
@@ -35,11 +38,6 @@ sources = ["https://en.wikipedia.org/wiki/6.8mm_Remington_SPC"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/6.8mm_Remington_SPC"]
-
-[shoulder_angle]
-# C.I.P. 6,8 mm Rem. SPC
-degrees = 23
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf"]
 
 [case_head]
 # C.I.P. 6,8 mm Rem. SPC

@@ -18,6 +18,9 @@ shoulder = 13.58
 shoulder_at = 39.07
 neck_at = 43.79
 neck_base = 8.13
+# C.I.P. 7 mm Rem. SA Ultra Mag.
+shoulder_angle = 30
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page40.pdf"]
 neck = 8.1
 case_length = 51.7
 overall_length = 71.8
@@ -34,11 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/7mm_Remington_Short_Action_Ultra_Magnu
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/7mm_Remington_Short_Action_Ultra_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 7 mm Rem. SA Ultra Mag.
-degrees = 30
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page40.pdf"]
 
 [case_head]
 # C.I.P. 7 mm Rem. SA Ultra Mag.

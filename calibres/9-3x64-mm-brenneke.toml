@@ -21,6 +21,9 @@ shoulder = 12.05
 shoulder_at = 52.09
 neck_at = 55.28
 neck_base = 10.04
+# C.I.P. 9,3 x 64 Brenneke
+shoulder_angle = 17.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page70.pdf"]
 neck = 10.04
 case_length = 64.0
 overall_length = 85.6
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/9.3×64mm_Brenneke"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/9.3×64mm_Brenneke"]
-
-[shoulder_angle]
-# C.I.P. 9,3 x 64 Brenneke
-degrees = 17.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page70.pdf"]
 
 [case_head]
 # C.I.P. 9,3 x 64 Brenneke

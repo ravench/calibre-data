@@ -20,6 +20,8 @@ shoulder = 13.97
 shoulder_at = 72.39
 neck_at = 77.47
 neck_base = 12.24
+# C.I.P. 450 No.2 N.E. 3''1/2 Eley
+shoulder_angle = 9.7
 neck = 12.24
 case_length = 88.9
 overall_length = 109.98
@@ -34,11 +36,6 @@ sources = ["https://en.wikipedia.org/wiki/.450_No_2_Nitro_Express"]
 # The table gives a .254 in. Berdan primer.
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# C.I.P. 450 No.2 N.E. 3''1/2 Eley
-degrees = 9.7
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page116.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

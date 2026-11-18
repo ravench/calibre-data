@@ -18,6 +18,9 @@ shoulder = 11.68
 shoulder_at = 40.97
 neck_at = 45.22
 neck_base = 8.82
+# AECC drawing on municion.org: SØ 11.85, NØ 8.82, SL 40.80, NL 6.60, CL 51.65.
+shoulder_angle = 19.6
+cite.shoulder_angle = ["https://municion.org/producto/8-x-52-r-siamese-type-66/"]
 neck = 8.81
 case_length = 51.82
 overall_length = 75.18
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 552"]
 [primer]
 # 5.37 mm, 3 specimens
 size = "large-rifle"
-sources = ["https://municion.org/producto/8-x-52-r-siamese-type-66/"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.85, NØ 8.82, SL 40.80, NL 6.60, CL 51.65.
-degrees = 19.6
 sources = ["https://municion.org/producto/8-x-52-r-siamese-type-66/"]
 
 [case_head]

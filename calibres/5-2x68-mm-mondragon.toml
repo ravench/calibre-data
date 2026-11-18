@@ -19,6 +19,9 @@ shoulder = 11.43
 shoulder_at = 61.6
 neck_at = 63.76
 neck_base = 6.31
+# AECC drawing on municion.org: SØ 11.39, NØ 6.31, SL 62.30, NL 3.55, CL 68.01.
+shoulder_angle = 49.6
+cite.shoulder_angle = ["https://municion.org/producto/52-x-676-mondragon-original/"]
 neck = 6.17
 case_length = 67.31
 overall_length = 77.72
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 532"]
 [primer]
 # 5.27 mm, 3 specimens
 size = "large-rifle"
-sources = ["https://municion.org/producto/52-x-676-mondragon-original/"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.39, NØ 6.31, SL 62.30, NL 3.55, CL 68.01.
-degrees = 49.6
 sources = ["https://municion.org/producto/52-x-676-mondragon-original/"]
 
 [case_head]

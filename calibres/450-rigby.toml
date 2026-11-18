@@ -22,6 +22,8 @@ shoulder = 14.5
 shoulder_at = 59.5
 neck_at = 60.69
 neck_base = 12.5
+# C.I.P. 450 Rigby
+shoulder_angle = 40
 neck = 12.38
 case_length = 73.5
 overall_length = 95.25
@@ -36,11 +38,6 @@ sources = ["https://en.wikipedia.org/wiki/.450_Rigby"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.450_Rigby"]
-
-[shoulder_angle]
-# C.I.P. 450 Rigby
-degrees = 40
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page150.pdf"]
 
 [case_head]
 # C.I.P. 450 Rigby

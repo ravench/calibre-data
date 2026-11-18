@@ -17,6 +17,9 @@ shoulder = 11.74
 shoulder_at = 37.85
 neck_at = 42.38
 neck_base = 6.5
+# SAAMI drawing
+shoulder_angle = 30
+cite.shoulder_angle = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=76"]
 neck = 6.5
 case_length = 48.77
 overall_length = 68.58
@@ -34,11 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/.22_Creedmoor"]
 [primer]
 size = "large-rifle"
 sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
-
-[shoulder_angle]
-# SAAMI drawing
-degrees = 30
-sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=76"]
 
 [case_head]
 # 6.5 Creedmoor case necked down; C.I.P. 6,5 Creedmoor

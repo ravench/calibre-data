@@ -17,6 +17,8 @@ shoulder = 11.74
 shoulder_at = 37.85
 neck_at = 41.94
 neck_base = 7.01
+shoulder_angle = 30
+cite.shoulder_angle = ["https://chuckhawks.com/6mm_Creedmoor.html"]
 neck = 7.01
 case_length = 48.77
 overall_length = 71.12
@@ -30,10 +32,6 @@ sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
-
-[shoulder_angle]
-degrees = 30
-sources = ["https://chuckhawks.com/6mm_Creedmoor.html"]
 
 [case_head]
 # SAAMI 6mm Creedmoor

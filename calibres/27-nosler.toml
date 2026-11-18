@@ -19,6 +19,9 @@ shoulder = 13.42
 shoulder_at = 53.56
 neck_at = 57.45
 neck_base = 7.98
+# Nosler's "27 Nosler Rifle Cartridge" drawing: 35 deg, shoulder at 2.109 in, neck at 2.262 in
+shoulder_angle = 35
+cite.shoulder_angle = ["https://www.nosler.com/"]
 neck = 7.98
 case_length = 65.79
 overall_length = 84.84
@@ -32,11 +35,6 @@ sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
-
-[shoulder_angle]
-# Nosler's "27 Nosler Rifle Cartridge" drawing: 35 deg, shoulder at 2.109 in, neck at 2.262 in
-degrees = 35
-sources = ["https://www.nosler.com/"]
 
 [case_head]
 # SAAMI 27 Nosler: rim thickness 0.050, groove 0.475 at 32 degrees, groove width 0.037,

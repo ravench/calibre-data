@@ -14,6 +14,9 @@ rim = 12.01
 base = 12.7
 shoulder = 12.14
 shoulder_at = 54.8
+# SAAMI drawing
+shoulder_angle = 35
+cite.shoulder_angle = ["https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"]
 neck = 7.54
 case_length = 65.28
 overall_length = 84.84
@@ -31,11 +34,6 @@ sources = ["https://hodgdonpowderco.com/articles/loading-the-6-5-weatherby-rpm/"
 [primer]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# SAAMI drawing
-degrees = 35
-sources = ["https://web.archive.org/web/2022/https://saami.org/wp-content/uploads/2020/10/6.5-WBY-RPM-Public-Introduction-Orig-2020-09-27.pdf"]
 
 [case_head]
 # SAAMI 6.5 Wby RPM: rim thickness .054, groove .409 at 40 degrees, groove width .040,

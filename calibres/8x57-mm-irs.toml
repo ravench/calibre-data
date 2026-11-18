@@ -19,6 +19,8 @@ shoulder = 10.95
 shoulder_at = 46
 neck_at = 48.85
 neck_base = 9.08
+# C.I.P. 8 x 57 IRS
+shoulder_angle = 18.2
 neck = 9.08
 case_length = 57.0
 overall_length = 82.0
@@ -34,11 +36,6 @@ sources = ["https://municion.org/producto/8-x-57-r-jrs-mauser/"]
 [primer]
 size = "large-rifle"
 sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
-
-[shoulder_angle]
-# C.I.P. 8 x 57 IRS
-degrees = 18.2
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page35.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

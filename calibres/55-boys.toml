@@ -20,6 +20,9 @@ shoulder = 18.03
 shoulder_at = 75.0
 neck_at = 82.11
 neck_base = 15.51
+# AECC drawing 14-099-BFC-020
+shoulder_angle = 10
+cite.shoulder_angle = ["https://municion.org/producto/55-boys/"]
 neck = 15.51
 case_length = 99.11
 overall_length = 133.64
@@ -33,11 +36,6 @@ sources = ["https://municion.org/producto/55-boys/"]
 [primer]
 # 7.61 mm, 7 specimens
 size = "bmg-35"
-sources = ["https://municion.org/producto/55-boys/"]
-
-[shoulder_angle]
-# AECC drawing 14-099-BFC-020
-degrees = 10
 sources = ["https://municion.org/producto/55-boys/"]
 
 [case_head]

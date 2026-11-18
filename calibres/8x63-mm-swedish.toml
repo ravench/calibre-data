@@ -21,6 +21,9 @@ shoulder = 11.58
 shoulder_at = 50.98
 neck_at = 54.99
 neck_base = 9.1
+# AECC drawing on municion.org: SØ 11.51, NØ 9.10, SL 50.80, NL 8.00, CL 62.81.
+shoulder_angle = 16.7
+cite.shoulder_angle = ["https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
 neck = 9.04
 case_length = 62.99
 overall_length = 85.34
@@ -35,11 +38,6 @@ sources = ["book:cotw-18 p. 556"]
 # The infobox gives a Berdan primer of the large rifle size.
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/8×63mm_patron_m/32"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.51, NØ 9.10, SL 50.80, NL 8.00, CL 62.81.
-degrees = 16.7
-sources = ["https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
 
 [case_head]
 # AECC drawing 08-063-BGC-010 (municion.org): RT 1.42, HL 3.25, GØ 10.34, GW 1.00, HØ 12.43; ramp angle from HL = RT +

@@ -21,6 +21,9 @@ shoulder = 7.4
 shoulder_at = 12.07
 neck_at = 14
 neck_base = 6.26
+# C.I.P. 5,45x18
+shoulder_angle = 16.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page2.pdf"]
 neck = 6.26
 case_length = 18.03
 overall_length = 25.0
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/5.45×18mm"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/5.45×18mm"]
-
-[shoulder_angle]
-# C.I.P. 5,45x18
-degrees = 16.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page2.pdf"]
 
 [case_head]
 # C.I.P. 5,45x18

@@ -22,6 +22,9 @@ shoulder = 10.0
 shoulder_at = 39.01
 neck_at = 41.03
 neck_base = 6.4
+# C.I.P. 224 Weath. Mag.
+shoulder_angle = 41.7
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page8.pdf"]
 neck = 6.4
 case_length = 48.8
 overall_length = 59.2
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.224_Weatherby_Magnum"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.224_Weatherby_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 224 Weath. Mag.
-degrees = 41.7
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page8.pdf"]
 
 [case_head]
 # C.I.P. ?

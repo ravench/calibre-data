@@ -19,6 +19,11 @@ shoulder = 13.0
 shoulder_at = 34.44
 neck_at = 40.59
 neck_base = 11.95
+# AECC drawing on municion.org: SØ 12.76, NØ 11.95, SL 35.00, NL 19.10, CL 60.25. The half angle runs between the
+# book's diameters over the drawing's shoulder length (6.15 mm): the specimen's own cone (3.8 degrees) would leave a
+# neck 2.8 mm shorter than the specimen's, over the 1.5 mm the rule allows.
+shoulder_angle = 5.5
+cite.shoulder_angle = ["https://municion.org/producto/112-x-60-schuler/"]
 neck = 11.81
 case_length = 59.69
 overall_length = 72.64
@@ -35,13 +40,6 @@ sources = ["book:cotw-18 p. 649"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.76, NØ 11.95, SL 35.00, NL 19.10, CL 60.25. The half angle runs between the
-# book's diameters over the drawing's shoulder length (6.15 mm): the specimen's own cone (3.8 degrees) would leave a
-# neck 2.8 mm shorter than the specimen's, over the 1.5 mm the rule allows.
-degrees = 5.5
-sources = ["https://municion.org/producto/112-x-60-schuler/"]
 
 [case_head]
 # AECC drawing 11-060-BRC-010 (municion.org): RT 1.26, HL 3.90, GØ 10.25, GW 1.46, HØ 13.00; ramp angle from HL = RT +

@@ -17,6 +17,9 @@ shoulder = 13.41
 shoulder_at = 53.72
 neck_at = 57.05
 neck_base = 8.74
+# Nosler's "30 Nosler Rifle Cartridges" drawing: 35 deg, shoulder .528 in at 2.115 in, neck .344 in at 2.246 in, case 2.556 in
+shoulder_angle = 35
+cite.shoulder_angle = ["https://www.nosler.com/"]
 neck = 8.74
 case_length = 64.92
 overall_length = 84.84
@@ -30,11 +33,6 @@ sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
-
-[shoulder_angle]
-# Nosler's "30 Nosler Rifle Cartridges" drawing: 35 deg, shoulder .528 in at 2.115 in, neck .344 in at 2.246 in, case 2.556 in
-degrees = 35
-sources = ["https://www.nosler.com/"]
 
 [case_head]
 # same case head as the 26 Nosler; C.I.P. 26 Nosler (no C.I.P. 30 Nosler sheet).

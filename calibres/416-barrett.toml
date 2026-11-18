@@ -18,6 +18,9 @@ shoulder = 18.5
 shoulder_at = 63.55
 neck_at = 70.83
 neck_base = 11.78
+# AECC drawing 11-083-BGC-010
+shoulder_angle = 24.7
+cite.shoulder_angle = ["https://municion.org/producto/416-barrett-sniper/"]
 neck = 11.6
 case_length = 83.0
 overall_length = 118.0
@@ -34,11 +37,6 @@ sources = ["https://en.wikipedia.org/wiki/.416_Barrett"]
 [primer]
 # 7.77 mm, 2 specimens
 size = "bmg-35"
-sources = ["https://municion.org/producto/416-barrett-sniper/"]
-
-[shoulder_angle]
-# AECC drawing 11-083-BGC-010
-degrees = 24.7
 sources = ["https://municion.org/producto/416-barrett-sniper/"]
 
 [case_head]

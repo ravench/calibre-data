@@ -20,6 +20,8 @@ shoulder = 11.95
 shoulder_at = 41.3
 neck_at = 46.8
 neck_base = 9.2
+shoulder_angle = 16.5
+cite.shoulder_angle = ["https://en.wikipedia.org/wiki/8%C3%9758mmR_Danish_Krag"]
 neck = 8.98
 case_length = 58.0
 overall_length = 78.0
@@ -40,10 +42,6 @@ sources = ["https://en.wikipedia.org/wiki/8×58mmR_Danish_Krag"]
 # 5.42 mm, 8 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/8-x-58-r-danish-krag-jorgensen-m-1889/"]
-
-[shoulder_angle]
-degrees = 16.5
-sources = ["https://en.wikipedia.org/wiki/8%C3%9758mmR_Danish_Krag"]
 
 [case_head]
 # .060 in.

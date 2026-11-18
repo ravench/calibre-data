@@ -19,6 +19,9 @@ shoulder = 13.5
 shoulder_at = 38.55
 neck_at = 44
 neck_base = 11.8
+# AECC drawing 11-059-BBC-010
+shoulder_angle = 8.7
+cite.shoulder_angle = ["https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"]
 neck = 11.9
 case_length = 59.0
 overall_length = 76.0
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/11×59mmR_Gras"]
 # between the large and the .254 in. Nitro Berdan primer, perhaps the .241 in. one. Unverified.
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing 11-059-BBC-010
-degrees = 8.7
-sources = ["https://municion.org/producto/11-x-59-r-french-gras-m-1874-79-83/"]
 
 [case_head]
 # .075 in.

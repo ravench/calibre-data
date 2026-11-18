@@ -17,6 +17,9 @@ rim = 16.33
 base = 14.48
 shoulder = 13.46
 shoulder_at = 57.1
+# AECC drawing on municion.org: SØ 13.49, NØ 12.75, SL 57.00, NL 16.50, CL 76.10.
+shoulder_angle = 8.1
+cite.shoulder_angle = ["https://municion.org/producto/476-nitro-express-3-flanged/"]
 neck = 12.9
 case_length = 76.2
 overall_length = 95.76
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 602"]
 # The table gives a .254 in. Berdan primer.
 size = "berdan-nitro"
 sources = ["book:cotw-18 p. 609"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.49, NØ 12.75, SL 57.00, NL 16.50, CL 76.10.
-degrees = 8.1
-sources = ["https://municion.org/producto/476-nitro-express-3-flanged/"]
 
 [case_head]
 # .055 in.

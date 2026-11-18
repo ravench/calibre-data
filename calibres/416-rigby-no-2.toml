@@ -19,6 +19,8 @@ shoulder = 13.72
 shoulder_at = 59.73
 neck_at = 60.92
 neck_base = 11.35
+# C.I.P. 416 Rigby N°2: alpha 89°45'32", the same cone as the .416 Rigby.
+shoulder_angle = 44.9
 neck = 11.33
 case_length = 73.66
 overall_length = 95.25
@@ -34,11 +36,6 @@ sources = ["https://www.thefirearmblog.com/blog/2019/06/03/john-rigby-co-release
 # The C.I.P. sheet gives none; assumed from the .416 Rigby.
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# C.I.P. 416 Rigby N°2: alpha 89°45'32", the same cone as the .416 Rigby.
-degrees = 44.9
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/416rigbyn2-180516-en.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

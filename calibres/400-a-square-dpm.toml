@@ -16,6 +16,11 @@ rim = 13.46
 base = 12.95
 shoulder = 12.48
 shoulder_at = 59.1
+# municion.org's profile drawing: shoulder 12.48 to neck 11.06 over 1.4 mm (57.7 to 59.1 mm on its 71.0 case).
+# The side photo on the same page gives about 20 deg on both edges: the cone is only about 16 px there and
+# its rounded corners spread it out, so the photo reads low.
+shoulder_angle = 26.9
+cite.shoulder_angle = ["https://municion.org/producto/400-a-square-dpm-belted/"]
 neck = 11.06
 case_length = 72.39
 overall_length = 91.44
@@ -35,13 +40,6 @@ sources = ["book:cotw-18 p. 418"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
-
-[shoulder_angle]
-# municion.org's profile drawing: shoulder 12.48 to neck 11.06 over 1.4 mm (57.7 to 59.1 mm on its 71.0 case).
-# The side photo on the same page gives about 20 deg on both edges: the cone is only about 16 px there and
-# its rounded corners spread it out, so the photo reads low.
-degrees = 26.9
-sources = ["https://municion.org/producto/400-a-square-dpm-belted/"]
 
 [case_head]
 # from the .375 H&H Magnum case; C.I.P. 375 H&H Mag.

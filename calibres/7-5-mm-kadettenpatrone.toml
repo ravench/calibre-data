@@ -29,6 +29,9 @@ shoulder = 11.65
 shoulder_at = 44.5
 neck_at = 47.45
 neck_base = 8.47
+# Same case as the GP 90/23: AECC drawing 08-054-BGC-085.
+shoulder_angle = 30.0
+cite.shoulder_angle = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
 neck = 8.47
 case_length = 54.6
 overall_length = 77.5
@@ -45,11 +48,6 @@ sources = ["https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/50000184.pdf
 # GP 90 family; Raven measured a 5.4 mm primer
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
-
-[shoulder_angle]
-# Same case as the GP 90/23: AECC drawing 08-054-BGC-085.
-degrees = 30.0
-sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
 
 [case_head]
 # Same case as the GP 90/23: its head from the AECC drawing 08-054-BGC-085 (municion.org).

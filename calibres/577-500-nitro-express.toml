@@ -19,6 +19,9 @@ shoulder = 14.86
 shoulder_at = 59.96
 neck_at = 64
 neck_base = 13.56
+# AECC drawing on municion.org: SØ 14.83, NØ 13.56, SL 59.85, NL 15.50, CL 79.39.
+shoulder_angle = 8.9
+cite.shoulder_angle = ["https://municion.org/producto/577-500-express-3-1-8/"]
 neck = 13.36
 case_length = 79.5
 overall_length = 95.0
@@ -37,11 +40,6 @@ sources = ["book:cotw-18 p. 603"]
 size = "berdan-nitro"
 diameter = 6.38
 sources = ["book:cotw-18 p. 609"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 14.83, NØ 13.56, SL 59.85, NL 15.50, CL 79.39.
-degrees = 8.9
-sources = ["https://municion.org/producto/577-500-express-3-1-8/"]
 
 [case_head]
 # .055 in. (COTW); the AECC drawing 13-079-BBC-020 (municion.org) has RT 1.45.

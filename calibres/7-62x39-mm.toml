@@ -19,6 +19,9 @@ shoulder = 10.07
 shoulder_at = 30.5
 neck_at = 32.73
 neck_base = 8.56
+# C.I.P. 7,62 x 39
+shoulder_angle = 16.4
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf"]
 neck = 8.56
 case_length = 38.81
 overall_length = 55.88
@@ -32,11 +35,6 @@ sources = ["https://en.wikipedia.org/wiki/7.62×39mm"]
 [primer]
 size = "large-rifle"
 sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
-
-[shoulder_angle]
-# C.I.P. 7,62 x 39
-degrees = 16.4
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf"]
 
 [case_head]
 # C.I.P. 7,62 x 39

@@ -25,6 +25,8 @@ shoulder = 10.87
 shoulder_at = 43.79
 neck_at = 47.35
 neck_base = 8.23
+# C.I.P. 275 H.V. Rigby
+shoulder_angle = 20.3
 neck = 8.23
 case_length = 56.9
 overall_length = 77.98
@@ -42,11 +44,6 @@ sources = ["https://municion.org/producto/275-rigby/"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 608"]
-
-[shoulder_angle]
-# C.I.P. 275 H.V. Rigby
-degrees = 20.3
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page101.pdf"]
 
 [case_head]
 # C.I.P. 275 H.V. Rigby

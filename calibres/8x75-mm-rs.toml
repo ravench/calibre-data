@@ -23,6 +23,8 @@ shoulder = 10.4
 shoulder_at = 66.2
 neck_at = 69.06
 neck_base = 9.08
+# C.I.P. 8 x 75 RS
+shoulder_angle = 13
 neck = 9.08
 case_length = 74.6
 overall_length = 96.0
@@ -39,11 +41,6 @@ sources = ["https://municion.org/producto/8-x-75-r-behr/"]
 # 5.10 mm, 6 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/8-x-75-r-s-behr/"]
-
-[shoulder_angle]
-# C.I.P. 8 x 75 RS
-degrees = 13
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page42.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

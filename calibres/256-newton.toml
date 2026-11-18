@@ -18,6 +18,9 @@ shoulder = 10.92
 shoulder_at = 47.73
 neck_at = 52.13
 neck_base = 7.47
+# AECC drawing on municion.org: SØ 10.73, NØ 7.47, SL 48.00, NL 9.85, CL 62.25.
+shoulder_angle = 20.3
+cite.shoulder_angle = ["https://municion.org/producto/256-newton/"]
 neck = 7.37
 case_length = 61.98
 overall_length = 86.36
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 191"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 249"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.73, NØ 7.47, SL 48.00, NL 9.85, CL 62.25.
-degrees = 20.3
-sources = ["https://municion.org/producto/256-newton/"]
 
 [case_head]
 # from the .30-06 case; C.I.P. 30-06 Spring.

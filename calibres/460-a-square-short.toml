@@ -18,6 +18,9 @@ shoulder = 14.22
 shoulder_at = 52.27
 neck_at = 54.4
 neck_base = 12.36
+# AECC drawing on municion.org: SØ 14.30, NØ 12.36, SL 52.00, NL 9.10, CL 63.23.
+shoulder_angle = 24.5
+cite.shoulder_angle = ["https://municion.org/producto/460-a-square-short-belted/"]
 neck = 12.29
 case_length = 63.5
 overall_length = 88.9
@@ -37,11 +40,6 @@ sources = ["book:cotw-18 p. 434"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 453"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 14.30, NØ 12.36, SL 52.00, NL 9.10, CL 63.23.
-degrees = 24.5
-sources = ["https://municion.org/producto/460-a-square-short-belted/"]
 
 [case_head]
 # from the .460 Weatherby Magnum case; C.I.P. sheet

@@ -24,6 +24,8 @@ shoulder = 11.54
 shoulder_at = 44.91
 neck_at = 49.27
 neck_base = 10.86
+# C.I.P. 40-82 Win.
+shoulder_angle = 4.5
 neck = 10.85
 case_length = 60.71
 overall_length = 70.23
@@ -39,11 +41,6 @@ sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
 # 5.05 mm, 8 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
-
-[shoulder_angle]
-# C.I.P. 40-82 Win.
-degrees = 4.5
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page102.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

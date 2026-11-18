@@ -17,6 +17,9 @@ shoulder = 11.85
 shoulder_at = 17.21
 neck_at = 19.35
 neck_base = 10.72
+# AECC drawing 10-023-BGC-050
+shoulder_angle = 15.4
+cite.shoulder_angle = ["https://municion.org/producto/400-cor-bon/"]
 neck = 10.7
 case_length = 22.8
 overall_length = 30.0
@@ -33,11 +36,6 @@ sources = ["https://en.wikipedia.org/wiki/.400_Cor-Bon"]
 [primer]
 size = "small-pistol"
 sources = ["https://www.starlinebrass.com/400-cor-bon-brass"]
-
-[shoulder_angle]
-# AECC drawing 10-023-BGC-050
-degrees = 15.4
-sources = ["https://municion.org/producto/400-cor-bon/"]
 
 [case_head]
 # .45 ACP case necked down; C.I.P. 45 Auto

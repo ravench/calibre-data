@@ -21,6 +21,9 @@ shoulder = 10.85
 shoulder_at = 51.8
 neck_at = 55.59
 neck_base = 8.96
+# C.I.P. 8 x 64 S
+shoulder_angle = 14
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page62.pdf"]
 neck = 8.96
 case_length = 64.0
 overall_length = 87.5
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/8×64mm_S"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/8×64mm_S"]
-
-[shoulder_angle]
-# C.I.P. 8 x 64 S
-degrees = 14
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page62.pdf"]
 
 [case_head]
 # C.I.P. 8 x 64 S

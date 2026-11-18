@@ -21,6 +21,9 @@ shoulder = 12.2
 shoulder_at = 53.35
 neck_at = 54
 neck_base = 11.51
+# C.I.P. 10,75 x 68: half the cone angle alpha 55°54'58"
+shoulder_angle = 28.0
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf"]
 neck = 11.51
 case_length = 68.0
 overall_length = 81.0
@@ -40,11 +43,6 @@ sources = ["book:cotw-18 p. 647"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
-
-[shoulder_angle]
-# C.I.P. 10,75 x 68: half the cone angle alpha 55°54'58"
-degrees = 28.0
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page74.pdf"]
 
 [case_head]
 # C.I.P. 10,75 x 68: R, E, E1, delta

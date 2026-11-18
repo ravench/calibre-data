@@ -19,6 +19,9 @@ shoulder = 9.16
 shoulder_at = 27.2
 neck_at = 28
 neck_base = 8.48
+# C.I.P. 300 AAC Blackout
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
 neck = 8.48
 case_length = 34.7
 overall_length = 57.4
@@ -36,11 +39,6 @@ sources = ["https://en.wikipedia.org/wiki/.300_AAC_Blackout"]
 [primer]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/.300_AAC_Blackout"]
-
-[shoulder_angle]
-# C.I.P. 300 AAC Blackout
-degrees = 23
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
 
 [case_head]
 # C.I.P. 300 AAC Blackout

@@ -18,6 +18,10 @@ shoulder = 11.73
 shoulder_at = 44.49
 neck_at = 49.89
 neck_base = 8.83
+# The drawing is of the .303 Jeffery Magnum semi-rimmed, the same case (rim 14.15 over a 13.46 base).
+# AECC drawing on municion.org: SØ 11.60, NØ 8.83, SL 44.40, NL 9.80, CL 59.60.
+shoulder_angle = 14.4
+cite.shoulder_angle = ["https://municion.org/producto/303-jeffery-magnum-semi-rimmed/"]
 neck = 8.76
 case_length = 59.69
 overall_length = 82.55
@@ -31,12 +35,6 @@ sources = ["book:cotw-18 p. 585"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# The drawing is of the .303 Jeffery Magnum semi-rimmed, the same case (rim 14.15 over a 13.46 base).
-# AECC drawing on municion.org: SØ 11.60, NØ 8.83, SL 44.40, NL 9.80, CL 59.60.
-degrees = 14.4
-sources = ["https://municion.org/producto/303-jeffery-magnum-semi-rimmed/"]
 
 [case_head]
 # AECC drawing 08-060-BDC-010 (municion.org): RT 1.18, HL 2.65, GØ 12.20, GW 1.00, HØ 13.40; ramp angle from HL = RT +

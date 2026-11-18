@@ -16,6 +16,9 @@ shoulder = 26.54
 shoulder_at = 84.74
 neck_at = 93.3
 neck_base = 20.82
+# AECC drawing 20-102-BGE-010 on municion.org: SØ 26.54, NØ 20.82, SL 84.10, NL 8.70, CL 101.36, TL 167.17.
+shoulder_angle = 18.5
+cite.shoulder_angle = ["https://municion.org/producto/20-x-102-us-vulcan-m-50-series/"]
 neck = 20.6
 case_length = 102.0
 overall_length = 168.0
@@ -30,11 +33,6 @@ sources = [
 [introduced]
 year = 1959
 sources = ["https://en.wikipedia.org/wiki/M61_Vulcan"]
-
-[shoulder_angle]
-# AECC drawing 20-102-BGE-010 on municion.org: SØ 26.54, NØ 20.82, SL 84.10, NL 8.70, CL 101.36, TL 167.17.
-degrees = 18.5
-sources = ["https://municion.org/producto/20-x-102-us-vulcan-m-50-series/"]
 
 [case_head]
 # The AECC drawing 20-102-BGE-010 (municion.org): RØ 29.44, HØ 29.16, RT 2.46, GØ 25.38, GW 2.96,

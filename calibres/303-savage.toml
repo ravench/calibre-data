@@ -21,6 +21,9 @@ shoulder = 10.5
 shoulder_at = 34.33
 neck_at = 37.54
 neck_base = 8.66
+# C.I.P. 303 Savage
+shoulder_angle = 16
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf"]
 neck = 8.5
 case_length = 51.2
 overall_length = 64.0
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/.303_Savage"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.303_Savage"]
-
-[shoulder_angle]
-# C.I.P. 303 Savage
-degrees = 16
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

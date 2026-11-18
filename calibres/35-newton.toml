@@ -18,6 +18,9 @@ shoulder = 12.65
 shoulder_at = 51.41
 neck_at = 55.21
 neck_base = 9.76
+# AECC drawing on municion.org: SØ 12.67, NØ 9.76, SL 51.30, NL 8.80, CL 63.90.
+shoulder_angle = 21.0
+cite.shoulder_angle = ["https://municion.org/producto/35-newton/"]
 neck = 9.73
 case_length = 64.01
 overall_length = 85.09
@@ -34,11 +37,6 @@ sources = ["book:cotw-18 p. 209"]
 # The table row has lost its primer; large rifle, as on the .30 Newton.
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 12.67, NØ 9.76, SL 51.30, NL 8.80, CL 63.90.
-degrees = 21.0
-sources = ["https://municion.org/producto/35-newton/"]
 
 [case_head]
 # AECC drawing 09-064-BGC-040 (municion.org): RT 1.17, HL 3.10, GØ 11.65, GW 1.00, HØ 13.33; ramp angle from HL = RT +

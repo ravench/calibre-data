@@ -21,6 +21,9 @@ shoulder = 6.6
 shoulder_at = 20.22
 neck_at = 21.15
 neck_base = 5.72
+# C.I.P. 5 mm Rem. Mag.
+shoulder_angle = 25
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf"]
 neck = 5.7
 case_length = 25.9
 overall_length = 33.0
@@ -33,11 +36,6 @@ sources = [
 [introduced]
 year = 1969
 sources = ["https://en.wikipedia.org/wiki/5mm_Remington_Rimfire_Magnum"]
-
-[shoulder_angle]
-# C.I.P. 5 mm Rem. Mag.
-degrees = 25
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page3.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

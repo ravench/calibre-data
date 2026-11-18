@@ -21,6 +21,9 @@ shoulder = 10.9
 shoulder_at = 27.3
 neck_at = 31
 neck_base = 6.65
+# C.I.P. 6 mm PPC
+shoulder_angle = 30
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page14.pdf"]
 neck = 6.7
 case_length = 38.5
 overall_length = 53.3
@@ -37,11 +40,6 @@ sources = ["https://en.wikipedia.org/wiki/6mm_PPC"]
 [primer]
 size = "small-rifle"
 sources = ["https://en.wikipedia.org/wiki/6mm_PPC"]
-
-[shoulder_angle]
-# C.I.P. 6 mm PPC
-degrees = 30
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page14.pdf"]
 
 [case_head]
 # C.I.P. 6 mm PPC

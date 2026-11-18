@@ -24,6 +24,8 @@ shoulder = 14.05
 shoulder_at = 36.63
 neck_at = 38.55
 neck_base = 13.62
+# C.I.P. 50-95 Win.
+shoulder_angle = 6.4
 neck = 13.62
 case_length = 49.28
 overall_length = 57.4
@@ -39,11 +41,6 @@ sources = ["https://municion.org/producto/50-95-300-winchester/"]
 # 5.16 mm, 6 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/50-95-300-winchester/"]
-
-[shoulder_angle]
-# C.I.P. 50-95 Win.
-degrees = 6.4
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page122.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

@@ -17,6 +17,9 @@ shoulder = 11.56
 shoulder_at = 44.2
 neck_at = 46.89
 neck_base = 9.94
+# AECC drawing on municion.org: SØ 11.44, NØ 9.94, SL 43.30, NL 6.70, CL 52.69.
+shoulder_angle = 15.6
+cite.shoulder_angle = ["https://municion.org/producto/93-x-53-r-swiss-m-26/"]
 neck = 9.93
 case_length = 53.59
 overall_length = 71.88
@@ -32,11 +35,6 @@ sources = ["book:cotw-18 p. 639"]
 [primer]
 # 5.54 mm, 4 specimens
 size = "large-rifle"
-sources = ["https://municion.org/producto/93-x-53-r-swiss-m-26/"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.44, NØ 9.94, SL 43.30, NL 6.70, CL 52.69.
-degrees = 15.6
 sources = ["https://municion.org/producto/93-x-53-r-swiss-m-26/"]
 
 [case_head]

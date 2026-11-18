@@ -20,6 +20,9 @@ shoulder = 13.87
 shoulder_at = 29.47
 neck_at = 40.2
 neck_base = 11.19
+# AECC drawing on municion.org: SØ 14.09, NØ 11.19, SL 29.70, NL 10.60, CL 51.03.
+shoulder_angle = 7.7
+cite.shoulder_angle = ["https://municion.org/producto/40-90-500-peabody-martini-what-cheer-n3/"]
 neck = 11.0
 case_length = 50.8
 overall_length = 85.6
@@ -38,11 +41,6 @@ sources = ["book:cotw-18 p. 226"]
 # The table gives B-1, a Berdan primer without its size.
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 14.09, NØ 11.19, SL 29.70, NL 10.60, CL 51.03.
-degrees = 7.7
-sources = ["https://municion.org/producto/40-90-500-peabody-martini-what-cheer-n3/"]
 
 [case_head]
 # .07 in.

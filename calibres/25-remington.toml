@@ -21,6 +21,9 @@ shoulder = 10.1
 shoulder_at = 38.05
 neck_at = 41.42
 neck_base = 7.33
+# C.I.P. 25 Rem.
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page90.pdf"]
 neck = 7.3
 case_length = 52.0
 overall_length = 64.0
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.25_Remington"]
 # 5.30 mm, 6 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/25-remington-auto/"]
-
-[shoulder_angle]
-# C.I.P. 25 Rem.
-degrees = 23
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page90.pdf"]
 
 [case_head]
 # C.I.P. 25 Rem.

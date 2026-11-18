@@ -19,6 +19,9 @@ shoulder = 10.5
 shoulder_at = 38.48
 neck_at = 42.26
 neck_base = 6.5
+# C.I.P. 22-250 Rem
+shoulder_angle = 28
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf"]
 neck = 6.45
 # Midway between C.I.P. (48.46) and SAAMI (48.56).
 case_length = 48.51
@@ -39,11 +42,6 @@ sources = ["https://en.wikipedia.org/wiki/.22-250_Remington"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.22-250_Remington"]
-
-[shoulder_angle]
-# C.I.P. 22-250 Rem
-degrees = 28
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page82.pdf"]
 
 [case_head]
 # C.I.P. 22-250 Rem

@@ -15,6 +15,9 @@ rim = 9.5
 base = 9.5
 shoulder = 9.47
 shoulder_at = 13.69
+# AECC drawing 08-017-BGC-040
+shoulder_angle = 18.8
+cite.shoulder_angle = ["https://municion.org/producto/32-naa/"]
 neck = 8.55
 case_length = 17.3
 overall_length = 25.0
@@ -31,11 +34,6 @@ sources = ["https://en.wikipedia.org/wiki/.32_NAA"]
 [primer]
 size = "small-pistol"
 sources = ["https://en.wikipedia.org/wiki/.32_NAA"]
-
-[shoulder_angle]
-# AECC drawing 08-017-BGC-040
-degrees = 18.8
-sources = ["https://municion.org/producto/32-naa/"]
 
 [case_head]
 # .380 ACP case necked down; C.I.P. 9 mm Browning court

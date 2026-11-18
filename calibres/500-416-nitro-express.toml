@@ -20,6 +20,8 @@ shoulder = 13.49
 shoulder_at = 60.96
 neck_at = 65
 neck_base = 11.35
+# C.I.P. 500/416 N.E. 3"1/4
+shoulder_angle = 14.8
 neck = 11.33
 case_length = 82.55
 overall_length = 101.09
@@ -34,11 +36,6 @@ sources = ["https://bulletin.accurateshooter.com/?p=59952"]
 [primer]
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# C.I.P. 500/416 N.E. 3"1/4
-degrees = 14.8
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page124.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

@@ -25,6 +25,8 @@ shoulder = 10.19
 shoulder_at = 38.05
 neck_at = 40.1
 neck_base = 8.45
+# C.I.P. 30 Rem.
+shoulder_angle = 23
 neck = 8.43
 case_length = 52.07
 overall_length = 64.14
@@ -39,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.30_Remington"]
 # 5.33 mm, 3 specimens
 size = "large-rifle"
 sources = ["https://municion.org/producto/30-remington/"]
-
-[shoulder_angle]
-# C.I.P. 30 Rem.
-degrees = 23
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page108.pdf"]
 
 [case_head]
 # C.I.P. 30 Rem.

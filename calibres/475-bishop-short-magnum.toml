@@ -17,6 +17,9 @@ shoulder = 14.66
 shoulder_at = 40.88
 neck_at = 45.88
 neck_base = 12.8
+# AECC drawing on municion.org: SØ 14.60, NØ 12.80, SL 40.30, NL 9.90, CL 55.20.
+shoulder_angle = 10.2
+cite.shoulder_angle = ["https://municion.org/producto/475-bishop-short-magnum/"]
 neck = 12.8
 case_length = 55.78
 overall_length = 72.39
@@ -34,11 +37,6 @@ sources = ["book:cotw-18 p. 439"]
 # is far too big for a small one.
 size = "large-rifle"
 sources = []
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 14.60, NØ 12.80, SL 40.30, NL 9.90, CL 55.20.
-degrees = 10.2
-sources = ["https://municion.org/producto/475-bishop-short-magnum/"]
 
 [case_head]
 # .054 in. (COTW); groove from the AECC drawing 12-055-BRC-020 (municion.org): RT 1.30, HL 4.70, GØ 10.40, GW 1.20,

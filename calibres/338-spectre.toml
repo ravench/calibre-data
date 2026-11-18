@@ -15,6 +15,10 @@ rim = 10.67
 base = 10.79
 shoulder = 10.54
 shoulder_at = 23.57
+# COTW 18 drawing. COTW says the designer gave neither the angle nor the head-to-shoulder length:
+# both were measured.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 400"]
 neck = 9.17
 case_length = 31.75
 overall_length = 53.34
@@ -31,12 +35,6 @@ sources = ["book:cotw-18 p. 400"]
 # municion.org's two specimens disagree (4.86 and 5.53 mm).
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
-
-[shoulder_angle]
-# COTW 18 drawing. COTW says the designer gave neither the angle nor the head-to-shoulder length:
-# both were measured.
-degrees = 30
-sources = ["book:cotw-18 p. 400"]
 
 [case_head]
 # from the 6.8 mm Remington SPC case; C.I.P. 6,8 mm Rem. SPC

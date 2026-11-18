@@ -22,6 +22,9 @@ shoulder = 10.5
 shoulder_at = 51.4
 neck_at = 53.34
 neck_base = 9.8
+# C.I.P. 35 Win.
+shoulder_angle = 15.3
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page86.pdf"]
 neck = 9.6
 case_length = 61.0
 overall_length = 80.0
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.35_Winchester"]
 [primer]
 size = "large-rifle"
 sources = ["https://en.wikipedia.org/wiki/.35_Winchester"]
-
-[shoulder_angle]
-# C.I.P. 35 Win.
-degrees = 15.3
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page86.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

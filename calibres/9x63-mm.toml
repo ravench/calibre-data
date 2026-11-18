@@ -18,6 +18,9 @@ shoulder = 10.85
 shoulder_at = 51.05
 neck_at = 53.69
 neck_base = 9.71
+# AECC drawing on municion.org: SØ 10.82, NØ 9.71, SL 50.95, NL 9.30, CL 62.89.
+shoulder_angle = 11.9
+cite.shoulder_angle = ["https://municion.org/producto/9-x-63-hessmer/"]
 neck = 9.75
 case_length = 62.99
 overall_length = 83.31
@@ -33,11 +36,6 @@ sources = ["book:cotw-18 p. 638"]
 size = "large-rifle"
 diameter = 5.51
 sources = ["book:cotw-18 p. 652"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 10.82, NØ 9.71, SL 50.95, NL 9.30, CL 62.89.
-degrees = 11.9
-sources = ["https://municion.org/producto/9-x-63-hessmer/"]
 
 [case_head]
 # AECC drawing 09-063-BGC-010 (municion.org): RT 1.20, HL 3.10, GØ 10.20, GW 1.10, HØ 11.88; ramp angle from HL = RT +

@@ -22,6 +22,9 @@ shoulder = 13.5
 shoulder_at = 60.96
 neck_at = 63.5
 neck_base = 12.85
+# C.I.P. 470 N.E.
+shoulder_angle = 7.2
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page119.pdf"]
 neck = 12.8
 case_length = 83.0
 overall_length = 101.0
@@ -38,11 +41,6 @@ sources = ["https://en.wikipedia.org/wiki/.470_Nitro_Express"]
 [primer]
 size = "large-rifle"
 sources = ["https://hodgdonreloading.com/rldc/"]
-
-[shoulder_angle]
-# C.I.P. 470 N.E.
-degrees = 7.2
-sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page119.pdf"]
 
 [case_head]
 # R on the C.I.P. sheet.

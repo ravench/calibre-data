@@ -18,6 +18,9 @@ shoulder = 13.49
 shoulder_at = 53.21
 neck_at = 58.17
 neck_base = 8.54
+# AECC drawing on municion.org: SØ 13.41, NØ 8.54, SL 53.00, NL 6.60, CL 64.56.
+shoulder_angle = 26.1
+cite.shoulder_angle = ["https://municion.org/producto/300-dakota/"]
 neck = 8.59
 case_length = 64.77
 overall_length = 84.58
@@ -32,11 +35,6 @@ sources = ["https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+ca
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 452"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 13.41, NØ 8.54, SL 53.00, NL 6.60, CL 64.56.
-degrees = 26.1
-sources = ["https://municion.org/producto/300-dakota/"]
 
 [case_head]
 # .046 in. (COTW); groove from the AECC drawing 08-065-BGC-060 (municion.org): RT 1.18, HL 3.30, GØ 12.12, GW 0.90,

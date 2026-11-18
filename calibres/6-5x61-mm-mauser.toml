@@ -18,6 +18,9 @@ shoulder = 11.48
 shoulder_at = 47.77
 neck_at = 52.18
 neck_base = 7.49
+# AECC drawing on municion.org: SØ 11.54, NØ 7.49, SL 47.73, NL 8.78, CL 60.92.
+shoulder_angle = 24.7
+cite.shoulder_angle = ["https://municion.org/producto/65-x-61-mauser/"]
 neck = 7.52
 case_length = 60.96
 overall_length = 90.17
@@ -31,11 +34,6 @@ sources = ["book:cotw-18 p. 619"]
 [primer]
 size = "large-rifle"
 sources = ["book:cotw-18 p. 651"]
-
-[shoulder_angle]
-# AECC drawing on municion.org: SØ 11.54, NØ 7.49, SL 47.73, NL 8.78, CL 60.92.
-degrees = 24.7
-sources = ["https://municion.org/producto/65-x-61-mauser/"]
 
 [case_head]
 # AECC drawing 07-061-BGC-030 (municion.org): RT 1.45, HL 3.60, GØ 10.43, GW 1.00, HØ 12.10; ramp angle from HL = RT +
