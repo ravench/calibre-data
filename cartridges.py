@@ -184,15 +184,19 @@ NECK_KEYS = ("neck_at", "neck_base")
 NECK_SLACK = 0.15
 # Bottleneck cases only: the shoulder's half cone angle to the case axis in degrees (drawn at 32 without it).
 ANGLE_KEY = "shoulder_angle"
+# Pointed bullets only: the nose's length, from the tip back to where the curve starts (the drawing keeps the
+# bullet parallel below it). It is the bullet's: on a longer overall_length the same nose sits further out of
+# the case. Without it a pointed nose is drawn over the front 68 % of the exposed bullet.
+NOSE_KEY = "nose"
 MM_SHAPES = {  # shape: (required keys, optional keys)
     "ball": (("diameter",), ()),
     "loose": (("diameter", "length"), ()),
     "shot": (("diameter", "rim", "length"), ("case_length",)),
     "blank": (("rim", "base", "mouth", "length"), ()),
     "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"),
-                  ("belt", "shoulder", "shoulder_at", ANGLE_KEY) + NECK_KEYS),
+                  ("belt", "shoulder", "shoulder_at", ANGLE_KEY, NOSE_KEY) + NECK_KEYS),
     "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length",
-                                       ANGLE_KEY) + NECK_KEYS),
+                                       ANGLE_KEY, NOSE_KEY) + NECK_KEYS),
 }
 TOP_KEYS = {"name", "guns", "black_powder", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
             "origin_candidates", "origin_sources", "worldwide", "obsolete", "rare"}
@@ -686,6 +690,17 @@ def _read_calibre(f, countries, books=None):
                 f.problem(f.line("mm", ANGLE_KEY), f"[mm] {ANGLE_KEY} is for bottleneck cases (with shoulder and shoulder_at)")
             elif ("neck_at" in data) != ("neck_base" in data):
                 f.problem(f.line("mm"), "[mm] has neck_at and neck_base together (C.I.P. L2 and H1), or neither")
+            if NOSE_KEY in data:
+                exposed = (data["overall_length"] - data["case_length"]
+                           if all(_is_number(data.get(k)) for k in ("overall_length", "case_length")) else None)
+                if profile != SPITZER:
+                    f.problem(f.line("mm", NOSE_KEY), f'[mm] {NOSE_KEY} is for pointed bullets (profile = "spitzer")')
+                elif _is_number(data[NOSE_KEY]) and exposed is not None and data[NOSE_KEY] > exposed:
+                    f.problem(f.line("mm", NOSE_KEY), f"[mm] {NOSE_KEY} {data[NOSE_KEY]} is longer than the bullet "
+                                                      f"out of the case ({exposed:.2f}: overall_length - case_length)")
+                elif _is_number(data[NOSE_KEY]) and _is_number(data.get("bullet")) and data[NOSE_KEY] < data["bullet"]:
+                    f.problem(f.line("mm", NOSE_KEY), f"[mm] {NOSE_KEY} {data[NOSE_KEY]} is shorter than the bullet "
+                                                      f"is wide ({data['bullet']}): that is no pointed nose")
         allowed = set(req) | set(opt) | ({"sources"} if t != "mm" else set(MM_LISTS))
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)
@@ -1032,7 +1047,7 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "RIM_THICKNESS", "FEET", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "NOSES", "RIM_THICKNESS", "FEET", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
                          "CURRENT_CASES", "SOURCES", "UNSOURCED", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES", "CALIBRE_GUNS",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("BLACK_POWDER", "PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
@@ -1083,6 +1098,9 @@ def load(root=ROOT):
                     t["PRIMER_SOURCES"][n] = first("primer")
                 else:
                     sets["PRIMER_UNVERIFIED"].add(n)
+            if NOSE_KEY in mm:
+                t["NOSES"][n] = mm[NOSE_KEY]
+                t["SOURCES"][(n, NOSE_KEY)] = list(mm.get("cite", {}).get(NOSE_KEY, mm["sources"]))
             if "neck_at" in mm or "neck_base" in mm:
                 t["NECKS"][n] = (mm.get("neck_at"), mm.get("neck_base"))
             for k, cited in mm.get("cite", {}).items():
@@ -1172,6 +1190,8 @@ GROOVE_WIDTHS = _t["GROOVE_WIDTHS"]
 # {name: (neck_at, neck_base)}: where a bottleneck case's neck starts and its diameter there (C.I.P. L2 and
 # H1), either None when not given; the [mm] sources cover them.
 NECKS = _t["NECKS"]
+# {name: mm}: the nose length of a pointed bullet, tip to where its curve starts; the [mm] sources cover it.
+NOSES = _t["NOSES"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
 # code: {"en", "de", "fr", "it"}: the country's name in the apps' languages (Kaliberfinder's
@@ -1218,7 +1238,7 @@ PROFILE_TODAY = _t["PROFILE_TODAY"]
 def sources(name, fact):
     """Every source of one of a calibre's values, as listed in its file: fact is the table name
     ("mm", "introduced", "primer", "case_head", "bullet", "case", "current_cases" or "fired_by"), "origin"
-    for origin_sources, or an [mm] key with its own sources (cite.<key>) and "shoulder_angle"; [] when nothing
+    for origin_sources, or an [mm] key with its own sources (cite.<key>), "shoulder_angle" and "nose"; [] when nothing
     is checked yet or the calibre has no such table."""
     return list(SOURCES.get((name, fact), []))
 
@@ -1293,6 +1313,11 @@ def origin_candidates(name):
     """The states that can claim a calibre whose origin is still open, likelier first, as
     (code, English name, flag emoji or None) tuples; () when origin() answers or nothing is known."""
     return tuple((code, *COUNTRIES[code]) for code in ORIGIN_UNDECIDED.get(name, ()))
+
+
+def nose(name):
+    """Length of a pointed bullet's nose in mm (tip to where its curve starts), or None when not given."""
+    return NOSES.get(name)
 
 
 def patch_length(name):

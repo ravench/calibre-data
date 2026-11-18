@@ -16,6 +16,10 @@ neck = 12.19
 case_length = 43.18
 overall_length = 57.4
 bullet = 11.49
+# nose: read to scale off the AECC drawing 11-043-CRC-010 (municion.org, specimen):
+# the curve starts 12.6 mm behind the tip, of the 13.45 mm out of its case (TL 56.57, CL 43.12).
+nose = 12.6
+cite.nose = ["https://municion.org/producto/450-bushmaster/"]
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=169"]
 
 [introduced]

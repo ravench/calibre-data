@@ -686,6 +686,20 @@ class OutlineTests(unittest.TestCase):
         ys = [y for _, y in points(o["patch"])]
         self.assertAlmostEqual(max(ys) - min(ys), 12.7, places=1)
 
+    def test_a_nose_length_sets_where_a_pointed_nose_starts(self):
+        # Without [mm] nose the bullet stays parallel for 32 % of what is out of the case; with it the curve
+        # starts that far behind the tip (the GP 90: 10.6 mm of its 12.7, from the AECC 5.56x45 drawing).
+        r, y0, top = 5.7 / 2, 44.7, 57.4
+        start = lambda pts: max(y for x, y in pts if x == r)  # noqa: E731
+        self.assertAlmostEqual(start(outline.bullet_profile(r, y0, top, SPITZER)), y0 + 0.32 * 12.7)
+        self.assertAlmostEqual(start(outline.bullet_profile(r, y0, top, SPITZER, 10.6)), top - 10.6)
+        self.assertEqual(outline.bullet_profile(r, y0, top, SPITZER, 12.7)[1], (r, y0))  # all nose
+        by_name = {s["name"]: s for _, s in outline.specs()}
+        o = outline.outline(by_name["5.6 mm GP 90"])
+        # tip at y = 0: the widest bullet points end 10.6 mm below it
+        widest = max(x for x, _ in points(o["bullet"]))
+        self.assertAlmostEqual(min(y for x, y in points(o["bullet"]) if x == widest), 10.6, places=2)
+
     def test_jackets_that_are_not_copper_are_named(self):
         for _, s in outline.specs():
             o = outline.outline(s)

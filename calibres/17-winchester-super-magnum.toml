@@ -24,6 +24,9 @@ neck = 5.0
 case_length = 30.48
 overall_length = 40.39
 bullet = 4.38
+# nose: read to scale off the AECC drawing 04-029-BBR-010 (municion.org, specimen):
+# the curve starts 8.0 mm behind the tip, of the 8.55 mm out of its case (TL 37.30, CL 28.75).
+nose = 8.0
 sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=17", "https://en.wikipedia.org/wiki/.17_Winchester_Super_Magnum", "https://municion.org/producto/17-winchester-super-magnum-rf/"]
 
 [introduced]

@@ -27,6 +27,9 @@ neck = 8.43
 case_length = 40.72
 overall_length = 57.4
 bullet = 7.82
+# nose: read to scale off the AECC drawing 08-041-BGC-001 (municion.org, specimen):
+# the curve starts 12.8 mm behind the tip, of the 13.43 mm out of its case (TL 53.78, CL 40.35).
+nose = 12.8
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=116", "book:cotw-18 p. 452", "https://municion.org/producto/300-hamr/"]
 
 [introduced]

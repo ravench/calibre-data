@@ -25,6 +25,10 @@ neck = 7.7
 case_length = 65.0
 overall_length = 83.0
 bullet = 7.0
+# nose: read to scale off the AECC drawing 07-065-BFC-030 (municion.org, specimen):
+# the curve starts 13.2 mm behind the tip, of the 15.38 mm out of its case (TL 79.96, CL 64.58).
+nose = 13.2
+cite.nose = ["https://municion.org/producto/270-weatherby-magnum-belted/"]
 sources = [
   "https://en.wikipedia.org/wiki/.270_Weatherby_Magnum",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page14.pdf",

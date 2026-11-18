@@ -30,6 +30,10 @@ neck = 8.7
 case_length = 48.5
 overall_length = 66.0
 bullet = 7.82
+# nose: read to scale off the AECC drawing 08-049-BDC-010 (municion.org, specimen):
+# the curve starts 14.1 mm behind the tip, of the 16.60 mm out of its case (TL 65.50, CL 48.90).
+nose = 14.1
+cite.nose = ["https://municion.org/producto/308-marlin-express/"]
 sources = [
   "https://en.wikipedia.org/wiki/.308_Marlin_Express",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page124.pdf",

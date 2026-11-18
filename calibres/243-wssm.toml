@@ -28,6 +28,10 @@ neck = 7.4
 case_length = 42.4
 overall_length = 60.0
 bullet = 6.2
+# nose: read to scale off the AECC drawing 06-042-BRC-020 (municion.org, specimen):
+# the curve starts 11.0 mm behind the tip, of the 11.83 mm out of its case (TL 54.13, CL 42.30).
+nose = 11.0
+cite.nose = ["https://municion.org/producto/243-winchester-super-short-magnum/"]
 sources = [
   "https://en.wikipedia.org/wiki/.243_Winchester_Super_Short_Magnum",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page89.pdf",
