@@ -71,6 +71,9 @@ part = "tip"
 colours = ["yellow"]
 meaning = ["ball"]
 description = "D, heavy ball"
+description_de = "D, schweres Standardgeschoss"
+description_fr = "D, balle ordinaire lourde"
+description_it = "D, palla ordinaria pesante"
 countries = ["SU"]
 sources = ["book:labbett p. 83"]
 
@@ -79,6 +82,9 @@ part = "tip"
 colours = ["silver"]
 meaning = ["ball"]
 description = "LPS, steel core"
+description_de = "LPS, Stahlkern"
+description_fr = "LPS, noyau en acier"
+description_it = "LPS, nucleo in acciaio"
 countries = ["SU"]
 sources = ["book:labbett p. 83"]
 

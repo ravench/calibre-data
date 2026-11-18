@@ -98,6 +98,9 @@ part = "tip"
 colours = ["red"]
 meaning = ["tracer"]
 description = "US M1 and M2, British G Mk 2z"
+description_de = "M1 und M2 (USA), G Mk 2z (Grossbritannien)"
+description_fr = "M1 et M2 (États-Unis), G Mk 2z (Royaume-Uni)"
+description_it = "M1 e M2 (Stati Uniti), G Mk 2z (Regno Unito)"
 countries = ["US", "GB"]
 sources = ["https://en.wikipedia.org/wiki/.30-06_Springfield", "book:labbett p. 80"]
 

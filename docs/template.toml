@@ -213,7 +213,8 @@ sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
 # meaning: one or more of ball, armour-piercing, incendiary, explosive, tracer, spotting (a flash or
 # smoke where it hits), subsonic, frangible, proof (an overpressure round) or reduced-charge (a
 # lighter load for short-range practice). An API round is ["armour-piercing", "incendiary"].
-# description (optional): the round's name. countries (optional): codes from countries.toml of the
+# description (optional): the round's name, in English; where it is more than a designation, also
+# description_de, description_fr and description_it (all three). countries (optional): codes from countries.toml of the
 # armies that mark it so; the same part, colours and meaning are one table for all of them.
 # Needs a source.
 # [[colour_codes]]

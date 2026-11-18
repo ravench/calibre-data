@@ -66,6 +66,9 @@ part = "tip"
 colours = ["silver"]
 meaning = ["armour-piercing", "incendiary"]
 description = "US M8, Swiss M.64"
+description_de = "M8 (USA), M.64 (Schweiz)"
+description_fr = "M8 (États-Unis), M.64 (Suisse)"
+description_it = "M8 (Stati Uniti), M.64 (Svizzera)"
 countries = ["US", "CH"]
 sources = [
   "https://en.wikipedia.org/wiki/.50_BMG",
@@ -79,6 +82,9 @@ part = "tip"
 colours = ["red", "silver"]
 meaning = ["armour-piercing", "incendiary", "tracer"]
 description = "US M20, Swiss M.65"
+description_de = "M20 (USA), M.65 (Schweiz)"
+description_fr = "M20 (États-Unis), M.65 (Suisse)"
+description_it = "M20 (Stati Uniti), M.65 (Svizzera)"
 countries = ["US", "CH"]
 sources = [
   "https://en.wikipedia.org/wiki/.50_BMG",
@@ -92,6 +98,9 @@ part = "tip"
 colours = ["red"]
 meaning = ["tracer"]
 description = "M1 and M21"
+description_de = "M1 und M21"
+description_fr = "M1 et M21"
+description_it = "M1 e M21"
 countries = ["US"]
 sources = [
   "https://en.wikipedia.org/wiki/.50_BMG",
@@ -125,6 +134,9 @@ part = "tip"
 colours = ["blue"]
 meaning = ["incendiary"]
 description = "M1, a light blue tip"
+description_de = "M1, hellblaue Spitze"
+description_fr = "M1, pointe bleu clair"
+description_it = "M1, punta azzurra"
 countries = ["US"]
 sources = ["https://en.wikipedia.org/wiki/.50_BMG", "book:labbett p. 80"]
 
