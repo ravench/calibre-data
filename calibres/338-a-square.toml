@@ -25,6 +25,9 @@ neck = 9.32
 case_length = 72.39
 overall_length = 93.22
 bullet = 8.59
+# nose: read to scale off the AECC drawing 09-072-BFC-005 (municion.org, specimen):
+# the curve starts 15.7 mm behind the tip, of the 18.10 mm out of its case (TL 90.10, CL 72.00).
+nose = 15.7
 # The table gives the belt, .603 in., in the rim column; rim and belt are the .378 Weatherby Magnum's (R1 and R3
 # on its C.I.P. sheet).
 sources = [

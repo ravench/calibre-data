@@ -25,6 +25,10 @@ neck = 5.87
 case_length = 47.0
 overall_length = 57.4
 bullet = 5.2
+# nose: read to scale off the AECC drawing 05-047-BGC-040 (municion.org, specimen):
+# the curve starts 9.5 mm behind the tip, of the 10.43 mm out of its case (TL 57.20, CL 46.77).
+nose = 9.5
+cite.nose = ["https://municion.org/producto/204-ruger/"]
 sources = [
   "book:cotw-18 p. 175",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page79.pdf",

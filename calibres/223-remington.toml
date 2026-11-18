@@ -29,6 +29,10 @@ neck = 6.43
 case_length = 44.7
 overall_length = 57.4
 bullet = 5.70
+# nose: read to scale off the AECC drawing 06-045-BGC-050 (municion.org, its M193 ball specimen):
+# the curve starts 10.6 mm behind the tip, of the 12.59 mm out of its case (TL 57.15, CL 44.56).
+nose = 10.6
+cite.nose = ["https://municion.org/producto/556-x-45-otan/"]
 sources = [
   "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84",
   "book:hornady-10 p. 160",

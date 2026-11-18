@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, foot, unsourced, SHOULDER_ANGLES, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, nose, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
 # mm, groove floor where no source gives its length: belted cases (as drawn on the C.I.P. sheets) and
@@ -104,7 +104,7 @@ def gaps(s):
     name, found = s["name"], []
     cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
     drawn = ("rim", "base", "neck", "case", "oal", "bullet") + (("sh_at",) if s["shoulder"] else ()) if cartridge else ()
-    missing = set(unsourced(name)) - ({"mouth"} if s["profile"] == CRIMPED else set())
+    missing = set(unsourced(name)) - {"nose"} - ({"mouth"} if s["profile"] == CRIMPED else set())
     if missing or any(s[k] is None for k in drawn):  # a cannon round may leave measurements out
         found.append(MEASUREMENTS)
     if cartridge:
@@ -144,11 +144,17 @@ def case_profile(s):
     return pts
 
 
-def bullet_profile(r, y0, top, profile):
-    """Right half of the exposed bullet from (r, y0) to the tip at `top`."""
+# Share of the exposed bullet a pointed bullet keeps parallel above the case mouth where [mm] gives no nose.
+SPITZER_PARALLEL = 0.32
+
+
+def bullet_profile(r, y0, top, profile, nose_length=None):
+    """Right half of the exposed bullet from (r, y0) to the tip at `top`; `nose_length` (mm) is where a
+    pointed nose starts, counted back from the tip."""
     e = top - y0
     if profile == SPITZER:
-        cyl, tip, f = 0.32, 0.05, lambda t: (1 - t ** 1.7) ** 0.8
+        cyl = max(0.0, 1 - nose_length / e) if nose_length else SPITZER_PARALLEL
+        tip, f = 0.05, lambda t: (1 - t ** 1.7) ** 0.8
     elif profile == ROUND:
         cyl, tip, f = 0.22, 0.16, lambda t: math.sqrt(max(0, 1 - t * t))
     elif profile == PATCHED:
@@ -237,11 +243,11 @@ PAPER_HEAD = 12.7
 HOLLOW_MOUTH, HOLLOW_DEPTH = 0.3, 0.8
 
 
-def cavity_profile(r, y0, top, profile):
+def cavity_profile(r, y0, top, profile, nose_length=None):
     """Right half of a hollow-point bullet's cavity, a hidden line inside the round's full nose (tester,
     2026-11-16): its mouth where the nose is as wide as it, and its apex below (at most 0.3 of the exposed
     bullet deep)."""
-    pts, m = bullet_profile(r, y0, top, profile), HOLLOW_MOUTH * r
+    pts, m = bullet_profile(r, y0, top, profile, nose_length), HOLLOW_MOUTH * r
     i = next(i for i, (x, _) in enumerate(pts) if x <= m)
     (xa, ya), (xb, yb) = pts[i - 1], pts[i]
     y = ya + (xa - m) / (xa - xb) * (yb - ya)
@@ -312,10 +318,10 @@ def outline(s):
         if s["oal"] > s["case"] + 0.1:
             kind = bullet(s["name"])
             r, y0, top = s["bullet"] / 2, s["case"], s["oal"]
-            right = bullet_profile(r, y0, top, s["profile"])
+            right = bullet_profile(r, y0, top, s["profile"], nose(s["name"]))
             paths["bullet"] = to_path(mirror(right), H, hw)
             if kind == HOLLOW_POINT:
-                paths["cavity"] = to_path(mirror(cavity_profile(r, y0, top, s["profile"])), H, hw)
+                paths["cavity"] = to_path(mirror(cavity_profile(r, y0, top, s["profile"], nose(s["name"]))), H, hw)
             if s["profile"] == PATCHED:
                 # The bullet path is the whole silhouette (steel cap colour); the paper band goes on top.
                 paths["patch"] = to_path(mirror(patch_profile(s["bullet"] / 2, s["case"], s["oal"])), H, hw)

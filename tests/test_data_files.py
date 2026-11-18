@@ -839,6 +839,24 @@ class CheckTests(unittest.TestCase):
             c.edit(WIN, "neck_base = 8.72", "neck_base = 8.56")   # within NECK_SLACK of the neck
             self.assertEqual(c.problems(), [])
 
+    def test_nose_length(self):
+        self.assertEqual(cartridges.nose("5.6 mm GP 90"), 10.6)  # the AECC 5.56x45 drawing
+        self.assertIsNone(cartridges.nose(".308 Winchester"))
+        acp = "calibres/45-acp.toml"
+        with Copy() as c:
+            c.edit(WIN, "bullet = 7.85\n", "bullet = 7.85\nnose = 20.0\n")   # 19.92 out of the case
+            c.edit(acp, "bullet = 11.48\n", "bullet = 11.48\nnose = 5.0\n")  # a round nose
+            self.assertProblem(c, WIN, r"nose 20.0 is longer than the bullet out of the case \(19.92")
+            self.assertProblem(c, acp, r'nose is for pointed bullets \(profile = "spitzer"\)')
+        with Copy() as c:
+            c.edit(WIN, "bullet = 7.85\n", "bullet = 7.85\nnose = 5.0\n")   # under the 7.85 width
+            self.assertProblem(c, WIN, r"nose 5.0 is shorter than the bullet is wide")
+        for ok in ("15.0", "19.92"):  # up to all of the bullet out of the case
+            with Copy() as c:
+                c.edit(WIN, "bullet = 7.85\n", f"bullet = 7.85\nnose = {ok}\n")
+                self.assertEqual(c.problems(), [])
+        self.assertEqual(cartridges.sources("5.6 mm GP 90", "nose"), ["https://municion.org/producto/556-x-45-otan/"])
+
     # Calibres whose [mm] shoulder is not the sheet's P2, so the shoulder drawn at the sheet's angle ends short of
     # the sheet's L2. Their shoulders come from other pages; fix them to P2 and empty this.
     SHOULDER_NOT_P2 = {".22 Remington Jet", ".35 Remington", ".35 Winchester", ".400/350 Nitro Express", ".45-75 Winchester", "8x56 mm R Mannlicher", ".500/465 Nitro Express"}

@@ -25,6 +25,10 @@ neck = 8.1
 case_length = 51.7
 overall_length = 71.8
 bullet = 7.2
+# nose: read to scale off the AECC drawing 07-051-BRC-030 (municion.org, specimen):
+# the curve starts 13.0 mm behind the tip, of the 14.75 mm out of its case (TL 66.27, CL 51.52).
+nose = 13.0
+cite.nose = ["https://municion.org/producto/7-mm-remington-short-action-ultra-magnum/"]
 sources = [
   "https://en.wikipedia.org/wiki/7mm_Remington_Short_Action_Ultra_Magnum",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page40.pdf",

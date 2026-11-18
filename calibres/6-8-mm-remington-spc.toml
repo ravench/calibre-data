@@ -26,6 +26,10 @@ neck = 7.8
 case_length = 42.8
 overall_length = 57.4
 bullet = 7.0
+# nose: read to scale off the AECC drawing 07-043-BGC-023 (municion.org, specimen):
+# the curve starts 12.4 mm behind the tip, of the 14.60 mm out of its case (TL 57.23, CL 42.63).
+nose = 12.4
+cite.nose = ["https://municion.org/producto/68-x-43-remington-spc/"]
 sources = [
   "https://en.wikipedia.org/wiki/6.8mm_Remington_SPC",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf",
