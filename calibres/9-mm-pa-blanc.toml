@@ -6,7 +6,7 @@ name = "9 mm PA Blanc"
 guns = ["handgun"]
 kind = "rimless"
 profile = "flat"
-aliases = ["9mmpak", "pak", "9pak", "9x22", "9mmpa", "9mmpablanc", "gaspatrone", "reizstoffpatrone", "9mmpaknall"]
+aliases = ["9mmpak", "pak", "9pak", "9x22", "9mmpa", "9mmpablanc", "gaspatrone", "reizstoffpatrone", "9mmpaknall", "9mm pa blank"]
 display_aliases = ["9 mm P.A.K.", "9 mm P.A. Knall"]
 
 [mm]

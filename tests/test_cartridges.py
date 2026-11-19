@@ -94,6 +94,29 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(DISPLAY_ALIASES["6.5x58 mm Vergueiro"], ["6.5x58 mm Mauser"])
         self.assertNotIn("7.92x24 mm", NAMES)
 
+    def test_english_words_find_the_rounds_named_the_swiss_way(self):
+        # Round balls, pellets and blanks keep the name they have in Switzerland or on their C.I.P. sheet (README,
+        # Names), so the English word has to be an alias: «pellet», «round ball», «blank» and «12 bore» found
+        # nothing in Kaliberfinder's search (check of its translations, 2026-11-19). The apps look for the search
+        # text inside the name, the display aliases and the aliases, without spaces, dots and «mm».
+        def key(text):
+            return text.lower().replace("é", "e").replace(" ", "").replace("-", "").replace("mm", "").replace(".", "")
+
+        def found(words):
+            return {s["name"] for s in ALL
+                    if any(key(words) in key(k) for k in [s["name"], *DISPLAY_ALIASES.get(s["name"], ()), *s["aliases"]])}
+        self.assertEqual(found("pellet"), {"4.5 mm Diabolo (.177)", "5.5 mm Diabolo (.22)"})
+        self.assertEqual(found("air rifle"), found("pellet"))
+        self.assertEqual(found("air gun"), found("pellet"))
+        self.assertEqual(found("round ball"), {s["name"] for s in ALL if "Rundkugel" in s["name"]})
+        self.assertEqual(len(found("round ball")), 5)
+        self.assertEqual(found("minie ball"), {".58 Minié", ".69 Minié"})
+        self.assertLessEqual({s["name"] for s in ALL if s["name"].endswith(" Blanc")}, found("blank"))
+        for bore, shell in (("12 bore", "12/70"), ("16 bore", "16/70"), ("20 bore", "20/70"), ("28 bore", "28/70")):
+            self.assertEqual(found(bore), {shell})
+        self.assertEqual(found("9mm short"), {"9 mm Browning kurz (.380 ACP)"})
+        self.assertEqual(found("french long"), {"7.65 mm Longue"})
+
     def test_every_centrefire_calibre_has_a_primer(self):
         centrefire = {s["name"] for s in ALL if s["kind"] not in (RIMFIRE, BALL, MINIE, PELLET)}
         self.assertEqual(set(PRIMERS), centrefire)

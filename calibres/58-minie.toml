@@ -4,7 +4,7 @@ guns = ["rifle"]
 black_powder = true
 kind = "minie"
 profile = "round"
-aliases = ["58", "58minie"]
+aliases = ["58", "58minie", "58 minie ball"]
 
 obsolete = true
 

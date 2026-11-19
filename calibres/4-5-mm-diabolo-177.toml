@@ -2,7 +2,7 @@ name = "4.5 mm Diabolo (.177)"
 guns = ["air-gun"]
 kind = "pellet"
 profile = "round"
-aliases = ["4.5", "4.5mm", "177", "luftgewehr", "lg", "lp"]
+aliases = ["4.5", "4.5mm", "177", "luftgewehr", "lg", "lp", "177 pellet", "177 air rifle pellet", "177 airgun pellet"]
 
 worldwide = true
 

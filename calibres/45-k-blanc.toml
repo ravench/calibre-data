@@ -7,7 +7,7 @@ name = ".45 K Blanc"
 guns = ["handgun"]
 kind = "rimmed"
 profile = "crimped"
-aliases = ["45knall", "45k", "45shortknall", "45kblanc"]
+aliases = ["45knall", "45k", "45shortknall", "45kblanc", "45 blank"]
 display_aliases = [".45 Knall"]
 
 [mm]
