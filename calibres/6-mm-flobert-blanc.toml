@@ -7,7 +7,7 @@ name = "6 mm Flobert Blanc"
 guns = []
 kind = "rimfire"
 profile = "crimped"
-aliases = ["6mmflobert", "6mmknall", "6mmflobertblanc", "flobertknall", "6mmflobertknall", "6mm flobert blank"]
+aliases = ["6mmflobert", "6mmknall", "6mmflobertblanc", "flobertknall", "6mmflobertknall"]
 display_aliases = ["6 mm Flobert Knall"]
 
 [mm]

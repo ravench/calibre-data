@@ -4,7 +4,7 @@ guns = ["handgun"]
 black_powder = true
 kind = "ball"
 profile = "round"
-aliases = ["36", "36navy", ".375ball", "36 round ball"]
+aliases = ["36", "36navy", ".375ball"]
 
 [mm]
 diameter = 9.5

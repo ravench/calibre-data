@@ -2,7 +2,7 @@ name = ".410/76"
 guns = ["shotgun"]
 kind = "shot"
 profile = "flat"
-aliases = [".410", "410"]
+aliases = [".410", "410", "410 bore", "calibro 36"]
 
 [mm]
 # C.I.P. Cal. 410, Tab. VII, maximum cartridge: diameter d1, rim g; case_length is the length in the
