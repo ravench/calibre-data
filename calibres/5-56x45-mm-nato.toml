@@ -71,6 +71,7 @@ description = "US M855 (with a steel penetrator), German DM11"
 description_de = "M855 mit Stahl-Penetrator (USA), DM11 (Deutschland)"
 description_fr = "M855 à pénétrateur en acier (États-Unis), DM11 (Allemagne)"
 description_it = "M855 con penetratore in acciaio (Stati Uniti), DM11 (Germania)"
+description_es = "M855 con penetrador de acero (Estados Unidos), DM11 (Alemania)"
 countries = ["US", "DE"]
 sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
 
@@ -82,6 +83,7 @@ description = "US M856, German DM21"
 description_de = "M856 (USA), DM21 (Deutschland)"
 description_fr = "M856 (États-Unis), DM21 (Allemagne)"
 description_it = "M856 (Stati Uniti), DM21 (Germania)"
+description_es = "M856 (Estados Unidos), DM21 (Alemania)"
 countries = ["US", "DE"]
 sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
 
@@ -93,6 +95,7 @@ description = "US M856A1, British L1, L16 and L22"
 description_de = "M856A1 (USA), L1, L16 und L22 (Grossbritannien)"
 description_fr = "M856A1 (États-Unis), L1, L16 et L22 (Royaume-Uni)"
 description_it = "M856A1 (Stati Uniti), L1, L16 e L22 (Regno Unito)"
+description_es = "M856A1 (Estados Unidos), L1, L16 y L22 (Reino Unido)"
 countries = ["US", "GB"]
 sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
 

@@ -242,11 +242,14 @@ BOOK_KEYS = ("title", "year", "edition", "authors", "editors", "publisher", "pla
 # "silver"]: a red tip above a silver band); a base (the head of the case) and an annulus (the lacquer
 # ring around the primer) have one colour. The meanings combine (["armour-piercing", "incendiary"] is
 # an API round).
-# `description` is English; a description that is more than a designation ("M62") comes in German, French and
-# Italian too (DESCRIPTION_TRANSLATIONS, all three or none), for Kaliberfinder's other languages (Raven 2026-11-18).
-DESCRIPTION_TRANSLATIONS = ("description_de", "description_fr", "description_it")
+# `description` is English; a description that is more than a designation ("M62") comes in German, French,
+# Italian and Spanish too (DESCRIPTION_TRANSLATIONS, all or none), for Kaliberfinder's other languages (Raven
+# 2026-11-18; Spanish 2026-11-19).
+DESCRIPTION_TRANSLATIONS = ("description_de", "description_fr", "description_it", "description_es")
 COLOUR_CODE_KEYS = (("part", "colours", "meaning", "sources"), ("description", *DESCRIPTION_TRANSLATIONS, "countries"))  # (required, optional)
 PARTS = ("tip", "base", "annulus")
+# The languages of a country's names in countries.toml besides the English `name` (Spanish since 2026-11-19).
+COUNTRY_LANGUAGES = ("de", "fr", "it", "es")
 COLOURS = ("black", "white", "grey", "silver", "red", "orange", "yellow", "green", "blue", "purple", "brown")
 MEANINGS = ("ball", "armour-piercing", "incendiary", "explosive", "tracer", "spotting", "subsonic", "frangible",
             "proof", "reduced-charge")
@@ -881,14 +884,14 @@ def load(root=ROOT):
             if not isinstance(v, dict) or not isinstance(v.get("name"), str):
                 cf.problem(cf.line(code), f"[{code}] needs name = \"…\"")
                 continue
-            _check_keys(cf, code, v, {"name", "de", "fr", "it", "flag"}, ("name", "de", "fr", "it"))
-            for lang in ("de", "fr", "it"):
+            _check_keys(cf, code, v, {"name", *COUNTRY_LANGUAGES, "flag"}, ("name", *COUNTRY_LANGUAGES))
+            for lang in COUNTRY_LANGUAGES:
                 if lang in v and not (isinstance(v[lang], str) and v[lang].strip()):
                     cf.problem(cf.line(code, lang), f"[{code}] {lang} must be the name in that language, in quotes")
             if "flag" in v and not isinstance(v["flag"], str):
                 cf.problem(cf.line(code, "flag"), f"[{code}] flag must be the flag emoji in quotes")
             countries[code] = (v["name"], v.get("flag"))
-            country_names[code] = {"en": v["name"], **{lang: v[lang] for lang in ("de", "fr", "it") if isinstance(v.get(lang), str)}}
+            country_names[code] = {"en": v["name"], **{lang: v[lang] for lang in COUNTRY_LANGUAGES if isinstance(v.get(lang), str)}}
     if len(problems) > before:  # check the calibres' origins only against a good list
         countries = None
 
@@ -1203,7 +1206,7 @@ NECKS = _t["NECKS"]
 NOSES = _t["NOSES"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
-# code: {"en", "de", "fr", "it"}: the country's name in the apps' languages (Kaliberfinder's
+# code: {"en", "de", "fr", "it", "es"}: the country's name in the apps' languages (Kaliberfinder's
 # generator reads it, 2026-11-12; the German name is the app's localization key).
 COUNTRY_NAMES = _t["COUNTRY_NAMES"]
 ORIGIN, ORIGIN_UNDECIDED = _t["ORIGIN"], _t["ORIGIN_UNDECIDED"]  # {name: code}, {name: (codes, likelier first)}
@@ -1233,7 +1236,7 @@ UNSOURCED = _t["UNSOURCED"]
 BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
 # {name: [{part, colours, meaning, description or None, descriptions, countries, sources}]}: what a painted bullet tip,
 # cartridge base or primer annulus means, from the [[colour_codes]] tables (part "tip", "base" or "annulus"; a tip's colours from
-# the tip down; `description` in English, `descriptions` {"de", "fr", "it"} where it is translated, else {}).
+# the tip down; `description` in English, `descriptions` {"de", "fr", "it", "es"} where it is translated, else {}).
 # Kaliberfinder's generator reads it for the calibre page (2026-11-11); the sources stay here.
 COLOUR_CODES = _t["COLOUR_CODES"]
 # {name: (firearms that fire it, first source)}: the firearms that define a round, mostly old and

@@ -63,6 +63,7 @@ description = "M61 and M993"
 description_de = "M61 und M993"
 description_fr = "M61 et M993"
 description_it = "M61 e M993"
+description_es = "M61 y M993"
 countries = ["US"]
 sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO", "book:labbett p. 80"]
 
@@ -82,6 +83,7 @@ description = "M276 dim tracer"
 description_de = "M276, lichtschwache Leuchtspur"
 description_fr = "M276, traçant à faible luminosité"
 description_it = "M276, tracciante a bassa luminosità"
+description_es = "M276, trazadora de baja luminosidad"
 countries = ["US"]
 sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
 
@@ -93,6 +95,7 @@ description = "British ball"
 description_de = "Britisches Standardgeschoss"
 description_fr = "Balle ordinaire britannique"
 description_it = "Palla ordinaria britannica"
+description_es = "Ordinaria británica"
 countries = ["GB"]
 sources = ["book:labbett p. 86"]
 
@@ -104,6 +107,7 @@ description = "British tracer"
 description_de = "Britische Leuchtspur"
 description_fr = "Traçant britannique"
 description_it = "Tracciante britannico"
+description_es = "Trazadora británica"
 countries = ["GB"]
 sources = ["book:labbett p. 86"]
 
@@ -115,5 +119,6 @@ description = "British proof or standard round"
 description_de = "Britische Beschuss- oder Referenzpatrone"
 description_fr = "Cartouche britannique d'épreuve ou étalon"
 description_it = "Cartuccia britannica di prova forzata o campione"
+description_es = "Cartucho británico de prueba o patrón"
 countries = ["GB"]
 sources = ["book:labbett p. 86"]

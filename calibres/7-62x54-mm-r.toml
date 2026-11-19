@@ -74,6 +74,7 @@ description = "D, heavy ball"
 description_de = "D, schweres Standardgeschoss"
 description_fr = "D, balle ordinaire lourde"
 description_it = "D, palla ordinaria pesante"
+description_es = "D, ordinaria pesada"
 countries = ["SU"]
 sources = ["book:labbett p. 83"]
 
@@ -85,6 +86,7 @@ description = "LPS, steel core"
 description_de = "LPS, Stahlkern"
 description_fr = "LPS, noyau en acier"
 description_it = "LPS, nucleo in acciaio"
+description_es = "LPS, núcleo de acero"
 countries = ["SU"]
 sources = ["book:labbett p. 83"]
 

@@ -532,12 +532,13 @@ class CatalogueTests(unittest.TestCase):
         self.assertFalse(is_obsolete("9x19 mm"))
 
     def test_every_country_has_its_name_in_the_apps_languages(self):
-        """Kaliberfinder shows the origin in German, English, French and Italian (2026-11-12)."""
+        """Kaliberfinder shows the origin in German, English, French and Italian (2026-11-12), and Spanish (2026-11-19)."""
         self.assertEqual(set(COUNTRY_NAMES), set(COUNTRIES))
         for code, names in COUNTRY_NAMES.items():
-            self.assertEqual(set(names), {"en", "de", "fr", "it"}, code)
+            self.assertEqual(set(names), {"en", "de", "fr", "it", "es"}, code)
             self.assertEqual(names["en"], COUNTRIES[code][0], code)
-        self.assertEqual(COUNTRY_NAMES["CH"], {"en": "Switzerland", "de": "Schweiz", "fr": "Suisse", "it": "Svizzera"})
+        self.assertEqual(COUNTRY_NAMES["CH"], {"en": "Switzerland", "de": "Schweiz", "fr": "Suisse", "it": "Svizzera", "es": "Suiza"})
+        self.assertEqual(COUNTRY_NAMES["NATO"]["es"], "OTAN")
         self.assertEqual(COUNTRY_NAMES["GB"]["de"], "Grossbritannien")  # Swiss spelling, no ß
 
     def test_headstamp_spellings_are_aliases(self):
