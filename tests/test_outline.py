@@ -700,6 +700,20 @@ class OutlineTests(unittest.TestCase):
         widest = max(x for x, _ in points(o["bullet"]))
         self.assertAlmostEqual(min(y for x, y in points(o["bullet"]) if x == widest), 10.6, places=2)
 
+    def test_a_nose_length_sets_where_a_round_nose_starts(self):
+        # Raven 2026-11-19: the GP 90/23 and the Kadettenpatrone drew too pointed. Without [mm] nose a round
+        # nose curves over 78 % of what is out of the case; with it only over the nose's length.
+        r, y0, top = 7.75 / 2, 54.6, 77.44
+        start = lambda pts: max(y for x, y in pts if x == r)  # noqa: E731
+        self.assertAlmostEqual(start(outline.bullet_profile(r, y0, top, ROUND)), y0 + 0.22 * (top - y0))
+        self.assertAlmostEqual(start(outline.bullet_profile(r, y0, top, ROUND, 9.2)), top - 9.2)
+        by_name = {s["name"]: s for _, s in outline.specs()}
+        for name, length in (("7.5x54.5 mm Swiss (GP 90/23)", 9.2), ("7.5 mm Kadettenpatrone", 6.4)):
+            o = outline.outline(by_name[name])
+            widest = max(x for x, _ in points(o["bullet"]))
+            # The round nose leaves the side tangentially, so its first points still round to the full width.
+            self.assertAlmostEqual(min(y for x, y in points(o["bullet"]) if x == widest), length, delta=0.8)
+
     def test_jackets_that_are_not_copper_are_named(self):
         for _, s in outline.specs():
             o = outline.outline(s)

@@ -146,17 +146,20 @@ def case_profile(s):
 
 # Share of the exposed bullet a pointed bullet keeps parallel above the case mouth where [mm] gives no nose.
 SPITZER_PARALLEL = 0.32
+# The same for a round nose.
+ROUND_PARALLEL = 0.22
 
 
 def bullet_profile(r, y0, top, profile, nose_length=None):
     """Right half of the exposed bullet from (r, y0) to the tip at `top`; `nose_length` (mm) is where a
-    pointed nose starts, counted back from the tip."""
+    pointed or round nose starts, counted back from the tip."""
     e = top - y0
     if profile == SPITZER:
         cyl = max(0.0, 1 - nose_length / e) if nose_length else SPITZER_PARALLEL
         tip, f = 0.05, lambda t: (1 - t ** 1.7) ** 0.8
     elif profile == ROUND:
-        cyl, tip, f = 0.22, 0.16, lambda t: math.sqrt(max(0, 1 - t * t))
+        cyl = max(0.0, 1 - nose_length / e) if nose_length else ROUND_PARALLEL
+        tip, f = 0.16, lambda t: math.sqrt(max(0, 1 - t * t))
     elif profile == PATCHED:
         # The paper-wrapped body, then the capped nose straight from where the paper ends. The cap
         # sits the paper's thickness (8.15 where the paper ends, 7.95 on the cap) inside the body, so

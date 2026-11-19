@@ -431,10 +431,10 @@ class CatalogueTests(unittest.TestCase):
         self.assertLess(by_name[".22 Nosler"]["rim"], by_name[".22 Nosler"]["base"])  # rebated rim
         self.assertIsNone(by_name["9.3x72 mm R"]["shoulder"])
 
-    def test_45_colt_is_drawn_with_a_round_nose(self):
-        # Factory lead loads are round nose with a small flat (Raven's W-W round, 2026-11-08).
+    def test_45_colt_is_drawn_with_a_flat_nose(self):
+        # The 1873 bullet was flat nosed (Wikipedia, the AECC drawing); Raven 2026-11-19: round drew it too round.
         by_name = {s["name"]: s for s in ALL}
-        self.assertEqual(by_name[".45 Colt"]["profile"], "round")
+        self.assertEqual(by_name[".45 Colt"]["profile"], "flat")
 
     def test_crimped_blank(self):
         by_name = {s["name"]: s for s in ALL}

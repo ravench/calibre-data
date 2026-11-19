@@ -36,6 +36,11 @@ neck = 8.47
 case_length = 54.6
 overall_length = 77.5
 bullet = 7.75
+# nose: read off the side photo of Raven's round in its Kaliberfinder capture (2026-11-08, private
+# training package, photo 02): the round nose curves in over the last 0.82 bullet widths, 6.4 mm; the
+# bullet is parallel from the case mouth up to there.
+nose = 6.4
+cite.nose = ["measured:raven 2026-11-08"]
 sources = ["book:poyer p. 50", "https://municion.org/producto/75-x-545-swiss-gp-90-23/", "measured:raven 2026-11-08"]
 
 [introduced]
