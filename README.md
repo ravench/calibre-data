@@ -36,7 +36,7 @@ hold cannon rounds only (see [Lookalikes](#lookalikes)).
 - `order.toml`: the order the apps and the poster list the calibres in. A calibre that is not listed
   comes after the listed ones of its category, by name, so a new calibre needs no entry here.
 - `countries.toml`: the country codes a calibre's `origin` can name, with the name in English, German,
-  French and Italian (`name`, `de`, `fr`, `it`) and the flag emoji.
+  French, Italian and Spanish (`name`, `de`, `fr`, `it`, `es`) and the flag emoji.
 - `books.toml`: the printed books a source can name (see [Sources](#sources)), with title, edition,
   year and ISBN.
 - `docs/template.toml`: a calibre file with every field explained, to start a new calibre from.
@@ -547,6 +547,7 @@ description = "US M20, Swiss M.65"
 description_de = "M20 (USA), M.65 (Schweiz)"
 description_fr = "M20 (États-Unis), M.65 (Suisse)"
 description_it = "M20 (Stati Uniti), M.65 (Svizzera)"
+description_es = "M20 (Estados Unidos), M.65 (Suiza)"
 countries = ["US", "CH"]
 sources = [
   "https://en.wikipedia.org/wiki/.50_BMG",
@@ -568,8 +569,8 @@ sources = [
   overpressure round for proofing weapons) or `reduced-charge` (a lighter load for short-range practice); an API
   round is `["armour-piercing", "incendiary"]`.
 - `description` (optional): the round's name, in English.
-- `description_de`, `description_fr`, `description_it` (optional): the description in German (Swiss
-  spelling), French and Italian, for Kaliberfinder's other languages. All three or none: a bare
+- `description_de`, `description_fr`, `description_it`, `description_es` (optional): the description in German (Swiss
+  spelling), French, Italian and Spanish, for Kaliberfinder's other languages. All four or none: a bare
   designation (`"M62"`) needs none, a description in words has them.
 - `countries` (optional): codes from `countries.toml` of the armies that mark it so. The same colours
   can mean something else in another army; the same part, colours and meaning are one table

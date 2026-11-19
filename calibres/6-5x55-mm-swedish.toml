@@ -71,5 +71,6 @@ description = "Half of the case head blackened, the Swedish mark of a reduced ch
 description_de = "Halber Hülsenboden geschwärzt, das schwedische Zeichen für eine reduzierte Ladung"
 description_fr = "Moitié du culot noircie, la marque suédoise d'une charge réduite"
 description_it = "Metà del fondello annerita, il contrassegno svedese di una carica ridotta"
+description_es = "Medio culote ennegrecido, la marca sueca de una carga reducida"
 countries = ["SE"]
 sources = ["book:labbett p. 79"]

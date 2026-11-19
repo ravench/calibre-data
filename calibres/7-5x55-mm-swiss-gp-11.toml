@@ -67,6 +67,7 @@ description = "Tracer M.1911 (Leuchtspurpatrone)"
 description_de = "Leuchtspurpatrone M.1911"
 description_fr = "Cartouche traçante M.1911 (Leuchtspurpatrone)"
 description_it = "Cartuccia tracciante M.1911 (Leuchtspurpatrone)"
+description_es = "Cartucho trazador M.1911 (Leuchtspurpatrone)"
 countries = ["CH"]
 sources = ["book:labbett p. 76", "book:labbett p. 77"]
 
@@ -78,6 +79,7 @@ description = "Tracer, the older marking: the whole base lacquered"
 description_de = "Leuchtspur, ältere Kennzeichnung: ganzer Boden lackiert"
 description_fr = "Traçant, ancien marquage : tout le culot laqué"
 description_it = "Tracciante, vecchia marcatura: tutto il fondello laccato"
+description_es = "Trazadora, marca antigua: todo el culote lacado"
 countries = ["CH"]
 sources = ["book:labbett p. 77", "book:labbett p. 86"]
 
@@ -89,5 +91,6 @@ description = "Armour-piercing, no longer in service (1980)"
 description_de = "Panzerbrechend, nicht mehr im Dienst (1980)"
 description_fr = "Perforant, n'est plus en service (1980)"
 description_it = "Perforante, non più in servizio (1980)"
+description_es = "Perforante, fuera de servicio (1980)"
 countries = ["CH"]
 sources = ["book:labbett p. 77", "book:labbett p. 86"]

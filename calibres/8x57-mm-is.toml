@@ -64,6 +64,7 @@ description = "Light ball, former Czechoslovak code (before the Soviet codes)"
 description_de = "Leichtes Standardgeschoss, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
 description_fr = "Balle ordinaire légère, ancien code tchécoslovaque (avant les codes soviétiques)"
 description_it = "Palla ordinaria leggera, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Ordinaria ligera, antiguo código checoslovaco (anterior a los códigos soviéticos)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]
 
@@ -75,6 +76,7 @@ description = "Heavy ball, former Czechoslovak code (before the Soviet codes)"
 description_de = "Schweres Standardgeschoss, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
 description_fr = "Balle ordinaire lourde, ancien code tchécoslovaque (avant les codes soviétiques)"
 description_it = "Palla ordinaria pesante, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Ordinaria pesada, antiguo código checoslovaco (anterior a los códigos soviéticos)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]
 
@@ -86,6 +88,7 @@ description = "Ball with a mild steel core, former Czechoslovak code (before the
 description_de = "Standardgeschoss mit Weichstahlkern, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
 description_fr = "Balle ordinaire à noyau en acier doux, ancien code tchécoslovaque (avant les codes soviétiques)"
 description_it = "Palla ordinaria con nucleo in acciaio dolce, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Ordinaria con núcleo de acero dulce, antiguo código checoslovaco (anterior a los códigos soviéticos)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]
 
@@ -97,6 +100,7 @@ description = "Tracer, former Czechoslovak code (before the Soviet codes)"
 description_de = "Leuchtspur, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
 description_fr = "Traçant, ancien code tchécoslovaque (avant les codes soviétiques)"
 description_it = "Tracciante, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Trazadora, antiguo código checoslovaco (anterior a los códigos soviéticos)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]
 
@@ -108,5 +112,6 @@ description = "Armour-piercing, former Czechoslovak code (before the Soviet code
 description_de = "Panzerbrechend, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
 description_fr = "Perforant, ancien code tchécoslovaque (avant les codes soviétiques)"
 description_it = "Perforante, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Perforante, antiguo código checoslovaco (anterior a los códigos soviéticos)"
 countries = ["CS"]
 sources = ["book:labbett p. 56", "book:labbett p. 86"]

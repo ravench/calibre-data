@@ -596,10 +596,10 @@ class CheckTests(unittest.TestCase):
         # A description in words comes in Kaliberfinder's other languages too (Raven 2026-11-18).
         swiss = next(t for t in cartridges.COLOUR_CODES[".50 BMG"] if t["description"] == "US M8, Swiss M.64")
         self.assertEqual(swiss["descriptions"], {"de": "M8 (USA), M.64 (Schweiz)", "fr": "M8 (États-Unis), M.64 (Suisse)",
-                                                 "it": "M8 (Stati Uniti), M.64 (Svizzera)"})
+                                                 "it": "M8 (Stati Uniti), M.64 (Svizzera)", "es": "M8 (Estados Unidos), M.64 (Suiza)"})
         for name, codes in cartridges.COLOUR_CODES.items():
             for t in codes:
-                self.assertIn(sorted(t["descriptions"]), ([], ["de", "fr", "it"]), name)
+                self.assertIn(sorted(t["descriptions"]), ([], ["de", "es", "fr", "it"]), name)
                 self.assertNotIn("ß", "".join(t["descriptions"].values()), f"{name}: Swiss spelling, ss")
         self.assertNotIn(".308 Winchester", cartridges.COLOUR_CODES)
         self.assertEqual([(t["part"], t["colours"], t["meaning"]) for t in cartridges.COLOUR_CODES["7.5x55 mm Swiss (GP 11)"]],
@@ -638,11 +638,14 @@ class CheckTests(unittest.TestCase):
                  ('colours = ["black"]', 'colours = ["black"]\ncolor = "black"', r"unknown key 'color'.*did you mean \"colours\""),
                  ('colours = ["black"]', 'colours = ["black"]\ndescription = " "', r"description must be text"),
                  ('colours = ["black"]', 'colours = ["black"]\ndescription = "Ball"\ndescription_de = " "\n'
-                  'description_fr = "Balle"\ndescription_it = "Palla"', r"description_de must be text"),
+                  'description_fr = "Balle"\ndescription_it = "Palla"\ndescription_es = "Ordinaria"', r"description_de must be text"),
                  ('colours = ["black"]', 'colours = ["black"]\ndescription = "Ball"\ndescription_de = "Standardgeschoss"',
                   r"comes with the English description and all of description_de, description_fr, description_it"),
+                 ('colours = ["black"]', 'colours = ["black"]\ndescription = "Ball"\ndescription_de = "Standardgeschoss"\n'
+                  'description_fr = "Balle"\ndescription_it = "Palla"',  # Spanish since 2026-11-19
+                  r"all of description_de, description_fr, description_it, description_es"),
                  ('colours = ["black"]', 'colours = ["black"]\ndescription_de = "Standardgeschoss"\n'
-                  'description_fr = "Balle"\ndescription_it = "Palla"', r"comes with the English description"),
+                  'description_fr = "Balle"\ndescription_it = "Palla"\ndescription_es = "Ordinaria"', r"comes with the English description"),
                  ('colours = ["black"]', 'colours = ["black"]\ncountries = ["USA"]', r"country 'USA' is not a code"),
                  ('colours = ["black"]', 'colours = ["black"]\ncountries = []', r"countries lists one or more"),
                  ('colours = ["black"]', 'colours = ["black"]\ncountries = ["US", "US"]', r"countries lists a country twice")]
@@ -1105,9 +1108,10 @@ class CheckTests(unittest.TestCase):
     def test_a_broken_countries_toml_is_reported_there_only(self):
         for text, pattern in [("# nothing\n", r"lists no countries"),
                               ('[CH]\nflag = "x"\n', r"\[CH\] needs name"),
-                              ('[CH]\nname = "Switzerland"\nde = "Schweiz"\nfr = "Suisse"\n', r"\[CH\] needs 'it'"),
-                              ('[CH]\nname = "Switzerland"\nde = ""\nfr = "Suisse"\nit = "Svizzera"\n', r"\[CH\] de must be the name"),
-                              ('[CH]\nname = "Switzerland"\nde = "Schweiz"\nfr = "Suisse"\nit = "Svizzera"\nflag = 5\n', r"\[CH\] flag must be")]:
+                              ('[CH]\nname = "Switzerland"\nde = "Schweiz"\nfr = "Suisse"\nes = "Suiza"\n', r"\[CH\] needs 'it'"),
+                              ('[CH]\nname = "Switzerland"\nde = "Schweiz"\nfr = "Suisse"\nit = "Svizzera"\n', r"\[CH\] needs 'es'"),
+                              ('[CH]\nname = "Switzerland"\nde = ""\nfr = "Suisse"\nit = "Svizzera"\nes = "Suiza"\n', r"\[CH\] de must be the name"),
+                              ('[CH]\nname = "Switzerland"\nde = "Schweiz"\nfr = "Suisse"\nit = "Svizzera"\nes = "Suiza"\nflag = 5\n', r"\[CH\] flag must be")]:
             with self.subTest(text), Copy() as c:
                 c.write("countries.toml", text)
                 self.assertOnlyProblems(c, "countries.toml", pattern)
