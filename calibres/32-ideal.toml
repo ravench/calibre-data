@@ -3,7 +3,8 @@
 name = ".32 Ideal"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/32-ideal/).
+profile = "flat"
 aliases = ["32 ideal", "32-25-100"]
 
 origin = "US"

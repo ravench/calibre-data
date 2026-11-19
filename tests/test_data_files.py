@@ -859,21 +859,26 @@ class CheckTests(unittest.TestCase):
 
     def test_nose_length(self):
         self.assertEqual(cartridges.nose("5.6 mm GP 90"), 10.6)  # the AECC 5.56x45 drawing
+        self.assertEqual(cartridges.nose("7.5 mm Kadettenpatrone"), 6.4)  # a round nose, Raven's round
         self.assertIsNone(cartridges.nose(".308 Winchester"))
-        acp = "calibres/45-acp.toml"
+        colt, acp = "calibres/45-colt.toml", "calibres/45-acp.toml"
         with Copy() as c:
             c.edit(WIN, "bullet = 7.85\n", "bullet = 7.85\nnose = 20.0\n")   # 19.92 out of the case
-            c.edit(acp, "bullet = 11.48\n", "bullet = 11.48\nnose = 5.0\n")  # a round nose
+            c.edit(colt, "bullet = 11.53\n", "bullet = 11.53\nnose = 8.0\n")  # a flat point
+            c.edit(acp, "bullet = 11.48\n", "bullet = 11.48\nnose = 5.0\n")  # a round nose under half its width
             self.assertProblem(c, WIN, r"nose 20.0 is longer than the bullet out of the case \(19.92")
-            self.assertProblem(c, acp, r'nose is for pointed bullets \(profile = "spitzer"\)')
+            self.assertProblem(c, colt, r'nose is for pointed and round bullets \(profile = "spitzer" or "round"\)')
+            self.assertProblem(c, acp, r"nose 5.0 is shorter than half the bullet width \(5.74\): that is no round nose")
         with Copy() as c:
             c.edit(WIN, "bullet = 7.85\n", "bullet = 7.85\nnose = 5.0\n")   # under the 7.85 width
-            self.assertProblem(c, WIN, r"nose 5.0 is shorter than the bullet is wide")
-        for ok in ("15.0", "19.92"):  # up to all of the bullet out of the case
+            self.assertProblem(c, WIN, r"nose 5.0 is shorter than the bullet width \(\S+\): that is no pointed nose")
+        for path, ok in ((WIN, "15.0"), (WIN, "19.92"), (acp, "6.0")):  # up to all of the bullet out of the case
             with Copy() as c:
-                c.edit(WIN, "bullet = 7.85\n", f"bullet = 7.85\nnose = {ok}\n")
+                width = "7.85" if path == WIN else "11.48"
+                c.edit(path, f"bullet = {width}\n", f"bullet = {width}\nnose = {ok}\n")
                 self.assertEqual(c.problems(), [])
         self.assertEqual(cartridges.sources("5.6 mm GP 90", "nose"), ["https://municion.org/producto/556-x-45-otan/"])
+        self.assertEqual(cartridges.sources("7.5 mm Kadettenpatrone", "nose"), ["measured:raven 2026-11-08"])
 
     # Calibres whose [mm] shoulder is not the sheet's P2, so the shoulder drawn at the sheet's angle ends short of
     # the sheet's L2. Their shoulders come from other pages; fix them to P2 and empty this.

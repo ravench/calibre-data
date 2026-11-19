@@ -3,7 +3,8 @@
 name = "10.3x65 mm R Baenziger"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/103-x-65-r-banziger/).
+profile = "flat"
 aliases = ["10.3x65r", "10.3x65r baenziger"]
 
 origin = "CH"

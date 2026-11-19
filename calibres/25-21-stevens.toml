@@ -3,7 +3,8 @@
 name = ".25-21 Stevens"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/25-21-86-stevens/).
+profile = "flat"
 aliases = ["25-21", "25-21 stevens"]
 
 origin = "US"

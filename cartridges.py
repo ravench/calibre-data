@@ -184,9 +184,9 @@ NECK_KEYS = ("neck_at", "neck_base")
 NECK_SLACK = 0.15
 # Bottleneck cases only: the shoulder's half cone angle to the case axis in degrees (drawn at 32 without it).
 ANGLE_KEY = "shoulder_angle"
-# Pointed bullets only: the nose's length, from the tip back to where the curve starts (the drawing keeps the
-# bullet parallel below it). It is the bullet's: on a longer overall_length the same nose sits further out of
-# the case. Without it a pointed nose is drawn over the front 68 % of the exposed bullet.
+# Pointed and round noses: the nose's length, from the tip back to where the curve starts (the drawing keeps
+# the bullet parallel below it). It is the bullet's: on a longer overall_length the same nose sits further out
+# of the case. Without it a pointed nose is drawn over the front 68 % of the exposed bullet, a round one over 78 %.
 NOSE_KEY = "nose"
 MM_SHAPES = {  # shape: (required keys, optional keys)
     "ball": (("diameter",), ()),
@@ -704,14 +704,18 @@ def _read_calibre(f, countries, books=None):
             if NOSE_KEY in data:
                 exposed = (data["overall_length"] - data["case_length"]
                            if all(_is_number(data.get(k)) for k in ("overall_length", "case_length")) else None)
-                if profile != SPITZER:
-                    f.problem(f.line("mm", NOSE_KEY), f'[mm] {NOSE_KEY} is for pointed bullets (profile = "spitzer")')
+                shortest = {SPITZER: data.get("bullet"), ROUND: data.get("bullet") / 2 if _is_number(data.get("bullet")) else None}
+                if profile not in shortest:
+                    f.problem(f.line("mm", NOSE_KEY), f'[mm] {NOSE_KEY} is for pointed and round bullets '
+                                                      f'(profile = "spitzer" or "round")')
                 elif _is_number(data[NOSE_KEY]) and exposed is not None and data[NOSE_KEY] > exposed:
                     f.problem(f.line("mm", NOSE_KEY), f"[mm] {NOSE_KEY} {data[NOSE_KEY]} is longer than the bullet "
                                                       f"out of the case ({exposed:.2f}: overall_length - case_length)")
-                elif _is_number(data[NOSE_KEY]) and _is_number(data.get("bullet")) and data[NOSE_KEY] < data["bullet"]:
-                    f.problem(f.line("mm", NOSE_KEY), f"[mm] {NOSE_KEY} {data[NOSE_KEY]} is shorter than the bullet "
-                                                      f"is wide ({data['bullet']}): that is no pointed nose")
+                elif _is_number(data[NOSE_KEY]) and _is_number(shortest[profile]) and data[NOSE_KEY] < shortest[profile]:
+                    what = "the bullet width" if profile == SPITZER else "half the bullet width"
+                    f.problem(f.line("mm", NOSE_KEY), f"[mm] {NOSE_KEY} {data[NOSE_KEY]} is shorter than {what} "
+                                                      f"({shortest[profile]:g}): that is no "
+                                                      f"{'pointed' if profile == SPITZER else 'round'} nose")
         allowed = set(req) | set(opt) | ({"sources"} if t != "mm" else set(MM_LISTS))
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)
@@ -1202,7 +1206,7 @@ GROOVE_WIDTHS = _t["GROOVE_WIDTHS"]
 # {name: (neck_at, neck_base)}: where a bottleneck case's neck starts and its diameter there (C.I.P. L2 and
 # H1), either None when not given; the [mm] sources cover them.
 NECKS = _t["NECKS"]
-# {name: mm}: the nose length of a pointed bullet, tip to where its curve starts; the [mm] sources cover it.
+# {name: mm}: the nose length of a pointed or round bullet, tip to where its curve starts; the [mm] sources cover it.
 NOSES = _t["NOSES"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
@@ -1328,7 +1332,7 @@ def origin_candidates(name):
 
 
 def nose(name):
-    """Length of a pointed bullet's nose in mm (tip to where its curve starts), or None when not given."""
+    """Length of a pointed or round bullet's nose in mm (tip to where its curve starts), or None when not given."""
     return NOSES.get(name)
 
 

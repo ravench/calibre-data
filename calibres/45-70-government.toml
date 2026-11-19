@@ -1,7 +1,8 @@
 name = ".45-70 Government"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "flat"
+# Nose: round, as the AECC specimen drawing shows it (https://municion.org/producto/45-70-government/).
+profile = "round"
 aliases = ["45-70", "4570", "45-70 govt"]
 
 origin = "US"

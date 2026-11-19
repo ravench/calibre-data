@@ -5,7 +5,8 @@
 name = "7.92x24 mm VBR"
 guns = ["handgun"]
 kind = "rimless"
-profile = "round"
+# Nose: spitzer, as the AECC specimen drawing shows it (https://municion.org/producto/792-x-24-vbr-pdw-cartridge/).
+profile = "spitzer"
 aliases = ["7.92x24", "7.92 vbr"]
 
 origin = "BE"

@@ -6,7 +6,8 @@ name = ".25-20 Single-Shot"
 guns = ["rifle"]
 black_powder = true
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/25-20-single-shot/).
+profile = "flat"
 aliases = ["25-20 single shot", "25-20ss"]
 
 origin = "US"

@@ -3,7 +3,8 @@
 name = ".440 Cor-Bon"
 guns = ["handgun"]
 kind = "rimless"
-profile = "flat"
+# Nose: round, as the AECC specimen drawing shows it (https://municion.org/producto/440-cor-bon-magnum/).
+profile = "round"
 aliases = ["440 cor-bon", "440 corbon"]
 
 origin = "US"

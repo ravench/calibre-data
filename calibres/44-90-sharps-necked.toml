@@ -5,7 +5,8 @@ name = ".44-90 Sharps Necked"
 guns = ["rifle"]
 black_powder = true
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/44-90-520-sharps-2-5-8/).
+profile = "flat"
 aliases = ["44-90 sharps", "44-100 sharps", "44-105 sharps", "44-2 5/8 sharps"]
 
 origin = "US"

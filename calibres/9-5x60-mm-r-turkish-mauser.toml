@@ -3,7 +3,8 @@
 name = "9.5x60 mm R Turkish Mauser"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/).
+profile = "flat"
 aliases = ["9.5x60r", "9.5 turkish"]
 
 origin = "OE"

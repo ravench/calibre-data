@@ -3,7 +3,8 @@
 name = ".38-90 Winchester Express"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/38-90-217-winchester-express/).
+profile = "flat"
 aliases = ["38-90", "38-90 winchester", "38 express"]
 
 origin = "US"

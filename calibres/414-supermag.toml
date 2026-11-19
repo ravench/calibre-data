@@ -3,7 +3,8 @@
 name = ".414 SuperMag"
 guns = ["handgun"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/414-elgin-gates-super-magnum/).
+profile = "flat"
 aliases = ["414 supermag", "414 super mag"]
 
 origin = "US"

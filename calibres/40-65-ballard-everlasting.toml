@@ -5,7 +5,8 @@ name = ".40-65 Ballard Everlasting"
 guns = ["rifle"]
 black_powder = true
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/40-65-ballard-everlasting/).
+profile = "flat"
 aliases = ["40-65 ballard", "40-65 ballard everlasting"]
 
 origin = "US"

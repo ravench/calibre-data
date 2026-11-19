@@ -3,7 +3,8 @@
 name = ".32-35 Stevens & Maynard"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/32-35-maynard-1882/).
+profile = "flat"
 aliases = ["32-35", "32-35 stevens", "32-35 maynard"]
 
 origin = "US"

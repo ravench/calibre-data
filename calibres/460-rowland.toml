@@ -2,7 +2,8 @@
 name = ".460 Rowland"
 guns = ["handgun"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/460-rowland/).
+profile = "flat"
 aliases = ["460rowland"]
 
 origin = "US"

@@ -39,6 +39,9 @@ neck = 8.47
 case_length = 54.6
 overall_length = 77.44
 bullet = 7.75
+# nose: read to scale off the AECC drawing 08-054-BGC-085: the round nose curves in over the last 9.2 mm of
+# the 23.04 out of the case (TL 77.44, CL 54.40); parallel below that.
+nose = 9.2
 sources = [
   "book:poyer p. 50",
   "https://municion.org/producto/75-x-545-swiss-gp-90-23/",

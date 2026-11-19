@@ -2,7 +2,8 @@
 name = "6.5x40 mm R"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/65-x-40-r-g-tesching/).
+profile = "flat"
 aliases = ["6.5x40r"]
 
 origin = "DE"

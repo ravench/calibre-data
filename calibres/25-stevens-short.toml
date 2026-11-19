@@ -4,7 +4,8 @@ name = ".25 Stevens Short"
 # Guns: book:cotw-18 p. 661.
 guns = ["rifle"]
 kind = "rimfire"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/25-stevens-short-rf/).
+profile = "flat"
 aliases = ["25 stevens short", "25 stevens short rf"]
 
 origin = "US"

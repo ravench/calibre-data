@@ -5,7 +5,8 @@ name = ".35-40 Maynard 1882"
 guns = ["rifle"]
 black_powder = true
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/35-40-maynard-1882/).
+profile = "flat"
 aliases = ["35-40 maynard", "35-40 maynard 1882"]
 
 origin = "US"

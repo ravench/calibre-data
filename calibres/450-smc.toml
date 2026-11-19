@@ -3,7 +3,8 @@
 name = ".450 SMC"
 guns = ["handgun"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/450-smc/).
+profile = "flat"
 aliases = ["450 smc", "450 short magnum cartridge", "450 small magnum cartridge"]
 
 origin = "US"

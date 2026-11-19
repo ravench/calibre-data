@@ -3,7 +3,8 @@
 name = "10.75x63 mm Mauser"
 guns = ["rifle"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/1075-x-63-g-mauser/).
+profile = "flat"
 aliases = ["10.75x63"]
 
 origin = "DE"

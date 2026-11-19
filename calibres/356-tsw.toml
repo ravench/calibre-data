@@ -2,7 +2,8 @@
 name = ".356 TSW"
 guns = ["handgun"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/356-team-smith-wesson/).
+profile = "flat"
 aliases = ["356tsw"]
 
 origin = "US"

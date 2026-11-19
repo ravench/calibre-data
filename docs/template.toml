@@ -93,9 +93,10 @@ neck = 8.7             # neck diameter at the mouth (H2)
 case_length = 51.2     # case length (L3)
 overall_length = 71.12 # cartridge length (L6)
 bullet = 7.85          # bullet diameter (G1)
-# Optional, pointed bullets only: the nose's length, tip to where its curve starts, read to scale off an
-# AECC drawing (municion.org); cite.nose names the page unless the sources above hold it. Without it the
-# curve runs over the front 68 % of the bullet out of the case.
+# Optional, pointed and round bullets only: the nose's length, tip to where its curve starts, at least the
+# bullet diameter (pointed) or half of it (round), read to scale off an AECC drawing (municion.org) or a
+# photo of a measured round; cite.nose names the source unless the sources above hold it. Without it the
+# curve runs over the front 68 % (pointed) or 78 % (round) of the bullet out of the case.
 # nose = 16.2
 # A belted case gives base in front of its belt. One whose belt is wider than its rim adds belt, the belt's
 # diameter (R3): belt = 15.33 on the .378 Weatherby Magnum, in front of a 14.71 mm rim. Without it the belt is

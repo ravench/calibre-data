@@ -2,7 +2,8 @@
 name = ".50-110 Winchester"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "flat"
+# Nose: round, as the AECC specimen drawing shows it (https://municion.org/producto/50-110-300-winchester-express/).
+profile = "round"
 aliases = ["50-110", "50-100", "50-105"]
 
 origin = "US"
