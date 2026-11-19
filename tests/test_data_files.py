@@ -591,7 +591,16 @@ class CheckTests(unittest.TestCase):
     def test_colour_codes_are_for_the_catalogue_only(self):
         self.assertEqual(cartridges.COLOUR_CODES[".50 BMG"][0],
                          {"part": "tip", "colours": ("black",), "meaning": ("armour-piercing",), "description": "M2",
+                          "descriptions": {},  # a designation is the same in every language
                           "countries": ("US",), "sources": ["https://en.wikipedia.org/wiki/.50_BMG", "book:labbett p. 80"]})
+        # A description in words comes in Kaliberfinder's other languages too (Raven 2026-11-18).
+        swiss = next(t for t in cartridges.COLOUR_CODES[".50 BMG"] if t["description"] == "US M8, Swiss M.64")
+        self.assertEqual(swiss["descriptions"], {"de": "M8 (USA), M.64 (Schweiz)", "fr": "M8 (États-Unis), M.64 (Suisse)",
+                                                 "it": "M8 (Stati Uniti), M.64 (Svizzera)"})
+        for name, codes in cartridges.COLOUR_CODES.items():
+            for t in codes:
+                self.assertIn(sorted(t["descriptions"]), ([], ["de", "fr", "it"]), name)
+                self.assertNotIn("ß", "".join(t["descriptions"].values()), f"{name}: Swiss spelling, ss")
         self.assertNotIn(".308 Winchester", cartridges.COLOUR_CODES)
         self.assertEqual([(t["part"], t["colours"], t["meaning"]) for t in cartridges.COLOUR_CODES["7.5x55 mm Swiss (GP 11)"]],
                          [("tip", ("red",), ("tracer",)), ("base", ("red",), ("tracer",)),
@@ -628,6 +637,12 @@ class CheckTests(unittest.TestCase):
                  ('sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]\n', "", r"\[\[colour_codes\]\] needs sources"),
                  ('colours = ["black"]', 'colours = ["black"]\ncolor = "black"', r"unknown key 'color'.*did you mean \"colours\""),
                  ('colours = ["black"]', 'colours = ["black"]\ndescription = " "', r"description must be text"),
+                 ('colours = ["black"]', 'colours = ["black"]\ndescription = "Ball"\ndescription_de = " "\n'
+                  'description_fr = "Balle"\ndescription_it = "Palla"', r"description_de must be text"),
+                 ('colours = ["black"]', 'colours = ["black"]\ndescription = "Ball"\ndescription_de = "Standardgeschoss"',
+                  r"comes with the English description and all of description_de, description_fr, description_it"),
+                 ('colours = ["black"]', 'colours = ["black"]\ndescription_de = "Standardgeschoss"\n'
+                  'description_fr = "Balle"\ndescription_it = "Palla"', r"comes with the English description"),
                  ('colours = ["black"]', 'colours = ["black"]\ncountries = ["USA"]', r"country 'USA' is not a code"),
                  ('colours = ["black"]', 'colours = ["black"]\ncountries = []', r"countries lists one or more"),
                  ('colours = ["black"]', 'colours = ["black"]\ncountries = ["US", "US"]', r"countries lists a country twice")]

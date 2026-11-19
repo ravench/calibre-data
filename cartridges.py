@@ -242,7 +242,10 @@ BOOK_KEYS = ("title", "year", "edition", "authors", "editors", "publisher", "pla
 # "silver"]: a red tip above a silver band); a base (the head of the case) and an annulus (the lacquer
 # ring around the primer) have one colour. The meanings combine (["armour-piercing", "incendiary"] is
 # an API round).
-COLOUR_CODE_KEYS = (("part", "colours", "meaning", "sources"), ("description", "countries"))  # (required, optional)
+# `description` is English; a description that is more than a designation ("M62") comes in German, French and
+# Italian too (DESCRIPTION_TRANSLATIONS, all three or none), for Kaliberfinder's other languages (Raven 2026-11-18).
+DESCRIPTION_TRANSLATIONS = ("description_de", "description_fr", "description_it")
+COLOUR_CODE_KEYS = (("part", "colours", "meaning", "sources"), ("description", *DESCRIPTION_TRANSLATIONS, "countries"))  # (required, optional)
 PARTS = ("tip", "base", "annulus")
 COLOURS = ("black", "white", "grey", "silver", "red", "orange", "yellow", "green", "blue", "purple", "brown")
 MEANINGS = ("ball", "armour-piercing", "incendiary", "explosive", "tracer", "spotting", "subsonic", "frangible",
@@ -547,8 +550,13 @@ def _check_colour_codes(f, codes, shape, countries, books):
                                  f"{_close(bad[0], choices) if bad else ''}")
             elif len(set(t[k])) != len(t[k]):
                 f.problem(at(k), f"[[colour_codes]] {k} lists {next(x for x in t[k] if t[k].count(x) > 1)!r} twice")
-        if "description" in t and (not isinstance(t["description"], str) or not t["description"].strip()):
-            f.problem(at("description"), "[[colour_codes]] description must be text in quotes")
+        for k in ("description", *DESCRIPTION_TRANSLATIONS):
+            if k in t and (not isinstance(t[k], str) or not t[k].strip()):
+                f.problem(at(k), f"[[colour_codes]] {k} must be text in quotes")
+        translated = [k for k in DESCRIPTION_TRANSLATIONS if k in t]
+        if translated and ("description" not in t or len(translated) < len(DESCRIPTION_TRANSLATIONS)):
+            f.problem(at(translated[0]), "[[colour_codes]] a translated description comes with the English description "
+                                         f"and all of {', '.join(DESCRIPTION_TRANSLATIONS)}")
         if "countries" in t:
             codes = t["countries"]
             if not _is_text_list(codes) or not codes:
@@ -1136,6 +1144,7 @@ def load(root=ROOT):
             if "colour_codes" in raw:
                 t["COLOUR_CODES"][n] = [{"part": c["part"], "colours": tuple(c["colours"]), "meaning": tuple(c["meaning"]),
                                          "description": c.get("description"),
+                                         "descriptions": {k[-2:]: c[k] for k in DESCRIPTION_TRANSLATIONS if k in c},
                                          "countries": tuple(c.get("countries", ())),
                                          "sources": list(c["sources"])} for c in raw["colour_codes"]]
     t.update(sets)
@@ -1222,10 +1231,10 @@ SOURCES = _t["SOURCES"]  # {(name, table): [every source]}
 # no source at all; calibres whose measurements all have one are not in it.
 UNSOURCED = _t["UNSOURCED"]
 BOOKS = _t["BOOKS"]  # {book id: its table in books.toml}: the books a source "book:<id> p. <page>" names
-# {name: [{part, colours, meaning, description or None, countries, sources}]}: what a painted bullet tip,
+# {name: [{part, colours, meaning, description or None, descriptions, countries, sources}]}: what a painted bullet tip,
 # cartridge base or primer annulus means, from the [[colour_codes]] tables (part "tip", "base" or "annulus"; a tip's colours from
-# the tip down). Kaliberfinder's generator reads it for the
-# calibre page (2026-11-11); the sources stay here.
+# the tip down; `description` in English, `descriptions` {"de", "fr", "it"} where it is translated, else {}).
+# Kaliberfinder's generator reads it for the calibre page (2026-11-11); the sources stay here.
 COLOUR_CODES = _t["COLOUR_CODES"]
 # {name: (firearms that fire it, first source)}: the firearms that define a round, mostly old and
 # obsolete ones. For the catalogue only; the apps do not read it.

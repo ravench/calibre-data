@@ -544,6 +544,9 @@ part = "tip"
 colours = ["red", "silver"]
 meaning = ["armour-piercing", "incendiary", "tracer"]
 description = "US M20, Swiss M.65"
+description_de = "M20 (USA), M.65 (Schweiz)"
+description_fr = "M20 (États-Unis), M.65 (Suisse)"
+description_it = "M20 (Stati Uniti), M.65 (Svizzera)"
 countries = ["US", "CH"]
 sources = [
   "https://en.wikipedia.org/wiki/.50_BMG",
@@ -565,6 +568,9 @@ sources = [
   overpressure round for proofing weapons) or `reduced-charge` (a lighter load for short-range practice); an API
   round is `["armour-piercing", "incendiary"]`.
 - `description` (optional): the round's name, in English.
+- `description_de`, `description_fr`, `description_it` (optional): the description in German (Swiss
+  spelling), French and Italian, for Kaliberfinder's other languages. All three or none: a bare
+  designation (`"M62"`) needs none, a description in words has them.
 - `countries` (optional): codes from `countries.toml` of the armies that mark it so. The same colours
   can mean something else in another army; the same part, colours and meaning are one table
   that lists all their countries.
