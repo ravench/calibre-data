@@ -54,6 +54,11 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/12-7-x-108-170419-en.pd
 type = "jacketed"
 sources = ["book:cotw-18 p. 570", "book:cotw-18 p. 571"]
 
+[case]
+# Labbett: most Russian-made cases are brass (Jane's: brass or varnished steel).
+material = "brass"
+sources = ["book:labbett p. 84", "book:janes-ammo-2002 p. 58"]
+
 [[colour_codes]]
 part = "tip"
 colours = ["black", "red"]

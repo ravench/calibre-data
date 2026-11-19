@@ -50,9 +50,10 @@ type = "jacketed"
 sources = ["book:cotw-18 p. 551"]
 
 [case]
-# Lacquered steel: 5.45x39 from the start; 7.62x39 since the early 1960s (bimetal before).
+# Steel: Labbett says most early Soviet cases were copper-washed (a few brass-washed) and lacquer
+# came later; Wikipedia dates lacquered steel to the early 1960s.
 material = "steel"
-sources = ["https://en.wikipedia.org/wiki/7.62%C3%9739mm"]
+sources = ["https://en.wikipedia.org/wiki/7.62%C3%9739mm", "book:labbett p. 83"]
 
 [current_cases]
 materials = ["brass"]

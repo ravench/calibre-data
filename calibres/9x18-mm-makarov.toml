@@ -42,6 +42,11 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page23.pdf
 type = "jacketed"
 sources = ["book:cotw-18 p. 494"]
 
+[case]
+# Jane's: the original brass case was later replaced by steel.
+material = "brass"
+sources = ["book:janes-ammo-2002 p. 38"]
+
 [current_cases]
 # Barnaul's lacquered, zinc- or polymer-coated steel cases.
 materials = ["steel"]
