@@ -247,7 +247,7 @@ class LoadTests(unittest.TestCase):
 
     def test_short_forms_build_the_same_dicts_as_the_helpers(self):
         self.assertEqual(next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == "12/70"),
-                         cartridges.shot("12/70", 20.6, 22.45, 61.09, ["12", "12/70", "12ga", "12gauge"], 70.0))
+                         cartridges.shot("12/70", 20.6, 22.45, 61.09, ["12", "12/70", "12ga", "12gauge", "12 bore"], 70.0))
         blank = next(s for _, i in cartridges.CATALOGUE for s in i if s["name"] == ".22 SH (5.6/11)")
         self.assertEqual((blank["neck"], blank["oal"], blank["profile"]), (3.4, 11.1, "crimped"))
 
