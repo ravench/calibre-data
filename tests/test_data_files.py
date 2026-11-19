@@ -868,10 +868,10 @@ class CheckTests(unittest.TestCase):
             c.edit(acp, "bullet = 11.48\n", "bullet = 11.48\nnose = 5.0\n")  # a round nose under half its width
             self.assertProblem(c, WIN, r"nose 20.0 is longer than the bullet out of the case \(19.92")
             self.assertProblem(c, colt, r'nose is for pointed and round bullets \(profile = "spitzer" or "round"\)')
-            self.assertProblem(c, acp, r"nose 5.0 is shorter than the bullet is half wide \(5.74\)")
+            self.assertProblem(c, acp, r"nose 5.0 is shorter than half the bullet width \(5.74\): that is no round nose")
         with Copy() as c:
             c.edit(WIN, "bullet = 7.85\n", "bullet = 7.85\nnose = 5.0\n")   # under the 7.85 width
-            self.assertProblem(c, WIN, r"nose 5.0 is shorter than the bullet is wide")
+            self.assertProblem(c, WIN, r"nose 5.0 is shorter than the bullet width \(\S+\): that is no pointed nose")
         for path, ok in ((WIN, "15.0"), (WIN, "19.92"), (acp, "6.0")):  # up to all of the bullet out of the case
             with Copy() as c:
                 width = "7.85" if path == WIN else "11.48"

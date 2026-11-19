@@ -3,8 +3,7 @@
 name = "9.3x53 mm Swiss"
 guns = ["rifle"]
 kind = "rimless"
-# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/93-x-53-swiss-m89-n/).
-profile = "flat"
+profile = "round"
 aliases = ["9.3x53", "9.3x53 swiss"]
 
 origin = "CH"

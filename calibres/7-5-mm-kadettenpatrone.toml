@@ -21,7 +21,7 @@ obsolete = true
 rare = true
 
 [mm]
-# The case and bullet of the GP 90/23 (same chamber: its AECC drawing 08-054-BGC-085, within 0.15 mm of
+# The case and bullet diameter of the GP 90/23 (same chamber: its AECC drawing 08-054-BGC-085, within 0.15 mm of
 # Raven's caliper values above, the shoulder position 0.5 mm); the length is Raven's round.
 rim = 12.62
 base = 12.52
@@ -38,7 +38,8 @@ overall_length = 77.5
 bullet = 7.75
 # nose: read off the side photo of Raven's round in its Kaliberfinder capture (2026-11-08, private
 # training package, photo 02): the round nose curves in over the last 0.82 bullet widths, 6.4 mm; the
-# bullet is parallel from the case mouth up to there.
+# bullet is parallel from the case mouth up to there. That is blunter than the GP 90/23 on its AECC
+# drawing (9.2 mm, 1.19 widths): the cadet bullet is its own, shorter-nosed bullet, or one reading is off.
 nose = 6.4
 cite.nose = ["measured:raven 2026-11-08"]
 sources = ["book:poyer p. 50", "https://municion.org/producto/75-x-545-swiss-gp-90-23/", "measured:raven 2026-11-08"]

@@ -1,13 +1,13 @@
+name = ".45 Colt"
+# Guns: https://www.henryusa.com/wp-content/uploads/mediakit/Henry-Big-Boy-Rifles-Spec-Sheet.pdf https://www.americanrifleman.org/articles/2020/8/19/rossi-r92-a-top-selling-lever-action-rifle/ (Henry Big Boy, Rossi R92 lever actions).
+guns = ["handgun", "rifle"]
+kind = "rimmed"
 # Nose: flat. The 1873 original was an "ogival & flat nosed" 255 gr bullet (Wikipedia), and the AECC
 # drawing of the .45 Long Colt (https://municion.org/producto/45-long-colt-d-a/) shows a flat point
 # about 5 mm across. Raven 2026-11-19: the round nose drew it too round; Raven's second .45 Colt capture
 # (2026-11-19, private training package) shows a lead truncated cone with a flat about 0.4 of its
 # width. (Some factory lead loads are round nose with a small flat: Winchester X45CP2 "255 gr Lead
 # Round Nose", Raven's W-W round of 2026-11-08.)
-name = ".45 Colt"
-# Guns: https://www.henryusa.com/wp-content/uploads/mediakit/Henry-Big-Boy-Rifles-Spec-Sheet.pdf https://www.americanrifleman.org/articles/2020/8/19/rossi-r92-a-top-selling-lever-action-rifle/ (Henry Big Boy, Rossi R92 lever actions).
-guns = ["handgun", "rifle"]
-kind = "rimmed"
 profile = "flat"
 aliases = ["45colt", "45lc", "45longcolt"]
 display_aliases = [".45 Long Colt"]

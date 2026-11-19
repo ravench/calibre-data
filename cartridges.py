@@ -712,9 +712,10 @@ def _read_calibre(f, countries, books=None):
                     f.problem(f.line("mm", NOSE_KEY), f"[mm] {NOSE_KEY} {data[NOSE_KEY]} is longer than the bullet "
                                                       f"out of the case ({exposed:.2f}: overall_length - case_length)")
                 elif _is_number(data[NOSE_KEY]) and _is_number(shortest[profile]) and data[NOSE_KEY] < shortest[profile]:
-                    what = "is wide" if profile == SPITZER else "is half wide"
-                    f.problem(f.line("mm", NOSE_KEY), f"[mm] {NOSE_KEY} {data[NOSE_KEY]} is shorter than the bullet "
-                                                      f"{what} ({shortest[profile]:g}): that is no {profile} nose")
+                    what = "the bullet width" if profile == SPITZER else "half the bullet width"
+                    f.problem(f.line("mm", NOSE_KEY), f"[mm] {NOSE_KEY} {data[NOSE_KEY]} is shorter than {what} "
+                                                      f"({shortest[profile]:g}): that is no "
+                                                      f"{'pointed' if profile == SPITZER else 'round'} nose")
         allowed = set(req) | set(opt) | ({"sources"} if t != "mm" else set(MM_LISTS))
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)

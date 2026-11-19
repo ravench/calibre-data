@@ -2,8 +2,7 @@
 name = "9x57 mm R"
 guns = ["rifle"]
 kind = "rimmed"
-# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/9-x-57-r-mauser/).
-profile = "flat"
+profile = "round"
 aliases = ["9x57r"]
 
 origin = "DE"

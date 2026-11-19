@@ -711,8 +711,7 @@ class OutlineTests(unittest.TestCase):
         for name, length in (("7.5x54.5 mm Swiss (GP 90/23)", 9.2), ("7.5 mm Kadettenpatrone", 6.4)):
             o = outline.outline(by_name[name])
             widest = max(x for x, _ in points(o["bullet"]))
-            # The round nose leaves the side tangentially, so its first points still round to the full width.
-            self.assertAlmostEqual(min(y for x, y in points(o["bullet"]) if x == widest), length, delta=0.8)
+            self.assertIn(length, [y for x, y in points(o["bullet"]) if x == widest])
 
     def test_jackets_that_are_not_copper_are_named(self):
         for _, s in outline.specs():
