@@ -45,4 +45,4 @@ sources = ["book:cotw-18 p. 465", "https://en.wikipedia.org/wiki/7.62×38mmR"]
 [case]
 # Labbett has seen only brass cases.
 material = "brass"
-sources = ["book:labbett p. 23", "book:labbett p. 84"]
+sources = ["book:labbett p. 23"]
