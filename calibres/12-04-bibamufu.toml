@@ -3,7 +3,8 @@
 name = "12.04 Bibamufu"
 guns = ["rifle"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/1204-mm-lazzeroni-bibamufu/).
+profile = "flat"
 aliases = ["12.04 bibamufu", "bibamufu", "lazzeroni bibamufu"]
 
 origin = "US"

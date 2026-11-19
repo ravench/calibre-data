@@ -2,7 +2,8 @@
 name = "5.75 mm Velo-Dog"
 guns = ["handgun"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/56-mm-velo-dog/).
+profile = "flat"
 aliases = ["velodog", "5.75velodog", "5.5velodog", "5.5x30r"]
 
 origin = "FR"

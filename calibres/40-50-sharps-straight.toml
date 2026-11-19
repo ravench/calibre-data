@@ -5,7 +5,8 @@ name = ".40-50 Sharps Straight"
 guns = ["rifle"]
 black_powder = true
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/40-50-265-sharps-straight-1-7-8/).
+profile = "flat"
 aliases = ["40-50 sharps straight", "40-1 7/8 sharps"]
 
 origin = "US"

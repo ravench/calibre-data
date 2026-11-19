@@ -2,7 +2,8 @@
 name = ".25 NAA"
 guns = ["handgun"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/25-naa/).
+profile = "flat"
 aliases = ["25naa"]
 
 origin = "US"

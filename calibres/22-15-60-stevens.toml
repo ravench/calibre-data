@@ -3,7 +3,8 @@
 name = ".22-15-60 Stevens"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/22-15-60-stevens/).
+profile = "flat"
 aliases = ["22-15-60", "22-15 stevens"]
 
 origin = "US"

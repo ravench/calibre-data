@@ -6,7 +6,8 @@ name = ".50-140 Sharps"
 guns = ["rifle"]
 black_powder = true
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/50-140-700-sharps-3-1-4/).
+profile = "flat"
 aliases = ["50-140 sharps", "50-140 winchester express", "50-3 1/4 sharps"]
 
 origin = "US"

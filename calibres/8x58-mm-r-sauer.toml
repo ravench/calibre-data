@@ -2,7 +2,8 @@
 name = "8x58 mm R Sauer"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/8-x-58-r-sauer-sohn/).
+profile = "flat"
 aliases = ["8x58r sauer"]
 
 origin = "DE"

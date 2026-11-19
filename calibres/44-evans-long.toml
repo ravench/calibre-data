@@ -5,7 +5,8 @@ name = ".44 Evans Long"
 guns = ["rifle"]
 black_powder = true
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/44-evans-long/).
+profile = "flat"
 aliases = ["44 evans long", "44-40 straight", "44-40-300"]
 
 origin = "US"

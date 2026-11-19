@@ -2,7 +2,8 @@
 name = "7.5 FK"
 guns = ["handgun"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/75-mm-fk-brno/).
+profile = "flat"
 aliases = ["7.5fk", "fk brno"]
 
 origin = "CZ"

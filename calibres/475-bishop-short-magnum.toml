@@ -3,7 +3,8 @@
 name = ".475 Bishop Short Magnum"
 guns = ["rifle"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/475-bishop-short-magnum/).
+profile = "flat"
 aliases = ["475 bishop", "475 bishop short magnum", "475 bsm"]
 
 origin = "US"

@@ -3,7 +3,8 @@
 name = "9.3x65 mm R Collath"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "flat"
+# Nose: round, as the AECC specimen drawing shows it (https://municion.org/producto/93-x-65-r-collath-tesco/).
+profile = "round"
 aliases = ["9.3x65r", "9.3x65r collath"]
 
 origin = "DE"

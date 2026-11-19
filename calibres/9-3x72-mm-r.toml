@@ -5,7 +5,8 @@
 name = "9.3x72 mm R"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/93-x-72-r/).
+profile = "flat"
 aliases = ["9.3x72r"]
 
 origin = "DE"

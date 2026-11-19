@@ -5,7 +5,8 @@
 name = ".30 Remington"
 guns = ["rifle"]
 kind = "rimless"
-profile = "flat"
+# Nose: round, as the AECC specimen drawing shows it (https://municion.org/producto/30-remington/).
+profile = "round"
 aliases = ["30rem"]
 
 origin = "US"

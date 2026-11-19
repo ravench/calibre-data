@@ -5,7 +5,8 @@ name = "11x52 mm R Beaumont M71/78"
 guns = ["rifle"]
 black_powder = true
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/113-x-51-r-dutch-beaumont-mle-1871-78/).
+profile = "flat"
 aliases = ["11x52r", "11x52r beaumont"]
 
 origin = "NL"

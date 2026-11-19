@@ -3,7 +3,8 @@
 name = "10 mm Magnum"
 guns = ["handgun"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/10-mm-auto-magnum/).
+profile = "flat"
 aliases = ["10mm magnum", "10 mm mag", "10mm mag"]
 
 origin = "US"

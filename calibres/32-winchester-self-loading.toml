@@ -3,7 +3,8 @@
 name = ".32 Winchester Self-Loading"
 guns = ["rifle"]
 kind = "semi-rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/32-winchester-self-loading/).
+profile = "flat"
 aliases = ["32wsl", "32 wsl", "32 win. sl"]
 
 origin = "US"

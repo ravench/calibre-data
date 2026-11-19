@@ -3,7 +3,8 @@
 name = ".451 Detonics Magnum"
 guns = ["handgun"]
 kind = "rimless"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/451-detonics-magnum/).
+profile = "flat"
 aliases = ["451 detonics", "451 detonics magnum"]
 
 origin = "US"

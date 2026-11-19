@@ -3,7 +3,8 @@
 name = ".300 Sherwood"
 guns = ["rifle"]
 kind = "rimmed"
-profile = "round"
+# Nose: flat, as the AECC specimen drawing shows it (https://municion.org/producto/300-sherwood/).
+profile = "flat"
 aliases = ["300 sherwood", "300sherwood"]
 
 origin = "GB"
