@@ -2,7 +2,7 @@ name = "12/70"
 guns = ["shotgun"]
 kind = "shot"
 profile = "flat"
-aliases = ["12", "12/70", "12ga", "12gauge"]
+aliases = ["12", "12/70", "12ga", "12gauge", "12 bore", "calibre 12", "calibro 12", "kaliber 12"]
 
 worldwide = true
 

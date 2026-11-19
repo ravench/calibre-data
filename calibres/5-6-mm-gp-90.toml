@@ -5,7 +5,7 @@ name = "5.6 mm GP 90"
 guns = ["rifle"]
 kind = "rimless"
 profile = "spitzer"
-aliases = ["gp90", "gp 90", "5.6", "5.6mm", "5.6gp90", "stgw90", "gewehrpatrone 90", "gwpat90"]
+aliases = ["gp90", "gp 90", "5.6", "5.6mm", "5.6gp90", "stgw90", "gewehrpatrone 90", "gwpat90", "cart 5.6 mm 90 f", "fass 90"]
 
 origin = "CH"
 origin_sources = ["https://en.wikipedia.org/wiki/SIG_SG_550"]

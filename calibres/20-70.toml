@@ -2,7 +2,7 @@ name = "20/70"
 guns = ["shotgun"]
 kind = "shot"
 profile = "flat"
-aliases = ["20", "20/70"]
+aliases = ["20", "20/70", "20 bore", "calibre 20", "calibro 20", "kaliber 20"]
 
 worldwide = true
 

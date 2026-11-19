@@ -94,6 +94,30 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(DISPLAY_ALIASES["6.5x58 mm Vergueiro"], ["6.5x58 mm Mauser"])
         self.assertNotIn("7.92x24 mm", NAMES)
 
+    def test_everyday_names_of_a_round_find_it_in_every_language(self):
+        # The name a single round goes by in English, French, Italian and German, and in the language of its
+        # origin, is an alias (Raven, 2026-11-19): «12 bore», «calibre 12», «calibro 12» and «Kaliber 12» found
+        # nothing in Kaliberfinder's search. The words of a whole group (blank, round ball, pellet, shotshell) are
+        # not aliases: the apps translate them once, by `kind` and for blanks. The apps look for the search text
+        # inside the name, the display aliases and the aliases, without spaces, dots and «mm», a comma as a point.
+        def key(text):
+            return text.lower().replace(",", ".").replace(" ", "").replace("-", "").replace("mm", "").replace(".", "")
+
+        def found(words):
+            return {s["name"] for s in ALL
+                    if any(key(words) in key(k) for k in [s["name"], *DISPLAY_ALIASES.get(s["name"], ()), *s["aliases"]])}
+        for gauge in ("12", "16", "20", "28"):
+            for words in (f"{gauge} bore", f"calibre {gauge}", f"calibro {gauge}", f"Kaliber {gauge}"):
+                self.assertEqual(found(words), {f"{gauge}/70"}, words)
+        for words in ("410 bore", "calibro 36"):  # Italy counts the .410 as its 36
+            self.assertEqual(found(words), {".410/76"}, words)
+        for words in ("9mm short", "9 corto", "9 mm corto", "9 mm court", "9 mm kurz", ".380 ACP"):
+            self.assertEqual(found(words), {"9 mm Browning kurz (.380 ACP)"}, words)
+        self.assertEqual(found("french long"), {"7.65 mm Longue"})
+        # The Swiss Army's own French and Italian name of the GP 90, and of its rifle (regulation 53.096 f and i).
+        for words in ("cart 5,6 mm 90 F", "Fass 90", "Stgw 90", "Gewehrpatrone 90"):
+            self.assertIn("5.6 mm GP 90", found(words), words)
+
     def test_every_centrefire_calibre_has_a_primer(self):
         centrefire = {s["name"] for s in ALL if s["kind"] not in (RIMFIRE, BALL, MINIE, PELLET)}
         self.assertEqual(set(PRIMERS), centrefire)

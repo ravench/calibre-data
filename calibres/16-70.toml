@@ -2,7 +2,7 @@ name = "16/70"
 guns = ["shotgun"]
 kind = "shot"
 profile = "flat"
-aliases = ["16", "16/70"]
+aliases = ["16", "16/70", "16 bore", "calibre 16", "calibro 16", "kaliber 16"]
 
 [mm]
 # C.I.P. Cal. 16, Tab. VII, maximum cartridge: diameter d1, rim g; case_length is the length in the
