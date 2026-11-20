@@ -51,10 +51,22 @@ class GapTests(unittest.TestCase):
     def test_a_crimped_blanks_mouth_is_a_sketch(self):
         # Raven 2026-11-14: "treat the crimp as a sketch". No sheet gives a star crimp's size: the mouth stays
         # listed as unsourced, but it keeps no blank from being well sourced.
-        for name in (".22 Long Blanc", "6 mm Flobert Blanc", "9 mm R Blanc", ".320 Court Blanc", ".45 K Blanc"):
+        # (The .320 Court Blanc's and the 6.8/11's are read off Raven's captures since 2026-11-20.)
+        for name in (".22 Long Blanc", "6 mm Flobert Blanc", "9 mm R Blanc", ".45 K Blanc"):
             with self.subTest(name):
                 self.assertEqual(cartridges.unsourced(name), ("mouth",))
                 self.assertEqual(outline.gaps(self.spec(name)), ())
+        for name in ("6.8/11", ".320 Court Blanc"):
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+        # An estimated crimp length is a sketch too.
+        real = cartridges.unsourced
+        try:
+            cartridges_unsourced = lambda n: ("mouth", "crimp_length") if n == "6.8/11" else real(n)  # noqa: E731
+            outline.unsourced = cartridges_unsourced
+            self.assertEqual(outline.gaps(self.spec("6.8/11")), ())
+        finally:
+            outline.unsourced = real
         s = dict(self.spec(".45 K Blanc"), profile=FLAT)  # on any other profile it would still be a gap
         self.assertEqual(outline.gaps(s)[:1], ("measurements",))
 
@@ -857,6 +869,21 @@ class OutlineTests(unittest.TestCase):
         body = [x for x, y in pts if abs(y - s["case"] * outline.CRIMP_LENGTH) < 0.01]
         self.assertAlmostEqual(max(body) - min(body), s["base"], places=1)
         self.assertLess(s["neck"], s["base"])
+
+    def test_a_crimp_length_sets_where_the_petals_start(self):
+        # Read off Raven's captures (2026-11-20): the Hilti 6.8/11's petals bend in over 4.3 mm to a near point,
+        # the RWS .320 Court Blanc's over 2.8 mm into a blunt dome. Without crimp_length: the front 38 %.
+        for name, crimp in (("6.8/11", 4.3), (".320 Court Blanc", 2.8), (".22 SH (5.6/11)", None)):
+            with self.subTest(name):
+                s = next(s for _, s in outline.specs() if s["name"] == name)
+                self.assertEqual(cartridges.crimp_length(name), crimp)
+                start = s["case"] - (crimp or s["case"] * outline.CRIMP_LENGTH)
+                pts = points(outline.outline(s)["case"])
+                # Tip at y = 0: the full body down to where the crimp starts, narrower only above it.
+                at = [x for x, y in pts if abs(y - (s["oal"] - start)) < 0.01]
+                self.assertAlmostEqual(max(at) - min(at), s["base"], places=1)
+                self.assertTrue(all(abs(x - (max(at) + min(at)) / 2) < s["base"] / 2 - 0.01
+                                    for x, y in pts if 0.01 < y < s["oal"] - start - 0.01), name)
 
     def test_rimmed_alarm_blank_draws_a_rim_and_a_crimp(self):
         s = next(s for _, s in outline.specs() if s["name"] == "9 mm R Blanc")

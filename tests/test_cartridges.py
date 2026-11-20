@@ -444,9 +444,13 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(b["base"], by_name[".22 Short"]["base"], "same .22 case body")
         self.assertIn("platzpatrone", b["aliases"])
         self.assertFalse(is_obsolete(b["name"]))
-        # C.I.P.'s 6,8/11 is the .27 calibre load, which the catalogue does not hold: nothing answers to it.
         self.assertIn("5.6/11", b["aliases"])
-        self.assertFalse([s["name"] for s in ALL if "6.8/11" in s["name"] or {"6.8/11", "6.8x11"} & set(s["aliases"])])
+        # C.I.P.'s 6,8/11 is the .27 calibre load, its own entry since Raven's Hilti capture (2026-11-20).
+        h = by_name["6.8/11"]
+        self.assertEqual((h["kind"], h["profile"]), (RIMFIRE, "crimped"))
+        self.assertEqual((h["rim"], h["base"], h["oal"]), (8.5, 6.86, 11.0))  # C.I.P. 6,8/11 R1, P1, L6
+        self.assertGreater(h["rim"], b["rim"])
+        self.assertEqual([s["name"] for s in ALL if {"6.8/11", "6.8x11"} & set(s["aliases"])], ["6.8/11"])
 
     def test_blanks_carry_the_title_of_their_cip_sheet(self):
         # Raven, 2026-11-14: blanks and tool loads have no maker's name, so only the official one is used: the
@@ -454,6 +458,7 @@ class CatalogueTests(unittest.TestCase):
         # The names they are sold under stay as display aliases and search aliases; «.22 Blank» was made up here.
         titles = {  # name: (C.I.P. title as printed, a display alias, a search alias)
             ".22 SH (5.6/11)": ("22 SH (5,6/11)", ".22 Blank", "22blank"),
+            "6.8/11": ("6,8/11", ".27 Blank", "27blank"),
             ".22 Long Blanc": ("22 Long Blanc", ".22 lang Knall", "22longknall"),
             "6 mm Flobert Blanc": ("6 mm Flobert Blanc", "6 mm Flobert Knall", "flobertknall"),
             ".315 Blanc": ("315 Blanc", ".315 Knall", "315knall"),
@@ -659,9 +664,9 @@ class CatalogueTests(unittest.TestCase):
         sizes = {s["name"] for s in ALL if s["kind"] in (SHOT, BALL, MINIE, PELLET)}
         blanks = {s["name"] for s in ALL
                   if is_blank(s["profile"], s["rim"], s["base"], s["neck"], s["bullet"], s["case"], s["oal"])}
-        self.assertEqual(len(blanks), 9)  # the .22 SH (5.6/11) and the eight alarm blanks of C.I.P. Tab. VIII
+        self.assertEqual(len(blanks), 10)  # the .22 SH (5.6/11), the 6.8/11 and the eight alarm blanks of C.I.P. Tab. VIII
         self.assertFalse(blanks & sizes)
-        self.assertLessEqual(sizes | {".22 SH (5.6/11)"}, set(INTRODUCED_UNKNOWN))  # no single launch year
+        self.assertLessEqual(sizes | {".22 SH (5.6/11)", "6.8/11"}, set(INTRODUCED_UNKNOWN))  # no single launch year
         self.assertIn("9 mm PA Blanc", blanks)
         for name in sizes | blanks:
             self.assertIsNone(origin(name), name)
