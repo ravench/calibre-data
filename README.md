@@ -239,7 +239,7 @@ Short forms:
 | `kind = "ball"` | `diameter` |
 | `kind = "minie"` or `"pellet"` | `diameter`, `length` |
 | `kind = "shot"` | `diameter`, `rim`, `length` (the loaded shell as crimped), optional `case_length` (the hull opened by firing: the length in the name, 70 for a 12/70) |
-| `profile = "crimped"` | `rim`, `base`, `mouth` (at the star crimp), `length` |
+| `profile = "crimped"` | `rim`, `base`, `mouth` (at the star crimp), `length`; optional `crimp_length` (mm from the mouth back to where the petals start bending in, read off photos: no sheet gives it; drawn over the front 38 % of the case without it) |
 
 `sources` lists every page the measurements come from, the page of most of them first. When only
 some of them have a source, `unsourced` lists the others (estimated, or measured on one round), with

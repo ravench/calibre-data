@@ -113,7 +113,7 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(cartridges.categories(".357 Magnum"), ("Kurzwaffe", "Langwaffe"))
         # Only blanks name no gun: they are fired by blank and starter pistols and tools, not by a gun.
         self.assertEqual({n for n, g in guns.items() if not g},
-                         {".22 SH (5.6/11)", ".22 Long Blanc", "6 mm Flobert Blanc"})
+                         {".22 SH (5.6/11)", "6.8/11", ".22 Long Blanc", "6 mm Flobert Blanc"})
         kinds = {s["name"]: s["kind"] for _, items in cartridges.ALL_CATALOGUE for s in items}
         for name, g in guns.items():
             with self.subTest(name):
@@ -969,6 +969,24 @@ class CheckTests(unittest.TestCase):
                 (WIN, c.line_of(WIN, "shoulder ="), "[mm] shoulder 11.95 is wider than base 11.9" + why),
                 (acp, c.line_of(acp, "neck ="), "[mm] neck 12.15 is more than 0.05 wider than base 12.09" + why),
             ])
+
+    def test_a_crimp_length_is_drawable_and_cited(self):
+        hilti = "calibres/6-8-11.toml"
+        for value, shown in (("11.0", "11.0"), ("0.2", "0.2")):  # into the rim, or folding back under the turn-in
+            with self.subTest(value), Copy() as c:
+                c.edit(hilti, "crimp_length = 4.3", "crimp_length = " + value)
+                self.assertProblem(c, hilti, rf"crimp_length {shown} is the crimp's length from the mouth back: 0.5 to "
+                                             rf"half the length \(5.5\)")
+        with Copy() as c:
+            c.edit(hilti, "crimp_length = 4.3", "crimp_length = 0")
+            found = [p for p in c.problems() if "crimp_length" in p[2]]
+            self.assertEqual(len(found), 1, found)  # only the number check, not the range too
+        with Copy() as c:  # no sheet gives it: its own cite or unsourced, never the [mm] sources
+            c.edit(hilti, 'cite.crimp_length = ["measured:raven 2026-11-20"]\n', "")
+            self.assertProblem(c, hilti, r"crimp_length comes from no sheet")
+        with Copy() as c:
+            c.edit(WIN, "bullet = ", "crimp_length = 3.0\nbullet = ")
+            self.assertProblem(c, WIN, r"crimp_length")  # only blanks have a crimp
 
     def test_names_write_numbers_and_units_one_way(self):
         for name, pattern in [("7.62x51mm Test", r"a space between the number and the unit"),

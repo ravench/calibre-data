@@ -1,7 +1,7 @@
 # Alarm and starter blanks from C.I.P. Tab. VIII, maximum cartridge (sheets 1991-07-29 to
 # 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm PA Blanc, length = L3.
-# Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base,
-# the ratio of the measured .22 SH (5.6/11), because C.I.P. gives no crimp size.
+# Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base, the
+# ratio once read off fired blanks (opened 6.8/11 loads, it turned out), because C.I.P. gives no crimp size.
 # The name is the sheet's title, «6 mm Flobert Blanc»; in German the round is sold as «Knall».
 name = "6 mm Flobert Blanc"
 guns = []

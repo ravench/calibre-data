@@ -1,8 +1,11 @@
 # Alarm and starter blanks from C.I.P. Tab. VIII, maximum cartridge (sheets 1991-07-29 to
 # 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm PA Blanc, length = L3.
-# Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base,
-# the ratio of the measured .22 SH (5.6/11), because C.I.P. gives no crimp size.
+# Star-crimped ones use L6 (the crimped length); C.I.P. gives no crimp size. This one's mouth and crimp
+# are measured (below); the others' mouths are estimated at 0.6 x the base.
 # The name is the sheet's title, «320 Court Blanc»; in German the round is sold as «Knall».
+# Raven's RWS round (headstamp «RWS 620», capture of 2026-11-20 in the private training package) is this
+# one: calliper rim 9.2, body 8.0, primer 4.5, all inside the sheet's maxima, but only 14.5 long against
+# L6 16.00, so the length stays the sheet's maximum.
 name = ".320 Court Blanc"
 guns = ["handgun"]
 kind = "rimmed"
@@ -13,9 +16,14 @@ display_aliases = [".320 Knall"]
 [mm]
 rim = 9.55
 base = 8.09
-mouth = 4.9
+# mouth and crimp_length: read off the side photos of that capture (photos 02, 03, 06, 07), as shares
+# of the case width and of the round's length. The six petals fold in over the front 2.8 mm (0.19 of 14.5)
+# into a blunt dome and close to about 0.48 of the body, 3.8 mm (estimated at 0.6 x the base, 4.9, before).
+mouth = 3.8
+cite.mouth = ["measured:raven 2026-11-20"]
+crimp_length = 2.8
+cite.crimp_length = ["measured:raven 2026-11-20"]
 length = 16.0
-unsourced = ["mouth"]
 sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
 
 [introduced]

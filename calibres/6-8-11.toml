@@ -1,0 +1,35 @@
+# .27 calibre power-tool load (Hilti and other powder-actuated nailers), named by its C.I.P. sheet
+# «6,8/11» (Tab. VI): a 6.8 mm case, 11 mm long. Before 2026-11-20 the catalogue had only the .22 one,
+# the .22 SH (5.6/11), which this was taken for until Raven's capture of a Hilti load (headstamp «HILTI.»,
+# 2026-11-20, private training package) measured rim 8.4, body 6.8, length 10.8 with the calliper; the
+# fired blanks Raven captured on 2026-11-04 and 2026-11-07 are the same cartridge. Hilti sells it as
+# «6.8/11 M10» (strips of 10, colours yellow, green, red, black and white):
+# https://www.hilti.ch/c/CLS_POWER_TOOLS_7125/CLS_TOOLS_7125/CLS_ACC_DIRECT_FASTENING_7125/r4527
+name = "6.8/11"
+guns = []
+kind = "rimfire"
+profile = "crimped"
+aliases = ["6.8/11", "6.8x11", "27blank", "27cal", "27short", "hilti", "6.8/11m10"]
+display_aliases = [".27 Blank", "6.8/11 M10"]
+
+[mm]
+# C.I.P. 6,8/11, maximum cartridge: rim R1, base P1, length L6 (crimped; the open case L3 is 11.80).
+rim = 8.5
+base = 6.86
+# mouth and crimp_length: read off the side photos of Raven's capture (photos 04, 05, 09, 10), as shares of
+# the case width and of the round's length. The six red-lacquered petals bend in over the front 4.3 mm
+# (0.40 of 10.8) to a near point, about 0.38 of the body, 2.6 mm across.
+mouth = 2.6
+cite.mouth = ["measured:raven 2026-11-20"]
+crimp_length = 4.3
+cite.crimp_length = ["measured:raven 2026-11-20"]
+length = 11.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vi/tabvical-en-page15.pdf"]
+
+[introduced]
+unknown = "a family of power-tool loads with no single launch"
+
+[case_head]
+# R on the C.I.P. 6,8/11 sheet
+rim_thickness = 1.45
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vi/tabvical-en-page15.pdf"]

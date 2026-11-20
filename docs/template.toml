@@ -113,7 +113,8 @@ bullet = 7.85          # bullet diameter (G1)
 #   kind = "ball":                     diameter
 #   kind = "minie" or "pellet":        diameter, length
 #   kind = "shot":                     diameter, rim, length (the case)
-#   profile = "crimped":               rim, base, mouth (at the star crimp), length
+#   profile = "crimped":               rim, base, mouth (at the star crimp), length, optional crimp_length
+#                                      (mm from the mouth back to where the petals start bending in)
 #
 # sources: every page the measurements come from, the page of most of them first: web addresses or
 # pages of a book in books.toml ("book:cotw-18 p. 176": the page number printed in the book).
