@@ -933,6 +933,8 @@ class CatalogueTests(unittest.TestCase):
         self.assertEqual(BULLETS[".480 Ruger"][0], HOLLOW_POINT)
         for name in ("6 mm Creedmoor", ".25 Creedmoor", ".300 Ruger Compact Magnum"):
             self.assertEqual(BULLETS[name][0], POLYMER_TIP, name)
+        # Thun's PTBT match load: a red plastic tip, not a painted tracer tip.
+        self.assertEqual(BULLETS["6x47 mm SM"][0], POLYMER_TIP)
         self.assertEqual(BULLETS[".244 H&H Magnum"][0], SOFT_POINT)
         self.assertEqual(bullet(".32 NAA"), JACKETED)  # also sold with full metal jackets
 

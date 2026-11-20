@@ -51,5 +51,8 @@ ramp_angle = 36.0
 sources = ["https://www.tiropratico.com/CIP/Commission%20Internationale%20Permanente/6x47.pdf"]
 
 [bullet]
-type = "jacketed"
-sources = []
+# Thun's factory load PTBT, municion.org's specimen of 1999, the year it came out: a hollow point closed
+# by a plastic tip («PUNTA HUECA CON INSERTO PLASTICO»), red on Raven's rounds (Raven 2026-11-20).
+# Part of the bullet, not paint: no tracer code.
+type = "polymer"
+sources = ["https://municion.org/producto/6-x-47-swiss-match/"]
