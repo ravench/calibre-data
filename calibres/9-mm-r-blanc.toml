@@ -7,7 +7,7 @@ name = "9 mm R Blanc"
 guns = ["handgun"]
 kind = "rimmed"
 profile = "crimped"
-aliases = ["9mmrk", "9rk", "9mmr", "380r", "380knall", "9x17r", "revolverknall", "9mmrknall", "9mmrblanc", "380rblanc"]
+aliases = ["9mmrk", "9mmr.k.", "9rk", "9mmr", "380r", "380knall", "9x17r", "revolverknall", "9mmrknall", "9mmrblanc", "380rblanc"]
 display_aliases = ["9 mm R Knall", ".380 R Blanc"]
 
 [mm]

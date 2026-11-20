@@ -474,6 +474,8 @@ class CatalogueTests(unittest.TestCase):
                 self.assertIn(shown, DISPLAY_ALIASES[name])
                 self.assertIn(alias, by_name[name]["aliases"])
         self.assertIn(".380 R Blanc", DISPLAY_ALIASES["9 mm R Blanc"])  # the other half of the double title
+        # A former display alias, as printed on boxes: Schiesstagebuch's exact search keeps the dots.
+        self.assertIn("9mmr.k.", by_name["9 mm R Blanc"]["aliases"])  # «9 mm R.K.»
         self.assertFalse([n for n in by_name if "Knall" in n or "P.A.K." in n or "Blank" in n])
 
     def test_alarm_blanks_keep_the_cip_values(self):
