@@ -10,7 +10,7 @@ name = ".22 SH (5.6/11)"
 guns = []
 kind = "rimfire"
 profile = "crimped"
-aliases = ["22blank", "22platzpatrone", "5.6/11", "5.6x11", "platzpatrone", "kartusche", "setzkartusche", "bolzensetzer", "22sh"]
+aliases = ["22blank", "5.6/11", "5.6x11", "platzpatrone", "kartusche", "setzkartusche", "bolzensetzer", "22sh"]
 display_aliases = [".22 Blank", "Setzkartusche 5.6/11"]
 
 [mm]
