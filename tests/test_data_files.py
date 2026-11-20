@@ -894,6 +894,9 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.edit(colt, "flat = 5.0", "flat = 0")
             self.assertProblem(c, colt, r"flat must be a number above 0")
+        with Copy() as c:
+            c.edit(colt, "flat = 5.0", "flat = 11.5")                     # just under the bullet
+            self.assertEqual(c.problems(), [])
 
     # Calibres whose [mm] shoulder is not the sheet's P2, so the shoulder drawn at the sheet's angle ends short of
     # the sheet's L2. Their shoulders come from other pages; fix them to P2 and empty this.

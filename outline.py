@@ -256,7 +256,10 @@ def cavity_profile(r, y0, top, profile, nose_length=None, flat_width=None):
     """Right half of a hollow-point bullet's cavity, a hidden line inside the round's full nose (tester,
     2026-11-16): its mouth where the nose is as wide as it, and its apex below (at most 0.3 of the exposed
     bullet deep)."""
+    # On a flat nose narrower than the mouth the mouth opens in the flat.
     pts, m = bullet_profile(r, y0, top, profile, nose_length, flat_width), HOLLOW_MOUTH * r
+    if profile == FLAT and flat_width:
+        m = min(m, flat_width / 2)
     i = next(i for i, (x, _) in enumerate(pts) if x <= m)
     (xa, ya), (xb, yb) = pts[i - 1], pts[i]
     y = ya + (xa - m) / (xa - xb) * (yb - ya)

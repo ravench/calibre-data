@@ -730,6 +730,14 @@ class OutlineTests(unittest.TestCase):
             nose = pts[2:-1]
             self.assertTrue(all(b[0] < a[0] for a, b in zip(nose, nose[1:])), width)
 
+    def test_a_hollow_point_opens_in_a_narrow_flat(self):
+        # The cavity's mouth is 0.3 of the bullet's radius across, or the flat's width where that is narrower.
+        r, y0, top = 11.53 / 2, 32.64, 40.64
+        for width, mouth in ((5.0, 0.3 * r), (2.0, 1.0)):
+            (x, y), _ = outline.cavity_profile(r, y0, top, FLAT, flat_width=width)
+            self.assertAlmostEqual(x, mouth)
+            self.assertAlmostEqual(y, top, places=6)
+
     def test_jackets_that_are_not_copper_are_named(self):
         for _, s in outline.specs():
             o = outline.outline(s)

@@ -1220,7 +1220,7 @@ GROOVE_WIDTHS = _t["GROOVE_WIDTHS"]
 NECKS = _t["NECKS"]
 # {name: mm}: the nose length of a pointed or round bullet, tip to where its curve starts; the [mm] sources cover it.
 NOSES = _t["NOSES"]
-# {name: mm}: the width of a flat-nosed bullet's flat tip; the [mm] sources cover it.
+# {name: mm}: the width of a flat-nosed bullet's flat tip; its sources are cite.flat or the [mm] sources.
 FLATS = _t["FLATS"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
