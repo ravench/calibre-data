@@ -9,7 +9,7 @@ import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, foot, unsourced, SHOULDER_ANGLES, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
-from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, nose, case_material, current_case_materials, loose_material  # noqa: E402
+from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, nose, crimp_length, case_material, current_case_materials, loose_material  # noqa: E402
 
 N = 14  # samples per curve
 # mm, groove floor where no source gives its length: belted cases (as drawn on the C.I.P. sheets) and
@@ -132,8 +132,10 @@ def case_profile(s):
     pts = rim_and_groove(s)
     top = s["neck"] / 2
     if s["profile"] == CRIMPED:
-        # Star crimp: the petals bend in over the front 38 % of the case, then turn in at the mouth.
-        return pts + [(base, case * (1 - CRIMP_LENGTH)), ((base + top) / 2, case - 0.35), (top, case)]
+        # Star crimp: the petals bend in over the crimp's length ([mm] crimp_length, else the front 38 % of the
+        # case), then turn in at the mouth.
+        crimp = crimp_length(s["name"]) or case * CRIMP_LENGTH
+        return pts + [(base, case - crimp), ((base + top) / 2, case - 0.35), (top, case)]
     if s["shoulder"]:
         sh = s["shoulder"] / 2
         run = shoulder_run(s)
@@ -186,7 +188,8 @@ def bullet_profile(r, y0, top, profile, nose_length=None):
     return pts
 
 
-# Share of a crimped blank's case taken up by the star crimp, from the mouth back.
+# Share of a crimped blank's case taken up by the star crimp, from the mouth back, where [mm] crimp_length
+# does not give it.
 CRIMP_LENGTH = 0.38
 
 # GP 1890 bullet from the army's drawing «Patrone, Modell 1890» (Thun, 1 February 1892): of the

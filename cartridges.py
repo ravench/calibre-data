@@ -188,11 +188,14 @@ ANGLE_KEY = "shoulder_angle"
 # the bullet parallel below it). It is the bullet's: on a longer overall_length the same nose sits further out
 # of the case. Without it a pointed nose is drawn over the front 68 % of the exposed bullet, a round one over 78 %.
 NOSE_KEY = "nose"
+# Star-crimped blanks: how far back from the mouth the petals bend in, in mm. Without it the crimp is drawn
+# over the front 38 % of the case (outline.CRIMP_LENGTH). No sheet gives it: it is read off photos.
+CRIMP_KEY = "crimp_length"
 MM_SHAPES = {  # shape: (required keys, optional keys)
     "ball": (("diameter",), ()),
     "loose": (("diameter", "length"), ()),
     "shot": (("diameter", "rim", "length"), ("case_length",)),
-    "blank": (("rim", "base", "mouth", "length"), ()),
+    "blank": (("rim", "base", "mouth", "length"), (CRIMP_KEY,)),
     "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"),
                   ("belt", "shoulder", "shoulder_at", ANGLE_KEY, NOSE_KEY) + NECK_KEYS),
     "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length",
@@ -701,6 +704,10 @@ def _read_calibre(f, countries, books=None):
                 f.problem(f.line("mm", ANGLE_KEY), f"[mm] {ANGLE_KEY} is for bottleneck cases (with shoulder and shoulder_at)")
             elif ("neck_at" in data) != ("neck_base" in data):
                 f.problem(f.line("mm"), "[mm] has neck_at and neck_base together (C.I.P. L2 and H1), or neither")
+            if CRIMP_KEY in data and _is_number(data[CRIMP_KEY]) and _is_number(data.get("length")) \
+                    and not 0 < data[CRIMP_KEY] < data["length"]:
+                f.problem(f.line("mm", CRIMP_KEY), f"[mm] {CRIMP_KEY} {data[CRIMP_KEY]} is the crimp's length from the "
+                                                   f"mouth back: above 0 and shorter than the length {data['length']}")
             if NOSE_KEY in data:
                 exposed = (data["overall_length"] - data["case_length"]
                            if all(_is_number(data.get(k)) for k in ("overall_length", "case_length")) else None)
@@ -1062,7 +1069,7 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "NOSES", "RIM_THICKNESS", "FEET", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "NOSES", "CRIMPS", "RIM_THICKNESS", "FEET", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
                          "CURRENT_CASES", "SOURCES", "UNSOURCED", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES", "CALIBRE_GUNS",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("BLACK_POWDER", "PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
@@ -1116,6 +1123,9 @@ def load(root=ROOT):
             if NOSE_KEY in mm:
                 t["NOSES"][n] = mm[NOSE_KEY]
                 t["SOURCES"][(n, NOSE_KEY)] = list(mm.get("cite", {}).get(NOSE_KEY, mm["sources"]))
+            if CRIMP_KEY in mm:
+                t["CRIMPS"][n] = mm[CRIMP_KEY]
+                t["SOURCES"][(n, CRIMP_KEY)] = list(mm.get("cite", {}).get(CRIMP_KEY, mm["sources"]))
             if "neck_at" in mm or "neck_base" in mm:
                 t["NECKS"][n] = (mm.get("neck_at"), mm.get("neck_base"))
             for k, cited in mm.get("cite", {}).items():
@@ -1208,6 +1218,8 @@ GROOVE_WIDTHS = _t["GROOVE_WIDTHS"]
 NECKS = _t["NECKS"]
 # {name: mm}: the nose length of a pointed or round bullet, tip to where its curve starts; the [mm] sources cover it.
 NOSES = _t["NOSES"]
+# {name: mm}: a star-crimped blank's crimp length, mouth back to where the petals start bending in.
+CRIMPS = _t["CRIMPS"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
 COUNTRIES = _t["COUNTRIES"]  # code: (English name, flag emoji or None)
 # code: {"en", "de", "fr", "it", "es"}: the country's name in the apps' languages (Kaliberfinder's
@@ -1334,6 +1346,12 @@ def origin_candidates(name):
 def nose(name):
     """Length of a pointed or round bullet's nose in mm (tip to where its curve starts), or None when not given."""
     return NOSES.get(name)
+
+
+def crimp_length(name):
+    """A star-crimped blank's crimp in mm, from the mouth back to where the petals start bending in, or None
+    when not given (the drawing then takes the front 38 % of the case)."""
+    return CRIMPS.get(name)
 
 
 def patch_length(name):

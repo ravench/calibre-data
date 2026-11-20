@@ -2,10 +2,9 @@
 # blanks. The name is the title of its C.I.P. sheet, «22 SH (5,6/11)» (Tab. VI): a 5.6 mm (.22) case,
 # 11 mm long. «.22 Blank» was made up for the catalogue and stays as an alias.
 # Until 2026-11-14 this entry was named «.22 Blank (6.8/11)» by mistake: C.I.P.'s «6,8/11» is
-# the .27 calibre load (rim 8.50, body 6.86), which is not in the catalogue. Raven's captures of
-# fired blanks of this entry measure about 11.4 x 6.9 mm: the .22's rim, not 8.50.
-# Crimp shape after fired ones in Raven's photos (2026-11-04): the star opens on firing but the
-# petals stay narrower than the body.
+# the .27 calibre load (rim 8.50, body 6.86), in the catalogue since 2026-11-20 as «6.8/11». Raven's fired
+# blanks of 2026-11-04 and 2026-11-07, filed under this entry, are that 6.8/11 (Raven 2026-11-20: the same
+# Hilti cartridge as the loaded one captured that day), so nothing here is measured on a round any more.
 name = ".22 SH (5.6/11)"
 guns = []
 kind = "rimfire"
@@ -15,7 +14,7 @@ display_aliases = [".22 Blank", "Setzkartusche 5.6/11"]
 
 [mm]
 # C.I.P. 22 SH (5,6/11), maximum cartridge: rim R1, base P1, length L6 (crimped; the open case L3 is
-# 11.50). C.I.P. gives no crimp size: the mouth is measured on Raven's photos.
+# 11.50). C.I.P. gives no crimp size: the mouth is estimated (it was read off the fired 6.8/11 photos).
 rim = 7.06
 base = 5.74
 mouth = 3.4
