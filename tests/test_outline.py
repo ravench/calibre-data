@@ -713,6 +713,23 @@ class OutlineTests(unittest.TestCase):
             widest = max(x for x, _ in points(o["bullet"]))
             self.assertIn(length, [y for x, y in points(o["bullet"]) if x == widest])
 
+    def test_a_flat_width_sets_the_flat_tip(self):
+        # Without [mm] flat the flat is 0.55 of the bullet's width; with it the given width (.45 Colt: 5.0).
+        r, y0, top = 11.53 / 2, 32.64, 40.64
+        tip = lambda pts: pts[-2][0] * 2  # noqa: E731  # the flat's corner, before the point on the axis
+        self.assertAlmostEqual(tip(outline.bullet_profile(r, y0, top, FLAT)), 0.55 * 11.53)
+        self.assertAlmostEqual(tip(outline.bullet_profile(r, y0, top, FLAT, flat_width=5.0)), 5.0)
+        by_name = {s["name"]: s for _, s in outline.specs()}
+        xs = [x for x, y in points(outline.outline(by_name[".45 Colt"])["bullet"]) if abs(y) < 1e-6]
+        self.assertAlmostEqual(max(xs) - min(xs), 5.0, places=2)  # tip at y = 0
+
+    def test_a_flat_nose_has_no_cylinder_on_top(self):
+        # Raven 2026-11-20: every flat nose drew a short cylinder under its flat. The nose narrows all the way up.
+        for width in (None, 3.0, 5.0, 9.0):
+            pts = outline.bullet_profile(11.53 / 2, 32.64, 40.64, FLAT, flat_width=width)
+            nose = pts[2:-1]
+            self.assertTrue(all(b[0] < a[0] for a, b in zip(nose, nose[1:])), width)
+
     def test_jackets_that_are_not_copper_are_named(self):
         for _, s in outline.specs():
             o = outline.outline(s)

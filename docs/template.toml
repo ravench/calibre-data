@@ -98,6 +98,9 @@ bullet = 7.85          # bullet diameter (G1)
 # photo of a measured round; cite.nose names the source unless the sources above hold it. Without it the
 # curve runs over the front 68 % (pointed) or 78 % (round) of the bullet out of the case.
 # nose = 16.2
+# Optional, flat-nosed bullets only: the flat tip's width, less than the bullet diameter, read the same way
+# (cite.flat for its source). Without it the flat is drawn 0.55 of the bullet's width.
+# flat = 5.0
 # A belted case gives base in front of its belt. One whose belt is wider than its rim adds belt, the belt's
 # diameter (R3): belt = 15.33 on the .378 Weatherby Magnum, in front of a 14.71 mm rim. Without it the belt is
 # drawn as wide as the rim.
