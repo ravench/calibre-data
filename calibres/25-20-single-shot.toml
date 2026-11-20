@@ -29,6 +29,8 @@ neck = 6.99
 case_length = 41.4
 overall_length = 48.26
 bullet = 6.53
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
 sources = ["book:cotw-18 p. 249", "https://municion.org/producto/25-20-single-shot/"]
 
 [introduced]

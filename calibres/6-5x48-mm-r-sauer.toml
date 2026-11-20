@@ -18,6 +18,9 @@ neck = 7.21
 case_length = 47.75
 overall_length = 61.72
 bullet = 6.6
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
+cite.flat = ["https://municion.org/producto/65-x-48-r-sauer-sohn/"]
 sources = ["book:cotw-18 p. 651"]
 
 [introduced]

@@ -27,6 +27,8 @@ neck = 12.7
 case_length = 71.12
 overall_length = 91.95
 bullet = 12.06
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
 # shoulder_at from the AECC drawing 12-071-BGC-030 (municion.org): SL 59.00 on a case of CL 71.12, taken from the
 # mouth (case_length - (CL - SL)).
 sources = ["book:cotw-18 p. 252", "https://municion.org/producto/1204-mm-lazzeroni-bibamufu/"]

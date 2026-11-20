@@ -19,6 +19,9 @@ neck = 10.74
 case_length = 31.88
 overall_length = 39.5
 bullet = 10.16
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/10-mm-auto-magnum/"]
 sources = ["book:cotw-18 p. 528"]
 
 [introduced]

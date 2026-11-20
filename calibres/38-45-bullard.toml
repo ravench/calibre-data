@@ -18,6 +18,9 @@ neck = 10.08
 case_length = 45.72
 overall_length = 57.4
 bullet = 9.47
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/38-45-190-bullard/"]
 # A straight, tapered case: there is no shoulder on municion.org's AECC drawing
 # (https://municion.org/producto/38-45-190-bullard/) or naboje.org's photo (https://naboje.org/node/19456).
 # COTW 18 prints a .448 in. "shoulder" Ø, probably the body just below the mouth.

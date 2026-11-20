@@ -26,6 +26,8 @@ neck = 8.81
 case_length = 42.16
 overall_length = 57.91
 bullet = 8.08
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
 sources = ["book:cotw-18 p. 651", "https://municion.org/producto/8-x-42-r-mauser-m88d/"]
 
 [introduced]

@@ -22,6 +22,9 @@ neck = 9.58
 case_length = 29.31
 overall_length = 41.91
 bullet = 8.95
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/35-winchester-self-loading/"]
 sources = [
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page87.pdf",
   "book:cotw-18 p. 250",

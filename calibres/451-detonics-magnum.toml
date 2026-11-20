@@ -19,6 +19,9 @@ neck = 12.06
 case_length = 23.98
 overall_length = 32.87
 bullet = 11.46
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 8,00 (whole millimetres).
+flat = 8.0
+cite.flat = ["https://municion.org/producto/451-detonics-magnum/"]
 sources = ["book:cotw-18 p. 529"]
 
 [introduced]

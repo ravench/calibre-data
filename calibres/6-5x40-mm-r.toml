@@ -18,6 +18,9 @@ neck = 7.37
 case_length = 40.13
 overall_length = 52.58
 bullet = 6.35
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/65-x-40-r-g-tesching/"]
 sources = ["book:cotw-18 p. 651"]
 
 [introduced]

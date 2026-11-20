@@ -40,6 +40,8 @@ neck = 11.35
 case_length = 62.74
 overall_length = 81.79
 bullet = 10.77
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
 sources = ["book:cotw-18 p. 652", "https://municion.org/producto/1075-x-63-g-mauser/"]
 
 [introduced]

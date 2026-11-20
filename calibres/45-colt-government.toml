@@ -18,6 +18,9 @@ neck = 12.14
 case_length = 27.94
 overall_length = 36.58
 bullet = 11.53
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/45-colt-government-model-1874/"]
 sources = ["book:cotw-18 p. 529"]
 
 [introduced]

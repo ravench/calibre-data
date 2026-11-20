@@ -22,6 +22,9 @@ neck = 8.56
 case_length = 30.48
 overall_length = 37.47
 bullet = 7.95
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/327-federal-magnum/"]
 sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=44"]
 
 [introduced]

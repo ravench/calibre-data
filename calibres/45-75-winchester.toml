@@ -30,6 +30,9 @@ neck = 12.2
 case_length = 47.86
 overall_length = 56.52
 bullet = 11.39
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
+cite.flat = ["https://municion.org/producto/45-75-winchester-centennial/"]
 sources = [
   "https://en.wikipedia.org/wiki/.45-75_Winchester",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page113.pdf",

@@ -30,6 +30,9 @@ neck = 10.85
 case_length = 60.71
 overall_length = 70.23
 bullet = 10.35
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page102.pdf"]
 
 [introduced]

@@ -19,6 +19,9 @@ neck = 8.61
 case_length = 47.75
 overall_length = 58.17
 bullet = 7.92
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/32-35-maynard-1882/"]
 sources = ["book:cotw-18 p. 250"]
 
 [introduced]

@@ -25,6 +25,8 @@ neck = 7.2
 case_length = 32.5
 overall_length = 40.4
 bullet = 6.5
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 2,00 (whole millimetres).
+flat = 2.0
 sources = [
   "https://en.wikipedia.org/wiki/.256_Winchester_Magnum",
   "https://municion.org/producto/256-winchester-magnum/",

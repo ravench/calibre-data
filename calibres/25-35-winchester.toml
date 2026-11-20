@@ -27,6 +27,8 @@ neck = 7.15
 case_length = 51.89
 overall_length = 64.77
 bullet = 6.55
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=92", "https://en.wikipedia.org/wiki/.25-35_Winchester", "https://municion.org/producto/25-35-winchester-cf/"]
 
 [introduced]

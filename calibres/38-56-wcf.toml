@@ -28,6 +28,8 @@ neck = 10.16
 case_length = 53.34
 overall_length = 63.5
 bullet = 9.59
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
 sources = [
   "https://en.wikipedia.org/wiki/.38-56_WCF",
   "https://municion.org/producto/38-56-winchester-cf-marlincolt/",

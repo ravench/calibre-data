@@ -18,6 +18,9 @@ neck = 12.09
 case_length = 22.81
 overall_length = 29.72
 bullet = 11.48
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
+cite.flat = ["https://municion.org/producto/450-smc/"]
 sources = ["book:cotw-18 p. 529"]
 
 [introduced]

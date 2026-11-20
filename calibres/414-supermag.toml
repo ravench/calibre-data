@@ -19,6 +19,9 @@ neck = 11.02
 case_length = 40.89
 overall_length = 49.91
 bullet = 10.41
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/414-elgin-gates-super-magnum/"]
 sources = ["book:cotw-18 p. 528"]
 
 [introduced]

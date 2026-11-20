@@ -21,6 +21,9 @@ neck = 11.03
 case_length = 22.0
 overall_length = 29.25
 bullet = 10.41
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/41-action-express/"]
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page67.pdf"]
 
 [introduced]

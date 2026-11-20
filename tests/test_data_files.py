@@ -880,6 +880,24 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(cartridges.sources("5.6 mm GP 90", "nose"), ["https://municion.org/producto/556-x-45-otan/"])
         self.assertEqual(cartridges.sources("7.5 mm Kadettenpatrone", "nose"), ["measured:raven 2026-11-08"])
 
+    def test_flat_width(self):
+        # Raven 2026-11-20: the flat of a flat nose is a field too (the .45 Colt's AECC drawing: about 5 of 11.53).
+        self.assertEqual(cartridges.flat(".45 Colt"), 5.0)
+        self.assertEqual(cartridges.sources(".45 Colt", "flat"), ["https://municion.org/producto/45-long-colt-d-a/"])
+        self.assertIsNone(cartridges.flat(".308 Winchester"))
+        colt = "calibres/45-colt.toml"
+        with Copy() as c:
+            c.edit(WIN, "bullet = 7.85\n", "bullet = 7.85\nflat = 3.0\n")  # a pointed bullet
+            c.edit(colt, "flat = 5.0", "flat = 11.53")                    # as wide as the bullet
+            self.assertProblem(c, WIN, r'flat is for flat-nosed bullets \(profile = "flat"\)')
+            self.assertProblem(c, colt, r"flat 11.53 is not narrower than the bullet \(11.53\)")
+        with Copy() as c:
+            c.edit(colt, "flat = 5.0", "flat = 0")
+            self.assertProblem(c, colt, r"flat must be a number above 0")
+        with Copy() as c:
+            c.edit(colt, "flat = 5.0", "flat = 11.5")                     # just under the bullet
+            self.assertEqual(c.problems(), [])
+
     # Calibres whose [mm] shoulder is not the sheet's P2, so the shoulder drawn at the sheet's angle ends short of
     # the sheet's L2. Their shoulders come from other pages; fix them to P2 and empty this.
     SHOULDER_NOT_P2 = {".22 Remington Jet", ".35 Remington", ".35 Winchester", ".400/350 Nitro Express", ".45-75 Winchester", "8x56 mm R Mannlicher", ".500/465 Nitro Express"}

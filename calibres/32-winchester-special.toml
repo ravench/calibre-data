@@ -26,6 +26,9 @@ neck = 8.7
 case_length = 51.8
 overall_length = 65.2
 bullet = 8.2
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/32-winchester-cf-special/"]
 sources = [
   "https://en.wikipedia.org/wiki/.32_Winchester_Special",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page80.pdf",

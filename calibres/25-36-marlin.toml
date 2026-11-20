@@ -25,6 +25,8 @@ neck = 7.14
 case_length = 53.85
 overall_length = 63.5
 bullet = 6.53
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
 sources = ["book:cotw-18 p. 249", "https://municion.org/producto/25-36-marlin/"]
 
 [introduced]

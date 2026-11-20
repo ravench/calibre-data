@@ -24,6 +24,8 @@ neck = 10.7
 case_length = 22.8
 overall_length = 30.0
 bullet = 10.2
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
 sources = [
   "https://en.wikipedia.org/wiki/.400_Cor-Bon",
   "https://municion.org/producto/400-cor-bon/",

@@ -20,6 +20,9 @@ neck = 10.92
 case_length = 27.18
 overall_length = 33.27
 bullet = 9.65
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 8,00 (whole millimetres).
+flat = 8.0
+cite.flat = ["https://municion.org/producto/94-mm-dutch-indies/"]
 sources = ["book:cotw-18 p. 528"]
 
 [introduced]

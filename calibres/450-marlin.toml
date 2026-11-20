@@ -19,6 +19,9 @@ neck = 12.21
 case_length = 53.35
 overall_length = 64.76
 bullet = 11.64
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/450-marlin-belted/"]
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=170"]
 
 [introduced]

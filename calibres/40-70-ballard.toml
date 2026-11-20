@@ -22,6 +22,9 @@ case_length = 60.45
 # The table's overall length (2.55 in.) repeats the 40-60 Marlin row's in COTW 18 and COTW 5; kept.
 overall_length = 64.77
 bullet = 10.24
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/40-70-ballard/"]
 sources = ["book:cotw-18 p. 251"]
 
 [introduced]

@@ -26,6 +26,8 @@ neck = 10.44
 case_length = 60.2
 overall_length = 75.44
 bullet = 9.88
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
 sources = ["book:cotw-18 p. 574", "https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
 
 [introduced]

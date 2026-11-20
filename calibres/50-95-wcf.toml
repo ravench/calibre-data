@@ -30,6 +30,9 @@ neck = 13.62
 case_length = 49.28
 overall_length = 57.4
 bullet = 13.03
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
+cite.flat = ["https://municion.org/producto/50-95-300-winchester/"]
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page122.pdf"]
 
 [introduced]

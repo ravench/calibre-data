@@ -20,6 +20,9 @@ neck = 8.56
 case_length = 27.0
 overall_length = 36.0
 bullet = 8.11
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/8-mm-gasser-m-1898/"]
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page15.pdf"]
 
 [introduced]

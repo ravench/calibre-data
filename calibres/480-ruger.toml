@@ -24,6 +24,9 @@ neck = 12.8
 case_length = 32.64
 overall_length = 41.91
 bullet = 12.08
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
+cite.flat = ["https://municion.org/producto/480-ruger/"]
 sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=65"]
 
 [introduced]

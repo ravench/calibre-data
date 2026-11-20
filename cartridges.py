@@ -188,6 +188,9 @@ ANGLE_KEY = "shoulder_angle"
 # the bullet parallel below it). It is the bullet's: on a longer overall_length the same nose sits further out
 # of the case. Without it a pointed nose is drawn over the front 68 % of the exposed bullet, a round one over 78 %.
 NOSE_KEY = "nose"
+# Flat noses: the flat tip's diameter (the meplat), less than the bullet's. Without it the flat is drawn 0.55 of
+# the bullet's width.
+FLAT_KEY = "flat"
 # Star-crimped blanks: how far back from the mouth the petals bend in, in mm. Without it the crimp is drawn
 # over the front 38 % of the case (outline.CRIMP_LENGTH). No sheet gives it: it is read off photos.
 CRIMP_KEY = "crimp_length"
@@ -198,9 +201,9 @@ MM_SHAPES = {  # shape: (required keys, optional keys)
     "shot": (("diameter", "rim", "length"), ("case_length",)),
     "blank": (("rim", "base", "mouth", "length"), (CRIMP_KEY,)),
     "cartridge": (("rim", "base", "neck", "case_length", "overall_length", "bullet"),
-                  ("belt", "shoulder", "shoulder_at", ANGLE_KEY, NOSE_KEY) + NECK_KEYS),
+                  ("belt", "shoulder", "shoulder_at", ANGLE_KEY, NOSE_KEY, FLAT_KEY) + NECK_KEYS),
     "partial": (("case_length", "bullet"), ("rim", "belt", "base", "shoulder", "shoulder_at", "neck", "overall_length",
-                                       ANGLE_KEY, NOSE_KEY) + NECK_KEYS),
+                                       ANGLE_KEY, NOSE_KEY, FLAT_KEY) + NECK_KEYS),
 }
 TOP_KEYS = {"name", "guns", "black_powder", "kind", "profile", "profile_today", "aliases", "display_aliases", "origin",
             "origin_candidates", "origin_sources", "worldwide", "obsolete", "rare"}
@@ -732,6 +735,12 @@ def _read_calibre(f, countries, books=None):
                     f.problem(f.line("mm", NOSE_KEY), f"[mm] {NOSE_KEY} {data[NOSE_KEY]} is shorter than {what} "
                                                       f"({shortest[profile]:g}): that is no "
                                                       f"{'pointed' if profile == SPITZER else 'round'} nose")
+            if FLAT_KEY in data:
+                if profile != FLAT:
+                    f.problem(f.line("mm", FLAT_KEY), f'[mm] {FLAT_KEY} is for flat-nosed bullets (profile = "flat")')
+                elif _is_number(data[FLAT_KEY]) and _is_number(data.get("bullet")) and data[FLAT_KEY] >= data["bullet"]:
+                    f.problem(f.line("mm", FLAT_KEY), f"[mm] {FLAT_KEY} {data[FLAT_KEY]} is not narrower than the bullet "
+                                                      f"({data['bullet']:g})")
         allowed = set(req) | set(opt) | ({"sources"} if t != "mm" else set(MM_LISTS))
         before = len(f.problems)
         _check_keys(f, t, data, allowed, req)
@@ -1078,7 +1087,7 @@ def load(root=ROOT):
         raise DataError(sorted(problems, key=lambda p: (p[0], p[1] or 0)))
 
     t = {k: {} for k in ("DISPLAY_ALIASES", "PRIMERS", "PRIMER_MM", "PRIMER_SOURCES", "INTRODUCED", "INTRODUCED_UNKNOWN",
-                         "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "NOSES", "CRIMPS", "RIM_THICKNESS", "FEET", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
+                         "SHOULDER_ANGLES", "CASE_HEADS", "GROOVE_WIDTHS", "NECKS", "NOSES", "FLATS", "CRIMPS", "RIM_THICKNESS", "FEET", "ORIGIN", "ORIGIN_UNDECIDED", "ORIGIN_SOURCES", "BULLETS", "JACKETS", "PATCH_LENGTHS", "CASES",
                          "CURRENT_CASES", "SOURCES", "UNSOURCED", "COLOUR_CODES", "FIRED_BY", "CALIBRE_CATEGORIES", "CALIBRE_GUNS",
                          "PROFILE_TODAY")}
     sets = {k: set() for k in ("BLACK_POWDER", "PRIMER_UNVERIFIED", "OBSOLETE", "RARE", "WORLDWIDE", "BULLET_INFERRED",
@@ -1132,6 +1141,9 @@ def load(root=ROOT):
             if NOSE_KEY in mm:
                 t["NOSES"][n] = mm[NOSE_KEY]
                 t["SOURCES"][(n, NOSE_KEY)] = list(mm.get("cite", {}).get(NOSE_KEY, mm["sources"]))
+            if FLAT_KEY in mm:
+                t["FLATS"][n] = mm[FLAT_KEY]
+                t["SOURCES"][(n, FLAT_KEY)] = list(mm.get("cite", {}).get(FLAT_KEY, mm["sources"]))
             if CRIMP_KEY in mm:
                 t["CRIMPS"][n] = mm[CRIMP_KEY]
             if "neck_at" in mm or "neck_base" in mm:
@@ -1226,6 +1238,8 @@ GROOVE_WIDTHS = _t["GROOVE_WIDTHS"]
 NECKS = _t["NECKS"]
 # {name: mm}: the nose length of a pointed or round bullet, tip to where its curve starts; the [mm] sources cover it.
 NOSES = _t["NOSES"]
+# {name: mm}: the width of a flat-nosed bullet's flat tip; its sources are cite.flat or the [mm] sources.
+FLATS = _t["FLATS"]
 # {name: mm}: a star-crimped blank's crimp length, mouth back to where the petals start bending in.
 CRIMPS = _t["CRIMPS"]
 OBSOLETE, RARE, WORLDWIDE = _t["OBSOLETE"], _t["RARE"], _t["WORLDWIDE"]
@@ -1274,8 +1288,8 @@ PROFILE_TODAY = _t["PROFILE_TODAY"]
 def sources(name, fact):
     """Every source of one of a calibre's values, as listed in its file: fact is the table name
     ("mm", "introduced", "primer", "case_head", "bullet", "case", "current_cases" or "fired_by"), "origin"
-    for origin_sources, or an [mm] key with its own sources (cite.<key>, such as "mouth" or "crimp_length"), "shoulder_angle"
-    and "nose"; [] when nothing
+    for origin_sources, or an [mm] key with its own sources (cite.<key>, such as "mouth" or "crimp_length"), "shoulder_angle",
+    "nose" and "flat"; [] when nothing
     is checked yet or the calibre has no such table."""
     return list(SOURCES.get((name, fact), []))
 
@@ -1355,6 +1369,11 @@ def origin_candidates(name):
 def nose(name):
     """Length of a pointed or round bullet's nose in mm (tip to where its curve starts), or None when not given."""
     return NOSES.get(name)
+
+
+def flat(name):
+    """Width of a flat-nosed bullet's flat tip in mm, or None when not given."""
+    return FLATS.get(name)
 
 
 def crimp_length(name):
