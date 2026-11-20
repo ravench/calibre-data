@@ -100,11 +100,12 @@ def gaps(s):
     (well_sourced allows a little less). Bullet type, case material and the nose are not counted: they colour the
     drawing or are schematic anyway, like a shot shell's brass head and crimp, which differ from load to load.
     A star-crimped blank's mouth is schematic too (Raven 2026-11-14: "treat the crimp as a sketch"): no sheet gives
-    the crimp's size, so an unsourced mouth on a CRIMPED case is no gap; the data still lists it as unsourced."""
+    the crimp's size, so an unsourced mouth or crimp_length on a CRIMPED case is no gap; the data still lists it
+    as unsourced."""
     name, found = s["name"], []
     cartridge = s["kind"] not in (SHOT, BALL, MINIE, PELLET)
     drawn = ("rim", "base", "neck", "case", "oal", "bullet") + (("sh_at",) if s["shoulder"] else ()) if cartridge else ()
-    missing = set(unsourced(name)) - {"nose"} - ({"mouth"} if s["profile"] == CRIMPED else set())
+    missing = set(unsourced(name)) - {"nose"} - ({"mouth", "crimp_length"} if s["profile"] == CRIMPED else set())
     if missing or any(s[k] is None for k in drawn):  # a cannon round may leave measurements out
         found.append(MEASUREMENTS)
     if cartridge:

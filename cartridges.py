@@ -191,6 +191,7 @@ NOSE_KEY = "nose"
 # Star-crimped blanks: how far back from the mouth the petals bend in, in mm. Without it the crimp is drawn
 # over the front 38 % of the case (outline.CRIMP_LENGTH). No sheet gives it: it is read off photos.
 CRIMP_KEY = "crimp_length"
+CRIMP_MIN = 0.5
 MM_SHAPES = {  # shape: (required keys, optional keys)
     "ball": (("diameter",), ()),
     "loose": (("diameter", "length"), ()),
@@ -704,10 +705,18 @@ def _read_calibre(f, countries, books=None):
                 f.problem(f.line("mm", ANGLE_KEY), f"[mm] {ANGLE_KEY} is for bottleneck cases (with shoulder and shoulder_at)")
             elif ("neck_at" in data) != ("neck_base" in data):
                 f.problem(f.line("mm"), "[mm] has neck_at and neck_base together (C.I.P. L2 and H1), or neither")
-            if CRIMP_KEY in data and _is_number(data[CRIMP_KEY]) and _is_number(data.get("length")) \
-                    and not 0 < data[CRIMP_KEY] < data["length"]:
+            if CRIMP_KEY in data and _is_number(data[CRIMP_KEY]) and data[CRIMP_KEY] > 0 \
+                    and _is_number(data.get("length")) and not CRIMP_MIN <= data[CRIMP_KEY] <= data["length"] / 2:
+                # (0 and below: the number check reports it.) The drawing turns in 0.35 below the mouth, so
+                # a shorter crimp would fold back; over half the case would run into the rim.
                 f.problem(f.line("mm", CRIMP_KEY), f"[mm] {CRIMP_KEY} {data[CRIMP_KEY]} is the crimp's length from the "
-                                                   f"mouth back: above 0 and shorter than the length {data['length']}")
+                                                   f"mouth back: {CRIMP_MIN} to half the length "
+                                                   f"({data['length'] / 2:g})")
+            if CRIMP_KEY in data and CRIMP_KEY not in data.get("cite", {}) \
+                    and CRIMP_KEY not in (data.get("unsourced") or []):
+                f.problem(f.line("mm", CRIMP_KEY), f"[mm] {CRIMP_KEY} comes from no sheet: give it its own "
+                                                   f'cite.{CRIMP_KEY} (e.g. ["measured:raven 2026-11-20"]) or '
+                                                   f"list it in unsourced")
             if NOSE_KEY in data:
                 exposed = (data["overall_length"] - data["case_length"]
                            if all(_is_number(data.get(k)) for k in ("overall_length", "case_length")) else None)
@@ -1125,7 +1134,6 @@ def load(root=ROOT):
                 t["SOURCES"][(n, NOSE_KEY)] = list(mm.get("cite", {}).get(NOSE_KEY, mm["sources"]))
             if CRIMP_KEY in mm:
                 t["CRIMPS"][n] = mm[CRIMP_KEY]
-                t["SOURCES"][(n, CRIMP_KEY)] = list(mm.get("cite", {}).get(CRIMP_KEY, mm["sources"]))
             if "neck_at" in mm or "neck_base" in mm:
                 t["NECKS"][n] = (mm.get("neck_at"), mm.get("neck_base"))
             for k, cited in mm.get("cite", {}).items():
@@ -1266,7 +1274,8 @@ PROFILE_TODAY = _t["PROFILE_TODAY"]
 def sources(name, fact):
     """Every source of one of a calibre's values, as listed in its file: fact is the table name
     ("mm", "introduced", "primer", "case_head", "bullet", "case", "current_cases" or "fired_by"), "origin"
-    for origin_sources, or an [mm] key with its own sources (cite.<key>), "shoulder_angle" and "nose"; [] when nothing
+    for origin_sources, or an [mm] key with its own sources (cite.<key>, such as "mouth" or "crimp_length"), "shoulder_angle"
+    and "nose"; [] when nothing
     is checked yet or the calibre has no such table."""
     return list(SOURCES.get((name, fact), []))
 

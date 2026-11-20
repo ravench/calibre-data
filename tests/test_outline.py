@@ -56,6 +56,17 @@ class GapTests(unittest.TestCase):
             with self.subTest(name):
                 self.assertEqual(cartridges.unsourced(name), ("mouth",))
                 self.assertEqual(outline.gaps(self.spec(name)), ())
+        for name in ("6.8/11", ".320 Court Blanc"):
+            with self.subTest(name):
+                self.assertEqual(outline.gaps(self.spec(name)), ())
+        # An estimated crimp length is a sketch too.
+        real = cartridges.unsourced
+        try:
+            cartridges_unsourced = lambda n: ("mouth", "crimp_length") if n == "6.8/11" else real(n)  # noqa: E731
+            outline.unsourced = cartridges_unsourced
+            self.assertEqual(outline.gaps(self.spec("6.8/11")), ())
+        finally:
+            outline.unsourced = real
         s = dict(self.spec(".45 K Blanc"), profile=FLAT)  # on any other profile it would still be a gap
         self.assertEqual(outline.gaps(s)[:1], ("measurements",))
 
