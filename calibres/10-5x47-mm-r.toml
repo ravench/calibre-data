@@ -26,6 +26,8 @@ neck = 11.3
 case_length = 46.99
 overall_length = 60.96
 bullet = 10.64
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 9,00 (whole millimetres).
+flat = 9.0
 sources = ["book:cotw-18 p. 652", "https://municion.org/producto/105-x-47-r-mb-target/"]
 
 [introduced]

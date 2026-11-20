@@ -20,6 +20,9 @@ neck = 11.51
 case_length = 56.52
 overall_length = 65.28
 bullet = 10.94
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/444-marlin/"]
 sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=167"]
 
 [introduced]

@@ -24,6 +24,9 @@ neck = 9.82
 case_length = 72.0
 overall_length = 86.0
 bullet = 9.57
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/93-x-72-r-d-express/"]
 sources = [
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page50.pdf",
   "book:cotw-18 p. 652",

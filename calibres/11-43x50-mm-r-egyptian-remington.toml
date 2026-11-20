@@ -32,6 +32,8 @@ neck = 12.17
 case_length = 49.28
 overall_length = 69.34
 bullet = 11.38
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
 sources = ["book:cotw-18 p. 574", "https://municion.org/producto/43-egyptian-remington-flat-base/"]
 
 [introduced]

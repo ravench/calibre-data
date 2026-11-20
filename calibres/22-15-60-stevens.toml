@@ -19,6 +19,9 @@ neck = 6.17
 case_length = 51.05
 overall_length = 57.4
 bullet = 5.74
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
+cite.flat = ["https://municion.org/producto/22-15-60-stevens/"]
 sources = ["book:cotw-18 p. 249"]
 
 [introduced]

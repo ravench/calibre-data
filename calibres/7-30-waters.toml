@@ -28,6 +28,9 @@ neck = 7.8
 case_length = 52.0
 overall_length = 64.0
 bullet = 7.2
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/7-30-waters/"]
 sources = [
   "https://en.wikipedia.org/wiki/7-30_Waters",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page20.pdf",

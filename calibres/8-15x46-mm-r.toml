@@ -28,6 +28,9 @@ neck = 8.83
 case_length = 46.5
 overall_length = 62.3
 bullet = 8.38
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/815-x-46-r-frohn/"]
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page44.pdf"]
 
 [introduced]

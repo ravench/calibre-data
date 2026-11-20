@@ -21,6 +21,9 @@ neck = 11.02
 case_length = 39.12
 overall_length = 50.8
 bullet = 10.64
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/44-evans-long/"]
 sources = ["book:cotw-18 p. 251"]
 
 [introduced]

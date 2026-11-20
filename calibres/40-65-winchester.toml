@@ -19,6 +19,9 @@ neck = 10.7
 case_length = 53.0
 overall_length = 63.0
 bullet = 10.3
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/40-65-winchester-cf/"]
 sources = ["https://en.wikipedia.org/wiki/.40-65_Winchester"]
 
 [introduced]

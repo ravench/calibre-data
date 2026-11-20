@@ -25,6 +25,8 @@ neck = 12.8
 case_length = 55.78
 overall_length = 72.39
 bullet = 12.06
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
 # The table prints the bullet and neck without their points (475, 504).
 sources = ["book:cotw-18 p. 453", "https://municion.org/producto/475-bishop-short-magnum/"]
 

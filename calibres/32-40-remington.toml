@@ -23,6 +23,9 @@ neck = 8.38
 case_length = 54.1
 overall_length = 82.55
 bullet = 7.85
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/32-40-150-remington-hepburn/"]
 # shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
 unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 250"]

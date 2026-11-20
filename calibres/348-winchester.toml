@@ -26,6 +26,9 @@ neck = 9.61
 case_length = 57.3
 overall_length = 71.0
 bullet = 8.8
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/348-winchester/"]
 sources = [
   "https://en.wikipedia.org/wiki/.348_Winchester",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page85.pdf",

@@ -23,6 +23,8 @@ neck = 8.55
 case_length = 17.3
 overall_length = 25.0
 bullet = 7.95
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
 sources = [
   "https://en.wikipedia.org/wiki/.32_NAA",
   "https://municion.org/producto/32-naa/",

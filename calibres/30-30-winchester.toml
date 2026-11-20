@@ -25,6 +25,9 @@ neck = 8.38
 case_length = 51.8
 overall_length = 64.8
 bullet = 7.82
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/30-30-winchester-cf/"]
 sources = [
   "book:hornady-10 p. 444",
   "book:cotw-18 p. 176",

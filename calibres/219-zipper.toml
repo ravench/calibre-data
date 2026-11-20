@@ -27,6 +27,9 @@ neck = 6.4
 case_length = 49.2
 overall_length = 57.4
 bullet = 5.7
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
+cite.flat = ["https://municion.org/producto/219-zipper/"]
 sources = [
   "https://en.wikipedia.org/wiki/.219_Zipper",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page55.pdf",

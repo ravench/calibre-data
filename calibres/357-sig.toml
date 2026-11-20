@@ -26,6 +26,9 @@ neck = 9.68
 case_length = 21.97
 overall_length = 28.96
 bullet = 9.02
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/357-sig/"]
 sources = [
   "book:cotw-18 p. 528",
   "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page53.pdf",

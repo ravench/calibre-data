@@ -29,6 +29,8 @@ neck = 12.29
 case_length = 51.82
 overall_length = 64.52
 bullet = 11.61
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
 # shoulder_at from the AECC drawing 11-051-BBC-071 (municion.org): SL 33.90 on a case of CL 51.05, taken from the mouth
 # (case_length - (CL - SL)). Donnelly prints the start 0.13 mm earlier (J 1.36 in. = 34.54). The drawing's
 # shoulder diameter (SØ 13.92) is 0.51 mm wider than the book's, which stays.

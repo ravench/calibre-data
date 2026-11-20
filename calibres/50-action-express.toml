@@ -18,6 +18,9 @@ neck = 13.44
 case_length = 32.64
 overall_length = 40.51
 bullet = 12.75
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 8,00 (whole millimetres).
+flat = 8.0
+cite.flat = ["https://municion.org/producto/50-action-express-semi-rimmed/"]
 sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=66"]
 
 [introduced]

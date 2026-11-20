@@ -21,6 +21,9 @@ neck = 9.96
 case_length = 56.64
 overall_length = 77.98
 bullet = 9.55
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
+cite.flat = ["https://municion.org/producto/38-50-255-remington-hepburn-2-1-4-case/"]
 sources = ["book:cotw-18 p. 250"]
 
 [introduced]

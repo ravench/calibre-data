@@ -19,6 +19,9 @@ neck = 7.0
 case_length = 28.6
 overall_length = 35.4
 bullet = 6.4
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/25-stevens-rf/"]
 sources = ["https://en.wikipedia.org/wiki/.25_Stevens"]
 
 [introduced]

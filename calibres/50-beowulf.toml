@@ -17,6 +17,9 @@ neck = 13.3
 case_length = 42.0
 overall_length = 54.0
 bullet = 12.7
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/50-beowulf/"]
 sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
 
 [introduced]

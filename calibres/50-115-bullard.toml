@@ -21,6 +21,9 @@ neck = 13.89
 case_length = 55.63
 overall_length = 65.02
 bullet = 13.0
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
+cite.flat = ["https://municion.org/producto/50-115-300-bullard/"]
 # shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
 unsourced = ["shoulder_at"]
 sources = ["book:cotw-18 p. 252"]

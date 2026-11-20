@@ -25,6 +25,8 @@ neck = 11.23
 case_length = 40.13
 overall_length = 49.78
 bullet = 10.87
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
 sources = ["book:cotw-18 p. 251", "https://municion.org/producto/44-40-extra-long-cf/"]
 
 [introduced]

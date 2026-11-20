@@ -29,6 +29,8 @@ neck = 8.43
 case_length = 46.99
 overall_length = 57.4
 bullet = 8.0
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
 sources = ["book:cotw-18 p. 250", "https://municion.org/producto/32-40-150-bullard/"]
 
 [introduced]

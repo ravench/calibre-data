@@ -29,6 +29,9 @@ neck = 11.86
 case_length = 57.15
 overall_length = 77.47
 bullet = 11.33
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/44-77-300-remington-sharps-2-1-4/"]
 # shoulder_at from the ammo-one photo in [shoulder_angle]: 578 px above the head, 32.4-33.4 mm by case
 # length, ruler (17.6 px/mm) or rim (17.3 px/mm).
 sources = [

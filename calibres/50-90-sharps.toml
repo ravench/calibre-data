@@ -20,6 +20,9 @@ neck = 13.41
 case_length = 63.5
 overall_length = 81.28
 bullet = 12.93
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/50-90-sharps-straight-2-1-2/"]
 sources = ["book:cotw-18 p. 252"]
 
 [introduced]

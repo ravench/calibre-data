@@ -22,6 +22,9 @@ neck = 8.08
 case_length = 39.37
 overall_length = 51.82
 bullet = 7.62
+# flat: the AECC drawing (municion.org) gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/300-sherwood/"]
 sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page73.pdf"]
 
 [introduced]
