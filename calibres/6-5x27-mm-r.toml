@@ -1,0 +1,50 @@
+# Measurements converted from inches.
+name = "6.5x27 mm R"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["6.5x27r", "6.5r ronezewsky", "ronezewsky"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.87
+base = 9.63
+shoulder = 8.84
+shoulder_at = 19.57
+neck_at = 22.32
+neck_base = 7.3
+# Drawing: SØ 8.98, NØ 7.30, SL 19.50, NL 4.60, CL 26.85.
+shoulder_angle = 17.0
+cite.shoulder_angle = ["https://municion.org/producto/65-x-27-r-p-tesching/"]
+neck = 7.21
+case_length = 26.92
+overall_length = 39.12
+bullet = 6.53
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/65-x-27-r-p-tesching/"]
+
+[introduced]
+unknown = "A short single-loader round, in use by the 1890s or earlier (COTW 18 p. 616); no year."
+sources = ["book:cotw-18 p. 616"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# .051 in.
+# The drawing 07-027-BBC-010 (municion.org) has RT 1.18, within 0.3 mm.
+rim_thickness = 1.3
+sources = ["book:donnelly p. 762"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 616"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/65-x-27-r-p-tesching/"]

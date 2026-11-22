@@ -1,0 +1,29 @@
+# The round of the German navy's 3.7 cm SK C/36 and Flak M42: the army's 37x249R (of the Pak 36) with a
+# thicker rim. Rapid Fire's table calls it the 37x249R and gives its rim and base; its name gives the
+# bore and case length (Autocannon), Autocannon p. 158 the length of the round. The specimen drawing
+# on municion.org (37-250-BBC-040) is of the army's Pak 36 round: its rim (RØ 52.00, RT 2.50) is 0.6 mm
+# wider than Rapid Fire's and 1.4 mm thinner than Autocannon's, so nothing is taken from it.
+name = "37x250 mm R"
+guns = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["37x250r", "37x249r", "3.7 cm sk c/36", "3.7 cm m42"]
+origin = "DE"
+origin_sources = ["book:rapid-fire p. 230"]
+
+[mm]
+rim = 51.4
+base = 45.9
+case_length = 250.0
+overall_length = 355.0
+bullet = 37.0
+sources = ["book:rapid-fire p. 230", "book:autocannon p. 158"]
+
+[introduced]
+unknown = "Autocannon names the guns but gives no year."
+sources = ["book:autocannon p. 158"]
+
+[case_head]
+# Autocannon: 3.9 mm, against the 2.5 mm of the army's 37x249R.
+rim_thickness = 3.9
+sources = ["book:autocannon p. 158"]

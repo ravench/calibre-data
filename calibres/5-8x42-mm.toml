@@ -1,0 +1,59 @@
+# Sourced 2026-11-04 from the Wikipedia infoboxes (.277 SIG Fury after the 2020 SAAMI drawing);
+# shoulder heights estimated (.277 Fury like the .308 parent).
+name = "5.8x42 mm"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["5.8x42", "dbp87", "dbp10"]
+
+origin = "CN"
+origin_sources = ["https://en.wikipedia.org/wiki/5.8×42mm"]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 10.42
+base = 10.4
+shoulder = 9.35
+shoulder_at = 34.0
+# small-arms.org (QBQ club) 5.8x42 dimension drawing: 49 deg full cone angle, shoulder at 34 mm, neck at 37.2 mm
+shoulder_angle = 24.5
+cite.shoulder_angle = ["https://www.small-arms.org/"]
+neck = 6.65
+case_length = 42.2
+overall_length = 58.0
+bullet = 6.0
+# bullet: BØ 6.00 on the drawing 06-042-BGC-010, whose rim, base, shoulder and neck are the
+# file's.
+sources = [
+  "https://en.wikipedia.org/wiki/5.8×42mm",
+  "https://www.small-arms.org/",
+  "https://municion.org/producto/58-x-42-chinese-assault-rifle/",
+]
+
+[introduced]
+year = 1987
+sources = ["https://en.wikipedia.org/wiki/5.8×42mm"]
+
+[primer]
+size = "small-rifle"
+sources = []
+
+[case_head]
+# Drawing 06-042-BGC-010: RT 1.42, HL 3.45, GØ 8.64, GW 1.14, HØ 10.40; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.42
+ramp_top = 3.45
+groove_diameter = 8.64
+ramp_angle = 45.0
+groove_width = 1.14
+sources = ["https://municion.org/producto/58-x-42-chinese-assault-rifle/"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# Copper-washed steel.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 13"]

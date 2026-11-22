@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# Lazzeroni's .375 short magnum for a 2.8 in. action, on its .577 in. case.
+name = "9.53 Lazzeroni Hellcat"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["9.53 hellcat", "9.53mm hellcat", "lazzeroni hellcat"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/953-mm-lazzeroni-hellcat/"]
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 39.95
+neck_at = 43.47
+neck_base = 10.34
+# COTW 18 p. 413: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 413"]
+neck = 10.26
+case_length = 52.07
+overall_length = 71.12
+bullet = 9.52
+# shoulder_at from the drawing 10-052-BGC-030: SL 39.38 on a case of CL 51.50, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/953-mm-lazzeroni-hellcat/"]
+
+[introduced]
+year = 1997
+sources = ["book:cotw-18 p. 413"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .060 in. (COTW); groove from the drawing 10-052-BGC-030: RT 1.55, HL 3.80, GØ 12.70, GW 1.33,
+# HØ 14.63; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.52
+ramp_top = 3.8
+groove_diameter = 12.7
+ramp_angle = 46.0
+groove_width = 1.33
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/953-mm-lazzeroni-hellcat/"]
+
+[bullet]
+# Soft point: the Nosler Partition (COTW 18 p. 413).
+type = "softpoint"
+sources = ["book:cotw-18 p. 413"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/953-mm-lazzeroni-hellcat/"]

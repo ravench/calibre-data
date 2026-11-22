@@ -1,0 +1,50 @@
+# Measurements converted from inches.
+# The smallest commercial centrefire pistol round, for the Austrian Kolibri pistol; a jacketed bullet.
+name = "2.7 mm Kolibri"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["2.7kolibri", "2.7 kolibri", "2.7mm kolibri auto"]
+
+origin = "AH"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 3.56
+base = 3.56
+neck = 3.53
+case_length = 9.4
+overall_length = 10.92
+bullet = 2.72
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1914
+sources = ["book:cotw-18 p. 456"]
+
+# Primer measured on municion.org headstamp photos (one photo, 0.62 of the 3.56 mm head).
+[primer]
+size = "miniature"
+diameter = 2.2
+sources = ["https://municion.org/producto/27-mm-kolibri/"]
+
+[case_head]
+# Drawing 03-009-CGC-010: RT 0.41, HL 1.31, GØ 3.09, GW 0.55, HØ 3.52; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 0.41
+ramp_top = 1.31
+groove_diameter = 3.09
+ramp_angle = 32.0
+groove_width = 0.55
+sources = ["https://municion.org/producto/27-mm-kolibri/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 456"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/27-mm-kolibri/"]

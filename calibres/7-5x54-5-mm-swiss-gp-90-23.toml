@@ -1,0 +1,84 @@
+# GP 90/23: «7,5 mm Gewehrpatrone 90/23» («Scharfe Patrone 90/23» on older boxes). Collector sources
+# (swisswaffen, FCHM) date it to a Federal Council decision of 9 January 1923, but that decision
+# (minutes Nr. 75, Federal Archives 70012164, PDF p. 36-42) is a contract with the new A.G. Moderna
+# Patronenfabrik in Solothurn for 20 million «Patronen für Gewehrmodell 89» for the Landsturm, made to
+# the existing federal specifications; the Federal Council's report for 1923 still names the round
+# «Gewehrpatronen 90/03» (50000263, PDF p. 440-441). No official text up to 1923 uses «90/23». The
+# GP 1890 round reworked: a 1 mm longer case, a jacketed
+# round-nose bullet (190 gr) and smokeless powder, so the reserve's unaltered IG 89 rifles had a jacketed
+# round (Poyer p. 54). It also fires in rifles chambered for GP 11 (FCHM; swisswaffen). Made by the
+# Solothurn cartridge factory, designed at Thun (FCHM). Still a Swiss stock item after 1945: «7.5mm Ball
+# cartridge M90/23» in the army's part numbers (Labbett p. 118).
+# Case: swissrifles.com/ammo (http only, so not a listed source) gives 2.15 in (54.6) case,
+# .500 in (12.7) rim, .496 in (12.6) head and a .3075 in (7.8) bullet; Poyer p. 50 gives 7.5x54.5.
+# All values but the case length from the drawing 08-054-BGC-085 (municion.org): RØ 12.62, HØ 12.52, SØ 11.65,
+# SL 44.50, NØ 8.47, CL 54.40, TL 77.44, BØ 7.75. Its case length 54.40 is kept at 54.6 (swissrifles, and
+# the maintainer's GP 90/23-case Kadettenpatrone measures 54.8; Poyer gives 7.5x54.5).
+name = "7.5x54.5 mm Swiss (GP 90/23)"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["gp90/23", "gp 90/23", "gp1890/23", "gp 1890/23", "7.5 mm gp 90/23", "patrone 90/23", "scharfe patrone 90/23", "gewehrpatrone 90/23", "7.5x54.5"]
+display_aliases = ["GP 90/23"]
+
+origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
+obsolete = true
+
+[mm]
+rim = 12.62
+base = 12.52
+shoulder = 11.65
+shoulder_at = 44.5
+neck_at = 47.45
+neck_base = 8.47
+# Drawing 08-054-BGC-085: SØ 11.65, NØ 8.47, SL 44.50, NL 7.15, CL 54.40.
+shoulder_angle = 30.0
+cite.shoulder_angle = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
+neck = 8.47
+case_length = 54.6
+overall_length = 77.44
+bullet = 7.75
+# nose: read to scale off the drawing 08-054-BGC-085: the round nose curves in over the last 9.2 mm of
+# the 23.04 out of the case (TL 77.44, CL 54.40); parallel below that.
+nose = 9.2
+sources = [
+  "book:poyer p. 50",
+  "https://municion.org/producto/75-x-545-swiss-gp-90-23/",
+]
+
+[introduced]
+# 1923: the Solothurn contract of 9 January 1923 (minutes Nr. 75, PDF p. 36-42); swisswaffen and Poyer
+# p. 54 give 1923 for the reworked round
+year = 1923
+sources = ["https://swisswaffen.com/?L=DE&W=GP9075&LP=SM", "https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/70012164.pdf?id=70012164"]
+
+[primer]
+# GP 90 family
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
+
+[case_head]
+# Drawing 08-054-BGC-085: RT 1.56, HL 3.60, GØ 10.26, GW 1.00, HØ 12.52;
+# ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.56
+ramp_top = 3.6
+groove_diameter = 10.26
+ramp_angle = 47.0
+groove_width = 1
+sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
+
+[bullet]
+# cupronickel-jacketed round nose (Poyer p. 50: 80 % copper, 20 % nickel; swisswaffen: steel jacket)
+type = "jacketed"
+jacket = "cupronickel"
+sources = ["book:poyer p. 50"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
+
+[fired_by]
+firearms = ["Schmidt-Rubin M1889"]
+sources = ["https://fchm.ch/munition/zentralfeuerpatronen/schmidt-rubin-patrone/"]

@@ -1,0 +1,47 @@
+# The round of the Soviet NN-30 naval revolver cannon of the AK-230 mounting, made in China too, and
+# fired by the Romanian A436 anti-aircraft twin and the Yugoslav Zastava M86 and M89 armoured-vehicle
+# guns (Autocannon p. 147). Its name gives the bore and case length; Jane's table
+# gives the rim, the belt and the neck, Rapid Fire's table the base, Autocannon p. 147 the length of the
+# round. The specimen drawing on municion.org (30-210-BFE-010) gives the shoulder: its case length
+# (CL 209.15) and neck (NØ 31.72) are within the shoulder rule's 1.5 and 0.5 mm of the file's. Its head
+# is not taken, so the extractor groove is the generic one: the drawing's head (HØ 46.82) is 0.92 mm
+# wider than Rapid Fire's base, more than the 0.5 mm a head may differ from the file's, though Rapid
+# Fire gives the rim and the base the same 45.9 mm and the drawing's rim (RØ 45.69) and belt (LØ 47.30)
+# fit the books. The drawing's neck is 0.49 mm narrower than Jane's, more than the 0.15 mm a neck may
+# widen towards its mouth, so the file has no neck_at or neck_base.
+name = "30x210 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["30x210b", "30 mm nn-30", "nn-30", "30 mm ak-230"]
+origin = "SU"
+origin_sources = ["book:rapid-fire p. 229"]
+
+[mm]
+rim = 46.0
+belt = 47.5
+base = 45.9
+shoulder = 43.63
+shoulder_at = 170.05
+# Drawing 30-210-BFE-010: SØ 43.63, NØ 31.72, SL 169.20, NL 24.05, CL 209.15, TL 304.30.
+shoulder_angle = 20.5
+cite.shoulder_angle = ["https://municion.org/producto/30-x-210-b-russian-navy-nn-30/"]
+neck = 32.21
+case_length = 210.0
+overall_length = 306.0
+bullet = 30.0
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "book:autocannon p. 147",
+  "book:rapid-fire p. 229",
+  "https://municion.org/producto/30-x-210-b-russian-navy-nn-30/",
+]
+
+[introduced]
+# Autocannon: the NN-30 was introduced in 1959; Wikipedia has the AK-230 made from 1959.
+year = 1959
+sources = ["book:autocannon p. 78", "https://en.wikipedia.org/wiki/AK-230"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 147"]

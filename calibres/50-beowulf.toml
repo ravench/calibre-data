@@ -1,0 +1,50 @@
+# Rifle batch 5 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated; the Nosler line shares the .28 Nosler case outside.
+name = ".50 Beowulf"
+guns = ["rifle"]
+kind = "rimless"
+profile = "flat"
+aliases = ["50beowulf"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 11.3
+base = 13.6
+neck = 13.3
+case_length = 42.0
+overall_length = 54.0
+bullet = 12.7
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/50-beowulf/"]
+sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
+
+[introduced]
+year = 2001
+sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.50_Beowulf"]
+
+[case_head]
+# .055 in. (COTW); groove from the drawing 13-042-CRC-030: RT 1.31, HL 4.70,
+# GØ 9.23, GW 1.65, HØ 13.71; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.4
+ramp_top = 4.7
+groove_diameter = 9.23
+ramp_angle = 52.0
+groove_width = 1.65
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/50-beowulf/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 441"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/50-beowulf/"]

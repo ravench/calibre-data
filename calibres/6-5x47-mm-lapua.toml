@@ -1,0 +1,53 @@
+name = "6.5x47 mm Lapua"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5x47"]
+
+origin = "FI"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6.5×47mm_Lapua",
+  "book:ammo-encyclopedia-2 p. 292",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page19.pdf",
+]
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 11.6
+shoulder_at = 35.68
+neck_at = 39.31
+neck_base = 7.4
+# C.I.P. 6,5 x 47 Lapua
+shoulder_angle = 30
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page19.pdf"]
+neck = 7.4
+case_length = 47.0
+overall_length = 71.0
+bullet = 6.7
+sources = [
+  "book:cotw-18 p. 175",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page19.pdf",
+]
+
+[introduced]
+year = 2005
+sources = ["https://en.wikipedia.org/wiki/6.5×47mm_Lapua"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5×47mm_Lapua"]
+
+[case_head]
+# C.I.P. 6,5 x 47 Lapua
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+groove_width = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page19.pdf"]
+
+[bullet]
+# Lapua's Scenar match factory loads; an open-tip match bullet counts as jacketed.
+type = "jacketed"
+sources = ["book:cotw-18 p. 112"]

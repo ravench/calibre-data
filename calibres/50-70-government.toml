@@ -1,0 +1,60 @@
+name = ".50-70 Government"
+# Guns: book:cotw-18 p. 571.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["50-70"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.50-70_Government",
+  "book:ammo-encyclopedia-2 p. 560",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/50-70-govt-170428-en.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. maximum cartridge: rim R1, base P1, neck H2, case L3, length L6, bullet G1.
+rim = 16.92
+base = 14.48
+neck = 13.73
+case_length = 45.01
+overall_length = 57.15
+bullet = 13.08
+sources = [
+  "book:donnelly p. 658",
+  "book:cotw-18 p. 574",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/50-70-govt-170428-en.pdf",
+]
+
+[introduced]
+year = 1866
+sources = ["https://en.wikipedia.org/wiki/.50-70_Government"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://www.starlinebrass.com/50-70-govt-brass"]
+
+[case_head]
+# C.I.P. 50-70 Govt.: R (COTW gives .060 in.)
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/50-70-govt-170428-en.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.50-70_Government"]
+
+[case]
+material = "copper"
+sources = ["https://en.wikipedia.org/wiki/.45-70"]
+
+[current_cases]
+materials = ["brass"]
+sources = ["https://www.starlinebrass.com/50-70-govt-brass"]
+
+[today]
+# Cases made today are brass (Starline).
+case = "brass"
+sources = ["https://www.starlinebrass.com/50-70-govt-brass"]

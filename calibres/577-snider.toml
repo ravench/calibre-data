@@ -1,0 +1,61 @@
+name = ".577 Snider"
+# Guns: book:cotw-18 p. 572.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["577snider"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.577_Snider",
+  "book:ammo-encyclopedia-2 p. 565",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page129.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 577 Snider, maximum cartridge.
+rim = 19.05
+base = 16.89
+neck = 15.32
+case_length = 50.8
+overall_length = 62.74
+bullet = 14.58
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page129.pdf"]
+
+[introduced]
+year = 1866
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# C.I.P. 577 Snider
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page129.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
+
+[case]
+material = "paper"
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
+
+[current_cases]
+# Kynamco, Bertram
+materials = ["brass"]
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
+
+[today]
+# Cases made today are brass (Kynamco and Bertram, Wikipedia).
+case = "brass"
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]
+
+[fired_by]
+firearms = ["Snider-Enfield"]
+sources = ["https://en.wikipedia.org/wiki/.577_Snider"]

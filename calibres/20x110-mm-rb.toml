@@ -1,0 +1,33 @@
+# The round of the Oerlikon S of 1927 and of its successors, the SS anti-aircraft gun of 1938 and the
+# FFS aircraft gun: the 20 mm Oerlikon of the Allied navies in the Second World War, also fired by
+# the Polsten. The Swiss federal ammunition factory at Altdorf made it too (municion.org). Not the
+# 20x110 mm Hispano: its rim is rebated, 22.2 mm under a 24.7 mm base, and its shoulder slopes. Its
+# name gives the bore and case length (Jane's table measures the case at 109.8 mm), Jane's table the
+# rim, base and neck, Jane's p. 84 and Autocannon the length of the round. The specimen drawing
+# on municion.org (20-110-BRC-030) gives no shoulder or head here: its neck (NØ 20.06) is 0.54 mm
+# narrower than Jane's (20.6), more than its sizes may differ from the file's.
+name = "20x110 mm RB"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x110rb", "20x110 rb", "20 mm oerlikon", "oerlikon s", "oerlikon ss", "oerlikon ffs", "polsten"]
+origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/Oerlikon_20_mm_cannon"]
+
+[mm]
+rim = 22.2
+base = 24.69
+neck = 20.6
+case_length = 110.0
+overall_length = 181.0
+bullet = 20.0
+sources = ["book:janes-ammo-2002 p. 682", "book:janes-ammo-2002 p. 84", "book:autocannon p. 117"]
+
+[introduced]
+year = 1927
+sources = ["https://en.wikipedia.org/wiki/Oerlikon_20_mm_cannon"]
+
+[case]
+# Autocannon: normally brass; some steel cases were made, mostly in the USA late in the Second World War.
+material = "brass"
+sources = ["book:autocannon p. 117"]

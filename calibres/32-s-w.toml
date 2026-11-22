@@ -1,0 +1,38 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".32 S&W"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["32s&wshort", "32sws"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
+
+[mm]
+# SAAMI 32 Smith & Wesson, maximum cartridge.
+rim = 9.6
+base = 8.61
+neck = 8.61
+case_length = 15.37
+overall_length = 23.62
+bullet = 8.0
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=42"]
+
+[introduced]
+year = 1878
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]
+
+[case_head]
+# SAAMI 32 Smith & Wesson
+rim_thickness = 1.37
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=42"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W"]

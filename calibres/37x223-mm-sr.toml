@@ -1,0 +1,52 @@
+# The round of the US 37 mm M1 anti-aircraft gun and the M9 aircraft cannon, a semi-rimmed version of the
+# tank guns' rimmed M16 case. Its name gives the bore and case length, Rapid Fire's table the rim and
+# base, Autocannon p. 157 the length of the round, the specimen drawing on municion.org (37x222 SR
+# M17), in round numbers, the shoulder, the neck and the head: a long shoulder, 30 mm from the body to the
+# neck. The drawing's round is 357 mm long, 32 mm longer than Autocannon's; the file keeps Autocannon's.
+name = "37x223 mm SR"
+guns = ["cannon"]
+kind = "semi-rimmed"
+profile = "spitzer"
+aliases = ["37x223sr", "37 mm m1", "37 mm m9"]
+origin = "US"
+origin_sources = ["book:rapid-fire p. 230"]
+
+[mm]
+rim = 51.1
+base = 50.3
+shoulder = 48.5
+shoulder_at = 153.0
+neck_at = 183.0
+neck_base = 38.0
+# Drawing 37-222-BDC-010: SØ 48.50, NØ 38.00, SL 152.00, NL 40.00, CL 222.00, TL 357.00.
+shoulder_angle = 9.9
+cite.shoulder_angle = ["https://municion.org/producto/37-x-222-sr-us-m17/"]
+neck = 38.0
+case_length = 223.0
+overall_length = 325.0
+bullet = 37.0
+sources = [
+  "book:rapid-fire p. 230",
+  "book:autocannon p. 157",
+  "https://municion.org/producto/37-x-222-sr-us-m17/",
+]
+
+[introduced]
+# The M1's first year of production (Wikipedia).
+year = 1939
+sources = ["https://en.wikipedia.org/wiki/37_mm_gun_M1"]
+
+[case_head]
+# The drawing 37-222-BDC-010: RØ 51.50, HØ 50.00, RT 2.50, GØ 47.50, GW 4.00, the ramp
+# ends at HL 8.00; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 2.5
+# No groove_width: the base is wider than the drawing's head, so the ramp drawn up to it leaves less
+# room than the drawing's GW.
+ramp_top = 8.0
+groove_diameter = 47.5
+ramp_angle = 40.0
+sources = ["https://municion.org/producto/37-x-222-sr-us-m17/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 157"]

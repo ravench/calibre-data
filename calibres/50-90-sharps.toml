@@ -1,0 +1,48 @@
+# Measurements converted from inches.
+name = ".50-90 Sharps"
+# Guns: book:cotw-18 p. 243.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/50-90-sharps-straight-2-1-2/).
+profile = "flat"
+aliases = ["50-90", "50sharps"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.84
+base = 14.35
+neck = 13.41
+case_length = 63.5
+overall_length = 81.28
+bullet = 12.93
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/50-90-sharps-straight-2-1-2/"]
+sources = ["book:cotw-18 p. 252"]
+
+[introduced]
+year = 1872
+sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 252"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.50-90_Sharps"]
+
+[case]
+# The photos show brass cases (UMC's).
+material = "brass"
+sources = ["https://municion.org/producto/50-90-sharps-straight-2-1-2/"]

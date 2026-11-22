@@ -1,0 +1,59 @@
+# Measurements converted from inches.
+# J. Francis Rabbeth's round, first loaded by UMC; longer than the .25-20 Winchester made for the 1892
+# repeater.
+name = ".25-20 Single-Shot"
+# Guns: book:cotw-18 p. 187.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/25-20-single-shot/).
+profile = "flat"
+aliases = ["25-20 single shot", "25-20ss"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 384"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.6
+base = 8.0
+shoulder = 7.52
+shoulder_at = 27.13
+neck_at = 29.4
+neck_base = 6.96
+# Drawing: SØ 7.40, NØ 6.96, SL 27.20, NL 12.00, CL 41.47.
+shoulder_angle = 5.5
+cite.shoulder_angle = ["https://municion.org/producto/25-20-single-shot/"]
+neck = 6.99
+case_length = 41.4
+overall_length = 48.26
+bullet = 6.53
+# flat: the drawing gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
+sources = ["book:cotw-18 p. 249", "https://municion.org/producto/25-20-single-shot/"]
+
+[introduced]
+# COTW: first appeared about 1882.
+year = 1882
+sources = ["book:cotw-18 p. 187"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 211"]
+
+[bullet]
+# COTW 18 p. 187 lists only handloads; municion.org's sheet shows a lead bullet.
+type = "lead"
+sources = ["https://municion.org/ficha-07-041-bbc-010-0006/"]
+
+[case]
+# The photos show brass cases (Winchester's, Remington-UMC's, Roth's and Sellier &
+# Bellot's).
+material = "brass"
+sources = ["https://municion.org/producto/25-20-single-shot/"]

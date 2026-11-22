@@ -1,0 +1,54 @@
+# Measurements converted from inches.
+# Danish target round, the 8x58 mm R Krag necked down.
+name = "6.5x58 mm R Krag-Jørgensen"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["6.5x58r krag"]
+
+origin = "DK"
+origin_sources = ["https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.6
+base = 12.7
+shoulder = 11.68
+shoulder_at = 41.67
+neck_at = 48.27
+neck_base = 7.67
+# Drawing: SØ 11.90, NØ 7.67, SL 41.80, NL 9.90, CL 58.30.
+shoulder_angle = 17.8
+cite.shoulder_angle = ["https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/"]
+neck = 7.62
+case_length = 58.17
+overall_length = 82.55
+bullet = 6.71
+sources = [
+  "book:cotw-18 p. 651",
+  "https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/",
+]
+
+[introduced]
+year = 1933
+sources = ["book:cotw-18 p. 620"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# .062 in.
+rim_thickness = 1.57
+sources = ["book:donnelly p. 776"]
+
+[bullet]
+# The service or target load, full metal jacket; p. 620 also lists soft points.
+type = "jacketed"
+sources = ["book:cotw-18 p. 620"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/65-x-58-r-krag-jorgensen-m-1928-33/"]

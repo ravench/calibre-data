@@ -1,0 +1,61 @@
+# Measurements converted from inches.
+# A shortened .460 Weatherby Magnum case, the length of the .458 Winchester Magnum.
+name = ".460 A-Square Short"
+guns = ["rifle"]
+kind = "belted"
+profile = "round"
+aliases = ["460 a-square short", "460 short a-square"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/460-a-square-short-belted/"]
+rare = true
+
+[mm]
+rim = 14.7
+belt = 15.33
+base = 14.78
+shoulder = 14.22
+shoulder_at = 52.27
+neck_at = 54.4
+neck_base = 12.36
+# Drawing: SØ 14.30, NØ 12.36, SL 52.00, NL 9.10, CL 63.23.
+shoulder_angle = 24.5
+cite.shoulder_angle = ["https://municion.org/producto/460-a-square-short-belted/"]
+neck = 12.29
+case_length = 63.5
+overall_length = 88.9
+bullet = 11.63
+# The table gives the belt, .603 in., in the rim column; rim and belt are the .460 Weatherby Magnum's (R1 and R3
+# on its C.I.P. sheet).
+sources = [
+  "book:cotw-18 p. 453",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf",
+  "https://municion.org/producto/460-a-square-short-belted/",
+]
+
+[introduced]
+unknown = "COTW 18 p. 434 dates the A-Square line to 1974, but not this round."
+sources = ["book:cotw-18 p. 434"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# from the .460 Weatherby Magnum case; C.I.P. sheet
+rim_thickness = 1.6
+ramp_top = 6.4
+groove_diameter = 12.57
+ramp_angle = 45.0
+groove_width = 1.24
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
+
+[bullet]
+# Inferred: the page gives only A-Square's handloads, with soft points (p. 435).
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/460-a-square-short-belted/"]

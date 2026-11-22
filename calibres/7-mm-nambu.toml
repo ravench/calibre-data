@@ -1,0 +1,56 @@
+# Measurements converted from inches.
+# For the 'Baby' Nambu pistol of Japanese officers, about 1920.
+name = "7 mm Nambu"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["7nambu", "7 nambu", "baby nambu"]
+
+origin = "JP"
+origin_sources = ["book:ammo-encyclopedia-2 p. 648"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.12
+base = 8.92
+shoulder = 8.56
+shoulder_at = 14.66
+neck_at = 16.41
+neck_base = 7.64
+# Drawing: SØ 8.62, NØ 7.64, SL 14.65, NL 3.40, CL 19.80.
+shoulder_angle = 15.6
+cite.shoulder_angle = ["https://municion.org/producto/7-mm-nambu/"]
+neck = 7.52
+case_length = 19.81
+overall_length = 26.92
+bullet = 7.11
+sources = ["book:cotw-18 p. 527", "https://municion.org/producto/7-mm-nambu/"]
+
+[introduced]
+year = 1920
+sources = ["book:cotw-18 p. 463"]
+
+[primer]
+# The table gives a Berdan primer without its size; 4.41 mm, 4 specimens on municion.org's photos.
+size = "small-pistol"
+sources = ["https://municion.org/producto/7-mm-nambu/"]
+
+[case_head]
+# Drawing 07-020-BGC-010: RT 0.98, HL 2.53, GØ 7.81, GW 0.80, HØ 8.91; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 0.98
+ramp_top = 2.53
+groove_diameter = 7.81
+ramp_angle = 36.0
+groove_width = 0.8
+sources = ["https://municion.org/producto/7-mm-nambu/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 464"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/7-mm-nambu/"]

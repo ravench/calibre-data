@@ -1,0 +1,46 @@
+# The round of the Swedish Bofors m/40 anti-aircraft and anti-tank cannon, a Bofors design first meant
+# for an aircraft gun. Its name gives the bore and case length, Jane's table the rim, base and neck, the
+# specimen drawing on municion.org the shoulder, the rim's thickness and the length of the round
+# (Autocannon p. 124: about 220 mm). The drawing's neck (NØ 20.71) is 0.30 mm narrower than Jane's
+# (21.01), more than the 0.15 mm a neck may widen towards its mouth, so the file has no neck_at or
+# neck_base.
+name = "20x145 mm R"
+guns = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["20x145r", "20 mm bofors m/40", "20 mm m/40"]
+origin = "SE"
+origin_sources = ["book:rapid-fire p. 227"]
+
+[mm]
+rim = 29.49
+base = 25.4
+shoulder = 23.11
+shoulder_at = 121.18
+# Drawing 20-145-BBC-010: SØ 23.11, NØ 20.71, SL 121.00, NL 13.70, CL 144.82, TL 222.09.
+shoulder_angle = 6.8
+cite.shoulder_angle = ["https://municion.org/producto/20-x-145-r-swedish-bofors-m-40-tubkanon/"]
+neck = 21.01
+case_length = 145.0
+overall_length = 222.09
+bullet = 20.0
+sources = [
+  "book:janes-ammo-2002 p. 681",
+  "book:rapid-fire p. 227",
+  "https://municion.org/producto/20-x-145-r-swedish-bofors-m-40-tubkanon/",
+]
+
+[introduced]
+# The year in the gun's name: Autocannon has the Swedish army adopt the m/40 in its chapter on 1933 to
+# 1940 (p. 18), and the gun fire this round (p. 124).
+year = 1940
+sources = ["book:autocannon p. 18", "book:autocannon p. 124"]
+
+[case_head]
+# The drawing 20-145-BBC-010: RØ 29.49, HØ 25.44, RT 3.98.
+rim_thickness = 3.98
+sources = ["https://municion.org/producto/20-x-145-r-swedish-bofors-m-40-tubkanon/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 124"]

@@ -1,0 +1,56 @@
+# Measurements converted from inches.
+# Holland & Holland's target and small-game round, mostly in small Martini rifles.
+name = ".297/250 Rook"
+# Guns: book:cotw-18 p. 578.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["297/250", "297/250 rook"]
+
+origin = "GB"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.71
+base = 7.49
+shoulder = 7.47
+shoulder_at = 13.2
+neck_at = 15.33
+neck_base = 6.73
+# Drawing: SØ 7.29, NØ 6.73, SL 13.00, NL 5.50, CL 20.63.
+shoulder_angle = 7.5
+cite.shoulder_angle = ["https://municion.org/producto/297-250-mk-ii-rook-rifle-hh/"]
+neck = 6.78
+case_length = 20.83
+overall_length = 27.94
+bullet = 6.35
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/297-250-mk-ii-rook-rifle-hh/"]
+
+[introduced]
+unknown = "From before 1880; COTW 18 p. 578 gives no year."
+sources = ["book:cotw-18 p. 578"]
+
+[primer]
+# The table gives a .177 in. Berdan primer, the small Boxer size.
+size = "small-rifle"
+diameter = 4.5
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# .04 in.
+rim_thickness = 1.02
+sources = ["book:donnelly p. 293"]
+
+[bullet]
+# A blackpowder rook round (COTW 18 p. 578), lead like the others of its kind.
+# naboje.org: loaded with black powder and a lead bullet.
+type = "lead"
+sources = ["https://naboje.org/node/4173"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/297-250-mk-ii-rook-rifle-hh/"]

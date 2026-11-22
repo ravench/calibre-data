@@ -1,0 +1,57 @@
+# Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".256 Winchester Magnum"
+# Guns: https://en.wikipedia.org/wiki/.256_Winchester_Magnum (Marlin 62 Levermatic, a Universal M1 carbine).
+guns = ["handgun", "rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["256win"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.256_Winchester_Magnum"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.2
+base = 9.7
+shoulder = 9.3
+shoulder_at = 24.77
+neck_at = 27.3
+neck_base = 7.14
+# Drawing 06-033-BBC-040
+shoulder_angle = 22.3
+cite.shoulder_angle = ["https://municion.org/producto/256-winchester-magnum/"]
+neck = 7.2
+case_length = 32.5
+overall_length = 40.4
+bullet = 6.5
+# flat: the drawing gives the flat tip as Ø 2,00 (whole millimetres).
+flat = 2.0
+sources = [
+  "https://en.wikipedia.org/wiki/.256_Winchester_Magnum",
+  "https://municion.org/producto/256-winchester-magnum/",
+]
+
+[introduced]
+year = 1960
+sources = ["https://en.wikipedia.org/wiki/.256_Winchester_Magnum"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.256_Winchester_Magnum"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 527"]
+
+[bullet]
+# Winchester, its only maker, loaded a soft point; Wikipedia calls it an «open point expanding»
+# bullet.
+type = "softpoint"
+sources = ["book:cotw-18 p. 462"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/256-winchester-magnum/"]

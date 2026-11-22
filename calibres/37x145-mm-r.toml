@@ -1,0 +1,27 @@
+# The round of the US M4 and M10 aircraft cannon of the Second World War, a slightly longer case than the
+# 37x136 mm R's; the Soviet air force used it too. Its name gives the bore and case length, Rapid Fire's
+# table the rim and base. Autocannon (p. 155) gives the round as 248 mm long with the HE shell and 237 mm
+# with AP, so the file has no length of the round.
+name = "37x145 mm R"
+guns = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["37x145r", "37 mm m4", "37 mm m10"]
+origin = "US"
+origin_sources = ["book:rapid-fire p. 229"]
+
+[mm]
+rim = 45.0
+base = 40.6
+case_length = 145.0
+bullet = 37.0
+sources = ["book:rapid-fire p. 229"]
+
+[introduced]
+# Wikipedia: the M4 was made from 1939 and in service from 1942.
+year = 1939
+sources = ["https://en.wikipedia.org/wiki/M4_autocannon"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 155"]

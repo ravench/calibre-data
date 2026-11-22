@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# A 1.88 in. .44 bottleneck case for the 1869 Sharps sporting rifle; loaded by Remington and Winchester.
+name = ".44-60 Sharps & Remington Necked"
+# Guns: book:cotw-18 p. 236.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/44-60-396-sharps-necked-1-7-8/).
+profile = "flat"
+# The 44-60 Winchester or Peabody Creedmoor (COTW 18 p. 237) is the same round.
+aliases = ["44-60 sharps", "44-60 sharps necked", "44-60 winchester", "44-60 peabody creedmoor"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 453"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.0
+base = 13.08
+shoulder = 12.75
+shoulder_at = 28.39
+neck_at = 32.1
+neck_base = 11.91
+# Drawing: SØ 12.91, NØ 11.91, SL 29.00, NL 15.65, CL 48.36.
+shoulder_angle = 7.7
+cite.shoulder_angle = ["https://municion.org/producto/44-60-396-sharps-necked-1-7-8/"]
+neck = 11.79
+case_length = 47.75
+overall_length = 64.77
+bullet = 11.35
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+sources = ["book:cotw-18 p. 251", "https://municion.org/producto/44-60-396-sharps-necked-1-7-8/"]
+
+[introduced]
+year = 1869
+sources = ["book:cotw-18 p. 236"]
+
+[primer]
+# The table gives L-B1: a large rifle or a Berdan #1 primer.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# .068 in.
+rim_thickness = 1.73
+sources = ["book:donnelly p. 574"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 237"]
+
+[case]
+# The photos show brass cases (Winchester's and unmarked ones).
+material = "brass"
+sources = ["https://municion.org/producto/44-60-396-sharps-necked-1-7-8/"]

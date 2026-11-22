@@ -1,0 +1,61 @@
+# Measurements converted from inches.
+# Bishop Ammunition & Firearms' .475 for AR-10 and bolt-action rifles.
+name = ".475 Bishop Short Magnum"
+guns = ["rifle"]
+kind = "rimless"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/475-bishop-short-magnum/).
+profile = "flat"
+aliases = ["475 bishop", "475 bishop short magnum", "475 bsm"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/475-bishop-short-magnum/"]
+rare = true
+
+[mm]
+rim = 12.01
+base = 14.94
+shoulder = 14.66
+shoulder_at = 40.88
+neck_at = 45.88
+neck_base = 12.8
+# Drawing: SØ 14.60, NØ 12.80, SL 40.30, NL 9.90, CL 55.20.
+shoulder_angle = 10.2
+cite.shoulder_angle = ["https://municion.org/producto/475-bishop-short-magnum/"]
+neck = 12.8
+case_length = 55.78
+overall_length = 72.39
+bullet = 12.06
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+# The table prints the bullet and neck without their points (475, 504).
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/475-bishop-short-magnum/"]
+
+[introduced]
+# COTW: designed in 2018, shown at the 2019 SHOT Show.
+year = 2018
+sources = ["book:cotw-18 p. 439"]
+
+[primer]
+# The table gives a CCI magnum rifle primer without its size; large rifle, as the case
+# is far too big for a small one.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .054 in. (COTW); groove from the drawing 12-055-BRC-020: RT 1.30, HL 4.70, GØ 10.40, GW 1.20,
+# HØ 15.00; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.37
+ramp_top = 4.7
+groove_diameter = 10.4
+ramp_angle = 46.0
+groove_width = 1.2
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/475-bishop-short-magnum/"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/475-bishop-short-magnum/"]

@@ -1,0 +1,47 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = "8 mm Lebel revolver"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["8lebelrev", "8mm1892"]
+
+origin = "FR"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8mm_French_Ordnance",
+  "book:ammo-encyclopedia-2 p. 693",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page16.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 8 mm Lebel, maximum cartridge.
+rim = 10.5
+base = 9.1
+neck = 8.9
+case_length = 27.4
+overall_length = 37.0
+bullet = 8.28
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page16.pdf"]
+
+[introduced]
+year = 1892
+sources = ["https://en.wikipedia.org/wiki/8mm_French_Ordnance"]
+
+[primer]
+size = "small-pistol"
+sources = []
+
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page16.pdf"]
+
+[bullet]
+# municion.org's oldest dated service round (École Centrale de Pyrotechnie, 1912) has a copper-washed
+# jacketed bullet; its lead-bullet round (1940) is a reduced-range load. COTW 18 p. 477 gives a lead
+# military load.
+type = "jacketed"
+sources = ["https://municion.org/ficha-08-027-cbc-010-0001/", "https://municion.org/ficha-08-027-cbc-010-0002/"]

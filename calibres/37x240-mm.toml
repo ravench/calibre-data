@@ -1,0 +1,27 @@
+# The Chinese round of the Type 76 naval anti-aircraft mounting, a wider, rimless successor of the 37x252
+# mm SR with much more propellant. Its name gives the bore and case length, Rapid Fire's table the rim
+# and base, Autocannon p. 158 the length of the round.
+name = "37x240 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["37 mm type 76"]
+origin = "CN"
+origin_sources = ["book:rapid-fire p. 230"]
+
+[mm]
+rim = 54.0
+base = 54.0
+case_length = 240.0
+overall_length = 383.0
+bullet = 37.0
+sources = ["book:rapid-fire p. 230", "book:autocannon p. 158"]
+
+[introduced]
+# Autocannon: the Type 76 mounting emerged in 1976.
+year = 1976
+sources = ["book:autocannon p. 157"]
+
+[case]
+material = "steel"
+sources = ["book:autocannon p. 158"]

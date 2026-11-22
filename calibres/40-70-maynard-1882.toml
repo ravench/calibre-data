@@ -1,0 +1,46 @@
+# Measurements converted from inches.
+# The longest of the three .40 Maynard 1882 rounds, with a slightly larger rim and base.
+name = ".40-70 Maynard 1882"
+# Guns: book:cotw-18 p. 228.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/40-70-maynard-1882/).
+profile = "flat"
+aliases = ["40-70 maynard", "40-70 maynard 1882"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/40-70-maynard-1882/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.59
+base = 11.46
+neck = 11.43
+case_length = 61.47
+overall_length = 73.15
+bullet = 10.59
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/40-70-maynard-1882/"]
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# The year of the Maynard Model 1882 rifles it was made for.
+year = 1882
+sources = ["book:cotw-18 p. 228"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:donnelly p. 523"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 229"]

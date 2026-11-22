@@ -1,0 +1,37 @@
+# The round of most German 3.7 cm Flak of the Second World War (18, 36, 37 and 43) and of the BK 3.7
+# aircraft cannon. Its name gives the bore and case length (Autocannon: 37x264B), Rapid Fire's table the
+# rim and base, Autocannon p. 161 the length of the round. The drawing on municion.org
+# (37-265-BFC-010) has round numbers and a case of 265 mm, 2 mm longer than the file's, so nothing is
+# taken from it.
+name = "37x263 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = [
+  "37x263b",
+  "37x264b",
+  "3.7 cm flak 18",
+  "3.7 cm flak 36",
+  "3.7 cm flak 37",
+  "3.7 cm flak 43",
+  "bk 3.7",
+]
+origin = "DE"
+origin_sources = ["book:rapid-fire p. 230"]
+
+[mm]
+rim = 46.8
+base = 45.9
+case_length = 263.0
+overall_length = 367.0
+bullet = 37.0
+sources = [
+  "book:rapid-fire p. 230",
+  "https://en.wikipedia.org/wiki/3.7_cm_Flak_18/36/37",
+  "book:autocannon p. 161",
+]
+
+[introduced]
+# In service from 1936 (Wikipedia).
+year = 1936
+sources = ["https://en.wikipedia.org/wiki/3.7_cm_Flak_18/36/37"]

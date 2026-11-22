@@ -1,0 +1,60 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".44 Colt"
+guns = ["handgun"]
+kind = "rimmed"
+# Nose: round, the heeled lead bullet (photos, COTW 18 p. 508).
+profile = "round"
+aliases = ["44colt"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.44_Colt",
+  "book:ammo-encyclopedia-2 p. 709",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page70.pdf",
+]
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+# C.I.P. 44 Colt, maximum cartridge.
+rim = 13.06
+base = 11.58
+neck = 11.55
+case_length = 27.94
+overall_length = 38.1
+bullet = 11.25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page70.pdf"]
+
+[introduced]
+year = 1871
+sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.44_Colt"]
+
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page70.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/44-colt-remington-army-revolver/"]
+
+[case]
+# The army's Benét-primed round (Frankford Arsenal's inside primer) had a copper case; the photo shows it
+# next to later brass ones.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:44_Colt.JPG"]
+
+[current_cases]
+# Starline's brass cases.
+materials = ["brass"]
+sources = ["https://www.starlinebrass.com/44-colt-brass"]
+
+[today]
+# Cases made today are brass (Starline).
+case = "brass"
+sources = ["https://www.starlinebrass.com/44-colt-brass"]

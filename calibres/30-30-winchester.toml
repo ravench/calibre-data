@@ -1,0 +1,57 @@
+name = ".30-30 Winchester"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["30-30", "3030", "30-30 win", "30 wcf"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30-30_Winchester",
+  "book:ammo-encyclopedia-2 p. 324",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page70.pdf",
+]
+
+[mm]
+rim = 12.8
+base = 10.7
+shoulder = 10.2
+shoulder_at = 36.6
+neck_at = 39.69
+neck_base = 8.46
+# C.I.P. 30-30 Win.
+shoulder_angle = 15.7
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page70.pdf"]
+neck = 8.38
+case_length = 51.8
+overall_length = 64.8
+bullet = 7.82
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/30-30-winchester-cf/"]
+sources = [
+  "book:hornady-10 p. 444",
+  "book:cotw-18 p. 176",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page70.pdf",
+]
+
+[introduced]
+year = 1895
+sources = ["https://en.wikipedia.org/wiki/.30-30_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.30-30_Winchester"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page70.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.30-30_Winchester"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/30-30-winchester-cf/"]

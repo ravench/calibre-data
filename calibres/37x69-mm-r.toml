@@ -1,0 +1,27 @@
+# The round of the Vickers 1-pounder Mk III and Mk V, Maxim-type aircraft guns of the First World War.
+# Its name gives the bore and case length, Rapid Fire's table the rim and base, Autocannon p. 153 the
+# length of the round.
+name = "37x69 mm R"
+guns = ["cannon"]
+kind = "rimmed"
+# Nose: flat, the No. 131 impact fuze of its standard HE shell (Autocannon p. 153).
+profile = "flat"
+aliases = ["37x69r", "1-pounder mk iii", "1 pdr mk iii"]
+origin = "GB"
+origin_sources = ["book:rapid-fire p. 229"]
+
+[mm]
+rim = 44.0
+base = 39.5
+case_length = 69.0
+overall_length = 137.0
+bullet = 37.0
+sources = ["book:rapid-fire p. 229", "book:autocannon p. 153"]
+
+[introduced]
+unknown = "Autocannon dates it only to the First World War."
+sources = ["book:autocannon p. 153"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 153"]

@@ -1,0 +1,52 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".375 Ruger"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["375ruger"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.375_Ruger",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf",
+]
+
+[mm]
+rim = 13.5
+base = 13.5
+shoulder = 13.1
+shoulder_at = 55.36
+neck_at = 57.78
+neck_base = 10.29
+# C.I.P. 375 Ruger
+shoulder_angle = 30
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]
+neck = 10.3
+case_length = 65.5
+overall_length = 84.8
+bullet = 9.5
+sources = [
+  "https://en.wikipedia.org/wiki/.375_Ruger",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf",
+]
+
+[introduced]
+year = 2007
+sources = ["https://en.wikipedia.org/wiki/.375_Ruger"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.375_Ruger"]
+
+[case_head]
+# C.I.P. 375 Ruger
+rim_thickness = 1.27
+ramp_top = 3.24
+groove_diameter = 12.07
+ramp_angle = 35.0
+groove_width = 0.94
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page143.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.375_Ruger"]

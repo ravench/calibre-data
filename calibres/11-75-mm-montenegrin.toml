@@ -1,0 +1,46 @@
+# Measurements converted from inches.
+# For the large Gasser revolvers of Montenegro and Austria-Hungary.
+name = "11.75 mm Montenegrin"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["11.75 montenegrin", "11mm austrian gasser", "11 mm gasser", "11.25x36", "11.25x36 montenegrin"]
+
+origin = "AH"
+origin_sources = ["book:ammo-encyclopedia-2 p. 714"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.1
+base = 12.45
+neck = 11.99
+case_length = 35.56
+overall_length = 43.94
+bullet = 11.3
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+# COTW: about 1870.
+year = 1870
+sources = ["book:cotw-18 p. 508"]
+
+[primer]
+# The table gives no primer; 6.33 mm, 6 specimens on municion.org's photos (two of them 6.2 mm), at
+# the lower edge of the .254 in. band, next to the gap where the .241 in. primer falls.
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/113-mm-gasser-mod-1870-74-montenegrin-flat-base/"]
+
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 996"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 509"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/113-mm-gasser-mod-1870-74-montenegrin-flat-base/"]

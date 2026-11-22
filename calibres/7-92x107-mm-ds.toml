@@ -1,0 +1,58 @@
+# Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "7.92x107 mm DS"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.92x107", "7.92ds"]
+
+origin = "PL"
+origin_sources = ["https://en.wikipedia.org/wiki/7.92×107mm_DS"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.36
+base = 16.39
+shoulder = 13.15
+shoulder_at = 95.28
+neck_at = 98.68
+neck_base = 9.16
+# Drawing 08-107-BGC-020
+shoulder_angle = 31.2
+cite.shoulder_angle = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
+neck = 9.23
+case_length = 107.18
+overall_length = 132.0
+bullet = 8.18
+sources = [
+  "https://en.wikipedia.org/wiki/7.92×107mm_DS",
+  "https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/",
+]
+
+[introduced]
+year = 1931
+sources = ["https://en.wikipedia.org/wiki/7.92×107mm_DS"]
+
+[primer]
+# 5.64 mm, 4 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
+
+[case_head]
+# Drawing 08-107-BGC-020: RT 1.54, HL 3.80, GØ 14.38, GW 1.00, HØ 16.46; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.54
+ramp_top = 3.8
+groove_diameter = 14.38
+ramp_angle = 40.0
+groove_width = 1
+sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/792-x-107-polish-anti-tank-maroszek-ur-wz-35/"]

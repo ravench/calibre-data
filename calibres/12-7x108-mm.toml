@@ -1,0 +1,71 @@
+# Batch 7 (2026-11); now from the C.I.P. sheet (see [mm]).
+name = "12.7x108 mm"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["12.7x108", "dshk", "12.7x107"]
+
+origin = "SU"
+origin_sources = ["https://en.wikipedia.org/wiki/12.7×108mm"]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+# C.I.P. 12,7 x 108, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 21.8
+base = 21.85
+shoulder = 19.05
+shoulder_at = 84.8
+neck_at = 92.6
+neck_base = 14.05
+# C.I.P. 12,7 x 108: half the cone angle alpha 35°32'34"
+shoulder_angle = 17.8
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/12-7-x-108-170419-en.pdf"]
+neck = 13.9
+case_length = 108.0
+overall_length = 147.0
+bullet = 13.01
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/12-7-x-108-170419-en.pdf",
+  "https://en.wikipedia.org/wiki/12.7×108mm",
+]
+
+[introduced]
+year = 1934
+sources = ["https://en.wikipedia.org/wiki/12.7×108mm"]
+
+[primer]
+# 8.70 mm, 8 specimens
+size = "bmg-35"
+sources = ["https://municion.org/producto/127-x-108-russian-dshk-rimless/"]
+
+[case_head]
+# C.I.P. 12,7 x 108: R, E, E1, delta
+rim_thickness = 2.0
+ramp_top = 6.3
+groove_diameter = 18.0
+ramp_angle = 38.7
+groove_width = 1.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/12-7-x-108-170419-en.pdf"]
+
+[bullet]
+# COTW 18 says the round appeared with armour-piercing bullets and lists armour-piercing incendiary
+# military loads (under 12.7x107 mm); such bullets are jacketed.
+type = "jacketed"
+sources = ["book:cotw-18 p. 570", "book:cotw-18 p. 571"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["black", "red"]
+meaning = ["armour-piercing", "incendiary"]
+description = "B-32"
+countries = ["SU"]
+sources = ["book:labbett p. 84", "book:labbett p. 83"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["purple", "red"]
+meaning = ["armour-piercing", "incendiary", "tracer"]
+description = "BZT-44"
+countries = ["SU"]
+sources = ["book:labbett p. 84", "book:labbett p. 83"]

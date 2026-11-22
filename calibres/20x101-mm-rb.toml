@@ -1,0 +1,30 @@
+# The round of the Oerlikon FFL aircraft cannon of about 1935, which the Japanese Navy made as the
+# Type 99-2. Autocannon: the SEMAG and Oerlikon Type L's 20x99RB case with the rim cut down to 19 mm
+# and a 2 mm longer extractor groove (Rapid Fire's table counts the two as one round). Its name gives
+# the bore and case length, Jane's table the rim, base and neck, Autocannon the length of the round.
+# The drawing on municion.org (20-101-BRC-010) has only round numbers and a 20.00 mm rim, 1 mm
+# wider than Jane's, so nothing is taken from it.
+name = "20x101 mm RB"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x101rb", "20x101 rb", "oerlikon ffl", "type 99-2"]
+origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/Oerlikon_20_mm_cannon"]
+
+[mm]
+rim = 18.99
+base = 22.1
+neck = 20.6
+case_length = 101.0
+overall_length = 173.0
+bullet = 20.0
+sources = ["book:janes-ammo-2002 p. 682", "book:autocannon p. 115"]
+
+[introduced]
+year = 1935
+sources = ["https://en.wikipedia.org/wiki/Oerlikon_20_mm_cannon", "book:autocannon p. 115"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 115"]

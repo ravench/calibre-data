@@ -1,0 +1,59 @@
+# Batch 8 (2026-11); now from the C.I.P. sheet (see [mm]).
+name = ".35 Winchester Self-Loading"
+guns = ["rifle"]
+kind = "semi-rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/35-winchester-self-loading/).
+profile = "flat"
+aliases = ["35wsl", "35 win. sl"]
+
+origin = "US"
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 416",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page87.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 35 Win. SL, maximum cartridge: rim R1, base P1, neck H2, case L3, length L6, bullet G1.
+rim = 10.29
+base = 9.68
+neck = 9.58
+case_length = 29.31
+overall_length = 41.91
+bullet = 8.95
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/35-winchester-self-loading/"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page87.pdf",
+  "book:cotw-18 p. 250",
+]
+
+[introduced]
+# Year of production on the product page.
+year = 1905
+sources = ["https://municion.org/producto/35-winchester-self-loading/"]
+
+[primer]
+# 4.44 mm, 3 specimens
+size = "small-rifle"
+sources = ["https://municion.org/producto/35-winchester-self-loading/"]
+
+[case_head]
+# C.I.P. 35 Win. SL: R, E, E1, delta. The groove's ramp is a shallow cone (delta 8°)
+rim_thickness = 1.27
+ramp_top = 4.26
+groove_diameter = 9.02
+ramp_angle = 8.0
+groove_width = 0.64
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page87.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/35-winchester-self-loading/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/35-winchester-self-loading/"]

@@ -1,0 +1,45 @@
+# Measurements converted from inches.
+# A shorter, cheaper .25 Stevens that fires in .25 Stevens rifles; made until 1942.
+name = ".25 Stevens Short"
+# Guns: book:cotw-18 p. 661.
+guns = ["rifle"]
+kind = "rimfire"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/25-stevens-short-rf/).
+profile = "flat"
+aliases = ["25 stevens short", "25 stevens short rf"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/25-stevens-short-rf/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.46
+base = 7.01
+neck = 6.99
+case_length = 15.21
+overall_length = 22.28
+bullet = 6.38
+# flat: the drawing gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
+cite.flat = ["https://municion.org/producto/25-stevens-short-rf/"]
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+year = 1902
+sources = ["book:cotw-18 p. 661"]
+
+[case_head]
+# Drawing 06-015-CBR-030: RT 1.30, RØ 8.60, HØ 7.06.
+rim_thickness = 1.3
+sources = ["https://municion.org/producto/25-stevens-short-rf/"]
+
+[bullet]
+# COTW 18 p. 661 does not name the bullet's material; municion.org's sheet shows a lead one.
+type = "lead"
+sources = ["https://municion.org/ficha-06-015-cbr-030-0004/"]
+
+[case]
+# municion.org's photos: every case shown (Peters, Remington-UMC, Winchester, Western, Dominion) is copper.
+material = "copper"
+sources = ["https://municion.org/producto/25-stevens-short-rf/"]

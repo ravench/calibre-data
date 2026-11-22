@@ -1,0 +1,61 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# Holland & Holland's belted 7 mm, with the .375 H&H one of the first magnums.
+name = ".275 H&H Magnum"
+guns = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["275hh", "275 h&h", "275 belted magnum", "275 belt. n.e."]
+display_aliases = [".275 Belted Magnum"]
+
+origin = "GB"
+origin_sources = ["https://naboje.org/node/14849"]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 275 Belt. N.E., maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 13.51
+base = 13.03
+shoulder = 11.43
+shoulder_at = 53.34
+neck_at = 55.88
+neck_base = 8.25
+# C.I.P. 275 Belt. N.E.: half the cone angle alpha 64°05'30"
+shoulder_angle = 32.0
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page15.pdf"]
+neck = 8.25
+case_length = 63.5
+overall_length = 87.12
+bullet = 7.29
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page15.pdf",
+  "book:cotw-18 p. 608",
+]
+
+[introduced]
+year = 1911
+sources = ["book:cotw-18 p. 581"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# C.I.P. 275 Belt. N.E.: R, E (the front of the belt), E1, delta
+rim_thickness = 1.27
+ramp_top = 5.56
+groove_diameter = 11.94
+ramp_angle = 28.4
+groove_width = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page15.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 581"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/275-holland-holland-magnum-belted/"]

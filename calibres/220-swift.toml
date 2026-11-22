@@ -1,0 +1,62 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".220 Swift"
+guns = ["rifle"]
+kind = "semi-rimmed"
+profile = "spitzer"
+aliases = ["220swift"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.220_Swift",
+  "book:ammo-encyclopedia-2 p. 271",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page83.pdf",
+]
+
+[mm]
+rim = 12.0
+base = 11.3
+shoulder = 10.2
+shoulder_at = 43.76
+neck_at = 48.41
+neck_base = 6.64
+# C.I.P. 220 Swift
+shoulder_angle = 21
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page83.pdf"]
+neck = 6.6
+case_length = 56.0
+overall_length = 68.1
+bullet = 5.7
+# nose: read to scale off the specimen drawing 06-056-BDC-010:
+# the curve starts 10.6 mm behind the tip, of the 12.21 mm out of its case (TL 67.99, CL 55.78).
+nose = 10.6
+cite.nose = ["https://municion.org/producto/220-swift/"]
+sources = [
+  "https://en.wikipedia.org/wiki/.220_Swift",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page83.pdf",
+]
+
+[introduced]
+year = 1935
+sources = ["https://en.wikipedia.org/wiki/.220_Swift"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.220_Swift"]
+
+[case_head]
+# C.I.P. 220 Swift
+rim_thickness = 1.24
+ramp_top = 2.89
+groove_diameter = 10.82
+ramp_angle = 15.0
+groove_width = 0.64
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page83.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.220_Swift"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/220-swift/"]

@@ -1,0 +1,27 @@
+# The round of the Japanese army's Ho-155 aircraft cannon, which came too late in the war to see much
+# service. Its name gives the bore and case length, Rapid Fire's table the rim and base, Autocannon
+# p. 141 the length of the round.
+name = "30x114 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30x115", "30 mm ho-155", "ho-155"]
+origin = "JP"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 37.5
+base = 38.0
+case_length = 114.0
+overall_length = 190.0
+bullet = 30.0
+sources = ["book:rapid-fire p. 228", "book:autocannon p. 141", "https://en.wikipedia.org/wiki/Ho-155_cannon"]
+
+[introduced]
+# Wikipedia's list of 30 mm rounds.
+year = 1944
+sources = ["https://en.wikipedia.org/wiki/30_mm_caliber"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 141"]

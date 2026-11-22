@@ -1,0 +1,61 @@
+# Batch 8 (2026-11): old American sporting rounds; now from the C.I.P. sheet (see [mm]).
+name = ".32 Remington"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["32rem"]
+
+origin = "US"
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 410",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page127.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 10.72
+base = 10.71
+shoulder = 10.19
+shoulder_at = 38.05
+neck_at = 39.67
+neck_base = 8.81
+# C.I.P. 32 Rem.
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page127.pdf"]
+neck = 8.73
+case_length = 52.07
+overall_length = 64.14
+bullet = 8.15
+sources = [
+  "book:cotw-18 p. 250",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page127.pdf",
+]
+
+[introduced]
+year = 1906
+sources = ["https://en.wikipedia.org/wiki/.32_Remington"]
+
+[primer]
+# 5.11 mm, 4 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/32-remington/"]
+
+[case_head]
+# C.I.P. 32 Rem.
+rim_thickness = 1.24
+ramp_top = 3.19
+groove_diameter = 9.09
+ramp_angle = 36.0
+groove_width = 0.84
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page127.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/32-remington/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/32-remington/"]

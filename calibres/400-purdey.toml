@@ -1,0 +1,43 @@
+# Measurements converted from inches.
+# A straight 3 in. case loaded with light cordite for Purdey doubles.
+name = ".400 Purdey"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["400 purdey", "400 purdey light"]
+display_aliases = [".400 Purdey Light Express"]
+
+origin = "GB"
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page103.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 400 Purdey 3", maximum cartridge.
+rim = 13.26
+base = 11.99
+neck = 10.85
+case_length = 76.2
+overall_length = 91.44
+bullet = 10.29
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page103.pdf"]
+
+[introduced]
+# COTW: around 1905.
+year = 1905
+sources = ["book:cotw-18 p. 592"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.32
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page103.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 592"]

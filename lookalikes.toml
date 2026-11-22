@@ -1,0 +1,683 @@
+# Calibres that are cartridges of their own but look alike, so an app can show the others from any
+# one of them. Each [[group]] has a name (its parent's, or the family's), lists its calibres, the
+# parent first, and differ_by, what tells them apart: rim, bore, length, seating, load or ignition
+# (see Lookalikes in docs/format.md). A calibre is in one group at most.
+
+[[group]]
+name = "5.56x45 mm"
+differ_by = ["load"]
+calibres = [".223 Remington", "5.56x45 mm NATO", "5.56 Commercial", "5.6 mm GP 90"]
+
+[[group]]
+# The Swiss 7.5 mm rounds of the IG 89: the 1890 round, its 1923 rework on a 1 mm longer case, and the
+# reduced cadet load on that case (Poyer p. 50). The 1890 paper-patched bullet is 8.15 across, the
+# later jacketed ones 7.8.
+name = "7.5x53.5 mm Swiss (Patrone Modell 1890)"
+differ_by = ["bore", "length", "load"]
+calibres = ["7.5x53.5 mm Swiss (Patrone Modell 1890)", "7.5x54.5 mm Swiss (GP 90/23)", "7.5 mm Kadettenpatrone"]
+
+[[group]]
+name = "7.62x51 mm"
+differ_by = ["load"]
+calibres = [".308 Winchester", "7.62x51 mm NATO"]
+
+[[group]]
+name = ".38 Auto"
+differ_by = ["load"]
+calibres = [".38 ACP", ".38 Super"]
+
+[[group]]
+name = "9x19 mm"
+differ_by = ["load"]
+calibres = ["9x19 mm", "9 mm Glisenti"]
+
+[[group]]
+# Straight rimless 9 mm cases of other lengths: the 9 mm Mauser and the 9 mm Winchester Magnum, which
+# COTW 18 likens to the Mauser (p. 480).
+name = "9x23 mm Largo"
+differ_by = ["load", "length"]
+calibres = ["9x23 mm Largo", "9x23 mm Winchester", "9 mm Mauser", "9 mm Winchester Magnum"]
+
+[[group]]
+# Cases that measure alike (COTW 18 p. 467). The Mauser and Tokarev rounds are loaded hotter than the
+# Borchardt, whose pistols must not fire them (p. 467); Tokarev pistols fire most Mauser loads (p. 466).
+# C.I.P. today: 2600 bar for the Mauser, 2500 bar for the Tokarev.
+name = "7.63x25 mm"
+differ_by = ["load"]
+calibres = [".30 Borchardt", "7.63x25 mm Mauser", "7.62x25 mm Tokarev"]
+
+[[group]]
+name = ".32 S&W Long"
+differ_by = ["seating"]
+calibres = [".32 S&W Long", ".32 S&W Long Wadcutter"]
+
+[[group]]
+# The .38 AMU (COTW 18 p. 487) is the .38 Special case semi-rimmed, with a flush wadcutter.
+name = ".38 Special"
+differ_by = ["seating", "rim"]
+calibres = [".38 Special", ".38 Special Wadcutter", ".38 AMU"]
+
+[[group]]
+name = "7x57 mm"
+differ_by = ["rim", "load"]
+calibres = ["7x57 mm Mauser", "7x57 mm R", ".275 Rigby"]
+
+[[group]]
+# COTW 18 p. 579: the .256 Gibbs is the 6.5x57 mm with a shorter neck.
+name = "6.5x57 mm"
+differ_by = ["rim", "length"]
+calibres = ["6.5x57 mm Mauser", "6.5x57 mm R", ".256 Gibbs Magnum"]
+
+[[group]]
+name = "7x64 mm"
+differ_by = ["rim", "length"]
+calibres = ["7x64 mm", "7x65 mm R"]
+
+[[group]]
+name = "8x57 mm"
+differ_by = ["rim", "bore"]
+calibres = ["8x57 mm IS", "8x57 mm IRS", "8x57 mm I", "8x57 mm IR"]
+
+[[group]]
+# The .45 HP is the case 1 mm shorter (COTW 18 p. 514); the .450 SMC takes a small rifle primer
+# for a hotter load (p. 517).
+name = ".45 ACP"
+differ_by = ["rim", "length", "load"]
+calibres = [".45 ACP", ".45 Auto Rim", ".45 HP", ".450 SMC"]
+
+[[group]]
+name = "5.6x50 mm Magnum"
+differ_by = ["rim"]
+calibres = ["5.6x50 mm Magnum", "5.6x50 mm R Magnum"]
+
+[[group]]
+name = "5.6x57 mm"
+differ_by = ["rim"]
+calibres = ["5.6x57 mm", "5.6x57 mm R"]
+
+[[group]]
+name = "6.5x65 mm RWS"
+differ_by = ["rim"]
+calibres = ["6.5x65 mm RWS", "6.5x65 mm R RWS"]
+
+[[group]]
+name = "6.5x68 mm"
+differ_by = ["rim"]
+calibres = ["6.5x68 mm", "6.5x68 mm R"]
+
+[[group]]
+name = "8x60 mm S"
+differ_by = ["rim"]
+calibres = ["8x60 mm S", "8x60 mm RS"]
+
+[[group]]
+name = "8x64 mm S"
+differ_by = ["rim", "length"]
+calibres = ["8x64 mm S", "8x65 mm RS"]
+
+[[group]]
+name = "9x57 mm"
+differ_by = ["rim"]
+calibres = ["9x57 mm Mauser", "9x57 mm R"]
+
+[[group]]
+name = "5.6x61 mm Vom Hofe Super Express"
+differ_by = ["rim"]
+calibres = ["5.6x61 mm Vom Hofe Super Express", "5.6x61 mm R Vom Hofe Super Express"]
+
+[[group]]
+# The .244 Halger is the 6.5x57 mm case necked down; its case is within 0.3 mm of the 6x58 mm Forster's.
+name = "6x58 mm Forster"
+differ_by = ["rim", "load"]
+calibres = ["6x58 mm Forster", "6x58 mm R Forster", ".244 Halger Magnum"]
+
+[[group]]
+name = "6x62 mm Frères"
+differ_by = ["rim"]
+calibres = ["6x62 mm Frères", "6x62 mm R Frères"]
+
+[[group]]
+name = "6.5x61 mm Mauser"
+differ_by = ["rim"]
+calibres = ["6.5x61 mm Mauser", "6.5x61 mm R Mauser"]
+
+[[group]]
+name = "8x51 mm Mauser"
+differ_by = ["rim"]
+calibres = ["8x51 mm Mauser", "8x51 mm R Mauser"]
+
+[[group]]
+name = "9.3x53 mm Swiss"
+differ_by = ["rim"]
+calibres = ["9.3x53 mm Swiss", "9.3x53 mm R Swiss"]
+
+[[group]]
+name = "9x71 mm Peterlongo"
+differ_by = ["bore"]
+calibres = ["9x71 mm Peterlongo", "8x71 mm Peterlongo"]
+
+[[group]]
+# The Dakota rounds (COTW 18 pp. 385-424) are the .404 Jeffery case, most of them shortened, with a slightly
+# larger rim.
+name = ".404 Jeffery"
+differ_by = ["bore", "length"]
+calibres = [".404 Jeffery", "9.5x73 mm Miller-Greiss Magnum", "7 mm Dakota", ".300 Dakota", ".330 Dakota",
+            ".375 Dakota", ".416 Dakota"]
+
+[[group]]
+name = "9.5x47 mm R"
+differ_by = ["bore"]
+calibres = ["9.5x47 mm R", "10.5x47 mm R"]
+
+[[group]]
+# The 8x72 mm R Sauer is the 9.3x72 mm R necked down (COTW 18 p. 635).
+name = "9.3x72 mm R"
+differ_by = ["length", "bore"]
+calibres = ["9.3x72 mm R", "9.3x48 mm R", "9.3x57 mm R", "9.3x70 mm R", "8x72 mm R Sauer"]
+
+[[group]]
+name = "10.75x63 mm Mauser"
+differ_by = ["length"]
+calibres = ["10.75x63 mm Mauser", "10.75x68 mm Mauser"]
+
+[[group]]
+# COTW 18 p. 567: the Brazilian Comblain looks much like the Belgian one.
+name = "11x50 mm R Albini"
+differ_by = ["bore", "length"]
+calibres = ["11x50 mm R Albini", "11x53 mm R Comblain", "11.4x50 mm R Brazilian Comblain"]
+
+[[group]]
+# COTW 18 p. 566: the Egyptian Remington fires in Beaumont rifles.
+name = "11.3x50 mm R Beaumont M71"
+differ_by = ["bore", "length"]
+calibres = ["11.3x50 mm R Beaumont M71", "11x52 mm R Beaumont M71/78", "11.43x50 mm R Egyptian Remington"]
+
+[[group]]
+# COTW 18 p. 567: rim, base and case length almost the same.
+name = "11.15x58 mm R Spanish Remington"
+differ_by = ["bore"]
+calibres = ["11.15x58 mm R Spanish Remington", "11.5x57 mm R Spanish Reformado"]
+
+[[group]]
+# COTW 18 p. 552: Type 45 rifles were rechambered for the Type 66.
+name = "8x50 mm R Siamese Type 45"
+differ_by = ["length"]
+calibres = ["8x50 mm R Siamese Type 45", "8x52 mm R Siamese Type 66"]
+
+[[group]]
+name = "7.62x54 mm R"
+differ_by = ["bore"]
+calibres = ["7.62x54 mm R", "7.62x53 mm R"]
+
+[[group]]
+name = ".450/400 Nitro Express 3 inch"
+differ_by = ["length"]
+calibres = [".450/400 Nitro Express 3 inch", ".450/400 Nitro Express 3¼ inch"]
+
+[[group]]
+name = "10.4x38 mm R Vetterli"
+differ_by = ["ignition"]
+calibres = ["10.4x38 mm R Vetterli", "10.4x38 mm R Vetterli Centrefire"]
+
+[[group]]
+name = ".44 Henry"
+differ_by = ["ignition"]
+calibres = [".44 Henry", ".44 Henry Centrefire"]
+
+[[group]]
+# COTW 18 pp. 662-664: the .32 rimfires of one bore in four lengths (the Long Rifle sits between the Long and
+# the Extra Long and fires in Extra Long rifles), and the centrefire Long and Extra Long.
+name = ".32 Long"
+differ_by = ["ignition", "length"]
+calibres = [".32 Long Rimfire", ".32 Short Rimfire", ".32 Long Rifle Rimfire", ".32 Extra Long Rimfire",
+            ".32 Long Centrefire", ".32 Extra Long Centrefire"]
+
+# The Swiss service revolver 1872 was converted to centrefire in 1878 (Ordonnanzrevolver 1872/78).
+[[group]]
+name = "10.4 mm Swiss Ordnance 1872 Rimfire"
+differ_by = ["ignition", "length"]
+calibres = ["10.4 mm Swiss Ordnance 1872 Rimfire", "10.4 mm Swiss Ordnance 1878"]
+
+# The Swiss Match came first (C.I.P. 2002); the 6.5x47 mm Lapua (2005) is a similar case with a
+# small rifle primer, a wider neck and the shoulder further forward.
+[[group]]
+name = "6x47 mm SM"
+differ_by = ["bore"]
+calibres = ["6x47 mm SM", "6.5x47 mm Lapua"]
+
+[[group]]
+# COTW 18 p. 649: the rimless version of the 11x60 mm R Mauser. p. 560: Serbian cases can be made from
+# 11 mm Mauser brass sized down.
+name = "11x60 mm R Mauser"
+differ_by = ["rim", "bore", "length"]
+calibres = ["11x60 mm R Mauser", "11.2x60 mm Schüler", "10.15x63 mm R Serbian Mauser"]
+
+[[group]]
+# COTW 18 p. 637: the 8x56 mm case necked up.
+name = "8x56 mm Mannlicher-Schönauer"
+differ_by = ["bore"]
+calibres = ["8x56 mm Mannlicher-Schönauer", "9x56 mm Mannlicher-Schönauer"]
+
+[[group]]
+# COTW 18 p. 633: the 6.5x55 mm case necked up (and a little shorter).
+name = "6.5x55 mm Swedish"
+differ_by = ["bore", "length"]
+calibres = ["6.5x55 mm Swedish", "8x54 mm Krag-Jørgensen"]
+
+[[group]]
+# The Nitro Express is the Magnum Express case loaded with cordite.
+name = ".500/450 3¼ inch"
+differ_by = ["load"]
+calibres = [".500/450 Magnum Express", ".500/450 Nitro Express"]
+
+[[group]]
+name = ".297/230 Morris"
+differ_by = ["length"]
+calibres = [".297/230 Morris Short", ".297/230 Morris Long"]
+
+[[group]]
+# Both from their C.I.P. sheets: the same case length and overall length and a body within 0.1 mm, the
+# Flanged with a wider rim.
+name = ".280 Ross"
+differ_by = ["rim"]
+calibres = [".280 Ross", ".280 Flanged"]
+
+[[group]]
+# COTW 18 p. 582: the .280 Jeffery is the .333 Jeffery case necked down.
+name = ".333 Jeffery Rimless"
+differ_by = ["bore", "length"]
+calibres = [".333 Jeffery Rimless", ".280 Jeffery"]
+
+[[group]]
+# COTW 18 p. 585: the .303 Magnum uses the .276 Enfield case, made semi-rimmed (municion.org's .303 Jeffery
+# Magnum semi-rimmed).
+name = ".276 Enfield"
+differ_by = ["bore", "rim"]
+calibres = [".276 Enfield", ".303 Magnum"]
+
+[[group]]
+# Donnelly pp. 245 and 382: the same belted case.
+name = ".33 BSA"
+differ_by = ["bore"]
+calibres = [".33 BSA", ".26 BSA"]
+
+[[group]]
+# The C.I.P. sheets give both the same rim and neck.
+name = ".300 Rook"
+differ_by = ["length"]
+calibres = [".300 Rook", ".300 Sherwood"]
+
+[[group]]
+# COTW 18 p. 587: the .400/350 is the .400 Purdey case necked down.
+name = ".400 Purdey"
+differ_by = ["bore", "length"]
+calibres = [".400 Purdey", ".400/350 Nitro Express"]
+
+[[group]]
+name = ".577/500 Nitro Express"
+differ_by = ["length"]
+calibres = [".577/500 Nitro Express", ".577/500 No. 2 Express"]
+
+[[group]]
+# The Swedish M1887 Nagant and the Swiss M1882 revolver rounds: same case, the Swedish bullet wider.
+name = "7.5 mm Swiss Ordnance 1882"
+differ_by = ["bore"]
+calibres = ["7.5 mm Swiss Ordnance 1882", "7.5 mm Swedish Nagant"]
+
+[[group]]
+# Two 8 mm service revolver rounds that look much alike (COTW 18 p. 476); the Lebel bullet is wider.
+name = "8 mm Rast-Gasser"
+differ_by = ["bore"]
+calibres = ["8 mm Rast-Gasser", "8 mm Lebel revolver"]
+
+[[group]]
+name = ".45 Mars"
+differ_by = ["length"]
+calibres = [".45 Mars Long", ".45 Mars Short"]
+
+[[group]]
+name = ".32 Colt"
+differ_by = ["length"]
+calibres = [".32 Short Colt", ".32 Long Colt"]
+
+[[group]]
+# Both are the 10 mm Auto case necked down to 9 mm (COTW 18 p. 486); the chambers differ.
+name = "9x25 mm Dillon"
+differ_by = ["load"]
+calibres = ["9x25 mm Dillon", "9x25 mm Super Auto G"]
+
+[[group]]
+name = ".380 Short Revolver"
+differ_by = ["length"]
+calibres = [".380 Short Revolver", ".380 Long Revolver"]
+
+[[group]]
+# COTW 18 p. 512: the .45 Webley has a slightly longer case, and the two interchange in most revolvers.
+name = ".450 Adams"
+differ_by = ["length", "bore"]
+calibres = [".450 Adams", ".45 Webley"]
+
+[[group]]
+# COTW 18 p. 522: the Mk I and the .476 share one case, the .455 Webley (Mk II) is it shortened.
+# All three take a .455 in bullet (C.I.P. 455 MK II G1 11.57 mm), so only the length tells them apart.
+name = ".476 Enfield"
+differ_by = ["length"]
+calibres = [".476 Enfield", ".455 Webley Mk I", ".455 Webley"]
+
+[[group]]
+name = "10 mm Auto"
+differ_by = ["length"]
+calibres = ["10 mm Auto", "10 mm Magnum"]
+
+[[group]]
+name = ".41 Magnum"
+differ_by = ["length"]
+calibres = [".41 Magnum", ".414 SuperMag"]
+
+[[group]]
+name = ".44 Magnum"
+differ_by = ["length"]
+calibres = [".44 Magnum", ".445 SuperMag"]
+
+[[group]]
+# COTW 18 p. 511: the .45 Winchester Magnum shortened.
+name = ".45 Winchester Magnum"
+differ_by = ["length"]
+calibres = [".45 Winchester Magnum", ".451 Detonics Magnum"]
+
+[[group]]
+# The .45 Colt Government has the Schofield's length and a Colt rim (COTW 18 p. 520); the Cowboy Special
+# a Colt rim on a .45 ACP-length case (p. 518).
+name = ".45 Colt"
+differ_by = ["length"]
+calibres = [".45 Colt", ".45 Schofield", ".45 Colt Government", ".45 Cowboy Special"]
+
+[[group]]
+# Two C.I.P. sheets: the same case, Norma's with a longer overall length for longer bullets.
+name = "6 mm BR"
+differ_by = ["load"]
+calibres = ["6 mm BR Remington", "6 mm BR Norma"]
+
+[[group]]
+# COTW 18 p. 197: a rimless version of the Krag round.
+name = ".30-40 Krag"
+differ_by = ["rim"]
+calibres = [".30-40 Krag", ".30 USA Rimless"]
+
+[[group]]
+# COTW 18 p. 197: the .30-06 is the .30-03 with a shorter neck.
+name = ".30-03 Springfield"
+differ_by = ["length"]
+calibres = [".30-03 Springfield", ".30-06 Springfield"]
+
+[[group]]
+# COTW 18 p. 209: the .35 Newton is the .30 Newton necked up.
+name = ".30 Newton"
+differ_by = ["bore"]
+calibres = [".30 Newton", ".35 Newton"]
+
+[[group]]
+# COTW 18 p. 188: the .25-21 is the .25-25 shortened.
+name = ".25-25 Stevens"
+differ_by = ["length"]
+calibres = [".25-25 Stevens", ".25-21 Stevens"]
+
+[[group]]
+name = ".35-30 Maynard 1882"
+differ_by = ["length"]
+calibres = [".35-30 Maynard 1882", ".35-40 Maynard 1882"]
+
+[[group]]
+# The centrefire Long and Extra Long are the rimfire rounds made centrefire.
+name = ".38 Long"
+differ_by = ["ignition", "length"]
+calibres = [".38 Long Rimfire", ".38 Short Rimfire", ".38 Extra Long Rimfire", ".38 Long Centrefire",
+            ".38 Extra Long Centrefire"]
+
+[[group]]
+# Both rounds of the Winchester Model 1905 self-loading rifle (COTW 18 p. 203).
+name = ".35 Winchester Self-Loading"
+differ_by = ["bore", "length"]
+calibres = [".35 Winchester Self-Loading", ".32 Winchester Self-Loading"]
+
+[[group]]
+name = ".38-56 WCF"
+differ_by = ["length"]
+calibres = [".38-56 WCF", ".38-70 Winchester"]
+
+[[group]]
+name = ".38-40 Remington-Hepburn"
+differ_by = ["bore", "length"]
+calibres = [".38-40 Remington-Hepburn", ".38-50 Remington-Hepburn"]
+
+[[group]]
+name = ".40-50 Sharps Necked"
+differ_by = ["length"]
+calibres = [".40-50 Sharps Necked", ".40-70 Sharps Necked", ".40-90 Sharps Necked"]
+
+[[group]]
+name = ".40-70 Sharps Straight"
+differ_by = ["length"]
+calibres = [".40-70 Sharps Straight", ".40-50 Sharps Straight"]
+
+[[group]]
+# COTW 18 p. 218: the Ballard case is very like the 40-90 Sharps straight, a little shorter; p. 220 has
+# the Sharps round as the Ballard's lengthened.
+name = ".40-90 Ballard Everlasting"
+differ_by = ["length"]
+calibres = [".40-90 Ballard Everlasting", ".40-90 Sharps Straight"]
+
+[[group]]
+# COTW 18 p. 228: the 40-60 is the 40-40 lengthened; p. 229: the 40-60 also fires in the 40-70 chamber.
+name = ".40-40 Maynard 1882"
+differ_by = ["length"]
+calibres = [".40-40 Maynard 1882", ".40-60 Maynard 1882", ".40-70 Maynard 1882"]
+
+[[group]]
+# Peabody-Martini cases with the Turkish service round's head (rim and base in the COTW 18 tables): the
+# Providence Tool Co.'s What Cheer target rounds.
+name = "11.43x55 mm R Turkish Peabody-Martini"
+differ_by = ["length", "bore"]
+calibres = ["11.43x55 mm R Turkish Peabody-Martini", ".44-95 Peabody What Cheer", ".40-90 Peabody What Cheer",
+            ".40-70 Peabody What Cheer"]
+
+[[group]]
+# COTW 18 p. 227: the 40-75 Bullard is like the 40-65 Winchester, with a bigger bullet.
+name = ".40-65 Winchester"
+differ_by = ["bore"]
+calibres = [".40-65 Winchester", ".40-75 Bullard"]
+
+[[group]]
+# Both for the Winchester Model 1895 box magazine.
+name = ".38-72 Winchester"
+differ_by = ["bore", "length"]
+calibres = [".38-72 Winchester", ".40-72 Winchester"]
+
+[[group]]
+name = ".44 Evans Short"
+differ_by = ["length"]
+calibres = [".44 Evans Short", ".44 Evans Long"]
+
+[[group]]
+# The centrefire Long and Extra Long are the rimfire rounds made centrefire.
+name = ".44 Long"
+differ_by = ["ignition", "bore", "length"]
+calibres = [".44 Long Rimfire", ".44 Short Rimfire", ".44 Extra Long Rimfire", ".44 Long Centrefire",
+            ".44 Extra Long Centrefire"]
+
+[[group]]
+# COTW 18 pp. 232-233: the .44-90 Remington Special looks like the 44-90 Sharps, shorter and a little
+# fatter, and does not fit its chamber; p. 243: the .45-100 Remington is it with a wider, longer neck.
+name = ".44-60 Sharps & Remington Necked"
+differ_by = ["bore", "length"]
+calibres = [".44-60 Sharps & Remington Necked", ".44-77 Sharps & Remington", ".44-90 Sharps Necked",
+            ".44-90 Remington Special", ".45-100 Remington Necked"]
+
+[[group]]
+# COTW 18 p. 239: the .45-100 Ballard is the .44-100 case opened up.
+name = ".44-75 Ballard Everlasting"
+differ_by = ["bore", "length"]
+calibres = [".44-75 Ballard Everlasting", ".44-100 Ballard", ".45-100 Ballard"]
+
+[[group]]
+# The .45-70 head in straight cases of other lengths (COTW 18 pp. 240-242), the .457 WWG's among them,
+# and the .45-70 Auto: .45-70 brass with the rim turned down (p. 431).
+name = ".45-70 Government"
+differ_by = ["rim", "length"]
+calibres = [".45-70 Government", ".45-70 Van Choate", ".45-90 WCF", ".45-110 Sharps", ".45-120 Sharps",
+            ".457 WWG", ".45-70 Auto"]
+
+[[group]]
+# COTW 18 p. 244: the .50-90 Sharps case, longer.
+name = ".50-90 Sharps"
+differ_by = ["length"]
+calibres = [".50-90 Sharps", ".50-140 Sharps"]
+
+[[group]]
+# All three from the .223 Rem./5.56x45 mm case with a .30 bullet, in three lengths.
+name = ".300 AAC Blackout"
+differ_by = ["length"]
+calibres = [".300 AAC Blackout", "7.62x40 mm WT", ".300 HAM'R"]
+
+[[group]]
+# COTW 18 p. 656: the .22 LR case with a .21 bullet.
+name = ".22 LR"
+differ_by = ["bore"]
+calibres = [".22 LR", ".21 Sharp"]
+
+[[group]]
+# COTW 18 pp. 657 and 660: smokeless-only rounds for the Winchester 1903 and the Remington Model 16
+# autoloaders; they do not interchange.
+name = ".22 Winchester Automatic"
+differ_by = ["bore"]
+calibres = [".22 Winchester Automatic", ".22 Remington Automatic"]
+
+[[group]]
+name = ".22 BB Cap"
+differ_by = ["length", "seating"]
+calibres = [".22 BB Cap", ".22 CB Cap"]
+
+[[group]]
+# COTW 18 p. 661: the short one fires in .25 Stevens rifles.
+name = ".25 Stevens"
+differ_by = ["length"]
+calibres = [".25 Stevens", ".25 Stevens Short"]
+
+[[group]]
+name = ".30 Short Rimfire"
+differ_by = ["bore", "length"]
+calibres = [".30 Short Rimfire", ".30 Long Rimfire"]
+
+[[group]]
+# Both for the Protector palm pistol: the rimfire .32 Extra Short was also called the .32 Protector
+# (COTW 18 p. 663), and the centrefire one was made for the same pistol (p. 465).
+name = ".32 Extra Short Rimfire"
+differ_by = ["ignition", "bore"]
+calibres = [".32 Extra Short Rimfire", ".32 Protector"]
+
+[[group]]
+name = ".41 Short"
+differ_by = ["length"]
+calibres = [".41 Short", ".41 Long Rimfire"]
+
+[[group]]
+name = ".46 Short Rimfire"
+differ_by = ["bore", "length"]
+calibres = [".46 Short Rimfire", ".46 Long Rimfire", ".46 Extra Long Rimfire"]
+
+[[group]]
+# The Spencer .56 case with other bullets and lengths (COTW 18 pp. 667-668).
+name = ".56-56 Spencer"
+differ_by = ["bore", "length"]
+calibres = [".56-56 Spencer", ".56-50 Spencer", ".56-52 Spencer", ".56-52 Spencer Necked", ".56-46 Spencer"]
+
+[[group]]
+# Lazzeroni's short magnums on its .577 in. case; the Eagle is the Patriot necked up (COTW 18 p. 410).
+name = "7.82 Lazzeroni Patriot"
+differ_by = ["bore"]
+calibres = ["7.82 Lazzeroni Patriot", "7.21 Lazzeroni Tomahawk", "8.59 Lazzeroni Galaxy", "9.09 Lazzeroni Eagle",
+            "9.53 Lazzeroni Hellcat", "10.57 Lazzeroni Maverick"]
+
+[[group]]
+# Lazzeroni's long magnums on its .577 in. case; the Firebird is the Warbird necked down (COTW 18 p. 388).
+name = "7.82 Lazzeroni Warbird"
+differ_by = ["bore"]
+calibres = ["7.82 Lazzeroni Warbird", "7.21 Lazzeroni Firebird", "8.59 Lazzeroni Titan", "9.53 Lazzeroni Saturn",
+            "10.57 Lazzeroni Meteor", "12.04 Bibamufu"]
+
+[[group]]
+name = "6.17 Lazzeroni Spitfire"
+differ_by = ["bore"]
+calibres = ["6.17 Lazzeroni Spitfire", "6.71 Lazzeroni Phantom"]
+
+[[group]]
+name = "6.17 Lazzeroni Flash"
+differ_by = ["bore"]
+calibres = ["6.17 Lazzeroni Flash", "6.53 Lazzeroni Scramjet"]
+
+[[group]]
+name = "6.71 Lazzeroni Blackbird"
+differ_by = ["bore"]
+calibres = ["6.71 Lazzeroni Blackbird", "7.21 Lazzeroni Firehawk"]
+
+[[group]]
+name = "7 mm Canadian Magnum"
+differ_by = ["bore"]
+calibres = ["7 mm Canadian Magnum", ".338 Canadian Magnum", ".458 Canadian Magnum"]
+
+[[group]]
+# COTW 18 p. 406: the .338 Excaliber is on the .300 Pegasus case.
+name = ".300 Pegasus"
+differ_by = ["bore"]
+calibres = [".300 Pegasus", ".338 Excaliber"]
+
+[[group]]
+# The .378 Weatherby Magnum case necked down and up by Weatherby
+# (https://en.wikipedia.org/wiki/.378_Weatherby_Magnum; the .460: COTW 18 p. 434), and A-Square's rounds
+# on it and on the .460 (pp. 401, 415, 434, 443).
+name = ".378 Weatherby Magnum"
+differ_by = ["bore", "length"]
+calibres = [".378 Weatherby Magnum", ".30-378 Weatherby Magnum", ".338-378 Weatherby Magnum", ".338 A-Square",
+            ".375 A-Square", ".416 Weatherby Magnum", ".460 Weatherby Magnum", ".460 A-Square Short", ".500 A-Square"]
+
+[[group]]
+# A-Square's rimmed double rifle rounds share one case (COTW 18 p. 453).
+name = ".416 Rimmed"
+differ_by = ["bore"]
+calibres = [".416 Rimmed", ".450 Assegai"]
+
+[[group]]
+# The full-length .375 H&H Magnum case blown out (COTW 18 pp. 418, 426); the .416 Remington Magnum
+# measures almost like the .416 Hoffman.
+name = ".375 H&H Magnum"
+differ_by = ["bore"]
+calibres = [".375 H&H Magnum", ".416 Hoffman", ".416 Remington Magnum", ".400 A-Square DPM"]
+
+[[group]]
+# COTW 18 p. 397: the .338 Lapua Magnum head and body, longer.
+name = ".338 Lapua Magnum"
+differ_by = ["length"]
+calibres = [".338 Lapua Magnum", ".33 XC"]
+
+[[group]]
+# Rigby's No. 2 (2019) is the .416 Rigby with a rim, for double rifles (C.I.P. sheets).
+name = ".416 Rigby"
+differ_by = ["rim"]
+calibres = [".416 Rigby", ".416 Rigby No. 2"]
+
+[[group]]
+# Cannon rounds (catalogue only): loadings of one case that only their own gun fires, with another
+# primer (Jane's pp. 91, 96-99, 105 and 112; p. 91 calls the two 23x152 B not interchangeable).
+name = "23x152 mm B"
+differ_by = ["gun"]
+calibres = ["23x152 mm B VYa", "23x152 mm B ZU-23"]
+
+[[group]]
+name = "30x165 mm"
+differ_by = ["gun"]
+calibres = ["30x165 mm GSh-30", "30x165 mm 2A42"]
+
+[[group]]
+name = "30x173 mm"
+differ_by = ["gun"]
+calibres = ["30x173 mm KCA", "30x173 mm GAU-8"]

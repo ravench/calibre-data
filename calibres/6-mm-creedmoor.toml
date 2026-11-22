@@ -1,0 +1,49 @@
+# Batch 10 (2026-11): recent American rounds; first added from the page named in INTRODUCED, now SAAMI's (see [mm]); .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor first from the Sierra load-data drawing.
+name = "6 mm Creedmoor"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6cm", "6creedmoor", "6mmcm"]
+
+origin = "US"
+origin_sources = []
+
+[mm]
+# SAAMI 6mm Creedmoor, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+rim = 11.99
+base = 11.95
+shoulder = 11.74
+shoulder_at = 37.85
+neck_at = 41.94
+neck_base = 7.01
+shoulder_angle = 30
+cite.shoulder_angle = ["https://chuckhawks.com/6mm_Creedmoor.html"]
+neck = 7.01
+case_length = 48.77
+overall_length = 71.12
+bullet = 6.18
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=45", "book:cotw-18 p. 175"]
+
+[introduced]
+year = 2009
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Creedmoor"]
+
+[case_head]
+# SAAMI 6mm Creedmoor
+rim_thickness = 1.37
+ramp_top = 3.84
+groove_diameter = 10.39
+ramp_angle = 36.0
+groove_width = 1.4
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=45"]
+
+[bullet]
+# Hornady's first factory load, announced in October 2016 for 2017, carries a 108-grain ELD Match;
+# COTW 18 p. 97 lists the later V-Max and ELD-X factory loads.
+type = "polymer"
+sources = ["https://press.hornady.com/release/2016/10/28/hornady-announces-new-products-for-2017/", "book:cotw-18 p. 96", "book:cotw-18 p. 97"]

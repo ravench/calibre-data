@@ -1,0 +1,50 @@
+# Measurements converted from inches.
+# A blackpowder target round (old DWM case 23).
+name = "9.5x47 mm R"
+# Guns: book:cotw-18 p. 644.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["9.5x47r"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.81
+base = 13.03
+shoulder = 12.62
+shoulder_at = 23.11
+neck_at = 34.49
+neck_base = 10.38
+# Drawing: SØ 12.80, NØ 10.38, SL 23.00, NL 12.50, CL 46.88.
+shoulder_angle = 6.1
+cite.shoulder_angle = ["https://municion.org/producto/95-x-47-r-mb-stahl/"]
+neck = 10.39
+case_length = 46.99
+overall_length = 60.2
+bullet = 9.52
+sources = ["book:cotw-18 p. 652", "https://municion.org/producto/95-x-47-r-mb-stahl/"]
+
+[introduced]
+# COTW: the 1880s; the decade's first year is kept.
+year = 1880
+sources = ["book:cotw-18 p. 644"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 652"]
+
+[case_head]
+# .09 in.
+rim_thickness = 2.29
+sources = ["book:donnelly p. 938"]
+
+[bullet]
+# A blackpowder target round (COTW 18 p. 644); municion.org's sheet shows a lead bullet.
+type = "lead"
+sources = ["https://municion.org/ficha-10-047-bbc-010-0011/"]

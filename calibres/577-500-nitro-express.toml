@@ -1,0 +1,58 @@
+# Measurements converted from inches.
+# The .577 case necked to .50; blackpowder first, later a full Nitro Express.
+name = ".577/500 Nitro Express"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["577/500", "577/500 3 1/8"]
+display_aliases = [".577/500 Nitro Express 3⅛ inch"]
+
+origin = "GB"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 18.21
+base = 16.38
+shoulder = 14.86
+shoulder_at = 59.96
+neck_at = 64
+neck_base = 13.56
+# Drawing: SØ 14.83, NØ 13.56, SL 59.85, NL 15.50, CL 79.39.
+shoulder_angle = 8.9
+cite.shoulder_angle = ["https://municion.org/producto/577-500-express-3-1-8/"]
+neck = 13.36
+case_length = 79.5
+overall_length = 95.0
+bullet = 12.9
+# shoulder_at from the drawing 13-079-BBC-020 (municion.org, filed as «.577/.500 Express 3 1/8″»): SL 59.85 on a
+# case of CL 79.39, taken from the mouth (case_length - (CL - SL)). Its rim, base, shoulder, neck and case length are
+# within 0.25 mm of the book's. naboje.org shows the same drawing without the neck length (node 1356).
+sources = ["book:cotw-18 p. 609", "https://municion.org/producto/577-500-express-3-1-8/"]
+
+[introduced]
+unknown = "Blackpowder first; COTW 18 p. 603 gives no year."
+sources = ["book:cotw-18 p. 603"]
+
+[primer]
+# The table gives a .251 in. Berdan primer.
+size = "berdan-nitro"
+diameter = 6.38
+sources = ["book:cotw-18 p. 609"]
+
+[case_head]
+# .055 in. (COTW); the drawing 13-079-BBC-020 (municion.org) has RT 1.45.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 609"]
+
+[bullet]
+# Lead: the Nitro-for-Black factory load; the full Nitro load that followed was a 570-grain FMJ
+# (COTW 18 p. 603).
+type = "lead"
+sources = ["book:cotw-18 p. 603"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/577-500-express-3-1-8/"]

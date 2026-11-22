@@ -1,0 +1,49 @@
+# Measurements converted from inches.
+# First for the Frommer pocket pistol of 1901, later the Roth-Sauer.
+name = "7.65 mm Roth-Sauer"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["7.65 roth-sauer", "7.65rothsauer", "7.65 roth sauer"]
+
+origin = "AH"
+origin_sources = ["book:ammo-encyclopedia-2 p. 652"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.51
+base = 8.51
+neck = 8.43
+case_length = 12.95
+overall_length = 21.34
+bullet = 7.65
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1901
+sources = ["book:cotw-18 p. 465"]
+
+[primer]
+# The table's primer column prints 14.2, which is no size; small pistol, as for the other small cases.
+size = "small-pistol"
+sources = []
+
+[case_head]
+# Drawing 08-013-CGC-020: RT 1.10, HL 2.95, GØ 6.93, GW 0.99, HØ 8.51; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.1
+ramp_top = 2.95
+groove_diameter = 6.93
+ramp_angle = 43.0
+groove_width = 0.99
+sources = ["https://municion.org/producto/765-mm-roth-sauer/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 465"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/765-mm-roth-sauer/"]

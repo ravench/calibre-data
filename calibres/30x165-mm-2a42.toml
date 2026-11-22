@@ -1,0 +1,56 @@
+# The Soviet round of the 2A42 and 2A72 infantry fighting vehicle cannon and the 2A38 air defence gun,
+# with a KV-3 percussion primer (Jane's p. 96); the aircraft and naval round on the same case has an
+# electric primer (30x165 mm GSh-30). Its name gives the bore and case length (Jane's p. 97 and Koll
+# measure the case at 164 mm), Rapid Fire's table the rim and base, Jane's and Koll the length of the
+# round (Koll gives 289.5 to 291.0 mm), the specimen drawing of a 2A42 round on municion.org
+# (titled 30 x 164) the shoulder, the neck and the head.
+name = "30x165 mm 2A42"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30 mm 2a42", "30 mm 2a72"]
+origin = "SU"
+origin_sources = ["https://en.wikipedia.org/wiki/Shipunov_2A42"]
+
+[mm]
+rim = 40.0
+base = 40.0
+shoulder = 37.72
+shoulder_at = 134.44
+neck_at = 143.85
+neck_base = 31.58
+# Drawing 30-164-BGC-020: SØ 37.72, NØ 31.58, SL 134.30, NL 21.15, CL 164.86, TL 291.03.
+shoulder_angle = 18.1
+cite.shoulder_angle = ["https://municion.org/producto/30-x-164-russian-ao-18-for-2a38m-2a42-2a732-army-guns/"]
+neck = 31.58
+case_length = 165.0
+overall_length = 291.0
+bullet = 30.0
+sources = [
+  "book:rapid-fire p. 228",
+  "book:janes-ammo-2002 p. 97",
+  "book:koll p. 281",
+  "book:koll p. 298",
+  "https://en.wikipedia.org/wiki/Shipunov_2A42",
+  "https://municion.org/producto/30-x-164-russian-ao-18-for-2a38m-2a42-2a732-army-guns/",
+]
+
+[introduced]
+# The 2A42 entered service in 1980.
+year = 1980
+sources = ["https://en.wikipedia.org/wiki/Shipunov_2A42"]
+
+[case_head]
+# The drawing 30-164-BGC-020: RØ 39.92, HØ 39.92, RT 4.53, GØ 34.34, GW 3.40,
+# the ramp ends at HL 10.95; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 4.53
+ramp_top = 10.95
+groove_diameter = 34.34
+ramp_angle = 43.0
+groove_width = 3.4
+sources = ["https://municion.org/producto/30-x-164-russian-ao-18-for-2a38m-2a42-2a732-army-guns/"]
+
+[case]
+# Lacquered or zinc-plated steel.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 96"]

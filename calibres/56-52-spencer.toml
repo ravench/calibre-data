@@ -1,0 +1,40 @@
+# Measurements converted from inches.
+# Spencer's version of the .56-50; most makers left out its slight neck. Listed until 1920.
+name = ".56-52 Spencer"
+# Guns: book:cotw-18 p. 668.
+guns = ["rifle"]
+kind = "rimfire"
+profile = "round"
+aliases = ["56-52", "56-52 spencer"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/56-52-spencer-rimfire-longest-case/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.23
+base = 14.2
+neck = 13.72
+case_length = 26.29
+overall_length = 38.1
+bullet = 13.0
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+year = 1866
+sources = ["book:cotw-18 p. 668"]
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 670"]
+
+[bullet]
+# COTW 18 p. 668 does not name the bullet's material; municion.org's sheet shows a lead one.
+type = "lead"
+sources = ["https://municion.org/ficha-13-026-bbr-010-0002/"]
+
+[case]
+material = "copper"
+sources = ["https://municion.org/producto/56-52-spencer-rimfire-longest-case/"]

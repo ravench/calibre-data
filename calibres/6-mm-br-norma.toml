@@ -1,0 +1,52 @@
+name = "6 mm BR Norma"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6br", "6mmbr"]
+
+# Norma's 1996 version is the one made (Norma, Lapua) and shot (300 m); Remington's factory 6mm BR of 1978 is its parent: US
+origin = "SE"
+origin_sources = [
+  "https://naboje.org/node/2135",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page12.pdf",
+]
+
+[mm]
+rim = 12.0
+base = 12.0
+shoulder = 11.6
+shoulder_at = 27.3
+neck_at = 31.44
+neck_base = 6.9
+# C.I.P. 6mm BR Norma
+shoulder_angle = 30
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page12.pdf"]
+neck = 6.9
+case_length = 39.6
+overall_length = 62.0
+bullet = 6.2
+sources = [
+  "book:cotw-18 p. 175",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page12.pdf",
+]
+
+[introduced]
+year = 1996
+sources = ["https://en.wikipedia.org/wiki/6mm_BR"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/6mm_BR"]
+
+[case_head]
+# C.I.P. 6mm BR Norma
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+groove_width = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page12.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []

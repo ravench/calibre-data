@@ -1,0 +1,26 @@
+# The round of the early French DEFA 540 series revolver cannon; the DEFA 550 series took the British
+# 30x113 mm B. Its name gives the bore and case length; Jane's table gives the rim, the belt and the
+# neck, Rapid Fire's table the base, Autocannon p. 139 the length of the round. The case was brass at
+# first, then steel, so the file names no material.
+name = "30x97 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["30x97b", "30 mm defa 540", "30 mm defa 541", "defa 541"]
+origin = "FR"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 33.2
+belt = 33.78
+base = 32.0
+neck = 30.99
+case_length = 97.0
+overall_length = 199.0
+bullet = 30.0
+sources = ["book:janes-ammo-2002 p. 682", "book:rapid-fire p. 228", "book:autocannon p. 139"]
+
+[introduced]
+# Wikipedia's list of 30 mm rounds.
+year = 1951
+sources = ["https://en.wikipedia.org/wiki/30_mm_caliber"]

@@ -1,0 +1,57 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".480 Ruger"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["480ruger"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.480_Ruger",
+  "book:ammo-encyclopedia-2 p. 639",
+]
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+# SAAMI 480 Ruger, maximum cartridge.
+rim = 13.77
+base = 12.8
+neck = 12.8
+case_length = 32.64
+overall_length = 41.91
+bullet = 12.08
+# flat: the drawing gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
+cite.flat = ["https://municion.org/producto/480-ruger/"]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=65"]
+
+[introduced]
+# Introduced for 2001 (Gun Tests, 12 April 2001, with Hornady's ammunition still to come); Ruger's
+# release with Hornady's load is dated 1 December 2001. American Rifleman and Wikipedia give 2003; the
+# earliest is kept.
+year = 2001
+sources = ["https://www.gun-tests.com/?p=6242", "https://ruger.com/news/2001-12-01.html"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.480_Ruger"]
+
+[case_head]
+# SAAMI 480 Ruger
+rim_thickness = 1.78
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=65"]
+
+[bullet]
+# Launched with Hornady's 325-grain XTP Magnum, a jacketed hollow point and at first the only load
+# (Ruger's release of December 2001; Gunblast).
+type = "hollowpoint"
+sources = ["https://ruger.com/news/2001-12-01.html", "https://gunblast.com/480_Ruger.htm", "book:cotw-18 p. 524"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/480-ruger/"]

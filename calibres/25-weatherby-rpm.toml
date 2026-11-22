@@ -1,0 +1,48 @@
+# Weatherby RPM family (rebated rim, 6.5-284 body lengthened). The .25 is from the 2026 SAAMI drawing;
+# the 6.5 and .338 share its rim, head and shoulder diameter, with neck and shoulder height estimated.
+name = ".25 Weatherby RPM"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["25rpm", "25wbyrpm"]
+
+origin = "US"
+origin_sources = []
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+# SAAMI 25 Weatherby RPM, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+rim = 12.01
+base = 12.7
+shoulder = 12.09
+shoulder_at = 50.51
+# SAAMI drawing
+shoulder_angle = 35
+neck = 7.37
+case_length = 60.96
+overall_length = 84.84
+bullet = 6.53
+sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"]
+
+[introduced]
+year = 2026
+sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# SAAMI 25 Weatherby RPM: rim thickness 0.054, groove 0.409 at 40 degrees, groove width 0.040,
+# body 0.5000; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 40)
+rim_thickness = 1.37
+ramp_top = 3.76
+groove_diameter = 10.39
+ramp_angle = 40.0
+sources = ["https://saami.org/wp-content/uploads/2026/01/Public-Introduction-25-Weatherby-RPM-2026-01-19.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []

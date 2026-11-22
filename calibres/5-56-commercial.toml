@@ -1,0 +1,62 @@
+# SAAMI's own commercial 5.56 standard (2026). Its maximum cartridge is the SAAMI 223 Remington one
+# but for .0001 in on the body; its chamber (longer, wider throat, 7 in twist) and its pressure
+# limit (62,000 psi) differ.
+# SAAMI says it does not imply NATO conformance, and that 5.56 ammunition in a chamber marked
+# 223 Remington only is unsafe.
+name = "5.56 Commercial"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["5.56comm", "5.56 comm", "556comm"]
+
+# SAAMI, the US standards body, introduced it.
+origin = "US"
+origin_sources = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.56-Commercial-2026-06-22-FINAL-Rev-3.pdf#page=1"]
+
+[mm]
+# SAAMI 5.56 COMM, maximum cartridge. Its body is .3760 (9.550) at 5.08 mm from the head, .0001 in
+# over the 223 Remington's; base 9.58 at the head as for the .223 Rem. (C.I.P. P1).
+rim = 9.6
+base = 9.58
+shoulder = 9.0
+# shoulder_at: C.I.P. L1 36.52 as for the .223 Rem., SAAMI 36.527.
+shoulder_at = 36.52
+neck_at = 39.55
+neck_base = 6.43
+shoulder_angle = 23
+cite.shoulder_angle = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.56-Commercial-2026-06-22-FINAL-Rev-3.pdf#page=2"]
+neck = 6.43
+case_length = 44.7
+overall_length = 57.4
+bullet = 5.70
+# nose: read to scale off the drawing 06-045-BGC-050 (municion.org, its M193 ball specimen):
+# the curve starts 10.6 mm behind the tip, of the 12.59 mm out of its case (TL 57.15, CL 44.56).
+nose = 10.6
+cite.nose = ["https://municion.org/producto/556-x-45-otan/"]
+sources = [
+  "https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.56-Commercial-2026-06-22-FINAL-Rev-3.pdf#page=2",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf",
+]
+
+[introduced]
+# drawing issued 2026-06-09
+year = 2026
+sources = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.56-Commercial-2026-06-22-FINAL-Rev-3.pdf#page=2"]
+
+[primer]
+size = "small-rifle"
+sources = []
+
+[case_head]
+# SAAMI 5.56 COMM: rim thickness .045, groove .332 and .030 wide, ramp 25 degrees; E as on the
+# C.I.P. 223 Rem. sheet.
+rim_thickness = 1.14
+ramp_top = 3.13
+groove_diameter = 8.43
+ramp_angle = 25.0
+groove_width = 0.76
+sources = ["https://saami.org/wp-content/uploads/2026/10/Public-Introduction-5.56-Commercial-2026-06-22-FINAL-Rev-3.pdf#page=2", "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []

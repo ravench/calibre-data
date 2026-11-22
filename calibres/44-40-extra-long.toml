@@ -1,0 +1,53 @@
+# Measurements converted from inches.
+# A longer body and neck than the .44-40 WCF.
+name = ".44-40 Extra Long"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["44-40 extra long", "44-40 xl"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/44-40-extra-long-cf/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.08
+base = 11.89
+shoulder = 11.76
+shoulder_at = 24.54
+neck_at = 28.14
+neck_base = 11.23
+# Drawing: SØ 11.76, NØ 11.23, SL 24.54, NL 11.99, CL 40.13.
+shoulder_angle = 4.2
+cite.shoulder_angle = ["https://municion.org/producto/44-40-extra-long-cf/"]
+neck = 11.23
+case_length = 40.13
+overall_length = 49.78
+bullet = 10.87
+# flat: the drawing gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+sources = ["book:cotw-18 p. 251", "https://municion.org/producto/44-40-extra-long-cf/"]
+
+[introduced]
+unknown = "COTW 18 p. 231 finds no record of the rifle it was made for; a Stevens rifle of 1914-16 chambered it."
+sources = ["book:cotw-18 p. 231"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# .049 in.
+rim_thickness = 1.24
+sources = ["book:donnelly p. 571"]
+
+[bullet]
+# COTW 18 p. 231 gives no load; municion.org's sheet shows a lead bullet.
+type = "lead"
+sources = ["https://municion.org/ficha-11-040-bbc-060-0002/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/44-40-extra-long-cf/"]

@@ -1,0 +1,62 @@
+# Measurements converted from inches.
+# The .450 case shortened and necked down; blackpowder first, Nitro-for-Black and Nitro Express later.
+name = ".450/400 Nitro Express 2⅜ inch"
+# Guns: book:cotw-18 p. 593.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["450/400 2 3/8", "450/400 2.375"]
+
+origin = "GB"
+origin_sources = ["https://municion.org/producto/450-400-express-2-3-8/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.65
+base = 13.84
+shoulder = 12.34
+shoulder_at = 40.3
+neck_at = 43.75
+neck_base = 11
+# Drawing: SØ 12.40, NØ 11.00, SL 40.48, NL 16.70, CL 60.63. (Until this drawing was read the
+# angle was assumed to be the 5.2 degrees of the 10.3x60 R, which COTW 18 p. 645 calls the Swiss version of this
+# round; that case has a longer shoulder and a shorter neck.)
+shoulder_angle = 11.5
+cite.shoulder_angle = ["https://municion.org/producto/450-400-express-2-3-8/"]
+neck = 10.85
+case_length = 60.45
+overall_length = 74.93
+bullet = 10.34
+# shoulder: .486 in., as the first, second and revised fifth editions of COTW print it (p. 235, 235, 266). The 14th
+# and 18th print .456 in a row that they revised (five other sizes differ as well). The file keeps .486 because the
+# specimens stand with it: the AECC specimen measures 12.40 and the Swiss sister round's C.I.P. sheet (10,3 x 60 R)
+# has 12.50. Donnelly prints .486 too, but names COTW's fourth edition as his source, so he is no second witness.
+# shoulder_at from the drawing 10-060-BBC-050: SL 40.48 on a case of CL 60.63, taken from the mouth
+# (case_length - (CL - SL)); the 10,3 x 60 R sheet starts its shoulder at 40.80.
+sources = ["book:cotw-18 p. 608", "book:cotw-5 p. 266", "https://municion.org/producto/450-400-express-2-3-8/"]
+
+[introduced]
+# COTW: the blackpowder load, circa 1880.
+year = 1880
+sources = ["book:cotw-18 p. 593"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .035 in. (COTW); the drawing 10-060-BBC-050 (municion.org) has RT 0.92.
+rim_thickness = 0.89
+sources = ["book:cotw-18 p. 608"]
+
+[bullet]
+# The blackpowder load.
+type = "lead"
+sources = ["book:cotw-18 p. 593"]
+
+[case]
+# The photos show brass cases (ICI's, Eley's, RWS's and Nagel & Menz's).
+material = "brass"
+sources = ["https://municion.org/producto/450-400-express-2-3-8/"]

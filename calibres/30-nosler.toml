@@ -1,0 +1,57 @@
+# Rifle batch 5 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]); the Nosler line shares the .28 Nosler case outside.
+name = ".30 Nosler"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30nosler"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
+
+[mm]
+# SAAMI 30 Nosler, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+rim = 13.56
+base = 13.97
+shoulder = 13.41
+shoulder_at = 53.72
+neck_at = 57.05
+neck_base = 8.74
+# Nosler's "30 Nosler Rifle Cartridges" drawing: 35 deg, shoulder .528 in at 2.115 in, neck .344 in at 2.246 in, case 2.556 in
+shoulder_angle = 35
+cite.shoulder_angle = ["https://www.nosler.com/"]
+neck = 8.74
+case_length = 64.92
+overall_length = 84.84
+bullet = 7.85
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=109", "https://www.nosler.com/", "https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[introduced]
+year = 2016
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[case_head]
+# same case head as the 26 Nosler; C.I.P. 26 Nosler (no C.I.P. 30 Nosler sheet).
+# SAAMI 30 Nosler gives the same rim thickness, groove diameter and 32 degree groove angle
+rim_thickness = 1.27
+ramp_top = 3.75
+groove_diameter = 12.07
+ramp_angle = 32.0
+groove_width = 0.94
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/26-nosler-211012-en.pdf",
+  "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=109",
+]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.30_Nosler"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/30-nosler/"]

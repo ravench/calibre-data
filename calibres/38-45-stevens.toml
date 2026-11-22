@@ -1,0 +1,40 @@
+# Measurements converted from inches.
+# One of the Stevens Everlasting rounds, for the tip-up rifles of 1875.
+name = ".38-45 Stevens"
+# Guns: book:cotw-18 p. 210.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["38-45 stevens"]
+
+origin = "US"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.26
+base = 11.56
+neck = 10.03
+case_length = 44.7
+overall_length = 56.9
+bullet = 9.22
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+year = 1875
+sources = ["book:cotw-18 p. 210"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[case_head]
+# .06 in.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 481"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 210"]

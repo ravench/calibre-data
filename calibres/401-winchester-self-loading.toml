@@ -1,0 +1,55 @@
+# Batch 8 (2026-11); now from the C.I.P. sheet (see [mm]).
+name = ".401 Winchester Self-Loading"
+guns = ["rifle"]
+kind = "semi-rimmed"
+profile = "round"
+aliases = ["401wsl", "401 win. sl"]
+
+origin = "US"
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 436",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page105.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 401 Win. SL, maximum cartridge: rim R1, base P1, neck H2, case L3, length L6, bullet G1.
+rim = 11.68
+base = 11.0
+neck = 10.99
+case_length = 38.1
+overall_length = 50.93
+bullet = 10.34
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page105.pdf",
+  "book:cotw-18 p. 251",
+  "book:donnelly p. 516",
+]
+
+[introduced]
+# Year of production on the product page.
+year = 1910
+sources = ["https://municion.org/producto/401-winchester-self-loading/"]
+
+[primer]
+# 5.34 mm, 8 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/401-winchester-self-loading/"]
+
+[case_head]
+# C.I.P. 401 Win. SL: R, E, E1, delta. The groove is a shallow cone that starts at the rim (delta 7°)
+rim_thickness = 1.52
+ramp_top = 4.3
+groove_diameter = 10.31
+ramp_angle = 7.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page105.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/401-winchester-self-loading/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/401-winchester-self-loading/"]

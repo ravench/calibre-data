@@ -1,0 +1,20 @@
+# The round of the German 3.7 cm Sockelflak, a Maxim-type anti-aircraft gun of the First World War. Its
+# name gives the bore and case length, Rapid Fire's table the rim and base.
+name = "37x101 mm SR"
+guns = ["cannon"]
+kind = "semi-rimmed"
+profile = "spitzer"
+aliases = ["37x101sr", "sockelflak", "3.7 cm sockelflak"]
+origin = "DE"
+origin_sources = ["book:rapid-fire p. 229"]
+
+[mm]
+rim = 42.9
+base = 39.9
+case_length = 101.0
+bullet = 37.0
+sources = ["book:rapid-fire p. 229"]
+
+[introduced]
+unknown = "the sources date it only to the First World War."
+sources = ["book:rapid-fire p. 229", "book:autocannon p. 195"]

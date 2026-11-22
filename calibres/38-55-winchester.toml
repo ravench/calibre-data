@@ -1,0 +1,47 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".38-55 Winchester"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["38-55", "38-55ballard"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.38-55_Winchester",
+  "book:ammo-encyclopedia-2 p. 346",
+]
+
+[mm]
+# SAAMI 38-55 Winchester, maximum cartridge.
+rim = 12.85
+base = 10.65
+neck = 9.98
+case_length = 52.96
+overall_length = 63.75
+bullet = 9.58
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/38-55-winchester-marlin-ballard/"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=158"]
+
+[introduced]
+year = 1884
+sources = ["https://en.wikipedia.org/wiki/.38-55_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://www.starlinebrass.com/38-55-brass-2080"]
+
+[case_head]
+# SAAMI 38-55 Winchester
+rim_thickness = 1.6
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=158"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.38-55_Winchester"]
+
+[case]
+# The photos show brass cases (Dominion's, UMC's, Winchester's and Olin's).
+material = "brass"
+sources = ["https://municion.org/producto/38-55-winchester-marlin-ballard/"]

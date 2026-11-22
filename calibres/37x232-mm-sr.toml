@@ -1,0 +1,22 @@
+# The round of the Italian Breda 37/54 anti-aircraft cannon. Its name gives the bore and case length
+# (Rapid Fire's table: 37x230SR), Rapid Fire's table the rim and base. Autocannon (p. 157) gives the
+# round as about 360 mm long, so the file has no length of the round.
+name = "37x232 mm SR"
+guns = ["cannon"]
+kind = "semi-rimmed"
+profile = "spitzer"
+aliases = ["37x232sr", "37x230sr", "breda 37/54", "37 mm breda"]
+origin = "IT"
+origin_sources = ["book:rapid-fire p. 230"]
+
+[mm]
+rim = 51.5
+base = 50.0
+case_length = 232.0
+bullet = 37.0
+sources = ["book:rapid-fire p. 230", "https://en.wikipedia.org/wiki/Cannone-Mitragliera_da_37/54_(Breda)"]
+
+[introduced]
+# The gun's first year of production (Wikipedia).
+year = 1932
+sources = ["https://en.wikipedia.org/wiki/Cannone-Mitragliera_da_37/54_(Breda)"]

@@ -1,0 +1,62 @@
+# Sourced 2026-11-04 from the Wikipedia infoboxes (.277 SIG Fury after the 2020 SAAMI drawing);
+# shoulder heights estimated (.277 Fury like the .308 parent).
+name = ".277 SIG Fury"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["277fury", "277sigfury", "6.8x51"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.277_Fury"]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+# SAAMI 277 SIG Fury, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+rim = 11.99
+base = 11.95
+shoulder = 11.71
+shoulder_at = 41.43
+neck_at = 44.75
+neck_base = 7.87
+# SAAMI 277 Fury drawing shown with xxlreloading.com load data: 30 deg, shoulder .4611 in at 1.6311 in, neck .310 in at 1.7619 in
+shoulder_angle = 30
+cite.shoulder_angle = ["https://www.xxlreloading.com/"]
+neck = 7.87
+case_length = 51.18
+overall_length = 71.76
+bullet = 7.06
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=103", "https://en.wikipedia.org/wiki/.277_Fury", "https://www.xxlreloading.com/"]
+
+[introduced]
+year = 2019
+sources = ["https://en.wikipedia.org/wiki/.277_Fury"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
+
+[case_head]
+# SAAMI 277 SIG Fury: rim thickness 0.054, groove 0.408 at 36 degrees, groove width 0.055,
+# body 0.4703; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 36)
+rim_thickness = 1.37
+ramp_top = 3.86
+groove_diameter = 10.36
+ramp_angle = 36.0
+groove_width = 1.4
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=103"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# Brass body on a stainless steel head, held by an aluminium washer.
+material = "hybrid"
+sources = ["https://en.wikipedia.org/wiki/.277_Fury"]
+
+[current_cases]
+# brass "practice" loads
+materials = ["brass"]
+sources = ["https://en.wikipedia.org/wiki/.277_Fury"]

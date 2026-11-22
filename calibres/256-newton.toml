@@ -1,0 +1,54 @@
+# Measurements converted from inches.
+# Charles Newton's .30-06 case necked to 6.5 mm; Western loaded it from 1913 to 1938.
+name = ".256 Newton"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["256 newton"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/256-newton/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.01
+base = 11.91
+shoulder = 10.92
+shoulder_at = 47.73
+neck_at = 52.13
+neck_base = 7.47
+# Drawing: SØ 10.73, NØ 7.47, SL 48.00, NL 9.85, CL 62.25.
+shoulder_angle = 20.3
+cite.shoulder_angle = ["https://municion.org/producto/256-newton/"]
+neck = 7.37
+case_length = 61.98
+overall_length = 86.36
+bullet = 6.71
+sources = ["book:cotw-18 p. 249", "https://municion.org/producto/256-newton/"]
+
+[introduced]
+year = 1913
+sources = ["book:cotw-18 p. 191"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[case_head]
+# from the .30-06 case; C.I.P. 30-06 Spring.
+rim_thickness = 1.24
+ramp_top = 3.16
+groove_diameter = 10.39
+ramp_angle = 36.0
+groove_width = 0.84
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 192"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/256-newton/"]

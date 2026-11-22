@@ -1,0 +1,48 @@
+# Measurements converted from inches.
+# For the Stevens 44 and 44½ single-shot rifles; designed by Charles H. Herrick.
+name = ".22-15-60 Stevens"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/22-15-60-stevens/).
+profile = "flat"
+aliases = ["22-15-60", "22-15 stevens"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/22-15-60-stevens/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.69
+base = 6.73
+neck = 6.17
+case_length = 51.05
+overall_length = 57.4
+bullet = 5.74
+# flat: the drawing gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
+cite.flat = ["https://municion.org/producto/22-15-60-stevens/"]
+sources = ["book:cotw-18 p. 249"]
+
+[introduced]
+year = 1896
+sources = ["book:cotw-18 p. 183"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[case_head]
+# .072 in.
+# The drawing 06-051-CBC-020 (municion.org) has RT 1.61, within 0.3 mm.
+rim_thickness = 1.83
+sources = ["book:donnelly p. 123"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 183"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/22-15-60-stevens/"]

@@ -1,0 +1,52 @@
+# The round of Hotchkiss's 25 mm automatic anti-aircraft gun (Mle 1938 in France), mostly used by the
+# Japanese navy as its Type 96. Its name gives the bore and case length, Rapid Fire's table the rim and
+# base, Autocannon p. 131 the length of the round, the specimen drawing on municion.org the shoulder,
+# the neck and the head.
+name = "25x163 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["25 mm hotchkiss", "25 mm type 96"]
+origin = "FR"
+origin_sources = ["book:rapid-fire p. 227"]
+
+[mm]
+rim = 42.6
+base = 42.7
+shoulder = 39.59
+shoulder_at = 124.29
+neck_at = 139.85
+neck_base = 26.81
+# Drawing 25-163-BGC-010: SØ 39.59, NØ 26.81, SL 124.50, NL 23.15, CL 163.21, TL 232.15.
+shoulder_angle = 22.3
+cite.shoulder_angle = ["https://municion.org/producto/25-x-163-hotchkiss-short-rimless-m-1938/"]
+neck = 26.81
+case_length = 163.0
+overall_length = 233.0
+bullet = 25.0
+sources = [
+  "book:rapid-fire p. 227",
+  "book:autocannon p. 131",
+  "https://municion.org/producto/25-x-163-hotchkiss-short-rimless-m-1938/",
+]
+
+[introduced]
+# The Japanese navy's Type 96 entered service in 1936 (Wikipedia); the earliest Hotchkiss drawing of the
+# case is from June 1934 (Autocannon p. 132).
+year = 1936
+sources = ["https://en.wikipedia.org/wiki/Type_96_25_mm_AT/AA_gun"]
+
+[case_head]
+# The drawing 25-163-BGC-010: RØ 42.62, HØ 42.46, RT 3.76, GØ 37.97, GW 2.18, the ramp
+# ends at HL 8.80; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 3.76
+# No groove_width: the base is wider than the drawing's head, so the ramp drawn up to it leaves less
+# room than the drawing's GW.
+ramp_top = 8.8
+groove_diameter = 37.97
+ramp_angle = 38.0
+sources = ["https://municion.org/producto/25-x-163-hotchkiss-short-rimless-m-1938/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 131"]

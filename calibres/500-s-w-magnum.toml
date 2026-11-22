@@ -1,0 +1,35 @@
+name = ".500 S&W Magnum"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["500s&w"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.500_S%26W_Magnum"]
+
+[mm]
+# SAAMI 500 S&W Magnum, maximum cartridge.
+rim = 14.22
+base = 13.46
+neck = 13.46
+case_length = 41.28
+overall_length = 57.15
+bullet = 12.7
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=67"]
+
+[introduced]
+year = 2003
+sources = ["https://en.wikipedia.org/wiki/.500_S%26W_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.500_S%26W_Magnum"]
+
+[case_head]
+# SAAMI 500 S&W Magnum
+rim_thickness = 1.5
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=67"]
+
+[bullet]
+type = "jacketed"
+sources = []

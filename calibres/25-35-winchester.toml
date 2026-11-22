@@ -1,0 +1,54 @@
+# Rifle batch 2 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]).
+name = ".25-35 Winchester"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["25-35", "25-35wcf", "6.5x52r"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.25-35_Winchester",
+  "book:ammo-encyclopedia-2 p. 386",
+]
+
+[mm]
+# SAAMI 25-35 Winchester, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+rim = 12.85
+base = 10.57
+shoulder = 9.25
+shoulder_at = 35.05
+# SAAMI 25-35 Winchester: 11° 34' (the drawing 06-052-BBC-050 gives 11.1).
+# SAAMI's neck tapers from 7.32 to the mouth's 7.15, so with our straight 7.15 neck the cone ends 0.4 mm
+# past SAAMI's 39.76.
+shoulder_angle = 11.57
+cite.shoulder_angle = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=92"]
+neck = 7.15
+case_length = 51.89
+overall_length = 64.77
+bullet = 6.55
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=92", "https://en.wikipedia.org/wiki/.25-35_Winchester", "https://municion.org/producto/25-35-winchester-cf/"]
+
+[introduced]
+year = 1895
+sources = ["https://en.wikipedia.org/wiki/.25-35_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.25-35_Winchester"]
+
+[case_head]
+# SAAMI 25-35 Winchester
+rim_thickness = 1.6
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=92"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/25-35-winchester-cf/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/25-35-winchester-cf/"]

@@ -1,0 +1,49 @@
+# Measurements converted from inches.
+# Semi-rimmed, for the Webley self-loading pistol of the Royal Navy (1912); its bullet's nose is nearly flat.
+name = ".455 Webley Automatic"
+guns = ["handgun"]
+kind = "semi-rimmed"
+profile = "round"
+aliases = ["455 webley auto", "455 webley automatic", "455 webley self-loading", "455 wsl"]
+
+origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 713"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.7
+base = 12.04
+neck = 12.01
+case_length = 23.62
+overall_length = 31.24
+bullet = 11.56
+sources = ["book:cotw-18 p. 529"]
+
+[introduced]
+year = 1912
+sources = ["book:cotw-18 p. 522"]
+
+[primer]
+# The table gives a Berdan primer without its size.
+size = "large-pistol"
+sources = []
+
+[case_head]
+# Drawing 12-023-CDC-030: RT 1.18, HL 4.00, GØ 11.06, GW 1.67, HØ 12.08; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.18
+ramp_top = 4.0
+groove_diameter = 11.06
+ramp_angle = 24.0
+groove_width = 1.67
+sources = ["https://municion.org/producto/455-webley-scott-automatic-mk-i-m-1913-type-5/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 522"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/455-webley-scott-automatic-mk-i-m-1913-type-5/"]

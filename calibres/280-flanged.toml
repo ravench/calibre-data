@@ -1,0 +1,56 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# Lancaster's rimmed counterpart of the .280 Ross, for single-shot and double rifles.
+name = ".280 Flanged"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["280 flanged", "280 lancaster"]
+display_aliases = [".280 Lancaster", ".280 Flanged Nitro Express"]
+
+origin = "GB"
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 393",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page63.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.49
+base = 13.69
+shoulder = 10.72
+shoulder_at = 55.4
+neck_at = 57.99
+neck_base = 8.13
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 26.6
+neck = 8.13
+case_length = 66.32
+overall_length = 87.88
+bullet = 7.29
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page63.pdf"]
+
+[introduced]
+# COTW: shortly after the .280 Ross of 1906; that year is kept.
+year = 1906
+sources = ["book:cotw-18 p. 581"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page63.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 581"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/280-flanged-nitro-express-2-5-8/"]

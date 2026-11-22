@@ -1,0 +1,62 @@
+# Measurements converted from inches.
+# The Italian Vetterli M1870 and Vetterli-Vitali rifles.
+name = "10.4x47 mm R Italian Vetterli"
+# Guns: book:cotw-18 p. 561.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["10.4x47r", "italian vetterli"]
+display_aliases = ["10.4 mm Vetterli M1870"]
+
+origin = "IT"
+origin_sources = ["https://naboje.org/node/1366"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.1
+base = 13.72
+shoulder = 13.13
+shoulder_at = 34.75
+neck_at = 38.5
+neck_base = 11.15
+# Drawing: SØ 13.00, NØ 11.15, SL 34.70, NL 9.00, CL 47.45.
+shoulder_angle = 13.9
+cite.shoulder_angle = ["https://municion.org/producto/1035-x-47-r-italian-vetterli-m-1870-71-m-1890/"]
+neck = 11.1
+case_length = 47.5
+overall_length = 62.48
+bullet = 10.92
+# shoulder_at from the drawing 11-048-BBC-005: SL 34.70 on a case of CL 47.45, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/1035-x-47-r-italian-vetterli-m-1870-71-m-1890/"]
+
+[introduced]
+year = 1870
+sources = ["book:cotw-18 p. 561"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .058 in. (COTW); the drawing 11-048-BBC-005 (municion.org) has RT 1.60.
+rim_thickness = 1.47
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# A blackpowder service round of 1870. Many had a brass-coated bullet (COTW 18 p. 561); municion.org's
+# earliest sheet, an 1873 Italian arsenal round, shows a bare lead one.
+type = "lead"
+sources = ["https://municion.org/ficha-11-048-bbc-005-0005/"]
+
+[case]
+# The maintainer's own round, headstamped with only an acorn, has a copper case (2026-11-17). On municion.org the 1873 (Stabilimento Pirotecnico)
+# and 1877 (Polverificio di Firenze) cases look copper too; the later arsenal cases there are brass.
+material = "copper"
+sources = [
+  "measured:ravench 2026-11-17",
+  "https://municion.org/ficha-11-048-bbc-005-0005/",
+  "https://municion.org/ficha-11-048-bbc-005-0009/",
+]

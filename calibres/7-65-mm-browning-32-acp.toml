@@ -1,0 +1,49 @@
+name = "7.65 mm Browning (.32 ACP)"
+guns = ["handgun"]
+kind = "semi-rimmed"
+profile = "round"
+aliases = ["7.65browning", "32acp", "32auto", "7,65"]
+display_aliases = [".32 ACP", ".32 Auto"]
+
+# The 7.65 mm Browning was issued by France from 1915 (710,000 Ruby pistols), Russia 1916, Finland 1919, Italy
+# 1937 (Beretta M1935) and Germany (Walther PP/PPK, captured Rubys and Berettas); the 6.35 mm never.
+# the designer's country and the «ACP» name: US
+origin = "BE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 618"]
+worldwide = true
+
+[mm]
+# SAAMI 32 Automatic, maximum cartridge.
+rim = 9.09
+base = 8.57
+neck = 8.55
+case_length = 17.27
+overall_length = 24.99
+bullet = 7.94
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=40"]
+
+[introduced]
+year = 1899
+sources = ["https://en.wikipedia.org/wiki/.32_ACP"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_ACP"]
+
+[case_head]
+# C.I.P. 7,65 mm Browning
+rim_thickness = 1.25
+ramp_top = 3.01
+groove_diameter = 7.85
+ramp_angle = 20.0
+groove_width = 0.8
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page12.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 474"]
+
+[current_cases]
+# CCI Blazer's aluminium cases.
+materials = ["aluminium"]
+sources = ["https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]

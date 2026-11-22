@@ -1,0 +1,61 @@
+# Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
+name = ".465 H&H Magnum"
+guns = ["rifle"]
+kind = "belted"
+profile = "round"
+aliases = ["465hh", "465h&h"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.465_H%26H_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page38.pdf",
+]
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 14.7
+# The belt, R3 on the C.I.P. sheet, is wider than the rim.
+belt = 15.33
+base = 14.8
+shoulder = 13.5
+shoulder_at = 53.5
+neck_at = 58.93
+neck_base = 12.55
+# C.I.P. 465 H&H Belt. Mag.
+shoulder_angle = 5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page38.pdf"]
+neck = 12.5
+case_length = 73.5
+overall_length = 90.2
+bullet = 11.9
+sources = [
+  "https://en.wikipedia.org/wiki/.465_H%26H_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page38.pdf",
+]
+
+[introduced]
+year = 2003
+sources = ["https://en.wikipedia.org/wiki/.465_H%26H_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.465_H%26H_Magnum"]
+
+[case_head]
+# C.I.P. ?
+rim_thickness = 1.6
+ramp_top = 6.4
+groove_diameter = 12.57
+ramp_angle = 45.0
+groove_width = 1.24
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page38.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.465_H%26H_Magnum"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/465-holland-holland-magnum-belted/"]

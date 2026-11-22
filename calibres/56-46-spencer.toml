@@ -1,0 +1,46 @@
+# Measurements converted from inches.
+# Spencer's necked round for the small carbine and sporting rifle of 1866.
+name = ".56-46 Spencer"
+# Guns: book:cotw-18 p. 667.
+guns = ["rifle"]
+kind = "rimfire"
+profile = "round"
+aliases = ["56-46", "56-46 spencer", "46 spencer"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 742"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.28
+base = 14.17
+shoulder = 14.1
+shoulder_at = 17.32
+# Drawing on naboje.org (P2, H1, L1, Lk, L3): SØ 14.00, NØ 12.35, SL 17.20, NL 6.00, CL 26.17.
+shoulder_angle = 15.5
+cite.shoulder_angle = ["https://naboje.org/en/node/13400"]
+neck = 12.14
+case_length = 26.29
+overall_length = 40.51
+bullet = 11.81
+sources = ["book:cotw-18 p. 670", "https://naboje.org/en/node/13400"]
+
+[introduced]
+year = 1866
+sources = ["book:cotw-18 p. 667"]
+
+[case_head]
+# naboje.org drawing: R 1.80, R1 16.18, P1 14.22, L3 26.17.
+rim_thickness = 1.8
+sources = ["https://naboje.org/en/node/13400"]
+
+[bullet]
+# COTW 18 p. 667 does not name the bullet's material; lead, as in the other rimfire rounds of its time.
+type = "lead"
+sources = []
+
+[case]
+# The photos show copper cases on the early makers' rounds (Leet and Fitch, Van Vechten & Co.).
+material = "copper"
+sources = ["https://municion.org/producto/56-46-spencer-rf-short-neck/"]

@@ -1,0 +1,43 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".450 Nitro Express"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["450ne"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.450_Nitro_Express",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page115.pdf",
+]
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+# C.I.P. 450 N.E. 3"1/4, maximum cartridge.
+rim = 15.85
+base = 13.84
+neck = 12.22
+case_length = 82.55
+overall_length = 100.33
+bullet = 11.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page115.pdf"]
+
+[introduced]
+year = 1898
+sources = ["https://en.wikipedia.org/wiki/.450_Nitro_Express"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# C.I.P. 450 N.E. 3"1/4
+rim_thickness = 1.07
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page115.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.450_Nitro_Express"]

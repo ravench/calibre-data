@@ -1,0 +1,23 @@
+# The round of the Soviet Rikhter R-23, a bomber's tail gun: a revolver loaded backwards from the front,
+# with the case extended forwards to enclose the shell and tapered «the wrong way» (Autocannon p. 95),
+# the propellant all behind the shell. Rapid Fire's table gives the case 15 mm across at the head and 30
+# mm across further up, the file's rim and base. Its name gives the bore and case length.
+name = "23x260 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["23 mm r-23", "r-23"]
+origin = "SU"
+origin_sources = ["book:rapid-fire p. 227"]
+
+[mm]
+rim = 15.0
+base = 30.0
+case_length = 260.0
+bullet = 23.0
+sources = ["book:rapid-fire p. 227"]
+
+[introduced]
+# Autocannon: adopted in 1964 and named R-23.
+year = 1964
+sources = ["book:autocannon p. 101"]

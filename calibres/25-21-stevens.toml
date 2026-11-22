@@ -1,0 +1,49 @@
+# Measurements converted from inches.
+# The .25-25 Stevens shortened, for the Stevens 44 and 44½ single-shot rifles.
+name = ".25-21 Stevens"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/25-21-86-stevens/).
+profile = "flat"
+aliases = ["25-21", "25-21 stevens"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/25-21-86-stevens/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.55
+base = 7.62
+neck = 7.11
+case_length = 52.07
+overall_length = 58.42
+bullet = 6.53
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/25-21-86-stevens/"]
+sources = ["book:cotw-18 p. 249"]
+
+[introduced]
+# COTW: developed about 1897.
+year = 1897
+sources = ["book:cotw-18 p. 188"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[case_head]
+# .05 in.
+rim_thickness = 1.27
+sources = ["book:donnelly p. 213"]
+
+[bullet]
+# COTW 18 p. 188 lists only handloads; municion.org's sheet shows a lead bullet.
+type = "lead"
+sources = ["https://municion.org/ficha-06-052-cbc-010-0001/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/25-21-86-stevens/"]

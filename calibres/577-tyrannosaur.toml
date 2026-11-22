@@ -1,0 +1,51 @@
+# Measurements converted from inches.
+# A-Square's .577 for bolt-action backup rifles of African professional hunters.
+name = ".577 Tyrannosaur"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["577 tyrannosaur", "577 t-rex"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/577-tyrannosaur/"]
+rare = true
+
+[mm]
+rim = 17.48
+base = 17.48
+shoulder = 17.09
+shoulder_at = 59.55
+neck_at = 63.65
+neck_base = 15.64
+# Drawing: SØ 16.71, NØ 15.64, SL 59.30, NL 12.30, CL 75.70. The half angle runs between the
+# book's diameters over the drawing's shoulder length (4.10 mm): the specimen's own cone (7.4 degrees) would leave a
+# neck 1.6 mm shorter than the specimen's, over the 1.5 mm the rule allows.
+shoulder_angle = 10.3
+cite.shoulder_angle = ["https://municion.org/producto/577-tyrannosaur/"]
+neck = 15.6
+case_length = 75.95
+overall_length = 94.23
+bullet = 14.86
+sources = ["book:cotw-18 p. 454", "https://municion.org/producto/577-tyrannosaur/"]
+
+[introduced]
+year = 1993
+sources = ["book:cotw-18 p. 449"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 454"]
+
+[case_head]
+# .060 in. (COTW); groove from the drawing 15-075-BGC-030: RT 1.28, HL 3.50, GØ 16.10, GW 1.28,
+# HØ 17.55; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.52
+ramp_top = 3.5
+groove_diameter = 16.1
+ramp_angle = 38.0
+sources = ["book:cotw-18 p. 454", "https://municion.org/producto/577-tyrannosaur/"]
+
+[bullet]
+# A-Square's factory load: a monolithic solid.
+type = "jacketed"
+sources = ["book:cotw-18 p. 450"]

@@ -1,0 +1,62 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "6.8 mm Remington SPC"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.8spc", "68spc", "6.8x43"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6.8mm_Remington_SPC",
+  "book:ammo-encyclopedia-2 p. 486",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf",
+]
+
+[mm]
+rim = 10.7
+base = 10.7
+shoulder = 10.2
+shoulder_at = 33.05
+neck_at = 35.91
+neck_base = 7.77
+# C.I.P. 6,8 mm Rem. SPC
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf"]
+neck = 7.8
+case_length = 42.8
+overall_length = 57.4
+bullet = 7.0
+# nose: read to scale off the specimen drawing 07-043-BGC-023:
+# the curve starts 12.4 mm behind the tip, of the 14.60 mm out of its case (TL 57.23, CL 42.63).
+nose = 12.4
+cite.nose = ["https://municion.org/producto/68-x-43-remington-spc/"]
+sources = [
+  "https://en.wikipedia.org/wiki/6.8mm_Remington_SPC",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf",
+]
+
+[introduced]
+year = 2002
+sources = ["https://en.wikipedia.org/wiki/6.8mm_Remington_SPC"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.8mm_Remington_SPC"]
+
+[case_head]
+# C.I.P. 6,8 mm Rem. SPC
+rim_thickness = 1.24
+ramp_top = 3.2
+groove_diameter = 9.09
+ramp_angle = 36.0
+groove_width = 0.84
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page31.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 115"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/68-x-43-remington-spc/"]

@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# North American Shooting Systems' rebated rimless magnum for long actions, without a belt.
+name = "7 mm Canadian Magnum"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7mm canadian magnum", "7mm canadian mag", "7mm nass"]
+
+origin = "CA"
+origin_sources = []
+rare = true
+
+[mm]
+rim = 13.51
+base = 13.82
+shoulder = 13.46
+shoulder_at = 59.0
+# Drawing: SØ 13.38, NØ 7.97, SL 58.75, NL 6.70, CL 71.63.
+shoulder_angle = 23.6
+cite.shoulder_angle = ["https://municion.org/producto/7-mm-imperial-magnum/"]
+neck = 8.18
+case_length = 71.88
+overall_length = 91.44
+bullet = 7.21
+# shoulder_at from the drawing 07-072-BRC-011, carried from the mouth. The drawing is titled
+# «7 mm Imperial Magnum»: its page says the range was sold as NASS Magnum, then as Imperial Magnum and last as
+# Canadian Magnum. The specimen's case is within 0.25 mm of the book on every size.
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/7-mm-imperial-magnum/"]
+
+[introduced]
+# COTW: developed about 1989.
+year = 1989
+sources = ["book:cotw-18 p. 388"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .046 in. (COTW); groove from the drawing 07-072-BRC-011 (municion.org, «7 mm Imperial Magnum»): RT 1.18,
+# HL 3.30, GØ 11.65, GW 1.12, HØ 13.75; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.17
+ramp_top = 3.3
+groove_diameter = 11.65
+ramp_angle = 46.0
+groove_width = 1.12
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/7-mm-imperial-magnum/"]
+
+[bullet]
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/7-mm-imperial-magnum/"]

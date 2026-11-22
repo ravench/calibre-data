@@ -1,0 +1,45 @@
+# Measurements converted from inches.
+# Lazzeroni's .264 long magnum, on its .544 in. case. Chambered only on special order (COTW 18 p. 376).
+name = "6.71 Lazzeroni Blackbird"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.71 blackbird", "6.71mm blackbird", "lazzeroni blackbird"]
+
+origin = "US"
+origin_sources = []
+rare = true
+
+[mm]
+rim = 13.82
+base = 13.82
+shoulder = 13.31
+shoulder_at = 59.4
+# COTW 18 p. 376: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 376"]
+neck = 7.54
+case_length = 71.12
+overall_length = 90.8
+bullet = 6.71
+# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 451"]
+
+[introduced]
+year = 1996
+sources = ["book:cotw-18 p. 376"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:cotw-18 p. 451"]
+
+[bullet]
+# Soft point: the Nosler Partition (COTW 18 p. 377).
+type = "softpoint"
+sources = ["book:cotw-18 p. 377"]

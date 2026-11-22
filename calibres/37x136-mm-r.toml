@@ -1,0 +1,47 @@
+# The US Navy's «heavy» one-pounder, first for a hand-loaded Hotchkiss gun, then for the Maxim-Nordenfelt
+# 1-pounder Heavy (Mk VI) and the McClean automatic cannon. Its name gives the bore and case length
+# (Rapid Fire's table: 37x137R), Rapid Fire's table the rim and base, Autocannon p. 155 the length of the
+# round, the specimen drawing on municion.org (37x137R), in round numbers, the shoulder, the neck
+# and the rim's thickness.
+name = "37x136 mm R"
+guns = ["cannon"]
+kind = "rimmed"
+# Nose: pointed, the base-fuzed steel shells it seems always to have fired (Autocannon p. 155).
+profile = "spitzer"
+aliases = ["37x136r", "37x137r", "1-pounder heavy", "1-pounder mk vi"]
+origin = "US"
+origin_sources = ["book:rapid-fire p. 229"]
+
+[mm]
+rim = 44.7
+base = 40.6
+shoulder = 39.5
+shoulder_at = 111.5
+neck_at = 114.5
+neck_base = 37.5
+# Drawing 37-137-BBC-010: SØ 39.50, NØ 37.50, SL 112.00, NL 21.50, CL 136.50, TL 207.50.
+shoulder_angle = 18.4
+cite.shoulder_angle = ["https://municion.org/producto/37-x-137-r-us-navy-1-pdr/"]
+neck = 37.5
+case_length = 136.0
+overall_length = 210.0
+bullet = 37.0
+sources = [
+  "book:rapid-fire p. 229",
+  "book:autocannon p. 155",
+  "https://municion.org/producto/37-x-137-r-us-navy-1-pdr/",
+]
+
+[introduced]
+# Autocannon: the Hotchkiss gun it was designed for entered US Navy service in about 1890.
+year = 1890
+sources = ["book:autocannon p. 155"]
+
+[case_head]
+# The drawing 37-137-BBC-010: RØ 45.00, HØ 40.30, RT 2.10.
+rim_thickness = 2.1
+sources = ["https://municion.org/producto/37-x-137-r-us-navy-1-pdr/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 155"]

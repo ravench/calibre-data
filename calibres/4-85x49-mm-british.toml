@@ -1,0 +1,60 @@
+# Measurements converted from inches.
+# A British trial round of the 1977 NATO small-calibre trials; never adopted.
+name = "4.85x49 mm British"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["4.85x49", "4.85 british"]
+display_aliases = ["4.85 mm British"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/4.85×49mm",
+  "book:ammo-encyclopedia-2 p. 498",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.55
+base = 9.52
+shoulder = 8.97
+shoulder_at = 36.12
+neck_at = 40.44
+neck_base = 5.59
+# Drawing: SØ 8.97, NØ 5.59, SL 36.20, NL 8.45, CL 48.97.
+shoulder_angle = 21.4
+cite.shoulder_angle = ["https://municion.org/producto/485-x-49-british-xpl/"]
+neck = 5.59
+case_length = 48.89
+overall_length = 62.36
+bullet = 5.0
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/485-x-49-british-xpl/"]
+
+[introduced]
+# COTW: entered in the NATO trials of 1977.
+year = 1977
+sources = ["book:cotw-18 p. 532"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/4.85×49mm"]
+
+[case_head]
+# .041 in. (COTW); groove from the drawing 05-049-BGC-010: RT 1.13, HL 3.10, GØ 8.35, GW 0.90,
+# HØ 9.54; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.04
+ramp_top = 3.1
+groove_diameter = 8.35
+ramp_angle = 29.0
+groove_width = 0.9
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/485-x-49-british-xpl/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 532"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/485-x-49-british-xpl/"]

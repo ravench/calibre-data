@@ -1,0 +1,53 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# On the 9x19 mm case head. Full metal jacket, the standard for its birds (COTW 18 p. 621); soft points
+# were made too.
+name = "7x33 mm Sako"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["7x33", "7x33sako"]
+
+origin = "FI"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7×33mm_Sako",
+  "book:ammo-encyclopedia-2 p. 395",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page32.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.0
+base = 9.93
+shoulder = 9.52
+shoulder_at = 26.68
+neck_at = 29.1
+neck_base = 7.95
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 18.0
+neck = 7.9
+case_length = 33.33
+overall_length = 44.44
+bullet = 7.26
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page32.pdf"]
+
+[introduced]
+year = 1942
+sources = ["book:cotw-18 p. 621"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/7×33mm_Sako"]
+
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.27
+ramp_top = 3.05
+groove_diameter = 8.8
+ramp_angle = 32.7
+groove_width = 0.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page32.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 621"]

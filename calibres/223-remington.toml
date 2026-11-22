@@ -1,0 +1,69 @@
+name = ".223 Remington"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["223", "223rem"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.223_Remington",
+  "book:ammo-encyclopedia-2 p. 275",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf",
+]
+worldwide = true
+
+[mm]
+# C.I.P. 223 Rem. and SAAMI 223 Remington, maximum cartridge; they agree to 0.01 mm except the
+# base: C.I.P. P1 9.58 at 3.13 mm from the head, SAAMI 9.548 at 5.08 mm (the body tapers).
+rim = 9.6
+base = 9.58
+shoulder = 9.0
+# shoulder_at: C.I.P. L1 36.52, SAAMI 36.527.
+shoulder_at = 36.52
+neck_at = 39.55
+neck_base = 6.43
+# C.I.P. alpha 46 degrees (full cone), SAAMI 23 degrees
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf", "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84"]
+neck = 6.43
+case_length = 44.7
+overall_length = 57.4
+bullet = 5.70
+# nose: read to scale off the drawing 06-045-BGC-050 (municion.org, its M193 ball specimen):
+# the curve starts 10.6 mm behind the tip, of the 12.59 mm out of its case (TL 57.15, CL 44.56).
+nose = 10.6
+cite.nose = ["https://municion.org/producto/556-x-45-otan/"]
+sources = [
+  "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84",
+  "book:hornady-10 p. 160",
+  "book:donnelly p. 152",
+  "book:cotw-18 p. 175",
+  "https://en.wikipedia.org/wiki/.223_Remington",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf",
+]
+
+[introduced]
+year = 1963
+sources = ["https://en.wikipedia.org/wiki/.223_Remington"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.223_Remington"]
+
+[case_head]
+# C.I.P. 223 Rem. (E 3.13); SAAMI gives the same rim, groove and ramp angle.
+rim_thickness = 1.14
+ramp_top = 3.13
+groove_diameter = 8.43
+ramp_angle = 25.0
+groove_width = 0.76
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf", "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 91"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]

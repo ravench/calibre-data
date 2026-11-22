@@ -1,0 +1,44 @@
+name = ".32 H&R Magnum"
+# Guns: https://www.henryusa.com/wp-content/uploads/mediakit/Henry-Big-Boy-Rifles-Spec-Sheet.pdf (Henry Big Boy in .327 Federal Magnum/.32 H&R Magnum).
+guns = ["handgun", "rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = []
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.32_H%26R_Magnum"]
+
+[mm]
+# SAAMI 32 H&R Magnum, maximum cartridge.
+rim = 9.53
+base = 8.56
+neck = 8.56
+case_length = 27.31
+overall_length = 34.29
+bullet = 8.0
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/32-harrington-richardson-magnum/"]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=41"]
+
+[introduced]
+year = 1984
+sources = ["https://en.wikipedia.org/wiki/.32_H%26R_Magnum"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_H%26R_Magnum"]
+
+[case_head]
+# SAAMI 32 H&R Magnum
+rim_thickness = 1.4
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=41"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/32-harrington-richardson-magnum/"]

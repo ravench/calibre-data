@@ -1,0 +1,54 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".500/465 Nitro Express"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["500/465", "465ne"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.500/465_Nitro_Express",
+  "book:ammo-encyclopedia-2 p. 467",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page125.pdf",
+]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 16.4
+base = 14.5
+shoulder = 13.4
+shoulder_at = 55.88
+neck_at = 66.04
+neck_base = 12.55
+# C.I.P. 500/465 N.E.
+shoulder_angle = 2.8
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page125.pdf"]
+neck = 12.4
+case_length = 83.0
+overall_length = 99.0
+bullet = 11.9
+sources = [
+  "https://en.wikipedia.org/wiki/.500/465_Nitro_Express",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page125.pdf",
+]
+
+[introduced]
+year = 1907
+sources = ["https://en.wikipedia.org/wiki/.500/465_Nitro_Express"]
+
+[primer]
+# Both COTW tables give the .254 in. Kynoch No. 40 Berdan primer. The municion.org photos read
+# 6.13 mm raw (3 specimens), about 6.28 mm with the 2.5 % correction: just under the Nitro band,
+# so they alone would leave it unverified.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 609", "book:cotw-5 p. 267"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page125.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.500/465_Nitro_Express"]

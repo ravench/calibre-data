@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# The Ottoman Mauser M1887; Mauser's last blackpowder round.
+name = "9.5x60 mm R Turkish Mauser"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/).
+profile = "flat"
+aliases = ["9.5x60r", "9.5 turkish"]
+
+origin = "OE"
+origin_sources = ["https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.54
+base = 12.98
+shoulder = 12.37
+shoulder_at = 35.4
+neck_at = 42.2
+neck_base = 10.4
+# Drawing: SØ 12.03, NØ 10.40, SL 35.00, NL 18.00, CL 59.80.
+shoulder_angle = 6.8
+cite.shoulder_angle = ["https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
+neck = 10.44
+case_length = 60.2
+overall_length = 75.44
+bullet = 9.88
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
+
+[introduced]
+year = 1887
+sources = ["book:cotw-18 p. 559"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .082 in.
+rim_thickness = 2.08
+# The rim stands on a foot (drawing 10-060-BBC-010, «Mauser base»), not dimensioned there: 6 of the
+# 14 px from the base to the rim's front (HL 2.35), that share of rim_thickness.
+foot = 0.9
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]
+
+[bullet]
+# The military load: a paper-patched lead bullet over blackpowder.
+type = "paper"
+sources = ["book:cotw-18 p. 559"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/95-x-60-r-turkish-mauser-m-1887/"]

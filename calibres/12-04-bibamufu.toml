@@ -1,0 +1,61 @@
+# Measurements converted from inches.
+# Lazzeroni's round for the largest dangerous game, made at Craig Boddington's request; on special order only.
+name = "12.04 Bibamufu"
+guns = ["rifle"]
+kind = "rimless"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/1204-mm-lazzeroni-bibamufu/).
+profile = "flat"
+aliases = ["12.04 bibamufu", "bibamufu", "lazzeroni bibamufu"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/1204-mm-lazzeroni-bibamufu/"]
+# Special order only (COTW 18 p. 243), which counts as boutique loads.
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 59.0
+neck_at = 61.32
+neck_base = 12.73
+# COTW 18 p. 243: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 243"]
+neck = 12.7
+case_length = 71.12
+overall_length = 91.95
+bullet = 12.06
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+# shoulder_at from the drawing 12-071-BGC-030: SL 59.00 on a case of CL 71.12, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 252", "https://municion.org/producto/1204-mm-lazzeroni-bibamufu/"]
+
+[introduced]
+year = 1999
+sources = ["book:cotw-18 p. 243"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 252"]
+
+[case_head]
+# .060 in. (COTW); groove from the drawing 12-071-BGC-030: RT 1.65, HL 3.56, GØ 13.25, GW 1.14,
+# HØ 14.66; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.52
+ramp_top = 3.56
+groove_diameter = 13.25
+ramp_angle = 42.0
+groove_width = 1.14
+sources = ["book:cotw-18 p. 252", "https://municion.org/producto/1204-mm-lazzeroni-bibamufu/"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/1204-mm-lazzeroni-bibamufu/"]

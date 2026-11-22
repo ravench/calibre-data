@@ -1,0 +1,38 @@
+# Measurements converted from inches.
+# A blackpowder target and small-game round.
+name = "9.1x40 mm R"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["9.1x40r"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.33
+base = 10.26
+neck = 9.78
+case_length = 40.64
+overall_length = 50.8
+bullet = 9.5
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+unknown = "Probably from before 1900; COTW 18 p. 643 gives no year."
+sources = ["book:cotw-18 p. 643"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .062 in.
+rim_thickness = 1.57
+sources = ["book:donnelly p. 917"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 643"]

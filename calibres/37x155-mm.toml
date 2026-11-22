@@ -1,0 +1,48 @@
+# The round of the Soviet N-37 aircraft cannon, made in China too. Its name gives the bore and case
+# length, Rapid Fire's table the rim and base, Autocannon p. 155 the length of the round, the
+# drawing of a case on municion.org, in round numbers, the shoulder, the neck and the head. The case was
+# steel or brass, so the file names no material.
+name = "37x155 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["37 mm n-37", "n-37"]
+origin = "SU"
+origin_sources = ["book:rapid-fire p. 230"]
+
+[mm]
+rim = 46.0
+base = 45.8
+shoulder = 44.0
+shoulder_at = 126.0
+neck_at = 130.0
+neck_base = 39.0
+# Drawing 37-155-BGC-010: SØ 44.00, NØ 39.00, SL 126.00, NL 25.00, CL 155.00.
+# The drawing shows the case alone, without a shell.
+shoulder_angle = 32.0
+cite.shoulder_angle = ["https://municion.org/producto/37-x-155-russian-nudelmann-n37/"]
+neck = 39.0
+case_length = 155.0
+overall_length = 288.0
+bullet = 37.0
+sources = [
+  "book:rapid-fire p. 230",
+  "book:autocannon p. 155",
+  "https://en.wikipedia.org/wiki/Nudelman_N-37",
+  "https://municion.org/producto/37-x-155-russian-nudelmann-n37/",
+]
+
+[introduced]
+# The N-37 entered service in 1946 (Wikipedia).
+year = 1946
+sources = ["https://en.wikipedia.org/wiki/Nudelman_N-37"]
+
+[case_head]
+# The drawing 37-155-BGC-010: RØ 45.90, HØ 46.20, RT 3.50, GØ 40.10, GW 4.00, the ramp
+# ends at HL 10.50; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 3.5
+ramp_top = 10.5
+groove_diameter = 40.1
+ramp_angle = 45.0
+groove_width = 4.0
+sources = ["https://municion.org/producto/37-x-155-russian-nudelmann-n37/"]

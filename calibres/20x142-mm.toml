@@ -1,0 +1,51 @@
+# The round of the Japanese army's Type 98 anti-aircraft cannon, its standard light anti-aircraft gun
+# from the late 1930s. Its name gives the bore and case length (Autocannon: 20x143), Rapid Fire's table
+# the rim and base, the specimen drawing on municion.org the shoulder, the neck and the head.
+# Autocannon (p. 124) gives the round as 214 mm long with the AP shell and 208 mm with HE; the file has
+# the HE round's length, which the drawing has too.
+name = "20x142 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x143", "20 mm type 98"]
+origin = "JP"
+origin_sources = ["https://en.wikipedia.org/wiki/Type_98_20_mm_AA_machine_cannon", "book:rapid-fire p. 227"]
+
+[mm]
+rim = 33.4
+base = 33.5
+shoulder = 31.47
+shoulder_at = 119.7
+neck_at = 129.45
+neck_base = 20.72
+# Drawing 20-142-BGC-010: SØ 31.47, NØ 20.72, SL 119.70, NL 12.55, CL 142.00, TL 208.00.
+shoulder_angle = 28.9
+cite.shoulder_angle = ["https://municion.org/producto/20-x-142-japanese-type-98/"]
+neck = 20.72
+case_length = 142.0
+overall_length = 208.0
+bullet = 20.0
+sources = [
+  "book:rapid-fire p. 227",
+  "https://en.wikipedia.org/wiki/20_mm_caliber",
+  "book:autocannon p. 124",
+  "https://municion.org/producto/20-x-142-japanese-type-98/",
+]
+
+[introduced]
+year = 1938
+sources = ["https://en.wikipedia.org/wiki/Type_98_20_mm_AA_machine_cannon"]
+
+[case_head]
+# The drawing 20-142-BGC-010: RØ 33.37, HØ 33.47, RT 3.46, GØ 28.34, GW 2.47, the ramp
+# ends at HL 9.20; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 3.46
+ramp_top = 9.2
+groove_diameter = 28.34
+ramp_angle = 38.0
+groove_width = 2.47
+sources = ["https://municion.org/producto/20-x-142-japanese-type-98/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 124"]

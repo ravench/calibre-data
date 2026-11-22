@@ -1,0 +1,45 @@
+# The round of the later Rheinmetall MG 204 aircraft cannon; the early guns fired the belted 20x105 mm B.
+# Its name gives the bore and case length, Rapid Fire's table the rim and base, Autocannon p. 116 the
+# length of the round, the specimen drawing on municion.org («20 mm MG 204 Solo») the shoulder, the
+# neck and the head.
+name = "20x105 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20 mm mg 204", "mg 204"]
+origin = "DE"
+origin_sources = ["book:rapid-fire p. 226"]
+
+[mm]
+rim = 25.0
+base = 26.2
+shoulder = 23.97
+shoulder_at = 91.4
+neck_at = 95.0
+neck_base = 21.08
+# Drawing 20-105-BRC-010: SØ 23.97, NØ 21.08, SL 91.35, NL 10.00, CL 104.95, TL 171.00.
+shoulder_angle = 21.9
+cite.shoulder_angle = ["https://municion.org/producto/20-x-105-german-xpl-mg-204/"]
+neck = 21.08
+case_length = 105.0
+overall_length = 170.0
+bullet = 20.0
+sources = [
+  "book:rapid-fire p. 226",
+  "book:autocannon p. 116",
+  "https://municion.org/producto/20-x-105-german-xpl-mg-204/",
+]
+
+[introduced]
+unknown = "Autocannon dates the MG 204 only to the late 1930s."
+sources = ["book:autocannon p. 116"]
+
+[case_head]
+# The drawing 20-105-BRC-010: RØ 24.84, HØ 26.22, RT 2.49, GØ 20.86, GW 4.17, the ramp
+# ends at HL 8.90; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 2.49
+ramp_top = 8.9
+groove_diameter = 20.86
+ramp_angle = 50.0
+groove_width = 4.17
+sources = ["https://municion.org/producto/20-x-105-german-xpl-mg-204/"]

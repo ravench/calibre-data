@@ -1,0 +1,41 @@
+# Measurements converted from inches.
+# A straight case, one of the rounds that replaced the banned .450s.
+name = ".475 Nitro Express 3¼ inch"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["475 3 1/4", "475 nitro 3 1/4"]
+
+origin = "GB"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.77
+base = 13.84
+neck = 12.75
+case_length = 82.55
+overall_length = 101.6
+bullet = 12.27
+sources = ["book:cotw-18 p. 609"]
+
+[introduced]
+# COTW: about 1900.
+year = 1900
+sources = ["book:cotw-18 p. 601"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 609"]
+
+[case_head]
+# .053 in.
+# Donnelly's entry is titled .475 Nitro Express: rim .621 in. as the file, case 3.30 in.
+rim_thickness = 1.35
+sources = ["book:donnelly p. 648"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 601"]

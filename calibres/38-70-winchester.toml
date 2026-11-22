@@ -1,0 +1,51 @@
+# Measurements converted from inches.
+# For the Winchester Model 1886 lever action; dropped within a few years.
+name = ".38-70 Winchester"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["38-70", "38-70 winchester"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 428"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.24
+base = 12.85
+shoulder = 10.69
+shoulder_at = 48.7
+neck = 10.24
+case_length = 58.67
+overall_length = 69.34
+bullet = 9.6
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/38-70-winchester-cf-marlin-colt/"]
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+year = 1894
+sources = ["book:cotw-18 p. 217"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[case_head]
+# Drawing 09-059-BBC-030: RT 1.72. Its shoulder is not taken: the drawing's (SØ 11.68) is 1.0 mm
+# wider than the book's.
+rim_thickness = 1.72
+sources = ["https://municion.org/producto/38-70-winchester-cf-marlin-colt/"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 217"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/38-70-winchester-cf-marlin-colt/"]

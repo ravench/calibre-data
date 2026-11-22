@@ -1,0 +1,50 @@
+# Mixed batch 4 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated (7x65 R and 8x57 IRS rims later from C.I.P.).
+name = ".356 TSW"
+guns = ["handgun"]
+kind = "rimless"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/356-team-smith-wesson/).
+profile = "flat"
+aliases = ["356tsw"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.356_TSW"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.0
+base = 9.92
+neck = 9.7
+case_length = 21.6
+overall_length = 29.5
+bullet = 9.0
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/356-team-smith-wesson/"]
+sources = ["https://en.wikipedia.org/wiki/.356_TSW"]
+
+[introduced]
+year = 1994
+sources = ["https://en.wikipedia.org/wiki/.356_TSW"]
+
+[primer]
+size = "small-pistol"
+sources = ["book:cotw-18 p. 528"]
+
+[case_head]
+# 9x19-based like the 9x21; C.I.P. 9 x 21
+rim_thickness = 1.27
+ramp_top = 2.98
+groove_diameter = 8.79
+ramp_angle = 35.0
+groove_width = 0.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page20.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 480"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/356-team-smith-wesson/"]

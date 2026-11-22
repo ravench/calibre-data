@@ -1,0 +1,51 @@
+# Solothurn's short 20 mm round, for the S-18/100 anti-tank rifle and the early MG 204 aircraft cannon
+# (the later MG 204 fired the rimless 20x105 mm). Its name gives the bore and case length; Jane's table
+# gives the rim, the belt and the neck, Rapid Fire's table the base, Autocannon p. 116 the length of the
+# round, the specimen drawing on municion.org the shoulder and the head.
+name = "20x105 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["20x105b", "20 mm short solothurn", "s-18/100", "s18-100"]
+# Waffenfabrik Solothurn, a Swiss front company of Rheinmetall, made the gun, as with the 20x138 mm B;
+# Wikipedia names Germany and Switzerland: CH
+origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/Solothurn_S-18/100", "book:rapid-fire p. 226"]
+
+[mm]
+rim = 24.99
+belt = 26.29
+base = 25.0
+shoulder = 23.8
+shoulder_at = 89.34
+neck_at = 95.2
+neck_base = 20.85
+# Drawing 20-105-BFC-010: SØ 23.80, NØ 20.85, SL 89.20, NL 9.80, CL 104.86, TL 169.29.
+shoulder_angle = 14.1
+cite.shoulder_angle = ["https://municion.org/producto/20-x-105-b-swiss-solothurn-sh-anti-tank-s-18-100-german/"]
+neck = 20.7
+case_length = 105.0
+overall_length = 170.0
+bullet = 20.0
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "book:rapid-fire p. 226",
+  "book:autocannon p. 116",
+  "https://municion.org/producto/20-x-105-b-swiss-solothurn-sh-anti-tank-s-18-100-german/",
+]
+
+[introduced]
+# The S-18/100's first year of production (Wikipedia).
+year = 1934
+sources = ["https://en.wikipedia.org/wiki/Solothurn_S-18/100"]
+
+[case_head]
+# The drawing 20-105-BFC-010: RØ 24.88, HØ 24.90, LØ 26.18, RT 2.17, GØ 21.85, GW 3.50,
+# the ramp ends at HL 8.10; the belt (LW 4.60) ends at 12.70; ramp angle from HL = RT + GW +
+# ((LØ - GØ)/2)/tan(angle).
+rim_thickness = 2.17
+ramp_top = 12.7
+groove_diameter = 21.85
+ramp_angle = 42.0
+groove_width = 3.5
+sources = ["https://municion.org/producto/20-x-105-b-swiss-solothurn-sh-anti-tank-s-18-100-german/"]

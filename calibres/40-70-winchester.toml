@@ -1,0 +1,45 @@
+# Measurements converted from inches.
+# For the Winchester Model 1886; a bottleneck case like the .38-70 Winchester.
+name = ".40-70 Winchester"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["40-70 winchester", "40-70 wcf"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 441"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.34
+base = 12.8
+shoulder = 12.6
+shoulder_at = 44.45
+# The same drawing: 13.26 deg, as its .496 shoulder, .430 neck and .510 neck length on a 2.40 case give.
+shoulder_angle = 13.26
+cite.shoulder_angle = ["https://winchestercollector.org/forum/winchester-swap-meet/wtb-40-70-wcf/"]
+neck = 10.92
+case_length = 60.96
+overall_length = 72.39
+bullet = 10.29
+# shoulder_at: 1.75 in. on the dimension drawing in Bert H.'s post (2 June 2024) on the Winchester Arms
+# Collectors forum; its rim, base, shoulder and neck diameters and its case and overall lengths are COTW's to the thou.
+sources = ["book:cotw-18 p. 251", "https://winchestercollector.org/forum/winchester-swap-meet/wtb-40-70-wcf/"]
+
+[introduced]
+year = 1894
+sources = ["book:cotw-18 p. 223"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# .059 in.
+rim_thickness = 1.5
+sources = ["book:donnelly p. 504"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 223"]

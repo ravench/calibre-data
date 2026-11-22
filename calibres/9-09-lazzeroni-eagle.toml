@@ -1,0 +1,52 @@
+# Measurements converted from inches.
+# Lazzeroni's .358 short magnum for a 2.8 in. action, the 7.82 Patriot necked up. Lazzeroni seldom chambers rifles for it (COTW 18 p. 410).
+name = "9.09 Lazzeroni Eagle"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["9.09 eagle", "9.09mm eagle", "lazzeroni eagle"]
+
+origin = "US"
+origin_sources = []
+# COTW 18 p. 410: essentially a wildcat on the Patriot case that Lazzeroni does not normally chamber.
+obsolete = true
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 39.2
+# COTW 18 p. 410: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 410"]
+neck = 9.83
+case_length = 52.07
+overall_length = 71.12
+bullet = 9.09
+# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 452"]
+
+[introduced]
+year = 1998
+sources = ["book:cotw-18 p. 410"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .060 in. (COTW); groove from the drawing 08-052-BGC-009 of the 7.82 Patriot, whose case the
+# Eagle uses (COTW 18 p. 410): RT 1.57, HL 3.90, GØ 12.67, GW 1.00, HØ 14.63; ramp angle from
+# HL = RT + GW + ((HØ - GØ)/2)/tan(angle). No drawing of the Eagle itself was found.
+rim_thickness = 1.52
+ramp_top = 3.9
+groove_diameter = 12.67
+ramp_angle = 36.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/782-mm-lazzeroni-patriot/", "book:cotw-18 p. 410"]
+
+[bullet]
+# Soft point inferred: Lazzeroni loads premium hunting bullets; the page gives weights only.
+type = "softpoint"
+sources = []

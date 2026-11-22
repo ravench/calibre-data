@@ -1,0 +1,62 @@
+# Measurements converted from inches.
+# For the Peabody-Martini rifles of the Providence Tool Co.; a short body and a long, sloping shoulder.
+name = ".40-70 Peabody What Cheer"
+# Guns: book:cotw-18 p. 225.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["40-70 peabody", "40-70 what cheer"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 440"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.81
+base = 14.76
+shoulder = 14.0
+shoulder_at = 25.15
+# The book's shoulder and neck diameters over the shoulder length of the drawing (CL 42.45 - NL 9.60 -
+# SL 22.90 = 9.95 mm). Donnelly's lengths (K .392 in.) give the same; his printed angles are not used.
+shoulder_angle = 8.9
+cite.shoulder_angle = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
+neck = 10.87
+case_length = 44.7
+overall_length = 72.39
+bullet = 10.36
+# shoulder_at from the drawing 10-043-BBC-030: SL 22.90 on a case of CL 42.45, taken from the mouth
+# (case_length - (CL - SL)). Donnelly prints the same start (J .988 in. = 25.10). The specimen's case
+# is 2.25 mm shorter than the book's; its neck (NL 9.60) and shoulder length (9.95) are Donnelly's (H .380 in.,
+# K .392 in.) within 0.05 mm.
+sources = [
+  "book:cotw-18 p. 251",
+  "https://municion.org/producto/40-70-peabody-martini-what-cheer/",
+  "book:donnelly p. 500",
+]
+
+[introduced]
+# COTW: introduced in 1877 or 1878.
+year = 1877
+sources = ["book:cotw-18 p. 225"]
+
+[primer]
+# The table gives a large rifle primer, but most samples are Berdan primed (COTW 18 p. 225);
+# municion.org's measure 6.57 mm (2 specimens).
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
+
+[case_head]
+# Drawing 10-043-BBC-030: RT 1.87.
+rim_thickness = 1.87
+sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 226"]
+
+[case]
+# The photos show brass cases (unmarked ones).
+material = "brass"
+sources = ["https://municion.org/producto/40-70-peabody-martini-what-cheer/"]

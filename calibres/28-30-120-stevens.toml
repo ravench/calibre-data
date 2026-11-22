@@ -1,0 +1,48 @@
+# Measurements converted from inches.
+# Probably the first American commercial 7 mm round, designed by Charles H. Herrick for Stevens.
+name = ".28-30-120 Stevens"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/28-30-120-stevens/).
+profile = "flat"
+aliases = ["28-30", "28-30-120", "28-30 stevens"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/28-30-120-stevens/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.46
+base = 9.07
+neck = 7.85
+case_length = 63.75
+overall_length = 71.63
+bullet = 7.24
+# flat: the drawing gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
+cite.flat = ["https://municion.org/producto/28-30-120-stevens/"]
+sources = ["book:cotw-18 p. 249"]
+
+[introduced]
+year = 1900
+sources = ["book:cotw-18 p. 195"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[case_head]
+# .06 in.
+# Donnelly's entry is titled .28-30 Stevens: rim .412 in., case 2.51 in., as the file.
+rim_thickness = 1.52
+sources = ["book:donnelly p. 279"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 196"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/28-30-120-stevens/"]

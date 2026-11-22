@@ -1,0 +1,50 @@
+# Measurements converted from inches.
+name = "6.5x61 mm R Mauser"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["6.5x61r"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.51
+base = 12.12
+shoulder = 11.48
+shoulder_at = 47.07
+neck_at = 52.16
+neck_base = 7.52
+# Drawing: SØ 11.58, NØ 7.52, SL 47.00, NL 8.80, CL 60.89.
+shoulder_angle = 21.7
+cite.shoulder_angle = ["https://municion.org/producto/65-x-61-r-mauser/"]
+neck = 7.54
+case_length = 60.96
+overall_length = 90.17
+bullet = 6.71
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/65-x-61-r-mauser/"]
+
+[introduced]
+year = 1930
+sources = ["book:cotw-18 p. 619"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# .055 in.
+# The drawing 07-061-BBC-010 (municion.org) has RT 1.56, within 0.3 mm.
+rim_thickness = 1.4
+sources = ["book:donnelly p. 779"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 619"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/65-x-61-r-mauser/"]

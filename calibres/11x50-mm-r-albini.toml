@@ -1,0 +1,50 @@
+# Measurements converted from inches.
+# The Belgian Albini-Braendlin rifle; often taken for the 11 mm Comblain.
+name = "11x50 mm R Albini"
+# Guns: book:cotw-18 p. 562.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["11x50r", "11x50r albini", "albini"]
+display_aliases = ["11x50 mm R Belgian Albini M67/72"]
+
+origin = "BE"
+origin_sources = ["book:ammo-encyclopedia-2 p. 541"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 17.22
+base = 14.73
+shoulder = 13.59
+shoulder_at = 42.5
+# Drawing on naboje.org (P2, H1, L1, L3; the neck start read off the drawing's scale): SØ 13.38, NØ 12.13,
+# SL 42.50, NL 6.14, CL 50.50. naboje.org's photo of the round gives about 18 deg (15-22 over its two edges).
+shoulder_angle = 18.6
+cite.shoulder_angle = ["https://naboje.org/node/11147"]
+neck = 11.99
+case_length = 50.8
+overall_length = 66.04
+bullet = 11.05
+# shoulder_at: L1 on naboje.org's drawing, whose shoulder, neck and case length agree with COTW within
+# 0.4 mm.
+sources = ["book:cotw-18 p. 574", "https://naboje.org/node/11147"]
+
+[introduced]
+year = 1867
+sources = ["book:cotw-18 p. 562"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .075 in.
+rim_thickness = 1.9
+sources = ["book:donnelly p. 966"]
+
+[bullet]
+# The military load: a paper-patched lead bullet over blackpowder.
+type = "paper"
+sources = ["book:cotw-18 p. 562"]

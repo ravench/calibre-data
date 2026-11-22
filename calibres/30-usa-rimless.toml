@@ -1,0 +1,62 @@
+# Measurements converted from inches.
+# A rimless .30-40 Krag.
+name = ".30 USA Rimless"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["30 usa", "30 usa rimless", "30-40 rimless"]
+
+origin = "US"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.58
+base = 11.53
+shoulder = 10.59
+shoulder_at = 43.82
+neck_at = 46.45
+neck_base = 8.61
+# Half the cone angle alpha on the rimmed twin's C.I.P. sheet.
+shoulder_angle = 21.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
+neck = 8.46
+case_length = 58.67
+overall_length = 78.74
+bullet = 7.82
+# shoulder_at is L1 on the rimmed twin's C.I.P. sheet (30-40 Krag): COTW 18 p. 197 calls the two nearly
+# the same but for the rim.
+sources = ["book:cotw-18 p. 250", "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
+
+[introduced]
+unknown = "COTW 18 p. 197 gives no year: UMC loaded it for the Blake rifle for a time."
+sources = ["book:cotw-18 p. 197"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[case_head]
+# .054 in. (COTW); groove from the drawing 08-059-BGC-050: RT 1.55, HL 3.90, GØ 10.00, GW 0.85,
+# HØ 11.57; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle). The page files the round as «.30 Blake»: the
+# rimless .30-40 Krag, with «.30 Krag Rimless» as another name, which is how COTW 18 (p. 197) describes this round,
+# loaded by UMC for the Blake rifle. The page lists three specimens, one headstamped U.M.C. .30 U.S.A. and two by
+# O.P.M. (South Africa, no year given) marked 30 BLAKE, and does not say which the drawing measures. The drawing's
+# rim (11.59) and head are within 0.05 mm of the book's. Its shoulder is not used: it is labelled 11.59, wider than
+# the head and 1.00 mm more than the book's.
+rim_thickness = 1.37
+ramp_top = 3.9
+groove_diameter = 10.0
+ramp_angle = 28.0
+groove_width = 0.85
+sources = ["book:cotw-18 p. 250", "https://municion.org/producto/30-blake/"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/30-blake/"]

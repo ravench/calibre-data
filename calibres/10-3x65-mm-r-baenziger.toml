@@ -1,0 +1,49 @@
+# Measurements converted from inches.
+# A Swiss target round for Martini rifles: the brass 2.5 in. .410 shell with a thicker rim and a bullet.
+name = "10.3x65 mm R Baenziger"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/103-x-65-r-banziger/).
+profile = "flat"
+aliases = ["10.3x65r", "10.3x65r baenziger"]
+
+origin = "CH"
+origin_sources = ["https://naboje.org/node/12541"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.83
+base = 11.73
+neck = 10.95
+case_length = 65.02
+overall_length = 80.01
+bullet = 10.74
+# flat: the drawing gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
+cite.flat = ["https://municion.org/producto/103-x-65-r-banziger/"]
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+unknown = "DWM listed the case in 1904; COTW 18 p. 646 gives no year of origin."
+sources = ["book:cotw-18 p. 646"]
+
+[primer]
+# 6.48 mm, 4 specimens
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/103-x-65-r-banziger/"]
+
+[case_head]
+# RT on the drawing 11-065-CBC-010.
+rim_thickness = 2.34
+sources = ["https://municion.org/producto/103-x-65-r-banziger/"]
+
+[bullet]
+# COTW: a lead or soft-point bullet.
+type = "lead"
+sources = ["book:cotw-18 p. 646"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/103-x-65-r-banziger/"]

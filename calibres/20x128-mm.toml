@@ -1,0 +1,53 @@
+# Oerlikon's post-war 20 mm round, for the KAB (first called 5TG) and KAA (204 GK) cannon, mostly on
+# ships; Spain's Meroka fires it with an electric primer. Its name gives the bore and case length
+# (Jane's table and the drawing measure the case at 128.7 mm); Jane's table gives the rim, base and
+# neck, its p. 85 the length of the round, the specimen drawing on municion.org the shoulder and
+# the head.
+name = "20x128 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x128", "20 mm kaa", "20 mm kab", "20 mm oerlikon kaa", "20 mm 204 gk", "20 mm 5tg"]
+origin = "CH"
+origin_sources = ["https://municion.org/producto/20-x-128-oerlikon-rk-206/", "book:rapid-fire p. 226"]
+
+[mm]
+rim = 32.0
+base = 32.18
+shoulder = 29.95
+shoulder_at = 100.5
+neck_at = 118.75
+neck_base = 21.28
+# Drawing 20-128-BGC-010: SØ 29.95, NØ 21.28, SL 101.20, NL 9.25, CL 128.70, TL 203.70.
+shoulder_angle = 13.4
+cite.shoulder_angle = ["https://municion.org/producto/20-x-128-oerlikon-rk-206/"]
+neck = 21.21
+case_length = 128.0
+overall_length = 203.0
+bullet = 20.0
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "book:janes-ammo-2002 p. 85",
+  "https://municion.org/producto/20-x-128-oerlikon-rk-206/",
+]
+
+[introduced]
+# The first year of production on municion.org. Jane's p. 85 and Autocannon p. 120 have the round
+# developed in the 1950s; Autocannon p. 283 has the 5TG gun developed in the late 1940s.
+year = 1955
+sources = ["https://municion.org/producto/20-x-128-oerlikon-rk-206/"]
+
+[case_head]
+# The drawing 20-128-BGC-010: RØ 31.90, HØ 32.20, RT 3.30, GØ 27.94, GW 3.35,
+# the ramp ends at HL 9.50; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 3.3
+ramp_top = 9.5
+groove_diameter = 27.94
+ramp_angle = 37.0
+groove_width = 3.35
+sources = ["https://municion.org/producto/20-x-128-oerlikon-rk-206/"]
+
+[case]
+# Lacquered steel as standard (municion.org).
+material = "steel"
+sources = ["book:autocannon p. 120", "https://municion.org/producto/20-x-128-oerlikon-rk-206/"]

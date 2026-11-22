@@ -1,0 +1,52 @@
+# The round of the Soviet 25 mm M1940 anti-aircraft cannon, the navy's (Autocannon p. 132) and the army's
+# 72-K (p. 238), with a wide, thick rim after Bofors practice; after the war its rimless version, the
+# 25x218 mm, replaced it in the navy. Its name gives the bore and
+# case length, Rapid Fire's table the rim and base, Autocannon p. 133 the length of the round, the
+# drawing of a case on municion.org the shoulder, the neck and the head: a long shoulder, 28 mm from
+# the body to the neck.
+name = "25x218 mm SR"
+guns = ["cannon"]
+kind = "semi-rimmed"
+profile = "spitzer"
+aliases = ["25x218sr", "25x218r", "25 mm 72-k", "72-k", "25 mm m1940"]
+origin = "SU"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 40.0
+base = 34.7
+shoulder = 32.21
+shoulder_at = 161.99
+neck_at = 190.0
+neck_base = 27.75
+# Drawing 26-218-BDC-020: SØ 32.21, NØ 27.75, SL 163.20, NL 28.00, CL 219.21.
+# The drawing shows the case alone, without a shell. The neck is its mouth (MØ 27.45), 0.30 mm narrower than
+# where the neck starts (NØ). The half angle runs between the shoulder and the mouth over the drawing's
+# shoulder length (28.01 mm): the specimen's own cone (4.6 degrees) would leave a neck 1.6 mm shorter than
+# the specimen's, over the 1.5 mm the rule allows.
+shoulder_angle = 4.9
+cite.shoulder_angle = ["https://municion.org/producto/25-x-218-sr-russian-model-1940/"]
+neck = 27.45
+case_length = 218.0
+overall_length = 291.0
+bullet = 25.0
+sources = [
+  "book:rapid-fire p. 228",
+  "book:autocannon p. 133",
+  "https://municion.org/producto/25-x-218-sr-russian-model-1940/",
+]
+
+[introduced]
+# Wikipedia: the gun was adopted in 1940.
+year = 1940
+sources = ["https://en.wikipedia.org/wiki/25_mm_automatic_air_defense_gun_M1940_(72-K)"]
+
+[case_head]
+# The drawing 26-218-BDC-020: RØ 39.74, HØ 34.75, RT 5.00, GØ 32.71, GW 3.30, the ramp
+# ends at HL 8.85; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 5.0
+ramp_top = 8.85
+groove_diameter = 32.71
+ramp_angle = 62.0
+groove_width = 3.3
+sources = ["https://municion.org/producto/25-x-218-sr-russian-model-1940/"]

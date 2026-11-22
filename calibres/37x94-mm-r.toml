@@ -1,0 +1,53 @@
+# Hotchkiss's 37 mm one-pounder of 1885, the smallest of its 37 mm rounds, which Maxim chose for the
+# first automatic shell-firing gun, the 1-pounder «pom-pom»: the standard 37 mm round of the first
+# automatic cannon, still fired by French light tank guns in the Second World War. Its name gives the
+# bore and case length, Rapid Fire's table the rim and base, the specimen drawing on municion.org
+# the shoulder, the neck, the rim's thickness and the length of the round, 166 mm (Autocannon p. 154: 165
+# to 175 mm).
+name = "37x94 mm R"
+guns = ["cannon"]
+kind = "rimmed"
+# Nose: round, as for the rounds from before 1898 that no source shows pointed. The British handbook of
+# 1900 lists a nose-fuzed common shell and a pointed steel shell (Autocannon p. 154), but no source
+# gives the shells of 1885.
+profile = "round"
+aliases = ["37x94r", "1-pounder pom-pom", "1 pdr pom-pom", "37 mm hotchkiss", "37 mm maxim"]
+origin = "FR"
+origin_sources = ["book:rapid-fire p. 229"]
+
+[mm]
+rim = 44.1
+base = 39.7
+shoulder = 39.2
+shoulder_at = 75.0
+neck_at = 81.0
+neck_base = 38.0
+# Drawing 37-094-BBC-010: SØ 39.20, NØ 38.00, SL 75.00, NL 13.00, CL 94.00, TL 166.00.
+# This older drawing labels its widths and heights without letters, in round numbers; they are
+# read in the order of the site's other drawings.
+shoulder_angle = 5.7
+cite.shoulder_angle = ["https://municion.org/producto/37-x-94-r-hotchkiss-m1878/"]
+neck = 38.0
+case_length = 94.0
+overall_length = 166.0
+bullet = 37.0
+sources = [
+  "book:rapid-fire p. 229",
+  "https://en.wikipedia.org/wiki/QF_1-pounder_pom-pom",
+  "https://municion.org/producto/37-x-94-r-hotchkiss-m1878/",
+]
+
+[introduced]
+# Autocannon: developed by Hotchkiss in 1885.
+year = 1885
+sources = ["book:autocannon p. 153"]
+
+[case_head]
+# The drawing 37-094-BBC-010: RØ 44.50, HØ 40.00; RT 2.00, the height at which it
+# measures the base (its labels have no letters).
+rim_thickness = 2.0
+sources = ["https://municion.org/producto/37-x-94-r-hotchkiss-m1878/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 154"]

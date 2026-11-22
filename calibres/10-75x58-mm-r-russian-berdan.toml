@@ -1,0 +1,70 @@
+# Measurements converted from inches.
+# The Berdan I and II rifles; the first bottlenecked service round with an outside Berdan primer.
+name = "10.75x58 mm R Russian Berdan"
+# Guns: book:cotw-18 p. 561.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["10.75x58r", "43 berdan"]
+display_aliases = [".43 Russian Berdan"]
+
+origin = "RUE"
+origin_sources = [
+  "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.18
+base = 14.4
+shoulder = 12.85
+shoulder_at = 38.45
+neck_at = 44.7
+neck_base = 11.31
+# Drawing: SØ 13.04, NØ 11.31, SL 39.00, NL 12.20, CL 57.45.
+shoulder_angle = 7.9
+cite.shoulder_angle = ["https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/"]
+neck = 11.4
+case_length = 56.9
+overall_length = 74.93
+bullet = 10.92
+# shoulder_at from the drawing 11-058-BBC-070: SL 39.00 on a case of CL 57.45, taken from the
+# mouth (case_length - (CL - SL)). The drawing's shoulder and neck diameters are the book's within 0.2 mm; its cone,
+# drawn between the book's diameters, leaves a neck 1.03 mm longer than the specimen's (NL 12.20), inside the 1.5 mm
+# the rule allows. The drawing prints a head of 13.09 mm against the book's 14.40, so nothing of the head is taken
+# from it. Donnelly (p. 957) prints the same shoulder: its start 0.41 mm later (J 1.53 in.) and its end 0.26 mm
+# after the specimen's. A second specimen (11-058-BBC-072, Mauser A base) would start the shoulder 4.2 mm lower; its
+# shoulder and neck are 0.8 and 0.6 mm wider than the book's, outside the limits, so it does not count.
+sources = [
+  "book:cotw-18 p. 574",
+  "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/",
+]
+
+[introduced]
+year = 1868
+sources = ["book:cotw-18 p. 561"]
+
+[primer]
+# 6.42 mm, 10 specimens
+size = "berdan-nitro"
+sources = [
+  "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/",
+  "https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-mauser-a/",
+]
+
+[case_head]
+# .080 in. (COTW); the drawing 11-058-BBC-070 (municion.org) has RT 2.30.
+rim_thickness = 2.03
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a paper-patched lead bullet over blackpowder.
+type = "paper"
+sources = ["book:cotw-18 p. 561"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/1075-x-58-r-berdan-n1-n2-russian-m-69-bulgarian-m-71-flat-base/"]

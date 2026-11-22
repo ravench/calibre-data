@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# The US Navy's round for the Lee straight-pull rifle of 1895, made by Winchester; no factory ammunition
+# since 1935.
+name = "6 mm Lee Navy"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["6mm lee navy", "236 navy", "6mm lee"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6mm_Lee_Navy",
+  "book:ammo-encyclopedia-2 p. 499",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.38
+base = 11.3
+shoulder = 10.21
+shoulder_at = 43.75
+neck_at = 48.19
+neck_base = 7.11
+# Drawing: SØ 10.04, NØ 7.11, SL 43.70, NL 11.50, CL 59.64.
+shoulder_angle = 18.3
+cite.shoulder_angle = ["https://municion.org/producto/6-mm-us-lee-navy/"]
+neck = 7.06
+case_length = 59.69
+overall_length = 78.99
+bullet = 6.2
+sources = ["book:cotw-18 p. 249", "https://municion.org/producto/6-mm-us-lee-navy/"]
+
+[introduced]
+year = 1895
+sources = ["book:cotw-18 p. 186"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[case_head]
+# Drawing 06-060-BGC-010: RT 1.40, HL 3.00, GØ 9.65, GW 0.90, HØ 11.25; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.4
+ramp_top = 3.0
+groove_diameter = 9.65
+ramp_angle = 49.0
+groove_width = 0.9
+sources = ["https://municion.org/producto/6-mm-us-lee-navy/"]
+
+[bullet]
+# The first Navy ball: a round-nose lead-core bullet in a steel jacket coated with cupronickel
+# (Wikipedia).
+type = "jacketed"
+jacket = "cupronickel"
+sources = ["https://en.wikipedia.org/wiki/6mm_Lee_Navy"]

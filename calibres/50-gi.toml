@@ -1,0 +1,55 @@
+# Measurements converted from inches.
+# Guncrafter Industries' .50 for 1911-type pistols, on a rebated case.
+name = ".50 GI"
+guns = ["handgun"]
+kind = "rimless"
+# Nose: flat, as in Guncrafter's two factory loads, a hollow point and a flat point (COTW 18 p. 442).
+profile = "flat"
+aliases = ["50 gi", "50gi"]
+
+origin = "US"
+origin_sources = ["https://naboje.org/node/5388"]
+rare = true
+
+[mm]
+rim = 12.19
+base = 13.36
+neck = 13.36
+case_length = 22.83
+overall_length = 31.01
+bullet = 12.7
+# flat: the drawing gives the flat tip as Ø 8,00 (whole millimetres).
+flat = 8.0
+cite.flat = ["https://municion.org/producto/50-gi/"]
+sources = ["book:cotw-18 p. 453"]
+
+[introduced]
+# COTW: created in 2002, first shown at the 2004 SHOT Show.
+year = 2002
+sources = ["book:cotw-18 p. 441"]
+
+[primer]
+# The table gives no primer. The municion.org photos read 5.88 mm (2 specimens, scaled by the rebated base), above the
+# large primer band. Unverified.
+size = "large-pistol"
+sources = []
+
+[case_head]
+# .048 in. (COTW); groove from the drawing 13-022-CRC-040: RT 1.10, HL 5.30, GØ 9.83, GW 1.10,
+# HØ 13.38; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle). The specimen's case (CL 21.90) is 0.9 mm shorter
+# than the book's.
+rim_thickness = 1.22
+ramp_top = 5.3
+groove_diameter = 9.83
+ramp_angle = 30.0
+groove_width = 1.1
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/50-gi/"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/50-gi/"]

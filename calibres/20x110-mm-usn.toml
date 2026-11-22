@@ -1,0 +1,29 @@
+# The US Navy's Mk 100 series round for the Mk 11 and Mk 12 aircraft cannon, the Navy's standard aircraft
+# cannon from the mid-1950s: Autocannon has it made from the 20x102 mm's base with the case stretched as
+# far as the Hispano allowed. Its name gives the bore and case length, Rapid Fire's table the rim and
+# base, Jane's table the neck, Autocannon p. 118 the length of the round. Jane's table gives the rim as
+# 29.49 and the base as 29.00 mm, a rim wider than a rimless case's may be.
+name = "20x110 mm USN"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x110 usn", "20 mm mk 12", "20 mm mk 100"]
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/Colt_Mk_12_cannon", "book:rapid-fire p. 226"]
+
+[mm]
+rim = 29.5
+base = 29.3
+neck = 20.6
+case_length = 110.0
+overall_length = 185.0
+bullet = 20.0
+sources = ["book:rapid-fire p. 226", "book:janes-ammo-2002 p. 682", "book:autocannon p. 118"]
+
+[introduced]
+unknown = "the sources date the Mk 12 only to the mid-1950s."
+sources = ["book:autocannon p. 118", "https://en.wikipedia.org/wiki/Colt_Mk_12_cannon"]
+
+[case]
+material = "steel"
+sources = ["book:autocannon p. 118"]

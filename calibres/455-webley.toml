@@ -1,0 +1,41 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".455 Webley"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["455webley", "455"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.455_Webley",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page87.pdf",
+]
+
+[mm]
+# C.I.P. 455 MK II, maximum cartridge.
+rim = 13.5
+base = 12.15
+neck = 12.14
+case_length = 19.5
+overall_length = 32.0
+bullet = 11.57
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page87.pdf"]
+
+[introduced]
+year = 1891
+sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.455_Webley"]
+
+[case_head]
+# C.I.P. 455 MK II
+rim_thickness = 1.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page87.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.455_Webley"]

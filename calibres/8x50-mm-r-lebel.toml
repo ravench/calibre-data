@@ -1,0 +1,69 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = "8x50 mm R Lebel"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, the jacketed Balle M of 1886; the pointed Balle D followed in 1898 (COTW 18 p. 553).
+profile = "flat"
+# Today: pointed, since the Balle D of 1898 (COTW 18 p. 553).
+profile_today = "spitzer"
+aliases = ["8lebel", "8x50rlebel"]
+
+origin = "FR"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×50mmR_Lebel",
+  "book:ammo-encyclopedia-2 p. 528",
+]
+
+[mm]
+rim = 16.0
+base = 13.77
+shoulder = 11.42
+shoulder_at = 37.22
+neck_at = 41.8
+neck_base = 8.89
+# Drawing 08-050-BBC-060
+shoulder_angle = 17.9
+cite.shoulder_angle = ["https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/"]
+neck = 8.85
+case_length = 50.5
+overall_length = 75.0
+bullet = 8.3
+sources = [
+  "https://en.wikipedia.org/wiki/8×50mmR_Lebel",
+  "https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/",
+]
+
+[introduced]
+year = 1886
+sources = ["https://en.wikipedia.org/wiki/8×50mmR_Lebel"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/8×50mmR_Lebel"]
+
+[case_head]
+# .068 in.
+rim_thickness = 1.73
+sources = ["book:cotw-18 p. 573"]
+
+[bullet]
+# The Balle M of 1886: a lead core in a cupronickel jacket (Wikipedia).
+type = "jacketed"
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 553", "https://en.wikipedia.org/wiki/8×50mmR_Lebel"]
+
+[case]
+# The photos show brass cases (a French arsenal's and wartime makers' in Italy,
+# Britain and the US).
+material = "brass"
+sources = ["https://municion.org/producto/8-x-50-r-french-lebel-m-1886-1888-1932/"]
+
+[today]
+# Today's factory round has a copper-coloured jacket (Prvi Partizan's FMJ boat tail, sold as 8x51 R Lebel).
+jacket = "copper"
+sources = ["https://prvipartizan.com/download/PPU_2018.pdf#page=9"]
+
+[fired_by]
+firearms = ["Lebel M1886", "Berthier"]
+sources = ["https://en.wikipedia.org/wiki/8×50mmR_Lebel"]

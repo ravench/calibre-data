@@ -1,0 +1,63 @@
+# Measurements converted from inches.
+# The Sharps 2¼ in. bottleneck case for the 1869 sporting rifle; also chambered by Remington.
+name = ".44-77 Sharps & Remington"
+# Guns: book:cotw-18 p. 235.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/44-77-300-remington-sharps-2-1-4/).
+profile = "flat"
+aliases = ["44-77", "44-77 sharps", "44-2 1/4 sharps"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/44-77-300-remington-sharps-2-1-4/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.88
+base = 13.11
+shoulder = 12.75
+shoulder_at = 33.0
+# ammo-one's photo of a new round on JBA brass beside an inch ruler, not an original: no drawing or
+# photo of an original was found, and its rim, body and neck match our diameters (neck 11.6-11.8,
+# body 12.7-12.9 mm). The case reads 1-3 % long against ours. A long, gentle shoulder from about 32-33 mm to 39-40 mm above the head; its two
+# edges give 3.8 and 5.2 deg, the same at three thresholds.
+shoulder_angle = 4.5
+cite.shoulder_angle = ["https://www.ammo-one1.com/product/44-77-sharps-remington-limit-one-cartridge-per-customer/"]
+neck = 11.86
+case_length = 57.15
+overall_length = 77.47
+bullet = 11.33
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/44-77-300-remington-sharps-2-1-4/"]
+# shoulder_at from the ammo-one photo in [shoulder_angle]: 578 px above the head, 32.4-33.4 mm by case
+# length, ruler (17.6 px/mm) or rim (17.3 px/mm).
+sources = [
+  "book:cotw-18 p. 251",
+  "https://www.ammo-one1.com/product/44-77-sharps-remington-limit-one-cartridge-per-customer/",
+]
+
+[introduced]
+year = 1869
+sources = ["book:cotw-18 p. 235"]
+
+[primer]
+# The table gives L-B1: a large rifle or a Berdan #1 primer.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:donnelly p. 575"]
+
+[bullet]
+type = "paper"
+sources = ["book:cotw-18 p. 236"]
+
+[case]
+# The photos show brass cases (E. Remington & Sons', Winchester's and unmarked ones).
+material = "brass"
+sources = ["https://municion.org/producto/44-77-300-remington-sharps-2-1-4/"]

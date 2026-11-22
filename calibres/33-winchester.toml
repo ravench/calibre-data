@@ -1,0 +1,59 @@
+# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+name = ".33 Winchester"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["33win", "33wcf"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.33_Winchester",
+  "book:ammo-encyclopedia-2 p. 415",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page83.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.5
+base = 12.9
+shoulder = 11.3
+shoulder_at = 40.96
+neck_at = 44.1
+neck_base = 9.37
+# C.I.P. 33 Win.
+shoulder_angle = 16.2
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page83.pdf"]
+neck = 9.3
+case_length = 54.0
+overall_length = 71.0
+bullet = 8.6
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/33-winchester-cf/"]
+sources = [
+  "https://en.wikipedia.org/wiki/.33_Winchester",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page83.pdf",
+]
+
+[introduced]
+year = 1902
+sources = ["https://en.wikipedia.org/wiki/.33_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.33_Winchester"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page83.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/33-winchester-cf/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/33-winchester-cf/"]

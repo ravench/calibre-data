@@ -1,0 +1,60 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".25 NAA"
+guns = ["handgun"]
+kind = "rimless"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/25-naa/).
+profile = "flat"
+aliases = ["25naa"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.25_NAA"]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 8.6
+base = 8.6
+shoulder = 8.5
+shoulder_at = 13.79
+neck_at = 15.07
+neck_base = 7.05
+# Drawing 06-019-BGC-070
+shoulder_angle = 29
+cite.shoulder_angle = ["https://municion.org/producto/25-naa/"]
+neck = 7.0
+case_length = 18.9
+overall_length = 24.4
+bullet = 6.4
+# flat: the drawing gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
+sources = [
+  "https://en.wikipedia.org/wiki/.25_NAA",
+  "https://municion.org/producto/25-naa/",
+]
+
+[introduced]
+year = 2002
+sources = ["https://en.wikipedia.org/wiki/.25_NAA"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.25_NAA"]
+
+[case_head]
+# .32 ACP case necked down; C.I.P. 7,65 mm Browning
+rim_thickness = 1.25
+ramp_top = 3.01
+groove_diameter = 7.85
+ramp_angle = 20.0
+groove_width = 0.8
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page12.pdf"]
+
+[bullet]
+# The only load, made for North American Arms under a Cor-Bon headstamp: a jacketed hollow point.
+type = "hollowpoint"
+sources = ["book:cotw-18 p. 462"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/25-naa/"]

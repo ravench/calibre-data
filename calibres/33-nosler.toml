@@ -1,0 +1,51 @@
+# Rifle batch 5 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]); the Nosler line shares the .28 Nosler case outside.
+name = ".33 Nosler"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["33nosler"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+# SAAMI 33 Nosler, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+rim = 13.56
+base = 13.97
+shoulder = 13.44
+shoulder_at = 51.21
+neck_at = 54.1
+neck_base = 9.4
+# SAAMI: 35 deg (the drawing 09-062-BRC-010 gives 31.9).
+shoulder_angle = 35
+cite.shoulder_angle = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=134"]
+neck = 9.4
+case_length = 62.48
+overall_length = 84.84
+bullet = 8.61
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=134", "https://en.wikipedia.org/wiki/.28_Nosler", "https://municion.org/producto/33-nosler/", "book:cotw-18 p. 176"]
+
+[introduced]
+year = 2016
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[case_head]
+# SAAMI 33 Nosler: rim thickness 0.050, groove 0.475 at 32 degrees, groove width 0.037,
+# body 0.5500; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 32)
+rim_thickness = 1.27
+ramp_top = 3.73
+groove_diameter = 12.07
+ramp_angle = 32.0
+groove_width = 0.94
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=134"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]

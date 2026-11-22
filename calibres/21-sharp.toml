@@ -1,0 +1,38 @@
+# Measurements converted from inches.
+# Winchester's lead-free answer to the .22 LR: the same case with a full-diameter .21 bullet, so only the barrel
+# changes.
+name = ".21 Sharp"
+# Guns: book:cotw-18 p. 656.
+guns = ["rifle"]
+kind = "rimfire"
+profile = "round"
+aliases = ["21 sharp", "21sharp"]
+
+origin = "US"
+origin_sources = []
+# Too new (2024) for the 2026-11-04 listing check; four Savage rifles at launch (COTW 18 p. 656).
+rare = true
+
+[mm]
+# SAAMI 21 Sharp, maximum cartridge.
+# Neck: the case is a .226 in cylinder to the mouth.
+rim = 7.06
+base = 5.74
+neck = 5.74
+case_length = 15.57
+overall_length = 25.4
+bullet = 5.35
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=18"]
+
+[introduced]
+year = 2024
+sources = ["book:cotw-18 p. 656"]
+
+[case_head]
+# SAAMI 21 Sharp
+rim_thickness = 1.09
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=18"]
+
+[bullet]
+type = "jacketed"
+sources = []

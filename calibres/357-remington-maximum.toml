@@ -1,0 +1,42 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".357 Remington Maximum"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["357max"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.357_Remington_Maximum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page52.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 357 Maximum, maximum cartridge.
+rim = 11.18
+base = 9.63
+neck = 9.63
+case_length = 40.77
+overall_length = 50.55
+bullet = 9.12
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page52.pdf"]
+
+[introduced]
+year = 1983
+sources = ["https://en.wikipedia.org/wiki/.357_Remington_Maximum"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# C.I.P. 357 Maximum
+rim_thickness = 1.52
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page52.pdf"]
+
+[bullet]
+# The factory load: a jacketed hollow point.
+type = "hollowpoint"
+sources = ["book:cotw-18 p. 489"]

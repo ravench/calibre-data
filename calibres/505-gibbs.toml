@@ -1,0 +1,55 @@
+# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+name = ".505 Gibbs"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["505gibbs"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.505_Gibbs",
+  "book:ammo-encyclopedia-2 p. 368",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page154.pdf",
+]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 16.3
+base = 16.3
+shoulder = 15.2
+shoulder_at = 62.43
+neck_at = 63.45
+neck_base = 13.67
+# C.I.P. 505 Mag. Gibbs
+shoulder_angle = 37.6
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page154.pdf"]
+neck = 13.6
+case_length = 80.0
+overall_length = 97.8
+bullet = 12.8
+sources = [
+  "https://en.wikipedia.org/wiki/.505_Gibbs",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page154.pdf",
+]
+
+[introduced]
+year = 1910
+sources = ["https://en.wikipedia.org/wiki/.505_Gibbs"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.505_Gibbs"]
+
+[case_head]
+# C.I.P. 505 Mag. Gibbs
+rim_thickness = 1.65
+ramp_top = 4.06
+groove_diameter = 14.22
+ramp_angle = 36.3
+groove_width = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page154.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.505_Gibbs"]

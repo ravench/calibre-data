@@ -1,0 +1,63 @@
+# Measurements converted from inches.
+# The .333 Jeffery case necked down.
+name = ".280 Jeffery"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["280 jeffery", "33/280 jeffery"]
+display_aliases = [".33/280 Jeffery"]
+
+origin = "GB"
+origin_sources = ["https://municion.org/producto/280-jeffery-rimless-nitro-express/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.67
+base = 13.77
+shoulder = 12.8
+shoulder_at = 49.33
+neck_at = 55.3
+neck_base = 8.16
+# Drawing: SØ 12.47, NØ 8.16, SL 49.36, NL 8.20, CL 63.53.
+shoulder_angle = 19.8
+cite.shoulder_angle = ["https://municion.org/producto/280-jeffery-rimless-nitro-express/"]
+neck = 8.05
+case_length = 63.5
+overall_length = 87.63
+bullet = 7.32
+sources = [
+  "book:cotw-18 p. 608",
+  "https://municion.org/producto/280-jeffery-rimless-nitro-express/",
+]
+
+[introduced]
+# COTW: around 1915.
+year = 1915
+sources = ["book:cotw-18 p. 582"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# C.I.P. 333 Riml. N.E.: R, E, E1, delta. This is the .333 Jeffery case necked down (COTW 18 p. 582) and C.I.P.
+# has no sheet for it. The drawing 07-063-BGC-130 (municion.org) of a specimen: RT 1.21, HL 3.05, GØ 12.23.
+rim_thickness = 1.27
+ramp_top = 3.3
+groove_diameter = 12.37
+ramp_angle = 36.0
+groove_width = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf", "book:cotw-18 p. 582"]
+
+[bullet]
+# COTW gives no factory load.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/280-jeffery-rimless-nitro-express/"]

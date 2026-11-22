@@ -1,0 +1,69 @@
+name = ".45 Colt"
+# Guns: https://www.henryusa.com/wp-content/uploads/mediakit/Henry-Big-Boy-Rifles-Spec-Sheet.pdf https://www.americanrifleman.org/articles/2020/8/19/rossi-r92-a-top-selling-lever-action-rifle/ (Henry Big Boy, Rossi R92 lever actions).
+guns = ["handgun", "rifle"]
+kind = "rimmed"
+# Nose: flat. The 1873 original was an "ogival & flat nosed" 255 gr bullet (Wikipedia), and the
+# drawing of the .45 Long Colt (https://municion.org/producto/45-long-colt-d-a/) shows a flat point
+# about 5 mm across. The round nose drew it too round; the maintainer's second .45 Colt capture
+# (2026-11-19, private training package) shows a lead truncated cone with a flat about 0.4 of its
+# width. (Some factory lead loads are round nose with a small flat: Winchester X45CP2 "255 gr Lead
+# Round Nose", the maintainer's W-W round of 2026-11-08.)
+profile = "flat"
+aliases = ["45colt", "45lc", "45longcolt"]
+display_aliases = [".45 Long Colt"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.45_Colt",
+  "book:ammo-encyclopedia-2 p. 710",
+]
+
+[mm]
+# SAAMI 45 Colt, maximum cartridge; bullet .454 in from COTW 18 like its lookalikes (SAAMI's
+# lead bullet is .4560 in max).
+rim = 13.0
+base = 12.19
+neck = 12.19
+case_length = 32.64
+overall_length = 40.64
+bullet = 11.53
+# flat: read off the drawing of the .45 Long Colt (municion.org), about 5 mm across the 11.53 mm bullet.
+# The maintainer's 2026-11-19 capture of a lead truncated cone shows about 0.4 of its width (4.6).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/45-long-colt-d-a/"]
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=59", "book:cotw-18 p. 529"]
+
+[introduced]
+# designed 1872, produced from 1873
+year = 1873
+sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
+
+[case_head]
+# SAAMI 45 Colt
+rim_thickness = 1.52
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=59"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.45_Colt"]
+
+[case]
+# Frankford Arsenal's first army rounds (1873/74, Benét-primed) had copper cases; the photo shows one next
+# to a .45 Schofield and a brass round of today.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:Colt_.45_LC_Cartridges.JPG"]
+
+[current_cases]
+# Starline's brass cases; CCI Blazer's aluminium cases.
+materials = ["brass", "aluminium"]
+sources = ["https://www.starlinebrass.com/45-colt-brass",
+           "https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]
+
+[today]
+# Cases made today are brass (Starline), but for CCI Blazer's aluminium ones.
+case = "brass"
+sources = ["https://www.starlinebrass.com/45-colt-brass"]

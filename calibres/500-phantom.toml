@@ -1,0 +1,51 @@
+# Measurements converted from inches.
+# Teppo Jutsu and Garber Supply's .50 for AR-10 rifles, on a rebated, beltless short magnum case.
+name = ".500 Phantom"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["500 phantom"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/500-phantom/"]
+rare = true
+
+[mm]
+rim = 13.51
+base = 15.75
+neck = 13.59
+case_length = 38.73
+overall_length = 57.91
+bullet = 12.7
+# The table types it as a rebated bottleneck but gives no shoulder; it is drawn straight, tapering from
+# base to neck.
+sources = ["book:cotw-18 p. 453"]
+
+[introduced]
+year = 2005
+sources = ["book:cotw-18 p. 442"]
+
+[primer]
+# The table gives no primer. The municion.org photos read 5.76 mm (5 specimens, scaled by the rebated base), just
+# above the large primer band. Unverified.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# Drawing 13-039-BRC-030: RT 1.31, HL 3.90, GØ 11.75, GW 1.30, HØ 15.71; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.31
+ramp_top = 3.9
+groove_diameter = 11.75
+ramp_angle = 57.0
+groove_width = 1.3
+sources = ["https://municion.org/producto/500-phantom/"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/500-phantom/"]

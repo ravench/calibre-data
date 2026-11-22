@@ -1,0 +1,44 @@
+# Measurements converted from inches.
+# For the Winchester Model 1895 box-magazine lever action; loaded until 1936.
+name = ".40-72 Winchester"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["40-72", "40-72 winchester"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 442"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.16
+base = 11.68
+neck = 10.95
+case_length = 66.04
+overall_length = 80.01
+bullet = 10.31
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+# The year of the Model 1895 rifle, brought out with it.
+year = 1895
+sources = ["book:cotw-18 p. 224"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# .055 in.
+rim_thickness = 1.4
+sources = ["book:donnelly p. 505"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 224"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/40-72-330-winchester-cf/"]

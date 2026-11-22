@@ -1,0 +1,64 @@
+# Measurements converted from inches.
+# The Dutch Beaumont round as changed in 1878.
+name = "11x52 mm R Beaumont M71/78"
+# Guns: book:cotw-18 p. 568.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/113-x-51-r-dutch-beaumont-mle-1871-78/).
+profile = "flat"
+aliases = ["11x52r", "11x52r beaumont"]
+
+origin = "NL"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.89
+base = 14.63
+shoulder = 13.41
+shoulder_at = 34.67
+neck_at = 39.17
+neck_base = 12.73
+# The book's shoulder and neck diameters over the shoulder length of the drawing (CL 51.05 - NL 12.65 -
+# SL 33.90 = 4.50 mm). Donnelly's lengths (K .18 in.) give 7.0; his printed angles are not used.
+shoulder_angle = 7.1
+cite.shoulder_angle = ["https://municion.org/producto/113-x-51-r-dutch-beaumont-mle-1871-78/"]
+neck = 12.29
+case_length = 51.82
+overall_length = 64.52
+bullet = 11.61
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+# shoulder_at from the drawing 11-051-BBC-071: SL 33.90 on a case of CL 51.05, taken from the mouth
+# (case_length - (CL - SL)). Donnelly prints the start 0.13 mm earlier (J 1.36 in. = 34.54). The drawing's
+# shoulder diameter (SØ 13.92) is 0.51 mm wider than the book's, which stays.
+sources = [
+  "book:cotw-18 p. 574",
+  "https://municion.org/producto/113-x-51-r-dutch-beaumont-mle-1871-78/",
+  "book:donnelly p. 554",
+]
+
+[introduced]
+year = 1878
+sources = ["book:cotw-18 p. 568"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .065 in. (COTW); the drawing 11-051-BBC-071 (municion.org) has RT 1.65.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a lead bullet over blackpowder.
+type = "lead"
+sources = ["book:cotw-18 p. 568"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/113-x-51-r-dutch-beaumont-mle-1871-78/"]

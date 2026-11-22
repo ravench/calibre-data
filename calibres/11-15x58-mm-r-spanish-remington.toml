@@ -1,0 +1,55 @@
+# Measurements converted from inches.
+# The Spanish Remington rolling-block rifle.
+name = "11.15x58 mm R Spanish Remington"
+# Guns: book:cotw-18 p. 563.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["11.15x58r spanish", "43 spanish", "11x53 spanish"]
+display_aliases = [".43 Spanish"]
+
+origin = "ES"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.13
+base = 13.11
+shoulder = 13.0
+shoulder_at = 38.57
+neck_at = 46.15
+neck_base = 11.55
+# Drawing: SØ 12.77, NØ 11.55, SL 38.00, NL 11.00, CL 56.58.
+shoulder_angle = 4.6
+cite.shoulder_angle = ["https://municion.org/producto/1115-x-57-r-spanish-remington-m-1869-1871-188/"]
+neck = 11.63
+case_length = 57.15
+overall_length = 71.63
+bullet = 11.15
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/1115-x-57-r-spanish-remington-m-1869-1871-188/"]
+
+[introduced]
+# COTW: it replaced the Reformado in 1871.
+year = 1871
+sources = ["book:cotw-18 p. 567"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .082 in.
+rim_thickness = 2.08
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a lead bullet over blackpowder.
+type = "lead"
+sources = ["book:cotw-18 p. 563"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/1115-x-57-r-spanish-remington-m-1869-1871-188/"]

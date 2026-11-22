@@ -1,0 +1,59 @@
+# Measurements converted from inches.
+# Unlike the other Dakota rounds, an improved full-length .416 Rigby case.
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 436).
+name = ".450 Dakota"
+guns = ["rifle"]
+kind = "rimless"
+# Nose: round, as on the other dangerous-game rounds; the page gives none.
+profile = "round"
+aliases = ["450 dakota"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/450-dakota/"]
+rare = true
+
+[mm]
+rim = 14.73
+base = 14.78
+shoulder = 14.22
+shoulder_at = 59.01
+neck_at = 61.26
+neck_base = 12.29
+# Drawing: SØ 14.15, NØ 12.29, SL 58.65, NL 12.40, CL 73.30.
+shoulder_angle = 22.5
+cite.shoulder_angle = ["https://municion.org/producto/450-dakota/"]
+neck = 12.32
+case_length = 73.66
+overall_length = 95.0
+bullet = 11.63
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/450-dakota/"]
+
+[introduced]
+# naboje.org: developed in the USA in 1995 from the .416 Rigby; COTW 18 p. 435 gives no year.
+year = 1995
+sources = ["book:cotw-18 p. 435", "https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+cartridges.html", "https://naboje.org/node/16766"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# C.I.P. 416 Rigby: R, E, E1, delta. Dakota made this round on the .416 Rigby case, blown out (COTW 18 p. 435), and
+# C.I.P. has no sheet for it. Cartridges of the World's table gives the rim .058 in. (1.47); the drawing
+# 12-074-BGC-020 (municion.org) of a specimen: RT 1.55, HL 4.00, GØ 12.43.
+rim_thickness = 1.65
+ramp_top = 3.81
+groove_diameter = 12.7
+ramp_angle = 39.9
+groove_width = 0.81
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page146.pdf", "book:cotw-18 p. 435"]
+
+[bullet]
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/450-dakota/"]

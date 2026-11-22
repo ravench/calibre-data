@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# Lazzeroni's .416 short magnum for a 2.8 in. action, on its .577 in. case.
+name = "10.57 Lazzeroni Maverick"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["10.57 maverick", "10.57mm maverick", "lazzeroni maverick"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/1057-mm-lazzeroni-maverick/"]
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 39.67
+neck_at = 42.52
+neck_base = 11.29
+# COTW 18 p. 425: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 425"]
+neck = 11.3
+case_length = 52.07
+overall_length = 71.12
+bullet = 10.57
+# shoulder_at from the drawing 11-052-BGC-020: SL 39.20 on a case of CL 51.60, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/1057-mm-lazzeroni-maverick/"]
+
+[introduced]
+year = 1998
+sources = ["book:cotw-18 p. 425"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# .060 in. (COTW); groove from the drawing 11-052-BGC-020: RT 1.55, HL 3.80, GØ 12.70, GW 1.33,
+# HØ 14.63; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.52
+ramp_top = 3.8
+groove_diameter = 12.7
+ramp_angle = 46.0
+groove_width = 1.33
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/1057-mm-lazzeroni-maverick/"]
+
+[bullet]
+# Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 425).
+type = "softpoint"
+sources = ["book:cotw-18 p. 425"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/1057-mm-lazzeroni-maverick/"]

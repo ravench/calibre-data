@@ -1,0 +1,51 @@
+# Measurements converted from inches.
+# Westley Richards, for single-shot and double rifles.
+name = ".476 Nitro Express"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["476 ne", "476 westley richards"]
+display_aliases = [".476 Westley Richards"]
+
+origin = "GB"
+origin_sources = ["https://municion.org/producto/476-nitro-express-3-flanged/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.33
+base = 14.48
+shoulder = 13.46
+shoulder_at = 57.1
+# Drawing: SØ 13.49, NØ 12.75, SL 57.00, NL 16.50, CL 76.10.
+shoulder_angle = 8.1
+cite.shoulder_angle = ["https://municion.org/producto/476-nitro-express-3-flanged/"]
+neck = 12.9
+case_length = 76.2
+overall_length = 95.76
+bullet = 12.09
+sources = ["book:cotw-18 p. 609", "https://municion.org/producto/476-nitro-express-3-flanged/"]
+
+[introduced]
+year = 1907
+sources = ["book:cotw-18 p. 602"]
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 609"]
+
+[case_head]
+# .055 in.
+# Donnelly's entry is titled .476 Westley Richards: rim .643 in., case 3.00 in., as the file.
+rim_thickness = 1.4
+sources = ["book:donnelly p. 650"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 602"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/476-nitro-express-3-flanged/"]

@@ -1,0 +1,61 @@
+# .375 Flanged NE (1899, 2.5 in, straight taper) and .55 Boys: measured specimens on municion.org
+# (AECC 10-063-TBC-020, 14-099-BFC-020; Boys belt 21.59 matches antitank.co.uk's 0.850 in).
+name = ".55 Boys"
+guns = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["55boys", "13.9x99b", "boys"]
+
+origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 563"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 20.3
+# The belt on the drawing; antitank.co.uk gives its outside diameter as 0.850 in.
+belt = 21.59
+base = 20.14
+shoulder = 18.03
+shoulder_at = 75.0
+neck_at = 82.11
+neck_base = 15.51
+# Drawing 14-099-BFC-020
+shoulder_angle = 10
+cite.shoulder_angle = ["https://municion.org/producto/55-boys/"]
+neck = 15.51
+case_length = 99.11
+overall_length = 133.64
+bullet = 14.36
+sources = ["https://municion.org/producto/55-boys/", "https://www.antitank.co.uk/ammunition-boys.htm"]
+
+[introduced]
+year = 1936
+sources = ["https://municion.org/producto/55-boys/"]
+
+[primer]
+# 7.61 mm, 7 specimens
+size = "bmg-35"
+sources = ["https://municion.org/producto/55-boys/"]
+
+[case_head]
+# Drawing 14-099-BFC-020: RT 2.08, GØ 17.18, GW 2.26, the ramp up to the belt
+# (LØ 21.59) ends at HL 6.20 and the belt (LW 2.80) at 9.00; ramp angle from HL = RT + GW + ((LØ - GØ)/2)/tan(angle).
+# The outline draws a belted groove floor 1 mm long (C.I.P. sheets give no width), so its ramp reaches the belt at 4.9.
+rim_thickness = 2.08
+ramp_top = 9.0
+groove_diameter = 17.18
+ramp_angle = 50.0
+groove_width = 2.26
+sources = ["https://municion.org/producto/55-boys/"]
+
+[bullet]
+# All Boys bullets had steel jackets clad with cupronickel (Ammo Encyclopedia p. 563).
+type = "jacketed"
+jacket = "cupronickel"
+sources = ["book:ammo-encyclopedia-2 p. 563"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/55-boys/"]

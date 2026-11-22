@@ -1,0 +1,122 @@
+name = "8x57 mm IS"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8x57", "8x57is", "8mmmauser", "7.92x57", "7.9x57", "8x57js"]
+display_aliases = ["8 mm Mauser"]
+
+origin = "DE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7.92×57mm_Mauser",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page57.pdf",
+]
+
+[mm]
+rim = 11.95
+base = 11.95
+shoulder = 11.0
+shoulder_at = 46.2
+neck_at = 48.9
+neck_base = 9.08
+# C.I.P. 8 x 57 IS
+shoulder_angle = 19.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page57.pdf"]
+neck = 9.1
+case_length = 57.0
+overall_length = 82.0
+bullet = 8.2
+sources = [
+  "book:hornady-10 p. 631",
+  "book:cotw-18 p. 176",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page57.pdf",
+]
+
+[introduced]
+# S bullet; the round-nosed Patrone 88 is 1888
+year = 1903
+sources = ["https://en.wikipedia.org/wiki/7.92×57mm_Mauser"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.92×57mm_Mauser"]
+
+[case_head]
+# C.I.P. 8 x 57 IS
+rim_thickness = 1.3
+ramp_top = 3.19
+groove_diameter = 10.5
+ramp_angle = 36.0
+groove_width = 0.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page57.pdf"]
+
+[bullet]
+# The military table lists the S-Patrone ball load. Its pointed S bullet had a steel jacket clad with
+# cupronickel (Ammo Encyclopedia p. 71).
+type = "jacketed"
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 556", "book:ammo-encyclopedia-2 p. 71"]
+
+[today]
+# Today's factory rounds have copper-coloured jackets (Prvi Partizan's FMJ and soft points).
+jacket = "copper"
+sources = ["https://prvipartizan.com/download/PPU_2018.pdf#page=9"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["black"]
+meaning = ["ball"]
+description = "Light ball, former Czechoslovak code (before the Soviet codes)"
+description_de = "Leichtes Standardgeschoss, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
+description_fr = "Balle ordinaire légère, ancien code tchécoslovaque (avant les codes soviétiques)"
+description_it = "Palla ordinaria leggera, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Ordinaria ligera, antiguo código checoslovaco (anterior a los códigos soviéticos)"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["green"]
+meaning = ["ball"]
+description = "Heavy ball, former Czechoslovak code (before the Soviet codes)"
+description_de = "Schweres Standardgeschoss, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
+description_fr = "Balle ordinaire lourde, ancien code tchécoslovaque (avant les codes soviétiques)"
+description_it = "Palla ordinaria pesante, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Ordinaria pesada, antiguo código checoslovaco (anterior a los códigos soviéticos)"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["blue"]
+meaning = ["ball"]
+description = "Ball with a mild steel core, former Czechoslovak code (before the Soviet codes)"
+description_de = "Standardgeschoss mit Weichstahlkern, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
+description_fr = "Balle ordinaire à noyau en acier doux, ancien code tchécoslovaque (avant les codes soviétiques)"
+description_it = "Palla ordinaria con nucleo in acciaio dolce, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Ordinaria con núcleo de acero dulce, antiguo código checoslovaco (anterior a los códigos soviéticos)"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["red"]
+meaning = ["tracer"]
+description = "Tracer, former Czechoslovak code (before the Soviet codes)"
+description_de = "Leuchtspur, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
+description_fr = "Traçant, ancien code tchécoslovaque (avant les codes soviétiques)"
+description_it = "Tracciante, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Trazadora, antiguo código checoslovaco (anterior a los códigos soviéticos)"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["white"]
+meaning = ["armour-piercing"]
+description = "Armour-piercing, former Czechoslovak code (before the Soviet codes)"
+description_de = "Panzerbrechend, früherer tschechoslowakischer Code (vor den sowjetischen Codes)"
+description_fr = "Perforant, ancien code tchécoslovaque (avant les codes soviétiques)"
+description_it = "Perforante, vecchio codice cecoslovacco (prima dei codici sovietici)"
+description_es = "Perforante, antiguo código checoslovaco (anterior a los códigos soviéticos)"
+countries = ["CS"]
+sources = ["book:labbett p. 56", "book:labbett p. 86"]

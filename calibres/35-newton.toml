@@ -1,0 +1,58 @@
+# Measurements converted from inches.
+# The .30 Newton necked up; Western listed it until 1936.
+name = ".35 Newton"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["35 newton"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/35-newton/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.33
+base = 13.28
+shoulder = 12.65
+shoulder_at = 51.41
+neck_at = 55.21
+neck_base = 9.76
+# Drawing: SØ 12.67, NØ 9.76, SL 51.30, NL 8.80, CL 63.90.
+shoulder_angle = 21.0
+cite.shoulder_angle = ["https://municion.org/producto/35-newton/"]
+neck = 9.73
+case_length = 64.01
+overall_length = 85.09
+bullet = 9.09
+# The table row is shifted by one column: 2.52 in. is the case length and 3.35 in. the overall length.
+sources = ["book:cotw-18 p. 250", "https://municion.org/producto/35-newton/"]
+
+[introduced]
+# COTW: listed in the 1915 Newton Rifle Co. catalogue.
+year = 1915
+sources = ["book:cotw-18 p. 209"]
+
+[primer]
+# The table row has lost its primer; large rifle, as on the .30 Newton.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# Drawing 09-064-BGC-040: RT 1.17, HL 3.10, GØ 11.65, GW 1.00, HØ 13.33; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.17
+ramp_top = 3.1
+groove_diameter = 11.65
+ramp_angle = 42.0
+groove_width = 1
+sources = ["https://municion.org/producto/35-newton/"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 209"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/35-newton/"]

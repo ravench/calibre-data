@@ -1,0 +1,34 @@
+name = "12/76"
+guns = ["shotgun"]
+kind = "shot"
+profile = "flat"
+aliases = ["12/76"]
+
+worldwide = true
+
+[mm]
+# C.I.P. Cal. 12, Tab. VII, maximum cartridge: diameter d1, rim g; case_length is the length in the
+# marking.
+# length: the loaded shell closed with a folded (star) crimp, the maximum on SAAMI's cartridge drawing
+# 12 gauge 3" (2.655 in., Z299.2 p. 23; the tolerance is -6.35). The C.I.P. sheet gives no closed length.
+diameter = 20.6
+rim = 22.45
+length = 67.44
+case_length = 76.0
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/12-55-en.pdf",
+  "https://saami.org/wp-content/uploads/2025/09/ANSI-SAAMI-Z299.2-Shotshell-2019-Approved-2025-09-23.pdf",
+]
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"
+
+[primer]
+size = "shotshell-209"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# C.I.P. Cal. 12, Tab. VII, maximum cartridge: rim thickness t 1.85 (rim g 22.45).
+rim_thickness = 1.85
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vii/12-55-en.pdf"]

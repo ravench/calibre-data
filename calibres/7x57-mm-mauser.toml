@@ -1,0 +1,73 @@
+name = "7x57 mm Mauser"
+guns = ["rifle"]
+kind = "rimless"
+# Nose: round, as first loaded (the Wikipedia page below); pointed service bullets came only from 1898
+# (COTW 18 p. 553).
+profile = "round"
+# Today: pointed, since Spain's service round of 1913 (https://en.wikipedia.org/wiki/7×57mm_Mauser).
+profile_today = "spitzer"
+aliases = ["7x57", "7mmmauser"]
+
+origin = "DE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7×57mm_Mauser",
+  "book:ammo-encyclopedia-2 p. 509",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page33.pdf",
+]
+
+[mm]
+# Midway between C.I.P. (12.10) and SAAMI (12.01).
+rim = 12.055
+base = 12.0
+shoulder = 10.9
+shoulder_at = 43.84
+neck_at = 47.41
+neck_base = 8.25
+# C.I.P. 7 x 57
+shoulder_angle = 20.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page33.pdf"]
+neck = 8.2
+case_length = 57.0
+overall_length = 78.0
+bullet = 7.24
+sources = [
+  "book:donnelly p. 828",
+  "book:cotw-18 p. 573",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page33.pdf",
+  "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=58",
+]
+
+[introduced]
+year = 1892
+sources = ["https://en.wikipedia.org/wiki/7×57mm_Mauser"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7×57mm_Mauser"]
+
+[case_head]
+# C.I.P. 7 x 57
+rim_thickness = 1.15
+ramp_top = 3.04
+groove_diameter = 10.7
+ramp_angle = 32.0
+groove_width = 0.84
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page33.pdf"]
+
+[bullet]
+# No text found names the jacket of the first bullet. municion.org's sheets of early military rounds
+# do: nickel-plated brass on Oviedo's of 1897 (S.B 18 97 O), steel plated with cupronickel on
+# Karlsruhe's of 1902 (D M 19 02 K), maillechort on Seville's of 1909 (A 19 09 PS). Silver every time.
+type = "jacketed"
+jacket = "cupronickel"
+sources = [
+  "book:cotw-18 p. 542",
+  "https://municion.org/ficha-07-057-bgc-080-0146/",
+  "https://municion.org/ficha-07-057-bgc-080-0152/",
+  "https://municion.org/ficha-07-057-bgc-080-0141/",
+]
+
+[today]
+# Today's factory rounds have copper-coloured jackets (Prvi Partizan's FMJ and soft points).
+jacket = "copper"
+sources = ["https://prvipartizan.com/download/PPU_2018.pdf#page=7"]

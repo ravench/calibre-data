@@ -1,0 +1,51 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".450 Marlin"
+guns = ["rifle"]
+kind = "belted"
+profile = "flat"
+aliases = ["450marlin"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.450_Marlin",
+  "book:ammo-encyclopedia-2 p. 355",
+]
+
+[mm]
+# SAAMI 450 Marlin, maximum cartridge.
+rim = 13.51
+base = 13.01
+neck = 12.21
+case_length = 53.35
+overall_length = 64.76
+bullet = 11.64
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/450-marlin-belted/"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=170"]
+
+[introduced]
+year = 2000
+sources = ["https://en.wikipedia.org/wiki/.450_Marlin"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.450_Marlin"]
+
+[case_head]
+# C.I.P. 450 Marlin
+rim_thickness = 1.27
+ramp_top = 6.4
+groove_diameter = 12.07
+ramp_angle = 35.0
+groove_width = 0.94
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page34.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.450_Marlin"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/450-marlin-belted/"]

@@ -1,0 +1,39 @@
+name = ".41 Magnum"
+# Guns: https://www.henryusa.com/wp-content/uploads/mediakit/Henry-Big-Boy-Rifles-Spec-Sheet.pdf (Henry Big Boy).
+guns = ["handgun", "rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["41mag", "41remmag", "41remingtonmagnum"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.41_Remington_Magnum",
+  "book:ammo-encyclopedia-2 p. 631",
+]
+
+[mm]
+# SAAMI 41 Remington Magnum, maximum cartridge.
+rim = 12.5
+base = 11.05
+neck = 11.02
+case_length = 32.77
+overall_length = 40.39
+bullet = 10.41
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=53"]
+
+[introduced]
+year = 1964
+sources = ["https://en.wikipedia.org/wiki/.41_Remington_Magnum"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.41_Remington_Magnum"]
+
+[case_head]
+# SAAMI 41 Remington Magnum
+rim_thickness = 1.5
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=53"]
+
+[bullet]
+type = "jacketed"
+sources = []

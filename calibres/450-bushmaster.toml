@@ -1,0 +1,49 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".450 Bushmaster"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["450bm", "450bushmaster"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.450_Bushmaster"]
+
+[mm]
+# SAAMI 450 Bushmaster, maximum cartridge.
+rim = 12.01
+base = 12.7
+neck = 12.19
+case_length = 43.18
+overall_length = 57.4
+bullet = 11.49
+# nose: read to scale off the specimen drawing 11-043-CRC-010:
+# the curve starts 12.6 mm behind the tip, of the 13.45 mm out of its case (TL 56.57, CL 43.12).
+nose = 12.6
+cite.nose = ["https://municion.org/producto/450-bushmaster/"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=169"]
+
+[introduced]
+year = 2007
+sources = ["https://en.wikipedia.org/wiki/.450_Bushmaster"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# C.I.P. 450 Bushmaster
+rim_thickness = 1.37
+ramp_top = 3.77
+groove_diameter = 10.39
+ramp_angle = 40.0
+groove_width = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page149.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.450_Bushmaster"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/450-bushmaster/"]

@@ -1,0 +1,54 @@
+# Measurements converted from inches.
+# Like the Belgian Comblain round to look at, but the two do not interchange.
+name = "11.4x50 mm R Brazilian Comblain"
+# Guns: book:cotw-18 p. 567.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["11.4x50r comblain"]
+display_aliases = ["11.4x50 mm R Comblain M74"]
+
+origin = "BR"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 17.32
+base = 14.94
+shoulder = 13.46
+shoulder_at = 39.1
+neck = 12.55
+case_length = 51.31
+overall_length = 66.55
+bullet = 11.48
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees. Three drawings (municion.org)
+# of other rounds fit this row's sizes (case within 1.5 mm, shoulder and neck within 0.5 mm) and start the shoulder
+# in three places: «11 mm Chilean Comblain Rifle M 1874» (12-050-BBC-060) at 44.28 mm, «11 mm Belgian Infantry
+# Mle1876 Short Neck» (12-050-BBC-020) at 42.74 mm and the Belgian 1871 round (11-051-BBC-090) at 37.90 mm. None is
+# titled as this round: municion.org lists «11,4 x 50 R Brazilian Comblain M74» as another name of its 53 mm round
+# (11-053-BBC-030, Model 1889). No shoulder is taken, and no rim thickness. Donnelly (p. 981: J 1.69 in., K .16 in.)
+# starts the shoulder 0.2 mm from the Mle1876 drawing's start and ends it 0.2 mm from the Chilean drawing's end, so
+# he decides for neither.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+# M74 is the model year; COTW gives no other.
+year = 1874
+sources = ["book:cotw-18 p. 567"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .085 in.
+rim_thickness = 2.16
+sources = ["book:donnelly p. 981"]
+
+[bullet]
+# The military load: a lead bullet over blackpowder.
+type = "lead"
+sources = ["book:cotw-18 p. 567"]

@@ -1,0 +1,51 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = "7.7x58 mm Arisaka"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.7arisaka", "7.7x58"]
+
+origin = "JP"
+origin_sources = ["https://en.wikipedia.org/wiki/7.7×58mm_Arisaka"]
+
+[mm]
+rim = 12.07
+base = 12.02
+shoulder = 11.0
+shoulder_at = 47.34
+neck_at = 51.6
+neck_base = 8.58
+# Drawing 08-058-BGC-020
+shoulder_angle = 16.1
+cite.shoulder_angle = ["https://municion.org/producto/77-x-58-japanese-rimless-arisaka-type-99/"]
+neck = 8.58
+case_length = 57.8
+overall_length = 79.6
+bullet = 7.92
+sources = [
+  "https://en.wikipedia.org/wiki/7.7×58mm_Arisaka",
+  "https://municion.org/producto/77-x-58-japanese-rimless-arisaka-type-99/",
+]
+
+[introduced]
+year = 1940
+sources = ["https://en.wikipedia.org/wiki/7.7×58mm_Arisaka"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.7×58mm_Arisaka"]
+
+[case_head]
+# .042 in. (COTW); groove from the drawing 08-058-BGC-020: RT 1.18, HL 3.07,
+# GØ 10.32, GW 1.16, HØ 12.01; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.07
+ramp_top = 3.07
+groove_diameter = 10.32
+ramp_angle = 49.0
+groove_width = 1.16
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/77-x-58-japanese-rimless-arisaka-type-99/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 550"]

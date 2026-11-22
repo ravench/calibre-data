@@ -1,0 +1,57 @@
+# Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "6.5x53 mm R Mannlicher"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["6.5x53r", "6.5dutch"]
+
+origin = "AH"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/6.5×53mmR",
+  "book:ammo-encyclopedia-2 p. 502",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.4
+base = 11.48
+shoulder = 10.75
+shoulder_at = 41.15
+neck_at = 46
+neck_base = 7.5
+shoulder_angle = 25
+cite.shoulder_angle = ["https://en.wikipedia.org/wiki/6.5%C3%9753mmR"]
+neck = 7.55
+case_length = 53.5
+overall_length = 77.47
+bullet = 6.65
+# shoulder_at from the drawing 07-054-BBC-010: SL 41.20 on a case of CL 53.55, taken from the
+# mouth (case_length - (CL - SL)). The specimen's cone is 19.1 degrees; at the 25 degrees below the neck is 1.42 mm
+# longer than the specimen's (NL 7.50), inside the 1.5 mm the rule allows.
+sources = [
+  "https://en.wikipedia.org/wiki/6.5×53mmR",
+  "https://municion.org/producto/65-x-535-r-dutch-mannlicher-m-1895/",
+]
+
+[introduced]
+year = 1892
+sources = ["https://en.wikipedia.org/wiki/6.5×53mmR"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .066 in.
+rim_thickness = 1.68
+sources = ["book:cotw-18 p. 573"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 538"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/65-x-535-r-dutch-mannlicher-m-1895/"]

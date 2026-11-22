@@ -1,0 +1,52 @@
+# Measurements converted from inches.
+# The Belgian civil guard's Comblain rifle.
+name = "11x53 mm R Comblain"
+# Guns: book:cotw-18 p. 563.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["11x53r", "11x53r comblain"]
+display_aliases = ["11x53 mm R Belgian Comblain M71"]
+
+origin = "BE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 17.09
+base = 14.6
+shoulder = 13.51
+shoulder_at = 40.8
+neck = 11.68
+case_length = 53.34
+overall_length = 70.1
+bullet = 11.07
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees. The drawing 11-053-BBC-030
+# (municion.org), «11 x 53 R Brazilian-Comblain Model 1889», has this row's diameters within 0.3 mm and its length
+# within 0.02 mm, and would start the shoulder at 45.22 mm with a neck of 6.2 mm. It is not taken: its page says that
+# the Brazilian round differs from the Belgian 11x53 R in its shorter neck, and the page of drawing 12-050-BBC-020
+# gives the Belgian round a neck of a fifth of the case, which no drawing of the 53 mm case shows. Donnelly (p. 967)
+# prints such a neck (H .38 in., 9.65 mm) behind a shoulder that starts at 38.86 mm (J 1.53 in.); on his own he is
+# not a source.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 574"]
+
+[introduced]
+year = 1871
+sources = ["book:cotw-18 p. 563"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .082 in.
+rim_thickness = 2.08
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a paper-patched lead bullet over blackpowder.
+type = "paper"
+sources = ["book:cotw-18 p. 563"]

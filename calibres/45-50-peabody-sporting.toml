@@ -1,0 +1,61 @@
+# Measurements converted from inches.
+# A sporting round for the Peabody-Martini single-shot rifle, close to the Turkish Peabody carbine round.
+name = ".45-50 Peabody Sporting"
+# Guns: book:cotw-18 p. 237.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["45-50 peabody", "45-50 peabody sporting"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/45-50-peabody-martini-sporting/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.1
+base = 13.11
+shoulder = 12.9
+shoulder_at = 26.06
+neck_at = 29.67
+neck_base = 12.16
+# Drawing: SØ 12.85, NØ 12.16, SL 26.30, NL 9.45, CL 39.36.
+shoulder_angle = 5.5
+cite.shoulder_angle = ["https://municion.org/producto/45-50-peabody-martini-sporting/"]
+neck = 12.14
+case_length = 39.12
+overall_length = 52.83
+bullet = 11.53
+# COTW 18 prints 2.08 in. in the rim thickness, case length and overall length columns; the case length
+# is 1.54 in. from COTW 5 p. 138.
+sources = [
+  "book:cotw-18 p. 251",
+  "book:cotw-5 p. 138",
+  "https://municion.org/producto/45-50-peabody-martini-sporting/",
+]
+
+[introduced]
+# COTW: introduced in 1873-74.
+year = 1873
+sources = ["book:cotw-18 p. 237"]
+
+[primer]
+# The table gives no primer.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .065 in.
+# Donnelly's entry is titled .45-50 Martini Sporting: rim .634 in., case 1.54 in., as the file.
+rim_thickness = 1.65
+sources = ["book:donnelly p. 596"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 237"]
+
+[case]
+# The photo shows a brass case (UMC's).
+material = "brass"
+sources = ["https://municion.org/producto/45-50-peabody-martini-sporting/"]

@@ -1,0 +1,40 @@
+# Batch 11 (2026-11): old rimfire, black-powder and British rounds plus 9x25 Dillon and .300 Lapua; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".41 Short"
+# Guns: book:cotw-18 p. 665.
+guns = ["handgun"]
+kind = "rimfire"
+profile = "round"
+aliases = ["41short", "41rf"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.41_Short"]
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 11.9
+base = 10.3
+neck = 10.3
+case_length = 11.9
+overall_length = 23.2
+bullet = 10.3
+sources = ["https://en.wikipedia.org/wiki/.41_Short"]
+
+[introduced]
+year = 1863
+sources = ["https://en.wikipedia.org/wiki/.41_Short"]
+
+[case_head]
+# Drawing 10-012-CBR-010: RT 1.53, RØ 11.98, HØ 10.33, CL 12.00.
+rim_thickness = 1.53
+sources = ["https://municion.org/producto/41-short-derringer-rf/"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.41_Short"]
+
+[case]
+# The photo shows a copper-cased round and the head of another.
+material = "copper"
+sources = ["https://commons.wikimedia.org/wiki/File:.41_Rimfire_cartridge.JPG"]

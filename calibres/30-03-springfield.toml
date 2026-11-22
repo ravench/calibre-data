@@ -1,0 +1,59 @@
+# Measurements converted from inches.
+# The US service round of 1903 with a 220-grain round-nosed bullet, replaced by the .30-06 in 1906.
+name = ".30-03 Springfield"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["30-03", "30-03 government", "30-03 gov't"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 518"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.01
+base = 11.94
+shoulder = 11.2
+shoulder_at = 49.49
+neck_at = 53.56
+neck_base = 8.63
+# Half the cone angle alpha on the .30-06's C.I.P. sheet.
+shoulder_angle = 17.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+neck = 8.64
+case_length = 64.52
+overall_length = 84.84
+bullet = 7.82
+# shoulder_at is L1 on the .30-06's C.I.P. sheet: the .30-06 is this case with a shorter neck (COTW 18 p. 197).
+sources = ["book:cotw-18 p. 250", "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+
+[introduced]
+year = 1903
+sources = ["book:cotw-18 p. 197"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[case_head]
+# the .30-06 kept this case's head; C.I.P. 30-06 Spring.
+rim_thickness = 1.24
+ramp_top = 3.16
+groove_diameter = 10.39
+ramp_angle = 36.0
+groove_width = 0.84
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page111.pdf"]
+
+[bullet]
+# The .30-03 kept the 220-grain round-nosed bullet of the .30-01, which had a cupronickel jacket
+# (C. Punnett, "An Introduction to Collecting .30-06 Cartridges", International Ammunition
+# Association).
+type = "jacketed"
+jacket = "cupronickel"
+sources = ["https://cartridgecollectors.org/an-introduction-to-collecting-30-06-cartridges/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/30-03-springfield-xpl-us-govt-m-1903/"]

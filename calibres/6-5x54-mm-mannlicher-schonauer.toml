@@ -1,0 +1,60 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = "6.5x54 mm Mannlicher-Schönauer"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["6.5x54ms", "6.5x54"]
+
+origin = "AH"
+origin_sources = ["https://en.wikipedia.org/wiki/6.5×54mm_Mannlicher–Schönauer"]
+
+[mm]
+rim = 11.52
+base = 11.47
+shoulder = 10.87
+shoulder_at = 41.82
+neck_at = 45.6
+neck_base = 7.56
+# C.I.P. 6,5 x 54 Mannl. Sch.
+shoulder_angle = 23.6
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page22.pdf"]
+neck = 7.56
+case_length = 53.6
+overall_length = 77.8
+bullet = 6.7
+sources = [
+  "book:hornady-10 p. 296",
+  "https://en.wikipedia.org/wiki/6.5×54mm_Mannlicher–Schönauer",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page22.pdf",
+]
+
+[introduced]
+year = 1900
+sources = ["https://en.wikipedia.org/wiki/6.5×54mm_Mannlicher–Schönauer"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5×54mm_Mannlicher–Schönauer"]
+
+[case_head]
+# C.I.P. 6,5 x 54 Mannl. Sch.
+rim_thickness = 1.05
+ramp_top = 3.4
+groove_diameter = 9.7
+ramp_angle = 33.2
+groove_width = 1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page22.pdf"]
+
+[bullet]
+# No source found names the jacket of the first load, so a military round of 1908 stands in for it:
+# municion.org's sheet of one that Hirtenberg made for the Greek army (H Ε Σ 1908) calls the
+# round-nosed bullet nickel-plated.
+type = "jacketed"
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 537", "https://municion.org/ficha-07-054-bgc-030-0009/"]
+
+[today]
+# Today's factory round has a copper-coloured jacket (Prvi Partizan's round-nosed soft point).
+jacket = "copper"
+sources = ["https://prvipartizan.com/download/PPU_2018.pdf#page=7"]

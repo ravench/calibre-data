@@ -1,0 +1,73 @@
+# Kadettenpatrone («7,5 mm Kadetten-Pat.», «Cart. 7,5 mm cadets/cadetti» on the box): the reduced
+# load for the single-shot Kadettengewehr 1897, "a reduced-power GP90 7.5×53.5mm cartridge"
+# (Wikipedia, Schmidt–Rubin). Poyer p. 50 lists a cadet blank at 7.5x53.6, on the early case. Measured by the maintainer with a caliper on one round (2026-11-08, headstamp
+# «12 D T 64»: Thun, December 1964, Dornach brass): length 77.5, case 54.8, rim 12.7, base 12.6,
+# shoulder 11.5, neck 8.6, bullet 7.8, head to shoulder 45.0, primer 5.4. A late round on the longer
+# case of 1923: drawn at the GP 90/23's 54.6 (0.2 apart on single rounds), so the two are one chamber. Jacketed round-nose bullet
+# with a silver-coloured jacket on the maintainer's round (see [bullet]). Kaliberfinder's LiDAR captures
+# of the same round (training package of 2026-11-07, filed under GP 1890 with the note
+# "Kadettenpatrone") gave 79.0.
+name = "7.5 mm Kadettenpatrone"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["kadettenpatrone", "kadetten-pat", "kadettenpat", "7.5 mm kadettenpatrone", "7.5 mm kadetten-pat", "cadets", "cadetti", "kg97", "kadettengewehr", "kadettengewehrpatrone"]
+display_aliases = ["Cart. 7,5 mm cadets", "Cart. 7,5 mm cadetti"]
+
+origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
+obsolete = true
+# 2026-11-08: made only for the Kadettengewehr 1897 (about 7,900 made); collectors' item
+rare = true
+
+[mm]
+# The case and bullet diameter of the GP 90/23 (same chamber: its drawing 08-054-BGC-085, within 0.15 mm of
+# the maintainer's caliper values above, the shoulder position 0.5 mm); the length is the maintainer's round.
+rim = 12.62
+base = 12.52
+shoulder = 11.65
+shoulder_at = 44.5
+neck_at = 47.45
+neck_base = 8.47
+# Same case as the GP 90/23: drawing 08-054-BGC-085.
+shoulder_angle = 30.0
+cite.shoulder_angle = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
+neck = 8.47
+case_length = 54.6
+overall_length = 77.5
+bullet = 7.75
+# nose: read off the side photo of the maintainer's round in its Kaliberfinder capture (2026-11-08, private
+# training package, photo 02): the round nose curves in over the last 0.82 bullet widths, 6.4 mm; the
+# bullet is parallel from the case mouth up to there. That is blunter than the GP 90/23 on its
+# drawing (9.2 mm, 1.19 widths): the cadet bullet is its own, shorter-nosed bullet, or one reading is off.
+nose = 6.4
+cite.nose = ["measured:ravench 2026-11-08"]
+sources = ["book:poyer p. 50", "https://municion.org/producto/75-x-545-swiss-gp-90-23/", "measured:ravench 2026-11-08"]
+
+[introduced]
+# Federal Council decision of 8 September 1897 on the «Ordonnanz für Kadettengewehrpatronen» (report
+# for 1897, 50000184, p. 503)
+year = 1897
+sources = ["https://www.amtsdruckschriften.bar.admin.ch/viewOrigDoc/50000184.pdf?id=50000184", "https://swisswaffen.com/75mm-cadet-cartridge/gp90kp/wjpaihuqy7ys"]
+
+[primer]
+# GP 90 family; the maintainer measured a 5.4 mm primer
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.5×55mm_Swiss"]
+
+[case_head]
+# Same case as the GP 90/23: its head from the drawing 08-054-BGC-085.
+rim_thickness = 1.56
+ramp_top = 3.6
+groove_diameter = 10.26
+ramp_angle = 47.0
+groove_width = 1
+sources = ["https://municion.org/producto/75-x-545-swiss-gp-90-23/"]
+
+[bullet]
+# Silver-coloured jacket on the maintainer's 1964 round. No source names the metal or the
+# 1897 bullet, so the 1964 jacket stands in for the original; the GP 90/23 of the same case has a
+# cupronickel jacket (Poyer p. 50).
+type = "jacketed"
+jacket = "cupronickel"
+sources = []

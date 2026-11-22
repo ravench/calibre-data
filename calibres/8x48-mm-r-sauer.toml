@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+name = "8x48 mm R Sauer"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/8-x-48-r-sauer-sohn/).
+profile = "flat"
+aliases = ["8x48r"]
+
+origin = "DE"
+origin_sources = ["https://municion.org/producto/8-x-48-r-sauer-sohn/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.7
+base = 10.97
+neck = 8.74
+case_length = 47.75
+overall_length = 65.53
+bullet = 8.03
+# flat: the drawing gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/8-x-48-r-sauer-sohn/"]
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+# Designed about 1892 (municion.org); COTW 18 p. 627 gives no year.
+year = 1892
+sources = ["https://municion.org/producto/8-x-48-r-sauer-sohn/"]
+
+[primer]
+# .254 in. Berdan in the table
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 651"]
+
+[bullet]
+# A blackpowder round (p. 627), but the only factory load the book gives is DWM's soft point. The DWM
+# (K K 462A) and Utendoerffer sheets on municion.org show one with a chrome-coloured bullet ("bala
+# cromada"), the RWS sheet "probably" one; none shows lead. No source names the jacket metal; the
+# sheets give no year and are filed under Germany before 1919. The first load is not dated.
+type = "softpoint"
+jacket = "cupronickel"
+sources = [
+    "book:cotw-18 p. 627",
+    "https://municion.org/ficha-08-048-tbc-010-0001/",
+    "https://municion.org/ficha-08-048-tbc-010-0002/",
+]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/8-x-48-r-sauer-sohn/"]

@@ -1,0 +1,64 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".22 TCM"
+guns = ["handgun"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["22tcm"]
+
+# Fred Craig (US gunsmith) developed it at Armscor's Marikina plant as the .22 Micromagnum; Armscor named it after Martin Tuason and makes the pistols and the only factory ammunition: US (Craig)
+origin = "PH"
+origin_sources = []
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+# Rim, base and case length from the drawing 06-026-BGC-010 (municion.org: RØ 9.53, HØ 9.46, CL 26.04).
+rim = 9.53
+base = 9.46
+shoulder = 9.19
+shoulder_at = 17.72
+neck_at = 22.04
+neck_base = 6.5
+# Drawing 06-026-BGC-010
+shoulder_angle = 18.8
+cite.shoulder_angle = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]
+neck = 6.48
+case_length = 26.04
+overall_length = 32.13
+bullet = 5.7
+sources = [
+  "book:cotw-18 p. 451",
+  "https://municion.org/producto/22-tuason-craig-micromagnum/",
+]
+
+[introduced]
+# Year of production on the product page.
+# as the Tuason Craig Micromagnum, ca. 2008
+year = 2008
+sources = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# .049 in. (COTW); groove from the drawing 06-026-BGC-010: RT 1.22, HL 3.28,
+# GØ 8.20, GW 1.05, HØ 9.46; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.24
+ramp_top = 3.28
+groove_diameter = 8.2
+ramp_angle = 32.0
+groove_width = 1.05
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/22-tuason-craig-micromagnum/"]
+
+[bullet]
+# Armscor, its only maker, loads it with jacketed hollow points only.
+type = "hollowpoint"
+sources = ["book:cotw-18 p. 362", "https://en.wikipedia.org/wiki/.22_TCM"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/22-tuason-craig-micromagnum/"]

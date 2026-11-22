@@ -1,0 +1,60 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".221 Remington Fireball"
+# Guns: https://en.wikipedia.org/wiki/Remington_XP-100 (introduced with the XP-100 pistol; Remington 700 rifle since 2002).
+guns = ["handgun", "rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["221fireball"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.221_Remington_Fireball",
+  "book:ammo-encyclopedia-2 p. 615",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page37.pdf",
+]
+rare = true
+
+[mm]
+rim = 9.6
+base = 9.6
+shoulder = 9.2
+shoulder_at = 27.2
+neck_at = 30.42
+neck_base = 6.43
+# C.I.P. 221 Rem. Fireball
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page37.pdf"]
+neck = 6.4
+case_length = 35.6
+overall_length = 46.5
+bullet = 5.7
+sources = [
+  "https://en.wikipedia.org/wiki/.221_Remington_Fireball",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page37.pdf",
+]
+
+[introduced]
+year = 1963
+sources = ["https://en.wikipedia.org/wiki/.221_Remington_Fireball"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.221_Remington_Fireball"]
+
+[case_head]
+# C.I.P. 221 Rem. Fireball
+rim_thickness = 1.14
+ramp_top = 3.13
+groove_diameter = 8.43
+ramp_angle = 25.0
+groove_width = 0.76
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page37.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.221_Remington_Fireball"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/221-remington-fireball/"]

@@ -1,0 +1,61 @@
+# Measurements converted from inches.
+# Lazzeroni's .257 long magnum, on its .530 in. case.
+name = "6.53 Lazzeroni Scramjet"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.53 scramjet", "6.53mm scramjet", "lazzeroni scramjet"]
+
+origin = "US"
+origin_sources = []
+rare = true
+
+[mm]
+rim = 13.46
+base = 13.46
+shoulder = 12.95
+shoulder_at = 59.7
+neck_at = 64.25
+neck_base = 7.43
+# COTW 18 p. 369: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 369"]
+neck = 7.34
+case_length = 71.12
+overall_length = 90.8
+bullet = 6.53
+# shoulder_at estimated: a neck one calibre long and the shoulder at COTW's 30 degrees. The drawing
+# 07-071-BGC-020 (municion.org) has the shoulder start 2.5 mm earlier (SL 57.02 on a case of CL 70.93) and a
+# neck of NL 6.87: a cone of 21 degrees, not the book's 30. With the book's angle from the drawing's start the
+# neck would be 2.18 mm longer than the drawing's, over the 1.5 mm the rule allows, so neither is taken until a
+# third source settles it.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/653-mm-lazzeroni-scramjet/"]
+
+[introduced]
+year = 1996
+sources = ["book:cotw-18 p. 369"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# .055 in. (COTW); groove from the drawing 07-071-BGC-020: RT 1.39, HL 3.22, GØ 11.83, GW 1.20,
+# HØ 13.44; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.4
+ramp_top = 3.22
+groove_diameter = 11.83
+ramp_angle = 52.0
+groove_width = 1.2
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/653-mm-lazzeroni-scramjet/"]
+
+[bullet]
+# Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 369).
+type = "softpoint"
+sources = ["book:cotw-18 p. 369"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/653-mm-lazzeroni-scramjet/"]

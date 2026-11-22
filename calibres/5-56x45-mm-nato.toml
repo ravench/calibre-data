@@ -1,0 +1,116 @@
+name = "5.56x45 mm NATO"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["5.56", "556", "5.56x45", "5.56nato"]
+
+# the union that standardised it in 1980 (with the Belgian SS109 load); the case is the US .223/M193 of 1963: US, BE
+origin = "NATO"
+origin_sources = []
+worldwide = true
+
+[mm]
+rim = 9.6
+base = 9.58
+shoulder = 9.0
+# shoulder_at: L1 on the C.I.P. 223 Rem. sheet.
+shoulder_at = 36.52
+neck_at = 39.55
+neck_base = 6.43
+# same case as .223 Rem
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf", "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84"]
+neck = 6.43
+case_length = 44.7
+overall_length = 57.4
+bullet = 5.70
+# nose: read to scale off the drawing 06-045-BGC-050 (municion.org, its M193 ball specimen):
+# the curve starts 10.6 mm behind the tip, of the 12.59 mm out of its case (TL 57.15, CL 44.56).
+nose = 10.6
+cite.nose = ["https://municion.org/producto/556-x-45-otan/"]
+sources = [
+  "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84",
+  "book:hornady-10 p. 174",
+  "book:cotw-18 p. 573",
+  "https://en.wikipedia.org/wiki/.223_Remington",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf",
+]
+
+[introduced]
+# STANAG 4172, 28 Oct 1980
+year = 1980
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[case_head]
+# C.I.P. 223 Rem. (E 3.13); SAAMI gives the same rim, groove and ramp angle.
+rim_thickness = 1.14
+ramp_top = 3.13
+groove_diameter = 8.43
+ramp_angle = 25.0
+groove_width = 0.76
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf", "https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=84"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 534"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["green"]
+meaning = ["ball"]
+description = "US M855 (with a steel penetrator), German DM11"
+description_de = "M855 mit Stahl-Penetrator (USA), DM11 (Deutschland)"
+description_fr = "M855 à pénétrateur en acier (États-Unis), DM11 (Allemagne)"
+description_it = "M855 con penetratore in acciaio (Stati Uniti), DM11 (Germania)"
+description_es = "M855 con penetrador de acero (Estados Unidos), DM11 (Alemania)"
+countries = ["US", "DE"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["orange"]
+meaning = ["tracer"]
+description = "US M856, German DM21"
+description_de = "M856 (USA), DM21 (Deutschland)"
+description_fr = "M856 (États-Unis), DM21 (Allemagne)"
+description_it = "M856 (Stati Uniti), DM21 (Germania)"
+description_es = "M856 (Estados Unidos), DM21 (Alemania)"
+countries = ["US", "DE"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["red"]
+meaning = ["tracer"]
+description = "US M856A1, British L1, L16 and L22"
+description_de = "M856A1 (USA), L1, L16 und L22 (Grossbritannien)"
+description_fr = "M856A1 (États-Unis), L1, L16 et L22 (Royaume-Uni)"
+description_it = "M856A1 (Stati Uniti), L1, L16 e L22 (Regno Unito)"
+description_es = "M856A1 (Estados Unidos), L1, L16 y L22 (Reino Unido)"
+countries = ["US", "GB"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["black"]
+meaning = ["armour-piercing"]
+description = "M995"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["white"]
+meaning = ["frangible"]
+description = "Mk 255"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/5.56×45mm_NATO"]

@@ -1,0 +1,28 @@
+# A Japanese round first made for the army's Year 11 light infantry gun of 1922, later loaded for the
+# Ho-203 automatic cannon of some army heavy fighters in the Second World War. Its name gives the bore
+# and case length (Autocannon: 37x111R), Rapid Fire's table the rim and base, Autocannon p. 154 the
+# length of the round.
+name = "37x112 mm R"
+guns = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["37x112r", "37x111r", "37 mm ho-203", "ho-203"]
+origin = "JP"
+origin_sources = ["book:rapid-fire p. 229"]
+
+[mm]
+rim = 47.0
+base = 43.5
+case_length = 112.0
+overall_length = 194.0
+bullet = 37.0
+sources = ["book:rapid-fire p. 229", "book:autocannon p. 154", "https://en.wikipedia.org/wiki/Ho-203_cannon"]
+
+[introduced]
+# Autocannon: the infantry gun was adopted in 1922.
+year = 1922
+sources = ["book:autocannon p. 154"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 154"]

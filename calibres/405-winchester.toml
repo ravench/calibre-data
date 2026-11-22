@@ -1,0 +1,45 @@
+# Rifle batch 3 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".405 Winchester"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: round, the 300-grain soft point of the factory load (COTW 18 p. 226).
+profile = "round"
+# Today: pointed, Hornady's spire-point load (COTW 18 pp. 226-227).
+profile_today = "spitzer"
+aliases = ["405win"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.405_Winchester",
+  "book:ammo-encyclopedia-2 p. 438",
+]
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+# SAAMI 405 Winchester, maximum cartridge.
+rim = 13.79
+base = 11.69
+neck = 11.07
+case_length = 65.61
+overall_length = 80.65
+bullet = 10.45
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=160"]
+
+[introduced]
+year = 1904
+sources = ["https://en.wikipedia.org/wiki/.405_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.405_Winchester"]
+
+[case_head]
+# SAAMI 405 Winchester
+rim_thickness = 1.85
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=160"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.405_Winchester"]

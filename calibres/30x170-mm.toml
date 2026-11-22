@@ -1,0 +1,53 @@
+# The round of Hispano-Suiza's HS 830 and HS 831 anti-aircraft cannon, called the Oerlikon KCB since
+# 1971, and of the British Rarden. Autocannon traces it to the French HS 411 project of 1939/40: a
+# few lots were made in Britain in 1942, and Hispano-Suiza's Swiss arm developed it into the HS 830
+# and HS 831, in service from the 1950s (p. 144). Its name gives the bore and case length, Jane's
+# table the rim, base and neck, its p. 105 the length of the round, the specimen drawing on
+# municion.org the shoulder and the head. The drawing's neck (NØ 31.21) is 0.29 mm narrower than
+# Jane's (31.5), more than the 0.15 mm a neck may widen towards its mouth, so the file has no neck_at
+# or neck_base.
+# The case is steel (HS 831L, KCB) or brass (HS 831A, Rarden): the file names no material.
+name = "30x170 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30x170", "30 mm rarden", "30 mm kcb", "30 mm oerlikon kcb", "hs 831"]
+origin = "CH"
+origin_sources = [
+  "https://municion.org/producto/30-x-170-swiss-hispano-hs-830-831l-british-rarden-kcb/",
+  "book:rapid-fire p. 228",
+]
+
+[mm]
+rim = 42.9
+base = 42.9
+shoulder = 41.8
+shoulder_at = 138.0
+# Drawing 30-170-BGC-010: SØ 41.80, NØ 31.21, SL 138.00, NL 13.70, CL 170.00, TL 285.41.
+shoulder_angle = 16.1
+cite.shoulder_angle = ["https://municion.org/producto/30-x-170-swiss-hispano-hs-830-831l-british-rarden-kcb/"]
+neck = 31.5
+case_length = 170.0
+overall_length = 285.25
+bullet = 30.0
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "book:janes-ammo-2002 p. 105",
+  "https://municion.org/producto/30-x-170-swiss-hispano-hs-830-831l-british-rarden-kcb/",
+]
+
+[introduced]
+# municion.org's year. Autocannon p. 144 has the round in service from the 1950s; p. 281 has the HS 830
+# marketed from 1945 and the HS 831 from the early 1950s.
+year = 1954
+sources = ["https://municion.org/producto/30-x-170-swiss-hispano-hs-830-831l-british-rarden-kcb/"]
+
+[case_head]
+# The drawing 30-170-BGC-010: RØ 42.75, HØ 42.83, RT 3.48, GØ 38.86, GW 3.30,
+# the ramp ends at HL 8.35; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 3.48
+ramp_top = 8.35
+groove_diameter = 38.86
+ramp_angle = 52.0
+groove_width = 3.3
+sources = ["https://municion.org/producto/30-x-170-swiss-hispano-hs-830-831l-british-rarden-kcb/"]

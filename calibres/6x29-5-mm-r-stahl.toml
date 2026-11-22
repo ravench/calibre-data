@@ -1,0 +1,49 @@
+# Measurements converted from inches.
+name = "6x29.5 mm R Stahl"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["6x29.5r"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.4
+base = 8.13
+shoulder = 7.65
+shoulder_at = 21.48
+neck_at = 23.91
+neck_base = 6.62
+# Drawing: SØ 7.85, NØ 6.62, SL 21.30, NL 5.55, CL 29.28.
+shoulder_angle = 14.2
+cite.shoulder_angle = ["https://municion.org/producto/6-x-295-r-d-z-tesching/"]
+neck = 6.65
+case_length = 29.46
+overall_length = 36.58
+bullet = 6.17
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/6-x-295-r-d-z-tesching/"]
+
+[introduced]
+unknown = "Made for B. Stahl's guns before 1900; no year given (COTW 18 p. 614)."
+sources = ["book:cotw-18 p. 614"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# .05 in.
+rim_thickness = 1.27
+sources = ["book:donnelly p. 741"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 614"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/6-x-295-r-d-z-tesching/"]

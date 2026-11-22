@@ -1,0 +1,55 @@
+# Measurements converted from inches.
+# The British round for the EM-2 rifle; NATO chose the 7.62x51 mm instead.
+name = ".280 British"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["280british", "280 british", "7x43"]
+display_aliases = ["7x43 mm"]
+
+origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 508"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.01
+base = 11.94
+shoulder = 11.38
+shoulder_at = 30.97
+neck_at = 36.08
+neck_base = 7.9
+# Drawing: SØ 11.49, NØ 7.90, SL 30.90, NL 7.35, CL 43.36.
+shoulder_angle = 19.4
+cite.shoulder_angle = ["https://municion.org/producto/280-british-xpl-for-em-2-assault-rifle/"]
+neck = 7.95
+case_length = 43.43
+overall_length = 64.52
+bullet = 7.19
+sources = [
+  "book:cotw-18 p. 573",
+  "https://municion.org/producto/280-british-xpl-for-em-2-assault-rifle/",
+]
+
+[introduced]
+# COTW: work began in 1945; ready for trials by 1947.
+year = 1945
+sources = ["book:cotw-18 p. 541"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# Drawing 07-043-BGC-040: RT 1.21, HL 3.46, GØ 10.04, GW 0.85, HØ 11.88; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.21
+ramp_top = 3.46
+groove_diameter = 10.04
+ramp_angle = 33.0
+groove_width = 0.85
+sources = ["https://municion.org/producto/280-british-xpl-for-em-2-assault-rifle/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 541"]

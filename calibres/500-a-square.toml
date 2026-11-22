@@ -1,0 +1,63 @@
+# Measurements converted from inches.
+# Arthur Alphin's first A-Square round: the .460 Weatherby Magnum case
+# necked up and blown out.
+name = ".500 A-Square"
+guns = ["rifle"]
+kind = "belted"
+profile = "round"
+aliases = ["500 a-square", "500 a-sq"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/500-a-square-belted-type-2/"]
+rare = true
+
+[mm]
+rim = 14.7
+belt = 15.33
+base = 14.78
+shoulder = 14.43
+shoulder_at = 62.89
+neck_at = 64.26
+neck_base = 13.47
+# Drawing: SØ 14.40, NØ 13.47, SL 62.50, NL 9.40, CL 73.27.
+shoulder_angle = 18.7
+cite.shoulder_angle = ["https://municion.org/producto/500-a-square-belted-type-2/"]
+neck = 13.61
+case_length = 73.66
+overall_length = 95.0
+bullet = 12.95
+# The table gives the belt, .603 in., in the rim column; rim and belt are the .460 Weatherby Magnum's (R1 and R3
+# on its C.I.P. sheet).
+sources = [
+  "book:cotw-18 p. 453",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf",
+  "https://municion.org/producto/500-a-square-belted-type-2/",
+]
+
+[introduced]
+# COTW: designed in 1974; the A-Square company was founded for it in 1979.
+year = 1974
+sources = ["book:cotw-18 p. 443"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# from the .460 Weatherby Magnum case; C.I.P. sheet
+rim_thickness = 1.6
+ramp_top = 6.4
+groove_diameter = 12.57
+ramp_angle = 45.0
+groove_width = 1.24
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page37.pdf"]
+
+[bullet]
+# Inferred: the page gives only A-Square's handloads, with soft points (p. 443).
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/500-a-square-belted-type-2/"]

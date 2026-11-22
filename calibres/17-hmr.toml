@@ -1,0 +1,46 @@
+name = ".17 HMR"
+# Guns: book:cotw-18 p. 654.
+guns = ["rifle"]
+kind = "rimfire"
+profile = "spitzer"
+aliases = ["17hmr"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.17_Hornady_Magnum_Rimfire",
+  "book:ammo-encyclopedia-2 p. 719",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page26.pdf",
+]
+worldwide = true
+
+[mm]
+rim = 7.5
+base = 6.1
+shoulder = 6.1
+shoulder_at = 22.2
+neck_at = 23.54
+neck_base = 4.9
+# C.I.P. 17 HMR
+shoulder_angle = 25
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page26.pdf"]
+neck = 4.9
+case_length = 27.03
+overall_length = 34.67
+bullet = 4.4
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page26.pdf",
+  "book:cotw-18 p. 670",
+]
+
+[introduced]
+year = 2002
+sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Magnum_Rimfire"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/tabvcal-en-page26.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.17_Hornady_Magnum_Rimfire"]

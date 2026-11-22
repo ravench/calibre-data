@@ -1,0 +1,57 @@
+# Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".338-378 Weatherby Magnum"
+guns = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["338-378"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.338-378_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page23.pdf",
+]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 14.7
+# The belt, R3 on the C.I.P. sheet, is wider than the rim.
+belt = 15.33
+base = 14.8
+shoulder = 14.2
+shoulder_at = 61.05
+neck_at = 63.19
+neck_base = 9.41
+# C.I.P. 338-378 Weath. Mag.
+shoulder_angle = 48.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page23.pdf"]
+neck = 9.2
+case_length = 73.8
+overall_length = 93.0
+bullet = 8.6
+sources = [
+  "https://en.wikipedia.org/wiki/.338-378_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page23.pdf",
+]
+
+[introduced]
+# factory round; the wildcat is older
+year = 1998
+sources = ["https://en.wikipedia.org/wiki/.338-378_Weatherby_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.338-378_Weatherby_Magnum"]
+
+[case_head]
+# C.I.P. ?
+rim_thickness = 1.6
+ramp_top = 6.4
+groove_diameter = 12.57
+ramp_angle = 45.0
+groove_width = 1.24
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page23.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.338-378_Weatherby_Magnum"]

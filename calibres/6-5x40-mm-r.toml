@@ -1,0 +1,43 @@
+# Measurements converted from inches.
+name = "6.5x40 mm R"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/65-x-40-r-g-tesching/).
+profile = "flat"
+aliases = ["6.5x40r"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.46
+base = 10.06
+neck = 7.37
+case_length = 40.13
+overall_length = 52.58
+bullet = 6.35
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/65-x-40-r-g-tesching/"]
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+# naboje.org: about 1900; COTW 18 p. 616 gives no year.
+year = 1900
+sources = ["book:cotw-18 p. 616", "https://naboje.org/node/22010"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .07 in.
+rim_thickness = 1.78
+sources = ["book:donnelly p. 764"]
+
+[bullet]
+# A blackpowder round (p. 616): lead, like the others of its time.
+type = "lead"
+sources = []

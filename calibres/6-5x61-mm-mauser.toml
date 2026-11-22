@@ -1,0 +1,55 @@
+# Measurements converted from inches.
+# DWM, introduced in the 1930s: the decade's first year is kept.
+name = "6.5x61 mm Mauser"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5x61"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.17
+base = 12.12
+shoulder = 11.48
+shoulder_at = 47.77
+neck_at = 52.18
+neck_base = 7.49
+# Drawing: SØ 11.54, NØ 7.49, SL 47.73, NL 8.78, CL 60.92.
+shoulder_angle = 24.7
+cite.shoulder_angle = ["https://municion.org/producto/65-x-61-mauser/"]
+neck = 7.52
+case_length = 60.96
+overall_length = 90.17
+bullet = 6.71
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/65-x-61-mauser/"]
+
+[introduced]
+year = 1930
+sources = ["book:cotw-18 p. 619"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# Drawing 07-061-BGC-030: RT 1.45, HL 3.60, GØ 10.43, GW 1.00, HØ 12.10; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.45
+ramp_top = 3.6
+groove_diameter = 10.43
+ramp_angle = 36.0
+groove_width = 1
+sources = ["https://municion.org/producto/65-x-61-mauser/"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 619"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/65-x-61-mauser/"]

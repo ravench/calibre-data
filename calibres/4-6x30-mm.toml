@@ -1,0 +1,53 @@
+name = "4.6x30 mm"
+# Guns: https://en.wikipedia.org/wiki/Heckler_%26_Koch_MP7 (H&K MP7, made for it).
+guns = ["handgun", "rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["4.6x30"]
+
+origin = "DE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/HK_4.6×30mm",
+  "book:ammo-encyclopedia-2 p. 478",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page1.pdf",
+]
+
+[mm]
+rim = 8.0
+base = 8.0
+shoulder = 7.8
+shoulder_at = 23.02
+neck_at = 26.03
+neck_base = 5.31
+# C.I.P. 4,6 x 30
+shoulder_angle = 22.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page1.pdf"]
+neck = 5.3
+case_length = 30.5
+overall_length = 38.5
+bullet = 4.65
+sources = [
+  "book:cotw-18 p. 175",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page1.pdf",
+]
+
+[introduced]
+year = 1999
+sources = ["https://en.wikipedia.org/wiki/HK_4.6×30mm"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/HK_4.6×30mm"]
+
+[case_head]
+# C.I.P. 4,6 x 30
+rim_thickness = 1.1
+ramp_top = 2.87
+groove_diameter = 6.8
+ramp_angle = 31.0
+groove_width = 0.75
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page1.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 84"]

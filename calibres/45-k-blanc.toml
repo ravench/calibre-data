@@ -1,0 +1,34 @@
+# Alarm and starter blanks from C.I.P. Tab. VIII, maximum cartridge (sheets 1991-07-29 to
+# 1991-08-02). Closed-front ones (8 mm, .315) are plain cylinders like the 9 mm PA Blanc, length = L3.
+# Star-crimped ones use L6 (the crimped length); their mouth is estimated at 0.6 x the base, the
+# ratio once read off fired blanks (opened 6.8/11 loads, it turned out), because C.I.P. gives no crimp size.
+# The name is the sheet's title, «45 K Blanc»; in German the round is sold as «Knall».
+name = ".45 K Blanc"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "crimped"
+aliases = ["45knall", "45k", "45shortknall", "45kblanc"]
+display_aliases = [".45 Knall"]
+
+[mm]
+rim = 13.0
+base = 12.1
+mouth = 7.3
+length = 16.6
+unsourced = ["mouth"]
+sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
+
+[introduced]
+# C.I.P. Tab. VIII sheet dates (1991-07-29 to 1991-08-02); no earlier source found for these blanks.
+year = 1991
+sources = ["https://360.lexisnexis.at/media/attachment/2019_ii_435-coo_2026_100_2_1703759-anlage11/pdf"]
+
+[primer]
+# Alarm blanks: not reloadable, primed with small pistol size caps.
+size = "small-pistol"
+sources = []
+
+[case_head]
+# R on the C.I.P. 45 K Blanc sheet
+rim_thickness = 1.2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-viii/tabviiical-en-page12.pdf"]

@@ -1,0 +1,55 @@
+name = ".577/450 Martini-Henry"
+# Guns: book:cotw-18 p. 567.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["martini-henry", "577/450", "577/450 sld. mart. h."]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.577/450_Martini–Henry",
+  "book:ammo-encyclopedia-2 p. 564",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 577/450 Sld. Mart. H., maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+# The sheet is the later solid drawn case («Sld.»); the first rolled foil cases have no sheet.
+rim = 19.3
+base = 17.07
+shoulder = 16.15
+shoulder_at = 35.71
+neck_at = 41.17
+neck_base = 13.06
+# C.I.P. 577/450 Sld. Mart. H.: half the cone angle alpha 31°35'57"
+shoulder_angle = 15.8
+neck = 12.83
+case_length = 59.08
+overall_length = 81.28
+bullet = 11.81
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf"]
+
+[introduced]
+year = 1871
+sources = ["https://en.wikipedia.org/wiki/.577/450_Martini–Henry"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page127.pdf"]
+
+[bullet]
+type = "paper"
+sources = ["https://en.wikipedia.org/wiki/.577/450_Martini–Henry"]
+
+[case]
+# Rolled brass foil, as the Commons photo's caption says.
+material = "brass"
+sources = ["https://commons.wikimedia.org/wiki/File:Snider-Martini-Enfield_Cartridges.JPG"]

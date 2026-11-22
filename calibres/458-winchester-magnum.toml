@@ -1,0 +1,49 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = ".458 Winchester Magnum"
+guns = ["rifle"]
+kind = "belted"
+profile = "round"
+aliases = ["458winmag", "458wm"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.458_Winchester_Magnum",
+  "book:ammo-encyclopedia-2 p. 361",
+]
+
+[mm]
+# SAAMI 458 Winchester Magnum, maximum cartridge.
+rim = 13.51
+base = 13.02
+neck = 12.22
+case_length = 63.5
+overall_length = 84.84
+bullet = 11.66
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=172"]
+
+[introduced]
+year = 1956
+sources = ["https://en.wikipedia.org/wiki/.458_Winchester_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.458_Winchester_Magnum"]
+
+[case_head]
+# C.I.P. 458 Win. Mag.
+rim_thickness = 1.27
+ramp_top = 5.59
+groove_diameter = 12.07
+ramp_angle = 35.0
+groove_width = 0.94
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page36.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.458_Winchester_Magnum"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/458-winchester-magnum-belted/"]

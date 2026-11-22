@@ -1,0 +1,63 @@
+# Measurements converted from inches.
+# The Portuguese Guedes single-shot rifle, made by Steyr.
+name = "8x60 mm R Guedes"
+# Guns: book:cotw-18 p. 556.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["8x60r guedes", "8 mm guedes"]
+display_aliases = ["8 mm Guedes M85"]
+
+origin = "PT"
+origin_sources = ["https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.75
+base = 13.79
+shoulder = 12.45
+shoulder_at = 37.47
+neck_at = 45.79
+neck_base = 9.03
+# Drawing: SØ 12.60, NØ 9.03, SL 37.65, NL 13.65, CL 59.62.
+shoulder_angle = 12.1
+cite.shoulder_angle = ["https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]
+neck = 8.99
+case_length = 59.44
+overall_length = 82.55
+bullet = 8.28
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]
+
+[introduced]
+year = 1885
+sources = ["book:cotw-18 p. 556"]
+
+[primer]
+# 6.44 mm, 2 specimens
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]
+
+[case_head]
+# .080 in.
+rim_thickness = 2.03
+sources = ["book:cotw-18 p. 573"]
+
+[bullet]
+# COTW 18 p. 557 gives the military load as a ball over blackpowder, without its material.
+# municion.org says the lead bullet came with both paper and metal (brass or copper foil) patches, and
+# Roth's two 1885 rounds there show a metal-looking one
+# (https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/); ammunitionartifacts.com's page
+# for the 8x60 R Kropatschek M1886 case, which it calls suitable for the Guedes rifle, says the original
+# load had a paper patch
+# (https://www.ammunitionartifacts.com/metriccartridgecases/8x60r-mm-portuguese-kropatschek-m1886).
+# Both are reported and which came first is not known; the catalogue has no metal-patched type, so
+# lead stays unchecked.
+type = "lead"
+sources = []
+
+[case]
+# The photos show brass cases (Roth's).
+material = "brass"
+sources = ["https://municion.org/producto/8-x-60-r-portuguese-guedes-m-1885/"]

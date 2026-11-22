@@ -1,0 +1,58 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+# Cartridges of the World: interchangeable with the Swedish and Norwegian Nagant rounds; only the bullet lube differs.
+name = "7.5 mm Swiss Ordnance 1882"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["7.5ord", "7.5revolver", "revolver82", "7.5nagant", "7.5norwegiannagant"]
+
+origin = "CH"
+# Wikipedia's infobox names Belgium: not listed.
+origin_sources = [
+  "https://municion.org/producto/75-mm-swiss-ordnance-revolver-m-1882-86/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page8.pdf",
+]
+obsolete = true
+
+[mm]
+rim = 10.4
+# C.I.P. P1; the case tapers to 8.4 at the mouth (H2).
+base = 9.0
+neck = 8.4
+case_length = 22.8
+overall_length = 34.6
+bullet = 8.0
+sources = [
+  "https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page8.pdf",
+]
+
+[introduced]
+# adopted 1882; 1880 is the design
+year = 1882
+sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/7.5mm_1882_Ordnance"]
+
+[case_head]
+# R on the C.I.P. 7,5 Ord. Suisse sheet
+rim_thickness = 1.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page8.pdf"]
+
+[bullet]
+# First loaded with a plain lead bullet over black powder (about 100 gr); a copper-alloy jacket
+# came in 1889 (municion.org). COTW 18 gives the military load as lead.
+type = "lead"
+sources = [
+  "https://municion.org/producto/75-mm-swiss-ordnance-revolver-m-1882-86/",
+  "book:cotw-18 p. 475",
+]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/75-mm-swiss-ordnance-revolver-m-1882-86/"]

@@ -1,0 +1,42 @@
+# The round of the Soviet 61-K (M1939) anti-aircraft cannon and its naval twins, made since 1939 and in
+# China as the Type 55. Its name gives the bore and case length (Rapid Fire's table: 37x250R), Rapid
+# Fire's table the rim and base, Autocannon p. 159 the length of the round. The cases are lacquered steel
+# or brass, so the file names no material. The specimen drawing on municion.org (37-252-BDC-010)
+# gives the head; it does not show where the neck starts, so it gives no shoulder or neck.
+name = "37x252 mm SR"
+guns = ["cannon"]
+kind = "semi-rimmed"
+profile = "spitzer"
+aliases = ["37x252sr", "37 mm 61-k", "61-k", "37 mm m1939", "37 mm type 55"]
+origin = "SU"
+origin_sources = ["book:rapid-fire p. 230"]
+
+[mm]
+rim = 51.9
+base = 45.8
+case_length = 252.0
+overall_length = 383.0
+bullet = 37.0
+sources = [
+  "book:rapid-fire p. 230",
+  "book:autocannon p. 159",
+  "https://en.wikipedia.org/wiki/37_mm_automatic_air_defense_gun_M1939_(61-K)",
+]
+
+[introduced]
+# In production since its introduction in 1939 (Autocannon).
+year = 1939
+sources = [
+  "book:autocannon p. 159",
+  "https://en.wikipedia.org/wiki/37_mm_automatic_air_defense_gun_M1939_(61-K)",
+]
+
+[case_head]
+# The drawing 37-252-BDC-010: RØ 52.00, HØ 46.00, RT 5.40, GØ 43.00, GW 3.00, the ramp
+# ends at HL 10.70; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 5.4
+ramp_top = 10.7
+groove_diameter = 43.0
+ramp_angle = 33.0
+groove_width = 3.0
+sources = ["https://municion.org/producto/37-x-253-sr-soviet-aa-gun-m-1939/"]

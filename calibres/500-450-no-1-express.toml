@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# One of Westley Richards's many blackpowder .500/450s.
+name = ".500/450 No. 1 Express"
+# Guns: book:cotw-18 p. 597.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["500/450 no 1", "500/450 no. 1 express"]
+
+origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 466"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.76
+base = 14.66
+shoulder = 13.46
+shoulder_at = 47.3
+neck_at = 50.5
+neck_base = 12.32
+# Drawing: SØ 13.44, NØ 12.32, SL 47.33, NL 19.35, CL 69.88.
+shoulder_angle = 9.9
+cite.shoulder_angle = ["https://municion.org/producto/500-450-westley-richards-n1-express/"]
+neck = 12.32
+case_length = 69.85
+overall_length = 85.85
+bullet = 11.63
+# shoulder_at from the drawing 11-070-BBC-020: SL 47.33 on a case of CL 69.88, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/500-450-westley-richards-n1-express/"]
+
+[introduced]
+unknown = "COTW 18 p. 597 dates the oldest .500/450 to 1871 but gives no year for this one."
+sources = ["book:cotw-18 p. 597"]
+
+[primer]
+# COTW 5 gives a .251 in. Berdan primer; COTW 18 p. 608 prints .241 in.
+size = "berdan-nitro"
+diameter = 6.38
+sources = ["book:cotw-5 p. 266"]
+
+[case_head]
+# Drawing 11-070-BBC-020: RT 1.45.
+rim_thickness = 1.45
+sources = ["https://municion.org/producto/500-450-westley-richards-n1-express/"]
+
+[bullet]
+# A blackpowder round.
+type = "lead"
+sources = ["book:cotw-18 p. 597"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/500-450-westley-richards-n1-express/"]

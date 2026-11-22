@@ -1,0 +1,54 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+name = "8x58 mm R Sauer"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/8-x-58-r-sauer-sohn/).
+profile = "flat"
+aliases = ["8x58r sauer"]
+
+origin = "DE"
+origin_sources = [
+  "https://municion.org/producto/8-x-58-r-sauer-sohn/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.75
+base = 11.05
+neck = 8.78
+case_length = 58.5
+overall_length = 78.0
+bullet = 8.09
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/8-x-58-r-sauer-sohn/"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf"]
+
+[introduced]
+# About 1892 (municion.org; DWM's case 462 dates from about 1897); COTW 18 p. 629 gives no year.
+year = 1892
+sources = ["https://municion.org/producto/8-x-58-r-sauer-sohn/"]
+
+[primer]
+# .254 in. Berdan in the table
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page36.pdf"]
+
+[bullet]
+# A blackpowder Schützen round (p. 629). RWS loaded it with a bare lead bullet (this sheet, filed
+# under Germany 1920-1945); DWM (1936), Roth and RWS also with soft points, the factory load the book gives. Which came first is not
+# known; lead is kept for the target round.
+type = "lead"
+sources = ["https://municion.org/ficha-08-058-tbc-010-0006/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/8-x-58-r-sauer-sohn/"]

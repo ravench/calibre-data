@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# Lazzeroni's .284 short magnum for a 2.8 in. action, on its .577 in. case.
+name = "7.21 Lazzeroni Tomahawk"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.21 tomahawk", "7.21mm tomahawk", "lazzeroni tomahawk"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/721-mm-lazzeroni-tomahawk/"]
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 39.69
+neck_at = 45.47
+neck_base = 8.06
+# COTW 18 p. 387: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 387"]
+neck = 8.08
+case_length = 52.07
+overall_length = 71.12
+bullet = 7.21
+# shoulder_at from the drawing 07-052-BGC-025: SL 39.50 on a case of CL 51.88, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/721-mm-lazzeroni-tomahawk/"]
+
+[introduced]
+year = 1997
+sources = ["book:cotw-18 p. 387"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .060 in. (COTW); groove from the drawing 07-052-BGC-025: RT 1.48, HL 3.85, GØ 12.72, GW 1.30,
+# HØ 14.65; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.52
+ramp_top = 3.85
+groove_diameter = 12.72
+ramp_angle = 42.0
+groove_width = 1.3
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/721-mm-lazzeroni-tomahawk/"]
+
+[bullet]
+# Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 387).
+type = "softpoint"
+sources = ["book:cotw-18 p. 387"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/721-mm-lazzeroni-tomahawk/"]

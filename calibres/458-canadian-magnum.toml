@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# North American Shooting Systems' rebated rimless magnum for long actions, without a belt.
+name = ".458 Canadian Magnum"
+guns = ["rifle"]
+kind = "rimless"
+# Nose: round, as on the other dangerous-game rounds; the page gives none.
+profile = "round"
+aliases = ["458 canadian magnum", "458 canadian mag", "458 nass"]
+
+origin = "CA"
+origin_sources = ["https://municion.org/producto/458-canadian-magnum-by-nass/"]
+rare = true
+
+[mm]
+rim = 13.51
+base = 13.82
+shoulder = 13.46
+shoulder_at = 59.58
+neck_at = 61.06
+neck_base = 12.2
+# Drawing: SØ 13.36, NØ 12.20, SL 59.20, NL 10.82, CL 71.50.
+shoulder_angle = 21.4
+cite.shoulder_angle = ["https://municion.org/producto/458-canadian-magnum-by-nass/"]
+neck = 12.32
+case_length = 71.88
+overall_length = 91.44
+bullet = 11.63
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/458-canadian-magnum-by-nass/"]
+
+[introduced]
+# COTW: developed about 1994.
+year = 1994
+sources = ["book:cotw-18 p. 435"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# .046 in. (COTW); groove from the drawing 12-072-BGC-020: RT 1.10, HL 3.50, GØ 11.85, GW 1.00,
+# HØ 13.76; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.17
+ramp_top = 3.5
+groove_diameter = 11.85
+ramp_angle = 34.0
+groove_width = 1
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/458-canadian-magnum-by-nass/"]
+
+[bullet]
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/458-canadian-magnum-by-nass/"]

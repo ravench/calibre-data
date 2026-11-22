@@ -1,0 +1,27 @@
+# The round of the Maxim-Nordenfelt 1¼-pounder Mk III «Heavy» of 1898, adopted later in modified form for
+# the Vickers 1½-pounder of the First World War. Its name gives the bore and case length (Rapid Fire's
+# table: 37x123R), Rapid Fire's table the rim and base. Autocannon (p. 154) has the round's length vary
+# with the shell, so the file has none.
+name = "37x124 mm R"
+guns = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["37x124r", "37x123r", "1.5-pounder vickers"]
+origin = "GB"
+origin_sources = ["book:rapid-fire p. 229"]
+
+[mm]
+rim = 47.6
+base = 43.7
+case_length = 124.0
+bullet = 37.0
+sources = ["book:rapid-fire p. 229", "book:autocannon p. 154"]
+
+[introduced]
+# The year of the Maxim-Nordenfelt gun it was developed for (Autocannon).
+year = 1898
+sources = ["book:autocannon p. 154"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 154"]

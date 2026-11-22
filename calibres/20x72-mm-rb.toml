@@ -1,0 +1,29 @@
+# The round of the Oerlikon FF aircraft cannon of 1934, the smallest of Oerlikon's three pre-war
+# rounds with a rebated rim (with the 20x101 mm RB and the 20x110 mm RB); the Japanese Navy's Type
+# 99-1 fired it too. Autocannon: the Becker cannon's 20x70RB case with the rim cut down to 19 mm and
+# a 2 mm longer extractor groove. Its name gives the bore and case length, Jane's table the rim, base
+# and neck. Autocannon gives the round as 140 to 147 mm long, so the file has no length of the round.
+name = "20x72 mm RB"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x72rb", "20x72 rb", "oerlikon ff", "type 99-1"]
+origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/Oerlikon_20_mm_cannon"]
+
+[mm]
+rim = 18.99
+base = 22.4
+neck = 20.6
+case_length = 72.0
+bullet = 20.0
+sources = ["book:janes-ammo-2002 p. 682", "book:autocannon p. 112"]
+
+[introduced]
+# Wikipedia and Autocannon p. 275 give 1935.
+year = 1934
+sources = ["book:autocannon p. 112"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 113"]

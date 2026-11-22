@@ -1,0 +1,49 @@
+# Measurements converted from inches.
+# Semi-rimmed; the French Navy's Daudeteau rifle.
+name = "6.5x53.5 mm SR Daudeteau"
+guns = ["rifle"]
+kind = "semi-rimmed"
+profile = "round"
+aliases = ["6.5daudeteau", "6.5x53.5"]
+
+origin = "FR"
+origin_sources = ["book:ammo-encyclopedia-2 p. 502"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.31
+base = 12.45
+shoulder = 11.84
+shoulder_at = 43.0
+neck = 7.57
+case_length = 53.09
+overall_length = 76.71
+bullet = 6.68
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+year = 1895
+sources = ["book:cotw-18 p. 617"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .065 in. (COTW's military table, p. 573; the sporting table on p. 651, which the measurements follow, gives none);
+# groove from the drawing 07-053-BDC-010: RT 1.80, HL 3.25, GØ 11.31, GW 0.75, HØ 12.45; ramp
+# angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.65
+ramp_top = 3.25
+groove_diameter = 11.31
+ramp_angle = 39.0
+groove_width = 0.75
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/65-x-53-sr-daudeteau-n12/"]
+
+[bullet]
+# The service or target load, full metal jacket; p. 617 also lists soft points.
+type = "jacketed"
+sources = ["book:cotw-18 p. 617"]

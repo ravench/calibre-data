@@ -1,0 +1,51 @@
+# Measurements converted from inches.
+# A-Square's rimmed .45 for double rifles, like a lengthened, rimmed .416 Rigby case.
+name = ".450 Assegai"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["450 assegai"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/450-assegai/"]
+rare = true
+
+[mm]
+rim = 16.89
+base = 14.55
+shoulder = 13.94
+shoulder_at = 68.92
+neck_at = 72.52
+neck_base = 12.3
+# Drawing: SØ 13.86, NØ 12.30, SL 68.50, NL 11.30, CL 83.40.
+shoulder_angle = 12.2
+cite.shoulder_angle = ["https://municion.org/producto/450-assegai/"]
+neck = 12.37
+case_length = 83.82
+overall_length = 104.14
+bullet = 11.63
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/450-assegai/"]
+
+[introduced]
+unknown = "COTW 18 p. 436 gives no year."
+sources = ["book:cotw-18 p. 436"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 453"]
+
+[bullet]
+# Inferred: the factory load gives the weight only; A-Square's handloads use its Lion Load soft
+# point (p. 436).
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/450-assegai/"]

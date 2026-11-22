@@ -1,0 +1,53 @@
+# Measurements converted from inches.
+# For Westley Richards doubles with Lancaster oval-bore rifling, falling-block and Lee-action rifles.
+name = ".375/303 Westley Richards"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["375/303", "375/303 axite"]
+display_aliases = [".375/303 Axite"]
+
+origin = "GB"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.83
+base = 11.61
+shoulder = 9.91
+shoulder_at = 53.15
+neck_at = 55.4
+neck_base = 8.58
+# Short cone (about 2 mm): a 0.1 mm reading step moves the angle by about 1 degree.
+# Drawing: SØ 10.10, NØ 8.58, SL 52.70, NL 8.10, CL 63.05.
+shoulder_angle = 18.7
+cite.shoulder_angle = ["https://municion.org/producto/375-303-axite-nitro-express-swift-westley-richards/"]
+neck = 8.71
+case_length = 63.5
+overall_length = 85.34
+bullet = 7.9
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/375-303-axite-nitro-express-swift-westley-richards/"]
+
+[introduced]
+year = 1905
+sources = ["book:cotw-18 p. 584"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .065 in.
+# Donnelly's entry is titled .375/303 Axite: rim .505 in. as the file.
+rim_thickness = 1.65
+sources = ["book:donnelly p. 464"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 584"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/375-303-axite-nitro-express-swift-westley-richards/"]

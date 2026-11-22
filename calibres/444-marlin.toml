@@ -1,0 +1,48 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = ".444 Marlin"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["444marlin"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.444_Marlin",
+  "book:ammo-encyclopedia-2 p. 354",
+]
+
+[mm]
+# SAAMI 444 Marlin, maximum cartridge.
+rim = 13.06
+base = 11.93
+neck = 11.51
+case_length = 56.52
+overall_length = 65.28
+bullet = 10.94
+# flat: the drawing gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/444-marlin/"]
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=167"]
+
+[introduced]
+year = 1964
+sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
+
+[case_head]
+# SAAMI 444 Marlin
+rim_thickness = 1.6
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=167"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.444_Marlin"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/444-marlin/"]

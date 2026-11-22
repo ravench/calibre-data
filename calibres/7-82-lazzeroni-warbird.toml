@@ -1,0 +1,58 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# Lazzeroni's .308 long magnum, on its .577 in. case (C.I.P. maximum 14.73 mm).
+name = "7.82 Lazzeroni Warbird"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.82 warbird", "7.82mm warbird", "lazzeroni warbird"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/782-mm-lazzeroni-warbird/"]
+rare = true
+
+[mm]
+# C.I.P. 7,82 Warbird, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 14.76
+base = 14.73
+shoulder = 14.22
+shoulder_at = 58.7
+neck_at = 63.4
+neck_base = 8.79
+# C.I.P. 7,82 Warbird: half the cone angle alpha 60°01'36"
+shoulder_angle = 30.0
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page51.pdf"]
+neck = 8.76
+case_length = 71.37
+overall_length = 92.2
+bullet = 7.84
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page51.pdf",
+  "book:cotw-18 p. 452",
+]
+
+[introduced]
+year = 1995
+sources = ["book:cotw-18 p. 395"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# C.I.P. 7,82 Warbird: R, E, E1, delta
+rim_thickness = 1.65
+ramp_top = 3.94
+groove_diameter = 12.95
+ramp_angle = 45.0
+groove_width = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page51.pdf"]
+
+[bullet]
+# Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 395).
+type = "softpoint"
+sources = ["book:cotw-18 p. 395"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/782-mm-lazzeroni-warbird/"]

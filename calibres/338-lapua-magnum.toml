@@ -1,0 +1,59 @@
+name = ".338 Lapua Magnum"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["338lm", "338lapua", "338", "8.58x71", "8.58x70", "8.6x70", "338 lapua mag"]
+
+origin = "FI"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.338_Lapua_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page132.pdf",
+]
+worldwide = true
+
+[mm]
+rim = 14.9
+base = 14.9
+shoulder = 13.82
+shoulder_at = 54.9
+neck_at = 60.89
+neck_base = 9.46
+# C.I.P. 338 Lapua Mag.
+shoulder_angle = 20
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page132.pdf"]
+neck = 9.41
+case_length = 69.2
+overall_length = 93.5
+bullet = 8.6
+sources = [
+  "book:hornady-10 p. 668",
+  "book:cotw-18 p. 176",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page132.pdf",
+]
+
+[introduced]
+year = 1989
+sources = ["https://en.wikipedia.org/wiki/.338_Lapua_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.338_Lapua_Magnum"]
+
+[case_head]
+# C.I.P. 338 Lapua Mag.
+rim_thickness = 1.52
+ramp_top = 3.12
+groove_diameter = 13.24
+ramp_angle = 50.1
+groove_width = 0.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page132.pdf"]
+
+[bullet]
+# Lapua's Scenar match factory load; an open-tip match bullet counts as jacketed.
+type = "jacketed"
+sources = ["book:cotw-18 p. 153"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/338-lapua-magnum/"]

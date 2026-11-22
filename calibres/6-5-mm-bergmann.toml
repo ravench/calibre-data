@@ -1,0 +1,60 @@
+# Measurements converted from inches.
+# One of Theodor Bergmann's pistol rounds of 1894-96, the earliest year kept.
+name = "6.5 mm Bergmann"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["6.5bergmann", "6.5 bergmann"]
+
+origin = "DE"
+origin_sources = ["https://municion.org/producto/65-mm-bergmann-n3-1894-grooveless/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 9.4
+base = 9.32
+shoulder = 8.25
+shoulder_at = 16.02
+neck_at = 17.6
+neck_base = 7.3
+# Drawing: SØ 8.38, NØ 7.30, SL 15.70, NL 4.50, CL 21.78.
+shoulder_angle = 18.9
+cite.shoulder_angle = ["https://municion.org/producto/65-mm-bergmann-n3-1896/"]
+neck = 7.34
+case_length = 22.1
+overall_length = 31.24
+bullet = 6.71
+sources = ["book:cotw-18 p. 527", "https://municion.org/producto/65-mm-bergmann-n3-1896/"]
+
+[introduced]
+year = 1894
+sources = ["book:cotw-18 p. 463"]
+
+[primer]
+# 4.57 mm, 6 specimens
+size = "small-pistol"
+sources = [
+  "https://municion.org/producto/65-mm-bergmann-n3-1894-grooveless/",
+  "https://municion.org/producto/65-mm-bergmann-n3-1896/",
+]
+
+[case_head]
+# Drawing 07-022-BGC-010: RT 1.00, HL 1.90, GØ 8.63, GW 0.40, HØ 9.34; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle). Cartridges of the World's table gives the rim .025 in. (0.64): more than 0.3 mm
+# under the drawing's, so the whole head is the drawing's (a thinner rim under its HL would stretch the groove).
+rim_thickness = 1.0
+ramp_top = 1.9
+groove_diameter = 8.63
+ramp_angle = 35.0
+groove_width = 0.4
+sources = ["https://municion.org/producto/65-mm-bergmann-n3-1896/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 463"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/65-mm-bergmann-n3-1894-grooveless/"]

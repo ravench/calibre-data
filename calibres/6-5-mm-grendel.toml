@@ -1,0 +1,54 @@
+# Rifle batch 3 (2026-11): first added from the page named in INTRODUCED, now C.I.P.'s (see [mm]).
+name = "6.5 mm Grendel"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.5grendel", "grendel"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
+
+[mm]
+# C.I.P. 6,5 Grendel, maximum cartridge.
+rim = 11.2
+base = 11.22
+shoulder = 10.92
+shoulder_at = 29.23
+# C.I.P.: alpha 60 degrees.
+shoulder_angle = 30
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-grendel.pdf", "https://www.rifleshootermag.com/editorial/6-5-grendel-evolution/84008"]
+neck = 7.44
+case_length = 38.61
+overall_length = 57.4
+bullet = 6.71
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-grendel.pdf",
+  "https://en.wikipedia.org/wiki/6.5mm_Grendel",
+]
+
+[introduced]
+year = 2003
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/6.5mm_Grendel"]
+
+[case_head]
+# C.I.P. 6,5 Grendel
+rim_thickness = 1.5
+ramp_top = 3.5
+groove_diameter = 9.6
+ramp_angle = 45.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/6-5-grendel.pdf"]
+
+[bullet]
+# Alexander Arms' own loads on the page include an open-tip match bullet, which counts as
+# jacketed; the FMJ row is Wolf's later load.
+type = "jacketed"
+sources = ["book:cotw-18 p. 109"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]

@@ -1,0 +1,49 @@
+# The Swiss round of the Oerlikon KBA, a NATO standard, also fired by the M242 Bushmaster. Its name
+# gives the bore and case length (Jane's table measures the case at 136.5 mm); Jane's table gives
+# the rim, base and neck, the specimen drawing on municion.org the shoulder and the head,
+# TM 43-0001-27 (the M791) and Jane's p. 89 the round length. Wikipedia's text has KBA deliveries to
+# the Netherlands from 1971, its infobox production from 1973 and service from 1975.
+name = "25x137 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["25x137"]
+origin = "CH"
+origin_sources = ["https://en.wikipedia.org/wiki/Oerlikon_KBA"]
+
+[mm]
+rim = 37.8
+base = 37.99
+shoulder = 35.58
+shoulder_at = 109.87
+neck_at = 124.6
+neck_base = 26.14
+# Drawing 25-137-BGC-010: SØ 35.58, NØ 26.14, SL 109.50, NL 12.40, CL 136.63, TL 222.86.
+shoulder_angle = 17.8
+cite.shoulder_angle = ["https://municion.org/producto/25-x-137-swiss-oerlikon-kba-mecanic-primer/"]
+neck = 26.08
+case_length = 137.0
+overall_length = 223.0
+bullet = 25.0
+sources = [
+  "book:janes-ammo-2002 p. 89",
+  "book:janes-ammo-2002 p. 682",
+  "https://en.wikipedia.org/wiki/Oerlikon_KBA",
+  "https://en.wikipedia.org/wiki/25_mm_caliber",
+  "book:tm-43-0001-27 p. 15-3",
+  "https://municion.org/producto/25-x-137-swiss-oerlikon-kba-mecanic-primer/",
+]
+
+[introduced]
+year = 1971
+sources = ["https://en.wikipedia.org/wiki/Oerlikon_KBA"]
+
+[case_head]
+# The drawing 25-137-BGC-010: RØ 37.86, HØ 38.07, RT 4.01, GØ 33.97, GW 4.09,
+# the ramp ends at HL 9.74; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 4.01
+ramp_top = 9.74
+groove_diameter = 33.97
+ramp_angle = 51.0
+groove_width = 4.09
+sources = ["https://municion.org/producto/25-x-137-swiss-oerlikon-kba-mecanic-primer/"]

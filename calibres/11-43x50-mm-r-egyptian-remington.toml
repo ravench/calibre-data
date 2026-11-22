@@ -1,0 +1,60 @@
+# Measurements converted from inches.
+# The Egyptian Remington rolling-block rifle; France used it too in 1870-71.
+name = "11.43x50 mm R Egyptian Remington"
+# Guns: book:cotw-18 p. 566.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/43-egyptian-remington-flat-base/).
+profile = "flat"
+aliases = ["11.43x50r", "43 egyptian"]
+display_aliases = [".43 Egyptian"]
+
+origin = "EG"
+origin_sources = ["https://municion.org/producto/43-egyptian-remington-flat-base/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.97
+base = 14.76
+shoulder = 13.77
+shoulder_at = 34.19
+neck_at = 37.32
+neck_base = 12.51
+# Drawing of the drawn flat-base case; the coiled case has a wider neck.
+# Drawing: SØ 13.56, NØ 12.51, SL 33.44, NL 11.96, CL 48.53. The half angle runs between the
+# book's diameters over the drawing's shoulder length (3.13 mm): the specimen's own cone (9.5 degrees) would leave a
+# neck 1.7 mm shorter than the specimen's, over the 1.5 mm the rule allows.
+shoulder_angle = 14.3
+cite.shoulder_angle = ["https://municion.org/producto/43-egyptian-remington-flat-base/"]
+neck = 12.17
+case_length = 49.28
+overall_length = 69.34
+bullet = 11.38
+# flat: the drawing gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+sources = ["book:cotw-18 p. 574", "https://municion.org/producto/43-egyptian-remington-flat-base/"]
+
+[introduced]
+year = 1870
+sources = ["book:cotw-18 p. 566"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a paper-patched lead bullet over blackpowder.
+type = "paper"
+sources = ["book:cotw-18 p. 566"]
+
+[case]
+# municion.org says the case is brass, and its photos show it.
+material = "brass"
+sources = ["https://municion.org/producto/43-egyptian-remington-flat-base/"]

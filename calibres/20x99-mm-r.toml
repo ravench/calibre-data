@@ -1,0 +1,40 @@
+# The round of the Soviet ShVAK aircraft cannon (also in light tanks) and of the B-20, a slightly tapered
+# rimmed case without a shoulder. Its name gives the bore and case length, Jane's table the rim, base and
+# neck, Autocannon p. 115 the length of the round, the specimen drawing on municion.org the rim's
+# thickness.
+name = "20x99 mm R"
+guns = ["cannon"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["20x99r", "20 mm shvak", "shvak"]
+origin = "SU"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/ShVAK_cannon",
+  "https://municion.org/producto/20-x-99-r-russian-shvak/",
+  "book:rapid-fire p. 226",
+]
+
+[mm]
+rim = 25.19
+base = 21.89
+neck = 20.7
+case_length = 99.0
+overall_length = 145.0
+bullet = 20.0
+sources = ["book:janes-ammo-2002 p. 681", "book:autocannon p. 115", "book:rapid-fire p. 226"]
+
+[introduced]
+# Wikipedia and municion.org's text: in service from 1936 (municion.org's year of production, 1930, is
+# before the gun was designed).
+year = 1936
+sources = ["https://en.wikipedia.org/wiki/ShVAK_cannon"]
+
+[case_head]
+# The drawing 20-099-CBC-010: RØ 25.11, HØ 21.66, MØ 20.63, RT 1.93, CL 98.80,
+# TL 146.01, a tapered case without a shoulder.
+rim_thickness = 1.93
+sources = ["https://municion.org/producto/20-x-99-r-russian-shvak/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 115"]

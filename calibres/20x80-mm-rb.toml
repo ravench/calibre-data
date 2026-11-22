@@ -1,0 +1,25 @@
+# The round of the German MG FF and MG FF/M aircraft cannon, with a longer case than the 20x72 mm RB of
+# Oerlikon's FF. Its name gives the bore and case length, Jane's table the rim, base and neck. Autocannon
+# (p. 113) gives the round as about 145 mm long and the case as brass or steel, so the file has no length
+# of the round and no case material. The drawing on municion.org (20-080-BRC-010, filed as
+# 20-080-CRC-010 too) has an 18.08 mm rim, 1.1 mm narrower than Jane's, so nothing is taken from it.
+name = "20x80 mm RB"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x80rb", "20x80 rb", "mg ff", "mg-ff", "mg ffm", "mg-ffm", "20 mm mg ff"]
+origin = "DE"
+origin_sources = ["https://en.wikipedia.org/wiki/MG_FF_cannon", "book:rapid-fire p. 225"]
+
+[mm]
+rim = 19.2
+base = 22.2
+neck = 20.7
+case_length = 80.0
+bullet = 20.0
+sources = ["book:janes-ammo-2002 p. 682"]
+
+[introduced]
+# Wikipedia: Ikaria developed the gun in 1936.
+year = 1936
+sources = ["https://en.wikipedia.org/wiki/MG_FF_cannon"]

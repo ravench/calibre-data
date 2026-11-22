@@ -1,0 +1,59 @@
+# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+name = ".408 CheyTac"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["408cheytac", "408ct", "10.36x77"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf",
+]
+rare = true
+
+[mm]
+# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 16.25
+base = 16.18
+shoulder = 15.24
+shoulder_at = 62.23
+neck_at = 67.31
+neck_base = 11.12
+# C.I.P. 408 Chey Tac: half the cone angle alpha 44°08'46"
+shoulder_angle = 22.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf"]
+neck = 11.12
+case_length = 77.21
+overall_length = 115.5
+bullet = 10.36
+sources = [
+  "https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf",
+]
+
+[introduced]
+year = 2001
+sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.408_Cheyenne_Tactical"]
+
+[case_head]
+# C.I.P. 408 Chey Tac: R, E, E1, delta
+rim_thickness = 1.6
+ramp_top = 4.47
+groove_diameter = 13.8
+ramp_angle = 53.7
+groove_width = 2
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/408-chey-tac-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/408-cheyenne-tactical/"]

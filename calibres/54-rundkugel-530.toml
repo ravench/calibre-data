@@ -1,0 +1,19 @@
+name = ".54 Rundkugel (.530)"
+# Guns: https://www.hornady.com/muzzleloading/browse/54-cal-530-lead-balls (Hornady .530 ball, 54 calibre) https://en.wikipedia.org/wiki/Hawken_rifle (Hawken round balls averaged .54 inch).
+guns = ["rifle"]
+black_powder = true
+kind = "ball"
+profile = "round"
+aliases = ["54", "54ball", ".530"]
+
+[mm]
+diameter = 13.5
+sources = ["https://www.hornady.com/muzzleloading/browse/54-cal-530-lead-balls"]
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"
+
+[bullet]
+type = "lead"
+sources = ["https://www.hornady.com/muzzleloading/browse/54-cal-530-lead-balls"]

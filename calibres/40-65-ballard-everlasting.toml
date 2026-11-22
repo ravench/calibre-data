@@ -1,0 +1,49 @@
+# Measurements converted from inches.
+# An early Ballard Everlasting case, later altered to the .40-70 Ballard of the same length.
+name = ".40-65 Ballard Everlasting"
+# Guns: book:cotw-18 p. 220.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/40-65-ballard-everlasting/).
+profile = "flat"
+aliases = ["40-65 ballard", "40-65 ballard everlasting"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/40-65-ballard-everlasting/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.24
+base = 12.9
+neck = 11.05
+case_length = 60.45
+# The table's overall length (2.55 in.) repeats the 40-60 Marlin row's in COTW 18 and COTW 5; kept.
+overall_length = 64.77
+bullet = 10.24
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/40-65-ballard-everlasting/"]
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+year = 1876
+sources = ["book:cotw-18 p. 220"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .07 in.
+rim_thickness = 1.78
+sources = ["book:donnelly p. 496"]
+
+[bullet]
+# COTW 18 p. 220 gives no load of its own. municion.org's one sheet
+# (https://municion.org/ficha-10-060-cbc-030-0001/: a tinned case, no maker or headstamp) shows a
+# paper-patched lead bullet; an Everlasting case was made to be reloaded, so it may be a handload.
+type = "paper"
+sources = []

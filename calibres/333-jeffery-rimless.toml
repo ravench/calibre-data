@@ -1,0 +1,63 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The magazine-rifle version; a flanged one was made for doubles.
+name = ".333 Jeffery Rimless"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["333 jeffery", "333jeffery", "333 riml. n.e."]
+
+origin = "GB"
+origin_sources = [
+  "https://municion.org/producto/333-jeffery-rimless-nitro-express/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 333 Riml. N.E., maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 13.79
+base = 13.84
+shoulder = 12.7
+shoulder_at = 44.45
+neck_at = 49.2
+neck_base = 9.27
+# C.I.P. 333 Riml. N.E.: half the cone angle alpha 39°42'15"
+shoulder_angle = 19.9
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf"]
+neck = 9.22
+case_length = 62.86
+overall_length = 88.9
+bullet = 8.46
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf",
+  "book:cotw-18 p. 608",
+]
+
+[introduced]
+year = 1908
+sources = ["book:cotw-18 p. 586"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# C.I.P. 333 Riml. N.E.: R, E, E1, delta
+rim_thickness = 1.27
+ramp_top = 3.3
+groove_diameter = 12.37
+ramp_angle = 36.0
+groove_width = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page129.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 586"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/333-jeffery-rimless-nitro-express/"]

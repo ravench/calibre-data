@@ -1,0 +1,42 @@
+# Measurements converted from inches.
+# The longer .30 rimfire, for handguns and some single-shot rifles; gone before World War I.
+name = ".30 Long Rimfire"
+# Guns: book:cotw-18 p. 662.
+guns = ["handgun", "rifle"]
+kind = "rimfire"
+profile = "round"
+aliases = ["30 long rf", "30 long rimfire"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/30-long-rf/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.64
+base = 7.32
+neck = 7.32
+case_length = 15.57
+overall_length = 25.91
+bullet = 7.32
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: in catalogues from 1873, maybe earlier.
+year = 1873
+sources = ["book:cotw-18 p. 662"]
+
+[case_head]
+# Drawing 07-016-CBR-010: RT 1.28, RØ 8.75, HØ 7.45.
+rim_thickness = 1.28
+sources = ["https://municion.org/producto/30-long-rf/"]
+
+[bullet]
+# COTW 18 p. 662 does not name the bullet's material; municion.org's sheet shows a lead one.
+type = "lead"
+sources = ["https://municion.org/ficha-07-016-cbr-010-0005/"]
+
+[case]
+# The photos show copper cases on the early makers' rounds (U.S. Cartridge Co. and Phoenix).
+material = "copper"
+sources = ["https://municion.org/producto/30-long-rf/"]

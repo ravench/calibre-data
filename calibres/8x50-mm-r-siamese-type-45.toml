@@ -1,0 +1,52 @@
+# Measurements converted from inches.
+# The Siamese service round from 1902 to the Second World War; Type 45 is the Thai year.
+name = "8x50 mm R Siamese Type 45"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["8x50r siamese", "8x50r type 45"]
+
+origin = "TH"
+origin_sources = ["https://municion.org/producto/8-x-50-r-siamese-type-45/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.97
+base = 12.19
+shoulder = 11.43
+shoulder_at = 37.61
+neck_at = 42.29
+neck_base = 8.9
+# Drawing: SØ 11.40, NØ 8.90, SL 37.70, NL 8.00, CL 50.38.
+shoulder_angle = 15.0
+cite.shoulder_angle = ["https://municion.org/producto/8-x-50-r-siamese-type-45/"]
+neck = 8.81
+case_length = 50.29
+overall_length = 75.44
+bullet = 8.15
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/8-x-50-r-siamese-type-45/"]
+
+[introduced]
+year = 1902
+sources = ["book:cotw-18 p. 552"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# Drawing 08-050-BBC-080: RT 1.53, RØ 13.93, HØ 12.39.
+rim_thickness = 1.53
+sources = ["https://municion.org/producto/8-x-50-r-siamese-type-45/"]
+
+[bullet]
+# Round nose with a cupronickel jacket (COTW 18 p. 552).
+type = "jacketed"
+jacket = "cupronickel"
+sources = ["book:cotw-18 p. 552"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/8-x-50-r-siamese-type-45/"]

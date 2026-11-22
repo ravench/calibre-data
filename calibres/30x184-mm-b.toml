@@ -1,0 +1,56 @@
+# Rheinmetall-Borsig's round of the MK 101 and MK 103 aircraft cannon and of the Flak 103/38, a steel
+# case for percussion (MK 101) and electric (MK 103) primers. Its name gives the bore and case length,
+# Rapid Fire's table the rim and base, the specimen drawing on municion.org the belt, the shoulder,
+# the neck and the head, Autocannon p. 147 the length of the round.
+name = "30x184 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["30x184b", "30x183", "30 mm mk 103", "30 mm mk 101", "mk 103", "mk 101"]
+origin = "DE"
+origin_sources = [
+  "https://municion.org/producto/30-x-184-b-german-rheinmetall-mk-103/",
+  "book:rapid-fire p. 229",
+]
+
+[mm]
+rim = 37.8
+belt = 39.4
+base = 37.9
+shoulder = 35.46
+shoulder_at = 159.08
+neck_at = 168.9
+neck_base = 31.16
+# Drawing 30-184-BFE-010: SØ 35.46, NØ 31.16, SL 158.75, NL 15.10, CL 183.67, TL 297.32.
+shoulder_angle = 12.3
+cite.shoulder_angle = ["https://municion.org/producto/30-x-184-b-german-rheinmetall-mk-103/"]
+neck = 31.16
+case_length = 184.0
+overall_length = 298.0
+bullet = 30.0
+sources = [
+  "book:rapid-fire p. 229",
+  "https://municion.org/producto/30-x-184-b-german-rheinmetall-mk-103/",
+  "book:autocannon p. 147",
+]
+
+[introduced]
+# The MK 101's first year of production (Wikipedia); Autocannon p. 147 has the round developed in the
+# mid-1930s, municion.org gives 1941.
+year = 1940
+sources = ["https://en.wikipedia.org/wiki/MK_101_cannon"]
+
+[case_head]
+# The drawing 30-184-BFE-010: RØ 37.86, HØ 37.71, LØ 39.40, RT 2.95, GØ 33.22,
+# GW 4.77, the ramp ends at HL 11.20; the belt (LW 4.20) ends at 15.40; ramp angle from HL = RT + GW +
+# ((LØ - GØ)/2)/tan(angle).
+rim_thickness = 2.95
+ramp_top = 15.4
+groove_diameter = 33.22
+ramp_angle = 42.0
+groove_width = 4.77
+sources = ["https://municion.org/producto/30-x-184-b-german-rheinmetall-mk-103/"]
+
+[case]
+material = "steel"
+sources = ["book:autocannon p. 147", "https://en.wikipedia.org/wiki/MK_101_cannon"]

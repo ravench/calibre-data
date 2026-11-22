@@ -1,0 +1,59 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, shoulder_at = L1,
+# overall_length = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = ".22 Nosler"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["22nosler"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/22-nosler/"]
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+# SAAMI 22 Nosler, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+rim = 9.6
+base = 10.69
+shoulder = 10.16
+shoulder_at = 35.29
+neck_at = 38.48
+neck_base = 6.46
+# Drawing 06-045-BRC-050
+shoulder_angle = 29.9
+cite.shoulder_angle = ["https://municion.org/producto/22-nosler/"]
+neck = 6.46
+case_length = 44.7
+overall_length = 57.4
+bullet = 5.7
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=78", "book:cotw-18 p. 175"]
+
+[introduced]
+year = 2017
+sources = ["https://bulletin.accurateshooter.com/2017/01/22-nosler-more-details-load-data-and-a-bit-of-history"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# SAAMI 22 Nosler: rim thickness 0.045, groove 0.332 at 27 degrees, groove width 0.030,
+# body 0.4207; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 27)
+rim_thickness = 1.14
+ramp_top = 4.12
+groove_diameter = 8.43
+ramp_angle = 27.0
+groove_width = 0.76
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=78"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/22-nosler/"]

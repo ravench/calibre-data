@@ -1,0 +1,48 @@
+# Measurements converted from inches.
+# One case for the 40-85 and 40-90 loads: a thick, reloadable Everlasting case for the Ballard rifles.
+name = ".40-90 Ballard Everlasting"
+# Guns: book:cotw-18 p. 218.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/40-90-ideal-everlasting-ballard-n5-3-1-16-case/).
+profile = "flat"
+aliases = ["40-90 ballard", "40-85 ballard", "40-85 ballard everlasting"]
+
+origin = "US"
+origin_sources = [
+  "https://municion.org/producto/40-90-ideal-everlasting-ballard-n5-3-1-16-case/",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.84
+base = 12.12
+neck = 10.79
+case_length = 74.68
+overall_length = 96.77
+bullet = 10.24
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/40-90-ideal-everlasting-ballard-n5-3-1-16-case/"]
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+# COTW: listed for the Ballard rifles introduced in 1878.
+year = 1878
+sources = ["book:cotw-18 p. 218"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[case_head]
+# .046 in.
+# Donnelly's entry is titled .40-85 Ballard: rim .545 in., case 2.94 in., as the file.
+rim_thickness = 1.17
+sources = ["book:donnelly p. 507"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 219"]

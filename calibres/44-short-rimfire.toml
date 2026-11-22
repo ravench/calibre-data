@@ -1,0 +1,42 @@
+# Measurements converted from inches.
+# A handgun round, best known from the Hammond Bulldog pistol; it also fires in .44 Long rimfire guns.
+name = ".44 Short Rimfire"
+# Guns: book:cotw-18 p. 665.
+guns = ["handgun"]
+kind = "rimfire"
+profile = "round"
+aliases = ["44 short rf", "44 short rimfire"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/44-short-rf-short-case/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.18
+base = 11.3
+neck = 11.3
+case_length = 17.48
+overall_length = 30.23
+bullet = 11.33
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: about 1864-65.
+year = 1864
+sources = ["book:cotw-18 p. 665"]
+
+[case_head]
+# .066 in.
+rim_thickness = 1.68
+sources = ["book:cotw-18 p. 670"]
+
+[bullet]
+# COTW 18 p. 665 does not name the bullet's material; municion.org's sheet shows a lead one.
+type = "lead"
+sources = ["https://municion.org/ficha-11-016-cbr-010-0001/"]
+
+[case]
+# The photos show copper cases on the early makers' rounds (Leet and UMC).
+material = "copper"
+sources = ["https://municion.org/producto/44-short-rf-short-case/"]

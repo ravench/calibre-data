@@ -1,0 +1,59 @@
+# Measurements converted from inches.
+# Swedish machine-gun round, also for the m/40 rifle.
+name = "8x63 mm Swedish"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["8x63", "8x63 swedish"]
+
+origin = "SE"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×63mm_patron_m/32",
+  "book:ammo-encyclopedia-2 p. 534",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.17
+base = 12.4
+shoulder = 11.58
+shoulder_at = 50.98
+neck_at = 54.99
+neck_base = 9.1
+# Drawing: SØ 11.51, NØ 9.10, SL 50.80, NL 8.00, CL 62.81.
+shoulder_angle = 16.7
+cite.shoulder_angle = ["https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
+neck = 9.04
+case_length = 62.99
+overall_length = 85.34
+bullet = 8.2
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
+
+[introduced]
+year = 1932
+sources = ["book:cotw-18 p. 556"]
+
+[primer]
+# The infobox gives a Berdan primer of the large rifle size.
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/8×63mm_patron_m/32"]
+
+[case_head]
+# Drawing 08-063-BGC-010: RT 1.42, HL 3.25, GØ 10.34, GW 1.00, HØ 12.43; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.42
+ramp_top = 3.25
+groove_diameter = 10.34
+ramp_angle = 52.0
+groove_width = 1
+sources = ["https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 556"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/8-x-63-swedish-for-mg-m-1932/"]

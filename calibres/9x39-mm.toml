@@ -1,0 +1,68 @@
+# Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "9x39 mm"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["9x39", "sp-5", "sp-6"]
+
+origin = "SU"
+origin_sources = ["https://municion.org/producto/9-x-39-russian/"]
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 11.35
+base = 11.35
+shoulder = 10.7
+shoulder_at = 31.4
+neck_at = 33
+neck_base = 9.72
+# C.I.P. 9 x 39: alpha 34 degrees 3 minutes (the drawing 09-039-BGC-010 gives 14.8)
+shoulder_angle = 17.0
+cite.shoulder_angle = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/9-x-39-180314-en1.pdf",
+  "https://municion.org/producto/9-x-39-russian/",
+]
+neck = 9.72
+case_length = 38.7
+overall_length = 56.0
+bullet = 9.25
+# nose: read to scale off the specimen drawing 09-039-BGC-010:
+# the curve starts 15.7 mm behind the tip, of the 17.10 mm out of its case (TL 56.07, CL 38.97).
+nose = 15.7
+cite.nose = ["https://municion.org/producto/9-x-39-russian/"]
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/9-x-39-180314-en1.pdf",
+  "book:cotw-18 p. 574",
+]
+
+[introduced]
+# Year of production on the product page.
+# "1980s"; the other source says early 1980s
+year = 1980
+sources = ["https://municion.org/producto/9-x-39-russian/"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://www.starlinebrass.com/9x39-brass"]
+
+[case_head]
+# C.I.P. 9 x 39 (the same head as the 7,62 x 39 it is necked up from)
+rim_thickness = 1.5
+ramp_top = 3.2
+groove_diameter = 9.56
+ramp_angle = 52.0
+groove_width = 1
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/9-x-39-180314-en1.pdf",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf",
+]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 558"]
+
+[case]
+# Lacquered steel.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 44"]

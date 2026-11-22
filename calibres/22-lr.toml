@@ -1,0 +1,42 @@
+name = ".22 LR"
+# Guns: book:cotw-18 p. 658.
+guns = ["rifle", "handgun"]
+kind = "rimfire"
+profile = "round"
+aliases = ["22lr", "22", "kk", "22l.r."]
+display_aliases = [".22 Long Rifle", "KK"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.22_Long_Rifle",
+  "book:ammo-encyclopedia-2 p. 723",
+]
+worldwide = true
+
+[mm]
+# Rim: SAAMI 22 Long Rifle - Sporting, maximum cartridge (.278 in).
+rim = 7.06
+base = 5.7
+neck = 5.7
+case_length = 15.6
+overall_length = 25.4
+bullet = 5.7
+sources = [
+  "https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=22",
+  "book:janes-ammo-2002 p. 681",
+  "book:cotw-18 p. 670",
+  "book:tm-43-0001-27 p. 3-5",
+]
+
+[introduced]
+year = 1887
+sources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]
+
+[case_head]
+# .040 in.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 670"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.22_Long_Rifle"]

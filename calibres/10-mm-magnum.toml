@@ -1,0 +1,52 @@
+# Measurements converted from inches.
+# AMT's lengthened 10 mm Auto for the AutoMag IV pistol.
+name = "10 mm Magnum"
+guns = ["handgun"]
+kind = "rimless"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/10-mm-auto-magnum/).
+profile = "flat"
+aliases = ["10mm magnum", "10 mm mag", "10mm mag"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/10-mm-auto-magnum/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.77
+base = 10.74
+neck = 10.74
+case_length = 31.88
+overall_length = 39.5
+bullet = 10.16
+# flat: the drawing gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/10-mm-auto-magnum/"]
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+# COTW: the early 1990s; the decade's first year is kept.
+year = 1990
+sources = ["book:cotw-18 p. 499"]
+
+[primer]
+size = "large-pistol"
+sources = ["book:cotw-18 p. 528"]
+
+[case_head]
+# lengthened 10 mm Auto case; C.I.P. 10 mm Auto
+rim_thickness = 1.4
+ramp_top = 3.63
+groove_diameter = 8.85
+ramp_angle = 45.0
+groove_width = 1.25
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page31.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/10-mm-auto-magnum/"]

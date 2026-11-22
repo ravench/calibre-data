@@ -1,0 +1,43 @@
+# Measurements converted from inches.
+# For the Bergmann No. 2 pistol; the first cases had no rim or extractor groove.
+name = "5 mm Bergmann"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["5bergmann", "5 bergmann"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 6.96
+base = 6.93
+neck = 5.84
+case_length = 14.99
+overall_length = 24.38
+bullet = 5.16
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1894
+sources = ["book:cotw-18 p. 458"]
+
+[primer]
+size = "small-pistol"
+sources = []
+
+[case_head]
+# .020 in. (COTW); groove from the drawing 05-015-TGC-010: RT 0.67, HL 1.35, GØ 6.40, GW 0.45,
+# HØ 6.89; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle). This is the 1896 type with a groove.
+rim_thickness = 0.51
+ramp_top = 1.35
+groove_diameter = 6.4
+ramp_angle = 47.0
+groove_width = 0.45
+sources = ["book:cotw-18 p. 527", "https://municion.org/producto/5-mm-bergmann-n2-rimless-1896/"]
+
+[bullet]
+type = "jacketed"
+sources = []

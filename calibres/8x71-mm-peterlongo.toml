@@ -1,0 +1,56 @@
+# Measurements converted from inches.
+# Johann Peterlongo of Innsbruck; loaded by G. Roth and Hirtenberger.
+name = "8x71 mm Peterlongo"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["8x71"]
+
+origin = "AH"
+origin_sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.89
+base = 11.73
+shoulder = 10.72
+shoulder_at = 59.4
+neck_at = 61.92
+neck_base = 8.9
+# Drawing: SØ 10.78, NØ 8.90, SL 59.00, NL 9.20, CL 70.72.
+shoulder_angle = 20.5
+cite.shoulder_angle = ["https://municion.org/producto/8-x-71-peterlongo/"]
+neck = 8.86
+case_length = 71.12
+overall_length = 83.31
+bullet = 8.08
+sources = ["book:cotw-18 p. 651", "https://municion.org/producto/8-x-71-peterlongo/"]
+
+[introduced]
+# COTW 18 p. 630 gives no year; municion.org dates it to 1909.
+year = 1909
+sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# Drawing 08-071-BGC-030: RT 1.23, HL 3.00, GØ 10.32, GW 0.75, HØ 11.84; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.23
+ramp_top = 3.0
+groove_diameter = 10.32
+ramp_angle = 37.0
+groove_width = 0.75
+sources = ["https://municion.org/producto/8-x-71-peterlongo/"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 630"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/8-x-71-peterlongo/"]

@@ -1,0 +1,46 @@
+# Measurements converted from inches.
+name = "6.5x48 mm R Sauer"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/65-x-48-r-sauer-sohn/).
+profile = "flat"
+aliases = ["6.5x48r"]
+
+origin = "DE"
+origin_sources = ["https://municion.org/producto/65-x-48-r-sauer-sohn/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.57
+base = 11.0
+neck = 7.21
+case_length = 47.75
+overall_length = 61.72
+bullet = 6.6
+# flat: the drawing gives the flat tip as Ø 3,00 (whole millimetres).
+flat = 3.0
+cite.flat = ["https://municion.org/producto/65-x-48-r-sauer-sohn/"]
+sources = ["book:cotw-18 p. 651"]
+
+[introduced]
+unknown = "A blackpowder round for Sauer guns; COTW 18 p. 617 gives no year."
+sources = ["book:cotw-18 p. 617"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# .051 in.
+rim_thickness = 1.3
+sources = ["book:donnelly p. 765"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 617"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/65-x-48-r-sauer-sohn/"]

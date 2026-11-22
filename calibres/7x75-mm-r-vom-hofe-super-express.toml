@@ -1,0 +1,52 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+name = "7x75 mm R Vom Hofe Super Express"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["7x75r", "7x75r se"]
+
+origin = "DE"
+origin_sources = [
+  "https://municion.org/producto/7-x-75-r-super-express-vom-hofe/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page27.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.35
+base = 11.9
+shoulder = 10.7
+shoulder_at = 59.0
+neck_at = 66.8
+neck_base = 7.95
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 10.0
+neck = 7.95
+case_length = 75.0
+overall_length = 97.0
+bullet = 7.24
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page27.pdf"]
+
+[introduced]
+year = 1939
+sources = ["book:cotw-18 p. 624"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page27.pdf"]
+
+[bullet]
+# A hunting round; COTW 18 p. 624 has no factory data.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/7-x-75-r-super-express-vom-hofe/"]

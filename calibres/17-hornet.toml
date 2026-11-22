@@ -1,0 +1,51 @@
+# Rifle batch 3 (2026-11): first added from the page named in INTRODUCED, now C.I.P.'s shoulder and length.
+name = ".17 Hornet"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["17hornet"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.17_Hornet",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf",
+]
+
+[mm]
+rim = 8.9
+base = 7.6
+shoulder = 7.47
+shoulder_at = 26.6
+neck_at = 29.32
+neck_base = 4.93
+# C.I.P. 17 Hornet: alpha 50 degrees (the drawing 04-035-BBC-57W reads 21).
+shoulder_angle = 25
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf"]
+neck = 4.9
+case_length = 34.3
+overall_length = 43.69
+bullet = 4.4
+sources = [
+  "book:cotw-18 p. 175",
+  "https://municion.org/producto/17-hornet/",
+  "book:hornady-10 p. 130",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf",
+]
+
+[introduced]
+# Year of production on the product page.
+year = 2012
+sources = ["https://municion.org/producto/17-hornet/"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/17-hornet-en.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.17_Hornet"]

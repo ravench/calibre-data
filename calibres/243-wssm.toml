@@ -1,0 +1,64 @@
+# Mixed batch 4 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated (7x65 R and 8x57 IRS rims later from C.I.P.).
+name = ".243 WSSM"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["243wssm"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.243_Winchester_Super_Short_Magnum",
+  "book:ammo-encyclopedia-2 p. 278",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page89.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.6
+base = 14.1
+shoulder = 13.8
+shoulder_at = 29.21
+neck_at = 35.35
+neck_base = 7.29
+# C.I.P. 243 Win. Super Short Mag.
+shoulder_angle = 28
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page89.pdf"]
+neck = 7.4
+case_length = 42.4
+overall_length = 60.0
+bullet = 6.2
+# nose: read to scale off the specimen drawing 06-042-BRC-020:
+# the curve starts 11.0 mm behind the tip, of the 11.83 mm out of its case (TL 54.13, CL 42.30).
+nose = 11.0
+cite.nose = ["https://municion.org/producto/243-winchester-super-short-magnum/"]
+sources = [
+  "https://en.wikipedia.org/wiki/.243_Winchester_Super_Short_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page89.pdf",
+]
+
+[introduced]
+year = 2003
+sources = ["https://en.wikipedia.org/wiki/.243_Winchester_Super_Short_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.243_Winchester_Super_Short_Magnum"]
+
+[case_head]
+# C.I.P. 243 Win. Super Short Mag.
+rim_thickness = 1.37
+ramp_top = 3.35
+groove_diameter = 12.19
+ramp_angle = 45.0
+groove_width = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page89.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.243_Winchester_Super_Short_Magnum"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/243-winchester-super-short-magnum/"]

@@ -1,0 +1,48 @@
+# Measurements converted from inches.
+# The centrefire version of the .44 Extra Long rimfire, for the Ballard No. 2 rifle.
+name = ".44 Extra Long Centrefire"
+# Guns: book:cotw-18 p. 231.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+# The 44 Wesson Extra Long (COTW 18 p. 232) is this case with a two-groove bullet.
+aliases = ["44 extra long cf", "44 extra long ballard", "44 wesson extra long"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/44-ballard-extra-long/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.85
+base = 11.2
+neck = 11.2
+case_length = 41.4
+overall_length = 53.34
+bullet = 11.15
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1876
+sources = ["book:cotw-18 p. 231"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# .052 in.
+# Donnelly's entry is titled .44 Ballard Extra Long: rim .506 in., case 1.63 in., as the file.
+rim_thickness = 1.32
+sources = ["book:donnelly p. 557"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 231"]
+
+[case]
+# The photo shows a brass case (an unmarked one). municion.org files the round as
+# the .44 Ballard Extra Long.
+material = "brass"
+sources = ["https://municion.org/producto/44-ballard-extra-long/"]

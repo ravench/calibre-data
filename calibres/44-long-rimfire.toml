@@ -1,0 +1,38 @@
+# Measurements converted from inches.
+# First for the Ethan Allen carbine, then Ballard, Howard, Remington and Wesson rifles; obsolete in the 1920s.
+name = ".44 Long Rimfire"
+# Guns: book:cotw-18 p. 666.
+guns = ["rifle"]
+kind = "rimfire"
+profile = "round"
+aliases = ["44 long rf", "44 long rimfire"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/44-long-rf/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.33
+base = 11.63
+neck = 11.56
+case_length = 27.79
+overall_length = 46.79
+bullet = 11.46
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: the Allen carbine was patented in 1860.
+year = 1860
+sources = ["book:cotw-18 p. 666"]
+
+[bullet]
+# COTW 18 p. 666 does not name the bullet's material; municion.org's sheet shows a lead one.
+type = "lead"
+sources = ["https://municion.org/ficha-11-024-cbr-010-0011/"]
+
+[case]
+# The photos show copper cases on the early makers' rounds (Crittenden & Tibbals, Leet, U.S.
+# Cartridge Co. and UMC).
+material = "copper"
+sources = ["https://municion.org/producto/44-long-rf/"]

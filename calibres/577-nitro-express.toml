@@ -1,0 +1,42 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".577 Nitro Express"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["577ne"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.577_Nitro_Express",
+  "book:ammo-encyclopedia-2 p. 369",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page128.pdf",
+]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+# C.I.P. 577 N.E. 3", maximum cartridge.
+rim = 19.05
+base = 16.81
+neck = 15.37
+case_length = 76.2
+overall_length = 93.98
+bullet = 14.83
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page128.pdf"]
+
+[introduced]
+unknown = "the source gives only the 1890s"
+
+[primer]
+# The table gives a .254 in. Berdan primer.
+size = "berdan-nitro"
+sources = ["book:cotw-18 p. 609"]
+
+[case_head]
+# C.I.P. 577 N.E. 3"
+rim_thickness = 1.27
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page128.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.577_Nitro_Express"]

@@ -1,0 +1,50 @@
+# Solothurn's long 20 mm round (S-18/1000 anti-tank rifle, Flak 30 and 38). The diameters, the
+# shoulder and the head are the specimen drawing's on municion.org (RØ, LØ, HØ, SØ, NØ): its belt
+# (LØ 28.48) is what the Wikipedia infobox calls the rim, and its rim (RØ 26.86) what the infobox
+# gives as the rim's thickness. The cartridge length is the infobox's (the drawing's TL: 202.75).
+# The long shallow shoulder runs over 25 mm.
+name = "20x138 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["20x138b", "20 mm solothurn", "20 mm long solothurn"]
+# Germany made and used most of them (Flak 30 and 38); Waffenfabrik Solothurn, a Swiss front company
+# of Rheinmetall, developed it, and Wikipedia names Switzerland: CH
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 26.86
+belt = 28.48
+base = 26.86
+shoulder = 25.49
+shoulder_at = 102.93
+neck_at = 128
+neck_base = 20.7
+# Drawing 20-138-BFC-010: SØ 25.49, NØ 20.70, SL 103.00, NL 10.00, CL 138.07, TL 202.75.
+shoulder_angle = 5.5
+cite.shoulder_angle = ["https://municion.org/producto/20-x-138-b-rheinmetall-flak-30-38/"]
+neck = 20.7
+case_length = 138.0
+overall_length = 202.7
+bullet = 20.0
+sources = [
+  "https://municion.org/producto/20-x-138-b-rheinmetall-flak-30-38/",
+  "https://en.wikipedia.org/wiki/20%C3%97138mmB",
+]
+
+[introduced]
+year = 1930
+sources = ["https://en.wikipedia.org/wiki/20%C3%97138mmB"]
+
+[case_head]
+# The drawing 20-138-BFC-010: RØ 26.86, HØ 26.86, LØ 28.48, RT 2.43, GØ 22.85, GW 4.29,
+# the ramp ends at HL 9.72; the belt (LW 5.62) ends at 15.34; ramp angle from HL = RT + GW + ((LØ - GØ)/2)/tan(angle).
+rim_thickness = 2.43
+ramp_top = 15.34
+groove_diameter = 22.85
+ramp_angle = 43.0
+groove_width = 4.29
+sources = ["https://municion.org/producto/20-x-138-b-rheinmetall-flak-30-38/"]

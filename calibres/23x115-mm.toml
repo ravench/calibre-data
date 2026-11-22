@@ -1,0 +1,46 @@
+# The Soviet round of the NS-23 and NR-23 aircraft cannon and of the AM-23, GSh-23 and GSh-6-23 that
+# followed; China makes it too. Its name gives the bore and case length, Jane's table the rim, base and
+# neck, Autocannon p. 127 the length of the round, the specimen drawing on municion.org the shoulder
+# and the head.
+name = "23x115 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["23x115", "23 mm ns-23", "ns-23", "nr-23", "am-23", "gsh-23"]
+origin = "SU"
+origin_sources = ["https://en.wikipedia.org/wiki/Nudelman-Suranov_NS-23", "book:rapid-fire p. 227"]
+
+[mm]
+rim = 26.8
+base = 26.9
+shoulder = 26.26
+shoulder_at = 99.53
+neck_at = 102.15
+neck_base = 24.0
+# Drawing 23-115-BGC-010: SØ 26.26, NØ 24.00, SL 99.20, NL 12.85, CL 114.67, TL 204.00.
+shoulder_angle = 23.3
+cite.shoulder_angle = ["https://municion.org/producto/23-x-115-russian-nr-ns23-nudelmann-suranov/"]
+neck = 23.9
+case_length = 115.0
+overall_length = 200.0
+bullet = 23.0
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "book:autocannon p. 127",
+  "https://municion.org/producto/23-x-115-russian-nr-ns23-nudelmann-suranov/",
+]
+
+[introduced]
+# The NS-23 entered service in 1944 (Wikipedia).
+year = 1944
+sources = ["https://en.wikipedia.org/wiki/Nudelman-Suranov_NS-23"]
+
+[case_head]
+# The drawing 23-115-BGC-010: RØ 26.87, HØ 26.90, RT 2.42, GØ 22.90, GW 4.30, the ramp
+# ends at HL 9.04; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 2.42
+ramp_top = 9.04
+groove_diameter = 22.9
+ramp_angle = 41.0
+groove_width = 4.3
+sources = ["https://municion.org/producto/23-x-115-russian-nr-ns23-nudelmann-suranov/"]

@@ -1,0 +1,49 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".218 Bee"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["218bee"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.218_Bee",
+  "book:ammo-encyclopedia-2 p. 264",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page54.pdf",
+]
+
+[mm]
+rim = 10.4
+base = 8.9
+shoulder = 8.4
+shoulder_at = 23.45
+neck_at = 27.67
+neck_base = 6.18
+# C.I.P. 218 Bee
+shoulder_angle = 15
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page54.pdf"]
+neck = 6.1
+case_length = 34.2
+overall_length = 42.7
+bullet = 5.7
+sources = [
+  "https://en.wikipedia.org/wiki/.218_Bee",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page54.pdf",
+]
+
+[introduced]
+year = 1937
+sources = ["https://en.wikipedia.org/wiki/.218_Bee"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.218_Bee"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page54.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.218_Bee"]

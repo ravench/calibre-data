@@ -1,0 +1,76 @@
+# Batch 6 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = "7.65x53 mm Argentine"
+guns = ["rifle"]
+kind = "rimless"
+# Nose: round, as first loaded (the Wikipedia page below); pointed service bullets came only from 1898
+# (COTW 18 p. 553).
+profile = "round"
+# Today: pointed, like the later service rounds (https://en.wikipedia.org/wiki/7.65×53mm_Mauser).
+profile_today = "spitzer"
+aliases = ["7.65x53", "7.65argentine", "7.65belgian"]
+
+# Paul Mauser designed the 7.65x53 mm in 1889 for the Belgian trials; Belgium adopted it first (October 1889, FN
+# was founded to make the rifle), then the Ottoman Empire 1890, Argentina 1891, Peru, Spain 1893, Bolivia,
+# Colombia, Ecuador and Paraguay. Rifles came from Loewe/DWM (Berlin) and FN (Herstal); Fabricaciones Militares
+# (Argentina), Norma and PPU still load it. Wikipedia: German Empire; municion.org: Belgium 1889.
+# the largest adopter (about 495,000 rifles, 85,000 of them Argentine-made) and the usual name; Belgium adopted it first and FN made it, Mauser designed it: BE, DE
+origin = "AR"
+origin_sources = []
+
+[mm]
+rim = 11.96
+base = 12.01
+shoulder = 11.0
+shoulder_at = 44.6
+neck_at = 47.2
+neck_base = 8.78
+# C.I.P. 7,65 x 53 Arg.
+shoulder_angle = 22.2
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page50.pdf"]
+neck = 8.73
+case_length = 53.6
+overall_length = 76.0
+bullet = 7.92
+sources = [
+  "https://en.wikipedia.org/wiki/7.65×53mm_Mauser",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page50.pdf",
+]
+
+[introduced]
+year = 1889
+sources = ["https://en.wikipedia.org/wiki/7.65×53mm_Mauser"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.65×53mm_Mauser"]
+
+[case_head]
+# C.I.P. 7,65 x 53 Arg.
+rim_thickness = 1.0
+ramp_top = 3.2
+groove_diameter = 10.4
+ramp_angle = 35.7
+groove_width = 1.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page50.pdf"]
+
+[bullet]
+# No text found names the jacket. municion.org's sheets of two early military rounds call the
+# round-nosed bullet steel: FN's of 1894 (F.N 94) and the Buenos Aires arsenal's of 1897 (A G 97).
+# Neither says whether the steel is plated, so it stands as steel; a plated one would be cupronickel.
+type = "jacketed"
+jacket = "steel"
+sources = [
+  "book:cotw-18 p. 551",
+  "https://municion.org/ficha-08-053-bgc-030-0076/",
+  "https://municion.org/ficha-08-053-bgc-030-0004/",
+]
+
+[case]
+# The photos show brass cases (DWM's, FN's and the Argentine arsenals').
+material = "brass"
+sources = ["https://municion.org/producto/765-x-53-belgian-mauser-m-1889/"]
+
+[today]
+# Today's factory rounds have copper-coloured jackets (Prvi Partizan's FMJ and soft points).
+jacket = "copper"
+sources = ["https://prvipartizan.com/download/PPU_2018.pdf#page=9"]

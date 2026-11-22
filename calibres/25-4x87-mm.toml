@@ -1,0 +1,25 @@
+# The round of the Italian Revelli-FIAT 1-inch aircraft cannon (Modello 1917), a rimless,
+# sharp-shouldered remake of the Vickers-Terni's 25.4x87 mm R; production stopped when Vickers threatened
+# to sue. Its name gives the bore and case length, Rapid Fire's table the rim and base, Autocannon p. 133
+# the length of the round.
+name = "25.4x87 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["25x87", "revelli-fiat 25 mm", "fiat-revelli 25 mm"]
+origin = "IT"
+origin_sources = ["book:rapid-fire p. 227"]
+
+[mm]
+rim = 30.2
+base = 30.2
+case_length = 87.0
+overall_length = 162.0
+bullet = 25.4
+sources = ["book:rapid-fire p. 227", "book:autocannon p. 133"]
+
+[introduced]
+# Autocannon: designed in 1916 and ordered after its tests in September and October 1916; Rapid Fire's
+# table names the gun Modello 1917.
+year = 1916
+sources = ["book:autocannon p. 214"]

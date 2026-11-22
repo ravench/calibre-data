@@ -1,0 +1,44 @@
+# Measurements converted from inches.
+# For the Bullard repeater; the 40-60 Bullard load used the same case.
+name = ".40-75 Bullard"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: round, as the specimen drawing shows it (https://municion.org/producto/40-75-258-bullard-cf-straight/).
+profile = "round"
+aliases = ["40-75 bullard", "40-60 bullard"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/40-75-258-bullard-cf-straight/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.39
+base = 12.83
+neck = 10.97
+case_length = 53.09
+overall_length = 64.52
+bullet = 10.49
+sources = ["book:cotw-18 p. 251"]
+
+[introduced]
+year = 1887
+sources = ["book:cotw-18 p. 227"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 251"]
+
+[case_head]
+# .085 in.
+rim_thickness = 2.16
+sources = ["book:donnelly p. 524"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 228"]
+
+[case]
+# The photos show brass cases (UMC's and an unmarked one).
+material = "brass"
+sources = ["https://municion.org/producto/40-75-258-bullard-cf-straight/"]

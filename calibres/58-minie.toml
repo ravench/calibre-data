@@ -1,0 +1,27 @@
+name = ".58 Minié"
+# Guns: https://en.wikipedia.org/wiki/Springfield_Model_1861 (Springfield 1861 rifle-musket).
+guns = ["rifle"]
+black_powder = true
+kind = "minie"
+profile = "round"
+aliases = ["58", "58minie"]
+
+obsolete = true
+
+[mm]
+# The Harpers Ferry drawing «New Rifle-Musket Ball, Calibre .58» (James H. Burton): diameter .5775 in,
+# length 1.05 in, 500 grains; the riflemagazine page gives about .575 in for later moulds.
+diameter = 14.67
+length = 26.67
+sources = [
+  "https://commons.wikimedia.org/wiki/File:Minie_ball_design_harpers_ferry_burton.jpg",
+  "https://www.riflemagazine.com/minie-and-roundballs",
+]
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/Mini%C3%A9_ball"]

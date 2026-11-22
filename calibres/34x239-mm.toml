@@ -1,0 +1,43 @@
+# The Swiss round of the 34 mm Flab Kan 38 anti-aircraft gun, used during and after the Second World
+# War. Its name gives the bore and case length, Rapid Fire's table the rim and base, the specimen
+# drawing on naboje.org the shoulder, the neck, the head and the length of the round.
+name = "34x239 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["34x239", "34 mm flab kan 38"]
+origin = "CH"
+origin_sources = []
+
+[mm]
+rim = 47.8
+base = 47.8
+shoulder = 45.05
+shoulder_at = 195.9
+# The naboje.org drawing (labelled like a C.I.P. sheet): P2 45.05 at L1 196.70, H1 35.24 at L2 215.40,
+# case L3 239.80, round L6 365.20; angle = atan(((P2 - H1)/2)/(L2 - L1)).
+shoulder_angle = 14.7
+cite.shoulder_angle = ["https://naboje.org/en/node/14433"]
+neck = 35.24
+case_length = 239.0
+overall_length = 365.2
+bullet = 34.0
+sources = [
+  "book:rapid-fire p. 229",
+  "https://naboje.org/en/node/14433",
+]
+
+[introduced]
+# In Swiss service from 1938, per Tony Williams (A. G. Williams, Rapid Fire's author) in the
+# thread; he names no document.
+year = 1938
+sources = ["https://www.bocn.co.uk/threads/34x-239-flab-kan-38.60661"]
+
+[case_head]
+# The naboje.org drawing: R1 47.81, P1 47.91, R 3.85 (rim thickness), e 3.65 (groove width), E1 43.02,
+# E 12.39; ramp angle from E = R + e + ((P1 - E1)/2)/tan(angle).
+rim_thickness = 3.85
+ramp_top = 12.39
+groove_diameter = 43.02
+ramp_angle = 27.0
+sources = ["https://naboje.org/en/node/14433"]

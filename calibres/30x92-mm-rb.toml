@@ -1,0 +1,23 @@
+# The round of the Japanese navy's 30 mm Type 2 aircraft cannon, a bigger Oerlikon-pattern gun that some
+# fighters carried in combat but that was never formally adopted. Its name gives the bore and case length
+# (Autocannon: 91.5 mm), Rapid Fire's table the rim and base, Autocannon p. 139 the length of the round.
+name = "30x92 mm RB"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30x92rb", "30 mm type 2"]
+origin = "JP"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 27.8
+base = 33.0
+case_length = 92.0
+overall_length = 167.0
+bullet = 30.0
+sources = ["book:rapid-fire p. 228", "book:autocannon p. 139"]
+
+[introduced]
+# Wikipedia's list of 30 mm rounds; Type 2 is the Japanese year 2602 (1942).
+year = 1942
+sources = ["https://en.wikipedia.org/wiki/30_mm_caliber"]

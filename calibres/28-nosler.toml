@@ -1,0 +1,47 @@
+# Rifle batch 5 (2026-11): first added from the page named in INTRODUCED, now SAAMI's (see [mm]); the Nosler line shares the .28 Nosler case outside.
+name = ".28 Nosler"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["28nosler"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[mm]
+# SAAMI 28 Nosler, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+rim = 13.56
+base = 13.97
+shoulder = 13.4
+shoulder_at = 55.02
+neck_at = 58.79
+neck_base = 8.13
+shoulder_angle = 35
+cite.shoulder_angle = ["https://en.wikipedia.org/wiki/Nosler_cartridges"]
+neck = 8.13
+case_length = 65.79
+overall_length = 84.84
+bullet = 7.23
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=104", "https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[introduced]
+year = 2015
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]
+
+[case_head]
+# C.I.P. 28 Nosler
+rim_thickness = 1.27
+ramp_top = 3.74
+groove_diameter = 12.07
+ramp_angle = 32.0
+groove_width = 0.94
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/28-nosler-230324-en.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.28_Nosler"]

@@ -1,0 +1,30 @@
+name: Test
+on:
+  push:
+    branches: [main]
+  pull_request:
+# A newer push to the same pull request cancels this run. On main a running build
+# finishes; a newer merge only replaces a run that is still waiting for a runner.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  check:
+    # Every calibre file: unknown or misspelt keys, values that are not allowed, missing sources,
+    # broken TOML. The problems show on the pull request's files.
+    name: Check calibre files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python3 check.py
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python3 -m unittest discover -s tests -v

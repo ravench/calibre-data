@@ -1,0 +1,28 @@
+# The round of the German MK 108 aircraft cannon of the Me 262, a short, straight steel case with a
+# rebated rim for the Minengeschoss shells. Its name gives the bore and case length (Autocannon: 30x91 mm
+# RB, a case 90 to 91 mm long), Rapid Fire's table the rim and base. The drawing on municion.org
+# (30-091-CRE-010) has only round numbers and a 26.50 mm rim, 1.6 mm wider than Rapid Fire's, so nothing
+# is taken from it.
+name = "30x90 mm RB"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30x90rb", "30x91rb", "30 mm mk 108", "mk 108"]
+origin = "DE"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 24.9
+base = 32.3
+case_length = 90.0
+bullet = 30.0
+sources = ["book:rapid-fire p. 228", "https://en.wikipedia.org/wiki/MK_108_cannon"]
+
+[introduced]
+# Wikipedia: in service and made from 1943.
+year = 1943
+sources = ["https://en.wikipedia.org/wiki/MK_108_cannon"]
+
+[case]
+material = "steel"
+sources = ["book:autocannon p. 138", "https://en.wikipedia.org/wiki/MK_108_cannon"]

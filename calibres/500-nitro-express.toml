@@ -1,0 +1,42 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".500 Nitro Express"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["500ne"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.500_Nitro_Express",
+  "book:ammo-encyclopedia-2 p. 464",
+]
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+# SAAMI 500 Nitro Express 3", maximum cartridge.
+rim = 16.64
+base = 14.52
+neck = 13.51
+case_length = 76.2
+overall_length = 95.25
+bullet = 12.95
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=174"]
+
+[introduced]
+year = 1890
+sources = ["https://en.wikipedia.org/wiki/.500_Nitro_Express"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# SAAMI 500 Nitro Express 3"
+rim_thickness = 1.02
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=174"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.500_Nitro_Express"]

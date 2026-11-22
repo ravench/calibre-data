@@ -1,0 +1,46 @@
+# The round of the ADEN Mk 4 and later aircraft cannon (the earlier ADEN marks had 30x86 B and
+# 30x111 B cases) and of the French DEFA. Its name gives the bore and case length (Jane's table
+# measures the case at 111.99 mm); KNDS gives the cartridge length, Jane's table the rim, the belt
+# and the neck, the specimen drawing of a DEFA round on municion.org the base (HØ) and the head.
+name = "30x113 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["30x113b", "30 mm aden", "30 mm defa"]
+origin = "GB"
+origin_sources = []
+
+[mm]
+rim = 33.3
+belt = 33.78
+base = 32.0
+neck = 30.87
+case_length = 113.0
+overall_length = 200.0
+bullet = 30.0
+sources = [
+  "https://knds.com/en/products/ammunition/30x113-mm-b",
+  "https://en.wikipedia.org/wiki/30_mm_caliber",
+  "book:janes-ammo-2002 p. 682",
+  "https://municion.org/producto/30-x-113-b-french-defa-30-550/",
+]
+
+[introduced]
+year = 1955
+sources = ["https://en.wikipedia.org/wiki/30_mm_caliber"]
+
+[case_head]
+# The drawing 30-113-CFE-010: RØ 33.28, HØ 32.00, LØ 33.62, RT 3.14, GØ 26.87, GW 3.82,
+# the ramp ends at HL 10.50; the belt (LW 3.60) ends at 14.10; ramp angle from HL = RT + GW + ((LØ - GØ)/2)/tan(angle).
+# The drawing has no shoulder (MØ 31.01 at CL 112.70, TL 199.48).
+rim_thickness = 3.14
+ramp_top = 14.1
+groove_diameter = 26.87
+ramp_angle = 44.0
+groove_width = 3.82
+sources = ["https://municion.org/producto/30-x-113-b-french-defa-30-550/"]
+
+[current_cases]
+# The LW30 rounds of the M230 (AH-64 Apache), Aden/DEFA pattern (p. 111), have aluminium cases (p. 112).
+materials = ["aluminium"]
+sources = ["book:janes-ammo-2002 p. 111", "book:janes-ammo-2002 p. 112"]

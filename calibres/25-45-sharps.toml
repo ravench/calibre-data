@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# The Sharps Rifle Company's .223 Remington case necked up to .25 for AR-15 rifles.
+name = ".25-45 Sharps"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["25-45 sharps", "25-45"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/25-45-sharps/"]
+rare = true
+
+[mm]
+rim = 9.6
+base = 9.55
+shoulder = 8.97
+shoulder_at = 36.53
+neck_at = 39.3
+neck_base = 7.11
+# COTW 18, in the text
+shoulder_angle = 23
+cite.shoulder_angle = ["book:cotw-18 p. 367"]
+neck = 7.21
+case_length = 44.7
+overall_length = 54.23
+bullet = 6.53
+# shoulder_at from the drawing 06-045-BDC-020: SL 36.05 on a case of CL 44.22, taken from the
+# mouth (case_length - (CL - SL)). The specimen's cone is 18.2 degrees; at the book's 23 the neck is 0.70 mm longer
+# than the specimen's (NL 5.40).
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/25-45-sharps/"]
+
+[introduced]
+year = 2008
+sources = ["book:cotw-18 p. 367"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# made from .223 Rem. cases; the C.I.P. 223 Rem. head
+rim_thickness = 1.14
+ramp_top = 3.13
+groove_diameter = 8.43
+ramp_angle = 25.0
+groove_width = 0.76
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf"]
+
+[bullet]
+# The Sharps Rifle Company's factory load: Speer's Hot-Cor soft point.
+type = "softpoint"
+sources = ["book:cotw-18 p. 368"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/25-45-sharps/"]

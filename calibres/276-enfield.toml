@@ -1,0 +1,54 @@
+# Measurements converted from inches.
+# The trial round of the Pattern 1913 rifle; the war stopped it.
+name = ".276 Enfield"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["276enfield", "276 enfield", "7x60 enfield"]
+
+origin = "GB"
+origin_sources = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.23
+base = 13.41
+shoulder = 11.68
+shoulder_at = 44.61
+neck_at = 49.99
+neck_base = 8.29
+# Drawing: SØ 11.69, NØ 8.29, SL 44.50, NL 9.70, CL 59.58.
+shoulder_angle = 17.5
+cite.shoulder_angle = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"]
+neck = 8.15
+case_length = 59.69
+overall_length = 82.55
+bullet = 7.21
+sources = [
+  "book:cotw-18 p. 573",
+  "https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/",
+]
+
+[introduced]
+# COTW: development began in 1909.
+year = 1909
+sources = ["book:cotw-18 p. 542"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# Drawing 07-060-BGC-059: RT 1.20, HL 3.36, GØ 11.16, GW 0.97, HØ 13.38; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.2
+ramp_top = 3.36
+groove_diameter = 11.16
+ramp_angle = 43.0
+groove_width = 0.97
+sources = ["https://municion.org/producto/276-enfield-xpl-pattern-13-rl-18000c/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 542"]

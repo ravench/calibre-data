@@ -1,0 +1,40 @@
+# Measurements converted from inches.
+# For the Maynard Improved Hunter's Rifle No. 11 of 1882; also made as a shot shell for combination guns.
+name = ".55-100 Maynard 1882"
+# Guns: book:cotw-18 p. 247.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["55-100 maynard", "55-100 maynard 1882"]
+
+origin = "US"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 18.24
+base = 14.99
+neck = 14.78
+case_length = 49.28
+overall_length = 65.02
+bullet = 14.0
+sources = ["book:cotw-18 p. 252"]
+
+[introduced]
+year = 1882
+sources = ["book:cotw-18 p. 247"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 252"]
+
+[case_head]
+# .067 in.
+rim_thickness = 1.7
+sources = ["book:donnelly p. 681"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 247"]

@@ -1,0 +1,40 @@
+# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+name = ".400 Legend"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["400legend"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.400_Legend"]
+
+[mm]
+# SAAMI 400 Legend, maximum cartridge.
+rim = 10.72
+base = 11.18
+neck = 10.84
+case_length = 41.91
+overall_length = 57.4
+bullet = 10.17
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=159"]
+
+[introduced]
+year = 2023
+sources = ["https://en.wikipedia.org/wiki/.400_Legend"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.400_Legend"]
+
+[case_head]
+# C.I.P. 400 Legend
+rim_thickness = 1.24
+ramp_top = 3.53
+groove_diameter = 9.09
+ramp_angle = 36.0
+groove_width = 0.84
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/400-legend-231009-en.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.400_Legend"]

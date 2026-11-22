@@ -1,0 +1,61 @@
+# Added 2026-11, rifle batch 1: dimensions from the page named in INTRODUCED, rounded;
+# shoulder heights estimated for drawing.
+name = ".30-40 Krag"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["30-40", "30-40krag", "30army"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30-40_Krag",
+  "book:ammo-encyclopedia-2 p. 325",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf",
+]
+
+[mm]
+rim = 13.8
+base = 11.6
+shoulder = 10.7
+shoulder_at = 43.82
+neck_at = 46.45
+neck_base = 8.61
+# C.I.P. 30-40 Krag
+shoulder_angle = 21.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
+neck = 8.6
+case_length = 58.8
+overall_length = 78.5
+bullet = 7.8
+sources = [
+  "https://en.wikipedia.org/wiki/.30-40_Krag",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf",
+]
+
+[introduced]
+year = 1892
+sources = ["https://en.wikipedia.org/wiki/.30-40_Krag"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.63
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page71.pdf"]
+
+[bullet]
+# The service load's 220-grain round-nosed bullet had a cupronickel jacket; the 230-grain bullet
+# tried first had a steel one (Gunmart, "The 30-40 Krag", 2016).
+type = "jacketed"
+jacket = "cupronickel"
+sources = [
+  "book:cotw-18 p. 546",
+  "https://www.gunmart.net/shooting-advice/getting-started/the-30-40-krag",
+]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/30-40-krag-jorgensen-us-govt-m-1892/"]

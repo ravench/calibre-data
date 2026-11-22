@@ -1,0 +1,57 @@
+# The round of the Oerlikon KBB, the 25x137 mm's big brother, whose only service gun is a naval CIWS that
+# Turkey bought; sabot shells take a 181 mm case. Rapid Fire's table and Jane's p. 92 call it the 25x184;
+# Autocannon p. 132 and the specimen drawing on municion.org measure the case at 173 mm. Its name
+# gives the bore and case length, Rapid Fire's table the rim and base, the drawing the shoulder, the neck
+# and the head, Autocannon p. 132 and Jane's p. 92 the length of the round.
+name = "25x173 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["25x184", "25x181", "25 mm kbb", "oerlikon kbb"]
+origin = "CH"
+origin_sources = [
+  "https://municion.org/producto/25-x-173-swiss-xpl-oerlikon-kbb-short-neck-normal-bullets/",
+  "book:rapid-fire p. 227",
+]
+
+[mm]
+rim = 38.0
+base = 38.2
+shoulder = 34.58
+shoulder_at = 149.4
+neck_at = 162.0
+neck_base = 26.18
+# Drawing 25-173-BGC-010: SØ 34.58, NØ 26.18, SL 149.50, NL 11.00, CL 173.10, TL 286.66.
+shoulder_angle = 18.4
+cite.shoulder_angle = ["https://municion.org/producto/25-x-173-swiss-xpl-oerlikon-kbb-short-neck-normal-bullets/"]
+neck = 26.18
+case_length = 173.0
+overall_length = 288.0
+bullet = 25.0
+sources = [
+  "book:rapid-fire p. 227",
+  "book:autocannon p. 132",
+  "book:janes-ammo-2002 p. 92",
+  "https://municion.org/producto/25-x-173-swiss-xpl-oerlikon-kbb-short-neck-normal-bullets/",
+]
+
+[introduced]
+# municion.org's year; Autocannon p. 132 has the KBB developed from 1966, Jane's p. 92 in the early
+# 1980s.
+year = 1979
+sources = ["https://municion.org/producto/25-x-173-swiss-xpl-oerlikon-kbb-short-neck-normal-bullets/"]
+
+[case_head]
+# The drawing 25-173-BGC-010: RØ 37.87, HØ 38.10, RT 3.92, GØ 31.94, GW 2.54, the
+# ramp ends at HL 10.00; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 3.92
+ramp_top = 10.0
+groove_diameter = 31.94
+ramp_angle = 41.0
+groove_width = 2.54
+sources = ["https://municion.org/producto/25-x-173-swiss-xpl-oerlikon-kbb-short-neck-normal-bullets/"]
+
+[case]
+# Lacquered steel.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 92"]

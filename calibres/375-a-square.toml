@@ -1,0 +1,58 @@
+# Measurements converted from inches.
+# A changed .378 Weatherby Magnum case, short enough for a .375 H&H magazine.
+name = ".375 A-Square"
+guns = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["375 a-square", "375 a-sq"]
+
+origin = "US"
+origin_sources = []
+rare = true
+
+[mm]
+rim = 14.7
+belt = 15.33
+base = 14.78
+shoulder = 14.0
+shoulder_at = 61.1
+# Measured on the side photo of the jww.de reloading page (centre cartridge): straight part of the
+# shoulder at 37.8 deg (left edge) and 38.1 (right), 37.4-38.1 over edge thresholds; 8.8 px/mm, neck/body
+# width 0.727 (ours 0.735). The shoulder starts 11.3 mm below the mouth. One photo only.
+shoulder_angle = 37.9
+cite.shoulder_angle = ["https://jww.de/wiederladen-375-a-square-2187/"]
+neck = 10.29
+case_length = 72.39
+overall_length = 92.71
+bullet = 9.52
+# The table gives the belt, .603 in., in the rim column; rim and belt are the .378 Weatherby Magnum's (R1 and R3
+# on its C.I.P. sheet). shoulder_at: case_length less the 11.3 mm from
+# the mouth measured on the jww.de photo (see [shoulder_angle]).
+sources = [
+  "book:cotw-18 p. 452",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page29.pdf",
+  "https://jww.de/wiederladen-375-a-square-2187/",
+]
+
+[introduced]
+year = 1975
+sources = ["book:cotw-18 p. 415"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# from the .378 Weatherby Magnum case; C.I.P. sheet
+rim_thickness = 1.6
+ramp_top = 6.4
+groove_diameter = 12.57
+ramp_angle = 45.0
+groove_width = 1.24
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page29.pdf"]
+
+[bullet]
+# Inferred: A-Square's factory load took Sierra bullets and its own three Triad types; the page names
+# no type (p. 416).
+type = "softpoint"
+sources = []

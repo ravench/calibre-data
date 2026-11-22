@@ -1,0 +1,44 @@
+# Measurements converted from inches.
+# Colt's round of about 1912, offered to Romania; FN made the same round as the 9.65 mm Browning.
+name = "9.8 mm Auto Colt"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["9.8 colt", "9.8mm auto colt", "9.8 colt auto pistol", "9.65 browning", "9.65mm browning automatic"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 702"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.29
+base = 10.26
+neck = 10.26
+case_length = 23.16
+overall_length = 32.18
+bullet = 9.6
+sources = ["book:cotw-18 p. 528"]
+
+[introduced]
+# COTW: about 1912.
+year = 1912
+sources = ["book:cotw-18 p. 496"]
+
+[primer]
+# The table gives no primer.
+size = "small-pistol"
+sources = []
+
+[case_head]
+# Drawing 10-023-CGC-030: RT 1.21, HL 3.65, GØ 8.70, GW 0.95, HØ 10.26; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.21
+ramp_top = 3.65
+groove_diameter = 8.7
+ramp_angle = 28.0
+sources = ["https://municion.org/producto/98-mm-acp-winchester/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 496"]

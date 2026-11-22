@@ -1,0 +1,50 @@
+# The round of the Mauser MG 151/20, the Luftwaffe's standard aircraft cannon from 1941: the 15x96 case
+# of the MG 151 shortened and necked out to 20 mm. South Africa's Denel GA-1 still fires it. Its name
+# gives the bore and case length, Jane's table the rim, base and neck, Autocannon p. 114 the length of
+# the round, the specimen drawing on municion.org the shoulder and the head. Autocannon notes that
+# it is often called the 20x83.5, though South African cases measure about 82 mm. The German cases were
+# brass or steel, the French ones of after the war brass and the South African ones steel (pp. 113-114),
+# so the file names no material.
+name = "20x82 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x82", "20x83.5", "20 mm mg 151", "mg 151/20", "mg151/20"]
+origin = "DE"
+origin_sources = ["book:rapid-fire p. 226"]
+
+[mm]
+rim = 25.09
+base = 24.99
+shoulder = 23.55
+shoulder_at = 65.16
+neck_at = 70.5
+neck_base = 20.64
+# Drawing 20-082-BGC-030: SØ 23.55, NØ 20.64, SL 64.50, NL 11.50, CL 81.34, TL 146.75.
+shoulder_angle = 15.2
+cite.shoulder_angle = ["https://municion.org/producto/20-mm-mauser-for-mg-151-20/"]
+neck = 20.7
+case_length = 82.0
+overall_length = 147.0
+bullet = 20.0
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "book:autocannon p. 114",
+  "https://municion.org/producto/20-mm-mauser-for-mg-151-20/",
+]
+
+[introduced]
+# Autocannon: the MG 151/20 was the Luftwaffe's standard aircraft cannon from 1941; the 15 mm MG 151 had
+# entered service in late 1940.
+year = 1941
+sources = ["book:autocannon p. 113"]
+
+[case_head]
+# The drawing 20-082-BGC-030: RØ 25.00, HØ 25.02, RT 2.22, GØ 21.89, GW 2.80, the ramp
+# ends at HL 6.75; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 2.22
+ramp_top = 6.75
+groove_diameter = 21.89
+ramp_angle = 42.0
+groove_width = 2.8
+sources = ["https://municion.org/producto/20-mm-mauser-for-mg-151-20/"]

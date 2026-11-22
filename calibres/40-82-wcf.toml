@@ -1,0 +1,60 @@
+# Sourced 2026-11-04: C.I.P. TDCC maximum cartridge (shoulder = P2, neck = H2, shoulder_at = L1,
+# overall_length = L6), except .22 Nosler (Sierra load-data drawing), 6.5-300 Wby (SAAMI drawing; base
+# from Wikipedia) and .38-56 WCF (Wikipedia inch values, its mm column is off by 1000;
+# shoulder start estimated). 9.3x72 R has no shoulder on its C.I.P. sheet.
+name = ".40-82 WCF"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["40-82"]
+
+origin = "US"
+origin_sources = [
+  "https://municion.org/producto/40-82-260-winchester-cf-marlin/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page102.pdf",
+]
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 15.49
+base = 12.92
+shoulder = 11.54
+shoulder_at = 44.91
+neck_at = 49.27
+neck_base = 10.86
+# C.I.P. 40-82 Win.
+shoulder_angle = 4.5
+neck = 10.85
+case_length = 60.71
+overall_length = 70.23
+bullet = 10.35
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page102.pdf"]
+
+[introduced]
+# Year of production on the product page.
+year = 1885
+sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
+
+[primer]
+# 5.05 mm, 8 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page102.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/40-82-260-winchester-cf-marlin/"]

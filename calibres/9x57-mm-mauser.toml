@@ -1,0 +1,63 @@
+# Batch 7 (2026-11); now from the C.I.P. sheet (see [mm]).
+name = "9x57 mm Mauser"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["9x57"]
+
+origin = "DE"
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 431",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page67.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 9 x 57, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 11.95
+base = 11.94
+shoulder = 10.95
+shoulder_at = 46.2
+neck_at = 47.82
+neck_base = 9.83
+# C.I.P. 9 x 57: half the cone angle alpha 38°08'17"
+shoulder_angle = 19.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page67.pdf"]
+neck = 9.83
+case_length = 56.8
+overall_length = 81.0
+bullet = 9.08
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page67.pdf",
+  "book:cotw-18 p. 652",
+]
+
+[introduced]
+# Year of production on the product page.
+# municion says ca. 1904, the other source the 1890s: earliest wins
+year = 1890
+sources = ["https://municion.org/producto/9-x-57-mauser/"]
+
+[primer]
+# 5.36 mm, 8 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/9-x-57-mauser/"]
+
+[case_head]
+# C.I.P. 9 x 57: R, E, E1, delta
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 10.5
+ramp_angle = 38.7
+groove_width = 1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page67.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/9-x-57-mauser/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/9-x-57-mauser/"]

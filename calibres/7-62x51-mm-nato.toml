@@ -1,0 +1,124 @@
+name = "7.62x51 mm NATO"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.62x51", "7.62nato", "762"]
+
+# the union that standardised it in 1954; the US T65 of 1949-54 is the design: US
+origin = "NATO"
+origin_sources = []
+worldwide = true
+
+[mm]
+# C.I.P. 308 Win. lists 7,62 x 51 as an alternative name; its values are the .308's.
+rim = 11.9
+base = 11.9
+shoulder = 11.5
+shoulder_at = 39.62
+neck_at = 43.48
+neck_base = 8.72
+shoulder_angle = 20
+cite.shoulder_angle = ["https://en.wikipedia.org/wiki/7.62%C3%9751mm_NATO"]
+neck = 8.7
+case_length = 51.2
+overall_length = 71.12
+bullet = 7.85
+sources = [
+  "book:cotw-18 p. 573",
+  "book:tm-43-0001-27 p. 11-17",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf",
+]
+
+[introduced]
+year = 1954
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
+
+[case_head]
+# same case as the .308 Win.; C.I.P. 308 Win.
+rim_thickness = 1.37
+ramp_top = 3.85
+groove_diameter = 10.39
+ramp_angle = 36.0
+groove_width = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page125.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 546"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["black"]
+meaning = ["armour-piercing"]
+description = "M61 and M993"
+description_de = "M61 und M993"
+description_fr = "M61 et M993"
+description_it = "M61 e M993"
+description_es = "M61 y M993"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO", "book:labbett p. 80"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["orange"]
+meaning = ["tracer"]
+description = "M62"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO", "book:labbett p. 80"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["purple"]
+meaning = ["tracer"]
+description = "M276 dim tracer"
+description_de = "M276, lichtschwache Leuchtspur"
+description_fr = "M276, traçant à faible luminosité"
+description_it = "M276, tracciante a bassa luminosità"
+description_es = "M276, trazadora de baja luminosidad"
+countries = ["US"]
+sources = ["https://en.wikipedia.org/wiki/7.62×51mm_NATO"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["purple"]
+meaning = ["ball"]
+description = "British ball"
+description_de = "Britisches Standardgeschoss"
+description_fr = "Balle ordinaire britannique"
+description_it = "Palla ordinaria britannica"
+description_es = "Ordinaria británica"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["red"]
+meaning = ["tracer"]
+description = "British tracer"
+description_de = "Britische Leuchtspur"
+description_fr = "Traçant britannique"
+description_it = "Tracciante britannico"
+description_es = "Trazadora británica"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]
+
+[[colour_codes]]
+part = "annulus"
+colours = ["yellow"]
+meaning = ["proof"]
+description = "British proof or standard round"
+description_de = "Britische Beschuss- oder Referenzpatrone"
+description_fr = "Cartouche britannique d'épreuve ou étalon"
+description_it = "Cartuccia britannica di prova forzata o campione"
+description_es = "Cartucho británico de prueba o patrón"
+countries = ["GB"]
+sources = ["book:labbett p. 86"]

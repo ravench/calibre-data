@@ -1,0 +1,45 @@
+# Measurements converted from inches.
+# For the Mannlicher pistols of 1900, 1901 and 1905.
+name = "7.63 mm Mannlicher"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["7.63mannlicher", "7.65 mannlicher", "7.63 mannlicher"]
+
+origin = "AH"
+origin_sources = ["https://municion.org/producto/763-mm-mannlicher/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.48
+base = 8.43
+neck = 8.41
+case_length = 21.34
+overall_length = 28.45
+bullet = 7.82
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+year = 1900
+sources = ["book:cotw-18 p. 467"]
+
+[primer]
+# The table gives a Berdan primer without its size; 4.37 mm, 14 specimens on municion.org's photos.
+size = "small-pistol"
+sources = ["https://municion.org/producto/763-mm-mannlicher/"]
+
+[case_head]
+# Drawing 08-021-CGC-010: RT 1.09, HL 2.40, GØ 7.81, GW 0.90, HØ 8.78; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle). Cartridges of the World's table gives the rim .030 in. (0.76): more than 0.3 mm
+# under the drawing's, so the whole head is the drawing's (a thinner rim under its HL would stretch the groove).
+rim_thickness = 1.09
+ramp_top = 2.4
+groove_diameter = 7.81
+ramp_angle = 50.0
+groove_width = 0.9
+sources = ["https://municion.org/producto/763-mm-mannlicher/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 467"]

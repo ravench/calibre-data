@@ -1,0 +1,58 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# German target round; COTW dates it between 1890 and 1900: the earliest year is kept.
+name = "8.15x46 mm R"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/815-x-46-r-frohn/).
+profile = "flat"
+aliases = ["8.15x46r"]
+
+origin = "DE"
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 407",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page44.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.35
+base = 10.75
+shoulder = 9.9
+shoulder_at = 30.0
+neck_at = 40
+neck_base = 8.83
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 3.1
+neck = 8.83
+case_length = 46.5
+overall_length = 62.3
+bullet = 8.38
+# flat: the drawing gives the flat tip as Ø 6,00 (whole millimetres).
+flat = 6.0
+cite.flat = ["https://municion.org/producto/815-x-46-r-frohn/"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page44.pdf"]
+
+[introduced]
+year = 1890
+sources = ["book:cotw-18 p. 628"]
+
+[primer]
+# .250 in. Berdan in the table
+size = "berdan-nitro"
+diameter = 6.35
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.5
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page44.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 628"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/815-x-46-r-frohn/"]

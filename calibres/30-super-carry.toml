@@ -1,0 +1,46 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = ".30 Super Carry"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["30sc", "30supercarry"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.30_Super_Carry",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/30-super-carry-250223-en.pdf",
+]
+
+[mm]
+# C.I.P. 30 Super Carry, maximum cartridge.
+rim = 8.74
+base = 8.72
+neck = 8.56
+case_length = 21.01
+overall_length = 29.69
+bullet = 7.95
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/30-super-carry-250223-en.pdf"]
+
+[introduced]
+year = 2022
+sources = ["https://en.wikipedia.org/wiki/.30_Super_Carry"]
+
+[primer]
+# Factory ammunition and this table use small pistol primers; Hodgdon's reloading data loads small rifle.
+size = "small-pistol"
+sources = ["book:cotw-18 p. 527"]
+
+[case_head]
+# C.I.P. 30 Super Carry
+rim_thickness = 1.27
+ramp_top = 2.98
+groove_diameter = 7.57
+ramp_angle = 35.0
+groove_width = 0.89
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/30-super-carry-250223-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 468"]

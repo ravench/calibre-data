@@ -1,0 +1,29 @@
+# The round of the Soviet NS-37 aircraft cannon of the Second World War, in fighters and ground-attack
+# planes. Its name gives the bore and case length (Rapid Fire's table: 37x195), Rapid Fire's table the
+# rim and base, Autocannon p. 156 the length of the round. The drawing on municion.org
+# (37-195-BGC-010) has round numbers, a case of 195 mm, 3 mm shorter than the file's, and a 54.40 mm rim
+# and base, 1.1 mm wider than Rapid Fire's, so nothing is taken from it.
+name = "37x198 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["37x195", "37 mm ns-37", "ns-37"]
+origin = "SU"
+origin_sources = ["book:rapid-fire p. 230"]
+
+[mm]
+rim = 53.3
+base = 53.3
+case_length = 198.0
+overall_length = 332.0
+bullet = 37.0
+sources = [
+  "book:rapid-fire p. 230",
+  "book:autocannon p. 156",
+  "https://en.wikipedia.org/wiki/Nudelman-Suranov_NS-37",
+]
+
+[introduced]
+# The NS-37's first year of production (Wikipedia).
+year = 1942
+sources = ["https://en.wikipedia.org/wiki/Nudelman-Suranov_NS-37"]

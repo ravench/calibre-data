@@ -1,0 +1,28 @@
+# The round of the Japanese army's Ho-5 aircraft cannon (20 mm Type 2), its standard aircraft cannon at
+# the end of the Second World War. Its name gives the bore and case length, Rapid Fire's table the rim
+# and base, Autocannon p. 114 the length of the round.
+name = "20x94 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x94", "20 mm ho-5", "ho-5", "20 mm type 2"]
+origin = "JP"
+origin_sources = ["https://en.wikipedia.org/wiki/Ho-5_cannon", "book:rapid-fire p. 226"]
+
+[mm]
+rim = 24.9
+base = 25.0
+case_length = 94.0
+overall_length = 148.0
+bullet = 20.0
+sources = ["book:rapid-fire p. 226", "book:autocannon p. 114"]
+
+[introduced]
+# The year in the gun's name: Autocannon calls it the Type 2, the Japanese year 2602 (1942); Rapid Fire's
+# table calls it the Type 1. No source gives the year in words.
+year = 1942
+sources = ["book:autocannon p. 114"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 114"]

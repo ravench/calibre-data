@@ -1,0 +1,56 @@
+# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+name = ".303 Savage"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["303savage", "301savage"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.303_Savage",
+  "book:ammo-encyclopedia-2 p. 401",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.8
+base = 11.2
+shoulder = 10.5
+shoulder_at = 34.33
+neck_at = 37.54
+neck_base = 8.66
+# C.I.P. 303 Savage
+shoulder_angle = 16
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf"]
+neck = 8.5
+case_length = 51.2
+overall_length = 64.0
+bullet = 7.8
+sources = [
+  "https://en.wikipedia.org/wiki/.303_Savage",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf",
+]
+
+[introduced]
+year = 1894
+sources = ["https://en.wikipedia.org/wiki/.303_Savage"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.303_Savage"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page75.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/303-savage/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/303-savage/"]

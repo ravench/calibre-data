@@ -1,0 +1,29 @@
+# The rimless version of the 25x218 mm SR that replaced it in Soviet naval guns after the war: the 110-PM
+# of 1950 and the faster M-110, in the 2M-3 and 2M-3M twin mountings. Its name gives the bore and case
+# length, Jane's table the rim, base and neck, Autocannon p. 133 the length of the round. The
+# specimen drawings on municion.org (25-219-BGC-010 and -020, of cases with a 34 and a 29 mm neck) give no
+# shoulder or head here: their necks start 1.10 and 0.95 mm wider than Jane's (NØ 27.18 and 27.03 against
+# 26.08), more than the sizes may differ from the file's; only the 29 mm neck narrows to Jane's at the
+# mouth (MØ 26.20). The two cases start the shoulder 2.8 mm apart, and nothing tells which of them
+# Jane's row measures.
+name = "25x218 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["25 mm 2m-3", "2m-3", "110-pm"]
+origin = "SU"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 34.9
+base = 34.8
+neck = 26.08
+case_length = 218.0
+overall_length = 293.0
+bullet = 25.0
+sources = ["book:janes-ammo-2002 p. 682", "book:autocannon p. 133"]
+
+[introduced]
+# Autocannon: the 110-PM came first, in 1950.
+year = 1950
+sources = ["book:autocannon p. 26"]

@@ -1,0 +1,58 @@
+# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+name = ".416 Barrett"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["416barrett"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.416_Barrett",
+  "book:ammo-encyclopedia-2 p. 352",
+]
+
+[mm]
+rim = 20.4
+base = 20.4
+shoulder = 18.5
+shoulder_at = 63.55
+neck_at = 70.83
+neck_base = 11.78
+# Drawing 11-083-BGC-010
+shoulder_angle = 24.7
+cite.shoulder_angle = ["https://municion.org/producto/416-barrett-sniper/"]
+neck = 11.6
+case_length = 83.0
+overall_length = 118.0
+bullet = 10.6
+sources = [
+  "https://en.wikipedia.org/wiki/.416_Barrett",
+  "https://municion.org/producto/416-barrett-sniper/",
+]
+
+[introduced]
+year = 2005
+sources = ["https://en.wikipedia.org/wiki/.416_Barrett"]
+
+[primer]
+# 7.77 mm, 2 specimens
+size = "bmg-35"
+sources = ["https://municion.org/producto/416-barrett-sniper/"]
+
+[case_head]
+# C.I.P. 416 Barrett
+rim_thickness = 2.11
+ramp_top = 6.22
+groove_diameter = 17.27
+ramp_angle = 36.0
+groove_width = 1.96
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/416-barrett-250313-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/416-barrett-sniper/"]

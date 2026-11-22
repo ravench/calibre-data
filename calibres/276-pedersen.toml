@@ -1,0 +1,59 @@
+# Measurements converted from inches.
+# US Army trial round of the Pedersen rifle; there were several versions.
+name = ".276 Pedersen"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["276pedersen", "276 pedersen", "7x51 pedersen"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.276_Pedersen",
+  "book:ammo-encyclopedia-2 p. 506",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.46
+base = 11.4
+shoulder = 9.88
+shoulder_at = 40.95
+neck_at = 45.26
+neck_base = 8.1
+# Drawing: SØ 9.75, NØ 8.10, SL 41.05, NL 6.05, CL 51.41.
+shoulder_angle = 10.8
+cite.shoulder_angle = ["https://municion.org/producto/276-pedersen-xpl-pd-42-case-pc-48-bullet/"]
+neck = 7.98
+case_length = 51.31
+overall_length = 72.39
+bullet = 7.24
+# shoulder_at from the drawing 07-051-BGC-075: SL 41.05 on a case of CL 51.41, taken from the
+# mouth (case_length - (CL - SL)). This is the PD-42 case, one of four .276 Pedersen specimens on municion.org. The T2
+# case (drawing 07-053-BGC-040) is 0.8 mm longer and has a wider head, and one is semi-rimmed (07-051-BDC-020). The
+# FB-9892 case (07-051-BGC-090) fits the book as well as the PD-42 and has the same shoulder within 0.11 mm and 0.2
+# degrees; only its groove differs (GW 1.70, a ramp of 46 degrees).
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/276-pedersen-xpl-pd-42-case-pc-48-bullet/"]
+
+[introduced]
+# COTW: developed from 1923 to 1932.
+year = 1923
+sources = ["book:cotw-18 p. 543"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.276_Pedersen"]
+
+[case_head]
+# Drawing 07-051-BGC-075: RT 1.20, HL 3.79, GØ 9.60, GW 1.41, HØ 11.39; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.2
+ramp_top = 3.79
+groove_diameter = 9.6
+ramp_angle = 37.0
+groove_width = 1.41
+sources = ["https://municion.org/producto/276-pedersen-xpl-pd-42-case-pc-48-bullet/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 543"]

@@ -1,0 +1,41 @@
+# Measurements converted from inches.
+# The Maynard Model 1882 rifles' version of the .50 US Carbine round.
+name = ".50-50 Maynard 1882"
+# Guns: book:cotw-18 p. 246.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["50-50 maynard", "50-50 maynard 1882"]
+
+origin = "US"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.79
+base = 14.3
+neck = 13.59
+case_length = 34.8
+overall_length = 48.51
+bullet = 13.03
+sources = ["book:cotw-18 p. 252"]
+
+[introduced]
+# The year of the Maynard Model 1882 rifle it was made for; COTW 18 p. 246 gives no date for the round.
+year = 1882
+sources = ["book:cotw-18 p. 246"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 252"]
+
+[case_head]
+# .058 in.
+rim_thickness = 1.47
+sources = ["book:donnelly p. 656"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 246"]

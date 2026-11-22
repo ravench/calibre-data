@@ -1,0 +1,52 @@
+# Measurements converted from inches.
+# For the Marlin Model 93 lever action; like the .25-35 Winchester, but a little longer.
+name = ".25-36 Marlin"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["25-36", "25-37"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/25-36-marlin/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.67
+base = 10.57
+shoulder = 9.09
+shoulder_at = 36.02
+neck_at = 39.95
+neck_base = 7.21
+# Drawing: SØ 8.92, NØ 7.21, SL 36.00, NL 13.90, CL 53.83.
+shoulder_angle = 12.3
+cite.shoulder_angle = ["https://municion.org/producto/25-36-marlin/"]
+neck = 7.14
+case_length = 53.85
+overall_length = 63.5
+bullet = 6.53
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+sources = ["book:cotw-18 p. 249", "https://municion.org/producto/25-36-marlin/"]
+
+[introduced]
+year = 1895
+sources = ["book:cotw-18 p. 189"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 249"]
+
+[case_head]
+# .056 in.
+rim_thickness = 1.42
+sources = ["book:cotw-18 p. 249"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 189"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/25-36-marlin/"]

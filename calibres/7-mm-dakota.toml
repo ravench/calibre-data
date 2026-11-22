@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# Don Allen's 7 mm on the .404 Jeffery case, shortened and with a slightly larger, no longer rebated rim.
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 385).
+name = "7 mm Dakota"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7mm dakota", "7 dakota"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/7-mm-dakota/"]
+rare = true
+
+[mm]
+rim = 13.82
+base = 13.82
+shoulder = 13.49
+shoulder_at = 50.24
+neck_at = 55.7
+neck_base = 8
+# Drawing: SØ 13.43, NØ 8.00, SL 50.00, NL 7.80, CL 63.26.
+shoulder_angle = 26.4
+cite.shoulder_angle = ["https://municion.org/producto/7-mm-dakota/"]
+neck = 7.98
+case_length = 63.5
+overall_length = 84.58
+bullet = 7.21
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/7-mm-dakota/"]
+
+[introduced]
+# Ballistic Studies: Don Allen brought out his Dakota rounds in 1992; COTW gives no year.
+year = 1992
+sources = ["https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+cartridges.html"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# .042 in. (COTW); groove from the drawing 07-063-BGC-050: RT 1.16, HL 3.25, GØ 12.11, GW 0.80,
+# HØ 13.80; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.07
+ramp_top = 3.25
+groove_diameter = 12.11
+ramp_angle = 33.0
+groove_width = 0.8
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/7-mm-dakota/"]
+
+[bullet]
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/7-mm-dakota/"]

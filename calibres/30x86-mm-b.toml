@@ -1,0 +1,23 @@
+# The round of the first, low-velocity British ADEN revolver cannon (3M), closely based on the German
+# 30x85 mm B of the Mauser MG 213C; it saw RAF service only briefly in the mid-1950s before the 30x113 mm
+# B replaced it. Its name gives the bore and case length, Rapid Fire's table the rim and base. Jane's
+# table has a 30x86B row for the Mauser MK 213 (rim 33.40, belt 33.70, neck 31.09); the file keeps to
+# Rapid Fire's ADEN figures.
+name = "30x86 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["30x86b", "30 mm aden 3m", "aden 3m"]
+origin = "GB"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 33.2
+base = 32.3
+case_length = 86.0
+bullet = 30.0
+sources = ["book:rapid-fire p. 228"]
+
+[introduced]
+unknown = "Autocannon has it in RAF service only briefly in the mid-1950s."
+sources = ["book:autocannon p. 137"]

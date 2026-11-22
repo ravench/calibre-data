@@ -1,0 +1,54 @@
+# Measurements converted from inches.
+# Lazzeroni's .308 short magnum for a 2.8 in. action, on its .577 in. case.
+name = "7.82 Lazzeroni Patriot"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.82 patriot", "7.82mm patriot", "lazzeroni patriot"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/782-mm-lazzeroni-patriot/"]
+rare = true
+
+[mm]
+rim = 14.66
+base = 14.66
+shoulder = 14.15
+shoulder_at = 39.71
+# COTW 18 p. 394: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 394"]
+neck = 8.64
+case_length = 52.07
+overall_length = 71.12
+bullet = 7.82
+# shoulder_at from the drawing 08-052-BGC-009: SL 39.20 on a case of CL 51.56, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/782-mm-lazzeroni-patriot/"]
+
+[introduced]
+year = 1997
+sources = ["book:cotw-18 p. 394"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .060 in. (COTW); groove from the drawing 08-052-BGC-009: RT 1.57, HL 3.90, GØ 12.67, GW 1.00,
+# HØ 14.63; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.52
+ramp_top = 3.9
+groove_diameter = 12.67
+ramp_angle = 36.0
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/782-mm-lazzeroni-patriot/"]
+
+[bullet]
+# Soft point inferred: Lazzeroni loads premium hunting bullets; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/782-mm-lazzeroni-patriot/"]

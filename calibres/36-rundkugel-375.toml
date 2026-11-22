@@ -1,0 +1,19 @@
+name = ".36 Rundkugel (.375)"
+# Guns: https://en.wikipedia.org/wiki/Colt_1851_Navy_Revolver (Colt 1851 Navy revolver, .375 to .380 inch ball).
+guns = ["handgun"]
+black_powder = true
+kind = "ball"
+profile = "round"
+aliases = ["36", "36navy", ".375ball"]
+
+[mm]
+diameter = 9.5
+sources = ["https://www.hornady.com/muzzleloading/browse/36-cal-375-lead-balls"]
+
+[introduced]
+# Not one cartridge with one launch: shot shell sizes, loose balls and air gun pellets.
+unknown = "not a single cartridge"
+
+[bullet]
+type = "lead"
+sources = ["https://www.hornady.com/muzzleloading/browse/36-cal-375-lead-balls"]

@@ -1,0 +1,126 @@
+name = "7.62x54 mm R"
+guns = ["rifle"]
+kind = "rimmed"
+# Nose: round: the round of 1891 is older than its pointed bullet of 1909 (COTW 18 p. 548).
+profile = "round"
+# Today: pointed, since the 150-grain bullet of 1909 (COTW 18 p. 548).
+profile_today = "spitzer"
+aliases = ["7.62x54r", "762x54r"]
+
+origin = "RUE"
+origin_sources = ["https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[mm]
+rim = 14.5
+base = 12.4
+shoulder = 11.6
+shoulder_at = 39.7
+neck_at = 44.3
+neck_base = 8.53
+# C.I.P. 7,62 x 54 R
+shoulder_angle = 18.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf"]
+neck = 8.5
+case_length = 53.72
+overall_length = 77.16
+bullet = 7.92
+sources = [
+  "book:hornady-10 p. 489",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf",
+  "book:cotw-18 p. 573",
+  "book:janes-ammo-2002 p. 681",
+]
+
+[introduced]
+year = 1891
+sources = ["https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page29.pdf"]
+
+[bullet]
+# The round-nosed bullet of 1891 had a cupronickel jacket over a lead core; tombac jackets replaced
+# cupronickel in the early 1930s (7.62x54r.net's page on the Russian and Soviet headstamps, in the
+# copy sks-files.com keeps as a PDF). municion.org's page calls the Tsarist bullets chrome-coloured.
+type = "jacketed"
+jacket = "cupronickel"
+sources = [
+  "book:cotw-18 p. 549",
+  "https://sks-files.com/Pictures/Russian/FAQ/Russian_Soviet_7_62x54r_headstamps.pdf",
+  "https://municion.org/producto/762-x-54-r-russian-mosin-nagant-m-1891-1908/",
+]
+
+[case]
+# municion.org says the case is brass; steel came in 1935.
+material = "brass"
+sources = ["https://municion.org/producto/762-x-54-r-russian-mosin-nagant-m-1891-1908/"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases.
+materials = ["steel"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant"]
+
+[today]
+# Tombac jackets since the early 1930s; Prvi Partizan's FMJ boat tails today.
+jacket = "copper"
+# Most rounds sold today are Russian, in lacquered, zinc- or polymer-coated steel cases.
+case = "steel"
+sources = [
+  "https://sks-files.com/Pictures/Russian/FAQ/Russian_Soviet_7_62x54r_headstamps.pdf",
+  "https://prvipartizan.com/download/PPU_2018.pdf#page=8",
+  "https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant",
+]
+
+[[colour_codes]]
+part = "tip"
+colours = ["yellow"]
+meaning = ["ball"]
+description = "D, heavy ball"
+description_de = "D, schweres Standardgeschoss"
+description_fr = "D, balle ordinaire lourde"
+description_it = "D, palla ordinaria pesante"
+description_es = "D, ordinaria pesada"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["silver"]
+meaning = ["ball"]
+description = "LPS, steel core"
+description_de = "LPS, Stahlkern"
+description_fr = "LPS, noyau en acier"
+description_it = "LPS, nucleo in acciaio"
+description_es = "LPS, núcleo de acero"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["green"]
+meaning = ["tracer"]
+description = "T-46 (7T2)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["black", "red"]
+meaning = ["armour-piercing", "incendiary"]
+description = "B-32 (7BZ3)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×54mmR"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["red"]
+meaning = ["incendiary", "spotting"]
+description = "ZP"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]

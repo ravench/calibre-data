@@ -1,0 +1,62 @@
+# Measurements converted from inches.
+# Kynoch's round for J. Manton & Co. of Calcutta.
+name = ".242 Rimless Nitro Express"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["242 rimless", "242 manton"]
+display_aliases = [".242 Manton"]
+
+origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 380"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.81
+base = 11.81
+shoulder = 10.29
+shoulder_at = 50.46
+neck_at = 55.45
+neck_base = 7.11
+# Drawing: SØ 10.73, NØ 7.11, SL 50.80, NL 5.00, CL 60.79.
+shoulder_angle = 19.9
+cite.shoulder_angle = ["https://municion.org/producto/242-rimless-nitro-express-vickers/"]
+neck = 7.14
+case_length = 60.45
+overall_length = 81.28
+bullet = 6.43
+sources = [
+  "book:cotw-18 p. 608",
+  "https://municion.org/producto/242-rimless-nitro-express-vickers/",
+]
+
+[introduced]
+year = 1923
+sources = ["book:cotw-18 p. 579"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# Drawing 06-061-BGC-020: RT 1.19, HL 3.56, GØ 10.41, GW 0.90, HØ 11.84; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.19
+ramp_top = 3.56
+groove_diameter = 10.41
+ramp_angle = 26.0
+groove_width = 0.9
+sources = ["https://municion.org/producto/242-rimless-nitro-express-vickers/"]
+
+[bullet]
+# COTW gives no factory load.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/242-rimless-nitro-express-vickers/"]

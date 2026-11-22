@@ -1,0 +1,37 @@
+# Measurements converted from inches.
+name = "10.75x65 mm R Collath"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["10.75x65r", "10.75x65r collath"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.77
+base = 12.37
+neck = 11.46
+case_length = 65.02
+overall_length = 76.71
+bullet = 10.77
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+unknown = "Collath worked in the early 1900s; COTW 18 p. 648 gives no year."
+sources = ["book:cotw-18 p. 648"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .047 in.
+rim_thickness = 1.19
+sources = ["book:donnelly p. 959"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 648"]

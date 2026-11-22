@@ -1,0 +1,49 @@
+# The Soviet round of the ZU-23-2 anti-aircraft gun and its successors (ZSU-23-4): a steel case with a
+# pressed-in KV-3 primer, on the VYa-23's case (23x152 mm B VYa), with which it does not interchange
+# (Jane's). The name gives the bore and case length, the specimen drawing of a ZU-23 round on
+# municion.org the diameters, the shoulder, the head (a rim 3.88 mm thick against the VYa's 2.85) and
+# the length of the round (TL); carried from the mouth, its shoulder starts 1.4 mm nearer the head
+# than the VYa round's.
+name = "23x152 mm B ZU-23"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["23 mm zu-23", "23 mm zsu-23-4"]
+origin = "SU"
+origin_sources = ["https://en.wikipedia.org/wiki/ZU-23-2"]
+
+[mm]
+rim = 33.33
+belt = 34.57
+base = 33.24
+shoulder = 31.65
+shoulder_at = 112.04
+neck_at = 132.6
+neck_base = 23.73
+# Drawing 23-152-BFC-010: SØ 31.65, NØ 23.73, SL 111.25, NL 19.40, CL 151.21, TL 236.07.
+shoulder_angle = 10.9
+neck = 23.73
+case_length = 152.0
+overall_length = 236.07
+bullet = 23.0
+sources = ["https://municion.org/producto/23-x-152-b-russian-zu-or-zsu-anti-aircraft/"]
+
+[introduced]
+# The ZU-23-2 entered service in 1960.
+year = 1960
+sources = ["https://en.wikipedia.org/wiki/ZU-23-2"]
+
+[case_head]
+# The drawing 23-152-BFC-010: RØ 33.33, HØ 33.24, LØ 34.57, RT 3.88, GØ 27.80, GW 2.20,
+# the ramp ends at HL 9.70; the belt (LW 2.25) ends at 11.95; ramp angle from HL = RT + GW + ((LØ - GØ)/2)/tan(angle).
+rim_thickness = 3.88
+ramp_top = 11.95
+groove_diameter = 27.8
+ramp_angle = 43.0
+groove_width = 2.2
+sources = ["https://municion.org/producto/23-x-152-b-russian-zu-or-zsu-anti-aircraft/"]
+
+[case]
+# Lacquered steel; Jane's names brass cases only for the VYa.
+material = "steel"
+sources = ["book:janes-ammo-2002 p. 91"]

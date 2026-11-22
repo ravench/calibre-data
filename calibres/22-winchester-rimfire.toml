@@ -1,0 +1,54 @@
+# Batch 8 (2026-11): old American sporting rounds; dimensions from the page named in INTRODUCED, rounded (.32 Remington from the .25 Remington family); shoulder heights estimated.
+name = ".22 Winchester Rimfire"
+# Guns: book:cotw-18 p. 660.
+guns = ["rifle", "handgun"]
+kind = "rimfire"
+# Nose: flat, as in Winchester's first load; Remington's round-nosed version was the .22 Remington
+# Special (COTW 18 p. 660).
+profile = "flat"
+aliases = ["22wrf", "22remspecial", "22remingtonspecial"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.22_Winchester_Rimfire",
+  "book:ammo-encyclopedia-2 p. 725",
+]
+
+[mm]
+# SAAMI 22 Winchester Rimfire, maximum cartridge.
+rim = 7.62
+base = 6.24
+neck = 6.18
+case_length = 24.51
+overall_length = 29.97
+bullet = 5.8
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=24"]
+
+[introduced]
+year = 1890
+sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"]
+
+[case_head]
+# SAAMI 22 Winchester Rimfire
+rim_thickness = 1.27
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=24"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.22_Winchester_Rimfire"]
+
+[case]
+# municion.org says the case was copper at first, and its photos of Winchester's, UMC's and Eley's
+# heads show copper. Brass came later.
+material = "copper"
+sources = ["https://municion.org/producto/22-winchester-rim-fire/"]
+
+[current_cases]
+# Winchester's Super-X .22 WRF today: brass case.
+materials = ["brass"]
+sources = ["https://www.luckygunner.com/22-wrf-45-cplfn-winchester-super-x-50-rounds"]
+
+[today]
+# The rounds made today have brass cases.
+case = "brass"
+sources = ["https://www.luckygunner.com/22-wrf-45-cplfn-winchester-super-x-50-rounds"]

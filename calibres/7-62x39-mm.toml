@@ -1,0 +1,92 @@
+name = "7.62x39 mm"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["7.62x39", "762x39"]
+
+origin = "SU"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7.62×39mm",
+  "book:ammo-encyclopedia-2 p. 487",
+]
+
+[mm]
+# SAAMI 7.62 x 39, maximum cartridge.
+# Shoulder and shoulder_at stay C.I.P.'s (SAAMI: 10.06 at 30.44).
+rim = 11.35
+base = 11.25
+shoulder = 10.07
+shoulder_at = 30.5
+neck_at = 32.73
+neck_base = 8.56
+# C.I.P. 7,62 x 39
+shoulder_angle = 16.4
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf"]
+neck = 8.56
+case_length = 38.81
+overall_length = 55.88
+bullet = 7.9
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=67", "book:cotw-18 p. 176", "book:hornady-10 p. 618"]
+
+[introduced]
+year = 1943
+sources = ["https://en.wikipedia.org/wiki/7.62×39mm"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://vihtavuori.com/reloading-data/reloading-data-tool/"]
+
+[case_head]
+# C.I.P. 7,62 x 39
+rim_thickness = 1.5
+ramp_top = 3.2
+groove_diameter = 9.56
+ramp_angle = 52.0
+groove_width = 1.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page47.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 551"]
+
+[case]
+# Steel: Labbett says most early Soviet cases were copper-washed (a few brass-washed) and lacquer
+# came later; Wikipedia dates lacquered steel to the early 1960s.
+material = "steel"
+sources = ["https://en.wikipedia.org/wiki/7.62%C3%9739mm", "book:labbett p. 83"]
+
+[current_cases]
+materials = ["brass"]
+sources = ["https://www.starlinebrass.com/762x39mm-russian"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["green"]
+meaning = ["tracer"]
+description = "T-45 (57-N-231P)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×39mm"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["black", "red"]
+meaning = ["armour-piercing", "incendiary"]
+description = "BZ"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["red"]
+meaning = ["incendiary", "spotting"]
+description = "Z"
+countries = ["SU"]
+sources = ["book:labbett p. 83"]
+
+[[colour_codes]]
+part = "tip"
+colours = ["black", "green"]
+meaning = ["subsonic"]
+description = "US (57-N-231U)"
+countries = ["SU"]
+sources = ["book:labbett p. 83", "https://en.wikipedia.org/wiki/7.62×39mm"]

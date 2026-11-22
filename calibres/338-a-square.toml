@@ -1,0 +1,64 @@
+# Measurements converted from inches.
+# The .378 Weatherby Magnum case changed and necked down to .338.
+name = ".338 A-Square"
+guns = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["338 a-square", "338 a-sq"]
+
+origin = "US"
+origin_sources = []
+rare = true
+
+[mm]
+rim = 14.7
+belt = 15.33
+base = 14.78
+shoulder = 14.05
+shoulder_at = 58.39
+neck_at = 62.39
+neck_base = 9.42
+# Drawing: SØ 14.03, NØ 9.42, SL 58.00, NL 10.00, CL 72.00.
+shoulder_angle = 30.0
+cite.shoulder_angle = ["https://municion.org/producto/338-a-square-belted/"]
+neck = 9.32
+case_length = 72.39
+overall_length = 93.22
+bullet = 8.59
+# nose: read to scale off the specimen drawing 09-072-BFC-005:
+# the curve starts 15.7 mm behind the tip, of the 18.10 mm out of its case (TL 90.10, CL 72.00).
+nose = 15.7
+# The table gives the belt, .603 in., in the rim column; rim and belt are the .378 Weatherby Magnum's (R1 and R3
+# on its C.I.P. sheet).
+sources = [
+  "book:cotw-18 p. 452",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page29.pdf",
+  "https://municion.org/producto/338-a-square-belted/",
+]
+
+[introduced]
+year = 1978
+sources = ["book:cotw-18 p. 401"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# from the .378 Weatherby Magnum case; C.I.P. sheet
+rim_thickness = 1.6
+ramp_top = 6.4
+groove_diameter = 12.57
+ramp_angle = 45.0
+groove_width = 1.24
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page29.pdf"]
+
+[bullet]
+# A-Square's first factory load: a Nosler Ballistic Tip.
+type = "polymer"
+sources = ["book:cotw-18 p. 402"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/338-a-square-belted/"]

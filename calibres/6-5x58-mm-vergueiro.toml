@@ -1,0 +1,58 @@
+# Batch 12 (2026-11); now from the C.I.P. sheet (see [mm]).
+name = "6.5x58 mm Vergueiro"
+guns = ["rifle"]
+kind = "rimless"
+# Nose: no source gives the first service bullet's nose (1904); left pointed.
+profile = "spitzer"
+aliases = ["6.5x58", "6.5vergueiro", "6.5portuguese"]
+# C.I.P. lists it as «6,5 x 58 Mauser», the German trade name; Cartridges of the World as the 6.5x58 mm Portuguese.
+display_aliases = ["6.5x58 mm Mauser"]
+
+origin = "PT"
+origin_sources = ["https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro"]
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+# C.I.P. 6,5 x 58 Mauser, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 11.8
+base = 11.95
+shoulder = 10.95
+shoulder_at = 42.52
+neck_at = 48.58
+neck_base = 7.7
+# C.I.P. 6,5 x 58 Mauser: half the cone angle alpha 30°01'18"
+shoulder_angle = 15.0
+neck = 7.7
+case_length = 58.0
+overall_length = 82.5
+bullet = 6.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page25.pdf"]
+
+[introduced]
+year = 1904
+sources = ["https://en.wikipedia.org/wiki/6.5×58mm_Vergueiro"]
+
+[primer]
+# 5.28 mm, 8 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]
+
+[case_head]
+# C.I.P. 6,5 x 58 Mauser: R, E, E1, delta
+rim_thickness = 1.5
+ramp_top = 3.4
+groove_diameter = 10.2
+ramp_angle = 45.0
+groove_width = 1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page25.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/65-x-58-mauser-vergueiro-m-1904/"]

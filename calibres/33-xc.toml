@@ -1,0 +1,52 @@
+# Measurements converted from inches.
+# David Tubb's extreme long-range round: the .338 Lapua Magnum head with a longer, less tapered body.
+name = ".33 XC"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["33 xc", "33xc"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/33-xc-tubb/"]
+rare = true
+
+[mm]
+rim = 14.93
+base = 14.91
+shoulder = 14.25
+shoulder_at = 64.91
+# Drawing: SØ 14.00, NØ 9.20, SL 64.80, NL 9.80, CL 78.25.
+shoulder_angle = 33.3
+cite.shoulder_angle = ["https://municion.org/producto/33-xc-tubb/"]
+neck = 9.4
+case_length = 78.36
+overall_length = 124.46
+bullet = 8.59
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/33-xc-tubb/"]
+
+[introduced]
+unknown = "COTW 18 p. 397 gives no year; David Tubb set a record with it in December 2018."
+sources = ["book:cotw-18 p. 397"]
+
+[primer]
+# The table names Federal's 215, a large rifle magnum primer.
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# from the .338 Lapua Magnum case; C.I.P. 338 Lapua Mag.
+rim_thickness = 1.52
+ramp_top = 3.12
+groove_diameter = 13.24
+ramp_angle = 50.1
+groove_width = 0.9
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page132.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/33-xc-tubb/"]

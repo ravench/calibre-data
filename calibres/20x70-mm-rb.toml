@@ -1,0 +1,51 @@
+# The round of the German Becker cannon of the First World War, which Oerlikon developed further as its
+# Type F; the 20x72 mm RB of Oerlikon's FF is this case with a smaller rim (Autocannon p. 112). Its name
+# gives the bore and case length, Rapid Fire's table the rim and base, Autocannon p. 111 the length of
+# the round, the specimen drawing on municion.org the shoulder, the neck and the head. The drawing
+# is of Becker's necked second model; the first cases, municion.org says, had no neck.
+name = "20x70 mm RB"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x70rb", "20x70 rb", "20 mm becker"]
+origin = "DE"
+origin_sources = ["book:rapid-fire p. 225"]
+
+[mm]
+rim = 20.2
+base = 21.9
+shoulder = 21.18
+shoulder_at = 57.19
+neck_at = 60.5
+neck_base = 20.4
+# Drawing 20-070-BRC-010: SØ 21.18, NØ 20.40, SL 57.20, NL 9.50, CL 70.01, TL 145.24.
+shoulder_angle = 6.7
+cite.shoulder_angle = ["https://municion.org/producto/20-x-70-becker-necked-case-2nd-model/"]
+neck = 20.4
+case_length = 70.0
+overall_length = 147.0
+bullet = 20.0
+sources = [
+  "book:rapid-fire p. 225",
+  "book:autocannon p. 111",
+  "https://municion.org/producto/20-x-70-becker-necked-case-2nd-model/",
+]
+
+[introduced]
+# Becker's first production contract, June 1916.
+year = 1916
+sources = ["book:autocannon p. 195"]
+
+[case_head]
+# The drawing 20-070-BRC-010: RØ 19.91, HØ 21.84, RT 2.16, GØ 18.08, GW 1.87, the ramp
+# ends at HL 7.50; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 2.16
+ramp_top = 7.5
+groove_diameter = 18.08
+ramp_angle = 28.0
+groove_width = 1.87
+sources = ["https://municion.org/producto/20-x-70-becker-necked-case-2nd-model/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 111"]

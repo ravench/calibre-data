@@ -1,0 +1,56 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# A-Square's .30 magnum on its own beltless case with a .580 in. head.
+name = ".300 Pegasus"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300 pegasus", "300 a-square pegasus"]
+
+origin = "US"
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 317",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-pegasus-en.pdf",
+]
+rare = true
+
+[mm]
+rim = 14.73
+base = 14.73
+shoulder = 14.38
+shoulder_at = 62.23
+neck_at = 67.66
+neck_base = 8.61
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 28.0
+neck = 8.59
+case_length = 75.95
+overall_length = 95.25
+bullet = 7.82
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-pegasus-en.pdf"]
+
+[introduced]
+year = 1994
+sources = ["book:cotw-18 p. 393"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.65
+ramp_top = 3.79
+groove_diameter = 12.7
+ramp_angle = 45.0
+groove_width = 1.12
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-pegasus-en.pdf"]
+
+[bullet]
+# A-Square's factory loads: Nosler Ballistic Tips.
+type = "polymer"
+sources = ["book:cotw-18 p. 393"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/300-pegasus/"]

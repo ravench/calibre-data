@@ -1,0 +1,52 @@
+# Measurements converted from inches.
+# The largest Bullard round, for the Bullard repeating rifle: the first semi-rimmed, solid-head case made in
+# the USA.
+name = ".50-115 Bullard"
+guns = ["rifle"]
+kind = "semi-rimmed"
+profile = "flat"
+aliases = ["50-115 bullard"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/50-115-300-bullard/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.72
+base = 14.86
+shoulder = 14.66
+shoulder_at = 42.0
+neck = 13.89
+case_length = 55.63
+overall_length = 65.02
+bullet = 13.0
+# flat: the drawing gives the flat tip as Ø 7,00 (whole millimetres).
+flat = 7.0
+cite.flat = ["https://municion.org/producto/50-115-300-bullard/"]
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 252"]
+
+[introduced]
+year = 1886
+sources = ["book:cotw-18 p. 245"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 252"]
+
+[case_head]
+# Drawing 13-055-BDC-010: RT 1.50. The drawing gives no groove width, so the groove stays the
+# generic one.
+rim_thickness = 1.5
+sources = ["https://municion.org/producto/50-115-300-bullard/"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 245"]
+
+[case]
+# The photos show brass cases (unmarked ones).
+material = "brass"
+sources = ["https://municion.org/producto/50-115-300-bullard/"]

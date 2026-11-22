@@ -1,0 +1,56 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# Metallwerk Elisenhütte (MEN), on the 9.3x62 mm case.
+name = "6x62 mm Frères"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6x62", "6x62 freres"]
+
+origin = "DE"
+origin_sources = [
+  "https://naboje.org/node/3320",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page11.pdf",
+]
+rare = true
+
+[mm]
+rim = 12.1
+base = 12.1
+shoulder = 11.53
+shoulder_at = 49.4
+neck_at = 55.75
+neck_base = 6.91
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 20.0
+neck = 6.91
+case_length = 61.75
+overall_length = 82.0
+bullet = 6.18
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page11.pdf"]
+
+[introduced]
+# naboje.org: developed in 1983; COTW 18 p. 614 gives no year.
+year = 1983
+sources = ["book:cotw-18 p. 614", "https://naboje.org/node/3320"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.3
+ramp_top = 3.2
+groove_diameter = 10.5
+ramp_angle = 41.6
+groove_width = 1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page11.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 614"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/6-x-62-freres/"]

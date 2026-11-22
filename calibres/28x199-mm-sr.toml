@@ -1,0 +1,50 @@
+# The round of the US Navy's 1.1-inch anti-aircraft gun of the Second World War. Its name gives the bore
+# and case length, Rapid Fire's table the rim and base, Autocannon p. 135 the length of the round, the
+# specimen drawing on municion.org («1.1″ US Navy Mk I») the shoulder, the neck and the head: a long
+# shoulder, 39 mm from the body to the neck.
+name = "28x199 mm SR"
+guns = ["cannon"]
+kind = "semi-rimmed"
+profile = "spitzer"
+aliases = ["28x199sr", "1.1-inch", "1.1 inch", "1.1-inch/75", "chicago piano"]
+origin = "US"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 43.5
+base = 41.4
+shoulder = 40.16
+shoulder_at = 137.83
+neck_at = 176.5
+neck_base = 28.91
+# Drawing 28-199-BDC-010: SØ 40.16, NØ 28.91, SL 137.50, NL 22.50, CL 198.67, TL 307.00.
+shoulder_angle = 8.3
+cite.shoulder_angle = ["https://municion.org/producto/1-1-us-navy-mk-i/"]
+neck = 28.91
+case_length = 199.0
+overall_length = 309.0
+bullet = 28.0
+sources = [
+  "book:rapid-fire p. 228",
+  "book:autocannon p. 135",
+  "https://municion.org/producto/1-1-us-navy-mk-i/",
+]
+
+[introduced]
+# The gun's first year of production (Wikipedia).
+year = 1938
+sources = ["https://en.wikipedia.org/wiki/1.1-inch/75-caliber_gun"]
+
+[case_head]
+# The drawing 28-199-BDC-010: RØ 43.58, HØ 41.15, RT 3.20, GØ 39.56, GW 1.53, the ramp
+# ends at HL 5.60; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 3.2
+ramp_top = 5.6
+groove_diameter = 39.56
+ramp_angle = 42.0
+groove_width = 1.53
+sources = ["https://municion.org/producto/1-1-us-navy-mk-i/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 135"]

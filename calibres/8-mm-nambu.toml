@@ -1,0 +1,62 @@
+# Added 2026-11: further mass-produced handgun rounds, current and obsolete. Dimensions from
+# the page named in INTRODUCED (mostly the Wikipedia infobox, which quotes C.I.P./SAAMI),
+# rounded; shoulder heights of bottleneck cases are estimated for drawing.
+name = "8 mm Nambu"
+guns = ["handgun"]
+kind = "semi-rimmed"
+profile = "round"
+aliases = ["nambu", "8nambu"]
+
+origin = "JP"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/8×22mm_Nambu",
+  "book:ammo-encyclopedia-2 p. 692",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.5
+base = 10.23
+shoulder = 10.0
+shoulder_at = 15.35
+neck_at = 17.68
+neck_base = 8.71
+# Drawing 08-022-BGC-040
+shoulder_angle = 15.5
+cite.shoulder_angle = ["https://municion.org/producto/8-mm-nambu-m-1914/"]
+neck = 8.71
+case_length = 21.43
+overall_length = 31.56
+bullet = 8.13
+sources = [
+  "https://en.wikipedia.org/wiki/8×22mm_Nambu",
+  "https://municion.org/producto/8-mm-nambu-m-1914/",
+]
+
+[introduced]
+year = 1904
+sources = ["https://en.wikipedia.org/wiki/8×22mm_Nambu"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/8×22mm_Nambu"]
+
+[case_head]
+# .042 in. (Donnelly); groove from the drawing 08-022-BGC-040: RT 0.92, HL 2.02,
+# GØ 9.22, GW 0.70, HØ 10.23; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.07
+ramp_top = 2.02
+groove_diameter = 9.22
+ramp_angle = 52.0
+groove_width = 0.7
+sources = ["book:donnelly p. 860", "https://municion.org/producto/8-mm-nambu-m-1914/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 476"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/8-mm-nambu-m-1914/"]

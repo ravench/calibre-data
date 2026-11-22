@@ -1,0 +1,60 @@
+# Measurements converted from inches.
+# North American Shooting Systems' rebated rimless magnum for long actions, without a belt.
+name = ".338 Canadian Magnum"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["338 canadian magnum", "338 canadian mag", "338 nass"]
+
+origin = "CA"
+origin_sources = []
+rare = true
+
+[mm]
+rim = 13.51
+base = 13.82
+shoulder = 13.46
+shoulder_at = 59.98
+neck_at = 63.73
+neck_base = 9.39
+# Drawing: SØ 13.39, NØ 9.39, SL 59.82, NL 8.15, CL 71.72.
+shoulder_angle = 28.1
+cite.shoulder_angle = ["https://municion.org/producto/338-imperial-magnum/"]
+neck = 9.37
+case_length = 71.88
+overall_length = 91.44
+bullet = 8.59
+# shoulder_at from the drawing 09-072-BRC-010, carried from the mouth. The drawing is titled
+# «.338 Imperial Magnum» and its page lists the .338 Canadian Magnum among the other names: the range was sold as
+# NASS Magnum, then as Imperial Magnum and last as Canadian Magnum. The specimen's case is within 0.16 mm of the book
+# on every size.
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/338-imperial-magnum/"]
+
+[introduced]
+# COTW: developed about 1989.
+year = 1989
+sources = ["book:cotw-18 p. 403"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .046 in. (COTW); groove from the drawing 09-072-BRC-010 (municion.org, «.338 Imperial Magnum»): RT 1.18,
+# HL 3.55, GØ 11.80, GW 1.12, HØ 13.77; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.17
+ramp_top = 3.55
+groove_diameter = 11.8
+ramp_angle = 38.0
+groove_width = 1.12
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/338-imperial-magnum/"]
+
+[bullet]
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/338-imperial-magnum/"]

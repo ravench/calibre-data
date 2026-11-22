@@ -1,0 +1,54 @@
+# Measurements converted from inches.
+# The shoulder is barely there.
+name = "10.75x57 mm Mannlicher"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["10.75x57"]
+
+origin = "AH"
+# Ammo Encyclopedia p. 446 names Austria, today's state; in 1900 that was Austria-Hungary.
+origin_sources = ["https://municion.org/producto/1075-x-57-mauser/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.89
+base = 11.89
+shoulder = 11.81
+shoulder_at = 45.8
+neck = 11.38
+case_length = 56.9
+overall_length = 77.47
+bullet = 10.77
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 652"]
+
+[introduced]
+# COTW: around 1900, possibly earlier.
+year = 1900
+sources = ["book:cotw-18 p. 647"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# Drawing 11-057-BGC-010: RT 1.20, HL 3.20, GØ 10.00, GW 0.35, HØ 11.85; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle). The groove is narrow on this specimen (GW 0,35 as printed).
+rim_thickness = 1.2
+ramp_top = 3.2
+groove_diameter = 10.0
+ramp_angle = 29.0
+groove_width = 0.35
+sources = ["https://municion.org/producto/1075-x-57-mauser/"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 647"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/1075-x-57-mauser/"]

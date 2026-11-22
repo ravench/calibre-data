@@ -1,0 +1,50 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".35 S&W Auto"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["35s&w", "35auto"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.35_S%26W_Auto",
+  "book:ammo-encyclopedia-2 p. 655",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 8.85
+base = 8.83
+neck = 8.82
+case_length = 17.21
+overall_length = 24.16
+bullet = 7.92
+sources = ["https://en.wikipedia.org/wiki/.35_S%26W_Auto"]
+
+[introduced]
+year = 1912
+sources = ["https://en.wikipedia.org/wiki/.35_S%26W_Auto"]
+
+[primer]
+# 4.34 mm, 4 specimens
+size = "small-pistol"
+sources = ["https://municion.org/producto/35-smith-wesson-automatic/"]
+
+[case_head]
+# Drawing 08-017-CGC-030: RT 1.09, HL 3.34, GØ 7.56, GW 0.80, HØ 8.83; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.09
+ramp_top = 3.34
+groove_diameter = 7.56
+ramp_angle = 24.0
+sources = ["https://municion.org/producto/35-smith-wesson-automatic/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 475"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/35-smith-wesson-automatic/"]

@@ -1,0 +1,48 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".600 Nitro Express"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["600ne"]
+
+origin = "GB"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.600_Nitro_Express",
+  "book:ammo-encyclopedia-2 p. 370",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page130.pdf",
+]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+# C.I.P. 600 N.E., maximum cartridge.
+rim = 20.57
+base = 17.78
+neck = 16.51
+case_length = 76.2
+overall_length = 93.98
+bullet = 15.75
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page130.pdf"]
+
+[introduced]
+year = 1899
+sources = ["https://en.wikipedia.org/wiki/.600_Nitro_Express"]
+
+[primer]
+# 5.52 mm, 8 specimens
+size = "large-rifle"
+sources = ["https://municion.org/producto/600-nitro-express-3/"]
+
+[case_head]
+# C.I.P. 600 N.E.
+rim_thickness = 1.65
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page130.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/600-nitro-express-3/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/600-nitro-express-3/"]

@@ -1,0 +1,66 @@
+# Measurements from Donnelly's Handloader's Manual of Cartridge Conversion and Cartridges of the
+# World, 5th ed. (inches converted to mm): COTW 18's row (p. 608) repeats the .242 Rimless row.
+# BSA's belted round for its sporting rifles on the 1914 Enfield action. The table types it rimless;
+# the entry and its other name say belted.
+name = ".26 BSA"
+guns = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["26 bsa", "26bsa"]
+display_aliases = [".26 Rimless Belted Nitro Express"]
+
+origin = "GB"
+origin_sources = ["book:ammo-encyclopedia-2 p. 391"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.46
+base = 13.03
+shoulder = 11.68
+shoulder_at = 49.13
+neck_at = 54.21
+neck_base = 7.81
+# Drawing: SØ 11.49, NØ 7.81, SL 49.10, NL 6.50, CL 60.68.
+shoulder_angle = 19.9
+cite.shoulder_angle = ["https://municion.org/producto/26-bsa-nitro-express-belted/"]
+neck = 7.75
+case_length = 60.71
+overall_length = 79.5
+bullet = 6.78
+# The overall length from COTW 5, the rest from Donnelly.
+sources = [
+  "book:donnelly p. 245",
+  "book:cotw-5 p. 266",
+  "https://municion.org/producto/26-bsa-nitro-express-belted/",
+]
+
+[introduced]
+year = 1921
+sources = ["book:cotw-18 p. 580"]
+
+[primer]
+# COTW 5 gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-5 p. 266"]
+
+[case_head]
+# .049 in. (Donnelly); groove from the drawing 07-061-BFC-020: RT 1.24, GØ 11.92, GW 1.02, the
+# ramp up to the belt (LØ 13.47) ends at HL 3.30 and the belt (LW 2.00) at 5.30; ramp angle from HL = RT + GW + ((LØ -
+# GØ)/2)/tan(angle).
+rim_thickness = 1.24
+ramp_top = 5.3
+groove_diameter = 11.92
+ramp_angle = 37.0
+groove_width = 1.02
+sources = ["book:donnelly p. 245", "https://municion.org/producto/26-bsa-nitro-express-belted/"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 580"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/26-bsa-nitro-express-belted/"]

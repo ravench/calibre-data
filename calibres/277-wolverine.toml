@@ -1,0 +1,48 @@
+# Measurements converted from inches.
+# Mad Dog Weapon Systems' 5.56x45 mm case opened to .277 for AR-15 rifles.
+name = ".277 Wolverine"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["277 wolverine"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/277-wolverine/"]
+rare = true
+
+[mm]
+rim = 9.6
+base = 9.58
+shoulder = 9.04
+shoulder_at = 32.46
+neck_at = 33.66
+neck_base = 7.7
+# Drawing: SØ 8.90, NØ 7.70, SL 32.35, NL 5.20, CL 38.75.
+shoulder_angle = 26.6
+cite.shoulder_angle = ["https://municion.org/producto/277-wolverine/"]
+neck = 7.85
+case_length = 38.86
+overall_length = 57.4
+bullet = 7.04
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/277-wolverine/"]
+
+[introduced]
+year = 2014
+sources = ["book:cotw-18 p. 381"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# made from .223 Rem. cases; the C.I.P. 223 Rem. head
+rim_thickness = 1.14
+ramp_top = 3.13
+groove_diameter = 8.43
+ramp_angle = 25.0
+groove_width = 0.76
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/223-rem-170406-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []

@@ -1,0 +1,43 @@
+# Measurements converted from inches.
+# A rifle round for Ballard, Howard, Remington and Wesson single-shots; soon replaced by centrefire rounds.
+name = ".38 Extra Long Rimfire"
+# Guns: book:cotw-18 p. 664.
+guns = ["rifle"]
+kind = "rimfire"
+profile = "round"
+aliases = ["38 extra long rf", "38 extra long rimfire"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/38-extra-long-rf/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.05
+base = 9.6
+neck = 9.6
+case_length = 37.59
+overall_length = 51.43
+bullet = 9.52
+sources = ["book:cotw-18 p. 670"]
+
+[introduced]
+# COTW: about 1870.
+year = 1870
+sources = ["book:cotw-18 p. 664"]
+
+[case_head]
+# Drawing 09-038-CBR-010: RT 1.49, RØ 11.00, HØ 9.57.
+rim_thickness = 1.49
+sources = ["https://municion.org/producto/38-extra-long-rf/"]
+
+[bullet]
+# COTW 18 p. 664 does not name the bullet's material; municion.org's sheet shows a lead one.
+type = "lead"
+sources = ["https://municion.org/ficha-09-038-cbr-010-0005/"]
+
+[case]
+# The photos show copper cases on the early makers' rounds (UMC, U.S. Cartridge Co. and
+# Winchester).
+material = "copper"
+sources = ["https://municion.org/producto/38-extra-long-rf/"]

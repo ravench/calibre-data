@@ -1,0 +1,54 @@
+# Batch 7 (2026-11): dimensions from the page named in INTRODUCED (or the parent page), rounded; shoulder heights estimated; rims of the R variants estimated.
+name = ".308 Norma Magnum"
+guns = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["308nm"]
+
+origin = "SE"
+origin_sources = ["https://en.wikipedia.org/wiki/.308_Norma_Magnum"]
+
+[mm]
+rim = 13.5
+base = 13.0
+shoulder = 12.5
+shoulder_at = 53.05
+neck_at = 57.25
+neck_base = 8.53
+# Drawing 08-065-BFC-010
+shoulder_angle = 24.8
+cite.shoulder_angle = ["https://municion.org/producto/308-norma-magnum-belted/"]
+neck = 8.1
+case_length = 65.0
+overall_length = 85.0
+bullet = 7.82
+sources = [
+  "https://en.wikipedia.org/wiki/.308_Norma_Magnum",
+  "https://municion.org/producto/308-norma-magnum-belted/",
+]
+
+[introduced]
+year = 1960
+sources = ["https://en.wikipedia.org/wiki/.308_Norma_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.308_Norma_Magnum"]
+
+[case_head]
+# C.I.P. 308 Norma Mag.; on a belted case E is the front end of the belt
+rim_thickness = 1.25
+ramp_top = 5.56
+groove_diameter = 11.6
+ramp_angle = 45.0
+groove_width = 1.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/308-norma-mag-en.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.308_Norma_Magnum"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/308-norma-magnum-belted/"]

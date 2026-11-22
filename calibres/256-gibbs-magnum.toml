@@ -1,0 +1,64 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The 6.5x57 mm with the case 1.5 mm shorter (55.25 against 56.7 mm), for Gibbs's Mauser-type rifles. The table of Cartridges of the
+# World (18th ed., p. 608) marks it rimmed, but its p. 579 and the C.I.P. sheet say rimless.
+name = ".256 Gibbs Magnum"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["256 gibbs", "256gibbs", "256 mag. gibbs"]
+
+origin = "GB"
+origin_sources = [
+  "https://municion.org/producto/256-gibbs-magnum/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page95.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+# C.I.P. 256 Mag. Gibbs, maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 12.09
+base = 12.01
+shoulder = 10.82
+shoulder_at = 44.83
+neck_at = 49.2
+neck_base = 7.62
+# C.I.P. 256 Mag. Gibbs: half the cone angle alpha 40°13'07"
+shoulder_angle = 20.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page95.pdf"]
+neck = 7.52
+case_length = 55.25
+overall_length = 77.47
+bullet = 6.73
+sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page95.pdf",
+  "book:cotw-18 p. 608",
+]
+
+[introduced]
+year = 1913
+sources = ["book:cotw-18 p. 579"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 608"]
+
+[case_head]
+# C.I.P. 256 Mag. Gibbs: R, E, E1, delta
+rim_thickness = 1.02
+ramp_top = 3.18
+groove_diameter = 10.41
+ramp_angle = 35.1
+groove_width = 1.02
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page95.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 579"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/256-gibbs-magnum/"]

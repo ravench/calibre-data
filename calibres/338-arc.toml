@@ -1,0 +1,51 @@
+# Batch 13 (2026-11): .22 Creedmoor, 7 mm Backcountry, .338 ARC (SAAMI drawing; shoulder estimated from 6 mm ARC), 6 mm PPC and 9x39; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".338 ARC"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["338arc"]
+
+origin = "US"
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/338-arc-250223-en.pdf",
+]
+
+[mm]
+rim = 11.2
+base = 11.22
+shoulder = 10.9
+shoulder_at = 23.83
+neck_at = 25.22
+neck_base = 9.37
+# SAAMI drawing
+shoulder_angle = 30
+cite.shoulder_angle = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"]
+neck = 9.37
+case_length = 33.02
+overall_length = 57.4
+bullet = 8.59
+sources = [
+  "https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/338-arc-250223-en.pdf",
+]
+
+[introduced]
+year = 2025
+sources = ["https://saami.org/wp-content/uploads/2025/03/Public-Introduction-338-ARC-2025-01-27.pdf"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# C.I.P. 338 ARC
+rim_thickness = 1.5
+ramp_top = 3.53
+groove_diameter = 9.55
+ramp_angle = 45.0
+groove_width = 1.19
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/338-arc-250223-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []

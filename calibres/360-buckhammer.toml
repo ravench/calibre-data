@@ -1,0 +1,36 @@
+# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+name = ".360 Buckhammer"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["360buckhammer", "360bh"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.360_Buckhammer"]
+
+[mm]
+# SAAMI 360 Buckhammer, maximum cartridge.
+rim = 12.85
+base = 10.66
+neck = 9.65
+case_length = 45.72
+overall_length = 63.5
+bullet = 9.12
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=150"]
+
+[introduced]
+year = 2022
+sources = ["https://en.wikipedia.org/wiki/.360_Buckhammer"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# SAAMI 360 Buckhammer
+rim_thickness = 1.6
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=150"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.360_Buckhammer"]

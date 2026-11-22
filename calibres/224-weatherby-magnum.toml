@@ -1,0 +1,56 @@
+# Batch 9 (2026-11): Nitro Express and small Weatherby rounds; dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".224 Weatherby Magnum"
+guns = ["rifle"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["224wby"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.224_Weatherby_Magnum",
+  "book:ammo-encyclopedia-2 p. 376",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page8.pdf",
+]
+obsolete = true
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 10.9
+base = 10.5
+shoulder = 10.0
+shoulder_at = 39.01
+neck_at = 41.03
+neck_base = 6.4
+# C.I.P. 224 Weath. Mag.
+shoulder_angle = 41.7
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page8.pdf"]
+neck = 6.4
+case_length = 48.8
+overall_length = 59.2
+bullet = 5.7
+sources = [
+  "https://en.wikipedia.org/wiki/.224_Weatherby_Magnum",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page8.pdf",
+]
+
+[introduced]
+year = 1963
+sources = ["https://en.wikipedia.org/wiki/.224_Weatherby_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.224_Weatherby_Magnum"]
+
+[case_head]
+# C.I.P. ?
+rim_thickness = 1.27
+ramp_top = 5.03
+groove_diameter = 9.37
+ramp_angle = 45.0
+groove_width = 1.14
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iii/tabiiical-en-page8.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.224_Weatherby_Magnum"]

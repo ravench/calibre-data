@@ -1,0 +1,49 @@
+# The rimmed twin of the calibre above, from its C.I.P. sheet in SHOULDER_ANGLES (2026-11-08).
+name = "6.5x68 mm R"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "spitzer"
+aliases = ["6.5x68r"]
+
+origin = "DE"
+origin_sources = [
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page18.pdf",
+]
+# Lookalike variants added 2026-11-08, judged without listing counts: rimmed twins of rare or old rounds,
+# the old J-bore 8x57s, the Finnish 7.62x53 R, the .450/400 3 1/4 inch and the .275 Rigby.
+rare = true
+
+[mm]
+rim = 15.0
+base = 13.34
+shoulder = 12.18
+shoulder_at = 51.78
+neck_at = 60.53
+neck_base = 7.6
+# C.I.P. 6,5 x 68 R
+shoulder_angle = 14.7
+neck = 7.6
+case_length = 67.5
+overall_length = 87.5
+bullet = 6.7
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page18.pdf"]
+
+[introduced]
+# naboje.org: RWS brought it out in the 1960s, after the rimless 6.5x68; the earliest year is kept.
+year = 1960
+sources = ["https://naboje.org/node/2287"]
+
+[primer]
+# Lookalike variants added 2026-11-08: probably the twin's size, not checked yet.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.75
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page18.pdf"]
+
+[bullet]
+# Soft points: every factory load in the loading table shared with the rimless twin (COTW 18 p. 621).
+type = "softpoint"
+sources = ["book:cotw-18 p. 621"]

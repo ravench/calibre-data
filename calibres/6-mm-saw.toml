@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# Frankford Arsenal's trial round for the US Army squad automatic weapon.
+name = "6 mm SAW"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6mm saw", "6x45 saw"]
+
+origin = "US"
+origin_sources = ["https://naboje.org/node/10010"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 10.41
+base = 10.41
+shoulder = 9.7
+shoulder_at = 32.01
+neck_at = 35.99
+neck_base = 6.78
+# Drawing: SØ 9.79, NØ 6.78, SL 31.90, NL 9.20, CL 45.08.
+shoulder_angle = 20.7
+cite.shoulder_angle = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
+neck = 6.93
+case_length = 45.19
+overall_length = 65.53
+bullet = 6.17
+sources = ["book:cotw-18 p. 573", "https://municion.org/producto/6-mm-us-xpl-saw/"]
+
+[introduced]
+# COTW: design work began in July 1971.
+year = 1971
+sources = ["book:cotw-18 p. 535"]
+
+[primer]
+# The table gives a Boxer primer without its size; 4.57 mm, 11 specimens on municion.org's photos.
+size = "small-rifle"
+sources = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
+
+[case_head]
+# Drawing 06-045-BGC-030: RT 1.18, HL 3.54, GØ 8.80, GW 0.90, HØ 10.28; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.18
+ramp_top = 3.54
+groove_diameter = 8.8
+ramp_angle = 27.0
+groove_width = 0.9
+sources = ["https://municion.org/producto/6-mm-us-xpl-saw/"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 536"]
+
+[case]
+# COTW names varnished steel and aluminium cases without saying which came first; steel is kept.
+material = "steel"
+sources = ["book:cotw-18 p. 535"]

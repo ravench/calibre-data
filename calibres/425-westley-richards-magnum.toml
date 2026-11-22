@@ -1,0 +1,55 @@
+# Measurements converted from inches.
+# A rebated rim for the standard Mauser bolt face.
+name = ".425 Westley Richards Magnum"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["425 wr", "425 westley richards"]
+
+origin = "GB"
+origin_sources = ["https://municion.org/producto/425-westley-richards-magnum/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.86
+base = 13.79
+shoulder = 13.72
+shoulder_at = 44.84
+neck_at = 51.06
+neck_base = 11.64
+# Drawing: SØ 13.39, NØ 11.64, SL 45.00, NL 16.00, CL 67.22.
+shoulder_angle = 8.0
+cite.shoulder_angle = ["https://municion.org/producto/425-westley-richards-magnum/"]
+neck = 11.58
+case_length = 67.06
+overall_length = 83.82
+bullet = 11.05
+sources = ["book:cotw-18 p. 608", "https://municion.org/producto/425-westley-richards-magnum/"]
+
+[introduced]
+year = 1909
+sources = ["book:cotw-18 p. 596"]
+
+[primer]
+size = "large-rifle"
+sources = []
+
+[case_head]
+# Drawing 11-067-BRC-010: RT 1.12, HL 3.52, GØ 10.39, GW 1.00, HØ 13.77; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.12
+ramp_top = 3.52
+groove_diameter = 10.39
+ramp_angle = 50.0
+groove_width = 1
+sources = ["https://municion.org/producto/425-westley-richards-magnum/"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 596"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/425-westley-richards-magnum/"]

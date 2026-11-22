@@ -1,0 +1,54 @@
+# Sourced 2026-11-04 (batch 12 leftovers): C.I.P. TDCC maximum cartridge (shoulder = P2,
+# neck = H2, shoulder_at = L1, overall_length = L6); .360 No. 5 Rook from the Wikipedia infobox (Barnes).
+name = "10.3x60 mm R"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "round"
+aliases = ["10.3x60r"]
+
+origin = "CH"
+origin_sources = [
+  "https://municion.org/producto/103-x-60-r/",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page52.pdf",
+]
+
+[mm]
+rim = 15.7
+base = 13.85
+shoulder = 12.5
+shoulder_at = 40.8
+neck_at = 46.8
+neck_base = 11.4
+# C.I.P. 10,3 x 60 R
+shoulder_angle = 5.2
+neck = 11.26
+case_length = 60.8
+overall_length = 78.9
+bullet = 10.54
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page52.pdf"]
+
+[introduced]
+# Year of production on the product page.
+year = 1919
+sources = ["https://municion.org/producto/103-x-60-r/"]
+
+[primer]
+# No book gives it (COTW 18 p. 652: UNK/NA). The municion.org photos read 6.14 mm raw (4 specimens),
+# about 6.29 mm with the 2.5 % correction: between the large and the .254 in. Nitro Berdan primer,
+# perhaps the .241 in. one. Unverified.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page52.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/103-x-60-r/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/103-x-60-r/"]

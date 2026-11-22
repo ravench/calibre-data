@@ -1,0 +1,55 @@
+name = ".300 AAC Blackout"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["300blk", "300blackout", "300aac"]
+display_aliases = [".300 BLK", "7.62x35 mm"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.300_AAC_Blackout",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf",
+]
+worldwide = true
+
+[mm]
+rim = 9.6
+base = 9.6
+shoulder = 9.16
+shoulder_at = 27.2
+neck_at = 28
+neck_base = 8.48
+# C.I.P. 300 AAC Blackout
+shoulder_angle = 23
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+neck = 8.48
+case_length = 34.7
+overall_length = 57.4
+bullet = 7.85
+sources = [
+  "book:hornady-10 p. 435",
+  "book:cotw-18 p. 176",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf",
+]
+
+[introduced]
+year = 2010
+sources = ["https://en.wikipedia.org/wiki/.300_AAC_Blackout"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.300_AAC_Blackout"]
+
+[case_head]
+# C.I.P. 300 AAC Blackout
+rim_thickness = 1.14
+ramp_top = 3.15
+groove_diameter = 8.43
+ramp_angle = 25.0
+groove_width = 0.76
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/300-aac-blackout-180801-en.pdf"]
+
+[bullet]
+# Remington's open-tip match factory load, which counts as jacketed.
+type = "jacketed"
+sources = ["book:cotw-18 p. 130"]

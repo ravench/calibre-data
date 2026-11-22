@@ -1,0 +1,44 @@
+# Batch 12 (2026-11): British Nitro and Rigby rounds, .310 Cadet, Portuguese 6.5x58, .30 R Blaser, .22 Rem Auto; dimensions from the page named in INTRODUCED (.475 No. 2 from its Wikipedia page), rounded; shoulder heights estimated.
+name = ".22 Remington Automatic"
+# Guns: book:cotw-18 p. 660.
+guns = ["rifle"]
+kind = "rimfire"
+profile = "round"
+aliases = ["22remauto"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.22_Remington_Automatic",
+  "book:ammo-encyclopedia-2 p. 733",
+]
+obsolete = true
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+rim = 7.4
+base = 6.2
+neck = 6.2
+case_length = 16.8
+overall_length = 23.4
+bullet = 5.7
+sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]
+
+[introduced]
+# with the Model 16
+year = 1914
+sources = ["https://gunsmagazine.com/our-experts/remington-model-16/"]
+
+[case_head]
+# C.I.P. R.
+rim_thickness = 1.29
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-v/22-rem-auto-en.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.22_Remington_Automatic"]
+
+[case]
+# municion.org's photos: Remington-UMC's cases are copper (Western's too; one Peters case is brass).
+material = "copper"
+sources = ["https://municion.org/producto/22-remington-rf-automatic/"]

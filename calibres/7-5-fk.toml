@@ -1,0 +1,64 @@
+# Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); dimensions from the page named in INTRODUCED, rounded.
+name = "7.5 FK"
+guns = ["handgun"]
+kind = "rimless"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/75-mm-fk-brno/).
+profile = "flat"
+aliases = ["7.5fk", "fk brno"]
+
+origin = "CZ"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/7.5_FK",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/7-5-fk-200922-en.pdf",
+]
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+# C.I.P. maximum cartridge: rim R1, base P1, shoulder P2 at L1, neck H2, case L3, length L6, bullet G1.
+rim = 10.8
+base = 10.8
+shoulder = 10.75
+shoulder_at = 21.01
+neck_at = 23
+neck_base = 8.45
+# C.I.P. 7,5 FK: half the cone angle alpha 60 degrees
+shoulder_angle = 30.0
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/7-5-fk-200922-en.pdf"]
+neck = 8.45
+case_length = 27.0
+overall_length = 35.0
+bullet = 7.8
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/75-mm-fk-brno/"]
+sources = [
+  "https://en.wikipedia.org/wiki/7.5_FK",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/7-5-fk-200922-en.pdf",
+]
+
+[introduced]
+year = 2009
+sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/7.5_FK"]
+
+[case_head]
+# C.I.P. 7,5 FK: R, E, E1, delta
+rim_thickness = 1.4
+ramp_top = 3.65
+groove_diameter = 8.6
+ramp_angle = 45.0
+groove_width = 1.15
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/7-5-fk-200922-en.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/75-mm-fk-brno/"]

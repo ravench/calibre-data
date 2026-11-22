@@ -1,0 +1,24 @@
+# The round of the Swedish Bofors m/32 anti-aircraft cannon, which inspired the Soviet 25 mm rounds; from
+# the late 1930s the guns fired the shorter 25x187 mm SR m/38. Its name gives the bore and case length,
+# Jane's table the rim, base and neck, Autocannon p. 132 the length of the round.
+name = "25x205 mm SR"
+guns = ["cannon"]
+kind = "semi-rimmed"
+profile = "spitzer"
+aliases = ["25x205sr", "25x205r", "25 mm bofors m/32", "25 mm m/32"]
+origin = "SE"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 42.01
+base = 36.91
+neck = 25.7
+case_length = 205.0
+overall_length = 265.0
+bullet = 25.0
+sources = ["book:janes-ammo-2002 p. 682", "book:autocannon p. 132", "book:rapid-fire p. 228"]
+
+[introduced]
+# Autocannon: the m/32 entered service in 1934.
+year = 1934
+sources = ["book:autocannon p. 132"]

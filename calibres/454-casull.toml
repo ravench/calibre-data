@@ -1,0 +1,37 @@
+name = ".454 Casull"
+# Guns: https://www.americanrifleman.org/articles/2020/8/19/rossi-r92-a-top-selling-lever-action-rifle/ (Rossi R92 lever action).
+guns = ["handgun", "rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["454casull"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
+
+[mm]
+# SAAMI 454 Casull, maximum cartridge.
+rim = 13.0
+base = 12.13
+neck = 12.13
+case_length = 35.13
+overall_length = 44.83
+bullet = 11.49
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=62"]
+
+[introduced]
+# wildcat from 1958, commercial (SAAMI) 1997
+year = 1997
+sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://en.wikipedia.org/wiki/.454_Casull"]
+
+[case_head]
+# SAAMI 454 Casull
+rim_thickness = 1.45
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=62"]
+
+[bullet]
+type = "jacketed"
+sources = []

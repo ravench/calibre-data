@@ -1,0 +1,49 @@
+# Measurements converted from inches.
+# Cor-Bon's .50 Action Express necked down to .44 (.429 in.) for semi-automatic hunting pistols.
+name = ".440 Cor-Bon"
+guns = ["handgun"]
+kind = "rimless"
+# Nose: round, as the specimen drawing shows it (https://municion.org/producto/440-cor-bon-magnum/).
+profile = "round"
+aliases = ["440 cor-bon", "440 corbon"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/440-cor-bon-magnum/"]
+rare = true
+
+[mm]
+rim = 12.95
+base = 13.67
+shoulder = 13.44
+shoulder_at = 22.88
+neck_at = 26.36
+neck_base = 11.71
+# Drawing: SØ 13.43, NØ 11.71, SL 24.02, NL 6.15, CL 33.65.
+shoulder_angle = 13.9
+cite.shoulder_angle = ["https://municion.org/producto/440-cor-bon-magnum/"]
+neck = 11.71
+case_length = 32.51
+overall_length = 40.39
+bullet = 10.9
+sources = ["book:cotw-18 p. 453", "https://municion.org/producto/440-cor-bon-magnum/"]
+
+[introduced]
+year = 1997
+sources = ["book:cotw-18 p. 429"]
+
+[primer]
+size = "large-pistol"
+sources = ["book:cotw-18 p. 453"]
+
+[case_head]
+# from the .50 Action Express case; C.I.P. ?(50 AE: rim 13.06, body 13.79)
+rim_thickness = 1.5
+ramp_top = 3.94
+groove_diameter = 11.7
+ramp_angle = 35.0
+groove_width = 0.95
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page91.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []

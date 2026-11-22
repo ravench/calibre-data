@@ -1,0 +1,57 @@
+# Handgun batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded.
+name = ".32 NAA"
+guns = ["handgun"]
+kind = "rimless"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/32-naa/).
+profile = "flat"
+aliases = ["32naa"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.32_NAA"]
+# Still made, but hardly ever found:
+rare = true
+
+[mm]
+rim = 9.5
+base = 9.5
+shoulder = 9.47
+shoulder_at = 13.69
+# Drawing 08-017-BGC-040
+shoulder_angle = 18.8
+cite.shoulder_angle = ["https://municion.org/producto/32-naa/"]
+neck = 8.55
+case_length = 17.3
+overall_length = 25.0
+bullet = 7.95
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+sources = [
+  "https://en.wikipedia.org/wiki/.32_NAA",
+  "https://municion.org/producto/32-naa/",
+]
+
+[introduced]
+year = 2002
+sources = ["https://en.wikipedia.org/wiki/.32_NAA"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_NAA"]
+
+[case_head]
+# .380 ACP case necked down; C.I.P. 9 mm Browning court
+rim_thickness = 1.3
+ramp_top = 2.84
+groove_diameter = 8.25
+ramp_angle = 40.0
+groove_width = 0.8
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page24.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/32-naa/"]

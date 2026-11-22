@@ -1,0 +1,50 @@
+# Batch 14 (2026-11): .378 Weatherby, 7.5 FK and 6 mm GT (SAAMI drawing; neck estimated); first added from the page named in INTRODUCED, now SAAMI's (see [mm]).
+name = "6 mm GT"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6gt", "6mmgt"]
+
+origin = "US"
+origin_sources = []
+# Sourced 2026-11-04 (C.I.P. etc.), all hardly ever found:
+rare = true
+
+[mm]
+# SAAMI 6mm GT, maximum cartridge.
+# Shoulder and shoulder_at: SAAMI's, where the body and shoulder lines meet.
+rim = 11.96
+base = 11.95
+shoulder = 11.66
+shoulder_at = 33.12
+neck_at = 36.5
+neck_base = 6.73
+# 4D Reamer Rentals 6mm GT drawing: 35 deg, shoulder at 1.3040 in, neck at 1.4375 in (GA Precision brass photo reads 35-36)
+shoulder_angle = 35
+cite.shoulder_angle = ["https://www.4dreamerrentals.com/"]
+neck = 6.73
+case_length = 43.82
+overall_length = 67.06
+bullet = 6.18
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=46", "book:cotw-18 p. 175", "https://www.4dreamerrentals.com/"]
+
+[introduced]
+unknown = "sources give only the 2024 SAAMI acceptance"
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# SAAMI 6mm GT: rim thickness 0.054, groove 0.409 at 36 degrees, groove width 0.055,
+# body 0.4703; ramp_top = rim thickness + groove width + ramp height ((body - groove) / 2 / tan 36)
+rim_thickness = 1.37
+ramp_top = 3.84
+groove_diameter = 10.39
+ramp_angle = 36.0
+groove_width = 1.4
+sources = ["https://saami.org/wp-content/uploads/2026/10/SAAMI-Z299.4-CFR-2025-Centerfire-Rifle-Approved-2-10-2025-2026-10-21.pdf#page=46"]
+
+[bullet]
+type = "jacketed"
+sources = []

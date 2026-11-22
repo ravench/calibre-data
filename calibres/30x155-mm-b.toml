@@ -1,0 +1,53 @@
+# The round of the Soviet NR-30 aircraft cannon, made in China too, with a narrow belt above the
+# extractor groove. Its name gives the bore and case length; Jane's table gives the rim, the belt and the
+# neck, Rapid Fire's table the base, Autocannon p. 142 the length of the round, the specimen drawing
+# on municion.org the shoulder and the head.
+name = "30x155 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "spitzer"
+aliases = ["30x155b", "30 mm nr-30", "nr-30"]
+origin = "SU"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 40.0
+belt = 41.5
+base = 39.9
+shoulder = 37.48
+shoulder_at = 124.78
+neck_at = 133.6
+neck_base = 31.68
+# Drawing 30-155-BFC-010: SØ 37.48, NØ 31.68, SL 124.30, NL 21.40, CL 154.52, TL 266.19.
+shoulder_angle = 18.2
+cite.shoulder_angle = ["https://municion.org/producto/30-x-155-b-russian-nudelmann-nr-30/"]
+neck = 31.8
+case_length = 155.0
+overall_length = 266.0
+bullet = 30.0
+sources = [
+  "book:janes-ammo-2002 p. 682",
+  "book:autocannon p. 142",
+  "book:rapid-fire p. 228",
+  "https://municion.org/producto/30-x-155-b-russian-nudelmann-nr-30/",
+]
+
+[introduced]
+# The NR-30 entered service in 1954 (Wikipedia); Autocannon has it in service from 1955 (pp. 28, 245).
+year = 1954
+sources = ["https://en.wikipedia.org/wiki/Nudelman-Rikhter_NR-30"]
+
+[case_head]
+# The drawing 30-155-BFC-010: RØ 39.83, HØ 39.72, LØ 41.36, RT 3.37, GØ 34.31, GW 4.60,
+# the ramp ends at HL 11.60; the belt (LW 3.35) ends at 14.95; ramp angle from HL = RT + GW +
+# ((LØ - GØ)/2)/tan(angle).
+rim_thickness = 3.37
+ramp_top = 14.95
+groove_diameter = 34.31
+ramp_angle = 44.0
+groove_width = 4.6
+sources = ["https://municion.org/producto/30-x-155-b-russian-nudelmann-nr-30/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 142"]

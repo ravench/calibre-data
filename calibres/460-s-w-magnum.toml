@@ -1,0 +1,40 @@
+name = ".460 S&W Magnum"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["460s&w"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
+
+[mm]
+# SAAMI 460 S&W Magnum, maximum cartridge.
+rim = 13.21
+base = 12.14
+neck = 12.14
+case_length = 45.72
+overall_length = 58.12
+bullet = 11.49
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=63"]
+
+[introduced]
+year = 2005
+sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.460_S%26W_Magnum"]
+
+[case_head]
+# SAAMI 460 S&W Magnum
+rim_thickness = 1.5
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=63"]
+
+[bullet]
+type = "jacketed"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/460-smith-wesson-magnum/"]

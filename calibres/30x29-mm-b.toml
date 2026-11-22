@@ -1,0 +1,35 @@
+# The Soviet VOG-17 grenade round of the AGS-17 automatic grenade launcher, which the AGS-30 fires too.
+# Its name gives the bore and case length, Rapid Fire's table the rim and base, the specimen drawing
+# on municion.org the belt, the neck, the rim's thickness and the length of the round. The drawing
+# narrows the case by 0.22 mm, from SØ 31.30 at 17.05 mm (SL) to NØ 31.08 at 19.23 mm, too little to
+# draw as a shoulder, so the file has the case straight.
+name = "30x29 mm B"
+guns = ["cannon"]
+kind = "belted"
+profile = "round"
+aliases = ["30x29b", "30 mm vog-17", "vog-17", "ags-17"]
+origin = "SU"
+origin_sources = ["book:rapid-fire p. 228"]
+
+[mm]
+rim = 31.5
+belt = 32.57
+base = 31.5
+neck = 31.08
+case_length = 29.0
+overall_length = 132.0
+bullet = 30.0
+sources = ["book:rapid-fire p. 228", "https://municion.org/producto/30-x-29-ags-17/"]
+
+[introduced]
+# Wikipedia's infobox has the AGS-17 in service from 1970 (its text: first prototypes in trials in 1969,
+# mass production from 1971).
+year = 1970
+sources = ["https://en.wikipedia.org/wiki/AGS-17"]
+
+[case_head]
+# The drawing 30-029-CFC-010: RØ 31.89, HØ 31.33, LØ 32.57, RT 3.00. Its extractor
+# groove (GØ 27.89, GW 3.55) has square walls and ends at the belt (HL 6.55 = RT + GW), so the drawing gives
+# no ramp.
+rim_thickness = 3.0
+sources = ["https://municion.org/producto/30-x-29-ags-17/"]

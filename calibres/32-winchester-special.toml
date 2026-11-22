@@ -1,0 +1,57 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".32 Winchester Special"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["32winspecial", "32ws"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.32_Winchester_Special",
+  "book:ammo-encyclopedia-2 p. 329",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page80.pdf",
+]
+
+[mm]
+rim = 12.9
+base = 10.7
+shoulder = 10.2
+shoulder_at = 36.72
+neck_at = 39.47
+neck_base = 8.78
+# C.I.P. 32 Win. Spec.
+shoulder_angle = 14.5
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page80.pdf"]
+neck = 8.7
+case_length = 51.8
+overall_length = 65.2
+bullet = 8.2
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+cite.flat = ["https://municion.org/producto/32-winchester-cf-special/"]
+sources = [
+  "https://en.wikipedia.org/wiki/.32_Winchester_Special",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page80.pdf",
+]
+
+[introduced]
+year = 1899
+sources = ["https://en.wikipedia.org/wiki/.32_Winchester_Special"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.32_Winchester_Special"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.6
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page80.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://municion.org/producto/32-winchester-cf-special/"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/32-winchester-cf-special/"]

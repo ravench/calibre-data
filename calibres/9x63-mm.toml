@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# One of a German or Austrian family on a 63 mm case; much like the .35 Whelen. DE is kept.
+name = "9x63 mm"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["9x63"]
+
+origin = "DE"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.89
+base = 11.86
+shoulder = 10.85
+shoulder_at = 51.05
+neck_at = 53.69
+neck_base = 9.71
+# Drawing: SØ 10.82, NØ 9.71, SL 50.95, NL 9.30, CL 62.89.
+shoulder_angle = 11.9
+cite.shoulder_angle = ["https://municion.org/producto/9-x-63-hessmer/"]
+neck = 9.75
+case_length = 62.99
+overall_length = 83.31
+bullet = 9.07
+sources = ["book:cotw-18 p. 652", "https://municion.org/producto/9-x-63-hessmer/"]
+
+[introduced]
+unknown = "Most of the 63 mm family came after 1905; COTW 18 p. 638 gives no year for this one."
+sources = ["book:cotw-18 p. 638"]
+
+[primer]
+# The table gives a .217 in. Berdan primer, within 0.2 mm of the large Boxer size.
+size = "large-rifle"
+diameter = 5.51
+sources = ["book:cotw-18 p. 652"]
+
+[case_head]
+# Drawing 09-063-BGC-010: RT 1.20, HL 3.10, GØ 10.20, GW 1.10, HØ 11.88; ramp angle from HL = RT +
+# GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.2
+ramp_top = 3.1
+groove_diameter = 10.2
+ramp_angle = 46.0
+groove_width = 1.1
+sources = ["https://municion.org/producto/9-x-63-hessmer/"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 638"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/9-x-63-hessmer/"]

@@ -1,0 +1,47 @@
+# The round of the Czechoslovak M53 anti-aircraft cannon, the biggest of the service 30 mm rounds: first
+# designed at the Brno works, developed there under the German occupation for the MK 303 and adopted by
+# Czechoslovakia in the 1950s. Its name gives the bore and case length (Autocannon: 30x211; Jane's:
+# 30x220), Rapid Fire's table the rim and base, Autocannon p. 148 the length of the round, the
+# specimen drawing on municion.org («30 x 210 German MK 303») the shoulder, the neck and the head. Brass
+# and steel cases were made, so the file names no material.
+name = "30x210 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["30x211", "30x220", "30 mm m53", "3 cm mk 303"]
+origin = "CS"
+origin_sources = ["book:autocannon p. 148"]
+
+[mm]
+rim = 47.7
+base = 47.7
+shoulder = 45.03
+shoulder_at = 168.71
+neck_at = 189.75
+neck_base = 31.36
+# Drawing 30-210-BGC-010: SØ 45.03, NØ 31.36, SL 169.00, NL 20.25, CL 210.29, TL 322.00.
+shoulder_angle = 18.0
+cite.shoulder_angle = ["https://municion.org/producto/30-x-210-german-mk-303/"]
+neck = 31.36
+case_length = 210.0
+overall_length = 332.0
+bullet = 30.0
+sources = [
+  "book:rapid-fire p. 229",
+  "book:autocannon p. 148",
+  "https://municion.org/producto/30-x-210-german-mk-303/",
+]
+
+[introduced]
+unknown = "Autocannon dates the M53's adoption only to the 1950s; the MK 303 of the war stayed experimental."
+sources = ["book:autocannon p. 27", "book:autocannon p. 148"]
+
+[case_head]
+# The drawing 30-210-BGC-010: RØ 47.66, HØ 47.59, RT 5.48, GØ 39.93, GW 3.62, the ramp
+# ends at HL 13.90; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 5.48
+ramp_top = 13.9
+groove_diameter = 39.93
+ramp_angle = 39.0
+groove_width = 3.62
+sources = ["https://municion.org/producto/30-x-210-german-mk-303/"]

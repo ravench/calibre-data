@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# A shortened .404 Jeffery case for .338 in. bullets in a .30-06-length action.
+# Dakota Arms became Parkwest Arms in 2021 (COTW 18 p. 406).
+name = ".330 Dakota"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["330 dakota"]
+
+origin = "US"
+origin_sources = ["https://municion.org/producto/330-dakota/"]
+rare = true
+
+[mm]
+rim = 13.82
+base = 13.82
+shoulder = 13.46
+shoulder_at = 53.65
+neck_at = 57.88
+neck_base = 9.36
+# Drawing: SØ 13.38, NØ 9.36, SL 52.50, NL 7.40, CL 64.13.
+shoulder_angle = 25.4
+cite.shoulder_angle = ["https://municion.org/producto/330-dakota/"]
+neck = 9.42
+case_length = 65.28
+overall_length = 84.33
+bullet = 8.59
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/330-dakota/"]
+
+[introduced]
+# Ballistic Studies: Don Allen brought out his Dakota rounds in 1992; COTW gives no year.
+year = 1992
+sources = ["https://www.ballisticstudies.com/Knowledgebase/Dakota+proprietary+cartridges.html"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 452"]
+
+[case_head]
+# .045 in. (COTW); groove from the drawing 09-065-BGC-020: RT 1.19, HL 3.28, GØ 12.13, GW 1.18,
+# HØ 13.80; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.14
+ramp_top = 3.28
+groove_diameter = 12.13
+ramp_angle = 43.0
+groove_width = 1.18
+sources = ["book:cotw-18 p. 452", "https://municion.org/producto/330-dakota/"]
+
+[bullet]
+# Soft point inferred from its use as a hunting round; the page gives weights only.
+type = "softpoint"
+sources = []
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/330-dakota/"]

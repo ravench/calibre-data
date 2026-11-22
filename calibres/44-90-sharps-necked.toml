@@ -1,0 +1,55 @@
+# Measurements converted from inches.
+# The Sharps 2⅝ in. bottleneck case of the 1873 Creedmoor rifle.
+name = ".44-90 Sharps Necked"
+# Guns: book:cotw-18 p. 236.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/44-90-520-sharps-2-5-8/).
+profile = "flat"
+aliases = ["44-90 sharps", "44-100 sharps", "44-105 sharps", "44-2 5/8 sharps"]
+
+origin = "US"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 15.88
+base = 13.13
+shoulder = 12.8
+shoulder_at = 47.58
+# Drawing: SØ 12.91, NØ 11.80, SL 47.50, NL 15.80, CL 66.72.
+shoulder_angle = 9.2
+cite.shoulder_angle = ["https://municion.org/producto/44-90-520-sharps-2-5-8/"]
+neck = 11.89
+case_length = 66.8
+overall_length = 83.82
+bullet = 11.33
+# flat: the drawing gives the flat tip as Ø 5,00 (whole millimetres).
+flat = 5.0
+sources = ["book:cotw-18 p. 251", "https://municion.org/producto/44-90-520-sharps-2-5-8/"]
+
+[introduced]
+# COTW: advertised as early as June 1873.
+year = 1873
+sources = ["book:cotw-18 p. 236"]
+
+[primer]
+# The table gives B-1, a Berdan primer without its size.
+size = "large-rifle"
+sources = []
+
+[case_head]
+# .065 in.
+rim_thickness = 1.65
+sources = ["book:cotw-18 p. 251"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 236"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/44-90-520-sharps-2-5-8/"]

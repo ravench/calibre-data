@@ -1,0 +1,50 @@
+# .45 Super: a hotter load in the .45 ACP case that neither C.I.P. nor SAAMI lists, so a search alias.
+name = ".45 ACP"
+# Guns: https://en.wikipedia.org/wiki/Thompson_submachine_gun (Thompson).
+guns = ["handgun", "rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["45acp", "45auto", "45", "11.43", "45acp+p", "45auto+p", "45automaticmatch", "45super"]
+display_aliases = [".45 Auto", "11,43 mm"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.45_ACP"]
+worldwide = true
+
+[mm]
+# SAAMI 45 Automatic, maximum cartridge.
+# Bullet: the jacketed bullet (lead .4530 in).
+rim = 12.19
+base = 12.09
+neck = 12.01
+case_length = 22.81
+overall_length = 32.39
+bullet = 11.48
+sources = ["https://saami.org/wp-content/uploads/2025/05/SAAMI-Z299.3-2022-Centerfire-Pistol-Revolver-Approved-12-13-2022.pdf#page=57"]
+
+[introduced]
+# designed 1904, produced from 1905
+year = 1905
+sources = ["https://en.wikipedia.org/wiki/.45_ACP"]
+
+[primer]
+size = "large-pistol"
+sources = ["https://en.wikipedia.org/wiki/.45_ACP"]
+
+[case_head]
+# C.I.P. 45 Auto
+rim_thickness = 1.24
+ramp_top = 4.11
+groove_diameter = 10.16
+ramp_angle = 26.0
+groove_width = 0.89
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/tabivcal-en-page76.pdf"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 516"]
+
+[current_cases]
+# Barnaul's lacquered, zinc- or polymer-coated steel cases; CCI Blazer's aluminium cases.
+materials = ["steel", "aluminium"]
+sources = ["https://en.wikipedia.org/wiki/Barnaul_Cartridge_Plant", "https://www.cci-ammunition.com/handgun/blazer/blazer-aluminum"]

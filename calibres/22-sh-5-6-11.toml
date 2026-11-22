@@ -1,0 +1,31 @@
+# .22 crimped blank, the size of the yellow/green/red power-tool loads and starter pistol
+# blanks. The name is the title of its C.I.P. sheet, «22 SH (5,6/11)» (Tab. VI): a 5.6 mm (.22) case,
+# 11 mm long. «.22 Blank» was made up for the catalogue and stays as an alias.
+# Until 2026-11-14 this entry was named «.22 Blank (6.8/11)» by mistake: C.I.P.'s «6,8/11» is
+# the .27 calibre load (rim 8.50, body 6.86), in the catalogue since 2026-11-20 as «6.8/11». The maintainer's fired
+# blanks of 2026-11-04 and 2026-11-07, filed under this entry, are that 6.8/11 (the same
+# Hilti cartridge as the loaded one captured that day), so nothing here is measured on a round any more.
+name = ".22 SH (5.6/11)"
+guns = []
+kind = "rimfire"
+profile = "crimped"
+aliases = ["22blank", "5.6/11", "5.6x11", "platzpatrone", "kartusche", "setzkartusche", "bolzensetzer", "22sh"]
+display_aliases = [".22 Blank", "Setzkartusche 5.6/11"]
+
+[mm]
+# C.I.P. 22 SH (5,6/11), maximum cartridge: rim R1, base P1, length L6 (crimped; the open case L3 is
+# 11.50). C.I.P. gives no crimp size: the mouth is estimated (it was read off the fired 6.8/11 photos).
+rim = 7.06
+base = 5.74
+mouth = 3.4
+length = 11.1
+unsourced = ["mouth"]
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vi/tabvical-en-page3.pdf"]
+
+[introduced]
+unknown = "a family of blanks and power-tool loads with no single launch"
+
+[case_head]
+# R on the C.I.P. 22 SH (5,6/11) sheet
+rim_thickness = 1.12
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-vi/tabvical-en-page3.pdf"]

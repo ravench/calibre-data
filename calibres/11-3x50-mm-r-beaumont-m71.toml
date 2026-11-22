@@ -1,0 +1,57 @@
+# Measurements converted from inches.
+# The first Dutch Beaumont round.
+name = "11.3x50 mm R Beaumont M71"
+# Guns: book:cotw-18 p. 569.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+profile = "round"
+aliases = ["11.3x50r", "11.3x50r beaumont"]
+
+origin = "NL"
+origin_sources = ["https://municion.org/producto/113-x-50-r-dutch-beaumont-m-1871/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 16.92
+base = 14.76
+shoulder = 13.46
+shoulder_at = 32.74
+neck_at = 36.74
+neck_base = 12.25
+# Drawing: SØ 13.47, NØ 12.25, SL 34.00, NL 13.30, CL 51.30.
+shoulder_angle = 8.7
+cite.shoulder_angle = ["https://municion.org/producto/113-x-50-r-dutch-beaumont-m-1871/"]
+neck = 12.34
+case_length = 50.04
+overall_length = 63.25
+bullet = 11.79
+sources = [
+  "book:cotw-18 p. 574",
+  "https://municion.org/producto/113-x-50-r-dutch-beaumont-m-1871/",
+]
+
+[introduced]
+year = 1871
+sources = ["book:cotw-18 p. 569"]
+
+[primer]
+# 6.51 mm, 4 specimens
+size = "berdan-nitro"
+sources = ["https://municion.org/producto/113-x-50-r-dutch-beaumont-m-1871/"]
+
+[case_head]
+# .060 in.
+rim_thickness = 1.52
+sources = ["book:cotw-18 p. 574"]
+
+[bullet]
+# The military load: a lead bullet over blackpowder.
+type = "lead"
+sources = ["book:cotw-18 p. 569"]
+
+[case]
+# municion.org says the case is brass, and its photos show it.
+material = "brass"
+sources = ["https://municion.org/producto/113-x-50-r-dutch-beaumont-m-1871/"]

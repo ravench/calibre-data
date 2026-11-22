@@ -1,0 +1,44 @@
+name = ".32 S&W Long"
+guns = ["handgun"]
+kind = "rimmed"
+profile = "round"
+aliases = ["32s&w", "32swl", "32long", "32coltnewpolice"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.32_S%26W_Long",
+  "book:ammo-encyclopedia-2 p. 620",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/32s-w-long-190829-en.pdf",
+]
+
+[mm]
+# C.I.P. 32 S&W Long, maximum cartridge.
+rim = 9.53
+base = 8.56
+neck = 8.56
+case_length = 23.37
+overall_length = 32.51
+bullet = 8.0
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/32s-w-long-190829-en.pdf"]
+
+[introduced]
+year = 1896
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
+
+[primer]
+size = "small-pistol"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
+
+[case_head]
+# C.I.P. 32 S&W Long
+rim_thickness = 1.4
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-iv/32s-w-long-190829-en.pdf"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.32_S%26W_Long"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/32-smith-wesson-long/"]

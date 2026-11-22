@@ -1,0 +1,26 @@
+# The round of the British COW 1½-pounder (Coventry Ordnance Works), an automatic cannon for aircraft and
+# anti-aircraft use, begun before the First World War. Its name gives the bore and case length, Rapid
+# Fire's table the rim and base, Autocannon p. 156 the length of the round.
+name = "37x190 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["37 mm cow", "cow gun", "1.5-pounder cow"]
+origin = "GB"
+origin_sources = ["book:rapid-fire p. 230"]
+
+[mm]
+rim = 46.5
+base = 47.0
+case_length = 190.0
+overall_length = 290.0
+bullet = 37.0
+sources = ["book:rapid-fire p. 230", "book:autocannon p. 156"]
+
+[introduced]
+unknown = "Autocannon dates the COW gun only to before the First World War."
+sources = ["book:autocannon p. 156"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 156"]

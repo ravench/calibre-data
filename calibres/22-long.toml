@@ -1,0 +1,40 @@
+# Added 2026-11: dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".22 Long"
+# Guns: book:cotw-18 p. 658.
+guns = ["handgun", "rifle"]
+kind = "rimfire"
+profile = "round"
+aliases = ["22long"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.22_Long",
+  "book:ammo-encyclopedia-2 p. 723",
+]
+# Share of listings (2026-11-04): under 0.05 per mille on GunBroker (1.2 million guns)
+# and at most 2 listings on any other site:
+rare = true
+
+[mm]
+# SAAMI 22 Long, maximum cartridge.
+# Neck: the case is a .226 in cylinder to the mouth.
+rim = 7.06
+base = 5.74
+neck = 5.74
+case_length = 15.57
+overall_length = 22.56
+bullet = 5.72
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=20"]
+
+[introduced]
+year = 1871
+sources = ["https://en.wikipedia.org/wiki/.22_Long"]
+
+[case_head]
+# SAAMI 22 Long
+rim_thickness = 1.09
+sources = ["https://saami.org/wp-content/uploads/2026/05/SAAMI-Z299.1-R2026-Rimfire-FINAL-Approved-2026-05-08.pdf#page=20"]
+
+[bullet]
+type = "lead"
+sources = ["https://en.wikipedia.org/wiki/.22_Long"]

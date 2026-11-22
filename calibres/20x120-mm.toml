@@ -1,0 +1,48 @@
+# The round of Madsen's 20 mm cannon for anti-aircraft, anti-tank and aircraft use, with a notably thick
+# rim. Its name gives the bore and case length, Rapid Fire's table the rim and base, the specimen
+# drawing on municion.org (which calls it the 20x119) the shoulder, the neck, the head and the length of
+# the round (Autocannon p. 119: about 185 mm). Jane's table gives the rim and base as 35.99 mm, which
+# fits neither Rapid Fire nor the drawing (RØ 29.00); Autocannon p. 120 has a 29.5 mm rim, and 35.5 mm on
+# two experimental cases of the 1950s.
+name = "20x120 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x119", "20 mm madsen"]
+origin = "DK"
+origin_sources = ["https://municion.org/producto/20-x-119-danish-madsen/", "book:rapid-fire p. 226"]
+
+[mm]
+rim = 28.9
+base = 29.0
+shoulder = 26.8
+shoulder_at = 98.8
+neck_at = 109.8
+neck_base = 20.9
+# Drawing 20-119-BGC-020: SØ 26.80, NØ 20.90, SL 98.10, NL 10.20, CL 119.30, TL 184.40.
+shoulder_angle = 15.0
+cite.shoulder_angle = ["https://municion.org/producto/20-x-119-danish-madsen/"]
+neck = 20.9
+case_length = 120.0
+overall_length = 184.4
+bullet = 20.0
+sources = ["book:rapid-fire p. 226", "https://municion.org/producto/20-x-119-danish-madsen/"]
+
+[introduced]
+# municion.org: about 1934, the year of its Kynoch-made specimen.
+year = 1934
+sources = ["https://municion.org/producto/20-x-119-danish-madsen/"]
+
+[case_head]
+# The drawing 20-119-BGC-020: RØ 29.00, HØ 29.00, RT 5.00, GØ 23.80, GW 2.00, the
+# ramp ends at HL 9.75; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 5.0
+ramp_top = 9.75
+groove_diameter = 23.8
+ramp_angle = 43.0
+groove_width = 2.0
+sources = ["https://municion.org/producto/20-x-119-danish-madsen/"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 119"]

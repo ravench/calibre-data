@@ -1,0 +1,47 @@
+# Batch 10 (2026-11): recent American rounds; dimensions from the page named in INTRODUCED, rounded; .25 Creedmoor and 8.6 Blackout from their SAAMI drawings, 6 mm Creedmoor from the Sierra load-data drawing; other shoulder heights estimated.
+name = ".22 ARC"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["22arc"]
+
+origin = "US"
+origin_sources = ["https://en.wikipedia.org/wiki/.22_ARC"]
+
+[mm]
+rim = 11.2
+base = 11.2
+shoulder = 10.915
+shoulder_at = 29.235
+# SAAMI 22 ARC drawing (issued 2024-01-21) shown by Outdoor Life: 30 deg, shoulder .4297 in at 1.1510 in, neck .253 in at 1.3040 in
+shoulder_angle = 30
+cite.shoulder_angle = ["https://www.outdoorlife.com/guns/22-arc-review/"]
+neck = 6.43
+case_length = 38.74
+overall_length = 57.4
+bullet = 5.7
+sources = [
+  "https://en.wikipedia.org/wiki/.22_ARC",
+  "https://www.outdoorlife.com/guns/22-arc-review/",
+]
+
+[introduced]
+year = 2023
+sources = ["https://en.wikipedia.org/wiki/.22_ARC"]
+
+[primer]
+size = "small-rifle"
+sources = ["https://hodgdonreloading.com/rldc/"]
+
+[case_head]
+# C.I.P. 22 ARC
+rim_thickness = 1.5
+ramp_top = 3.49
+groove_diameter = 9.6
+ramp_angle = 45.0
+groove_width = 1.19
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/22-arc-en.pdf"]
+
+[bullet]
+type = "polymer"
+sources = ["https://en.wikipedia.org/wiki/.22_ARC"]

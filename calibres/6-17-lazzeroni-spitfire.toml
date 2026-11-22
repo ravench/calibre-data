@@ -1,0 +1,58 @@
+# Measurements converted from inches.
+# Lazzeroni's .243 short magnum for a 2.8 in. action, on its .530 in. case. No loaded rounds offered since 2022 (COTW 18 p. 366).
+name = "6.17 Lazzeroni Spitfire"
+guns = ["rifle"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["6.17 spitfire", "6.17mm spitfire", "lazzeroni spitfire"]
+
+origin = "US"
+origin_sources = []
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.46
+base = 13.46
+shoulder = 12.95
+shoulder_at = 40.66
+neck_at = 46.22
+neck_base = 7.08
+# COTW 18 p. 366: a 30-degree shoulder.
+shoulder_angle = 30
+cite.shoulder_angle = ["book:cotw-18 p. 366"]
+neck = 6.99
+case_length = 52.07
+overall_length = 71.12
+bullet = 6.17
+# shoulder_at from the drawing 06-052-BGC-027: SL 40.50 on a case of CL 51.91, taken from the
+# mouth (case_length - (CL - SL)).
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/617-mm-lazzeroni-spitfire/"]
+
+[introduced]
+year = 1997
+sources = ["book:cotw-18 p. 366"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 451"]
+
+[case_head]
+# .050 in. (COTW); groove from the drawing 06-052-BGC-027: RT 1.25, HL 3.12, GØ 11.88, GW 1.16,
+# HØ 13.44; ramp angle from HL = RT + GW + ((HØ - GØ)/2)/tan(angle).
+rim_thickness = 1.27
+ramp_top = 3.12
+groove_diameter = 11.88
+ramp_angle = 48.0
+groove_width = 1.16
+sources = ["book:cotw-18 p. 451", "https://municion.org/producto/617-mm-lazzeroni-spitfire/"]
+
+[bullet]
+# Soft point: Lazzeroni loads premium hunting bullets from Nosler, Barnes or Swift (COTW 18 p. 366).
+type = "softpoint"
+sources = ["book:cotw-18 p. 366"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/617-mm-lazzeroni-spitfire/"]

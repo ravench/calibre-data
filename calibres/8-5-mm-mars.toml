@@ -1,0 +1,52 @@
+# Measurements converted from inches.
+# The .45 Mars Long necked down, for Gabbett-Fairfax's Mars pistol of 1900: a thin rim and deep groove.
+name = "8.5 mm Mars"
+guns = ["handgun"]
+kind = "rimless"
+profile = "round"
+aliases = ["8.5mars", "8.5 mars", "8mm mars"]
+
+origin = "GB"
+origin_sources = ["https://municion.org/producto/85-mm-mars-late-type/"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 12.47
+base = 12.83
+shoulder = 10.54
+shoulder_at = 18.5
+neck = 8.53
+case_length = 28.65
+overall_length = 40.21
+bullet = 8.51
+# shoulder_at estimated: a neck one calibre long and the shoulder at 32 degrees.
+unsourced = ["shoulder_at"]
+sources = ["book:cotw-18 p. 527"]
+
+[introduced]
+# COTW dates the round only to the late nineteenth century (p. 477); 1900 is the year of the Mars pistol
+# (p. 493).
+year = 1900
+sources = ["book:cotw-18 p. 477", "book:cotw-18 p. 493"]
+
+[primer]
+# The table gives a Berdan primer without its size.
+size = "large-pistol"
+sources = []
+
+[case_head]
+# .040 in. The groove stays the generic one: the drawing 08-026-BGC-010 (municion.org) of a specimen has a
+# smaller head (RØ 10.40, HØ 10.70) and a shorter case (CL 26.00) than the book's table, which prints one rim and
+# base for all four Mars rounds, and no third source was found.
+rim_thickness = 1.02
+sources = ["book:cotw-18 p. 527"]
+
+[bullet]
+type = "jacketed"
+sources = ["book:cotw-18 p. 478"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/85-mm-mars-late-type/"]

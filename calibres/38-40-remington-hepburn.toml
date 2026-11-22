@@ -1,0 +1,50 @@
+# Measurements converted from inches.
+# A straight-case .38 for the Remington No. 1 rolling block and the Hepburn rifles.
+name = ".38-40 Remington-Hepburn"
+# Guns: book:cotw-18 p. 212.
+guns = ["rifle"]
+black_powder = true
+kind = "rimmed"
+# Nose: flat, as the specimen drawing shows it (https://municion.org/producto/38-40-remington-hepburn/).
+profile = "flat"
+aliases = ["38-40 remington-hepburn", "38-40 remington"]
+
+origin = "US"
+origin_sources = ["book:ammo-encyclopedia-2 p. 424"]
+obsolete = true
+rare = true
+
+[mm]
+rim = 13.64
+base = 11.53
+neck = 10.03
+case_length = 44.96
+overall_length = 58.93
+bullet = 9.45
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/38-40-remington-hepburn/"]
+sources = ["book:cotw-18 p. 250"]
+
+[introduced]
+# COTW: appeared about 1875.
+year = 1875
+sources = ["book:cotw-18 p. 212"]
+
+[primer]
+size = "small-rifle"
+sources = ["book:cotw-18 p. 250"]
+
+[case_head]
+# .062 in.
+rim_thickness = 1.57
+sources = ["book:donnelly p. 477"]
+
+[bullet]
+type = "lead"
+sources = ["book:cotw-18 p. 212"]
+
+[case]
+# The photos show brass cases (UMC's and unmarked ones).
+material = "brass"
+sources = ["https://municion.org/producto/38-40-remington-hepburn/"]

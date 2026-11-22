@@ -1,0 +1,28 @@
+# The round of the Japanese army's Type 97 anti-tank rifle and of its Ho-1 and Ho-3 aircraft cannon. Its
+# name gives the bore and case length (Rapid Fire's table: 20x125; Autocannon p. 120: 124.5 mm), Rapid
+# Fire's table the rim and base. Autocannon gives the round as about 195 mm long, so the file has no
+# length of the round.
+name = "20x124 mm"
+guns = ["cannon"]
+kind = "rimless"
+profile = "spitzer"
+aliases = ["20x125", "20 mm type 97", "ho-1", "ho-3"]
+origin = "JP"
+origin_sources = ["https://en.wikipedia.org/wiki/Type_97_automatic_cannon", "book:rapid-fire p. 226"]
+
+[mm]
+rim = 28.5
+base = 28.7
+case_length = 124.0
+bullet = 20.0
+sources = ["book:rapid-fire p. 226", "book:autocannon p. 120"]
+
+[introduced]
+# Type 97 is the Japanese year 2597 (1937); Wikipedia has the rifle designed from 1935 to 1938 and made
+# from 1939.
+year = 1937
+sources = ["https://en.wikipedia.org/wiki/Type_97_automatic_cannon"]
+
+[case]
+material = "brass"
+sources = ["book:autocannon p. 120"]

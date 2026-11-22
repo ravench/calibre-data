@@ -1,0 +1,51 @@
+# Measurements from the C.I.P. sheet (maximum cartridge).
+# The short Mauser K round, not the Mannlicher-Schönauer.
+name = "6.5x54 mm Mauser"
+guns = ["rifle"]
+kind = "rimless"
+profile = "round"
+aliases = ["6.5x54mauser"]
+
+origin = "DE"
+origin_sources = [
+  "book:ammo-encyclopedia-2 p. 388",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page21.pdf",
+]
+obsolete = true
+rare = true
+
+[mm]
+rim = 11.8
+base = 11.95
+shoulder = 11.1
+shoulder_at = 36.5
+neck_at = 43.05
+neck_base = 7.59
+# Half the cone angle alpha on the C.I.P. sheet.
+shoulder_angle = 15.0
+neck = 7.59
+case_length = 54.0
+overall_length = 68.0
+bullet = 6.64
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page21.pdf"]
+
+[introduced]
+year = 1900
+sources = ["book:cotw-18 p. 617"]
+
+[primer]
+size = "large-rifle"
+sources = ["book:cotw-18 p. 651"]
+
+[case_head]
+# R and the extractor groove on the C.I.P. sheet.
+rim_thickness = 1.5
+ramp_top = 3.6
+groove_diameter = 10.2
+ramp_angle = 38.5
+groove_width = 1
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-i/tabical-en-page21.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["book:cotw-18 p. 617"]

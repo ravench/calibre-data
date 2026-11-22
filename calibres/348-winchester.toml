@@ -1,0 +1,57 @@
+# Rifle batch 2 (2026-11): dimensions from the page named in INTRODUCED, rounded; shoulder heights estimated.
+name = ".348 Winchester"
+guns = ["rifle"]
+kind = "rimmed"
+profile = "flat"
+aliases = ["348win"]
+
+origin = "US"
+origin_sources = [
+  "https://en.wikipedia.org/wiki/.348_Winchester",
+  "book:ammo-encyclopedia-2 p. 416",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page85.pdf",
+]
+
+[mm]
+rim = 15.5
+base = 14.0
+shoulder = 12.3
+shoulder_at = 41.91
+neck_at = 45.83
+neck_base = 9.61
+# C.I.P. 348 Win.
+shoulder_angle = 19.1
+cite.shoulder_angle = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page85.pdf"]
+neck = 9.61
+case_length = 57.3
+overall_length = 71.0
+bullet = 8.8
+# flat: the drawing gives the flat tip as Ø 4,00 (whole millimetres).
+flat = 4.0
+cite.flat = ["https://municion.org/producto/348-winchester/"]
+sources = [
+  "https://en.wikipedia.org/wiki/.348_Winchester",
+  "https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page85.pdf",
+]
+
+[introduced]
+year = 1936
+sources = ["https://en.wikipedia.org/wiki/.348_Winchester"]
+
+[primer]
+size = "large-rifle"
+sources = ["https://en.wikipedia.org/wiki/.348_Winchester"]
+
+[case_head]
+# R on the C.I.P. sheet.
+rim_thickness = 1.78
+sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page85.pdf"]
+
+[bullet]
+type = "softpoint"
+sources = ["https://en.wikipedia.org/wiki/.348_Winchester"]
+
+[case]
+# The photo shows a brass case.
+material = "brass"
+sources = ["https://municion.org/producto/348-winchester/"]
