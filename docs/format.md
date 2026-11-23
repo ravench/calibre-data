@@ -284,7 +284,9 @@ No book gives a cannon case's shoulder or extractor groove. Specimen drawings do
 they give the shoulder, the head and, where no book does, the neck and the round's length, under the
 rules for small-arms drawings (see Shoulder angle and `[case_head]`): the shoulder when the case is within 1.5 mm and the neck within
 0.5 mm of what the file has from the books, the head when the drawing's rim and head are within 0.5 mm
-too. Where no book gives the neck, the file takes the drawing's neck where it starts, or its mouth
+too. A cannon drawing's neck may instead fit at its mouth (MØ), since the file's `neck` is the mouth and
+the books do not say where they measure: the file then keeps the books' neck, takes the drawn start as
+`neck_at` and `neck_base`, and its note gives both differences. Where no book gives the neck, the file takes the drawing's neck where it starts, or its mouth
 where the two differ by more than the 0.15 mm a neck may widen towards its mouth. A drawn neck start
 more than 0.15 mm narrower than the books' neck is not taken, and the file then has no `neck_at`. A
 drawing whose rim is more than 1 mm off the books', or whose case is outside the 1.5 mm, gives

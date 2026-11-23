@@ -1,8 +1,8 @@
 # The round of the Mauser BK-27 aircraft cannon. Its name gives the bore and case length; Jane's
-# table gives the rim, the belt and the neck, its p. 96 the length. The year is
-# the gun's first year of production (Wikipedia gives no year of service).
-# The specimen drawing on municion.org (27-145-BFE-010) gives no shoulder or head here: its neck
-# (NØ 29.51) is 0.8 mm wider than Jane's (28.7), more than its sizes may differ from the file's.
+# table gives the rim, the belt and the neck, its p. 96 the length, the specimen drawing on municion.org
+# the base (HØ), the shoulder and the head. The drawing's neck starts 0.81 mm wider than Jane's (NØ 29.51
+# against 28.7) and narrows to 0.42 mm wider at the mouth (MØ 29.12), where the file measures the neck.
+# The year is the gun's first year of production (Wikipedia gives no year of service).
 name = "27x145 mm B"
 guns = ["cannon"]
 kind = "belted"
@@ -14,6 +14,14 @@ origin_sources = ["https://en.wikipedia.org/wiki/Mauser_BK-27"]
 [mm]
 rim = 34.11
 belt = 34.49
+base = 33.18
+shoulder = 31.84
+shoulder_at = 127.26
+neck_at = 130.1
+neck_base = 29.51
+# Drawing 27-145-BFE-010: SØ 31.84, NØ 29.51, SL 126.90, NL 14.90, CL 144.64, TL 242.41.
+shoulder_angle = 22.3
+cite.shoulder_angle = ["https://municion.org/producto/27-x-145-b-german-mauser-mk-27-mrca/"]
 neck = 28.7
 case_length = 145.0
 overall_length = 243.0
@@ -22,11 +30,22 @@ sources = [
   "book:janes-ammo-2002 p. 682",
   "book:janes-ammo-2002 p. 96",
   "https://en.wikipedia.org/wiki/Mauser_BK-27",
+  "https://municion.org/producto/27-x-145-b-german-mauser-mk-27-mrca/",
 ]
 
 [introduced]
 year = 1977
 sources = ["https://en.wikipedia.org/wiki/Mauser_BK-27"]
+
+[case_head]
+# The drawing 27-145-BFE-010: RØ 34.03, HØ 33.18, LØ 34.52, RT 3.16, GØ 27.86, GW 3.70,
+# the ramp ends at HL 10.37; the belt (LW 1.94) ends at 12.31; ramp angle from HL = RT + GW + ((LØ - GØ)/2)/tan(angle).
+rim_thickness = 3.16
+ramp_top = 12.31
+groove_diameter = 27.86
+ramp_angle = 43.0
+groove_width = 3.7
+sources = ["https://municion.org/producto/27-x-145-b-german-mauser-mk-27-mrca/"]
 
 [case]
 # Lacquered steel for every round.

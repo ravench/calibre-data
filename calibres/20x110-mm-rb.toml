@@ -4,8 +4,10 @@
 # 20x110 mm Hispano: its rim is rebated, 22.2 mm under a 24.7 mm base, and its shoulder slopes. Its
 # name gives the bore and case length (Jane's table measures the case at 109.8 mm), Jane's table the
 # rim, base and neck, Jane's p. 84 and Autocannon the length of the round. The specimen drawing
-# on municion.org (20-110-BRC-030) gives no shoulder or head here: its neck (NØ 20.06) is 0.54 mm
-# narrower than Jane's (20.6), more than its sizes may differ from the file's.
+# on municion.org (20-110-BRC-030) gives no shoulder or head here: its neck starts 0.54 mm narrower than
+# Jane's (NØ 20.06 against 20.6) and is 0.68 mm narrower at the mouth (MØ 19.92), more than its sizes may
+# differ from the file's. naboje.org's drawing (node 9647) has about the same neck (H1 20.07, H2 19.98),
+# but no other source stands with the two drawings, so Jane's neck stays.
 name = "20x110 mm RB"
 guns = ["cannon"]
 kind = "rimless"

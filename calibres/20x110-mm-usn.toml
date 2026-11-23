@@ -1,8 +1,9 @@
 # The US Navy's Mk 100 series round for the Mk 11 and Mk 12 aircraft cannon, the Navy's standard aircraft
 # cannon from the mid-1950s: Autocannon has it made from the 20x102 mm's base with the case stretched as
 # far as the Hispano allowed. Its name gives the bore and case length, Rapid Fire's table the rim and
-# base, Jane's table the neck, Autocannon p. 118 the length of the round. Jane's table gives the rim as
-# 29.49 and the base as 29.00 mm, a rim wider than a rimless case's may be.
+# base, Jane's table the neck, Autocannon p. 118 the length of the round, the specimen drawing on
+# naboje.org the shoulder and the head. Jane's table gives the rim as 29.49 and the base as 29.00 mm, a
+# rim wider than a rimless case's may be.
 name = "20x110 mm USN"
 guns = ["cannon"]
 kind = "rimless"
@@ -14,15 +15,38 @@ origin_sources = ["https://en.wikipedia.org/wiki/Colt_Mk_12_cannon", "book:rapid
 [mm]
 rim = 29.5
 base = 29.3
+shoulder = 26.11
+shoulder_at = 92.55
+neck_at = 101.24
+neck_base = 20.71
+# The naboje.org drawing (labelled like a C.I.P. sheet): P2 26.11 at L1 92.47, H1 20.71 at L2 101.16, mouth
+# H2 20.59, case L3 109.92, round L6 182.40; angle = atan(((P2 - H1)/2)/(L2 - L1)).
+shoulder_angle = 17.3
+cite.shoulder_angle = ["https://naboje.org/en/node/10378"]
 neck = 20.6
 case_length = 110.0
 overall_length = 185.0
 bullet = 20.0
-sources = ["book:rapid-fire p. 226", "book:janes-ammo-2002 p. 682", "book:autocannon p. 118"]
+sources = [
+  "book:rapid-fire p. 226",
+  "book:janes-ammo-2002 p. 682",
+  "book:autocannon p. 118",
+  "https://naboje.org/en/node/10378",
+]
 
 [introduced]
 unknown = "the sources date the Mk 12 only to the mid-1950s."
 sources = ["book:autocannon p. 118", "https://en.wikipedia.org/wiki/Colt_Mk_12_cannon"]
+
+[case_head]
+# The naboje.org drawing: R1 29.51, P1 29.02, R 2.49 (rim thickness), e 3.15 (groove width), E1 25.30,
+# E 7.63; ramp angle from E = R + e + ((P1 - E1)/2)/tan(angle).
+rim_thickness = 2.49
+ramp_top = 7.63
+groove_diameter = 25.3
+ramp_angle = 43.0
+groove_width = 3.15
+sources = ["https://naboje.org/en/node/10378"]
 
 [case]
 material = "steel"

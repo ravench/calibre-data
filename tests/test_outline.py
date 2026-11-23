@@ -30,7 +30,7 @@ class GapTests(unittest.TestCase):
                 (".25 Stevens", ("rim_thickness",)),
                 ("20x138 mm B", ()),  # its AECC drawing (2026-11-15)
                 ("24x138 mm", ()),
-                ("27x145 mm B", ("measurements", "groove", "rim_thickness")),  # no base: Jane's neck and the drawing's differ
+                ("27x145 mm B", ()),  # its AECC drawing's base (HØ), shoulder and head
                 ("57x441 mm R", ("measurements", "rim_thickness"))]:  # no neck from any source
             with self.subTest(name):
                 self.assertEqual(outline.gaps(self.spec(name)), gaps)
@@ -43,16 +43,18 @@ class GapTests(unittest.TestCase):
         # heads (each loading of the 23x152 B, 30x165 and 30x173 from its own drawing). 2026-11-22: the Swiss
         # 20x128 and 30x170, then the 20x120, 25x173 and 30x184 B, and the 20x99 R, a tapered case without a
         # shoulder whose drawing gives the rim's thickness. Then seventeen more rounds of Rapid Fire's table,
-        # from the 20x70 RB to the 37x223 SR. The others lack a drawing that shows the shoulder (or one that
-        # fits the books' sizes, as for the 27x145 mm B and the 20x110 mm RB); the 30x29 mm B's drawing has a
-        # square groove, without the ramp a head needs.
+        # from the 20x70 RB to the 37x223 SR. Then the 20x110 USN (naboje.org), and the 25x218 and the 27x145 B,
+        # whose drawn necks fit the books' only at the mouth. The others lack a drawing that shows the shoulder (or
+        # one that fits the books' sizes, as for the 20x110 mm RB); the 30x29 mm B's drawing has a square
+        # groove, without the ramp a head needs.
         drawn = {"20x99 mm R", "20x102 mm", "20x110 mm Hispano", "20x120 mm", "20x128 mm", "20x138 mm B",
                  "20x139 mm", "23x152 mm B VYa", "23x152 mm B ZU-23", "24x138 mm", "25x137 mm", "25x173 mm",
                  "30x113 mm B", "30x165 mm GSh-30", "30x165 mm 2A42", "30x170 mm", "30x173 mm GAU-8", "30x173 mm KCA",
                  "30x184 mm B", "34x239 mm", "35x228 mm",
                  "20x70 mm RB", "20x82 mm", "20x105 mm", "20x105 mm B", "20x113 mm", "20x142 mm", "20x145 mm R",
                  "23x115 mm", "25x163 mm", "25x218 mm SR", "28x199 mm SR", "30x155 mm B", "30x210 mm",
-                 "37x94 mm R", "37x136 mm R", "37x155 mm", "37x223 mm SR"}
+                 "37x94 mm R", "37x136 mm R", "37x155 mm", "37x223 mm SR",
+                 "20x110 mm USN", "25x218 mm", "27x145 mm B"}
         cannon = dict(cartridges.ALL_CATALOGUE)["Kanone"]
         self.assertEqual({s["name"] for s in cannon if outline.well_sourced(s)}, drawn)
 
@@ -1212,15 +1214,14 @@ class OutlineTests(unittest.TestCase):
         ".360 Mars", ".45-70 Auto", ".50-115 Bullard", "6.17 Lazzeroni Flash",
         "6.71 Lazzeroni Blackbird", "8.5 mm Mars",
         # Cannon rounds without a specimen drawing that shows the head (catalogue only).
-        "20x139 mm FMK", "27x145 mm B", "45x386 mm SR", "50x346 mm B", "57x348 mm SR",
+        "20x139 mm FMK", "45x386 mm SR", "50x346 mm B", "57x348 mm SR",
         # Oerlikon's rebated rims: no drawing (20x72 mm RB) or one that does not fit Jane's table.
         "20x72 mm RB", "20x101 mm RB", "20x110 mm RB",
         # The rest of Rapid Fire's table (2026-11-22), from the books' tables without a specimen drawing that fits
         # them or shows the neck.
-        "20x80 mm RB", "20x94 mm", "20x110 mm USN", "20x124 mm", "23x260 mm", "25x205 mm SR", "25x218 mm",
-        "25.4x87 mm", "30x86 mm B", "30x90 mm RB", "30x92 mm RB", "30x97 mm B", "30x114 mm", "30x122 mm",
-        "30x210 mm B", "37x101 mm SR", "37x144 mm", "37x190 mm", "37x198 mm", "37x232 mm SR", "37x240 mm",
-        "37x263 mm B", "40x53 mm SR",
+        "20x80 mm RB", "20x94 mm", "20x124 mm", "23x260 mm", "25x205 mm SR", "25.4x87 mm", "30x86 mm B",
+        "30x90 mm RB", "30x92 mm RB", "30x97 mm B", "30x114 mm", "30x122 mm", "30x210 mm B", "37x101 mm SR",
+        "37x144 mm", "37x190 mm", "37x198 mm", "37x232 mm SR", "37x240 mm", "37x263 mm B", "40x53 mm SR",
         # A square groove on its drawing, which gives the rim's thickness but no ramp.
         "30x29 mm B",
     }
