@@ -50,3 +50,12 @@ sources = ["book:cotw-18 p. 574"]
 # The military load: a paper-patched lead bullet over blackpowder.
 type = "paper"
 sources = ["book:cotw-18 p. 563"]
+
+[case]
+# The M70 and M71 rounds had rolled brass foil cases; drawn brass came from 1875.
+# The forum's photo shows a drawn brass case.
+material = "brass"
+sources = [
+  "https://www.militaryrifles.com/combliancart",
+  "https://www.armedconflicts.com/-t25497",
+]

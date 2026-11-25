@@ -51,3 +51,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page53.pdf
 [bullet]
 type = "paper"
 sources = ["https://en.wikipedia.org/wiki/11×60mm_Mauser"]
+
+[case]
+# The forum's photos show brass cases (DWM and an arsenal round).
+material = "brass"
+sources = ["https://www.armedconflicts.com/11-15-x-60-R-t25482"]

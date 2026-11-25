@@ -50,6 +50,10 @@ type = "paper"
 sources = ["book:cotw-18 p. 562"]
 
 [case]
-# The early Belgian 11 mm service rounds had rolled brass foil cases; drawn brass cases came from 1875 (Fusnot).
-material = "brass"
-sources = ["https://www.militaryrifles.com/combliancart"]
+# The first cases were rolled paper on a brass head, then rolled brass foil (militaryrifles.com: all early
+# Belgian 11 mm rounds), and drawn brass from 1875.
+material = "paper"
+sources = [
+  "https://www.armedconflicts.com/-t21786",
+  "https://www.militaryrifles.com/combliancart",
+]

@@ -44,3 +44,8 @@ sources = ["book:cotw-18 p. 609"]
 # p. 604, is a later Nitro-for-Black soft point.
 type = "lead"
 sources = []
+
+[case]
+# The forum's photo shows a brass case.
+material = "brass"
+sources = ["https://www.armedconflicts.com/-t115128"]

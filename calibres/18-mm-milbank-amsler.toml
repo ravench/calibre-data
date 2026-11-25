@@ -36,3 +36,12 @@ sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
 [bullet]
 type = "lead"
 sources = ["https://municion.org/producto/18-x-257-r-rf-milbank-amsler/"]
+
+[case]
+# A sale listing's photos of an 1867 round and the forum's photo show copper cases (the forum's text
+# gives copper or brass).
+material = "copper"
+sources = [
+  "https://aukro.cz/naboj-18mm-milbank-amsler-mod-1867-viz-foto-7038500198",
+  "https://www.armedconflicts.com/18-mm-svycarsky-Milbank-Amsler-t31907",
+]

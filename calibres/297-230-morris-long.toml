@@ -54,3 +54,8 @@ sources = ["https://bobp.cip-bobp.org/uploads/tdcc/tab-ii/tabiical-en-page64.pdf
 [bullet]
 type = "lead"
 sources = ["book:cotw-18 p. 577"]
+
+[case]
+# The forum's photo shows a brass case.
+material = "brass"
+sources = ["https://www.armedconflicts.com/297-230-Morris-long-t25521"]

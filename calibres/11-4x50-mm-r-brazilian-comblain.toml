@@ -56,4 +56,7 @@ sources = ["book:cotw-18 p. 567"]
 [case]
 # The early Brazilian service rounds had rolled brass foil cases, like the Belgian ones; drawn brass came later.
 material = "brass"
-sources = ["https://www.militaryrifles.com/combliancart"]
+sources = [
+  "https://www.militaryrifles.com/combliancart",
+  "https://www.armedconflicts.com/-t25498",
+]
