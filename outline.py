@@ -8,12 +8,12 @@ millimetres, SVG path data (M/L/Z only), tip at the top (y = 0), base at the bot
 import math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cartridges import CATALOGUE, shoulder_angle, case_head, rim_thickness, foot, unsourced, SHOULDER_ANGLES, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
+from cartridges import CATALOGUE, shoulder_angle, case_head, groove_width, rim_thickness, foot, unsourced, SHOULDER_ANGLES, RIMLESS, RIMMED, BELTED, RIMFIRE, SHOT, BALL, MINIE, PELLET, SPITZER, ROUND, FLAT, PATCHED, CRIMPED, BALL_NOSE  # noqa: E402
 from cartridges import LEAD, PAPER_PATCHED, SOFT_POINT, POLYMER_TIP, HOLLOW_POINT, STEEL, BRASS, COPPER, HYBRID, PAPER, bullet, jacket, patch_length, nose, flat, crimp_length, case_material, current_case_materials, loose_material, jacket_today, case_material_today  # noqa: E402
 
 N = 14  # samples per curve
-# mm, groove floor where no source gives its length: belted cases (as drawn on the C.I.P. sheets) and
-# generic heads (the sourced rimless floors: median 0.95)
+# mm, groove floor where no source gives its length (groove_width): belted cases and generic heads (the
+# sourced rimless floors: median 0.95)
 GROOVE_FLOOR = 1.0
 # mm, rim thickness of a case whose [case_head] gives none: rimmed, rimfire, rimless, semi-rimmed or belted
 RIMMED_RIM, RIMFIRE_RIM, RIMLESS_RIM = 1.5, 1.1, 1.3
@@ -66,14 +66,16 @@ def rim_and_groove(s):
     thick, top_at, groove_dia, ramp_angle = case_head(s["name"]) or generic_head(s)
     groove = groove_dia / 2
     if k == BELTED:
-        # The ramp climbs to the belt, which ends at E; the sheets give no groove width, so the groove floor
-        # is drawn GROOVE_FLOOR long. The belt is as wide as the rim unless the calibre gives its own diameter
-        # (.378 Weatherby Magnum: a belt of 15.33 mm in front of a 14.71 mm rim). In front of the belt the body
+        # The ramp climbs to the belt, which ends at E. The groove floor is the calibre's groove_width
+        # (C.I.P. e, the drawings' GW: 3.7 mm on the 27x145 mm B), or GROOVE_FLOOR long where none is given.
+        # The belt is as wide as the rim unless the calibre gives its own diameter (.378 Weatherby Magnum:
+        # a belt of 15.33 mm in front of a 14.71 mm rim). In front of the belt the body
         # starts at the base diameter, which a belted case's sheet gives there (P1).
         belt_dia = s["belt"] or s["rim"]
+        floor = groove_width(s["name"]) or GROOVE_FLOOR
         # A long ramp (a wide belt, or a big case on the generic head) stops at the front of the belt.
-        ramp_end = min(top_at, thick + GROOVE_FLOOR + ramp_run(groove_dia, belt_dia, ramp_angle))
-        return [(rim, 0), (rim, thick), (groove, thick), (groove, thick + GROOVE_FLOOR),
+        ramp_end = min(top_at, thick + floor + ramp_run(groove_dia, belt_dia, ramp_angle))
+        return [(rim, 0), (rim, thick), (groove, thick), (groove, thick + floor),
                 (belt_dia / 2, ramp_end), (belt_dia / 2, top_at), (base, top_at)]
     ramp_start = max(thick, top_at - ramp_run(groove_dia, s["base"], ramp_angle))
     return [(rim, 0), (rim, thick), (groove, thick), (groove, ramp_start), (base, top_at)]

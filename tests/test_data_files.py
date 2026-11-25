@@ -1017,6 +1017,11 @@ class CheckTests(unittest.TestCase):
         with Copy() as c:
             c.edit(WIN, "ramp_top = 3.85\ngroove_diameter = 10.39\nramp_angle = 36.0\n", "")
             self.assertProblem(c, WIN, r"groove_width goes with the groove")
+        with Copy() as c:
+            # A belted case's ramp climbs to the belt: 12.31 less the 3.16 rim and the 43° ramp from 27.86 up to the
+            # 34.49 belt leaves 5.6 (5.8 up to the 34.11 rim, which this check used to take).
+            c.edit("calibres/27x145-mm-b.toml", "groove_width = 3.7", "groove_width = 5.8")
+            self.assertProblem(c, "calibres/27x145-mm-b.toml", r"groove_width is the groove's floor: from 0.3 to the 5.7")
 
     def test_cannon_neck(self):
         # A cannon round's [mm] (shape partial) may give the neck start too: the 25x137 mm's AECC drawing has

@@ -156,7 +156,7 @@ sources = ["https://en.wikipedia.org/wiki/.308_Winchester"]
 # Rimless, semi-rimmed and belted cases add their extractor groove from the C.I.P. sheet, all three or none: head
 # to the top of the groove's ramp (E; belted: to the front of the belt), groove diameter (E1) and
 # the groove's front ramp to the case axis in degrees (delta), and optionally groove_width, the width of the
-# groove's floor (e min). Needs a source; without one, leave
+# groove's floor (e min; a belted case's drawing uses it). Needs a source; without one, leave
 # the table out (or the groove keys) and the head is drawn generic (add a rimless, semi-rimmed or belted calibre
 # without a groove to HEAD_UNSOURCED in tests/test_outline.py).
 # A rimmed case whose rim stands on a foot above the base («Mauser base» on the AECC drawings) adds foot, the

@@ -1,5 +1,7 @@
 # The high-velocity 40 mm grenade round of automatic grenade launchers such as the Mark 19 and the M129.
-# Its name gives the bore and case length, Rapid Fire's table the rim and base.
+# Its name gives the bore and case length, Rapid Fire's table the rim and base. The specimen drawing on
+# armedconflicts.com (RØ 43.80, a straight case of 40.20 from head to mouth, CL 53.00, TL 111.00) gives
+# nothing: its head is 1.1 mm narrower than the book's base.
 name = "40x53 mm SR"
 guns = ["cannon"]
 kind = "semi-rimmed"

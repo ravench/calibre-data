@@ -8,7 +8,7 @@ profile = "round"
 aliases = ["11mmfrench", "11mm1873"]
 
 origin = "FR"
-origin_sources = []
+origin_sources = ["https://www.armedconflicts.com/11-mm-francouzsky-sluzebni-t19822"]
 obsolete = true
 rare = true
 

@@ -9,7 +9,7 @@ profile = "round"
 aliases = ["10.4revolver", "revolver78"]
 
 origin = "CH"
-origin_sources = []
+origin_sources = ["https://www.armedconflicts.com/10-4-mm-Ordonnance-Suisse-t19811"]
 obsolete = true
 
 [mm]

@@ -1,6 +1,8 @@
 # The round of the Vickers 2-pounder «pom-pom» naval anti-aircraft gun and of the Vickers Class S
 # aircraft gun. Its name gives the bore and case length, Rapid Fire's table the rim and base, Autocannon
-# p. 163 the length of the round.
+# p. 163 the length of the round, the specimen drawing on armedconflicts.com the neck and the rim's
+# thickness. The page is titled 40x158SR, the drawing 40x158R; its rim (48.10) and head (44.00) agree with
+# the book, its round is 294.00 mm long, 6 mm shorter than Autocannon's.
 name = "40x158 mm R"
 guns = ["cannon"]
 kind = "rimmed"
@@ -12,6 +14,9 @@ origin_sources = ["book:rapid-fire p. 230"]
 [mm]
 rim = 48.1
 base = 43.9
+# Drawing: MØ 41.00, BØ 39.90, CL 157.70.
+neck = 41.0
+cite.neck = ["https://www.armedconflicts.com/40x158SR-t185590"]
 case_length = 158.0
 overall_length = 300.0
 bullet = 40.0
@@ -25,3 +30,8 @@ sources = [
 # The Mk II entered service in 1917 (Wikipedia).
 year = 1917
 sources = ["https://en.wikipedia.org/wiki/QF_2-pounder_naval_gun"]
+
+[case_head]
+# RT 2.50 on the drawing.
+rim_thickness = 2.5
+sources = ["https://www.armedconflicts.com/40x158SR-t185590"]

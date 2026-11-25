@@ -392,9 +392,9 @@ def _check_neck(f, mm):
 
 def _groove_room(head, mm, kind):
     """How long the groove's floor can be: ramp_top less the rim and the front ramp up to the base (up to the
-    rim on a belted case, whose ramp climbs to the belt). None when a value is missing or not a number."""
+    belt on a belted case, or the rim where it gives no belt). None when a value is missing or not a number."""
     vals = [head.get(k) for k in ("ramp_top", "rim_thickness", "groove_diameter", "ramp_angle", GROOVE_WIDTH)]
-    top = mm.get("rim") if kind == BELTED else mm.get("base")
+    top = (mm.get("belt") or mm.get("rim")) if kind == BELTED else mm.get("base")
     if not all(_is_number(v) for v in vals + [top]):
         return None
     ramp = max(top - head["groove_diameter"], 0) / 2 / math.tan(math.radians(head["ramp_angle"]))
@@ -1352,6 +1352,13 @@ def case_head(name):
     """(rim thickness, ramp top or belt front, groove diameter, ramp angle) or None."""
     entry = CASE_HEADS.get(name)
     return entry[:4] if entry else None
+
+
+def groove_width(name):
+    """Length in mm of the extractor groove's floor, from the rim's front to the ramp, or None where no source
+    gives it."""
+    entry = GROOVE_WIDTHS.get(name)
+    return entry[0] if entry else None
 
 
 def rim_thickness(name):

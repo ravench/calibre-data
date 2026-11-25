@@ -383,8 +383,9 @@ none: `ramp_top` (E: head to the top of the extractor-groove ramp; belted: head 
 `groove_diameter` (E1) and `ramp_angle` (delta: the groove's front ramp to the case axis, degrees).
 Beside them `groove_width` gives the width of the groove's floor (e min on the sheet, a minimum: the
 groove of any case is at least that wide). It is at least 0.3 mm and at most 0.15 mm over what
-`ramp_top` leaves after the rim and the front ramp up to the base (up to the rim on a belted case). The
-drawing does not use it.
+`ramp_top` leaves after the rim and the front ramp up to the base (up to the belt on a belted case). The
+drawing of a belted case draws its groove floor this long (1 mm where it is not given); a rimless or
+semi-rimmed drawing does not use it.
 The .32, .35 and .401 Winchester Self-Loading have no groove floor on their sheets: a shallow cone (3.7°,
 8° and 7°) runs from the rim's front up to the body at E, and the drawing follows it.
 A case made from a parent case without its own sheet keeps the parent's head (the note says which); a parent

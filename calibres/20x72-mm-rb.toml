@@ -3,6 +3,8 @@
 # 99-1 fired it too. Autocannon: the Becker cannon's 20x70RB case with the rim cut down to 19 mm and
 # a 2 mm longer extractor groove. Its name gives the bore and case length, Jane's table the rim, base
 # and neck. Autocannon gives the round as 140 to 147 mm long, so the file has no length of the round.
+# The specimen drawing on armedconflicts.com (RØ 19.30, HØ 21.78, neck 19.90, CL 71.50, TL 144.35)
+# gives nothing: its head is 0.6 mm and its neck 0.7 mm off Jane's.
 name = "20x72 mm RB"
 guns = ["cannon"]
 kind = "rimless"

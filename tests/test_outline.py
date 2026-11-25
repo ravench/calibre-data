@@ -44,7 +44,8 @@ class GapTests(unittest.TestCase):
         # 20x128 and 30x170, then the 20x120, 25x173 and 30x184 B, and the 20x99 R, a tapered case without a
         # shoulder whose drawing gives the rim's thickness. Then seventeen more rounds of Rapid Fire's table,
         # from the 20x70 RB to the 37x223 SR. Then the 20x110 USN (naboje.org), and the 25x218 and the 27x145 B,
-        # whose drawn necks fit the books' only at the mouth. The others lack a drawing that shows the shoulder (or
+        # whose drawn necks fit the books' only at the mouth. 2026-11-25: the 40x158 R, a tapered case without a shoulder whose drawing
+        # (armedconflicts.com) gives the neck and the rim's thickness. The others lack a drawing that shows the shoulder (or
         # one that fits the books' sizes, as for the 20x110 mm RB); the 30x29 mm B's drawing has a square
         # groove, without the ramp a head needs.
         drawn = {"20x99 mm R", "20x102 mm", "20x110 mm Hispano", "20x120 mm", "20x128 mm", "20x138 mm B",
@@ -54,7 +55,7 @@ class GapTests(unittest.TestCase):
                  "20x70 mm RB", "20x82 mm", "20x105 mm", "20x105 mm B", "20x113 mm", "20x142 mm", "20x145 mm R",
                  "23x115 mm", "25x163 mm", "25x218 mm SR", "28x199 mm SR", "30x155 mm B", "30x210 mm",
                  "37x94 mm R", "37x136 mm R", "37x155 mm", "37x223 mm SR",
-                 "20x110 mm USN", "25x218 mm", "27x145 mm B"}
+                 "20x110 mm USN", "25x218 mm", "27x145 mm B", "40x158 mm R"}
         cannon = dict(cartridges.ALL_CATALOGUE)["Kanone"]
         self.assertEqual({s["name"] for s in cannon if outline.well_sourced(s)}, drawn)
 
@@ -124,7 +125,7 @@ class GapTests(unittest.TestCase):
         self.assertEqual(cartridges.case_head(".338 Weatherby RPM"), cartridges.case_head("6.5 Weatherby RPM"))
         # The Boys' belt (21.59 mm) stands over its 20.3 mm rim; the drawing's belt ends 9 mm up.
         boys = [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(self.spec(".55 Boys"))[:7]]
-        self.assertEqual(boys, [(10.15, 0), (10.15, 2.08), (8.59, 2.08), (8.59, 3.08), (10.795, 4.9302), (10.795, 9.0),
+        self.assertEqual(boys, [(10.15, 0), (10.15, 2.08), (8.59, 2.08), (8.59, 4.34), (10.795, 6.1902), (10.795, 9.0),
                                 (10.07, 9.0)])
 
     def test_aecc_drawings_source_pistol_heads(self):
@@ -1286,8 +1287,8 @@ class OutlineTests(unittest.TestCase):
         # drawn at the rim's diameter, below the body: the ten cases on this head showed no belt at all (2026-11-14).
         s = self.rimless()[".378 Weatherby Magnum"]
         prof = [(round(r, 4), round(h, 4)) for r, h in outline.case_profile(s)[:7]]
-        self.assertEqual(prof[:4], [(7.35, 0), (7.35, 1.6), (6.285, 1.6), (6.285, 2.6)])  # rim and groove
-        self.assertEqual(prof[4:6], [(7.665, 3.98), (7.665, 6.4)])  # the belt, after a 45 degree ramp
+        self.assertEqual(prof[:4], [(7.35, 0), (7.35, 1.6), (6.285, 1.6), (6.285, 2.84)])  # rim and groove (e 1.24)
+        self.assertEqual(prof[4:6], [(7.665, 4.22), (7.665, 6.4)])  # the belt, after a 45 degree ramp
         self.assertEqual(prof[6], (7.4, 6.4))  # the body in front of it, at the base diameter
         self.assertEqual(outline.outline(s)["width"], 15.33)  # the belt is the widest part
 
@@ -1339,6 +1340,23 @@ class OutlineTests(unittest.TestCase):
                 self.assertEqual(body, s["base"] / 2)
                 self.assertGreater(h - start, 1.1)
                 self.assertLessEqual(2 * (body - r) / (h - start), 0.05)
+
+    def test_a_belted_groove_is_as_long_as_its_groove_width(self):
+        # AECC 27-145-BFE-010: RT 3.16, GØ 27.86, GW 3.70, belt LØ 34.52 (Jane's 34.49) ending at 12.31, LW 1.94.
+        # Every belted groove used to be drawn 1 mm long, which made this belt 4.6 mm wide (2026-11-25).
+        by_name = {s["name"]: s for _, items in cartridges.ALL_CATALOGUE for s in items}
+        prof = outline.case_profile(by_name["27x145 mm B"])
+        self.assertEqual([(round(r, 3), round(h, 3)) for r, h in prof[2:4]], [(13.93, 3.16), (13.93, 6.86)])
+        self.assertAlmostEqual(prof[5][1] - prof[4][1], 1.94, delta=0.05)  # the belt's width, LW
+        belted = [s for s in by_name.values() if s["kind"] == BELTED]
+        self.assertGreaterEqual(sum(cartridges.groove_width(s["name"]) is not None for s in belted), 54)
+        for s in belted:
+            with self.subTest(s["name"]):
+                head = outline.rim_and_groove(s)
+                (_, start), (_, end) = head[2:4]
+                heights = [h for _, h in head]
+                self.assertEqual(heights, sorted(heights))  # the outline never turns back
+                self.assertAlmostEqual(end - start, cartridges.groove_width(s["name"]) or outline.GROOVE_FLOOR, places=6)
 
     def test_a_long_ramp_stops_at_the_front_of_the_belt(self):
         # A cannon-sized belted case on the generic head (the 50x346 mm B's rim and body): at 40 degrees the ramp
