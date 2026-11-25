@@ -50,6 +50,10 @@ type = "paper"
 sources = ["https://en.wikipedia.org/wiki/.577/450_Martini–Henry"]
 
 [case]
-# Rolled brass foil, as the Commons photo's caption says.
+# The first issue (Mark I, 1871) was coiled brass foil riveted to an iron base disc, as the Commons
+# photo's caption says too; solid drawn brass cases came in 1885.
 material = "brass"
-sources = ["https://commons.wikimedia.org/wiki/File:Snider-Martini-Enfield_Cartridges.JPG"]
+sources = [
+  "https://commons.wikimedia.org/wiki/File:Snider-Martini-Enfield_Cartridges.JPG",
+  "https://en.wikipedia.org/wiki/.577/450_Martini–Henry",
+]

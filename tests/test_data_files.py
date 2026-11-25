@@ -95,14 +95,28 @@ class LoadTests(unittest.TestCase):
         self.assertEqual([cat for cat, _ in cartridges.CATALOGUE],
                          ["Randfeuer", "Kurzwaffe", "Langwaffe", "Schwarzpulver", "Flinte", "Luftdruck"])
 
+    def test_a_cartridge_still_in_production_is_not_listed_under_black_powder(self):
+        # Black powder is the shelf of black-powder cartridges nobody makes any more and of the
+        # muzzle-loaders' balls and bullets. A cartridge that began with black powder and is still loaded
+        # (with smokeless powder) stands with the guns that fire it.
+        kinds = {s["name"]: s["kind"] for _, specs in cartridges.ALL_CATALOGUE for s in specs}
+        made_today = cartridges.BLACK_POWDER - cartridges.OBSOLETE
+        self.assertEqual(sorted(n for n in made_today if kinds[n] not in (cartridges.BALL, cartridges.MINIE)), [],
+                         "a black-powder cartridge needs obsolete = true (docs/format.md)")
+        self.assertEqual(cartridges.categories(".44-40 WCF"), ("Langwaffe", "Kurzwaffe"))
+        for name in (".45-70 Government", ".38-55 Winchester", ".45 Colt", ".38-40 Winchester", ".32-20 Winchester"):
+            self.assertIn(cartridges.categories(name)[0], ("Kurzwaffe", "Langwaffe"), name)
+        for name in (".50-70 Government", ".577/450 Martini-Henry", ".44 Henry Centrefire"):
+            self.assertEqual(cartridges.categories(name)[0], "Schwarzpulver", name)
+
     def test_guns_beyond_the_category_have_a_source(self):
         # A round's guns say what fires it; its category follows from them unless it is a black-powder or
         # rimfire round (2026-11-16). Guns a black-powder or rimfire round names, and a second gun of any
         # round, come from the source in its "# Guns:" note.
         guns = cartridges.CALIBRE_GUNS
         self.assertEqual(guns[".22 LR"], ("rifle", "handgun"))
-        self.assertEqual(guns[".44-40 WCF"], ("rifle", "handgun"))
-        self.assertTrue(cartridges.is_black_powder(".44-40 WCF"))
+        self.assertEqual(guns[".380 Short"], ("rifle", "handgun"))
+        self.assertTrue(cartridges.is_black_powder(".380 Short"))
         # Handgun rounds factory carbines, lever actions or submachine guns are made for, the balls and
         # Minié bullets by their guns, the Flobert ball by its garden gun (2026-11-16).
         self.assertEqual(guns[".357 Magnum"], ("handgun", "rifle"))
@@ -1267,14 +1281,37 @@ class CheckTests(unittest.TestCase):
                 c.edit(WIN, old, new)
                 self.assertProblem(c, WIN, pattern, line=bool(new))
 
+    def test_black_powder_on_a_cartridge_still_in_regular_production_is_a_problem(self):
+        problem = r"black_powder is only for a cartridge that is no longer in regular production"
+        colt, short, minie, pellet = (f"calibres/{n}.toml" for n in ("45-colt", "380-short", "58-minie", "4-5-mm-diabolo-177"))
+        with Copy() as c:
+            c.edit(colt, 'guns = ["handgun", "rifle"]', 'guns = ["handgun", "rifle"]\nblack_powder = true')
+            self.assertProblem(c, colt, problem, line=c.line_of(colt, "black_powder"))
+        with Copy() as c:  # a black-powder cartridge that someone makes again leaves the shelf
+            c.edit(short, "obsolete = true\n", "")
+            self.assertProblem(c, short, problem, line=c.line_of(short, "black_powder"))
+        with Copy() as c:  # a muzzle-loader's bullet may still be made and is black powder all the same
+            c.edit(minie, "obsolete = true\n", "")
+            self.assertEqual(c.problems(), [])
+        with Copy() as c:  # an air-gun pellet is no muzzle-loader's bullet
+            c.edit(pellet, 'guns = ["air-gun"]', 'guns = ["air-gun"]\nblack_powder = true')
+            self.assertProblem(c, pellet, problem)
+        for old, new, said in (('guns = ["handgun", "rifle"]', 'guns = ["handgun", "rifle"]\nobsolete = "true"', r"obsolete must be"),
+                               ('kind = "rimmed"', 'kind = "rimed"', r"kind 'rimed' is not one of")):
+            with self.subTest(new), Copy() as c:  # a wrong obsolete or kind is reported as that, not as this too
+                c.edit(colt, 'guns = ["handgun", "rifle"]', 'guns = ["handgun", "rifle"]\nblack_powder = true')
+                c.edit(colt, old, new)
+                self.assertProblem(c, colt, said)
+                self.assertFalse([p for p in c.problems() if re.search(problem, p[2])])
+
     def test_a_black_powder_or_rimfire_round_may_name_no_gun(self):
         with Copy() as c:
             c.edit(LR, 'guns = ["rifle", "handgun"]', 'guns = []')
-            c.edit("calibres/44-40-wcf.toml", 'guns = ["rifle", "handgun"]', 'guns = []')
+            c.edit("calibres/380-short.toml", 'guns = ["rifle", "handgun"]', 'guns = []')
             t = load(c.dir)
             self.assertEqual(t["CALIBRE_CATEGORIES"][".22 LR"], ("Randfeuer",))
-            self.assertEqual(t["CALIBRE_CATEGORIES"][".44-40 WCF"], ("Schwarzpulver",))
-            self.assertEqual(t["CALIBRE_GUNS"][".44-40 WCF"], ())
+            self.assertEqual(t["CALIBRE_CATEGORIES"][".380 Short"], ("Schwarzpulver",))
+            self.assertEqual(t["CALIBRE_GUNS"][".380 Short"], ())
 
     def test_a_bad_gun_on_a_cannon_round_is_its_only_problem(self):
         rel = "calibres/20x138-mm-b.toml"
@@ -1301,7 +1338,7 @@ class CheckTests(unittest.TestCase):
             self.assertEqual(t["CALIBRE_CATEGORIES"][".308 Winchester"], ("Langwaffe", "Kurzwaffe"))
             self.assertEqual(t["CALIBRE_GUNS"][".308 Winchester"], ("rifle", "handgun"))
             self.assertEqual(t["ALL_CATALOGUE"], cartridges.ALL_CATALOGUE)  # listed once, as before
-            c.edit(WIN, 'guns = ["rifle", "handgun"]', 'guns = ["rifle"]\nblack_powder = true')
+            c.edit(WIN, 'guns = ["rifle", "handgun"]', 'guns = ["rifle"]\nblack_powder = true\nobsolete = true')
             self.assertProblem(c, "order.toml", r"'.308 Winchester' is not a calibre whose first category is rifle "
                                                 r"\(its first category is black-powder\)")
             c.edit("order.toml", '  ".308 Winchester",\n', "")

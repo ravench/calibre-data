@@ -644,6 +644,10 @@ def _read_calibre(f, countries, books=None):
                                             "fired by nothing else and is neither black-powder nor rimfire")
     if "black_powder" in d and not isinstance(bp, bool):
         f.problem(f.line(None, "black_powder"), "black_powder must be true or false (without quotes)")
+    elif bp is True and d.get("obsolete", False) is False and kind in KINDS and kind not in (BALL, MINIE):
+        f.problem(f.line(None, "black_powder"), "black_powder is only for a cartridge that is no longer in regular production "
+                                                "(obsolete = true) and for a muzzle-loader's ball or bullet: a cartridge "
+                                                "still in regular production is listed by its guns")
     cats = _categories(d)
     category = cats[0] if cats else None
     if kind not in KINDS:

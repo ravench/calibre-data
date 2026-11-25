@@ -33,7 +33,10 @@ name = ".308 Winchester"
 # guns = []. The category the apps and order.toml list a calibre under follows from this file:
 # black-powder for a black-powder round, else rimfire for a rimfire case, else the first gun.
 guns = ["rifle"]
-# true for a round made for black powder (category black-powder); leave it out for any other.
+# true only for a cartridge made for black powder that is no longer in regular production (obsolete = true)
+# and for a muzzle-loader's ball or bullet: it is then listed under black-powder. A cartridge that began
+# with black powder and is still in regular production, such as the .45-70 Government, leaves it out and
+# is listed by its guns. Leave it out for any other.
 # black_powder = true
 # rimless (the rim at most 0.3 mm wider than the base), semi-rimmed (rim a little wider than the base,
 # with an extractor groove), rimmed, belted,

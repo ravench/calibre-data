@@ -11,8 +11,9 @@ Every calibre is one [TOML](https://toml.io) file in `calibres/`, named after th
 the apps list it under, follows from them: `black-powder` for a black-powder round, else `rimfire` for
 a rimfire case, else its first gun. So the categories are `rimfire`, `handgun`, `rifle`,
 `black-powder`, `shotgun`, `air-gun` and `cannon` (below; a cannon round is fired by nothing else).
-.22 LR (`guns = ["rifle", "handgun"]`, rimfire) is listed under `rimfire`, the .44-40 WCF
-(`guns = ["rifle", "handgun"]`, black powder) under `black-powder`; `CALIBRE_CATEGORIES` /
+.22 LR (`guns = ["rifle", "handgun"]`, rimfire) is listed under `rimfire`, the .577/450 Martini-Henry
+(`guns = ["rifle"]`, black powder) under `black-powder`, and the .44-40 WCF (`guns = ["rifle", "handgun"]`,
+made for black powder in 1873 and loaded with smokeless powder today) under `rifle`; `CALIBRE_CATEGORIES` /
 `categories(name)` give the category and then the others it fits, `CALIBRE_GUNS` / `guns(name)` the guns.
 The apps know
 these six as `Randfeuer`, `Kurzwaffe`, `Langwaffe`, `Schwarzpulver`, `Flinte` and `Luftdruck`, the
@@ -147,7 +148,7 @@ in `unsourced`. Only `[mm]` has `cite`.
 |---|---|---|
 | `name` | required | The calibre's name as the apps show it, written as in [Names](#names). The file name follows from it (`.22 LR` is `22-lr.toml`); `check.py` gives the right one. |
 | `guns` | required | The guns that fire it, the main one first: `handgun`, `rifle`, `shotgun`, `air-gun` or `cannon` (see [The files](#the-files)). Its first gun is its category unless it is a black-powder or rimfire round. A second gun (a handgun round that carbines or lever actions are made for), and any gun of a black-powder or rimfire round, needs a `# Guns:` note above it giving the source. A handgun round gets `rifle` where a source names a factory carbine, lever action or submachine gun made in it (a long gun, «Langwaffe»); a rifle round is not marked `handgun` for the single-shot pistols that are made in nearly every rifle calibre. `[]` only for a black-powder or rimfire round no source names a gun for (blanks, which blank pistols and tools fire). A `cannon` round names no other gun. |
-| `black_powder` | optional | `true` for a round made for black powder: it is listed under `black-powder`, whatever fires it. Leave it out for any other. |
+| `black_powder` | optional | `true` only for a cartridge made for black powder that is no longer in regular production (`obsolete = true`) and for a muzzle-loader's ball or bullet: it is then listed under `black-powder`, whatever fires it. A cartridge that began with black powder and is still in regular production (the .45-70 Government, the .45 Colt, the .44-40 WCF, loaded with smokeless powder today) leaves it out and is listed with the guns that fire it, where a reader looks for it. Leave it out for any other. |
 | `kind` | required | `rimless` (the rim at most 0.3 mm wider than the base), `semi-rimmed` (a rim a little wider than the base, with an extractor groove: .38 Super, .32 ACP), `rimmed`, `belted`, `rimfire`, `shot` (shot shell), `ball` (round ball or BB), `minie` (Minié bullet) or `pellet` (air gun pellet). |
 | `profile` | required | Bullet nose of the round as first sold (the apps draw it): `spitzer`, `round`, `flat`, `patched` (paper-patched lead body and a steel-capped nose, GP 1890, drawn to the army's 1892 drawing) `ball` (a round ball seated in the case, drawn as the part of the sphere out of the mouth: the 9 mm Flobert Bosquette) or `crimped` (no bullet, the mouth folded shut in a star: blanks and power-tool loads). |
 | `profile_today` | optional | The nose of today's usual load, where it is not the first one: the .303 British is drawn `round` but loaded `spitzer` since the Mk VII. Same values as `profile`; for the catalogue only. A `# Today:` comment above it names the source, as `# Nose:` does for `profile`. |
@@ -678,7 +679,8 @@ unknown or misspelt key (with the key it probably means), a value that is not al
 measurement or table, a source that is not a web address or a page of a book in `books.toml`, a
 name that writes a number or unit another way than [Names](#names), a file whose name does not
 follow the calibre's name, an alias two calibres use or that is another calibre's name, a gun
-or category the apps do not know or that is missing from `order.toml`, names in `order.toml` or
+or category the apps do not know or that is missing from `order.toml`, `black_powder` on a cartridge
+still in regular production, names in `order.toml` or
 `lookalikes.toml` without a file. The *Check calibre files* job runs it on every pull request. It
 needs Python 3.11 or newer.
 
